@@ -1,0 +1,320 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 10px;
+}
+/*********************************************************
+ * a11y.css - a stylesheet to help create 
+ * accessible websites.
+ * 
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * Licensed under the MIT License
+ * 
+ * https://opensource.org/licenses/MIT
+ ********************************************************/
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+/*
+ * For `.visually-hidden` elements that should be visible when it gains focus. 
+ */
+.visible-when-focused:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+}
+/*
+ * Style for "Skip Navigation" type links.  Should have an href linked to 
+ * a `.ally-target` element.
+ */
+.bypass-block-link:focus {
+  position: absolute;
+  text-decoration: none;
+  background: #ffffcc;
+  padding: 0.2em;
+  z-index: 10;
+}
+/*
+ * We don't want the `.bypass-block-target` to have an outline on *just* focus,
+ * since this will look strange if regular users click inside this element,
+ * since it will look like it was tabbed into
+ */
+.bypass-block-target:focus {
+  outline: none;
+}
+/*
+ * We do, however, want the `.bypass-block-target` to have an outline when
+ * it has focus and it is the target of the document (i.e. the hash tag of the
+ * document URL is the same as the "Skip Nav" link).
+ * 
+ * Note that this style is the same as the focus state on all the tabbable 
+ * elements.  It doesn't have to be.  WCAG 2.4.7 – Focus Visible (Level AA) 
+ * only requires that the focus state is visible, so you can have, say, the 
+ * focus state of a button different than that of a form element. 
+ */
+.bypass-block-target:focus:target,
+a[href]:not([tabindex="-1"]):focus,
+area:not([tabindex="-1"]):focus,
+[role="button"]:not([tabindex="-1"]):focus,
+[role="link"]:not([tabindex="-1"]):focus,
+iframe:not([tabindex="-1"]):focus,
+[contentEditable=true]:not([tabindex="-1"]):focus,
+:enabled:not([tabindex="-1"]):focus,
+[tabindex]:not([tabindex="-1"]):focus {
+  /* You can replace this with whatever style you want for focus state */
+  outline: solid 2px #ffa500;
+}
+/*
+ * The above selector will match focusable elements when they are clicked
+ * with a mouse.  If you don't want that to happen, use this rule. 
+ */
+a[href]:not([tabindex="-1"]):hover:focus,
+area:not([tabindex="-1"]):hover:focus,
+[role="button"]:not([tabindex="-1"]):hover:focus,
+[role="link"]:not([tabindex="-1"]):hover:focus,
+iframe:not([tabindex="-1"]):hover:focus,
+[contentEditable=true]:not([tabindex="-1"]):hover:focus,
+:enabled:not([tabindex="-1"]):hover:focus,
+[tabindex]:not([tabindex="-1"]):hover:focus {
+  outline: solid 2px rgba(255, 165, 0, 0.5);
+}
+a[href]:not([tabindex="-1"]):focus:active,
+area:not([tabindex="-1"]):focus:active,
+[role="button"]:not([tabindex="-1"]):focus:active,
+[role="link"]:not([tabindex="-1"]):focus:active,
+iframe:not([tabindex="-1"]):focus:active,
+[contentEditable=true]:not([tabindex="-1"]):focus:active,
+:enabled:not([tabindex="-1"]):focus:active,
+[tabindex]:not([tabindex="-1"]):focus:active {
+  outline: none;
+}
+*:focus {
+  outline: solid 2px orange ;
+}
+/*
+ * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
+ * Level AA
+ * 
+ * From https://www.w3.org/WAI/tutorials/forms/instructions/
+ */
+.placeholder-removed {
+  opacity: 0.999;
+}
+[placeholder] {
+  background-color: #fff;
+  border: solid 1px #777;
+}
+::-webkit-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+table {
+  width: 100%;
+  max-width: 1024px;
+  margin: 1em auto;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  line-height: 1.2;
+  text-align: left;
+  padding: 10px;
+}
+table th {
+  font-weight: bold;
+  color: white;
+  background-color: black;
+}
+table tr:nth-child(2n) {
+  background-color: #cccccc;
+}
+table.fixed-headers {
+  border-collapse: collapse;
+}
+table.fixed-headers,
+table.fixed-headers thead {
+  width: 100%;
+}
+table.fixed-headers td,
+table.fixed-headers th {
+  overflow: hidden;
+}
+table.fixed-headers th,
+table.fixed-headers td {
+  width: 16.66666667%;
+}
+table.fixed-headers th {
+  border-left: solid 1px #fff;
+  border-right: solid 1px #fff;
+}
+table.fixed-headers td {
+  border-left: solid 1px #cccccc;
+  border-right: solid 1px #cccccc;
+}
+table.fixed-headers thead tr {
+  display: block;
+  position: relative;
+}
+table.fixed-headers tbody {
+  display: block;
+  overflow: auto;
+  width: calc(100% + 16px);
+  height: 300px;
+}
