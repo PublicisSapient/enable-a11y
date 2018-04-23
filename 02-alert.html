@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Windows version 5.4.0">
+  <title>Aria alert demo</title>
+  <link rel="stylesheet" type="text/css" href="css/alert.css" />
+</head>
+<body>
+
+    <h1>Tests for role="alert"</h1>
+
+    <h2>Assertive alert</h2>
+
+    <div id="assertive-alert" role="alert" aria-live="assertive" aria-expanded="true">This is an aria live region alert.</div>
+    
+    <label for="is-alert-expanded">set <code>aria-expanded</code> on the above alert</label>
+    <input type="checkbox" id="is-alert-expanded" checked />
+    
+    <button id="say-time">Tell me the time.</button>
+
+
+
+    <h2>Polite Alert</h2> 
+
+    <div id="polite-alert" role="alert" aria-live="polite"></div>
+
+
+    <div class="expando">
+        <h2><button class="expando__button" data-section="table of contents">Expand table of contents</button></h2>
+        <section class="expando__contents expando__contents--collapsed">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#thesis">Thesis</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>   
+            </ul>
+        </section>
+    </div>
+
+    <script src="js/shared/polyfills.js"></script>
+    <script src="js/alert.js"></script>
+</body>
+</html>

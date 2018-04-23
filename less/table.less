@@ -1,14 +1,14 @@
-@import "reset";
-@import "defaults";
-@import "a11y";
-
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+ 
 @table-header-height: 2em;
 
 table {
 	width: 100%;
 	max-width: 1024px;
 	margin: 1em auto;
-	border-collapse: collapse;
+    border-collapse: collapse;
 
     th,td {
         line-height: 1.2;
@@ -29,9 +29,9 @@ table {
 
 
     @table-width: 100%;
-    @table-column-width: @table-width / 6;
-    @table-body-height: 300px;
-    // @column_one_width: 33.33vw;
+    @table-column-width: @table-width / 7; 
+    @table-body-height: 80vh;
+    // @column_one_width 33.33vw;
     // @column_two_width: 33.33vw;
     // @column_three_width: 33.33vw;
 
@@ -50,7 +50,13 @@ table {
         }
         
         th, td {
-            width: @table-width / 6;    
+            width: @table-column-width;
+            max-width: @table-column-width;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            -o-hyphens: auto;
+            hyphens: auto;
         }
 
         

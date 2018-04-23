@@ -278,62 +278,6 @@ iframe:not([tabindex="-1"]):focus:active,
   color: #777;
   opacity: 1;
 }
-table {
-  width: 100%;
-  max-width: 1024px;
-  margin: 1em auto;
-  border-collapse: collapse;
-}
-table th,
-table td {
-  line-height: 1.2;
-  text-align: left;
-  padding: 10px;
-}
-table th {
-  font-weight: bold;
-  color: white;
-  background-color: black;
-}
-table tr:nth-child(2n) {
-  background-color: #cccccc;
-}
-table.fixed-headers {
-  border-collapse: collapse;
-}
-table.fixed-headers,
-table.fixed-headers thead {
-  width: 100%;
-}
-table.fixed-headers td,
-table.fixed-headers th {
-  overflow: hidden;
-}
-table.fixed-headers th,
-table.fixed-headers td {
-  width: 14.28571429%;
-  max-width: 14.28571429%;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
-}
-table.fixed-headers th {
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
-}
-table.fixed-headers td {
-  border-left: solid 1px #cccccc;
-  border-right: solid 1px #cccccc;
-}
-table.fixed-headers thead tr {
-  display: block;
-  position: relative;
-}
-table.fixed-headers tbody {
-  display: block;
-  overflow: auto;
-  width: calc(100% + 16px);
-  height: 80vh;
+.expando__contents--collapsed {
+  display: none;
 }
