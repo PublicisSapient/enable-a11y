@@ -1,0 +1,39 @@
+
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+
+.checkbox-container {
+    margin-bottom: 1rem;
+    
+    input[type="checkbox"].custom,
+    [role="checkbox"] {
+        @size: 1.5rem;
+
+        position: relative;
+        .vendor(appearance, none); 
+
+        display: inline-block;
+        width: @size;
+        height: @size;
+        overflow: hidden; 
+        color: black;
+        padding: 2px 6px 3px 6px;
+        box-sizing: border-box;
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-size: 0.8rem;
+        cursor: pointer;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../images/empty-checkbox.svg);
+ 
+        & {
+            &[aria-checked="true"],
+            &:checked {
+                background-image: url(../images/checkbox.svg);
+                
+            }
+        }
+    }
+
+}

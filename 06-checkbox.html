@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
+    <title>Checkbox demo</title>
+    <link rel="stylesheet" type="text/css" href="css/checkbox.css" />
+</head>
+
+<body>
+
+    <h1>Accessible Checkbox Demo</h1>
+
+    <p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to users.</p>
+
+    <h2>A real HTML checkbox</h2>
+
+    <p>The following is an
+        <code>&lt;input&gt;</code> tag with a
+        <code>&lt;label&gt;</code> tag describing what it is for.</p>
+    <div class="checkbox-container">
+        <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
+        <input id="html-checkbox" type="checkbox" />
+    </div>
+
+
+    <h2>A DIV with a role of checkbox</h2>
+    <p>This is a
+        <code>&lt;div&gt;</code> tag that has its role attribute set to
+        <code>checkbox</code>.</p>
+
+    <div class="checkbox-container">
+        <label id="div-checkbox-label">I agree to sell my soul to Zoltan:</label>
+        <div aria-labelledby="div-checkbox-label" role="checkbox" tabindex="0" aria-checked="true">
+        </div>
+    </div>
+
+    <h2>A custom styled HTML checkbox</h2>
+
+    <p>The following is a custom styled
+        <code>&lt;input type="checkbox"&gt;</code> tag with a
+        <code>&lt;label&gt;</code> tag describing what it is for.
+        <div>Icons made by
+            <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                target="_blank">CC 3.0 BY</a>
+        </div>
+    </p>
+    <div class="checkbox-container">
+        <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
+        <input id="html-checkbox" class="custom" type="checkbox" />
+        <span class="checkbox-state"></span>
+    </div>
+
+    <script src="js/role-checkbox.js"></script>
+</body>
+
+</html>
