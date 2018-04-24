@@ -282,7 +282,7 @@ table,
 [role="table"] {
   width: 100%;
   max-width: 1024px;
-  margin: 1em auto;
+  margin: 1rem auto 5rem auto;
   border-collapse: collapse;
   display: table;
 }
