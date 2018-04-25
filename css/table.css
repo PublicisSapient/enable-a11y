@@ -129,6 +129,7 @@ table {
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
+  line-height: 1.1;
 }
 h1 {
   font-weight: bold;
@@ -140,6 +141,11 @@ h2 {
   border-bottom: solid 1px #999999;
   margin-top: 1rem;
 }
+ul {
+  padding-left: 3rem;
+  list-style: disc;
+}
+ul,
 p {
   margin-top: 0.5rem;
 }

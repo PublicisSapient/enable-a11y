@@ -3,17 +3,35 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <title>Checkbox demo</title>
+    <title>Accessible Table Examples</title>
     <link rel="stylesheet" type="text/css" href="css/table.css" />
 </head>
 
 <body>
 
+    <a href="#">Back</a>
+
     <h1>Accessible Table Examples</h1>
+
+    <h2>Hints</h2>
+
+    <ul>
+        <li>In voiceover, go to the rotor, choose the 
+            table and navigate around with the CAPS-LOCK + arrow-keys.
+        </li>
+        <li>
+            In NVDA, press the T key to go to the next table (SHIFT+T to go to the 
+            previous one), use the arrow keys to get out
+            of the caption and CTRL+ALT+arrow-keys to move around the table.
+            To ensure you understand how the tables are being read, you may want
+            to install the <a href="https://addons.nvda-project.org/addons/focusHighlight.en.html">
+            Focus Highlight NVDA plugin</a>.
+        </li>
+    </ul>
 
     <h2>A Simple Table</h2>
 
-    <p>Just a simple table. Hint: In voiceover, go to the rotor, choose the table and navigate around with the CAPS-LOCK + arrow-keys.</p>
+    <p>Just a simple table.</p>
 
 
     <table>
@@ -25,14 +43,14 @@
                 <th scope="col">Birthday</th>
             </tr>
         </thead>
-        
+
         <tbody>
             <tr>
                 <th scope="row">Jackie</th>
                 <td>5</td>
                 <td>April 5</td>
             </tr>
-            
+
             <tr>
                 <th scope="row">Beth</th>
                 <td>8</td>
@@ -47,7 +65,7 @@
 
     <div id="table1" role="table" aria-describedby="table1-caption">
         <div id="table1-caption" class="caption">Shelly's Daughters</div>
-        
+
         <div class="thead" role="rowgroup">
             <div role="row">
 
@@ -57,21 +75,21 @@
                 <span role="columnheader" scope="col">Birthday</span>
             </div>
         </div>
-            
+
         <div class="tbody" role="rowgroup">
             <div role="row">
-                <span role="rowheader" >Jackie</span>
+                <span role="rowheader">Jackie</span>
                 <span role="cell">5</span>
                 <span role="cell">April 5</span>
             </div>
-            
+
             <div role="row">
-                <span role="rowheader" >Beth</span>
+                <span role="rowheader">Beth</span>
                 <span role="cell">8</span>
                 <span role="cell">January 14</span>
             </div>
         </div>
-            
+
     </div>
 
     <script src="js/role-checkbox.js"></script>
