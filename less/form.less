@@ -2,7 +2,18 @@
 @import "shared/defaults";
 @import "shared/a11y";
 
-label,
+
+input[type="radio"],
+input[type="checkbox"],
+[role="radio"],
+[role="checkbox"] { 
+    
+    + label {
+        display: inline; 
+    }
+}
+
+
 input[type=submit] {
   display: block;
   margin-top: 0.5em;
@@ -32,4 +43,66 @@ fieldset legend {
 
 fieldset label {
   font-weight: normal;
+}
+
+
+[role="radio"]:after {
+  
+}
+
+[role="radio"],
+[role="checkbox"] {
+  display          : inline-block;
+  position         : relative;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  
+  background       : rgb(224,224,224);
+  .gradient(linear; rgb(240,240,240),rgb(224,224,224)); 
+  vertical-align   : bottom;
+}
+
+[role="radio"] {
+  &,
+  &:after {
+    border-radius    : 50%;
+  }
+
+  &[aria-checked="true"] {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.5em;
+      height: 0.5em;
+      margin: 0.125em;
+      border: 0.0625em solid rgb(115,153,77);
+      background: rgb(153,204,102);
+    }
+
+  }
+}
+
+[role="checkbox"] {
+  &[aria-checked="true"] {
+    &:after {
+      content: '✓';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1em;
+      color: rgb(153,204,102);
+      font-size: 0.875em;
+      line-height: 1em;
+      text-align: center;
+      text-shadow: 0 0 0.0714em rgb(115,153,77);
+      font-weight: bold;
+    }
+
+  }
 }

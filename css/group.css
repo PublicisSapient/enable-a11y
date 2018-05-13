@@ -126,6 +126,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*
+ * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
@@ -294,7 +297,12 @@ iframe:not([tabindex="-1"]):focus:active,
   color: #777;
   opacity: 1;
 }
-label,
+input[type="radio"] + label,
+input[type="checkbox"] + label,
+[role="radio"] + label,
+[role="checkbox"] + label {
+  display: inline;
+}
 input[type=submit] {
   display: block;
   margin-top: 0.5em;
@@ -320,4 +328,50 @@ fieldset legend {
 }
 fieldset label {
   font-weight: normal;
+}
+[role="radio"],
+[role="checkbox"] {
+  display: inline-block;
+  position: relative;
+  width: 0.875em;
+  height: 0.875em;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 0.0625em solid #c0c0c0;
+  background: #e0e0e0;
+  background-image: -webkit-linear-gradient(90deg, #f0f0f0, #e0e0e0);
+  background-image: -moz-linear-gradient(90deg, #f0f0f0, #e0e0e0);
+  background-image: -ms-linear-gradient(90deg, #f0f0f0, #e0e0e0);
+  background-image: -o-linear-gradient(90deg, #f0f0f0, #e0e0e0);
+  background-image: linear-gradient(0deg, #f0f0f0, #e0e0e0);
+  vertical-align: bottom;
+}
+[role="radio"],
+[role="radio"]:after {
+  border-radius: 50%;
+}
+[role="radio"][aria-checked="true"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5em;
+  height: 0.5em;
+  margin: 0.125em;
+  border: 0.0625em solid #73994d;
+  background: #99cc66;
+}
+[role="checkbox"][aria-checked="true"]:after {
+  content: '✓';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  color: #99cc66;
+  font-size: 0.875em;
+  line-height: 1em;
+  text-align: center;
+  text-shadow: 0 0 0.0714em #73994d;
+  font-weight: bold;
 }

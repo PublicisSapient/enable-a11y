@@ -127,6 +127,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/*
+ * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
