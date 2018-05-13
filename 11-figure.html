@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aria Figure/Figcaption role examples</title>
+    <link rel="stylesheet" type="text/css" href="css/figure.css" />
+
+</head>
+
+<body>
+
+    <a href="#">Back</a>
+
+    <h1>Aria Figure/Figcaption role examples</h1>
+
+    <p>Note that this is new tech that most assistive technologies don't implement. These examples are from
+        <a href="https://developer.paciellogroup.com/blog/2011/08/html5-accessibility-chops-the-figure-and-figcaption-elements/">HTML5 Accessibility Chops: the figure and figcaption elements</a>
+        by <a href="http://www.html5accessibility.com/">Steve Faulkner</a>
+    </p>
+
+    <h2>HTML5 Example</h2>
+    <figure>
+        <figcaption>Figure 1. JavaScript alert code example</figcaption>
+
+        <code>
+        function warning()
+        {alert('Warning!')}
+        </code>
+
+    </figure>
+
+
+    <h2>ARIA Example</h2>
+    <div role="figure">
+        <span>Figure 1. JavaScript alert code example</span>
+
+        <code>
+        function warning()
+        {alert('Warning!')}
+        </code>
+
+    </div>
+
+</body>
+
+</html>

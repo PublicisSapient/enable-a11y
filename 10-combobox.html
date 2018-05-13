@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA combobox role examples</title>
+    <link rel="stylesheet" type="text/css" href="css/combobox.css" />
+
+    <script src="js/shared/w3c-examples-stub.js"></script>
+    <script src="js/shared/listbox-combobox.js"></script>
+    <script src="js/listbox-combobox-example.js"></script>
+</head>
+
+<body>
+
+    <a href="#">Back</a>
+
+    <h1>ARIA combobox role examples</h1>
+
+    <p>Examples 1 through 3 are from <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/combobox/aria1.1pattern/listbox-combo.html">this W3C example page</a>.</p>
+
+    
+
+    <h2>Example 1: </h2>
+
+    <label id="ex1-label" class="combobox-label">
+    
+        Choice 1 Fruit or Vegetable
+      
+    </label>
+    <div class="combobox-wrapper">
+    <div role="combobox"
+        aria-expanded="false"
+        aria-owns="ex1-listbox"
+        aria-haspopup="listbox"
+        id="ex1-combobox">
+        <input aria-autocomplete="list"
+            aria-controls="ex1-listbox"
+            aria-labelledby="ex1-label"
+            id="ex1-input"
+            type="text">
+    </div>
+    <ul aria-labelledby="ex1-label"
+        role="listbox"
+        id="ex1-listbox"
+        class="listbox hidden">
+    </ul>
+    </div>
+
+    <h2>Example 2: </h2>
+
+    <label id="ex2-label" class="combobox-label">
+            Choice 2 Fruit or Vegetable
+    </label>
+    <div class="combobox-wrapper">
+      <div role="combobox"
+         aria-expanded="false"
+         aria-owns="ex2-listbox"
+         aria-haspopup="listbox"
+         id="ex2-combobox">
+        <input aria-autocomplete="list"
+             aria-controls="ex2-listbox"
+             aria-labelledby="ex2-label"
+             id="ex2-input"
+             type="text">
+      </div>
+      <ul aria-labelledby="ex2-label"
+        role="listbox"
+        id="ex2-listbox"
+        class="listbox hidden">
+      </ul>
+    </div>
+
+    <h2>Example 3: </h2>
+    <label id="ex3-label" class="combobox-label">
+    
+            Choice 3 Fruit or Vegetable
+          
+    </label>
+    <div class="combobox-wrapper">
+      <div role="combobox"
+         aria-expanded="false"
+         aria-owns="ex3-listbox"
+         aria-haspopup="listbox"
+         id="ex3-combobox">
+        <input aria-autocomplete="both"
+             aria-controls="ex3-listbox"
+             aria-labelledby="ex3-label"
+             id="ex3-input"
+             type="text">
+        <div class="combobox-dropdown"
+           id="ex3-combobox-arrow"
+           tabindex="-1"
+           role="button"
+           aria-label="Show vegetable options">
+          <img src="imgs/arrow_drop_down_grey_27x27.png" alt="">
+        </div>
+      </div>
+      <ul aria-labelledby="ex3-label"
+        role="listbox"
+        id="ex3-listbox"
+        class="listbox hidden">
+      </ul>
+    </div>
+
+    <h2>Example 4: HTML5 autocomplete</h2>
+
+    <form>
+        <fieldset>
+            <legend>HTML5 autocomplete example</legend>
+
+            <label id="ex4-label" for="ex4-input" class="combobox-label">
+                Choice 4 Fruit or Vegetable
+            </label>
+            <input id="ex4-input" type="text" list="languages">
+            <datalist id="languages">
+                <option value="Apple value">Apple</option>
+                <option value="Artichoke" />
+                <option value="Asparagus" />
+                <option value="Banana" />
+                <option value="Beets" />
+                <option value="Bell pepper" />
+                <option value="Broccoli" />
+                <option value="Brussels sprout" />
+                <option value="Cabbage" />
+                <option value="Carrot" />
+                <option value="Cauliflower" />
+                <option value="Celery" />
+                <option value="Chard" />
+                <option value="Chicory" />
+                <option value="Corn" />
+                <option value="Cucumber" />
+                <option value="Daikon" />
+                <option value="Date" />
+                <option value="Edamame" />
+                <option value="Eggplant" />
+                <option value="Elderberry" />
+                <option value="Fennel" />
+                <option value="Fig" />
+                <option value="Garlic" />
+                <option value="Grape" />
+                <option value="Honeydew melon" />
+                <option value="Iceberg lettuce" />
+                <option value="Jerusalem artichoke" />
+                <option value="Kale" />
+                <option value="Kiwi" />
+                <option value="Leek" />
+                <option value="Lemon" />
+                <option value="Mango" />
+                <option value="Mangosteen" />
+                <option value="Melon" />
+                <option value="Mushroom" />
+                <option value="Nectarine" />
+                <option value="Okra" />
+                <option value="Olive" />
+                <option value="Onion" />
+                <option value="Orange" />
+                <option value="Parship" />
+                <option value="Pea" />
+                <option value="Pear" />
+                <option value="Pineapple" />
+                <option value="Potato" />
+                <option value="Pumpkin" />
+                <option value="Quince" />
+                <option value="Radish" />
+                <option value="Rhubarb" />
+                <option value="Shallot" />
+                <option value="Spinach" />
+                <option value="Squash" />
+                <option value="Strawberry" />
+                <option value="Sweet potato" />
+                <option value="Tomato" />
+                <option value="Turnip" />
+                <option value="Ugli fruit" />
+                <option value="Victoria plum" />
+                <option value="Watercress" />
+                <option value="Watermelon" />
+                <option value="Yam" />
+                <option value="Zucchi" />
+              </datalist>
+        </fieldset>
+    </form>
+    
+</body>
+
+</html>

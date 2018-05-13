@@ -294,3 +294,34 @@ iframe:not([tabindex="-1"]):focus:active,
   color: #777;
   opacity: 1;
 }
+label,
+input[type=submit] {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+input[type=submit] {
+  margin-bottom: 1em;
+}
+fieldset,
+.aria-form-group {
+  padding: 0.5em;
+  margin-top: 1em;
+  padding-top: 1em;
+  background-color: #EEEEEE;
+}
+fieldset legend {
+  position: relative;
+  top: 1.5em;
+  border-color: #AAAAAA;
+  font-weight: bold;
+  font-size: 1em;
+}
+fieldset label {
+  font-weight: normal;
+}
+input[type="radio"] + label,
+[role="radio"] + label {
+  display: inline;
+}

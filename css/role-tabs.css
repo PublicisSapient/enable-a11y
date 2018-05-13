@@ -294,3 +294,112 @@ iframe:not([tabindex="-1"]):focus:active,
   color: #777;
   opacity: 1;
 }
+body {
+  margin: 2em;
+}
+#tabs {
+  max-width: 50em;
+}
+#tabs h2 {
+  margin: 1em 0 0;
+}
+.tabsList {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding-left: 2.35em;
+}
+.tabsList li {
+  position: relative;
+  /*for z-index*/
+  float: left;
+  margin: 0 .5em 0 0;
+  z-index: 1;
+}
+.tabsList li a {
+  position: relative;
+  top: 4px;
+  float: left;
+  overflow: hidden;
+  font-weight: normal;
+  text-shadow: none;
+  background: #fff;
+  color: #444;
+  text-decoration: none;
+  margin: .5em 0 0;
+  padding: .5em .5em .35em;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 2px 2px 0;
+  -moz-border-radius-topleft: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  cursor: pointer;
+}
+.tabsList li a:link {
+  border-color: #ccc;
+}
+.tabsList li a:hover,
+.tabsList li a:focus,
+.tabsList li a:active {
+  border-color: #999;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.tabsList li a:active {
+  top: 2px;
+}
+.tabsList li.current {
+  z-index: 10;
+}
+.tabsList li.current a {
+  top: 2px;
+  font-weight: bold;
+  color: #333;
+  background: #fafafa;
+  border-color: #999;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.tabsList li.current a:hover,
+.tabsList li.current a:focus {
+  color: #333;
+  background-color: #fafafa;
+}
+.tabsList li.current a:focus {
+  outline: 1px dotted #444;
+}
+.tabsList a span {
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+.tabPanel {
+  position: relative;
+  /*for z-index*/
+  display: block;
+  visibility: visible;
+  clear: left;
+  overflow: auto;
+  padding: .5em 3em 2em;
+  border: 2px solid #999;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  z-index: 5;
+  color: #333;
+  background-color: #fafafa;
+}
+.tabPanel:focus {
+  outline: 1px dotted #999;
+}
+.tabPanel h2 {
+  display: inline-block;
+}
+.tabPanel h2:focus {
+  outline: 1px dotted #999;
+}

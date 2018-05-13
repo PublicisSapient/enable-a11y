@@ -1,0 +1,134 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+
+@import url("demo.css");
+
+body {
+	background: #f0f0f0 url(../images/cream_dust.jpg);
+}
+
+main {
+	width: 100%;
+	max-width: 960px;
+	padding: 40px;
+	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
+}
+
+main p {
+	font-size: 16px;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+main p:nth-of-type(2){
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	-ms-column-count: 2;
+	-ms-column-gap: 20px;
+	-o-column-count: 2;
+	-o-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+}
+
+main p:nth-of-type(4){
+	-moz-column-count: 3;
+	-moz-column-gap: 15px;
+	-o-column-count: 3;
+	-o-column-gap: 15px;
+	-ms-column-count: 3;
+	-ms-column-gap: 15px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 15px;
+	column-count: 3;
+	column-gap: 15px;
+}
+
+
+/* DEMO 1 */
+@h1-size: 36px;
+@h2-size: 33px;
+@h3-size: 30px;
+@h4-size: 25px;
+@h5-size: 22px;
+@h6-size: 18px;
+@h7-size: 18px;
+
+main {
+  h1,
+  [role="heading"][aria-level="1"] {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Ultra', sans-serif;   
+    font-size: @h1-size;
+    line-height: 42 * ( 36 / @h1-size);
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+  }
+
+  h2, h5
+  [role="heading"][aria-level="2"], [role="heading"][aria-level="5"] {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Orienta', sans-serif;
+    border: none;
+  }
+
+  h2,
+  [role="heading"][aria-level="2"] {
+    font-size: @h2-size;
+    line-height: 40 * ( 30 / @h2-size );
+  }
+
+  h5,
+  [role="heading"][aria-level="5"] {
+    font-size: @h5-size;
+    line-height: 40 * ( 30 / @h5-size );
+  }
+
+  h3, h6,
+  [role="heading"][aria-level="3"], [role="heading"][aria-level="6"] {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: 'Orienta', sans-serif;
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+
+  h3,
+  [role="heading"][aria-level="3"] {
+    font-size: @h3-size;
+    line-height: 40 * ( 22 / @h3-size);
+  }
+
+  h6,
+  [role="heading"][aria-level="6"] {
+    font-size: @h6-size;
+    line-height: 40 * ( 22 / @h6-size);
+  }
+
+  h4, [role="heading"][aria-level="7"] {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-weight: normal;
+    font-family: 'Orienta', sans-serif;
+  }
+
+  h4,
+  [role="heading"][aria-level="4"] {
+    font-size: @h4-size;
+    line-height: 20 * (18 / @h4-size) ;
+  }
+
+  [role="heading"][aria-level="7"] {
+    font-size: @h7-size;
+    line-height: 20 * (18 / @h7-size) ;
+  }
+}

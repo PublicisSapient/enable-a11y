@@ -131,6 +131,15 @@ body {
   margin: 10px;
   line-height: 1.1;
 }
+strong {
+  font-weight: bold;
+}
+ul {
+  list-style: initial;
+}
+ol {
+  list-style: decimal;
+}
 h1 {
   font-weight: bold;
   font-size: 2rem;
@@ -140,6 +149,7 @@ h2 {
   font-size: 1.5rem;
   border-bottom: solid 1px #999999;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 ul {
   padding-left: 3rem;

@@ -1,0 +1,46 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+
+.sprite {
+  display: block;
+  overflow: hidden;
+  background-repeat: no-repeat; float:left; 
+
+
+  &.card_icons {
+    background-image: url("../images/card_icons.png");
+    background-size: 88px 83px
+  }
+
+  &.card_icons.amex {
+    width: 43px;
+    height: 27px;
+    background-position: -44px -29px
+  }
+
+  &.card_icons.discover {
+    width: 43px;
+    height: 27px;
+    background-position: 0 -57px
+  }
+
+  &.card_icons.visa {
+    width: 44px;
+    height: 27px;
+    background-position: -45px 0
+  }
+
+  &.card_icons.master {
+    width: 43px;
+    height: 27px;
+    background-position: 0 -29px
+  }
+
+  &.card_icons.debit {
+    width: 44px;
+    height: 28px;
+    background-position: 0 0
+  }
+
+}

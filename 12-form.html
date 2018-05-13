@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA form role examples</title>
+    <link rel="stylesheet" type="text/css" href="css/form.css" />
+
+</head>
+
+<body>
+
+    <a href="#">Back</a>
+
+    <h1>ARIA form role examples</h1>
+
+    <p>For the Love of God and all that is Holy: Use HTML5 forms when using
+        input fields instead.  You will make your application a lot more 
+        usable for things beyond accessibility.   
+    </p>
+
+    <p>These examples are from <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/form.html">the W3C's ARIA Form Landmarks Example</a>.
+
+    <h2>HTML5 example</h2>
+
+    <p>NVDA doesn't recognize a <code>form</code> element by itself as a
+    landmark.  In order to do this, we must add the ARIA form role.</p>
+    <form role="form" tabindex="-1">
+        <fieldset>
+            <legend id="contact_html5">Add Contact</legend>
+
+            <label for="name_html5">Name</label>
+            <input id="name_html5" size="25" type="text">
+
+            <label for="email_html5">E-mail</label>
+            <input id="email_html5" size="25" type="text">
+
+            <label for="phone_html5">Phone</label>
+            <input id="phone_html5" size="25" type="text">
+
+            <input value="Add Contact" type="submit">
+
+        </fieldset>
+    </form>
+
+    <h2>ARIA form role example</h2>
+
+    <div role="form" tabindex="-1">
+        <fieldset>
+            <legend id="contact">Add Contact</legend>
+    
+            <label for="name">Name</label>
+            <input id="name" size="25" type="text">
+    
+            <label for="email">E-mail</label>
+            <input id="email" size="25" type="text">
+    
+            <label for="phone">Phone</label>
+            <input id="phone" size="25" type="text">
+    
+            <input value="Add Contact" type="submit">
+    
+        </fieldset>
+    </div>
+</body>
+
+</html>

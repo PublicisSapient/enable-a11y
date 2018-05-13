@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("demo.css");
 html,
 body,
 div,
@@ -293,4 +294,111 @@ iframe:not([tabindex="-1"]):focus:active,
 :-ms-input-placeholder {
   color: #777;
   opacity: 1;
+}
+body {
+  background: #f0f0f0 url(../images/cream_dust.jpg);
+}
+main {
+  width: 100%;
+  max-width: 960px;
+  padding: 40px;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+main p {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+}
+main p:nth-of-type(2) {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  -ms-column-count: 2;
+  -ms-column-gap: 20px;
+  -o-column-count: 2;
+  -o-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+}
+main p:nth-of-type(4) {
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -o-column-count: 3;
+  -o-column-gap: 15px;
+  -ms-column-count: 3;
+  -ms-column-gap: 15px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  column-count: 3;
+  column-gap: 15px;
+}
+/* DEMO 1 */
+main h1,
+main [role="heading"][aria-level="1"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Ultra', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-shadow: 0 2px white, 0 3px #777;
+}
+main h2,
+main h5 [role="heading"][aria-level="2"],
+main [role="heading"][aria-level="5"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Orienta', sans-serif;
+  border: none;
+}
+main h2,
+main [role="heading"][aria-level="2"] {
+  font-size: 33px;
+  line-height: 36.36363636px;
+}
+main h5,
+main [role="heading"][aria-level="5"] {
+  font-size: 22px;
+  line-height: 54.54545455px;
+}
+main h3,
+main h6,
+main [role="heading"][aria-level="3"],
+main [role="heading"][aria-level="6"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Orienta', sans-serif;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+main h3,
+main [role="heading"][aria-level="3"] {
+  font-size: 30px;
+  line-height: 29.33333333px;
+}
+main h6,
+main [role="heading"][aria-level="6"] {
+  font-size: 18px;
+  line-height: 48.88888889px;
+}
+main h4,
+main [role="heading"][aria-level="7"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Orienta', sans-serif;
+}
+main h4,
+main [role="heading"][aria-level="4"] {
+  font-size: 25px;
+  line-height: 14.4px;
+}
+main [role="heading"][aria-level="7"] {
+  font-size: 18px;
+  line-height: 20px;
 }
