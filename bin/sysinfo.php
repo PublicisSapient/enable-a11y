@@ -49,7 +49,7 @@
     // Returns server load in percent (just number, without percent sign)
     function getServerLoad()
     {
-        $load = null;
+        $load = round(sys_getloadavg()[0]);
 
         if (stristr(PHP_OS, "win"))
         {
@@ -67,7 +67,7 @@
                     }
                 }
             }
-        }
+        } 
         else
         {
             if (is_readable("/proc/stat"))
@@ -107,7 +107,7 @@
 
     $cpuLoad = getServerLoad();
     if (is_null($cpuLoad)) {
-        echo "CPU load not estimateable (maybe too old Windows or missing rights at Linux or Windows)";
+        echo "CPU load unknown -". PHP_OS . "-";
     }
     else {
         echo "CPU load at ". date("g:i a"). ": " . $cpuLoad . "%";

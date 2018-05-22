@@ -1,0 +1,25 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+
+dl, .dl {
+    dd, dt,
+    [role="definition"], [role="term"] {
+        display: inline;
+    }
+
+    dt, 
+    [role="term"] {
+        font-weight:bold;
+    }
+
+    dd,
+    [role="definition"] {
+        font-style: italic;
+
+        &:after {
+            content: "\A";
+            white-space: pre;
+        }
+    }
+}

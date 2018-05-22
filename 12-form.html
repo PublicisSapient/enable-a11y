@@ -13,20 +13,31 @@
 
     <h1>ARIA form role examples</h1>
 
-    <p>For the Love of God and all that is Holy: Use HTML5 forms when using
-        input fields instead.  You will make your application a lot more 
-        usable for things beyond accessibility.   
+    <h2>Notes</h2>
+    <ul>
+        <li>NVDA doesn't recognize a <code>form</code> element by itself as a
+            landmark.  In order to do this, we must add the ARIA form role.</li>
+        <li>For the Love of God and All That is Holy: Use the HTML5 form tag whenever you
+            can.  You will make your application a lot more 
+            usable for things beyond accessibility:
+            <ol>
+                <li>JavaScript <code>document.forms</code> support.</li>
+                <li>Progressive enhancement.</li>
+                <li>Built in HTML5 validation and pattern checking.</li>
+                <li><a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">The God of the Web</a> built it the right way the first time.</li>
+            </ol>
+        </li>
+    </ul>
+    <p>  
     </p>
 
     <p>These examples are from <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/form.html">the W3C's ARIA Form Landmarks Example</a>.
 
     <h2>HTML5 example</h2>
 
-    <p>NVDA doesn't recognize a <code>form</code> element by itself as a
-    landmark.  In order to do this, we must add the ARIA form role.</p>
     <form role="form" tabindex="-1">
         <fieldset>
-            <legend id="contact_html5">Add Contact</legend>
+            <legend id="contact_html5">Contact Information</legend>
 
             <label for="name_html5">Name</label>
             <input id="name_html5" size="25" type="text">
@@ -46,7 +57,7 @@
 
     <div role="form" tabindex="-1">
         <fieldset>
-            <legend id="contact">Add Contact</legend>
+            <legend id="contact">Contact Information</legend>
     
             <label for="name">Name</label>
             <input id="name" size="25" type="text">
