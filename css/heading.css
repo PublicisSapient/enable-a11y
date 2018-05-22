@@ -163,6 +163,31 @@ ul,
 p {
   margin-top: 0.5rem;
 }
+.example h1 {
+  text-align: center;
+}
+.example main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.example .example-nav {
+  text-align: center;
+}
+.example .example-nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+.example .notes {
+  border: dashed #9C6F39 3px;
+  padding: 1em;
+  background-color: #ffffee;
+  margin: 2em auto;
+  max-width: calc(1024px - 2em);
+}
+.example .notes h2 {
+  margin: 0;
+  border-bottom: none;
+}
 /*********************************************************
  * a11y.css - a stylesheet to help create 
  * accessible websites.

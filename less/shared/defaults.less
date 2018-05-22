@@ -57,7 +57,42 @@ ul, p {
 
 .vendor(@property, @value) {
     -webkit-@{property}: @value;
-     -khtml-@{property}: @value;
+	 -khtml-@{property}: @value;
+	    -ms-@{property}: @value;
        -moz-@{property}: @value;
             @{property}: @value;
+}
+
+.example {
+
+	h1 {
+		text-align: center;
+	}
+
+	main {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+	.example-nav {
+		text-align: center;
+		ul {
+			li {
+				display: inline-block;
+				list-style: none;
+			}
+		}
+	}
+
+	.notes {
+		border: dashed #9C6F39 3px;
+		padding: 1em;
+		background-color: #ffffee;
+		margin: 2em auto;
+		max-width: calc(1024px - 2em);
+
+		h2 {
+			margin: 0;
+			border-bottom: none;
+		}
+	}
 }

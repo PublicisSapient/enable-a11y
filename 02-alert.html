@@ -7,36 +7,42 @@
   <meta charset="utf-8" >
   <link rel="stylesheet" type="text/css" href="css/alert.css" />
 </head>
-<body>
+<body class="example">
 
     <h1>Tests for role="alert"</h1>
 
-    <h2>Assertive alert</h2>
+    <?php include("includes/example-header.php"); ?>
 
-    <div id="assertive-alert" role="alert" aria-live="assertive" aria-expanded="true">This is an aria live region alert.</div>
-    
-    <label for="is-alert-expanded">set <code>aria-expanded</code> on the above alert</label>
-    <input type="checkbox" id="is-alert-expanded" checked />
-    
-    <button id="say-time">Tell me the time.</button>
+    <main>
+        <h2>Assertive alert</h2>
 
-
-
-    <h2>Polite Alert</h2> 
-
-    <div id="polite-alert" role="alert" aria-live="polite"></div>
+        <div id="assertive-alert" role="alert" aria-live="assertive" aria-expanded="true">This is an aria live region alert.</div>
+        
+        <label for="is-alert-expanded">set <code>aria-expanded</code> on the above alert</label>
+        <input type="checkbox" id="is-alert-expanded" checked />
+        
+        <button id="say-time">Tell me the time.</button>
 
 
-    <div class="expando">
-        <h2><button class="expando__button" data-section="table of contents">Expand table of contents</button></h2>
-        <section class="expando__contents expando__contents--collapsed">
-            <ul>
-                <li><a href="#intro">Introduction</a></li>
-                <li><a href="#thesis">Thesis</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>   
-            </ul>
-        </section>
-    </div>
+
+        <h2>Polite Alert</h2> 
+
+        <div id="polite-alert" role="alert" aria-live="polite"></div>
+
+
+        <div class="expando">
+            <h2><button class="expando__button" data-section="table of contents">Expand table of contents</button></h2>
+            <section class="expando__contents expando__contents--collapsed">
+                <ul>
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#thesis">Thesis</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>   
+                </ul>
+            </section>
+        </div>
+
+    </main>
+
 
     <script src="js/shared/polyfills.js"></script>
     <script src="js/alert.js"></script>

@@ -13,6 +13,12 @@
 
     <h1>Aria Log Role Examples</h1>
 
+<<<<<<< HEAD
+    <h2>Note</h2>
+    <ul>
+        <li>Voiceover and NVDA read everything in the dialog when the log is updated.</li>
+        <li>Chromevox reads the last added item in the log.</li>
+=======
     <h2>Notes:</h2>
 
     <ul>
@@ -23,6 +29,7 @@
         <li>
             NVDA does not just read the differences, even when hitting NVDA+5
         </li>
+>>>>>>> 57b51c9fd492b940027e460c986cad54a0b4c060
     </ul>
 
     <h2>Example 1: </h2>
