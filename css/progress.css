@@ -1,0 +1,434 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+ * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ */
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 10px;
+  line-height: 1.1;
+}
+strong {
+  font-weight: bold;
+}
+ul {
+  list-style: initial;
+}
+ol {
+  list-style: decimal;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: solid 1px #999999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+ul {
+  padding-left: 3rem;
+  list-style: disc;
+}
+ul,
+p {
+  margin-top: 0.5rem;
+}
+/*********************************************************
+ * a11y.css - a stylesheet to help create 
+ * accessible websites.
+ * 
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * Licensed under the MIT License
+ * 
+ * https://opensource.org/licenses/MIT
+ ********************************************************/
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+/*
+ * For `.visually-hidden` elements that should be visible when it gains focus. 
+ */
+.visible-when-focused:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+}
+/*
+ * Style for "Skip Navigation" type links.  Should have an href linked to 
+ * a `.ally-target` element.
+ */
+.bypass-block-link:focus {
+  position: absolute;
+  text-decoration: none;
+  background: #ffffcc;
+  padding: 0.2em;
+  z-index: 10;
+}
+/*
+ * We don't want the `.bypass-block-target` to have an outline on *just* focus,
+ * since this will look strange if regular users click inside this element,
+ * since it will look like it was tabbed into
+ */
+.bypass-block-target:focus {
+  outline: none;
+}
+/*
+ * We do, however, want the `.bypass-block-target` to have an outline when
+ * it has focus and it is the target of the document (i.e. the hash tag of the
+ * document URL is the same as the "Skip Nav" link).
+ * 
+ * Note that this style is the same as the focus state on all the tabbable 
+ * elements.  It doesn't have to be.  WCAG 2.4.7 – Focus Visible (Level AA) 
+ * only requires that the focus state is visible, so you can have, say, the 
+ * focus state of a button different than that of a form element. 
+ */
+.bypass-block-target:focus:target,
+a[href]:not([tabindex="-1"]):focus,
+area:not([tabindex="-1"]):focus,
+[role="button"]:not([tabindex="-1"]):focus,
+[role="link"]:not([tabindex="-1"]):focus,
+iframe:not([tabindex="-1"]):focus,
+[contentEditable=true]:not([tabindex="-1"]):focus,
+:enabled:not([tabindex="-1"]):focus,
+[tabindex]:not([tabindex="-1"]):focus {
+  /* You can replace this with whatever style you want for focus state */
+  outline: solid 2px #ffa500;
+}
+/*
+ * The above selector will match focusable elements when they are clicked
+ * with a mouse.  If you don't want that to happen, use this rule. 
+ */
+a[href]:not([tabindex="-1"]):hover:focus,
+area:not([tabindex="-1"]):hover:focus,
+[role="button"]:not([tabindex="-1"]):hover:focus,
+[role="link"]:not([tabindex="-1"]):hover:focus,
+iframe:not([tabindex="-1"]):hover:focus,
+[contentEditable=true]:not([tabindex="-1"]):hover:focus,
+:enabled:not([tabindex="-1"]):hover:focus,
+[tabindex]:not([tabindex="-1"]):hover:focus {
+  outline: solid 2px rgba(255, 165, 0, 0.5);
+}
+a[href]:not([tabindex="-1"]):focus:active,
+area:not([tabindex="-1"]):focus:active,
+[role="button"]:not([tabindex="-1"]):focus:active,
+[role="link"]:not([tabindex="-1"]):focus:active,
+iframe:not([tabindex="-1"]):focus:active,
+[contentEditable=true]:not([tabindex="-1"]):focus:active,
+:enabled:not([tabindex="-1"]):focus:active,
+[tabindex]:not([tabindex="-1"]):focus:active {
+  outline: none;
+}
+*:focus {
+  outline: solid 2px orange ;
+}
+/*
+ * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
+ * Level AA
+ * 
+ * From https://www.w3.org/WAI/tutorials/forms/instructions/
+ */
+.placeholder-removed {
+  opacity: 0.999;
+}
+[placeholder] {
+  background-color: #fff;
+  border: solid 1px #777;
+}
+::-webkit-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+/*
+ * This is a modified version of a stylesheet from an article by Lea Verou
+ * http://lea.verou.me/2011/07/a-polyfill-for-html5-progress-element-the-obsessive-perfectionist-way/
+ *
+ * It acts as a way to style a <div role="progress">
+ */
+[role="progressbar"] {
+  display: inline-block;
+  position: relative;
+  width: 10em;
+  height: 1em;
+  vertical-align: -0.2em;
+  background-image: url('data:image/gif;base64,R0lGODlhIAAQAIABAP///wAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODE3QTgyOEM0MzAwRkUyMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3NEY2MUMyQTlDMzgxMUUwOUFFQ0M4MEYwM0YzNUE2RCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3NEY2MUMyOTlDMzgxMUUwOUFFQ0M4MEYwM0YzNUE2RCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAxODAxMTc0MDcyMDY4MTE4MTdBODI4QzQzMDBGRTIzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTE4MTdBODI4QzQzMDBGRTIzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECQoAAQAsAAAAACAAEAAAAiwMjqkQ7Q/bmijaR+ndee7bLZ8VKmNUJieUVqvTHi8cz1Jtx0yOz7pt6L10BQAh+QQJCgABACwAAAAAIAAQAAACLYwNqctwD2GbKtpH6d157ts1nxUyY1Qup5QmK9Y6LxLPdGsHsTvv8uuzBXuhAgAh+QQJCgABACwAAAAAIAAQAAACLIx/oMsNCKNxdMk7K8VXbx55DhiKDAmZJ5qoFhu4LysrcFzf9QPvet4D0igFACH5BAkKAAEALAAAAAAgABAAAAIsjI8Hy+2QYnyUyWtqxVdvnngUGIoOiZgnmqkWG7gvKy9wXN81BO963gPSGAUAIfkECQoAAQAsAAAAACAAEAAAAixEjqkB7Q/bmijaR+ndee7bLZ8VKmNUJieUVqvTHi8cz1Jtx0yOz7pt6L10BQAh+QQJCgABACwAAAAAIAAQAAACLYQdqctxD2GbKtpH6d157ts1nxUyY1Qup5QmK9Y6LxLPdGsDsTvv8uuzBXuhAgAh+QQJCgABACwAAAAAIAAQAAACLIR/ocsdCKNxdMk7K8VXbx55DhiKDAmZJ5qoFgu4LysrcFzf9QPvet4D0igFACH5BAUKAAEALAAAAAAgABAAAAIshI8Xy+2RYnyUyWtqxVdvnngUGIoOiZgnmqkWC7gvKy9wXN81BO963gPSGAUAOw==');
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Determinate only overrides */
+  /* Overlay */
+}
+[role="progressbar"],
+[role="progressbar"][aria-valuenow]:before {
+  background-color: #5af;
+}
+[role="progressbar"],
+[role="progressbar"]:after {
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  -moz-background-size: auto 100%;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+}
+[role="progressbar"][aria-valuenow] {
+  background: #eee;
+}
+[role="progressbar"][aria-valuenow]:before {
+  content: "";
+  display: block;
+  height: 100%;
+}
+[role="progressbar"]:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA6lpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFRTE5QjlCQTlDMkQxMUUwOUFFQ0M4MEYwM0YzNUE2RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNkRFQUIzNjlDMkUxMUUwOUFFQ0M4MEYwM0YzNUE2RCI+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z3JhZGllbnQ8L3JkZjpsaT4gPC9yZGY6QWx0PiA8L2RjOnRpdGxlPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFRTE5QjlCODlDMkQxMUUwOUFFQ0M4MEYwM0YzNUE2RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFRTE5QjlCOTlDMkQxMUUwOUFFQ0M4MEYwM0YzNUE2RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq477Q0AAAD2SURBVHjaxFIxDsIwDLRF/1AmRp7AM9iYWHkD76AP6h9Qi1SGfqAMqGJg6XA4jts0RUwZiKLEsZ3L+Rwmoi0lDC6Ky4rAMuGO5DY5iuWH93oDegMuK8QA7JIYCMDpvwDDMBzNHCGtONYq2enjHKYLMObCp7dtu/+FDppDgyJpTemsrm/9l7L2ku4aUy4BTEmKR1hmVXV9OjfsqlqC7irAhBKxDnmOQdPc+ynKMXdenEELAFmzrnu8RoK6jpRhHkGJmFgdXmsByNf5Wx+fJPbigEI3OKrB77Bfy2VZzppqC0IfAtlIAusC9CNtUn/iIRXgnALwEWAA/+5+ZNOapmcAAAAASUVORK5CYII=');
+}
+/*
+ * Example 2: more graphical
+ */
+/* All HTML5 progress enabled browsers */
+.example2 {
+  /* Turns off styling - not usually needed, but good to know. */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* Apply border. */
+  border: inset 3px;
+  /* Dimensions */
+  width: 242px;
+  height: 45px;
+}
+progress.example2 {
+  /*
+    * Background of the progress bar background
+    */
+  /* Firefox and Polyfill */
+  background: url("../images/example2BW.png") #cccccc;
+  /* Chrome */
+  /*
+    * Background of the progress bar value
+    */
+  /* Firefox */
+  /* Chrome */
+}
+progress.example2::-webkit-progress-bar {
+  background: url("../images/example2BW.png") #cccccc;
+}
+progress.example2::-moz-progress-bar {
+  background: url("../images/example2Color.png") #8f6534;
+}
+progress.example2::-webkit-progress-value {
+  background: url("../images/example2Color.png") #8f6534;
+}
+.example2[role="progressbar"] {
+  background: url("../images/example2BW.png") #cccccc;
+  /* Polyfill */
+  /* Polyfill */
+}
+.example2[role="progressbar"]:after {
+  background-image: none;
+  /* removes default background from polyfill */
+}
+.example2[role="progressbar"] strong {
+  display: none;
+}
+.example2[role="progressbar"][aria-valuenow]:before {
+  background: url("../images/example2Color.png") #8f6534;
+}
+.example2[role="progressbar"][aria-valuenow="0"]:before {
+  width: 0%;
+}
+.example2[role="progressbar"][aria-valuenow="10"]:before {
+  width: 10%;
+}
+.example2[role="progressbar"][aria-valuenow="20"]:before {
+  width: 20%;
+}
+.example2[role="progressbar"][aria-valuenow="30"]:before {
+  width: 30%;
+}
+.example2[role="progressbar"][aria-valuenow="40"]:before {
+  width: 40%;
+}
+.example2[role="progressbar"][aria-valuenow="50"]:before {
+  width: 50%;
+}
+.example2[role="progressbar"][aria-valuenow="60"]:before {
+  width: 60%;
+}
+.example2[role="progressbar"][aria-valuenow="70"]:before {
+  width: 70%;
+}
+.example2[role="progressbar"][aria-valuenow="80"]:before {
+  width: 80%;
+}
+.example2[role="progressbar"][aria-valuenow="90"]:before {
+  width: 90%;
+}
+.example2[role="progressbar"][aria-valuenow="100"]:before {
+  width: 100%;
+}
+input {
+  display: block;
+}

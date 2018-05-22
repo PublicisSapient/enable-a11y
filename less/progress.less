@@ -1,0 +1,86 @@
+@import "shared/reset";
+@import "shared/defaults"; 
+@import "shared/a11y";
+@import "shared/aria-progress-role-reset"; 
+
+/*
+ * Example 2: more graphical
+ */
+
+/* All HTML5 progress enabled browsers */
+.example2 {
+
+	/* Turns off styling - not usually needed, but good to know. */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	
+	/* Apply border. */
+	border: inset 3px;
+	
+	/* Dimensions */
+	width: 242px;
+	height: 45px;
+}
+
+progress.example2 {
+    /*
+    * Background of the progress bar background
+    */
+
+    /* Firefox and Polyfill */
+    & {
+        background: url("../images/example2BW.png") #cccccc;
+    }
+    /* Chrome */
+    &::-webkit-progress-bar {
+        background: url("../images/example2BW.png") #cccccc;
+    }
+
+    /*
+    * Background of the progress bar value
+    */
+
+    /* Firefox */
+    &::-moz-progress-bar {
+        background: url("../images/example2Color.png") #8f6534;
+    }
+    /* Chrome */
+    &::-webkit-progress-value {
+        background: url("../images/example2Color.png") #8f6534;
+    }
+}
+
+.example2[role="progressbar"] {
+    background: url("../images/example2BW.png") #cccccc;
+
+    /* Polyfill */
+    &:after {
+        background-image: none; /* removes default background from polyfill */
+    }
+
+    & strong {
+        display: none;
+    }
+
+    /* Polyfill */
+    &[aria-valuenow]:before {
+        background: url("../images/example2Color.png") #8f6534;
+    }
+
+    .generate-progress-frames(10);
+
+    .generate-progress-frames(@n, @i: 0) when (@i =< @n) {
+        @val: @i * 10;
+        &[aria-valuenow="@{val}"]:before {
+          width: (@i * 100% / @n);
+        }
+        .generate-progress-frames(@n, (@i + 1));
+    }
+
+
+}
+
+input {
+	display: block;
+}

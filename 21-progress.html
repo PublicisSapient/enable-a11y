@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA Progress Role Example</title>
+    <link rel="stylesheet" type="text/css" href="css/progress.css" />
+    <meta charset="utf-8" >
+</head>
+
+<body>
+
+    <a href="#">Back</a>
+
+    <h1>ARIA Progress Role Example</h1>
+
+    <h2>Notes:</h2>
+    <ul>
+        <li>For NVDA, hitting NVDA+u controls how NVDA reports progress bar updates to you.
+
+        <ul>
+        <li>Off: Progress bars will not be reported as they change.
+        </li><li>Speak: This option tells NVDA to speak the progress bar in percentages. Each time the progress bar changes, NVDA will speak the new value.
+        </li><li>Beep: This tells NVDA to beep each time the progress bar changes. The higher the beep, the closer the progress bar is to completion.
+        </li><li>Beep and speak: This option tells NVDA to both beep and speak when a progress bar updates.
+        </li>
+        </ul>
+    </li></ul>
+
+    <h2>HTML5 progress bar</h2>
+
+    <div>
+        <progress id="ex1" class="example2" max="100" value="0"><strong>Progress: 60%</strong></progress>
+    </div>
+
+    <h2>ARIA role="progressbar" Example</h2>
+
+    <div>
+        <div id="ex2" role="progressbar" class="example2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><strong>Progress: 60%</strong></div>
+    </div>
+    
+    
+    <script src="js/progress.js"></script>
+</body>
+
+</html>
