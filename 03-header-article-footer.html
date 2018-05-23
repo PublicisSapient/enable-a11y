@@ -21,6 +21,10 @@
             with them.
         </p>
 
+        <p>
+            <strong>TODO: incorporate info from http://whatsock.com/training/matrices/</strong>
+        </p>
+
 
         <h2>What Is The Difference Between a Landmark and a Role?</h2>
 
@@ -47,39 +51,137 @@
             <tbody>
                 <tr>
                     <td>banner</td>
-                    <td>header</td>
+                    <td>&lt;header&gt;</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>main</td>
-                    <td>main</td>
+                    <td>&lt;main&gt;</td>
                     <td>The main content on a page</td>
                 </tr>
                 <tr>
                     <td>navigation</td>
-                    <td>nav</td>
+                    <td>&lt;nav&gt;</td>
                     <td>any item that is used to navigate throughout a web page or web site (e.g. a menu)</td>
                 </tr>
                 <tr>
                     <td>complementary</td>
-                    <td>aside</td>
+                    <td>&lt;aside&gt;</td>
                     <td>(e.g. a sidebar)</td>
                 </tr>
                 <tr>
-                    <td>search</td>
-                    <td>input type="search"</td>
+                    <td>contentinfo</td>
                     <td></td>
+                    <td>
+                        A large perceivable region that contains information about the parent document.  Note: A lot of demos state that <code>footer</code>
+                        is the property HTML equivalent to <code>contentinfo</code>, but this is only partially true.  In Firefox the footer is mapped to ARIA <code>contentinfo</code>
+                        In Safari and Chrome, <code>footer</code> is mapped to ARIA <code>group</code> role if it is contained within a
+                        section or article element otherwise it is mapped to role=contentinfo.  It is recommended to include a role inside your footer if you want it
+                        to be considered a landmark.
+                    </td>
                 </tr>
                 <tr>
-                    <td>form</td>
-                    <td>form</td>
+                    <td>search</td>
                     <td></td>
+                    <td>A search form field.  Note that some sites say that <code>&lt;input type="search"&gt;</code> will map to this automatically,
+                    but a lot of screen readers don't (e.g. Voiceover and NVDA), so you should add the role of <code>search</code> here.</td>
+                </tr>
+                <tr>
+                    <td><a href="12-form.html">form</a></td>
+                    <td>&lt;form&gt;</td>
+                    <td>NVDA doesn't recognize a form element by itself as a landmark. In order to do this, we must add the ARIA form role.</td>
                 </tr>
                 <tr>
                     <td>application</td>
                     <td>N/A</td>
                     <td>A web application that overrides normal keyboard/screenreader behaviour and has its own unique user interface.
                         If you don't know what this means, don't use it.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="dataTable">
+            <caption>The ARIA Live Region Roles</caption>
+
+            <thead>
+                <tr>
+                    <th scope="col">Role</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Analogous To</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr id="log">
+                    <td>
+                        <a href="20-log.html">log</a>
+                    </td>
+
+                    <td></td>
+
+                    <td>
+                        Chat, error, game or other type of log Note: To maximize compatibility, add a redundant
+                        <code>aria-live="polite"</code> when using this role.
+                    </td>
+                </tr>
+                <tr id="status">
+                    <td>
+                        <a href="27-status.html">status</a>
+                    </td>
+
+                    <td></td>
+
+                    <td>
+                        A status bar or area of the screen that provides an updated status of some kind. Screen reader users have a special command to read the current status.
+                        To maximize compatibility, add a redundant <code>aria-live="polite"</code> when using this role.
+                    </td>
+                </tr>
+                <tr id="alert">
+                    <td>
+                        <a href="20a-alert.html">alert</a>
+                    </td>
+
+                    <td></td>
+
+                    <td>
+                        Error or warning message that flashes on the screen. Alerts are particularly important for client side validation notices to users. 
+                        <code>aria-live="polite"</code> when using this role.
+                    </td>
+                </tr>
+                <tr id="progressbar-live">
+                    <td>
+                        <a href="23-progress.html">progress</a>
+                    </td>
+
+                    <td>&lt;progress&gt;</td>
+
+                    <td>
+                        A hybrid between a widget and a live region. Use this with aria-valuemin, aria-valuenow and aria-valuemax.
+                        Note, as far as all that I have tested, a progressbar is only treated by a live region by NVDA and it has to be
+                        set up to be treated as such.
+                    </td>
+                </tr>
+                <tr id="marquee">
+                    <td>
+                        <a href="26-marquee.html">marquee</a>
+                    </td>
+
+                    <td></td>
+
+                    <td>
+                        For text which scrolls, such as a stock ticker.
+                    </td>
+                </tr>
+                <tr id="timer">
+                    <td>
+                        <a href="25-timer.html">timer</a>
+                    </td>
+
+                    <td></td>
+
+                    <td>
+                        For any kind of timer or clock, such as a countdown timer or stopwatch readout.
                     </td>
                 </tr>
             </tbody>
@@ -101,12 +203,18 @@
             <tbody>
                 <tr id="alert">
                     <td>
-                        <a href="02-alert.html">alert</a></td>
+                        <a href="02-alert.html">alert</a>
+                    </td>
 
                     <td></td>
 
-                    <td>A message with important, and usually time-sensitive, information. See <a href="#alertdialog"><code>alertdialog</code></a> and <a href="#status"><code>status</code></a>status.
-                        Note: Elements with the role alert have an implicit aria-live value of assertive.</td>
+                    <td>A message with important, and usually time-sensitive, information. See
+                        <a href="#alertdialog">
+                            <code>alertdialog</code>
+                        </a> and
+                        <a href="#status">
+                            <code>status</code>
+                        </a>status. Note: Elements with the role alert have an implicit aria-live value of assertive.</td>
                 </tr>
 
                 <tr id="alertdialog">
@@ -116,24 +224,35 @@
                     <td>&nbsp;</td>
 
                     <td>A type of dialog that contains an alert message, where initial focus goes to an element within the dialog.
-                        See <a href="#alert"><code>alert</code></a> and <a href="#dialog"><code>dialog</code></a>.
+                        See
+                        <a href="#alert">
+                            <code>alert</code>
+                        </a> and
+                        <a href="#dialog">
+                            <code>dialog</code>
+                        </a>.
                     </td>
                 </tr>
 
                 <tr id="button">
                     <td>
-                        <a href="05-button.html">button</a></td>
+                        <a href="05-button.html">button</a>
+                    </td>
 
                     <td>&lt;button&gt;, &lt;input type="submit"&gt;, &lt;input type="reset"&gt;, &lt;input type="image"&gt;
                     </td>
 
-                    <td>An input that allows for user-triggered actions when clicked or pressed. See <a href="#link"><code>link</code></a>.
+                    <td>An input that allows for user-triggered actions when clicked or pressed. See
+                        <a href="#link">
+                            <code>link</code>
+                        </a>.
                     </td>
                 </tr>
 
                 <tr id="checkbox">
                     <td>
-                        <a href="06-checkbox.html">checkbox</a></td>
+                        <a href="06-checkbox.html">checkbox</a>
+                    </td>
 
                     <td>&lt;input type="checkbox"&gt;
                     </td>
@@ -148,18 +267,25 @@
                     <td>&lt;th scope="col"&gt;
                     </td>
 
-                    <td>A cell containing header information for a column.  See <a href="#grid"><code>grid</code></a>.</td>
+                    <td>A cell containing header information for a column. See
+                        <a href="#grid">
+                            <code>grid</code>
+                        </a>.</td>
                 </tr>
 
                 <tr id="combobox">
                     <td>
-                        <a href="10-combobox.html">combobox</a></td>
+                        <a href="10-combobox.html">combobox</a>
+                    </td>
 
                     <td>&lt;select&gt;, HTML5&lt;input&gt; types which provide suggestions
                     </td>
 
                     <td>A presentation of a select; usually similar to a textbox where users can type ahead to select an option,
-                        or type to enter arbitrary text as a new item in the list. See <a href="#listbox"><code>listbox</code></a>.</td>
+                        or type to enter arbitrary text as a new item in the list. See
+                        <a href="#listbox">
+                            <code>listbox</code>
+                        </a>.</td>
                 </tr>
 
                 <tr id="definition">
@@ -174,18 +300,23 @@
 
                 <tr id="dialog">
                     <td>
-                        <a href="04-dialog-document.html">dialog</a></td>
+                        <a href="04-dialog-document.html">dialog</a>
+                    </td>
 
                     <td>&nbsp;</td>
 
                     <td>A dialog is an application window that is designed to interrupt the current processing of an application
-                        in order to prompt the user to enter information or require a response. See <a href="#alertdialogu"><code>alertdialog</code></a>.
+                        in order to prompt the user to enter information or require a response. See
+                        <a href="#alertdialogu">
+                            <code>alertdialog</code>
+                        </a>.
                     </td>
                 </tr>
 
                 <tr id="directory">
                     <td>
-                        <a href="09-directory.html">directory</a></td>
+                        <a href="09-directory.html">directory</a>
+                    </td>
 
                     <td>&nbsp;</td>
 
@@ -195,7 +326,8 @@
 
                 <tr id="grid">
                     <td>
-                        <a href="07-table.html">grid</a></td>
+                        <a href="07-table.html">grid</a>
+                    </td>
 
                     <td>&lt;table&gt;</td>
 
@@ -209,7 +341,10 @@
 
                     <td>&lt;td&gt;</td>
 
-                    <td>A cell in a grid or treegrid.  See <a href="#grid"><code>grid</code></a>.
+                    <td>A cell in a grid or treegrid. See
+                        <a href="#grid">
+                            <code>grid</code>
+                        </a>.
                     </td>
                 </tr>
 
@@ -221,13 +356,17 @@
                     </td>
 
                     <td>A set of user interface objects which are not intended to be included in a page summary or table of contents
-                        by assistive technologies.  See <a href="#form"><code>form</code></a>.
+                        by assistive technologies. See
+                        <a href="#form">
+                            <code>form</code>
+                        </a>.
                     </td>
                 </tr>
 
                 <tr id="heading">
                     <td>
-                        <a href="16-heading.html">heading</a></td>
+                        <a href="16-heading.html">heading</a>
+                    </td>
 
                     <td>&lt;h1&gt;, &lt;h2&gt;, etc. (aria-level must be set appropriately)</td>
 
@@ -236,7 +375,8 @@
 
                 <tr id="img">
                     <td>
-                        <a href="17-img.html">img</a></td>
+                        <a href="17-img.html">img</a>
+                    </td>
 
                     <td>&lt;img&gt;</td>
 
@@ -245,13 +385,17 @@
 
                 <tr id="link">
                     <td>
-                        <a href="LICENSE">link</a></td>
+                        <a href="LICENSE">link</a>
+                    </td>
 
                     <td>&lt;a href...&gt;, &lt;area&gt;
                     </td>
 
                     <td>An interactive reference to an internal or external resource that, when activated, causes the user agent
-                        to navigate to that resource. <a href="#button"><code>button</code></a>.
+                        to navigate to that resource.
+                        <a href="#button">
+                            <code>button</code>
+                        </a>.
                     </td>
                 </tr>
 
@@ -262,17 +406,21 @@
                     <td>&lt;ul&gt;, &lt;ol&gt;
                     </td>
 
-                    <td>A group of non-interactive list items. <a href="listbox"><code>listbox</code></a>.</td>
+                    <td>A group of non-interactive list items.</a>.</td>
                 </tr>
 
                 <tr id="listbox">
                     <td>
-                        <a href="19-listbox.html">listbox</a></td>
+                        <a href="19-listbox.html">listbox</a>
+                    </td>
 
                     <td>&lt;select&gt;, &lt;datalist&gt; (when aria-multiselectable set to false on listbox)
                     </td>
 
-                    <td>A widget that allows the user to select one or more items from a list of choices. See <a href="#combobox"><code>combobox</code></a>
+                    <td>A widget that allows the user to select one or more items from a list of choices. See
+                        <a href="#combobox">
+                            <code>combobox</code>
+                        </a>
                         and list.</td>
                 </tr>
 
@@ -282,7 +430,10 @@
 
                     <td>&lt;li&gt;</td>
 
-                    <td>A single item in a list or directory.  See <a href="#listbox"><code>listbox</code></a> 
+                    <td>A single item in a list or directory. See
+                        <a href="#list">
+                            <code>list</code>
+                        </a>
                     </td>
                 </tr>
 
@@ -292,13 +443,16 @@
 
                     <td>&nbsp;</td>
 
-                    <td>A type of live region where non-essential information changes frequently. See <a href="#log"><code>log</code></a>. Note: Elements
-                        with the role marquee maintain the default aria-live value of off.</td>
+                    <td>A type of live region where non-essential information changes frequently. See
+                        <a href="#log">
+                            <code>log</code>
+                        </a>. Note: Elements with the role marquee maintain the default aria-live value of off.</td>
                 </tr>
 
                 <tr id="math">
                     <td>
-                        <a href="21-math.html">math</a></td>
+                        <a href="21-math.html">math</a>
+                    </td>
 
                     <td>&lt;math&gt;</td>
 
@@ -307,7 +461,8 @@
 
                 <tr id="menu">
                     <td>
-                        <a href="22-menu.html">menu</a></td>
+                        <a href="22-menu.html">menu</a>
+                    </td>
 
                     <td>&lt;menu type="list"&gt;
                     </td>
@@ -321,7 +476,10 @@
 
                     <td>&nbsp;</td>
 
-                    <td>A presentation of menu that usually remains visible and is usually presented horizontally.  See <a href="#menu"><code>menu</code></a>.
+                    <td>A presentation of menu that usually remains visible and is usually presented horizontally. See
+                        <a href="#menu">
+                            <code>menu</code>
+                        </a>.
                     </td>
                 </tr>
 
@@ -331,7 +489,11 @@
 
                     <td>&nbsp;</td>
 
-                    <td>An option in a group of choices contained by a menu or menubar. See <a href="#menu"><code>menu</code></a></td>
+                    <td>An option in a group of choices contained by a menu or menubar. See
+                        <a href="#menu">
+                            <code>menu</code>
+                        </a>
+                    </td>
                 </tr>
 
                 <tr id="menuitemcheckbox">
@@ -340,7 +502,11 @@
 
                     <td>&nbsp;</td>
 
-                    <td>A checkable menuitem that has three possible values: true, false, or mixed. See <a href="#menu"><code>menu</code></a></td>
+                    <td>A checkable menuitem that has three possible values: true, false, or mixed. See
+                        <a href="#menu">
+                            <code>menu</code>
+                        </a>
+                    </td>
                 </tr>
 
                 <tr id="menuitemradio">
@@ -349,7 +515,11 @@
 
                     <td>&nbsp;</td>
 
-                    <td>A checkable menuitem in a group of menuitemradio roles, only one of which can be checked at a time. See <a href="#menu"><code>menu</code></a></td>
+                    <td>A checkable menuitem in a group of menuitemradio roles, only one of which can be checked at a time. See
+                        <a href="#menu">
+                            <code>menu</code>
+                        </a>
+                    </td>
                 </tr>
 
                 <tr id="option">
@@ -358,7 +528,11 @@
 
                     <td>&lt;option&gt;</td>
 
-                    <td>A selectable item in a select list. See <a href="#listbox"><code>listbox</code></a></td>
+                    <td>A selectable item in a select list. See
+                        <a href="#listbox">
+                            <code>listbox</code>
+                        </a>
+                    </td>
                 </tr>
 
                 <tr id="presentation">
@@ -373,7 +547,8 @@
 
                 <tr id="progressbar">
                     <td>
-                        progressbar</td>
+                        <a href="23-progress.html">progressbar</a>
+                    </td>
 
                     <td>
                         &lt;progress&gt;</td>
@@ -384,7 +559,7 @@
 
                 <tr id="radio">
                     <td>
-                        radio</td>
+                        <a href="15-radiogroup.html">radio</td>
 
                     <td>&lt;input type="radio"&gt;
                     </td>
@@ -399,8 +574,11 @@
 
                     <td>&nbsp;</td>
 
-                    <td>A group of radio buttons. See <a href="#radio"><code>radio</code></tr>
-                    </td>
+                    <td>A group of radio buttons. See
+                        <a href="#radio">
+                            <code>radio</code>
+                </tr>
+                </td>
                 </tr>
 
                 <tr id="row">
@@ -409,7 +587,8 @@
 
                     <td>&lt;tr&gt;</td>
 
-                    <td>A row of cells in a grid.
+                    <td>A row of cells in a grid. See
+                        <a href="07-table.html">grid</a>.
                     </td>
                 </tr>
 
@@ -419,7 +598,9 @@
 
                     <td>&lt;thead&gt;, &lt;tfoot&gt;, &lt;tbody&gt;</td>
 
-                    <td>A group containing one or more row elements in a grid.</td>
+                    <td>A group containing one or more row elements in a grid. See
+                        <a href="07-table.html">grid</a>
+                    </td>
                 </tr>
 
                 <tr id="rowheader">
@@ -429,7 +610,9 @@
                     <td>&lt;th scope="row"&gt;
                     </td>
 
-                    <td>A cell containing header information for a row in a grid.</td>
+                    <td>A cell containing header information for a row in a grid. See
+                        <a href="07-table.html">grid</a>
+                    </td>
                 </tr>
 
                 <tr id="scrollbar">
@@ -438,14 +621,14 @@
 
                     <td>&nbsp;</td>
 
-                    <td><p>A graphical object that controls the scrolling of content within a viewing area, regardless of whether
-                        the content is fully displayed within the viewing area.
+                    <td>
+                        <p>A graphical object that controls the scrolling of content within a viewing area, regardless of whether
+                            the content is fully displayed within the viewing area.
                         </p>
-                        <p>Note: Elements with the role scrollbar have
-                        an implicit aria-orientation value of vertical.
+                        <p>Note: Elements with the role scrollbar have an implicit aria-orientation value of vertical.
                         </p>
                         <p>
-                        Also Note: Using custom scrollbars makes Zoltan cry.  You don't want him to cry, do you?
+                            Also Note: Using custom scrollbars makes Zoltan cry. You don't want him to cry, do you?
                         </p>
                     </td>
                 </tr>
@@ -509,7 +692,8 @@
 
                 <tr id="textbox">
                     <td>
-                        textbox</td>
+                        <a href="24-textbox.html">textbox</a>
+                    </td>
 
                     <td>&lt;input type="text"&gt; (and other text-like inputs, such as 'password', 'email', etc.). &lt;textarea&gt;</td>
 
@@ -518,7 +702,8 @@
 
                 <tr id="timer">
                     <td>
-                        timer</td>
+                        <a href="25-timer.html">timer</a>
+                    </td>
 
                     <td>&nbsp;</td>
 
@@ -528,7 +713,7 @@
 
                 <tr id="toolbar">
                     <td>
-                        toolbar</td>
+                        <a href="">toolbar</td>
 
                     <td>&lt;menu type="toolbar"&gt;
                     </td>
@@ -597,7 +782,8 @@
                 <a href="https://dequeuniversity.com">Deque University</a>.</li>
 
             <li>
-                <a href="http://karlgroves-sandbox.com/CheatSheets/ARIA-Cheatsheet.html">The ARIA Cheetsheet</a> by <a href="http://www.karlgroves.com/">Karl Groves</a>.
+                <a href="http://karlgroves-sandbox.com/CheatSheets/ARIA-Cheatsheet.html">The ARIA Cheetsheet</a> by
+                <a href="http://www.karlgroves.com/">Karl Groves</a>.
             </li>
         </ul>
     </article>

@@ -12,6 +12,11 @@
             </div>
         </h1>
 
+        <form class="search-form">
+            <label for="search-input">Search:</label>
+            <input role="search" type="search" id="search-input" name="search" />
+        </form>
+
         <nav>
             <ul>
                 <li>

@@ -134,6 +134,9 @@ body {
   margin: 10px;
   line-height: 1.1;
 }
+code {
+  font-family: "Consolas", monospace;
+}
 strong {
   font-weight: bold;
 }
@@ -336,6 +339,29 @@ table .caption,
 [role="table"] .caption {
   display: table-caption;
   text-align: center;
+  margin-bottom: 1em;
+  font-style: italic;
+  font-family: "Times New Roman", serif;
+}
+table caption:before,
+[role="table"] caption:before,
+table .caption:before,
+[role="table"] .caption:before,
+table caption:after,
+[role="table"] caption:after,
+table .caption:after,
+[role="table"] .caption:after {
+  display: inline-block;
+  content: url(../images/squiggly.png);
+  position: relative;
+  margin: 0 1em;
+  top: 3px;
+}
+table caption:after,
+[role="table"] caption:after,
+table .caption:after,
+[role="table"] .caption:after {
+  transform: scaleX(-1);
 }
 table th,
 [role="table"] th,

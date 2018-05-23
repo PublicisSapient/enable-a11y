@@ -1,0 +1,18 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+@import "shared/landmarks";
+ 
+[role="textbox"] {
+    display: inline-block;
+    width: 200px;
+    height: 1rem;
+    border: solid 1px black; 
+
+    &[aria-multiline="true"] {
+        min-height: 2rem;
+        overflow: auto;
+        .vendor(appearance, textarea);
+        resize: both;
+    }
+}
