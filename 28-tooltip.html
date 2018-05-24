@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA Tooltip Example</title>
+    <link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+    <meta charset="utf-8" >
+</head>
+
+<body>
+
+    <?php include("includes/example-header.php"); ?>
+
+    <h1>ARIA Tooltip Example</h1>
+
+    <main>
+
+            <aside class="notes">
+                <h2>Notes:</h2>
+    
+                <ul>
+                    <li>Tooltips should be visible onfocus, and be hidden onblur.</li>
+                    <li>The widget that activates the tooltip should have an <code>aria-describedby</code> attribute that points to the tooltip so the AT can inform the user of it.</li>
+                </ul>
+                
+            </aside>
+
+            <p><a href="/" data-tooltip="This tooltip is accessible!">This link has a tooltip</a> and so does this input field:
+            <input type="text" data-tooltip="You can put tooltips on any focusable item." />.  The tooltip should be legible when in reading mode.</p>
+
+    </main>
+    
+    
+    <script src="js/shared/tooltip.js"></script>
+</body>
+
+</html>

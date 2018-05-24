@@ -1,0 +1,17 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+@import "shared/landmarks";
+ 
+.tooltip {
+    display: block;
+    background: black;
+    color: white;
+    padding: 0.5rem;
+    max-width: 20rem;
+    position: absolute;
+
+    &--hidden {
+        display: none;
+    }
+}

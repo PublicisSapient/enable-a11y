@@ -23,6 +23,7 @@
 
         <p>
             <strong>TODO: incorporate info from http://whatsock.com/training/matrices/</strong>
+            <strong>TODO: incorporate info from https://developer.paciellogroup.com/blog/2014/10/aria-in-html-there-goes-the-neighborhood/</strong>
         </p>
 
 
@@ -76,8 +77,12 @@
                         A large perceivable region that contains information about the parent document.  Note: A lot of demos state that <code>footer</code>
                         is the property HTML equivalent to <code>contentinfo</code>, but this is only partially true.  In Firefox the footer is mapped to ARIA <code>contentinfo</code>
                         In Safari and Chrome, <code>footer</code> is mapped to ARIA <code>group</code> role if it is contained within a
-                        section or article element otherwise it is mapped to role=contentinfo.  It is recommended to include a role inside your footer if you want it
-                        to be considered a landmark.
+                        section or article element otherwise it is mapped to role=contentinfo.
+                        It is recommended to include a role inside your footer if you want it
+                        to be considered a landmark. Source, 
+                        <a href="https://twitter.com/stevefaulkner?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Steve Faulkner</a>
+                        of the W3C HTML Working Group 
+                        <a href="https://stackoverflow.com/questions/11191746/should-role-contentinfo-be-always-added-on-footer-element">via this Stack Overflow thread</a>.
                     </td>
                 </tr>
                 <tr>
@@ -661,6 +666,12 @@
 
                     <td>A form of range that expects the user to select from among discrete choices.
                     </td>
+                </tr>
+
+                <tr id="switch">
+                    <td>switch</td>
+                    <td></td>
+                    <td>Widget that has on and off positions</td>
                 </tr>
 
                 <tr id="tab">

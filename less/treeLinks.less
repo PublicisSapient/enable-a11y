@@ -1,0 +1,81 @@
+@import "shared/reset";
+@import "shared/defaults";
+@import "shared/a11y";
+@import "shared/landmarks";
+
+ul[role="tree"] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+
+  & li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  & a {
+    text-decoration: underline;
+    border-color: transparent;
+  }
+}
+
+
+[role="treeitem"] {
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    margin-left: 0.9em;
+  }
+
+  &[aria-expanded="false"] > ul {
+    display: none;
+  }
+
+  &[aria-expanded="true"] > ul {
+    display: block;
+  }
+
+  &[aria-expanded="false"] > span:before {
+    content: url(../images/right-arrow-brown.png);
+    position: relative;
+    left: -0.25em;
+  }
+
+  &[aria-expanded="true"] > span:before {
+    content: url(../images/down-arrow-brown.png);
+    position: relative;
+    left: -0.25em;
+  }
+
+  &,
+  & span {
+    margin: 0;
+    padding: 0;
+    border: 2px transparent solid;
+    padding: 0.125em;
+    display: block;
+  }
+
+  /* disable default keyboard focus styling for treeitems
+    Keyboard focus is styled with the following CSS */
+  &:focus {
+    outline: 0;
+  }
+
+  &.focus,
+  & span.focus {
+    border-color: black;
+    background-color: #EEEEEE;
+    width: 16em;  
+  }
+
+  &.hover,
+  & span.hover {
+    background-color: #DDDDDD;
+    width: 16em;  
+  }
+
+}

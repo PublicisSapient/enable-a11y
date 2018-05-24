@@ -1,0 +1,450 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+ * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ */
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 10px;
+  line-height: 1.1;
+}
+code {
+  font-family: "Consolas", monospace;
+}
+strong {
+  font-weight: bold;
+}
+ul {
+  list-style: initial;
+}
+ol {
+  list-style: decimal;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: solid 1px #999999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+ul {
+  padding-left: 3rem;
+  list-style: disc;
+}
+ul,
+p {
+  margin-top: 0.5rem;
+}
+.example h1 {
+  text-align: center;
+}
+.example main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.example .example-nav {
+  text-align: center;
+}
+.example .example-nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+.example .notes {
+  border: dashed #9C6F39 3px;
+  padding: 1em;
+  background-color: #ffffee;
+  margin: 2em auto;
+  max-width: calc(1024px - 2em);
+}
+.example .notes h2 {
+  margin: 0;
+  border-bottom: none;
+}
+/*********************************************************
+ * a11y.css - a stylesheet to help create 
+ * accessible websites.
+ * 
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * Licensed under the MIT License
+ * 
+ * https://opensource.org/licenses/MIT
+ ********************************************************/
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.visually-hidden {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+/*
+ * For `.visually-hidden` elements that should be visible when it gains focus. 
+ */
+.visible-when-focused:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+}
+/*
+ * Style for "Skip Navigation" type links.  Should have an href linked to 
+ * a `.ally-target` element.
+ */
+.bypass-block-link:focus {
+  position: absolute;
+  text-decoration: none;
+  background: #ffffcc;
+  padding: 0.2em;
+  z-index: 10;
+}
+/*
+ * We don't want the `.bypass-block-target` to have an outline on *just* focus,
+ * since this will look strange if regular users click inside this element,
+ * since it will look like it was tabbed into
+ */
+.bypass-block-target:focus {
+  outline: none;
+}
+/*
+ * We do, however, want the `.bypass-block-target` to have an outline when
+ * it has focus and it is the target of the document (i.e. the hash tag of the
+ * document URL is the same as the "Skip Nav" link).
+ * 
+ * Note that this style is the same as the focus state on all the tabbable 
+ * elements.  It doesn't have to be.  WCAG 2.4.7 – Focus Visible (Level AA) 
+ * only requires that the focus state is visible, so you can have, say, the 
+ * focus state of a button different than that of a form element. 
+ */
+.bypass-block-target:focus:target,
+a[href]:not([tabindex="-1"]):focus,
+area:not([tabindex="-1"]):focus,
+[role="button"]:not([tabindex="-1"]):focus,
+[role="link"]:not([tabindex="-1"]):focus,
+iframe:not([tabindex="-1"]):focus,
+[contentEditable=true]:not([tabindex="-1"]):focus,
+:enabled:not([tabindex="-1"]):focus,
+[tabindex]:not([tabindex="-1"]):focus {
+  /* You can replace this with whatever style you want for focus state */
+  outline: solid 2px #ffa500;
+}
+/*
+ * The above selector will match focusable elements when they are clicked
+ * with a mouse.  If you don't want that to happen, use this rule. 
+ */
+a[href]:not([tabindex="-1"]):hover:focus,
+area:not([tabindex="-1"]):hover:focus,
+[role="button"]:not([tabindex="-1"]):hover:focus,
+[role="link"]:not([tabindex="-1"]):hover:focus,
+iframe:not([tabindex="-1"]):hover:focus,
+[contentEditable=true]:not([tabindex="-1"]):hover:focus,
+:enabled:not([tabindex="-1"]):hover:focus,
+[tabindex]:not([tabindex="-1"]):hover:focus {
+  outline: solid 2px rgba(255, 165, 0, 0.5);
+}
+a[href]:not([tabindex="-1"]):focus:active,
+area:not([tabindex="-1"]):focus:active,
+[role="button"]:not([tabindex="-1"]):focus:active,
+[role="link"]:not([tabindex="-1"]):focus:active,
+iframe:not([tabindex="-1"]):focus:active,
+[contentEditable=true]:not([tabindex="-1"]):focus:active,
+:enabled:not([tabindex="-1"]):focus:active,
+[tabindex]:not([tabindex="-1"]):focus:active {
+  outline: none;
+}
+*:focus {
+  outline: solid 2px orange ;
+}
+/*
+ * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
+ * Level AA
+ * 
+ * From https://www.w3.org/WAI/tutorials/forms/instructions/
+ */
+.placeholder-removed {
+  opacity: 0.999;
+}
+[placeholder] {
+  background-color: #fff;
+  border: solid 1px #777;
+}
+::-webkit-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+body {
+  margin: 0;
+}
+header {
+  background: #ffcccc;
+  padding: 10px 10px 0px 10px;
+  margin: 0;
+  position: relative;
+}
+header h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+header .search-form {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+nav {
+  position: static;
+  background: #000000;
+  padding: 0.4em;
+  margin: 10px -10px 10px -10px;
+  line-height: 1.6;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 1em;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+.logo {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background: #9999ff;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+.logo .acme {
+  display: inline-block;
+  position: relative;
+  transform: scale(1.1) translateY(-20px) rotate(10deg);
+  color: #ff9999;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
+  font-size: 70px;
+  font-weight: 900;
+}
+.logo .corp {
+  position: absolute;
+  display: inline-block;
+  transform: rotate(10deg) scaleY(0.7);
+  top: 60%;
+  right: 5%;
+}
+.motto {
+  position: absolute;
+  transform: rotate(10deg);
+  bottom: -20px;
+  left: 30px;
+  font-size: 0.8em;
+  font-family: "Palatino", serif;
+  font-style: italic;
+  width: 500px;
+}
+main {
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 1024px;
+  line-height: 1.4;
+}
+.inline-left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.inline-right {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.inline-left,
+.inline-right {
+  width: 200px;
+}
+article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+aside {
+  display: block;
+  background: #ddd url('../images/bomb.png') no-repeat 1em 1em;
+  margin: 1em 1em 1em calc(200px + 1em);
+  padding: 1em 1em 1em calc(100px + 2em);
+  min-height: calc(109px);
+  border: solid 1px black;
+  box-shadow: 4px 4px 0 black;
+}
+aside h3 {
+  color: #9999ff;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+footer {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+.tooltip {
+  display: block;
+  background: black;
+  color: white;
+  padding: 0.5rem;
+  max-width: 20rem;
+  position: absolute;
+}
+.tooltip--hidden {
+  display: none;
+}
