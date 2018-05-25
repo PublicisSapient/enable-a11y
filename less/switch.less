@@ -1,0 +1,40 @@
+@import "shared/reset";
+@import "shared/defaults"; 
+@import "shared/a11y";
+@import "shared/landmarks";
+
+button.switch {
+    margin: 0;
+    padding: 0;
+    height: 26px;
+    border: 2px solid black;
+    display: inline-block;
+    margin-right: 0.25em;
+    line-height: 20px;
+    vertical-align: middle;
+    text-align: center;
+    font: 12px "Open Sans", "Arial", serif;
+}
+
+button.switch span {
+    padding: 0 4px;
+}
+
+[role="switch"][aria-checked="false"] :first-child,
+[role="switch"][aria-checked="true"] :last-child {
+    background: #262;
+    color: #eef;
+}
+
+[role="switch"][aria-checked="false"] :last-child,
+[role="switch"][aria-checked="true"] :first-child {
+    color: #bbd;
+}
+
+label.switch {
+font: 16px "Open Sans", "Arial", sans-serif;
+    line-height: 20px;
+    user-select: none;
+    vertical-align: middle;
+    .vendor(user-select, none);
+}

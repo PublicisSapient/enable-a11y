@@ -24,6 +24,12 @@
                         <a href="https://web.archive.org/web/20170424171217/http://oaa-accessibility.org/examplep/spinbutton1/">Example - Spinbutton using IMG elements for buttons</a>
                         by the <a href="http://oaa-accessibility.org/">Open Ajax Alliance</a> (now currently offline).
                     </li>
+                    <li>
+                        ChromeVox makes the really odd choice of converting an <code>&lt;input type="number"&gt;</code> tag to an <code>&lt;input type="text" &gt;</code> onFocus.
+                        It does, however, report to the user that it is "Edit Text, Numeric Only", and will remove any numeric value within the input onBlur.
+                    </li>
+                    <li>NVDA reports both the ARIA and the native HTML versions as a "spinbutton".</li>
+                    <li>Voiceover reports the ARIA version as a "stepper" and the HTML version as "incrementable edit text".</li>
                 </ul>
             </aside>
 
@@ -67,6 +73,10 @@
 
 
             <h2>HTML example</h2>
+
+            <label id="html_number" class="sbLabel" for="sb2">Choose a number between 500 and 1000</label>
+            <input type="number" min="500" max="1000" value="500" />
+
             
     </main>
     

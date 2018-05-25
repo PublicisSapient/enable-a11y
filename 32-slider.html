@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA Slider Examples</title>
+    <link rel="stylesheet" type="text/css" href="css/slider.css" />
+    <meta charset="utf-8" >
+</head>
+
+<body>
+
+    <?php include("includes/example-header.php"); ?>
+
+    <h1>ARIA Slider Examples</h1>
+
+    <main>
+
+            <aside class="notes">
+                <h2>Notes:</h2>
+    
+                <ul>
+                    <li>This example is originally from Open Ajax Alliance's <a href="https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/">Slider Example</a></li>
+                </ul>
+            </aside>
+
+            
+
+            <h2>A Simple ARIA Slider</h2>
+            
+            <div id="sr1_label" class="hidden">Example 1 Slider</div>
+            <div class="hslider" id="sr1"></div>  
+                
+            <h2>An ARIA Slider With Min and Max Values</h2>
+            
+            <div id="sr2_label1" class="hidden">Example 2 Slider Low</div>
+            <div id="sr2_label2" class="hidden">Example 2 Slider High</div>
+            <div class="hslider" id="sr2"></div>  
+            
+            <h2>A Vertical ARIA Slider</h2>
+            
+            <div id="sr3_label" class="hidden">Example 3 Slider</div>
+            <div class="vslider" id="sr3"></div> 
+
+            <h2>A Simple HTML Slider (i.e. an <code>input</code> with <code>type="range"</code>)</h2>
+
+            <form oninput="document.getElementById('myOutput').innerHTML = parseFloat(this.elements.donationAmount.value);">
+            <label for="horizontal-slider">Amount you want to donate to the Zoltan Hawryluk Developer Fund: </label>
+            <input type="range" id="horizontal-slider" name="donationAmount" value ="500" min="100" max="1000" />
+            <output id="myOutput">500</output>
+            </form>
+
+            
+                 
+
+    </main>
+    
+    <script src="js/shared/jquery-1.4.2.min.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+
+</html>

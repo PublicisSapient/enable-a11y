@@ -437,49 +437,206 @@ footer {
   padding: 1em;
   text-align: center;
 }
-div.spinControl,
-input[type="number"] {
-  width: 100px;
-  height: 44px;
+/*
+ * This is the CSS needed to style the <input type="range" />.  Note how complex it is due
+ * to cross-browser issues.
+ *
+ * From https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+ */
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 15px 0;
+  width: 90%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 90%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 2px #222, 0px 0px 2px #2f2f2f;
+  background: #424242;
+  border-radius: 5px;
   border: 1px solid black;
 }
-input[type="number"] {
-  font-size: 1.6rem;
-  text-align: right;
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #111, 0px 0px 1px #1e1e1e;
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  background: #555bc8;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
 }
-div.spinControl {
-  margin: 20px;
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #4f4f4f;
 }
-div.spinbutton {
-  float: left;
-  display: inline;
-  margin: 1px;
-  text-align: right;
-  font-size: 1.6rem;
-  padding: 7px 10px 7px 0;
-  width: 65px;
-  height: 28px;
-  background-color: #faf7f0;
+input[type=range]::-moz-range-track {
+  width: 90%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 2px #222, 0px 0px 2px #2f2f2f;
+  background: #424242;
+  border-radius: 5px;
+  border: 1px solid black;
 }
-div.spinbutton:active,
-div.spinbutton:hover,
-div.spinbutton.focus {
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #111, 0px 0px 1px #1e1e1e;
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  background: #555bc8;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 90%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 30px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #353535;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #222, 0px 0px 2px #2f2f2f;
+}
+input[type=range]::-ms-fill-upper {
+  background: #424242;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #222, 0px 0px 2px #2f2f2f;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #111, 0px 0px 1px #1e1e1e;
+  border: 1px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  background: #555bc8;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #424242;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #4f4f4f;
+}
+/*
+ * The CSS to style the ARIA slider.
+ */
+.label {
   margin: 0;
-  background-color: #faf7f0;
-  border: 1px solid red;
-}
-div.button {
-  margin: 0;
-  margin-left: 77px;
   padding: 0;
-  height: 22px;
-}
-div.button img {
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid black;
-}
-label.sbLabel {
+  margin-top: 2em;
+  margin-bottom: .5em;
+  clear: both;
   font-weight: bold;
-  font-size: 1.2em;
+}
+div.hslider {
+  margin: 50px;
+  padding: 0;
+  width: 540px;
+  height: 20px;
+  background-color: #eef;
+  border: 2px solid black;
+}
+.hsliderHandle {
+  margin: 0;
+  padding: 7px 2px;
+  width: 24px;
+  height: 12px;
+  background-color: #808080;
+  position: absolute;
+  left: -300em;
+  top: -30em;
+  z-index: 10;
+  border: 1px solid black;
+  -webkit-border-radius: 5px;
+  /* Safari and Chrome rounded corners */
+  -moz-border-radius: 5px;
+  /* Firefox rounded corners */
+  border-radius: 5px;
+  /* Opera rounded corners */
+}
+.hsliderValue {
+  margin: 24px 0 0 0;
+  padding: 5px;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  left: -30em;
+  top: -30em;
+  z-index: 10;
+}
+div.vslider {
+  margin: 50px;
+  padding: 0;
+  height: 540px;
+  width: 20px;
+  background-color: #eef;
+  border: 2px solid black;
+}
+.vsliderHandle {
+  margin: 0;
+  padding: 2px 7px;
+  width: 12px;
+  height: 24px;
+  background-color: #808080;
+  position: absolute;
+  left: -300em;
+  top: -30em;
+  z-index: 10;
+  border: 1px solid black;
+  -webkit-border-radius: 5px;
+  /* Safari and Chrome rounded corners */
+  -moz-border-radius: 5px;
+  /* Firefox rounded corners */
+  border-radius: 5px;
+  /* Opera rounded corners */
+}
+.vsliderValue {
+  margin: 0 0 0 30px;
+  padding: 5px;
+  width: 30px;
+  height: 15px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  left: -30em;
+  top: -30em;
+  z-index: 10;
+}
+div.sliderRange {
+  margin: 2px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  background-color: #00f;
+  position: absolute;
+  left: -300em;
+  top: -30em;
+  z-index: 0;
+}
+.hidden {
+  position: absolute;
+  top: -20em;
+  left: -200em;
+}
+.focus {
+  background-color: #eee !important;
+}
+output {
+  padding-left: 1em;
 }

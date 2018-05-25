@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA Switch Role Example</title>
+    <link rel="stylesheet" type="text/css" href="css/switch.css" />
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <?php include("includes/example-header.php"); ?>
+
+    <h1>ARIA Switch Role Example</h1>
+
+    <main>
+
+        <aside class="notes">
+            <h2>Notes:</h2>
+
+            <ul>
+                <li>This code is based on code from the <a href="https://developer.mozilla.org/en-US/">MDN</a> article on <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_switch_role">Using the switch role</a></li>
+                <li>The switch must have an <code>aria-checked</code> value associated with it.</li>
+                <li>The switch reports the checked state as "on" or "off" in VoiceOver and "checked" or "unchecked" in NVDA and ChromeVox.</li>
+                <li>Putting an <code>aria-describedby</code> on the switch can give supplementary info to the state of the switch</li>
+                <li>The third example tries to have screen readers bypass the reporting of the checked state. It works in all but ChromeVox treats an
+                    <code>aria-live="assertive"</code> like an <code>aria-live="polite"</code>. 
+                </li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <h2>Switch As A Checkbox</h2>
+
+    <button aria-labelledby="speakerPower__label" role="switch" aria-checked="true" id="speakerPower" class="switch" aria-describedby="speakerPower-checked">
+        <span id="speakerPower-unchecked">off</span>
+        <span id="speakerPower-checked">on</span>
+    </button>
+    <label id="speakerPower__label" class="switch">Speaker power</label>
+
+    <h2>Switch As A Toggle Between Two Values</h2>
+
+    <button aria-labelledby="VehicleDrive__label" role="switch" aria-checked="true" id="VehicleDrive" class="switch" aria-describedby="VehicleDrive-checked">
+        <span aria-label="two wheel drive" id="VehicleDrive-unchecked">2WD</span>
+        <span aria-label="four wheel drive" id="VehicleDrive-checked">4WD</span>
+    </button>
+    <label id="VehicleDrive__label" class="switch">Vehicle Drive</label>
+
+    <h2></h2>
+
+    <button aria-labelledby="VehicleDriveWithAriaLive__label" role="switch" aria-checked="true" id="VehicleDriveWithAriaLive" class="switch">
+        <span aria-label="two wheel drive" id="VehicleDriveWithAriaLive-unchecked">2WD</span>
+        <span aria-label="four wheel drive" id="VehicleDriveWithAriaLive-checked">4WD</span>
+    </button>
+    <span id="VehicleDriveWithAriaLive__alert" class="visually-hidden" aria-live="assertive" role="alert"></span>
+    <label id="VehicleDriveWithAriaLive__label" class="switch">Vehicle Drive</label>
+
+
+    <script src="js/shared/switch.js"></script>
+</body>
+
+</html>

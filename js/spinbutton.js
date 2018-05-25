@@ -32,6 +32,7 @@ $(document).ready(function () {
     this.valNow = parseInt(this.$id.attr('aria-valuenow'));
 
     this.$id.attr('aria-live', 'polite');
+    this.$id.attr('contenteditable', 'true');
   
     this.keys = {
       pageup:   33,
@@ -47,6 +48,33 @@ $(document).ready(function () {
     // bind event handlers
     this.bindHandlers();
   }
+
+  spinbutton.prototype.setValue = function (valNow) {
+    this.valNow = valNow;
+    // update the control
+    this.$id.attr('aria-valuenow', this.valNow);
+    this.$id.html(this.valNow);
+    this.selectText();
+    this.$id[0].focus();
+  }
+
+  spinbutton.prototype.selectText = function () {
+    const node = this.$id[0];
+
+    if (document.body.createTextRange) {
+        const range = document.body.createTextRange()
+        range.moveToElementText(node)
+        range.select()
+    } else if (window.getSelection) {
+        const selection = window.getSelection()
+        const range = document.createRange()
+        range.selectNodeContents(node)
+        selection.removeAllRanges()
+        selection.addRange(range)
+    } else {
+        console.warn("Could not select text in node: Unsupported browser.")
+    }
+}
   
   // Function bindHandlers() is a member function to bind event handlers for the spinbutton control
   //
@@ -142,20 +170,14 @@ $(document).ready(function () {
   
       // if valuemax isn't met, increment valnow
       if (this.valNow < this.valMax) {
-        this.valNow++;
-  
-        this.$id.text(this.valNow);
-        this.$id.attr('aria-valuenow', this.valNow);
+        this.setValue(this.valNow + 1);
       }
     }
     else {
   
       // if valuemax isn't met, decrement valnow
       if (this.valNow > this.valMin) {
-        this.valNow--;
-  
-        this.$id.text(this.valNow);
-        this.$id.attr('aria-valuenow', this.valNow);
+        this.setValue(this.valNow - 1);
       }
     }
   
@@ -293,15 +315,11 @@ $(document).ready(function () {
           // if valnow is small enough, increase by the skipVal,
           // otherwise just set to valmax
           if (this.valNow < this.valMax - this.skipVal) {
-            this.valNow += this.skipVal;
+            this.setValue(this.valNow + this.skipVal);
           }  
           else {
-            this.valNow = this.valMax;
+            this.setValue(this.valMax);
           }
-  
-          // update the control
-          this.$id.attr('aria-valuenow', this.valNow);
-          this.$id.html(this.valNow);
         }
   
         e.stopPropagation();
@@ -314,15 +332,11 @@ $(document).ready(function () {
           // if valNow is big enough, decrease by the skipVal,
           // otherwise just set to valmin
           if (this.valNow > this.valMin + this.skipVal) {
-            this.valNow -= this.skipVal;
+            this.setValue(this.valNow - this.skipVal);
           }  
           else {
-            this.valNow = this.valMin;
+           this.setValue(this.valMin);
           }
-  
-          // update the control
-          this.$id.attr('aria-valuenow', this.valNow);
-          this.$id.html(this.valNow);
         }
   
         e.stopPropagation();
@@ -331,9 +345,7 @@ $(document).ready(function () {
       case this.keys.home: {
   
         if (this.valNow < this.valMax) {
-          this.valNow = this.valMax;
-          this.$id.attr('aria-valuenow', this.valNow);
-          this.$id.html(this.valNow);
+            this.setValue(this.valMax);
         }
   
         e.stopPropagation();
@@ -342,9 +354,7 @@ $(document).ready(function () {
       case this.keys.end: {
   
         if (this.valNow > this.valMin) {
-          this.valNow = this.valMin;
-          this.$id.attr('aria-valuenow', this.valNow);
-          this.$id.html(this.valNow);
+            this.setValue(this.valMin);
         }
   
         e.stopPropagation();
@@ -355,10 +365,7 @@ $(document).ready(function () {
   
         // if valuemin isn't met, increment valnow
         if (this.valNow < this.valMax) {
-          this.valNow++;
-  
-          this.$id.text(this.valNow);
-          this.$id.attr('aria-valuenow', this.valNow);
+            this.setValue(this.valNow + 1);
         }
   
         e.stopPropagation();
@@ -369,10 +376,7 @@ $(document).ready(function () {
   
         // if valuemax isn't met, decrement valnow
         if (this.valNow > this.valMin) {
-          this.valNow--;
-  
-          this.$id.text(this.valNow);
-          this.$id.attr('aria-valuenow', this.valNow);
+            this.setValue(this.valNow - 1);
         }
   
         e.stopPropagation();

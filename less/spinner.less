@@ -2,43 +2,58 @@
 @import "shared/defaults";
 @import "shared/a11y";
 @import "shared/landmarks";
-div.spinControl {
-  margin: 20px;
-  margin-left: 40px;
+
+@fontSize: 1.6rem;
+
+div.spinControl,
+input[type="number"] {
+  
   width: 100px;
   height: 44px;
   border: 1px solid black;
+}
+
+input[type="number"] {
+  font-size: @fontSize;
+  text-align: right;
+}
+
+div.spinControl {
+  margin: 20px;
 }
 div.spinbutton {
   float: left;
   display: inline;
   margin: 1px;
   text-align: right;
-  font-weight: bold;
-  font-size: 1.6em;
+  font-size: @fontSize;
   padding: 7px 10px 7px 0;
   width: 65px;
   height: 28px;
   background-color: #faf7f0;
+
+  &:active,
+  &:hover,
+  &.focus {
+    margin: 0;
+    background-color: #faf7f0;
+    border: 1px solid red;
+  }
 }
-div.spinbutton:active,
-div.spinbutton:hover,
-div.spinbutton.focus {
-  margin: 0;
-  background-color: #faf7f0;
-  border: 1px solid red;
-}
+
 div.button {
   margin: 0;
   margin-left: 77px;
   padding: 0;
   height: 22px;
+
+  & img {
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid black;
+  }
 }
-div.button img {
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid black;
-}
+
 label.sbLabel {
   font-weight: bold;
   font-size: 1.2em;

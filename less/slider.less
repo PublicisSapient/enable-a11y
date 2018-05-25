@@ -1,0 +1,250 @@
+@import "shared/reset";
+@import "shared/defaults"; 
+@import "shared/a11y";
+@import "shared/landmarks";
+
+
+
+/*
+ * This is the CSS needed to style the <input type="range" />.  Note how complex it is due
+ * to cross-browser issues.
+ *
+ * From https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+ */
+
+ @track-color: #424242;
+ @thumb-color: #555bc8;
+ 
+ @thumb-radius: 8px;
+ @thumb-height: 30px;
+ @thumb-width: 30px;
+ @thumb-shadow-size: 1px;
+ @thumb-shadow-blur: 1px;
+ @thumb-shadow-color: #111;
+ @thumb-border-width: 1px;
+ @thumb-border-color: white;
+ 
+ @track-width: 90%;
+ @track-height: 10px;
+ @track-shadow-size: 2px;
+ @track-shadow-blur: 2px;
+ @track-shadow-color: #222;
+ @track-border-width: 1px;
+ @track-border-color: black;
+ 
+ @track-radius: 5px;
+ @contrast: 5%;
+ 
+ .shadow(@shadow-size,@shadow-blur,@shadow-color) {
+   box-shadow: @shadow-size @shadow-size @shadow-blur @shadow-color, 0px 0px @shadow-size lighten(@shadow-color,5%);
+ }
+ 
+ .track() {
+   width: @track-width;
+   height: @track-height;
+   cursor: pointer;
+   animate: 0.2s;
+ }
+ 
+ .thumb() {
+   .shadow(@thumb-shadow-size,@thumb-shadow-blur,@thumb-shadow-color);
+   border: @thumb-border-width solid @thumb-border-color;
+   height: @thumb-height;
+   width: @thumb-width;
+   border-radius: @thumb-radius;
+   background: @thumb-color;
+   cursor: pointer;
+ }
+ 
+ input[type=range] {
+   -webkit-appearance: none;
+   margin: @thumb-height/2 0;
+   width: @track-width;
+ 
+   &:focus {
+     outline: none;
+   }
+ 
+   &::-webkit-slider-runnable-track {
+     .track();
+     .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+     background: @track-color;
+     border-radius: @track-radius;
+     border: @track-border-width solid @track-border-color;
+   }
+   
+   &::-webkit-slider-thumb {
+     .thumb();
+     -webkit-appearance: none;
+     margin-top: ((-@track-border-width * 2 + @track-height) / 2) - (@thumb-height / 2);
+   }
+ 
+   &:focus::-webkit-slider-runnable-track {
+     background: lighten(@track-color, @contrast);
+   }
+ 
+   &::-moz-range-track {
+     .track();
+     .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+     background: @track-color;
+     border-radius: @track-radius;
+      border: @track-border-width solid @track-border-color;
+   }
+   &::-moz-range-thumb {
+      .thumb();
+   }
+ 
+   &::-ms-track {
+     .track(); 
+     background: transparent;
+     border-color: transparent;
+     border-width: @thumb-width 0;
+     color: transparent;
+   }
+ 
+   &::-ms-fill-lower {
+     background: darken(@track-color, @contrast);
+     border: @track-border-width solid @track-border-color;
+     border-radius: @track-radius*2;
+     .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+   }
+   &::-ms-fill-upper {
+     background: @track-color;
+     border: @track-border-width solid @track-border-color;
+     border-radius: @track-radius*2;
+     .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+   }
+   &::-ms-thumb {
+     .thumb();
+   }
+   &:focus::-ms-fill-lower {
+     background: @track-color;
+   }
+   &:focus::-ms-fill-upper {
+     background: lighten(@track-color, @contrast);
+   }
+ }
+
+
+/*
+ * The CSS to style the ARIA slider.
+ */
+
+.label {
+    margin: 0;
+    padding: 0;
+    margin-top: 2em;
+    margin-bottom: .5em;  
+    clear: both;
+    font-weight: bold;
+}
+  
+div.hslider {
+    margin: 50px;
+    padding: 0;
+    width: 540px;
+    height: 20px;
+    background-color: #eef;
+    border: 2px solid black;
+}
+  
+.hsliderHandle  {
+    margin: 0;
+    padding: 7px 2px;
+    width: 24px;
+    height: 12px;
+    background-color: #808080;
+  
+    position: absolute;
+    left: -300em;
+    top: -30em;
+    z-index: 10;
+  
+    border: 1px solid black;
+    -webkit-border-radius: 5px; /* Safari and Chrome rounded corners */
+    -moz-border-radius: 5px; /* Firefox rounded corners */
+    border-radius: 5px; /* Opera rounded corners */
+  
+}
+  
+.hsliderValue  {
+    margin: 24px 0 0 0;
+    padding: 5px;
+    width: 30px;
+    height: 15px;
+    text-align: center;
+    font-weight: bold;
+  
+    position: absolute;
+    left: -30em;
+    top: -30em;
+    z-index: 10;
+}
+  
+div.vslider {
+    margin: 50px;
+    padding: 0;
+    height: 540px;
+    width: 20px;
+    background-color: #eef;
+    border: 2px solid black;
+}
+  
+.vsliderHandle  {
+    margin: 0;
+    padding: 2px 7px;
+    width: 12px;
+    height: 24px;
+    background-color: #808080;
+  
+    position: absolute;
+    left: -300em;
+    top: -30em;
+    z-index: 10;
+  
+    border: 1px solid black;
+    -webkit-border-radius: 5px; /* Safari and Chrome rounded corners */
+    -moz-border-radius: 5px; /* Firefox rounded corners */
+    border-radius: 5px; /* Opera rounded corners */
+}
+  
+.vsliderValue  {
+    margin: 0 0 0 30px;
+    padding: 5px;
+    width: 30px;
+    height: 15px;
+    text-align: center;
+    font-weight: bold;
+  
+    position: absolute;
+    left: -30em;
+    top: -30em;
+    z-index: 10;
+}
+  
+div.sliderRange {
+    margin: 2px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    background-color: #00f;
+  
+    position: absolute;
+    left: -300em;
+    top: -30em;
+    z-index: 0;
+}
+  
+.hidden {
+    position: absolute;
+    top: -20em;
+    left: -200em;
+}
+  
+.focus {
+    background-color: #eee !important;
+}
+
+output {
+    padding-left: 1em;
+}
