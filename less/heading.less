@@ -1,27 +1,25 @@
-@import "shared/reset";
-@import "shared/defaults";
-@import "shared/a11y";
-
+@import "shared/all";
+ 
 @import url("demo.css");
 
 body {
 	background: #f0f0f0 url(../images/cream_dust.jpg);
 }
 
-main {
+div.heading-example {
 	width: 100%;
 	max-width: 960px;
 	padding: 40px;
 	text-shadow: 0 2px 0 rgba(255,255,255,0.7);
 }
 
-main p {
+div.heading-example p {
 	font-size: 16px;
 	line-height: 1.4;
 	text-align: justify;
 }
 
-main p:nth-of-type(2){
+div.heading-example p:nth-of-type(2){
 	-moz-column-count: 2;
 	-moz-column-gap: 20px;
 	-webkit-column-count: 2;
@@ -34,7 +32,7 @@ main p:nth-of-type(2){
 	column-gap: 20px;
 }
 
-main p:nth-of-type(4){
+div.heading-example p:nth-of-type(4){
 	-moz-column-count: 3;
 	-moz-column-gap: 15px;
 	-o-column-count: 3;
@@ -57,7 +55,7 @@ main p:nth-of-type(4){
 @h6-size: 18px;
 @h7-size: 18px;
 
-main {
+div.heading-example {
   h1,
   [role="heading"][aria-level="1"] {
     margin: 1em 0 0.5em 0;

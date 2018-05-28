@@ -327,20 +327,156 @@ iframe:not([tabindex="-1"]):focus:active,
   opacity: 1;
 }
 body {
+  margin: 0;
+  position: relative;
+  padding-bottom: 5rem;
+}
+header,
+[role="banner"] {
+  background: #ffcccc;
+  padding: 10px 10px 0px 10px;
+  margin: 0;
+  position: relative;
+}
+header h1,
+[role="banner"] h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+header .search-form,
+[role="banner"] .search-form {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+nav {
+  position: static;
+  background: #000000;
+  padding: 0.4em;
+  margin: 0px -10px 10px -10px;
+  line-height: 1.6;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 1em;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+.logo {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background: #9999ff;
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+.logo .acme,
+.logo .zoltipedia {
+  display: inline-block;
+  position: relative;
+  transform: scale(1.1) translateY(-20px) rotate(10deg);
+  color: #ff9999;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
+}
+.logo .acme {
+  font-size: 70px;
+  font-weight: 900;
+}
+.logo .zoltipedia {
+  font-size: 60px;
+}
+.logo .corp {
+  position: absolute;
+  display: inline-block;
+  transform: rotate(10deg) scaleY(0.7);
+  top: 60%;
+  right: 5%;
+}
+.logo .zoltipedia + .corp {
+  top: 70%;
+}
+.motto {
+  position: absolute;
+  transform: rotate(10deg);
+  bottom: -20px;
+  left: 30px;
+  font-size: 0.8em;
+  font-family: "Palatino", serif;
+  font-style: italic;
+  width: 500px;
+}
+main,
+[role="main"] {
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 1024px;
+  line-height: 1.4;
+}
+.inline-left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.inline-right {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.inline-left,
+.inline-right {
+  width: 200px;
+}
+article:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+aside,
+[role="complementary"] {
+  display: block;
+  background: #ddd url('../images/bomb.png') no-repeat 1em 1em;
+  margin: 1em auto;
+  padding: 1em 1em 1em calc(100px + 2em);
+  min-height: calc(109px);
+  border: solid 1px black;
+  box-shadow: 4px 4px 0 black;
+}
+aside h3,
+[role="complementary"] h3 {
+  color: #9999ff;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+footer,
+[role="contentinfo"] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+footer a,
+[role="contentinfo"] a {
+  color: #ccccff;
+}
+body {
   background: #f0f0f0 url(../images/cream_dust.jpg);
 }
-main {
+div.heading-example {
   width: 100%;
   max-width: 960px;
   padding: 40px;
   text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
 }
-main p {
+div.heading-example p {
   font-size: 16px;
   line-height: 1.4;
   text-align: justify;
 }
-main p:nth-of-type(2) {
+div.heading-example p:nth-of-type(2) {
   -moz-column-count: 2;
   -moz-column-gap: 20px;
   -webkit-column-count: 2;
@@ -352,7 +488,7 @@ main p:nth-of-type(2) {
   column-count: 2;
   column-gap: 20px;
 }
-main p:nth-of-type(4) {
+div.heading-example p:nth-of-type(4) {
   -moz-column-count: 3;
   -moz-column-gap: 15px;
   -o-column-count: 3;
@@ -365,8 +501,8 @@ main p:nth-of-type(4) {
   column-gap: 15px;
 }
 /* DEMO 1 */
-main h1,
-main [role="heading"][aria-level="1"] {
+div.heading-example h1,
+div.heading-example [role="heading"][aria-level="1"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
@@ -376,29 +512,29 @@ main [role="heading"][aria-level="1"] {
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
 }
-main h2,
-main h5 [role="heading"][aria-level="2"],
-main [role="heading"][aria-level="5"] {
+div.heading-example h2,
+div.heading-example h5 [role="heading"][aria-level="2"],
+div.heading-example [role="heading"][aria-level="5"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
   font-family: 'Orienta', sans-serif;
   border: none;
 }
-main h2,
-main [role="heading"][aria-level="2"] {
+div.heading-example h2,
+div.heading-example [role="heading"][aria-level="2"] {
   font-size: 33px;
   line-height: 36.36363636px;
 }
-main h5,
-main [role="heading"][aria-level="5"] {
+div.heading-example h5,
+div.heading-example [role="heading"][aria-level="5"] {
   font-size: 22px;
   line-height: 54.54545455px;
 }
-main h3,
-main h6,
-main [role="heading"][aria-level="3"],
-main [role="heading"][aria-level="6"] {
+div.heading-example h3,
+div.heading-example h6,
+div.heading-example [role="heading"][aria-level="3"],
+div.heading-example [role="heading"][aria-level="6"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
@@ -407,29 +543,29 @@ main [role="heading"][aria-level="6"] {
   letter-spacing: 1px;
   font-style: italic;
 }
-main h3,
-main [role="heading"][aria-level="3"] {
+div.heading-example h3,
+div.heading-example [role="heading"][aria-level="3"] {
   font-size: 30px;
   line-height: 29.33333333px;
 }
-main h6,
-main [role="heading"][aria-level="6"] {
+div.heading-example h6,
+div.heading-example [role="heading"][aria-level="6"] {
   font-size: 18px;
   line-height: 48.88888889px;
 }
-main h4,
-main [role="heading"][aria-level="7"] {
+div.heading-example h4,
+div.heading-example [role="heading"][aria-level="7"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
   font-family: 'Orienta', sans-serif;
 }
-main h4,
-main [role="heading"][aria-level="4"] {
+div.heading-example h4,
+div.heading-example [role="heading"][aria-level="4"] {
   font-size: 25px;
   line-height: 14.4px;
 }
-main [role="heading"][aria-level="7"] {
+div.heading-example [role="heading"][aria-level="7"] {
   font-size: 18px;
   line-height: 20px;
 }

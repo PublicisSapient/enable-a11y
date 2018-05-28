@@ -3,17 +3,18 @@
 <head>
   <meta name="generator" content=
   "HTML Tidy for HTML5 for Windows version 5.4.0">
-  <title>Aria alert demo</title>
+  <title>ARIA Alert Demo</title>
   <meta charset="utf-8" >
   <link rel="stylesheet" type="text/css" href="css/alert.css" />
 </head>
 <body class="example">
 
-    <h1>Tests for role="alert"</h1>
-
     <?php include("includes/example-header.php"); ?>
 
     <main>
+        
+        <h1>ARIA Alert Demo</h1>
+
         <h2>Assertive alert</h2>
 
         <div id="assertive-alert" role="alert" aria-live="assertive" aria-expanded="true">This is an aria live region alert.</div>
@@ -27,7 +28,7 @@
 
         <h2>Polite Alert</h2> 
 
-        <div id="polite-alert" role="alert" aria-live="polite"></div>
+        <div id="polite-alert" role="alert" aria-live="polite" class="visually-hidden"></div>
 
 
         <div class="expando">

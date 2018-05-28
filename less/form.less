@@ -1,7 +1,4 @@
-@import "shared/reset";
-@import "shared/defaults";
-@import "shared/a11y";
-
+@import "shared/all"; 
 
 input[type="radio"],
 input[type="checkbox"],
@@ -29,17 +26,25 @@ fieldset,
 .aria-form-group {
   padding: 0.5em;
   margin-top: 1em;
-  padding-top: 1em;
+  padding-top: 2em;
   background-color: #EEEEEE;
+
+  legend,
+  .fieldset {
+    position: relative;
+    top: 1.5em;
+    border-color: #AAAAAA;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .fieldset {
+    top: -1.5em;
+    display: block;
+  }
 }
 
-fieldset legend {
-  position: relative;
-  top: 1.5em;
-  border-color: #AAAAAA;
-  font-weight: bold;
-  font-size: 1em;
-}
+
 
 fieldset label {
   font-weight: normal;
@@ -103,6 +108,5 @@ fieldset label {
       text-shadow: 0 0 0.0714em rgb(115,153,77);
       font-weight: bold;
     }
-
   }
 }

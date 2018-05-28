@@ -9,29 +9,40 @@
 
 <body>
 
-    <a href="#">Back</a>
+    <?php include("includes/example-header.php"); ?>
 
-    <h1>ARIA Img Role</h1>
+    <main>
 
-    <h2>Notes</h2>
+        <aside class="notes">
 
-    <ul>
-        <li>Both HTML and ARIA role work that same in NVDA and Voiceover.</li>
-    </ul>
+            <h2>Notes</h2>
 
-    <p>Code based on that from <a href="http://pauljadam.com/demos/img.html">Paul J Adam's img role demo</a>.</p>
-    
-    
-    <h2>HTML &lt;img&gt; Element &amp; alt attribute</h2>
-    <p><img src="images/card_icons.png" width="100" height="94" alt="Debit, Visa, MasterCard, American Express, Discover Network"/></p>
+            <ul>
+                <li>Both HTML and ARIA role work that same in NVDA and Voiceover.</li>
+            </ul>
+        </aside>
 
-    <h2>ARIA role=&quot;img&quot; &amp; aria-label=&quot;Accessible Name&quot;</h2>
-    <div class="clearfix">
-    <div class="sprite card_icons amex" role="img" aria-label="American Express"></div>
-    <div class="sprite card_icons discover" role="img" aria-label="Discover Network"></div>
-    <div class="sprite card_icons visa" role="img" aria-label="Visa"></div>
-    <div class="sprite card_icons master" role="img" aria-label="MasterCard"></div>
-</div>
+        <h1>ARIA Img Role</h1>
+
+
+        <p>Code based on that from
+            <a href="http://pauljadam.com/demos/img.html">Paul J Adam's img role demo</a>.</p>
+
+
+        <h2>HTML &lt;img&gt; Element &amp; alt attribute</h2>
+        <p>
+            <img src="images/card_icons.png" width="100" height="94" alt="Debit, Visa, MasterCard, American Express, Discover Network"
+            />
+        </p>
+
+        <h2>ARIA role=&quot;img&quot; &amp; aria-label=&quot;Accessible Name&quot;</h2>
+        <div class="clearfix">
+            <div class="sprite card_icons amex" role="img" aria-label="American Express"></div>
+            <div class="sprite card_icons discover" role="img" aria-label="Discover Network"></div>
+            <div class="sprite card_icons visa" role="img" aria-label="Visa"></div>
+            <div class="sprite card_icons master" role="img" aria-label="MasterCard"></div>
+        </div>
+    </main>
 </body>
 
 </html>

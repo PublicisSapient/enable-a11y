@@ -9,35 +9,46 @@
 </head>
 
 <body>
+    <?php include("includes/example-header.php"); ?>
 
-    <h1>Accessible Checkbox Demo</h1>
+    <main>
 
-    <p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to users.</p>
+        <aside class="notes">
+            <h2>Notes:</h2>
 
-    <h2>A real HTML checkbox</h2>
+            <p>All screenreaders seem to read both HTML and ARIA version the same way.</p>
+        </aside>
 
-    <p>The following is an
-        <code>&lt;input&gt;</code> tag with a
-        <code>&lt;label&gt;</code> tag describing what it is for.</p>
-    <div class="checkbox-container">
-        <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
-        <input id="html-checkbox" type="checkbox" />
-    </div>
+        <h1>Accessible Checkbox Demo</h1>
 
+        <p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to users.</p>
 
-    <h2>A DIV with a role of checkbox</h2>
-    <p>This is a
-        <code>&lt;div&gt;</code> tag that has its role attribute set to
-        <code>checkbox</code>.</p>
+        <h2>A real HTML checkbox</h2>
 
-    <div class="checkbox-container">
-        <label id="div-checkbox-label">I agree to sell my soul to Zoltan:</label>
-        <div aria-labelledby="div-checkbox-label" role="checkbox" tabindex="0" aria-checked="true">
+        <p>The following is an
+            <code>&lt;input&gt;</code> tag with a
+            <code>&lt;label&gt;</code> tag describing what it is for.</p>
+        <div class="checkbox-container">
+            <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
+            <input id="html-checkbox" type="checkbox" />
         </div>
-    </div>
 
 
-    <script src="js/shared/radio-and-checkbox-roles.js"></script>
+        <h2>A DIV with a role of checkbox</h2>
+        <p>This is a
+            <code>&lt;div&gt;</code> tag that has its role attribute set to
+            <code>checkbox</code>.</p>
+
+        <div class="checkbox-container">
+            <label id="div-checkbox-label">I agree to sell my soul to Zoltan:</label>
+            <div aria-labelledby="div-checkbox-label" role="checkbox" tabindex="0" aria-checked="true">
+            </div>
+        </div>
+
+
+        <script src="js/shared/radio-and-checkbox-roles.js"></script>
+
+    </main>
 </body>
 
 </html>

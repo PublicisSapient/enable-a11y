@@ -3,96 +3,100 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
     <title>Accessible Table Examples</title>
     <link rel="stylesheet" type="text/css" href="css/table.css" />
 </head>
 
 <body>
+    <?php include("includes/example-header.php"); ?>
 
-    <a href="#">Back</a>
+    <main>
 
-    <h1>Accessible Table Examples</h1>
+        <aside class="notes">
+            <h2>Notes:</h2>
+            <ul>
+                    <li>In voiceover, go to the rotor, choose the table and navigate around with the CAPS-LOCK + arrow-keys.
+                    </li>
+                    <li>
+                        In NVDA, press the T key to go to the next table (SHIFT+T to go to the previous one), use the arrow keys to get out of the
+                        caption and CTRL+ALT+arrow-keys to move around the table. To ensure you understand how the tables are being
+                        read, you may want to install the
+                        <a href="https://addons.nvda-project.org/addons/focusHighlight.en.html">
+                            Focus Highlight NVDA plugin</a>.
+                    </li>
+                </ul>
 
-    <h2>Hints</h2>
-
-    <ul>
-        <li>In voiceover, go to the rotor, choose the 
-            table and navigate around with the CAPS-LOCK + arrow-keys.
-        </li>
-        <li>
-            In NVDA, press the T key to go to the next table (SHIFT+T to go to the 
-            previous one), use the arrow keys to get out
-            of the caption and CTRL+ALT+arrow-keys to move around the table.
-            To ensure you understand how the tables are being read, you may want
-            to install the <a href="https://addons.nvda-project.org/addons/focusHighlight.en.html">
-            Focus Highlight NVDA plugin</a>.
-        </li>
-    </ul>
-
-    <h2>A Simple Table</h2>
-
-    <p>Just a simple table.</p>
+        </aside>
 
 
-    <table>
-        <caption>Shelly's Daughters</caption>
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Birthday</th>
-            </tr>
-        </thead>
+        <h1>Accessible Table Examples</h1>
 
-        <tbody>
-            <tr>
-                <th scope="row">Jackie</th>
-                <td>5</td>
-                <td>April 5</td>
-            </tr>
 
-            <tr>
-                <th scope="row">Beth</th>
-                <td>8</td>
-                <td>January 14</td>
-            </tr>
-        </tbody>
-    </table>
+        <h2>A Simple Table</h2>
 
-    <h2>A Simple Table Made Using Aria Roles</h2>
+        <p>Just a simple table.</p>
 
-    <p>This is relatively new to aria and may not be implemented by all assistive technologies.</p>
 
-    <div id="table1" role="table" aria-describedby="table1-caption">
-        <div id="table1-caption" class="caption">Shelly's Daughters</div>
+        <table>
+            <caption>Shelly's Daughters</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Birthday</th>
+                </tr>
+            </thead>
 
-        <div class="thead" role="rowgroup">
-            <div role="row">
+            <tbody>
+                <tr>
+                    <th scope="row">Jackie</th>
+                    <td>5</td>
+                    <td>April 5</td>
+                </tr>
 
-                <!-- These `scope="col"` items are in to make voiceover report the number of columns in the table.-->
-                <span role="columnheader" scope="col">Name</span>
-                <span role="columnheader" scope="col">Age</span>
-                <span role="columnheader" scope="col">Birthday</span>
+                <tr>
+                    <th scope="row">Beth</th>
+                    <td>8</td>
+                    <td>January 14</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>A Simple Table Made Using Aria Roles</h2>
+
+        <p>This is relatively new to aria and may not be implemented by all assistive technologies.</p>
+
+        <div id="table1" role="table" aria-describedby="table1-caption">
+            <div id="table1-caption" class="caption">Shelly's Daughters</div>
+
+            <div class="thead" role="rowgroup">
+                <div role="row">
+
+                    <!-- These `scope="col"` items are in to make voiceover report the number of columns in the table.-->
+                    <span role="columnheader" scope="col">Name</span>
+                    <span role="columnheader" scope="col">Age</span>
+                    <span role="columnheader" scope="col">Birthday</span>
+                </div>
             </div>
+
+            <div class="tbody" role="rowgroup">
+                <div role="row">
+                    <span role="rowheader">Jackie</span>
+                    <span role="cell">5</span>
+                    <span role="cell">April 5</span>
+                </div>
+
+                <div role="row">
+                    <span role="rowheader">Beth</span>
+                    <span role="cell">8</span>
+                    <span role="cell">January 14</span>
+                </div>
+            </div>
+
         </div>
 
-        <div class="tbody" role="rowgroup">
-            <div role="row">
-                <span role="rowheader">Jackie</span>
-                <span role="cell">5</span>
-                <span role="cell">April 5</span>
-            </div>
-
-            <div role="row">
-                <span role="rowheader">Beth</span>
-                <span role="cell">8</span>
-                <span role="cell">January 14</span>
-            </div>
-        </div>
-
-    </div>
-
+    </main>
     <script src="js/role-checkbox.js"></script>
 </body>
 

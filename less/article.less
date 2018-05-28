@@ -1,13 +1,25 @@
-@import "shared/reset";
-@import "shared/defaults";
-@import "shared/a11y";
-@import "shared/landmarks";
+@import "shared/all"; 
 @import "table";
 
 table {
     td:first-child,
     td:nth-child(2) {
         font-family: "Consolas",  monospace;
+    }
+
+    td:first-child {
+        width: 25%;
+    }
+
+    td:nth-child(2) {
+        width: 25%;
+    }
+
+    @media @mobile {
+        td {
+            font-size: 0.8em;
+            width: auto;
+        }
     }
 }
 

@@ -12,20 +12,26 @@
 
 <body>
 
-    <a href="#">Back</a>
+    <?php include("includes/example-header.php"); ?>
+
+    <main>
 
     <h1>Accessible Tabs Examples</h1>
 
-    <h2>Notes:</h2>
+    <aside class="notes">
+        <h2>Notes:</h2>
 
-    <ul>
-        <li>This example is originally from <a href="http://simplyaccessible.com/article/danger-aria-tabs/">Danger! ARIA tabs</a>, written by <a href="http://simplyaccessible.com/article/author/jeffsmith/">Jeff Smith</a>.</li>
-        <li>This doesn't use ARIA roles but a bunch of links with hash-anchors within the page.</li>
-        <li>The problem is that a visually-impaired user doesn't realize content is hidden and will miss the hidden content in reading mode.</li>
-    </ul>
+        <ul>
+            <li>This example is originally from <a href="http://simplyaccessible.com/article/danger-aria-tabs/">Danger! ARIA tabs</a>, written by <a href="http://simplyaccessible.com/article/author/jeffsmith/">Jeff Smith</a>.</li>
+            <li>This doesn't use ARIA roles but a bunch of links with hash-anchors within the page.</li>
+            <li>The problem is that a visually-impaired user doesn't realize content is hidden and will miss the hidden content in reading mode.</li>
+        </ul>
+    </aside>
+
+    
 
 
-    <h1>Top rated craft beers</h1>
+    <h2>Top rated craft beers</h2>
     <div id="tabs">
         <ul>
             <li><a href="#ipa">India Pale Ale (IPA)</a></li>
