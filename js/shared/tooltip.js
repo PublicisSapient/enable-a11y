@@ -42,7 +42,6 @@ const tooltip = new function () {
     }
 
     this.show = (e) => {
-        console.log('show');
         const target = e.target;
         const text = target.dataset.tooltip;
 
@@ -54,8 +53,12 @@ const tooltip = new function () {
             tooltipEl.innerHTML = text;
             tooltipEl.setAttribute('aria-hidden', "false");
             tooltipEl.classList.remove('tooltip--hidden');
+            
+            const tooltipRect = tooltipEl.getBoundingClientRect();
+
+            console.log(tooltipRect.width);
             tooltipStyle.top = 'calc(' + targetRect.bottom + 'px + 1em)';
-            tooltipStyle.left = (targetRect.left + targetRect.width / 2) + 'px';
+            tooltipStyle.left = (targetRect.left) + 'px';
         }
     }
 }

@@ -157,11 +157,8 @@ h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-ul,
-ol {
-  padding-left: 3rem;
-}
 ul {
+  padding-left: 3rem;
   list-style: disc;
 }
 ul,
@@ -464,38 +461,4 @@ footer,
 footer a,
 [role="contentinfo"] a {
   color: #ccccff;
-}
-button.switch {
-  margin: 0;
-  padding: 0;
-  height: 26px;
-  border: 2px solid black;
-  display: inline-block;
-  margin-right: 0.25em;
-  line-height: 20px;
-  vertical-align: middle;
-  text-align: center;
-  font: 12px "Open Sans", "Arial", serif;
-}
-button.switch span {
-  padding: 0 4px;
-}
-[role="switch"][aria-checked="false"] :first-child,
-[role="switch"][aria-checked="true"] :last-child {
-  background: #262;
-  color: #eef;
-}
-[role="switch"][aria-checked="false"] :last-child,
-[role="switch"][aria-checked="true"] :first-child {
-  color: #bbd;
-}
-label.switch {
-  font: 16px "Open Sans", "Arial", sans-serif;
-  line-height: 20px;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }

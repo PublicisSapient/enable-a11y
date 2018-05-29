@@ -4,32 +4,34 @@
 <head>
     <title>Aria Log Role Examples</title>
     <link rel="stylesheet" type="text/css" href="css/log.css" />
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
 </head>
 
 <body>
+    <?php include("includes/example-header.php"); ?>
 
-    <a href="#">Back</a>
+    <main>
 
-    <h1>Aria Log Role Examples</h1>
 
-    <h2>Notes:</h2>
+        <h1>Aria Log Role Examples</h1>
+        <aside class="notes">
 
-    <ul>
-        <li>By default, Chromevox is the only browser will only say the updates
-            in the log.  All other screenreaders will read the whole log like
-            an alert.
-        </li>
-        <li>
-            NVDA does not just read the differences, even when hitting NVDA+5
-        </li>
-    </ul>
+            <h2>Notes:</h2>
 
-    <h2>Example 1: </h2>
+            <ul>
+                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screenreaders will
+                    read the whole log like an alert.
+                </li>
+                <li>
+                    NVDA does not just read the differences, even when hitting NVDA+5
+                </li>
+            </ul>
+        </aside>
+        <h2>Example 1: </h2>
 
-    <pre id="syslog" role="log" aria-atomic="false"></pre>
-    
-    
+        <pre id="syslog" role="log" aria-atomic="false"></pre>
+
+    </main>
     <script src="js/log.js"></script>
 </body>
 
