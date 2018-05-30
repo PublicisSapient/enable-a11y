@@ -33,14 +33,13 @@
             <h2>Fun Fact:</h2>
 
             <p>
-                The User Experience for interacting with ARIA landmarks varies from screen reader to
-                screen reader.
+                The User Experience for interacting with ARIA landmarks varies from screen reader to screen reader.
             </p>
         </aside>
 
         There are six roles that are used as landmarks:
 
-        
+
 
         <table>
             <caption>The Six ARIA landmarks</caption>
@@ -76,27 +75,34 @@
                     <td>contentinfo</td>
                     <td></td>
                     <td>
-                        A large perceivable region that contains information about the parent document.  Note: A lot of demos state that <code>footer</code>
-                        is the property HTML equivalent to <code>contentinfo</code>, but this is only partially true.  In Firefox the footer is mapped to ARIA <code>contentinfo</code>
-                        In Safari and Chrome, <code>footer</code> is mapped to ARIA <code>group</code> role if it is contained within a
-                        section or article element otherwise it is mapped to role=contentinfo.
-                        It is recommended to include a role inside your footer if you want it
-                        to be considered a landmark. Source, 
+                        A large perceivable region that contains information about the parent document. Note: A lot of demos state that
+                        <code>footer</code> is the property HTML equivalent to
+                        <code>contentinfo</code>, but this is only partially true. In Firefox the footer is mapped to ARIA
+                        <code>contentinfo</code> In Safari and Chrome,
+                        <code>footer</code> is mapped to ARIA
+                        <code>group</code> role if it is contained within a section or article element otherwise it is mapped to role=contentinfo.
+                        It is recommended to include a role inside your footer if you want it to be considered a landmark.
+                        Source,
                         <a href="https://twitter.com/stevefaulkner?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Steve Faulkner</a>
-                        of the W3C HTML Working Group 
+                        of the W3C HTML Working Group
                         <a href="https://stackoverflow.com/questions/11191746/should-role-contentinfo-be-always-added-on-footer-element">via this Stack Overflow thread</a>.
                     </td>
                 </tr>
                 <tr>
                     <td>search</td>
                     <td></td>
-                    <td>A search form field.  Note that some sites say that <code>&lt;input type="search"&gt;</code> will map to this automatically,
-                    but a lot of screen readers don't (e.g. Voiceover and NVDA), so you should add the role of <code>search</code> here.</td>
+                    <td>A search form field. Note that some sites say that
+                        <code>&lt;input type="search"&gt;</code> will map to this automatically, but a lot of screen readers don't (e.g. Voiceover and NVDA), so
+                        you should add the role of
+                        <code>search</code> here.</td>
                 </tr>
                 <tr>
-                    <td><a href="12-form.html">form</a></td>
+                    <td>
+                        <a href="12-form.html">form</a>
+                    </td>
                     <td>&lt;form&gt;</td>
-                    <td>NVDA doesn't recognize a form element by itself as a landmark. In order to do this, we must add the ARIA form role.</td>
+                    <td>NVDA doesn't recognize a form element by itself as a landmark. In order to do this, we must add the ARIA
+                        form role.</td>
                 </tr>
                 <tr>
                     <td>application</td>
@@ -140,8 +146,9 @@
                     <td></td>
 
                     <td>
-                        A status bar or area of the screen that provides an updated status of some kind. Screen reader users have a special command to read the current status.
-                        To maximize compatibility, add a redundant <code>aria-live="polite"</code> when using this role.
+                        A status bar or area of the screen that provides an updated status of some kind. Screen reader users have a special command
+                        to read the current status. To maximize compatibility, add a redundant
+                        <code>aria-live="polite"</code> when using this role.
                     </td>
                 </tr>
                 <tr id="alert">
@@ -152,7 +159,8 @@
                     <td></td>
 
                     <td>
-                        Error or warning message that flashes on the screen. Alerts are particularly important for client side validation notices to users. 
+                        Error or warning message that flashes on the screen. Alerts are particularly important for client side validation notices
+                        to users.
                         <code>aria-live="polite"</code> when using this role.
                     </td>
                 </tr>
@@ -164,9 +172,9 @@
                     <td>&lt;progress&gt;</td>
 
                     <td>
-                        A hybrid between a widget and a live region. Use this with aria-valuemin, aria-valuenow and aria-valuemax.
-                        Note, as far as all that I have tested, a progressbar is only treated by a live region by NVDA and it has to be
-                        set up to be treated as such.
+                        A hybrid between a widget and a live region. Use this with aria-valuemin, aria-valuenow and aria-valuemax. Note, as far as
+                        all that I have tested, a progressbar is only treated by a live region by NVDA and it has to be set
+                        up to be treated as such.
                     </td>
                 </tr>
                 <tr id="marquee">
@@ -662,7 +670,8 @@
 
                 <tr id="spinbutton">
                     <td>
-                        <a href="30-spinner.html">spinbutton</a></td>
+                        <a href="30-spinner.html">spinbutton</a>
+                    </td>
 
                     <td>input element with a type attribute in the Number state</td>
 
@@ -788,6 +797,18 @@
             technology. Use ARIA if you don't want to change the structure of you HTML drastically (e.g. when your CSS or
             JavaScipt is tightly coupled with your document structure and it would cause regression issues to change it).
         </p>
+
+        <h2>The Five Rules of ARIA</h2>
+
+        <ol>
+            <li>If you can use a native HTML element [HTML51] or attribute with the semantics and behavior you require already
+                built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible,
+                then do so.</li>
+            <li>Do not change native semantics, unless you really have to.</li>
+            <li>All interactive ARIA controls must be usable with the keyboard.</li>
+            <li>Do not use role="presentation" or aria-hidden="true" on a visible focusable element.</li>
+            <li>All interactive elements must have an accessible name. </li>
+        </ol>
 
 
         <h2>Other Resources</h2>
