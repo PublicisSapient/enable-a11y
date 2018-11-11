@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Button demo</title>
     <link rel="stylesheet" type="text/css" href="css/button.css" />
+    <link rel="stylesheet" type="text/css" href="css/switch.css" />
 </head>
 
 <body>
@@ -62,7 +63,17 @@
             </a>
         </div>
 
+        <h2>Toggle Button</h2>
+
+        <button aria-labelledby="VehicleDrive__label" role="switch" aria-checked="true" id="VehicleDrive" aria-label="four wheel drive" aria-describedby="VehicleDrive-checked">
+            <span aria-label="two wheel drive" id="VehicleDrive-unchecked">2WD</span>
+            <span aria-label="four wheel drive" id="VehicleDrive-checked">4WD</span>
+        </button>
+        <label id="VehicleDrive__label" class="switch--label">Vehicle Drive </label>
+
     </main>
+
+    <script src="js/shared/toggle-button.js"></script>
 </body>
 
 </html>

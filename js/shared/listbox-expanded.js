@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
     this.button.addEventListener('keyup', this.checkShow.bind(this));
     this.listbox.listboxNode.addEventListener('blur', this.hideListbox.bind(this));
     this.listbox.listboxNode.addEventListener('keydown', this.checkHide.bind(this));
+    this.listbox.listboxNode.addEventListener('focus', this.checkHide.bind(this));
     this.listbox.setHandleFocusChange(this.onFocusChange.bind(this));
   };
   
@@ -40,6 +41,7 @@ window.addEventListener('load', function () {
   };
   
   aria.ListboxButton.prototype.checkHide = function (evt) {
+    
     var key = evt.which || evt.keyCode;
   
     switch (key) {

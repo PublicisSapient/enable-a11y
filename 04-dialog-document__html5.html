@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Incredible Accessible Modal Window, Version 4</title>
+    <meta charset="utf-8">
+    <link media="all" rel="stylesheet" href="css/shared/dialog-polyfill.css" />
+</head>
+
+<body>
+    <?php include("includes/example-header.php"); ?>
+
+    <main>
+
+        <aside class="notes">
+            <h2>Notes:</h2>
+
+
+        </aside>
+        <!-- Simple pop-up dialog box, containing a form -->
+        <dialog id="favDialog">
+            <form method="dialog">
+                <section>
+                    <p>
+                        <label for="favAnimal">Favorite animal:</label>
+                        <select id="favAnimal">
+                            <option></option>
+                            <option>Brine shrimp</option>
+                            <option>Red panda</option>
+                            <option>Spider monkey</option>
+                        </select>
+                    </p>
+                </section>
+                <menu>
+                    <button id="cancel" type="reset">Cancel</button>
+                    <button type="submit">Confirm</button>
+                </menu>
+            </form>
+        </dialog>
+
+        <menu>
+            <button id="updateDetails">Update details</button>
+        </menu>
+    </main>
+
+    <script src="js/shared/dialog-polyfill.js"></script>
+    <script src="js/dialog-example.js"></script>
+</body>
+
+</html>

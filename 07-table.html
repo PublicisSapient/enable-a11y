@@ -52,6 +52,44 @@
                 <tr>
                     <th scope="row">Jackie</th>
                     <td>5</td>
+                    <td>January 1</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Beth</th>
+                    <td>8</td>
+                    <td>March 1</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Birthday Delta</th>
+                    <td colspan="2">59 days.</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h2>A Simple Table with the caption not placed at the top of the table node</h2>
+
+        <p>Just a simple table.</p>
+
+
+        <table>
+            
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Birthday</th>
+                </tr>
+            </thead>
+
+            <caption>Shelly's Daughters</caption>
+
+            <tbody>
+                <tr>
+                    <th scope="row">Jackie</th>
+                    <td>5</td>
                     <td>April 5</td>
                 </tr>
 
@@ -67,7 +105,7 @@
 
         <p>This is relatively new to aria and may not be implemented by all assistive technologies.</p>
 
-        <div id="table1" role="table" aria-describedby="table1-caption">
+        <div id="table1" role="table" aria-labelledby="table1-caption">
             <div id="table1-caption" class="caption">Shelly's Daughters</div>
 
             <div class="thead" role="rowgroup">
@@ -91,6 +129,81 @@
                     <span role="rowheader">Beth</span>
                     <span role="cell">8</span>
                     <span role="cell">January 14</span>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>A Simple Table Made Using Aria Roles Without rowgroup nodes</h2>
+
+        <p>This is relatively new to aria and may not be implemented by all assistive technologies.</p>
+
+        <div id="table1" role="table" aria-labelledby="table1-caption">
+            <div id="table1-caption" class="caption">Shelly's Daughters</div>
+
+            <div class="thead">
+                <div role="row">
+
+                    <!-- These `scope="col"` items are in to make voiceover report the number of columns in the table.-->
+                    <span role="columnheader" scope="col">Name</span>
+                    <span role="columnheader" scope="col">Age</span>
+                    <span role="columnheader" scope="col">Birthday</span>
+                </div>
+            </div>
+
+            <div class="tbody" >
+                <div role="row">
+                    <span role="rowheader">Jackie</span>
+                    <span role="cell">5</span>
+                    <span role="cell">April 5</span>
+                </div>
+
+                <div role="row">
+                    <span role="rowheader">Beth</span>
+                    <span role="cell">8</span>
+                    <span role="cell">January 14</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <h2>A Complex Table Made Using Aria Roles</h2>
+
+        
+
+        <div id="table2" role="table" aria-labelledby="table2-caption" >
+            
+            <div class="thead" role="rowgroup">
+                <div role="row">
+
+                    <span role="row" ></span>
+                    <span role="columnheader" scope="col">ACME Widgets</span>
+                    <span role="columnheader" scope="col">Our Competitor's Widgets</span>
+                </div>
+            </div>
+
+            <div id="table2-caption" class="caption">ACME Widgets compared to the competition</div>
+
+
+            <div class="tbody" role="rowgroup">
+                <div role="row">
+                    <span role="rowheader">Power Usage (in kilowatt hours)</span>
+                    <span role="cell">5 kWh</span>
+                    <span role="cell">20 kWh</span>
+                </div>
+
+                <div role="row">
+                    <span role="rowheader">Costs for fuel per hour</span>
+                    <span role="cell">$20</span>
+                    <span role="cell">$100</span>
+                </div>
+            </div>
+
+            <div class="tfoot" role="rowgroup">
+                <div role="row">
+                    <span role="rowheader">Total Savings in one day</span>
+                    <span role="cell" aria-colspan="2">$45600</span>
                 </div>
             </div>
 

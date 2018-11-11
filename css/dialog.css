@@ -99,6 +99,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section {
@@ -157,13 +158,17 @@ h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-ul {
+ul,
+ol {
   padding-left: 3rem;
+}
+ul {
   list-style: disc;
 }
 ul,
 p {
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .example h1 {
   text-align: center;
@@ -255,39 +260,40 @@ p {
  * only requires that the focus state is visible, so you can have, say, the 
  * focus state of a button different than that of a form element. 
  */
-.bypass-block-target:focus:target,
+.bypass-block-target:focus:target {
+  outline: solid 2px #ffa500;
+}
 a[href]:not([tabindex="-1"]):focus,
-area:not([tabindex="-1"]):focus,
-[role="button"]:not([tabindex="-1"]):focus,
-[role="link"]:not([tabindex="-1"]):focus,
+area[href]:not([tabindex="-1"]):focus,
+details:not([tabindex="-1"]):focus,
 iframe:not([tabindex="-1"]):focus,
 [contentEditable=true]:not([tabindex="-1"]):focus,
 :enabled:not([tabindex="-1"]):focus,
+object:not([tabindex="-1"]):focus,
+embed:not([tabindex="-1"]):focus,
 [tabindex]:not([tabindex="-1"]):focus {
   /* You can replace this with whatever style you want for focus state */
   outline: solid 2px #ffa500;
 }
-/*
- * The above selector will match focusable elements when they are clicked
- * with a mouse.  If you don't want that to happen, use this rule. 
- */
 a[href]:not([tabindex="-1"]):hover:focus,
-area:not([tabindex="-1"]):hover:focus,
-[role="button"]:not([tabindex="-1"]):hover:focus,
-[role="link"]:not([tabindex="-1"]):hover:focus,
+area[href]:not([tabindex="-1"]):hover:focus,
+details:not([tabindex="-1"]):hover:focus,
 iframe:not([tabindex="-1"]):hover:focus,
 [contentEditable=true]:not([tabindex="-1"]):hover:focus,
 :enabled:not([tabindex="-1"]):hover:focus,
+object:not([tabindex="-1"]):hover:focus,
+embed:not([tabindex="-1"]):hover:focus,
 [tabindex]:not([tabindex="-1"]):hover:focus {
   outline: solid 2px rgba(255, 165, 0, 0.5);
 }
 a[href]:not([tabindex="-1"]):focus:active,
-area:not([tabindex="-1"]):focus:active,
-[role="button"]:not([tabindex="-1"]):focus:active,
-[role="link"]:not([tabindex="-1"]):focus:active,
+area[href]:not([tabindex="-1"]):focus:active,
+details:not([tabindex="-1"]):focus:active,
 iframe:not([tabindex="-1"]):focus:active,
 [contentEditable=true]:not([tabindex="-1"]):focus:active,
 :enabled:not([tabindex="-1"]):focus:active,
+object:not([tabindex="-1"]):focus:active,
+embed:not([tabindex="-1"]):focus:active,
 [tabindex]:not([tabindex="-1"]):focus:active {
   outline: none;
 }
@@ -464,21 +470,7 @@ footer a,
 /*
  * This CSS from http://gdkraus.github.io/accessible-modal-dialog/
  */
-#modalOverlay {
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  /* places the modal overlay between the main page and the modal dialog*/
-  background-color: #000;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-#modal {
+.a11y-modal {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -492,23 +484,44 @@ footer a,
   left: 25%;
   display: none;
 }
-#modal h1 {
+.a11y-modal.visible {
+  display: block;
+}
+.a11y-modal h1 {
   text-align: center;
 }
-.modalCloseButton {
-  float: right;
+.a11y-modal__button--close {
   position: absolute;
-  top: 10px;
-  left: 92%;
-  height: 25px;
+  top: -20px;
+  right: -20px;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  display: inline;
 }
-.modalCloseButton img {
+.a11y-modal__button--close img {
   border: 0;
+  width: 38px;
+  height: 38px;
 }
-.screen-reader-offscreen {
-  position: absolute;
-  left: -999px;
-  width: 1px;
-  height: 1px;
-  top: auto;
+#a11y-modal__overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  /* places the modal overlay between the main page and the modal dialog*/
+  background-color: #000;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+#a11y-modal__overlay.visible {
+  display: block;
 }

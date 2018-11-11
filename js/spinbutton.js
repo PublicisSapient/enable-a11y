@@ -2,7 +2,7 @@ $(document).ready(function () {
     var spin1 = new spinbutton('sb1', 'sb1_up', 'sb1_down', 10);  
     var spin2 = new spinbutton('sb2', 'sb2_up', 'sb2_down', 50);  
   }); // end ready
-  
+    
   //
   // Function spinbutton() is a constructor for an ARIA spinbutton widget. The widget
   // binds to an element with role='spinbutton'.
