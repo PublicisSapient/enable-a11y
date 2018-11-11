@@ -99,6 +99,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 menu,
 nav,
 section {
@@ -259,39 +260,40 @@ p {
  * only requires that the focus state is visible, so you can have, say, the 
  * focus state of a button different than that of a form element. 
  */
-.bypass-block-target:focus:target,
+.bypass-block-target:focus:target {
+  outline: solid 2px #ffa500;
+}
 a[href]:not([tabindex="-1"]):focus,
-area:not([tabindex="-1"]):focus,
-[role="button"]:not([tabindex="-1"]):focus,
-[role="link"]:not([tabindex="-1"]):focus,
+area[href]:not([tabindex="-1"]):focus,
+details:not([tabindex="-1"]):focus,
 iframe:not([tabindex="-1"]):focus,
 [contentEditable=true]:not([tabindex="-1"]):focus,
 :enabled:not([tabindex="-1"]):focus,
+object:not([tabindex="-1"]):focus,
+embed:not([tabindex="-1"]):focus,
 [tabindex]:not([tabindex="-1"]):focus {
   /* You can replace this with whatever style you want for focus state */
   outline: solid 2px #ffa500;
 }
-/*
- * The above selector will match focusable elements when they are clicked
- * with a mouse.  If you don't want that to happen, use this rule. 
- */
 a[href]:not([tabindex="-1"]):hover:focus,
-area:not([tabindex="-1"]):hover:focus,
-[role="button"]:not([tabindex="-1"]):hover:focus,
-[role="link"]:not([tabindex="-1"]):hover:focus,
+area[href]:not([tabindex="-1"]):hover:focus,
+details:not([tabindex="-1"]):hover:focus,
 iframe:not([tabindex="-1"]):hover:focus,
 [contentEditable=true]:not([tabindex="-1"]):hover:focus,
 :enabled:not([tabindex="-1"]):hover:focus,
+object:not([tabindex="-1"]):hover:focus,
+embed:not([tabindex="-1"]):hover:focus,
 [tabindex]:not([tabindex="-1"]):hover:focus {
   outline: solid 2px rgba(255, 165, 0, 0.5);
 }
 a[href]:not([tabindex="-1"]):focus:active,
-area:not([tabindex="-1"]):focus:active,
-[role="button"]:not([tabindex="-1"]):focus:active,
-[role="link"]:not([tabindex="-1"]):focus:active,
+area[href]:not([tabindex="-1"]):focus:active,
+details:not([tabindex="-1"]):focus:active,
 iframe:not([tabindex="-1"]):focus:active,
 [contentEditable=true]:not([tabindex="-1"]):focus:active,
 :enabled:not([tabindex="-1"]):focus:active,
+object:not([tabindex="-1"]):focus:active,
+embed:not([tabindex="-1"]):focus:active,
 [tabindex]:not([tabindex="-1"]):focus:active {
   outline: none;
 }
@@ -465,7 +467,8 @@ footer a,
 [role="contentinfo"] a {
   color: #ccccff;
 }
-button.switch {
+[role="switch"],
+[role="switch"][aria-checked] {
   margin: 0;
   padding: 0;
   height: 26px;
@@ -477,19 +480,32 @@ button.switch {
   text-align: center;
   font: 12px "Open Sans", "Arial", serif;
 }
-button.switch span {
+[role="switch"] span,
+[role="switch"][aria-checked] span {
   padding: 0 4px;
 }
 [role="switch"][aria-checked="false"] :first-child,
-[role="switch"][aria-checked="true"] :last-child {
+[role="switch"][aria-checked][aria-checked="false"] :first-child,
+[role="switch"][aria-checked="true"] :last-child,
+[role="switch"][aria-checked][aria-checked="true"] :last-child,
+[role="switch"][aria-pressed="false"] :first-child,
+[role="switch"][aria-checked][aria-pressed="false"] :first-child,
+[role="switch"][aria-pressed="true"] :last-child,
+[role="switch"][aria-checked][aria-pressed="true"] :last-child {
   background: #262;
   color: #eef;
 }
 [role="switch"][aria-checked="false"] :last-child,
-[role="switch"][aria-checked="true"] :first-child {
+[role="switch"][aria-checked][aria-checked="false"] :last-child,
+[role="switch"][aria-checked="true"] :first-child,
+[role="switch"][aria-checked][aria-checked="true"] :first-child,
+[role="switch"][aria-pressed="false"] :last-child,
+[role="switch"][aria-checked][aria-pressed="false"] :last-child,
+[role="switch"][aria-pressed="true"] :first-child,
+[role="switch"][aria-checked][aria-pressed="true"] :first-child {
   color: #bbd;
 }
-label.switch {
+label.switch--label {
   font: 16px "Open Sans", "Arial", sans-serif;
   line-height: 20px;
   vertical-align: middle;

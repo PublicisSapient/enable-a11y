@@ -45,8 +45,47 @@
             </div>
         </div>
 
+        <h2>A Checkbox with content that only appears when it is checked.</h2>
+
+        <p>
+            If the checkbox below is checked, content appears.
+        </p>
+            <div class="checkbox-container">
+                <form>
+                    <label for="html-checkbox-with-visibleif">I want to subscribe to the Zoltanic Foundation's newsletter 
+                        <span class="visually-hidden visibleIf" data-visibleif-rule="iAgree != 'yes'">
+                            (checking this will add mailing information fields below)
+                        </span>
+                        <span class="visually-hidden visibleIf" data-visibleif-rule="iAgree == 'yes'">
+                            (unchecking this will remove the mailing information fields below)
+                            </span>
+                        :
+                    </label>
+                    <input id="html-checkbox-with-visibleif" name="iAgree" type="checkbox" value="yes" />
+
+                    <div class="visibleIf" data-visibleif-rule="iAgree == 'yes'">
+                            <div>
+                            <label for="name">Your name:</label>
+                            <input type="text" name="name" id="name" />
+                            </div>
+
+                            <div>
+                            <label for="address">Your address:</label>
+                            <input type="text" name="address" id="address" />
+                            </div>
+
+                            <div>
+                            <label for="emailaddress">Your email address:</label>
+                            <input type="text" name="emailaddress" id="emailaddress" />
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </p>
+
 
         <script src="js/shared/radio-and-checkbox-roles.js"></script>
+        <script src="js/shared/visibleIf.js"></script>
 
     </main>
 </body>

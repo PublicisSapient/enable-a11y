@@ -17,7 +17,7 @@
             <input role="search" type="search" id="search-input" name="search" />
         </form>
 
-        <nav>
+        <nav aria-label="Main Navigation">
             <ul>
                 <li>
                     <a href="2.4.1-skip-nav.html">Home</a>
