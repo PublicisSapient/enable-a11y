@@ -3,6 +3,9 @@
     var cancelButton = document.getElementById('cancel');
     var favDialog = document.getElementById('favDialog');
   
+    dialogPolyfill.registerDialog(favDialog);
+    registerFocusRestoreDialog(favDialog);
+
     // Update button opens a modal dialog
     updateButton.addEventListener('click', function() {
       favDialog.showModal();
@@ -12,6 +15,7 @@
     cancelButton.addEventListener('click', function() {
       favDialog.close();
     });
+
   })();
   
   
