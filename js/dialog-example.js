@@ -1,20 +1,32 @@
 (function() {
-    var updateButton = document.getElementById('updateDetails');
-    var cancelButton = document.getElementById('cancel');
-    var favDialog = document.getElementById('favDialog');
-  
-    dialogPolyfill.registerDialog(favDialog);
-    registerFocusRestoreDialog(favDialog);
+    // Button that opens the dialog
+    const updateButton = document.getElementById('updateDetails');
 
-    // Update button opens a modal dialog
+    // Clicking this button opens the dialog
     updateButton.addEventListener('click', function() {
       favDialog.showModal();
     });
-  
-    // Form cancel button closes the dialog box
+
+    // The modal's cancel button
+    const cancelButton = document.getElementById('cancel');
+
+    // Clicking the cancel button will close the dialog
     cancelButton.addEventListener('click', function() {
       favDialog.close();
     });
+
+    // The <dialog> element itself
+    const favDialog = document.getElementById('favDialog');
+
+    // If we are using the polyfill, then initialize it
+    if (window.dialogPolyfill) {
+      dialogPolyfill.registerDialog(favDialog);
+    }
+
+    // Remove this for now.
+    if (window.registerFocusRestoreDialog) {
+      registerFocusRestoreDialog(favDialog);
+    }
 
   })();
   

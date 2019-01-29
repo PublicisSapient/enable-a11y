@@ -3,6 +3,7 @@
  * upgrade a dialog more than once. Supports IE11+ and is a no-op otherwise.
  * @param {!HTMLDialogElement} dialog to upgrade
  */
+
 var registerFocusRestoreDialog = (function() {
     if (!window.WeakMap || !window.MutationObserver) {
       return function() {};
@@ -37,8 +38,10 @@ var registerFocusRestoreDialog = (function() {
       // watch for 'open' change and clear saved
       var mo = new MutationObserver(function() {
         if (dialog.hasAttribute('open')) {
-            accessibility.addMobileFocusLoop();
+            accessibility.setKeepFocusInside(dialog, true);
+            accessibility.setMobileFocusLoop(dialog);
         } else {
+            accessibility.setKeepFocusInside(dialog, false);
             accessibility.removeMobileFocusLoop();
         }
       });
@@ -50,10 +53,8 @@ var registerFocusRestoreDialog = (function() {
           return;  // in native, this fires the frame later
         }
         var savedFocus = registered.get(dialog);
-        console.log('let us see', savedFocus);
         if (document.contains(savedFocus)) {
           var wasFocus = document.activeElement;
-          console.log('ha');
           savedFocus.focus();
           if (document.activeElement !== savedFocus) {
             wasFocus.focus();  // restore focus, we couldn't focus saved
