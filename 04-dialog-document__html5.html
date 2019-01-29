@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>The Incredible Accessible Modal Window, Version 4</title>
-    <meta charset="utf-8">
-    <link media="all" rel="stylesheet" href="css/shared/dialog-polyfill.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link media="all" rel="stylesheet" href="css/dialog-html5.css" />
 </head>
 
 <body>
@@ -19,24 +19,31 @@
 
         </aside>
         <!-- Simple pop-up dialog box, containing a form -->
-        <dialog id="favDialog">
-            <form method="dialog">
-                <section>
-                    <p>
-                        <label for="favAnimal">Favorite animal:</label>
-                        <select id="favAnimal">
-                            <option></option>
-                            <option>Brine shrimp</option>
-                            <option>Red panda</option>
-                            <option>Spider monkey</option>
-                        </select>
-                    </p>
-                </section>
-                <menu>
-                    <button id="cancel" type="reset">Cancel</button>
-                    <button type="submit">Confirm</button>
-                </menu>
-            </form>
+        <dialog id="favDialog" aria-labelledby="favDialog__label" aria-describedby="favDialog__description">
+            
+            <div role="document">
+                <button id="cancel" class="a11y-modal__button--close" data-modal-function="hide">
+                    <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close this dialog">
+                </button>
+                <h2 id="favDialog__label">Login</h2>
+                <p id="favDialog__description">In order to continue, please log into the application</p>
+                <form method="dialog">
+                    <section>
+                        <div>
+                            <label for="username">Username:</label>
+                            <input id="username" type="text" name="u" />
+                        </div>
+                        <div>
+                            <label for="password">Password:</label>
+                            <input id="password" type="password" name="p" />
+                        </div>
+                    </section>
+                    <menu>
+                        <button id="cancel" type="reset">Cancel</button>
+                        <button type="submit">Confirm</button>
+                    </menu>
+                </form>
+            </div>
         </dialog>
 
         <menu>
@@ -44,7 +51,9 @@
         </menu>
     </main>
 
+    <script src="js/accessibility-es4.js"></script>
     <script src="js/shared/dialog-polyfill.js"></script>
+    <script src="js/shared/dialog-polyfill-a11y-fixes.js"></script>
     <script src="js/dialog-example.js"></script>
 </body>
 
