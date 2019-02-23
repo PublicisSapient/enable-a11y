@@ -1,0 +1,69 @@
+The first browser we are going to demonstrate is Safari using VoiceOver, which is built into OSX.
+Right now, keyboard focus is on the link just before the button labelled "Log into our website", 
+which will open the modal when pressed.
+
+So, let's use the keyboard to navigate to the button ...
+
+... and now we'll hit the enter key.
+
+You may have noticed that when the dialog opened, the close button gains focus.
+Also, note that the screen reader said "close this dialog, button".
+This tells the screen reader user that focus is on a button labelled "close this dialog".
+(Incidentally, this label was coded as alt attibute for the button's <img> tag).
+You'll also note that the screen reader reports it is a web dialog.
+That's  because the button is inside a HTML <dialog> tag.
+
+VoiceOver would also announce this if the modal was coded as a <div> tag with its role attribute set to "dialog".
+In fact, setting the role to dialog is what the polyfill does on all dialog tags so screen readers can report the dialog properly to the user.
+
+Finally, you will notice the screen reader reads out the header, and the description in the dialog.
+This happens because the <dialog> tag has its aria-labelledby attribute set to the id of the header, and its aria-describedby attribute set the the id of the description text.
+
+Now, let's find out what happens when we tab past the end of the dialog.
+
+You'll notice that when I hit the tab key after the "Confirm" button, focus goes to the first element in the dialog.
+Focus never goes to any interactive element behind the modal.
+For browsers that support the <dialog> tag, this automatically  happens because it is native browser behavior.
+However, for browsers that don't, the polyfill steps in and uses focus events to implement this.
+If focus goes outside the dialog, it loops back to the first element of the modal ... if we are tabbing forward, of course.
+If we are tabbing backward, using a shift-TAB, then focus goes the last element of the modal.
+
+And now, let's find out what happnes when I close the modal ...
+
+... you'll notice that focus is placed back to the button that opened it.
+Surprisingly, this is not default browser behavior, even though this is considered best practise in the WAI-ARIA documentation.  
+It is added by a bit of code in the polyfill.  This code is executed for all browsers, including those with native support for the dialog tag.
+
+Now let's look at Google Chrome using Android's built in screen reader, Talkback.
+
+I am using a Samsung tablet for this demonstration, but the behavior for this device is, more or less, the same on any Android device using this software.
+
+I'm going to start by navigating to the link just before the button that opens the modal.
+Since this device doesn't have a keyboard, Talkback users must swipe left and right to navigate back and forth within the document.
+You'll also note that it looks like focus is not just going to the interactive elements on the page (like the tab key does on a keyboard enabled device).
+Instead, Talkback's so-called "accessibility focus" goes to all the items on the page that can be read.
+This is default behavior for Talkback, and iOS's VoiceOver screen reader has similar behavior.
+This can be changed, but I will leave that for a future video.
+    
+Now let's double tap to activate this button.
+
+Again, you will notice that focus goes to the close button.
+However, unlike VoiceOver, Talkback didn't read the dialog's heading or the description.
+It also doesn't mention that you are now inside a web dialog.
+This is because different screen readers don't support all the ARIA- attributes equally.
+This is the reason why I chose "close this dialog" as the alt attribute for the close button image.
+It tells the user that they are inside a dialog, even if a particular screen reader doesn't support the dialog role.
+This is a good example that, just like in all aspects of web development, you should use progressive-enhancement to make your code bullet-proof.
+
+Now, let's try to swipe backwards past the close button at the beginning of the dialog.
+
+You'll notice that focus doesn't go behind the modal, just like when I was using a desktop screen reader.
+However, this is not because of the focus events I described earlier.
+The problem with most (if not all) mobile screen readers is that they don't fire focus and blur events back to the browser when swiping over the document.
+In order to code this behavior on mobile, developers must set aria-hidden="true" to all elements outside of the modal dialog.
+This may seem a little scary if you have a lot of interactive elements outside the dialog,
+(I mean, who wants to set aria-hidden attributes on all of those DOM nodes).
+However, this is an efficient algorithm to do this, and it's in the blog post that accompanies this video.
+If you are playing this video on the YouTube website, the link to the post is the description below it.
+
+Hope this demonstation was helpful!  Please feel free to comment on the my YouTube page or my blog, useragentman.com.  I'd love to hear your feedback.  Thank you.

@@ -1,25 +1,30 @@
-'use strict';
+"use strict";
 
+/*
+ * This file must be transpiled for browser like IE11 using babel
+ * Install instructions: https://babeljs.io/docs/en/babel-cli
+ * You will also need npx: https://www.npmjs.com/package/npx
+ * and the env preset: https://stackoverflow.com/questions/34747693/how-do-i-get-babel-6-to-compile-to-es5-javascript
+ */
 // add contains polyfill here (for IE11)
 if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'function') {
-    Element.prototype.contains = function contains (el) {
-        return this.compareDocumentPosition(el) % 16;
-    }
+  Element.prototype.contains = function contains(el) {
+    return this.compareDocumentPosition(el) % 16;
+  };
 
-    document.contains = function docContains(el){
-        return document.body.contains(el);
-    }
+  document.contains = function docContains(el) {
+    return document.body.contains(el);
+  };
 }
-
 /* global window document */
-
 // This library is not specific to any framework.  It contains utility functions
 // that can be used in any project to make it more accessible and assistive
 // technology/screenreader friendly.
-var accessibility = {
 
+
+var accessibility = {
   tempFocusElement: null,
-  tabbableSelector: 'a[href], area[href], details, iframe, [contentEditable=true], :enabled, object, embed, [tabindex]',
+  tabbableSelector: 'a[href]:not([tabindex="-1"]), area[href]:not([tabindex="-1"]), details:not([tabindex="-1"]), iframe:not([tabindex="-1"]), [contentEditable=true]:not([tabindex="-1"]), :enabled:not(fieldset):not([tabindex="-1"]), object:not([tabindex="-1"]), embed:not([tabindex="-1"]), [tabindex]:not([tabindex="-1"])',
   htmlTagRegex: /(<([^>]+)>)/gi,
   hasSecondaryNavSkipTarget: false,
   mainContentSelector: 'main, main ~ *, .gcss-page ~ *, .Ecology .Documentation, .Ecology .dummy-content, #mainnavigation, .doc-header',
@@ -34,7 +39,6 @@ var accessibility = {
    */
   focusAndScrollToView: function focusAndScrollToView(element) {
     element.focus();
-
     var elementRect = element.getBoundingClientRect();
     var elementOnTop = document.elementFromPoint(elementRect.left, elementRect.top);
 
@@ -43,7 +47,6 @@ var accessibility = {
       window.scrollBy(0, topElRect.top - topElRect.bottom);
     }
   },
-
 
   /**
    * Focuses the first invalid field in a form, so that a screen reader can
@@ -67,7 +70,6 @@ var accessibility = {
     var firstValid = options.firstValid,
         isAjaxForm = options.isAjaxForm,
         e = options.e;
-
     var isFormInvalid = false;
 
     if (isAjaxForm) {
@@ -78,19 +80,19 @@ var accessibility = {
       var formFields = formElement.elements;
 
       var _loop = function _loop(i) {
-        var formField = formFields[i];
-
-        // If the form is invalid, we must focus the first invalid one (or
+        var formField = formFields[i]; // If the form is invalid, we must focus the first invalid one (or
         // the first valid one if option.firstValue === true). Since fieldsets
         // are part of the elements array, we must exclude those.
+
         if (formField.nodeName !== 'FIELDSET' && (firstValid || formField.getAttribute('aria-invalid') === 'true')) {
           isFormInvalid = true;
-          if (document.activeElement === formField) {
-            _this.focusAndScrollToView(formFields[i + 1]);
 
-            // If we do not pause for half a second, Voiceover will not read out
+          if (document.activeElement === formField) {
+            _this.focusAndScrollToView(formFields[i + 1]); // If we do not pause for half a second, Voiceover will not read out
             // where it is focused.  There doesn't seem to be any other
             // workaround for this.
+
+
             setTimeout(function () {
               if (formField) {
                 _this.focusAndScrollToView(formField);
@@ -99,14 +101,15 @@ var accessibility = {
           } else {
             _this.focusAndScrollToView(formField);
           }
-          return 'break';
+
+          return "break";
         }
       };
 
       for (var i = 0; i < formFields.length; i += 1) {
         var _ret = _loop(i);
 
-        if (_ret === 'break') break;
+        if (_ret === "break") break;
       }
 
       if (!isFormInvalid) {
@@ -114,12 +117,14 @@ var accessibility = {
         // grab the first error.
         window.requestAnimationFrame(function () {
           var globalError = formElement.querySelector('.form-error__error-text');
+
           if (globalError) {
             _this.focusAndScrollToView(globalError);
           }
         });
       }
     }
+
     return isFormInvalid;
   },
   refocusCurrentElement: function refocusCurrentElement(callback) {
@@ -127,14 +132,14 @@ var accessibility = {
         activeElement = _document.activeElement;
 
     if (this.tempFocusElement && activeElement) {
-      this.tempFocusElement.focus();
-
-      // If we do not pause for half a second, Voiceover will not read out
+      this.tempFocusElement.focus(); // If we do not pause for half a second, Voiceover will not read out
       // where it is focused.  There doesn't seem to be any other
       // workaround for this.
+
       setTimeout(function () {
         if (activeElement) {
           activeElement.focus();
+
           if (callback) {
             callback();
           }
@@ -150,7 +155,6 @@ var accessibility = {
   doIfBlurredHelper: function doIfBlurredHelper(currentTarget, relatedTarget, func) {
     var focusedElement = relatedTarget || document.activeElement;
     var isFocusLost = focusedElement.parentNode === document.body || focusedElement === document.body || focusedElement === null;
-
     /*
      * If a user clicks anywhere within the target that isn't a button, it
      * shouldn't execute `func()` .  This happens also should happen when focus is
@@ -158,11 +162,11 @@ var accessibility = {
      *
      * If we blurred out of the target, then we execute the function.
      */
+
     if (!isFocusLost && !currentTarget.contains(focusedElement)) {
       func();
     }
   },
-
 
   /**
    *
@@ -173,7 +177,6 @@ var accessibility = {
   removeHTML: function removeHTML(html) {
     return html.replace(this.htmlTagRegex, '');
   },
-
 
   /**
    * Converts a string or JSX to lower case with HTML removed,
@@ -195,7 +198,6 @@ var accessibility = {
     return r;
   },
 
-
   /**
    * Hides the main content from assistive technologies (like screen readers).
    * This is useful when you want to make sure the main content is not
@@ -208,12 +210,12 @@ var accessibility = {
    */
   setMainContentAriaHidden: function setMainContentAriaHidden(value) {
     var els = document.querySelectorAll(this.mainContentSelector);
-    for (var i = 0; i < els.length; i++) {
-      var el = els[i];
 
-      // setting the aria-hidden attribute to 'false' would make the element
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i]; // setting the aria-hidden attribute to 'false' would make the element
       // accessible to Voiceover, it just wouldn't be able to read it.
       // This is why we set it to `null`.
+
       if (value) {
         el.setAttribute('aria-hidden', value);
       } else {
@@ -221,7 +223,6 @@ var accessibility = {
       }
     }
   },
-
 
   /**
    * Detects while element has been blurred inside the active subdocument (e.g. a modal).
@@ -237,6 +238,7 @@ var accessibility = {
     var allowableFocusableEls = this.activeSubdocument.querySelectorAll(this.tabbableSelector);
     var firstFocusableElement = allowableFocusableEls[0];
     var lastFocusableElement = allowableFocusableEls[allowableFocusableEls.length - 1];
+    console.log(this.tabbableSelector, allowableFocusableEls);
 
     if (blurredEl === firstFocusableElement) {
       lastFocusableElement.focus();
@@ -244,7 +246,6 @@ var accessibility = {
       firstFocusableElement.focus();
     }
   },
-
 
   /**
    * Detects when focus is being blurred out ofthe activeSubdocument of a
@@ -255,7 +256,6 @@ var accessibility = {
    */
   doWhenActiveSubdocIsBlurred: function doWhenActiveSubdocIsBlurred(blurredEl, func) {
     var activeSubdocument = this.activeSubdocument;
-
 
     if (activeSubdocument) {
       window.requestAnimationFrame(function () {
@@ -269,7 +269,6 @@ var accessibility = {
     }
   },
 
-
   /**
    * A blur event handler to that will create a focus loop
    * inside the activeSubdocument (e.g. a modal).
@@ -280,12 +279,10 @@ var accessibility = {
     var blurredEl = e.target;
     var activeSubdocument = this.activeSubdocument;
 
-
     if (activeSubdocument) {
       this.doWhenActiveSubdocIsBlurred(blurredEl, this.keepFocusInsideActiveSubdoc.bind(this));
     }
   },
-
 
   /**
    * A focus event that will be activated when, say, a modal
@@ -302,16 +299,15 @@ var accessibility = {
         activeElement = _document3.activeElement;
     var relatedTarget = e.relatedTarget;
 
-
     if (activeSubdocument && relatedTarget === null && !activeSubdocument.contains(activeElement)) {
       var allowableFocusableEls = activeSubdocument.querySelectorAll(tabbableSelector);
+
       if (allowableFocusableEls.length > 0) {
         var firstFocusableElement = allowableFocusableEls[0];
         firstFocusableElement.focus();
       }
     }
   },
-
 
   /**
    * This ensures that a mobile devices "accessibilityFocus"
@@ -325,27 +321,27 @@ var accessibility = {
   setMobileFocusLoop: function setMobileFocusLoop(el) {
     var _document4 = document,
         body = _document4.body;
-
     var currentEl = el;
 
     do {
       // for every sibling of currentElement, we mark with
       // aria-hidden="true".
       var siblings = currentEl.parentNode.childNodes;
+
       for (var i = 0; i < siblings.length; i++) {
         var sibling = siblings[i];
+
         if (sibling !== currentEl && sibling.setAttribute) {
           sibling.setAttribute(this.oldAriaHiddenVal, sibling.ariaHidden || 'null');
           sibling.setAttribute('aria-hidden', 'true');
         }
-      }
-
-      // we then set the currentEl to be the parent node
+      } // we then set the currentEl to be the parent node
       // and repeat (unless the currentNode is the body tag).
+
+
       currentEl = currentEl.parentNode;
     } while (currentEl !== body);
   },
-
 
   /**
    * reset all the nodes that have been marked as aria-hidden="true"
@@ -353,20 +349,21 @@ var accessibility = {
    * aria-hidden values.
    */
   removeMobileFocusLoop: function removeMobileFocusLoop() {
-    var elsToReset = document.querySelectorAll('[' + this.oldAriaHiddenVal + ']');
+    var elsToReset = document.querySelectorAll("[".concat(this.oldAriaHiddenVal, "]"));
 
     for (var i = 0; i < elsToReset.length; i++) {
       var el = elsToReset[i];
       var ariaHiddenVal = el.getAttribute(this.oldAriaHiddenVal);
+
       if (ariaHiddenVal === 'null') {
         el.removeAttribute('aria-hidden');
       } else {
         el.setAttribute('aria-hidden', ariaHiddenVal);
       }
+
       el.removeAttribute(this.oldAriaHiddenVal);
     }
   },
-
 
   /**
    *
@@ -378,7 +375,6 @@ var accessibility = {
   setKeepFocusInside: function setKeepFocusInside(el, keepFocusInside) {
     var _document5 = document,
         body = _document5.body;
-
 
     if (keepFocusInside) {
       this.activeSubdocument = el;
@@ -393,3 +389,4 @@ var accessibility = {
     }
   }
 };
+

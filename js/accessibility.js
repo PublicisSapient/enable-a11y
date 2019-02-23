@@ -1,3 +1,11 @@
+/*
+ * This file must be transpiled for browser like IE11 using babel
+ * Install instructions: https://babeljs.io/docs/en/babel-cli
+ * You will also need npx: https://www.npmjs.com/package/npx
+ * and the env preset: https://stackoverflow.com/questions/34747693/how-do-i-get-babel-6-to-compile-to-es5-javascript
+ */
+
+
 // add contains polyfill here (for IE11)
 if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'function') {
   Element.prototype.contains = function contains (el) {
@@ -17,7 +25,17 @@ if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'fu
 const accessibility = {
 
   tempFocusElement: null,
-  tabbableSelector: 'a[href], area[href], details, iframe, [contentEditable=true], :enabled:not(fieldset), object, embed, [tabindex]:not([tabindex="-1"])',
+  tabbableSelector: 
+    `a[href]:not([tabindex="-1"]):not([disabled]),
+     area[href]:not([tabindex="-1"]):not([disabled]),
+     details:not([tabindex="-1"]):not([disabled]),
+     iframe:not([tabindex="-1"]):not([disabled]),
+     keygen:not([tabindex="-1"]):not([disabled]),
+     [contentEditable=true]:not([tabindex="-1"]):not([disabled]),
+     :enabled:not(fieldset):not([tabindex="-1"]):not([disabled]),
+     object:not([tabindex="-1"]):not([disabled]),
+     embed:not([tabindex="-1"]):not([disabled]),
+     [tabindex]:not([tabindex="-1"])':not([disabled])`,
   htmlTagRegex: /(<([^>]+)>)/gi,
   hasSecondaryNavSkipTarget: false,
   mainContentSelector: 'main, main ~ *, .gcss-page ~ *, .Ecology .Documentation, .Ecology .dummy-content, #mainnavigation, .doc-header',
@@ -224,7 +242,7 @@ const accessibility = {
     const allowableFocusableEls = this.activeSubdocument.querySelectorAll(this.tabbableSelector);
     const firstFocusableElement = allowableFocusableEls[0];
     const lastFocusableElement = allowableFocusableEls[allowableFocusableEls.length - 1];
-
+    console.log(this.tabbableSelector, allowableFocusableEls);
     if (blurredEl === firstFocusableElement) {
       lastFocusableElement.focus();
     } else {

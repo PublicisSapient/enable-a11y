@@ -239,6 +239,7 @@
           target = this.dialog_;
         }
         if (!target) {
+          /*
           // Note that this is 'any focusable area'. This list is probably not exhaustive, but the
           // alternative involves stepping through and trying to focus everything.
           var opts = ['button', 'input', 'keygen', 'select', 'textarea'];
@@ -248,6 +249,8 @@
           // TODO(samthor): tabindex values that are not numeric are not focusable.
           query.push('[tabindex]:not([disabled]):not([tabindex=""])');  // tabindex != "", not disabled
           target = this.dialog_.querySelector(query.join(', '));
+          */
+         target = this.dialog_.querySelector(accessibility.tabbableSelector);
         }
         safeBlur(document.activeElement);
         target && target.focus();

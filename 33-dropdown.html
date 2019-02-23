@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ARIA Slider Examples</title>
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
+    <meta charset="utf-8" >
+</head>
+
+<body>
+
+    <?php include("includes/example-header.php"); ?>
+
+    
+
+    <main>
+            <h1>ARIA Slider Examples</h1>
+
+            <aside class="notes">
+                <h2>Notes:</h2>
+    
+                <ul>
+                    <li>This example is originally from Open Ajax Alliance's <a href="https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/">Slider Example</a></li>
+                </ul>
+            </aside>
+
+            
+            <details>
+            <summary>Click to open</summary>
+            <p>If your browser supports this element, it should allow you to expand and collapse these details.</p></details> 
+
+
+
+    </main>
+    
+    
+
+    <script src="js/accessibility.js"></script>
+    <script>
+            var tempEl = document.createElement('button');
+            tempEl.className = 'visually-hidden';
+            tempEl.style.position = 'absolute';
+            tempEl.style.top = '-1000px';
+            tempEl.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;';
+            //tempEl.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(tempEl);
+            accessibility.tempFocusElement = tempEl;
+            document.body.addEventListener('click', function (e) {
+                var target = e.target;
+                if (target.nodeName == 'SUMMARY') {
+                    accessibility.refocusCurrentElement();
+                }
+            });
+        </script>
+</body>
+
+</html>

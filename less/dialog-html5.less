@@ -67,3 +67,31 @@
 	}
 }
 
+/*
+ * For decorating the page (not the modal)
+ */
+ .image {
+	 position: absolute;
+	 z-index: 1;
+	 top: 0;
+	 left: calc(50% - 50vmin);
+	 width: 100vmin;
+	 margin: 0 auto;
+
+	 &__container {
+		 position: relative;
+	 }
+ }
+
+ .modal__opener {
+	z-index: 2;
+	position: absolute;
+	left: calc(50% - 27vmin);
+	top: 22vmin;
+	font-size: 3vmin;
+ }
+
+ [data-old-aria-hidden] {
+	 opacity: 0.3;
+	 filter: blur(1px);
+ }
