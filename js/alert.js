@@ -2,7 +2,6 @@
 const alert = new function () {
     const sayTimeEl = document.getElementById('say-time');
     const assertiveAlertEl = document.getElementById('assertive-alert');
-    const checkboxEl = document.getElementById('is-alert-expanded');
     
 
     this.sayTimeClickHandler = () => {
@@ -15,7 +14,6 @@ const alert = new function () {
 
     this.init = () => {
         sayTimeEl.addEventListener('click', this.sayTimeClickHandler);
-        checkboxEl.addEventListener('change', this.checkboxChangeHandler);
     }
 }
 
@@ -25,6 +23,7 @@ const expando = new function () {
     const collapsedClass = 'expando__contents--collapsed';
 
     this.clickHandler = (e) => {
+        console.log('sss');
         const button = e.currentTarget;
         const expandoEl = button.closest('.expando');
         const contentEl = expandoEl.getElementsByClassName('expando__contents')[0];
@@ -44,7 +43,7 @@ const expando = new function () {
 
     this.init = () => {
         Array.from(expandoButtonEls).forEach( (el) => {
-            el.addEventListener('click',this. clickHandler);
+            el.addEventListener('click',this.clickHandler);
         });
     }
 }

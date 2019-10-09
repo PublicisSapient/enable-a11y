@@ -39,10 +39,8 @@ var registerFocusRestoreDialog = (function() {
       var mo = new MutationObserver(function() {
         if (dialog.hasAttribute('open')) {
             accessibility.setKeepFocusInside(dialog, true);
-            accessibility.setMobileFocusLoop(dialog);
         } else {
             accessibility.setKeepFocusInside(dialog, false);
-            accessibility.removeMobileFocusLoop();
         }
       });
       mo.observe(dialog, {attributes: true, attributeFilter: ['open']});

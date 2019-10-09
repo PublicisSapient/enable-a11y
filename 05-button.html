@@ -4,6 +4,7 @@
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Button demo</title>
     <link rel="stylesheet" type="text/css" href="css/button.css" />
     <link rel="stylesheet" type="text/css" href="css/switch.css" />
@@ -63,17 +64,14 @@
             </a>
         </div>
 
-        <h2>Toggle Button</h2>
-
-        <button aria-labelledby="VehicleDrive__label" role="switch" aria-checked="true" id="VehicleDrive" aria-label="four wheel drive" aria-describedby="VehicleDrive-checked">
-            <span aria-label="two wheel drive" id="VehicleDrive-unchecked">2WD</span>
-            <span aria-label="four wheel drive" id="VehicleDrive-checked">4WD</span>
-        </button>
-        <label id="VehicleDrive__label" class="switch--label">Vehicle Drive </label>
-
+        <div class="button-container">
+            <label for="html-button">This is a short button:</label>
+            <button id="short-button">
+                Submit
+            </button> 
+        </div>
     </main>
 
-    <script src="js/shared/toggle-button.js"></script>
 </body>
 
 </html>

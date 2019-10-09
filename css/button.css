@@ -493,3 +493,7 @@ footer a,
 .button-container [role="button"]:hover {
   background-color: #cccccc;
 }
+#short-button {
+  height: 0px;
+  overflow: hidden;
+}

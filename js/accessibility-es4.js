@@ -322,7 +322,7 @@ var accessibility = {
     var _document4 = document,
         body = _document4.body;
     var currentEl = el;
-
+    console.log('qqq');
     do {
       // for every sibling of currentElement, we mark with
       // aria-hidden="true".
@@ -373,6 +373,7 @@ var accessibility = {
    * @param {boolean} keepFocusInside - true if we need to create a loop, false otherwise.
    */
   setKeepFocusInside: function setKeepFocusInside(el, keepFocusInside) {
+    console.log('sss');
     var _document5 = document,
         body = _document5.body;
 

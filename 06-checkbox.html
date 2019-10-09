@@ -83,6 +83,33 @@
             </div>
         </p>
 
+        <h2>HTML checkbox group</h2>
+
+        <div role="group" aria-labelledby="html-checkbox-multi-label">
+            <p id="html-checkbox-multi-label">
+                <span class="visually-hidden">You must choose at least one of the following.</span>
+                The following people will have my soul when I die:
+            </p>
+            <div style="color: red">You must choose at least one of the following.</div>
+            <div class="checkbox-container">
+                <label for="html-checkbox-multi1">Zoltan:</label>
+                <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
+            </div>
+            <div class="checkbox-container">
+                <label for="html-checkbox-multi2">Noel:</label>
+                <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
+            </div>
+            <div class="checkbox-container">
+                <label for="html-checkbox-multi3">Alison:</label>
+                <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
+            </div>
+            <div class="checkbox-container">
+                <label for="html-checkbox-multi4">That guy who smokes in the alleyway at work:</label>
+                <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
+            </div>
+
+        </div>
+
 
         <script src="js/shared/radio-and-checkbox-roles.js"></script>
         <script src="js/shared/visibleIf.js"></script>

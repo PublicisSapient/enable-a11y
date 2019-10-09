@@ -26,13 +26,14 @@
                     <code>dfn</code> tags
                     <a href="https://github.com/w3c/aria/issues/504">are being questioned</a>
                 </li>
-                <li>The user experience for the ARIA version is much better in Voiceover, since voiceover erroneously states
-                    that the HTML version below has 6 list items.</li>
+                <li>The screen reader user experience is better if you surround your <code>dt</code>/<code>dd</code> pairs with a <code>div</code>.</li>
                 </li>
             </ul>
         </aside>
 
         <h2>A HTML example</h2>
+
+        <p>This example reports that there is six items in the list (instead of three) by Voiceover for OSX</p>
 
         <dl>
             <dt>Gojira</dt>
@@ -45,6 +46,27 @@
             <dd>A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates Robocop
                 by at least 20 years.</dd>
         </dl>
+
+        <h2>Another HTML example</h2>
+
+        <p>This is a better example.  It reports three items in the list.  This is done by surrounding the related <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> tags
+            with a <code>&lt;div&gt;</code>.</p>
+        <dl>
+            <div>
+                <dt>Gojira</dt>
+                <dd>A japanese kaiju monster created in the 1960s.</dd>
+    
+            </div>
+            <div>
+                <dt>Frankenstein</dt>
+                <dd>A fictional doctor that created a fictional being out of the spare parts of dead people.</dd>
+            </div>
+            <div>
+                <dt>8-man</dt>
+                <dd>A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates Robocop
+                    by at least 20 years.</dd>
+            </div>
+          </dl>
 
         <h2>Aria Roles example</h2>
 

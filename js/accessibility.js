@@ -317,6 +317,7 @@ const accessibility = {
    * @param {HTMLElement} el - the element that will have the loop.
    */
   setMobileFocusLoop(el) {
+    console.log('setMobileFocusLoop()')
     const { body } = document;
     let currentEl = el;
 
