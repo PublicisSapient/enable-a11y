@@ -1,4 +1,36 @@
 @import "shared/all";
+
+.has-css-only-tooltip {
+    position: relative;
+
+    &:focus {
+        z-index: 1;
+        &::after {
+            content: attr(title);
+            display: block;
+            background: black;
+            color: white;
+            padding: 0.5rem;
+            max-width: 20rem;
+            position: absolute;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            z-index: 1;
+        }
+
+        &::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            background: black;
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+    }
+}
  
 .tooltip {
     display: block;

@@ -10,8 +10,13 @@ table,
     border-collapse: collapse;
     display: table;
 
+    figure & {
+        margin-bottom: 0;
+    }
+
     caption,
-    .caption {
+    .caption,
+    + figcaption {
         display: table-caption;
         text-align: center;
         margin-bottom: 1em;
@@ -30,6 +35,12 @@ table,
         &:after {
             transform: scaleX(-1);
         }
+    }
+
+    + figcaption {
+        display: block;
+        margin-bottom: 5rem;
+        margin-top: 1em;
     }
 
     th,td,

@@ -66,38 +66,38 @@
 .bypass-block-target:focus:target {
   outline: solid 2px #ffa500;
 }
-a[href]:not([tabindex="-1"]):focus,
-area[href]:not([tabindex="-1"]):focus,
-details:not([tabindex="-1"]):focus,
-iframe:not([tabindex="-1"]):focus,
-[contentEditable=true]:not([tabindex="-1"]):focus,
-:enabled:not([tabindex="-1"]):focus,
-object:not([tabindex="-1"]):focus,
-embed:not([tabindex="-1"]):focus,
-[tabindex]:not([tabindex="-1"]):focus {
+a[href]:focus,
+area[href]:focus,
+details:focus,
+iframe:focus,
+[contentEditable=true]:focus,
+:enabled:focus,
+object:focus,
+embed:focus,
+[tabindex]:focus {
   /* You can replace this with whatever style you want for focus state */
   outline: solid 2px #ffa500;
 }
-a[href]:not([tabindex="-1"]):hover:focus,
-area[href]:not([tabindex="-1"]):hover:focus,
-details:not([tabindex="-1"]):hover:focus,
-iframe:not([tabindex="-1"]):hover:focus,
-[contentEditable=true]:not([tabindex="-1"]):hover:focus,
-:enabled:not([tabindex="-1"]):hover:focus,
-object:not([tabindex="-1"]):hover:focus,
-embed:not([tabindex="-1"]):hover:focus,
-[tabindex]:not([tabindex="-1"]):hover:focus {
+a[href]:hover:focus,
+area[href]:hover:focus,
+details:hover:focus,
+iframe:hover:focus,
+[contentEditable=true]:hover:focus,
+:enabled:hover:focus,
+object:hover:focus,
+embed:hover:focus,
+[tabindex]:hover:focus {
   outline: solid 2px rgba(255, 165, 0, 0.5);
 }
-a[href]:not([tabindex="-1"]):focus:active,
-area[href]:not([tabindex="-1"]):focus:active,
-details:not([tabindex="-1"]):focus:active,
-iframe:not([tabindex="-1"]):focus:active,
-[contentEditable=true]:not([tabindex="-1"]):focus:active,
-:enabled:not([tabindex="-1"]):focus:active,
-object:not([tabindex="-1"]):focus:active,
-embed:not([tabindex="-1"]):focus:active,
-[tabindex]:not([tabindex="-1"]):focus:active {
+a[href]:focus:active,
+area[href]:focus:active,
+details:focus:active,
+iframe:focus:active,
+[contentEditable=true]:focus:active,
+:enabled:focus:active,
+object:focus:active,
+embed:focus:active,
+[tabindex]:focus:active {
   outline: none;
 }
 *:focus {

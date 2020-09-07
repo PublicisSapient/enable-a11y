@@ -1,0 +1,152 @@
+@import "shared/all";
+
+label {
+  display: inline-block;
+  width: 45%;
+  text-align: right;
+  font-weight: bold;
+}
+
+.desc {
+  margin: 0.2rem 0 0 45%;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+input, .desc {
+  width: 45%;
+  max-width: 20rem;
+}
+
+
+.field-block {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+label.error {
+  margin-left: calc(45% + 10px);
+  text-align: left;
+  color: red;
+
+  &::before {
+    content: '';
+    background-image: url('../images/error.svg');
+    background-size: 0.7rem 0.7rem;
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.5em;
+  }
+}
+input[type="radio"],
+input[type="checkbox"],
+[role="radio"],
+[role="checkbox"] { 
+    
+    + label {
+        display: inline; 
+    }
+}
+
+
+input[type=submit] {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding-bottom: 0;
+}
+
+input[type=submit] {
+  margin-bottom: 1em;
+}
+
+fieldset,
+.aria-form-group {
+  padding: 0.5em;
+  margin-top: 1em;
+  padding-top: 2em;
+  background-color: #EEEEEE;
+
+  legend,
+  .fieldset {
+    position: relative;
+    top: 1.5em;
+    border-color: #AAAAAA;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin: 0 0 1em 0;
+    width: 100%;
+    border-bottom: 1px #ccc solid;
+  }
+
+  .fieldset {
+    top: -1.5em;
+    display: block;
+  }
+}
+
+
+
+
+[role="radio"]:after {
+  
+}
+
+[role="radio"],
+[role="checkbox"] {
+  display          : inline-block;
+  position         : relative;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 0.0625em solid rgb(192,192,192);
+  
+  background       : rgb(224,224,224);
+  .gradient(linear; rgb(240,240,240),rgb(224,224,224)); 
+  vertical-align   : bottom;
+}
+
+[role="radio"] {
+  &,
+  &:after {
+    border-radius    : 50%;
+  }
+
+  &[aria-checked="true"] {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.5em;
+      height: 0.5em;
+      margin: 0.125em;
+      border: 0.0625em solid rgb(115,153,77);
+      background: rgb(153,204,102);
+    }
+
+  }
+}
+
+[role="checkbox"] {
+  &[aria-checked="true"] {
+    &:after {
+      content: '✓';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1em;
+      color: rgb(153,204,102);
+      font-size: 0.875em;
+      line-height: 1em;
+      text-align: center;
+      text-shadow: 0 0 0.0714em rgb(115,153,77);
+      font-weight: bold;
+    }
+  }
+}

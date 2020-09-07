@@ -1,4 +1,8 @@
 /*
+ * accessibility.js - a library with common accessibility related routines.
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * MIT License.
+ * 
  * This file must be transpiled for browser like IE11 using babel
  * Install instructions: https://babeljs.io/docs/en/babel-cli
  * You will also need npx: https://www.npmjs.com/package/npx
@@ -6,7 +10,8 @@
  */
 
 
-// add contains polyfill here (for IE11)
+// add contains polyfill here (for IE11).  The typeof document check is to ensure this 
+// script doesn't break server side rendering frameworks like Nashorn.
 if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'function') {
   Element.prototype.contains = function contains (el) {
       return this.compareDocumentPosition(el) % 16;
@@ -18,6 +23,264 @@ if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'fu
 }
 
 /* global window document */
+const a11yGroup = function (el, options) {
+  let mousedown = false;
+  let keyboardOnlyInstructionsId;
+  let keyboardOnlyInstructionsEl
+
+  /**
+   * Takes the *positive* modulo of n % m.  Javascript will
+   * return negative ones if n < 0.
+   */
+  this.mod = function (n, m) {
+    return ((n % m) + m) % m;
+  };
+
+  /**
+   * Makes the arrow keys work on a radiogroup's radio buttons.
+   *
+   * @param {HTMLElement} el - the radiogroup in question.
+   * @param {object} options - an optional set of options:
+   *
+   * - doSelectFirstOnInit: if set to true, select the first element
+   *   in the group when initialized.
+   * - setMouseEvents: if set to true, this library will handle the
+   *   mouse events.
+   * - visuallyHiddenClass: if set, this library will use this
+   *   string as its 'visually hidden' class instead of the sr-only
+   *   on used in frameworks like bootstrap
+   * - allowTabbing: if set to true, allows tabbing of the individual
+   *   radio buttons with the tab key.  This is useful when the radio
+   *   buttons don't look like radio buttons.
+   * - doKeyChecking: if set to true, then this allows the space and
+   *   the enter key to allow checking of the radio button.
+   * - setState: if set to false, then the library doesn't set the
+   *   state.  It is assumed that `ariaCheckedCallback` will do the
+   *   setting of state of the checkbox instead (this is useful in
+   *   frameworks like React). Default is true.
+   * - preventClickDefault: prevents the default on the click event.
+   * - ariaCheckedCallback: a callback to run when an element is checked.
+   *   The following parameters will be passed to it:
+   *     - e (the event that initiated the callback)
+   *     - currentlyCheckedEl (the element that just got checked)
+   *     - currentlyCheckedIndex (the index of currentlyCheckedEl within the group)
+   *     - previouslyCheckedEl (the previously checked element)
+   *     - groupEls - all the elements within the group
+   *  - focusCallback: a callback to run when a radio button is focused.
+   *    (this was previously called radioFocusCallback)
+   *    The following parameters will be passed to it:
+   *      - el (the element that was checked),
+   *      - group (the radiogroup that el is contained in)
+   */
+  this.init = (el, options) => {
+    const { preventClickDefault, allowTabbing, doKeyChecking, ariaCheckedCallback, setState, radioFocusCallback, focusCallback, doSelectFirstOnInit, setMouseEvents, visuallyHiddenClass } = (options || {});
+    this.allowTabbing = !!allowTabbing;
+    this.doKeyChecking = !!doKeyChecking;
+    this.preventClickDefault = !!preventClickDefault;
+    this.setState = (setState === false) ? false : true;
+    this.role = el.getAttribute('role');
+    this.visuallyHiddenClass = visuallyHiddenClass || 'sr-only';
+    const groupRe = /(group|list)$/;
+    keyboardOnlyInstructionsId = el.dataset.keyboardOnlyInstructions;
+    keyboardOnlyInstructionsEl = keyboardOnlyInstructionsId ? document.getElementById(keyboardOnlyInstructionsId) : null;
+
+    if (this.role === null || !groupRe.test(this.role)) {
+      return;
+    } else {
+      this.groupType = this.role.replace(groupRe, '');
+    }
+    this.ariaCheckedCallback = ariaCheckedCallback;
+    this.focusCallback = focusCallback || radioFocusCallback;
+    this.checkedAttribute = (this.groupType === 'tab') ? 'aria-selected' : 'aria-checked';
+
+    el.addEventListener('keydown', this.onKeyUp.bind(this), true);
+    el.addEventListener('click', this.onClick.bind(this), true);
+
+    if (doSelectFirstOnInit) {
+      this.select(null, el.querySelector(`[role="${this.groupType}"]`));
+    }
+
+    if (keyboardOnlyInstructionsEl) {
+      el.addEventListener('mousedown', this.mousedownEvent);
+      el.addEventListener('focusout', this.focusoutEvent);
+    }
+
+    el.addEventListener('focusin', this.focusinEvent);
+
+    /* if (focusCallback) {
+      el.addEventListener('focus', this.onFocus.bind(this), true);
+    } */
+  };
+
+  this.mousedownEvent = () => {
+    mousedown = true;
+  }
+
+  this.focusinEvent = (e) => {
+    const groupEls = e.currentTarget.querySelectorAll(`[role="${this.groupType}"]`);
+    if (keyboardOnlyInstructionsEl) {
+      if (!mousedown) {
+        // show instructions if they exist
+        keyboardOnlyInstructionsEl.classList.remove(this.visuallyHiddenClass);
+      }
+    }
+
+    if (!mousedown && !this.allowTabbing) {
+      for (let i = 0; i < groupEls.length; i++) {
+        const el = groupEls[i];
+        if (el.getAttribute(this.checkedAttribute) === 'true') {
+          el.focus();
+          break;
+        }
+      }
+    }
+    mousedown = false;
+  }
+
+  this.focusoutEvent = () => {
+    keyboardOnlyInstructionsEl.classList.add(this.visuallyHiddenClass);
+  }
+
+  /**
+   *
+   * Checks an ARIA radio button, while unchecking the others in its radiogroup.
+   *
+   * @param {HTMLElement} radioEl - a radio button that needs to be checked
+   * @param {Array} radioGroupEls - an array of radio buttons that is in the same group as radioEl
+   */
+  this.select = (e, memberEl, doNotRefocus) => {
+    const { ariaCheckedCallback, setState, checkedAttribute, allowTabbing } = this;
+    const groupEls = Array.from(memberEl.closest(`[role=${this.role}]`).querySelectorAll(`[role="${this.groupType}"]`));
+    let previouslyCheckedEl;
+    let currentlyCheckedEl;
+    let currentlyCheckedIndex;
+
+    for (let i = 0; i < groupEls.length; i++) {
+      const currentEl = groupEls[i];
+      let checkedState = 'false';
+      if (currentEl.getAttribute(checkedAttribute) === 'true') {
+        previouslyCheckedEl = currentEl;
+      }
+      if (currentEl === memberEl) {
+        if (setState) {
+          checkedState = 'true';
+        }
+        currentlyCheckedEl = currentEl;
+        currentlyCheckedIndex = i;
+
+      }
+      if (setState) {
+        currentEl.setAttribute(checkedAttribute, checkedState);
+        if (currentEl === memberEl) {
+          if (document.activeElement !== document.body) {
+            currentEl.focus();
+          }
+        }
+      }
+
+      if (!allowTabbing) {
+        if (checkedState === 'true') {
+          currentEl.removeAttribute('tabIndex');
+        } else {
+          currentEl.setAttribute('tabIndex', '-1');
+        }
+      }
+    }
+
+    if (allowTabbing && !doNotRefocus) {
+      console.log('refocusing', )
+      accessibility.refocusCurrentElement();
+    }
+
+    if (ariaCheckedCallback) {
+      ariaCheckedCallback(e, currentlyCheckedEl, currentlyCheckedIndex, previouslyCheckedEl, groupEls);
+    }
+  };
+
+  this.onClick = (e) => {
+    const { target, currentTarget } = e;
+
+    if (this.preventClickDefault) {
+      e.preventDefault();
+    }
+
+    if (target.getAttribute('role') === this.groupType) {
+      this.select(e, target);
+      target.focus();
+    }
+  }
+
+  this.onFocus = (e) => {
+    const { target, currentTarget } = e;
+
+    if (!currentTarget) {
+      return
+    }
+
+    const { focusCallback } = this;
+    const radioEls = Array.from(currentTarget.querySelectorAll(`[role="${this.groupType}"]`));
+    const targetIndex = radioEls.indexOf(target);
+
+    if (focusCallback) {
+      focusCallback(e, target, targetIndex, currentTarget);
+    }
+  };
+
+  /**
+   * Implements keyboard events for ARIA radio buttons.
+   *
+   * @param {Event} e - the keyboard event.
+   */
+  this.onKeyUp = (e) => {
+    const { key, target, currentTarget, shiftKey } = e;
+    let { ariaCheckedCallback, allowTabbing, doKeyChecking } = this;
+
+    if (target.getAttribute('role') === this.groupType) {
+      const radioEls = Array.from(currentTarget.querySelectorAll(`[role="${this.groupType}"]`));
+      const targetIndex = radioEls.indexOf(target);
+      let elToFocus;
+
+      if (targetIndex >= 0) {
+        switch (key) {
+          case 'ArrowUp':
+          case 'ArrowLeft':
+            elToFocus = radioEls[this.mod(targetIndex - 1, radioEls.length)];
+
+            this.select(e, elToFocus, true);
+            break;
+          case 'ArrowDown':
+          case 'ArrowRight':
+            elToFocus = radioEls[this.mod(targetIndex + 1, radioEls.length)];
+            this.select(e, elToFocus, true);
+            break;
+          case ' ':
+          case 'Enter':
+            if (doKeyChecking) {
+              this.select(e, target);
+              e.preventDefault();
+            }
+            break;
+          default:
+        }
+
+        if (elToFocus) {
+          e.preventDefault();
+          requestAnimationFrame(() => {
+            elToFocus.focus();
+
+            if (key === 'Tab') {
+              requestAnimationFrame(() => {
+                this.onFocus(e);
+              });
+            }
+          });
+        }
+      }
+    }
+  }
+
+  this.init(el, options);
+};
 
 // This library is not specific to any framework.  It contains utility functions
 // that can be used in any project to make it more accessible and assistive
@@ -25,6 +288,7 @@ if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'fu
 const accessibility = {
 
   tempFocusElement: null,
+  tempFocusElementText: ' select ',
   tabbableSelector: 
     `a[href]:not([tabindex="-1"]):not([disabled]),
      area[href]:not([tabindex="-1"]):not([disabled]),
@@ -35,12 +299,15 @@ const accessibility = {
      :enabled:not(fieldset):not([tabindex="-1"]):not([disabled]),
      object:not([tabindex="-1"]):not([disabled]),
      embed:not([tabindex="-1"]):not([disabled]),
-     [tabindex]:not([tabindex="-1"])':not([disabled])`,
+     [tabindex]:not([tabindex="-1"]):not([disabled])`,
   htmlTagRegex: /(<([^>]+)>)/gi,
   hasSecondaryNavSkipTarget: false,
-  mainContentSelector: 'main, main ~ *, .gcss-page ~ *, .Ecology .Documentation, .Ecology .dummy-content, #mainnavigation, .doc-header',
+
+  // This should set in your project (and outside the script) to be a selector that covers all your main content.
+  mainContentSelector: '',
   activeSubdocument: null,
   oldAriaHiddenVal: 'data-old-aria-hidden',
+  groups: [],
 
   /**
    * Focuses on an element, and scrolls the window if there is an element on
@@ -49,6 +316,7 @@ const accessibility = {
    * @param {object} element - The element being focused
    */
   focusAndScrollToView(element) {
+    console.log('el', element);
     element.focus();
 
     const elementRect = element.getBoundingClientRect();
@@ -127,8 +395,44 @@ const accessibility = {
 
   refocusCurrentElement(callback) {
     const { activeElement } = document;
+
+    let isElementInModal = false;
+    let modalParentElm = null;
+
+    if (activeElement && (typeof Element.prototype.closest === 'function')) {
+      modalParentElm = activeElement.closest('[role="dialog"], dialog');
+      if (modalParentElm) {
+        isElementInModal = true;
+      }
+    }
+
+    if ((!this.tempFocusElement || isElementInModal) && document) {
+      const elm = document.createElement('div');
+      elm.setAttribute('tabindex', '-1');
+      elm.className = 'sr-only';
+      elm.style.cssText = 'position:fixed;top:0;left:0;';
+      // This ensures the screen reader doesn't read the content of this element.
+      // Leaving it blank makes a screen reader read "blank".
+      elm.setAttribute('aria-label', this.tempFocusElementText);
+      elm.innerHTML = this.tempFocusElementText;
+
+      if (isElementInModal && modalParentElm) {
+        modalParentElm.appendChild(elm);
+      } else {
+        document.body.appendChild(elm);
+      }
+
+      this.tempFocusElement = elm;
+    }
+
     if (this.tempFocusElement && activeElement) {
-      this.tempFocusElement.focus();
+      const { tempFocusElement } = this;
+      if (!activeElement.role) {
+        tempFocusElement.role = 'button';
+      } else {
+        tempFocusElement.role = activeElement.role;
+      }
+      tempFocusElement.focus();
 
       // If we do not pause for half a second, Voiceover will not read out
       // where it is focused.  There doesn't seem to be any other
@@ -136,6 +440,13 @@ const accessibility = {
       setTimeout(() => {
         if (activeElement) {
           activeElement.focus();
+          this.tempFocusElement.role = null;
+
+          // Delete tempFocusElement since it will disappear when modal closes
+          if (isElementInModal) {
+            this.tempFocusElement = null;
+          }
+
           if (callback) {
             callback();
           }
@@ -239,10 +550,13 @@ const accessibility = {
    * @param {HTMLElement} blurredEl
    */
   keepFocusInsideActiveSubdoc(blurredEl) {
+    if (!this.activeSubdocument) {
+      return;
+    }
+
     const allowableFocusableEls = this.activeSubdocument.querySelectorAll(this.tabbableSelector);
     const firstFocusableElement = allowableFocusableEls[0];
     const lastFocusableElement = allowableFocusableEls[allowableFocusableEls.length - 1];
-    console.log(this.tabbableSelector, allowableFocusableEls);
     if (blurredEl === firstFocusableElement) {
       lastFocusableElement.focus();
     } else {
@@ -317,9 +631,18 @@ const accessibility = {
    * @param {HTMLElement} el - the element that will have the loop.
    */
   setMobileFocusLoop(el) {
-    console.log('setMobileFocusLoop()')
     const { body } = document;
     let currentEl = el;
+
+    // If there are any nodes with oldAriaHiddenVal set, we should
+    // bail, since it has already been done.
+    const hiddenEl = document.querySelector(`[${this.oldAriaHiddenVal}]`);
+
+    if (hiddenEl !== null) {
+      // eslint-disable-next-line no-console
+      console.warn('Attempted to run setMobileFocusLoop() twice in a row.  removeMobileFocusLoop() must be executed before it run again. Bailing.');
+      return;
+    }
 
     do {
       // for every sibling of currentElement, we mark with
@@ -380,6 +703,15 @@ const accessibility = {
       body.removeEventListener('focus', this.correctFocusFromBrowserChrome.bind(this), true);
       this.removeMobileFocusLoop(el);
     }
+  },
+
+  initGroup: function (el, options) {
+    this.groups.push(new a11yGroup(el, options));
+  },
+
+  // This is for legacy support.
+  setArrowKeyRadioGroupEvents: function(el, options) {
+    this.initGroup(el, options);
   }
 };
 

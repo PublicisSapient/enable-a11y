@@ -1,15 +1,22 @@
 const Switch = new function () {
+    const customEvent = document.createEvent('Event');
 
     this.init = () => {
+        customEvent.initEvent('switch-change', true, true);
         document.body.addEventListener('click', onClick);
     }
 
     const onClick = (evt) => {
-        const el = evt.target;
+        let el = evt.target;
         const id = el.id;
         const alertEl = document.getElementById(id + '__alert');
         const labelEl = document.getElementById(id + '__label');
         let ariaDescribedByEl;
+        const switchEl = el.closest('[role="switch"]');
+
+        if (switchEl) {
+            el = switchEl;
+        }
 
         if (el.getAttribute('role', 'switch')) {
             if (el.getAttribute('aria-checked') === 'true') {
@@ -20,16 +27,9 @@ const Switch = new function () {
                 ariaDescribedBy =  id + '-checked';
             }
             el.setAttribute('aria-describedby', ariaDescribedBy);
-
-            // set the alert if it exists.
-            const ariaDescribedByEl = document.getElementById(ariaDescribedBy);
-            const description = ariaDescribedByEl.getAttribute('aria-label') || ariaDescribedByEl.innerText;
-            const label = (labelEl ? (labelEl.getAttribute('aria-label') || labelEl.innerText) : "");
-            console.log(labelEl, label);
-            if (alertEl && ariaDescribedByEl) {
-                alertEl.innerHTML = description;
-            }
-        }        
+            console.log(el);
+            el.dispatchEvent(customEvent);
+        }    
     }
 }
 

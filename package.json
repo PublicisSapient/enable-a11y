@@ -27,5 +27,8 @@
     "@babel/core": "^7.2.2",
     "babel-preset-es2015": "^6.24.1",
     "accessibility-js-routines": "1.8.0"
+  },
+  "dependencies": {
+    "lessc": "^1.0.2"
   }
 }

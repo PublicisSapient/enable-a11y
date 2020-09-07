@@ -1,0 +1,83 @@
+@import "tabs";
+
+html,
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #3333ff;
+}
+.enable-logo {
+  width: 100px;
+
+  &__link {
+    text-decoration: none;
+    font-family: "Specify Condensed", Arial, Helvetica, sans-serif;
+
+    color: black;
+    -webkit-text-stroke: none;
+    display: block;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+    color: #faa302;
+    font-size: 70px;
+    top: -25px;
+    -webkit-text-stroke: 1px #333;
+    text-shadow: 2px 2px 0 black;
+    font-style: italic;
+  }
+
+  &__sub-text {
+    font-size: 17px;
+    font-style: italic;
+    padding: 0 10px;
+    margin-top: -8px;
+    font-style: normal;
+  }
+}
+
+.home {
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    border: none;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-bottom: solid 1px #999999;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
+
+.options {
+  background: #000;
+  color: #fff;
+  margin: 0 -10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+body.with-open-dyslexia {
+  &, & * {
+    font-family: "OpenDyslexic", sans-serif;
+  }
+}
+
+#dyslexia-switch__label {
+  font-family: "OpenDyslexic", sans-serif;
+}

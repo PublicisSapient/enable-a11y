@@ -23,7 +23,6 @@ const expando = new function () {
     const collapsedClass = 'expando__contents--collapsed';
 
     this.clickHandler = (e) => {
-        console.log('sss');
         const button = e.currentTarget;
         const expandoEl = button.closest('.expando');
         const contentEl = expandoEl.getElementsByClassName('expando__contents')[0];

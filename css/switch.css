@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import "../fonts/specify/stylesheet.css";
+@import "../fonts/open-dyslexic/stylesheet.css";
 html,
 body,
 div,
@@ -137,6 +139,7 @@ body {
 }
 code {
   font-family: "Consolas", monospace;
+  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -194,6 +197,10 @@ p {
 .example .notes h2 {
   margin: 0;
   border-bottom: none;
+}
+input,
+select {
+  font-size: 1em;
 }
 /*********************************************************
  * a11y.css - a stylesheet to help create 
@@ -263,38 +270,38 @@ p {
 .bypass-block-target:focus:target {
   outline: solid 2px #ffa500;
 }
-a[href]:not([tabindex="-1"]):focus,
-area[href]:not([tabindex="-1"]):focus,
-details:not([tabindex="-1"]):focus,
-iframe:not([tabindex="-1"]):focus,
-[contentEditable=true]:not([tabindex="-1"]):focus,
-:enabled:not([tabindex="-1"]):focus,
-object:not([tabindex="-1"]):focus,
-embed:not([tabindex="-1"]):focus,
-[tabindex]:not([tabindex="-1"]):focus {
+a[href]:focus,
+area[href]:focus,
+details:focus,
+iframe:focus,
+[contentEditable=true]:focus,
+:enabled:focus,
+object:focus,
+embed:focus,
+[tabindex]:focus {
   /* You can replace this with whatever style you want for focus state */
   outline: solid 2px #ffa500;
 }
-a[href]:not([tabindex="-1"]):hover:focus,
-area[href]:not([tabindex="-1"]):hover:focus,
-details:not([tabindex="-1"]):hover:focus,
-iframe:not([tabindex="-1"]):hover:focus,
-[contentEditable=true]:not([tabindex="-1"]):hover:focus,
-:enabled:not([tabindex="-1"]):hover:focus,
-object:not([tabindex="-1"]):hover:focus,
-embed:not([tabindex="-1"]):hover:focus,
-[tabindex]:not([tabindex="-1"]):hover:focus {
+a[href]:hover:focus,
+area[href]:hover:focus,
+details:hover:focus,
+iframe:hover:focus,
+[contentEditable=true]:hover:focus,
+:enabled:hover:focus,
+object:hover:focus,
+embed:hover:focus,
+[tabindex]:hover:focus {
   outline: solid 2px rgba(255, 165, 0, 0.5);
 }
-a[href]:not([tabindex="-1"]):focus:active,
-area[href]:not([tabindex="-1"]):focus:active,
-details:not([tabindex="-1"]):focus:active,
-iframe:not([tabindex="-1"]):focus:active,
-[contentEditable=true]:not([tabindex="-1"]):focus:active,
-:enabled:not([tabindex="-1"]):focus:active,
-object:not([tabindex="-1"]):focus:active,
-embed:not([tabindex="-1"]):focus:active,
-[tabindex]:not([tabindex="-1"]):focus:active {
+a[href]:focus:active,
+area[href]:focus:active,
+details:focus:active,
+iframe:focus:active,
+[contentEditable=true]:focus:active,
+:enabled:focus:active,
+object:focus:active,
+embed:focus:active,
+[tabindex]:focus:active {
   outline: none;
 }
 *:focus {
@@ -342,6 +349,8 @@ header,
   padding: 10px 10px 0px 10px;
   margin: 0;
   position: relative;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 header h1,
 [role="banner"] h1 {
@@ -446,6 +455,17 @@ aside,
   border: solid 1px black;
   box-shadow: 4px 4px 0 black;
 }
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  aside,
+  [role="complementary"] {
+    background-size: 3rem;
+    padding-left: 1rem;
+  }
+  aside h2,
+  [role="complementary"] h2 {
+    margin-left: 5rem;
+  }
+}
 aside h3,
 [role="complementary"] h3 {
   color: #9999ff;
@@ -471,18 +491,31 @@ footer a,
 [role="switch"][aria-checked] {
   margin: 0;
   padding: 0;
-  height: 26px;
-  border: 2px solid black;
+  width: 3.75rem;
+  height: 2.125rem;
+  border: 0.125rem solid black;
   display: inline-block;
   margin-right: 0.25em;
-  line-height: 20px;
+  line-height: 1.25rem;
   vertical-align: middle;
   text-align: center;
-  font: 12px "Open Sans", "Arial", serif;
+  font: 12/16rem "Open Sans", "Arial", serif;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2.125rem;
+  /* Checked */
 }
 [role="switch"] span,
 [role="switch"][aria-checked] span {
-  padding: 0 4px;
+  padding: 0 0.25rem;
+}
+[role="switch"] :first-child,
+[role="switch"][aria-checked] :first-child {
+  left: 0;
+}
+[role="switch"] :last-child,
+[role="switch"][aria-checked] :last-child {
+  right: 0;
 }
 [role="switch"][aria-checked="false"] :first-child,
 [role="switch"][aria-checked][aria-checked="false"] :first-child,
@@ -494,6 +527,15 @@ footer a,
 [role="switch"][aria-checked][aria-pressed="true"] :last-child {
   background: #262;
   color: #eef;
+  height: 1.875rem;
+  width: 1.875rem;
+  display: block;
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 1.375rem;
+  padding: 0;
+  line-height: 1.7rem;
 }
 [role="switch"][aria-checked="false"] :last-child,
 [role="switch"][aria-checked][aria-checked="false"] :last-child,
@@ -503,11 +545,11 @@ footer a,
 [role="switch"][aria-checked][aria-pressed="false"] :last-child,
 [role="switch"][aria-pressed="true"] :first-child,
 [role="switch"][aria-checked][aria-pressed="true"] :first-child {
-  color: #bbd;
+  display: none;
 }
 label.switch--label {
-  font: 16px "Open Sans", "Arial", sans-serif;
-  line-height: 20px;
+  font: 16/16rem "Open Sans", "Arial", sans-serif;
+  line-height: 1.25rem;
   vertical-align: middle;
   -webkit-user-select: none;
   -khtml-user-select: none;

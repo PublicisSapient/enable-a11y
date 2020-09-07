@@ -3,6 +3,7 @@
 
 <head>
     <title>ARIA Heading Role Examples</title>
+		<?php include("includes/common-head-tags.php"); ?>
     <link href="https://fonts.googleapis.com/css?family=Ultra|Orienta" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/heading.css" />
 
@@ -17,36 +18,31 @@
             <h2>Notes:</h2>
 
             <ul>
-                <li>The examples below are from
-                    <a href="https://www.w3.org/WAI/GL/wiki/Using_grouping_roles_to_identify_related_form_controls">Using Grouping Roles to Identify Related Form Controls</a>
-                    from the W3C. The styling on the ARIA version was refactored from
-                    <a href="https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072">http://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/</a>
+                <li>Heading levels have nothing to do with their physical size
+                    (i.e. an H1 doesn't have to be larger than an H2)
+                </li>
+                <li>
+                    Headings are used by screen-reader users as a table of contents.
+                </li>
+                <li>The following are HTML headings. The styling was originally derived from
+                    <a href="https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/">Heading Set Styling with CSS </a>
                     by
-                    <a href="http://code.iamkate.com/">Kate Morley</a>.</li>
-                <li>Voiceover doesn't recognize
-                    <code>radiogroup</code> (in that it doesn't use it when tabbing into the radiobuttons in examples 1 and 2). According to
-                    <a href="https://www.w3.org/WAI/GL/wiki/Using_grouping_roles_to_identify_related_form_controls">Using Grouping Roles to Identify Related Form Controls</a>, this is used to work in OSX 10.7.4 on MacBook
-                    Pro but not on later versions like OSX 10.8 </li>
+                    <a href="https://hugogiraudel.com/">Hugo Giraudel</a>
+                </li>
             </ul>
         </aside>
 
         <h1>
-            ARIA Heading Role Examples
+            HTML5 and ARIA Headings
         </h1>
 
-        <h2>Notes:</h2>
 
-        <ul>
-            <li>Both ARIA and HTML5 headers are supported Voiceover's Rotor and NVDA's Elements Dialogue.</li>
-        </ul>
+        <h2>HTML5 Headings</h2>
 
+        <p>HTML supports heading levels 1-6</p>
 
         <div class="heading-example">
-            <p>The following are HTML headings. The styling was originally derived from
-                <a href="https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/">Heading Set Styling with CSS </a>
-                by
-                <a href="https://hugogiraudel.com/">Hugo Giraudel</a>
-            </p>
+            
 
             <h1>This is a heading level 1</h1>
             <h2>This is an h2</h2>
@@ -54,9 +50,17 @@
             <h4>This is an h4</h4>
             <h5>This is an h5</h5>
             <h6>This is an h6</h6>
+        </div>
 
+        
 
-            <p>The following are ARIA headings</p>
+            <h2>ARIA Headings</h2>
+
+            <p>The following are ARIA headings.  Note that ARIA supports
+                heading levels 1-10.
+            </p>
+        
+        <div class="heading-example">
             <div role="heading" aria-level="1">This in an ARIA heading level 1</div>
             <div role="heading" aria-level="2">This in an ARIA heading level 2</div>
             <div role="heading" aria-level="3">This in an ARIA heading level 3</div>

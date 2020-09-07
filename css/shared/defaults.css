@@ -8,6 +8,7 @@ body {
 }
 code {
   font-family: "Consolas", monospace;
+  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -65,4 +66,8 @@ p {
 .example .notes h2 {
   margin: 0;
   border-bottom: none;
+}
+input,
+select {
+  font-size: 1em;
 }

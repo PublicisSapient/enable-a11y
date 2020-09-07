@@ -3,4 +3,49 @@
 @import "shared/a11y";
 @import "shared/landmarks";
 
+details,
+.enable-drawer {
+  & > summary,
+  & > .enable-drawer__button {
+    appearance: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: transparent;
+    font-size: 1rem;
+    list-style: none;
+    cursor: default;
+    width: 100%;
+    text-align: left;
+    background-image: url("../images/plus.svg");
+    background-size: 20/@px 20/@px;
+    background-repeat: no-repeat;
+    padding-left: 25/@px;
+    background-repeat: no-repeat;
+   
+    &::-webkit-details-marker {
+      display: none;
+    }
 
+  }
+
+
+  &[open] > summary,
+  & .enable-drawer__button[aria-expanded="true"] { 
+      background-image: url('../images/minus.svg');
+  }
+}
+
+
+.enable-drawer {
+  &__content {
+    display: none;
+  }
+
+  &__button[aria-expanded="true"] + &__content {
+     display: block;
+  }
+  // <a href="https://iconscout.com/icons/plus" target="_blank">Plus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+  // <a href="https://iconscout.com/icons/minus" target="_blank">Minus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+ }

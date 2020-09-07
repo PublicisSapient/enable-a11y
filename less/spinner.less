@@ -3,13 +3,19 @@
 @import "shared/a11y";
 @import "shared/landmarks";
 
-@fontSize: 1.6rem;
+@inputHeight: 20/@px;
+@inputWidth: 70/@px;
+@spinButtonHeight: @inputHeight / 2;
+@fontSize: @inputHeight - 4;
+
+div.spinControl {
+  position: relative;
+}
 
 div.spinControl,
 input[type="number"] {
-  
-  width: 100px;
-  height: 44px;
+  width: @inputWidth;
+  height: @inputHeight;
   border: 1px solid black;
 }
 
@@ -19,38 +25,43 @@ input[type="number"] {
 }
 
 div.spinControl {
-  margin: 20px;
-}
-div.spinbutton {
-  float: left;
-  display: inline;
-  margin: 1px;
-  text-align: right;
-  font-size: @fontSize;
-  padding: 7px 10px 7px 0;
-  width: 65px;
-  height: 28px;
-  background-color: #faf7f0;
+  margin: 20/@px;
 
-  &:active,
-  &:hover,
-  &.focus {
-    margin: 0;
-    background-color: #faf7f0;
-    border: 1px solid red;
+  div.spinbutton {
+    display: block;
+    text-align: right;
+    font-size: @fontSize;
+    width: @inputWidth - @spinButtonHeight - 7/@px;
+
+    &:active,
+    &:hover,
+    &.focus {
+      margin: 0;
+      background-color: #faf7f0;
+      border: 1px solid red;
+    }
   }
-}
 
-div.button {
-  margin: 0;
-  margin-left: 77px;
-  padding: 0;
-  height: 22px;
+  .spin-button {
+    position: absolute;
+    right: 0;
+    height: @spinButtonHeight;
 
-  & img {
-    margin: 0;
-    padding: 0;
-    border-left: 1px solid black;
+    &--up {
+      top: 0;
+    }
+
+    &--down {
+      bottom: 0;
+    }
+
+    & img {
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid black;
+      height: @inputHeight / 2;
+      display: block;
+    }
   }
 }
 

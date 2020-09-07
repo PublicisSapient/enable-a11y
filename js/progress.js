@@ -1,6 +1,7 @@
 const progressTest = new function () {
 
     let counter = 1;
+    let timeout = null;
 
     this.init = function () {
         const progressEls = document.querySelectorAll('progress, [role="progressbar"]');
@@ -32,12 +33,17 @@ const progressTest = new function () {
     }
 
     function progressTestClickEvent(e) {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
         e.preventDefault();
         const id = e.target.dataset.for;
 
         const el = document.getElementById(id);
         const arrowEl = document.querySelector('[data-arrow-for="' + id + '"]');
         const isAria = (el.getAttribute('role') === 'progressbar');
+        const isFocusable = (el.getAttribute('tabIndex') === "-1");
 
         if (arrowEl) {
             arrowEl.classList.add('noTransition');
@@ -48,7 +54,14 @@ const progressTest = new function () {
         } else {
             el.value = 0;
         }
-        setTimeout(function () {
+
+        if (isFocusable) {
+            el.focus();
+        }
+
+        el.setAttribute('aria-busy', 'true');
+        
+        timeout = setTimeout(function () {
             startHelper(arrowEl, el, isAria);
         }, 200);
     }
@@ -71,7 +84,8 @@ const progressTest = new function () {
     }
 
     function startTimeout(n, el, step, max, ms, isAria) {
-        
+        const alertId = el.dataset.alert;
+        const alertEl = alertId && document.getElementById(alertId);
         if (isAria) {
             el.setAttribute('aria-valuenow', n);
 
@@ -88,10 +102,16 @@ const progressTest = new function () {
             }
         }
 
+        if (alertEl) {
+            alertEl.innerHTML = `${n * 100 / max}%`;
+        }
+
         if (n < max) {
-            setTimeout(function () {
+            timeout = setTimeout(function () {
                 startTimeout(n + step, el, step, max, ms, isAria)
             }, ms);
+        } else {
+            el.setAttribute('aria-busy', 'false');
         }
     }
 }
