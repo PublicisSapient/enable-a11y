@@ -120,7 +120,7 @@
           </p>
           <p>
             In general, (the big exception being the
-            <a href="10-combobox.html">Combo box exmaple</a>), we highly
+            <a href="10-combobox.php">Combo box exmaple</a>), we highly
             recommend that you use native HTML5 links, buttons, select boxes,
             checkboxes, etc., instead of custom ones. However, there are times
             when you have to work with custom components (e.g. when you are
@@ -138,7 +138,7 @@
 
           <ul>
             <li>
-              <a href="18-link.html">Links</a> : A lot of developers don't know
+              <a href="18-link.php">Links</a> : A lot of developers don't know
               that links should only be used when coding a CTA that goes to a
               specific URL. There is also special markup to tell assistive
               technology when a link actually points to the page the user is
@@ -146,7 +146,7 @@
             </li>
 
             <li>
-              <a href="05-button.html">Button</a>: Unlike a link, a button
+              <a href="05-button.php">Button</a>: Unlike a link, a button
               doesn't have a URL associated with it. It causes an action on the
               page.
             </li>
@@ -162,48 +162,48 @@
 
           <ul>
             <li>
-              <a href="12a-form-error-checking.html">Form error checking:</a>
+              <a href="12a-form-error-checking.php">Form error checking:</a>
               You don't even know you are coding them wrong! One of the most
               common things developers don't realize they are implementing
               incorrectly.
             </li>
-            <li><a href="12-form.html">Form with custom elements</a>:</li>
+            <li><a href="12-form.php">Form with custom elements</a>:</li>
 
             <li>
-              <a href="06-checkbox.html">Checkbox</a>: both native
+              <a href="06-checkbox.php">Checkbox</a>: both native
               <code>&lt;input type="checkbox"&gt;</code> and custom ones
             </li>
 
             <li>
-              <a href="15-radiogroup.html">Radio Buttons</a>: they are clustered
+              <a href="15-radiogroup.php">Radio Buttons</a>: they are clustered
               in groups and have special keyboard interactions that need to be
               coded if you are making custom ones instead of their native HTML5
               equivalents.
             </li>
             <li>
-              <a href="19-listbox.html">Listbox (a.k.a. select boxes)</a>: allow
+              <a href="19-listbox.php">Listbox (a.k.a. select boxes)</a>: allow
               you to select from a list of items. In order to make custom select
               boxes accessible, you must implement specific keyboard navigation
               and add specific ARIA markup.
             </li>
             <li>
-              <a href="24-textbox.html">Textboxes</a>: It is possible to make
+              <a href="24-textbox.php">Textboxes</a>: It is possible to make
               custom textboxes, with surprisingly little effort. This code shows
               how.
             </li>
             <li>
-              <a href="10-combobox.html">Combobox</a>: Surprisingly, native
+              <a href="10-combobox.php">Combobox</a>: Surprisingly, native
               HTML5 autocomplete using the <code>datalist</code> tag is
               currently not very accessible
             </li>
             <li>
-              <a href="32-slider.html">Slider</a>: can be implemented with
+              <a href="32-slider.php">Slider</a>: can be implemented with
               native HTML5 <code>&lt;input type="range"&gt;</code>, or with
               custom code. The latter can also be used when it's necessary for
               users to choose a range of values.
             </li>
             <li>
-              <a href="30-spinner.html">Numeric Inputs</a>: You may not even
+              <a href="30-spinner.php">Numeric Inputs</a>: You may not even
               realize that <code>&lt;input type="number"&gt;</code> is not
               supposed to be used for numeric inputs like zipcodes that don't
               represent quantities.
@@ -213,56 +213,59 @@
           <h3>Other native widgets</h3>
 
           <ul>
-            <li><a href="04-dialog-document__html5.html">Modal Dialog</a>:</li>
+            <li><a href="04-dialog-document__html5.php">Modal Dialog</a>:
+              Works in both desktop and modal (a lot of so-called accessible
+              dialogs don't work in mobile correctly).
+          </li>
             <li>
-              <a href="07-table.html">Table</a> You'll be surprised that you've
+              <a href="07-table.php">Table</a> You'll be surprised that you've
               probably been coding them wrong all this time! Includes
               instructions on how screen reader users navigate tables.
             </li>
             <li>
-              <a href="08-definition-term.html">Description List:</a> previously
+              <a href="08-definition-term.php">Description List:</a> previously
               known as definition lists, they are a list of name value pairs.
             </li>
             <li>
-              <a href="09-directory.html">Directory:</a> (natively they are
+              <a href="09-directory.php">Directory:</a> (natively they are
               called unordered lists)
             </li>
             <li>
-              <a href="23-progress.html">Progress bars/spinners</a>: should be
+              <a href="23-progress.php">Progress bars/spinners</a>: should be
               coded in such a way to ensure their progress is announced to
               screen readers.
             </li>
             <li>
-              <a href="17-img.html">Image</a>: HTML5 and custom image widgets
+              <a href="17-img.php">Image</a>: HTML5 and custom image widgets
               must be coded to ensure the content of the image is announced
               correctly to screen reader users.
             </li>
             <li>
-              <a href="28-tooltip.html"> 28-tooltip.html</a>: It is possible to
+              <a href="28-tooltip.php"> 28-tooltip.html</a>: It is possible to
               make custom tooltips with CSS only or with JavaScript. This
               example has both.
             </li>
             <li>
-              <a href="11-figure.html">Figure</a>: An image, illustration,
+              <a href="11-figure.php">Figure</a>: An image, illustration,
               diagram, code snippet, etc., that is referenced in the main flow
               of a document, but that can be moved to another part of the
               document or to an appendix without affecting the main flow.
             </li>
             <li>
-              <a href="16-heading.html">Heading</a>: Screen readers users use
+              <a href="16-heading.php">Heading</a>: Screen readers users use
               them as the table of contents for you page. Make sure you are
               coding them correctly.
             </li>
 
             <li>
-              <a href="21-math.html">Math</a>: MathML is used to code math
+              <a href="21-math.php">Math</a>: MathML is used to code math
               equations, and there are strategies to make them work with screen
               readers.
             </li>
             <li>
-              <a href="33-dropdown.html">Dropdowns</a>: Native ones can be coded
+              <a href="33-dropdown.php">Dropdowns</a>: Native ones can be coded
               today using <code>&lt;details&gt;</code> and
-              <code>&gt;summary&lt;</code> tags!
+              <code>&lt;summary&gt;</code> tags!
             </li>
           </ul>
 
@@ -272,11 +275,11 @@
 
           <ul>
             <li>
-              <a href="08a-tabs.html">Tabs:</a> one of the hardest widgets to
+              <a href="08a-tabs.php">Tabs:</a> one of the hardest widgets to
               code right.
             </li>
-            <li><a href="31-switch.html"> 31-switch.html</a></li>
-            <li><a href="29-tree.html"> 29-tree.html</a></li>
+            <li><a href="31-switch.php"> 31-switch.html</a></li>
+            <li><a href="29-tree.php"> 29-tree.html</a></li>
           </ul>
 
           <h3>ARIA live Regions</h3>
@@ -284,17 +287,11 @@
           <p>This markup will inform users about changes on the page.</p>
 
           <ul>
-            <li><a href="01-alert-dialog.html">Alert Dialog</a></li>
-            <li><a href="02-alert.html">Alert</a></li>
-            <li><a href="03-article-banner-contentinfo.html">ARIA Roles</a></li>
-            <li><a href="13-grid.html"> 13-grid.html</a></li>
-            <li><a href="14-group.html"> 14-group.html</a></li>
-            <li><a href="20-log.html"> 20-log.html</a></li>
-            <li><a href="25-timer.html"> 25-timer.html</a></li>
-            <li><a href="26-marquee.html"> 26-marquee.html</a></li>
-            <li><a href="27-status.html"> 27-status.html</a></li>
-
-            <li><a href="roles.html"> roles.html</a></li>
+            <li><a href="02-alert.php">Alert role</a></li>
+            <li><a href="20-log.php">Log role</a></li>
+            <li><a href="25-timer.php">Timer role</a></li>
+            <li><a href="26-marquee.php">Marquee role</a></li>
+            <li><a href="27-status.php">Status role</a></li>
           </ul>
         </div>
         <div role="tabpanel" id="how-to-contribute__tabpanel">

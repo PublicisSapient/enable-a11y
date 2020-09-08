@@ -46,6 +46,10 @@
 
         <h2> Example 2: Polite Alert</h2> 
 
+        <p>This example is only to illustrate how an aria-live="polite" works.
+            If you want to make an accessible expando, please look at
+            <a href="33-dropdown.php">accessible drawer example</a>.
+
         <div id="polite-alert" role="alert" aria-live="polite" class="visually-hidden"></div>
 
 

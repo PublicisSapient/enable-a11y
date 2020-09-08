@@ -72,6 +72,7 @@
           aria-valuemin="0"
           aria-valuemax="100"
           aria-valuenow="50"
+          data-increment="10"
           tabindex="0"
         >
           50
@@ -96,6 +97,7 @@
           aria-valuemin="500"
           aria-valuemax="1000"
           aria-valuenow="750"
+          data-increment="50"
           tabindex="0"
         >
           750
@@ -122,7 +124,6 @@
 
     </main>
 
-    <script src="js/shared/jquery-1.4.2.min.js"></script>
     <script src="js/spinbutton.js"></script>
   </body>
 </html>
