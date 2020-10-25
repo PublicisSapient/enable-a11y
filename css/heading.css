@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import "../fonts/specify/stylesheet.css";
+@import "../fonts/open-dyslexic/stylesheet.css";
 @import url("demo.css");
 html,
 body,
@@ -139,6 +140,7 @@ body {
 }
 code {
   font-family: "Consolas", monospace;
+  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -337,6 +339,7 @@ embed:focus:active,
   color: #777;
   opacity: 1;
 }
+/* Mixins */
 body {
   margin: 0;
   position: relative;

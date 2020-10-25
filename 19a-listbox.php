@@ -5,7 +5,7 @@
     <title>ARIA listbox role example</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
-    <link rel="stylesheet" type="text/css" href="css/listbox.css" />
+    <link rel="stylesheet" type="text/css" href="css/enable-listbox.css" />
     <meta charset="utf-8">
 </head>
 
@@ -69,16 +69,16 @@
         <p>
             Choose your favorite transuranic element (actinide or transactinide).
         </p>
-        <div class="listbox-area">
+        <div class="enable-listbox listbox-area">
             <div class="left-area">
-                <span id="exp_elem">
+                <span id="exp_elem" class="enable-listbox__exp_elem">
                     Choose an element:
                 </span>
                 <div id="exp_wrapper">
-                    <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="exp_button">
+                    <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="exp_button" class="enable-listbox__button">
                         Neptunium
                     </button>
-                    <ul id="exp_elem_list" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
+                    <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
                         <li id="exp_elem_Np" role="option">
                             Neptunium
                         </li>
@@ -258,7 +258,8 @@
     </main>
 
     
-    <script src="js/shared/listbox-refactored.js"></script>
+    <script src="js/shared/enable-listbox.js"></script>
+    <script src="js/accessibility.js"></script>
 </body>
 
 </html>

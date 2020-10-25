@@ -45,7 +45,6 @@ var tabgroup = new function () {
                 const { href } = tabEl;
                 const split = href && href.split('#');
                 const hash = split && split[1];
-                console.log(tabEl, href, hash);
 
 
                 if (activeHash === '#' + hash) {

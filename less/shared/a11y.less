@@ -135,3 +135,27 @@ embed,
 	 color: #777;
 	 opacity: 1;
 }
+
+/* Mixins */
+
+.content-with-alt-text(@content: ""; @alt: "") {
+	@supports (content: "x" / "y") {
+		& {
+			content: @content ~"/" @alt;
+		}
+	}
+
+	// Safari only
+	@supports not (content: "x" / "y") {
+		& {
+			content: @content;
+			alt: @alt;
+		}
+	}
+}
+
+.box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}

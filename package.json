@@ -29,6 +29,7 @@
     "accessibility-js-routines": "1.8.0"
   },
   "dependencies": {
+    "indent.js": "^0.3.5",
     "lessc": "^1.0.2"
   }
 }

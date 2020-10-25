@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-      <strong>Enable</strong> - HTML5 Code Examples Accessible To Everyone
+      Enable - HTML5 Code Examples Accessible To Everyone
     </title>
     <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/home.css" />
@@ -21,7 +21,7 @@
         class="visually-hidden tabs__instructions"
         id="tabs-keyboard-only-instructions"
       >
-        Use arrow keys to choose tabs.
+        Use arrow keys to choose tabs. Content will be displayed below.
       </div>
       <div id="home-tabs">
         <ul
@@ -278,8 +278,8 @@
               <a href="08a-tabs.php">Tabs:</a> one of the hardest widgets to
               code right.
             </li>
-            <li><a href="31-switch.php"> 31-switch.html</a></li>
-            <li><a href="29-tree.php"> 29-tree.html</a></li>
+            <li><a href="31-switch.php">Switch:</a> when you want something
+          turned on and off, but you don't want to use a checkbox.</li>
           </ul>
 
           <h3>ARIA live Regions</h3>

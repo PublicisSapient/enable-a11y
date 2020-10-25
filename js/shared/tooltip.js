@@ -20,7 +20,6 @@ const tooltip = new function () {
         tooltipEl.className = 'tooltip';
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip')
-        this.hide();
         bodyEl.appendChild(tooltipEl);
     }
 
@@ -33,12 +32,16 @@ const tooltip = new function () {
     }
 
     this.hide = (e) => {
-        
-        const target = e ? e.target : null;
-        tooltipEl.setAttribute('aria-hidden', "true");
-        tooltipEl.classList.add('tooltip--hidden');
-        
-        target && target.removeAttribute('aria-describedby');
+        const target = e.target;
+        const text = target.dataset.tooltip;
+
+        if (text) {
+            const target = e ? e.target : null;
+            tooltipEl.setAttribute('aria-hidden', "true");
+            tooltipEl.classList.add('tooltip--hidden');
+            
+            target && target.removeAttribute('aria-describedby');
+        }
     }
 
     this.show = (e) => {

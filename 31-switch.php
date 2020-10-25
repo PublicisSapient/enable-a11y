@@ -36,12 +36,6 @@
             Putting an <code>aria-describedby</code> on the switch can give
             supplementary info to the state of the switch
           </li>
-          <li>
-            The third example tries to have screen readers bypass the reporting
-            of the checked state. It works in all but ChromeVox treats an
-            <code>aria-live="assertive"</code> like an
-            <code>aria-live="polite"</code>.
-          </li>
         </ul>
       </aside>
 

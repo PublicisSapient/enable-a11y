@@ -1,0 +1,111 @@
+@import "shared/reset";
+@import "shared/defaults"; 
+@import "shared/a11y";
+@import "form";
+
+.annotate{
+	font-style: italic;
+	color: #366ED4;
+}
+
+.enable-listbox {
+	padding: 20px;
+	background: #eee;
+	border: 1px solid #aaa;
+
+	&__left-area,
+	&__right-area {
+		box-sizing: border-box;
+		display: inline-block;
+		font-size: 14px;
+		vertical-align: top;
+		width: 50%;
+	}
+
+	&__left-area {
+		padding-right: 10px;
+	}
+
+	&__right-area {
+		padding-left: 10px;
+	}
+
+	[role="listbox"] {
+		min-height: 18em;
+		padding: 0px;
+		background: white;
+		border: 1px solid #aaa;
+		border-top: 0;
+		max-height: 10em;
+		overflow-y: auto;
+		position: absolute;
+		margin: 0;
+		width: 148px;
+	}
+
+	[role="option"] {
+		display: block;
+		padding: 0 1em;
+		position: relative;
+		line-height: 1.8em;
+	}
+
+	[role="option"]:focus {
+		background: #bde4ff;
+	}
+
+	[role="option"][aria-selected] {
+		padding-left: 1.5em;
+	}
+
+	[role="option"][aria-selected="true"]::before {
+		.content-with-alt-text("✓"; "");
+		position: absolute;
+		left: 0.5em;
+	}
+
+	button {
+		font-size: 16px;
+		border-radius: 0;
+		font-size: 16px;
+		text-align: left;
+		padding: 5px 10px;
+		width: 150px;
+		position: relative;
+		
+		&[aria-disabled="true"] {
+			opacity: 0.5;
+		}
+
+
+		&::after {
+			width: 0;
+			height: 0;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 8px solid #aaa;
+			content: " ";
+			position: absolute;
+			right: 5px;
+			top: 10px;
+		}
+
+		&[aria-expanded="true"]::after {
+			width: 0;
+			height: 0;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 0;
+			border-bottom: 8px solid #aaa;
+			content: " ";
+			position: absolute;
+			right: 5px;
+			top: 10px;
+		}
+
+	}
+
+	.hidden {
+		display: none;
+	}
+}

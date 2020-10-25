@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import "../fonts/specify/stylesheet.css";
+@import "../fonts/open-dyslexic/stylesheet.css";
 html,
 body,
 div,
@@ -337,6 +338,7 @@ embed:focus:active,
   color: #777;
   opacity: 1;
 }
+/* Mixins */
 body {
   margin: 0;
   position: relative;

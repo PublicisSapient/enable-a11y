@@ -80,18 +80,21 @@ const a11yGroup = function (el, options) {
     this.setState = (setState === false) ? false : true;
     this.role = el.getAttribute('role');
     this.visuallyHiddenClass = visuallyHiddenClass || 'sr-only';
-    const groupRe = /(group|list)$/;
+    const groupRe = /(group$|list$|^listbox$)/;
     keyboardOnlyInstructionsId = el.dataset.keyboardOnlyInstructions;
     keyboardOnlyInstructionsEl = keyboardOnlyInstructionsId ? document.getElementById(keyboardOnlyInstructionsId) : null;
-
+    
     if (this.role === null || !groupRe.test(this.role)) {
       return;
+    } else if (this.role === "listbox") {
+      this.groupType = 'option';
     } else {
       this.groupType = this.role.replace(groupRe, '');
     }
+
     this.ariaCheckedCallback = ariaCheckedCallback;
     this.focusCallback = focusCallback || radioFocusCallback;
-    this.checkedAttribute = (this.groupType === 'tab') ? 'aria-selected' : 'aria-checked';
+    this.checkedAttribute = (this.groupType === 'tab' || this.groupType === 'option') ? 'aria-selected' : 'aria-checked';
 
     el.addEventListener('keydown', this.onKeyUp.bind(this), true);
     el.addEventListener('click', this.onClick.bind(this), true);
@@ -125,10 +128,12 @@ const a11yGroup = function (el, options) {
       }
     }
 
-    if (!mousedown && !this.allowTabbing) {
+    if (!mousedown && !this.allowTabbing && this.groupType !== 'option') {
       for (let i = 0; i < groupEls.length; i++) {
         const el = groupEls[i];
         if (el.getAttribute(this.checkedAttribute) === 'true') {
+          // it's this one here
+          console.log('here', this.groupType);
           el.focus();
           break;
         }
@@ -188,7 +193,6 @@ const a11yGroup = function (el, options) {
     }
 
     if (allowTabbing && !doNotRefocus) {
-      console.log('refocusing', )
       accessibility.refocusCurrentElement();
     }
 
@@ -233,11 +237,13 @@ const a11yGroup = function (el, options) {
    */
   this.onKeyUp = (e) => {
     const { key, target, currentTarget, shiftKey } = e;
+    const targetRole = target.getAttribute('role');
     let { ariaCheckedCallback, allowTabbing, doKeyChecking } = this;
 
-    if (target.getAttribute('role') === this.groupType) {
+    if (targetRole === this.groupType) {
       const radioEls = Array.from(currentTarget.querySelectorAll(`[role="${this.groupType}"]`));
       const targetIndex = radioEls.indexOf(target);
+      const isOption = (targetRole === 'option');
       let elToFocus;
 
       if (targetIndex >= 0) {
@@ -246,12 +252,16 @@ const a11yGroup = function (el, options) {
           case 'ArrowLeft':
             elToFocus = radioEls[this.mod(targetIndex - 1, radioEls.length)];
 
-            this.select(e, elToFocus, true);
+            if (!isOption) {
+              this.select(e, elToFocus, true);
+            }
             break;
           case 'ArrowDown':
           case 'ArrowRight':
             elToFocus = radioEls[this.mod(targetIndex + 1, radioEls.length)];
-            this.select(e, elToFocus, true);
+            if (!isOption) {
+              this.select(e, elToFocus, true);
+            }
             break;
           case ' ':
           case 'Enter':
@@ -316,7 +326,6 @@ const accessibility = {
    * @param {object} element - The element being focused
    */
   focusAndScrollToView(element) {
-    console.log('el', element);
     element.focus();
 
     const elementRect = element.getBoundingClientRect();
@@ -705,6 +714,57 @@ const accessibility = {
     }
   },
 
+  normalizedKey(key) {
+    switch(key) {
+      case "Space":
+      case "SpaceBar":
+        return " ";
+      case "OS":
+        return "Meta";
+      case "Scroll":
+        return "ScrollLock";
+      case "Left":
+      case "Right":
+      case "Up":
+      case "Down":
+        return "Arrow" + key;
+      case "Del":
+        return "Delete";
+      case "Crsel":
+        return "CrSel";
+      case "Essel":
+        return "EsSel";
+      case "Esc":
+        return "Escape";
+      case "Apps":
+        return "ContextMenu";
+      case "AltGraph":
+        return "ModeChange";
+      case "MediaNextTrack":
+        return "MediaTrackNext";
+      case "MediaPreviousTrack":
+        return "MediaTrackPrevious";
+      case "FastFwd":
+        return "MediaFastForward";
+      case "VolumeUp":
+      case "VolumeDown":
+      case "VolumeMute":
+        return "Audio" + key;
+      case "Decimal":
+        return ".";
+      case "Add":
+        return "+";
+      case "Subtract":
+        return "-";
+      case "Multiply":
+        return "*";
+      case "Divide":
+        return "/";
+      default:
+        return key;
+    }
+  },
+
   initGroup: function (el, options) {
     this.groups.push(new a11yGroup(el, options));
   },
@@ -713,5 +773,7 @@ const accessibility = {
   setArrowKeyRadioGroupEvents: function(el, options) {
     this.initGroup(el, options);
   }
+
+  
 };
 

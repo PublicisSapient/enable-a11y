@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import "../fonts/specify/stylesheet.css";
+@import "../fonts/open-dyslexic/stylesheet.css";
 html,
 body,
 div,
@@ -138,6 +139,7 @@ body {
 }
 code {
   font-family: "Consolas", monospace;
+  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -336,6 +338,7 @@ embed:focus:active,
   color: #777;
   opacity: 1;
 }
+/* Mixins */
 input[type="radio"] + label,
 input[type="checkbox"] + label,
 [role="radio"] + label,

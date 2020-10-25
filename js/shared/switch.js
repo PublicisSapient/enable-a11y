@@ -27,7 +27,6 @@ const Switch = new function () {
                 ariaDescribedBy =  id + '-checked';
             }
             el.setAttribute('aria-describedby', ariaDescribedBy);
-            console.log(el);
             el.dispatchEvent(customEvent);
         }    
     }
