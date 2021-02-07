@@ -24,14 +24,15 @@ input[type=submit] {
 }
 
 fieldset,
-.aria-form-group {
+.aria-form-group,
+.fieldset {
   padding: 0.5em;
   margin-top: 1em;
   padding-top: 2em;
   background-color: #EEEEEE;
 
   legend,
-  .fieldset {
+  .legend {
     position: relative;
     top: 1.5em;
     border-color: #AAAAAA;
@@ -39,9 +40,9 @@ fieldset,
     font-size: 1em;
   }
 
-  .fieldset {
+  .legend {
     top: -1.5em;
-    display: block;
+    margin-bottom: -1em;
   }
 }
 

@@ -5,7 +5,7 @@
     <title>ARIA listbox role example</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
-    <link rel="stylesheet" type="text/css" href="css/enable-listbox.css" />
+    <link rel="stylesheet" type="text/css" href="css/listbox.css" />
     <meta charset="utf-8">
 </head>
 
@@ -18,6 +18,7 @@
         <aside class="notes">
             <h2>Notes</h2>
             <ul>
+                <li>These examples are originally from <a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">W3C's Listbox Example page</a>.</li>
                 <li>tl;dr: Both versions are accessible, with slight differences in how they are reported to users.</li>
 
                 <li>Screen reader interactions are as follows:
@@ -69,16 +70,16 @@
         <p>
             Choose your favorite transuranic element (actinide or transactinide).
         </p>
-        <div class="enable-listbox listbox-area">
+        <div class="listbox-area">
             <div class="left-area">
-                <span id="exp_elem" class="enable-listbox__exp_elem">
+                <span id="exp_elem">
                     Choose an element:
                 </span>
                 <div id="exp_wrapper">
-                    <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="exp_button" class="enable-listbox__button">
+                    <button aria-haspopup="listbox" aria-labelledby="exp_elem exp_button" id="exp_button">
                         Neptunium
                     </button>
-                    <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
+                    <ul id="exp_elem_list" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
                         <li id="exp_elem_Np" role="option">
                             Neptunium
                         </li>
@@ -257,9 +258,9 @@
 
     </main>
 
-    
-    <script src="js/shared/enable-listbox.js"></script>
-    <script src="js/accessibility.js"></script>
+    <script src="js/shared/w3c-examples-stub.js"></script>
+    <script src="js/shared/listbox.js"></script>
+    <script src="js/shared/listbox-expanded.js"></script>
 </body>
 
 </html>

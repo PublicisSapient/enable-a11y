@@ -4,6 +4,7 @@
 */
 @import "../fonts/specify/stylesheet.css";
 @import "../fonts/open-dyslexic/stylesheet.css";
+@import "../fonts/modeseven/stylesheet.css";
 html,
 body,
 div,
@@ -136,10 +137,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
   line-height: 1.1;
-}
-code {
-  font-family: "Consolas", monospace;
-  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -481,7 +478,7 @@ footer,
   width: 100%;
   background: black;
   color: white;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center;
 }
 footer a,
@@ -500,7 +497,7 @@ footer a,
   line-height: 1.25rem;
   vertical-align: middle;
   text-align: center;
-  font: 12/16rem "Open Sans", "Arial", serif;
+  font: 0.75rem "Open Sans", "Arial", serif;
   overflow: hidden;
   position: relative;
   border-radius: 2.125rem;
@@ -549,7 +546,7 @@ footer a,
   display: none;
 }
 label.switch--label {
-  font: 16/16rem "Open Sans", "Arial", sans-serif;
+  font: 1rem "Open Sans", "Arial", sans-serif;
   line-height: 1.25rem;
   vertical-align: middle;
   -webkit-user-select: none;

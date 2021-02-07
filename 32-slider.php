@@ -31,8 +31,14 @@
 
             <h2>A Simple ARIA Slider</h2>
             
+            <audio id="xxx" controls src="/kc-munchkin/sounds/cuckoo.mp3" volume="0"></audio>
+
             <div id="sr1_label" >JPEG compression factor:</div>
-            <div class="hslider" id="sr1"></div>  
+            <div id="sr1_desc" class="visually-hidden">
+                Use arrow keys to increase and decrease the value of the slider.
+            </div>
+
+            <div class="enable-slider enable-slider--horizontal" id="sr1"></div>  
                 
             <h2>An ARIA Slider With Min and Max Values</h2>
 
@@ -40,7 +46,7 @@
             
             <div id="sr2_label1" class="hidden">Minimum investment amount</div>
             <div id="sr2_label2" class="hidden">Maximum investment amount</div>
-            <div class="hslider" id="sr2"></div>  
+            <div class="enable-slider enable-slider--horizontal" id="sr2"></div>  
             
             <h2>A Vertical ARIA Slider</h2>
             
@@ -48,7 +54,7 @@
             
             <div id="sr3_label1" class="hidden">Minimum investment amount</div>
             <div id="sr3_label2" class="hidden">Maximum investment amount   </div>
-            <div class="vslider" id="sr3"></div> 
+            <div class="enable-slider enable-slider--vertical" id="sr3"></div> 
 
             <h2>A Simple HTML Slider (i.e. an <code>input</code> with <code>type="range"</code>)</h2>
 
@@ -62,9 +68,13 @@
                  
 
     </main>
-    
-    <script src="js/shared/jquery-1.4.2.min.js"></script>
-    <script src="js/slider.js"></script>
+     <script>
+        var xxx = document.getElementById('xxx');
+        document.addEventListener('volumechange', (e) => {
+            console.log('volume changed!', e);
+        })
+     </script>
+     <script src="js/slider-no-jquery.js"></script>
 </body>
 
 </html>

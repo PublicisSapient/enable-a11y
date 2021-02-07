@@ -30,8 +30,10 @@
 
       <p>
         <a role="tooltip" href="/" data-tooltip="This tooltip is accessible!"
+          aria-describedby="tooltip1"
           >This link has a tooltip</a
         >
+        <span class="sr-only" id="tooltip1">This tooltip is accessible</span>
         and so does this input field:
         <input
           role="tooltip"

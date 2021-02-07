@@ -50,76 +50,86 @@
 
         <p>Just a simple table.</p>
 
+        <div id="table-example1">
+            <table>
+                <caption>A Simple HTML Table</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Birthday</th>
+                    </tr>
+                </thead>
 
-        <table>
-            <caption>A Simple HTML Table</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Birthday</th>
-                </tr>
-            </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Jackie</th>
+                        <td>5</td>
+                        <td>January 1</td>
+                    </tr>
 
-            <tbody>
-                <tr>
-                    <th scope="row">Jackie</th>
-                    <td>5</td>
-                    <td>January 1</td>
-                </tr>
+                    <tr>
+                        <th scope="row">Beth</th>
+                        <td>8</td>
+                        <td>March 1</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Birthday Delta</th>
+                        <td colspan="2">59 days.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
-                <tr>
-                    <th scope="row">Beth</th>
-                    <td>8</td>
-                    <td>March 1</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Birthday Delta</th>
-                    <td colspan="2">59 days.</td>
-                </tr>
-            </tfoot>
-        </table>
+        <?php includeShowcode("table-example1")?>
+
+        <script type="application/json" id="table-example1-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [
+                {
+                    "label": "Give table a label using the <strong>caption</strong> element",
+                    "hilite": "&lt;caption&gt;[\\s\\S]*&lt;/caption&gt;",
+                    "notes": "All tables must have captions."
+                },
+                {
+                    "label": "The <strong>thead</strong> section",
+                    "hilite": "\\s*&lt;thead&gt;[\\s\\S]*&lt;/thead&gt;",
+                    "notes": "The <strong>thead</strong> tag must contain the heading of the table, including column headings"
+                },
+                {
+                    "label": "The <strong>tbody</strong> section",
+                    "hilite": "\\s*&lt;tbody&gt;[\\s\\S]*&lt;/tbody&gt;",
+                    "notes": "The <strong>tbody</strong> tag contains the main data of the table, as well as row headings"
+                },
+                {
+                    "label": "The <strong>tfoot</strong> section",
+                    "hilite": "\\s*&lt;tfoot&gt;[\\s\\S]*&lt;/tfoot&gt;",
+                    "notes": "The <strong>tfoot</strong> contains summary information of the table"
+                },
+                {
+                    "label": "Column headings",
+                    "hilite": "scope=\"col\"",
+                    "notes": "All column headings must be tagged with <strong>scope=\"col\"</strong>"
+                },
+                {
+                    "label": "Row headings",
+                    "hilite": "scope=\"row\"",
+                    "notes": "All row headings must be tagged with <strong>scope=\"row\"</strong>"
+                }
+            ]
+        }
+        </script>
 
         <h2>A Simple Table with the caption not placed at the top of the table node</h2>
 
         <p>Just a simple table.</p>
 
 
-        <table>
-            
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Birthday</th>
-                </tr>
-            </thead>
-
-            <caption>A simple HTML table made with the caption not on the top of the markup.</caption>
-
-            <tbody>
-                <tr>
-                    <th scope="row">Jackie</th>
-                    <td>5</td>
-                    <td>April 5</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">Beth</th>
-                    <td>8</td>
-                    <td>January 14</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>A Simple Table with the caption placed inside a <code>figcaption</code> tag</h2>
-
-        <p>Note that the caption is on the bottom, instead of the top of the table.</p>
-
-        <figure>
-            <table aria-labelledby="fig-caption">
+        <div id="example2">
+            <table>
                 
                 <thead>
                     <tr>
@@ -129,7 +139,7 @@
                     </tr>
                 </thead>
 
-                
+                <caption>A simple HTML table made with the caption not on the top of the markup.</caption>
 
                 <tbody>
                     <tr>
@@ -145,8 +155,58 @@
                     </tr>
                 </tbody>
             </table>
-            <figcaption id="fig-caption" class="caption">A simple HTML table with a figcaption instead of a caption.</figcaption>
-        </figure>
+        </div>
+
+        <h2>A Simple Table with the caption placed inside a <code>figcaption</code> tag</h2>
+
+        <p>Note that the caption is on the bottom, instead of the top of the table.</p>
+
+        <div id="example3">
+            <figure>
+                <table aria-labelledby="fig-caption">
+                    
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Birthday</th>
+                        </tr>
+                    </thead>
+
+                    
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Jackie</th>
+                            <td>5</td>
+                            <td>April 5</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Beth</th>
+                            <td>8</td>
+                            <td>January 14</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <figcaption id="fig-caption" class="caption">A simple HTML table with a figcaption instead of a caption.</figcaption>
+            </figure>
+        </div>
+
+        <?php includeShowcode("example3")?>
+
+        <script type="application/json" id="example3-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [
+                {
+                    "label": "Give table a label using the <strong>caption</strong> element",
+                    "hilite": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt;,aria-labelledby=\"fig-caption\"",
+                    "notes": "The <strong>figcaption</strong> tag may be used instead of the <strong>caption</strong> if you use <strong>aria-labelledby</strong> on the <strong>table</strong> to point to it."
+                }
+            ]
+        }
+        </script>
 
         <h2>A Simple Table Made Using Aria Roles</h2>
 
@@ -372,8 +432,12 @@
                   </tr>
                 </tbody>
               </table>
-    </main>
+
+
     <script src="js/role-checkbox.js"></script>
+    <?php include "includes/example-footer.php" ?>
+
+    </main>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 */
 @import "../fonts/specify/stylesheet.css";
 @import "../fonts/open-dyslexic/stylesheet.css";
+@import "../fonts/modeseven/stylesheet.css";
 html,
 body,
 div,
@@ -136,10 +137,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
   line-height: 1.1;
-}
-code {
-  font-family: "Consolas", monospace;
-  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -481,7 +478,7 @@ footer,
   width: 100%;
   background: black;
   color: white;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center;
 }
 footer a,
@@ -498,7 +495,7 @@ input[type="number"] {
   border: 1px solid black;
 }
 input[type="number"] {
-  font-size: -2.75rem;
+  font-size: 16px;
   text-align: right;
 }
 div.spinControl {
@@ -507,15 +504,16 @@ div.spinControl {
 div.spinControl div.spinbutton {
   display: block;
   text-align: right;
-  font-size: -2.75rem;
-  width: 3.3125rem;
+  font-size: 16px;
+  padding-right: 0.875rem;
 }
 div.spinControl div.spinbutton:active,
 div.spinControl div.spinbutton:hover,
-div.spinControl div.spinbutton.focus {
+div.spinControl div.spinbutton:focus {
   margin: 0;
   background-color: #faf7f0;
   border: 1px solid red;
+  height: 19px;
 }
 div.spinControl .spin-button {
   position: absolute;

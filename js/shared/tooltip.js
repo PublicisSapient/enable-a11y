@@ -37,10 +37,10 @@ const tooltip = new function () {
 
         if (text) {
             const target = e ? e.target : null;
-            tooltipEl.setAttribute('aria-hidden', "true");
+            //tooltipEl.setAttribute('aria-hidden', "true");
             tooltipEl.classList.add('tooltip--hidden');
             
-            target && target.removeAttribute('aria-describedby');
+            //target && target.removeAttribute('aria-describedby');
         }
     }
 

@@ -130,6 +130,8 @@ input[type="range"] {
  */
 
 .enable-slider {
+  position: relative;
+   
   &__label {
     margin: 0;
     padding: 0;
@@ -156,7 +158,7 @@ input[type="range"] {
     border: 2px solid black;
 
     .enable-slider__handle {
-      margin: 0;
+      margin: -2px 0 0 0;
       padding: 7px 2px;
       width: 24px;
       height: 12px;
@@ -197,7 +199,7 @@ input[type="range"] {
     border: 2px solid black;
 
     .enable-slider__handle {
-      margin: 0;
+      margin: 0 0 0 -2px;
       padding: 2px 7px;
       width: 12px;
       height: 24px;
@@ -230,7 +232,8 @@ input[type="range"] {
   }
 
   &__slider-range {
-    margin: 2px;
+    pointer-events: none;
+    margin: 0 2px 2px 0;
     padding: 0;
     width: 1px;
     height: 1px;
@@ -241,6 +244,7 @@ input[type="range"] {
     top: -30em;
     z-index: 0;
   }
+
   .hidden {
     position: absolute;
     top: -20em;

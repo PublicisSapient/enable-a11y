@@ -35,7 +35,7 @@
     <h2>Top rated craft beers</h2>
     <div id="tabs">
         <ul>
-            <li><a href="#ipa">India Pale Ale (IPA)</a></li>
+            <li><a href="#ipa">IPA</a></li>
             <li><a href="#gueuze">Gueuze</a></li>
             <li><a href="#imperial-stout">Imperial Stout</a></li>
         </ul>

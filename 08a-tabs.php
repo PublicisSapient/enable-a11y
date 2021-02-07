@@ -57,7 +57,7 @@
                             aria-owns="ipa-tabpanel"
                             aria-describedby="tabs-keyboard-only-instructions"
                         >
-                            India Pale Ale (IPA)
+                            IPA
                         </a>
                     </li>
                     <li role="presentation">
@@ -125,20 +125,44 @@
 
         <h3>Example code explanation</h3>
 
-        <pre
-            data-showcode-html="example1"
-            data-showcode-replace-html='
-                {
-                    "[role=\"tabpanel\"]": "<!-- insert tab panel content here -->",
-                    "[role=\"tab\"]": "<!-- insert tab label here -->"
-                }
-            '
-        >
-        </pre>
+        <?php includeShowcode("example1")?>
 
-        <p>
-            <a href="..">Back to ENABLE homepage.</a>
-        </p>
+        <script type="application/json" id="example1-props">
+        {
+            "replaceHTMLRules": {
+                "[role=\"tabpanel\"]": "<!-- insert tab panel content here -->",
+                "[role=\"tab\"]": "<!-- insert tab label here -->"
+            },
+            "steps": [
+                {
+                    "label": "Place ARIA roles in document",
+                    "hilite": "role=\"tablist\",role=\"presentation\",role=\"tab\",role=\"tabpanel\"",
+                    "notes": "Note that <strong>tabs</strong> should be a direct child of the <strong>tablist</strong>. If this is not possible, then all the nodes in between them should have a role of <strong>presentation</strong>."
+                },
+                {
+                    "label": "Connect tabs to tabpanels",
+                    "hilite": "aria-owns",
+                    "notes": "Each <strong>tab</strong> must have an <strong>aria-owns</strong> attribute that corresponds to its <strong>tabpanel</strong>."
+                },
+                {
+                    "label": "Ensure aria-selected values are set correctly",
+                    "hilite": "aria-selected",
+                    "notes": "When a tab is selected, its <strong>aria-selected</strong> attribute must be set to <strong>true</strong>, while all the other tabs must have it set to <strong>false</strong>"
+                },
+                {
+                    "label": "Ensure only the selected tab is accessible via tab key",
+                    "hilite": "tabindex=\"-1\"",
+                    "notes": "In order switch tabs with the arrow keys, all tabs that have <strong>aria-selected=\"false\"</strong> must also have <strong>tabindex=\"-1\"</strong> set as well."
+                },
+                {
+                    "label": "Code keyboard instructions when user focuses on tabs",
+                    "hilite": "aria-describedby",
+                    "notes": "This gives screen reader users instructions how to use the tabs when they navigate into them via keyboard"
+                }
+            ]
+        }
+        </script>
+
 
 
         <div id="scripts">
@@ -146,8 +170,8 @@
             <script src="js/tabs.js"></script>
         </div>
 
-        <script src="node_modules/indent.js/lib/indent.min.js"></script>
-        <script src="js/showcode.js"></script>
+        <?php include "includes/example-footer.php" ?>
+    </main>
 </body>
 
 </html>

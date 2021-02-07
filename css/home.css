@@ -4,6 +4,7 @@
 */
 @import "../fonts/specify/stylesheet.css";
 @import "../fonts/open-dyslexic/stylesheet.css";
+@import "../fonts/modeseven/stylesheet.css";
 html,
 body,
 div,
@@ -136,10 +137,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
   line-height: 1.1;
-}
-code {
-  font-family: "Consolas", monospace;
-  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -481,7 +478,7 @@ footer,
   width: 100%;
   background: black;
   color: white;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center;
 }
 footer a,
@@ -511,6 +508,11 @@ footer a,
   padding-left: 2.35em;
   position: relative;
   z-index: 2;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  [role="tablist"] {
+    padding-left: 0;
+  }
 }
 [role="tablist"] li {
   position: relative;
@@ -543,6 +545,11 @@ footer a,
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   cursor: pointer;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  [role="tablist"] li [role="tab"] {
+    font-size: 0.8em;
+  }
 }
 [role="tablist"] li [role="tab"]:link {
   border-color: #ccc;
@@ -598,12 +605,15 @@ footer a,
   overflow: auto;
   padding: 0.5em 3em 2em;
   border: 2px solid #999;
-  -moz-border-radius: 1em;
-  -webkit-border-radius: 1em;
   border-radius: 1em;
   z-index: 1;
   color: #333;
   background-color: #c0dcee;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  [role="tabpanel"] {
+    border-radius: 0 1em 1em 1em;
+  }
 }
 [role="tabpanel"].visible {
   display: block;

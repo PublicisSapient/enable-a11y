@@ -4,6 +4,7 @@
 */
 @import "../fonts/specify/stylesheet.css";
 @import "../fonts/open-dyslexic/stylesheet.css";
+@import "../fonts/modeseven/stylesheet.css";
 @import url("demo.css");
 html,
 body,
@@ -137,10 +138,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   margin: 10px;
   line-height: 1.1;
-}
-code {
-  font-family: "Consolas", monospace;
-  white-space: pre;
 }
 strong {
   font-weight: bold;
@@ -482,7 +479,7 @@ footer,
   width: 100%;
   background: black;
   color: white;
-  padding: 1em;
+  padding: 1em 0;
   text-align: center;
 }
 footer a,

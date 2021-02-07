@@ -204,11 +204,11 @@
     
     
     if (this.vert == false) { // horizontal slider
-      rangeStyle.top = this.top + 'px';
+      rangeStyle.top = 0;
       rangeStyle.height = containerStyle.height;
     }
     else { // vertical slider
-      rangeStyle.left = this.left + 'px';
+      rangeStyle.left = 0;
       rangeStyle.width = containerStyle.width;
     }
     
@@ -237,18 +237,18 @@
       // horizontal slider
       
       // calculate the horizontal pixel position of the specified value
-      valPos = ((val - this.min) / (this.max - this.min)) * this.width + this.left;
+      valPos = ((val - this.min) / (this.max - this.min)) * this.width;
   
       xPos = Math.round(valPos - (handleWidth / 2));
-      yPos = Math.round(this.top + (this.height / 2) - (handleHeight / 2));
+      yPos = Math.round((this.height / 2) - (handleHeight / 2));
     }
     else {
       // vertical slider
   
       // calculate the vertical pixel position of the specified value
-      valPos = ( (val - this.min) / (this.max - this.min) ) * this.height + this.top;
+      valPos = ((val - this.min) / (this.max - this.min) ) * this.height;
   
-      xPos = Math.round(this.left + (this.width / 2) - (handleWidth / 2));
+      xPos = Math.round((this.width / 2) - (handleWidth / 2));
       yPos = Math.round(valPos - (handleHeight / 2));
     }
   
@@ -294,10 +294,10 @@
     if (this.vert == false) { // Horizontal slider
   
       // calculate the range start position
-      pos = Math.round( ((this.val1 - this.min) / (this.max - this.min)) * this.width) + this.left;
+      pos = Math.round( ((this.val1 - this.min) / (this.max - this.min)) * this.width) ;
   
       // calculate the new range width
-      size = Math.round( ((this.val2 - this.min) / (this.max - this.min)) * this.width) + this.left - pos;
+      size = Math.round( ((this.val2 - this.min) / (this.max - this.min)) * this.width) - pos;
   
       // set the new range position
       this.$rangeDiv.style.left =  pos + 'px';
@@ -307,10 +307,10 @@
     }
     else {
       // calculate the range start position
-      pos = Math.round(( (this.val1 - this.min) / (this.max - this.min)) * this.height)+ this.top;
+      pos = Math.round(( (this.val1 - this.min) / (this.max - this.min)) * this.height);
   
       // calculate the new range width
-      size = Math.round(( (this.val2 - this.min) / (this.max - this.min) ) * this.height) + this.top - pos;
+      size = Math.round(( (this.val2 - this.min) / (this.max - this.min) ) * this.height) - pos;
     
       // set the new range position
       this.$rangeDiv.style.top =  pos + 'px';
@@ -375,6 +375,9 @@
   
     var thisObj = this; // store the this pointer
   
+    document.addEventListener("volumeupbutton", thisObj.onVolumeUpKeyDown, false);
+    document.addEventListener("volumedownbutton", thisObj.onVolumeDownKeyDown, false);
+
     $handle.addEventListener('keydown', function(e) {
       return thisObj.handleKeyDown($handle, e);
     });
@@ -554,6 +557,16 @@
   
   } // end handleKeyDown
   
+
+  slider.prototype.onVolumeUpKeyDown = (e) => {
+    console.log('up');
+  }
+
+  slider.prototype.onVolumeDownKeyDown = (e) => {
+    console.log('down');
+  }
+
+
   //
   // function handleKeyPress() is a member function to process keypress events for a slider handle. Needed for
   // browsers that perform window scrolling on keypress rather than keydown events.
@@ -641,7 +654,9 @@
   // @return (boolean) true if propagating; false if consuming event
   //
   slider.prototype.handleMouseDown = function($handle, evt) {
-    console.log('down');
+    document.body.classList.add(this.className + '--cannot-select-text');
+    this.$container.classList.add(this.className + '--is-moving');
+    
     var thisObj = this; // store the this pointer
   
     // remove focus highlight from all other slider handles on the page
@@ -676,19 +691,21 @@
     }
 
     const mouseUpEvent = (e) => {
+      document.body.classList.remove(this.className + '--cannot-select-text');
+      this.$container.classList.remove(this.className + '--is-moving');
       // unbind the event listeners to release the mouse
-      document.removeEventListener('mousemove', mouseMoveEvent);
-      document.removeEventListener('mouseup', mouseUpEvent);
+      document.body.removeEventListener('mousemove', mouseMoveEvent);
+      document.body.removeEventListener('mouseup', mouseUpEvent);
     
       e.stopPropagation;
       return false;
     }
   
     // bind a mousemove event handler to the document to capture the mouse
-    document.addEventListener('mousemove', mouseMoveEvent);
+    document.body.addEventListener('mousemove', mouseMoveEvent);
   
     //bind a mouseup event handler to the document to capture the mouse
-    document.addEventListener('mouseup', mouseUpEvent);
+    document.body.addEventListener('mouseup', mouseUpEvent);
   
     evt.stopPropagation;
     return false;
@@ -706,7 +723,7 @@
   // @return (boolean) true if propagating; false if consuming event
   //
   slider.prototype.handleMouseMove = function($handle, evt) {
-    console.log('mousemove');
+    console.log('x', evt.target);
     var curVal = parseInt($handle.getAttribute('aria-valuenow'));
     var newVal;
     var startVal = this.min;
@@ -733,9 +750,10 @@
     }
     else {
       // vertical slider
-  
+      // ZOLTAN - Why is this wrong?
       // Calculate the new slider value based on the vertical pixel position of the mouse
       newVal = Math.round((evt.pageY - this.top) / this.height * (this.max - this.min)) + this.min;
+      console.log('hmmm', this.min, newVal, evt.pageY,this.max, this.height);
     }
   
     if (newVal >= startVal && newVal <= stopVal) {
@@ -772,6 +790,6 @@ var slider2 = new slider('sr2', false, 1900, 2008, 1, 10, true, true, 1950, 2000
 
 // slider3 is a vertical range slider
 //var slider3 = new slider('sr3', true, 0, 100, 1, true, false, 25);
-var slider3 = new slider('sr3', true, 1900, 2008, 1, 10, true, true, 1950, 2000);
+var slider3 = new slider('sr3', true, 1900, 2008, 1, 10, true, true, 1950, 2008);
 
   

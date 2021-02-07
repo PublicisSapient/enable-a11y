@@ -29,6 +29,10 @@
     position: relative;
     z-index: 2;
 
+    @media @mobile {
+        padding-left: 0;
+    }
+
 
     li {
         position: relative; /*for z-index*/
@@ -60,6 +64,10 @@
             border-top-left-radius: 0.5em;
             border-top-right-radius: 0.5em;
             cursor: pointer;
+
+            @media @mobile {
+                font-size: 0.8em;
+            }
 
             &:link { border-color: #ccc; }
 
@@ -125,12 +133,14 @@
     overflow: auto;
     padding: .5em 3em 2em;
     border: 2px solid #999;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
     border-radius: 1em;
     z-index: 1;
     color: #333;
     background-color: #c0dcee;
+
+    @media @mobile {
+        border-radius: 0 1em 1em 1em;
+    }
 
     &.visible {
         display: block;
@@ -143,3 +153,4 @@
 [role="tab"] {
     appearance: none;
 }
+

@@ -259,6 +259,11 @@ function spinbutton(el) {
     return false;
   }; // end handleMouseOutUp()
 
+  this.stopPropagation = function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
   //
   // Function handleKeyDown() is a member function to handle keydown events for the control.
   //
@@ -284,7 +289,7 @@ function spinbutton(el) {
           }
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
       case this.keys.pagedown: {
@@ -298,7 +303,7 @@ function spinbutton(el) {
           }
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
       case this.keys.home: {
@@ -306,7 +311,7 @@ function spinbutton(el) {
           this.setValue(this.valMax);
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
       case this.keys.end: {
@@ -314,7 +319,7 @@ function spinbutton(el) {
           this.setValue(this.valMin);
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
       case this.keys.right:
@@ -324,7 +329,7 @@ function spinbutton(el) {
           this.setValue(this.valNow + 1);
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
       case this.keys.left:
@@ -334,7 +339,7 @@ function spinbutton(el) {
           this.setValue(this.valNow - 1);
         }
 
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
     }
@@ -366,7 +371,7 @@ function spinbutton(el) {
       case this.keys.right:
       case this.keys.down: {
         // consume the event
-        e.stopPropagation();
+        this.stopPropagation(e);
         return false;
       }
     }

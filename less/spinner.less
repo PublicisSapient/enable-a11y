@@ -3,10 +3,11 @@
 @import "shared/a11y";
 @import "shared/landmarks";
 
-@inputHeight: 20/@px;
-@inputWidth: 70/@px;
-@spinButtonHeight: @inputHeight / 2;
-@fontSize: @inputHeight - 4;
+@inputHeightPx: 20;
+@inputHeight: (@inputHeightPx/@px);
+@inputWidth: (70/@px);
+@spinButtonHeight: (@inputHeight / 2);
+@fontSize: (@inputHeightPx - 4) * 1px;
 
 div.spinControl {
   position: relative;
@@ -25,20 +26,22 @@ input[type="number"] {
 }
 
 div.spinControl {
-  margin: 20/@px;
+  margin: (20/@px);
 
   div.spinbutton {
     display: block;
     text-align: right;
     font-size: @fontSize;
-    width: @inputWidth - @spinButtonHeight - 7/@px;
+    padding-right: @spinButtonHeight + (4/@px);
+    //width: @inputWidth - @spinButtonHeight - (7/@px);
 
     &:active,
     &:hover,
-    &.focus {
+    &:focus {
       margin: 0;
       background-color: #faf7f0;
       border: 1px solid red;
+      height: (@inputHeightPx - 1) * 1px;
     }
   }
 
@@ -59,7 +62,7 @@ div.spinControl {
       margin: 0;
       padding: 0;
       border-left: 1px solid black;
-      height: @inputHeight / 2;
+      height: (@inputHeight / 2);
       display: block;
     }
   }
