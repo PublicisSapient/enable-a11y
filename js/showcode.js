@@ -16,6 +16,7 @@ const showcode = new (function () {
   const blankString = /^\s*$/;
   const comment = /<\!--/;
   const ellipsesRe = /(\s*\.\.\.)/g;
+  const blankAttrValueRe = /(required|novalidate)=\"\"/g;
   
 
   // Most of this list from
@@ -54,8 +55,7 @@ const showcode = new (function () {
     return result;
   };
 
-  function hiliteFunc 
-  (s) {
+  function hiliteFunc(s) {
     return '<span class="showcode__hilite">' + s + '</span>'; 
   }
 
@@ -77,14 +77,20 @@ const showcode = new (function () {
     const hiliteStrings = value.split(',');
 
     for (let i=0; i<hiliteStrings.length; i++) {
-      const hiliteString = hiliteStrings[i];
+      let hiliteString = hiliteStrings[i];
       const attribute = hiliteString.split('=')[0];
       const hasValue = (hiliteString.indexOf('=') >= 0)
 
       if (hasValue) {
         replaceRegex = new RegExp(hiliteString, 'g');
       } else {
-        replaceRegex = new RegExp(hiliteString + '(="[^=]*")*', 'g');
+
+        // 'for' is a special case -- we don't want it to match <form>.
+        if (hiliteString === 'for') {
+          replaceRegex = new RegExp(hiliteString + '="[^=]*"', 'g');
+        } else {
+          replaceRegex = new RegExp(hiliteString + '(="[^=]*")*', 'g');
+        }
 
         // get all the unique matches
         const matches = [...new Set(code.match(replaceRegex))];
@@ -127,13 +133,30 @@ const showcode = new (function () {
     return fixedLines.join('\n');
   }
 
+  function explodeLine(s) {
+    const explodedLine = s.split(' ');
+
+    for (let i=0; i<explodedLine.length; ) {
+      const line = explodedLine[i];
+      // number of strings is odd, then join with next line;
+      if (line.split('"').length % 2 === 0) {
+        explodedLine[i] = line + ' ' + explodedLine[i+1];
+        explodedLine.splice(i+1, 1);
+      } else {
+        i++;
+      }
+    }
+
+    return explodedLine;
+  }
+
   function indentAttrs(line) {
     const isComment = (line.indexOf('<!--') >= 0);
 
     if (line.search(tagLine) >= 0 && !isComment && line.length > 30) {
       const begin = line.match(beginningSpaces)[0];
       const trimmedLine = line.trim();
-      const explodedLine = trimmedLine.split(' ');
+      const explodedLine = explodeLine(trimmedLine)
       const formattedLine = explodedLine.join('\n' + begin + '  ');
       
       return (begin + formattedLine).replace(gt, '\n' + begin + '>');
@@ -151,6 +174,11 @@ const showcode = new (function () {
 
   function insertEllipses(html){
     const s = html.replace(ellipsesRe, '\n\n$1\n\n');
+    return s;
+  }
+
+  function removeBlankAttrValues(html) {
+    const s = html.replace(blankAttrValueRe, '$1');
     return s;
   }
 
@@ -174,7 +202,7 @@ const showcode = new (function () {
       // let's do search and replace here
       if (block) {
         const unformattedHTML = block.innerHTML;
-        const formattedHTML = insertEllipses(removeBlankLines(indent.html(seperateTags(unformattedHTML), {tabString: '  '})));
+        const formattedHTML = removeBlankAttrValues(insertEllipses(removeBlankLines(indent.html(seperateTags(unformattedHTML), {tabString: '  '}))));
         //indent.html(unformattedHTML, {tabString: ' '});
         const entifiedHTML = this.entify(formattedHTML, {ignoreSpace: true});
         htmlCache[originalHTMLId] = entifiedHTML
@@ -201,7 +229,7 @@ const showcode = new (function () {
     selectEl.id = widgetId + '--select';
     selectEl.dataset.showcodeFor = codeblockId;
     labelEl.htmlFor = selectEl.id;
-    labelEl.className = 'showcode__select';
+    labelEl.className = 'showcode__select-label';
     labelEl.innerHTML = 'Code to hilite:'
 
     defaultOptionEl.innerHTML = '';

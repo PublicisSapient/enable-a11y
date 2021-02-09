@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
@@ -123,7 +123,7 @@
             </div>
         </div>
 
-        <h3>Example code explanation</h3>
+        <h3 class="showcode__heading">Example code explanation</h3>
 
         <?php includeShowcode("example1")?>
 

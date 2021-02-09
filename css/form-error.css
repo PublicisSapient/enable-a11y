@@ -502,6 +502,11 @@ input,
   width: 45%;
   max-width: 20rem;
 }
+.form-instructions {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2em;
+}
 .field-block {
   margin-bottom: 0.5rem;
   display: block;

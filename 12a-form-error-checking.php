@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>ARIA form role examples</title>
@@ -30,42 +30,87 @@
         validation <strong>without JavaScript</strong>.
       </p>
 
-      <form
-        role="form"
-        tabindex="-1"
-        onSubmit="alert('form submitted'); return false;"
-      >
-        <fieldset>
-          <legend id="contact_html5">Contact Information</legend>
+      <div id="example1">
+        <form
+          onSubmit="alert('form submitted'); return false;"
+        >
+          <fieldset>
+            <legend>Contact Information</legend>
 
-          <div class="field-block">
-            <label for="name_html5">Full Name:</label>
-            <input id="name_html5" size="25" type="text" required />
-          </div>
+            <p class="form-instructions">Note: All fields are required.</p>
 
-          <div class="field-block">
-            <label for="email_html5">E-mail address:</label>
-            <input id="email_html5" size="25" type="email" required />
-          </div>
-
-          <div class="field-block">
-            <label for="phone_html5">Phone Number:</label>
-            <input
-              id="phone_html5"
-              size="25"
-              type="text"
-              required
-              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-            />
-            <div id="phone-desc" class="desc">
-              Format is xxx-xxx-xxxx<br />
-              (where x is a digit)
+            <div class="field-block">
+              <label for="name_html5">Full Name:</label>
+              <input id="name_html5" size="25" type="text" required  autocomplete="name" />
             </div>
-          </div>
 
-          <input value="Add Contact" type="submit" />
-        </fieldset>
-      </form>
+            <div class="field-block">
+              <label for="email_html5">E-mail address:</label>
+              <input id="email_html5" size="25" type="email" required autocomplete="email" />
+            </div>
+
+            <div class="field-block">
+              <label for="phone_html5">Phone Number:</label>
+              <input
+                id="phone_html5"
+                size="25"
+                type="text"
+                required
+                pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                aria-describedby="phone-desc"
+                autocomplete="tel"
+              />
+              <div id="phone-desc" class="desc">
+                Format is xxx-xxx-xxxx<br />
+                (where x is a digit)
+              </div>
+            </div>
+
+            <input value="Add Contact" type="submit" />
+          </fieldset>
+        </form>
+      </div>
+
+      <h3 class="showcode__heading">Example code explanation</h3>
+
+      <?php includeShowcode("example1")?>
+
+      <script type="application/json" id="example1-props">
+      {
+        "replaceHTMLRules": {
+        },
+        "steps": [
+          {
+            "label": "Put in fieldsets and legends",
+            "hilite": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
+          },
+          {
+            "label": "All form fields need labels",
+            "hilite": "for",
+            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
+          },
+          {
+            "label": "All form fields that are required need the required attribute",
+            "hilite": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "notes": "All required form fields should also have a visual cue for sighted users (in this case, we just have some copy stating all fields are required."
+          },
+          {
+            "label": "Use regular expression patterns to ensure the data being submitted is in the right format",
+            "hilite": "pattern",
+            "notes": [
+              "The pattern must be a valid JavaScript regular expression.  When the form is submitted, the browser checks if all the form field values match the regexs.",
+              "If they don't, focus is applied to the first invalid one.  The user can then correct their mistake immediately, and attempt to submit until all form fields are valid"
+            ]
+          },
+          {
+            "label": "Hint text should be marked up using aria-describedby",
+            "hilite": "aria-describedby",
+            "notes": ""
+          }
+        ]
+      }
+      </script>
 
       <h2>Using custom validation</h2>
 
@@ -89,51 +134,107 @@
         >.
       </p>
 
-      <form novalidate role="form" tabindex="-1" class="js-form-validation">
-        <fieldset>
-          <legend id="contact_js">Contact Information</legend>
+      <div id="example2">
+        <form novalidate class="js-form-validation">
+          <fieldset>
+            <legend id="contact_js">Contact Information</legend>
 
-          <div class="field-block">
-            <label for="name_js">Full Name:</label>
-            <input id="name_js" name="name_js" size="25" type="text" required />
-          </div>
-
-          <div class="field-block">
-            <label for="email_js">E-mail address:</label>
-            <input
-              id="email_js"
-              name="email_js"
-              size="25"
-              type="email"
-              required
-            />
-          </div>
-
-          <div class="field-block">
-            <label for="phone_js">Phone Number:</label>
-            <input
-              id="phone_js"
-              name="phone_js"
-              size="25"
-              type="text"
-              required
-              pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-              aria-describedby="phone-desc"
-            />
-            <div id="phone-desc" class="desc">
-              Format is xxx-xxx-xxxx<br />
-              (where x is a digit).
+            <div class="field-block">
+              <label for="name_js">Full Name:</label>
+              <input id="name_js" name="name_js" size="25" type="text" required />
             </div>
-          </div>
 
-          <input value="Add Contact" type="submit" />
-        </fieldset>
-      </form>
+            <div class="field-block">
+              <label for="email_js">E-mail address:</label>
+              <input
+                id="email_js"
+                name="email_js"
+                size="25"
+                type="email"
+                required
+              />
+            </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="js/accessibility.js"></script>
-    <script src="js/shared/form.js"></script>
+            <div class="field-block">
+              <label for="phone_js">Phone Number:</label>
+              <input
+                id="phone_js"
+                name="phone_js"
+                size="25"
+                type="text"
+                required
+                pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                aria-describedby="phone-desc"
+              />
+              <div id="phone-desc" class="desc">
+                Format is xxx-xxx-xxxx<br />
+                (where x is a digit).
+              </div>
+            </div>
+
+            <input value="Add Contact" type="submit" />
+          </fieldset>
+        </form>
+      </div>
+
+      <h3 class="showcode__heading">Example code explanation</h3>
+
+      <?php includeShowcode("example2")?>
+
+      <script type="application/json" id="example2-props">
+      {
+        "replaceHTMLRules": {
+        },
+        "steps": [
+          {
+            "label": "Set your form's novalidate attribute",
+            "hilite": "novalidate",
+            "notes": "Putting this in the <strong>form</strong> element turns off native form validation (i.e. the validation bubbles built into the browser)"
+          },
+          {
+            "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
+            "hilite": "class=\"js-form-validation\"",
+            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/shared/form.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
+          },
+          {
+            "label": "Put in fieldsets and legends",
+            "hilite": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
+          },
+          {
+            "label": "All form fields need labels",
+            "hilite": "for",
+            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
+          },
+          {
+            "label": "All form fields that are required need the required attribute",
+            "hilite": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "notes": "All required form fields should also have a visual cue for sighted users (in this case, we just have some copy stating all fields are required."
+          },
+          {
+            "label": "Use regular expression patterns to ensure the data being submitted is in the right format",
+            "hilite": "pattern",
+            "notes": [
+              "The pattern must be a valid JavaScript regular expression.  When the form is submitted, the browser checks if all the form field values match the regexs.",
+              "If they don't, focus is applied to the first invalid one.  The user can then correct their mistake immediately, and attempt to submit until all form fields are valid"
+            ]
+          },
+          {
+            "label": "Hint text should be marked up using aria-describedby",
+            "hilite": "aria-describedby",
+            "notes": ""
+          }
+        ]
+      }
+      </script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+      <script src="js/accessibility.js"></script>
+      <script src="js/shared/form.js"></script>
+
+
+      <?php include "includes/example-footer.php" ?>
     </main>
 
   </body>

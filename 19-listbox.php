@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>ARIA listbox role example</title>
@@ -164,7 +164,7 @@
             </div>
         </div>
 
-        <h3>Example code explanation</h3>
+        <h3 class="showcode__heading">Example code explanation</h3>
 
         <?php includeShowcode("aria-example")?>
 

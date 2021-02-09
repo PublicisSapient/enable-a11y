@@ -1,9 +1,6 @@
 @import 'shared/defaults';
 
-h3 {
-    padding-top: 20px;
-    font-size: 20px;
-}
+
 
 html, body {
     width: 100vw;
@@ -12,27 +9,50 @@ html, body {
 
 .showcode {
     @fade-color: #000;
+    @border: solid 1px #999;
+    @select-width: (120/@px);
+    @clip-bottom: 45px;
+
+    border: @border;
+    clip-path: polygon(0 0, 100% 0%, 100% calc(100% - @clip-bottom), 0 calc(100% - @clip-bottom));
+    
+
+    &__heading {
+        font-weight: bold;
+        padding-top: 20px;
+        font-size: (20/@px);
+    }
+
     &__example {
         display: block;
         position: relative;
         font-family: "ModeSeven", "Consolas", monospace;
         background: black;
         color: green;
-        margin: 2em -1em 0 -1em;
+
+        /* @media @mobile {
+            margin: 0 -2em -25px -1em;
+        } */
+
+        code {
+            display: block;
+            padding: 10px;
+            width: calc(100vw - 20px);
+            overflow: scroll;
+        }
         
+        &--desc {
+            display: none;
+        }
 
         @media @mobile {
-            &::before {
-                content: "☜ Swipe to see full source  ☞";
+            &--desc {
+                display: block;
                 font-family: "Arial", "Helvetica", sans-serif;
                 background: white;
                 color: black;
                 font-size: 1em;
-                margin-top: -1.5em;
-                margin-left: 0.5em;
                 display: block;
-                position: absolute;
-                width: 100vw;
                 text-align: center;
                 display: block;
             }
@@ -46,8 +66,8 @@ html, body {
                 top: 0;
                 left: 0;
                 background-image: linear-gradient(-270deg,
-                    rgba(255, 255, 255, 0),
-                    rgba(255, 255, 255, 0) 80%,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0) 80%,
                     @fade-color
                 );  
                 width: 100%;
@@ -57,8 +77,8 @@ html, body {
             &.fade-both::after {
                 background-image: linear-gradient(-270deg, 
                     @fade-color,
-                     rgba(255, 255, 255, 0) 20%,
-                     rgba(255, 255, 255, 0) 80%,
+                     rgba(0, 0, 0, 0) 20%,
+                     rgba(0, 0, 0, 0) 80%,
                      @fade-color
                 );
             }
@@ -66,17 +86,10 @@ html, body {
             &.fade-left::after {
                 background-image: linear-gradient(-270deg, 
                     @fade-color,
-                     rgba(255, 255, 255, 0) 20%,
-                     rgba(255, 255, 255, 0)
+                     rgba(0, 0, 0, 0) 20%,
+                     rgba(0, 0, 0, 0)
                 );
             }
-        }
-
-        code {
-            display: block;
-            padding: 10px;
-            width: calc(100vw - 20px);
-            overflow: scroll;
         }
     }
     
@@ -84,20 +97,33 @@ html, body {
         display: inline-block;
         color: white;
         border: solid 2px white;
+
+        & & {
+            border: none;
+        }
+    }
+
+    &__select-label {
+        padding: 5px 10px;
+        display: inline-block;
+        width: initial;
+        width: @select-width;
     }
 
     &__steps {
-        padding-bottom: 20px;
-
+        border-bottom: none;
+        padding: 10px 0;
+        
         select {
-            width: 100%;
+            width: calc(100% - @select-width - 40px);
+        
         }
     }
 
     &__notes:not(:empty) {
         border: dashed #705029 3px;
         padding: 1em;
-        margin-bottom: 1em;
+        margin: 0 10px 1em 10px;
         background-color: #ffffee;
     }
 }

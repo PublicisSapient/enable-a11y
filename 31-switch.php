@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>ARIA Switch Role Example</title>
     <?php include("includes/common-head-tags.php"); ?>

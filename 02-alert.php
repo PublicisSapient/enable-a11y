@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="generator" content=
   "HTML Tidy for HTML5 for Windows version 5.4.0">

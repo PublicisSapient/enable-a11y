@@ -380,6 +380,11 @@ fieldset .legend,
 fieldset label {
   font-weight: normal;
 }
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  fieldset label {
+    width: 100%;
+  }
+}
 [role="radio"],
 [role="checkbox"] {
   display: inline-block;

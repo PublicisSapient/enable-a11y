@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>HTML5 and ARIA Accessible Drawer Examples</title>
     <?php include("includes/common-head-tags.php"); ?>
