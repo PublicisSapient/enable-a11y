@@ -139,6 +139,121 @@
         </div>
       </form>
 
+      <h1>ARIA combobox role examples</h1>
+
+      <h2>Example 2:</h2>
+
+      <form>
+        <label for="aria-example-2"> Enter a fruit or vegetable </label>
+        <div class="enable-combobox">
+          <!-- 
+                    This announces instructions to screen reader users when
+                    they focus into the widget
+                -->
+          <div class="visually-hidden" id="aria-example-2__desc">
+            As you type, use the up and down arrow keys (or swipe left and
+            right) to choose the autocomplete items.
+          </div>
+
+          <!--
+                    This live region will announce how many items are visible
+                    in the dropdown after the user types in characters into the
+                    input. (e.g. 4 items).
+                -->
+          <div role="status" aria-atomic="true">
+            <!-- This is the list status live region: e.g. "4 items." -->
+          </div>
+
+          <!--
+                    The focusable part of the widget.
+                -->
+          <input
+            type="text"
+            tabindex="0"
+            id="aria-example-2"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-owns="aria-example-2__list"
+            aria-expanded="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            aria-describedby="aria-example-2__desc"
+          />
+
+          <!--
+                    The dropdown (a.k.a. "listbox")
+                -->
+          <ul role="listbox" id="aria-example-2__list" hidden>
+            <li role="option" value="Apple">Apple</li>
+            <li role="option" value="Artichoke">Artichoke</li>
+            <li role="option" value="Asparagus">Asparagus</li>
+            <li role="option" value="Banana">Banana</li>
+            <li role="option" value="Beets">Beets</li>
+            <li role="option" value="Bell pepper">Bell pepper</li>
+            <li role="option" value="Broccoli">Broccoli</li>
+            <li role="option" value="Brussels sprout">Brussels sprout</li>
+            <li role="option" value="Cabbage">Cabbage</li>
+            <li role="option" value="Carrot">Carrot</li>
+            <li role="option" value="Cauliflower">Cauliflower</li>
+            <li role="option" value="Celery">Celery</li>
+            <li role="option" value="Chard">Chard</li>
+            <li role="option" value="Chicory">Chicory</li>
+            <li role="option" value="Corn">Corn</li>
+            <li role="option" value="Cucumber">Cucumber</li>
+            <li role="option" value="Daikon">Daikon</li>
+            <li role="option" value="Date">Date</li>
+            <li role="option" value="Edamame">Edamame</li>
+            <li role="option" value="Eggplant">Eggplant</li>
+            <li role="option" value="Elderberry">Elderberry</li>
+            <li role="option" value="Fennel">Fennel</li>
+            <li role="option" value="Fig">Fig</li>
+            <li role="option" value="Garlic">Garlic</li>
+            <li role="option" value="Grape">Grape</li>
+            <li role="option" value="Honeydew melon">Honeydew melon</li>
+            <li role="option" value="Iceberg lettuce">Iceberg lettuce</li>
+            <li role="option" value="Jerusalem artichoke">
+              Jerusalem artichoke
+            </li>
+            <li role="option" value="Kale">Kale</li>
+            <li role="option" value="Kiwi">Kiwi</li>
+            <li role="option" value="Leek">Leek</li>
+            <li role="option" value="Lemon">Lemon</li>
+            <li role="option" value="Mango">Mango</li>
+            <li role="option" value="Mangosteen">Mangosteen</li>
+            <li role="option" value="Melon">Melon</li>
+            <li role="option" value="Mushroom">Mushroom</li>
+            <li role="option" value="Nectarine">Nectarine</li>
+            <li role="option" value="Okra">Okra</li>
+            <li role="option" value="Olive">Olive</li>
+            <li role="option" value="Onion">Onion</li>
+            <li role="option" value="Orange">Orange</li>
+            <li role="option" value="Parship">Parship</li>
+            <li role="option" value="Pea">Pea</li>
+            <li role="option" value="Pear">Pear</li>
+            <li role="option" value="Pineapple">Pineapple</li>
+            <li role="option" value="Potato">Potato</li>
+            <li role="option" value="Pumpkin">Pumpkin</li>
+            <li role="option" value="Quince">Quince</li>
+            <li role="option" value="Radish">Radish</li>
+            <li role="option" value="Rhubarb">Rhubarb</li>
+            <li role="option" value="Shallot">Shallot</li>
+            <li role="option" value="Spinach">Spinach</li>
+            <li role="option" value="Squash">Squash</li>
+            <li role="option" value="Strawberry">Strawberry</li>
+            <li role="option" value="Sweet potato">Sweet potato</li>
+            <li role="option" value="Tomato">Tomato</li>
+            <li role="option" value="Turnip">Turnip</li>
+            <li role="option" value="Ugli fruit">Ugli fruit</li>
+            <li role="option" value="Victoria plum">Victoria plum</li>
+            <li role="option" value="Watercress">Watercress</li>
+            <li role="option" value="Watermelon">Watermelon</li>
+            <li role="option" value="Yam">Yam</li>
+            <li role="option" value="Zucchi">Zucchi</li>
+          </ul>
+        </div>
+      </form>
+
       <h2>Example 2: Using HTML5 datalist</h2>
 
       <p>

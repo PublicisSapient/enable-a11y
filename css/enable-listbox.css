@@ -614,6 +614,7 @@ fieldset label {
   position: absolute;
   margin: 0;
   width: 148px;
+  z-index: 1;
 }
 .enable-listbox [role="option"] {
   display: block;

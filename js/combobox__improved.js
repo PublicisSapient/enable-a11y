@@ -1,4 +1,4 @@
-var initComboBoxes = (function () {
+const comboBox = (function () {
   var field = null,
     status = null,
     list = null,
@@ -132,8 +132,6 @@ var initComboBoxes = (function () {
     if (isMac) {
         var elNum = visibleOptions.indexOf(el.innerText) + 1;
         var totalEls = options.length;
-
-        console.log(el);
 
         assertiveLiveRegion.innerHTML = 
             el.innerText + ', clickable, ' + elNum + ' of ' + itemCount;

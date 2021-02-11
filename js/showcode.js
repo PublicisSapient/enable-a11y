@@ -254,7 +254,7 @@ const showcode = new (function () {
               optionEl.dataset.showcodeNotes = notes.join(' ');
               break;
             default:
-              optionEl.dataset.showcodeNotes = notes;
+              optionEl.dataset.showcodeNotes = notes || '';
           }
           optionEl.innerHTML = 'Step #' + (parseInt(i) + 1) + ': ' + label;
 

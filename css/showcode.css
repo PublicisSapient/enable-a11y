@@ -70,7 +70,6 @@ select {
 html,
 body {
   width: 100vw;
-  overflow-x: hidden;
 }
 .showcode {
   border: solid 1px #999;
@@ -86,7 +85,7 @@ body {
   position: relative;
   font-family: "ModeSeven", "Consolas", monospace;
   background: black;
-  color: green;
+  color: #090;
   /* @media @mobile {
             margin: 0 -2em -25px -1em;
         } */

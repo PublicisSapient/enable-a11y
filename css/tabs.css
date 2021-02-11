@@ -485,11 +485,8 @@ footer a,
 [role="contentinfo"] a {
   color: #ccccff;
 }
-#tabs {
-  max-width: 50em;
-}
 #tabs h2 {
-  margin: 1em 0 0;
+  margin: 1em 0;
 }
 #tabs h2:focus {
   outline: 0;

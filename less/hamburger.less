@@ -1,0 +1,15 @@
+@import "shared/all";
+
+.hamburger {
+    &__main-button {
+        .button-reset();
+    }
+
+    &__level {
+        visibility: hidden;
+
+        &:focus-within {
+            visibility: visible;
+        }
+    }
+}
