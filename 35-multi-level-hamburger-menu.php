@@ -22,15 +22,15 @@
         <h1>Example 1</h1>
 
 
-        <button class="burger js-menuToggle" aria-label="Open mobile flyout" aria-expanded="false" aria-controls="mobile-menu">
+        <button class="enable-flyout__open-menu-button " aria-label="Open mobile flyout" aria-expanded="false" aria-controls="mobile-menu">
                 <i class="fa fa-navicon"></i>
             </button>
 
 
         <nav aria-label="mobile flyout">
-            <ul id="mobile-menu" class="pushNav js-topPushNav js-pushNavLevel">
+            <ul id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout_level">
                 <li>
-                    <button aria-label="Close mobile flyout"  class="closeLevel js-closeLevelTop hdg" aria-expanded="true" aria-controls="mobile-menu">
+                    <button aria-label="Close mobile flyout"  class="enable-flyout__close-level-button enable-flyout__close-top-level hdg" aria-expanded="true" aria-controls="mobile-menu">
                         <i class="fa fa-close"></i>
                         Close
                     </button>
@@ -44,25 +44,25 @@
 
                 <li>
                     <!-- Begin section 1 -->
-                    <button aria-expanded="false" aria-controls="section1" class="openLevel js-openLevel">
+                    <button aria-expanded="false" aria-controls="section1" class="enable-flyout__open-level-button ">
                         Section 1
                         <i class="fa fa-chevron-right"></i>
                     </button>
-                    <ul aria-label="section 1" id="section1" class="pushNav pushNav_level js-pushNavLevel">
+                    <ul aria-label="section 1" id="section1" class="enable-flyout enable-flyout_level ">
                         <li>
-                            <button aria-label="close" class="closeLevel js-closeLevel hdg">
+                            <button aria-label="close" class="enable-flyout__close-level-button  hdg">
                             <i class="fa fa-chevron-left"></i>
                             Go Back
 </button>
                         </li>
                         <li>
-                            <button aria-expanded="false" aria-controls="section1-1" class="openLevel js-openLevel">
+                            <button aria-expanded="false" aria-controls="section1-1" class="enable-flyout__open-level-button ">
                                 Section 1.1
                                 <i class="fa fa-chevron-right"></i>
 </button>
-                            <ul aria-label="section 1.1" id="section1-1" class="pushNav pushNav_level js-pushNavLevel">
+                            <ul aria-label="section 1.1" id="section1-1" class="enable-flyout enable-flyout_level ">
                                 <li>
-                                    <button aria-label="close" class="closeLevel js-closeLevel hdg">
+                                    <button aria-label="close" class="enable-flyout__close-level-button  hdg">
                                     <i class="fa fa-chevron-left"></i>
                                     Go Back
 </button>
@@ -75,12 +75,12 @@
                             </ul>
                         </li>
                         <li>
-                            <button aria-expanded="false" aria-controls="section1-2" class="openLevel js-openLevel">
+                            <button aria-expanded="false" aria-controls="section1-2" class="enable-flyout__open-level-button ">
                                 Secion 1.2
                                 <i class="fa fa-chevron-right"></i>
 </button>
-                            <ul aria-label="section 1.2" id="section1-2" class="pushNav pushNav_level js-pushNavLevel">
-                                <li><button aria-label="close" class="closeLevel js-closeLevel hdg">
+                            <ul aria-label="section 1.2" id="section1-2" class="enable-flyout enable-flyout_level ">
+                                <li><button aria-label="close" class="enable-flyout__close-level-button  hdg">
                                     <i class="fa fa-chevron-left"></i>
                                     Go Back
 </button></li>
@@ -96,12 +96,12 @@
                 </li><!-- End section 1 -->
 
                 <li>
-                    <button aria-expanded="false" aria-controls="section2" class="openLevel js-openLevel">
+                    <button aria-expanded="false" aria-controls="section2" class="enable-flyout__open-level-button ">
                         Section 2
                         <i class="fa fa-chevron-right"></i>
 </button>
-                    <ul aria-label="section 2" id="section2" class="pushNav pushNav_level js-pushNavLevel">
-                        <li><button aria-label="close" class="closeLevel js-closeLevel hdg">
+                    <ul aria-label="section 2" id="section2" class="enable-flyout enable-flyout_level ">
+                        <li><button aria-label="close" class="enable-flyout__close-level-button  hdg">
                             <i class="fa fa-chevron-left"></i>
                             Go Back
 </button></li>
@@ -113,7 +113,7 @@
                         <li><a href="#">Link to page nineteen</a></li>
                     </ul>
                 </li>
-                <hr />
+                <hr class="enable-flyout__separator" />
                 <li>
                     <a href="#">Link to page one</a>
                 </li>
@@ -123,19 +123,7 @@
             </ul>
         </nav>
 
-        <div class="wrapper">
-
-            <h1>Multi-Level Hamburger Push Menu</h1>
-            <p>This is a simple multi-level hamburger menu. The only thing jQuery is doing here is adding and removing
-                CSS classes — all animations/ nav hiding/ sliding etc are pure CSS.</p>
-            <p><a href="http://fontawesome.io/">Font Awesome</a> icons are used in the menu. You can easily substitute
-                your own icons or omit them altogether.</p>
-            <button>
-                <a href="https://hayley.cc" target="_blank"><i class="fa fa-user-circle-o"></i> Hayley.cc</a>
-            </button>
-        </div>
-
-        <span class="screen"></span>
+        <span class="enable-flyout__overlay-screen"></span>
 
     </main>
 

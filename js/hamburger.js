@@ -1,20 +1,21 @@
 const EnableFlyoutMenu = new function() {
-  const menuSel = '.js-menuToggle';
-  const topNavSel = '.js-topPushNav';
-  const openLevelSel = '.js-openLevel';
+  const menuSel = '.enable-flyout__open-menu-button';
+  const topNavSel = '.enable-flyout__top-level';
+  const openLevelSel = '.enable-flyout__open-level-button';
   const $openLevel = document.querySelectorAll(openLevelSel);
-  const closeLevelSel = '.js-closeLevel';
-  const closeLevelTopSel = '.js-closeLevelTop';
-  const navLevelSel = '.js-pushNavLevel';
+  const closeLevelSel = '.enable-flyout__close-level-button';
+  const closeLevelTopSel = '.enable-flyout__close-top-level';
+  const navLevelSel = '.enable-flyout_level';
+  const enableFlyoutOpenClass = 'enable-flyout__body--is-open';
+  const isOpenClass = 'enable-flyout--is-open';
   const $body = document.body;
-  const $screen = document.querySelector('.screen');
+  const $screen = document.querySelector('.enable-flyout__overlay-screen');
 
   // keeps track of what element currently has a focus loop
   let $focusLoopEl = null;
 
   function delegate(eventName, elementSelector, handler) { 
     document.body.addEventListener(eventName, function(e) {
-      eventName === 'transitionend' && e.propertyName === 'right' && console.log('help', e.target, elementSelector, eventName, e);
       // loop parent nodes from the target to the delegation node
       for (var target = e.target; target && target != this; target = target.parentNode) {
           if (target.matches(elementSelector)) {
@@ -52,23 +53,23 @@ const EnableFlyoutMenu = new function() {
   }
 
   function openFlyout($flyoutMenu) {
-    $flyoutMenu.classList.add('isOpen');
-    $body.classList.add('pushNavIsOpen');
+    $flyoutMenu.classList.add(isOpenClass);
+    $body.classList.add(enableFlyoutOpenClass);
   }
 
   function closeFlyout($flyoutMenu) {
     const $openLevel = $flyoutMenu.querySelectorAll(openLevelSel)
-    $flyoutMenu.classList.remove('isOpen');
+    $flyoutMenu.classList.remove(isOpenClass);
 
     forEach.call($openLevel, function ($el) {
       const siblings = getSiblings($el);
       
       forEach.call(siblings, function (sibling) {
-        sibling.classList.remove('isOpen');
+        sibling.classList.remove(isOpenClass);
       })
     });
     
-    $body.classList.remove('pushNavIsOpen');
+    $body.classList.remove(enableFlyoutOpenClass);
   }
 
   function closeAllFlyouts () {
@@ -79,7 +80,7 @@ const EnableFlyoutMenu = new function() {
   function onHamburgerIconClick(e) {
     e.preventDefault();
     const $flyoutMenu = getAriaControlsEl(this);
-    if ($flyoutMenu.classList.contains('isOpen')) {
+    if ($flyoutMenu.classList.contains(isOpenClass)) {
       closeFlyout($flyoutMenu);
     } else {
       openFlyout($flyoutMenu);
@@ -90,7 +91,6 @@ const EnableFlyoutMenu = new function() {
     e.preventDefault();
     const $flyoutMenu = document.getElementById(this.getAttribute('aria-controls'));
     if (!$flyoutMenu) {
-      console.log(this);
       throw "Error: aria-controls on button must be set to id of flyout menu.";
     }
     closeFlyout($flyoutMenu)
@@ -106,7 +106,7 @@ const EnableFlyoutMenu = new function() {
       const { classList } = target;
 
       if (target == $root) {
-        if (classList.contains("isOpen")) { 
+        if (classList.contains(isOpenClass)) { 
           setKeepFocusInside(target, true);
           $closeLevelButton.focus();
         } else {
@@ -114,13 +114,15 @@ const EnableFlyoutMenu = new function() {
           $menuEl.focus();
         }
       } else if (target.matches(navLevelSel)) {
-        if (classList.contains('isOpen')) {
-          target.querySelector('.js-closeLevel').focus();
+        if (classList.contains(isOpenClass)) {
+          target.querySelector(closeLevelSel).focus();
           setKeepFocusInside(target, true);
         } else {
+          console.log('this is the problem', target.id);
           const $upperLevel = target.parentNode.closest(navLevelSel);
           setKeepFocusInside($upperLevel, true);
-          $upperLevel.querySelector('.js-openLevel').focus();
+          const $elToFocus = document.querySelector('[aria-controls="' + target.id + '"]');
+          $elToFocus.focus();
         }
       }
     }
@@ -132,30 +134,26 @@ const EnableFlyoutMenu = new function() {
     const $flyoutMenu = getAriaControlsEl(this);
 
     if ($flyoutMenu) {
-      $flyoutMenu.classList.add('isOpen');
+      $flyoutMenu.classList.add(isOpenClass);
     }
   }
 
   function closeLevel () {
-    this.closest(navLevelSel).classList.remove('isOpen');
+    this.closest(navLevelSel).classList.remove(isOpenClass);
   }
 
   this.init = function () {
     // main menu open
     delegate('click', menuSel, onHamburgerIconClick);
-    delegate('touchstart', menuSel, onHamburgerIconClick);
 
     // level open
     delegate('click', openLevelSel, openLevel);
-    delegate('touchstart', openLevelSel, openLevel);
 
     // level close
-    delegate('click', '.js-closeLevel', closeLevel);
-    delegate('touchstart', '.js-closeLevel', closeLevel);
+    delegate('click', closeLevelSel, closeLevel);
 
     // main menu close
     delegate('click', closeLevelTopSel, onHamburgerCloseClick);
-    delegate('touchstart', closeLevelTopSel, onHamburgerCloseClick);
 
     document.addEventListener('transitionend', openMenuTransitionEnd);
 
