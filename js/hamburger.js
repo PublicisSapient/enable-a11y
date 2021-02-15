@@ -38,6 +38,14 @@ const EnableFlyoutMenu = new function() {
     return $ariaControlsEl;
   }
 
+  function getController($el) {
+    const $controller = document.querySelector('[aria-controls="' + $el.id + '"]');
+    if (!$controller) {
+      throw "Error: There is no element that has aria-controls set to " + $el.id;
+    }
+    return $controller;
+  }
+
   function setKeepFocusInside($el, doKeepFocusInside) {
     if (doKeepFocusInside) {
       if ($focusLoopEl) {
@@ -61,13 +69,20 @@ const EnableFlyoutMenu = new function() {
 
   function closeFlyout($flyoutMenu) {
     const $openLevel = $flyoutMenu.querySelectorAll(openLevelSel)
+    let $controller  = getController($flyoutMenu);
     $flyoutMenu.classList.remove(isOpenClass);
+    $controller.setAttribute('aria-expanded', 'false');
+    console.log('controller', $controller.innerHTML );
 
     forEach.call($openLevel, function ($el) {
       const siblings = getSiblings($el);
       
       forEach.call(siblings, function (sibling) {
         sibling.classList.remove(isOpenClass);
+        
+        $controller = getController(sibling);
+        $controller.setAttribute('aria-expanded', 'false');
+        console.log('controller', $controller.innerHTML );
       })
     });
     
@@ -157,7 +172,7 @@ const EnableFlyoutMenu = new function() {
     }
   }
 
-  function closeLevel (e) {
+  function closeLevel(e) {
     const { target } = e;
 
     if (target.classList.contains('enable-flyout__open-level-button')) {
