@@ -1,3 +1,4 @@
+@import "shared/defaults";
 
 // Color variables (appears count calculates by raw css)
 @color0: #fff; // Appears 4 times
@@ -9,185 +10,392 @@
 
 @menu-orientation: right;
 
-
 // Height variables (appears count calculates by raw css)
 @height0: 100%; // Appears 3 times
 
-@media screen and (max-width: 600px) {
-    .enable-flyout {
-      width: 75%;
-      right: -75%;
-      visibility: hidden;
-    }
-  }
-  
-  @media screen and (min-width: 601px) {
-    .enable-flyout {
-      width: 350px;
-      right: -350px;
-      visibility: hidden;
-    }
-  }
-
-
+* {
+	box-sizing: border-box;
+}
 
 .enable-flyout {
-	list-style-type: none;
+  width: calc(min(75%, 350px));
+  right: calc(-1 * min(75%, 350px));
+  visibility: hidden;
+  background: #2e2f35;
+  color: @color0;
+  font-family: helvetica, sens-serif;
+  font-size: 1em;
+  font-weight: 100;
+  height: @height0;
+  overflow: hidden;
+  position: fixed;
+  text-decoration: none;
+  top: 0;
+  z-index: 100;
+
+  &__list {
+  	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	background: #2e2f35;
-	color: @color0;
-	font-family: helvetica, sens-serif;
-	font-size: 1em;
-	font-weight: 100;
-	height: @height0;
-	overflow: hidden;
-	position: fixed;
-	text-decoration: none;
-	top: 0;
-	transition: visibility 0s, all ease-in-out @large-anim-time;
-	z-index: 100;
+  }
 
-	&__separator {
-		border: 1px solid #555555;
-	}
+  &__separator {
+    border: 1px solid #555555;
+  }
 
-	[aria-hidden="true"] {
+  &__open-level-button,
+  &__close-level-button,
+  &__link {
+    color: @color0;
+    display: block;
+    font-family: helvetica, sens-serif;
+    font-size: 1em;
+    font-weight: 100;
+    padding: 1em 0;
+    text-decoration: none;
+    text-indent: 20px;
+    transition: background @anim-time ease-in-out;
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+
+    // Corrects inability to style clickable `input` types in iOS
+    -webkit-appearance: none;
+    &:hover {
+      background: @color1;
+    }
+  }
+
+  &__open-level-button {
+    padding: 25px;
+	position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      background-image: url("../images/chevron-right.svg");
+      background-repeat: no-repeat;
+      background-position: 0 6px;
+      filter: invert();
+      position: absolute;
+      top: 5px;
+      margin-left: 6px;
+    }
+  }
+
+  &__body--is-open {
+    height: @height0;
+    overflow: auto;
+  }
+
+  &__body--is-open &__overlay-screen {
+    height: @height0;
+    opacity: 1;
+  }
+
+  animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
+  &--is-open {
+	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+    visibility: visible;
+  }
+
+  &--is-closed {
+	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out reverse;
+  }
+
+  &__level&--is-open {
+	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+    visibility: visible;
+  }
+
+  &__level-heading {
+	  display: none;
+  }
+
+  &__close-level-button {
+    color: @color2;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    padding: 1em 0;
+    text-indent: 20px;
+    transition: background @anim-time ease-in-out;
+    &:hover {
+      background: @color1;
+    }
+  }
+  &__open-level-button {
+    cursor: pointer;
+    display: block;
+    padding: 1em 0;
+    text-indent: 20px;
+    transition: background @anim-time ease-in-out;
+    &:hover {
+      background: @color1;
+    }
+  }
+  &__close-level-button {
+    background-color: #1e1e24;
+  }
+
+  &__close-level-button > i {
+    color: @color2;
+    font-size: 1em;
+  }
+  &__open-menu-button {
+    position: absolute;
+    right: 48px;
+    top: 24px;
+
+    i {
+      font-size: 3em;
+    }
+  }
+  &__overlay-screen {
+    background: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    height: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: opacity @large-anim-time ease-in-out;
+    width: 100%;
+  }
+
+  &__open-menu-button {
+    background-color: @color3;
+    border: none;
+    display: block;
+    margin: 50px auto;
+    padding: 10px 40px;
+    a {
+      color: @color0;
+      font-size: 2em;
+    }
+  }
+
+  &__open-menu-button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    // inherit font & color from ancestor
+    color: inherit;
+    font: inherit;
+
+    // Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+.
+    line-height: normal;
+
+    // Corrects font smoothing for webkit
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    // Corrects inability to style clickable `input` types in iOS
+    -webkit-appearance: none;
+  }
+
+
+  /* These items are hidden in the mobile breakpoint */
+  &__link-image {
+	display: none;
+  }
+
+  @media @desktop {
+    width: 100%;
+    visibility: visible;
+    right: auto;
+    margin: 0;
+    position: absolute;
+    left: 0px;
+	animation: enable-flyout__anim--desktop-close @anim-time ease-in-out forwards;
+
+	&__open-menu-button {
 		display: none;
 	}
-	
-	a, button {
-		color: @color0;
-		display: block;
-		font-family: helvetica, sens-serif;
-		font-size: 1em;
-		font-weight: 100;
-		padding: 1em 0;
-		text-decoration: none;
-		text-indent: 20px;
-		transition: background @anim-time ease-in-out;
-		width: 100%;
-		background: transparent;
-		border: none;
-		text-align: left;
-		
-		// Corrects inability to style clickable `input` types in iOS
-		-webkit-appearance: none;
-		&:hover {
-			background: @color1;
-		}
-	}
 
-	&__body--is-open {
-		height: @height0;
-		overflow: auto;
-	}
-
-	&__body--is-open &__overlay-screen {
-		height: @height0;
-		opacity: 1;
-	}
-
-	
 	&--is-open {
-		right: 0;
+		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out forwards;
 		visibility: visible;
-	}
-	&_level&--is-open {
-		right: 0;
-		visibility: visible;
-	}
-	&__close-level-button {
-		color: @color2;
-		cursor: pointer;
-		display: block;
-		font-size: 1em;
-		padding: 1em 0;
-		text-indent: 20px;
-		transition: background @anim-time ease-in-out;
-		&:hover {
-			background: @color1;
-		}
-	}
-	&__open-level-button {
-		cursor: pointer;
-		display: block;
-		padding: 1em 0;
-		text-indent: 20px;
-		transition: background @anim-time ease-in-out;
-		&:hover {
-			background: @color1;
-		}
-	}
-	&__close-level-button {
-		background-color: #1e1e24;
 	}
 
-	&__close-level-button>i {
-		color: @color2;
-		font-size: 1em;
+	&--is-closed {
+		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out reverse;
 	}
-	&__open-menu-button {
-		position: absolute;
-		right: 48px;
-		top: 24px;
-		i {
-			font-size: 3em;
+
+	&__level&--is-open {
+		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out forwards;
+		visibility: visible;
+	}
+
+	&__open-level-button,
+	&__close-level-button,
+	&__link {
+	  &:hover {
+		background: none;
+		font-weight: bold;
+	  }
+	}
+
+    &__level {
+      display: none;
+	  overflow: visible;
+    }
+
+	&__level-heading {
+		font-weight: bold;
+		font-size: (26/@px);
+		border-bottom: 1px solid #999;
+		padding: 20px;
+		display: block;
+		text-align: left;
+	}
+
+    &__top-level {
+      display: block;
+	  height: auto;
+	  overflow: visible;
+
+    }
+
+	&--is-open {
+		.enable-flyout__open-level-button {
+			display: none;
 		}
 	}
-	&__overlay-screen {
-		background: rgba(0, 0, 0, 0.7);
-		bottom: 0;
-		height: 0;
-		opacity: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
-		transition: opacity @large-anim-time ease-in-out;
+
+
+	&--is-open &__level {
+		display: block;
+		position: static;
+		background: white;
+		color: black;
 		width: 100%;
+
 	}
 
-	&__open-menu-button {
-		background-color: @color3;
-		border: none;
-		display: block;
-		margin: 50px auto;
-		padding: 10px 40px;
-		a {
-			color: @color0;
-			font-size: 2em;
+	&--is-open &__menu-item {
+		width: 100%;
+
+		&--orphan {
+			display: inline-block;
+			width: auto;
 		}
 	}
 
-	&__open-menu-button {
-		border: none;
-		margin: 0;
-		padding: 0;
-		width: auto;
-		overflow: visible;
-
-		background: transparent;
-
-		// inherit font & color from ancestor
-		color: inherit;
-		font: inherit;
-
-		// Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+.
-		line-height: normal;
-
-		// Corrects font smoothing for webkit
-		-webkit-font-smoothing: inherit;
-		-moz-osx-font-smoothing: inherit;
-
-		// Corrects inability to style clickable `input` types in iOS 
-		-webkit-appearance: none;
+	&__list--photo-layout &__menu-item {
+		width: (100% / 5);
+		float: left;
 	}
-}
 
+	&__list--photo-layout &__link {
+		transition: transform @anim-time ease-in-out;
+		&:hover,
+		&:focus {
+			transform: scale(1.2);
+			font-weight: bold;
+		}
+	}
+
+	&__list {
+		display: flow-root;
+	}
+
+
+	&__open-level-button {
+		padding-right: 35px;
+
+		&::after {
+			background-image: url("../images/chevron-down.svg");
+		}
+	}
+
+    &__close-level-button {
+      display: none;
+    }
+
+
+    &__menu-item {
+      display: inline-block;
+
+	  &--close {
+		  display: none;
+		  padding-right: 0;
+	  }
+    }
+
+	&__link {
+		display: inline-block;
+		text-align: center;
+	}
+
+	&__link-image {
+		display: block;
+		margin: 0 auto 10px auto;
+		width: 180px;
+	}
+
+	&--is-open {
+		display: block;
+		margin-top: 50px;
+		background: #ccc;
+		color: black;
+		text-align: center;
+
+		.enable-flyout__open-level-button,
+		.enable-flyout__close-level-button,
+		.enable-flyout__link {
+			color: black;
+
+			&::after {
+				filter: none;
+			}
+		}
+	}
+  }
+
+}
 
 .fa {
-	display: inline;
-	padding: 5px;
+  display: inline;
+  padding: 5px;
 }
 
+@keyframes enable-flyout__anim--mobile-open {
+	0% {
+		visibility: hidden;
+		right: calc(-1 * min(75%, 350px));
+	}
 
+	0.001%{
+		visibility: visible;
+	}
+
+	100% {
+		visibility: visible;
+		right: 0;
+	}
+}
+
+@keyframes enable-flyout__anim--mobile-close {
+	100% {
+		visibility: hidden;
+		right: calc(-1 * min(75%, 350px));
+	}
+
+	0.999%{
+		visibility: visible;
+	}
+
+	0% {
+		visibility: visible;
+		right: 0;
+	}
+}

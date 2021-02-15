@@ -662,6 +662,7 @@ const accessibility = {
         if (sibling !== currentEl && sibling.setAttribute) {
           sibling.setAttribute(this.oldAriaHiddenVal, sibling.ariaHidden || 'null');
           sibling.setAttribute('aria-hidden', 'true');
+          sibling.style.display = 'none';
         }
       }
 
@@ -669,6 +670,18 @@ const accessibility = {
       // and repeat (unless the currentNode is the body tag).
       currentEl = currentEl.parentNode;
     } while (currentEl !== body);
+      
+    requestAnimationFrame(this.fixChromeAriaHiddenBug);
+  },
+
+  // This fixes an issue with Chrome/Talkback in while aria-hidden is not
+  // respected when it is applied via JS.  Based on code from here:
+  // https://stackblitz.com/edit/aria-hidden-test?file=app.component.ts
+  fixChromeAriaHiddenBug() {
+      const elsToReset = document.querySelectorAll(`[${accessibility.oldAriaHiddenVal}]`);
+      for (let i=0; i < elsToReset.length; i++ ) {
+        elsToReset[i].style.display = '';
+      }
   },
 
   /**

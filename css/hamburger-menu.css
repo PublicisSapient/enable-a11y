@@ -1,21 +1,79 @@
-@media screen and (max-width: 600px) {
-  .enable-flyout {
-    width: 75%;
-    right: -75%;
-    visibility: hidden;
-  }
+/*
+ * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ */
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  margin: 10px;
+  line-height: 1.1;
 }
-@media screen and (min-width: 601px) {
-  .enable-flyout {
-    width: 350px;
-    right: -350px;
-    visibility: hidden;
-  }
+strong {
+  font-weight: bold;
+}
+ul {
+  list-style: initial;
+}
+ol {
+  list-style: decimal;
+}
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: solid 1px #999999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+ul,
+ol {
+  padding-left: 3rem;
+}
+ul {
+  list-style: disc;
+}
+ul,
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.example h1 {
+  text-align: center;
+}
+.example main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.example .example-nav {
+  text-align: center;
+}
+.example .example-nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+.example .notes {
+  border: dashed #9C6F39 3px;
+  padding: 1em;
+  background-color: #ffffee;
+  margin: 2em auto;
+  max-width: calc(1024px - 2em);
+}
+.example .notes h2 {
+  margin: 0;
+  border-bottom: none;
+}
+input,
+select {
+  font-size: 1em;
+}
+* {
+  box-sizing: border-box;
 }
 .enable-flyout {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  width: calc(min(75%, 350px));
+  right: calc(-1 * min(75%, 350px));
+  visibility: hidden;
   background: #2e2f35;
   color: #fff;
   font-family: helvetica, sens-serif;
@@ -26,17 +84,21 @@
   position: fixed;
   text-decoration: none;
   top: 0;
-  transition: visibility 0s, all ease-in-out 0.2s;
   z-index: 100;
+  animation: enable-flyout__anim--mobile-close 0.2s ease-in-out forwards;
+  /* These items are hidden in the mobile breakpoint */
+}
+.enable-flyout__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 .enable-flyout__separator {
   border: 1px solid #555555;
 }
-.enable-flyout [aria-hidden="true"] {
-  display: none;
-}
-.enable-flyout a,
-.enable-flyout button {
+.enable-flyout__open-level-button,
+.enable-flyout__close-level-button,
+.enable-flyout__link {
   color: #fff;
   display: block;
   font-family: helvetica, sens-serif;
@@ -52,9 +114,27 @@
   text-align: left;
   -webkit-appearance: none;
 }
-.enable-flyout a:hover,
-.enable-flyout button:hover {
+.enable-flyout__open-level-button:hover,
+.enable-flyout__close-level-button:hover,
+.enable-flyout__link:hover {
   background: #494a50;
+}
+.enable-flyout__open-level-button {
+  padding: 25px;
+  position: relative;
+}
+.enable-flyout__open-level-button::after {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-image: url("../images/chevron-right.svg");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  filter: invert();
+  position: absolute;
+  top: 5px;
+  margin-left: 6px;
 }
 .enable-flyout__body--is-open {
   height: 100%;
@@ -65,12 +145,18 @@
   opacity: 1;
 }
 .enable-flyout--is-open {
-  right: 0;
+  animation: enable-flyout__anim--mobile-open 0.2s ease-in-out forwards;
   visibility: visible;
 }
-.enable-flyout_level.enable-flyout--is-open {
-  right: 0;
+.enable-flyout--is-closed {
+  animation: enable-flyout__anim--mobile-open 0.2s ease-in-out reverse;
+}
+.enable-flyout__level.enable-flyout--is-open {
+  animation: enable-flyout__anim--mobile-open 0.2s ease-in-out forwards;
   visibility: visible;
+}
+.enable-flyout__level-heading {
+  display: none;
 }
 .enable-flyout__close-level-button {
   color: #a5a5a4;
@@ -145,7 +231,158 @@
   -moz-osx-font-smoothing: inherit;
   -webkit-appearance: none;
 }
+.enable-flyout__link-image {
+  display: none;
+}
+@media only screen and (min-width: 960px) {
+  .enable-flyout {
+    width: 100%;
+    visibility: visible;
+    right: auto;
+    margin: 0;
+    position: absolute;
+    left: 0px;
+    animation: enable-flyout__anim--desktop-close 0.2s ease-in-out forwards;
+  }
+  .enable-flyout__open-menu-button {
+    display: none;
+  }
+  .enable-flyout--is-open {
+    animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
+    visibility: visible;
+  }
+  .enable-flyout--is-closed {
+    animation: enable-flyout__anim--desktop-open 0.2s ease-in-out reverse;
+  }
+  .enable-flyout__level.enable-flyout--is-open {
+    animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
+    visibility: visible;
+  }
+  .enable-flyout__open-level-button:hover,
+  .enable-flyout__close-level-button:hover,
+  .enable-flyout__link:hover {
+    background: none;
+    font-weight: bold;
+  }
+  .enable-flyout__level {
+    display: none;
+    overflow: visible;
+  }
+  .enable-flyout__level-heading {
+    font-weight: bold;
+    font-size: 1.625rem;
+    border-bottom: 1px solid #999;
+    padding: 20px;
+    display: block;
+    text-align: left;
+  }
+  .enable-flyout__top-level {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+  .enable-flyout--is-open .enable-flyout__open-level-button {
+    display: none;
+  }
+  .enable-flyout--is-open .enable-flyout__level {
+    display: block;
+    position: static;
+    background: white;
+    color: black;
+    width: 100%;
+  }
+  .enable-flyout--is-open .enable-flyout__menu-item {
+    width: 100%;
+  }
+  .enable-flyout--is-open .enable-flyout__menu-item--orphan {
+    display: inline-block;
+    width: auto;
+  }
+  .enable-flyout__list--photo-layout .enable-flyout__menu-item {
+    width: 20%;
+    float: left;
+  }
+  .enable-flyout__list--photo-layout .enable-flyout__link {
+    transition: transform 0.2s ease-in-out;
+  }
+  .enable-flyout__list--photo-layout .enable-flyout__link:hover,
+  .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    transform: scale(1.2);
+    font-weight: bold;
+  }
+  .enable-flyout__list {
+    display: flow-root;
+  }
+  .enable-flyout__open-level-button {
+    padding-right: 35px;
+  }
+  .enable-flyout__open-level-button::after {
+    background-image: url("../images/chevron-down.svg");
+  }
+  .enable-flyout__close-level-button {
+    display: none;
+  }
+  .enable-flyout__menu-item {
+    display: inline-block;
+  }
+  .enable-flyout__menu-item--close {
+    display: none;
+    padding-right: 0;
+  }
+  .enable-flyout__link {
+    display: inline-block;
+    text-align: center;
+  }
+  .enable-flyout__link-image {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 180px;
+  }
+  .enable-flyout--is-open {
+    display: block;
+    margin-top: 50px;
+    background: #ccc;
+    color: black;
+    text-align: center;
+  }
+  .enable-flyout--is-open .enable-flyout__open-level-button,
+  .enable-flyout--is-open .enable-flyout__close-level-button,
+  .enable-flyout--is-open .enable-flyout__link {
+    color: black;
+  }
+  .enable-flyout--is-open .enable-flyout__open-level-button::after,
+  .enable-flyout--is-open .enable-flyout__close-level-button::after,
+  .enable-flyout--is-open .enable-flyout__link::after {
+    filter: none;
+  }
+}
 .fa {
   display: inline;
   padding: 5px;
+}
+@keyframes enable-flyout__anim--mobile-open {
+  0% {
+    visibility: hidden;
+    right: calc(-1 * min(75%, 350px));
+  }
+  0.001% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+    right: 0;
+  }
+}
+@keyframes enable-flyout__anim--mobile-close {
+  100% {
+    visibility: hidden;
+    right: calc(-1 * min(75%, 350px));
+  }
+  0.999% {
+    visibility: visible;
+  }
+  0% {
+    visibility: visible;
+    right: 0;
+  }
 }
