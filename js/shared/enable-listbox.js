@@ -149,7 +149,6 @@ const enableListbox = new function() {
       if (target.getAttribute('role') === 'option') {
         target.click();
       }
-      console.log('tab!', e.target);
       this.collapse(buttonEl, listboxEl, true);
     });
   }

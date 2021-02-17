@@ -71,6 +71,7 @@ select {
   box-sizing: border-box;
 }
 .enable-flyout {
+  --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
   width: calc(min(75%, 350px));
   right: calc(-1 * min(75%, 350px));
   visibility: hidden;
@@ -87,6 +88,57 @@ select {
   z-index: 100;
   animation: enable-flyout__anim--mobile-close 0.2s ease-in-out forwards;
   /* These items are hidden in the mobile breakpoint */
+}
+.enable-flyout__hamburger-icon {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  margin: 8px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 101;
+}
+.enable-flyout__hamburger-icon span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: black;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+.enable-flyout__hamburger-icon span:nth-child(1) {
+  top: 0px;
+}
+.enable-flyout__hamburger-icon span:nth-child(2),
+.enable-flyout__hamburger-icon span:nth-child(3) {
+  top: 12px;
+}
+.enable-flyout__hamburger-icon span:nth-child(4) {
+  top: 24px;
+}
+.enable-flyout__open-menu-button[aria-expanded="true"] .enable-flyout__hamburger-icon span {
+  background-color: white;
+}
+.enable-flyout__open-menu-button[aria-expanded="true"] .enable-flyout__hamburger-icon span:nth-child(1) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+.enable-flyout__open-menu-button[aria-expanded="true"] .enable-flyout__hamburger-icon span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.enable-flyout__open-menu-button[aria-expanded="true"] .enable-flyout__hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.enable-flyout__open-menu-button[aria-expanded="true"] .enable-flyout__hamburger-icon span:nth-child(4) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
 }
 .enable-flyout__list {
   list-style-type: none;
@@ -189,8 +241,8 @@ select {
 }
 .enable-flyout__open-menu-button {
   position: absolute;
-  right: 48px;
-  top: 24px;
+  right: 2px;
+  top: 0;
 }
 .enable-flyout__open-menu-button i {
   font-size: 3em;

@@ -7,6 +7,8 @@
 @color3: #20c270; // Appears 2 times
 @anim-time: 0.2s;
 @large-anim-time: 0.2s;
+@desktop-min: 960px;
+@desktop:   ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
 
 @menu-orientation: right;
 
@@ -14,10 +16,12 @@
 @height0: 100%; // Appears 3 times
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .enable-flyout {
+  --enable-flyout__desktop-media-query: @desktop;
+
   width: calc(min(75%, 350px));
   right: calc(-1 * min(75%, 350px));
   visibility: hidden;
@@ -33,10 +37,81 @@
   top: 0;
   z-index: 100;
 
+  // Animation for the hamburger menu icon stolen from:
+  // https://codepen.io/designcouch/pen/Atyop
+
+  &__hamburger-icon {
+	@hamburger-width: 30px;
+	@hamburger-height: 22px;
+	@hamburger-height-div-five: (@hamburger-width / 5);
+	@hamburger-stroke-width: 6px;
+
+    width: @hamburger-width;
+    height: @hamburger-height;
+	
+    position: relative;
+    margin: 8px;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+	z-index: 101;
+
+    span {
+      display: block;
+      position: absolute;
+      height: @hamburger-stroke-width;
+      width: 100%;
+      background: black;
+      border-radius: (@hamburger-stroke-width / 2);
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+	  transition: 0.5s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: (@hamburger-height-div-five * 2);
+      }
+
+      &:nth-child(4) {
+        top: (@hamburger-height-div-five * 4);
+      }
+    }
+
+    .enable-flyout__open-menu-button[aria-expanded="true"] & {
+	  span {
+		  background-color: white;
+	  }
+      span:nth-child(1) {
+        top: (@hamburger-height-div-five * 2);
+        width: 0%;
+        left: 50%;
+      }
+
+      span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      span:nth-child(4) {
+        top: (@hamburger-height-div-five * 2);
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+
   &__list {
-  	list-style-type: none;
-	margin: 0;
-	padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
   &__separator {
@@ -69,7 +144,7 @@
 
   &__open-level-button {
     padding: 25px;
-	position: relative;
+    position: relative;
 
     &::after {
       content: "";
@@ -98,21 +173,21 @@
 
   animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
   &--is-open {
-	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+    animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
     visibility: visible;
   }
 
   &--is-closed {
-	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out reverse;
+    animation: enable-flyout__anim--mobile-open @anim-time ease-in-out reverse;
   }
 
   &__level&--is-open {
-	animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+    animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
     visibility: visible;
   }
 
   &__level-heading {
-	  display: none;
+    display: none;
   }
 
   &__close-level-button {
@@ -147,8 +222,8 @@
   }
   &__open-menu-button {
     position: absolute;
-    right: 48px;
-    top: 24px;
+    right: 2px;
+    top: 0;
 
     i {
       font-size: 3em;
@@ -202,10 +277,9 @@
     -webkit-appearance: none;
   }
 
-
   /* These items are hidden in the mobile breakpoint */
   &__link-image {
-	display: none;
+    display: none;
   }
 
   @media @desktop {
@@ -215,152 +289,150 @@
     margin: 0;
     position: absolute;
     left: 0px;
-	animation: enable-flyout__anim--desktop-close @anim-time ease-in-out forwards;
+    animation: enable-flyout__anim--desktop-close @anim-time ease-in-out
+      forwards;
 
-	&__open-menu-button {
-		display: none;
-	}
+    &__open-menu-button {
+      display: none;
+    }
 
-	&--is-open {
-		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out forwards;
-		visibility: visible;
-	}
+    &--is-open {
+      animation: enable-flyout__anim--desktop-open @anim-time ease-in-out
+        forwards;
+      visibility: visible;
+    }
 
-	&--is-closed {
-		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out reverse;
-	}
+    &--is-closed {
+      animation: enable-flyout__anim--desktop-open @anim-time ease-in-out
+        reverse;
+    }
 
-	&__level&--is-open {
-		animation: enable-flyout__anim--desktop-open @anim-time ease-in-out forwards;
-		visibility: visible;
-	}
+    &__level&--is-open {
+      animation: enable-flyout__anim--desktop-open @anim-time ease-in-out
+        forwards;
+      visibility: visible;
+    }
 
-	&__open-level-button,
-	&__close-level-button,
-	&__link {
-	  &:hover {
-		background: none;
-		font-weight: bold;
-	  }
-	}
+    &__open-level-button,
+    &__close-level-button,
+    &__link {
+      &:hover {
+        background: none;
+        font-weight: bold;
+      }
+    }
 
     &__level {
       display: none;
-	  overflow: visible;
+      overflow: visible;
     }
 
-	&__level-heading {
-		font-weight: bold;
-		font-size: (26/@px);
-		border-bottom: 1px solid #999;
-		padding: 20px;
-		display: block;
-		text-align: left;
-	}
+    &__level-heading {
+      font-weight: bold;
+      font-size: (26 / @px);
+      border-bottom: 1px solid #999;
+      padding: 20px;
+      display: block;
+      text-align: left;
+    }
 
     &__top-level {
       display: block;
-	  height: auto;
-	  overflow: visible;
-
+      height: auto;
+      overflow: visible;
     }
 
-	&--is-open {
-		.enable-flyout__open-level-button {
-			display: none;
-		}
-	}
+    &--is-open {
+      .enable-flyout__open-level-button {
+        display: none;
+      }
+    }
 
+    &--is-open &__level {
+      display: block;
+      position: static;
+      background: white;
+      color: black;
+      width: 100%;
+    }
 
-	&--is-open &__level {
-		display: block;
-		position: static;
-		background: white;
-		color: black;
-		width: 100%;
+    &--is-open &__menu-item {
+      width: 100%;
 
-	}
+      &--orphan {
+        display: inline-block;
+        width: auto;
+      }
+    }
 
-	&--is-open &__menu-item {
-		width: 100%;
+    &__list--photo-layout &__menu-item {
+      width: (100% / 5);
+      float: left;
+    }
 
-		&--orphan {
-			display: inline-block;
-			width: auto;
-		}
-	}
+    &__list--photo-layout &__link {
+      transition: transform @anim-time ease-in-out;
+      &:hover,
+      &:focus {
+        transform: scale(1.2);
+        font-weight: bold;
+      }
+    }
 
-	&__list--photo-layout &__menu-item {
-		width: (100% / 5);
-		float: left;
-	}
+    &__list {
+      display: flow-root;
+    }
 
-	&__list--photo-layout &__link {
-		transition: transform @anim-time ease-in-out;
-		&:hover,
-		&:focus {
-			transform: scale(1.2);
-			font-weight: bold;
-		}
-	}
+    &__open-level-button {
+      padding-right: 35px;
 
-	&__list {
-		display: flow-root;
-	}
-
-
-	&__open-level-button {
-		padding-right: 35px;
-
-		&::after {
-			background-image: url("../images/chevron-down.svg");
-		}
-	}
+      &::after {
+        background-image: url("../images/chevron-down.svg");
+      }
+    }
 
     &__close-level-button {
       display: none;
     }
 
-
     &__menu-item {
       display: inline-block;
 
-	  &--close {
-		  display: none;
-		  padding-right: 0;
-	  }
+      &--close {
+        display: none;
+        padding-right: 0;
+      }
     }
 
-	&__link {
-		display: inline-block;
-		text-align: center;
-	}
+    &__link {
+      display: inline-block;
+      text-align: center;
+    }
 
-	&__link-image {
-		display: block;
-		margin: 0 auto 10px auto;
-		width: 180px;
-	}
+    &__link-image {
+      display: block;
+      margin: 0 auto 10px auto;
+      width: 180px;
+    }
 
-	&--is-open {
-		display: block;
-		margin-top: 50px;
-		background: #ccc;
-		color: black;
-		text-align: center;
+    &--is-open {
+      display: block;
+      margin-top: 50px;
+      background: #ccc;
+      color: black;
+      text-align: center;
 
-		.enable-flyout__open-level-button,
-		.enable-flyout__close-level-button,
-		.enable-flyout__link {
-			color: black;
+      .enable-flyout__open-level-button,
+      .enable-flyout__close-level-button,
+      .enable-flyout__link {
+        color: black;
 
-			&::after {
-				filter: none;
-			}
-		}
-	}
+        &::after {
+          filter: none;
+        }
+      }
+    }
   }
-
 }
 
 .fa {
@@ -369,33 +441,33 @@
 }
 
 @keyframes enable-flyout__anim--mobile-open {
-	0% {
-		visibility: hidden;
-		right: calc(-1 * min(75%, 350px));
-	}
+  0% {
+    visibility: hidden;
+    right: calc(-1 * min(75%, 350px));
+  }
 
-	0.001%{
-		visibility: visible;
-	}
+  0.001% {
+    visibility: visible;
+  }
 
-	100% {
-		visibility: visible;
-		right: 0;
-	}
+  100% {
+    visibility: visible;
+    right: 0;
+  }
 }
 
 @keyframes enable-flyout__anim--mobile-close {
-	100% {
-		visibility: hidden;
-		right: calc(-1 * min(75%, 350px));
-	}
+  100% {
+    visibility: hidden;
+    right: calc(-1 * min(75%, 350px));
+  }
 
-	0.999%{
-		visibility: visible;
-	}
+  0.999% {
+    visibility: visible;
+  }
 
-	0% {
-		visibility: visible;
-		right: 0;
-	}
+  0% {
+    visibility: visible;
+    right: 0;
+  }
 }

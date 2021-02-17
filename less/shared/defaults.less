@@ -41,9 +41,17 @@
 // pixels to rems.
 @px: 16rem;
 
-@desktop:   ~"only screen and (min-width: 960px)";
-@tablet:    ~"only screen and (min-width: 720px) and (max-width: 959px)";
-@mobile:	~"only screen and (min-width: 1px) and (max-width: 719px)";
+@desktop-min: 960px;
+
+@tablet-min: 720px;
+@tablet-max: (@desktop-min - 1);
+
+@mobile-min: 1px;
+@mobile-max: (@tablet-min - 1);
+
+@desktop:   ~"only screen and (min-width: @{desktop-min})";
+@tablet:    ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@mobile:	~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
 
 
 body {

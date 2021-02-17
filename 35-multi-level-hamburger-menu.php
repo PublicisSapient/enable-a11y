@@ -15,21 +15,30 @@
     <main>
         <aside class="notes">
             <p>
-                This is based on <a href="https://codepen.io/johorduz/pen/pYqPrp">
-                    this great CSS only hamburger menu</a>
+                This is based on <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
+                this great hamburger menu</a>.  I removed jQuery as a dependancy,
+                made the markup accessible and added focus management rules.  I
+                also made the styles follow the BEM design pattern.
             </p>
         </aside>
 
         <h1>Example 1</h1>
 
 
-        <button class="enable-flyout__open-menu-button " aria-label="Open mobile flyout" aria-expanded="false"
+        <button class="enable-flyout__open-menu-button "  aria-expanded="false"
             aria-controls="mobile-menu">
-            <i class="fa fa-navicon"></i>
+            
+            <div class="enable-flyout__hamburger-icon" role="image" aria-label="Open mobile flyout">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
         </button>
 
         <!-- ESC key -->
-        <nav aria-label="mobile flyout">
+        <nav class="enable-flyout__container" aria-label="mobile flyout">
             <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
                 <ul class="enable-flyout__list">
                     <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
@@ -54,7 +63,7 @@
                             Game Consoles
 
                         </button>
-                        <div aria-label="Game Consoles" id="section1" class="enable-flyout enable-flyout__level ">
+                        <div aria-label="Game Consoles" id="section1" class="enable-flyout enable-flyout__level  enable-flyout__dropdown">
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                                     <button class="enable-flyout__close-level-button  hdg">
@@ -112,7 +121,7 @@
 
                                     </button>
                                     <div aria-label="Intellivision" id="section1-2"
-                                        class="enable-flyout enable-flyout__level ">
+                                        class="enable-flyout enable-flyout__level">
                                         <div class="enable-flyout__level-heading">Intellivision</div>
                                         <ul class="enable-flyout__list enable-flyout__list--photo-layout">
                                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
@@ -172,7 +181,7 @@
                             Section 2
 
                         </button>
-                        <div aria-label="section 2" id="section2" class="enable-flyout enable-flyout__level ">
+                        <div aria-label="section 2" id="section2" class="enable-flyout enable-flyout__level enable-flyout__dropdown ">
                             <div class="enable-flyout__level-heading">section 2</div>
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
@@ -217,7 +226,6 @@
 
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/accessibility-es4.js"></script>
     <script src="js/hamburger.js"></script>
 </body>

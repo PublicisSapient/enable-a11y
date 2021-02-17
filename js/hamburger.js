@@ -1,6 +1,7 @@
 const EnableFlyoutMenu = new function() {
   const menuSel = '.enable-flyout__open-menu-button';
   const topNavSel = '.enable-flyout__top-level';
+  const $root = document.querySelector(topNavSel);
   const openLevelSel = '.enable-flyout__open-level-button';
   const $openLevel = document.querySelectorAll(openLevelSel);
   const closeLevelSel = '.enable-flyout__close-level-button';
@@ -12,6 +13,10 @@ const EnableFlyoutMenu = new function() {
   const $screen = document.querySelector('.enable-flyout__overlay-screen');
   const mobileOpenMenuAnim = 'enable-flyout__anim--mobile-open';
   const mobileCloseMenuAnim = 'enable-flyout__anim--mobile-close';
+  const dropdownSel = '.enable-flyout__dropdown';
+  const desktopMq = window.getComputedStyle($root).getPropertyValue('--enable-flyout__desktop-media-query');
+  const desktopMql = window.matchMedia(desktopMq);
+
 
   // keeps track of what element currently has a focus loop
   let $focusLoopEl = null;
@@ -72,7 +77,6 @@ const EnableFlyoutMenu = new function() {
     let $controller  = getController($flyoutMenu);
     $flyoutMenu.classList.remove(isOpenClass);
     $controller.setAttribute('aria-expanded', 'false');
-    console.log('controller', $controller.innerHTML );
 
     forEach.call($openLevel, function ($el) {
       const siblings = getSiblings($el);
@@ -82,7 +86,6 @@ const EnableFlyoutMenu = new function() {
         
         $controller = getController(sibling);
         $controller.setAttribute('aria-expanded', 'false');
-        console.log('controller', $controller.innerHTML );
       })
     });
     
@@ -147,7 +150,6 @@ const EnableFlyoutMenu = new function() {
           setKeepFocusInside(target, false);
           $menuEl.focus();
       } else if (target.matches(navLevelSel)) {
-          console.log('this is the problem', target.id);
           const $upperLevel = target.parentNode.closest(navLevelSel);
           setKeepFocusInside($upperLevel, true);
           const $elToFocus = document.querySelector('[aria-controls="' + target.id + '"]');
@@ -168,6 +170,12 @@ const EnableFlyoutMenu = new function() {
     closeSiblingFlyouts($flyoutMenu);
     target.setAttribute('aria-expanded', 'true');
     if ($flyoutMenu) {
+      const { classList } = $flyoutMenu;
+      if ($flyoutMenu.matches(dropdownSel)) {
+        $flyoutMenu.addEventListener(
+          'blur', blurEvent, true
+        );
+      }
       $flyoutMenu.classList.add(isOpenClass);
     }
   }
@@ -194,13 +202,23 @@ const EnableFlyoutMenu = new function() {
   function toggleLevel(e) {
     const { target } = e;
     const isExpanded = (target.getAttribute('aria-expanded') === 'true');
-    console.log(target.getAttribute('aria-expanded'), isExpanded);
 
     if (isExpanded){
       closeLevel(e);
     } else {
       openLevel(e);
     }
+  }
+
+  const blurEvent = (e) => {
+    accessibility.doIfBlurred(e, () => {
+      closeAllFlyouts();
+    });
+  }
+
+  const onBreakpointChange = (e) => {
+    // we will close all flyouts, just in case
+    closeAllFlyouts();
   }
 
   this.init = function () {
@@ -218,7 +236,13 @@ const EnableFlyoutMenu = new function() {
 
     document.addEventListener('animationend', openMenuAnimationEnd);
 
+    /* document.querySelector('.enable-flyout__dropdown').addEventListener(
+      'blur', blurEvent, true
+    );*/ 
+
     $screen.addEventListener('click', closeAllFlyouts);
+
+    desktopMql.addEventListener('change', onBreakpointChange)
   }
 }
 
