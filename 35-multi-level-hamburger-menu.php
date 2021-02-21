@@ -15,33 +15,33 @@
 
 
 
-        <button class="enable-flyout__open-menu-button "  aria-expanded="false"
-            aria-controls="mobile-menu">
-            
-            <div class="enable-flyout__hamburger-icon" role="image" aria-label="Open mobile flyout">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-        </button>
+        
 
         <!-- ESC key -->
         <nav class="enable-flyout__container" aria-label="mobile flyout">
+            <button class="enable-flyout__open-menu-button"  aria-expanded="false"
+                aria-controls="mobile-menu">
+                
+                <div class="enable-flyout__hamburger-icon" role="image" aria-label="Open mobile flyout">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </button>
             <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
                 <ul class="enable-flyout__list">
-                    <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                    <!-- <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                         <button aria-label="Close mobile flyout"
                             class="enable-flyout__close-level-button enable-flyout__close-top-level hdg"
                             aria-expanded="true" aria-controls="mobile-menu">
                             <i class="fa fa-close"></i>
                             Close
-                        </button>
+                        </button> -->
                     </li>
                     <li class="enable-flyout__menu-item">
-                        <a href="#" class="enable-flyout__link">
-                            <i class="fa fa-home"></i>
+                        <a href="#" class="enable-flyout__link enable-flyout__with-home-icon">
                             Home
                         </a>
                     </li>
@@ -57,7 +57,6 @@
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                                     <button class="enable-flyout__close-level-button  hdg">
-                                        <i class="fa fa-chevron-left"></i>
                                         Go Back
                                     </button>
                                 </li>
@@ -72,7 +71,7 @@
                                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                                                 <button aria-label="close"
                                                     class="enable-flyout__close-level-button  hdg">
-                                                    <i class="fa fa-chevron-left"></i>
+        
                                                     Go Back
                                                 </button>
                                             </li>
@@ -116,7 +115,7 @@
                                         <ul class="enable-flyout__list enable-flyout__list--photo-layout">
                                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
                                                     class="enable-flyout__close-level-button  hdg">
-                                                    <i class="fa fa-chevron-left"></i>
+        
                                                     Go Back
                                                 </button></li>
                                             <li class="enable-flyout__menu-item"><a href="#"
@@ -176,7 +175,6 @@
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
                                         class="enable-flyout__close-level-button  hdg">
-                                        <i class="fa fa-chevron-left"></i>
                                         Go Back
                                     </button></li>
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to

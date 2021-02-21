@@ -10,6 +10,20 @@
 @desktop-min: 960px;
 @desktop:   ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
 
+.icon-mixin(@img) {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 31px;
+  background: url(@img);
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  background-size: 26px 26px;
+  filter: invert();
+  position: absolute;
+  top: 5px;
+}
+
 @menu-orientation: right;
 
 // Height variables (appears count calculates by raw css)
@@ -37,6 +51,7 @@
   top: 0;
   z-index: 100;
 
+
   &__container {
     padding: 0;
     margin-bottom: 0;
@@ -47,7 +62,7 @@
 
   &__hamburger-icon {
 	@hamburger-width: 30px;
-	@hamburger-height: 22px;
+	@hamburger-height: 30px;
 	@hamburger-height-div-five: (@hamburger-width / 5);
 	@hamburger-stroke-width: 6px;
 
@@ -131,7 +146,7 @@
     font-family: helvetica, sens-serif;
     font-size: 1em;
     font-weight: 100;
-    padding: 1em 0;
+    padding: 1em 1em 1em 0;
     text-decoration: none;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
@@ -147,6 +162,17 @@
     }
   }
 
+
+  &__with-home-icon {
+    position: relative;
+    padding-left: 32px;
+    &::before {
+      .icon-mixin("../images/Home.svg");
+      top: 4px;
+      left: 15px;
+    }
+  }
+
   &__menu-item {
     width: 100%;
   }
@@ -156,17 +182,7 @@
     position: relative;
 
     &::after {
-      content: "";
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      background-image: url("../images/chevron-right.svg");
-      background-repeat: no-repeat;
-      background-position: 0 6px;
-      filter: invert();
-      position: absolute;
-      top: 5px;
-      margin-left: 6px;
+      .icon-mixin("../images/chevron-right.svg");
     }
   }
 
@@ -207,6 +223,14 @@
     padding: 1em 0;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
+    position: relative;
+    padding-left: 26px;
+
+    &::before {
+      .icon-mixin("../images/chevron-left.svg");
+      margin-left: -33px;
+    }
+
     &:hover {
       background: @color1;
     }
@@ -415,6 +439,13 @@
 
       &::after {
         background-image: url("../images/chevron-down.svg");
+      }
+
+      &[aria-expanded="true"] {
+
+        &::after {
+          background-image: url("../images/chevron-up.svg");
+        }
       }
     }
 

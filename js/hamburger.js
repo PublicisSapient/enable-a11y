@@ -191,9 +191,17 @@ const EnableFlyoutMenu = new function() {
         $flyoutMenu.classList.remove(isOpenClass);
       }
     } else {
+      
       const $navLevel = this.closest(navLevelSel);
       const { id } = $navLevel;
       const $button = document.querySelector('[aria-controls="' + id + '"]');
+
+      console.log('brrr');
+        if ($navLevel.matches(dropdownSel)) {
+          $navLevel.removeEventListener(
+            'blur', blurEvent, true
+          );
+        }
       $navLevel.classList.remove(isOpenClass);
       $button.setAttribute('aria-expanded', 'false');
     }

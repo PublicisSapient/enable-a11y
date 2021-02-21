@@ -95,7 +95,7 @@ select {
 }
 .enable-flyout__hamburger-icon {
   width: 30px;
-  height: 22px;
+  height: 30px;
   position: relative;
   margin: 8px;
   transform: rotate(0deg);
@@ -160,7 +160,7 @@ select {
   font-family: helvetica, sens-serif;
   font-size: 1em;
   font-weight: 100;
-  padding: 1em 0;
+  padding: 1em 1em 1em 0;
   text-decoration: none;
   text-indent: 20px;
   transition: background 0.2s ease-in-out;
@@ -175,6 +175,25 @@ select {
 .enable-flyout__link:hover {
   background: #494a50;
 }
+.enable-flyout__with-home-icon {
+  position: relative;
+  padding-left: 32px;
+}
+.enable-flyout__with-home-icon::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 31px;
+  background: url("../images/Home.svg");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  background-size: 26px 26px;
+  filter: invert();
+  position: absolute;
+  top: 5px;
+  top: 4px;
+  left: 15px;
+}
 .enable-flyout__menu-item {
   width: 100%;
 }
@@ -186,14 +205,14 @@ select {
   content: "";
   display: inline-block;
   width: 26px;
-  height: 26px;
-  background-image: url("../images/chevron-right.svg");
+  height: 31px;
+  background: url("../images/chevron-right.svg");
   background-repeat: no-repeat;
   background-position: 0 6px;
+  background-size: 26px 26px;
   filter: invert();
   position: absolute;
   top: 5px;
-  margin-left: 6px;
 }
 .enable-flyout__body--is-open {
   height: 100%;
@@ -225,6 +244,22 @@ select {
   padding: 1em 0;
   text-indent: 20px;
   transition: background 0.2s ease-in-out;
+  position: relative;
+  padding-left: 26px;
+}
+.enable-flyout__close-level-button::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 31px;
+  background: url("../images/chevron-left.svg");
+  background-repeat: no-repeat;
+  background-position: 0 6px;
+  background-size: 26px 26px;
+  filter: invert();
+  position: absolute;
+  top: 5px;
+  margin-left: -33px;
 }
 .enable-flyout__close-level-button:hover {
   background: #494a50;
@@ -390,6 +425,9 @@ select {
   }
   .enable-flyout__open-level-button::after {
     background-image: url("../images/chevron-down.svg");
+  }
+  .enable-flyout__open-level-button[aria-expanded="true"]::after {
+    background-image: url("../images/chevron-up.svg");
   }
   .enable-flyout__close-level-button {
     display: none;
