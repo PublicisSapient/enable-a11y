@@ -3,26 +3,16 @@
 
 <head>
     <title>Accessible Multilevel Hamburger Menu</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
     <?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="css/hamburger-menu.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
 </head>
 
-<body>
-    <?php include("includes/example-header.php"); ?>
+<body class="home">
+    <div role="banner" tabindex="0">
+        <?php include("includes/logo-link.php"); ?>
 
-    <main>
-        <aside class="notes">
-            <p>
-                This is based on <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
-                this great hamburger menu</a>.  I removed jQuery as a dependancy,
-                made the markup accessible and added focus management rules.  I
-                also made the styles follow the BEM design pattern.
-            </p>
-        </aside>
-
-        <h1>Example 1</h1>
 
 
         <button class="enable-flyout__open-menu-button "  aria-expanded="false"
@@ -189,22 +179,22 @@
                                         <i class="fa fa-chevron-left"></i>
                                         Go Back
                                     </button></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         fourteen</a></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         fifteen</a></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         sixteen</a></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         seventeen</a></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         eighteen</a></li>
-                                <li class="enable-flyout__menu-item"><a href="#" class="enable-flyout__link">Link to
+                                <li class="enable-flyout__menu-item enable-flyout__menu-item--orphan"><a href="#" class="enable-flyout__link">Link to
                                         page
                                         nineteen</a></li>
                             </ul>
@@ -219,6 +209,20 @@
                 </ul>
             </div>
         </nav>
+    </div>
+
+
+    <main>
+        <aside class="notes">
+            <p>
+                This is based on <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
+                this great hamburger menu</a>.  I removed jQuery as a dependancy,
+                made the markup accessible and added focus management rules.  I
+                also made the styles follow the BEM design pattern.
+            </p>
+        </aside>
+
+        <h1>Example 1</h1>
 
         <a href="/">Home</a>
 

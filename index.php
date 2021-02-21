@@ -5,13 +5,14 @@
       Enable - HTML5 Code Examples Accessible To Everyone
     </title>
     <?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/home.css" />
+
     <link rel="stylesheet" type="text/css" href="css/switch.css" />
+    <link rel="stylesheet" type="text/css" href="css/home.css" />
 
     <meta charset="utf-8" />
   </head>
 
-  <body class="home">
+  <body>
     <?php include("includes/documentation-header.php"); ?>
 
     <main>
@@ -274,6 +275,9 @@
           <p>These widgets don't have any native HTML5 equivalent.</p>
 
           <ul>
+            <li>
+              <a href="35-multi-level-hamburger-menu.php">Flyout Menu (a.k.a. Hamburger Menu)</a>
+            </li>
             <li>
               <a href="08a-tabs.php">Tabs:</a> one of the hardest widgets to
               code right.

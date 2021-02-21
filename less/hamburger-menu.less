@@ -37,6 +37,11 @@
   top: 0;
   z-index: 100;
 
+  &__container {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
   // Animation for the hamburger menu icon stolen from:
   // https://codepen.io/designcouch/pen/Atyop
 
@@ -54,7 +59,7 @@
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
-	z-index: 101;
+	  z-index: 101;
 
     span {
       display: block;
@@ -111,7 +116,7 @@
   &__list {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 50px 0 0 0;
   }
 
   &__separator {
@@ -140,6 +145,10 @@
     &:hover {
       background: @color1;
     }
+  }
+
+  &__menu-item {
+    width: 100%;
   }
 
   &__open-level-button {
@@ -287,19 +296,32 @@
     visibility: visible;
     right: auto;
     margin: 0;
-    position: absolute;
     left: 0px;
     animation: enable-flyout__anim--desktop-close @anim-time ease-in-out
       forwards;
+    top: auto;
+    height: auto;
+
+    
+
+    &__top-level {
+      position: relative;
+    }
 
     &__open-menu-button {
       display: none;
+    }
+
+    &__list {
+      padding-top: 0;
     }
 
     &--is-open {
       animation: enable-flyout__anim--desktop-open @anim-time ease-in-out
         forwards;
       visibility: visible;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 5px 5px #999;
     }
 
     &--is-closed {
@@ -331,7 +353,7 @@
       font-weight: bold;
       font-size: (26 / @px);
       border-bottom: 1px solid #999;
-      padding: 20px;
+      padding: 20px 20px 0 20px;
       display: block;
       text-align: left;
     }
@@ -356,6 +378,10 @@
       width: 100%;
     }
 
+    &__menu-item {
+      width: auto;
+    }
+
     &--is-open &__menu-item {
       width: 100%;
 
@@ -368,6 +394,7 @@
     &__list--photo-layout &__menu-item {
       width: (100% / 5);
       float: left;
+      margin: 0;
     }
 
     &__list--photo-layout &__link {
@@ -417,8 +444,7 @@
 
     &--is-open {
       display: block;
-      margin-top: 50px;
-      background: #ccc;
+      background: #fff;
       color: black;
       text-align: center;
 

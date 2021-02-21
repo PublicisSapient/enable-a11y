@@ -52,7 +52,7 @@
                     data-keyboard-only-instructions="tabs-keyboard-only-instructions">
                     <li role="presentation">
                         <a
-                            href="#ipa"
+                            href="#"
                             role="tab"
                             aria-owns="ipa-tabpanel"
                             aria-describedby="tabs-keyboard-only-instructions"
@@ -61,11 +61,11 @@
                         </a>
                     </li>
                     <li role="presentation">
-                        <a href="#gueuze" role="tab" aria-owns="gueuze-tabpanel"
+                        <a href="#" role="tab" aria-owns="gueuze-tabpanel"
                             aria-describedby="tabs-keyboard-only-instructions">Gueuze</a>
                     </li>
                     <li role="presentation">
-                        <a href="#imperial-stout" role="tab" aria-owns="imperial-stout-tabpanel"
+                        <a href="#" role="tab" aria-owns="imperial-stout-tabpanel"
                             aria-describedby="tabs-keyboard-only-instructions">Imperial Stout</a>
                     </li>
                 </ul>

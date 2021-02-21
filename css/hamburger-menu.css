@@ -89,6 +89,10 @@ select {
   animation: enable-flyout__anim--mobile-close 0.2s ease-in-out forwards;
   /* These items are hidden in the mobile breakpoint */
 }
+.enable-flyout__container {
+  padding: 0;
+  margin-bottom: 0;
+}
 .enable-flyout__hamburger-icon {
   width: 30px;
   height: 22px;
@@ -143,7 +147,7 @@ select {
 .enable-flyout__list {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 50px 0 0 0;
 }
 .enable-flyout__separator {
   border: 1px solid #555555;
@@ -170,6 +174,9 @@ select {
 .enable-flyout__close-level-button:hover,
 .enable-flyout__link:hover {
   background: #494a50;
+}
+.enable-flyout__menu-item {
+  width: 100%;
 }
 .enable-flyout__open-level-button {
   padding: 25px;
@@ -292,16 +299,25 @@ select {
     visibility: visible;
     right: auto;
     margin: 0;
-    position: absolute;
     left: 0px;
     animation: enable-flyout__anim--desktop-close 0.2s ease-in-out forwards;
+    top: auto;
+    height: auto;
+  }
+  .enable-flyout__top-level {
+    position: relative;
   }
   .enable-flyout__open-menu-button {
     display: none;
   }
+  .enable-flyout__list {
+    padding-top: 0;
+  }
   .enable-flyout--is-open {
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
     visibility: visible;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 5px 5px #999;
   }
   .enable-flyout--is-closed {
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out reverse;
@@ -324,7 +340,7 @@ select {
     font-weight: bold;
     font-size: 1.625rem;
     border-bottom: 1px solid #999;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     display: block;
     text-align: left;
   }
@@ -343,6 +359,9 @@ select {
     color: black;
     width: 100%;
   }
+  .enable-flyout__menu-item {
+    width: auto;
+  }
   .enable-flyout--is-open .enable-flyout__menu-item {
     width: 100%;
   }
@@ -353,6 +372,7 @@ select {
   .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     width: 20%;
     float: left;
+    margin: 0;
   }
   .enable-flyout__list--photo-layout .enable-flyout__link {
     transition: transform 0.2s ease-in-out;
@@ -392,8 +412,7 @@ select {
   }
   .enable-flyout--is-open {
     display: block;
-    margin-top: 50px;
-    background: #ccc;
+    background: #fff;
     color: black;
     text-align: center;
   }
