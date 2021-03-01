@@ -1,27 +1,45 @@
-const comboBox = (function () {
-  var field = null,
+const EnableCombobox = function (componentRoot) {
+  let root = null,
+    field = null,
     status = null,
     list = null,
     options = null,
     selectedOption = null,
     hideAll = false,
-    kRETURN = 13,
-    kESC = 27,
-    kUP = 38,
-    kDOWN = 40,
     itemCount = -1,
     visibleOptions,
-    assertiveLiveRegion,
+    controlsContainer = null,
     ariaDescriptionEl = null,
-    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+    resetButton,
+    listGroups = [],
+    isMobileKeyboard = true;
 
-  var submitHandler = function (e) {
+  const spaceRe = /\s+/g,
+    kRETURN = "Enter",
+    kESC = "Esc",
+    kUP = "ArrowUp",
+    kDOWN = "ArrowDown",
+    kTAB = "Tab",
+    kANDROIDKEYCODE = 229,
+    firstVisibleOptionSelector = '[role="option"]:not([hidden])';
+
+  function docKeyDownHandler(e) {
+    // if a key is pressed at the document level, we are assuming
+    // is not a mobile device
+    if (e.key === kTAB)  {
+      isMobileKeyboard = false;
+    } else if (e.keyCode === kANDROIDKEYCODE) {
+      isMobileKeyboard = true;
+    }
+  }
+
+  function submitHandler(e) {
     updateMenuDisplay();
     e.preventDefault();
   };
 
-  var keyUpHandler = function (e) {
-    switch (e.keyCode) {
+  function keyUpHandler(e) {
+    switch (e.key) {
       case kRETURN:
         return;
       case kESC:
@@ -35,8 +53,8 @@ const comboBox = (function () {
     updateMenuDisplay();
   };
 
-  var keyDownHandler = function (e) {
-    switch (e.keyCode) {
+  function keyDownHandler(e) {
+    switch (e.key) {
       case kRETURN:
         handleReturn(e);
         break; // Catch Return on keyDown, b/c keyUp fires after submit.
@@ -49,31 +67,47 @@ const comboBox = (function () {
     }
   };
 
-  var handleEscape = function (e) {
+  function handleEscape(e) {
     e.preventDefault();
     clearField();
   };
 
-  var handleUpArrow = function (e) {
+  function handleUpArrow(e) {
+    e.preventDefault();
     selectPreviousOption();
-    e.preventDefault();
   };
 
-  var handleDownArrow = function (e) {
+  function handleDownArrow(e) {
+    e.preventDefault();
     selectNextOption();
-    e.preventDefault();
   };
 
-  var handleReturn = function (e) {
+  function handleReturn(e) {
+    e.preventDefault();
     insertValue();
-    e.preventDefault();
+    focusOnFirstOption();
   };
 
-  var blurHandler = function (e) {
-    hideMenu();
-  };
+  function focusOnFirstOption() {
+    const validOptions = list.querySelectorAll(firstVisibleOptionSelector);
+    if (validOptions.length > 0) {
+      const option = validOptions[0];
 
-  var focusHandler = function (e) {
+      // We can't just focus on the option, since iOS will refocus back
+      // to the input field.  In order to work around this, we must
+      // blur the field (which will get rid of the virtual keyboard)
+      // and then focus the option after 1200 ms.
+      field.blur();
+      setTimeout(() => {
+        option.focus();
+      }, 1200);
+    } else {
+      field.blur();
+    }
+  }
+
+
+  function focusHandler(e) {
     if (field.value) {
       updateMenuDisplay();
     } else {
@@ -81,34 +115,53 @@ const comboBox = (function () {
     }
   };
 
-  var mouseDownHandler = function (e) {
-    if (e.target.tagName.toLowerCase() === "li") {
-      updateSelectedOption(e.target);
-      field.focus();
-      insertValue();
+  function listMouseDownHandler(e) {
+    updateSelectedOption(e.target);
+    e.target.focus();
+    insertValue();
+  }
+
+  function listClickHandler(e) {
+
+    if (e.target.getAttribute('role').toLowerCase() === "option") {
+      listMouseDownHandler(e);
     }
   };
 
-  var updateMenuDisplay = function () {
+  function updateMenuDisplay() {
     filter();
-    list.hidden = hideAll ? true : false;
+    if (hideAll) {
+      hideMenu();
+    } else {
+      showMenu();
+    }
     field.setAttribute("aria-expanded", hideAll ? "false" : "true");
     updateStatus();
   };
 
-  var hideMenu = function () {
+  function showMenu() {
+    accessibility.setMobileFocusLoop(controlsContainer);
+    list.hidden = false;
+  }
+
+  function hideMenu() {
     list.hidden = true;
     field.setAttribute("aria-expanded", "false");
+    accessibility.removeMobileFocusLoop();
     updateStatus();
   };
 
-  var clearField = function () {
-    if (field.value) field.value = "";
-    else if (field.textContent) field.textContent = "";
+  function clearField() {
+    if (field.value) {
+      field.value = "";
+    } else if (field.textContent) {
+      field.textContent = "";
+    }
     clearSelectedOption();
+    field.focus();
   };
 
-  var clearSelectedOption = function () {
+  function clearSelectedOption() {
     if (selectedOption) {
       field.removeAttribute("aria-activedescendant");
       list.removeAttribute("data-selection");
@@ -118,28 +171,21 @@ const comboBox = (function () {
     hideMenu();
   };
 
-  var updateSelectedOption = function (el) {
+  function updateSelectedOption(el) {
     if (!el) {
       return;
     }
-    if (selectedOption) selectedOption.removeAttribute("aria-selected");
+    if (selectedOption) {
+      selectedOption.removeAttribute("aria-selected");
+    }
     selectedOption = el;
     list.setAttribute("data-selection", el.id);
     el.setAttribute("aria-selected", "true");
     field.setAttribute("aria-activedescendant", el.id);
-
-
-    if (isMac) {
-        var elNum = visibleOptions.indexOf(el.innerText) + 1;
-        var totalEls = options.length;
-
-        assertiveLiveRegion.innerHTML = 
-            el.innerText + ', clickable, ' + elNum + ' of ' + itemCount;
-    }
   };
 
-  var selectNextOption = function () {
-    var so = shownOptions();
+  function selectNextOption() {
+    const so = shownOptions();
     for (var i = 0, c = so.length; i < c; i++) {
       var o = so[i];
       if (o == selectedOption) {
@@ -153,10 +199,10 @@ const comboBox = (function () {
     }
   };
 
-  var selectPreviousOption = function () {
-    var so = shownOptions();
-    for (var i = so.length - 1; i > 0; i--) {
-      var o = so[i];
+  function selectPreviousOption() {
+    const so = shownOptions();
+    for (let i = so.length - 1; i > 0; i--) {
+      const o = so[i];
       if (o == selectedOption) {
         if (so[i - 1]) updateSelectedOption(so[i - 1]);
         return;
@@ -168,13 +214,12 @@ const comboBox = (function () {
     }
   };
 
-  var shownOptions = function () {
-    // It's possible this selector will fail on some Windows browsers. May need to make it a simple classname.
-    return list.querySelectorAll("li:not([hidden])");
+  function shownOptions() {
+    return list.querySelectorAll(firstVisibleOptionSelector);
   };
 
-  var updateStatus = function () {
-    var statusContent = "";
+  function updateStatus() {
+    let statusContent = "";
 
     itemCount = shownOptions().length;
 
@@ -192,51 +237,83 @@ const comboBox = (function () {
     status.innerHTML = statusContent;
   };
 
-  var insertValue = function () {
+  function insertValue() {
+    const value = (selectedOption && selectedOption.textContent) ? selectedOption.textContent.trim().replace(spaceRe, ' ') : null;
     if (selectedOption) {
       if (field.value) {
-        field.value = selectedOption.textContent;
+        field.value = value;
       } else if (field.textContent) {
-        field.textContent = selectedOption.textContent;
+        field.textContent = value;
       }
       clearSelectedOption();
+      requestAnimationFrame(() => {
+        resetButton.focus();
+        status.innerHTML="Selected " + value + ".";
+      })
     }
   };
 
-  var filter = function () {
-    var s = field.value || field.textContent;
-    s = s.toUpperCase();
+  function filter() {
+    const s = (field.value || field.textContent).toUpperCase();
     hideAll = true;
     if (s == "") return;
     visibleOptions = [];
-    for (var i = 0, c = options.length; i < c; i++) {
-      var o = options[i];
-      var t = o.textContent.toUpperCase();
+    for (let i = 0, c = options.length; i < c; i++) {
+      const o = options[i];
+      const t = o.textContent.toUpperCase();
       // if typed string is not substring of state name or code (case insensitive), and is not exact match for state
       if ((t.indexOf(s) == -1 && o.id.indexOf(s) == -1) || t == s) {
         o.hidden = true;
       } else {
         o.hidden = false;
+        o.tabIndex = -1;
         hideAll = false;
         visibleOptions.push(o.textContent);
       }
     }
+
+    // remove headers if there are no elements in a group
+    for (let i=0; i<listGroups.length; i++) {
+      const group = listGroups[i];
+      const visibleValues = group.querySelectorAll(firstVisibleOptionSelector);
+      if (visibleValues.length === 0) {
+        group.hidden = true;
+      } else {
+        group.hidden = false;
+      }
+    }
+
+    // if there are no options visible after filtering, hide the menu.
+    // otherwise, show the menu.
+    if (list.querySelector(firstVisibleOptionSelector)) {
+      showMenu();
+    } else {
+      hideMenu();
+    }
     clearSelectedOption();
   };
 
-  var initCombo = function () {
+  function initCombo(componentRoot) {
     // TODO: If time allows, update example to account for multiple comboboxes.
-    form = document.querySelector("form");
-    field = document.querySelector('[role="combobox"]');
-    status = document.querySelector('[role="status"]');
+    root = componentRoot;
+    field = root.querySelector('[role="combobox"]');
+    form = field.form;
+    status = root.querySelector('[role="status"]');
     list = document.getElementById(field.getAttribute("aria-owns"));
-    options = list.getElementsByTagName("li");
+    options = list.querySelectorAll('[role="option"]');
+    listGroups = list.querySelectorAll('.enable-combobox__group');
+    resetButton = root.querySelector('.enable-combobox__reset-button');
+    controlsContainer = root.querySelector('.enable-combobox__controls-container');
+
+    // Events
     form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
     field.addEventListener("keyup", keyUpHandler);
     field.addEventListener("keydown", keyDownHandler);
-    field.addEventListener("blur", blurHandler);
     field.addEventListener("focus", focusHandler);
-    list.addEventListener("mousedown", mouseDownHandler);
+    list.addEventListener("mousedown", listMouseDownHandler);
+    list.addEventListener("click", listClickHandler)
+    resetButton.addEventListener("click", handleEscape);
+    //window.addEventListener("resize", showKeyboardEvent);
 
     // get aria-describedby element;
     var ariaDescribedBy = field.getAttribute('aria-describedby');
@@ -248,18 +325,21 @@ const comboBox = (function () {
         var optionNum = i+1;
         option.setAttribute('id', field.id + '__field-' + optionNum);
     }
-    
-    // This is needed for Chrome/Mac OS and Voiceover to ensure the element
-    // is announced correctly.
-    assertiveLiveRegion = document.createElement('div');
-    assertiveLiveRegion.setAttribute('aria-live', 'assertive');
-    assertiveLiveRegion.setAttribute('role', 'alert');
-    assertiveLiveRegion.className = 'visually-hidden';
-    list.parentElement.appendChild(assertiveLiveRegion);
-
   };
 
-  return initCombo;
-})();
+  initCombo(componentRoot);
+};
 
-initComboBoxes();
+const enableComboboxes = new function() {
+  this.list=[];
+  
+  this.init = (e) => {
+    const $roots = document.querySelectorAll('.enable-combobox');
+
+    for (let i=0; i<$roots.length; i++) {
+      this.list.push(new EnableCombobox($roots[i]));
+    }
+  }
+}
+
+enableComboboxes.init();

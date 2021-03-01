@@ -38,7 +38,6 @@
 
   width: calc(min(75%, 350px));
   right: calc(-1 * min(75%, 350px));
-  visibility: hidden;
   background: #2e2f35;
   color: @color0;
   font-family: helvetica, sens-serif;
@@ -50,7 +49,15 @@
   text-decoration: none;
   top: 0;
   z-index: 100;
+  display: none;
 
+  &--will-animate {
+    display: block;
+
+    .enable-flyout {
+      will-change: right;
+    }
+  }
 
   &__container {
     padding: 0;
@@ -74,7 +81,6 @@
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
-	  z-index: 101;
 
     span {
       display: block;
@@ -199,7 +205,6 @@
   animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
   &--is-open {
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
-    visibility: visible;
   }
 
   &--is-closed {
@@ -208,7 +213,6 @@
 
   &__level&--is-open {
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
-    visibility: visible;
   }
 
   &__level-heading {
@@ -249,19 +253,13 @@
     background-color: #1e1e24;
   }
 
-  &__close-level-button > i {
-    color: @color2;
-    font-size: 1em;
-  }
   &__open-menu-button {
     position: absolute;
     right: 2px;
     top: 0;
-
-    i {
-      font-size: 3em;
-    }
+	  z-index: 101;
   }
+  
   &__overlay-screen {
     background: rgba(0, 0, 0, 0.7);
     bottom: 0;
@@ -499,32 +497,28 @@
 
 @keyframes enable-flyout__anim--mobile-open {
   0% {
-    visibility: hidden;
-    right: calc(-1 * min(75%, 350px));
+    display: block;  
   }
 
   0.001% {
-    visibility: visible;
+    display: block;
+    right: calc(-1 * min(75%, 350px));
   }
 
   100% {
-    visibility: visible;
     right: 0;
   }
 }
 
 @keyframes enable-flyout__anim--mobile-close {
-  100% {
-    visibility: hidden;
+  0% {
+    right: 0;
+  }
+
+
+  0.999% {
     right: calc(-1 * min(75%, 350px));
   }
 
-  0.999% {
-    visibility: visible;
-  }
 
-  0% {
-    visibility: visible;
-    right: 0;
-  }
 }

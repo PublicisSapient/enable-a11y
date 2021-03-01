@@ -1,60 +1,98 @@
 @import "shared/all";
 
+.enable-aria-hidden {
+	display: contents;
+}
+
 .enable-combobox {
-	/* pc is positioning context */ 
-	position: relative;
-	width: 30em;
-	max-width: 400px;
-	font-size: 100%;
-	font-family: sans-serif;
+  &__inner-container {
+    /* pc is positioning context */
+    position: relative;
+    width: 30em;
+    max-width: 400px;
+    font-size: 100%;
+    font-family: sans-serif;
+  }
 
-	[hidden] {
-		display: none !important;
-	}
+  &__group {
+    padding: 10px;
+  }
 
-	input[role="combobox"] {
-		font-size: 12px;
-		height: 1.5em;
-		width: 100%; /* of pc */
-		border: solid 1px #000;
-		min-height: 1em;
-		padding: 0.9em 0.5em;
-		box-sizing: border-box;
-	}
-	[role="status"] {
-		position: absolute;
-		top: 0.3em;
-		right: 0.5em;
-		font-size: 0.8em;
-		color: #777;
-	}
-	ul[role="listbox"] {
-		position: absolute;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		top: 1.5em;
-		left: 0;
-		background-color: #fff;
-		border: solid 1px #ccc;
-		width: 100%; /* of pc */
-		box-sizing: border-box;
-	}
-	li[role="option"] {
-		display: block;
-		margin: 0;
-		padding: 0.3em 0.5em;
-		list-style: none;
-		font-size: 12px;
-		cursor: pointer;
-	}
-	li[role="option"]:hover {
-		color: #000;
-		background-color: #ccc;
-	}
+  &__reset-button {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    appearance: none;
 
-	[aria-selected="true"] {
-		color: #fff;
-		background-color: #666;
-	}
+    .enable-combobox input[role="combobox"]:not(:valid) ~ & {
+      display: none;
+	  border: solid 1px red;
+    }
+  }
+
+  &__reset-button-image {
+	  display: inherit;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  input[role="combobox"] {
+    position: relative;
+    font-size: 12px;
+    height: 1.5em;
+    width: 100%; /* of pc */
+    border: solid 1px #000;
+    min-height: 1em;
+    padding: 0.9em 0.5em;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  [role="status"] {
+    position: absolute;
+    top: 0.3em;
+    right: 2em;
+    font-size: 0.8em;
+    color: #777;
+    z-index: 2;
+  }
+  [role="listbox"] {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    top: 1.5em;
+    left: 0;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    width: 100%; /* of pc */
+    box-sizing: border-box;
+    z-index: 2;
+    max-height: 200px;
+    overflow: auto;
+  }
+  [role="option"] {
+    display: block;
+    margin: 0;
+    padding: 0.3em 0.5em;
+    list-style: none;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  [role="option"]:hover {
+    color: #000;
+    background-color: #ccc;
+  }
+
+  [aria-selected="true"] {
+    color: #fff;
+    background-color: #666;
+  }
 }

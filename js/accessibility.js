@@ -662,7 +662,7 @@ const accessibility = {
         if (sibling !== currentEl && sibling.setAttribute) {
           sibling.setAttribute(this.oldAriaHiddenVal, sibling.ariaHidden || 'null');
           sibling.setAttribute('aria-hidden', 'true');
-          sibling.style.display = 'none';
+          sibling.classList.add('enable-aria-hidden');
         }
       }
 
@@ -678,9 +678,9 @@ const accessibility = {
   // respected when it is applied via JS.  Based on code from here:
   // https://stackblitz.com/edit/aria-hidden-test?file=app.component.ts
   fixChromeAriaHiddenBug() {
-      const elsToReset = document.querySelectorAll(`[${accessibility.oldAriaHiddenVal}]`);
+      const elsToReset = document.querySelectorAll('.enable-aria-hidden');
       for (let i=0; i < elsToReset.length; i++ ) {
-        elsToReset[i].style.display = '';
+        elsToReset[i].classList.remove('enable-aria-hidden');
       }
   },
 
