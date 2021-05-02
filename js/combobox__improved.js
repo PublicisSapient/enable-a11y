@@ -12,11 +12,12 @@ const EnableCombobox = function (componentRoot) {
     ariaDescriptionEl = null,
     resetButton,
     listGroups = [],
-    isMobileKeyboard = true;
+    isMobileKeyboard = true,
+    clearMessage = 'Cleared form field.';
 
   const spaceRe = /\s+/g,
     kRETURN = "Enter",
-    kESC = "Esc",
+    kESC = "Escape",
     kUP = "ArrowUp",
     kDOWN = "ArrowDown",
     kTAB = "Tab",
@@ -90,6 +91,7 @@ const EnableCombobox = function (componentRoot) {
 
   function focusOnFirstOption() {
     const validOptions = list.querySelectorAll(firstVisibleOptionSelector);
+    const so = shownOptions();
     if (validOptions.length > 0) {
       const option = validOptions[0];
 
@@ -99,7 +101,7 @@ const EnableCombobox = function (componentRoot) {
       // and then focus the option after 1200 ms.
       field.blur();
       setTimeout(() => {
-        option.focus();
+        updateSelectedOption(so[0]);
       }, 1200);
     } else {
       field.blur();
@@ -128,6 +130,22 @@ const EnableCombobox = function (componentRoot) {
     }
   };
 
+  function containerBlurHandler(e) {
+    requestAnimationFrame(() => {
+      const { activeElement, body } = document;
+
+      // we want to hide the menu if the user blurs outside of the container.
+      // we don't want to hide the menu if focus is on the <body> tag.  This is 
+      // because when we the user hits the ENTER key, focus goes to the <body> tag
+      // because we programmatically use el.blur().
+
+      if (activeElement !== body && !controlsContainer.contains(activeElement)) {
+        hideMenu();
+      }
+    })
+    
+  }
+
   function updateMenuDisplay() {
     filter();
     if (hideAll) {
@@ -144,11 +162,11 @@ const EnableCombobox = function (componentRoot) {
     list.hidden = false;
   }
 
-  function hideMenu() {
+  function hideMenu(message) {
     list.hidden = true;
     field.setAttribute("aria-expanded", "false");
     accessibility.removeMobileFocusLoop();
-    updateStatus();
+    updateStatus(message);
   };
 
   function clearField() {
@@ -157,18 +175,18 @@ const EnableCombobox = function (componentRoot) {
     } else if (field.textContent) {
       field.textContent = "";
     }
-    clearSelectedOption();
+    clearSelectedOption(clearMessage);
     field.focus();
   };
 
-  function clearSelectedOption() {
+  function clearSelectedOption(statusMessage) {
     if (selectedOption) {
       field.removeAttribute("aria-activedescendant");
       list.removeAttribute("data-selection");
       selectedOption.removeAttribute("aria-selected");
     }
     selectedOption = null;
-    hideMenu();
+    hideMenu(statusMessage);
   };
 
   function updateSelectedOption(el) {
@@ -182,6 +200,8 @@ const EnableCombobox = function (componentRoot) {
     list.setAttribute("data-selection", el.id);
     el.setAttribute("aria-selected", "true");
     field.setAttribute("aria-activedescendant", el.id);
+
+    selectedOption.focus();
   };
 
   function selectNextOption() {
@@ -218,8 +238,8 @@ const EnableCombobox = function (componentRoot) {
     return list.querySelectorAll(firstVisibleOptionSelector);
   };
 
-  function updateStatus() {
-    let statusContent = "";
+  function updateStatus(message) {
+    let statusContent = message || "";
 
     itemCount = shownOptions().length;
 
@@ -234,6 +254,7 @@ const EnableCombobox = function (componentRoot) {
         ariaDescriptionEl.innerText +
         "</span>";
     }
+
     status.innerHTML = statusContent;
   };
 
@@ -307,13 +328,13 @@ const EnableCombobox = function (componentRoot) {
 
     // Events
     form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
-    field.addEventListener("keyup", keyUpHandler);
-    field.addEventListener("keydown", keyDownHandler);
+    controlsContainer.addEventListener("keyup", keyUpHandler, true);
+    controlsContainer.addEventListener("keydown", keyDownHandler, true);
     field.addEventListener("focus", focusHandler);
     list.addEventListener("mousedown", listMouseDownHandler);
-    list.addEventListener("click", listClickHandler)
+    list.addEventListener("click", listClickHandler);
     resetButton.addEventListener("click", handleEscape);
-    //window.addEventListener("resize", showKeyboardEvent);
+    controlsContainer.addEventListener("blur", containerBlurHandler, true);
 
     // get aria-describedby element;
     var ariaDescribedBy = field.getAttribute('aria-describedby');

@@ -23,21 +23,9 @@ if (typeof document !== 'undefined' && typeof Element.prototype.contains !== 'fu
 }
 
 /* global window document */
-const a11yGroup = function (el, options) {
-  let mousedown = false;
-  let keyboardOnlyInstructionsId;
-  let keyboardOnlyInstructionsEl
 
-  /**
-   * Takes the *positive* modulo of n % m.  Javascript will
-   * return negative ones if n < 0.
-   */
-  this.mod = function (n, m) {
-    return ((n % m) + m) % m;
-  };
-
-  /**
-   * Makes the arrow keys work on a radiogroup's radio buttons.
+/**
+   * Makes the arrow keys work on ARIA group elements, such as ARIA radio buttons, ARIA tabs and ARIA listbox options.
    *
    * @param {HTMLElement} el - the radiogroup in question.
    * @param {object} options - an optional set of options:
@@ -71,6 +59,26 @@ const a11yGroup = function (el, options) {
    *    The following parameters will be passed to it:
    *      - el (the element that was checked),
    *      - group (the radiogroup that el is contained in)
+   */
+const a11yGroup = function (el, options) {
+  let mousedown = false;
+  let keyboardOnlyInstructionsId;
+  let keyboardOnlyInstructionsEl;
+
+  /**
+   * Takes the *positive* modulo of n % m.  Javascript will
+   * return negative ones if n < 0.
+   * @param {int} n - the modulus  
+   * @param {int} m - the divisor
+   * @returns The positive modulo of n mod m.
+   */
+  this.mod = function (n, m) {
+    return ((n % m) + m) % m;
+  };
+
+  /**
+   * Initialization of this object.  See a11yGroup Object documentation for more infomation.
+   * 
    */
   this.init = (el, options) => {
     const { preventClickDefault, allowTabbing, doKeyChecking, ariaCheckedCallback, setState, radioFocusCallback, focusCallback, doSelectFirstOnInit, setMouseEvents, visuallyHiddenClass } = (options || {});
@@ -115,10 +123,18 @@ const a11yGroup = function (el, options) {
     } */
   };
 
+  /**
+   * Fired when mousedown event happens. Used internally only.
+   */
   this.mousedownEvent = () => {
     mousedown = true;
   }
 
+  /**
+   * Fired when a group is focused into. Used internally only.
+   * 
+   * @param {EventHandler} e - the focus event 
+   */
   this.focusinEvent = (e) => {
     const groupEls = e.currentTarget.querySelectorAll(`[role="${this.groupType}"]`);
     if (keyboardOnlyInstructionsEl) {
@@ -142,6 +158,9 @@ const a11yGroup = function (el, options) {
     mousedown = false;
   }
 
+  /**
+   * Fired when a group is focused out. Used internally only.
+   */
   this.focusoutEvent = () => {
     keyboardOnlyInstructionsEl.classList.add(this.visuallyHiddenClass);
   }
@@ -201,6 +220,11 @@ const a11yGroup = function (el, options) {
     }
   };
 
+  /**
+   * Fired when group is clicked. Only used internally.
+   * 
+   * @param {EventHandler} e - click event. 
+   */
   this.onClick = (e) => {
     const { target, currentTarget } = e;
 
@@ -214,6 +238,10 @@ const a11yGroup = function (el, options) {
     }
   }
 
+  /**
+   * Fired when group is focused.  Only used internally.
+   * @param {EventHandler} e 
+   */
   this.onFocus = (e) => {
     const { target, currentTarget } = e;
 
@@ -231,9 +259,9 @@ const a11yGroup = function (el, options) {
   };
 
   /**
-   * Implements keyboard events for ARIA radio buttons.
+   * Implements keyboard events for grouped element (like ARIA radio buttons and tab controls).
    *
-   * @param {Event} e - the keyboard event.
+   * @param {EventHandler} e - the keyboard event.
    */
   this.onKeyUp = (e) => {
     const { key, target, currentTarget, shiftKey } = e;
@@ -292,9 +320,11 @@ const a11yGroup = function (el, options) {
   this.init(el, options);
 };
 
-// This library is not specific to any framework.  It contains utility functions
-// that can be used in any project to make it more accessible and assistive
-// technology/screenreader friendly.
+/**
+ * This library is not specific to any framework.  It contains utility functions
+ * that can be used in any project to make it more accessible and assistive
+ * technology/screenreader friendly.
+ */
 const accessibility = {
 
   tempFocusElement: null,
@@ -401,7 +431,13 @@ const accessibility = {
     }
     return isFormInvalid;
   },
-
+  
+  /**
+   * Refocuses the current element.  This should not be needed in most modern browsers
+   * anymore ... use only if you need to support older browsers.  Test before using.
+   * 
+   * @param {Function} callback - a function to call immediately after the element is refocused. 
+   */
   refocusCurrentElement(callback) {
     const { activeElement } = document;
 
@@ -464,6 +500,11 @@ const accessibility = {
     }
   },
 
+  /**
+   * 
+   * @param {EventHandler} e - blur event
+   * @param {Function} func - function to be called when this currentTarget is blurred out of
+   */
   doIfBlurred(e, func) {
     // The `requestAnimationFrame` is needed since the browser doesn't know
     // what the focus is being switched *to* until after a repaint.
@@ -472,6 +513,13 @@ const accessibility = {
     );
   },
 
+  /**
+   * Helper function for doIfBlurred().  This function should never be called by itself.
+   * 
+   * @param {HTMLElement} currentTarget - the target to be blurred 
+   * @param {HTMLElement} relatedTarget - should be set to be the currently focused element in some browsers (older IE)
+   * @param {Function} func - function to be called if the currentTarget is blurred out of
+   */
   doIfBlurredHelper(currentTarget, relatedTarget, func) {
     const focusedElement = relatedTarget || document.activeElement;
     const isFocusLost = (
@@ -559,9 +607,13 @@ const accessibility = {
    * @param {HTMLElement} blurredEl
    */
   keepFocusInsideActiveSubdoc(blurredEl) {
-    if (!this.activeSubdocument) {
+    const { activeSubdocument } = this;
+
+    if (!activeSubdocument || activeSubdocument.contains(document.activeElement)) {
       return;
     }
+
+    console.log('blurredEl', blurredEl, this.activeSubdocument, this.activeSubdocument.contains(blurredEl));
 
     const allowableFocusableEls = this.activeSubdocument.querySelectorAll(this.tabbableSelector);
     const firstFocusableElement = allowableFocusableEls[0];
@@ -647,6 +699,7 @@ const accessibility = {
     // bail, since it has already been done.
     const hiddenEl = document.querySelector(`[${this.oldAriaHiddenVal}]`);
 
+    // the code should never reach here
     if (hiddenEl !== null) {
       // eslint-disable-next-line no-console
       console.warn('Attempted to run setMobileFocusLoop() twice in a row.  removeMobileFocusLoop() must be executed before it run again. Bailing.');
@@ -674,9 +727,11 @@ const accessibility = {
     requestAnimationFrame(this.fixChromeAriaHiddenBug);
   },
 
-  // This fixes an issue with Chrome/Talkback in while aria-hidden is not
-  // respected when it is applied via JS.  Based on code from here:
-  // https://stackblitz.com/edit/aria-hidden-test?file=app.component.ts
+  /**
+   * This fixes an issue with Chrome/Talkback in while aria-hidden is not
+   * respected when it is applied via JS.  Based on code from here:
+   * https://stackblitz.com/edit/aria-hidden-test?file=app.component.ts
+   */
   fixChromeAriaHiddenBug() {
       const elsToReset = document.querySelectorAll('.enable-aria-hidden');
       for (let i=0; i < elsToReset.length; i++ ) {
@@ -685,7 +740,7 @@ const accessibility = {
   },
 
   /**
-   * reset all the nodes that have been marked as aria-hidden="true"
+   * Reset all the nodes that have been marked as aria-hidden="true"
    * in the setMobileFocusLoop() method back to their original
    * aria-hidden values.
    */
@@ -709,12 +764,15 @@ const accessibility = {
    * Produces and removes a focus loop inside an element
    *
    * @param {HTMLElement} el - the element in question
-   * @param {boolean} keepFocusInside - true if we need to create a loop, false otherwise.
+   * @param {boolean} doKeepFocusInside - true if we need to create a loop, false otherwise.
    */
-  setKeepFocusInside(el, keepFocusInside) {
+  setKeepFocusInside(el, doKeepFocusInside) {
     const { body } = document;
 
-    if (keepFocusInside) {
+    if (doKeepFocusInside) {
+      if (this.activeSubdocument) {
+        accessibility.setKeepFocusInside(this.activeSubdocument, false);
+      }
       this.activeSubdocument = el;
       body.addEventListener('blur', this.testIfFocusIsOutside.bind(this), true);
       body.addEventListener('focus', this.correctFocusFromBrowserChrome.bind(this), true);
@@ -727,6 +785,15 @@ const accessibility = {
     }
   },
 
+  /**
+   * Since some browsers (not just IE) differ in how key events set the `key` property,
+   * this method normalizes this to the official property value. Source for these
+   * alternate values are from
+   * https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
+   * 
+   * @param {String} key 
+   * @returns the official property value that is supposed to be set for that key.
+   */
   normalizedKey(key) {
     switch(key) {
       case "Space":
@@ -778,15 +845,54 @@ const accessibility = {
     }
   },
 
+  /**
+   * Given an element, find out what element "controls" this element.
+   * @param {HTMLElement} $el - the element in question
+   * @returns {HTMLElement} - the element that $el controls
+   */
+  getAriaControllerEl($el) {
+    const $controller = document.querySelector('[aria-controls="' + $el.id + '"]');
+    if (!$controller) {
+      throw "Error: There is no element that has aria-controls set to " + $el.id;
+    }
+    return $controller;
+  },
+
+
+  /**
+   * Given an element, find out what it controls via aria-controls
+   * 
+   * @param {HTMLElement} $el - the element in question 
+   * @returns {HTMLElement} - the element that controls $el
+   */
+  getAriaControlsEl($el) {
+    const $ariaControlsEl = document.getElementById($el.getAttribute('aria-controls'));
+    if (!$ariaControlsEl) {
+      throw "Error: aria-controls on button must be set to id of flyout menu.";
+    }
+    return $ariaControlsEl;
+  },
+
+
+  /**
+   * Initialize a group element to ensure the objects inside are navigatible via arrow keys.
+   * 
+   * @param {HTMLElement} el - the group element
+   * @param {Object} options - see a11yGroup.init for possible properties.
+   */
   initGroup: function (el, options) {
     this.groups.push(new a11yGroup(el, options));
   },
 
-  // This is for legacy support.
+  /**
+   * Does the same as initGroup.  This is included for legacy support.
+   * 
+   * @param {HTMLElement} el - the group element
+   * @param {Object} options - see a11yGroup.init for possible properties.
+   */
   setArrowKeyRadioGroupEvents: function(el, options) {
+    console.warn('Note: this method is deprecated.  Please use .initGroup instead.');
     this.initGroup(el, options);
   }
-
-  
 };
 

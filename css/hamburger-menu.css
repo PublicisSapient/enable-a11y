@@ -1,93 +1,37 @@
 /*
- * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-body {
-  font-family: "Helvetica", "Arial", sans-serif;
-  margin: 10px;
-  line-height: 1.1;
-}
-strong {
-  font-weight: bold;
-}
-ul {
-  list-style: initial;
-}
-ol {
-  list-style: decimal;
-}
-h1 {
-  font-weight: bold;
-  font-size: 2rem;
-}
-h2 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  border-bottom: solid 1px #999999;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-ul,
-ol {
-  padding-left: 3rem;
-}
-ul {
-  list-style: disc;
-}
-ul,
-p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.example h1 {
-  text-align: center;
-}
-.example main {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-.example .example-nav {
-  text-align: center;
-}
-.example .example-nav ul li {
-  display: inline-block;
-  list-style: none;
-}
-.example .notes {
-  border: dashed #9C6F39 3px;
-  padding: 1em;
-  background-color: #ffffee;
-  margin: 2em auto;
-  max-width: calc(1024px - 2em);
-}
-.example .notes h2 {
-  margin: 0;
-  border-bottom: none;
-}
-input,
-select {
-  font-size: 1em;
-}
 * {
   box-sizing: border-box;
 }
 .enable-flyout {
   --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
-  width: calc(min(75%, 350px));
-  right: calc(-1 * min(75%, 350px));
+  --enable-flyout__is-hamburger: 1;
+  width: calc(min(75vw, 350px));
+  right: calc(-1 * min(75vw, 350px));
   background: #2e2f35;
   color: #fff;
-  font-family: helvetica, sens-serif;
   font-size: 1em;
   font-weight: 100;
   height: 100%;
-  overflow: hidden;
   position: fixed;
   text-decoration: none;
   top: 0;
   z-index: 100;
   display: none;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
   animation: enable-flyout__anim--mobile-close 0.2s ease-in-out forwards;
   /* These items are hidden in the mobile breakpoint */
+}
+.enable-flyout::-webkit-scrollbar {
+  width: 2px;
+}
+.enable-flyout--hidden {
+  display: none;
 }
 .enable-flyout--will-animate {
   display: block;
@@ -107,6 +51,16 @@ select {
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
+}
+.enable-flyout__hamburger-icon-facade {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
 }
 .enable-flyout__hamburger-icon span {
   display: block;
@@ -162,7 +116,6 @@ select {
 .enable-flyout__link {
   color: #fff;
   display: block;
-  font-family: helvetica, sens-serif;
   font-size: 1em;
   font-weight: 100;
   padding: 1em 1em 1em 0;
@@ -221,7 +174,7 @@ select {
 }
 .enable-flyout__body--is-open {
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
 }
 .enable-flyout__body--is-open .enable-flyout__overlay-screen {
   height: 100%;
@@ -229,6 +182,7 @@ select {
 }
 .enable-flyout--is-open {
   animation: enable-flyout__anim--mobile-open 0.2s ease-in-out forwards;
+  display: block;
 }
 .enable-flyout--is-closed {
   animation: enable-flyout__anim--mobile-open 0.2s ease-in-out reverse;
@@ -335,6 +289,11 @@ select {
     animation: enable-flyout__anim--desktop-close 0.2s ease-in-out forwards;
     top: auto;
     height: auto;
+    min-height: auto;
+    --enable-flyout__is-hamburger: 0;
+  }
+  .enable-flyout__hamburger-icon-facade {
+    display: none;
   }
   .enable-flyout__top-level {
     position: relative;
@@ -472,7 +431,7 @@ select {
   }
   0.001% {
     display: block;
-    right: calc(-1 * min(75%, 350px));
+    right: calc(-1 * min(75vw, 350px));
   }
   100% {
     right: 0;
@@ -483,6 +442,6 @@ select {
     right: 0;
   }
   0.999% {
-    right: calc(-1 * min(75%, 350px));
+    right: calc(-1 * min(75vw, 350px));
   }
 }

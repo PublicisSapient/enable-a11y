@@ -34,6 +34,13 @@
             <input id="html-checkbox" type="checkbox" />
         </div>
 
+        <h2>A real styled HTML5 checkbox</h2>
+        <div class="enable-checkbox">
+            <label for="checkbox_1">I agree to sell my soul to Zoltan.</label>
+            <input type="checkbox" id="checkbox_1">
+            <label for="checkbox_1"></label>
+        </div>
+
 
         <h2>A DIV with a role of checkbox</h2>
         <p>This is a

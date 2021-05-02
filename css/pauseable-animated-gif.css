@@ -1,0 +1,70 @@
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.pauseable-animated-gif {
+  display: inline-block;
+  position: relative;
+  /* for blink/webkit */
+  /* for firefox */
+}
+.pauseable-animated-gif summary {
+  color: #fff;
+  background: #000;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+  border-radius: 50%;
+  background-image: url("../images/pauseable-animated-gif/play_circle_filled-24px.svg");
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+.pauseable-animated-gif [open] summary {
+  background-image: url("../images/pauseable-animated-gif/pause_circle_filled-24px.svg");
+  box-shadow: 0 0 0 2px #fff;
+  background-color: white;
+}
+.pauseable-animated-gif details summary::-webkit-details-marker {
+  display: none;
+}
+.pauseable-animated-gif details > summary:first-of-type {
+  list-style: none;
+}
+.pauseable-animated-gif summary + * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  color: #fff;
+  overflow-y: auto;
+}
+.pauseable-animated-gif summary + * a {
+  color: #fff;
+}
+.pauseable-animated-gif summary:focus {
+  box-shadow: 0 0 0 0.25rem orange;
+  outline: transparent;
+}
+.pauseable-animated-gif__animated-image img {
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: visible;
+}
+:root {
+  /* This is a test */
+  --prefers-reduced-motion: 0;
+}
+@media (prefers-reduced-motion) {
+  :root {
+    --prefers-reduced-motion: 1;
+  }
+}

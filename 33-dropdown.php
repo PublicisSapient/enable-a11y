@@ -74,7 +74,7 @@
             },
             "steps": [{
                 "label": "Set up the details and summary tags",
-                "hilite": "\\s*&lt;summary&gt;[\\s\\S]*&lt;/summary&gt;,&lt;details&gt;,&lt;\/details&gt;",
+                "highlight": "\\s*&lt;summary&gt;[\\s\\S]*&lt;/summary&gt;,&lt;details&gt;,&lt;\/details&gt;",
                 "notes": "It's really this easy.  Everything else is done for you."
             }]
         }
@@ -153,21 +153,21 @@
                 },
                 "steps": [{
                         "label": "Set up the dropdown state on button with aria-expanded",
-                        "hilite": [
+                        "highlight": [
                             "aria-expanded"
                         ],
                         "notes": "It should be set to false if the drawer is closed, true if open."
                     },
                     {
                         "label": "Link up the button to the expanded content using aria-controls",
-                        "hilite": [
+                        "highlight": [
                             "aria-controls"
                         ],
                         "notes": ""
                     },
                     {
                         "label": "Set the aria roles",
-                        "hilite": "role=\"region\""
+                        "highlight": "role=\"region\""
                     }
                 ]
             }

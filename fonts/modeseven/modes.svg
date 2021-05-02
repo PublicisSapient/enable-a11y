@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20200314 at Fri Aug 14 20:19:27 1998
+Created by FontForge 20200314 at Sun Apr 11 12:43:37 2021
  By Zoltan Hawryluk
 This rendition (C) 1998 Andrew C. Bul+hac?k. Freely distributable.
 </metadata>
@@ -18,7 +18,7 @@ This rendition (C) 1998 Andrew C. Bul+hac?k. Freely distributable.
     descent="-200"
     x-height="500"
     cap-height="700"
-    bbox="0 -200 600 800"
+    bbox="0 -200 652 800"
     underline-thickness="20"
     underline-position="-143"
     unicode-range="U+0020-00F7"
@@ -154,13 +154,13 @@ d="M400 350v-350h-100v350h-50v50h-50v50h-50v50h-50v200h100v-150h50v-50h50v-50h10
     <glyph glyph-name="Z" unicode="Z" 
 d="M600 500h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h400v-100h-500v200h50v50h50v50h50v50h50v50h50v50h50v50h50v50h50v50h-400v100h500v-200z" />
     <glyph glyph-name="bracketleft" unicode="[" 
-d="M300 100h100v100h-50v50h-50v50h300v100h-300v50h50v50h50v100h-100v-50h-50v-50h-50v-50h-50v-50h-50v-100h50v-50h50v-50h50v-50h50v-50z" />
+d="M325 100h175v-100h-300v700h300v-100h-175v-500z" />
     <glyph glyph-name="backslash" unicode="\" 
 d="M200 600v-50h50v-50h50v-50h50v-50h50v-50h50v-50h50v-50h50v-50h50v-100h-100v50h-50v50h-50v50h-50v50h-50v50h-50v50h-50v50h-50v50h-50v100h100z" />
     <glyph glyph-name="bracketright" unicode="]" 
-d="M600 300h-50v-50h-50v-50h-50v-50h-50v-50h-100v100h50v50h50v50h-300v100h300v50h-50v50h-50v100h100v-50h50v-50h50v-50h50v-50h50v-100z" />
+d="M500 0h-300v100h175v500h-175v100h300v-700z" />
     <glyph glyph-name="asciicircum" unicode="^" 
-d="M500 450h50v-50h50v-100h-100v50h-50v50h-50v-300h-100v300h-50v-50h-50v-50h-100v100h50v50h50v50h50v50h50v50h100v-50h50v-50h50v-50z" />
+d="M500 450h50v-50h50v-100h-100v50h-50v50h-50v56h-100v-56h-50v-50h-50v-50h-100v100h50v50h50v50h50v50h50v50h100v-50h50v-50h50v-50z" />
     <glyph glyph-name="underscore" unicode="_" 
 d="M100 0h500v-100h-500v100z" />
     <glyph glyph-name="grave" unicode="`" 
@@ -218,23 +218,29 @@ d="M450 -50h50v50h-300v50h-50v50h-50v400h100v-350h50v-50h250v400h100v-600h-50v-5
     <glyph glyph-name="z" unicode="z" 
 d="M550 400v-50h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h300v-100h-500v100h50v50h50v50h50v50h50v50h50v50h50v50h-300v100h500v-100h-50z" />
     <glyph glyph-name="braceleft" unicode="{" 
-d="M325 100h175v-100h-300v700h300v-100h-175v-500z" />
+d="M372 101h-121v50v100v49v33v30v38v50v100v51h121v100h-128h-43v-100h-49v-200h-84v-100h84v-201h49v-50v-50h171v100z" />
     <glyph glyph-name="bar" unicode="|" 
 d="M200 700h100v-700h-100v700zM400 700h100v-700h-100v700z" />
     <glyph glyph-name="braceright" unicode="}" 
-d="M500 0h-300v100h175v500h-175v100h300v-700z" />
-    <glyph glyph-name="sterling" unicode="&#xa3;" 
-d="M600 -100h-500v100h100v200h-100v100h100v300h50v50h50v50h200v-50h50v-50h50v-100h-100v50h-50v50h-100v-50h-50v-250h100v-100h-100v-200h300v-100z" />
+d="M222 99h121v50v100v49v33v30v38v50v100v51h-121v100h128h43v-100h49v-200h102v-100h-102v-201h-49v-50v-50h-171v100z" />
+    <glyph glyph-name="uni0084" 
+d="M600 300h-50v-50h-50v-50h-50v-50h-50v-50h-100v100h50v50h50v50h-300v100h300v50h-50v50h-50v100h100v-50h50v-50h50v-50h50v-50h50v-100z" />
+    <glyph glyph-name="uni0085" unicode="&#x85;" 
+d="M300 100h100v100h-50v50h-50v50h300v100h-300v50h50v50h50v100h-100v-50h-50v-50h-50v-50h-50v-50h-50v-100h50v-50h50v-50h50v-50h50v-50z" />
+    <glyph glyph-name="uni0086" 
+d="M450 100h51v50v100v49v33v30v38v50v100v51h-51v100h58h43v-100h49v-201h52v-100h-52v-200h-49v-50v-50h-101v100z" />
     <glyph glyph-name="nonbreakingspace" unicode="&#xa0;" 
  />
-    <glyph glyph-name="divide" unicode="&#xf7;" 
-d="M300 200h100v-100h-100v100zM100 400h500v-100h-500v100zM300 600h100v-100h-100v100z" />
-    <glyph glyph-name="onehalf" unicode="&#xbd;" 
-d="M200 200h-100v500h100v-500zM600 -200h-300v200h50v50h50v50h50v100h-150v100h200v-50h50v-50h50v-100h-50v-50h-50v-50h-50v-50h-50v-50h200v-100z" />
+    <glyph glyph-name="sterling" unicode="&#xa3;" 
+d="M600 -100h-500v100h100v200h-100v100h100v300h50v50h50v50h200v-50h50v-50h50v-100h-100v50h-50v50h-100v-50h-50v-250h100v-100h-100v-200h300v-100z" />
     <glyph glyph-name="onequarter" unicode="&#xbc;" 
 d="M300 200h-100v500h100v-500zM600 -200h-100v100h-200v200h50v50h50v50h50v50h50v50h100v-500zM500 0v100h-50v-50h-50v-50h100z" />
+    <glyph glyph-name="onehalf" unicode="&#xbd;" 
+d="M200 200h-100v500h100v-500zM600 -200h-300v200h50v50h50v50h50v100h-150v100h200v-50h50v-50h50v-100h-50v-50h-50v-50h-50v-50h-50v-50h200v-100z" />
     <glyph glyph-name="threequarters" unicode="&#xbe;" 
 d="M400 300h-50v-50h-50v-50h-200v100h150v100h-150v100h150v100h-150v100h200v-50h50v-50h50v-100h-50v-100h50v-100zM600 -200h-100v100h-200v200h50v50h50v50h50v50h50v50h100v-500zM500 0v100h-50v-50h-50v-50h100z" />
+    <glyph glyph-name="divide" unicode="&#xf7;" 
+d="M300 200h100v-100h-100v100zM100 400h500v-100h-500v100zM300 600h100v-100h-100v100z" />
     <glyph glyph-name="DEL" 
 d="M0 700h600v-700h-600v700z" />
   </font>

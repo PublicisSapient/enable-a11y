@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Button demo</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/button.css" />
+		<?php include "includes/common-head-tags.php";?>
+    <link id="button-css" rel="stylesheet" type="text/css" href="css/button.css" />
     <link rel="stylesheet" type="text/css" href="css/switch.css" />
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
 
@@ -39,12 +39,33 @@
         <p>The following is a
             <code>&lt;button&gt;</code> tag with a
             <code>&lt;label&gt;</code> tag describing what it is for.</p>
-        <div class="button-container">
+        <div id="example1" class="button-container">
             <label for="html-button">If you are sure you want to give Facebook your data, push this:</label>
             <button id="html-button">
                 Submit
             </button>
         </div>
+
+        <?php includeShowcode("example1")?>
+
+        <script type="application/json" id="example1-props">
+        {
+          "replaceHTMLRules": {
+          },
+          "steps": [
+            {
+              "label": "Create markup",
+              "highlight": "%OPENCLOSECONTENTTAG%button",
+              "notes": "So straightforward.  Why would you want to use an ARIA button?"
+            },
+            {
+              "label": "Use an optional label",
+              "highlight": "for",
+              "notes": "Labels can be use to give appropriate context. Make sure you connect it to the button using the <strong>for</strong> attribute."
+            }
+          ]
+        }
+        </script>
 
 
         <h2>A DIV with a role of button</h2>
@@ -52,26 +73,132 @@
             <code>&lt;div&gt;</code> tag that has its role attribute set to
             <code>button</code>.</p>
 
-        <div class="button-container">
+        <div id="example2" class="button-container">
             <label id="div-button-label">If you are sure you want to give Facebook your data, push this:</label>
-            <div aria-describedby="div-button-label" role="button" tabindex="0">
+            <div class="aria-button" aria-describedby="div-button-label" role="button" tabindex="0">
                 Submit
             </div>
         </div>
+
+        <?php includeShowcode("example2")?>
+
+        <script type="application/json" id="example2-props">
+        {
+          "replaceHTMLRules": {
+          },
+          "steps": [
+            {
+              "label": "Put button role on fake buttons",
+              "highlight": "role=\"button\"",
+              "notes": "This is to ensure screen readers report them as buttons."
+            },
+            {
+              "label": "Apply tabindex=\"0\" on the fake buttons",
+              "highlight": "tabindex",
+              "notes": "This is to ensure they are keyboard accessible."
+            },
+            {
+                "label": "Create JS that should be triggered when pressed",
+                "highlight": "%JS% ariaButtonExample",
+                "notes": "You must ensure that you include the keyup event as well as click, since click doesn't fire on keyboard events on DOM elements that aren't natively keyboard accessible by default."
+            },
+            {
+                "label": "Create CSS",
+                "highlight": "%CSS% button-css~ .button-container [role=\"button\"]",
+                "notes": ""
+            },
+            {
+              "label": "Use an optional label using aria-describedby",
+              "highlight": "aria-describedby",
+              "notes": "Labels can be use to give appropriate context. Make sure you connect it to the button using the <strong>for</strong> attribute."
+            }
+          ]
+        }
+        </script>
+
+
+
 
         <h2>A link with the role of button</h2>
 
         <p>This is an
             <code>&lt;a&gt;</code tag that has its role set to <code>button</code>. Developers should avoid doing this.</p>
 
-        <div class="button-container">
+        <div id="example3" class="button-container">
             <label id="link-button-label">If you are sure you want to give Facebook your data, push this:</label>
-            <a aria-describedby="link-button-label" href="#" role="button">
+            <a class="aria-button" aria-describedby="link-button-label" href="#" role="button">
                 Submit
             </a>
         </div>
+
+        <?php includeShowcode("example3")?>
+        <script type="application/json" id="example3-props">
+        {
+          "replaceHTMLRules": {
+          },
+          "steps": [
+            {
+              "label": "Put button role on links that are really fake buttons",
+              "highlight": "role=\"button\"",
+              "notes": "This is to ensure screen readers report them as buttons."
+            },
+            {
+              "label": "Make sure you make a dummy href on the link",
+              "highlight": "href",
+              "notes": "This is to ensure they are keyboard accessible and you don't need Javascript to trigger them."
+            },
+            {
+                "label": "Create JS that should be triggered when pressed",
+                "highlight": "%JS% ariaButtonExample",
+                "notes": "You must ensure that you include the keyup event as well as click, since click doesn't fire on keyboard events on DOM elements that aren't natively keyboard accessible by default."
+            },
+            {
+                "label": "Create CSS",
+                "highlight": "%CSS% button-css~ .button-container [role=\"button\"]",
+                "notes": ""
+            },
+            {
+              "label": "Use an optional label using aria-describedby",
+              "highlight": "aria-describedby",
+              "notes": "Labels can be use to give appropriate context. Make sure you connect it to the button using the <strong>for</strong> attribute."
+            }
+          ]
+        }
+        </script>
     </main>
 
+    <script>
+        var ariaButtonExample = new function () {
+
+            const activate = (e) => {
+                const { target } = e;
+                if (
+                    target.classList.contains('aria-button') &&
+                    (e.type == 'click' || e.key === ' ' || e.key === 'Enter')
+                 ) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    alert('this ARIA button has been triggered');
+                }
+            }
+
+            document.addEventListener('click', activate);
+            document.addEventListener('keyup', activate);
+        }
+
+        var htmlButtonExample = new function () {
+
+            const activate = (e) => {
+                const { target } = e;
+                if (target.tagName === 'BUTTON') {
+                    alert('this HTML button has been triggered');
+                }
+            }
+
+            document.addEventListener('click', activate);
+        }
+    </script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

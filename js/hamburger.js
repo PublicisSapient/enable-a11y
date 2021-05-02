@@ -1,4 +1,5 @@
 const EnableFlyoutMenu = new function() {
+  // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
   const topNavSel = '.enable-flyout__top-level';
   const $root = document.querySelector(topNavSel);
@@ -12,17 +13,16 @@ const EnableFlyoutMenu = new function() {
   const willAnimate = '.enable-flyout--will-animate';
   const enableFlyoutOpenClass = 'enable-flyout__body--is-open';
   const isOpenClass = 'enable-flyout--is-open';
+  const isOpenSel = '.' + isOpenClass;
   const $body = document.body;
   const $screen = document.querySelector('.enable-flyout__overlay-screen');
   const mobileOpenMenuAnim = 'enable-flyout__anim--mobile-open';
   const mobileCloseMenuAnim = 'enable-flyout__anim--mobile-close';
   const dropdownSel = '.enable-flyout__dropdown';
+  const hamburgerIconFacadeSel = '.enable-flyout__hamburger-icon-facade';
+  const $rootCloseMenuButton = document.querySelector(hamburgerIconFacadeSel);
   const desktopMq = window.getComputedStyle($root).getPropertyValue('--enable-flyout__desktop-media-query');
   const desktopMql = window.matchMedia(desktopMq);
-
-
-  // keeps track of what element currently has a focus loop
-  let $focusLoopEl = null;
 
   function delegate(eventName, elementSelector, handler) { 
     document.body.addEventListener(eventName, function(e) {
@@ -36,33 +36,14 @@ const EnableFlyoutMenu = new function() {
     }, false);
   }
 
+  // I think this should be done for all projects.
   const forEach = Array.prototype.forEach;
 
-  function getAriaControlsEl($el) {
-    const $ariaControlsEl = document.getElementById($el.getAttribute('aria-controls'));
-    if (!$ariaControlsEl) {
-      throw "Error: aria-controls on button must be set to id of flyout menu.";
-    }
-    return $ariaControlsEl;
+  function isHamburger() {
+    // needs to be trimmed since it had leading spaces.
+    return window.getComputedStyle($root).getPropertyValue('--enable-flyout__is-hamburger').trim() === '1';
   }
 
-  function getController($el) {
-    const $controller = document.querySelector('[aria-controls="' + $el.id + '"]');
-    if (!$controller) {
-      throw "Error: There is no element that has aria-controls set to " + $el.id;
-    }
-    return $controller;
-  }
-
-  function setKeepFocusInside($el, doKeepFocusInside) {
-    if (doKeepFocusInside) {
-      if ($focusLoopEl) {
-        accessibility.setKeepFocusInside($focusLoopEl, false);
-      }
-      $focusLoopEl = $el;
-    }
-    accessibility.setKeepFocusInside($el, doKeepFocusInside);
-  }
 
   function getSiblings (el) {
     return Array.prototype.filter.call(el.parentNode.children, function(child){
@@ -74,16 +55,18 @@ const EnableFlyoutMenu = new function() {
     $root.classList.add(willAnimate);
 
     requestAnimationFrame(() => {
-      $root.classList.
       $root.classList.add(isOpenClass);
       $body.classList.add(enableFlyoutOpenClass);
+      
       accessibility.setKeepFocusInside($container, true);
+
+      requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
     })
   }
 
   function closeFlyout($flyoutMenu) {
     const $openLevel = $flyoutMenu.querySelectorAll(openLevelSel)
-    let $controller  = getController($flyoutMenu);
+    let $controller  = accessibility.getAriaControllerEl($flyoutMenu);
     $flyoutMenu.classList.remove(isOpenClass);
     $controller.setAttribute('aria-expanded', 'false');
 
@@ -93,7 +76,7 @@ const EnableFlyoutMenu = new function() {
       forEach.call(siblings, function (sibling) {
         sibling.classList.remove(isOpenClass);
         
-        $controller = getController(sibling);
+        $controller = accessibility.getAriaControllerEl(sibling);
         $controller.setAttribute('aria-expanded', 'false');
       })
     });
@@ -104,29 +87,31 @@ const EnableFlyoutMenu = new function() {
     const $flyouts = document.querySelectorAll(topNavSel);
     forEach.call($flyouts, closeLevel);
 
+    const $openFlyouts = document.querySelectorAll(isOpenSel);
+    forEach.call($openFlyouts, closeFlyout);
+
     $body.classList.remove(enableFlyoutOpenClass);
+    
     accessibility.setKeepFocusInside($container, false);
     $root.classList.remove(willAnimate);
+    
   }
 
   function closeSiblingFlyouts($level) {
     const $parentLevel = $level.parentNode.closest(navLevelSel);
     const $flyouts = $parentLevel.querySelectorAll(navLevelSel);
 
-    // this is not right.
     forEach.call($flyouts, closeLevel);
   }
 
   const onHamburgerIconClick = (e) => {
     const { target } = e;
     const $menuButton = target.closest(menuSel);
-    console.log($menuButton);
     e.preventDefault();
-    const $flyoutMenu = getAriaControlsEl($menuButton);
+    const $flyoutMenu = accessibility.getAriaControlsEl($menuButton);
     if ($flyoutMenu.classList.contains(isOpenClass)) {
       $menuButton.setAttribute('aria-expanded', 'false');
       closeAllFlyouts();
-      //closeFlyout($flyoutMenu);
     } else {
       $menuButton.setAttribute('aria-expanded', 'true');
       openFlyout();
@@ -153,18 +138,21 @@ const EnableFlyoutMenu = new function() {
 
       if (target.matches(navLevelSel)) {
           target.querySelector(closeLevelSel).focus();
-          //setKeepFocusInside(target, true);
+          
+          accessibility.setKeepFocusInside(target, true);
       }
 
     } else if (animationName === mobileCloseMenuAnim) {
       const $menuEl = document.querySelector('[aria-controls="' + $root.id + '"]');
       
       if (target === $root) {
-          //setKeepFocusInside(target, false);
+          
+          accessibility.setKeepFocusInside(target, false);
           $menuEl.focus();
       } else if (target.matches(navLevelSel)) {
           const $upperLevel = target.parentNode.closest(navLevelSel);
-          //setKeepFocusInside($upperLevel, true);
+          
+          accessibility.setKeepFocusInside($upperLevel, true);
           const $elToFocus = document.querySelector('[aria-controls="' + target.id + '"]');
           $elToFocus.focus();
       }
@@ -181,17 +169,22 @@ const EnableFlyoutMenu = new function() {
   }
 
   function openLevel($el) {
-    const $flyoutMenu = getAriaControlsEl($el);
+    const $flyoutMenu = accessibility.getAriaControlsEl($el);
 
-    closeSiblingFlyouts($flyoutMenu);
+    // if this is not the hamburger variant (i.e. the dropdowns
+    // common on desktop menu systems), we want to close the 
+    // sibling flyouts.
+    if (!isHamburger()) {
+      closeSiblingFlyouts($flyoutMenu);
+    }
     $el.setAttribute('aria-expanded', 'true');
     if ($flyoutMenu) {
       const { classList } = $flyoutMenu;
-      /* if ($flyoutMenu.matches(dropdownSel)) {
+      if ($flyoutMenu.matches(dropdownSel)) {
         $flyoutMenu.addEventListener(
           'blur', blurEvent, true
         );
-      } */
+      }
       $flyoutMenu.classList.add(isOpenClass);
     }
   }
@@ -204,13 +197,16 @@ const EnableFlyoutMenu = new function() {
   }
 
   function closeLevel($el) {
-
+    
     if ($el.classList.contains('enable-flyout__open-level-button')) {
-      const $flyoutMenu = getAriaControlsEl($el);
+      const $flyoutMenu = accessibility.getAriaControlsEl($el);
       $el.setAttribute('aria-expanded', 'false');
       if ($flyoutMenu) {
         $flyoutMenu.classList.remove(isOpenClass);
       }
+      
+      accessibility.setKeepFocusInside($el.parentNode.closest(navLevelSel), true);
+      $el.focus();
     } else {
       const $navLevel = $el.closest(navLevelSel);
       const { id } = $navLevel;
@@ -223,6 +219,15 @@ const EnableFlyoutMenu = new function() {
       }
       $navLevel.classList.remove(isOpenClass);
       $button.setAttribute('aria-expanded', 'false');
+      
+      const $panel = $button.parentNode.closest(navLevelSel);
+      if ($panel) {
+        accessibility.setKeepFocusInside($panel, true);
+      }
+
+      if (isHamburger()) {
+        $button.focus();
+      }
     }
   }
 
@@ -231,21 +236,31 @@ const EnableFlyoutMenu = new function() {
     const isExpanded = (target.getAttribute('aria-expanded') === 'true');
 
     if (isExpanded){
-      closeLevel(e);
+      closeLevelEvent(e);
     } else {
       openLevelEvent(e);
     }
   }
 
   const blurEvent = (e) => {
-    accessibility.doIfBlurred(e, () => {
-      closeAllFlyouts();
-    });
+    if (!isHamburger()) {
+      accessibility.doIfBlurred(e, () => {
+        closeAllFlyouts();
+      });
+    }
   }
 
   const onBreakpointChange = (e) => {
     // we will close all flyouts, just in case
     closeAllFlyouts();
+  }
+
+  function keyPressEvent(e) {
+    const { key } = e;
+    
+    if (key === 'Esc' || key === 'Escape') {
+      closeAllFlyouts();
+    }
   }
 
   this.init = function () {
@@ -261,16 +276,87 @@ const EnableFlyoutMenu = new function() {
     // main menu close
     delegate('click', closeLevelTopSel, onHamburgerCloseClick);
 
+    // close on close menu facade 
+    delegate('click', hamburgerIconFacadeSel, closeAllFlyouts);
+
     document.addEventListener('animationend', openMenuAnimationEnd);
 
     /* document.querySelector('.enable-flyout__dropdown').addEventListener(
       'blur', blurEvent, true
     );*/ 
 
+    
     $screen.addEventListener('click', closeAllFlyouts);
+    
+    if (desktopMql.addEventListener) {
+      desktopMql.addEventListener('change', onBreakpointChange);
+    }
+    
+    // This is supposed to be deprecated, but I don't know what its replacement is.
+    $body.addEventListener("orientationchange", onBreakpointChange);
 
-    desktopMql.addEventListener('change', onBreakpointChange)
+
+    document.addEventListener('keyup', keyPressEvent);
   }
 }
+
+const getStackTrace = function () {
+  var callstack = [];
+  var isCallstackPopulated = false;
+  try {
+    i.dont.exist+=0; //doesn't exist- that's the point
+  } catch(e) {
+    if (e.stack) { //Firefox
+      console.log('ff', e.stack);
+      var lines = e.stack.split('\n');
+      for (var i=0, len=lines.length; i<len; i++) {
+        if (lines[i].match(/^\s*[A-Za-z0-9\-_\$]+\(/)) {
+          callstack.push(lines[i]);
+        }
+      }
+      //Remove call to printStackTrace()
+      callstack.shift();
+      isCallstackPopulated = true;
+    }
+    else if (window.opera && e.message) { //Opera
+      console.log('??');
+      var lines = e.message.split('\n');
+      for (var i=0, len=lines.length; i<len; i++) {
+        if (lines[i].match(/^\s*[A-Za-z0-9\-_\$]+\(/)) {
+          var entry = lines[i];
+          //Append next line also since it has the file info
+          if (lines[i+1]) {
+            entry += "&quot; at &quot;" + lines[i+1];
+            i++;
+          }
+          callstack.push(entry);
+        }
+      }
+      //Remove call to printStackTrace()
+      callstack.shift();
+      isCallstackPopulated = true;
+    }
+  }
+  if (!isCallstackPopulated) { //IE and Safari
+    console.log('sssss');
+    var currentFunction = arguments.callee.caller;
+    while (currentFunction) {
+      var fn = currentFunction.toString();
+      var fname = fn.substring(fn.indexOf("&quot;function&quot;") + 8, fn.indexOf('')) || 'anonymous';
+      callstack.push(fname);
+      currentFunction = currentFunction.caller;
+    }
+  }
+  return (callstack);
+}
+
+/* 
+HTMLElement.prototype.oldFocus = HTMLElement.prototype.focus;
+
+HTMLElement.prototype.focus = function () {
+  console.log('focusing', getStackTrace());
+  this.oldFocus();
+}
+*/
 
 EnableFlyoutMenu.init();

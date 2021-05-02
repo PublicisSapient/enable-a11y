@@ -64,7 +64,7 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #ffa500;
+  outline: solid 2px #3b99fc;
 }
 a[href]:focus,
 area[href]:focus,
@@ -76,7 +76,7 @@ object:focus,
 embed:focus,
 [tabindex]:focus {
   /* You can replace this with whatever style you want for focus state */
-  outline: solid 2px #ffa500;
+  outline: solid 2px #3b99fc;
 }
 a[href]:hover:focus,
 area[href]:hover:focus,
@@ -89,19 +89,8 @@ embed:hover:focus,
 [tabindex]:hover:focus {
   outline: solid 2px rgba(255, 165, 0, 0.5);
 }
-a[href]:focus:active,
-area[href]:focus:active,
-details:focus:active,
-iframe:focus:active,
-[contentEditable=true]:focus:active,
-:enabled:focus:active,
-object:focus:active,
-embed:focus:active,
-[tabindex]:focus:active {
-  outline: none;
-}
 *:focus {
-  outline: solid 2px orange ;
+  outline: solid 2px #3b99fc;
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 

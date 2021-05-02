@@ -1,0 +1,91 @@
+@import "shared/mixins-and-vars";
+
+.glider {
+  border: solid 1px black;
+  .no-scrollbars();
+
+  &-slide {
+    display: block;
+    background: black;
+    color: white;
+    height: 109vw !important;
+
+    @media @tablet {
+      height: 72vw !important;
+    }
+
+    @media @desktop {
+      height: 689px !important;
+    }
+  }
+
+  &-prev,
+  &-next {
+    background: #000;
+    color: white;
+    top: 224px;
+    padding: 5px 10px;
+    transform: scaleY(1.5);
+    clip: rect(6px 100px 100px 0);
+  }
+
+  &-prev {
+    left: 0;
+  }
+
+  &-next {
+    right: 0;
+  }
+}
+
+.enable-carousel {
+  &__skip-link {
+    display: block;
+    margin: 2px auto;
+    background: #368803;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    z-index: 5;
+    transform: translateZ(1px)
+  }
+
+  &__slide {
+    position: relative;
+
+    &-heading {
+      margin: 0;
+      padding: 0;
+    }
+
+    &-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    &-copy {
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 40px;
+    }
+
+    &-cta {
+      display: block;
+      margin: 0 auto;
+      background: #368803;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

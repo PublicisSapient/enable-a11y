@@ -1,4 +1,4 @@
-@import "shared/defaults";
+@import "shared/mixins-and-vars";
 
 // Color variables (appears count calculates by raw css)
 @color0: #fff; // Appears 4 times
@@ -8,7 +8,8 @@
 @anim-time: 0.2s;
 @large-anim-time: 0.2s;
 @desktop-min: 960px;
-@desktop:   ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
+@flyout-width: 75vw;
+@desktop: ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
 
 .icon-mixin(@img) {
   content: "";
@@ -22,7 +23,7 @@
   filter: invert();
   position: absolute;
   top: 5px;
-}
+} 
 
 @menu-orientation: right;
 
@@ -33,23 +34,37 @@
   box-sizing: border-box;
 }
 
+
 .enable-flyout {
   --enable-flyout__desktop-media-query: @desktop;
+  --enable-flyout__is-hamburger: 1;
 
-  width: calc(min(75%, 350px));
-  right: calc(-1 * min(75%, 350px));
+  width: calc(min(@flyout-width, 350px));
+  right: calc(-1 * min(@flyout-width, 350px));
   background: #2e2f35;
   color: @color0;
-  font-family: helvetica, sens-serif;
+  
   font-size: 1em;
   font-weight: 100;
   height: @height0;
-  overflow: hidden;
   position: fixed;
   text-decoration: none;
   top: 0;
   z-index: 100;
   display: none;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+
+  &--hidden {
+    display: none;
+  }
 
   &--will-animate {
     display: block;
@@ -68,19 +83,30 @@
   // https://codepen.io/designcouch/pen/Atyop
 
   &__hamburger-icon {
-	@hamburger-width: 30px;
-	@hamburger-height: 30px;
-	@hamburger-height-div-five: (@hamburger-width / 5);
-	@hamburger-stroke-width: 6px;
+    @hamburger-width: 30px;
+    @hamburger-height: 30px;
+    @hamburger-height-div-five: (@hamburger-width / 5);
+    @hamburger-stroke-width: 6px;
 
     width: @hamburger-width;
     height: @hamburger-height;
-	
+
     position: relative;
     margin: 8px;
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
+
+    &-facade {
+      display: block;
+      width: @hamburger-width;
+      height: @hamburger-height;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: none;
+      border: none;
+    }
 
     span {
       display: block;
@@ -92,7 +118,7 @@
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
-	  transition: 0.5s ease-in-out;
+      transition: 0.5s ease-in-out;
 
       &:nth-child(1) {
         top: 0px;
@@ -109,9 +135,9 @@
     }
 
     .enable-flyout__open-menu-button[aria-expanded="true"] & {
-	  span {
-		  background-color: white;
-	  }
+      span {
+        background-color: white;
+      }
       span:nth-child(1) {
         top: (@hamburger-height-div-five * 2);
         width: 0%;
@@ -149,7 +175,7 @@
   &__link {
     color: @color0;
     display: block;
-    font-family: helvetica, sens-serif;
+    
     font-size: 1em;
     font-weight: 100;
     padding: 1em 1em 1em 0;
@@ -167,7 +193,6 @@
       background: @color1;
     }
   }
-
 
   &__with-home-icon {
     position: relative;
@@ -194,7 +219,7 @@
 
   &__body--is-open {
     height: @height0;
-    overflow: auto;
+    overflow: hidden;
   }
 
   &__body--is-open &__overlay-screen {
@@ -205,6 +230,7 @@
   animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
   &--is-open {
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+    display: block;
   }
 
   &--is-closed {
@@ -257,9 +283,9 @@
     position: absolute;
     right: 2px;
     top: 0;
-	  z-index: 101;
+    z-index: 101;
   }
-  
+
   &__overlay-screen {
     background: rgba(0, 0, 0, 0.7);
     bottom: 0;
@@ -323,8 +349,15 @@
       forwards;
     top: auto;
     height: auto;
+    min-height: auto;
 
+    --enable-flyout__is-hamburger: 0;
     
+    &__hamburger-icon {
+      &-facade {
+        display: none;
+      }
+    }
 
     &__top-level {
       position: relative;
@@ -440,7 +473,6 @@
       }
 
       &[aria-expanded="true"] {
-
         &::after {
           background-image: url("../images/chevron-up.svg");
         }
@@ -497,12 +529,12 @@
 
 @keyframes enable-flyout__anim--mobile-open {
   0% {
-    display: block;  
+    display: block;
   }
 
   0.001% {
     display: block;
-    right: calc(-1 * min(75%, 350px));
+    right: calc(-1 * min(@flyout-width, 350px));
   }
 
   100% {
@@ -515,10 +547,7 @@
     right: 0;
   }
 
-
   0.999% {
-    right: calc(-1 * min(75%, 350px));
+    right: calc(-1 * min(@flyout-width, 350px));
   }
-
-
 }

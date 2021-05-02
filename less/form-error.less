@@ -1,4 +1,4 @@
-@import "shared/all";
+@import "shared/mixins-and-vars";
 
 label {
   display: inline-block;
@@ -95,11 +95,6 @@ fieldset,
 
 
 
-
-[role="radio"]:after {
-  
-}
-
 [role="radio"],
 [role="checkbox"] {
   display          : inline-block;
@@ -154,4 +149,14 @@ fieldset,
       font-weight: bold;
     }
   }
+}
+
+form label.required::after
+{
+    color: red;
+    content: " *";
+}
+
+.required-symbol {
+  color: red;
 }

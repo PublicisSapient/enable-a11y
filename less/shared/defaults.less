@@ -1,150 +1,83 @@
-/*
- * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
- */
-.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
-    .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
- 
-    @prefix  : extract(@prefixes, @index);
-    @dir-old : 90 - (@dir);
- 
-    background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
-  & when ( @index = length(@prefixes) ) {
-        background-image: ~"@{type}-gradient(@{dir}, @{colors})";
-    }
-}
-
-.button-reset() {
-	border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-
-    background: transparent;
-
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-}
-
-// From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
-// pixels to rems.
-@px: 16rem;
-
-@desktop-min: 960px;
-
-@tablet-min: 720px;
-@tablet-max: (@desktop-min - 1);
-
-@mobile-min: 1px;
-@mobile-max: (@tablet-min - 1);
-
-@desktop:   ~"only screen and (min-width: @{desktop-min})";
-@tablet:    ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
-@mobile:	~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
-
-
 body {
-	font-family: "Helvetica", "Arial", sans-serif;
-	margin: 10px;
-	line-height: 1.1;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.1;
 }
-
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 ul {
-	list-style: initial;
+  list-style: initial;
 }
 
 ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
 h1 {
-	font-weight: bold;
-	font-size: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 h2 {
-	font-weight: bold;
-	font-size: 1.5rem;
-	border-bottom: solid 1px #999999;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: solid 1px #999999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-ul, ol {
-	padding-left: 3rem;
+ul,
+ol {
+  padding-left: 3rem;
 }
-
 
 ul {
-	
-	list-style: disc;
+  list-style: disc;
 }
 
-ul, p {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
+ul,
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.vendor(@property, @value) {
-    -webkit-@{property}: @value;
-	 -khtml-@{property}: @value;
-	    -ms-@{property}: @value;
-       -moz-@{property}: @value;
-            @{property}: @value;
-}
 
 .example {
+  h1 {
+    text-align: center;
+  }
 
-	h1 {
-		text-align: center;
-	}
+  main {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .example-nav {
+    text-align: center;
+    ul {
+      li {
+        display: inline-block;
+        list-style: none;
+      }
+    }
+  }
 
-	main {
-		max-width: 1024px;
-		margin: 0 auto;
-	}
-	.example-nav {
-		text-align: center;
-		ul {
-			li {
-				display: inline-block;
-				list-style: none;
-			}
-		}
-	}
+  .notes {
+    border: dashed #9c6f39 3px;
+    padding: 1em;
+    background-color: #ffffee;
+    margin: 2em auto;
+    max-width: calc(1024px - 2em);
 
-	.notes {
-		border: dashed #9C6F39 3px;
-		padding: 1em;
-		background-color: #ffffee;
-		margin: 2em auto;
-		max-width: calc(1024px - 2em);
-
-		h2 {
-			margin: 0;
-			border-bottom: none;
-		}
-
-	}
+    h2 {
+      margin: 0;
+      border-bottom: none;
+    }
+  }
 }
 
-
-input, select {
+input,
+select {
   font-size: 1em;
 }

@@ -77,6 +77,7 @@ const enableListbox = new function() {
           // set focus on appropriate option
           window.requestAnimationFrame(() => {
             const itemToFocus = listboxEl.querySelector('[aria-selected="true"]') || optionEls[0];
+            console.log('1');
             itemToFocus.focus();
             accessibility.setMobileFocusLoop(listboxEl);
             // make the arrow keyup events happen if needed
@@ -116,6 +117,7 @@ const enableListbox = new function() {
     buttonEl.removeAttribute('aria-expanded');
 
     if (doFocus) {
+      console.log('2');
       buttonEl.focus();
     }
     listboxEl.classList.add('hidden');
@@ -155,3 +157,5 @@ const enableListbox = new function() {
 }
 
 enableListbox.init();
+
+console.log('is this thing on?')

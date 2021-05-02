@@ -1,0 +1,60 @@
+.enable-skip-link {
+  @skip-link-width: 100%;
+
+  /* Here is the general styles of the link */
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  background: #368803;
+  color: #fff;
+  padding: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+
+  /* Make sure the width and margin-left are the same value */
+  width: @skip-link-width;
+  margin-left: @skip-link-width;
+
+  &:focus {
+    /*
+     * We use a negative outline-offset here. If we didn't,
+     * the outline would get cut off due to the container's
+     * `overflow: hidden` property
+     */
+    outline-offset: -1px;
+  }
+
+  &--begin {
+    top: 0;
+  }
+
+  &--end {
+    bottom: 0;
+  }
+
+  &__container {
+    display: block;
+    width: @skip-link-width;
+    margin: 0;
+    overflow: hidden;
+
+    // to make it hidden
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+
+    &--visible {
+      clip: auto;
+      position: relative;
+    }
+  }
+}
+
+/* This is just a mock of the component */
+.fake-component {
+  display: block;
+  background: black;
+  height: 200px;
+  width: 100%;
+  position: relative;
+}

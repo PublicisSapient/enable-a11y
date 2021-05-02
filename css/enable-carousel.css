@@ -1,0 +1,90 @@
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.glider {
+  border: solid 1px black;
+  /* IE and edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari & Chrome */
+}
+.glider::-webkit-scrollbar {
+  display: none;
+}
+.glider-slide {
+  display: block;
+  background: black;
+  color: white;
+  height: 109vw !important;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .glider-slide {
+    height: 72vw !important;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .glider-slide {
+    height: 689px !important;
+  }
+}
+.glider-prev,
+.glider-next {
+  background: #000;
+  color: white;
+  top: 224px;
+  padding: 5px 10px;
+  transform: scaleY(1.5);
+  clip: rect(6px 100px 100px 0);
+}
+.glider-prev {
+  left: 0;
+}
+.glider-next {
+  right: 0;
+}
+.enable-carousel__skip-link {
+  display: block;
+  margin: 2px auto;
+  background: #368803;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  z-index: 5;
+  transform: translateZ(1px);
+}
+.enable-carousel__slide {
+  position: relative;
+}
+.enable-carousel__slide-heading {
+  margin: 0;
+  padding: 0;
+}
+.enable-carousel__slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.enable-carousel__slide-copy {
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 40px;
+}
+.enable-carousel__slide-cta {
+  display: block;
+  margin: 0 auto;
+  background: #368803;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}

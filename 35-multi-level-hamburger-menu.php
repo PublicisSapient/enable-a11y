@@ -10,6 +10,7 @@
 </head>
 
 <body class="home">
+    
     <div role="banner" tabindex="0">
         <?php include("includes/logo-link.php"); ?>
 
@@ -17,20 +18,24 @@
 
         
 
-        <!-- ESC key -->
-        <nav class="enable-flyout__container" aria-label="mobile flyout">
+        
+    </div>
+
+    <nav class="enable-flyout__container" aria-label="mobile flyout">
             <button class="enable-flyout__open-menu-button"  aria-expanded="false"
                 aria-controls="mobile-menu">
                 
-                <div class="enable-flyout__hamburger-icon" role="image" aria-label="Open mobile flyout">
+                <div class="enable-flyout__hamburger-icon" role="image">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
+                    <span class="visually-hidden">mobile menu</span>
                 </div>
 
             </button>
             <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+                <button class="enable-flyout__hamburger-icon-facade"><span class="visually-hidden">close mobile flyout</span></button>
                 <ul class="enable-flyout__list">
                     <!-- <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                         <button aria-label="Close mobile flyout"
@@ -54,6 +59,7 @@
 
                         </button>
                         <div aria-label="Game Consoles" id="section1" class="enable-flyout enable-flyout__level  enable-flyout__dropdown">
+                            <button class="enable-flyout__hamburger-icon-facade"><span class="visually-hidden">close mobile flyout</span></button>
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                                     <button class="enable-flyout__close-level-button  hdg">
@@ -66,6 +72,7 @@
                                         Atari
                                     </button>
                                     <div aria-label=Atari id="section1-1" class="enable-flyout enable-flyout__level ">
+                                        <button class="enable-flyout__hamburger-icon-facade"><span class="visually-hidden">close mobile flyout</span></button>
                                         <div class="enable-flyout__level-heading">Atari</div>
                                         <ul class="enable-flyout__list enable-flyout__list--photo-layout">
                                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
@@ -111,6 +118,7 @@
                                     </button>
                                     <div aria-label="Intellivision" id="section1-2"
                                         class="enable-flyout enable-flyout__level">
+                                        <button class="enable-flyout__hamburger-icon-facade"><span class="visually-hidden">close mobile flyout</span></button>
                                         <div class="enable-flyout__level-heading">Intellivision</div>
                                         <ul class="enable-flyout__list enable-flyout__list--photo-layout">
                                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
@@ -172,6 +180,7 @@
                         </button>
                         <div aria-label="section 2" id="section2" class="enable-flyout enable-flyout__level enable-flyout__dropdown ">
                             <div class="enable-flyout__level-heading">section 2</div>
+                            <button class="enable-flyout__hamburger-icon-facade"><span class="visually-hidden">close mobile flyout</span></button>
                             <ul class="enable-flyout__list">
                                 <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
                                         class="enable-flyout__close-level-button  hdg">
@@ -207,9 +216,6 @@
                 </ul>
             </div>
         </nav>
-    </div>
-
-
     <main>
         <aside class="notes">
             <p>
@@ -228,7 +234,7 @@
 
     </main>
 
-    <script src="js/accessibility-es4.js"></script>
+    <script src="js/accessibility.js"></script>
     <script src="js/hamburger.js"></script>
 </body>
 

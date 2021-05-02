@@ -176,32 +176,32 @@
             "steps": [
                 {
                     "label": "Place ARIA roles in document",
-                    "hilite": "role",
+                    "highlight": "role",
                     "notes": "The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements"
                 },
                 {
                     "label": "Place <strong>aria-haspopup</strong> attribute on button that activates dropdown functionality.",
-                    "hilite": "aria-haspopup",
+                    "highlight": "aria-haspopup",
                     "notes": ""
                 },
                 {
                     "label": "Markup labels of listbox using aria-labelledby",
-                    "hilite": "aria-labelledby,id=\"exp_button\"",
+                    "highlight": "aria-labelledby,id=\"exp_button\"",
                     "notes": "Please ensure these ids are unique in your document.  If you have multiple dropdowns, the id from them must be unique."
                 },
                 {
                     "label": "When listbox is closed, hide listbox list with CSS <code>display: none</strong>.",
-                    "hilite": "class=\"hidden\"",
+                    "highlight": "class=\"hidden\"",
                     "notes": "This prevents the screenreader from reading the contents of the hidden information in reading mode."
                 },
                 {
                     "label": "Place aria-selected attributes on options",
-                    "hilite": "aria-selected",
+                    "highlight": "aria-selected",
                     "notes": "<strong>aria-selected=\"true\"</strong> for the selected option, <strong>aria-selected=\"false\"</strong> otherwise."
                 },
                 {
                     "label": "Place aria-expanded attribute on button element",
-                    "hilite": "aria-expanded",
+                    "highlight": "aria-expanded",
                     "notes": [
                         "<ul>",
                         "  <li>This is set to <strong>false</strong> when the options are hidden, <strong>true</strong> when the are visible.</li>",

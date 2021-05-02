@@ -16,7 +16,8 @@ const showcode = new (function () {
   const blankString = /^\s*$/;
   const comment = /<\!--/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate)=\"\"/g;
+  const blankAttrValueRe = /(required|novalidate|open)=\"\"/g;
+  const commandsRe = /^%[A-Z]*?%/;
   
 
   // Most of this list from
@@ -55,8 +56,76 @@ const showcode = new (function () {
     return result;
   };
 
-  function hiliteFunc(s) {
-    return '<span class="showcode__hilite">' + s + '</span>'; 
+  function highlightFunc(s) {
+    return '<span class="showcode__highlight">' + s + '</span>'; 
+  }
+
+  function getInnerCSS(el, selectorPropertyPairs) {
+    const cssTextBuffer = [];
+    const { cssRules } = el.sheet;
+    for (let i=0; i<cssRules.length; i++) {
+      const cssRule = cssRules[i].cssText.trim();
+
+      for (let j=0; j<selectorPropertyPairs.length; j++) {
+        const selectorPropertyPair = selectorPropertyPairs[j].trim();
+        const properties = selectorPropertyPair.split('|');
+        const selector = properties[0];
+
+        properties.shift();
+        console.log('props', properties, selectorPropertyPair);
+
+        if (cssRule.indexOf(selector + ' ') === 0) {
+          // Now we must highlight the properties.
+          let code = cssRule;
+          //code = code.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+          //code = indent.css(code, {tabString: '  '});
+
+
+
+          for (let k=0; k<properties.length; k++) {
+            console.log('prop', properties[k]);
+            let propertyRegEx = new RegExp(`${properties[k]}\:[^;]*\\;`);
+            console.log('regex', propertyRegEx);
+            code = code.replace(propertyRegEx, highlightFunc);
+            console.log('code', code);
+          }
+          
+          cssTextBuffer.push(code);
+        }
+      }
+    }
+
+    return cssTextBuffer.join('\n\n');
+  }
+
+  function abbreviateJS(code, grep) {
+    let lines = code.split('\n');
+    lines[0] += '\n';
+    lines[lines.length - 1] +='\n';
+
+    let hasEllipsesAlready = false;
+
+    for (let i=1; i<lines.length - 1; i++) {
+      const line = lines[i];
+
+      if (line.indexOf(grep) === -1) {
+        if (hasEllipsesAlready) {
+          lines[i] = '';
+        } else {
+          lines[i] = '…\n';
+          hasEllipsesAlready = true;
+        }
+      } else {
+        hasEllipsesAlready = false;
+        lines[i] = line + '\n';
+      }
+    }
+
+    return lines.join('')
+  }
+
+  function getConstructorInfo(object) {
+    return 'new ' + object.constructor.toString(); // .split(/\n\n/)[0] + '\n\n...\n\n}';
   }
 
   const selectChangeEvent = (e) => {
@@ -74,48 +143,200 @@ const showcode = new (function () {
 
     notesEl.innerHTML = showcodeNotes;
 
-    const hiliteStrings = value.split(',');
+    const highlightStrings = value.split(',');
+    let command;
 
-    for (let i=0; i<hiliteStrings.length; i++) {
-      let hiliteString = hiliteStrings[i];
-      const attribute = hiliteString.split('=')[0];
-      const hasValue = (hiliteString.indexOf('=') >= 0)
+    for (let i=0; i<highlightStrings.length; i++) {
+      let highlightString = highlightStrings[i].trim();
 
-      if (hasValue) {
-        replaceRegex = new RegExp(hiliteString, 'g');
-      } else {
+      if (highlightString !== "") {
 
-        // 'for' is a special case -- we don't want it to match <form>.
-        if (hiliteString === 'for') {
-          replaceRegex = new RegExp(hiliteString + '="[^=]*"', 'g');
-        } else {
-          replaceRegex = new RegExp(hiliteString + '(="[^=]*")*', 'g');
+        // If this is a command, extract it and set highlightString to the remainder.
+        // Commands are in the form of:
+        // 
+        // %COMMAND%
+        // 
+        // here are some examples
+        //
+        // "%OPENTAG%fieldset"
+        //    Highlight all the fieldset opening tags
+        // "%OPENCLOSETAG%fieldset"
+        //    Highlight all the fieldset opening and closing tags
+        // "%OPENCLOSECONTENTTAG%fieldset"
+        //    Highlight all the fieldset content as well as the open and close tags
+        // "%CSS%.foo .bar"
+        //    Will show all CSS selectors that match the rule given (in this case, `.foo .bar`).
+        // "%JS% functionName"
+        //    Will show the JS function that matches the string given (in this case, `functionName()`) 
+        command = highlightString.match(commandsRe);
+
+        console.log('g', highlightString, command, commandsRe);
+        if (command && command.length > 0) {
+          let stringSplit, attribute;
+          
+          command = command[0];
+          highlightString = highlightString.split('%')[2];
+          console.log('command', command );
+          console.log('highlightString', highlightString);
+          
+          switch(command) {
+            case '%OPENTAG%':
+            case '%OPENCLOSETAG%':
+            case '%OPENCLOSECONTENTTAG%':
+              stringSplit = highlightString.split(/\s+/);
+              console.log('split', stringSplit);
+              highlightString = stringSplit[0];
+              attribute = (stringSplit[1] ? `[^&]*${stringSplit[1]}` : '');
+              console.log('highlightStrng', highlightString);
+              console.log('attribute', attribute);
+          }
+          
+          switch (command) {
+            case '%OPENTAG%':
+              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
+              break;
+            case '%OPENCLOSETAG%':
+              highlightString = `\\s*&lt;[\/]?${highlightString}&gt;`;
+              break;
+            case '%OPENCLOSECONTENTTAG%':
+              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?\/${highlightString}&gt;`
+              break;
+            case '%CSS%':
+              const splitHighlightString = highlightString.split('~');
+              const cssID = splitHighlightString[0].trim();
+              highlightString = splitHighlightString[1].trim();
+              console.log('css', highlightString);
+              code = getInnerCSS(document.getElementById(cssID), highlightString.split(';'));
+              code = code.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+              code = indent.css(code, {tabString: '  '});
+              //code = Prism.highlight(code, Prism.languages.css, 'css');
+              break;
+            case '%JS%':
+              const funcNames = highlightString.split(';');
+              code = '';
+
+              for (let j=0; j<funcNames.length; j++) {
+                console.log('j', j, funcNames, funcNames[j])
+                const funcNameSplit = funcNames[j].split('#');
+                const funcName = funcNameSplit[0].trim();
+                const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
+                let funcCode;
+                let funcObjectCode;
+
+                if (funcName.indexOf('\'') === 0) {
+                  // print out the funcName literally
+                  funcCode = funcName.replace(/'/g, '');
+                } else {
+                  const evalFuncName = eval(funcName);
+                  const evalFuncString = evalFuncName.toString();
+                  if (evalFuncString.indexOf('object Object') >= 0) {
+                    funcCode = getConstructorInfo(evalFuncName);
+                  } else {
+                    if (funcName.indexOf('.') >= 0) {
+                      // this is inside an object, so let's get the object context
+                    }
+
+                    funcCode = evalFuncString;
+                  }
+                  console.log('funcCode', funcCode);
+
+                  if (grep) {
+                    funcCode = abbreviateJS(funcCode, grep);
+                  }
+
+                  //funcCode = indent.js(funcCode, {tabString: '  '});
+
+                  // If funcName is an object property, prefix the funcCode
+                  // with `this.propertyName =`.  Otherwise, prefix with
+                  // `const funcName =`.
+                  if (funcName.indexOf('.') > -1) {
+                    const propertyName = funcName.split('.')[1];
+                    funcCode = `this.${propertyName} = ${funcCode}`;
+                  } else {
+                    funcCode = `const ${funcName} = ${funcCode}`;
+                  }
+                }
+
+                code = code + funcCode + '\n\n';
+              }
+
+              code = indent.js(code, {tabString: '  '});
+
+              //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
+              break;
+            default: 
+              console.warn('Invalid command used', command);
+          }
         }
 
-        // get all the unique matches
-        const matches = [...new Set(code.match(replaceRegex))];
-        
-        // if the hiliteString is one of the relationship attributes,
-        // hilite the ids these matches points to.
-        if (relationshipAttributes.indexOf(attribute) >= 0 ) {
-          for (let j=0; j<matches.length; j++) {
-            const id= matches[j].split('"')[1];
-            const idReplaceRegex = new RegExp('id="' + id + '"');
+        const attribute = highlightString.split('=')[0];
+        const hasValue = (highlightString.indexOf('=') >= 0)
 
-            code = code.replace(idReplaceRegex, hiliteFunc);
-          }  
-        
+        if (hasValue) {
+          replaceRegex = new RegExp(highlightString, 'g');
+        } else {
+
+          // 'for' is a special case -- we don't want it to match <form>.
+          if (highlightString === 'for') {
+            replaceRegex = new RegExp(highlightString + '="[^=]*"', 'g');
+          } else {
+            replaceRegex = new RegExp(highlightString + '(="[^=]*")*', 'g');
+          }
+
+          // get all the unique matches
+          const matches = [...new Set(code.match(replaceRegex))];
+          
+          // if the highlightString is one of the relationship attributes,
+          // highlight the ids these matches points to.
+          if (relationshipAttributes.indexOf(attribute) >= 0 ) {
+            for (let j=0; j<matches.length; j++) {
+              const id= matches[j].split('"')[1];
+              const idReplaceRegex = new RegExp('id="' + id + '"');
+
+              console.log('XXX');
+              code = code.replace(idReplaceRegex, highlightFunc);
+            }  
+          
+          }
         }
       }
 
-      
-      code = code.replace(replaceRegex, hiliteFunc);
+      if (command !== '%CSS%' && command !== '%JS%') {
+        code = code.replace(replaceRegex, highlightFunc);
+      }
 
      
     }
 
 
     codeEl.innerHTML = code;
+
+    // now ... let's see if we can scroll the page to the first highlightd part
+    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
+    
+
+    if (firstHighlightdElement) {
+      const componentRoot = codeEl.closest('.showcode');
+      const uiEl = componentRoot.querySelector('.showcode__ui');
+      const highlightRect = firstHighlightdElement.getBoundingClientRect();
+      const uiRect = uiEl.getBoundingClientRect();
+      /* window.scroll({
+        top: highlightRect.top - uiRect.height - 50,
+        behavior: 'smooth'
+      }); */
+      firstHighlightdElement.scrollIntoView({ behavior: 'smooth', block: 'center', left: 0 });
+      /* setTimeout(() => {
+        window.scrollBy({
+          top: - uiRect.height - 50,
+          behavior: 'smooth'
+        })
+      }, 500); */
+    }
+    
+
+    requestAnimationFrame(() => {
+      target.focus();
+    },2000);
   }
 
   function removeBlankLines(almostFormatted) {
@@ -230,7 +451,7 @@ const showcode = new (function () {
     selectEl.dataset.showcodeFor = codeblockId;
     labelEl.htmlFor = selectEl.id;
     labelEl.className = 'showcode__select-label';
-    labelEl.innerHTML = 'Code to hilite:'
+    labelEl.innerHTML = 'Code to highlight:'
 
     defaultOptionEl.innerHTML = '';
     defaultOptionEl.value='';
@@ -244,9 +465,9 @@ const showcode = new (function () {
         for (let i in stepsJson) {
           const optionEl = document.createElement('OPTION');
           const step = stepsJson[i];
-          const { label, hilite, notes } = step;
+          const { label, highlight, notes } = step;
 
-          optionEl.value = hilite;
+          optionEl.value = highlight;
 
           switch(typeof notes) {
             case "object":
@@ -385,6 +606,7 @@ const showcode = new (function () {
   this.init = () => {
     showCodeBlocks();
     setEvents();
+    //smoothscroll.polyfill();
   }
 })();
 

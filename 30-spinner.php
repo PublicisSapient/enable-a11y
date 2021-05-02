@@ -105,27 +105,27 @@
         "steps": [
           {
             "label": "Place ARIA roles in document",
-            "hilite": "role",
+            "highlight": "role",
             "notes": "The DOM node that contains the editable number that gains focus has the <strong>spinbutton</strong> role.  The up and down arrows are <strong>buttons</strong>. We didn't mark them up with the HTML button tag so they <strong>wouldn't</strong> gain keyboard focus.  They are usable on a mobile device (since they ignore the <strong>tabindex</strong> attribute."
           },
           {
             "label": "Make editable element focusable",
-            "hilite": "tabindex",
+            "highlight": "tabindex",
             "notes": ""
           },
           {
             "label": "Label the spinbuttons with aria-labelledby",
-            "hilite": "aria-labelledby",
+            "highlight": "aria-labelledby",
             "notes": ""
           },
           {
             "label": "Code instructions for screen reader users.",
-            "hilite": "aria-describedby",
+            "highlight": "aria-describedby",
             "notes": "Note the <code>sr-only</code> class that ensures the instructions are not visible to sighted users."
           },
           {
             "label": "Explose min, max and current values via ARIA so screen readers can report them",
-            "hilite": "aria-valuemin,aria-valuemax,aria-valuenow,data-increment",
+            "highlight": "aria-valuemin,aria-valuemax,aria-valuenow,data-increment",
             "notes": [
               "The spinbutton.js script uses these values in the script, as well as the <strong>data-increment</strong> attribtute so that it can do the right thing when the arrow keys are pressed.",
               "When the up or right keys are pressed, 1 is added to the value.",
@@ -136,7 +136,7 @@
           },
           {
             "label": "Set alt text on controls",
-            "hilite": "alt",
+            "highlight": "alt",
             "notes": "Note that the height of these controls are expressed in rem units.  This ensures that when we resize the text only with browser controls, the controls grow with the text."
           }
         ]

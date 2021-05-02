@@ -1,0 +1,104 @@
+//
+// Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+//
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes))
+  when
+  (@index > 0) {
+  .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+
+  @prefix: extract(@prefixes, @index);
+  @dir-old: 90 - (@dir);
+
+  background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  & when ( @index = length(@prefixes) ) {
+    background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+  }
+}
+
+.no-scrollbars() {
+  /* IE and edge */
+  -ms-overflow-style: none;
+  
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* Safari & Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.button-reset() {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+.vendor(@property, @value) {
+  -webkit-@{property}: @value;
+  -khtml-@{property}: @value;
+  -ms-@{property}: @value;
+  -moz-@{property}: @value;
+  @{property}: @value;
+}
+
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+ .enable__visually-hidden() {
+	clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	margin: -1px;
+ }
+
+ .enable__visually-hidden--reverse() {
+	clip: auto;
+	height: auto;
+	overflow: visible;
+	position: static;
+	white-space: normal;
+	width: auto;
+	margin: auto;
+ }
+
+@focus-color: rgb(59, 153, 252); 
+
+// From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
+// pixels to rems.
+@px: 16rem;
+
+@desktop-min: 960px;
+
+@tablet-min: 720px;
+@tablet-max: (@desktop-min - 1);
+
+@mobile-min: 1px;
+@mobile-max: (@tablet-min - 1);
+
+@desktop: ~"only screen and (min-width: @{desktop-min})";
+@tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@mobile: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";

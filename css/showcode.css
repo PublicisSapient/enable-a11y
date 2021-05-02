@@ -1,72 +1,7 @@
 /*
- * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-body {
-  font-family: "Helvetica", "Arial", sans-serif;
-  margin: 10px;
-  line-height: 1.1;
-}
-strong {
-  font-weight: bold;
-}
-ul {
-  list-style: initial;
-}
-ol {
-  list-style: decimal;
-}
-h1 {
-  font-weight: bold;
-  font-size: 2rem;
-}
-h2 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  border-bottom: solid 1px #999999;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-ul,
-ol {
-  padding-left: 3rem;
-}
-ul {
-  list-style: disc;
-}
-ul,
-p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.example h1 {
-  text-align: center;
-}
-.example main {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-.example .example-nav {
-  text-align: center;
-}
-.example .example-nav ul li {
-  display: inline-block;
-  list-style: none;
-}
-.example .notes {
-  border: dashed #9C6F39 3px;
-  padding: 1em;
-  background-color: #ffffee;
-  margin: 2em auto;
-  max-width: calc(1024px - 2em);
-}
-.example .notes h2 {
-  margin: 0;
-  border-bottom: none;
-}
-input,
-select {
-  font-size: 1em;
-}
 html,
 body {
   width: 100vw;
@@ -93,7 +28,7 @@ body {
 .showcode__example code {
   display: block;
   padding: 10px;
-  width: calc(100vw - 20px);
+  max-width: calc(100vw - 20px);
   overflow: scroll;
 }
 .showcode__example--desc {
@@ -112,7 +47,7 @@ body {
     content: "";
     display: block;
     position: absolute;
-    z-index: 10;
+    z-index: 0;
     pointer-events: none;
     top: 0;
     left: 0;
@@ -127,26 +62,36 @@ body {
     background-image: linear-gradient(-270deg, #000, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0));
   }
 }
-.showcode__hilite {
+.showcode__highlight {
   display: inline-block;
   color: white;
   border: solid 2px white;
 }
-.showcode__hilite .showcode__hilite {
+.showcode__highlight .showcode__highlight {
   border: none;
 }
 .showcode__select-label {
   padding: 5px 10px;
   display: inline-block;
   width: initial;
-  width: 7.5rem;
+  width: 10rem;
+  white-space: nowrap;
 }
 .showcode__steps {
   border-bottom: none;
   padding: 10px 0;
 }
 .showcode__steps select {
-  width: calc(100% - 7.5rem - 40px);
+  width: calc(100% - 10rem - 40px);
+  float: right;
+  margin: 3px 40px 0 0;
+}
+.showcode__ui {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+  padding-bottom: 10px;
 }
 .showcode__notes:not(:empty) {
   border: dashed #705029 3px;

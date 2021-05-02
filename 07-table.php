@@ -91,32 +91,32 @@
             "steps": [
                 {
                     "label": "Give table a label using the <strong>caption</strong> element",
-                    "hilite": "&lt;caption&gt;[\\s\\S]*&lt;/caption&gt;",
+                    "highlight": "&lt;caption&gt;[\\s\\S]*&lt;/caption&gt;",
                     "notes": "All tables must have captions."
                 },
                 {
                     "label": "The <strong>thead</strong> section",
-                    "hilite": "\\s*&lt;thead&gt;[\\s\\S]*&lt;/thead&gt;",
+                    "highlight": "\\s*&lt;thead&gt;[\\s\\S]*&lt;/thead&gt;",
                     "notes": "The <strong>thead</strong> tag must contain the heading of the table, including column headings"
                 },
                 {
                     "label": "The <strong>tbody</strong> section",
-                    "hilite": "\\s*&lt;tbody&gt;[\\s\\S]*&lt;/tbody&gt;",
+                    "highlight": "\\s*&lt;tbody&gt;[\\s\\S]*&lt;/tbody&gt;",
                     "notes": "The <strong>tbody</strong> tag contains the main data of the table, as well as row headings"
                 },
                 {
                     "label": "The <strong>tfoot</strong> section",
-                    "hilite": "\\s*&lt;tfoot&gt;[\\s\\S]*&lt;/tfoot&gt;",
+                    "highlight": "\\s*&lt;tfoot&gt;[\\s\\S]*&lt;/tfoot&gt;",
                     "notes": "The <strong>tfoot</strong> contains summary information of the table"
                 },
                 {
                     "label": "Column headings",
-                    "hilite": "scope=\"col\"",
+                    "highlight": "scope=\"col\"",
                     "notes": "All column headings must be tagged with <strong>scope=\"col\"</strong>"
                 },
                 {
                     "label": "Row headings",
-                    "hilite": "scope=\"row\"",
+                    "highlight": "scope=\"row\"",
                     "notes": "All row headings must be tagged with <strong>scope=\"row\"</strong>"
                 }
             ]
@@ -201,7 +201,7 @@
             "steps": [
                 {
                     "label": "Give table a label using the <strong>caption</strong> element",
-                    "hilite": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt;,aria-labelledby=\"fig-caption\"",
+                    "highlight": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt;,aria-labelledby=\"fig-caption\"",
                     "notes": "The <strong>figcaption</strong> tag may be used instead of the <strong>caption</strong> if you use <strong>aria-labelledby</strong> on the <strong>table</strong> to point to it."
                 }
             ]

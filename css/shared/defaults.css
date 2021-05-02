@@ -1,9 +1,5 @@
-/*
- * Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
- */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
-  margin: 10px;
   line-height: 1.1;
 }
 strong {
@@ -53,7 +49,7 @@ p {
   list-style: none;
 }
 .example .notes {
-  border: dashed #9C6F39 3px;
+  border: dashed #9c6f39 3px;
   padding: 1em;
   background-color: #ffffee;
   margin: 2em auto;

@@ -136,27 +136,27 @@
             "steps": [
                 {
                     "label": "Place ARIA roles in document",
-                    "hilite": "role=\"tablist\",role=\"presentation\",role=\"tab\",role=\"tabpanel\"",
+                    "highlight": "role=\"tablist\",role=\"presentation\",role=\"tab\",role=\"tabpanel\"",
                     "notes": "Note that <strong>tabs</strong> should be a direct child of the <strong>tablist</strong>. If this is not possible, then all the nodes in between them should have a role of <strong>presentation</strong>."
                 },
                 {
                     "label": "Connect tabs to tabpanels",
-                    "hilite": "aria-owns",
+                    "highlight": "aria-owns",
                     "notes": "Each <strong>tab</strong> must have an <strong>aria-owns</strong> attribute that corresponds to its <strong>tabpanel</strong>."
                 },
                 {
                     "label": "Ensure aria-selected values are set correctly",
-                    "hilite": "aria-selected",
+                    "highlight": "aria-selected",
                     "notes": "When a tab is selected, its <strong>aria-selected</strong> attribute must be set to <strong>true</strong>, while all the other tabs must have it set to <strong>false</strong>"
                 },
                 {
                     "label": "Ensure only the selected tab is accessible via tab key",
-                    "hilite": "tabindex=\"-1\"",
+                    "highlight": "tabindex=\"-1\"",
                     "notes": "In order switch tabs with the arrow keys, all tabs that have <strong>aria-selected=\"false\"</strong> must also have <strong>tabindex=\"-1\"</strong> set as well."
                 },
                 {
                     "label": "Code keyboard instructions when user focuses on tabs",
-                    "hilite": "aria-describedby",
+                    "highlight": "aria-describedby",
                     "notes": "This gives screen reader users instructions how to use the tabs when they navigate into them via keyboard"
                 }
             ]

@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>ARIA form role examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/form-error.css" />
+		<?php include "includes/common-head-tags.php";?>
+    <link id="form-error-css" rel="stylesheet" type="text/css" href="css/form-error.css" />
   </head>
 
   <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
       <aside class="notes">
@@ -37,20 +37,20 @@
           <fieldset>
             <legend>Contact Information</legend>
 
-            <p class="form-instructions">Note: All fields are required.</p>
+            <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
             <div class="field-block">
-              <label for="name_html5">Full Name:</label>
+              <label class="required" for="name_html5">Full Name:</label>
               <input id="name_html5" size="25" type="text" required  autocomplete="name" />
             </div>
 
             <div class="field-block">
-              <label for="email_html5">E-mail address:</label>
+              <label class="required" for="email_html5">E-mail address:</label>
               <input id="email_html5" size="25" type="email" required autocomplete="email" />
             </div>
 
             <div class="field-block">
-              <label for="phone_html5">Phone Number:</label>
+              <label class="required" for="phone_html5">Phone Number:</label>
               <input
                 id="phone_html5"
                 size="25"
@@ -82,22 +82,27 @@
         "steps": [
           {
             "label": "Put in fieldsets and legends",
-            "hilite": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
             "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
           },
           {
             "label": "All form fields need labels",
-            "hilite": "for",
+            "highlight": "for",
             "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
           },
           {
             "label": "All form fields that are required need the required attribute",
-            "hilite": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
-            "notes": "All required form fields should also have a visual cue for sighted users (in this case, we just have some copy stating all fields are required."
+            "highlight": "class=\"required\",required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "notes": "All required form fields should also have a visual cue for sighted users (a star is used in this example)"
+          },
+          {
+            "label": "CSS for the required field labels",
+            "highlight": "%CSS% form-error-css~ form label.required::after",
+            "notes": "Note that the star is put into the labels via CSS"
           },
           {
             "label": "Use regular expression patterns to ensure the data being submitted is in the right format",
-            "hilite": "pattern",
+            "highlight": "pattern",
             "notes": [
               "The pattern must be a valid JavaScript regular expression.  When the form is submitted, the browser checks if all the form field values match the regexs.",
               "If they don't, focus is applied to the first invalid one.  The user can then correct their mistake immediately, and attempt to submit until all form fields are valid"
@@ -105,7 +110,7 @@
           },
           {
             "label": "Hint text should be marked up using aria-describedby",
-            "hilite": "aria-describedby",
+            "highlight": "aria-describedby",
             "notes": ""
           }
         ]
@@ -139,13 +144,15 @@
           <fieldset>
             <legend id="contact_js">Contact Information</legend>
 
+            <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
+
             <div class="field-block">
-              <label for="name_js">Full Name:</label>
+              <label class="required" for="name_js">Full Name:</label>
               <input id="name_js" name="name_js" size="25" type="text" required />
             </div>
 
             <div class="field-block">
-              <label for="email_js">E-mail address:</label>
+              <label class="required" for="email_js">E-mail address:</label>
               <input
                 id="email_js"
                 name="email_js"
@@ -156,7 +163,7 @@
             </div>
 
             <div class="field-block">
-              <label for="phone_js">Phone Number:</label>
+              <label class="required" for="phone_js">Phone Number:</label>
               <input
                 id="phone_js"
                 name="phone_js"
@@ -188,32 +195,37 @@
         "steps": [
           {
             "label": "Set your form's novalidate attribute",
-            "hilite": "novalidate",
+            "highlight": "novalidate",
             "notes": "Putting this in the <strong>form</strong> element turns off native form validation (i.e. the validation bubbles built into the browser)"
           },
           {
             "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
-            "hilite": "class=\"js-form-validation\"",
+            "highlight": "class=\"js-form-validation\"",
             "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/shared/form.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
           },
           {
             "label": "Put in fieldsets and legends",
-            "hilite": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
             "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
           },
           {
             "label": "All form fields need labels",
-            "hilite": "for",
+            "highlight": "for",
             "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
           },
           {
             "label": "All form fields that are required need the required attribute",
-            "hilite": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "highlight": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
             "notes": "All required form fields should also have a visual cue for sighted users (in this case, we just have some copy stating all fields are required."
           },
           {
+            "label": "CSS for the required field labels",
+            "highlight": "%CSS% form-error-css~ form label.required::after",
+            "notes": "Note that the star is put into the labels via CSS"
+          },
+          {
             "label": "Use regular expression patterns to ensure the data being submitted is in the right format",
-            "hilite": "pattern",
+            "highlight": "pattern",
             "notes": [
               "The pattern must be a valid JavaScript regular expression.  When the form is submitted, the browser checks if all the form field values match the regexs.",
               "If they don't, focus is applied to the first invalid one.  The user can then correct their mistake immediately, and attempt to submit until all form fields are valid"
@@ -221,8 +233,23 @@
           },
           {
             "label": "Hint text should be marked up using aria-describedby",
-            "hilite": "aria-describedby",
+            "highlight": "aria-describedby",
             "notes": ""
+          },
+          {
+            "label": "Ensure error messages are prefixed with the word \"Error\"",
+            "highlight": "%JS% formValidator.init, [ ]*messages: {[^}]*}[^}]",
+            "notes": "This is best practice to ensure screen reader users know easily that what is being read is an error"
+          },
+          {
+            "label": "Ensure the invalidHandler sets all the invalid fields with aria-invalid attributes",
+            "highlight": "%JS% formValidator.init, formField.setAttribute\\(\"aria-invalid\"[^)]*\\)\\;",
+            "notes": ""
+          },
+          {
+            "label": "Use Javascript to ensure the, when a form with an error is submitted, focus is applied to the first form element with an error",
+            "highlight": "%JS% formValidator.init, accessibility[^)]*\\)\\;",
+            "notes": "In order to do this easily, we use <code>accessibility.applyFormFocus(), which is part of my <a href=\"https://github.com/zoltan-dulac/accessibility.js\">accessibility.js</a> library.  As long as the invalid elements are marked up with <code>aria-invalid</code> after the form is submitted, focus will go to the first invalid element."
           }
         ]
       }
@@ -234,7 +261,7 @@
       <script src="js/shared/form.js"></script>
 
 
-      <?php include "includes/example-footer.php" ?>
+      <?php include "includes/example-footer.php"?>
     </main>
 
   </body>

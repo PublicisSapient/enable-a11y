@@ -1,25 +1,22 @@
-@import "shared/all";
-
+@import "shared/mixins-and-vars"; 
 
 input[type="radio"],
 input[type="checkbox"],
 [role="radio"],
-[role="checkbox"] { 
-    
-    + label {
-        display: inline; 
-    }
+[role="checkbox"] {
+  + label {
+    display: inline;
+  }
 }
 
-
-input[type=submit] {
+input[type="submit"] {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-input[type=submit] {
+input[type="submit"] {
   margin-bottom: 1em;
 }
 
@@ -29,13 +26,13 @@ fieldset,
   padding: 0.5em;
   margin-top: 1em;
   padding-top: 2em;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
 
   legend,
   .legend {
     position: relative;
     top: 1.5em;
-    border-color: #AAAAAA;
+    border-color: #aaaaaa;
     font-weight: bold;
     font-size: 1em;
   }
@@ -46,8 +43,6 @@ fieldset,
   }
 }
 
-
-
 fieldset label {
   font-weight: normal;
 
@@ -56,29 +51,27 @@ fieldset label {
   }
 }
 
-
 [role="radio"]:after {
-  
 }
 
 [role="radio"],
 [role="checkbox"] {
-  display          : inline-block;
-  position         : relative;
-  width            : 0.875em;
-  height           : 0.875em;
-  margin           : 0.25em 0.5em 0.25em 0.25em;
-  border           : 0.0625em solid rgb(192,192,192);
-  
-  background       : rgb(224,224,224);
-  .gradient(linear; rgb(240,240,240),rgb(224,224,224)); 
-  vertical-align   : bottom;
+  display: inline-block;
+  position: relative;
+  width: 0.875em;
+  height: 0.875em;
+  margin: 0.25em 0.5em 0.25em 0.25em;
+  border: 0.0625em solid #444;
+
+  background: rgb(224, 224, 224);
+  .gradient(linear; rgb(50, 47, 47),rgb(224,224,224));
+  vertical-align: bottom;
 }
 
 [role="radio"] {
   &,
   &:after {
-    border-radius    : 50%;
+    border-radius: 50%;
   }
 
   &[aria-checked="true"] {
@@ -91,28 +84,29 @@ fieldset label {
       width: 0.5em;
       height: 0.5em;
       margin: 0.125em;
-      border: 0.0625em solid rgb(115,153,77);
-      background: rgb(153,204,102);
+      border: 0.0625em solid #444;
+      background: rgb(153, 204, 102);
     }
-
   }
 }
 
 [role="checkbox"] {
   &[aria-checked="true"] {
     &:after {
-      content: '✓';
+      content: "✓";
       display: block;
       position: absolute;
       top: 0;
       left: 0;
       width: 1em;
-      color: rgb(153,204,102);
+      color: #060;
       font-size: 0.875em;
       line-height: 1em;
       text-align: center;
-      text-shadow: 0 0 0.0714em rgb(115,153,77);
+      text-shadow: 0 0 0.0714em rgb(115, 153, 77);
       font-weight: bold;
+      transform: scale(2.5) translateY(-2px);
     }
   }
 }
+

@@ -72,12 +72,12 @@
             "steps": [
                 {
                     "label": "Insert form tag",
-                    "hilite": "\\s*&lt;[\/]?form&gt;",
+                    "highlight": "\\s*&lt;[\/]?form&gt;",
                     "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
                 },
                 {
                     "label": "Insert fieldset and legend",
-                    "hilite": "\\s*&lt;[\/]?fieldset&gt;,\\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
+                    "highlight": "\\s*&lt;[\/]?fieldset&gt;,\\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
                     "notes": "The <strong>legend</strong> tag must be a direct child of the <strong>fieldset</strong> tag in order for it to work across screen readers."
                 }
             ]
@@ -114,17 +114,17 @@
             "steps": [
                 {
                     "label": "Insert form tag",
-                    "hilite": "\\s*&lt;[\/]?div role=\"form\"&gt;",
+                    "highlight": "\\s*&lt;[\/]?div role=\"form\"&gt;",
                     "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
                 },
                 {
                     "label": "Insert group role to minic native HTML fieldset",
-                    "hilite": "role=\"group\"",
+                    "highlight": "role=\"group\"",
                     "notes": ""
                 },
                 {
                     "label": "Add aria-labelledby to element with group role",
-                    "hilite": "aria-labelledby",
+                    "highlight": "aria-labelledby",
                     "notes": [
                         "This ensures that what the aria-labelledby attribute points to acts as a legend for the fieldset.",
                         "Unlike a HTML example, the label does not have to be a direct child to the group element (which acts as a fieldset)."
