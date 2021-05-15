@@ -50,7 +50,7 @@
             If you want to make an accessible expando, please look at
             <a href="33-dropdown.php">accessible drawer example</a>.
 
-        <div id="polite-alert" role="alert" aria-live="polite" class="visually-hidden"></div>
+        <div id="polite-alert" role="alert" aria-live="polite" class="sr-only"></div>
 
 
         <div class="expando">

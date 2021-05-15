@@ -1,6 +1,130 @@
-@import "form.less";
+@import "shared/mixins-and-vars";
 
+@radio-size: 24;
+@radio-border: 1;
+@radio-size-without-border: (@radio-size - 2 * @radio-border);
+@radio-label-font-size: 18;
 
+/* ARIA radio buttons */
 
+/* This is the radio button's outer circle */
+[role="radio"] {
+  display: inline-block;
+  position: relative;
+  width: (@radio-size / @px);
+  height: (@radio-size / @px);
+  margin: (4 / @px) (8 / @px) (4 / @px) (4 / @px);
+  border: (@radio-border / @px) solid #444;
 
+  background: rgb(224, 224, 224);
+  .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
+  vertical-align: bottom;
 
+  &[aria-checked="true"] {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: (@radio-size-without-border / @px);
+      height: (@radio-size-without-border / @px);
+      transform: scale(0.65);
+      background: #900;
+    }
+  }
+
+  /* Ensures both the inner and outer circles are circles, not squares. */
+  &,
+  &::after {
+
+    border-radius: 50%;
+  }
+}
+
+.aria-radio-label {
+  font-size: (@radio-label-font-size * 1px);
+  line-height: ((@radio-size + @radio-border) / @radio-label-font-size);
+}
+
+.enable-radio {
+  @enable-radio-size: 22;
+  @enable-radio-border: 1;
+  @enable-radio-size-without-border: (
+    @enable-radio-size - 2 * @enable-radio-border
+  );
+  @enable-radio-padding: 13;
+  @enable-radio-label-font-size: 18;
+
+  [type="radio"] {
+    .vendor(appearance, none);
+    position: absolute;
+    z-index: 1;
+    width: (@enable-radio-size / @px);
+    height: (@enable-radio-size / @px);
+    margin: 0;
+    opacity: 0;
+
+    &,
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+
+    &,
+    & + label {
+      margin-bottom: (8/@px);
+    }
+
+    + label {
+      position: relative;
+      padding-left: ((@enable-radio-size + @enable-radio-padding) / @px);
+      cursor: pointer;
+      display: inline-block;
+      color: #666;
+      font-size: (@enable-radio-label-font-size * 1px);
+      line-height: (
+        (@enable-radio-size + 2 * @enable-radio-border) /
+          @enable-radio-label-font-size
+      );
+    }
+
+    + label:before {
+      border: (@enable-radio-border / @px) solid #ddd;
+    }
+
+    + label:before,
+    + label:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: ((-1 * @enable-radio-border) / @px);
+      top: ((-1 * @enable-radio-border) / @px);
+      width: (@enable-radio-size / @px);
+      height: (@enable-radio-size / @px);
+
+      border-radius: 100%;
+      background: #fff;
+    }
+
+    + label:after {
+      border: (@enable-radio-border / @px) solid transparent;
+      transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+
+    &:focus + label:before {
+      outline: 2px @focus-color solid;
+    }
+
+    &:not(:checked) + label:after {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    &:checked + label:after {
+      opacity: 1;
+      background: #060;
+      transform: scale(0.6);
+    }
+  }
+}

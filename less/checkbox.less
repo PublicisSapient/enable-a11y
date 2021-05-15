@@ -1,18 +1,61 @@
 @import "shared/mixins-and-vars";
-@import "form";
 
-// This import is only for the conditionally hiding and showing of content in the final example.
-@import "shared/visibleIf";
 
-/* Custom Styled HTML5 checkbox */
+/* From the old stuff */
+
+@checkbox-size: 24;
+@checkbox-border: 1;
+
+/* These are the styles for the ARIA example */
+[role="checkbox"] {
+  display: inline-block;
+  position: relative;
+  width: (@checkbox-size/@px);
+  height: (@checkbox-size/@px);
+  margin: (4/@px) (8/@px) (4/@px) (4/@px);
+  border: (@checkbox-border/@px) solid #444;
+
+  background: rgb(224, 224, 224);
+  .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
+  vertical-align: bottom;
+
+  &[aria-checked="true"] {
+    &:after {
+      content: "✓";
+      display: block;
+      position: absolute;
+      top: (6/@px);
+      left: (5/@px);
+      width: 1em;
+      color: #060;
+      font-size: 0.875em;
+      line-height: 1em;
+      text-align: center;
+      text-shadow: 0 0 0.0714em rgb(115, 153, 77);
+      font-weight: bold;
+      transform: scale(2.5) translateY(-2px);
+    }
+  }
+}
+
+
+
+/* This is the CSS to style the custom HTML5 checkbox */
 .enable-checkbox {
   @width-checkbox: 16;
-  @offset: 3;
 
   input[type="checkbox"] {
-    width: (@width-checkbox / @px);
-    height: (@width-checkbox / @px);
-    //opacity: 0;
+
+    &, & + label::before {
+      .vendor(appearance, none);
+      box-sizing: border-box;
+      width: (@width-checkbox / @px);
+      height: (@width-checkbox / @px);
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      border: solid 1px #333;
+    }
 
     /*Hide the checkmark by default*/
     + label::after {
@@ -22,16 +65,15 @@
     /*Unhide on the checked state*/
     &:checked + label::after {
       content: "";
+      height: ((0.31 * @width-checkbox)  / @px);
+      width: ((0.87 * @width-checkbox) / @px);
+      border-left: (2 / @px) solid #600;
+      border-bottom: (2 / @px) solid #600;
 
-      height: (5 / @px);
-      width: (9 / @px);
-      border-left: (2 / @px) solid;
-      border-bottom: (2 / @px) solid;
+      transform: rotate(-45deg) scale(2);
 
-      transform: rotate(-45deg);
-
-      left: (4 / @px);
-      top: (7 / @px);
+      left: ((0.43 * @width-checkbox) / @px);
+      top: ((-0.31 * @width-checkbox) / @px);
     }
 
     /*Adding focus styles on the outer-box of the fake checkbox*/
@@ -44,7 +86,7 @@
       display: inline-block;
 
       /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
-      margin-left: ((0 - @width-checkbox - @offset) / @px);
+      margin-left: ((0 - @width-checkbox ) / @px);
 
       &::before,
       &::after {
@@ -56,19 +98,7 @@
         pointer-events: none;
       }
 
-      /*Outer box of the fake checkbox*/
-      &::before {
-        height: ((@width-checkbox +3) / @px);
-        width: ((@width-checkbox +3)/ @px);
-
-        border: 1px solid;
-        left: 0px;
-
-        /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
-        *to vertically center it.
-        */
-        //top: (@offset / @px);
-      }
+      
     }
   }
 }

@@ -28,6 +28,8 @@
 
         <h2>Example 1:</h2>
 
+        <p>Here is a standard autocomplete example using ARIA.</p>
+
         <form>
             <div id="example1" class="enable-combobox">
                 <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
@@ -42,7 +44,7 @@
                             <img class="enable-combobox__reset-button-image" src="images/close-window.svg"
                                 alt="Clear" />
                         </button>
-                        
+
                         <!-- The dropdown (a.k.a. "listbox") -->
                         <ul role="listbox" id="aria-fruit__list" tabindex="-1" hidden>
                             <li tabindex="-1" role="option" value="Apple">Apple</li>
@@ -112,10 +114,8 @@
                             <li tabindex="-1" role="option" value="Zucchi">Zucchi</li>
                         </ul>
                     </span>
-                    <div class="visually-hidden" id="aria-fruit__desc"
-                        data-mobile="Hit 'Enter' on your virtual keyboard to navigate through the autocomplete suggestions below the control">
-                        As you type, use the up and down arrow keys to choose the autocomplete items. Mobile devices
-                        will need to use the ENTER key and the swipe left and right to navigate through the items.
+                    <div class="sr-only" id="aria-fruit__desc">
+                        As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
                     </div>
                 </div>
             </div>
@@ -140,9 +140,9 @@
                     "notes": "Ensure the label is properly lababelled"
                 },
                 {
-                    "label": "Code instructions for the component using aria-describedby",
+                    "label": "Component instructions for the component using aria-describedby",
                     "highlight": "aria-describedby",
-                    "notes": "These code instructions are visibly hidden, since they are only for screen reader users."
+                    "notes": "These instructions are visibly hidden, since they are only for screen reader users."
                 },
                 {
                     "label": "Associate the dropdown data with the input field",
@@ -161,13 +161,13 @@
                 },
                 {
                     "label": "Turn off autocorrect and autocomplete",
-                    "highlight": "autocomplete=\"off\",autocorrect,autocapitalize=\"off\"",
+                    "highlight": "autocomplete=\"off\" ||| autocorrect ||| autocapitalize=\"off\"",
                     "notes": "If we want to ensure the user can only pick the items in the dropdown, we have to make sure these items are shut off."
                 },
                 {
                     "label": "Insert roles for autocomplete list",
-                    "highlight": "role=\"listbox\",role=\"option\"",
-                    "notes": "options must be direct children of listbox"
+                    "highlight": "role=\"listbox\" ||| role=\"option\"",
+                    "notes": "Options must be direct children of listbox"
                 }
             ]
         }
@@ -175,9 +175,11 @@
 
 
 
-        <h1>ARIA combobox role examples</h1>
 
         <h2>Example 2:</h2>
+
+        <p>Another ARIA combobox example. Note the special formatting in the dropdown. This is common
+            in a lot of modern searchboxes in the headings of a lot of e-commerce sites.</p>
 
         <form>
             <div class="enable-combobox">
@@ -188,7 +190,7 @@
                         This announces instructions to screen reader users when
                         they focus into the widget
                         -->
-                        <div class="visually-hidden" id="aria-example-2__desc">
+                        <div class="sr-only" id="aria-example-2__desc">
                             As you type, use the up and down arrow keys (or swipe left and
                             right) to choose the autocomplete items.
                         </div>
@@ -220,10 +222,13 @@
                                 <h2 class="enable-combobox__group-header">Communist States</h2>
 
                                 <div role="option" value="People's Republic of China">People's Republic of China</div>
-                                <div role="option" value="Democratic People's Republic of Korea (North Korea)">Democratic
+                                <div role="option" value="Democratic People's Republic of Korea (North Korea)">
+                                    Democratic
                                     People's Republic of Korea (North Korea)</div>
-                                <div role="option" value="Socialist Republic of Vietnam">Socialist Republic of Vietnam</div>
-                                <div role="option" value="Lao People's Democratic Republic (Laos)">Lao People's Democratic
+                                <div role="option" value="Socialist Republic of Vietnam">Socialist Republic of Vietnam
+                                </div>
+                                <div role="option" value="Lao People's Democratic Republic (Laos)">Lao People's
+                                    Democratic
                                     Republic (Laos)</div>
                                 <div role="option" value="Republic of Cuba">Republic of Cuba</div>
                             </div>
@@ -389,7 +394,8 @@
                                 <div role="option" value="South Sudan">South Sudan</div>
                                 <div role="option" value="Spain">Spain</div>
                                 <div role="option" value="Sri Lanka">Sri Lanka</div>
-                                <div role="option" value="St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines</div>
+                                <div role="option" value="St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines
+                                </div>
                                 <div role="option" value="State of Palestine">State of Palestine</div>
                                 <div role="option" value="Sudan">Sudan</div>
                                 <div role="option" value="Suriname">Suriname</div>
@@ -456,7 +462,7 @@
                 Enter a Fruit or Vegetable
             </label>
             <input id="html5-fruit" name="friuit" type="text" list="languages" aria-describedby="html5-fruit__desc" />
-            <div class="visually-hidden" id="html5-fruit__desc">
+            <div class="sr-only" id="html5-fruit__desc">
                 As you type, use the up and down arrow keys to choose the autocomplete
                 items.
             </div>

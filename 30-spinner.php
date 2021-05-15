@@ -66,7 +66,7 @@
           >Choose a number between 0 and 100</label
         >
 
-      <div class="visually-hidden" id="sb1_instructions">
+      <div class="sr-only" id="sb1_instructions">
         Use the arrow keys to increase and decrease the values
       </div>
 
@@ -125,7 +125,7 @@
           },
           {
             "label": "Explose min, max and current values via ARIA so screen readers can report them",
-            "highlight": "aria-valuemin,aria-valuemax,aria-valuenow,data-increment",
+            "highlight": "aria-valuemin ||| aria-valuemax ||| aria-valuenow ||| data-increment",
             "notes": [
               "The spinbutton.js script uses these values in the script, as well as the <strong>data-increment</strong> attribtute so that it can do the right thing when the arrow keys are pressed.",
               "When the up or right keys are pressed, 1 is added to the value.",

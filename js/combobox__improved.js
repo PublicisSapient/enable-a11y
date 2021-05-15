@@ -22,7 +22,8 @@ const EnableCombobox = function (componentRoot) {
     kDOWN = "ArrowDown",
     kTAB = "Tab",
     kANDROIDKEYCODE = 229,
-    firstVisibleOptionSelector = '[role="option"]:not([hidden])';
+    firstVisibleOptionSelector = '[role="option"]:not([hidden])',
+    chooseEvent = document.createEvent('Event');
 
   function docKeyDownHandler(e) {
     // if a key is pressed at the document level, we are assuming
@@ -85,8 +86,12 @@ const EnableCombobox = function (componentRoot) {
 
   function handleReturn(e) {
     e.preventDefault();
-    insertValue();
-    focusOnFirstOption();
+    if (e.target === resetButton) {
+      handleEscape(e);
+    } else {
+      insertValue();
+      focusOnFirstOption();
+    }
   };
 
   function focusOnFirstOption() {
@@ -121,6 +126,7 @@ const EnableCombobox = function (componentRoot) {
     updateSelectedOption(e.target);
     e.target.focus();
     insertValue();
+    field.dispatchEvent(chooseEvent);
   }
 
   function listClickHandler(e) {
@@ -166,7 +172,7 @@ const EnableCombobox = function (componentRoot) {
     list.hidden = true;
     field.setAttribute("aria-expanded", "false");
     accessibility.removeMobileFocusLoop();
-    updateStatus(message);
+    updateStatus(message, true);
   };
 
   function clearField() {
@@ -238,8 +244,12 @@ const EnableCombobox = function (componentRoot) {
     return list.querySelectorAll(firstVisibleOptionSelector);
   };
 
-  function updateStatus(message) {
+  function updateStatus(message, isHidden) {
     let statusContent = message || "";
+
+    if (isHidden) {
+      statusContent = '<span class="sr-only">' + message + '<span>';
+    }
 
     itemCount = shownOptions().length;
 
@@ -250,7 +260,7 @@ const EnableCombobox = function (componentRoot) {
         statusContent = "%@ items".replace("%@", itemCount);
       }
       statusContent +=
-        ". <span class='visually-hidden'>" +
+        ". <span class='sr-only'>" +
         ariaDescriptionEl.innerText +
         "</span>";
     }
@@ -269,7 +279,7 @@ const EnableCombobox = function (componentRoot) {
       clearSelectedOption();
       requestAnimationFrame(() => {
         resetButton.focus();
-        status.innerHTML="Selected " + value + ".";
+        status.innerHTML="<span class='sr-only'>Selected " + value + ".</span>";
       })
     }
   };
@@ -314,7 +324,7 @@ const EnableCombobox = function (componentRoot) {
     clearSelectedOption();
   };
 
-  function initCombo(componentRoot) {
+  this.initCombo = function (componentRoot) {
     // TODO: If time allows, update example to account for multiple comboboxes.
     root = componentRoot;
     field = root.querySelector('[role="combobox"]');
@@ -328,11 +338,17 @@ const EnableCombobox = function (componentRoot) {
 
     // Events
     form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
+
     controlsContainer.addEventListener("keyup", keyUpHandler, true);
     controlsContainer.addEventListener("keydown", keyDownHandler, true);
+    
+    document.addEventListener("keydown", docKeyDownHandler, true);
+
     field.addEventListener("focus", focusHandler);
+    
     list.addEventListener("mousedown", listMouseDownHandler);
     list.addEventListener("click", listClickHandler);
+    
     resetButton.addEventListener("click", handleEscape);
     controlsContainer.addEventListener("blur", containerBlurHandler, true);
 
@@ -346,9 +362,14 @@ const EnableCombobox = function (componentRoot) {
         var optionNum = i+1;
         option.setAttribute('id', field.id + '__field-' + optionNum);
     }
+
+    chooseEvent.initEvent('combobox-choose', true, true);
+    field.addEventListener('combobox-choose', (e) => {
+      console.log('choose', e);
+    })
   };
 
-  initCombo(componentRoot);
+  this.initCombo(componentRoot);
 };
 
 const enableComboboxes = new function() {

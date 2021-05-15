@@ -1,13 +1,20 @@
 @import "shared/mixins-and-vars";
   
 [role="textbox"] {
+    @font-size: 16;
+    @line-height: 22;
+
     display: inline-block;
     width: 200px;
-    height: 1rem;
-    border: solid 1px black; 
+    font-size: (@font-size/@px);
+    line-height: (@line-height/@font-size);
+    height: (@line-height/@px);
+    border: solid 1px black;
+    margin-bottom: 10px;
+    background: #fff;
 
     &[aria-multiline="true"] {
-        min-height: 2rem;
+        min-height: (2 * @line-height/@px);
         overflow: auto;
         .vendor(appearance, textarea);
         resize: both;

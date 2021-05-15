@@ -3,10 +3,10 @@ const Switch = new function () {
 
     this.init = () => {
         customEvent.initEvent('switch-change', true, true);
-        document.body.addEventListener('click', onClick);
+        document.body.addEventListener('click', this.onClick);
     }
 
-    const onClick = (evt) => {
+    this.onClick = (evt) => {
         let el = evt.target;
         const id = el.id;
         const alertEl = document.getElementById(id + '__alert');

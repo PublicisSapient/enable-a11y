@@ -5,11 +5,15 @@
 [role="textbox"] {
   display: inline-block;
   width: 200px;
-  height: 1rem;
+  font-size: 1rem;
+  line-height: 1.375;
+  height: 1.375rem;
   border: solid 1px black;
+  margin-bottom: 10px;
+  background: #fff;
 }
 [role="textbox"][aria-multiline="true"] {
-  min-height: 2rem;
+  min-height: 2.75rem;
   overflow: auto;
   -webkit-appearance: textarea;
   -khtml-appearance: textarea;

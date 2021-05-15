@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>ARIA form role examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
+    <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/group.css" />
 
 </head>
@@ -19,19 +20,25 @@
             <ul>
 
                 <li>These examples are from
-                    <a href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/form.html">the W3C's ARIA Form Landmarks Example</a>.</li>
+                    <a
+                        href="https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/form.html">the
+                        W3C's ARIA Form Landmarks Example</a>.
+                </li>
 
-               <!-- <li>NVDA doesn't recognize a
+                <!-- <li>NVDA doesn't recognize a
                     <code>form</code> element by itself as a landmark. In order to do this, we must add the ARIA form role.</li> -->
                 <li>Use the HTML5 form tag whenever you can. You will make your application
                     a lot more usable for things beyond accessibility:
                     <ol>
                         <li>JavaScript
-                            <code>document.forms</code> support.</li>
+                            <code>document.forms</code> support.
+                        </li>
                         <li>Progressive enhancement.</li>
                         <li>Built in HTML5 validation and pattern checking.</li>
                         <li>
-                            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">The God of the Web</a> built it the right way the first time.</li>
+                            <a href="https://en.wikipedia.org/wiki/Tim_Berners-Lee">The God of the Web</a> built it the
+                            right way the first time.
+                        </li>
                     </ol>
                 </li>
             </ul>
@@ -69,15 +76,14 @@
         <script type="application/json" id="example1-props">
         {
             "replaceHTMLRules": {},
-            "steps": [
-                {
+            "steps": [{
                     "label": "Insert form tag",
                     "highlight": "\\s*&lt;[\/]?form&gt;",
                     "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
                 },
                 {
                     "label": "Insert fieldset and legend",
-                    "highlight": "\\s*&lt;[\/]?fieldset&gt;,\\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
+                    "highlight": "\\s*&lt;[\/]?fieldset&gt; ||| \\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
                     "notes": "The <strong>legend</strong> tag must be a direct child of the <strong>fieldset</strong> tag in order for it to work across screen readers."
                 }
             ]
@@ -102,7 +108,7 @@
 
                     <input value="Add Contact" type="submit">
 
-                        </div>
+                </div>
             </div>
         </div>
 
@@ -111,8 +117,7 @@
         <script type="application/json" id="example2-props">
         {
             "replaceHTMLRules": {},
-            "steps": [
-                {
+            "steps": [{
                     "label": "Insert form tag",
                     "highlight": "\\s*&lt;[\/]?div role=\"form\"&gt;",
                     "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
@@ -138,8 +143,8 @@
 
         <form>
             <fieldset>
-                    <legend id="contact">Search</legend>
-                    <label for="search">Search this awesome site:</label><input role="search" id="search" type="text" />
+                <legend id="contact">Search</legend>
+                <label for="search">Search this awesome site:</label><input role="search" id="search" type="text" />
             </fieldset>
         </form>
 

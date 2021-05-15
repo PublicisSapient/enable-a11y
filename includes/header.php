@@ -1,4 +1,4 @@
-    <a href="#main-content" class="bypass-block-link visually-hidden visible-when-focused">
+    <a href="#main-content" class="bypass-block-link sr-only visible-when-focused">
         Skip Navigation
     </a>
     <!-- A header is considered a banner landmark when it is a descendant of body -->
@@ -7,7 +7,7 @@
             <div class="logo">
                 <span class="acme">ARIA</span>
                 <span class="corp">Roles amd Landmarks</span>
-                <span class="visually-hidden">&mdash;</span>
+                <span class="sr-only">&mdash;</span>
                 <div class="motto">A deep dive study.</div>
             </div>
         </h1>

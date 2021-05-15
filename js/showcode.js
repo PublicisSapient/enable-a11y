@@ -72,7 +72,7 @@ const showcode = new (function () {
         const selector = properties[0];
 
         properties.shift();
-        console.log('props', properties, selectorPropertyPair);
+        console.log('cssRule', cssRule)
 
         if (cssRule.indexOf(selector + ' ') === 0) {
           // Now we must highlight the properties.
@@ -143,7 +143,7 @@ const showcode = new (function () {
 
     notesEl.innerHTML = showcodeNotes;
 
-    const highlightStrings = value.split(',');
+    const highlightStrings = value.split('|||');
     let command;
 
     for (let i=0; i<highlightStrings.length; i++) {
@@ -163,7 +163,8 @@ const showcode = new (function () {
         // "%OPENCLOSETAG%fieldset"
         //    Highlight all the fieldset opening and closing tags
         // "%OPENCLOSECONTENTTAG%fieldset"
-        //    Highlight all the fieldset content as well as the open and close tags
+        //    Highlight all the fieldset content as well as the open and close tags. Note that
+        // "%OPENCLOSECONTENTTAG%fieldset highlghtstring attribute"
         // "%CSS%.foo .bar"
         //    Will show all CSS selectors that match the rule given (in this case, `.foo .bar`).
         // "%JS% functionName"
@@ -256,6 +257,8 @@ const showcode = new (function () {
                     funcCode = `const ${funcName} = ${funcCode}`;
                   }
                 }
+
+                funcCode = funcCode.replace(lt, '&lt;').replace(gt, '&gt;');
 
                 code = code + funcCode + '\n\n';
               }

@@ -11,7 +11,7 @@
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-.visually-hidden {
+.sr-only {
   clip: rect(1px 1px 1px 1px);
   /* IE 6/7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -23,7 +23,7 @@
   margin: -1px;
 }
 /*
- * For `.visually-hidden` elements that should be visible when it gains focus. 
+ * For `.sr-only` elements that should be visible when it gains focus. 
  */
 .visible-when-focused:focus {
   clip: auto;
@@ -87,7 +87,7 @@ iframe:hover:focus,
 object:hover:focus,
 embed:hover:focus,
 [tabindex]:hover:focus {
-  outline: solid 2px rgba(255, 165, 0, 0.5);
+  outline: solid 2px transparent;
 }
 *:focus {
   outline: solid 2px #3b99fc;

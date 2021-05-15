@@ -186,7 +186,7 @@
                 },
                 {
                     "label": "Markup labels of listbox using aria-labelledby",
-                    "highlight": "aria-labelledby,id=\"exp_button\"",
+                    "highlight": "aria-labelledby ||| id=\"exp_button\"",
                     "notes": "Please ensure these ids are unique in your document.  If you have multiple dropdowns, the id from them must be unique."
                 },
                 {

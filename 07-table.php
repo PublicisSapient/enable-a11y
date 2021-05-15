@@ -201,7 +201,7 @@
             "steps": [
                 {
                     "label": "Give table a label using the <strong>caption</strong> element",
-                    "highlight": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt;,aria-labelledby=\"fig-caption\"",
+                    "highlight": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt ||| aria-labelledby=\"fig-caption\"",
                     "notes": "The <strong>figcaption</strong> tag may be used instead of the <strong>caption</strong> if you use <strong>aria-labelledby</strong> on the <strong>table</strong> to point to it."
                 }
             ]

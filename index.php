@@ -7,7 +7,9 @@
     </title>
     <?php include("includes/common-head-tags.php"); ?>
 
+    <link rel="stylesheet" type="text/css" href="css/all.css" />
     <link rel="stylesheet" type="text/css" href="css/switch.css" />
+    <link rel="stylesheet" type="text/css" href="css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
 
     <meta charset="utf-8" />
@@ -19,7 +21,7 @@
     <main>
         <h1>Enable your code. Enable your users.</h1>
 
-        <div class="visually-hidden tabs__instructions" id="tabs-keyboard-only-instructions">
+        <div class="sr-only tabs__instructions" id="tabs-keyboard-only-instructions">
             Use arrow keys to choose tabs. Content will be displayed below.
         </div>
         <div id="home-tabs">
@@ -159,7 +161,7 @@
                     </li>
 
                     <li>
-                        <a href="15-radiogroup.php">Radio Buttons</a>: they are clustered
+                        <a href="15a-radiogroup.php">Radio Buttons</a>: they are clustered
                         in groups and have special keyboard interactions that need to be
                         coded if you are making custom ones instead of their native HTML5
                         equivalents.

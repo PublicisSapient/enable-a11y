@@ -133,6 +133,10 @@ table {
 * {
   box-sizing: border-box;
 }
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -207,11 +211,7 @@ select {
  * 
  * https://opensource.org/licenses/MIT
  ********************************************************/
-/*
- * Class for elements that are only visible to the screen reader. From
- * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
- */
-.visually-hidden {
+.sr-only {
   clip: rect(1px 1px 1px 1px);
   /* IE 6/7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -223,7 +223,7 @@ select {
   margin: -1px;
 }
 /*
- * For `.visually-hidden` elements that should be visible when it gains focus. 
+ * For `.sr-only` elements that should be visible when it gains focus. 
  */
 .visible-when-focused:focus {
   clip: auto;
@@ -287,7 +287,7 @@ iframe:hover:focus,
 object:hover:focus,
 embed:hover:focus,
 [tabindex]:hover:focus {
-  outline: solid 2px rgba(255, 165, 0, 0.5);
+  outline: solid 2px transparent;
 }
 *:focus {
   outline: solid 2px #3b99fc;
@@ -332,7 +332,6 @@ body {
 header,
 [role="banner"] {
   background: #ffcccc;
-  padding: 10px 10px 0px 10px;
   margin: 0;
   position: relative;
   border-bottom: solid 1px rgba(0, 0, 0, 0.4);
@@ -433,7 +432,7 @@ article:after {
 aside,
 [role="complementary"] {
   display: block;
-  background: #ddd url('../../images/bomb.png') no-repeat 1em 1em;
+  background: #ddd url('../../images/notepad-icon.svg') no-repeat 1em 1em;
   margin: 1em auto;
   padding: 1em 1em 1em calc(100px + 2em);
   min-height: 8.6875rem;
@@ -445,6 +444,7 @@ aside,
   [role="complementary"] {
     background-size: 3rem;
     padding-left: 1rem;
+    background: #ddd;
   }
   aside h2,
   [role="complementary"] h2 {
@@ -473,6 +473,10 @@ footer a,
   color: #ccccff;
 }
 .enable-drawer > .enable-drawer__button {
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border: none;
   margin: 0;
@@ -522,9 +526,13 @@ footer a,
   background-color: #ccffcc;
 }
 .enable-multiselect__checkbox:focus + .enable-multiselect__label {
-  outline: solid 2px #ffa500;
+  outline: solid 2px #3b99fc;
 }
 .enable-multiselect__button {
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   padding: 5px;
   background-size: 1.25rem 1.25rem;
@@ -532,7 +540,7 @@ footer a,
   background-repeat: no-repeat;
   background-image: url("../images/chevron-down.svg");
   background-position: right 5px;
-  width: 100px;
+  width: 130px;
   border: solid 1px #ccc;
   background-color: white;
 }

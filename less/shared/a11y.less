@@ -10,12 +10,12 @@
 
 @import "mixins-and-vars";
 
- .visually-hidden {
+ .sr-only {
 	.enable__visually-hidden;
 }
 
 /*
- * For `.visually-hidden` elements that should be visible when it gains focus. 
+ * For `.sr-only` elements that should be visible when it gains focus. 
  */
 .visible-when-focused:focus {
 	.enable__visually-hidden--reverse();
@@ -72,7 +72,7 @@ embed,
 		}
 
 		&:hover:focus {
-			outline: solid 2px rgba(255, 165, 0, 0.5);
+			outline: solid 2px transparent;
 		}
 	//}
 }

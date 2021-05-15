@@ -50,7 +50,7 @@
     >
         ...
     </div>
-        <div id="modalDescription" class="visually-hidden">Beginning of dialog window. It begins with a heading 1 called &quot;Registration Form&quot;. Escape will cancel
+        <div id="modalDescription" class="sr-only">Beginning of dialog window. It begins with a heading 1 called &quot;Registration Form&quot;. Escape will cancel
                 and close the window. This form does not collect any actual information.</div>
         <div role="document">
             <button class="a11y-modal__button--close" data-modal-function="hide">

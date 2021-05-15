@@ -7,9 +7,7 @@ const RoleCheckbox = new function () {
 
         if (target.getAttribute('role') === 'checkbox' && 
             ((e.type==="keydown" && e.key === ' ') || (e.type==="click"))) {
-            console.log('!')
             const isChecked = (target.getAttribute('aria-checked') === 'true');
-            console.log(`changing ${isChecked} to ${!isChecked}`);
             target.setAttribute('aria-checked', `${!isChecked}`);
         }
     }

@@ -82,7 +82,7 @@
         "steps": [
           {
             "label": "Put in fieldsets and legends",
-            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset&gt; ||| &lt;/fieldset&gt;",
             "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
           },
           {
@@ -92,7 +92,7 @@
           },
           {
             "label": "All form fields that are required need the required attribute",
-            "highlight": "class=\"required\",required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "highlight": "class=\"required\" ||| required ||| [\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
             "notes": "All required form fields should also have a visual cue for sighted users (a star is used in this example)"
           },
           {
@@ -205,7 +205,7 @@
           },
           {
             "label": "Put in fieldsets and legends",
-            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;,\\s*&lt;fieldset&gt;,&lt;/fieldset&gt;",
+            "highlight": "[\\s]*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset&gt; ||| &lt;/fieldset&gt;",
             "notes": "Grouping form fields in fieldsets give screen reader users context in how the fields are related. Note that the <strong>legend</strong> must be the first child of the <strong>fieldset</strong> in order for the legend to be announced correctly across different screen reader brands."
           },
           {
@@ -215,7 +215,7 @@
           },
           {
             "label": "All form fields that are required need the required attribute",
-            "highlight": "required,[\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
+            "highlight": "required ||| [\\s]*&lt;p[\\s\\S]*&gt;[\\s\\S]*&lt;/p&gt;",
             "notes": "All required form fields should also have a visual cue for sighted users (in this case, we just have some copy stating all fields are required."
           },
           {
@@ -238,17 +238,17 @@
           },
           {
             "label": "Ensure error messages are prefixed with the word \"Error\"",
-            "highlight": "%JS% formValidator.init, [ ]*messages: {[^}]*}[^}]",
+            "highlight": "%JS% formValidator.init ||| [ ]*messages: {[^}]*}[^}]",
             "notes": "This is best practice to ensure screen reader users know easily that what is being read is an error"
           },
           {
             "label": "Ensure the invalidHandler sets all the invalid fields with aria-invalid attributes",
-            "highlight": "%JS% formValidator.init, formField.setAttribute\\(\"aria-invalid\"[^)]*\\)\\;",
+            "highlight": "%JS% formValidator.init ||| formField.setAttribute\\(\"aria-invalid\"[^)]*\\)\\;",
             "notes": ""
           },
           {
             "label": "Use Javascript to ensure the, when a form with an error is submitted, focus is applied to the first form element with an error",
-            "highlight": "%JS% formValidator.init, accessibility[^)]*\\)\\;",
+            "highlight": "%JS% formValidator.init ||| accessibility[^)]*\\)\\;",
             "notes": "In order to do this easily, we use <code>accessibility.applyFormFocus(), which is part of my <a href=\"https://github.com/zoltan-dulac/accessibility.js\">accessibility.js</a> library.  As long as the invalid elements are marked up with <code>aria-invalid</code> after the form is submitted, focus will go to the first invalid element."
           }
         ]

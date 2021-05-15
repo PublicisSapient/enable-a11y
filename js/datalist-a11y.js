@@ -48,7 +48,7 @@ const datalistA11y = new function () {
     if (!liveRegionEl) {
       liveRegionEl = document.createElement('div');
       liveRegionEl.role = 'status';
-      liveRegionEl.className = 'visually-hidden';
+      liveRegionEl.className = 'sr-only';
       liveRegionEl.id = liveRegionId;
       list.parentNode.appendChild(liveRegionEl);
     }

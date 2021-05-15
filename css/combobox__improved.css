@@ -25,6 +25,10 @@
   padding: 0;
   border: none;
   background: transparent;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 .enable-combobox input[role="combobox"]:not(:valid) ~ .enable-combobox__reset-button {

@@ -28,8 +28,8 @@
         <h2>Mobile Friendly Skip Links</h2>
 
         <div id="example1">
-            <div class="enable-skip-link__container enable-skip-link--begin">
-                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-skip-link">
+            <div class="enable-visible-on-focus__container enable-skip-link--begin">
+                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-visible-on-focus enable-skip-link">
                     Skip to end of block
                 </a>
             </div>
@@ -40,8 +40,8 @@
 
 
             </div>
-            <div class="enable-skip-link__container  enable-skip-link--end">
-                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-skip-link">Skip to
+            <div class="enable-visible-on-focus__container enable-skip-link--end">
+                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-visible-on-focus enable-skip-link">Skip to
                     beginning of block</a>
             </div>
         </div>
@@ -56,12 +56,12 @@
             "steps": [
                 {
                     "label": "Make the first skip link point to the second one",
-                    "highlight": "href=\"#end-of-component-1\", id=\"end-of-component-1\"",
+                    "highlight": "href=\"#end-of-component-1\" ||| id=\"end-of-component-1\"",
                     "notes": ""
                 },
                 {
                     "label": "Make the second skip link point to the first",
-                    "highlight": "href=\"#beginning-of-component-1\", id=\"beginning-of-component-1\"",
+                    "highlight": "href=\"#beginning-of-component-1\" ||| id=\"beginning-of-component-1\"",
                     "notes": ""
                 },
                 {

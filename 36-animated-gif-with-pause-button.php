@@ -48,7 +48,7 @@
             "steps": [
                 {
                     "label": "Put in details and summary tag structure in HTML",
-                    "highlight": "%OPENCLOSETAG%details, %OPENCLOSECONTENTTAG%summary",
+                    "highlight": "%OPENCLOSETAG%details ||| %OPENCLOSECONTENTTAG%summary",
                     "notes": ""
                 },
                 {

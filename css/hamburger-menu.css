@@ -8,6 +8,7 @@
 .enable-flyout {
   --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
   --enable-flyout__is-hamburger: 1;
+  --enable-flyout__desktop-min: 960px;
   width: calc(min(75vw, 350px));
   right: calc(-1 * min(75vw, 350px));
   background: #2e2f35;
@@ -15,14 +16,14 @@
   font-size: 1em;
   font-weight: 100;
   height: 100%;
-  position: fixed;
+  position: absolute;
   text-decoration: none;
   top: 0;
   z-index: 100;
   display: none;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
   animation: enable-flyout__anim--mobile-close 0.2s ease-in-out forwards;
   /* These items are hidden in the mobile breakpoint */
@@ -47,18 +48,18 @@
   width: 30px;
   height: 30px;
   position: relative;
-  margin: 8px;
+  margin: 8px 18px;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
 .enable-flyout__hamburger-icon-facade {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 2px;
+  top: 2px;
   background: none;
   border: none;
 }
@@ -127,6 +128,10 @@
   border: none;
   text-align: left;
   -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .enable-flyout__open-level-button:hover,
 .enable-flyout__close-level-button:hover,
@@ -175,6 +180,7 @@
 .enable-flyout__body--is-open {
   height: 100%;
   overflow: hidden;
+  scrollbar-gutter: ;
 }
 .enable-flyout__body--is-open .enable-flyout__overlay-screen {
   height: 100%;
@@ -275,6 +281,10 @@
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
   -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .enable-flyout__link-image {
   display: none;
@@ -356,10 +366,6 @@
   .enable-flyout--is-open .enable-flyout__menu-item {
     width: 100%;
   }
-  .enable-flyout--is-open .enable-flyout__menu-item--orphan {
-    display: inline-block;
-    width: auto;
-  }
   .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     width: 20%;
     float: left;
@@ -375,6 +381,7 @@
   }
   .enable-flyout__list {
     display: flow-root;
+    text-align: center;
   }
   .enable-flyout__open-level-button {
     padding-right: 35px;
@@ -420,10 +427,6 @@
   .enable-flyout--is-open .enable-flyout__link::after {
     filter: none;
   }
-}
-.fa {
-  display: inline;
-  padding: 5px;
 }
 @keyframes enable-flyout__anim--mobile-open {
   0% {

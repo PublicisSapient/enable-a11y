@@ -187,7 +187,7 @@ table.data img {
 [role="gridcell"]:focus,
 [role="gridcell"] *:focus,
 [role="grid"] [tabindex="0"]:focus {
-  outline: #005a9c;
+  outline: #3b99fc;
   outline-style: dotted;
   outline-width: 3px;
 }

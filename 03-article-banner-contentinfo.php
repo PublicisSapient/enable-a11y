@@ -16,7 +16,7 @@
             <div class="logo">
                 <span class="zoltipedia">Enable</span>
                 <span class="corp">The minimalist encyclopaedia</span>
-                <span class="visually-hidden">&mdash;</span>
+                <span class="sr-only">&mdash;</span>
                 <div class="motto">Quality is our #1 dream.</div>
             </div>
         </h1>

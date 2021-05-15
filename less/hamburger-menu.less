@@ -10,6 +10,8 @@
 @desktop-min: 960px;
 @flyout-width: 75vw;
 @desktop: ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
+@hamburger-translate-y: min(@flyout-width, 350px);
+@hamburger-offset-y: calc(-1 * @hamburger-translate-y);
 
 .icon-mixin(@img) {
   content: "";
@@ -38,23 +40,24 @@
 .enable-flyout {
   --enable-flyout__desktop-media-query: @desktop;
   --enable-flyout__is-hamburger: 1;
+  --enable-flyout__desktop-min: @desktop-min;
 
   width: calc(min(@flyout-width, 350px));
-  right: calc(-1 * min(@flyout-width, 350px));
+  right: @hamburger-offset-y;
   background: #2e2f35;
   color: @color0;
   
   font-size: 1em;
   font-weight: 100;
   height: @height0;
-  position: fixed;
+  position: absolute;
   text-decoration: none;
   top: 0;
   z-index: 100;
   display: none;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -92,18 +95,18 @@
     height: @hamburger-height;
 
     position: relative;
-    margin: 8px;
+    margin: 8px 18px;
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
 
     &-facade {
       display: block;
-      width: @hamburger-width;
-      height: @hamburger-height;
+      width: @hamburger-width + 18px;
+      height: @hamburger-height + 18px;
       position: absolute;
-      right: 10px;
-      top: 10px;
+      right: 2px;
+      top: 2px;
       background: none;
       border: none;
     }
@@ -188,7 +191,7 @@
     text-align: left;
 
     // Corrects inability to style clickable `input` types in iOS
-    -webkit-appearance: none;
+    .vendor(appearance, none);
     &:hover {
       background: @color1;
     }
@@ -220,6 +223,7 @@
   &__body--is-open {
     height: @height0;
     overflow: hidden;
+    scrollbar-gutter: ;
   }
 
   &__body--is-open &__overlay-screen {
@@ -331,7 +335,7 @@
     -moz-osx-font-smoothing: inherit;
 
     // Corrects inability to style clickable `input` types in iOS
-    -webkit-appearance: none;
+    .vendor(appearance, none);
   }
 
   /* These items are hidden in the mobile breakpoint */
@@ -439,11 +443,6 @@
 
     &--is-open &__menu-item {
       width: 100%;
-
-      &--orphan {
-        display: inline-block;
-        width: auto;
-      }
     }
 
     &__list--photo-layout &__menu-item {
@@ -463,6 +462,7 @@
 
     &__list {
       display: flow-root;
+      text-align: center;
     }
 
     &__open-level-button {
@@ -522,10 +522,6 @@
   }
 }
 
-.fa {
-  display: inline;
-  padding: 5px;
-}
 
 @keyframes enable-flyout__anim--mobile-open {
   0% {
@@ -534,7 +530,7 @@
 
   0.001% {
     display: block;
-    right: calc(-1 * min(@flyout-width, 350px));
+    right: @hamburger-offset-y;
   }
 
   100% {
@@ -548,6 +544,6 @@
   }
 
   0.999% {
-    right: calc(-1 * min(@flyout-width, 350px));
+    right: @hamburger-offset-y;
   }
 }

@@ -70,7 +70,7 @@
 
     <div id="dialog-example" class="a11y-modal" aria-modal="true" aria-hidden="true" role="dialog" aria-labelledby="dialog-example__label"
         aria-describedby="dialog-example__desc">
-        <div id="dialog-example__desc" class="visually-hidden">Escape will cancel and close this dialog.</div>
+        <div id="dialog-example__desc" class="sr-only">Escape will cancel and close this dialog.</div>
         <div role="document">
             <button class="a11y-modal__button--close" data-modal-function="hide">
                 <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close the registration form">

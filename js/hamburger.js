@@ -60,7 +60,7 @@ const EnableFlyoutMenu = new function() {
       
       accessibility.setKeepFocusInside($container, true);
 
-      requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
+      // requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
     })
   }
 
@@ -132,7 +132,9 @@ const EnableFlyoutMenu = new function() {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
 
-    if (animationName === mobileOpenMenuAnim) {
+    if (target === $root) {
+      requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
+    } else if (animationName === mobileOpenMenuAnim) {
       const $closeLevelButton = $root.querySelector(closeLevelTopSel);
       const { classList } = target;
 
@@ -300,63 +302,5 @@ const EnableFlyoutMenu = new function() {
   }
 }
 
-const getStackTrace = function () {
-  var callstack = [];
-  var isCallstackPopulated = false;
-  try {
-    i.dont.exist+=0; //doesn't exist- that's the point
-  } catch(e) {
-    if (e.stack) { //Firefox
-      console.log('ff', e.stack);
-      var lines = e.stack.split('\n');
-      for (var i=0, len=lines.length; i<len; i++) {
-        if (lines[i].match(/^\s*[A-Za-z0-9\-_\$]+\(/)) {
-          callstack.push(lines[i]);
-        }
-      }
-      //Remove call to printStackTrace()
-      callstack.shift();
-      isCallstackPopulated = true;
-    }
-    else if (window.opera && e.message) { //Opera
-      console.log('??');
-      var lines = e.message.split('\n');
-      for (var i=0, len=lines.length; i<len; i++) {
-        if (lines[i].match(/^\s*[A-Za-z0-9\-_\$]+\(/)) {
-          var entry = lines[i];
-          //Append next line also since it has the file info
-          if (lines[i+1]) {
-            entry += "&quot; at &quot;" + lines[i+1];
-            i++;
-          }
-          callstack.push(entry);
-        }
-      }
-      //Remove call to printStackTrace()
-      callstack.shift();
-      isCallstackPopulated = true;
-    }
-  }
-  if (!isCallstackPopulated) { //IE and Safari
-    console.log('sssss');
-    var currentFunction = arguments.callee.caller;
-    while (currentFunction) {
-      var fn = currentFunction.toString();
-      var fname = fn.substring(fn.indexOf("&quot;function&quot;") + 8, fn.indexOf('')) || 'anonymous';
-      callstack.push(fname);
-      currentFunction = currentFunction.caller;
-    }
-  }
-  return (callstack);
-}
-
-/* 
-HTMLElement.prototype.oldFocus = HTMLElement.prototype.focus;
-
-HTMLElement.prototype.focus = function () {
-  console.log('focusing', getStackTrace());
-  this.oldFocus();
-}
-*/
 
 EnableFlyoutMenu.init();

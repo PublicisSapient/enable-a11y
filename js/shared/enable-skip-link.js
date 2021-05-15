@@ -1,5 +1,5 @@
 const enableSkipLink = new (function (e) {
-  const containerSelector = ".enable-skip-link__container";
+  const containerSelector = ".enable-visible-on-focus__container";
 
   this.init = function () {
     document.addEventListener("click", this.clickEvent, true);
@@ -22,9 +22,9 @@ const enableSkipLink = new (function (e) {
 
     if (skipLinkContainer) {
       if (skipLinkContainer.scrollLeft !== 0) {
-        skipLinkContainer.classList.add("enable-skip-link__container--visible");
+        skipLinkContainer.classList.add("enable-visible-on-focus__container--visible");
         const destinationLink = skipLinkContainer.querySelector(
-          ".enable-skip-link"
+          ".enable-visible-on-focus"
         );
         const top = destinationLink.getBoundingClientRect().top;
         const htmlEl = document.querySelector("html");
@@ -49,7 +49,7 @@ const enableSkipLink = new (function (e) {
   this.hide = function (el) {
     el.scrollLeft = 0;
     el.scrollTop = 0;
-    el.classList.remove("enable-skip-link__container--visible");
+    el.classList.remove("enable-visible-on-focus__container--visible");
   };
 
   this.clickEvent = e => {

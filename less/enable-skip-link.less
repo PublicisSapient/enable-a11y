@@ -1,4 +1,4 @@
-.enable-skip-link {
+.enable-visible-on-focus {
   @skip-link-width: 100%;
 
   /* Here is the general styles of the link */
@@ -25,14 +25,6 @@
     outline-offset: -1px;
   }
 
-  &--begin {
-    top: 0;
-  }
-
-  &--end {
-    bottom: 0;
-  }
-
   &__container {
     display: block;
     width: @skip-link-width;
@@ -47,6 +39,16 @@
       clip: auto;
       position: relative;
     }
+  }
+}
+
+.enable-skip-link {
+  &--begin {
+    top: 0;
+  }
+
+  &--end {
+    bottom: 0;
   }
 }
 

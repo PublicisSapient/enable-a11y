@@ -5,7 +5,10 @@
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
     <meta charset="utf-8" />
     <title>Checkbox demo</title>
-		<?php include("includes/common-head-tags.php"); ?>
+	<?php include("includes/common-head-tags.php"); ?>
+
+    <link rel="stylesheet" type="text/css" href="css/shared/visibleIf.css" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" />
     <link rel="stylesheet" type="text/css" href="css/checkbox.css" />
 </head>
 
@@ -61,10 +64,10 @@
             <div class="checkbox-container">
                 <form>
                     <label for="html-checkbox-with-visibleif">I want to subscribe to the Zoltanic Foundation's newsletter 
-                        <span class="visually-hidden visibleIf" data-visibleif-rule="iAgree != 'yes'">
+                        <span class="sr-only visibleIf" data-visibleif-rule="iAgree != 'yes'">
                             (checking this will add mailing information fields below)
                         </span>
-                        <span class="visually-hidden visibleIf" data-visibleif-rule="iAgree == 'yes'">
+                        <span class="sr-only visibleIf" data-visibleif-rule="iAgree == 'yes'">
                             (unchecking this will remove the mailing information fields below)
                             </span>
                         :
@@ -95,7 +98,7 @@
 
         <div role="group" aria-labelledby="html-checkbox-multi-label">
             <p id="html-checkbox-multi-label">
-                <span class="visually-hidden">You must choose at least one of the following.</span>
+                <span class="sr-only">You must choose at least one of the following.</span>
                 The following people will have my soul when I die:
             </p>
             <div style="color: red">You must choose at least one of the following.</div>

@@ -2,12 +2,6 @@
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-input[type="radio"] + label,
-input[type="checkbox"] + label,
-[role="radio"] + label,
-[role="checkbox"] + label {
-  display: inline;
-}
 input[type="submit"] {
   display: block;
   margin-top: 0.5em;
@@ -16,6 +10,13 @@ input[type="submit"] {
 }
 input[type="submit"] {
   margin-bottom: 1em;
+}
+.form-heading {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  border-bottom: 2px black solid;
 }
 fieldset,
 .aria-form-group,
@@ -50,51 +51,4 @@ fieldset label {
   fieldset label {
     width: 100%;
   }
-}
-[role="radio"],
-[role="checkbox"] {
-  display: inline-block;
-  position: relative;
-  width: 0.875em;
-  height: 0.875em;
-  margin: 0.25em 0.5em 0.25em 0.25em;
-  border: 0.0625em solid #444;
-  background: #e0e0e0;
-  background-image: -webkit-linear-gradient(90deg, #322f2f, #e0e0e0);
-  background-image: -moz-linear-gradient(90deg, #322f2f, #e0e0e0);
-  background-image: -ms-linear-gradient(90deg, #322f2f, #e0e0e0);
-  background-image: -o-linear-gradient(90deg, #322f2f, #e0e0e0);
-  background-image: linear-gradient(0deg, #322f2f, #e0e0e0);
-  vertical-align: bottom;
-}
-[role="radio"],
-[role="radio"]:after {
-  border-radius: 50%;
-}
-[role="radio"][aria-checked="true"]:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.5em;
-  height: 0.5em;
-  margin: 0.125em;
-  border: 0.0625em solid #444;
-  background: #99cc66;
-}
-[role="checkbox"][aria-checked="true"]:after {
-  content: "✓";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1em;
-  color: #060;
-  font-size: 0.875em;
-  line-height: 1em;
-  text-align: center;
-  text-shadow: 0 0 0.0714em #73994d;
-  font-weight: bold;
-  transform: scale(2.5) translateY(-2px);
 }

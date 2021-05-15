@@ -2,17 +2,22 @@
 
 figure,
 [role="figure"] {
-    width: 80%;
+    display: table;
     margin: 0 auto;
     padding: 1em;
 
+    img {
+        max-width: 100%;
+    }
+
     figcaption,
     span {
-        display: block;
-        margin-top: 1rem;
         text-align: center;
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
+        display: table-caption;
+        caption-side: bottom;
+        margin-bottom: 2rem;
     }
 
     code {

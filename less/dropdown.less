@@ -6,7 +6,7 @@
 
 .enable-drawer {
   & > .enable-drawer__button {
-    appearance: none;
+    .vendor(appearance, none);
     border: none;
     margin: 0;
     padding: 0;
@@ -78,11 +78,11 @@
   }
 
   &__checkbox:focus + &__label {
-    outline: solid 2px rgba(255, 165, 0, 1);
+    outline: solid 2px @focus-color;
   }
 
   &__button {
-    appearance: none;
+    .vendor(appearance, none);
     padding: 5px;
     background-size: (20/@px) (20/@px);
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@
     background-repeat: no-repeat;
     background-image: url("../images/chevron-down.svg");
     background-position: right 5px;
-    width: 100px;
+    width: 130px;
     border: solid 1px #ccc;
     background-color: white;
 

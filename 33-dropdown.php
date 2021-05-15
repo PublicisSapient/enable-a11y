@@ -74,7 +74,7 @@
             },
             "steps": [{
                 "label": "Set up the details and summary tags",
-                "highlight": "\\s*&lt;summary&gt;[\\s\\S]*&lt;/summary&gt;,&lt;details&gt;,&lt;\/details&gt;",
+                "highlight": "\\s*&lt;summary[^;]*&gt;[\\s\\S]*&lt;/summary&gt; ||| &lt;details[^;]*&gt; ||| &lt;\/details&gt;",
                 "notes": "It's really this easy.  Everything else is done for you."
             }]
         }
@@ -89,16 +89,16 @@
                     </summary>
                     <div class="enable-multiselect__contents">
                         <fieldset>
-                            <legend class="visually-hidden">
+                            <legend class="sr-only">
                                 Products
                             </legend>
-                                <input class="enable-multiselect__checkbox visually-hidden" name="product" type="checkbox" id="product1">
+                                <input class="enable-multiselect__checkbox sr-only" name="product" type="checkbox" id="product1">
                                 <label class="enable-multiselect__label" for="product1">Cars</label>
-                                <input class="enable-multiselect__checkbox visually-hidden" name="product" type="checkbox" id="product2">
+                                <input class="enable-multiselect__checkbox sr-only" name="product" type="checkbox" id="product2">
                                 <label class="enable-multiselect__label" for="product2">Trucks</label>
-                                <input class="enable-multiselect__checkbox visually-hidden" name="product" type="checkbox" id="product3">
+                                <input class="enable-multiselect__checkbox sr-only" name="product" type="checkbox" id="product3">
                                 <label class="enable-multiselect__label" for="product3">SUVs</label>
-                                <input class="enable-multiselect__checkbox visually-hidden" name="product" type="checkbox" id="product4">
+                                <input class="enable-multiselect__checkbox sr-only" name="product" type="checkbox" id="product4">
                                 <label class="enable-multiselect__label" for="product4">Motorcycles</label>
                                 
                         </fieldset>

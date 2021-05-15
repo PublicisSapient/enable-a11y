@@ -1,4 +1,4 @@
-.enable-skip-link {
+.enable-visible-on-focus {
   /* Here is the general styles of the link */
   box-sizing: border-box;
   position: relative;
@@ -13,7 +13,7 @@
   width: 100%;
   margin-left: 100%;
 }
-.enable-skip-link:focus {
+.enable-visible-on-focus:focus {
   /*
      * We use a negative outline-offset here. If we didn't,
      * the outline would get cut off due to the container's
@@ -21,13 +21,7 @@
      */
   outline-offset: -1px;
 }
-.enable-skip-link--begin {
-  top: 0;
-}
-.enable-skip-link--end {
-  bottom: 0;
-}
-.enable-skip-link__container {
+.enable-visible-on-focus__container {
   display: block;
   width: 100%;
   margin: 0;
@@ -35,9 +29,15 @@
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
-.enable-skip-link__container--visible {
+.enable-visible-on-focus__container--visible {
   clip: auto;
   position: relative;
+}
+.enable-skip-link--begin {
+  top: 0;
+}
+.enable-skip-link--end {
+  bottom: 0;
 }
 /* This is just a mock of the component */
 .fake-component {
