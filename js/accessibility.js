@@ -72,7 +72,7 @@ const a11yGroup = function (el, options) {
    * return negative ones if n < 0.
    * @param {int} n - the modulus
    * @param {int} m - the divisor
-   * @returns The positive modulo of n mod m.
+   * @returns {int} The positive modulo of n mod m.
    */
   this.mod = function (n, m) {
     return ((n % m) + m) % m;
@@ -866,7 +866,7 @@ const accessibility = {
    * https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
    *
    * @param {String} key
-   * @returns the official property value that is supposed to be set for that key.
+   * @returns {String} the official property value that is supposed to be set for that key.
    */
   normalizedKey(key) {
     switch (key) {

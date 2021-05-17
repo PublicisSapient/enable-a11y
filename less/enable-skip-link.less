@@ -4,7 +4,7 @@
   /* Here is the general styles of the link */
   box-sizing: border-box;
   position: relative;
-  display: block;
+  display: inline-block;
   background: #368803;
   color: #fff;
   padding: 1px;
@@ -30,6 +30,7 @@
     width: @skip-link-width;
     margin: 0;
     overflow: hidden;
+    pointer-events: none;
 
     // to make it hidden
     clip: rect(1px, 1px, 1px, 1px);
@@ -38,6 +39,7 @@
     &--visible {
       clip: auto;
       position: relative;
+      pointer-events: auto;
     }
   }
 }

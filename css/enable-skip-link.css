@@ -2,7 +2,7 @@
   /* Here is the general styles of the link */
   box-sizing: border-box;
   position: relative;
-  display: block;
+  display: inline-block;
   background: #368803;
   color: #fff;
   padding: 1px;
@@ -26,12 +26,14 @@
   width: 100%;
   margin: 0;
   overflow: hidden;
+  pointer-events: none;
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
 .enable-visible-on-focus__container--visible {
   clip: auto;
   position: relative;
+  pointer-events: auto;
 }
 .enable-skip-link--begin {
   top: 0;
