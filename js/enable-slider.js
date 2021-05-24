@@ -1,3 +1,17 @@
+/*******************************************************************************
+ * enable-slider.js - a library to implement a custom slider using ARIA.
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 written May 17, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/32-slider.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
+
 /**
  * keyCodes() is an object to contain key code values for the application
  */
@@ -129,7 +143,6 @@ const enableSlider = function (
     const ariaDesc = this.id + "_desc" + index;
     const desc = this.id + "_desc" + index;
     const controls = this.id + "_text" + index;
-    let $handle;
 
     // slider HTML. If it doesn't exist in the DOM, we create it for you.
     const handle = interpolate(this.template, {
@@ -143,13 +156,14 @@ const enableSlider = function (
     });
 
     this.$container.appendChild(this.htmlToDomNode(handle));
-    $handle = document.getElementById(id);
+    const $handle = document.getElementById(id);
+    const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
     const $incrementor = $handle.querySelector(".enable-slider__increase");
     const $decrementor = $handle.querySelector(".enable-slider__decrease");
 
     // position handle
-    this.positionHandle($handle, val);
+    this.positionHandle($handle, $handleButton, val);
 
     // bind handlers
     this.bindHandlers($handle, $decrementor, $incrementor);
@@ -197,10 +211,11 @@ const enableSlider = function (
    * at the specified value for the enableSlider. If showVal is true,
    * it also positions and updates the displayed value container.
    *
-   * @param {object} $handle - a pointer to the handle DOM object to manipulate
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
+   * @param { HTMLElement } $handleButton - DOM node of the handle button.
    * @param {integer} val - the new value of the slider
    */
-  this.positionHandle = ($handle, val) => {
+  this.positionHandle = ($handle, $handleButton, val) => {
     const handleHeight = $handle.offsetHeight; // the total height of the handle
     const handleWidth = $handle.offsetWidth; // the total width of the handle
     let handleOffset; // the distance from the value position for centering the handle
@@ -232,7 +247,7 @@ const enableSlider = function (
     $handle.style.left = xPos + "px";
 
     // Set the aria-valuenow position of the handle
-    $handle.setAttribute("aria-valuenow", val);
+    $handleButton.setAttribute("aria-valuenow", val);
 
     // Update the stored handle values
     if (/1$/.test($handle.getAttribute("id"))) {
@@ -250,7 +265,7 @@ const enableSlider = function (
 
     // if showVal is true, update the value container
     if (this.showVals) {
-      this.updateValBox($handle, Math.round(valPos));
+      this.updateValBox($handle, $handleButton, Math.round(valPos));
     }
   }; // end positionHandle()
 
@@ -306,10 +321,11 @@ const enableSlider = function (
    * updateValBox() is a member function to reposition a handle value box
    * and update its contents
    *
-   * @param {object} $handle - the DOM object of the handle that was moved
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
+   * @param { HTMLElement } $handleButton - DOM node of the handle button.
    * @param {integer} valPos - the pixel position of the slider value
    */
-  this.updateValBox = function ($handle, valPos) {
+  this.updateValBox = function ($handle, $handleButton, valPos) {
     const $valBox = document.getElementById($handle.getAttribute("id") + "_val");
 
     let xPos; // horizontal pixel position of the box
@@ -337,7 +353,7 @@ const enableSlider = function (
     $valBox.style.left = xPos;
 
     // Set the text in the box to the handle value
-    $valBox.innerHTML = $handle.getAttribute("aria-valuenow");
+    $valBox.innerHTML = $handleButton.getAttribute("aria-valuenow");
   }; // end updateValBox()
 
   /**
@@ -346,7 +362,6 @@ const enableSlider = function (
    * @param {object} $handle - the object pointer of the handle to bind handlers to
    */
   this.bindHandlers = ($handle, $decrementor, $incrementor) => {
-    const $handleButton = document.querySelector('.enable-slider__handle-button');
 
     $decrementor.addEventListener("click", e => {
       return this.handleDecrementorClick($handle, e);
@@ -373,12 +388,10 @@ const enableSlider = function (
     });
 
     $handle.addEventListener("pointerdown", e => {
-      console.log('pointerdown!');
       return this.handlePointerDown($handle, $incrementor, $decrementor, e);
     });
 
     $handle.addEventListener("touchstart", e => {
-      console.log('touchstart');
       return this.handlePointerDown($handle, $incrementor, $decrementor, e);
     })
 
@@ -391,12 +404,13 @@ const enableSlider = function (
   /**
    * handleKeyDown() is a member function to process keydown events for a slider handle
    *
-   * @param {object} $handle - the object associated with the event
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
    * @param {object} evt - the event object associated witthe the event
    *
    * @returns { boolean } true if propagating; false if consuming event
    */
   this.handleKeyDown = function ($handle, evt) {
+    $handleButton = $handle.querySelector('.enable-slider__handle-button');
     if (evt.ctrlKey || evt.shiftKey || evt.altKey) {
       // Do nothing
       return true;
@@ -406,14 +420,14 @@ const enableSlider = function (
       case this.keys.home: {
         // move the handle to the slider minimum
         if (!this.range) {
-          this.positionHandle($handle, this.min);
+          this.positionHandle($handle, $handleButton, this.min);
         } else {
           if (/1$/.test($handle.getAttribute("id"))) {
             // handle 1 - move to the min value
-            this.positionHandle($handle, this.min);
+            this.positionHandle($handle, $handleButton, this.min);
           } else {
             // handle 2 - move to the position of handle 1
-            this.positionHandle($handle, this.val1);
+            this.positionHandle($handle, $handleButton, this.val1);
           }
         }
         evt.stopPropagation;
@@ -424,14 +438,14 @@ const enableSlider = function (
       case this.keys.end: {
         if (!this.range) {
           // move the handle to the slider maximum
-          this.positionHandle($handle, this.max);
+          this.positionHandle($handle, $handleButton, this.max);
         } else {
           if (/1$/.test($handle.getAttribute("id"))) {
             // handle 1 - move to the position of handle 2
-            this.positionHandle($handle, this.val2);
+            this.positionHandle($handle, $handleButton, this.val2);
           } else {
             // handle 2 - move to the max value
-            this.positionHandle($handle, this.max);
+            this.positionHandle($handle, $handleButton, this.max);
           }
         }
         evt.stopPropagation;
@@ -442,7 +456,7 @@ const enableSlider = function (
       case this.keys.pageup: {
         // Decrease by jump value
 
-        const newVal = $handle.getAttribute("aria-valuenow") - this.jump;
+        const newVal = $handleButton.getAttribute("aria-valuenow") - this.jump;
         const stopVal = this.min; // where to stop moving
 
         if (this.range) {
@@ -455,7 +469,7 @@ const enableSlider = function (
 
         // move the handle one jump increment toward the slider minimum
         // If value is less than stopVal, set at stopVal instead
-        this.positionHandle($handle, newVal > stopVal ? newVal : stopVal);
+        this.positionHandle($handle, $handleButton, newVal > stopVal ? newVal : stopVal);
 
         evt.stopPropagation;
         evt.preventDefault();
@@ -466,7 +480,7 @@ const enableSlider = function (
         // Increase by jump value
 
         const newVal =
-          parseInt($handle.getAttribute("aria-valuenow")) + this.jump;
+          parseInt($handleButton.getAttribute("aria-valuenow")) + this.jump;
         let stopVal = this.max; // where to stop moving
 
         if (this.range) {
@@ -479,7 +493,7 @@ const enableSlider = function (
 
         // move the handle one jump increment toward the slider maximum
         // If value is greater than maximum, set at maximum instead
-        this.positionHandle($handle, newVal < stopVal ? newVal : stopVal);
+        this.positionHandle($handle, $handleButton, newVal < stopVal ? newVal : stopVal);
 
         evt.stopPropagation;
         evt.preventDefault();
@@ -585,6 +599,7 @@ const enableSlider = function (
    * @returns { boolean } true if propagating; false if consuming event
    */
   this.handlePointerDown = function ($handle, $incrementor, $decrementor, evt) {
+    $handleButton = $handle.querySelector('.enable-slider__handle-button');
     
     if (evt.target && (evt.target === $decrementor || evt.target === $incrementor)) {
       return;
@@ -648,11 +663,15 @@ const enableSlider = function (
    * handleDecrementorClick() - Event handler fired when clicking on the decrementor
    * button. This button should only be visible to mobile screen reader users.
    *
-   * @param { HTMLElement } $handle - DOM node of the handle to be manipulated
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
+   * @param { HTMLElement } $handleButton - DOM node of the handle button.
    * @param { Event } evt - the click event object
    */
   this.handleDecrementorClick = function ($handle, evt) {
-    const newVal = $handle.getAttribute("aria-valuenow") - this.inc;
+    $handleButton = $handle.querySelector('.enable-slider__handle-button');
+    
+    console.log($handleButton);
+    const newVal = $handleButton.getAttribute("aria-valuenow") - this.inc;
     let stopVal = this.min; // where to stop moving
 
     if (this.range) {
@@ -663,9 +682,10 @@ const enableSlider = function (
       }
     }
 
+
     // move the handle one jump increment toward the stopVal
     // If value is less than stopVal, set at stopVal instead
-    this.positionHandle($handle, newVal > stopVal ? newVal : stopVal);
+    this.positionHandle($handle, $handleButton, newVal > stopVal ? newVal : stopVal);
 
     evt.stopPropagation;
     evt.preventDefault();
@@ -675,11 +695,12 @@ const enableSlider = function (
    * handleIncrementorClick() - Event handler fired when clicking on the incrementor
    * button. This button should only be visible to mobile screen reader users.
    *
-   * @param { HTMLElement } $handle - DOM node of the handle to be manipulated
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
    * @param { Event } evt - the click event object
    */
   this.handleIncrementorClick = function ($handle, evt) {
-    const newVal = parseInt($handle.getAttribute("aria-valuenow")) + this.inc;
+    $handleButton = $handle.querySelector('.enable-slider__handle-button');
+    const newVal = parseInt($handleButton.getAttribute("aria-valuenow")) + this.inc;
     let stopVal = this.max; // where to stop moving
 
     if (this.range) {
@@ -692,7 +713,7 @@ const enableSlider = function (
 
     // move the handle one increment toward the slider maximum
     // If value is greater than maximum, set at maximum instead
-    this.positionHandle($handle, newVal < stopVal ? newVal : stopVal);
+    this.positionHandle($handle, $handleButton, newVal < stopVal ? newVal : stopVal);
 
     evt.stopPropagation;
     evt.preventDefault();
@@ -707,12 +728,16 @@ const enableSlider = function (
    */
   this.handleResize = evt => {
     const { positionHandle, positionRangeDiv, $handle1, $handle2 } = this;
-    positionHandle($handle1, parseInt($handle1.getAttribute("aria-valuenow")));
+    const $handleButton1 = $handle1.getElementsByClassName('enable-slider__handle-button')[0];
+    const $handleButton2 = $handle2 ? $handle2.getElementsByClassName('enable-slider__handle-button')[0] : null;
+
+    positionHandle($handle1, $handleButton1, parseInt($handleButton1.getAttribute("aria-valuenow")));
 
     if ($handle2) {
       positionHandle(
         $handle2,
-        parseInt($handle2.getAttribute("aria-valuenow"))
+        $handleButton2,
+        parseInt($handleButton2.getAttribute("aria-valuenow"))
       );
     }
 
@@ -725,12 +750,13 @@ const enableSlider = function (
    * handlePointerMove() is a member function to process pointermove
    * events for a slider handle.
    *
-   * @param {object} $handle - the object associated with the event
-   * @param {object} evt - the event object associated witthe the event
+   * @param { HTMLElement } $handle - DOM node of the handle container to be manipulated
+   * @param { Event } evt - the event object associated witthe the event
    * @returns { boolean } true if propagating; false if consuming event
    */
   this.handlePointerMove = function ($handle, evt) {
-    const curVal = parseInt($handle.getAttribute("aria-valuenow"));
+    $handleButton = $handle.querySelector('.enable-slider__handle-button');
+    const curVal = parseInt($handleButton.getAttribute("aria-valuenow"));
     let newVal;
     let startVal = this.min;
     let stopVal = this.max;
@@ -769,14 +795,14 @@ const enableSlider = function (
     if (newVal >= startVal && newVal <= stopVal) {
       // Do not move handle unless new value is a slider increment
       if (newVal % this.inc === 0) {
-        this.positionHandle($handle, newVal);
+        this.positionHandle($handle, $handleButton, newVal);
       }
     } else if (newVal < startVal) {
       // value is less than minimum for slider - set handle to min
-      this.positionHandle($handle, startVal);
+      this.positionHandle($handle, $handleButton, startVal);
     } else if (newVal > stopVal) {
       // value is greater than maximum for slider - set handle to max
-      this.positionHandle($handle, stopVal);
+      this.positionHandle($handle, $handleButton, stopVal);
     }
 
     evt.stopPropagation();

@@ -1,7 +1,4 @@
-@import "shared/reset";
-@import "shared/defaults";
-@import "shared/a11y";
-@import "shared/landmarks";
+@import "shared/mixins-and-vars";
 
 /*
  * This is the CSS needed to style the <input type="range" />.  Note how complex it is due
@@ -10,55 +7,126 @@
  * From https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
  */
 
-@track-color: #424242;
-@thumb-color: #555bc8;
-
-@thumb-radius: 8px;
 @thumb-height: 30px;
 @thumb-width: 30px;
-@thumb-shadow-size: 1px;
-@thumb-shadow-blur: 1px;
-@thumb-shadow-color: #111;
+@thumb-radius: (@thumb-width / 2);
+@thumb-shadow-size: 10px;
+@thumb-shadow-blur: 10px;
+@thumb-shadow-color: rgba(20, 20, 20, 1);
 @thumb-border-width: 1px;
-@thumb-border-color: white;
+@thumb-border-color: black;
+@thumb-color: #555bc8;
 
-@track-width: 90%;
-@track-height: 10px;
+@output-color: #fff;
+@output-bgcolor: #ff9900;
+@output-width: (4em);
+
+@track-width: 100%;
+@track-height: 5px;
 @track-shadow-size: 2px;
 @track-shadow-blur: 2px;
 @track-shadow-color: #222;
 @track-border-width: 1px;
 @track-border-color: black;
+@track-color: #afafaf;
+@track-diff-color: #333;
+@track-focus-color: #352976;
+@track-radius: 9px;
+@track-useful-width: (@track-width - @thumb-width);
 
-@track-radius: 5px;
+@slider-height: unit(@thumb-height) + unit(@thumb-border-width) * 2;
+@slider-height-px: @slider-height * 1px;
+@slider-box-sizing: content-box;
 @contrast: 5%;
 
-.shadow(@shadow-size,@shadow-blur,@shadow-color) {
-  box-shadow: @shadow-size @shadow-size @shadow-blur @shadow-color,
-    0px 0px @shadow-size lighten(@shadow-color, 5%);
-}
-
+/* This is a mixin that contains the styles for the slider's track. */
 .track() {
   width: @track-width;
   height: @track-height;
+  box-sizing: @slider-box-sizing;
   cursor: pointer;
-  animate: 0.2s;
+
+  background: @track-color;
+  border-radius: @track-radius;
+  border: @track-border-width solid @track-border-color;
+  position: relative;
+  top: 2px;
 }
 
+/*
+ * This is the mixin that contains the styles for the slider's
+ * interactive component (the part that changes the value of the slider.
+ * Note that browser manufacturers often call this the "thumb" part of the
+ * component, which is not really accurate for those who use keyboards
+ * and screen readers. :-)
+ */
 .thumb() {
-  .shadow(@thumb-shadow-size,@thumb-shadow-blur,@thumb-shadow-color);
+  .appearance(none);
+
+  box-sizing: @slider-box-sizing;
   border: @thumb-border-width solid @thumb-border-color;
   height: @thumb-height;
   width: @thumb-width;
   border-radius: @thumb-radius;
   background: @thumb-color;
   cursor: pointer;
+  margin-top: ((-@track-border-width * 2 + @track-height) / 2) -
+    (@thumb-height / 2);
+}
+
+.label() {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+  clear: both;
+  font-weight: bold;
+}
+
+.container() {
+  width: calc(100% - 6.3em);
+  display: inline-block;
+  height: ((@slider-height) / @px);
+  transform: translateY(-5px);
+}
+
+.multi-thumb() {
+  pointer-events: auto;
+  transform: translateZ(0);
+  z-index: 1;
+}
+
+.multi-track() {
+  visibility: hidden;
+  background: none; /* get rid of Firefox track background */
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+ * Thumb focus styles
+ */
+.thumb-focus() {
+  outline: solid 2px @focus-color;
+  outline-offset: 4px;
+}
+
+/*
+ * Track focus styles
+ */
+.track-focus() {
+  background: @track-focus-color;
 }
 
 input[type="range"] {
-  .vendor(appearance, none);
-  margin: @thumb-height / 2 0;
+  .appearance(none);
+  margin: 0;
+  font-size: 1rem;
   width: @track-width;
+  border: none;
+  box-sizing: @slider-box-sizing;
 
   &:focus {
     outline: none;
@@ -66,62 +134,158 @@ input[type="range"] {
 
   &::-webkit-slider-runnable-track {
     .track();
-    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
-    background: @track-color;
-    border-radius: @track-radius;
-    border: @track-border-width solid @track-border-color;
-  }
-
-  &::-webkit-slider-thumb {
-    .thumb();
-    .vendor(appearance, none);
-    margin-top: ((-@track-border-width * 2 + @track-height) / 2) -
-      (@thumb-height / 2);
-  }
-
-  &:focus::-webkit-slider-runnable-track {
-    background: lighten(@track-color, @contrast);
   }
 
   &::-moz-range-track {
     .track();
-    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
-    background: @track-color;
-    border-radius: @track-radius;
-    border: @track-border-width solid @track-border-color;
   }
+
+  &::-webkit-slider-thumb {
+    .thumb();
+  }
+
   &::-moz-range-thumb {
     .thumb();
   }
 
-  &::-ms-track {
-    .track();
-    background: transparent;
-    border-color: transparent;
-    border-width: @thumb-width 0;
-    color: transparent;
+  &:focus {
+    &::-webkit-slider-runnable-track {
+      .track-focus();
+    }
+
+    &::-moz-range-track {
+      .track-focus();
+    }
+
+    &::-webkit-slider-thumb {
+      .thumb-focus();
+    }
+
+    &::-moz-range-thumb {
+      .thumb-focus();
+    }
+  }
+}
+
+.html-slider {
+  &__container {
+    .container();
+
+    /*
+     * This allows us to adjust the top padding for the container div 
+     * in Firefox only, since its implementation needs extra padding on
+     * the top to be pixel perfect. ¯\_(ツ)_/¯
+     *
+     * @supports with selector() is supported by all browsers except Safari
+     * right now, but that's okay, since we only care about Firefox here.
+     */
+
+     @supports selector(input[type="range"]::-moz-range-thumb) {
+      & {
+        transform: translateY(3px);
+      }
+    }
   }
 
-  &::-ms-fill-lower {
-    background: darken(@track-color, @contrast);
-    border: @track-border-width solid @track-border-color;
-    border-radius: @track-radius*2;
-    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+
+
+  &__multi {
+    &--output {
+      position: absolute;
+      background: @output-bgcolor;
+      color: @output-color;
+      text-align: center;
+      width: @output-width;
+      top: (@slider-height + 10px);
+
+      /* This positions the particular values in the form */
+      &[for="a"] {
+        left: ~"calc(@{thumb-radius} + (var(--a) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
+      }
+
+      &[for="b"] {
+        left: ~"calc(@{thumb-radius} + (var(--b) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
+      }
+    }
+
+    &--container {
+      --minValue: calc(min(var(--a), var(--b)));
+      --maxValue: calc(max(var(--a), var(--b)));
+      --dif: calc(var(--max) - var(--min));
+      position: relative;
+      padding: 0;
+      display: block;
+      margin-bottom: (@slider-height + 30px);
+      width: 100%;
+
+      /* This will replace the track */ 
+      &::before {
+        .track();
+        
+        /* These are custom styles not needed by track pseudo-elements */
+        position: absolute;
+        content: "";
+        display: block;
+        top: ((@slider-height-px /2  - @track-height));
+        z-index: -2;
+        width: ~"calc(100% - @{thumb-border-width})";
+      }
+
+      /* This will be the coloured part in between the sliders */
+      &::after {
+        .track();
+
+        content: '';
+        display: 'block';
+        position: absolute;
+        z-index: -1;
+        left: ~"calc(@{thumb-radius} + (var(--minValue) / var(--dif)) * (100% - 2* @{thumb-radius}))";
+        top: ((@slider-height-px /2  - @track-height));
+        width: ~"calc((var(--maxValue) - var(--minValue)) / var(--dif) * (100% - 2* @{thumb-radius}))";
+        background: @track-diff-color;
+      }
+
+      input[type="range"] {
+        position: absolute;
+        pointer-events: none;
+        background: none;
+
+        &::-webkit-slider-thumb {
+          .multi-thumb();
+        }
+        &::-moz-range-thumb {
+          .multi-thumb();
+        }
+
+        &::-webkit-slider-runnable-track {
+          .multi-track();
+          margin-top: 23px;
+        }
+
+        &::-moz-range-track {
+          .multi-track();
+        }
+        
+        @supports selector(input[type="range"]::-moz-range-thumb) {
+          & {
+            transform: translateY(5px);
+          }
+        }
+      }
+    }
   }
-  &::-ms-fill-upper {
-    background: @track-color;
-    border: @track-border-width solid @track-border-color;
-    border-radius: @track-radius*2;
-    .shadow(@track-shadow-size,@track-shadow-blur,@track-shadow-color);
+
+  &__output {
+    display: inline-block;
+    height: (@slider-height / @px);
+    line-height: (@slider-height / @px);
+    position: relative;
+    width: 6em;
+    text-align: center;
   }
-  &::-ms-thumb {
-    .thumb();
-  }
-  &:focus::-ms-fill-lower {
-    background: @track-color;
-  }
-  &:focus::-ms-fill-upper {
-    background: lighten(@track-color, @contrast);
+
+  &__label {
+    .label();
   }
 }
 
@@ -131,14 +295,9 @@ input[type="range"] {
 
 .enable-slider {
   position: relative;
-   
+
   &__label {
-    margin: 0;
-    padding: 0;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    clear: both;
-    font-weight: bold;
+    .label();
   }
 
   &__hidden-label {
@@ -156,7 +315,7 @@ input[type="range"] {
     }
 
     &-button {
-      .appearance(none); 
+      .appearance(none);
       background: none;
       border: none;
       display: block;
@@ -168,7 +327,7 @@ input[type="range"] {
   &__button {
     .appearance(none);
     border: none;
-    
+
     &-container {
       position: absolute;
       top: -3px;
@@ -184,7 +343,7 @@ input[type="range"] {
   }
 
   &--horizontal {
-    margin: 50px 0;
+    margin: 20px 0 50px 0;
     padding: 0;
     width: 90vw;
     max-width: 100%;
@@ -247,7 +406,7 @@ input[type="range"] {
       z-index: 10;
 
       border: 1px solid black;
-      border-radius: 5px; 
+      border-radius: 5px;
     }
 
     .enable-slider__value {
@@ -284,7 +443,7 @@ input[type="range"] {
     text-align: right;
     z-index: 11;
     position: relative;
-    height: (30/@px);
+    height: (30 / @px);
     color: black;
   }
 
@@ -293,7 +452,6 @@ input[type="range"] {
     top: -20em;
     left: -200em;
   }
-
 
   output {
     padding-left: 1em;

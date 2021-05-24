@@ -136,10 +136,16 @@ body {
     padding-bottom: 10px;
   }
 
-  &__notes:not(:empty) {
-    border: dashed #705029 3px;
-    padding: 1em;
-    margin: 0 10px 1em 10px;
-    background-color: #ffffee;
+  &__notes {
+    code {
+      font-weight: bold;
+    }
+    
+    &:not(:empty) {
+      border: dashed #705029 3px;
+      padding: 1em;
+      margin: 0 10px 1em 10px;
+      background-color: #ffffee;
+    }
   }
 }

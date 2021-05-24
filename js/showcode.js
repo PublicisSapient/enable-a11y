@@ -60,7 +60,24 @@ const showcode = new (function () {
     return '<span class="showcode__highlight">' + s + '</span>'; 
   }
 
-  function getInnerCSS(el, selectorPropertyPairs) {
+  function formatCSS(localCode) {
+    //localCode = localCode.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+    localCode = localCode.replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+    localCode = indent.css(localCode, {tabString: '  '});
+    return localCode + '\n\n';
+  }
+
+  const getRawCSSData = async (el) => {
+    const response = await fetch(el.href).then(response => {
+      
+      return response.clone().text();
+    });
+
+    return response;
+  } 
+
+  const getInnerCSS = (el, selectorPropertyPairs, codeEl) => {
+    
     const cssTextBuffer = [];
     const { cssRules } = el.sheet;
     for (let i=0; i<cssRules.length; i++) {
@@ -72,7 +89,8 @@ const showcode = new (function () {
         const selector = properties[0];
 
         properties.shift();
-        console.log('cssRule', cssRule)
+
+        console.log(cssRule, selector);
 
         if (cssRule.indexOf(selector + ' ') === 0) {
           // Now we must highlight the properties.
@@ -83,16 +101,38 @@ const showcode = new (function () {
 
 
           for (let k=0; k<properties.length; k++) {
-            console.log('prop', properties[k]);
             let propertyRegEx = new RegExp(`${properties[k]}\:[^;]*\\;`);
-            console.log('regex', propertyRegEx);
             code = code.replace(propertyRegEx, highlightFunc);
-            console.log('code', code);
           }
           
           cssTextBuffer.push(code);
         }
       }
+    }
+
+    if (cssTextBuffer.length === 0) {
+      /*
+       * Since Chrome doesn't keep rules that are not valid for it but possibly valid
+       * for other browsers, let's grab the CSS file via HTTP and check it.
+       */
+      console.info(`Unable to retrieve selector CSS rule for selector ${selectorPropertyPairs[0]}. This may be because this browser's CSS parser is not storing rules it cannot understand. Attempting to get the information from the CSS file itself.`)
+
+      let returnedSelectorVal;
+      const r = (async () => {
+        getRawCSSData(el).then((css) => {
+          const index = css.indexOf(selectorPropertyPairs[0]); //css.match(selectorRegEx);
+          returnedSelectorVal = css.substring(index);
+          const endBraceIndex = returnedSelectorVal.indexOf('}');
+          returnedSelectorVal = returnedSelectorVal.substring(0, endBraceIndex + 1);
+          returnedSelectorVal = returnedSelectorVal.replace(/\n/g, '');
+          codeEl.innerHTML = codeEl.innerHTML.replace(/\n\n$/, '');
+          codeEl.innerHTML += formatCSS(returnedSelectorVal);
+
+          
+          return returnedSelectorVal;
+        })
+      })();
+      
     }
 
     return cssTextBuffer.join('\n\n');
@@ -171,25 +211,25 @@ const showcode = new (function () {
         //    Will show the JS function that matches the string given (in this case, `functionName()`) 
         command = highlightString.match(commandsRe);
 
-        console.log('g', highlightString, command, commandsRe);
+        
         if (command && command.length > 0) {
           let stringSplit, attribute;
           
           command = command[0];
           highlightString = highlightString.split('%')[2];
-          console.log('command', command );
-          console.log('highlightString', highlightString);
+          
+          
           
           switch(command) {
             case '%OPENTAG%':
             case '%OPENCLOSETAG%':
             case '%OPENCLOSECONTENTTAG%':
               stringSplit = highlightString.split(/\s+/);
-              console.log('split', stringSplit);
+              
               highlightString = stringSplit[0];
               attribute = (stringSplit[1] ? `[^&]*${stringSplit[1]}` : '');
-              console.log('highlightStrng', highlightString);
-              console.log('attribute', attribute);
+              
+              
           }
           
           switch (command) {
@@ -205,11 +245,15 @@ const showcode = new (function () {
             case '%CSS%':
               const splitHighlightString = highlightString.split('~');
               const cssID = splitHighlightString[0].trim();
+              let localCode;
+
+              if (code === htmlCache[showcodeFor]) {
+                code = '';
+              }
+
               highlightString = splitHighlightString[1].trim();
-              console.log('css', highlightString);
-              code = getInnerCSS(document.getElementById(cssID), highlightString.split(';'));
-              code = code.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
-              code = indent.css(code, {tabString: '  '});
+              localCode = getInnerCSS(document.getElementById(cssID), highlightString.split(';'), codeEl);
+              code += formatCSS(localCode);
               //code = Prism.highlight(code, Prism.languages.css, 'css');
               break;
             case '%JS%':
@@ -239,7 +283,7 @@ const showcode = new (function () {
 
                     funcCode = evalFuncString;
                   }
-                  console.log('funcCode', funcCode);
+                  
 
                   if (grep) {
                     funcCode = abbreviateJS(funcCode, grep);
@@ -296,7 +340,7 @@ const showcode = new (function () {
               const id= matches[j].split('"')[1];
               const idReplaceRegex = new RegExp('id="' + id + '"');
 
-              console.log('XXX');
+              
               code = code.replace(idReplaceRegex, highlightFunc);
             }  
           

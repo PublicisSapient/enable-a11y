@@ -1,3 +1,5 @@
+@import "shared/mixins-and-vars";
+
 .enable-visible-on-focus {
   @skip-link-width: 100%;
 
@@ -35,6 +37,12 @@
     // to make it hidden
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute;
+
+    &:focus-within {
+      outline: solid 2px @focus-color;
+      outline-offset: 2px;
+      z-index: 2;
+    }
 
     &--visible {
       clip: auto;

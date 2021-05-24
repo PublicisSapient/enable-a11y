@@ -6,7 +6,7 @@
     <?php include "includes/common-head-tags.php";?>
 
 
-    <link id="enable-skip-link-style" href="css/enable-skip-link.css" rel="stylesheet" />
+    <link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
 
 </head>
 
@@ -66,22 +66,22 @@
                 },
                 {
                     "label": "Initialize the Javascript",
-                    "highlight": "%JS% enableSkipLink.init",
+                    "highlight": "%JS% enableVisibleOnFocus.init",
                     "notes": "This sets up all the events needed for the links"
                 },
                 {
                     "label": "Skip Link Click Event",
-                    "highlight": "%JS% enableSkipLink.clickEvent",
+                    "highlight": "%JS% enableVisibleOnFocus.clickEvent",
                     "notes": "Ensures focus goes to the skip links target in all browsers that don't do this correctly (e.g. Firefox)."
                 },
                 {
                     "label": "Scroll Event",
-                    "highlight": "%JS% enableSkipLink.scrollEvent",
+                    "highlight": "%JS% enableVisibleOnFocus.scrollEvent",
                     "notes": "This ensures that when a user uses the skip link, its target is not outside the browser's viewport."
                 },
                 {
                     "label": "Hide All Method",
-                    "highlight": "%JS% enableSkipLink.hideAll",
+                    "highlight": "%JS% enableVisibleOnFocus.hideAll",
                     "notes": "This method is invoked when the page is loaded, since browsers like Firefox will remember the scroll state of the component when the page is reloaded. This method is also invoked onResize and onOrientationChange, since the look of the component can look odd after these events"
                 },
                 {
@@ -95,7 +95,7 @@
 
         <?php include "includes/example-footer.php"?>
 
-        <script src="js/shared/enable-skip-link.js"></script>
+        <script src="js/shared/enable-visible-on-focus.js"></script> 
 
     </main>
 </body>
