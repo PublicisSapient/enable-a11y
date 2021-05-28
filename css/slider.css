@@ -115,7 +115,7 @@ input[type="range"]:focus::-moz-range-thumb {
 }
 .html-slider__multi--output {
   position: absolute;
-  background: #ff9900;
+  background: #900;
   color: #fff;
   text-align: center;
   width: 4em;
@@ -193,7 +193,6 @@ input[type="range"]:focus::-moz-range-thumb {
   z-index: 1;
 }
 .html-slider__multi--container input[type="range"]::-webkit-slider-runnable-track {
-  visibility: hidden;
   background: none;
   /* get rid of Firefox track background */
   border: none;
@@ -202,7 +201,6 @@ input[type="range"]:focus::-moz-range-thumb {
   margin-top: 23px;
 }
 .html-slider__multi--container input[type="range"]::-moz-range-track {
-  visibility: hidden;
   background: none;
   /* get rid of Firefox track background */
   border: none;

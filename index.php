@@ -275,7 +275,7 @@
                         turned on and off, but you don't want to use a checkbox.</li>
                     <li><a href="36-animated-gif-with-pause-button.php">Animated GIF with pause button</a></li>
                     <li><a href="37-carousel.php">Carousel</a></li>
-                    <li><a href="38-skip-link.php">Skip Link</a></li>
+                    <li><a href="38-visible-on-focus.php">Visible On Focus CTAs/Skip Links</a></li>
 
                 </ul>
 

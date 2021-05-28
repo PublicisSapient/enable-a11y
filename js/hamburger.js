@@ -1,6 +1,7 @@
 const EnableFlyoutMenu = new function() {
   // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
+  const $mainMenuButton = document.querySelectorAll(menuSel);
   const topNavSel = '.enable-flyout__top-level';
   const $root = document.querySelector(topNavSel);
   const containerSel = '.enable-flyout__container';
@@ -51,7 +52,7 @@ const EnableFlyoutMenu = new function() {
     });
   }
 
-  function openFlyout() {
+  this.openFlyout = () => {
     $root.classList.add(willAnimate);
 
     requestAnimationFrame(() => {
@@ -60,11 +61,17 @@ const EnableFlyoutMenu = new function() {
       
       accessibility.setKeepFocusInside($container, true);
 
+      forEach.call($mainMenuButton, function ($el) {
+        $el.setAttribute('aria-expanded', 'true');
+        $el.setAttribute('tabindex', '-1');
+        $el.setAttribute('aria-hidden', 'true');
+      });
+      
       // requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
     })
   }
 
-  function closeFlyout($flyoutMenu) {
+  this.closeFlyout = ($flyoutMenu) => {
     const $openLevel = $flyoutMenu.querySelectorAll(openLevelSel)
     let $controller  = accessibility.getAriaControllerEl($flyoutMenu);
     $flyoutMenu.classList.remove(isOpenClass);
@@ -83,19 +90,26 @@ const EnableFlyoutMenu = new function() {
     
   }
 
-  function closeAllFlyouts () {
+  this.closeAllFlyouts = () => {
     const $flyouts = document.querySelectorAll(topNavSel);
     forEach.call($flyouts, closeLevel);
 
     const $openFlyouts = document.querySelectorAll(isOpenSel);
-    forEach.call($openFlyouts, closeFlyout);
+    forEach.call($openFlyouts, this.closeFlyout);
 
     $body.classList.remove(enableFlyoutOpenClass);
     
     accessibility.setKeepFocusInside($container, false);
     $root.classList.remove(willAnimate);
+
+    forEach.call($mainMenuButton, function ($el) {
+      $el.setAttribute('aria-expanded', 'false');
+      $el.removeAttribute('tabindex');
+      $el.removeAttribute('aria-hidden');
+    });
     
   }
+  
 
   function closeSiblingFlyouts($level) {
     const $parentLevel = $level.parentNode.closest(navLevelSel);
@@ -104,31 +118,30 @@ const EnableFlyoutMenu = new function() {
     forEach.call($flyouts, closeLevel);
   }
 
-  const onHamburgerIconClick = (e) => {
+  this.onHamburgerIconClick = (e) => {
     const { target } = e;
     const $menuButton = target.closest(menuSel);
+
     e.preventDefault();
     const $flyoutMenu = accessibility.getAriaControlsEl($menuButton);
     if ($flyoutMenu.classList.contains(isOpenClass)) {
-      $menuButton.setAttribute('aria-expanded', 'false');
-      closeAllFlyouts();
+      this.closeAllFlyouts();
     } else {
-      $menuButton.setAttribute('aria-expanded', 'true');
-      openFlyout();
+      this.openFlyout();
     }
   }
 
-  function onHamburgerCloseClick(e) {
+  this.onHamburgerCloseClick = (e) => {
     e.preventDefault();
     const $flyoutMenu = document.getElementById(this.getAttribute('aria-controls'));
     if (!$flyoutMenu) {
       throw "Error: aria-controls on button must be set to id of flyout menu.";
     }
-    closeFlyout($flyoutMenu)
+    this.closeFlyout($flyoutMenu)
   }
 
 
-  function openMenuAnimationEnd(e) {
+  this.openMenuAnimationEnd = (e) => {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
 
@@ -184,14 +197,14 @@ const EnableFlyoutMenu = new function() {
       const { classList } = $flyoutMenu;
       if ($flyoutMenu.matches(dropdownSel)) {
         $flyoutMenu.addEventListener(
-          'blur', blurEvent, true
+          'blur', this.blurEvent, true
         );
       }
       $flyoutMenu.classList.add(isOpenClass);
     }
   }
 
-  const closeLevelEvent = (e) => {
+  this.closeLevelEvent = (e) => {
     const { target } = e;
     e.preventDefault();
 
@@ -216,7 +229,7 @@ const EnableFlyoutMenu = new function() {
 
       if ($navLevel.matches(dropdownSel)) {
         $navLevel.removeEventListener(
-          'blur', blurEvent, true
+          'blur', this.blurEvent, true
         );
       }
       $navLevel.classList.remove(isOpenClass);
@@ -233,72 +246,72 @@ const EnableFlyoutMenu = new function() {
     }
   }
 
-  function toggleLevelEvent(e) {
+  this.toggleLevelEvent = (e) => {
     const { target } = e;
     const isExpanded = (target.getAttribute('aria-expanded') === 'true');
 
     if (isExpanded){
-      closeLevelEvent(e);
+      this.closeLevelEvent(e);
     } else {
       openLevelEvent(e);
     }
   }
 
-  const blurEvent = (e) => {
+  this.blurEvent = (e) => {
     if (!isHamburger()) {
       accessibility.doIfBlurred(e, () => {
-        closeAllFlyouts();
+        this.closeAllFlyouts();
       });
     }
   }
 
-  const onBreakpointChange = (e) => {
+  this.onBreakpointChange = (e) => {
     // we will close all flyouts, just in case
-    closeAllFlyouts();
+    this.closeAllFlyouts();
   }
 
-  function keyPressEvent(e) {
+  this.keyPressEvent = (e) => {
     const { key } = e;
     
     if (key === 'Esc' || key === 'Escape') {
-      closeAllFlyouts();
+      this.closeAllFlyouts();
     }
   }
 
   this.init = function () {
     // main menu open
-    delegate('click', menuSel, onHamburgerIconClick);
+    delegate('click', menuSel, this.onHamburgerIconClick);
 
     // level open
-    delegate('click', openLevelSel, toggleLevelEvent);
+    delegate('click', openLevelSel, this.toggleLevelEvent);
 
     // level close
-    delegate('click', closeLevelSel, closeLevelEvent);
+    delegate('click', closeLevelSel, this.closeLevelEvent);
 
     // main menu close
-    delegate('click', closeLevelTopSel, onHamburgerCloseClick);
+    delegate('click', closeLevelTopSel, this.onHamburgerCloseClick);
 
     // close on close menu facade 
-    delegate('click', hamburgerIconFacadeSel, closeAllFlyouts);
+    delegate('click', hamburgerIconFacadeSel, this.closeAllFlyouts);
 
-    document.addEventListener('animationend', openMenuAnimationEnd);
+    document.addEventListener('animationend', this.openMenuAnimationEnd);
 
     /* document.querySelector('.enable-flyout__dropdown').addEventListener(
-      'blur', blurEvent, true
+      'blur', this.blurEvent, true
     );*/ 
 
     
-    $screen.addEventListener('click', closeAllFlyouts);
+    $screen.addEventListener('click', this.closeAllFlyouts);
     
     if (desktopMql.addEventListener) {
-      desktopMql.addEventListener('change', onBreakpointChange);
+      desktopMql.addEventListener('change', this.onBreakpointChange);
     }
     
     // This is supposed to be deprecated, but I don't know what its replacement is.
-    $body.addEventListener("orientationchange", onBreakpointChange);
+    $body.addEventListener("orientationchange", this.onBreakpointChange);
 
 
-    document.addEventListener('keyup', keyPressEvent);
+    document.addEventListener('keyup', this.keyPressEvent);
   }
 }
 

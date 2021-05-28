@@ -7,7 +7,7 @@
 
     <link href="node_modules/glider-js/glider.css" rel="stylesheet" />
 
-    <link href="css/enable-skip-link.css" rel="stylesheet" />
+    <link href="css/enable-visible-on-focus.css" rel="stylesheet" />
     <link href="css/enable-carousel.css" rel="stylesheet" />
 
 </head>
@@ -34,8 +34,8 @@
         <h2>Carousels with CTAs</h2>
 
         <div id="example1">
-            <div class="enable-skip-link__container enable-skip-link--begin">
-                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-skip-link">
+            <div class="enable-visible-on-focus__container enable-skip-link--begin">
+                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-visible-on-focus">
                     Skip to end of promotional links
                 </a>
             </div>
@@ -100,8 +100,8 @@
                 <div role="tablist" class="dots"></div>
             </div>
 
-            <div class="enable-skip-link__container  enable-skip-link--end">
-                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-skip-link">Skip to
+            <div class="enable-visible-on-focus__container  enable-skip-link--end">
+                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-visible-on-focus">Skip to
                     beginning of promotional links</a>
             </div>
         </div>
@@ -116,7 +116,7 @@
             },
             "steps": [{
                     "label": "Put skip links around the carousel",
-                    "highlight": "%OPENCLOSECONTENTTAG%a class=\"enable-skip-link\"",
+                    "highlight": "%OPENCLOSECONTENTTAG%a class=\"enable-visible-on-focus\"",
                     "notes": "In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information."
                 },
                 {
@@ -125,7 +125,7 @@
                     "notes": "The content of all the carousel panels must follow accessibility guidelines as well as the carousel itself"
                 },
                 {
-                    "label": "Ensure CTAs have proper roles",
+                    "label": "Ensure CTAs are marked up correctly",
                     "highlight": "%OPENCLOSECONTENTTAG%a",
                     "notes": "More often than not, the CTAs inside a carousel will redirect users to another web page, which would make the CTA a link, <strong>even if the CTA looks like a button.</strong>  This is a very common mistake."
                 },
@@ -170,7 +170,7 @@
 
         <?php include "includes/example-footer.php" ?>
 
-        <script src="js/shared/enable-skip-link.js"></script>
+        <script src="js/shared/enable-visible-on-focus.js"></script>
         <script src="node_modules/glider-js/glider.min.js"></script>
         <script src="js/shared/enable-carousel.js"></script>
 
