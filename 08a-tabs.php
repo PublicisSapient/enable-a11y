@@ -7,7 +7,7 @@
     <?php include "includes/common-head-tags.php";?>
 
     <link class="example-stylesheet" rel="stylesheet" type="text/css" href="css/tabs.css" />
-    <meta charset="utf-8" />
+    
 
 </head>
 

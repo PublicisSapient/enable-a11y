@@ -3,15 +3,14 @@
 
 <head>
     <title>ARIA listbox role example</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
+	<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/enable-listbox.css" />
-    <meta charset="utf-8">
+    
 </head>
 
 <body>
 
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php"; ?>
 
     <main>
 
@@ -75,7 +74,7 @@
                     <span id="exp_elem" class="enable-listbox__exp_elem">
                         Choose an element:
                     </span>
-                    <div id="exp_wrapper">
+                    <div id="exp_wrapper" class="enable-listbox__wrapper">
                         <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button" class="enable-listbox__button">
                             Neptunium
                         </button>

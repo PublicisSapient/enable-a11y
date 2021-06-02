@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <meta charset="utf-8" />
+    
     <title>Checkbox demo</title>
 	<?php include("includes/common-head-tags.php"); ?>
 

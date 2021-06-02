@@ -88,6 +88,8 @@
   &__hamburger-icon {
     @hamburger-width: 30px;
     @hamburger-height: 30px;
+    @hamburger-padding-horiz: 18px;
+    @hamburger-padding-vert: 8px;
     @hamburger-height-div-five: (@hamburger-width / 5);
     @hamburger-stroke-width: 6px;
 
@@ -95,18 +97,18 @@
     height: @hamburger-height;
 
     position: relative;
-    margin: 8px 18px;
+    margin: (@hamburger-padding-vert) (@hamburger-padding-horiz);
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
 
     &-facade {
       display: block;
-      width: @hamburger-width + 18px;
-      height: @hamburger-height + 18px;
+      width: @hamburger-width + (2 * @hamburger-padding-horiz);
+      height: @hamburger-height + (2 * @hamburger-padding-vert);
       position: absolute;
       right: 2px;
-      top: 2px;
+      top: 0px;
       background: none;
       border: none;
     }
@@ -116,7 +118,11 @@
       position: absolute;
       height: @hamburger-stroke-width;
       width: 100%;
-      background: black;
+      background: currentColor;
+
+      // This is to ensure the logo appears in Windows
+      // High Contast mode.
+      border: 1px solid transparent;
       border-radius: (@hamburger-stroke-width / 2);
       opacity: 1;
       left: 0;
@@ -159,6 +165,7 @@
         top: (@hamburger-height-div-five * 2);
         width: 0%;
         left: 50%;
+        outline: none;
       }
     }
   }
@@ -195,6 +202,12 @@
     &:hover {
       background: @color1;
     }
+
+    // Fix Windows Contrast Mode cutting off focus outline.
+    &:focus {
+      position: relative;
+      z-index: 2;
+    }
   }
 
   &__with-home-icon {
@@ -223,7 +236,6 @@
   &__body--is-open {
     height: @height0;
     overflow: hidden;
-    scrollbar-gutter: ;
   }
 
   &__body--is-open &__overlay-screen {
@@ -288,6 +300,7 @@
     right: 2px;
     top: 0;
     z-index: 101;
+
   }
 
   &__overlay-screen {

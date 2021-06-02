@@ -3,7 +3,7 @@
 <head>
 <meta name="generator" content=
 "HTML Tidy for HTML5 for Apple macOS version 5.6.0">
-<meta charset="utf-8">
+
 <title>Alert Dialog Example</title>
 		<?php include("includes/common-head-tags.php"); ?>
 <link media="all" rel="stylesheet" href="css/dialog.css">

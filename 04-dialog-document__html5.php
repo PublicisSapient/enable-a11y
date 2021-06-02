@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8" />
+    
     <title>
       An Accessible Modal Dialog using the HTML5 &lt;dialog&gt; Tag.
     </title>

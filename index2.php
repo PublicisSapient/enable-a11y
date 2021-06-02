@@ -2,10 +2,10 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
+    
     <title>Article Example</title>
 		<?php include("includes/common-head-tags.php"); ?>
-    <meta charset="utf-8">
+    
     <link media="all" rel="stylesheet" href="css/article.css" />
 </head>
 

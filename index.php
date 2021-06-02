@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
 
-    <meta charset="utf-8" />
+    
 </head>
 
 <body>

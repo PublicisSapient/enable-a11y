@@ -61,6 +61,10 @@ const EnableFlyoutMenu = new function() {
       
       accessibility.setKeepFocusInside($container, true);
 
+      // We make the hamburger menu icon not accessible to
+      // screen readers and keyboards. This is because focus
+      // will be applied to the close menu icon when the menu
+      // flies out.  See this.openMenuAnimationEnd().
       forEach.call($mainMenuButton, function ($el) {
         $el.setAttribute('aria-expanded', 'true');
         $el.setAttribute('tabindex', '-1');
@@ -145,8 +149,11 @@ const EnableFlyoutMenu = new function() {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
 
+    // When the menu is initially opened, set focus to the close button facade.
     if (target === $root) {
       requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
+
+    // When a submenu is opened
     } else if (animationName === mobileOpenMenuAnim) {
       const $closeLevelButton = $root.querySelector(closeLevelTopSel);
       const { classList } = target;
@@ -157,13 +164,17 @@ const EnableFlyoutMenu = new function() {
           accessibility.setKeepFocusInside(target, true);
       }
 
+    // When a menu panel is being closed.
     } else if (animationName === mobileCloseMenuAnim) {
       const $menuEl = document.querySelector('[aria-controls="' + $root.id + '"]');
       
+      // When the close button is clicked
       if (target === $root) {
           
           accessibility.setKeepFocusInside(target, false);
           $menuEl.focus();
+
+      // When it is just a submenu that is closed
       } else if (target.matches(navLevelSel)) {
           const $upperLevel = target.parentNode.closest(navLevelSel);
           

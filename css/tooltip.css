@@ -10,6 +10,11 @@
   max-width: 20rem;
   position: absolute;
   border-radius: 0.5rem;
+  /* 
+     * We put a transparent border here for Windows High Contrast Mode. 
+     * Otherwise, the background will blend into the content underneath.
+     */
+  border: 1px solid transparent;
 }
 .tooltip:before {
   content: "";
@@ -20,6 +25,9 @@
   top: -0.5rem;
   left: 2rem;
   transform: rotate(45deg);
+  /* Again, we put a transparent border here for Windows High Contrast Mode */
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
 }
 .tooltip--hidden {
   clip: rect(1px 1px 1px 1px);

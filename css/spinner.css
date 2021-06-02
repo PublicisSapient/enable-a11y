@@ -2,9 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import "fonts/specify/stylesheet.css";
-@import "fonts/open-dyslexic/stylesheet.css";
-@import "fonts/modeseven/stylesheet.css";
+@import "../../fonts/specify/stylesheet.css";
+@import "../../fonts/open-dyslexic/stylesheet.css";
+@import "../../fonts/modeseven/stylesheet.css";
 html,
 body,
 div,
@@ -323,7 +323,6 @@ embed:hover:focus,
   color: #777;
   opacity: 1;
 }
-/* Mixins */
 body {
   margin: 0;
   position: relative;

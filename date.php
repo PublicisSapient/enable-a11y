@@ -5,7 +5,7 @@
     <title>HTML5 Date Input Example</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/date.css" />
-    <meta charset="utf-8" >
+    
 </head>
 
 <body>

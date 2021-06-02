@@ -6,7 +6,7 @@
     <title>Accessible Tabs Examples</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/tabs.css" />
-    <meta charset="utf-8" />
+    
 
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 </head>

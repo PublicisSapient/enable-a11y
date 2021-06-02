@@ -5,7 +5,7 @@
     <title>ARIA Marquee Role</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/marquee.css" />
-    <meta charset="utf-8" >
+    
 </head>
 
 <body>

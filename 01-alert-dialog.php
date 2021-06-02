@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8" />
+    
     <title>Alert Dialog Example</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link media="all" rel="stylesheet" href="css/dialog.css" />

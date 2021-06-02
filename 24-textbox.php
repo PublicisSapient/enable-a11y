@@ -6,7 +6,7 @@
     <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/group.css" />
     <link rel="stylesheet" type="text/css" href="css/textbox.css" />
-    <meta charset="utf-8">
+    
 </head>
 
 <body>

@@ -55,11 +55,11 @@
 }
 .enable-flyout__hamburger-icon-facade {
   display: block;
-  width: 48px;
-  height: 48px;
+  width: 66px;
+  height: 46px;
   position: absolute;
   right: 2px;
-  top: 2px;
+  top: 0px;
   background: none;
   border: none;
 }
@@ -68,7 +68,8 @@
   position: absolute;
   height: 6px;
   width: 100%;
-  background: black;
+  background: currentColor;
+  border: 1px solid transparent;
   border-radius: 3px;
   opacity: 1;
   left: 0;
@@ -103,6 +104,7 @@
   top: 12px;
   width: 0%;
   left: 50%;
+  outline: none;
 }
 .enable-flyout__list {
   list-style-type: none;
@@ -137,6 +139,12 @@
 .enable-flyout__close-level-button:hover,
 .enable-flyout__link:hover {
   background: #494a50;
+}
+.enable-flyout__open-level-button:focus,
+.enable-flyout__close-level-button:focus,
+.enable-flyout__link:focus {
+  position: relative;
+  z-index: 2;
 }
 .enable-flyout__with-home-icon {
   position: relative;
@@ -180,7 +188,6 @@
 .enable-flyout__body--is-open {
   height: 100%;
   overflow: hidden;
-  scrollbar-gutter: ;
 }
 .enable-flyout__body--is-open .enable-flyout__overlay-screen {
   height: 100%;

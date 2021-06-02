@@ -320,7 +320,6 @@ embed:hover:focus,
   color: #777;
   opacity: 1;
 }
-/* Mixins */
 input[type="submit"] {
   display: block;
   margin-top: 0.5em;

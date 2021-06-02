@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    
     <title>ARIA form role examples</title>
     <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/group.css" />

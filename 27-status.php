@@ -5,7 +5,7 @@
     <title>ARIA Status Role Example</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/status.css" />
-    <meta charset="utf-8" >
+    
 </head>
 
 <body>

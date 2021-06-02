@@ -6,7 +6,7 @@
 		<?php include("includes/common-head-tags.php"); ?>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0, width=device-width"/>
     <link rel="stylesheet" type="text/css" href="css/listbox.css" />
-    <meta charset="utf-8">
+    
 </head>
 
 <body>

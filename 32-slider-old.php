@@ -5,7 +5,7 @@
     <title>ARIA Slider Examples</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/slider.css" />
-    <meta charset="utf-8" >
+    
 </head>
 
 <body>

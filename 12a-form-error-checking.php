@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    
     <title>ARIA form role examples</title>
 		<?php include "includes/common-head-tags.php";?>
     <link id="form-error-css" rel="stylesheet" type="text/css" href="css/form-error.css" />

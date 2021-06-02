@@ -6,6 +6,23 @@ const enableListbox = new function() {
     document.addEventListener('click', this.onClick);
     body.addEventListener('keyup', this.onKeyup);
     body.addEventListener('keydown', this.onKeydown);
+    body.addEventListener('mousedown', this.onMousedown)
+  }
+
+  this.onMousedown = (e) => {
+    const { target } = e;
+    
+    if (target.classList.contains('enable-listbox__button')) {
+      
+      const root = target.closest('.enable-listbox');
+      const listboxEl = root.querySelector('[role="listbox"]');
+
+      listboxEl.removeEventListener('blur', this.blurEvent, true);
+      // ensure this gets focus
+      target.focus();
+
+      listboxEl.addEventListener('blur', this.blurEvent, true);
+    }
   }
 
   this.onKeydown = (e) => {
@@ -43,7 +60,7 @@ const enableListbox = new function() {
   }
 
   this.onClick = (e) => {
-
+    
     const { target } = e;
     const root = target.closest('.enable-listbox');
 
@@ -77,7 +94,7 @@ const enableListbox = new function() {
           // set focus on appropriate option
           window.requestAnimationFrame(() => {
             const itemToFocus = listboxEl.querySelector('[aria-selected="true"]') || optionEls[0];
-            console.log('1');
+            
             itemToFocus.focus();
             accessibility.setMobileFocusLoop(listboxEl);
             // make the arrow keyup events happen if needed
@@ -88,11 +105,18 @@ const enableListbox = new function() {
 
         }
       }
+
+
+      if (target !== buttonEl || listboxEl.contains(target)) {
+        // the user clicked outside of the control (but inside the root).
+        // We assume the must want to close all dropdowns on the page.
+        this.collapseAllListboxes();
+      }
     } else {
-      // the user clicked outside of the control.  We assume the must want to
-      // close all dropdowns on the page.
+      // same as above, except outside the whole root.
       this.collapseAllListboxes();
     }
+    
 
   }
 
@@ -117,7 +141,7 @@ const enableListbox = new function() {
     buttonEl.removeAttribute('aria-expanded');
 
     if (doFocus) {
-      console.log('2');
+      
       buttonEl.focus();
     }
     listboxEl.classList.add('hidden');
@@ -157,5 +181,3 @@ const enableListbox = new function() {
 }
 
 enableListbox.init();
-
-console.log('is this thing on?')

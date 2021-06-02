@@ -1,7 +1,4 @@
-@import "shared/reset";
-@import "shared/defaults"; 
-@import "shared/a11y";
-@import "form";
+@import "shared/mixins-and-vars";
 
 .annotate{
 	font-style: italic;
@@ -60,7 +57,7 @@
 	}
 
 	[role="option"][aria-selected="true"]::before {
-		.content-with-alt-text("✓"; "");
+		.content-with-alt-text("✓"; ""); 
 		position: absolute;
 		left: 0.5em;
 	}
@@ -80,28 +77,18 @@
 
 
 		&::after {
-			width: 0;
-			height: 0;
-			border-left: 8px solid transparent;
-			border-right: 8px solid transparent;
-			border-top: 8px solid #aaa;
-			content: " ";
+			content: url('data:image/svg+xml;utf8,<svg width="15.277" height="10" viewBox="0 0 4.042 2.646" xmlns="http://www.w3.org/2000/svg"><path d="M5.41 1.007a.151.151 0 0 0-.135-.085h-3.74a.151.151 0 0 0-.118.245l1.87 2.344a.15.15 0 0 0 .235 0l1.87-2.344a.15.15 0 0 0 .019-.16z" style="stroke-width:.0138559;" transform="translate(-1.384 -.922)"/></svg>');
+			color: #333;
 			position: absolute;
-			right: 5px;
-			top: 10px;
+			right: (5/@px);
+			top: (3/@px);
+			font-size: (16/@px);
+			transform: scale(0.7);
 		}
 
 		&[aria-expanded="true"]::after {
-			width: 0;
-			height: 0;
-			border-left: 8px solid transparent;
-			border-right: 8px solid transparent;
-			border-top: 0;
-			border-bottom: 8px solid #aaa;
-			content: " ";
-			position: absolute;
-			right: 5px;
-			top: 10px;
+			transform: scaleX(0.7) scaleY(-0.7);
+			top: (5/@px);
 		}
 
 	}

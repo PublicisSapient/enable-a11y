@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
+    
     <title>The Incredible Accessible Modal Window, Version 4</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1" />

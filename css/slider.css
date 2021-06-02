@@ -176,6 +176,8 @@ input[type="range"]:focus::-moz-range-thumb {
   top: 11px;
   width: calc((var(--maxValue) - var(--minValue)) / var(--dif) * (100% - 2* 15px));
   background: #333;
+  outline: 2px solid transparent;
+  outline-offset: -4px;
 }
 .html-slider__multi--container input[type="range"] {
   position: absolute;
@@ -191,6 +193,7 @@ input[type="range"]:focus::-moz-range-thumb {
   pointer-events: auto;
   transform: translateZ(0);
   z-index: 1;
+  transform: translateY(10px);
 }
 .html-slider__multi--container input[type="range"]::-webkit-slider-runnable-track {
   background: none;
@@ -210,6 +213,7 @@ input[type="range"]:focus::-moz-range-thumb {
 @supports selector(input[type="range"]::-moz-range-thumb) {
   .html-slider__multi--container input[type="range"] {
     transform: translateY(5px);
+    height: 0px;
   }
 }
 .html-slider__output {
@@ -361,6 +365,8 @@ input[type="range"]:focus::-moz-range-thumb {
   left: -300em;
   top: -30em;
   z-index: 0;
+  outline: solid 4px transparent;
+  outline-offset: -5px;
 }
 .enable-slider__number-fallback {
   background: #fff;

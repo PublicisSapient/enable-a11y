@@ -5,7 +5,7 @@
   "HTML Tidy for HTML5 for Windows version 5.4.0">
   <title>ARIA Alert Demo</title>
 		<?php include("includes/common-head-tags.php"); ?>
-  <meta charset="utf-8" >
+  
   <link rel="stylesheet" type="text/css" href="css/alert.css" />
 </head>
 <body>

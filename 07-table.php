@@ -3,7 +3,7 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <meta charset="utf-8">
+    
     <title>Accessible Table Examples</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/table.css" />

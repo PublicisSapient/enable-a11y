@@ -5,7 +5,7 @@
     <title>HTML5 and ARIA Accessible Drawer Examples</title>
     <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
-    <meta charset="utf-8" />
+    
 </head>
 
 <body>

@@ -5,7 +5,7 @@
     <title>ARIA Timer Role Examples</title>
 		<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/timer.css" />
-    <meta charset="utf-8">
+    
 </head>
 
 <body>

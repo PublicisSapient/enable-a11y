@@ -21,7 +21,19 @@
   /* Ensures both the inner and outer circles are circles, not squares. */
 }
 [role="radio"][aria-checked="true"]::after {
-  content: "";
+  /*
+       * These styles ensure the checkbox appears 
+       * as an 'X' in Windows High Contrast Mode
+       */
+  content: "x";
+  text-align: center;
+  font-size: 1.5625rem;
+  line-height: 1.375rem;
+  /*
+       * These styles are for sighted users who
+       * don't use assistive technology.
+       */
+  color: #900;
   display: block;
   position: absolute;
   top: 0;
@@ -68,25 +80,25 @@
   display: inline-block;
   color: #666;
   font-size: 18px;
-  line-height: 1.33333333;
+  line-height: 1.44444444;
 }
 .enable-radio [type="radio"] + label:before {
-  border: 0.0625rem solid #ddd;
+  border: 0.125rem solid #ddd;
 }
 .enable-radio [type="radio"] + label:before,
 .enable-radio [type="radio"] + label:after {
   content: "";
   display: block;
   position: absolute;
-  left: -0.0625rem;
-  top: -0.0625rem;
+  left: -0.125rem;
+  top: -0.125rem;
   width: 1.375rem;
   height: 1.375rem;
   border-radius: 100%;
   background: #fff;
 }
 .enable-radio [type="radio"] + label:after {
-  border: 0.0625rem solid transparent;
+  border: 0.125rem solid transparent;
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 .enable-radio [type="radio"]:focus + label:before {

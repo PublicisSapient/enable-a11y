@@ -4,7 +4,7 @@
     <title>ARIA Tooltip Example</title>
     <?php include("includes/common-head-tags.php"); ?>
     <link id="tooltip-css" rel="stylesheet" type="text/css" href="css/tooltip.css" />
-    <meta charset="utf-8" />
+    
   </head>
 
   <body>
@@ -71,8 +71,8 @@
             },
             {
               "label": "Set up the CSS",
-              "highlight": "%CSS%tooltip-css~ .tooltip; .tooltip::before; .tooltip--hidden",
-              "notes": "The arrow that points to this tooltip is CSS generated content. We hide the content ensuring it is still read by screen readers."
+              "highlight": "%CSS%tooltip-css~ .tooltip; .tooltip::before; .tooltip--hidden ||| border[^:]*: 1px solid transparent; ",
+              "notes": "The arrow that points to this tooltip is CSS generated content. We hide the content ensuring it is still read by screen readers. <strong>Note the highlighted properties</strong>.  <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">These ensure the tooltips appear in Windows High Contrast Mode</a>."
             }
           ]
         }

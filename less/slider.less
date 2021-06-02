@@ -242,6 +242,10 @@ input[type="range"] {
         top: ((@slider-height-px /2  - @track-height));
         width: ~"calc((var(--maxValue) - var(--minValue)) / var(--dif) * (100% - 2* @{thumb-radius}))";
         background: @track-diff-color;
+
+        // For Windows High Contrast Mode
+        outline: 2px solid transparent;
+        outline-offset: -4px;
       }
 
       input[type="range"] {
@@ -254,6 +258,7 @@ input[type="range"] {
         }
         &::-moz-range-thumb {
           .multi-thumb();
+          transform: translateY(10px);
         }
 
         &::-webkit-slider-runnable-track {
@@ -268,6 +273,7 @@ input[type="range"] {
         @supports selector(input[type="range"]::-moz-range-thumb) {
           & {
             transform: translateY(5px);
+            height: 0px;
           }
         }
       }
@@ -435,6 +441,11 @@ input[type="range"] {
     left: -300em;
     top: -30em;
     z-index: 0;
+
+    // For Windows High Contrast Mode
+    outline: solid 4px transparent;
+    outline-offset: -5px;
+    
   }
 
   &__number-fallback {

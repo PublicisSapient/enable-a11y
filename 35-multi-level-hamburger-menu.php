@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/home.css" />
     <?php include "includes/common-head-tags.php";?>
     
-    <link rel="stylesheet" type="text/css" href="css/hamburger-menu.css" />
+    <link id="hamburger-style" rel="stylesheet" type="text/css" href="css/hamburger-menu.css" />
     <link rel="stylesheet" type="text/css" href="css/figure.css" />
 </head>
 
@@ -239,9 +239,9 @@
         <aside class="notes">
             <p>
                 This is a heavily modified version of <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
-                    this hamburger menu</a>. I removed jQuery as a dependancy,
+                this hamburger menu</a>. I removed jQuery as a dependancy,
                 made the markup accessible and added focus management rules, as well as turning
-                it into a mega menu at the desktop breakpoint. I I
+                it into a mega menu at the desktop breakpoint. I
                 also made the styles follow the BEM design pattern.
             </p>
         </aside>
@@ -417,6 +417,21 @@
                 "label": "Set image alt attributes (or make them decorative if applicable)",
                 "highlight": "alt ||| role=\"presentation\"",
                 "notes": "The images in the desktop mega menu are decorative, so we set the attributes <code>alt=\"\"</code> and <code>role=\"presentation\"</code>.  If they actually gave extra information to sighted users, we would have to set the attribute to describe the image.  Since they are just screenshots of the video games that are given in the link labels, we have decided to make them decorative."
+            },
+            {
+                "label": "Ensure focus stays within hamburger menu when the user clicks on the hamburger menu icon",
+                "highlight": "%JS% EnableFlyoutMenu.onHamburgerIconClick ; EnableFlyoutMenu.openFlyout; EnableFlyoutMenu.openMenuAnimationEnd ||| [ ]*forEach[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, true\\)\\;  ||| requestAnimationFrame[^}]*\\}\\)\\;",
+                "notes": "Note that when the user click on the hamburger menu, we call <code>accessibility.setKeepFocusInside($container, true);</code>. This ensures keyboard focus (and mobile accessibility focus) stays inside the open menu, and not on the content outside of it.  We also make the button that opened it inaccessible to screen readers and keyboards, since focus will be applied to the close button, as seen in the openMenuAnimationEnd method at the bottom."
+            },
+            {
+                "label": "Ensure focus restrictions are removed when hamburger menu is closed",
+                "highlight": "%JS% EnableFlyoutMenu.closeAllFlyouts ; EnableFlyoutMenu.openMenuAnimationEnd ||| [ ]*forEach\\.call\\(\\$mainMenuButton[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, false\\)\\; ||| \\$menuEl\\.focus\\(\\)\\;",
+                "notes": "When the close button is clicked, all cancel the focus loop by calling <code>accessibility.setKeepFocusInside($container, false);</code>.  We also ensure that keyboard focus can be applied to the hamburger menu icon before we apply focus to it in the openMenuAnimationEnd method at the bottom."
+            },
+            {
+                "label": "Ensure hamburger item is visible in Windows High Contrast Mode.",
+                "highlight": "%CSS%hamburger-style~ .enable-flyout__hamburger-icon span |||  border[^:]*: 1px solid transparent;",
+                "notes": "We have a transparent <code>border</code> on the <code>div</code> elements that make up the hamburger menu icon by default. Even though this is normally invisible, <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">transparent borders show up in Windows High Contrast Mode</a>. If we didn't have this included, the icon would be invisible."
             }
           ]
         }

@@ -22,7 +22,20 @@
 
   &[aria-checked="true"] {
     &::after {
-      content: "";
+      /*
+       * These styles ensure the checkbox appears 
+       * as an 'X' in Windows High Contrast Mode
+       */
+      content: "x";
+      text-align: center;
+      font-size: (25/@px);
+      line-height: (@radio-size-without-border / @px);
+
+      /*
+       * These styles are for sighted users who
+       * don't use assistive technology.
+       */
+      color: #900;
       display: block;
       position: absolute;
       top: 0;
@@ -31,6 +44,7 @@
       height: (@radio-size-without-border / @px);
       transform: scale(0.65);
       background: #900;
+
     }
   }
 
@@ -49,7 +63,7 @@
 
 .enable-radio {
   @enable-radio-size: 22;
-  @enable-radio-border: 1;
+  @enable-radio-border: 2;
   @enable-radio-size-without-border: (
     @enable-radio-size - 2 * @enable-radio-border
   );

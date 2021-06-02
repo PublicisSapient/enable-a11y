@@ -6,14 +6,22 @@
     <?php include "includes/common-head-tags.php";?>
     <link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
     <link id="enable-slider-style" rel="stylesheet" type="text/css" href="css/slider.css" />
-    <meta charset="utf-8">
+    
 </head>
 
 <body>
 
     <?php include "includes/example-header.php";?>
 
-
+    <svg class="defs-only">
+            <filter id="chromakey" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
+                <feColorMatrix type="matrix"
+                    values="1   0   0   0   0 
+                            0   1   0   0   0  
+                            0   0   1   0   0 
+                            1 1  1 0   1" />
+            </filter>
+        </svg>
 
     <main>
         <h1>ARIA Slider Examples</h1>
