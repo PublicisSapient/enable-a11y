@@ -77,10 +77,14 @@ const showcode = new (function () {
   } 
 
   const getInnerCSS = (el, selectorPropertyPairs, codeEl) => {
+
+    const showAllCSS = (selectorPropertyPairs.length === 1 && selectorPropertyPairs[0] === '');
     
     const cssTextBuffer = [];
     const { cssRules } = el.sheet;
     for (let i=0; i<cssRules.length; i++) {
+
+      console.log('x', showAllCSS);
       const cssRule = cssRules[i].cssText.trim();
 
       for (let j=0; j<selectorPropertyPairs.length; j++) {
@@ -92,7 +96,7 @@ const showcode = new (function () {
 
         console.log(cssRule, selector);
 
-        if (cssRule.indexOf(selector + ' ') === 0) {
+        if (showAllCSS || cssRule.indexOf(selector + ' ') === 0) {
           // Now we must highlight the properties.
           let code = cssRule;
           //code = code.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
@@ -237,7 +241,9 @@ const showcode = new (function () {
               highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
               break;
             case '%OPENCLOSETAG%':
-              highlightString = `\\s*&lt;[\/]?${highlightString}&gt;`;
+              // The [^&] will give false positives if there is a & in the tag before
+              // the tag closes. 
+              highlightString = `\\s*&lt;[\/]?${highlightString}[^&]*&gt;`;
               break;
             case '%OPENCLOSECONTENTTAG%':
               highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?\/${highlightString}&gt;`

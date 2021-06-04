@@ -842,6 +842,7 @@ const accessibility = {
         this.correctFocusFromBrowserChrome.bind(this),
         true
       );
+      this.removeMobileFocusLoop();
       this.setMobileFocusLoop(el);
     } else {
       this.activeSubdocument = null;
@@ -855,7 +856,7 @@ const accessibility = {
         this.correctFocusFromBrowserChrome.bind(this),
         true
       );
-      this.removeMobileFocusLoop(el);
+      this.removeMobileFocusLoop();
     }
   },
 
