@@ -20,7 +20,7 @@
           <li>
             This ARIA spinner examples were originally in the article
             <a
-              href="https://web.archive.org/web/20170424171217/http://oaa-accessibility.org/examplep/spinbutton1/"
+            href="https://web.archive.org/web/20170424171217/http://oaa-accessibility.org/examplep/spinbutton1/"
               >Example - Spinbutton using IMG elements for buttons</a
             >
             by the
@@ -66,8 +66,8 @@
           >Choose a number between 0 and 100</label
         >
 
-      <div class="sr-only" id="sb1_instructions">
-        Use the arrow keys to increase and decrease the values
+      <div class="spinbutton__instructions" id="sb1_instructions">
+        Use the arrow keys or use the stepper buttons after this element to increase and decrease the values
       </div>
 
         <div class="spinControl">
@@ -85,12 +85,15 @@
           >
             50
           </div>
-          <div id="sb1_up" class="spin-button spin-button--up" role="button">
+          <div id="sb1__up" class="enable-spinner__button enable-spinner__button--up" role="button">
             <img src="images/button-arrow-up.png" alt="Increase Value" />
           </div>
-          <div id="sb1_down" class="spin-button spin-button--down" role="button">
+          <div id="sb1__down" class="enable-spinner__button enable-spinner__button--down" role="button">
             <img src="images/button-arrow-down.png" alt="Decrease Value" />
           </div>
+
+          <!-- This alert is needed for mobile screen readers to announce the value correctly -->
+          <div class="sr-only" id="sb1__live" role="alert" aria-live="assertive">50</div>
         </div>
       </div>
 
@@ -159,10 +162,10 @@
         >
           750
         </div>
-        <div id="sb2_up" class="spin-button spin-button--up" role="button" title="Increase Value">
+        <div id="sb2_up" class="enable-spinner__button enable-spinner__button--up" role="button" title="Increase Value">
           <img src="images/button-arrow-up.png" role="presentation" />
         </div>
-        <div id="sb2_down" class="spin-button spin-button--down" role="button" title="Decrease Value">
+        <div id="sb2_down" class="enable-spinner__button enable-spinner__button--down" role="button" title="Decrease Value">
           <img src="images/button-arrow-down.png" role="presentation" />
         </div>
       </div>

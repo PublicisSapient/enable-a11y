@@ -9,11 +9,11 @@
 @spinButtonHeight: (@inputHeight / 2);
 @fontSize: (@inputHeightPx - 4) * 1px;
 
-div.spinControl {
-  position: relative;
+.enable-spinner {
+  
 }
 
-div.spinControl,
+.enable-spinner,
 input[type="number"] {
   width: @inputWidth;
   height: @inputHeight;
@@ -25,10 +25,11 @@ input[type="number"] {
   text-align: right;
 }
 
-div.spinControl {
+.enable-spinner {
+  position: relative;
   margin: (20/@px);
 
-  div.spinbutton {
+  &__button {
     display: block;
     text-align: right;
     font-size: @fontSize;

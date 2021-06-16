@@ -39,7 +39,7 @@
 
         <h2>A real styled HTML5 checkbox</h2>
         <div class="enable-checkbox">
-            <label for="checkbox_1">I agree to sell my soul to Zoltan.</label>
+            <label for="checkbox_1">I agree to sell my soul to Zoltan:</label>
             <input type="checkbox" id="checkbox_1">
             <label for="checkbox_1"></label>
         </div>
@@ -96,34 +96,69 @@
 
         <h2>HTML checkbox group</h2>
 
-        <div role="group" aria-labelledby="html-checkbox-multi-label">
-            <p id="html-checkbox-multi-label">
-                <span class="sr-only">You must choose at least one of the following.</span>
-                The following people will have my soul when I die:
-            </p>
-            <div style="color: red">You must choose at least one of the following.</div>
-            <div class="checkbox-container">
-                <label for="html-checkbox-multi1">Zoltan:</label>
-                <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
-            </div>
-            <div class="checkbox-container">
-                <label for="html-checkbox-multi2">Noel:</label>
-                <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
-            </div>
-            <div class="checkbox-container">
-                <label for="html-checkbox-multi3">Alison:</label>
-                <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
-            </div>
-            <div class="checkbox-container">
-                <label for="html-checkbox-multi4">That guy who smokes in the alleyway at work:</label>
-                <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox-multi1-error" />
-            </div>
+        <div id="html5-example">
+            <div role="group" aria-labelledby="html-checkbox-multi-label">
+                <p id="html-checkbox-multi-label">
+                    <span class="sr-only">You must choose at least one of the following.</span>
+                    The following people will have my soul when I die:
 
+                    <div class="error">You must choose at least one of the following.</div>
+                </p>
+                
+                <div class="checkbox-container">
+                    <label for="html-checkbox-multi1">Zoltan:</label>
+                    <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" />
+                </div>
+                <div class="checkbox-container">
+                    <label for="html-checkbox-multi2">Noel:</label>
+                    <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" />
+                </div>
+                <div class="checkbox-container">
+                    <label for="html-checkbox-multi3">Alison:</label>
+                    <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" />
+                </div>
+                <div class="checkbox-container">
+                    <label for="html-checkbox-multi4">That guy who smokes in the alleyway at work:</label>
+                    <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" />
+                </div>
+
+            </div>
         </div>
+        <?php includeShowcode("html5-example")?>
+
+        <script type="application/json" id="html5-example-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [
+                {
+                    "label": "Use label tags to label form element",
+                    "highlight": "for",
+                    "notes": "This is just like any other form element"
+                },
+                {
+                    "label": "Surround the whole checkbox group, with instructions, in a div with group role assigned",
+                    "highlight": "role=\"group\"",
+                    "notes": "This will let the browser know these checkboxes are related."
+                },
+                {
+                    "label": "Ensure the whole group is labelled correctly",
+                    "highlight": "aria-labelledby",
+                    "notes": "Setting the aria-labelledby on the group will tell screen readers to announce the instructions for the whole group when users tab into the first checkbox in the group (sometimes all).  If there is an error that pertains to the whole group, it can be encapsulated in this label."
+                },
+                {
+                    "label": "Make sure you have aria-invalid set on the checkboxes if necessary",
+                    "highlight": "aria-invalid",
+                    "notes": "Just like any other form, aria-invalid must be set on the form elements that are invalid."
+                }
+            ]
+        }
+        </script>
 
 
         <script src="js/shared/radio-and-checkbox-roles.js"></script>
         <script src="js/shared/visibleIf.js"></script>
+
+        <?php include "includes/example-footer.php"?>
 
     </main>
 </body>

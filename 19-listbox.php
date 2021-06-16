@@ -3,9 +3,9 @@
 
 <head>
     <title>ARIA listbox role example</title>
-	<?php include("includes/common-head-tags.php"); ?>
+    <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/enable-listbox.css" />
-    
+
 </head>
 
 <body>
@@ -25,37 +25,43 @@
                         <li>Tabbing into the widget:
                             <ul>
                                 <li>
-                                    <strong>Voiceover:</strong> The ARIA and native HTML versions state that they are "popup buttons"
-                                    as well as the selected value. </li>
+                                    <strong>Voiceover:</strong> The ARIA and native HTML versions state that they are
+                                    "popup buttons"
+                                    as well as the selected value.
+                                </li>
                                 <li>
-                                    <strong>NVDA:</strong> The ARIA version is a "button" with "submenu", while the HTML version
+                                    <strong>NVDA:</strong> The ARIA version is a "button" with "submenu", while the HTML
+                                    version
                                     is a "combo box, collapsed"
                                 </li>
                         </li>
-                        </ul>
-                </li>
-                <li>
-                    Opening the widget:
-                    <ul>
-                        <li>
-                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how many other
-                            options there are (e.g. menu 26 items)
-                        </li>
-                        <li>
-                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the selected value.
-                            The ARIA version is described as a list and the HTML version is a "combo box, expanded".
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    Selecting a value:
+            </ul>
+            </li>
+            <li>
+                Opening the widget:
+                <ul>
                     <li>
-                        <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the list (e.g.
-                        Californium, text, 2 of 26). Native version just reads the just the value
-                        <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the list.</strong>
+                        <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how many
+                        other
+                        options there are (e.g. menu 26 items)
                     </li>
-                </li>
-                </ol>
+                    <li>
+                        <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the selected
+                        value.
+                        The ARIA version is described as a list and the HTML version is a "combo box, expanded".
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Selecting a value:
+            <li>
+                <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the list
+                (e.g.
+                Californium, text, 2 of 26). Native version just reads the just the value
+                <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the list.</strong>
+            </li>
+            </li>
+            </ol>
             </ul>
         </aside>
 
@@ -75,10 +81,12 @@
                         Choose an element:
                     </span>
                     <div id="exp_wrapper" class="enable-listbox__wrapper">
-                        <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button" class="enable-listbox__button">
+                        <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button"
+                            id="exp_button" class="enable-listbox__button">
                             Neptunium
                         </button>
-                        <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem" class="hidden">
+                        <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem"
+                            class="hidden">
                             <li id="exp_elem_Np" role="option">
                                 Neptunium
                             </li>
@@ -172,8 +180,7 @@
             "replaceHTMLRules": {
                 "[role=\"listbox\"]": "<!-- This is a the selected item in the dropdown --><li id=\"exp_elem_Np\" role=\"option\" aria-selected=\"true\">Neptunium</li><!-- This is an unselected item --><li id=\"exp_elem_Pu\" role=\"option\" aria-selected=\"false\">Plutonium</li>..."
             },
-            "steps": [
-                {
+            "steps": [{
                     "label": "Place ARIA roles in document",
                     "highlight": "role",
                     "notes": "The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements"
@@ -218,107 +225,132 @@
                         "</ul>"
                     ]
                 }
-                
+
             ]
         }
         </script>
 
 
-
-
-
         <h2>Example 2: HTML5 native select element</h2>
 
 
-        <form>
-            <p>Choose your favorite transuranic element (actinide or transactinide).</p>
+        <div id="html5-example">
+            <form>
+                <fieldset>
+                    <legend>Choose your favorite transuranic element (actinide or transactinide).</legend>
 
-            <label for="my-select">
-                Choose an element:
-            </label>
+                    <label for="form1-element">
+                        Choose an element:
+                    </label>
 
-            <select id="my-select">
-                <option>
-                    Neptunium
-                </option>
-                <option>
-                    Plutonium
-                </option>
-                <option>
-                    Americium
-                </option>
-                <option>
-                    Curium
-                </option>
-                <option>
-                    Berkelium
-                </option>
-                <option>
-                    Californium
-                </option>
-                <option>
-                    Einsteinium
-                </option>
-                <option>
-                    Fermium
-                </option>
-                <option>
-                    Mendelevium
-                </option>
-                <option>
-                    Nobelium
-                </option>
-                <option>
-                    Lawrencium
-                </option>
-                <option>
-                    Rutherfordium
-                </option>
-                <option>
-                    Dubnium
-                </option>
-                <option>
-                    Seaborgium
-                </option>
-                <option>
-                    Bohrium
-                </option>
-                <option>
-                    Hassium
-                </option>
-                <option>
-                    Meitnerium
-                </option>
-                <option>
-                    Darmstadtium
-                </option>
-                <option>
-                    Roentgenium
-                </option>
-                <option>
-                    Copernicium
-                </option>
-                <option>
-                    Nihonium
-                </option>
-                <option>
-                    Flerovium
-                </option>
-                <option>
-                    Moscovium
-                </option>
-                <option>
-                    Livermorium
-                </option>
-                <option>
-                    Tennessine
-                </option>
-                <option>
-                    Oganesson
-                </option>
-            </select>
+                    <select id="form1-element" name="element">
+                        <option value="Np">
+                            Neptunium
+                        </option>
+                        <option value="Pu">
+                            Plutonium
+                        </option>
+                        <option value="Am">
+                            Americium
+                        </option>
+                        <option value="Cm">
+                            Curium
+                        </option>
+                        <option value="Bk">
+                            Berkelium
+                        </option>
+                        <option value="Cf">
+                            Californium
+                        </option>
+                        <option value="Es">
+                            Einsteinium
+                        </option>
+                        <option value="Fm">
+                            Fermium
+                        </option>
+                        <option value="Md">
+                            Mendelevium
+                        </option>
+                        <option value="No">
+                            Nobelium
+                        </option>
+                        <option value="Lr">
+                            Lawrencium
+                        </option>
+                        <option value="Rf">
+                            Rutherfordium
+                        </option>
+                        <option value="Db">
+                            Dubnium
+                        </option>
+                        <option value="Sg">
+                            Seaborgium
+                        </option>
+                        <option value="Bh">
+                            Bohrium
+                        </option>
+                        <option value="Hs">
+                            Hassium
+                        </option>
+                        <option value="Mt">
+                            Meitnerium
+                        </option>
+                        <option value="Ds">
+                            Darmstadtium
+                        </option>
+                        <option value="Rg">
+                            Roentgenium
+                        </option>
+                        <option value="Cn">
+                            Copernicium
+                        </option>
+                        <option value="Nh">
+                            Nihonium
+                        </option>
+                        <option value="Fl">
+                            Flerovium
+                        </option>
+                        <option value="Mc">
+                            Moscovium
+                        </option>
+                        <option value="Lv">
+                            Livermorium
+                        </option>
+                        <option value="Ts">
+                            Tennessine
+                        </option>
+                        <option value="Og">
+                            Oganesson
+                        </option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
 
-        </form>
+        <?php includeShowcode("html5-example")?>
+
+        <script type="application/json" id="html5-example-props">
+        {
+            "replaceHTMLRules": {
+
+            },
+            "steps": [{
+                    "label": "Mark up the component with a select tag",
+                    "highlight": "%OPENCLOSETAG%select",
+                    "notes": ""
+                }, {
+                    "label": "Mark up all the options with the option tag",
+                    "highlight": "%OPENCLOSECONTENTTAG%option",
+                    "notes": ""
+                },
+                {
+                    "label": "Ensure the label is associated with the select tag",
+                    "highlight": "for",
+                    "notes": ""
+                }
+            ]
+        }
+        </script>
 
 
         <script src="js/shared/enable-listbox.js"></script>
@@ -328,7 +360,7 @@
 
     </main>
 
-    
+
 </body>
 
 </html>

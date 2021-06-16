@@ -14,13 +14,15 @@
 function spinbutton(el) {
 
   const id = el.id;
-  const upID = id + '_up';
-  const downID = id + '_down';
+  const liveID = id + '__live';
+  const upID = id + '__up';
+  const downID = id + '__down';
   const skipVal = parseInt(el.dataset.increment || '1');
 
   this.init = () => {
     // define widget attributes
-    this.$id = document.getElementById(id);
+    this.$el = document.getElementById(id);
+    this.$live = document.getElementById(liveID);
 
     this.upID = upID;
     this.$upButton = document.getElementById(upID);
@@ -28,12 +30,12 @@ function spinbutton(el) {
     this.$downButton = document.getElementById(downID);
     this.skipVal = skipVal;
 
-    this.valMin = parseInt(this.$id.getAttribute("aria-valuemin"));
-    this.valMax = parseInt(this.$id.getAttribute("aria-valuemax"));
-    this.valNow = parseInt(this.$id.getAttribute("aria-valuenow"));
+    this.valMin = parseInt(this.$el.getAttribute("aria-valuemin"));
+    this.valMax = parseInt(this.$el.getAttribute("aria-valuemax"));
+    this.valNow = parseInt(this.$el.getAttribute("aria-valuenow"));
 
-    this.$id.getAttribute("aria-live", "polite");
-    this.$id.getAttribute("contenteditable", "true");
+    this.$el.getAttribute("aria-live", "polite");
+    this.$el.getAttribute("contenteditable", "true");
 
     this.keys = {
       pageup: 33,
@@ -50,17 +52,21 @@ function spinbutton(el) {
     this.bindHandlers();
   }
 
-  this.setValue = function (valNow) {
+  this.setValue = function (valNow, isKeyEvent) {
     this.valNow = valNow;
     // update the control
-    this.$id.getAttribute("aria-valuenow", this.valNow);
-    this.$id.innerHTML = this.valNow;
+    this.$el.getAttribute("aria-valuenow", this.valNow);
+    this.$el.innerHTML = this.valNow;
+    this.$live.innerHTML = this.valNow;
     this.selectText();
-    this.$id.focus();
+
+    if (isKeyEvent) {
+      this.$el.focus();
+    }
   };
 
   this.selectText = function () {
-    const node = this.$id;
+    const node = this.$el;
 
     if (document.body.createTextRange) {
       const range = document.body.createTextRange();
@@ -100,11 +106,11 @@ function spinbutton(el) {
     this.$downButton.addEventListener("click", thisObj.handleClick);
 
     //////// bind event handlers to the spinbutton //////////////
-    this.$id.addEventListener("keydown", thisObj.handleKeyDown);
-    this.$id.addEventListener("keypress", thisObj.handleKeyPress);
-    this.$id.addEventListener("focus", thisObj.handleFocus);
-    this.$id.addEventListener("blur", thisObj.handleBlur);
-    this.$id.parentNode.addEventListener("focusout", thisObj.handleBlur);
+    this.$el.addEventListener("keydown", thisObj.handleKeyDown);
+    this.$el.addEventListener("keypress", thisObj.handleKeyPress);
+    this.$el.addEventListener("focus", thisObj.handleFocus);
+    this.$el.addEventListener("blur", thisObj.handleBlur);
+    this.$el.parentNode.addEventListener("focusout", thisObj.handleBlur);
   }; // end bindHandlers()
 
   //
@@ -118,9 +124,11 @@ function spinbutton(el) {
   // @return (boolean) Returns false
   //
   this.handleClick = (e) => {
-    $button = e.target;
+    const { currentTarget } = e;
+    const id = currentTarget.getAttribute("id")
+    console.log(currentTarget, id, this.upID);
 
-    if ($button.getAttribute("id") == this.upID) {
+    if (id == this.upID) {
       // if valuemax isn't met, increment valnow
       if (this.valNow < this.valMax) {
         this.setValue(this.valNow + 1);
@@ -132,8 +140,6 @@ function spinbutton(el) {
       }
     }
 
-    // set focus on the spinbutton
-    this.$id.focus();
 
     e.stopPropagation();
     return false;
@@ -283,9 +289,9 @@ function spinbutton(el) {
           // if valnow is small enough, increase by the skipVal,
           // otherwise just set to valmax
           if (this.valNow < this.valMax - this.skipVal) {
-            this.setValue(this.valNow + this.skipVal);
+            this.setValue(this.valNow + this.skipVal, true);
           } else {
-            this.setValue(this.valMax);
+            this.setValue(this.valMax, true);
           }
         }
 
@@ -297,9 +303,9 @@ function spinbutton(el) {
           // if valNow is big enough, decrease by the skipVal,
           // otherwise just set to valmin
           if (this.valNow > this.valMin + this.skipVal) {
-            this.setValue(this.valNow - this.skipVal);
+            this.setValue(this.valNow - this.skipVal, true);
           } else {
-            this.setValue(this.valMin);
+            this.setValue(this.valMin, true);
           }
         }
 
@@ -308,7 +314,7 @@ function spinbutton(el) {
       }
       case this.keys.home: {
         if (this.valNow < this.valMax) {
-          this.setValue(this.valMax);
+          this.setValue(this.valMax, true);
         }
 
         this.stopPropagation(e);
@@ -316,7 +322,7 @@ function spinbutton(el) {
       }
       case this.keys.end: {
         if (this.valNow > this.valMin) {
-          this.setValue(this.valMin);
+          this.setValue(this.valMin, true);
         }
 
         this.stopPropagation(e);
@@ -326,7 +332,7 @@ function spinbutton(el) {
       case this.keys.up: {
         // if valuemin isn't met, increment valnow
         if (this.valNow < this.valMax) {
-          this.setValue(this.valNow + 1);
+          this.setValue(this.valNow + 1, true);
         }
 
         this.stopPropagation(e);
@@ -336,7 +342,7 @@ function spinbutton(el) {
       case this.keys.down: {
         // if valuemax isn't met, decrement valnow
         if (this.valNow > this.valMin) {
-          this.setValue(this.valNow - 1);
+          this.setValue(this.valNow - 1, true);
         }
 
         this.stopPropagation(e);
@@ -387,7 +393,7 @@ function spinbutton(el) {
   //
   this.handleFocus = (e) => {
     // add the focus styling class to the control
-    this.$id.classList.add("focus");
+    this.$el.classList.add("focus");
 
     return true;
   }; // end handleFocus()
@@ -401,7 +407,7 @@ function spinbutton(el) {
   //
   this.handleBlur = (e) => {
     // Remove the focus styling class from the control
-    this.$id.classList.remove("focus");
+    this.$el.classList.remove("focus");
 
     return true;
   }; // end handleBlur()

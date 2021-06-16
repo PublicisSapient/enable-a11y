@@ -471,10 +471,7 @@ footer a,
 [role="contentinfo"] a {
   color: #ccccff;
 }
-div.spinControl {
-  position: relative;
-}
-div.spinControl,
+.enable-spinner,
 input[type="number"] {
   width: 4.375rem;
   height: 1.25rem;
@@ -484,35 +481,36 @@ input[type="number"] {
   font-size: 16px;
   text-align: right;
 }
-div.spinControl {
+.enable-spinner {
+  position: relative;
   margin: 1.25rem;
 }
-div.spinControl div.spinbutton {
+.enable-spinner__button {
   display: block;
   text-align: right;
   font-size: 16px;
   padding-right: 0.875rem;
 }
-div.spinControl div.spinbutton:active,
-div.spinControl div.spinbutton:hover,
-div.spinControl div.spinbutton:focus {
+.enable-spinner__button:active,
+.enable-spinner__button:hover,
+.enable-spinner__button:focus {
   margin: 0;
   background-color: #faf7f0;
   border: 1px solid red;
   height: 19px;
 }
-div.spinControl .spin-button {
+.enable-spinner .spin-button {
   position: absolute;
   right: 0;
   height: 0.625rem;
 }
-div.spinControl .spin-button--up {
+.enable-spinner .spin-button--up {
   top: 0;
 }
-div.spinControl .spin-button--down {
+.enable-spinner .spin-button--down {
   bottom: 0;
 }
-div.spinControl .spin-button img {
+.enable-spinner .spin-button img {
   margin: 0;
   padding: 0;
   border-left: 1px solid black;

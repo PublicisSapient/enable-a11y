@@ -85,3 +85,17 @@
   display: inline-block;
   pointer-events: none;
 }
+/* These are styles just for the global error */
+.error {
+  text-align: left;
+  color: red;
+}
+.error::before {
+  content: '';
+  background-image: url('../images/error.svg');
+  background-size: 0.7rem 0.7rem;
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.5em;
+}
