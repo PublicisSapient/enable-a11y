@@ -761,6 +761,17 @@
                 </div>
             </div>
         </div>
+
+        <h2>An ARIA List with presentational DIV tags between the list and listitems</h2>
+
+        <div role="list" class="product-images slick-initialized slick-slider slick-vertical">
+            <div role="presentation" class="slick-list draggable" style="height: 580px">
+                <div role="presentation" class="slick-track">
+                    <div role="listitem">Test 1</div>
+                    <div role="listitem">Test 2</div>
+            </div>
+        </div>
+        </div>
     </main>
 </body>
 

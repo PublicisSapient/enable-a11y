@@ -99,27 +99,27 @@
         <div id="html5-example">
             <div role="group" aria-labelledby="html-checkbox-multi-label">
                 <p id="html-checkbox-multi-label">
-                    <span class="sr-only">You must choose at least one of the following.</span>
                     The following people will have my soul when I die:
-
-                    <div class="error">You must choose at least one of the following.</div>
                 </p>
+
+
+                <div id="html-checkbox__error" class="error">You must choose at least one of the following.</div>
                 
                 <div class="checkbox-container">
                     <label for="html-checkbox-multi1">Zoltan:</label>
-                    <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" />
+                    <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error" />
                 </div>
                 <div class="checkbox-container">
                     <label for="html-checkbox-multi2">Noel:</label>
-                    <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" />
+                    <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error" />
                 </div>
                 <div class="checkbox-container">
                     <label for="html-checkbox-multi3">Alison:</label>
-                    <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" />
+                    <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error" />
                 </div>
                 <div class="checkbox-container">
                     <label for="html-checkbox-multi4">That guy who smokes in the alleyway at work:</label>
-                    <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" />
+                    <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error" />
                 </div>
 
             </div>
@@ -144,6 +144,11 @@
                     "label": "Ensure the whole group is labelled correctly",
                     "highlight": "aria-labelledby",
                     "notes": "Setting the aria-labelledby on the group will tell screen readers to announce the instructions for the whole group when users tab into the first checkbox in the group (sometimes all).  If there is an error that pertains to the whole group, it can be encapsulated in this label."
+                },
+                {
+                    "label": "Errors must be marked up with aria-describedby",
+                    "highlight": "aria-describedby",
+                    "notes": "You must always ensure what the aria-describedby is pointing to exists in the DOM."
                 },
                 {
                     "label": "Make sure you have aria-invalid set on the checkboxes if necessary",

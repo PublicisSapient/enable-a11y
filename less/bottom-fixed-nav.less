@@ -1,0 +1,32 @@
+@import "shared/mixins-and-vars";
+
+.bottom-fixed-nav {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: white;
+    border-top: 1px solid #999;
+    box-shadow: 0 -5px 5px #ccc;
+
+    &__list {
+        padding-left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__list-item {
+        flex: 1 1 auto;
+        justify-content: center;
+        display: flex;
+    }
+
+    &__link {
+        align-items: center;
+    }
+
+    &__avatar {
+        height: 24px;
+    }
+}
