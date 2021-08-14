@@ -179,6 +179,16 @@
               </div>
             </div>
 
+            <div class="field-block">
+              <label for="age-range">Age Range:</label>
+              <select>
+                <option>Choose one</option>
+                <option value="a">0 to 18 years old</option>
+                <option value="b">19 - 50 years old</option>
+                <option value="c">51 - 150 years old</option>
+              </select>
+            </div>
+
             <input value="Add Contact" type="submit" />
           </fieldset>
         </form>

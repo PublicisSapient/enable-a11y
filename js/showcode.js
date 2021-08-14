@@ -2,6 +2,7 @@ const showcode = new (function () {
   const htmlBlocks = document.querySelectorAll("[data-showcode-props]");
   const htmlCache = {};
   const codeblockCache = {};
+  const debug = false;
 
   // Needed by entify()
   const amp = /&/g;
@@ -84,7 +85,7 @@ const showcode = new (function () {
     const { cssRules } = el.sheet;
     for (let i=0; i<cssRules.length; i++) {
 
-      console.log('x', showAllCSS);
+      if (debug) { console.log('x', showAllCSS); }
       const cssRule = cssRules[i].cssText.trim();
 
       for (let j=0; j<selectorPropertyPairs.length; j++) {
@@ -94,7 +95,7 @@ const showcode = new (function () {
 
         properties.shift();
 
-        console.log(cssRule, selector);
+        if (debug) { console.log(cssRule, selector); }
 
         if (showAllCSS || cssRule.indexOf(selector + ' ') === 0) {
           // Now we must highlight the properties.
@@ -211,6 +212,7 @@ const showcode = new (function () {
         // "%OPENCLOSECONTENTTAG%fieldset highlghtstring attribute"
         // "%CSS%.foo .bar"
         //    Will show all CSS selectors that match the rule given (in this case, `.foo .bar`).
+        //    You can seperate multiple selectors with a semi-colon.
         // "%JS% functionName"
         //    Will show the JS function that matches the string given (in this case, `functionName()`) 
         command = highlightString.match(commandsRe);
@@ -267,7 +269,7 @@ const showcode = new (function () {
               code = '';
 
               for (let j=0; j<funcNames.length; j++) {
-                console.log('j', j, funcNames, funcNames[j])
+                if (debug) { console.log('j', j, funcNames, funcNames[j]) }
                 const funcNameSplit = funcNames[j].split('#');
                 const funcName = funcNameSplit[0].trim();
                 const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
