@@ -484,38 +484,34 @@ input[type="number"] {
 .enable-spinner {
   position: relative;
   margin: 1.25rem;
+  padding: 0 5px;
 }
 .enable-spinner__button {
   display: block;
   text-align: right;
   font-size: 16px;
-  padding-right: 0.875rem;
+  position: absolute;
+  right: 0;
+  height: 0.625rem;
+}
+.enable-spinner__button--up {
+  top: 0;
+}
+.enable-spinner__button--down {
+  bottom: 0;
+}
+.enable-spinner__button img {
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid black;
+  height: 0.625rem;
+  display: block;
 }
 .enable-spinner__button:active,
 .enable-spinner__button:hover,
 .enable-spinner__button:focus {
   margin: 0;
   background-color: #faf7f0;
-  border: 1px solid red;
-  height: 19px;
-}
-.enable-spinner .spin-button {
-  position: absolute;
-  right: 0;
-  height: 0.625rem;
-}
-.enable-spinner .spin-button--up {
-  top: 0;
-}
-.enable-spinner .spin-button--down {
-  bottom: 0;
-}
-.enable-spinner .spin-button img {
-  margin: 0;
-  padding: 0;
-  border-left: 1px solid black;
-  height: 0.625rem;
-  display: block;
 }
 label.sbLabel {
   font-weight: bold;

@@ -15,7 +15,8 @@ label {
   text-align: right;
 }
 input,
-.desc {
+.desc,
+[role="textbox"] {
   width: 45%;
   max-width: 20rem;
 }
@@ -65,10 +66,9 @@ fieldset,
 }
 fieldset legend,
 .aria-form-group legend,
-fieldset .fieldset,
-.aria-form-group .fieldset {
+fieldset .legend,
+.aria-form-group .legend {
   position: relative;
-  top: 1.5em;
   border-color: #AAAAAA;
   font-weight: bold;
   font-size: 1em;
@@ -77,6 +77,10 @@ fieldset .fieldset,
   margin: 0 0 1em 0;
   width: 100%;
   border-bottom: 1px #ccc solid;
+}
+fieldset legend,
+.aria-form-group legend {
+  top: 1.5em;
 }
 fieldset .fieldset,
 .aria-form-group .fieldset {

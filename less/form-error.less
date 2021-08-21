@@ -14,7 +14,7 @@ label {
   text-align: right;
 }
 
-input, .desc {
+input, .desc, [role="textbox"] {
   width: 45%;
   max-width: 20rem;
 }
@@ -74,9 +74,8 @@ fieldset,
   background-color: #EEEEEE;
 
   legend,
-  .fieldset {
+  .legend {
     position: relative;
-    top: 1.5em;
     border-color: #AAAAAA;
     font-weight: bold;
     font-size: 1em;
@@ -85,6 +84,10 @@ fieldset,
     margin: 0 0 1em 0;
     width: 100%;
     border-bottom: 1px #ccc solid;
+  }
+
+  legend {
+    top: 1.5em;
   }
 
   .fieldset {

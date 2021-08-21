@@ -3,12 +3,12 @@
 
 <head>
     <title>ARIA combobox role examples</title>
-    <?php include("includes/common-head-tags.php"); ?>
+    <?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/combobox__improved.css" />
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
         <aside class="notes">
@@ -34,7 +34,7 @@
             <div id="example1" class="enable-combobox">
                 <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
                 <div class="enable-combobox__inner-container">
-                    <span class="enable-combobox__controls-container">
+                    <div class="enable-combobox__controls-container">
                         <div role="status" aria-atomic="true"></div>
                         <input type="text" id="aria-fruit" aria-describedby="aria-fruit__desc" role="combobox"
                             aria-autocomplete="list" aria-owns="aria-fruit__list" aria-expanded="false"
@@ -47,73 +47,73 @@
 
                         <!-- The dropdown (a.k.a. "listbox") -->
                         <ul role="listbox" id="aria-fruit__list" tabindex="-1" hidden>
-                            <li tabindex="-1" role="option" value="Apple">Apple</li>
-                            <li tabindex="-1" role="option" value="Artichoke">Artichoke</li>
-                            <li tabindex="-1" role="option" value="Asparagus">Asparagus</li>
-                            <li tabindex="-1" role="option" value="Banana">Banana</li>
-                            <li tabindex="-1" role="option" value="Beets">Beets</li>
-                            <li tabindex="-1" role="option" value="Bell pepper">Bell pepper</li>
-                            <li tabindex="-1" role="option" value="Broccoli">Broccoli</li>
-                            <li tabindex="-1" role="option" value="Brussels sprout">Brussels sprout</li>
-                            <li tabindex="-1" role="option" value="Cabbage">Cabbage</li>
-                            <li tabindex="-1" role="option" value="Carrot">Carrot</li>
-                            <li tabindex="-1" role="option" value="Cauliflower">Cauliflower</li>
-                            <li tabindex="-1" role="option" value="Celery">Celery</li>
-                            <li tabindex="-1" role="option" value="Chard">Chard</li>
-                            <li tabindex="-1" role="option" value="Chicory">Chicory</li>
-                            <li tabindex="-1" role="option" value="Corn">Corn</li>
-                            <li tabindex="-1" role="option" value="Cucumber">Cucumber</li>
-                            <li tabindex="-1" role="option" value="Daikon">Daikon</li>
-                            <li tabindex="-1" role="option" value="Date">Date</li>
-                            <li tabindex="-1" role="option" value="Edamame">Edamame</li>
-                            <li tabindex="-1" role="option" value="Eggplant">Eggplant</li>
-                            <li tabindex="-1" role="option" value="Elderberry">Elderberry</li>
-                            <li tabindex="-1" role="option" value="Fennel">Fennel</li>
-                            <li tabindex="-1" role="option" value="Fig">Fig</li>
-                            <li tabindex="-1" role="option" value="Garlic">Garlic</li>
-                            <li tabindex="-1" role="option" value="Grape">Grape</li>
-                            <li tabindex="-1" role="option" value="Honeydew melon">Honeydew melon</li>
-                            <li tabindex="-1" role="option" value="Iceberg lettuce">Iceberg lettuce</li>
-                            <li tabindex="-1" role="option" value="Jerusalem artichoke">
+                            <li tabindex="-1" role="option" >Apple</li>
+                            <li tabindex="-1" role="option" >Artichoke</li>
+                            <li tabindex="-1" role="option" >Asparagus</li>
+                            <li tabindex="-1" role="option" >Banana</li>
+                            <li tabindex="-1" role="option" >Beets</li>
+                            <li tabindex="-1" role="option" >Bell pepper</li>
+                            <li tabindex="-1" role="option" >Broccoli</li>
+                            <li tabindex="-1" role="option" >Brussels sprout</li>
+                            <li tabindex="-1" role="option" >Cabbage</li>
+                            <li tabindex="-1" role="option" >Carrot</li>
+                            <li tabindex="-1" role="option" >Cauliflower</li>
+                            <li tabindex="-1" role="option" >Celery</li>
+                            <li tabindex="-1" role="option" >Chard</li>
+                            <li tabindex="-1" role="option" >Chicory</li>
+                            <li tabindex="-1" role="option" >Corn</li>
+                            <li tabindex="-1" role="option" >Cucumber</li>
+                            <li tabindex="-1" role="option" >Daikon</li>
+                            <li tabindex="-1" role="option" >Date</li>
+                            <li tabindex="-1" role="option" >Edamame</li>
+                            <li tabindex="-1" role="option" >Eggplant</li>
+                            <li tabindex="-1" role="option" >Elderberry</li>
+                            <li tabindex="-1" role="option" >Fennel</li>
+                            <li tabindex="-1" role="option" >Fig</li>
+                            <li tabindex="-1" role="option" >Garlic</li>
+                            <li tabindex="-1" role="option" >Grape</li>
+                            <li tabindex="-1" role="option" >Honeydew melon</li>
+                            <li tabindex="-1" role="option" >Iceberg lettuce</li>
+                            <li tabindex="-1" role="option" >
                                 Jerusalem artichoke
                             </li>
-                            <li tabindex="-1" role="option" value="Kale">Kale</li>
-                            <li tabindex="-1" role="option" value="Kiwi">Kiwi</li>
-                            <li tabindex="-1" role="option" value="Leek">Leek</li>
-                            <li tabindex="-1" role="option" value="Lemon">Lemon</li>
-                            <li tabindex="-1" role="option" value="Mango">Mango</li>
-                            <li tabindex="-1" role="option" value="Mangosteen">Mangosteen</li>
-                            <li tabindex="-1" role="option" value="Melon">Melon</li>
-                            <li tabindex="-1" role="option" value="Mushroom">Mushroom</li>
-                            <li tabindex="-1" role="option" value="Nectarine">Nectarine</li>
-                            <li tabindex="-1" role="option" value="Okra">Okra</li>
-                            <li tabindex="-1" role="option" value="Olive">Olive</li>
-                            <li tabindex="-1" role="option" value="Onion">Onion</li>
-                            <li tabindex="-1" role="option" value="Orange">Orange</li>
-                            <li tabindex="-1" role="option" value="Parship">Parship</li>
-                            <li tabindex="-1" role="option" value="Pea">Pea</li>
-                            <li tabindex="-1" role="option" value="Pear">Pear</li>
-                            <li tabindex="-1" role="option" value="Pineapple">Pineapple</li>
-                            <li tabindex="-1" role="option" value="Potato">Potato</li>
-                            <li tabindex="-1" role="option" value="Pumpkin">Pumpkin</li>
-                            <li tabindex="-1" role="option" value="Quince">Quince</li>
-                            <li tabindex="-1" role="option" value="Radish">Radish</li>
-                            <li tabindex="-1" role="option" value="Rhubarb">Rhubarb</li>
-                            <li tabindex="-1" role="option" value="Shallot">Shallot</li>
-                            <li tabindex="-1" role="option" value="Spinach">Spinach</li>
-                            <li tabindex="-1" role="option" value="Squash">Squash</li>
-                            <li tabindex="-1" role="option" value="Strawberry">Strawberry</li>
-                            <li tabindex="-1" role="option" value="Sweet potato">Sweet potato</li>
-                            <li tabindex="-1" role="option" value="Tomato">Tomato</li>
-                            <li tabindex="-1" role="option" value="Turnip">Turnip</li>
-                            <li tabindex="-1" role="option" value="Ugli fruit">Ugli fruit</li>
-                            <li tabindex="-1" role="option" value="Victoria plum">Victoria plum</li>
-                            <li tabindex="-1" role="option" value="Watercress">Watercress</li>
-                            <li tabindex="-1" role="option" value="Watermelon">Watermelon</li>
-                            <li tabindex="-1" role="option" value="Yam">Yam</li>
-                            <li tabindex="-1" role="option" value="Zucchi">Zucchi</li>
+                            <li tabindex="-1" role="option" >Kale</li>
+                            <li tabindex="-1" role="option" >Kiwi</li>
+                            <li tabindex="-1" role="option" >Leek</li>
+                            <li tabindex="-1" role="option" >Lemon</li>
+                            <li tabindex="-1" role="option" >Mango</li>
+                            <li tabindex="-1" role="option" >Mangosteen</li>
+                            <li tabindex="-1" role="option" >Melon</li>
+                            <li tabindex="-1" role="option" >Mushroom</li>
+                            <li tabindex="-1" role="option" >Nectarine</li>
+                            <li tabindex="-1" role="option" >Okra</li>
+                            <li tabindex="-1" role="option" >Olive</li>
+                            <li tabindex="-1" role="option" >Onion</li>
+                            <li tabindex="-1" role="option" >Orange</li>
+                            <li tabindex="-1" role="option" >Parship</li>
+                            <li tabindex="-1" role="option" >Pea</li>
+                            <li tabindex="-1" role="option" >Pear</li>
+                            <li tabindex="-1" role="option" >Pineapple</li>
+                            <li tabindex="-1" role="option" >Potato</li>
+                            <li tabindex="-1" role="option" >Pumpkin</li>
+                            <li tabindex="-1" role="option" >Quince</li>
+                            <li tabindex="-1" role="option" >Radish</li>
+                            <li tabindex="-1" role="option" >Rhubarb</li>
+                            <li tabindex="-1" role="option" >Shallot</li>
+                            <li tabindex="-1" role="option" >Spinach</li>
+                            <li tabindex="-1" role="option" >Squash</li>
+                            <li tabindex="-1" role="option" >Strawberry</li>
+                            <li tabindex="-1" role="option" >Sweet potato</li>
+                            <li tabindex="-1" role="option" >Tomato</li>
+                            <li tabindex="-1" role="option" >Turnip</li>
+                            <li tabindex="-1" role="option" >Ugli fruit</li>
+                            <li tabindex="-1" role="option" >Victoria plum</li>
+                            <li tabindex="-1" role="option" >Watercress</li>
+                            <li tabindex="-1" role="option" >Watermelon</li>
+                            <li tabindex="-1" role="option" >Yam</li>
+                            <li tabindex="-1" role="option" >Zucchi</li>
                         </ul>
-                    </span>
+</div>
                     <div class="sr-only" id="aria-fruit__desc">
                         As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
                     </div>
@@ -181,12 +181,13 @@
         <p>Another ARIA combobox example. Note the special formatting in the dropdown. This is common
             in a lot of modern searchboxes in the headings of a lot of e-commerce sites.</p>
 
+        <div id="example2">
         <form>
             <div class="enable-combobox">
                 <label for="aria-example-2"> Enter a name of a country or de jure sovereign state</label>
                 <div class="enable-combobox__inner-container">
-                    <span class="enable-combobox__controls-container">
-                        <!-- 
+                    <div class="enable-combobox__controls-container">
+                        <!--
                         This announces instructions to screen reader users when
                         they focus into the widget
                         -->
@@ -221,218 +222,492 @@
                             <div class="enable-combobox__group" role="presentation">
                                 <h2 class="enable-combobox__group-header">Communist States</h2>
 
-                                <div role="option" value="People's Republic of China">People's Republic of China</div>
-                                <div role="option" value="Democratic People's Republic of Korea (North Korea)">
+                                <div role="option" >People's Republic of China</div>
+                                <div role="option" >
                                     Democratic
                                     People's Republic of Korea (North Korea)</div>
-                                <div role="option" value="Socialist Republic of Vietnam">Socialist Republic of Vietnam
+                                <div role="option" >Socialist Republic of Vietnam
                                 </div>
-                                <div role="option" value="Lao People's Democratic Republic (Laos)">Lao People's
+                                <div role="option" >Lao People's
                                     Democratic
                                     Republic (Laos)</div>
-                                <div role="option" value="Republic of Cuba">Republic of Cuba</div>
+                                <div role="option" >Republic of Cuba</div>
                             </div>
                             <div class="enable-combobox__group" role="presentation">
                                 <h2 class="enable-combobox__group-header">Other States</h2>
-                                <div role="option" value="Afghanistan">Afghanistan</div>
-                                <div role="option" value="Albania">Albania</div>
-                                <div role="option" value="Algeria">Algeria</div>
-                                <div role="option" value="Andorra">Andorra</div>
-                                <div role="option" value="Angola">Angola</div>
-                                <div role="option" value="Antigua and Barbuda">Antigua and Barbuda</div>
-                                <div role="option" value="Argentina">Argentina</div>
-                                <div role="option" value="Armenia">Armenia</div>
-                                <div role="option" value="Australia">Australia</div>
-                                <div role="option" value="Austria">Austria</div>
-                                <div role="option" value="Azerbaijan">Azerbaijan</div>
-                                <div role="option" value="Bahamas">Bahamas</div>
-                                <div role="option" value="Bahrain">Bahrain</div>
-                                <div role="option" value="Bangladesh">Bangladesh</div>
-                                <div role="option" value="Barbados">Barbados</div>
-                                <div role="option" value="Belarus">Belarus</div>
-                                <div role="option" value="Belgium">Belgium</div>
-                                <div role="option" value="Belize">Belize</div>
-                                <div role="option" value="Benin">Benin</div>
-                                <div role="option" value="Bhutan">Bhutan</div>
-                                <div role="option" value="Bolivia">Bolivia</div>
-                                <div role="option" value="Bosnia and Herzegovina">Bosnia and Herzegovina</div>
-                                <div role="option" value="Botswana">Botswana</div>
-                                <div role="option" value="Brazil">Brazil</div>
-                                <div role="option" value="Brunei ">Brunei </div>
-                                <div role="option" value="Bulgaria">Bulgaria</div>
-                                <div role="option" value="Burkina Faso">Burkina Faso</div>
-                                <div role="option" value="Burundi">Burundi</div>
-                                <div role="option" value="Cabo Verde">Cabo Verde</div>
-                                <div role="option" value="Cambodia">Cambodia</div>
-                                <div role="option" value="Cameroon">Cameroon</div>
-                                <div role="option" value="Canada">Canada</div>
-                                <div role="option" value="Central African Republic">Central African Republic</div>
-                                <div role="option" value="Chad">Chad</div>
-                                <div role="option" value="Chile">Chile</div>
-                                <div role="option" value="Colombia">Colombia</div>
-                                <div role="option" value="Comoros">Comoros</div>
-                                <div role="option" value="Congo">Congo</div>
-                                <div role="option" value="Costa Rica">Costa Rica</div>
-                                <div role="option" value="Croatia">Croatia</div>
-                                <div role="option" value="Cyprus">Cyprus</div>
-                                <div role="option" value="Czech Republic (Czechia)">Czech Republic (Czechia)</div>
-                                <div role="option" value="Côte d'Ivoire">Côte d'Ivoire</div>
-                                <div role="option" value="DR Congo">DR Congo</div>
-                                <div role="option" value="Denmark">Denmark</div>
-                                <div role="option" value="Djibouti">Djibouti</div>
-                                <div role="option" value="Dominica">Dominica</div>
-                                <div role="option" value="Dominican Republic">Dominican Republic</div>
-                                <div role="option" value="Ecuador">Ecuador</div>
-                                <div role="option" value="Egypt">Egypt</div>
-                                <div role="option" value="El Salvador">El Salvador</div>
-                                <div role="option" value="Equatorial Guinea">Equatorial Guinea</div>
-                                <div role="option" value="Eritrea">Eritrea</div>
-                                <div role="option" value="Estonia">Estonia</div>
-                                <div role="option" value="Eswatini">Eswatini</div>
-                                <div role="option" value="Ethiopia">Ethiopia</div>
-                                <div role="option" value="Fiji">Fiji</div>
-                                <div role="option" value="Finland">Finland</div>
-                                <div role="option" value="France">France</div>
-                                <div role="option" value="Gabon">Gabon</div>
-                                <div role="option" value="Gambia">Gambia</div>
-                                <div role="option" value="Georgia">Georgia</div>
-                                <div role="option" value="Germany">Germany</div>
-                                <div role="option" value="Ghana">Ghana</div>
-                                <div role="option" value="Greece">Greece</div>
-                                <div role="option" value="Grenada">Grenada</div>
-                                <div role="option" value="Guatemala">Guatemala</div>
-                                <div role="option" value="Guinea">Guinea</div>
-                                <div role="option" value="Guinea-Bissau">Guinea-Bissau</div>
-                                <div role="option" value="Guyana">Guyana</div>
-                                <div role="option" value="Haiti">Haiti</div>
-                                <div role="option" value="Holy See">Holy See</div>
-                                <div role="option" value="Honduras">Honduras</div>
-                                <div role="option" value="Hungary">Hungary</div>
-                                <div role="option" value="Iceland">Iceland</div>
-                                <div role="option" value="India">India</div>
-                                <div role="option" value="Indonesia">Indonesia</div>
-                                <div role="option" value="Iran">Iran</div>
-                                <div role="option" value="Iraq">Iraq</div>
-                                <div role="option" value="Ireland">Ireland</div>
-                                <div role="option" value="Israel">Israel</div>
-                                <div role="option" value="Italy">Italy</div>
-                                <div role="option" value="Jamaica">Jamaica</div>
-                                <div role="option" value="Japan">Japan</div>
-                                <div role="option" value="Jordan">Jordan</div>
-                                <div role="option" value="Kazakhstan">Kazakhstan</div>
-                                <div role="option" value="Kenya">Kenya</div>
-                                <div role="option" value="Kiribati">Kiribati</div>
-                                <div role="option" value="Kuwait">Kuwait</div>
-                                <div role="option" value="Kyrgyzstan">Kyrgyzstan</div>
-                                <div role="option" value="Latvia">Latvia</div>
-                                <div role="option" value="Lebanon">Lebanon</div>
-                                <div role="option" value="Lesotho">Lesotho</div>
-                                <div role="option" value="Liberia">Liberia</div>
-                                <div role="option" value="Libya">Libya</div>
-                                <div role="option" value="Liechtenstein">Liechtenstein</div>
-                                <div role="option" value="Lithuania">Lithuania</div>
-                                <div role="option" value="Luxembourg">Luxembourg</div>
-                                <div role="option" value="Madagascar">Madagascar</div>
-                                <div role="option" value="Malawi">Malawi</div>
-                                <div role="option" value="Malaysia">Malaysia</div>
-                                <div role="option" value="Maldives">Maldives</div>
-                                <div role="option" value="Mali">Mali</div>
-                                <div role="option" value="Malta">Malta</div>
-                                <div role="option" value="Marshall Islands">Marshall Islands</div>
-                                <div role="option" value="Mauritania">Mauritania</div>
-                                <div role="option" value="Mauritius">Mauritius</div>
-                                <div role="option" value="Mexico">Mexico</div>
-                                <div role="option" value="Micronesia">Micronesia</div>
-                                <div role="option" value="Moldova">Moldova</div>
-                                <div role="option" value="Monaco">Monaco</div>
-                                <div role="option" value="Mongolia">Mongolia</div>
-                                <div role="option" value="Montenegro">Montenegro</div>
-                                <div role="option" value="Morocco">Morocco</div>
-                                <div role="option" value="Mozambique">Mozambique</div>
-                                <div role="option" value="Myanmar">Myanmar</div>
-                                <div role="option" value="Namibia">Namibia</div>
-                                <div role="option" value="Nauru">Nauru</div>
-                                <div role="option" value="Nepal">Nepal</div>
-                                <div role="option" value="Netherlands">Netherlands</div>
-                                <div role="option" value="New Zealand">New Zealand</div>
-                                <div role="option" value="Nicaragua">Nicaragua</div>
-                                <div role="option" value="Niger">Niger</div>
-                                <div role="option" value="Nigeria">Nigeria</div>
-                                <div role="option" value="North Macedonia">North Macedonia</div>
-                                <div role="option" value="Norway">Norway</div>
-                                <div role="option" value="Oman">Oman</div>
-                                <div role="option" value="Pakistan">Pakistan</div>
-                                <div role="option" value="Palau">Palau</div>
-                                <div role="option" value="Panama">Panama</div>
-                                <div role="option" value="Papua New Guinea">Papua New Guinea</div>
-                                <div role="option" value="Paraguay">Paraguay</div>
-                                <div role="option" value="Peru">Peru</div>
-                                <div role="option" value="Philippines">Philippines</div>
-                                <div role="option" value="Poland">Poland</div>
-                                <div role="option" value="Portugal">Portugal</div>
-                                <div role="option" value="Qatar">Qatar</div>
-                                <div role="option" value="Romania">Romania</div>
-                                <div role="option" value="Russia">Russia</div>
-                                <div role="option" value="Rwanda">Rwanda</div>
-                                <div role="option" value="Saint Kitts &amp; Nevis">Saint Kitts &amp; Nevis</div>
-                                <div role="option" value="Saint Lucia">Saint Lucia</div>
-                                <div role="option" value="Samoa">Samoa</div>
-                                <div role="option" value="San Marino">San Marino</div>
-                                <div role="option" value="Sao Tome &amp; Principe">Sao Tome &amp; Principe</div>
-                                <div role="option" value="Saudi Arabia">Saudi Arabia</div>
-                                <div role="option" value="Senegal">Senegal</div>
-                                <div role="option" value="Serbia">Serbia</div>
-                                <div role="option" value="Seychelles">Seychelles</div>
-                                <div role="option" value="Sierra Leone">Sierra Leone</div>
-                                <div role="option" value="Singapore">Singapore</div>
-                                <div role="option" value="Slovakia">Slovakia</div>
-                                <div role="option" value="Slovenia">Slovenia</div>
-                                <div role="option" value="Solomon Islands">Solomon Islands</div>
-                                <div role="option" value="Somalia">Somalia</div>
-                                <div role="option" value="South Africa">South Africa</div>
-                                <div role="option" value="South Korea">South Korea</div>
-                                <div role="option" value="South Sudan">South Sudan</div>
-                                <div role="option" value="Spain">Spain</div>
-                                <div role="option" value="Sri Lanka">Sri Lanka</div>
-                                <div role="option" value="St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines
+                                <div role="option" >Afghanistan</div>
+                                <div role="option" >Albania</div>
+                                <div role="option" >Algeria</div>
+                                <div role="option" >Andorra</div>
+                                <div role="option" >Angola</div>
+                                <div role="option" >Antigua and Barbuda</div>
+                                <div role="option" >Argentina</div>
+                                <div role="option" >Armenia</div>
+                                <div role="option" >Australia</div>
+                                <div role="option" >Austria</div>
+                                <div role="option" >Azerbaijan</div>
+                                <div role="option" >Bahamas</div>
+                                <div role="option" >Bahrain</div>
+                                <div role="option" >Bangladesh</div>
+                                <div role="option" >Barbados</div>
+                                <div role="option" >Belarus</div>
+                                <div role="option" >Belgium</div>
+                                <div role="option" >Belize</div>
+                                <div role="option" >Benin</div>
+                                <div role="option" >Bhutan</div>
+                                <div role="option" >Bolivia</div>
+                                <div role="option" >Bosnia and Herzegovina</div>
+                                <div role="option" >Botswana</div>
+                                <div role="option" >Brazil</div>
+                                <div role="option" >Brunei </div>
+                                <div role="option" >Bulgaria</div>
+                                <div role="option" >Burkina Faso</div>
+                                <div role="option" >Burundi</div>
+                                <div role="option" >Cabo Verde</div>
+                                <div role="option" >Cambodia</div>
+                                <div role="option" >Cameroon</div>
+                                <div role="option" >Canada</div>
+                                <div role="option" >Central African Republic</div>
+                                <div role="option" >Chad</div>
+                                <div role="option" >Chile</div>
+                                <div role="option" >Colombia</div>
+                                <div role="option" >Comoros</div>
+                                <div role="option" >Congo</div>
+                                <div role="option" >Costa Rica</div>
+                                <div role="option" >Croatia</div>
+                                <div role="option" >Cyprus</div>
+                                <div role="option" >Czech Republic (Czechia)</div>
+                                <div role="option" >Côte d'Ivoire</div>
+                                <div role="option" >DR Congo</div>
+                                <div role="option" >Denmark</div>
+                                <div role="option" >Djibouti</div>
+                                <div role="option" >Dominica</div>
+                                <div role="option" >Dominican Republic</div>
+                                <div role="option" >Ecuador</div>
+                                <div role="option" >Egypt</div>
+                                <div role="option" >El Salvador</div>
+                                <div role="option" >Equatorial Guinea</div>
+                                <div role="option" >Eritrea</div>
+                                <div role="option" >Estonia</div>
+                                <div role="option" >Eswatini</div>
+                                <div role="option" >Ethiopia</div>
+                                <div role="option" >Fiji</div>
+                                <div role="option" >Finland</div>
+                                <div role="option" >France</div>
+                                <div role="option" >Gabon</div>
+                                <div role="option" >Gambia</div>
+                                <div role="option" >Georgia</div>
+                                <div role="option" >Germany</div>
+                                <div role="option" >Ghana</div>
+                                <div role="option" >Greece</div>
+                                <div role="option" >Grenada</div>
+                                <div role="option" >Guatemala</div>
+                                <div role="option" >Guinea</div>
+                                <div role="option" >Guinea-Bissau</div>
+                                <div role="option" >Guyana</div>
+                                <div role="option" >Haiti</div>
+                                <div role="option" >Holy See</div>
+                                <div role="option" >Honduras</div>
+                                <div role="option" >Hungary</div>
+                                <div role="option" >Iceland</div>
+                                <div role="option" >India</div>
+                                <div role="option" >Indonesia</div>
+                                <div role="option" >Iran</div>
+                                <div role="option" >Iraq</div>
+                                <div role="option" >Ireland</div>
+                                <div role="option" >Israel</div>
+                                <div role="option" >Italy</div>
+                                <div role="option" >Jamaica</div>
+                                <div role="option" >Japan</div>
+                                <div role="option" >Jordan</div>
+                                <div role="option" >Kazakhstan</div>
+                                <div role="option" >Kenya</div>
+                                <div role="option" >Kiribati</div>
+                                <div role="option" >Kuwait</div>
+                                <div role="option" >Kyrgyzstan</div>
+                                <div role="option" >Latvia</div>
+                                <div role="option" >Lebanon</div>
+                                <div role="option" >Lesotho</div>
+                                <div role="option" >Liberia</div>
+                                <div role="option" >Libya</div>
+                                <div role="option" >Liechtenstein</div>
+                                <div role="option" >Lithuania</div>
+                                <div role="option" >Luxembourg</div>
+                                <div role="option" >Madagascar</div>
+                                <div role="option" >Malawi</div>
+                                <div role="option" >Malaysia</div>
+                                <div role="option" >Maldives</div>
+                                <div role="option" >Mali</div>
+                                <div role="option" >Malta</div>
+                                <div role="option" >Marshall Islands</div>
+                                <div role="option" >Mauritania</div>
+                                <div role="option" >Mauritius</div>
+                                <div role="option" >Mexico</div>
+                                <div role="option" >Micronesia</div>
+                                <div role="option" >Moldova</div>
+                                <div role="option" >Monaco</div>
+                                <div role="option" >Mongolia</div>
+                                <div role="option" >Montenegro</div>
+                                <div role="option" >Morocco</div>
+                                <div role="option" >Mozambique</div>
+                                <div role="option" >Myanmar</div>
+                                <div role="option" >Namibia</div>
+                                <div role="option" >Nauru</div>
+                                <div role="option" >Nepal</div>
+                                <div role="option" >Netherlands</div>
+                                <div role="option" >New Zealand</div>
+                                <div role="option" >Nicaragua</div>
+                                <div role="option" >Niger</div>
+                                <div role="option" >Nigeria</div>
+                                <div role="option" >North Macedonia</div>
+                                <div role="option" >Norway</div>
+                                <div role="option" >Oman</div>
+                                <div role="option" >Pakistan</div>
+                                <div role="option" >Palau</div>
+                                <div role="option" >Panama</div>
+                                <div role="option" >Papua New Guinea</div>
+                                <div role="option" >Paraguay</div>
+                                <div role="option" >Peru</div>
+                                <div role="option" >Philippines</div>
+                                <div role="option" >Poland</div>
+                                <div role="option" >Portugal</div>
+                                <div role="option" >Qatar</div>
+                                <div role="option" >Romania</div>
+                                <div role="option" >Russia</div>
+                                <div role="option" >Rwanda</div>
+                                <div role="option" >Saint Kitts &amp; Nevis</div>
+                                <div role="option" >Saint Lucia</div>
+                                <div role="option" >Samoa</div>
+                                <div role="option" >San Marino</div>
+                                <div role="option" >Sao Tome &amp; Principe</div>
+                                <div role="option" >Saudi Arabia</div>
+                                <div role="option" >Senegal</div>
+                                <div role="option" >Serbia</div>
+                                <div role="option" >Seychelles</div>
+                                <div role="option" >Sierra Leone</div>
+                                <div role="option" >Singapore</div>
+                                <div role="option" >Slovakia</div>
+                                <div role="option" >Slovenia</div>
+                                <div role="option" >Solomon Islands</div>
+                                <div role="option" >Somalia</div>
+                                <div role="option" >South Africa</div>
+                                <div role="option" >South Korea</div>
+                                <div role="option" >South Sudan</div>
+                                <div role="option" >Spain</div>
+                                <div role="option" >Sri Lanka</div>
+                                <div role="option" >St. Vincent &amp; Grenadines
                                 </div>
-                                <div role="option" value="State of Palestine">State of Palestine</div>
-                                <div role="option" value="Sudan">Sudan</div>
-                                <div role="option" value="Suriname">Suriname</div>
-                                <div role="option" value="Sweden">Sweden</div>
-                                <div role="option" value="Switzerland">Switzerland</div>
-                                <div role="option" value="Syria">Syria</div>
-                                <div role="option" value="Tajikistan">Tajikistan</div>
-                                <div role="option" value="Tanzania">Tanzania</div>
-                                <div role="option" value="Thailand">Thailand</div>
-                                <div role="option" value="Timor-Leste">Timor-Leste</div>
-                                <div role="option" value="Togo">Togo</div>
-                                <div role="option" value="Tonga">Tonga</div>
-                                <div role="option" value="Trinidad and Tobago">Trinidad and Tobago</div>
-                                <div role="option" value="Tunisia">Tunisia</div>
-                                <div role="option" value="Turkey">Turkey</div>
-                                <div role="option" value="Turkmenistan">Turkmenistan</div>
-                                <div role="option" value="Tuvalu">Tuvalu</div>
-                                <div role="option" value="Uganda">Uganda</div>
-                                <div role="option" value="Ukraine">Ukraine</div>
-                                <div role="option" value="United Arab Emirates">United Arab Emirates</div>
-                                <div role="option" value="United Kingdom">United Kingdom</div>
-                                <div role="option" value="United States">United States</div>
-                                <div role="option" value="Uruguay">Uruguay</div>
-                                <div role="option" value="Uzbekistan">Uzbekistan</div>
-                                <div role="option" value="Vanuatu">Vanuatu</div>
-                                <div role="option" value="Venezuela">Venezuela</div>
-                                <div role="option" value="Yemen">Yemen</div>
-                                <div role="option" value="Zambia">Zambia</div>
-                                <div role="option" value="Zimbabwe">Zimbabwe</div>
+                                <div role="option" >State of Palestine</div>
+                                <div role="option" >Sudan</div>
+                                <div role="option" >Suriname</div>
+                                <div role="option" >Sweden</div>
+                                <div role="option" >Switzerland</div>
+                                <div role="option" >Syria</div>
+                                <div role="option" >Tajikistan</div>
+                                <div role="option" >Tanzania</div>
+                                <div role="option" >Thailand</div>
+                                <div role="option" >Timor-Leste</div>
+                                <div role="option" >Togo</div>
+                                <div role="option" >Tonga</div>
+                                <div role="option" >Trinidad and Tobago</div>
+                                <div role="option" >Tunisia</div>
+                                <div role="option" >Turkey</div>
+                                <div role="option" >Turkmenistan</div>
+                                <div role="option" >Tuvalu</div>
+                                <div role="option" >Uganda</div>
+                                <div role="option" >Ukraine</div>
+                                <div role="option" >United Arab Emirates</div>
+                                <div role="option" >United Kingdom</div>
+                                <div role="option" >United States</div>
+                                <div role="option" >Uruguay</div>
+                                <div role="option" >Uzbekistan</div>
+                                <div role="option" >Vanuatu</div>
+                                <div role="option" >Venezuela</div>
+                                <div role="option" >Yemen</div>
+                                <div role="option" >Zambia</div>
+                                <div role="option" >Zimbabwe</div>
                             </div>
                         </div>
-                    </span>
+    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <?php includeShowcode("example2")?>
+
+      <script type="application/json" id="example2-props">
+      {
+        "replaceHTMLRules": {
+        },
+        "steps": [
+          {
+            "label": "Place ARIA roles in document",
+            "highlight": "role",
+            "notes": "The DOM node that contains the editable number that gains focus has the <strong>spinbutton</strong> role.  The up and down arrows are <strong>buttons</strong>. We didn't mark them up with the HTML button tag so they <strong>wouldn't</strong> gain keyboard focus.  They are usable on a mobile device (since they ignore the <strong>tabindex</strong> attribute."
+          }
+        ]
+      }
+      </script>
+
+        <h2>Example 2a: Autosubmitting when choosing an element</h2>
+
+        <form role="search" aria-label="Example 2a combobox example" tabindex="-1">
+            <div class="enable-combobox">
+                <label for="aria-example-2a">Country:</label>
+                <div class="enable-combobox__inner-container">
+                    <div id="aria-example-2a__close-desc" class="sr-only">
+                        Please choose a value or clear the combobox by either pressing the escape key or activating the clear button.
+                    </div>
+
+                    <div class="enable-combobox__controls-container">
+                        <!--
+                        This announces instructions to screen reader users when
+                        they focus into the widget
+                        -->
+                        <div class="sr-only" id="aria-example-2a__desc">
+                            As you type, use the up and down arrow keys or press ENTER and swipe to choose the autocomplete items.
+                        </div>
+
+                        <!--
+                        This live region will announce how many items are visible
+                        in the dropdown after the user types in characters into the
+                        input. (e.g. 4 items).
+                        -->
+                        <div role="status" aria-atomic="true">
+                            <!-- This is the list status live region: e.g. "4 items." -->
+                        </div>
+
+                        <!--
+                        The focusable part of the widget.
+                        -->
+                        <input type="text" tabindex="0" id="aria-example-2a" role="combobox" aria-autocomplete="list"
+                            aria-owns="aria-example-2a__list" aria-expanded="false" autocomplete="off" autocorrect="off"
+                            autocapitalize="off" aria-describedby="aria-example-2a__desc" />
+                        <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset" aria-describedby="aria-example-2a__close-desc">
+                            <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear"
+                                aria-describedby="aria-fruit__label" />
+                        </button>
+                        <!--
+                        The dropdown (a.k.a. "listbox")
+                    -->
+                        <div role="listbox" id="aria-example-2a__list" hidden >
+                            <div class="enable-combobox__group" role="presentation">
+                                <h2 class="enable-combobox__group-header">Communist States</h2>
+
+                                <div role="option" >People's Republic of China</div>
+                                <div role="option" >
+                                    Democratic
+                                    People's Republic of Korea (North Korea)</div>
+                                <div role="option" >Socialist Republic of Vietnam
+                                </div>
+                                <div role="option" >Lao People's
+                                    Democratic
+                                    Republic (Laos)</div>
+                                <div role="option" >Republic of Cuba</div>
+                            </div>
+                            <div class="enable-combobox__group" role="presentation">
+                                <h2 class="enable-combobox__group-header">Other States</h2>
+                                <div role="option" >Afghanistan</div>
+                                <div role="option" >Albania</div>
+                                <div role="option" >Algeria</div>
+                                <div role="option" >Andorra</div>
+                                <div role="option" >Angola</div>
+                                <div role="option" >Antigua and Barbuda</div>
+                                <div role="option" >Argentina</div>
+                                <div role="option" >Armenia</div>
+                                <div role="option" >Australia</div>
+                                <div role="option" >Austria</div>
+                                <div role="option" >Azerbaijan</div>
+                                <div role="option" >Bahamas</div>
+                                <div role="option" >Bahrain</div>
+                                <div role="option" >Bangladesh</div>
+                                <div role="option" >Barbados</div>
+                                <div role="option" >Belarus</div>
+                                <div role="option" >Belgium</div>
+                                <div role="option" >Belize</div>
+                                <div role="option" >Benin</div>
+                                <div role="option" >Bhutan</div>
+                                <div role="option" >Bolivia</div>
+                                <div role="option" >Bosnia and Herzegovina</div>
+                                <div role="option" >Botswana</div>
+                                <div role="option" >Brazil</div>
+                                <div role="option" >Brunei </div>
+                                <div role="option" >Bulgaria</div>
+                                <div role="option" >Burkina Faso</div>
+                                <div role="option" >Burundi</div>
+                                <div role="option" >Cabo Verde</div>
+                                <div role="option" >Cambodia</div>
+                                <div role="option" >Cameroon</div>
+                                <div role="option" >Canada</div>
+                                <div role="option" >Central African Republic</div>
+                                <div role="option" >Chad</div>
+                                <div role="option" >Chile</div>
+                                <div role="option" >Colombia</div>
+                                <div role="option" >Comoros</div>
+                                <div role="option" >Congo</div>
+                                <div role="option" >Costa Rica</div>
+                                <div role="option" >Croatia</div>
+                                <div role="option" >Cyprus</div>
+                                <div role="option" >Czech Republic (Czechia)</div>
+                                <div role="option" >Côte d'Ivoire</div>
+                                <div role="option" >DR Congo</div>
+                                <div role="option" >Denmark</div>
+                                <div role="option" >Djibouti</div>
+                                <div role="option" >Dominica</div>
+                                <div role="option" >Dominican Republic</div>
+                                <div role="option" >Ecuador</div>
+                                <div role="option" >Egypt</div>
+                                <div role="option" >El Salvador</div>
+                                <div role="option" >Equatorial Guinea</div>
+                                <div role="option" >Eritrea</div>
+                                <div role="option" >Estonia</div>
+                                <div role="option" >Eswatini</div>
+                                <div role="option" >Ethiopia</div>
+                                <div role="option" >Fiji</div>
+                                <div role="option" >Finland</div>
+                                <div role="option" >France</div>
+                                <div role="option" >Gabon</div>
+                                <div role="option" >Gambia</div>
+                                <div role="option" >Georgia</div>
+                                <div role="option" >Germany</div>
+                                <div role="option" >Ghana</div>
+                                <div role="option" >Greece</div>
+                                <div role="option" >Grenada</div>
+                                <div role="option" >Guatemala</div>
+                                <div role="option" >Guinea</div>
+                                <div role="option" >Guinea-Bissau</div>
+                                <div role="option" >Guyana</div>
+                                <div role="option" >Haiti</div>
+                                <div role="option" >Holy See</div>
+                                <div role="option" >Honduras</div>
+                                <div role="option" >Hungary</div>
+                                <div role="option" >Iceland</div>
+                                <div role="option" >India</div>
+                                <div role="option" >Indonesia</div>
+                                <div role="option" >Iran</div>
+                                <div role="option" >Iraq</div>
+                                <div role="option" >Ireland</div>
+                                <div role="option" >Israel</div>
+                                <div role="option" >Italy</div>
+                                <div role="option" >Jamaica</div>
+                                <div role="option" >Japan</div>
+                                <div role="option" >Jordan</div>
+                                <div role="option" >Kazakhstan</div>
+                                <div role="option" >Kenya</div>
+                                <div role="option" >Kiribati</div>
+                                <div role="option" >Kuwait</div>
+                                <div role="option" >Kyrgyzstan</div>
+                                <div role="option" >Latvia</div>
+                                <div role="option" >Lebanon</div>
+                                <div role="option" >Lesotho</div>
+                                <div role="option" >Liberia</div>
+                                <div role="option" >Libya</div>
+                                <div role="option" >Liechtenstein</div>
+                                <div role="option" >Lithuania</div>
+                                <div role="option" >Luxembourg</div>
+                                <div role="option" >Madagascar</div>
+                                <div role="option" >Malawi</div>
+                                <div role="option" >Malaysia</div>
+                                <div role="option" >Maldives</div>
+                                <div role="option" >Mali</div>
+                                <div role="option" >Malta</div>
+                                <div role="option" >Marshall Islands</div>
+                                <div role="option" >Mauritania</div>
+                                <div role="option" >Mauritius</div>
+                                <div role="option" >Mexico</div>
+                                <div role="option" >Micronesia</div>
+                                <div role="option" >Moldova</div>
+                                <div role="option" >Monaco</div>
+                                <div role="option" >Mongolia</div>
+                                <div role="option" >Montenegro</div>
+                                <div role="option" >Morocco</div>
+                                <div role="option" >Mozambique</div>
+                                <div role="option" >Myanmar</div>
+                                <div role="option" >Namibia</div>
+                                <div role="option" >Nauru</div>
+                                <div role="option" >Nepal</div>
+                                <div role="option" >Netherlands</div>
+                                <div role="option" >New Zealand</div>
+                                <div role="option" >Nicaragua</div>
+                                <div role="option" >Niger</div>
+                                <div role="option" >Nigeria</div>
+                                <div role="option" >North Macedonia</div>
+                                <div role="option" >Norway</div>
+                                <div role="option" >Oman</div>
+                                <div role="option" >Pakistan</div>
+                                <div role="option" >Palau</div>
+                                <div role="option" >Panama</div>
+                                <div role="option" >Papua New Guinea</div>
+                                <div role="option" >Paraguay</div>
+                                <div role="option" >Peru</div>
+                                <div role="option" >Philippines</div>
+                                <div role="option" >Poland</div>
+                                <div role="option" >Portugal</div>
+                                <div role="option" >Qatar</div>
+                                <div role="option" >Romania</div>
+                                <div role="option" >Russia</div>
+                                <div role="option" >Rwanda</div>
+                                <div role="option" >Saint Kitts &amp; Nevis</div>
+                                <div role="option" >Saint Lucia</div>
+                                <div role="option" >Samoa</div>
+                                <div role="option" >San Marino</div>
+                                <div role="option" >Sao Tome &amp; Principe</div>
+                                <div role="option" >Saudi Arabia</div>
+                                <div role="option" >Senegal</div>
+                                <div role="option" >Serbia</div>
+                                <div role="option" >Seychelles</div>
+                                <div role="option" >Sierra Leone</div>
+                                <div role="option" >Singapore</div>
+                                <div role="option" >Slovakia</div>
+                                <div role="option" >Slovenia</div>
+                                <div role="option" >Solomon Islands</div>
+                                <div role="option" >Somalia</div>
+                                <div role="option" >South Africa</div>
+                                <div role="option" >South Korea</div>
+                                <div role="option" >South Sudan</div>
+                                <div role="option" >Spain</div>
+                                <div role="option" >Sri Lanka</div>
+                                <div role="option" >St. Vincent &amp; Grenadines
+                                </div>
+                                <div role="option" >State of Palestine</div>
+                                <div role="option" >Sudan</div>
+                                <div role="option" >Suriname</div>
+                                <div role="option" >Sweden</div>
+                                <div role="option" >Switzerland</div>
+                                <div role="option" >Syria</div>
+                                <div role="option" >Tajikistan</div>
+                                <div role="option" >Tanzania</div>
+                                <div role="option" >Thailand</div>
+                                <div role="option" >Timor-Leste</div>
+                                <div role="option" >Togo</div>
+                                <div role="option" >Tonga</div>
+                                <div role="option" >Trinidad and Tobago</div>
+                                <div role="option" >Tunisia</div>
+                                <div role="option" >Turkey</div>
+                                <div role="option" >Turkmenistan</div>
+                                <div role="option" >Tuvalu</div>
+                                <div role="option" >Uganda</div>
+                                <div role="option" >Ukraine</div>
+                                <div role="option" >United Arab Emirates</div>
+                                <div role="option" >United Kingdom</div>
+                                <div role="option" >United States</div>
+                                <div role="option" >Uruguay</div>
+                                <div role="option" >Uzbekistan</div>
+                                <div role="option" >Vanuatu</div>
+                                <div role="option" >Venezuela</div>
+                                <div role="option" >Yemen</div>
+                                <div role="option" >Zambia</div>
+                                <div role="option" >Zimbabwe</div>
+                            </div>
+                        </div>
+    </div>
                 </div>
             </div>
         </form>
 
-        <h2>Example 2: Using HTML5 datalist</h2>
+
+        <h2>Example 3: Using HTML5 datalist</h2>
 
         <p>
             Ironically, this seems to be inaccessible compared to the ARIA version:
@@ -549,7 +824,17 @@
 
         <script src="js/accessibility.js"></script>
         <script src="js/combobox__improved.js"></script>
-        <?php include "includes/example-footer.php" ?>
+        <?php include "includes/example-footer.php"?>
+
+        <!-- This is the submit handler for example 2a -->
+        <script>
+            document.getElementById('aria-example-2a').addEventListener('combobox-change', (e) => {
+                const { currentTarget } = e;
+                const { value } = currentTarget;
+                const q = `https://www.google.com/search?${new URLSearchParams(`q=${value}`).toString()}`
+                location.href=q;
+            })
+        </script>
     </main>
 
 </body>

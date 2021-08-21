@@ -281,6 +281,9 @@ const EnableCombobox = function (componentRoot) {
         resetButton.focus();
         status.innerHTML="<span class='sr-only'>Selected " + value + ".</span>";
       })
+      
+      // fire the `onchange` event.
+      field.dispatchEvent(chooseEvent);
     }
   };
 
@@ -336,6 +339,8 @@ const EnableCombobox = function (componentRoot) {
     resetButton = root.querySelector('.enable-combobox__reset-button');
     controlsContainer = root.querySelector('.enable-combobox__controls-container');
 
+    const resetAriaDesc = resetButton.getAttribute('aria-describedby');
+
     // Events
     form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
 
@@ -363,10 +368,17 @@ const EnableCombobox = function (componentRoot) {
         option.setAttribute('id', field.id + '__field-' + optionNum);
     }
 
-    chooseEvent.initEvent('combobox-choose', true, true);
-    field.addEventListener('combobox-choose', (e) => {
+    chooseEvent.initEvent('combobox-change', true, true);
+    field.addEventListener('combobox-change', (e) => {
       console.log('choose', e);
     })
+
+    // Apply aria-describedby for close button on all the options.
+    if (resetAriaDesc) {
+      options.forEach((el, i) => {
+        el.setAttribute('aria-describedby', resetAriaDesc);
+      });
+    }
   };
 
   this.initCombo(componentRoot);

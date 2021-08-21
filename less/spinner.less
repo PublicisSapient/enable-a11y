@@ -9,9 +9,6 @@
 @spinButtonHeight: (@inputHeight / 2);
 @fontSize: (@inputHeightPx - 4) * 1px;
 
-.enable-spinner {
-  
-}
 
 .enable-spinner,
 input[type="number"] {
@@ -28,25 +25,14 @@ input[type="number"] {
 .enable-spinner {
   position: relative;
   margin: (20/@px);
+  padding: 0 5px;
 
   &__button {
     display: block;
     text-align: right;
     font-size: @fontSize;
-    padding-right: @spinButtonHeight + (4/@px);
     //width: @inputWidth - @spinButtonHeight - (7/@px);
 
-    &:active,
-    &:hover,
-    &:focus {
-      margin: 0;
-      background-color: #faf7f0;
-      border: 1px solid red;
-      height: (@inputHeightPx - 1) * 1px;
-    }
-  }
-
-  .spin-button {
     position: absolute;
     right: 0;
     height: @spinButtonHeight;
@@ -66,6 +52,19 @@ input[type="number"] {
       height: (@inputHeight / 2);
       display: block;
     }
+
+    
+    &:active,
+    &:hover,
+    &:focus {
+      margin: 0;
+      background-color: #faf7f0;
+      
+    }
+  }
+
+  .spin-button {
+    
   }
 }
 

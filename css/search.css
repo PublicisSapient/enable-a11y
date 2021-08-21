@@ -1,0 +1,35 @@
+/*
+ * Class for elements that are only visible to the screen reader. From
+ * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+ */
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.search__term {
+  width: 100%;
+  border: 3px solid #007e8f;
+  border-right: none;
+  padding: 5px;
+  height: 2.25rem;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+.search__term:focus {
+  color: #007e8f;
+}
+.search__button {
+  width: 2.5rem;
+  height: 2.25rem;
+  border: 1px solid #007e8f;
+  background: #007e8f;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.search__icon {
+  width: 1.25rem;
+}

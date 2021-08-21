@@ -1,0 +1,37 @@
+@import "shared/mixins-and-vars";
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+
+  &__term {
+    width: 100%;
+    border: 3px solid #007e8f;
+    border-right: none;
+    padding: 5px;
+    height: (36 / @px);
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9dbfaf;
+
+    &:focus {
+      color: #007e8f;
+    }
+  }
+
+  &__button {
+    width: (40 / @px);
+    height: (36 / @px);
+    border: 1px solid #007e8f;
+    background: #007e8f;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: (20 / @px);
+  }
+}

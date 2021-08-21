@@ -70,7 +70,7 @@
         Use the arrow keys or use the stepper buttons after this element to increase and decrease the values
       </div>
 
-        <div class="spinControl">
+        <div class="enable-spinner">
           <div
             id="sb1"
             class="spinbutton"
@@ -148,7 +148,7 @@
 
       <label id="sb2_label" class="sbLabel"
         >Choose a number between 500 and 1000</label>
-      <div class="spinControl">
+      <div class="enable-spinner">
         <div
           id="sb2"
           class="spinbutton"

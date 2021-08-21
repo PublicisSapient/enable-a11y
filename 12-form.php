@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
-    
+
     <title>ARIA form role examples</title>
-    <?php include("includes/common-head-tags.php"); ?>
+    <?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/group.css" />
+    <link rel="stylesheet" type="text/css" href="css/form-error.css" />
+    <link id="search-css" rel="stylesheet" type="text/css" href="css/search.css" />
 
 </head>
 
 <body>
 
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
 
@@ -56,13 +58,13 @@
                 <fieldset>
                     <legend id="contact_html5">Contact Information</legend>
 
-                    <label for="name_html5">Name</label>
+                    <label for="name_html5">Name: </label>
                     <input id="name_html5" size="25" type="text">
 
-                    <label for="email_html5">E-mail</label>
+                    <label for="email_html5">E-mail: </label>
                     <input id="email_html5" size="25" type="text">
 
-                    <label for="phone_html5">Phone</label>
+                    <label for="phone_html5">Phone: </label>
                     <input id="phone_html5" size="25" type="text">
 
                     <input value="Add Contact" type="submit">
@@ -94,16 +96,16 @@
 
         <div id="example2">
             <div role="form">
-                <div role="group" aria-labelledby="contact-aria" class="fieldset">
+                <div role="group" aria-labelledby="contact-aria" class="fieldset aria-form-group">
                     <div id="contact-aria" class="legend">Contact Information</div>
 
-                    <label for="name">Name</label>
+                    <label for="name">Name: </label>
                     <input id="name" size="25" type="text">
 
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail: </label>
                     <input id="email" size="25" type="text">
 
-                    <label for="phone">Phone</label>
+                    <label for="phone">Phone: </label>
                     <input id="phone" size="25" type="text">
 
                     <input value="Add Contact" type="submit">
@@ -139,16 +141,46 @@
         }
         </script>
 
-        <h2>Search Test</h2>
+        <h2>Search Form</h2>
 
-        <form>
-            <fieldset>
-                <legend id="contact">Search</legend>
-                <label for="search">Search this awesome site:</label><input role="search" id="search" type="text" />
-            </fieldset>
+        <div id="search-example">
+        <form role="search" >
+            <div class="search">
+                <label for="search-input" class="sr-only">Search:</label>
+                <input id="search-input" type="text" class="search__term" placeholder="What are you looking for?">
+                <button type="submit" class="search__button">
+                    <img class="search__icon" src="images/search.svg" alt="Search" />
+                </button>
+            </div>
         </form>
+    </div>
 
-        <?php include "includes/example-footer.php" ?>
+        <?php includeShowcode("search-example")?>
+
+        <script type="application/json" id="search-example-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [
+                {
+                    "label": "Add role of search to the form tag",
+                    "highlight": "role=\"search\"",
+                    "notes": "Adding this role makes this form easily found by screen reader users who skim through the page (e.g. via the Rotor in VoiceOver, or the Elements List of NVDA)"
+                },
+                {
+                    "label": "Add label for screen reader users",
+                    "highlight": "%OPENCLOSECONTENTTAG%label",
+                    "notes": "Since there is a search icon on this form, it can be argued that this label can be hidden visually with the <code>sr-only</code>."
+                },
+                {
+                    "label": "Ensure sizing of the form elements and the icons use relative units",
+                    "highlight": "%CSS%search-css~",
+                    "notes": "In order for the input fields and the icon to grow when using the browsers \"Resize Text\" functionality, it is important to use relative units, such as <code>rem</code> or <code>em</code>, when setting their widths and heights instead of absolute units, such as <code>px</code>.  In Enable, we <a href=\"https://codepen.io/janogarcia/pen/bNrKEP\">use LESS to convert px units to rem using this very simple method by Jano Garcia</a>."
+                }
+            ]
+        }
+    </script>
+
+        <?php include "includes/example-footer.php"?>
 
 
     </main>

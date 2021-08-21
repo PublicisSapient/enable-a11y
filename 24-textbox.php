@@ -5,7 +5,8 @@
     <title>ARIA Textbox Role Example</title>
     <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/group.css" />
-    <link rel="stylesheet" type="text/css" href="css/textbox.css" />
+    <link rel="stylesheet" type="text/css" href="css/form-error.css" />
+    <link id="textbox-css" rel="stylesheet" type="text/css" href="css/textbox.css" />
     
 </head>
 
@@ -48,13 +49,13 @@
                 <fieldset>
                     <legend>Payment information</legend>
                     <div>
-                        <label for="ccinfo">Credit Card Billing Address:</label>
+                        <label for="ccinfo">Billing Address:</label>
                         <input type="text" name="ccinfo" id="ccinfo" />
                     </div>
 
                     <div>
-                        <label for="reason">Reason for Late Payment:</label>
-                        <textarea id="reason" name="reason"></textarea>
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" name="notes"></textarea>
                     </div>
                 </fieldset>
 
@@ -72,6 +73,14 @@
                     "label": "All form fields need labels",
                     "highlight": "for",
                     "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
+                },
+                {
+                    "label": "Use <code>&lt;input type=\"text\"&gt;</code> for single line text inputs.",
+                    "highlight": "%OPENTAG%input"
+                },
+                {
+                    "label": "USe <code>&lt;textarea&gt;</code> for multiline text inputs",
+                    "highlight": "%OPENCLOSETAG%textarea"
                 }
             ]
         }
@@ -118,14 +127,19 @@
                     "notes": "If you do this, you don't need to set <strong>tabindex=\"0\"</strong>, since content editable elements get keyboard focus by default"
                 },
                 {
+                    "label": "All ARIA textboxes need labels using aria-labelledby",
+                    "highlight": "aria-labelledby",
+                    "notes": "Each form field have a label."
+                },
+                {
                     "label": "Use aria-multiline if you are simulating a textarea element.",
                     "highlight": "aria-multiline",
                     "notes": ""
                 },
                 {
-                    "label": "All ARIA textboxes need labels using aria-labelledby",
-                    "highlight": "aria-labelledby",
-                    "notes": "Each form field have a label."
+                    "label": "Use CSS to style multiline textboxes differently",
+                    "highlight": "%CSS%textbox-css~ [role=\"textbox\"]; [role=\"textbox\"][aria-multiline=\"true\"]",
+                    "notes": "Note the <code>resize: both</code> CSS on the multiline textbox.  This allows the browser to all the user to resize the textbox with a mouse (but not with a keyboard, as far as I'm aware).  <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/resize\">More information about this CSS property</a>."
                 }
             ]
         }
