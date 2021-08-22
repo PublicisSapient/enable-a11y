@@ -56,6 +56,7 @@
         <div class="expando">
             <h2><button id="say-expanded-state" class="expando__button" data-section="table of contents">Expand table of contents</button></h2>
             <section class="expando__contents expando__contents--collapsed">
+                <h3>Table of Contents</h3>
                 <ul>
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#thesis">Thesis</a></li>

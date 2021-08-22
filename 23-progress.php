@@ -41,15 +41,15 @@
                                 <li>Beep and speak: This option tells NVDA to both beep and speak when a progress bar updates.
                                 </li>
                             </ul>
-
-                            <li>For the ARIA
-                                <code>progressbar</code> role (but not the HTML5
-                                <code>progress</code> tag) NVDA will intepret the value of
-                                <code>aria-valuenow</code> as a percentage value, regardless of the value of
-                                <code>aria-valuemax</code>. It will also not read out the values correctly "live" when incrementing.</li>
-                            <li>NVDA does read the
-                                <code>aria-valuetext</code> value correctly.</li>
                         </li>
+
+                        <li>For the ARIA
+                            <code>progressbar</code> role (but not the HTML5
+                            <code>progress</code> tag) NVDA will intepret the value of
+                            <code>aria-valuenow</code> as a percentage value, regardless of the value of
+                            <code>aria-valuemax</code>. It will also not read out the values correctly "live" when incrementing.</li>
+                        <li>NVDA does read the
+                            <code>aria-valuetext</code> value correctly.</li>
                     </ul>
                 </li>
                 <li>Voiceover and Chromevox doesn't correctly read the

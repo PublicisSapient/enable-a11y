@@ -9,7 +9,7 @@ const ariaLinkShim = new (function () {
     if (e.type == 'click' || e.key === ' ' || e.key === 'Enter') {
       const ref = e.target != null ? e.target : e.srcElement;
       if (ref && ref.getAttribute('role') === 'link') {
-        window.location.href = ref.getAttribute('href');
+        window.location.href = ref.getAttribute('data-href');
       }
     }
   };

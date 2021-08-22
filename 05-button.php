@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Button demo</title>
 		<?php include "includes/common-head-tags.php";?>
     <link id="button-css" rel="stylesheet" type="text/css" href="css/button.css" />
@@ -122,7 +119,7 @@
         <h2>A link with the role of button</h2>
 
         <p>This is an
-            <code>&lt;a&gt;</code tag that has its role set to <code>button</code>. Developers should avoid doing this.</p>
+            <code>&lt;a&gt;</code> tag that has its role set to <code>button</code>. Developers should avoid doing this.</p>
 
         <div id="example3" class="button-container">
             <label id="link-button-label">If you are sure you want to give Facebook your data, push this:</label>

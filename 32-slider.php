@@ -82,7 +82,7 @@
 
         <div id="html-example">
             <form oninput="this.elements.myOutput.innerHTML = parseFloat(this.elements.donationAmount.value);">
-                <label for="horizontal-slider" class="html-slider__label" class="enable-slider__label">Amount you want
+                <label for="horizontal-slider" class="html-slider__label enable-slider__label">Amount you want
                     to donate to the Zoltan Hawryluk Developer Fund: </label>
                 <div>
                     <div class="html-slider__container">
@@ -176,6 +176,7 @@
                             </output>
                         </div>
                     </div>
+                </fieldset>
             </form>
         </div>
 

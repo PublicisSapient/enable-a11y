@@ -46,7 +46,7 @@
 
         <h2>Blank Alt attribute</h2>
         <div>
-            <img src="images/bomb.png" alt="" role="presentation" />
+            <img src="images/bomb.png" alt="" />
         </div>
 
         <h2>Alt attribute with one space</h2>
@@ -57,7 +57,6 @@
         <h2>SVG example</h2>
         <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text">
         <title id="circle-alt">A dark blue circle with text inside</title>
-		<?php include("includes/common-head-tags.php"); ?>
         <!-- 
             it is a good idea to put a background color for the image so any text without 
             a background is still legible.

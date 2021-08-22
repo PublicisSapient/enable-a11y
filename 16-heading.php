@@ -4,7 +4,7 @@
 <head>
     <title>ARIA Heading Role Examples</title>
 		<?php include("includes/common-head-tags.php"); ?>
-    <link href="https://fonts.googleapis.com/css?family=Ultra|Orienta" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ultra%7COrienta" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/heading.css" />
 
 </head>

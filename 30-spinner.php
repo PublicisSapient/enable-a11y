@@ -163,10 +163,10 @@
           750
         </div>
         <div id="sb2_up" class="enable-spinner__button enable-spinner__button--up" role="button" title="Increase Value">
-          <img src="images/button-arrow-up.png" role="presentation" />
+          <img src="images/button-arrow-up.png" alt="" role="presentation" />
         </div>
         <div id="sb2_down" class="enable-spinner__button enable-spinner__button--down" role="button" title="Decrease Value">
-          <img src="images/button-arrow-down.png" role="presentation" />
+          <img src="images/button-arrow-down.png" alt="" role="presentation" />
         </div>
       </div>
 

@@ -1,0 +1,75 @@
+#!/bin/bash
+
+VNU_CMD='java -jar node_modules/vnu-jar/build/dist/vnu.jar '
+
+URLS=`lynx -dump http://localhost:8888/aria-role-demos |awk '/http/{print $2}' | grep -v '#' | grep localhost | sort -u`
+
+CHECKFROM="$1"
+
+if [ "$CHECKFROM" = "" ]
+then
+	DOCHECK="1"
+fi
+
+rm tmp/* 2> /dev/null
+
+for i in $URLS
+do
+	FILE_SLUG=`echo $i| awk -F'/' '{print $NF}'`
+	TEMP_FILE="tmp/$FILE_SLUG"
+
+	if [ "$CHECKFROM" = "$FILE_SLUG" ]
+	then
+		DOCHECK="1"
+	fi
+
+	if [ "$DOCHECK" = "1" ]
+	then
+	
+		echo "Checking $i"
+		echo
+		wget $i -O $TEMP_FILE 2> /dev/null
+		
+		OUTPUT=`$VNU_CMD $TEMP_FILE 2>&1 | 
+			grep -v autocorrect | 
+			grep -v inputmode | 
+			grep -v 'The “dialog” element is not supported in all browsers' |
+			grep -v 'Bad value “dialog” for attribute “method”' |
+			grep -v 'The “button” role is unnecessary'`
+
+		# trim output
+		OUTPUT="${OUTPUT##*( )}"
+
+		echo "$OUTPUT"
+
+		OUTPUT_LEN=`echo "$OUTPUT" | wc -c`
+		echo $OUTPUT_LEN
+		
+		
+		if [ "$OUTPUT_LEN" -gt "1" ]
+		then
+			cat $TEMP_FILE | pbcopy
+			rm $TEMP_FILE
+			exit
+		fi
+
+
+		rm $TEMP_FILE
+
+		echo "Doing axe test on $i"
+		axe --exit $i 
+		AXE_RETURN="$?"
+		# echo "Returned $?"
+		# exit
+
+		if [ "$AXE_RETURN" -ne "0" ]
+		then
+			echo "Axe test failed: $AXE_RETURN"
+			exit
+		else
+			echo "Axe returned $AXE_RETURN"
+		fi
+	else
+		echo "Skipping $i ($FILE_SLUG)"
+	fi
+done

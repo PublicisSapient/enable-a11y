@@ -261,12 +261,14 @@
         </script>
 
 
-        <script src="js/shared/radio-and-checkbox-roles.js"></script>
-        <script src="js/shared/visibleIf.js"></script>
-
-        <?php include "includes/example-footer.php"?>
-
     </main>
+
+
+    <?php include "includes/example-footer.php"?>
+
+    <script src="js/shared/radio-and-checkbox-roles.js"></script>
+    <script src="js/shared/visibleIf.js"></script>
+
 </body>
 
 </html>

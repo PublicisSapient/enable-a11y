@@ -26,13 +26,18 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "accessibility-js-routines": "3.1.1",
+    "axe-core": "^4.3.2",
     "babel-preset-es2015": "^6.24.1",
     "jsdoc": "^3.6.6"
   },
   "dependencies": {
+    "axe-cli": "^3.2.1",
+    "chromedriver": "^92.0.1",
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
     "lessc": "^1.0.2",
-    "prismjs": "^1.24.0"
+    "prismjs": "^1.24.0",
+    "selenium-webdriver": "^4.0.0-beta.4",
+    "vnu-jar": "^21.6.11"
   }
 }

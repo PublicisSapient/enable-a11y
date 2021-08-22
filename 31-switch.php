@@ -43,6 +43,7 @@
 
       <div id="example1">
         <button
+          type="button"
           aria-labelledby="speakerPower__label"
           role="switch"
           aria-checked="true"

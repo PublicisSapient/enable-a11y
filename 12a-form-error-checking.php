@@ -171,9 +171,9 @@
                 type="text"
                 required
                 pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                aria-describedby="phone-desc"
+                aria-describedby="phone-desc2"
               />
-              <div id="phone-desc" class="desc">
+              <div id="phone-desc2" class="desc">
                 Format is xxx-xxx-xxxx<br />
                 (where x is a digit).
               </div>
@@ -181,7 +181,7 @@
 
             <div class="field-block">
               <label for="age-range">Age Range:</label>
-              <select>
+              <select id="age-range">
                 <option>Choose one</option>
                 <option value="a">0 to 18 years old</option>
                 <option value="b">19 - 50 years old</option>

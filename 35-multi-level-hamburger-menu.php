@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Accessible Multilevel Hamburger Menu</title>
     <link rel="stylesheet" type="text/css" href="css/home.css" />
@@ -21,13 +20,13 @@
             <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
 
                 <!-- This is the hamburger menu icon -->
-                <div class="enable-flyout__hamburger-icon" role="image">
+                <span class="enable-flyout__hamburger-icon" role="img">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span class="sr-only">mobile menu</span>
-                </div>
+            </span>
 
             </button>
             <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
@@ -48,7 +47,7 @@
                             Game Consoles
 
                         </button>
-                        <div id="section1" aria-label="Game Consoles"
+                        <div id="section1" aria-label="Game Consoles" role="group"
                             class="enable-flyout enable-flyout__level  enable-flyout__dropdown">
                             <button class="enable-flyout__hamburger-icon-facade"><span class="sr-only">close
                                     mobile flyout</span></button>
@@ -63,7 +62,7 @@
                                         class="enable-flyout__open-level-button">
                                         Atari
                                     </button>
-                                    <div aria-label="Atari" id="section1-1" class="enable-flyout enable-flyout__level ">
+                                    <div role="group" aria-label="Atari" id="section1-1" class="enable-flyout enable-flyout__level ">
                                         <button class="enable-flyout__hamburger-icon-facade"><span
                                                 class="sr-only">close mobile flyout</span></button>
                                         <div class="enable-flyout__level-heading">Atari</div>
@@ -79,7 +78,7 @@
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/space-invaders.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Space Invaders
                                                 </a>
                                             </li>
@@ -87,23 +86,23 @@
                                                     href="https://atariage.com/software_page.php?SoftwareLabelID=1007"
                                                     class="enable-flyout__link"><img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/asteroids.png" alt=""
-                                                        role="presentation" /> Asteroids</a></li>
+                                                        /> Asteroids</a></li>
                                             <li class="enable-flyout__menu-item"><a
                                                     href="https://atariage.com/software_page.php?SoftwareLabelID=342"
                                                     class="enable-flyout__link"><img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/pac-man.png" alt=""
-                                                        role="presentation" /> Pac-Man</a></li>
+                                                        /> Pac-Man</a></li>
                                             <li class="enable-flyout__menu-item"><a
                                                     href="https://atariage.com/software_page.php?SoftwareLabelID=2718"
                                                     class="enable-flyout__link"><img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/yars-revenge.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Yars' Revenge</a></li>
                                             <li class="enable-flyout__menu-item"><a
                                                     href="https://atariage.com/software_page.php?SoftwareID=1380"
                                                     class="enable-flyout__link"><img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/superman.png" alt=""
-                                                        role="presentation" /> Superman</a></li>
+                                                        /> Superman</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -113,7 +112,7 @@
                                         Intellivision
 
                                     </button>
-                                    <div id="section1-2" aria-label="Intellivision"
+                                    <div role="group" id="section1-2" aria-label="Intellivision"
                                         class="enable-flyout enable-flyout__level">
                                         <button class="enable-flyout__hamburger-icon-facade"><span
                                                 class="sr-only">close mobile flyout</span></button>
@@ -129,7 +128,7 @@
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/space-armada.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Space Armada
                                                 </a></li>
                                             <li class="enable-flyout__menu-item"><a
@@ -137,7 +136,7 @@
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/astrosmash.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Astrosmash
                                                 </a></li>
                                             <li class="enable-flyout__menu-item"><a
@@ -145,7 +144,7 @@
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/lock-n-chase.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Lock 'n Chase
                                                 </a></li>
                                             <li class="enable-flyout__menu-item"><a
@@ -153,14 +152,14 @@
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/dnd.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     Advanced Dungeons and Dragons</a></li>
                                             <li class="enable-flyout__menu-item"><a
                                                     href="https://history.blueskyrangers.com/mattelelectronics/games/masters.html"
                                                     class="enable-flyout__link">
                                                     <img class="enable-flyout__link-image"
                                                         src="images/hamburger-menu/he-man.png" alt=""
-                                                        role="presentation" />
+                                                        />
                                                     He-Man</a></li>
                                         </ul>
                                     </div>
@@ -183,7 +182,7 @@
                             Handheld Game Devices
 
                         </button>
-                        <div aria-label="Handheld Game Machines" id="section2"
+                        <div role="group" aria-label="Handheld Game Machines" id="section2"
                             class="enable-flyout enable-flyout__level enable-flyout__dropdown ">
                             <div class="enable-flyout__level-heading">Handheld Game Machines</div>
                             <button class="enable-flyout__hamburger-icon-facade"><span class="sr-only">close

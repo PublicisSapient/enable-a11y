@@ -28,7 +28,6 @@
                     <a href="https://github.com/w3c/aria/issues/504">are being questioned</a>
                 </li>
                 <li>The screen reader user experience is better if you surround your <code>dt</code>/<code>dd</code> pairs with a <code>div</code>.</li>
-                </li>
             </ul>
         </aside>
 

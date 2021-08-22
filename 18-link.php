@@ -71,7 +71,7 @@
         <p>
           This paragraph has a few
           <span
-            href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_link_role"
+            data-href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_link_role"
             tabindex="0"
             role="link"
             >ARIA link tags</span
@@ -92,13 +92,13 @@
         <p>
           In order for them to be functional, they need to have
           <span
-            href="https://en.wikipedia.org/wiki/JavaScript"
+            data-href="https://en.wikipedia.org/wiki/JavaScript"
             tabindex="0"
             role="link"
             >JavaScript</span
           >
           added to them to make them functional. Feel free to use
-          <span href="js/link.js" tabindex="0" role="link"
+          <span data-href="js/link.js" tabindex="0" role="link"
             >the script we use in this demo</span
           >
           if you need to use it.

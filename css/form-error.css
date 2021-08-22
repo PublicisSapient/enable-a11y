@@ -32,7 +32,7 @@ input,
 label.error {
   margin-left: calc(45% + 10px);
   text-align: left;
-  color: red;
+  color: #e60000;
 }
 label.error::before {
   content: '';
@@ -134,9 +134,9 @@ fieldset .fieldset,
   font-weight: bold;
 }
 form label.required::after {
-  color: red;
+  color: #e60000;
   content: " *";
 }
 .required-symbol {
-  color: red;
+  color: #e60000;
 }

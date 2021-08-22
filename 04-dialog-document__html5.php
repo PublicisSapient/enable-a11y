@@ -36,6 +36,7 @@
     <?php include "includes/example-header.php";?>
 
     <main>
+      <h1>Modal Dialog Example</h1>
       <aside class="notes">
         <h2>Notes:</h2>
 
@@ -80,7 +81,7 @@
               In order to continue, please log into the application
             </p>
             <form method="dialog">
-              <section>
+              <div>
                 <div>
                   <label for="username">Username:</label>
                   <input id="username" type="text" name="u" />
@@ -89,15 +90,15 @@
                   <label for="password">Password:</label>
                   <input id="password" type="password" name="p" />
                 </div>
-              </section>
-              <menu>
-                <button type="reset" id="cancel" onClick="onModalButtonClick();">
+              </div>
+              <div>
+                <button type="reset" id="cancel_bottom" onClick="onModalButtonClick();">
                   Cancel
                 </button>
                 <button type="submit" onClick="onModalButtonClick();">
                   Confirm
                 </button>
-              </menu>
+              </div>
             </form>
           </div>
         </dialog>
@@ -175,13 +176,14 @@
       </script>
 
 
-      <script src="js/accessibility.js"></script>
-      <script src="js/shared/dialog-polyfill.js"></script>
-      <script src="js/shared/dialog-polyfill-a11y-fixes.js"></script>
-      <script src="js/dialog-example.js"></script>
-
-      <?php include "includes/example-footer.php"?>
     </main>
 
+
+    <script src="js/accessibility.js"></script>
+    <script src="js/shared/dialog-polyfill.js"></script>
+    <script src="js/shared/dialog-polyfill-a11y-fixes.js"></script>
+    <script src="js/dialog-example.js"></script>
+
+    <?php include "includes/example-footer.php"?>
   </body>
 </html>

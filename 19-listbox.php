@@ -3,14 +3,14 @@
 
 <head>
     <title>ARIA listbox role example</title>
-    <?php include("includes/common-head-tags.php"); ?>
+    <?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/enable-listbox.css" />
 
 </head>
 
 <body>
 
-    <?php include "includes/example-header.php"; ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
 
@@ -34,34 +34,34 @@
                                     version
                                     is a "combo box, collapsed"
                                 </li>
+                            </ul>
                         </li>
-            </ul>
-            </li>
-            <li>
-                Opening the widget:
-                <ul>
-                    <li>
-                        <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how many
-                        other
-                        options there are (e.g. menu 26 items)
-                    </li>
-                    <li>
-                        <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the selected
-                        value.
-                        The ARIA version is described as a list and the HTML version is a "combo box, expanded".
-                    </li>
-                </ul>
-            </li>
-            <li>
-                Selecting a value:
-            <li>
-                <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the list
-                (e.g.
-                Californium, text, 2 of 26). Native version just reads the just the value
-                <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the list.</strong>
-            </li>
-            </li>
-            </ol>
+                    </ol>
+                </li>
+                <li>
+                    Opening the widget:
+                    <ul>
+                        <li>
+                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how many
+                            other
+                            options there are (e.g. menu 26 items)
+                        </li>
+                        <li>
+                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the selected
+                            value.
+                            The ARIA version is described as a list and the HTML version is a "combo box, expanded".
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Selecting a value:
+                <li>
+                    <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the list
+                    (e.g.
+                    Californium, text, 2 of 26). Native version just reads the just the value
+                    <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the list.</strong>
+
+                </li>
             </ul>
         </aside>
 
@@ -85,8 +85,7 @@
                             id="exp_button" class="enable-listbox__button">
                             Neptunium
                         </button>
-                        <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem"
-                            class="hidden">
+                        <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem">
                             <li id="exp_elem_Np" role="option">
                                 Neptunium
                             </li>
@@ -356,7 +355,7 @@
         <script src="js/shared/enable-listbox.js"></script>
         <script src="js/accessibility.js"></script>
 
-        <?php include "includes/example-footer.php" ?>
+        <?php include "includes/example-footer.php"?>
 
     </main>
 

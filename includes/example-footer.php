@@ -1,5 +1,5 @@
 
-        <div class="enable-example__footer">
+        <div class="enable-example__footer" role="contentinfo">
             <a href="..">Back to ENABLE homepage.</a>
         </div>
 

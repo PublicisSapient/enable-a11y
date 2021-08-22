@@ -744,15 +744,15 @@
             <div id="html5-fruit__statys" role="status" aria-atomic="true">
                 <!-- This is the list status live region: e.g. "4 items." -->
             </div>
-            <datalist role="listbox" id="languages">
+            <datalist id="languages">
                 <option id="Apple" value="Apple">Apple</option>
                 <option id="Artichoke" value="Artichoke">Artichoke</option>
                 <option id="Asparagus" value="Asparagus">Asparagus</option>
                 <option id="Banana" value="Banana">Banana</option>
                 <option id="Beets" value="Beets">Beets</option>
-                <option id="Bell pepper" value="Bell pepper">Bell pepper</option>
+                <option id="Bell-pepper" value="Bell pepper">Bell pepper</option>
                 <option id="Broccoli" value="Broccoli">Broccoli</option>
-                <option id="Brussels sprout" value="Brussels sprout">
+                <option id="Brussels-sprout" value="Brussels sprout">
                     Brussels sprout
                 </option>
                 <option id="Cabbage" value="Cabbage">Cabbage</option>
@@ -772,13 +772,13 @@
                 <option id="Fig" value="Fig">Fig</option>
                 <option id="Garlic" value="Garlic">Garlic</option>
                 <option id="Grape" value="Grape">Grape</option>
-                <option id="Honeydew melon" value="Honeydew melon">
+                <option id="Honeydew-melon" value="Honeydew melon">
                     Honeydew melon
                 </option>
-                <option id="Iceberg lettuce" value="Iceberg lettuce">
+                <option id="Iceberg-lettuce" value="Iceberg lettuce">
                     Iceberg lettuce
                 </option>
-                <option id="Jerusalem artichoke" value="Jerusalem artichoke">
+                <option id="Jerusalem-artichoke" value="Jerusalem artichoke">
                     Jerusalem artichoke
                 </option>
                 <option id="Kale" value="Kale">Kale</option>
@@ -807,11 +807,11 @@
                 <option id="Spinach" value="Spinach">Spinach</option>
                 <option id="Squash" value="Squash">Squash</option>
                 <option id="Strawberry" value="Strawberry">Strawberry</option>
-                <option id="Sweet potato" value="Sweet potato">Sweet potato</option>
+                <option id="Sweet-potato" value="Sweet potato">Sweet potato</option>
                 <option id="Tomato" value="Tomato">Tomato</option>
                 <option id="Turnip" value="Turnip">Turnip</option>
-                <option id="Ugli fruit" value="Ugli fruit">Ugli fruit</option>
-                <option id="Victoria plum" value="Victoria plum">
+                <option id="Ugli-fruit" value="Ugli fruit">Ugli fruit</option>
+                <option id="Victoria-plum" value="Victoria plum">
                     Victoria plum
                 </option>
                 <option id="Watercress" value="Watercress">Watercress</option>

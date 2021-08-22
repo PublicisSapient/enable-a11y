@@ -3,14 +3,14 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    
+
     <title>Accessible Table Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
+		<?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/table.css" />
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
 
@@ -21,7 +21,7 @@
 
             <ul>
                 <li><code>th</code> tags must have a scope attribute set to <code>row</code> if it is a heading for a table row, or <code>col</code> if it is a column row</li>
-                <li>All tables must have a text summary of what data is in the table.  This can be coded using a <code>summary</code> tag (see the first exmaple), or 
+                <li>All tables must have a text summary of what data is in the table.  This can be coded using a <code>summary</code> tag (see the first exmaple), or
                 a <code>aria-labelledby</code> on the table element (see the figcaption example)</li>
 
             </ul>
@@ -130,7 +130,10 @@
 
         <div id="example2">
             <table>
-                
+
+
+                <caption>A simple HTML table made with the caption not on the top of the markup.</caption>
+
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -138,9 +141,6 @@
                         <th scope="col">Birthday</th>
                     </tr>
                 </thead>
-
-                <caption>A simple HTML table made with the caption not on the top of the markup.</caption>
-
                 <tbody>
                     <tr>
                         <th scope="row">Jackie</th>
@@ -164,7 +164,7 @@
         <div id="example3">
             <figure>
                 <table aria-labelledby="fig-caption">
-                    
+
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
@@ -173,7 +173,7 @@
                         </tr>
                     </thead>
 
-                    
+
 
                     <tbody>
                         <tr>
@@ -218,10 +218,10 @@
             <div class="thead" role="rowgroup">
                 <div role="row">
 
-                    <!-- These `scope="col"` items are in to make voiceover report the number of columns in the table.-->
-                    <span role="columnheader" scope="col">Name</span>
-                    <span role="columnheader" scope="col">Age</span>
-                    <span role="columnheader" scope="col">Birthday</span>
+                    <!-- These role="columnheader" items are in to make voiceover report the number of columns in the table.-->
+                    <span role="columnheader">Name</span>
+                    <span role="columnheader">Age</span>
+                    <span role="columnheader">Birthday</span>
                 </div>
             </div>
 
@@ -245,16 +245,16 @@
 
         <p>This is relatively new to aria and may not be implemented by all assistive technologies.</p>
 
-        <div id="table1" role="table" aria-labelledby="table1-caption">
-            <div id="table1-caption" class="caption">ARIA table without rowgroup nodes.</div>
+        <div id="table-aria" role="table" aria-labelledby="table-aria-caption">
+            <div id="table-aria-caption" class="caption">ARIA table without rowgroup nodes.</div>
 
             <div class="thead">
                 <div role="row">
 
-                    <!-- These `scope="col"` items are in to make voiceover report the number of columns in the table.-->
-                    <span role="columnheader" scope="col">Name</span>
-                    <span role="columnheader" scope="col">Age</span>
-                    <span role="columnheader" scope="col">Birthday</span>
+                    <!-- These role="columnheader" items are in to make voiceover report the number of columns in the table.-->
+                    <span role="columnheader">Name</span>
+                    <span role="columnheader">Age</span>
+                    <span role="columnheader">Birthday</span>
                 </div>
             </div>
 
@@ -277,16 +277,16 @@
 
         <h2>A Complex Table Made Using Aria Roles</h2>
 
-        
+
 
         <div id="table2" role="table" aria-labelledby="table2-caption" >
-            
+
             <div class="thead" role="rowgroup">
                 <div role="row">
 
                     <span role="row" ></span>
-                    <span role="columnheader" scope="col">ACME Widgets</span>
-                    <span role="columnheader" scope="col">Our Competitor's Widgets</span>
+                    <span role="columnheader">ACME Widgets</span>
+                    <span role="columnheader">Our Competitor's Widgets</span>
                 </div>
             </div>
 
@@ -302,12 +302,12 @@
 
                 <div role="row">
                     <span role="rowheader">Costs for fuel per hour</span>
-                    <span role="cell">
+                    <div role="cell">
                         <div>
                             $20
                             <div>(Note: this is an estimate given current market value)</div>
                         </div>
-                    </span>
+                    </div>
                     <span role="cell">$100</span>
                 </div>
             </div>
@@ -323,7 +323,7 @@
 
         <h2>A Complex Table Made Using Aria Roles</h2>
 
-        
+
 
         <div id="complex-table" role="table" aria-labelledby="complex-table-caption" >
                 <table class="data complex">
@@ -379,63 +379,63 @@
 
         <h2>A Complex Table without using the scope attribute</h2>
 
-        
+
 
         <div id="no-scope-table" role="table" aria-labelledby="no-scope-table-caption" >
         <table class="complexexample">
-                <caption id="no-scope-table-caption">New Employee Orientation Schedule</caption>
-                <tbody>
-                  <tr>
-                    <th rowspan="2" id="date">Date</th>
-                    <th colspan="2" id="schedule">Schedule</th>
-                    <th rowspan="2" id="location">Location</th>
-                    <th colspan="2" rowspan="2" id="topics1">Topics</th>
-                  </tr>
-                  <tr>
-                    <th id="start">Start</th>
-                    <th id="end">End</th>
-                  </tr>
-                  <tr>
-                    <th id="monday" rowspan="5">Monday, June 1</th>
-                    <td headers="schedule start monday">9:00 a.m.</td>
-                    <td headers="schedule end monday">10:30 a.m.</td>
-                    <td headers="location monday">RH 001</td>
-                    <td headers="topics1 monday">
-                      Introduction to Company: Vision and Mission</td>
-                  </tr>
-                  <tr>
-                    <td headers="schedule start monday">10:30 a.m.</td>
-                    <td headers="schedule end monday">12:00 p.m.</td>
-                    <td headers="location monday">RH 001</td>
-                    <td headers="topics1 monday">HR Policies Review</td>
-                  </tr>
-                  <tr>
-                    <td headers="schedule monday" colspan="5">
-                      <strong><em>
-                        Lunch from 12:00 p.m. to 1:00 p.m.
-                      </em></strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td headers="schedule start monday">1:00 p.m.</td> 
-                    <td headers="schedule end monday">2:30 p.m.</td>
-                    <td headers="location monday">RH 001</td>
-                    <td headers="topics1 monday">Overview of Benefits</td>
-                  </tr>
-                  <tr>
-                    <td headers="schedule start monday">3:00 p.m.</td>
-                    <td headers="schedule end monday">4:30 p.m.</td>
-                    <td headers="location monday">RH 005</td>
-                    <td headers="topics1 monday">
-                      Health and Safety Procedures
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
+            <caption id="no-scope-table-caption">New Employee Orientation Schedule</caption>
+            <tbody>
+                <tr>
+                <th rowspan="2" id="date">Date</th>
+                <th colspan="2" id="schedule">Schedule</th>
+                <th rowspan="2" id="location">Location</th>
+                <th rowspan="2" id="topics1">Topics</th>
+                </tr>
+                <tr>
+                <th id="start">Start</th>
+                <th id="end">End</th>
+                </tr>
+                <tr>
+                <th id="monday" rowspan="5">Monday, June 1</th>
+                <td headers="schedule start monday">9:00 a.m.</td>
+                <td headers="schedule end monday">10:30 a.m.</td>
+                <td headers="location monday">RH 001</td>
+                <td headers="topics1 monday">
+                    Introduction to Company: Vision and Mission</td>
+                </tr>
+                <tr>
+                <td headers="schedule start monday">10:30 a.m.</td>
+                <td headers="schedule end monday">12:00 p.m.</td>
+                <td headers="location monday">RH 001</td>
+                <td headers="topics1 monday">HR Policies Review</td>
+                </tr>
+                <tr>
+                <td headers="schedule monday" colspan="4">
+                    <strong><em>
+                    Lunch from 12:00 p.m. to 1:00 p.m.
+                    </em></strong>
+                </td>
+                </tr>
+                <tr>
+                <td headers="schedule start monday">1:00 p.m.</td>
+                <td headers="schedule end monday">2:30 p.m.</td>
+                <td headers="location monday">RH 001</td>
+                <td headers="topics1 monday">Overview of Benefits</td>
+                </tr>
+                <tr>
+                <td headers="schedule start monday">3:00 p.m.</td>
+                <td headers="schedule end monday">4:30 p.m.</td>
+                <td headers="location monday">RH 005</td>
+                <td headers="topics1 monday">
+                    Health and Safety Procedures
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script src="js/role-checkbox.js"></script>
-    <?php include "includes/example-footer.php" ?>
+    <?php include "includes/example-footer.php"?>
 
     </main>
 </body>

@@ -3,13 +3,13 @@
 
 <head>
     <title>HTML5 and ARIA Accessible Drawer Examples</title>
-    <?php include("includes/common-head-tags.php"); ?>
+    <?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/dropdown.css" />
-    
+
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
         <h1>Accessible Drawer/Expando</h1>
@@ -47,7 +47,7 @@
 
                     <ul>
                         <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">
-                                MDM documentation</li>
+                                MDM documentation</a></li>
                         <li><a
                                 href="https://css-tricks.com/quick-reminder-that-details-summary-is-the-easiest-way-ever-to-make-an-accordion/">
                                 Quick Reminder that Details/Summary is the Easiest Way Ever to Make an Accordion
@@ -100,7 +100,7 @@
                                 <label class="enable-multiselect__label" for="product3">SUVs</label>
                                 <input class="enable-multiselect__checkbox sr-only" name="product" type="checkbox" id="product4">
                                 <label class="enable-multiselect__label" for="product4">Motorcycles</label>
-                                
+
                         </fieldset>
                     </div>
 
@@ -142,6 +142,7 @@
                     </div>
                 </div>
             </div>
+    </div>
 
             <?php includeShowcode("example2")?>
 
@@ -174,7 +175,7 @@
             </script>
 
 
-            <?php include "includes/example-footer.php" ?>
+            <?php include "includes/example-footer.php"?>
     </main>
 
     <script>

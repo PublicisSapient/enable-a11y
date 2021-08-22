@@ -63,16 +63,16 @@
             <fieldset>
                 <legend>Send an alert when a charge exceeds $ 250</legend>
                 <div>
-                    <input type="radio" id="radio2-1" name="a2radio"></input>
+                    <input type="radio" id="radio2-1" name="a2radio" />
                     <label for="radio2-1">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="radio2-2" name="a2radio"></input>
+                    <input type="radio" id="radio2-2" name="a2radio" />
                     <label for="radio2-2">No</label>
                 </div>
             </fieldset>
             <div>
-                <input type="submit" value="Continue" id="continue_btn" name="continue_btn" />
+                <input type="submit" value="Continue" />
             </div>
         </div>
 
@@ -130,16 +130,16 @@
                 <fieldset>
                     <legend>Send an alert when a charge exceeds $ 250</legend>
                     <div>
-                        <input type="radio" id="enable-radio2-1" name="enable-a2radio"></input>
+                        <input type="radio" id="enable-radio2-1" name="enable-a2radio" />
                         <label for="enable-radio2-1">Yes</label>
                     </div>
                     <div>
-                        <input type="radio" id="enable-radio2-2" name="enable-a2radio"></input>
+                        <input type="radio" id="enable-radio2-2" name="enable-a2radio" />
                         <label for="enable-radio2-2">No</label>
                     </div>
                 </fieldset>
                 <div>
-                    <input type="submit" value="Continue" id="continue_btn" name="continue_btn" />
+                    <input type="submit" value="Continue" />
                 </div>
             </div>
         </div>
@@ -197,11 +197,11 @@
             <div role="radiogroup" aria-labelledby="alert1" class="enable-custom-radiogroup aria-form-group">
                 <p id="alert1" class="legend">Send an alert when balance exceeds $ 3,000</p>
                 <div>
-                    <span role="radio" tabindex="0" aria-labelledby="a1r1" data-name="a1radio"></span>
+                    <span role="radio" aria-checked="false" tabindex="0" aria-labelledby="a1r1" data-name="a1radio"></span>
                     <span id="a1r1" class="aria-radio-label">Yes</span>
                 </div>
                 <div>
-                    <span role="radio" tabindex="0" aria-labelledby="a1r2" data-name="a1radio"></span>
+                    <span role="radio" aria-checked="false" tabindex="0" aria-labelledby="a1r2" data-name="a1radio"></span>
                     <span id="a1r2" class="aria-radio-label">No</span>
                 </div>
             </div>
@@ -211,16 +211,16 @@
             <div role="radiogroup" aria-labelledby="alert2" class="enable-custom-radiogroup aria-form-group">
                 <p id="alert2" class="legend">Send an alert when a charge exceeds $ 250</p>
                 <div>
-                    <span role="radio" tabindex="0" aria-labelledby="a2r1" data-name="a2radio"></span>
+                    <span role="radio" aria-checked="false" tabindex="0" aria-labelledby="a2r1" data-name="a2radio"></span>
                     <span id="a2r1" class="aria-radio-label">Yes</span>
                 </div>
                 <div>
-                    <span role="radio" tabindex="0" aria-labelledby="a2r2" data-name="a2radio"></span>
+                    <span role="radio" aria-checked="false" tabindex="0" aria-labelledby="a2r2" data-name="a2radio"></span>
                     <span id="a2r2" class="aria-radio-label">No</span>
                 </div>
             </div>
             <div>
-                <input type="submit" value="Continue" id="continue_btn" name="continue_btn" />
+                <input type="submit" value="Continue" />
             </div>
         </div>
 
@@ -238,6 +238,11 @@
                     "label": "Set role=\"radio\" and tabindex=\"0\" to all the custom radio buttons",
                     "highlight": "role=\"radio\" ||| tabindex",
                     "notes": "The <strong>role=\"radio\"</strong> ensures screen readers announce the component as a radio button when it gets keyboard focus.  The <strong>tabindex=\"0\"</strong> ensures the elements get keyboard focus."
+                },
+                {
+                    "label": "Set aria-checked to the appropriate value for all checkboxes",
+                    "highlight": "aria-checked",
+                    "notes": ""
                 },
                 {
                     "label": "Use aria-labelledby on the radiogroup to label the group",
@@ -276,35 +281,34 @@
 
 
 
-        <h2>Example 4: HTML5 version that uses radiogroup roles.</strong>
-        </h2>
+        <h2>Example 4: HTML5 version that uses radiogroup roles.</h2>
 
         <div id="example4">
             <h3 class="form-heading">Set Alerts for your Account</h3>
             <div role="radiogroup" class="aria-form-group" aria-labelledby="html2-alert1">
                 <p id="html2-alert1" class="legend">Send an alert when balance exceeds $ 3,000</p>
                 <div>
-                    <input type="radio" id="desc-radio1-1" name="a1e3radio"></input>
+                    <input type="radio" id="desc-radio1-1" name="a1e3radio" />
                     <label for="desc-radio1-1">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="desc-radio1-2" name="a1e3radio"></input>
+                    <input type="radio" id="desc-radio1-2" name="a1e3radio" />
                     <label for="desc-radio1-2">No</label>
                 </div>
             </div>
             <div role="radiogroup" class="aria-form-group" aria-labelledby="html2-alert2">
                 <p id="html2-alert2" class="legend">Send an alert when a charge exceeds $ 250</p>
                 <div>
-                    <input type="radio" id="desc-radio2-1" name="a2e3radio"></input>
+                    <input type="radio" id="desc-radio2-1" name="a2e3radio" />
                     <label for="desc-radio2-1">Yes</label>
                 </div>
                 <div>
-                    <input type="radio" id="desc-radio2-2" name="a2e3radio"></input>
+                    <input type="radio" id="desc-radio2-2" name="a2e3radio" />
                     <label for="desc-radio2-2">No</label>
                 </div>
             </div>
             <div>
-                <input type="submit" value="Continue" id="continue_btn" name="continue_btn" />
+                <input type="submit" value="Continue" />
             </div>
         </div>
 
