@@ -3,13 +3,13 @@
 VNU_CMD='java -jar node_modules/vnu-jar/build/dist/vnu.jar '
 
 URLS=`lynx -dump http://localhost:8888/aria-role-demos |awk '/http/{print $2}' | grep -v '#' | grep localhost | sort -u`
+DOWNLOADED_URLS=""
+TEMP_FILES=""
 
-CHECKFROM="$1"
 
-if [ "$CHECKFROM" = "" ]
-then
-	DOCHECK="1"
-fi
+#.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
+AXE_DELAYED_FILES="21-math.php"
+
 
 rm tmp/* 2> /dev/null
 
@@ -18,65 +18,64 @@ do
 	FILE_SLUG=`echo $i| awk -F'/' '{print $NF}'`
 	TEMP_FILE="tmp/$FILE_SLUG"
 
-	if [ "$CHECKFROM" = "$FILE_SLUG" ]
-	then
-		DOCHECK="1"
-	fi
-
-	if [ "$DOCHECK" = "1" ]
-	then
 	
-		echo "Checking $i"
-		echo
-		wget $i -O $TEMP_FILE 2> /dev/null
-		
-		OUTPUT=`$VNU_CMD $TEMP_FILE 2>&1 | 
-			grep -v autocorrect | 
-			grep -v inputmode | 
-			grep -v 'The “dialog” element is not supported in all browsers' |
-			grep -v 'Bad value “dialog” for attribute “method”' |
-			grep -v 'The “button” role is unnecessary'`
-
-		# trim output
-		OUTPUT="${OUTPUT##*( )}"
-
-		echo "$OUTPUT"
-
-		OUTPUT_LEN=`echo "$OUTPUT" | wc -c`
-		echo $OUTPUT_LEN
-		
-		
-		if [ "$OUTPUT_LEN" -gt "1" ]
-		then
-			cat $TEMP_FILE | pbcopy
-			rm $TEMP_FILE
-			exit
-		fi
-
-
-		rm $TEMP_FILE
-
-		echo "Doing axe test on $i"
-		
-		if [ "$FILE_SLUG" = "21-math.php" ]
-		then
-			axe --exit --load-delay=2000 $i 
-		else 
-			axe --exit  $i 
-		fi
-
-		AXE_RETURN="$?"
-		# echo "Returned $?"
-		# exit
-
-		if [ "$AXE_RETURN" -ne "0" ]
-		then
-			echo "Axe test failed: $AXE_RETURN"
-			exit
-		else
-			echo "Axe returned $AXE_RETURN"
-		fi
-	else
-		echo "Skipping $i ($FILE_SLUG)"
-	fi
+	printf "."
+	
+	wget $i -O $TEMP_FILE 2> /dev/null
+	DOWNLOADED_URLS=`echo -e "$DOWNLOADED_URLS\n$i"`
+	TEMP_FILES="$TEMP_FILES $TEMP_FILE"
 done
+echo	
+		
+
+echo "Checking HTML...."
+echo
+OUTPUT=`$VNU_CMD $TEMP_FILES 2>&1 | 
+	grep -v autocorrect | 
+	grep -v inputmode | 
+	grep -v 'The “dialog” element is not supported in all browsers' |
+	grep -v 'Bad value “dialog” for attribute “method”' |
+	grep -v 'The “button” role is unnecessary'`
+
+# trim output
+OUTPUT="${OUTPUT##*( )}"
+
+echo "$OUTPUT"
+
+
+OUTPUT_LEN=`echo "$OUTPUT" | wc -c`
+
+if [ "$OUTPUT_LEN" -gt "1" ]
+then
+	echo "$OUTPUT"
+	rm $TEMP_FILES
+	exit
+fi
+
+rm $TEMP_FILES
+
+echo "Running accessibility tests..."
+
+
+#.. Make a list of the delayed URLS
+AXE_DELAYED_URLS=""
+AXE_UNDELAYED_URLS="$DOWNLOADED_URLS"
+for delayed_file in $AXE_DELAYED_FILES
+do
+	GREP=`echo "$DOWNLOADED_URLS" | grep $delayed_file`
+	AXE_DELAYED_URLS="$AXE_DELAYED_URLS $GREP"
+	AXE_UNDELAYED_URLS=`echo "$AXE_UNDELAYED_URLS" | grep -v $delayed_file`
+done
+
+axe --exit --load-delay=2000 $AXE_DELAYED_URLS
+AXE_DELAY_RETURN="$?"
+
+axe --exit --verbose $AXE_UNDELAYED_URLS 
+AXE_UNDELAY_RETURN="$?"
+
+
+if [ "$AXE_DELAY_RETURN" -ne "0" -a "$AXE_UNDELAY_RETURN" -ne "0" ]
+then
+	echo "There are accessibility issues"
+	exit 1
+fi
