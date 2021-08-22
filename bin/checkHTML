@@ -57,7 +57,14 @@ do
 		rm $TEMP_FILE
 
 		echo "Doing axe test on $i"
-		axe --exit $i 
+		
+		if [ "$FILE_SLUG" = "21-math.php" ]
+		then
+			axe --exit --load-delay=2000 $i 
+		else 
+			axe --exit  $i 
+		fi
+
 		AXE_RETURN="$?"
 		# echo "Returned $?"
 		# exit

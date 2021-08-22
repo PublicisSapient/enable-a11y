@@ -20,12 +20,11 @@
             <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
 
                 <!-- This is the hamburger menu icon -->
-                <span class="enable-flyout__hamburger-icon" role="img">
+                <span class="enable-flyout__hamburger-icon" role="img" aria-label="main menu">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    <span class="sr-only">mobile menu</span>
             </span>
 
             </button>

@@ -23,7 +23,7 @@
             <pre class="showcode__example"><code
                     data-showcode-id="<?php echo $id ?>"
                     data-showcode-props="<?php echo $id ?>-props"
-                    
+                    tabindex="0"
                 >
                 </code>
             </pre>

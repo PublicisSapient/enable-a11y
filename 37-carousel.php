@@ -168,13 +168,14 @@
         }
         </script>
 
-        <?php include "includes/example-footer.php" ?>
-
-        <script src="js/shared/enable-visible-on-focus.js"></script>
-        <script src="node_modules/glider-js/glider.min.js"></script>
-        <script src="js/shared/enable-carousel.js"></script>
 
     </main>
-</body>
+
+    <?php include "includes/example-footer.php" ?>
+
+    <script src="js/shared/enable-visible-on-focus.js"></script>
+    <script src="node_modules/glider-js/glider.min.js"></script>
+    <script src="js/shared/enable-carousel.js"></script>
+    </body>
 
 </html>

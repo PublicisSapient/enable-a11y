@@ -182,13 +182,15 @@
 
 
 
-        <div id="scripts">
-            <script src="js/accessibility-es4.js"></script>
-            <script src="js/tabs.js"></script>
-        </div>
-
-        <?php include "includes/example-footer.php"?>
+        
     </main>
+
+    <div id="scripts">
+        <script src="js/accessibility-es4.js"></script>
+        <script src="js/tabs.js"></script>
+    </div>
+
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

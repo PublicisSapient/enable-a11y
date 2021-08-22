@@ -822,20 +822,21 @@
         </form>
 
 
-        <script src="js/accessibility.js"></script>
-        <script src="js/combobox__improved.js"></script>
-        <?php include "includes/example-footer.php"?>
-
-        <!-- This is the submit handler for example 2a -->
-        <script>
-            document.getElementById('aria-example-2a').addEventListener('combobox-change', (e) => {
-                const { currentTarget } = e;
-                const { value } = currentTarget;
-                const q = `https://www.google.com/search?${new URLSearchParams(`q=${value}`).toString()}`
-                location.href=q;
-            })
-        </script>
     </main>
+
+    <script src="js/accessibility.js"></script>
+    <script src="js/combobox__improved.js"></script>
+
+    <!-- This is the submit handler for example 2a -->
+    <script>
+        document.getElementById('aria-example-2a').addEventListener('combobox-change', (e) => {
+            const { currentTarget } = e;
+            const { value } = currentTarget;
+            const q = `https://www.google.com/search?${new URLSearchParams(`q=${value}`).toString()}`
+            location.href=q;
+        })
+    </script>
+    <?php include "includes/example-footer.php"?>
 
 </body>
 

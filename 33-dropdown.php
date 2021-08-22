@@ -175,8 +175,8 @@
             </script>
 
 
-            <?php include "includes/example-footer.php"?>
     </main>
+    <?php include "includes/example-footer.php"?>
 
     <script>
     document.body.addEventListener("click", function(e) {

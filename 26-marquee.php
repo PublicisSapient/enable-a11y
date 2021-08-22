@@ -12,8 +12,8 @@
 
     <?php include("includes/example-header.php"); ?>
 
-    <h1>ARIA Marquee Role</h1>
     <main>
+    <h1>ARIA Marquee Role</h1>
 
             <aside class="notes">
                 <h2>Notes:</h2>

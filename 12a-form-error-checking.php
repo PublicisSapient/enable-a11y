@@ -271,8 +271,8 @@
       <script src="js/shared/form.js"></script>
 
 
-      <?php include "includes/example-footer.php"?>
     </main>
 
+    <?php include "includes/example-footer.php"?>
   </body>
 </html>

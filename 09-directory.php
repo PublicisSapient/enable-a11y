@@ -43,7 +43,8 @@
             <div id="toctitle" dir="ltr" lang="en">
                 <h3>Table of Contents</h3>
             </div>
-            <ul role="directory">
+            <div role="directory">
+            <ul >
                 <li class="toclevel-1 tocsection-1">
                     <a href="#Name">
                         <span class="tocnumber">1</span>
@@ -395,6 +396,7 @@
                     </a>
                 </li>
             </ul>
+</div>
         </div>
 
 

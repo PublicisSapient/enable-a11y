@@ -284,7 +284,7 @@
             <div class="thead" role="rowgroup">
                 <div role="row">
 
-                    <span role="row" ></span>
+                    <span role="cell"></span>
                     <span role="columnheader">ACME Widgets</span>
                     <span role="columnheader">Our Competitor's Widgets</span>
                 </div>
@@ -321,11 +321,11 @@
 
         </div>
 
-        <h2>A Complex Table Made Using Aria Roles</h2>
+        <h2>A Complex Table Made Using HTML5</h2>
 
 
 
-        <div id="complex-table" role="table" aria-labelledby="complex-table-caption" >
+        <div id="complex-table" >
                 <table class="data complex">
                         <caption id="complex-table-caption">
                           Table with colgroup
@@ -381,7 +381,7 @@
 
 
 
-        <div id="no-scope-table" role="table" aria-labelledby="no-scope-table-caption" >
+        <div id="no-scope-table"  >
         <table class="complexexample">
             <caption id="no-scope-table-caption">New Employee Orientation Schedule</caption>
             <tbody>
@@ -434,10 +434,12 @@
         </table>
     </div>
 
-    <script src="js/role-checkbox.js"></script>
-    <?php include "includes/example-footer.php"?>
 
     </main>
+
+
+    <script src="js/role-checkbox.js"></script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

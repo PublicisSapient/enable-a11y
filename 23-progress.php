@@ -80,7 +80,7 @@
         <p>This progress bar uses aria-live regions to update the status of the progress bar.</p>
 
         <div class="progress__example">
-            <div id="aria1" role="progressbar" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-alert="aria1-alert" data-timeout="1000">
+            <div id="aria1" role="progressbar" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-alert="aria1-alert" data-timeout="1000" aria-label="Loading Data">
             </div>
             <strong class="sr-only" id="aria1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
@@ -88,7 +88,7 @@
         <p>This progress bar uses the screen reader's native functionality to read the progress bar by setting keyboard focus on the bar when incrementing.</p>
 
         <div class="progress__example">
-            <div id="ex2" role="progressbar" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-alert="ex2-alert" tabindex="-1" data-timeout="1000">
+            <div id="ex2" role="progressbar" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-alert="ex2-alert" tabindex="-1" data-timeout="1000" aria-label="Loading Data">
             </div>
         </div>
 
@@ -98,7 +98,7 @@
 
         <div>
             <div id="ex3" class="verbose" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" data-timeout="1000"
-                data-step="1" data-set-valuetext="true" >
+                data-step="1" data-set-valuetext="true" aria-label="Attempting to fulfill order">
                 <ol>
                     <li aria-hidden="true">Checking Credit Card Validity</li>
                     <li aria-hidden="true">Charging Card</li>

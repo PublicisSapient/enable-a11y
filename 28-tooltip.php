@@ -33,8 +33,9 @@
           <a href="/" data-tooltip="This tooltip is accessible!"
             >This link has a tooltip</a
           >
-          and so does this input field:
+          <label for="input-tooltip-example">and so does this input field:</label>
           <input
+            id="input-tooltip-example"
             type="text"
             data-tooltip="You can put tooltips on any focusable item."
           />.

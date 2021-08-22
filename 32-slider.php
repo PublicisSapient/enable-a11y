@@ -454,9 +454,9 @@
         <template id="enable-slider__handle--template">
             <div>
                 <div id="${id}" class="${classNameRoot}__handle">
-                    <button role="slider" class="${classNameRoot}__handle-button" aria-valuemin="${valuemin}"
+                    <div role="slider" tabindex="0" class="${classNameRoot}__handle-button" aria-valuemin="${valuemin}"
                         aria-valuemax="${valuemax}" aria-valuenow="${valuenow}"
-                        aria-labelledby="${arialabelledby} ${id}_val" aria-describedby="${ariadescribedby}"></button>
+                        aria-labelledby="${arialabelledby} ${id}_val" aria-describedby="${ariadescribedby}"></div>
 
                     <div id="${ariadescribedby}" class="${classNameRoot}__hidden-label">
                         Use arrow keys to adjust the slider value. Touch devices will need to swipe right to adjust these

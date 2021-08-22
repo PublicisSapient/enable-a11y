@@ -352,13 +352,13 @@
         </script>
 
 
-        <script src="js/shared/enable-listbox.js"></script>
-        <script src="js/accessibility.js"></script>
-
-        <?php include "includes/example-footer.php"?>
-
     </main>
 
+
+    <script src="js/shared/enable-listbox.js"></script>
+    <script src="js/accessibility.js"></script>
+
+    <?php include "includes/example-footer.php"?>
 
 </body>
 

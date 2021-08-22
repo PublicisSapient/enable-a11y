@@ -9,22 +9,19 @@
 }
 .search__term {
   width: 100%;
-  border: 3px solid #007e8f;
+  border: 3px solid #4E7963;
   border-right: none;
   padding: 5px;
   height: 2.25rem;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9dbfaf;
-}
-.search__term:focus {
-  color: #007e8f;
+  color: #000;
 }
 .search__button {
   width: 2.5rem;
   height: 2.25rem;
-  border: 1px solid #007e8f;
-  background: #007e8f;
+  border: 1px solid #4E7963;
+  background: #4E7963;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;

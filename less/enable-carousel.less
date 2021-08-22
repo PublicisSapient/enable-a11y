@@ -1,6 +1,9 @@
 @import "shared/mixins-and-vars";
 
+@carousel-green: #2A6803;
+
 .glider {
+
   border: solid 1px black;
   .no-scrollbars();
 
@@ -42,7 +45,7 @@
   &__skip-link {
     display: block;
     margin: 2px auto;
-    background: #368803;
+    background: @carousel-green;
     color: #fff;
     padding: 10px;
     text-decoration: none;
@@ -69,7 +72,7 @@
 
     &-copy {
       box-sizing: border-box;
-      background: rgba(0, 0, 0, 0.65);
+      background: #000;
       color: white;
       position: absolute;
       bottom: 0;
@@ -80,7 +83,7 @@
     &-cta {
       display: block;
       margin: 0 auto;
-      background: #368803;
+      background: @carousel-green;
       color: #fff;
       padding: 10px;
       text-decoration: none;

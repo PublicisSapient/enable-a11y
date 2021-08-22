@@ -172,10 +172,11 @@
         </script>
 
             
-        <script src="js/shared/enable-animatedGif.js"></script>
-
-        <?php include "includes/example-footer.php" ?>
     </main>
+
+    <script src="js/shared/enable-animatedGif.js"></script>
+
+<?php include "includes/example-footer.php" ?>
 </body>
 
 </html>

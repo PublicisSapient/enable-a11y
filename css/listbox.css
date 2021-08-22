@@ -337,7 +337,6 @@ input[type="submit"] {
   border-bottom: 2px black solid;
 }
 fieldset,
-.aria-form-group,
 .fieldset {
   padding: 0.5em;
   margin-top: 1em;
@@ -345,10 +344,8 @@ fieldset,
   background-color: #eeeeee;
 }
 fieldset legend,
-.aria-form-group legend,
 .fieldset legend,
 fieldset .legend,
-.aria-form-group .legend,
 .fieldset .legend {
   position: relative;
   top: 1.5em;
@@ -357,19 +354,18 @@ fieldset .legend,
   font-size: 1em;
 }
 fieldset .legend,
-.aria-form-group .legend,
 .fieldset .legend {
   top: -1.5em;
   margin-bottom: -1em;
 }
+/*
 fieldset label {
   font-weight: normal;
-}
-@media only screen and (min-width: 1px) and (max-width: 719px) {
-  fieldset label {
+
+  @media @mobile {
     width: 100%;
   }
-}
+} */
 .annotate {
   font-style: italic;
   color: #366ED4;

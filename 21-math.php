@@ -88,6 +88,9 @@
     </main>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script>
+        document.getElementById('MathJax_Message').setAttribute('role', 'complementary');
+    </script>
 </body>
 
 </html>

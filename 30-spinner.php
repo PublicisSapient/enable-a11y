@@ -182,10 +182,10 @@
       <label for="non-quantity">Zip Code:</label>
       <input id="non-quantity" type="text" inputmode="numeric" pattern="[0-9]*">
       
-      <script src="js/spinbutton.js"></script>
-      <?php include "includes/example-footer.php" ?>
     </main>
 
-    
+
+    <script src="js/spinbutton.js"></script>
+      <?php include "includes/example-footer.php" ?>
   </body>
 </html>

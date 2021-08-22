@@ -49,10 +49,7 @@
             <img src="images/bomb.png" alt="" />
         </div>
 
-        <h2>Alt attribute with one space</h2>
-        <div>
-            <img src="images/bomb.png" alt=" " />
-        </div>
+       
 
         <h2>SVG example</h2>
         <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text">
