@@ -2,7 +2,76 @@
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-.enable-visible-on-focus--mobile {
+/* Traditional skip links */
+.enable-visible-on-focus {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+.enable-visible-on-focus:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+  width: 100%;
+  /*
+    * We use a negative outline-offset here. If we didn't,
+    * the outline would get cut off due to the container's
+    * `overflow: hidden` property
+    */
+  outline-offset: -1px;
+}
+.enable-visible-on-focus__container {
+  display: block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.enable-visible-on-focus__container:focus-within {
+  height: auto;
+  overflow: auto;
+}
+.enable-mobile-visible-on-focus {
+  /* Make sure the width and margin-left are the same value */
+  margin-left: 100%;
+}
+.enable-mobile-visible-on-focus:focus {
+  /*
+     * We use a negative outline-offset here. If we didn't,
+     * the outline would get cut off due to the container's
+     * `overflow: hidden` property
+     */
+  outline-offset: -1px;
+}
+.enable-mobile-visible-on-focus__container {
+  display: block;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+.enable-mobile-visible-on-focus__container:focus-within {
+  outline: solid 2px #3b99fc;
+  outline-offset: 2px;
+  z-index: 2;
+}
+.enable-mobile-visible-on-focus__container--visible {
+  clip: auto;
+  position: relative;
+  pointer-events: auto;
+}
+.enable-skip-link {
   /* Here is the general styles of the link */
   box-sizing: border-box;
   position: relative;
@@ -13,36 +82,10 @@
   text-decoration: none;
   font-weight: bold;
   text-align: center;
-  /* Make sure the width and margin-left are the same value */
   width: 100%;
-  margin-left: 100%;
 }
-.enable-visible-on-focus--mobile:focus {
-  /*
-      * We use a negative outline-offset here. If we didn't,
-      * the outline would get cut off due to the container's
-      * `overflow: hidden` property
-      */
-  outline-offset: -1px;
-}
-.enable-visible-on-focus__container--mobile {
-  display: block;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  pointer-events: none;
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
-}
-.enable-visible-on-focus__container--mobile:focus-within {
-  outline: solid 2px #3b99fc;
-  outline-offset: 2px;
-  z-index: 2;
-}
-.enable-visible-on-focus__container--mobile--visible {
-  clip: auto;
-  position: relative;
-  pointer-events: auto;
+.enable-skip-link__example {
+  margin: 100px 0;
 }
 .enable-skip-link--begin {
   top: 0;
@@ -53,8 +96,15 @@
 /* This is just a mock of the component */
 .fake-component {
   display: block;
-  background: black;
+  background: white;
   height: 200px;
   width: 100%;
   position: relative;
+  color: black;
+  padding: 10px;
+  overflow-y: scroll;
+  border: solid 1px #ccc;
+}
+.fake-component a {
+  color: #330000;
 }

@@ -34,8 +34,8 @@
         <h2>Carousels with CTAs</h2>
 
         <div id="example1">
-            <div class="enable-visible-on-focus__container enable-skip-link--begin">
-                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-visible-on-focus">
+            <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
                     Skip to end of promotional links
                 </a>
             </div>
@@ -100,8 +100,8 @@
                 <div role="tablist" class="dots"></div>
             </div>
 
-            <div class="enable-visible-on-focus__container  enable-skip-link--end">
-                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-visible-on-focus">Skip to
+            <div class="enable-mobile-visible-on-focus__container  enable-skip-link--end">
+                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">Skip to
                     beginning of promotional links</a>
             </div>
         </div>
@@ -116,7 +116,7 @@
             },
             "steps": [{
                     "label": "Put skip links around the carousel",
-                    "highlight": "%OPENCLOSECONTENTTAG%a class=\"enable-visible-on-focus\"",
+                    "highlight": "%OPENCLOSECONTENTTAG%a class=\"enable-mobile-visible-on-focus\"",
                     "notes": "In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information."
                 },
                 {

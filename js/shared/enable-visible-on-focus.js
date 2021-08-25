@@ -14,7 +14,7 @@
  ******************************************************************************/
 
 const enableVisibleOnFocus = new (function (e) {
-  const containerSelector = ".enable-visible-on-focus__container";
+  const containerSelector = ".enable-mobile-visible-on-focus__container";
 
   this.init = function () {
     document.addEventListener("click", this.clickEvent, true);
@@ -47,7 +47,7 @@ const enableVisibleOnFocus = new (function (e) {
   };
 
   /**
-   * scrollEvent(): this event handler is fired when the enable-visible-on-focus__container
+   * scrollEvent(): this event handler is fired when the enable-mobile-visible-on-focus__container
    * scrolls.  This should happen only when the CTA inside gains focus, since the CTA
    * has a margin-left that is the same as the with of the container (and the
    * width of the CTA itself).
@@ -65,10 +65,10 @@ const enableVisibleOnFocus = new (function (e) {
     if (skipLinkContainer) {
       if (skipLinkContainer.scrollLeft !== 0) {
         skipLinkContainer.classList.add(
-          "enable-visible-on-focus__container--visible"
+          "enable-mobile-visible-on-focus__container--visible"
         );
         const destinationLink = skipLinkContainer.querySelector(
-          ".enable-visible-on-focus"
+          ".enable-mobile-visible-on-focus"
         );
         const top = destinationLink.getBoundingClientRect().top;
         const htmlEl = document.querySelector("html");
@@ -98,14 +98,14 @@ const enableVisibleOnFocus = new (function (e) {
   };
 
   /**
-   * hide(): Hides a specific .enable-visible-on-focus__container element.
+   * hide(): Hides a specific .enable-mobile-visible-on-focus__container element.
    * 
    * @param { HTMLElement } el 
    */
   this.hide = function (el) {
     el.scrollLeft = 0;
     el.scrollTop = 0;
-    el.classList.remove("enable-visible-on-focus__container--visible");
+    el.classList.remove("enable-mobile-visible-on-focus__container--visible");
   };
 
   /**

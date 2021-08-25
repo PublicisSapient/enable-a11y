@@ -1,64 +1,95 @@
 @import "shared/mixins-and-vars";
 
+@skip-link-width: 100%;
+
+/* Traditional skip links */
 .enable-visible-on-focus {
-  @skip-link-width: 100%;
+  .enable__visually-hidden();
 
-  &--mobile {
-
-    /* Here is the general styles of the link */
-    box-sizing: border-box;
-    position: relative;
-    display: inline-block;
-    background: #225502;
-    color: #fff;
-    padding: 1px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-
-    /* Make sure the width and margin-left are the same value */
+  &:focus {
+    .enable__visually-hidden--reverse();
     width: @skip-link-width;
-    margin-left: @skip-link-width;
+    
+    /*
+    * We use a negative outline-offset here. If we didn't,
+    * the outline would get cut off due to the container's
+    * `overflow: hidden` property
+    */
+   outline-offset: -1px;
+  }
 
-    &:focus {
-      /*
-      * We use a negative outline-offset here. If we didn't,
-      * the outline would get cut off due to the container's
-      * `overflow: hidden` property
-      */
-      outline-offset: -1px;
+
+  &__container {
+    display: block;
+    width: @skip-link-width;
+    height: 0;
+    overflow: hidden;
+
+    &:focus-within {
+      height: auto;
+      overflow: auto;
     }
+  }
+}
+
+
+.enable-mobile-visible-on-focus {
+
+  /* Make sure the width and margin-left are the same value */
+  margin-left: @skip-link-width;
+
+  &:focus {
+    /*
+     * We use a negative outline-offset here. If we didn't,
+     * the outline would get cut off due to the container's
+     * `overflow: hidden` property
+     */
+    outline-offset: -1px;
   }
 
   &__container {
+    display: block;
+    width: @skip-link-width;
+    margin: 0;
+    overflow: hidden;
+    pointer-events: none;
 
-    &--mobile {
-      display: block;
-      width: @skip-link-width;
-      margin: 0;
-      overflow: hidden;
-      pointer-events: none;
+    // to make it hidden
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
 
-      // to make it hidden
-      clip: rect(1px, 1px, 1px, 1px);
-      position: absolute;
+    &:focus-within {
+      outline: solid 2px @focus-color;
+      outline-offset: 2px;
+      z-index: 2;
+    }
 
-      &:focus-within {
-        outline: solid 2px @focus-color;
-        outline-offset: 2px;
-        z-index: 2;
-      }
-
-      &--visible {
-        clip: auto;
-        position: relative;
-        pointer-events: auto;
-      }
+    &--visible {
+      clip: auto;
+      position: relative;
+      pointer-events: auto;
     }
   }
 }
 
 .enable-skip-link {
+  /* Here is the general styles of the link */
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  background: #225502;
+  color: #fff;
+  padding: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  width: @skip-link-width;
+
+  &__example {
+    margin: 100px 0;
+  }
+
+
   &--begin {
     top: 0;
   }
@@ -71,8 +102,16 @@
 /* This is just a mock of the component */
 .fake-component {
   display: block;
-  background: black;
+  background: white;
   height: 200px;
   width: 100%;
   position: relative;
+  color: black;
+  padding: 10px;
+  overflow-y: scroll;
+  border: solid 1px #ccc;
+
+  a {
+    color: #330000;
+  }
 }
