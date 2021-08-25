@@ -3,51 +3,57 @@
 .enable-visible-on-focus {
   @skip-link-width: 100%;
 
-  /* Here is the general styles of the link */
-  box-sizing: border-box;
-  position: relative;
-  display: inline-block;
-  background: #225502;
-  color: #fff;
-  padding: 1px;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
+  &--mobile {
 
-  /* Make sure the width and margin-left are the same value */
-  width: @skip-link-width;
-  margin-left: @skip-link-width;
+    /* Here is the general styles of the link */
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    background: #225502;
+    color: #fff;
+    padding: 1px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
 
-  &:focus {
-    /*
-     * We use a negative outline-offset here. If we didn't,
-     * the outline would get cut off due to the container's
-     * `overflow: hidden` property
-     */
-    outline-offset: -1px;
+    /* Make sure the width and margin-left are the same value */
+    width: @skip-link-width;
+    margin-left: @skip-link-width;
+
+    &:focus {
+      /*
+      * We use a negative outline-offset here. If we didn't,
+      * the outline would get cut off due to the container's
+      * `overflow: hidden` property
+      */
+      outline-offset: -1px;
+    }
   }
 
   &__container {
-    display: block;
-    width: @skip-link-width;
-    margin: 0;
-    overflow: hidden;
-    pointer-events: none;
 
-    // to make it hidden
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute;
+    &--mobile {
+      display: block;
+      width: @skip-link-width;
+      margin: 0;
+      overflow: hidden;
+      pointer-events: none;
 
-    &:focus-within {
-      outline: solid 2px @focus-color;
-      outline-offset: 2px;
-      z-index: 2;
-    }
+      // to make it hidden
+      clip: rect(1px, 1px, 1px, 1px);
+      position: absolute;
 
-    &--visible {
-      clip: auto;
-      position: relative;
-      pointer-events: auto;
+      &:focus-within {
+        outline: solid 2px @focus-color;
+        outline-offset: 2px;
+        z-index: 2;
+      }
+
+      &--visible {
+        clip: auto;
+        position: relative;
+        pointer-events: auto;
+      }
     }
   }
 }

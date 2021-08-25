@@ -2,7 +2,7 @@
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */
-.enable-visible-on-focus {
+.enable-visible-on-focus--mobile {
   /* Here is the general styles of the link */
   box-sizing: border-box;
   position: relative;
@@ -17,15 +17,15 @@
   width: 100%;
   margin-left: 100%;
 }
-.enable-visible-on-focus:focus {
+.enable-visible-on-focus--mobile:focus {
   /*
-     * We use a negative outline-offset here. If we didn't,
-     * the outline would get cut off due to the container's
-     * `overflow: hidden` property
-     */
+      * We use a negative outline-offset here. If we didn't,
+      * the outline would get cut off due to the container's
+      * `overflow: hidden` property
+      */
   outline-offset: -1px;
 }
-.enable-visible-on-focus__container {
+.enable-visible-on-focus__container--mobile {
   display: block;
   width: 100%;
   margin: 0;
@@ -34,12 +34,12 @@
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
-.enable-visible-on-focus__container:focus-within {
+.enable-visible-on-focus__container--mobile:focus-within {
   outline: solid 2px #3b99fc;
   outline-offset: 2px;
   z-index: 2;
 }
-.enable-visible-on-focus__container--visible {
+.enable-visible-on-focus__container--mobile--visible {
   clip: auto;
   position: relative;
   pointer-events: auto;

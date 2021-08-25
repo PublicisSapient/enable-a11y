@@ -24,8 +24,7 @@
 
         <h1>Skip Link</h1>
 
-
-        <h2>Mobile Friendly Skip Links</h2>
+        <h2>Traditional Skip Link</h2>
 
         <div id="example1">
             <div class="enable-visible-on-focus__container enable-skip-link--begin">
@@ -42,6 +41,28 @@
             </div>
             <div class="enable-visible-on-focus__container enable-skip-link--end">
                 <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-visible-on-focus enable-skip-link">Skip to
+                    beginning of block</a>
+            </div>
+        </div>
+
+
+        <h2>Mobile Friendly Skip Links</h2>
+
+        <div id="example1">
+            <div class="enable-visible-on-focus__container--mobile enable-skip-link--begin">
+                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-visible-on-focus--mobile enable-skip-link">
+                    Skip to end of block
+                </a>
+            </div>
+            <div class="fake-component">
+
+
+
+
+
+            </div>
+            <div class="enable-visible-on-focus__container--mobile enable-skip-link--end">
+                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-visible-on-focus--mobile enable-skip-link">Skip to
                     beginning of block</a>
             </div>
         </div>
