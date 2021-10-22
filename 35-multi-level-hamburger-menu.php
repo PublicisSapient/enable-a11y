@@ -20,7 +20,7 @@
             <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
 
                 <!-- This is the hamburger menu icon -->
-                <span class="enable-flyout__hamburger-icon" role="img" aria-label="main menu">
+                <span aria-label="main menu" class="enable-flyout__hamburger-icon" role="img" >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -61,7 +61,7 @@
                                         class="enable-flyout__open-level-button">
                                         Atari
                                     </button>
-                                    <div role="group" aria-label="Atari" id="section1-1" class="enable-flyout enable-flyout__level ">
+                                    <div role="group" id="section1-1"  aria-label="Atari" class="enable-flyout enable-flyout__level">
                                         <button class="enable-flyout__hamburger-icon-facade"><span
                                                 class="sr-only">close mobile flyout</span></button>
                                         <div class="enable-flyout__level-heading">Atari</div>
@@ -181,7 +181,7 @@
                             Handheld Game Devices
 
                         </button>
-                        <div role="group" aria-label="Handheld Game Machines" id="section2"
+                        <div role="group" id="section2" aria-label="Handheld Game Machines" 
                             class="enable-flyout enable-flyout__level enable-flyout__dropdown ">
                             <div class="enable-flyout__level-heading">Handheld Game Machines</div>
                             <button class="enable-flyout__hamburger-icon-facade"><span class="sr-only">close
@@ -363,7 +363,7 @@
             "steps": [
             {
                 "label": "Use the nav HTML5 tag",
-                "highlight": "%OPENTAG%nav ||| %OPENCLOSETAG% nav",
+                "highlight": "%OPENTAG%nav",
                 "notes": "This whole component should be wrapped up in a <code>nav</code> tag, since it is a navigation widget"
             },
             {

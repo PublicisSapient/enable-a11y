@@ -26,9 +26,11 @@
 
         <h2>Traditional Skip Link</h2>
 
-        <p>This is an example of a traditional skip link seen on many websites today.  It works well on desktop.  It fails on mobile, due to screen readers not passing screenreader focus events to the mobile browser.</p>
+        <p>This is an variation of a traditional skip link seen on many websites today. Unlike a lot of implementations, we have two skip links pointing to each other.  This is users who accidentally trigger the skip link can undo their mistakes (useful for people who have hand tremors).</p>
+        
+        <p><strong>Note that while it works well on desktop, it fails on mobile, due to screen readers not passing screenreader focus events to the mobile browser.</strong></p>
 
-        <div id="desktop-example" class="enable-skip-link__example">
+        <div id="desktop-example" class="enable-example">
             <div class="enable-visible-on-focus__container enable-skip-link--begin">
                 <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-visible-on-focus enable-skip-link">
                     Skip to end of block
@@ -156,7 +158,12 @@
 
         <h2>Mobile Friendly Skip Links</h2>
 
-        <div id="example1" class="enable-skip-link__example">
+        <p>These skip links work on a different principle than the ones above.  They use a little bit of JavaScript to work,
+            and work really well for mobile screen reader users. <strong>Due to technical limitations, once focused on, the skip links remain visible.</strong>
+            This seems like a reasonable tradeoff (and can arguably be better for accessibility).
+        </p>
+
+        <div id="mobile-example" class="enable-example">
             <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
                 <a href="#end-of-component-2" id="beginning-of-component-2" class="enable-mobile-visible-on-focus enable-skip-link">
                     Skip to end of block
@@ -248,22 +255,47 @@
             </div>
         </div>
 
-        <?php includeShowcode("example1")?>
+        <?php includeShowcode("mobile-example")?>
 
-        <script type="application/json" id="example1-props">
+        <script type="application/json" id="mobile-example-props">
         {
             "replaceHTMLRules": {
                 ".fake-component": "<!-- insert HTML with a lot of CTAs here -->"
             },
             "steps": [
                 {
+                    "label": "Make container elements around the skip link",
+                    "highlight": "enable-mobile-visible-on-focus__container",
+                    "notes": "These containers are very important to the functionality of the skip links and are not optional."
+                },
+                {
+                    "label": "Make the container absolutely positioned",
+                    "highlight": "%CSS%enable-skip-link-style~.enable-mobile-visible-on-focus__container ||| position[^;]*;",
+                    "notes": ""
+                },
+                {
+                    "label": "Ensure this container is visibly hidden.",
+                    "highlight": "%CSS%enable-skip-link-style~.enable-mobile-visible-on-focus__container ||| [^\n]*display[^\\)]*\\);",
+                    "notes": "This CSS ensures is it not visible by sighted users on page load.  The <code>pointer-events: none</code> code ensures mouse users can never activate these skip links by accident (i.e. they are only accessible by keyboard users and by mobile screen readers when the user swipes into it."
+                },
+                {
+                    "label": "Add enable-mobile-visible-on-focus classes to the skip link",
+                    "highlight": "enable-mobile-visible-on-focus\\s",
+                    "notes": ""
+                },
+                {
+                    "label": "Style the enable-mobile-visible-on-focus elements",
+                    "highlight": "%CSS%enable-skip-link-style~.enable-mobile-visible-on-focus__container ||| width[^;]*; ||| overflow[^;]*; ||| %CSS%enable-skip-link-style~.enable-mobile-visible-on-focus ||| margin-left[^;]*;",
+                    "notes": "Note that the container has a width of 100% with the overflow hidden.  When the page loads, the contents will not be visible.  When the user focuses in on the skip link inside of it, the browser will horizontally scroll that element into view and trigger a scroll event.  This is the heart of how this mobile solution works."
+                },
+                {
                     "label": "Make the first skip link point to the second one",
-                    "highlight": "href=\"#end-of-component-1\" ||| id=\"end-of-component-1\"",
+                    "highlight": "href=\"#end-of-component-2\" ||| id=\"end-of-component-2\"",
                     "notes": ""
                 },
                 {
                     "label": "Make the second skip link point to the first",
-                    "highlight": "href=\"#beginning-of-component-1\" ||| id=\"beginning-of-component-1\"",
+                    "highlight": "href=\"#beginning-of-component-2\" ||| id=\"beginning-of-component-2\"",
                     "notes": ""
                 },
                 {
@@ -283,13 +315,13 @@
                 },
                 {
                     "label": "Hide All Method",
-                    "highlight": "%JS% enableVisibleOnFocus.hideAll",
+                    "highlight": "%JS% enableVisibleOnFocus ||| hideAll\\(\\): ||| hide\\(\\):",
                     "notes": "This method is invoked when the page is loaded, since browsers like Firefox will remember the scroll state of the component when the page is reloaded. This method is also invoked onResize and onOrientationChange, since the look of the component can look odd after these events"
                 },
                 {
                     "label": "CSS to style the skip link",
-                    "highlight": "%CSS%enable-skip-link-style~ .enable-skip-link|width|margin-left ",
-                    "notes": "This sets the CSS variable <strong>--prefers-reduced-motion</strong> to 1 if the user has asked the OS to reduce animations, and 0 otherwise."
+                    "highlight": "%CSS%enable-skip-link-style~ .enable-skip-link ||| width[^;]*;  ",
+                    "notes": ""
                 }
             ]
         }

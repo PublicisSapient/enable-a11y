@@ -1,3 +1,5 @@
+const interpolateDomParser = new DOMParser();
+
 /**
  * @description A function that will do the same this as ES6 template strings.  This is useful when we are passing Template-like Strings as Props.  It is safe to use from XSS attacks, since it cannot run arbitrary code. Code from https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string
  * @param {string} [str] - The template-like string.
@@ -21,4 +23,14 @@ const interpolate = function (template, params) {
     return template;
   }
   return r;
+};
+
+/**
+   *
+   * @param { String } html - A string of HTML code
+   * @returns { HTMLElement } - a DOM element representation of the HTML code.
+   */
+const htmlToDomNode = function (html) {
+  const doc = interpolateDomParser.parseFromString(html, "text/html");
+  return doc.body.firstChild;
 };

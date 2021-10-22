@@ -1,0 +1,15 @@
+@import "shared/mixins-and-vars";
+
+.read-more {
+    &__wrapper {
+        margin: 0 auto;
+    }
+
+    &__overflow-content {
+        display: none;
+
+        &--visible {
+            display: block;
+        }
+    }
+}

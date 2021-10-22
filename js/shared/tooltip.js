@@ -24,8 +24,9 @@ const tooltip = new function () {
         tooltipEl.className = 'tooltip';
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip');
-        tooltipEl.setAttribute('aria-label', 'enable tooltip');
         tooltipEl.classList.add('tooltip--hidden');
+        tooltipEl.innerHTML = 'Loading ...';
+        tooltipEl.setAttribute('aria-hidden', 'true');
         mainEl.appendChild(tooltipEl);
     }
 
@@ -63,7 +64,8 @@ const tooltip = new function () {
     }
 
     this.hide = (e) => {
-        tooltipEl.classList.add('tooltip--hidden'); 
+        tooltipEl.classList.add('tooltip--hidden');
+        tooltipEl.setAttribute('aria-hidden', 'true');
     }
 
 }

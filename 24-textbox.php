@@ -109,7 +109,7 @@
         </div>
 
 
-        <h3 class="showcode__heading">Example code explanation</h3>
+        
 
         <?php includeShowcode("aria-example")?>
 

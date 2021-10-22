@@ -154,6 +154,7 @@ const a11yGroup = function (el, options) {
    * @param {EventHandler} e - the focus event
    */
   this.focusinEvent = e => {
+    console.log('help', keyboardOnlyInstructionsEl);
     const groupEls = e.currentTarget.querySelectorAll(
       `[role="${this.groupType}"]`
     );

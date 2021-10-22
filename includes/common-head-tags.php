@@ -6,7 +6,7 @@
 <link href="css/libs/prism.css" rel="stylesheet" />
 
 <!-- This is the global stylesheet -->
-<link rel="stylesheet" href="css/shared/all.css" />
+<link id="all-css" rel="stylesheet" href="css/shared/all.css" />
 
 
 <?php
@@ -15,11 +15,12 @@
         include($fileName);
     }
 
-    function includeShowcode($id, $cssId = "", $jsId = "") {
+    function includeShowcode($id, $cssId = "", $jsId = "", $extra = "") {
         includeFileWithVariables('includes/showcode-template.php', array(
             'id' => $id,
             'cssId' => $cssId,
-            'jsId' => $jsId
+            'jsId' => $jsId,
+            'extra' => $extra
         ));
     }
 ?>

@@ -3,13 +3,13 @@
 
 <head>
     <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <title>Definition demo</title>
-		<?php include("includes/common-head-tags.php"); ?>
+    <title>Description Lists</title>
+		<?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/definition-term.css" />
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
         <h1>Accessible Definition Lists</h1>
@@ -33,42 +33,94 @@
 
         <h2>A HTML example</h2>
 
-        <p>This example reports that there is six items in the list (instead of three) by Voiceover for OSX</p>
+        
+        <div id="html5-def-list-example" class="enable-example">
+            <dl>
+                <dt>Gojira</dt>
+                <dd>A japanese kaiju monster created in the 1960s.</dd>
 
-        <dl>
-            <dt>Gojira</dt>
-            <dd>A japanese kaiju monster created in the 1960s.</dd>
+                <dt>Frankenstein</dt>
+                <dd>A fictional doctor that created a fictional being out of the spare parts of dead people.</dd>
 
-            <dt>Frankenstein</dt>
-            <dd>A fictional doctor that created a fictional being out of the spare parts of dead people.</dd>
+                <dt>8-man</dt>
+                <dd>A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates Robocop
+                    by at least 20 years.</dd>
+            </dl>
+        </div>
 
-            <dt>8-man</dt>
-            <dd>A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates Robocop
-                by at least 20 years.</dd>
-        </dl>
+        <?php includeShowcode("html5-def-list-example")?>
+
+        <script type="application/json" id="html5-def-list-example-props">
+        {
+            "replaceHTMLRules": {
+            },
+            "steps": [{
+                "label": "Use <code>dl</code> tag to encapsulate the whole list",
+                "highlight": "%OPENCLOSETAG%dl",
+                "notes": "The <code>dl</code> stands for <strong>description list</strong>.  It was changed from <a href=\"http://html5doctor.com/the-dl-element/\">its previous name of definiton list in HTML4</a>"
+            },
+            {
+                "label": "Each description term is encapsulated in a <code>dt</code> ",
+                "highlight": "%OPENCLOSECONTENTTAG%dt",
+                "notes": ""
+            },
+            {
+                "label": "All of a description term's detail is encapsulated in the <code>dd</code> tag.",
+                "highlight": "%OPENCLOSECONTENTTAG%dd",
+                "notes": ""                
+            }]
+        }
+        </script>
 
         <h2>Aria Roles example</h2>
 
-        <div class="dl" role="list">
-            <div role="listitem">
-                <div role="term" id="def1">Gojira</div>
-                <div role="definition" aria-labelledby="def1">A japanese kaiju monster created in the 1960s.</div>
-            </div>
+        <div id="aria-def-list-example" class="enable-example">
+            <div class="dl" role="list">
+                <div role="listitem">
+                    <div role="term">Gojira</div>
+                    <div role="definition">A japanese kaiju monster created in the 1960s.</div>
+                </div>
 
-            <div role="listitem">
-                <div role="term" id="def2">Frankenstein</div>
-                <div role="definition" aria-labelledby="def2">A fictional doctor that created a fictional being out of the spare parts of dead people.</div>
-            </div>
+                <div role="listitem">
+                    <div role="term">Frankenstein</div>
+                    <div role="definition">A fictional doctor that created a fictional being out of the spare parts of dead people.</div>
+                </div>
 
-            <div role="listitem">
-                <div role="term" id="def3">8-man</div>
-                <div role="definition" aria-labelledby="def3">A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates
-                    Robocop by at least 20 years.</div>
+                <div role="listitem">
+                    <div role="term">8-man</div>
+                    <div role="definition">A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates
+                        Robocop by at least 20 years.</div>
+                </div>
             </div>
         </div>
+
+        <?php includeShowcode("aria-def-list-example")?>
+
+        <script type="application/json" id="aria-def-list-example-props">
+        {
+            "replaceHTMLRules": {
+            },
+            "steps": [{
+                "label": "Use <code>list</code> role to encapsulate the whole list",
+                "highlight": "role=\"list\"",
+                "notes": ""
+            },
+            {
+                "label": "Each description term is encapsulated in a tag with the <code>term</code> role",
+                "highlight": "role=\"term\"",
+                "notes": ""
+            },
+            {
+                "label": "All of a description term's detail is encapsulated in a tag with the role of <code>definition</code>.",
+                "highlight": "role=\"definition\"",
+                "notes": ""                
+            }]
+        }
+        </script>
     </main>
 
     <script src="js/role-checkbox.js"></script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

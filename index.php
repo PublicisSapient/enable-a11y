@@ -213,10 +213,6 @@
                         known as definition lists, they are a list of name value pairs.
                     </li>
                     <li>
-                        <a href="09-directory.php">Directory:</a> (natively they are
-                        called unordered lists)
-                    </li>
-                    <li>
                         <a href="23-progress.php">Progress bars/spinners</a>: should be
                         coded in such a way to ensure their progress is announced to
                         screen readers.
@@ -276,6 +272,8 @@
                     <li><a href="36-animated-gif-with-pause-button.php">Animated GIF with pause button</a></li>
                     <li><a href="37-carousel.php">Carousel</a></li>
                     <li><a href="38-visible-on-focus.php">Visible On Focus CTAs/Skip Links</a></li>
+                    <li><a href="43-read-more.php">Read More buttons</a></li>
+                    <li><a href="42-play-pause-animations-button.php">Pause animation Widget</a></li>
 
                 </ul>
 

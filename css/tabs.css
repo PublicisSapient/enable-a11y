@@ -133,10 +133,6 @@ table {
 * {
   box-sizing: border-box;
 }
-/*
- * Class for elements that are only visible to the screen reader. From
- * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
- */
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -201,6 +197,16 @@ p {
 input,
 select {
   font-size: 1em;
+}
+.enable-example {
+  padding: 1em;
+  border: solid 1px black;
+  margin: 3em 0;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 /*********************************************************
  * a11y.css - a stylesheet to help create 
@@ -474,12 +480,11 @@ footer a,
 #tabs h2 {
   margin: 0.5em 0;
 }
-#tabs h2:focus {
-  outline: 0;
-  /* If you're removing the outline, you must add something as good or better! */
-  text-decoration: underline;
-}
 .tabs__instructions {
+  display: none;
+}
+.tabs--has-js .tabs__instructions {
+  display: inherit;
   background: black;
   color: white;
   padding: 0.5em;
@@ -582,7 +587,6 @@ footer a,
 [role="tabpanel"] {
   position: relative;
   /*for z-index*/
-  display: none;
   visibility: visible;
   clear: left;
   overflow: auto;
@@ -592,6 +596,9 @@ footer a,
   z-index: 1;
   color: #333;
   background-color: #c0dcee;
+}
+.tabs--has-js [role="tabpanel"] {
+  display: none;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   [role="tabpanel"] {

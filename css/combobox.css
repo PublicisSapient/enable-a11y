@@ -1,8 +1,4 @@
 /*
- * Class for elements that are only visible to the screen reader. From
- * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
- */
-/*
  * Taken verbatim from https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/combobox/aria1.1pattern/listbox-combo.html
  */
 .annotate {

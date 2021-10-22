@@ -1,0 +1,66 @@
+@import "shared/mixins-and-vars";
+
+
+.details-accordion {
+  @accordion-border-color: #41a6df;
+  border: solid 1px @accordion-border-color;
+  border-radius: 10px;
+
+  &__drawer  &__button {
+    .vendor(appearance, none);
+    margin: 0;
+    padding: 5px;
+    color: #000;
+    background: transparent;
+    font-size: 1rem;
+    list-style: none;
+    cursor: default;
+    width: 100%;
+    text-align: left;
+    background-image: url("../images/plus.svg");
+    background-size: (20/@px) (20/@px);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    padding-left: (25/@px);
+    background-repeat: no-repeat;
+    border-bottom: solid 1px @accordion-border-color;
+
+    &:focus {
+      outline: none;
+      background-color: #ccc;
+    }
+   
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+  }
+
+  & &__drawer:last-child &__button,
+  & &__drawer[open] &__button
+   {
+    border-bottom: none;
+  }
+
+  & &__drawer[open] .content {
+    border-bottom: solid 1px @accordion-border-color;
+  }
+
+  &__drawer[open] &__button,
+  & &__button[aria-expanded="true"] { 
+      background-image: url('../images/minus.svg');
+  }
+}
+
+
+.details-accordion {
+  &__content {
+    display: none;
+  }
+
+  &__button[aria-expanded="true"] + &__content {
+     display: block;
+  }
+  // <a href="https://iconscout.com/icons/plus" target="_blank">Plus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+  // <a href="https://iconscout.com/icons/minus" target="_blank">Minus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+}

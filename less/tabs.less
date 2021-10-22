@@ -6,16 +6,15 @@
     margin: 0.5em 0;
 }
 
-#tabs h2:focus {
-    outline: 0;
-    /* If you're removing the outline, you must add something as good or better! */
-    text-decoration: underline;
-}
-
 .tabs__instructions {
-    background: black;
-    color: white;
-    padding: 0.5em;
+    display: none;
+
+    .tabs--has-js &  {
+        display: inherit;
+        background: black;
+        color: white;
+        padding: 0.5em;
+    }
 }
  
 [role="tablist"] {
@@ -124,7 +123,6 @@
 
 [role="tabpanel"] {
     position: relative;  /*for z-index*/
-    display: none;
     visibility: visible;
     clear: left;
     overflow: auto;
@@ -134,6 +132,10 @@
     z-index: 1;
     color: #333;
     background-color: #c0dcee;
+
+    .tabs--has-js & {
+        display: none;
+    }
 
     @media @mobile {
         border-radius: 0 1em 1em 1em;

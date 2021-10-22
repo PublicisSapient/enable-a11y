@@ -5,7 +5,7 @@ const progressTest = new function () {
 
     this.init = function () {
         const progressEls = document.querySelectorAll('progress, [role="progressbar"]');
-        progressEls.forEach(function (el, index) {
+        progressEls.forEach((el, index) => {
             const next = el.nextElementSibling;
             const nextClassList = next && next.classList;
 
@@ -25,14 +25,15 @@ const progressTest = new function () {
             submitEl.value = 'Test Progress Bar';
 
             el.parentNode.insertBefore(submitEl, el.nextSibling);
-            submitEl.addEventListener('click', progressTestClickEvent);
+            submitEl.addEventListener('click', this.progressTestClickEvent);
         });
 
 
 
     }
 
-    function progressTestClickEvent(e) {
+    this.progressTestClickEvent = (e) => {
+        console.log('hx');
         if (timeout) {
             clearTimeout(timeout);
         }
@@ -98,7 +99,10 @@ const progressTest = new function () {
             const stepLabelEl = el.querySelector('li:nth-child(' + n + ')');
 
             if (stepLabelEl) {
-                el.setAttribute('aria-valuetext', 'Step ' + n + ' of ' + max + ': ' + stepLabelEl.innerHTML );
+                el.setAttribute(
+                    'aria-valuetext',
+                    `Step ${n} of ${max}: ${stepLabelEl.innerHTML}`
+                );
             }
         }
 

@@ -1,0 +1,105 @@
+@import "shared/mixins-and-vars";
+
+.deque-table-sortable-group {
+caption {
+        margin-bottom: 15px;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        overflow: visible;
+        margin-top: 8px;
+        width: 100%;
+    }
+    table thead {
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    table thead th {
+        position: relative;
+    }
+
+    table thead th:last-child {
+        border-right: none;
+    }
+    table thead th .sortableColumnLabel {
+        display: inline-block;
+        height: 100%;
+        cursor: pointer;
+        padding: 0 0 0 (25/@px);
+        text-align: left;
+    }
+    table thead th .sortableColumnLabel:hover {
+        outline: 1px dashed #767676;
+    }
+    table thead th .sortableColumnLabel:after {
+    }
+    table thead th button {
+        color: white;
+        background: transparent;
+        border: 0;
+        padding-left: 0;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+    table thead th button:hover {
+        margin: 0;
+    }
+    table thead th button:focus {
+        margin: 0;
+        z-index: 1;
+    }
+    table thead th button:active {
+        color: #000000;
+        outline: 1px solid transparent;
+        margin: 0;
+    }
+    table thead th[colspan]:not([colspan='1']) {
+        text-align: center;
+    }
+    table thead th .sortableColumnLabel:after {
+        // the aspect ratio is the width and height of the original image.
+        content: url('../images/sort-up-down.svg');
+
+        @aspectRatio: (41/57);
+        @height: (17/@px);
+        @width: (@height * @aspectRatio);
+
+        height: @height;
+        width: @width;
+
+        position: absolute;
+        left: 6px;
+        top: calc(50% - @height / 2);
+    }
+    table thead th[aria-sort='ascending'] .sortableColumnLabel:after {
+        content: url('../images/sort-asc.svg');
+    }
+
+    table thead th[aria-sort='descending'] .sortableColumnLabel:after {
+        content: url('../images/sort-asc.svg');
+        transform: scaleY(-1) translateY( (-5/@px) );
+    }
+
+    table thead:before {
+        content: '';
+        display: block;
+        width: 7px;
+    }
+    table thead td,
+    table thead th {
+        padding: 12px 11px 12px 0;
+        text-align: left;
+        vertical-align: middle;
+    }
+    table tbody td
+    table tbody th {
+        text-align: left;
+        padding: 7px;
+        border-right: 1px solid #cccccc;
+    }
+    table tbody td:last-child,
+    table tbody th:last-child {
+        border-right: none;
+    }
+}

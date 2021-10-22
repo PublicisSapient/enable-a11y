@@ -3,13 +3,13 @@
 
 <head>
     <title>Math Aria Role Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
+		<?php include "includes/common-head-tags.php";?>
     <link rel="stylesheet" type="text/css" href="css/math.css" />
-    
+
 </head>
 
 <body>
-    <?php include("includes/example-header.php"); ?>
+    <?php include "includes/example-header.php";?>
 
     <main>
 
@@ -36,7 +36,7 @@
         </aside>
 
         <h2>Polynomial (MathML)</h2>
-        <div class="equation">
+        <div id="equation" class="enable-example">
             <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
                 <mrow>
                     <mi>E</mi>
@@ -85,12 +85,40 @@
 
 
         </div>
+
+        <?php includeShowcode("equation")?>
+        <script type="application/json" id="equation-props">
+        {
+            "replaceHTMLRules": {
+            },
+            "steps": [
+            {
+                "label": "",
+                "highlight": "",
+                "notes": ""
+            }
+        ]}
+        </script>
     </main>
+    <script>
+        MathJax = {
+            options: {
+                menuOptions: {
+                settings: {
+                    assistiveMml: true;   // true to enable assitive MathML
+                    collapsible: true;   // true to enable collapsible math
+                    explorer: true;      // true to enable the expression explorer
+                }
+                }
+            }
+        };
+    </script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <script>
         document.getElementById('MathJax_Message').setAttribute('role', 'complementary');
     </script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

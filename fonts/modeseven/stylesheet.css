@@ -8,9 +8,9 @@
 
 @font-face {
   font-family: 'ModeSeven';
-  src: url('modes.eot?') format('eot'),
-       url('modes.woff2') format('woff2'),
-       url('modes.woff') format('woff'),
-       url('modes.ttf')  format('truetype'),
-       url('modes.svg#ModeSeven') format('svg');
+  src: url('ModeSeven.eot?') format('eot'),
+       url('ModeSeven.woff2') format('woff2'),
+       url('ModeSeven.woff') format('woff'),
+       url('ModeSeven.ttf')  format('truetype'),
+       url('ModeSeven.svg#ModeSeven') format('svg');
 }

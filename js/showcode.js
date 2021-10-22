@@ -17,7 +17,7 @@ const showcode = new (function () {
   const blankString = /^\s*$/;
   const comment = /<\!--/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate|open)=\"\"/g;
+  const blankAttrValueRe = /(required|novalidate|open|disabled)=\"\"/g;
   const commandsRe = /^%[A-Z]*?%/;
   
 
@@ -32,7 +32,8 @@ const showcode = new (function () {
     'aria-activedescendant',
     'aria-posinset',
     'aria-setsize',
-    'for'
+    'for',
+    'href'
   ]
 
   this.entify = function (s, options) {
@@ -57,13 +58,20 @@ const showcode = new (function () {
     return result;
   };
 
+  this.unentify = function (s) {
+		
+		return s.replace(/&amp;/g, '&').
+			replace(/&lt;/g, '<').
+			replace(/&gt;/g, '>');
+	}
+
   function highlightFunc(s) {
     return '<span class="showcode__highlight">' + s + '</span>'; 
   }
 
   function formatCSS(localCode) {
     //localCode = localCode.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
-    localCode = localCode.replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+    localCode = localCode.replace(/([\{\,;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
     localCode = indent.css(localCode, {tabString: '  '});
     return localCode + '\n\n';
   }
@@ -265,21 +273,31 @@ const showcode = new (function () {
               //code = Prism.highlight(code, Prism.languages.css, 'css');
               break;
             case '%JS%':
+            case '%JSHTML%':
               const funcNames = highlightString.split(';');
               code = '';
 
               for (let j=0; j<funcNames.length; j++) {
                 if (debug) { console.log('j', j, funcNames, funcNames[j]) }
+
+                // see animatedGIF example on how this works.
                 const funcNameSplit = funcNames[j].split('#');
-                const funcName = funcNameSplit[0].trim();
+                let funcName = funcNameSplit[0].trim();
                 const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
                 let funcCode;
                 let funcObjectCode;
+
+                const toHighlightSplit = funcName.split('~');
+                if (toHighlightSplit.length === 2) {
+                  funcName = toHighlightSplit[0];
+                  highlightString = toHighlightSplit[1];
+                }
 
                 if (funcName.indexOf('\'') === 0) {
                   // print out the funcName literally
                   funcCode = funcName.replace(/'/g, '');
                 } else {
+                  console.log('f', funcName);
                   const evalFuncName = eval(funcName);
                   const evalFuncString = evalFuncName.toString();
                   if (evalFuncString.indexOf('object Object') >= 0) {
@@ -302,7 +320,22 @@ const showcode = new (function () {
                   // If funcName is an object property, prefix the funcCode
                   // with `this.propertyName =`.  Otherwise, prefix with
                   // `const funcName =`.
-                  if (funcName.indexOf('.') > -1) {
+                  if (command === '%JSHTML%') {
+
+                    const { showcodeFor, replaceHtmlRules } = dataset;
+                    console.log('r', dataset);
+
+                    const replaceRulesJson = JSON.parse(this.unentify(replaceHtmlRules));
+                    const showcodeProps = `${showcodeFor}-props`;
+                    const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
+                    const {steps} = json;
+                    const { showcodeId } = dataset;
+                    const tmpNode = document.createElement('div');
+                    tmpNode.innerHTML = funcCode;
+                    formatHTMLInBlock(tmpNode, );
+                    code = this.entify(formatHTML(funcCode));
+                    funcCode = '';
+                  } else if (funcName.indexOf('.') > -1) {
                     const propertyName = funcName.split('.')[1];
                     funcCode = `this.${propertyName} = ${funcCode}`;
                   } else {
@@ -310,7 +343,7 @@ const showcode = new (function () {
                   }
                 }
 
-                funcCode = funcCode.replace(lt, '&lt;').replace(gt, '&gt;');
+                funcCode = this.entify(funcCode);
 
                 code = code + funcCode + '\n\n';
               }
@@ -345,11 +378,22 @@ const showcode = new (function () {
           // highlight the ids these matches points to.
           if (relationshipAttributes.indexOf(attribute) >= 0 ) {
             for (let j=0; j<matches.length; j++) {
-              const id= matches[j].split('"')[1];
-              const idReplaceRegex = new RegExp('id="' + id + '"');
+              console.log('matches', matches)
+              let ids = matches[j].split('"')[1];
 
-              
-              code = code.replace(idReplaceRegex, highlightFunc);
+              if (attribute === 'href' && id.indexOf('#') === 0) {
+                ids = ids.substring(1);
+              }
+
+              ids = ids.split(/\s+/);
+
+              for (let k=0; k<ids.length; k++) {
+                const id = ids[k];
+                console.log('id', id);
+                const idReplaceRegex = new RegExp(`id="${id}"`);
+                code = code.replace(idReplaceRegex, highlightFunc);
+              }
+
             }  
           
           }
@@ -458,37 +502,63 @@ const showcode = new (function () {
     return s;
   }
 
+  /**
+   * 
+   * @param {Element} htmlBlock - DOM node to put formatted code 
+   * @param {String} originalHTMLId - ID of DOM node that contains the code to display
+   * @param {JSON} replaceRulesJson - Replace rules.
+   */
   const displayCode = (htmlBlock, originalHTMLId, replaceRulesJson) => {
     const block = document.getElementById(originalHTMLId).cloneNode(true);
 
-    if (originalHTMLId) {
-      try {
-
-        for (let i in replaceRulesJson) {
-          const nodesToReplace = block.querySelectorAll(i);
-
-          for (let j in nodesToReplace) {
-            const node = nodesToReplace[j];
-            node.innerHTML = replaceRulesJson[i];
-          }
-        }
-      } catch (ex) {
-        console.log(ex);
-      }
+    if (block) {
+      formatHTMLInBlock(block, replaceRulesJson)
       // let's do search and replace here
-      if (block) {
-        const unformattedHTML = block.innerHTML;
-        const formattedHTML = removeBlankAttrValues(insertEllipses(removeBlankLines(indent.html(seperateTags(unformattedHTML), {tabString: '  '}))));
-        //indent.html(unformattedHTML, {tabString: ' '});
-        const entifiedHTML = this.entify(formattedHTML, {ignoreSpace: true});
-        htmlCache[originalHTMLId] = entifiedHTML
-        codeblockCache[originalHTMLId] = block;
-        htmlBlock.innerHTML = entifiedHTML.trim();
-      }
+      const unformattedHTML = block.innerHTML;
+      const formattedHTML = formatHTML(unformattedHTML)
+      //indent.html(unformattedHTML, {tabString: ' '});
+      const entifiedHTML = this.entify(formattedHTML, {ignoreSpace: true});
+      htmlCache[originalHTMLId] = entifiedHTML
+      codeblockCache[originalHTMLId] = block;
+      htmlBlock.innerHTML = entifiedHTML.trim();
     }
   }
 
-  function displayStepsWidget(codeblockId, stepsJson) {
+  function formatHTMLInBlock(block, replaceRulesJson) {
+    try {
+
+      for (let i in replaceRulesJson) {
+        const nodesToReplace = block.querySelectorAll(i);
+
+        for (let j in nodesToReplace) {
+          const node = nodesToReplace[j];
+          const content = replaceRulesJson[i];
+          if (Array.isArray(content)) {
+            node.innerHTML = content.join('');
+          } else {
+            node.innerHTML = content;
+          }
+        }
+      }
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+  
+
+  function formatHTML(unformattedHTML) {
+    return removeBlankAttrValues(
+      insertEllipses(
+        removeBlankLines(
+          indent.html(
+            seperateTags(unformattedHTML), {tabString: '  '}
+          )
+        )
+      )
+    );
+  }
+
+  const displayStepsWidget = (codeblockId, stepsJson, replaceHTMLRules) => {
     const widgetId =  codeblockId + '__steps';
     const notesId = codeblockId + '__notes';
     const selectEl = document.createElement('SELECT');
@@ -511,8 +581,10 @@ const showcode = new (function () {
     defaultOptionEl.innerHTML = '';
     defaultOptionEl.value='';
     selectEl.appendChild(defaultOptionEl);
-
-
+    selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHTMLRules), {
+      ignoreReturns: true,
+      ignoreSpace: true
+    });
 
     if (stepsJson) {
       try {
@@ -533,6 +605,7 @@ const showcode = new (function () {
               optionEl.dataset.showcodeNotes = notes || '';
           }
           optionEl.innerHTML = 'Step #' + (parseInt(i) + 1) + ': ' + label;
+          
 
           selectEl.appendChild(optionEl);
                     
@@ -551,7 +624,7 @@ const showcode = new (function () {
     }
   }
 
-  function showCodeBlocks() {
+  const showCodeBlocks = () => {
     for (let i = 0; i < htmlBlocks.length; i++) {
       const htmlBlock = htmlBlocks[i];
       const { dataset } = htmlBlock;
@@ -566,7 +639,7 @@ const showcode = new (function () {
           const { showcodeId } = dataset;
           
           displayCode(htmlBlock, showcodeId, replaceHTMLRules);
-          displayStepsWidget(showcodeId, steps);
+          displayStepsWidget(showcodeId, steps, replaceHTMLRules);
         } catch (ex) {
           console.error(ex);
         }

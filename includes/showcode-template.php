@@ -1,9 +1,13 @@
         
+        <h3 class="showcode__heading">Example code explanation</h3>
+        
         <p>
             Below is the HTML of the above example.  Use the dropdown
             to highlight each of the individual steps that makes the 
             example accessible.
         </p>
+
+        <?php echo $extra ?>
         
         <div class="showcode">
             <form class="showcode__ui">

@@ -35,7 +35,14 @@ OUTPUT=`$VNU_CMD $TEMP_FILES 2>&1 |
 	grep -v inputmode | 
 	grep -v 'The “dialog” element is not supported in all browsers' |
 	grep -v 'Bad value “dialog” for attribute “method”' |
-	grep -v 'The “button” role is unnecessary'`
+	grep -v 'The “button” role is unnecessary' |
+	grep -v 'The “role” attribute must not be used on a “td” element' |
+	grep -v 'error: When the “srcset” attribute has any image candidate string with a width descriptor, the “sizes” attribute must also be present.' |
+	grep -v 'An “img” element which has an “alt” attribute whose value is the empty string must not have a “role” attribute.' |
+	grep -v 'info warning:'`
+VNU_ERR_CODE="$?"
+
+echo "ERROR CODE: $VNU_ERR_CODE"
 
 # trim output
 OUTPUT="${OUTPUT##*( )}"

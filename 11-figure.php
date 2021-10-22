@@ -34,32 +34,66 @@
 
 
         <h2>HTML5 Example</h2>
-        <figure>
-            
-            <code>
-            function warning()
-            {alert('Warning!')}
-            </code>
+        <div id="html5-example">
+            <figure>
+                
+                <code>
+                function warning()
+                {alert('Warning!')}
+                </code>
+ 
+                <figcaption>Figure 1. JavaScript alert code example</figcaption>
 
-            <figcaption>Figure 1. JavaScript alert code example</figcaption>
 
+            </figure>
+        </div>
 
-        </figure>
+        <?php includeShowcode("html5-example")?>
+        <script type="application/json" id="html5-example-props">
+        {
+            "replaceHTMLRules": {
+            },
+            "steps": [
+            {
+                "label": "Add figure and figcapture tags",
+                "highlight": "%OPENCLOSETAG%figure ||| %OPENCLOSECONTENTTAG%figcaption",
+                "notes": ""
+            }
+        ]}
+        </script>
 
 
         <h2>ARIA Example</h2>
-        <div role="figure">
-            <code>
-                function warning()
-                {alert('Warning!')}
-            </code>
-            <span>Figure 1. JavaScript alert code example</span>
-
-           
-
+        <div id="aria-example" class="enable-example">
+            <div role="figure" aria-labelledby="aria-caption">
+                <code>
+                    function warning()
+                    {alert('Warning!')}
+                </code>
+                <span id="aria-caption">Figure 1. JavaScript alert code example</span>
+            </div>
         </div>
-    </main>
 
+        <?php includeShowcode("aria-example")?>
+        <script type="application/json" id="aria-example-props">
+        {
+            "replaceHTMLRules": {
+            },
+            "steps": [
+            {
+                "label": "Add figure role to whole component",
+                "highlight": "role=\"figure\"",
+                "notes": "This is the ARIA equivalent of the <code>figure</code> tag"
+            },
+            {
+                "label": "Add the caption",
+                "highlight": "aria-labelledby",
+                "notes": "Just like other grouped elements, it's given an accessible name via <code>aria-describedby"
+            }
+        ]}
+        </script>
+    </main>
+    <?php include "includes/example-footer.php"?> 
 </body>
 
 </html>

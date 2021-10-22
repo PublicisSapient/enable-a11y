@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "axe-cli": "^3.2.1",
-    "chromedriver": "^92.0.1",
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
     "lessc": "^1.0.2",

@@ -1,12 +1,111 @@
 @import "shared/mixins-and-vars";
  
-@table-header-height: 2em;
+@table-header-height: 2em; 
+
+
+.sticky-table {
+
+    &__keyboard-instructions {
+        display: none;
+        background: black;
+        color: white;
+        padding: 10px;
+        font-size: (12/@px);
+        position: absolute;
+        top: 0;
+    }
+
+    &__container {
+        overflow: auto;
+        max-height: 70vh;
+        position: relative;
+
+
+        &:focus {
+            outline: @focus-color 2px solid;
+
+            .sticky-table__keyboard-instructions {
+                display: block;
+            }
+        }
+    
+
+        table,
+        [role="table"] {
+            margin-bottom: 0;
+            position: relative;
+            border: solid 1px black;
+        }
+
+        thead {
+            background: white;
+            transform: translateZ(1px)
+        }
+
+        th[scope="col"],
+        [role="columnheader"] {    
+            .sticky();
+            top: 0;
+        }
+
+        th[scope="row"],
+        [role="rowheader"] {
+            .sticky();
+            left: 0;
+        }
+    }
+
+    &__sticky-horiz-heading {
+        .sticky();
+        left: 0;
+        z-index: 1;
+    }
+
+}
+
+caption,
+.caption,
+figcaption {
+    display: table-caption;
+    text-align: center;
+    font-style: italic;
+    font-family: "Times New Roman", serif;
+    .width-fit-content();
+    margin: 1em auto;
+    position: relative;
+
+    /* 
+        * The decorations around the captions are for tablet and up,
+        * since mobile doesn't have enough room
+        */
+    @media @tablet-up {
+        &:before,
+        &:after {
+            display: inline-block;
+            content: url(../images/squiggly.png);
+            position: absolute;
+            margin: 0 1em;
+            top: 3px;
+        }
+        
+        &:before {
+            left: -110px;
+        }
+        &:after {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+figcaption.caption {
+    display: block;
+    margin-top: 1em;
+}
 
 table,
 [role="table"] {
 	width: 100%;
 	max-width: 1024px;
-	margin: 1rem auto 5rem auto;
     border-collapse: collapse;
     display: table;
 
@@ -14,34 +113,7 @@ table,
         margin-bottom: 0;
     }
 
-    caption,
-    .caption,
-    + figcaption {
-        display: table-caption;
-        text-align: center;
-        margin-bottom: 1em;
-        font-style: italic;
-        font-family: "Times New Roman", serif;
-
-        &:before,
-        &:after {
-            display: inline-block;
-            content: url(../images/squiggly.png);
-            position: relative;
-            margin: 0 1em;
-            top: 3px;
-        }
-
-        &:after {
-            transform: scaleX(-1);
-        }
-    }
-
-    + figcaption {
-        display: block;
-        margin-bottom: 5rem;
-        margin-top: 1em;
-    }
+    
 
     th,td,
     [role="columnheader"], [role="rowheader"], [role="cell"] {
@@ -49,6 +121,7 @@ table,
         text-align: left;
         padding: 10px;
         display: table-cell;
+        font-size: (14/@px);
     }
 
     th,
@@ -61,6 +134,7 @@ table,
     tr, 
     [role="row"] {
         display: table-row;
+        background-color: #fff;
 
         &:nth-child(2n) {
             background-color: #cccccc;
@@ -75,9 +149,6 @@ table,
     @table-width: 100%;
     @table-column-width: @table-width / 7; 
     @table-body-height: 80vh;
-    // @column_one_width 33.33vw;
-    // @column_two_width: 33.33vw;
-    // @column_three_width: 33.33vw;
 
     &.fixed-headers {
         border-collapse: collapse;
@@ -88,9 +159,6 @@ table,
             width: @table-width;
         }
         
-        // td:nth-child(1), th:nth-child(1) { min-width: @column_one_width; }
-        // td:nth-child(2), th:nth-child(2) { min-width: @column_two_width; }
-        // td:nth-child(3), th:nth-child(3) { width: @column_three_width; }
         td, th,
         [role="columnheader"], [role="rowheader"], [role="cell"] {
             overflow: hidden;

@@ -1,0 +1,102 @@
+@import "shared/mixins-and-vars";
+
+.play-pause-anim {
+
+    /*
+    *  For the page
+    */
+    &__checkbox-container {
+        position: fixed;
+        top: 100px;
+        right: 50px;
+        width: (400 / @px);
+        max-height: 70vh;
+        border-radius: 50px;
+        border: solid 5px white;
+        padding: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+
+
+  &__full-bleed-image-demo {
+    position: relative;
+    
+
+    &--image {
+      background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
+      background-size: 100vw auto;
+      background-position: 0px 0px;
+      background-repeat: repeat-x;
+      background-size: auto;
+      animation: animatedBackground 60s linear infinite;
+      width: 100vw;
+    }
+  }
+}
+
+main {
+  min-height: 54vw;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1920px 0;
+  }
+}
+
+.play-pause-animation-button__gif {
+    &--animated {
+        display: initial;
+    }
+
+    &--still {
+        display: none;
+    }
+}
+
+.prefers-reduced-motion() {
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+
+    .play-pause-animation-button__gif {
+        &--animated {
+            display: none;
+        }
+
+        &--still {
+            display: initial;
+        }
+    }
+}
+
+
+/*
+ * From Bruce Lawson's awesome blog post
+ * https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/
+ */
+@media (prefers-reduced-motion: reduce) {
+    body:not(.play-pause-animation-button__prefers-motion) {
+        .prefers-reduced-motion(); 
+    }
+}
+
+body.play-pause-animation-button__prefers-reduced-motion {
+    .prefers-reduced-motion();
+}
+
+    
+

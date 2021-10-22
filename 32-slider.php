@@ -94,7 +94,7 @@
             </form>
         </div>
 
-        <h3 class="showcode__heading">Example code explanation</h3>
+        
 
         <?php includeShowcode("html-example")?>
         <script type="application/json" id="html-example-props">
@@ -180,7 +180,7 @@
             </form>
         </div>
 
-        <h3 class="showcode__heading">Example code explanation</h3>
+        
 
         <?php includeShowcode("html-multi-example")?>
         <script type="application/json" id="html-multi-example-props">
@@ -316,7 +316,7 @@
             </div>
         </div>
 
-        <h3 class="showcode__heading">Example code explanation</h3>
+        
 
         <?php includeShowcode("aria-example1")?>
         <script type="application/json" id="aria-example1-props">
@@ -384,7 +384,7 @@
             </div>
         </div>
 
-        <h3 class="showcode__heading">Example code explanation</h3>
+        
 
         <?php includeShowcode("aria-example2")?>
         <script type="application/json" id="aria-example2-props">
