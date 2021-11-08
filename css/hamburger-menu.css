@@ -159,8 +159,7 @@
   filter: invert();
   position: absolute;
   top: 5px;
-  top: 4px;
-  left: 15px;
+  position: static;
 }
 .enable-flyout__menu-item {
   width: 100%;
@@ -260,6 +259,7 @@
   top: 0;
   transition: opacity 0.2s ease-in-out;
   width: 100%;
+  z-index: 3;
 }
 .enable-flyout__open-menu-button {
   background-color: #20c270;
@@ -382,6 +382,7 @@
   .enable-flyout__list--photo-layout .enable-flyout__link:focus {
     transform: scale(1.2);
     font-weight: bold;
+    background: white;
   }
   .enable-flyout__list {
     display: flow-root;

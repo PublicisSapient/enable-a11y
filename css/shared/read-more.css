@@ -1,0 +1,6 @@
+.read-more {
+  display: block;
+  overflow: hidden;
+  max-height: 6em;
+  text-overflow: ellipsis;
+}

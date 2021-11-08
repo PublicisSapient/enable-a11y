@@ -102,5 +102,49 @@
 			"well as the open and close tags.\n\n",
 			"Usage: %OPENCLOSECONTENTTAG%<HTML TAG NAME>"
 		]
+	},
+	"hamburger-button": {
+		"scope": "",
+		"prefix": "hamburger-button",
+		"body": [
+			"<li class=\"enable-flyout__menu-item\">",
+			"  <!-- Begin section $1 -->",
+			"  <button aria-expanded=\"false\" aria-controls=\"$2\" class=\"enable-flyout__open-level-button\">",
+			"    $1",
+			"  </button>",
+			"  <div id=\"$2\" aria-label=\"$1\" role=\"group\"",
+			"    class=\"enable-flyout enable-flyout__level enable-flyout__dropdown\">",
+			"    <button class=\"enable-flyout__hamburger-icon-facade\">",
+			"      <span class=\"sr-only\">",
+			"        close mobile flyout",
+			"      </span>",
+			"    </button>",
+			"    <ul class=\"enable-flyout__list my-custom-list__layout\">",
+			"      <li class=\"enable-flyout__menu-item enable-flyout__menu-item--close\">",
+			"       <button ",
+			"        class=\"enable-flyout__close-level-button\">",
+			"        Go Back ",
+			"       </button>",
+			"      </li>",
+			"    ",
+			"       <!-- Start menu items for section $1 -->",
+			"    </ul>",
+			"  </div>",
+			"</li>"
+		]
+	},
+	"hamburger-link": {
+		"scope": "",
+		"prefix": "hamburger-link",
+		"body": [
+			"<li class=\"enable-flyout__menu-item\">",
+			"  <a href=\"$1.php\"",
+			"    class=\"enable-flyout__link\">",
+			"    <img class=\"enable-flyout__link-image\"",
+			"      src=\"images/hamburger-menu/$1.png\" alt=\"\">",
+			"    $2",
+			"  </a>",
+			"</li>"
+		]
 	}
 }

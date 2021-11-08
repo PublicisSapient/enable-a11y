@@ -1,42 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    $pattern = '/[0-9][0-9][a-z]*-([\S]+)$/';
+    $replace = '$1';
+    $path = preg_replace($pattern, $replace, $_SERVER['PHP_SELF']);
+    // 301 Moved Permanently
+    header("Location: http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $path, true, 301);;
+    exit();
+?>
 
-<head>
-    <title>ARIA Status Role Example</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/status.css" />
-    
-</head>
 
-<body>
-
-    <?php include("includes/example-header.php"); ?>
-
-    
-
-    <main>
-            <h1>ARIA Status Role Example</h1>
-
-            <aside class="notes">
-                <h2>Notes:</h2>
-    
-                <ul>
-                    <li>NVDA and Chromevox will update the status everytime the innerHTML property is updated.  Voiceover only
-                        updates the user the string inside that innerHTML property is changed.
-                    </li>
-                </ul>
-            </aside>
-
-            <h2>CPU Usage Status Example</h2>
-
-            <div id="myStatus" class="neutral" role="status">
-
-            </div>
-
-    </main>
-    
-    
-    <script src="js/status.js"></script>
-</body>
-
-</html>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id="a11y-modal__non-modal-content">
-<?php include("includes/example-header.php"); ?>
+<?php include("includes/documentation-header.php"); ?>
 <main>
 <aside class="notes">
 <h2>Notes:</h2>

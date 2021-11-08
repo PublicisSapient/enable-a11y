@@ -216,8 +216,7 @@
     padding-left: 32px;
     &::before {
       .icon-mixin("../images/Home.svg");
-      top: 4px;
-      left: 15px;
+      position: static;
     }
   }
 
@@ -314,6 +313,7 @@
     top: 0;
     transition: opacity @large-anim-time ease-in-out;
     width: 100%;
+    z-index: 3;
   }
 
   &__open-menu-button {
@@ -471,6 +471,7 @@
       &:focus {
         transform: scale(1.2);
         font-weight: bold;
+        background: white; 
       }
     }
 

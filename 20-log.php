@@ -1,39 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Aria Log Role Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/log.css" />
-    
-</head>
-
-<body>
-    <?php include("includes/example-header.php"); ?>
-
-    <main>
+<?php
+    $pattern = '/[0-9][0-9][a-z]*-([\S]+)$/';
+    $replace = '$1';
+    $path = preg_replace($pattern, $replace, $_SERVER['PHP_SELF']);
+    // 301 Moved Permanently
+    header("Location: http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $path, true, 301);;
+    exit();
+?>
 
 
-        <h1>Aria Log Role Examples</h1>
-        <aside class="notes">
-
-            <h2>Notes:</h2>
-
-            <ul>
-                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screenreaders will
-                    read the whole log like an alert.
-                </li>
-                <li>
-                    NVDA does not just read the differences, even when hitting NVDA+5
-                </li>
-            </ul>
-        </aside>
-        <h2>Example 1: </h2>
-
-        <pre id="syslog" role="log" aria-atomic="false"></pre>
-
-    </main>
-    <script src="js/log.js"></script>
-</body>
-
-</html>

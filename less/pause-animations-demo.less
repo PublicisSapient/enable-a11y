@@ -6,16 +6,23 @@
     *  For the page
     */
     &__checkbox-container {
+
         position: fixed;
-        top: 100px;
-        right: 50px;
-        width: (400 / @px);
+        z-index: 3;
+        top: 5px;
+        right: 20px;
         max-height: 70vh;
         border-radius: 50px;
-        border: solid 5px white;
-        padding: 20px;
+        border: solid 2px white;
         color: white;
-        background-color: rgba(0, 0, 0, 0.5);
+        padding: 0;
+        background-color: #000;
+
+        label {
+          padding: 10px 20px;
+          display: inline-block;
+          cursor: pointer;
+        }
     }
 
 
@@ -50,6 +57,11 @@ main {
 }
 
 .play-pause-animation-button__gif {
+    &--animated,
+    &--still {
+      max-width: 100%;
+    }
+
     &--animated {
         display: initial;
     }

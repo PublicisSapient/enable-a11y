@@ -5,15 +5,20 @@
 }
 .play-pause-anim__checkbox-container {
   position: fixed;
-  top: 100px;
-  right: 50px;
-  width: 25rem;
+  z-index: 3;
+  top: 5px;
+  right: 20px;
   max-height: 70vh;
   border-radius: 50px;
-  border: solid 5px white;
-  padding: 20px;
+  border: solid 2px white;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  background-color: #000;
+}
+.play-pause-anim__checkbox-container label {
+  padding: 10px 20px;
+  display: inline-block;
+  cursor: pointer;
 }
 .play-pause-anim__full-bleed-image-demo {
   position: relative;
@@ -37,6 +42,10 @@ main {
   to {
     background-position: -1920px 0;
   }
+}
+.play-pause-animation-button__gif--animated,
+.play-pause-animation-button__gif--still {
+  max-width: 100%;
 }
 .play-pause-animation-button__gif--animated {
   display: initial;

@@ -303,7 +303,7 @@ var draw = function() {
 setTimeout(function() {
   init();
   
-  //addEventListener('resize', init, false);
+  addEventListener('resize', init, false);
   c.addEventListener('dblclick', init, false);
   addEventListener('keydown', function(e) {
     if(e.keyCode == 13) {

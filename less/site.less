@@ -1,0 +1,119 @@
+@import "shared/mixins-and-vars";
+
+// site specific hamburger menu styles
+
+.enable-flyout {
+
+  &__open-level-button {
+    font-weight: normal;
+    letter-spacing: (0.5 / @px);
+
+    &:hover,
+    &:focus {
+      font-weight: bold;
+      letter-spacing: 0;
+    }
+  }
+
+  &__level &__menu-item {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  &__hamburger-icon span {
+    background-color: black;
+  }
+
+  &__link {
+    text-indent: 0px;
+    padding: 1em;
+  }
+
+  &__list &__list {
+    width: @desktop-min;
+    margin: 0 auto;
+  }
+}
+
+@media @desktop {
+  .enable-flyout {
+    @item-height: 235px;
+
+    &__link-image {
+      width: 105px;
+      border: solid 1px #999999;
+    }
+
+    &__level &__level &__menu-item {
+      width: 100%;
+      padding-bottom: 10px;
+    }
+
+    &__level &__level &__list--photo-layout &__menu-item {
+      width: 136px;
+      float: left;
+      min-height: @item-height;
+    }
+
+    &__level &__level &__list--photo-layout &__link {
+      min-height: @item-height;
+      letter-spacing: (0.5 / @px);
+
+      &:hover,
+      &:focus {
+        letter-spacing: 0;
+        border: solid 1px #666;
+        box-shadow: 2px 2px 5px #999;
+      }
+    }
+
+    &__level &__menu-item--close {
+      display: none;
+    }
+  }
+}
+
+
+// Logo in the header
+
+.enable-logo {
+  width: 100px;
+
+  &__link {
+    text-decoration: none;
+    font-family: "Specify Condensed", Arial, Helvetica, sans-serif;
+
+    color: black;
+    -webkit-text-stroke: none;
+    display: table;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+
+    @media @mobile {
+      transform: scale(0.75);
+    }
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    display: inline-block;
+    color: #ffa500;
+    font-size: 70px;
+    top: -25px;
+    -webkit-text-stroke: 1px #333;
+    text-shadow: 2px 2px 0 black;
+    font-style: italic;
+  }
+
+  &__sub-text {
+    display: block;
+    font-size: 17px;
+    font-style: italic;
+    padding: 0 10px;
+    margin-top: -8px;
+    font-style: normal;
+  }
+}

@@ -85,10 +85,12 @@ const EnableFlyoutMenu = new function() {
       const siblings = getSiblings($el);
       
       forEach.call(siblings, function (sibling) {
-        sibling.classList.remove(isOpenClass);
-        
-        $controller = accessibility.getAriaControllerEl(sibling);
-        $controller.setAttribute('aria-expanded', 'false');
+        if (sibling.getAttribute('role') && sibling.getAttribute('aria-controls')) {
+          sibling.classList.remove(isOpenClass);
+          
+          $controller = accessibility.getAriaControllerEl(sibling);
+          $controller.setAttribute('aria-expanded', 'false');
+        }
       })
     });
     
@@ -269,8 +271,10 @@ const EnableFlyoutMenu = new function() {
   }
 
   this.blurEvent = (e) => {
+    console.log('fired', e);
     if (!isHamburger()) {
       accessibility.doIfBlurred(e, () => {
+        console.log('is done')
         this.closeAllFlyouts();
       });
     }
@@ -289,7 +293,29 @@ const EnableFlyoutMenu = new function() {
     }
   }
 
+  this.onDocumentClick = (e) => {
+    const { target } = e;
+    
+    const closestOpenAncestor = target.closest(isOpenSel);
+    const isInMenu = target.closest(menuSel);
+    const currentlyOpenMenu = document.querySelector(isOpenSel);
+    const ariaControls = target.getAttribute('aria-controls');
+    
+    // If the document has an open menu
+    // *and* we didn't click on the button that controls that open menu
+    // *and* it we didn't click inside the open menu
+    // *and* we we didn't click inside the menu at all,
+    // then we close all the flyouts.
+    if (currentlyOpenMenu && currentlyOpenMenu.id !== ariaControls && !target.closest(isOpenSel) && !target.closest(menuSel)) {
+      this.closeAllFlyouts();
+    }
+  }
+
   this.init = function () {
+
+    document.body.addEventListener('click', this.onDocumentClick);
+    
+
     // main menu open
     delegate('click', menuSel, this.onHamburgerIconClick);
 
@@ -307,9 +333,12 @@ const EnableFlyoutMenu = new function() {
 
     document.addEventListener('animationend', this.openMenuAnimationEnd);
 
-    /* document.querySelector('.enable-flyout__dropdown').addEventListener(
-      'blur', this.blurEvent, true
-    );*/ 
+    // For all dropdowns, we must fire this event.
+    document.querySelectorAll('.enable-flyout__dropdown').forEach((el) => {
+      el.addEventListener(
+        'blur', this.blurEvent, true
+      );
+    }) 
 
     
     $screen.addEventListener('click', this.closeAllFlyouts);

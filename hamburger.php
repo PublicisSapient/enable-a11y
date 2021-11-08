@@ -31,7 +31,6 @@
         <li><a href="/acessibility">Accessibility Statement</a></li>
         <li><a href="/privacy">Privacy</a></li>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/accessibility-es4.js"></script>
 </body>
 

@@ -20,10 +20,17 @@ body {
     0 calc(100% - @clip-bottom)
   );
 
+  &__container {
+    position: relative;
+    z-index: 1;
+    background: white;
+  }
+
   &__heading {
     font-weight: bold;
     padding-top: 20px;
-    font-size: (20 / @px);
+    font-size: 1.25rem;
+    border-bottom: double 3px #000;
   }
 
   &__example {

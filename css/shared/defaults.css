@@ -22,6 +22,11 @@ h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 45px;
+}
 ul,
 ol {
   padding-left: 3rem;
@@ -72,4 +77,36 @@ select {
   content: "";
   display: table;
   clear: both;
+}
+.mobile {
+  display: none !important;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .mobile {
+    display: inherit !important;
+  }
+}
+.tablet {
+  display: none  !important;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .tablet {
+    display: inherit !important;
+  }
+}
+.desktop {
+  display: none  !important;
+}
+@media only screen and (min-width: 960px) {
+  .desktop {
+    display: inherit !important;
+  }
+}
+.mobile-and-tablet {
+  display: none  !important;
+}
+@media only screen and (min-width: 1px) and (max-width: 959px) {
+  .mobile-and-tablet {
+    display: inherit !important;
+  }
 }

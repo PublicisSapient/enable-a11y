@@ -1,3 +1,29 @@
+@focus-color: rgb(59, 153, 252); 
+
+// From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
+// pixels to rems.
+@px: 16rem;
+
+@desktop-min: 960px;
+
+@tablet-min: 720px;
+@tablet-max: (@desktop-min - 1);
+
+@mobile-min: 1px;
+@mobile-max: (@tablet-min - 1);
+
+@desktop: ~"only screen and (min-width: @{desktop-min})";
+@tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
+@mobile: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
+
+
+@tablet-up: ~"only screen and (min-width: @{tablet-min})";
+@mobile-up: ~"only screen and (min-width: @{mobile-min})";
+@mobile-and-tablet:  ~"only screen and (min-width: @{mobile-min}) and (max-width: @{tablet-max})";
+
+@max-zindex: 2147483647;
+
+
 //
 // Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
 //
@@ -121,26 +147,3 @@
      -moz-box-shadow: @arguments;
           box-shadow: @arguments;
 }
-
-@focus-color: rgb(59, 153, 252); 
-
-// From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
-// pixels to rems.
-@px: 16rem;
-
-@desktop-min: 960px;
-
-@tablet-min: 720px;
-@tablet-max: (@desktop-min - 1);
-
-@mobile-min: 1px;
-@mobile-max: (@tablet-min - 1);
-
-@desktop: ~"only screen and (min-width: @{desktop-min})";
-@tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
-@mobile: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
-
-
-@tablet-up: ~"only screen and (min-width: @{tablet-min})";
-@mobile-up: ~"only screen and (min-width: @{mobile-min})";
-@mobile-and-tablet:  ~"only screen and (min-width: @{mobile-min}) and (max-width: @{tablet-max})";

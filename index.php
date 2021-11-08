@@ -8,7 +8,6 @@
     <?php include("includes/common-head-tags.php"); ?>
 
     <link rel="stylesheet" type="text/css" href="css/all.css" />
-    <link rel="stylesheet" type="text/css" href="css/switch.css" />
     <link rel="stylesheet" type="text/css" href="css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="css/home.css" />
 
@@ -312,17 +311,9 @@
             </div>
         </div>
     </main>
+   
+    <?php include "includes/example-footer.php"?>
 
-    <footer>
-        Enable is a labour of love originally by
-        <a href="https://useragentman.com">Zoltan Hawryluk</a>, released as open
-        source so hopefully others can learn from it as well as contribute to make
-        it better.
-    </footer>
-
-    <script src="js/accessibility.js"></script>
-    <script src="js/shared/switch.js"></script>
-    <script src="js/shared/dyslexia.js"></script>
     <script src="js/tabs.js"></script>
 </body>
 

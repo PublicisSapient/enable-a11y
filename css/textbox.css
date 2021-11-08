@@ -1,12 +1,15 @@
+textarea,
 [role="textbox"] {
   display: inline-block;
   width: 200px;
   font-size: 1rem;
   line-height: 1.375;
-  height: 1.375rem;
+  height: 200px;
   border: solid 1px black;
   background: #fff;
+  vertical-align: bottom;
 }
+textarea[aria-multiline="true"],
 [role="textbox"][aria-multiline="true"] {
   min-height: 2.75rem;
   overflow: auto;
@@ -16,4 +19,11 @@
   -moz-appearance: textarea;
   appearance: textarea;
   resize: both;
+}
+.textarea-label {
+  vertical-align: top;
+}
+[role="group"] div,
+fieldset div {
+  margin-bottom: 10px;
 }

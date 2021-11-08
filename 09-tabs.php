@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    $pattern = '/[0-9][0-9][a-z]*-([\S]+)$/';
+    $replace = '$1';
+    $path = preg_replace($pattern, $replace, $_SERVER['PHP_SELF']);
+    // 301 Moved Permanently
+    header("Location: http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . $path, true, 301);;
+    exit();
+?>
 
-<head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.4.0">
-    <title>Accessible Tabs Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
-    <link rel="stylesheet" type="text/css" href="css/table.css" />
-</head>
 
-<body>
-
-    <h1>Accessible Tabs Examples</h1>
-
-    
-</body>
-
-</html>

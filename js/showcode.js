@@ -12,6 +12,8 @@ const showcode = new (function () {
   const space = / /g;
   const cr = /\n/g; // UNIX carriage return
   const mscr = /\r\n/g; // Microsoft carriage return
+  const nbspStr = '\u00a0';
+  const nbsp = /\u00a0/g;
   const beginningSpaces = /^\s*/g;
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
@@ -48,7 +50,7 @@ const showcode = new (function () {
       .replace(tab, "   ");
 
     if (!options.ignoreSpace) {
-      result = result.replace(space, "&nbsp;");
+      result = result.replace(space, nbspStr);
     }
 
     if (!options.ignoreReturns) {
@@ -184,17 +186,52 @@ const showcode = new (function () {
   const selectChangeEvent = (e) => {
     const { target } = e;
     const { value, dataset } = target;
+    const optionValue = 'option[value=\''+ value + '\']'
     const { showcodeFor } = dataset;
+    const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
+    const { showcodeNotes } = optionEl.dataset;
+    const { body } = document;
+
     const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
+
+    displayStep(value, showcodeNotes, showcodeFor, codeEl);
+
+
+
+    // now ... let's see if we can scroll the page to the first highlighted part
+    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
+    
+
+    if (firstHighlightdElement) {
+      const componentRoot = codeEl.closest('.showcode');
+      const uiEl = componentRoot.querySelector('.showcode__ui');
+      const highlightRect = firstHighlightdElement.getBoundingClientRect();
+      const uiRect = uiEl.getBoundingClientRect();
+      const behavior = body.classList.contains('play-pause-animation-button__prefers-reduced-motion') ? 'auto' : 'smooth';
+
+      firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
+    }
+    
+
+    requestAnimationFrame(() => {
+      target.focus();
+    },2000);
+  }
+
+  /**
+   * 
+   * @param {String} value - The string containing the `highlight` element in the json package. 
+   * @param {(String|Array)} showcodeNotes - HTML containing the notes (the `notes` element in the json package)
+   * @param {String} showcodeFor - the ID for the code snippet that will be displayed 
+   */
+  const displayStep = (value, showcodeNotes, showcodeFor, codeEl) => {
+
     const notesEl = document.getElementById(showcodeFor + '__notes');
     let code = htmlCache[showcodeFor];
     let replaceRegex;
-    const optionValue = 'option[value=\''+ value + '\']'
 
-    const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
-    const { showcodeNotes } = optionEl.dataset;
 
-    notesEl.innerHTML = showcodeNotes;
+    notesEl.innerHTML = showcodeNotes || '';
 
     const highlightStrings = value.split('|||');
     let command;
@@ -297,7 +334,6 @@ const showcode = new (function () {
                   // print out the funcName literally
                   funcCode = funcName.replace(/'/g, '');
                 } else {
-                  console.log('f', funcName);
                   const evalFuncName = eval(funcName);
                   const evalFuncString = evalFuncName.toString();
                   if (evalFuncString.indexOf('object Object') >= 0) {
@@ -323,8 +359,6 @@ const showcode = new (function () {
                   if (command === '%JSHTML%') {
 
                     const { showcodeFor, replaceHtmlRules } = dataset;
-                    console.log('r', dataset);
-
                     const replaceRulesJson = JSON.parse(this.unentify(replaceHtmlRules));
                     const showcodeProps = `${showcodeFor}-props`;
                     const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
@@ -357,6 +391,7 @@ const showcode = new (function () {
           }
         }
 
+        highlightString=highlightString.replace(space, nbspStr);
         const attribute = highlightString.split('=')[0];
         const hasValue = (highlightString.indexOf('=') >= 0)
 
@@ -378,7 +413,6 @@ const showcode = new (function () {
           // highlight the ids these matches points to.
           if (relationshipAttributes.indexOf(attribute) >= 0 ) {
             for (let j=0; j<matches.length; j++) {
-              console.log('matches', matches)
               let ids = matches[j].split('"')[1];
 
               if (attribute === 'href' && id.indexOf('#') === 0) {
@@ -389,7 +423,6 @@ const showcode = new (function () {
 
               for (let k=0; k<ids.length; k++) {
                 const id = ids[k];
-                console.log('id', id);
                 const idReplaceRegex = new RegExp(`id="${id}"`);
                 code = code.replace(idReplaceRegex, highlightFunc);
               }
@@ -409,33 +442,6 @@ const showcode = new (function () {
 
 
     codeEl.innerHTML = code;
-
-    // now ... let's see if we can scroll the page to the first highlightd part
-    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
-    
-
-    if (firstHighlightdElement) {
-      const componentRoot = codeEl.closest('.showcode');
-      const uiEl = componentRoot.querySelector('.showcode__ui');
-      const highlightRect = firstHighlightdElement.getBoundingClientRect();
-      const uiRect = uiEl.getBoundingClientRect();
-      /* window.scroll({
-        top: highlightRect.top - uiRect.height - 50,
-        behavior: 'smooth'
-      }); */
-      firstHighlightdElement.scrollIntoView({ behavior: 'smooth', block: 'center', left: 0 });
-      /* setTimeout(() => {
-        window.scrollBy({
-          top: - uiRect.height - 50,
-          behavior: 'smooth'
-        })
-      }, 500); */
-    }
-    
-
-    requestAnimationFrame(() => {
-      target.focus();
-    },2000);
   }
 
   function removeBlankLines(almostFormatted) {
@@ -505,20 +511,27 @@ const showcode = new (function () {
   /**
    * 
    * @param {Element} htmlBlock - DOM node to put formatted code 
-   * @param {String} originalHTMLId - ID of DOM node that contains the code to display
+   * @param {String} originalHTMLId - ID of DOM node that contains the code to display. If this is set to document, it's the whole document.
    * @param {JSON} replaceRulesJson - Replace rules.
    */
   const displayCode = (htmlBlock, originalHTMLId, replaceRulesJson) => {
-    const block = document.getElementById(originalHTMLId).cloneNode(true);
+    const isWholeDoc = (originalHTMLId === 'document');
+    let block;
+    
+    if (isWholeDoc) {
+      block = document.querySelector('html').cloneNode(true);
+    } else {
+      block = document.getElementById(originalHTMLId).cloneNode(true);
+    }
 
     if (block) {
       formatHTMLInBlock(block, replaceRulesJson)
       // let's do search and replace here
-      const unformattedHTML = block.innerHTML;
+      const unformattedHTML = isWholeDoc ? block.outerHTML : block.innerHTML;
       const formattedHTML = formatHTML(unformattedHTML)
       //indent.html(unformattedHTML, {tabString: ' '});
       const entifiedHTML = this.entify(formattedHTML, {ignoreSpace: true});
-      htmlCache[originalHTMLId] = entifiedHTML
+      htmlCache[originalHTMLId] = entifiedHTML;
       codeblockCache[originalHTMLId] = block;
       htmlBlock.innerHTML = entifiedHTML.trim();
     }
@@ -566,61 +579,67 @@ const showcode = new (function () {
     const defaultOptionEl = document.createElement('OPTION');
     const widgetContainerEl = document.getElementById(widgetId);
     const notesEl = document.getElementById(notesId);
+    const codeEl = document.querySelector('[data-showcode-id="'+ codeblockId + '"]');
 
-    if (!widgetContainerEl) {
-      console.error('Missing widget container ' + widgetId + '. Bailing.');
-      return;
-    }
 
-    selectEl.id = widgetId + '--select';
-    selectEl.dataset.showcodeFor = codeblockId;
-    labelEl.htmlFor = selectEl.id;
-    labelEl.className = 'showcode__select-label';
-    labelEl.innerHTML = 'Code to highlight:'
+    if (widgetContainerEl) {
 
-    defaultOptionEl.innerHTML = '';
-    defaultOptionEl.value='';
-    selectEl.appendChild(defaultOptionEl);
-    selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHTMLRules), {
-      ignoreReturns: true,
-      ignoreSpace: true
-    });
+      selectEl.id = widgetId + '--select';
+      selectEl.dataset.showcodeFor = codeblockId;
+      labelEl.htmlFor = selectEl.id;
+      labelEl.className = 'showcode__select-label';
+      labelEl.innerHTML = 'Code to highlight:'
 
-    if (stepsJson) {
-      try {
+      defaultOptionEl.innerHTML = '';
+      defaultOptionEl.value='';
+      selectEl.appendChild(defaultOptionEl);
+      selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHTMLRules), {
+        ignoreReturns: true,
+        ignoreSpace: true
+      });
 
-        for (let i in stepsJson) {
-          const optionEl = document.createElement('OPTION');
-          const step = stepsJson[i];
-          const { label, highlight, notes } = step;
+      if (stepsJson) {
+        try {
 
-          optionEl.value = highlight;
+          for (let i in stepsJson) {
+            const optionEl = document.createElement('OPTION');
+            const step = stepsJson[i];
+            const { label, highlight, notes } = step;
 
-          switch(typeof notes) {
-            case "object":
-              // assume it's an array.  Make it into a string
-              optionEl.dataset.showcodeNotes = notes.join(' ');
-              break;
-            default:
-              optionEl.dataset.showcodeNotes = notes || '';
+            optionEl.value = highlight;
+
+            switch(typeof notes) {
+              case "object":
+                // assume it's an array.  Make it into a string
+                optionEl.dataset.showcodeNotes = notes.join(' ');
+                break;
+              default:
+                optionEl.dataset.showcodeNotes = notes || '';
+            }
+            optionEl.innerHTML = `Step #${parseInt(i) + 1}: ${label}`;
+            
+
+            selectEl.appendChild(optionEl);
+                      
           }
-          optionEl.innerHTML = 'Step #' + (parseInt(i) + 1) + ': ' + label;
+          
+          widgetContainerEl.appendChild(labelEl)
+          widgetContainerEl.appendChild(selectEl);
+
+          selectEl.addEventListener('change', selectChangeEvent)
           
 
-          selectEl.appendChild(optionEl);
-                    
+
+        } catch (ex) {
+          console.log(ex);
         }
-        
-        widgetContainerEl.appendChild(labelEl)
-        widgetContainerEl.appendChild(selectEl);
-
-        selectEl.addEventListener('change', selectChangeEvent)
-        
-
-
-      } catch (ex) {
-        console.log(ex);
       }
+    } else {
+      // This is for a static, non-interactive showcode block.
+      const step = stepsJson && stepsJson[0];
+
+      displayStep(step.highlight, step.notes, codeblockId, codeEl)
+      return;
     }
   }
 

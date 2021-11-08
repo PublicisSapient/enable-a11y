@@ -10,7 +10,7 @@
 
 <body>
 
-    <?php include("includes/example-header.php"); ?>
+    <?php include("includes/documentation-header.php"); ?>
 
     
 
