@@ -22,7 +22,7 @@
 
       <h2>Native HTML5</h2>
 
-      <div id="html5-examples">
+      <div id="html5-examples" class="enable-example">
         <p>
           This paragraph has a few native
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
@@ -67,7 +67,7 @@
 
       <h2>Using ARIA</h2>
 
-      <div id="aria-examples">
+      <div id="aria-examples" class="enable-example">
         <p>
           This paragraph has a few
           <span

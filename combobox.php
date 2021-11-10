@@ -30,6 +30,7 @@
 
         <p>Here is a standard autocomplete example using ARIA.</p>
 
+        <div class="enable-example">
         <form>
             <div id="example1" class="enable-combobox">
                 <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
@@ -120,6 +121,7 @@
                 </div>
             </div>
         </form>
+</div>
 
         
 
@@ -181,7 +183,7 @@
         <p>Another ARIA combobox example. Note the special formatting in the dropdown. This is common
             in a lot of modern searchboxes in the headings of a lot of e-commerce sites.</p>
 
-        <div id="example2">
+        <div id="example2" class="enable-example">
         <form>
             <div class="enable-combobox">
                 <label for="aria-example-2"> Enter a name of a country or de jure sovereign state</label>
@@ -477,7 +479,7 @@
 
         <h2>Example 2a: Autosubmitting when choosing an element</h2>
 
-        <div id="example2-submit-on-select">
+        <div id="example2-submit-on-select" class="enable-example">
             <form role="search" aria-label="Example 2a combobox example" tabindex="-1">
                 <div class="enable-combobox">
                     <label for="aria-example-2a">Country:</label>
@@ -794,7 +796,7 @@
             </li>
         </ul>
 
-        <div id="dataset-example">
+        <div id="dataset-example" class="enable-example">
             <form>
                 <label id="html5-fruit__label" for="html5-fruit" class="combobox-label">
                     Enter a Fruit or Vegetable

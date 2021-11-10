@@ -43,7 +43,7 @@
             look at the next example.</p>
 
 
-        <div id="example1">
+        <div id="example1" class="enable-example">
             <h3 class="form-heading">Set Alerts for your Account</h3>
 
             <!-- This groups the first two radio buttons -->
@@ -109,7 +109,7 @@
                 that these styled facades will be discoverable to users navigating by touch</a>.
         </p>
 
-        <div id="example1-styled">
+        <div id="example1-styled" class="enable-example">
             <div class="enable-radio">
                 <h3 class="form-heading">Set Alerts for your Account</h3>
 
@@ -189,7 +189,7 @@
 
         <p>Note that this example uses radiogroup and radio roles.</p>
 
-        <div id="example2">
+        <div id="example2" class="enable-example">
             <h3 class="form-heading">Set Alerts for your Account</h3>
 
             <!-- This groups the first two custom radio buttons -->
@@ -283,7 +283,7 @@
 
         <h2>Example 4: HTML5 version that uses radiogroup roles.</h2>
 
-        <div id="example4">
+        <div id="example4" class="enable-example">
             <h3 class="form-heading">Set Alerts for your Account</h3>
             <div role="radiogroup" class="aria-form-group" aria-labelledby="html2-alert1">
                 <p id="html2-alert1" class="legend">Send an alert when balance exceeds $ 3,000</p>

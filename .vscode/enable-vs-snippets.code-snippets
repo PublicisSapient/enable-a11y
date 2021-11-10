@@ -41,8 +41,8 @@
 		"body": [
 			"{",
 			"\t\"label\": \"$1\",",
-			"\t\"highlight\": \"\",",
-			"\t\"notes\": \"\"",
+			"\t\"highlight\": \"$2\",",
+			"\t\"notes\": \"$3\"",
 			"}"
 		]
 	},
@@ -146,5 +146,27 @@
 			"  </a>",
 			"</li>"
 		]
+	},
+	"hamburger-link__no-image": {
+		"scope": "",
+		"prefix": "hamburger-link-no-image",
+		"body": [
+			"<li class=\"enable-flyout__menu-item\">",
+			"  <a href=\"$1.php\"",
+			"    class=\"enable-flyout__link\">",
+			"    $2",
+			"  </a>",
+			"</li>"
+		]
+	},
+	"enable-example": {
+		"scope": "",
+		"prefix": "enable-example",
+		"body": "enable-example"
+	},
+	"class-enable-example": {
+		"scope": "",
+		"prefix": "class-enable-example",
+		"body": "class=\"enable-example\""
 	}
 }

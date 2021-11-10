@@ -43,7 +43,7 @@
         <p>HTML supports heading levels 1-6</p>
 
 
-        <div id="html-example" class="enable-example">
+        <div id="html-example" class="heading-example enable-example">
             <h1>This is a heading level 1</h1>
             <h2>This is an h2</h2>
             <h3>This is an h3</h3>
@@ -72,7 +72,7 @@
             heading levels 1-10.
         </p>
 
-        <div id="aria-example" class="enable-example">
+        <div id="aria-example" class="heading-example enable-example">
             <div role="heading" aria-level="1">This in an ARIA heading level 1</div>
             <div role="heading" aria-level="2">This in an ARIA heading level 2</div>
             <div role="heading" aria-level="3">This in an ARIA heading level 3</div>

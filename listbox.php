@@ -67,14 +67,14 @@
             </ul>
         </aside>
 
-        <h1>ARIA listbox role example</h1>
+        <h1>Select Box/Listbox</h1>
 
 
 
         <h2>HTML5 native select element example</h2>
 
 
-        <div id="html5-example">
+        <div id="html5-example" class="enable-example">
             <form>
                 <fieldset>
                     <legend>Choose your favorite transuranic element (actinide or transactinide).</legend>
@@ -197,16 +197,18 @@
         <p>What follows is an excellent customly styled native HTML5 select box.  It uses code from <a href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross browser CSS demo</a> that you can download via NPM.
         Instead of putting my usual notes as an explantion, visit their blog post <a href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It’s 2019</a>.
 
-        <label class="select-css__label" for="fave-fruit">
-            Favourite fruit:
-        </label>
-        <select id="fave-fruit" class="select-css">
-            <option value="">Choose one ...</option>
-            <option>Apples</option>
-            <option>Bananas</option>
-            <option>Grapes</option>
-            <option>Oranges</option>
-        </select>
+        <div class="enable-example">
+            <label class="select-css__label" for="fave-fruit">
+                Favourite fruit:
+            </label>
+            <select id="fave-fruit" class="select-css">
+                <option value="">Choose one ...</option>
+                <option>Apples</option>
+                <option>Bananas</option>
+                <option>Grapes</option>
+                <option>Oranges</option>
+            </select>
+    </div>
 
 
 

@@ -1,6 +1,10 @@
 .pauseable-animated-gif {
-  display: inline-block;
+  display: block;
   position: relative;
+  margin: 0 auto;
+  font-size: 0;
+  width: -moz-fit-content;
+  width: fit-content;
   /* for blink/webkit */
   /* for firefox */
 }

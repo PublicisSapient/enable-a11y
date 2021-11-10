@@ -1,3 +1,10 @@
+<div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#end-of-nav" id="beginning-of-nav"
+        class="enable-mobile-visible-on-focus enable-skip-link">
+        Skip to Main Content
+    </a>
+</div>
+
 <div role="banner" tabindex="0">
     <h1>
         <?php include("includes/logo-link.php"); ?>
@@ -336,14 +343,47 @@
                                 close mobile flyout
                             </span>
                         </button>
-                        <ul class="enable-flyout__list">
+
+                    <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+                        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
                             <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
                                 <button class="enable-flyout__close-level-button">
                                     Go Back
                                 </button>
                             </li>
-
                             <!-- Start menu items for section ARIA Live Regions -->
+
+                            <li class="enable-flyout__menu-item">
+                              <a href="alert.php"
+                                class="enable-flyout__link">
+                                Alert
+                              </a>
+                            </li>
+
+                            <li class="enable-flyout__menu-item">
+                              <a href="log.php"
+                                class="enable-flyout__link">
+                                Log
+                              </a>
+                            </li>
+                            <li class="enable-flyout__menu-item">
+                              <a href="timer.php"
+                                class="enable-flyout__link">
+                                Timer
+                              </a>
+                            </li>
+                            <li class="enable-flyout__menu-item">
+                              <a href="marquee.php"
+                                class="enable-flyout__link">
+                                Marquee
+                              </a>
+                            </li>
+                            <li class="enable-flyout__menu-item">
+                              <a href="status.php"
+                                class="enable-flyout__link">
+                                Status
+                              </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -355,4 +395,9 @@
     </span>
 
 
+</div>
+
+<div class="enable-mobile-visible-on-focus__container enable-skip-link--end">
+    <a href="#beginning-of-nav" id="end-of-nav"
+        class="enable-mobile-visible-on-focus enable-skip-link">Back to Main Navigation</a>
 </div>

@@ -6,22 +6,13 @@
     <?php include "includes/common-head-tags.php";?>
     <link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
     <link id="enable-slider-style" rel="stylesheet" type="text/css" href="css/slider.css" />
-    
+
 </head>
 
 <body>
 
     <?php include "includes/documentation-header.php";?>
 
-    <svg class="defs-only">
-            <filter id="chromakey" color-interpolation-filters="sRGB" x="0" y="0" height="100%" width="100%">
-                <feColorMatrix type="matrix"
-                    values="1   0   0   0   0 
-                            0   1   0   0   0  
-                            0   0   1   0   0 
-                            1 1  1 0   1" />
-            </filter>
-        </svg>
 
     <main>
         <h1>ARIA Slider Examples</h1>
@@ -80,7 +71,7 @@
         </ul>
 
 
-        <div id="html-example">
+        <div id="html-example" class="enable-example">
             <form oninput="this.elements.myOutput.innerHTML = parseFloat(this.elements.donationAmount.value);">
                 <label for="horizontal-slider" class="html-slider__label enable-slider__label">Amount you want
                     to donate to the Zoltan Hawryluk Developer Fund: </label>
@@ -94,7 +85,7 @@
             </form>
         </div>
 
-        
+
 
         <?php includeShowcode("html-example")?>
         <script type="application/json" id="html-example-props">
@@ -147,7 +138,7 @@
 
         <h2>An HTML5 Slider With Min and Max Values</h2>
 
-        <div id="html-multi-example">
+        <div id="html-multi-example" class="enable-example">
             <form class="html-slider__multi--form" oninput="" autocomplete="off">
                 <fieldset>
                     <legend class="enable-slider__label">
@@ -180,7 +171,7 @@
             </form>
         </div>
 
-        
+
 
         <?php includeShowcode("html-multi-example")?>
         <script type="application/json" id="html-multi-example-props">
@@ -278,37 +269,36 @@
         <h3>A note on all ARIA sliders on this page:</h3>
 
         <p>
-            Note that all the ARIA sliders use the <code>&lt;template&gt;</code> tag that the 
+            Note that all the ARIA sliders use the <code>&lt;template&gt;</code> tag that the
             JavaScript library will use to create the DOM elements:
         </p>
 
         <?php includeShowcode("template-code")?>
         <script type="application/json" id="template-code-props">
-            {
-                "replaceHTMLRules": {},
-                "steps": [
-                    {
-                        "label": "Insert dynamic values placeholders in the template",
-                        "highlight": "\\$\\{[^}]+\\}",
-                        "notes": "These are the dymamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
-                    },
-                    {
-                        "label": "Create an interpolation function",
-                        "highlight": "%JS% interpolate",
-                        "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step."
-                    },
-                    {
-                        "label": "Insert dymanic values into the template using the interpolation function.",
-                        "highlight": "%JS% enableSliders.list[0].createHandle ||| const handle =[^;]*;",
-                        "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
-                    }
-                ]
-            }
+        {
+            "replaceHTMLRules": {},
+            "steps": [{
+                    "label": "Insert dynamic values placeholders in the template",
+                    "highlight": "\\$\\{[^}]+\\}",
+                    "notes": "These are the dymamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
+                },
+                {
+                    "label": "Create an interpolation function",
+                    "highlight": "%JS% interpolate",
+                    "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step."
+                },
+                {
+                    "label": "Insert dymanic values into the template using the interpolation function.",
+                    "highlight": "%JS% enableSliders.list[0].createHandle ||| const handle =[^;]*;",
+                    "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
+                }
+            ]
+        }
         </script>
 
         <h3>A Simple ARIA Slider</h3>
 
-        <div id="aria-example1">
+        <div id="aria-example1" class="enable-example">
             <div id="sr1_label" class="enable-slider__label">JPEG compression factor:</div>
 
             <div class="enable-slider enable-slider--horizontal" id="sr1" data-min="0" data-max="100" data-inc="5"
@@ -316,7 +306,7 @@
             </div>
         </div>
 
-        
+
 
         <?php includeShowcode("aria-example1")?>
         <script type="application/json" id="aria-example1-props">
@@ -372,7 +362,7 @@
         <h2>An ARIA Slider With Min and Max Values</h2>
 
 
-        <div id="aria-example2">
+        <div id="aria-example2" class="enable-example">
             <div id="sr2_global_label" class="enable-slider__label">Approximately how much money would you be willing to
                 invest in your RRSPs in the next
                 years</div>
@@ -384,7 +374,7 @@
             </div>
         </div>
 
-        
+
 
         <?php includeShowcode("aria-example2")?>
         <script type="application/json" id="aria-example2-props">
@@ -437,15 +427,31 @@
 
         <h2>A Vertical ARIA Slider</h2>
 
-        <div id="sr3_global_label" class="enable-slider__label">Approximately how much money would you be willing to
-            invest in your RRSPs in the next
-            years</div>
+        <div id="vertical-example" class="enable-example">
+            <div id="sr3_global_label" class="enable-slider__label">Approximately how much money would you be willing to
+                invest in your RRSPs in the next
+                years</div>
 
-        <div id="sr3_label1" class="enable-slider__hidden-label">Minimum investment amount</div>
-        <div id="sr3_label2" class="enable-slider__hidden-label">Maximum investment amount </div>
-        <div class="enable-slider enable-slider--vertical" id="sr3" data-min="1900" data-max="2008" data-inc="1"
-            data-jump="10" data-show-vals="true" data-range="true" data-val1="1950" data-val2="2008">
+            <div id="sr3_label1" class="enable-slider__hidden-label">Minimum investment amount</div>
+            <div id="sr3_label2" class="enable-slider__hidden-label">Maximum investment amount </div>
+            <div class="enable-slider enable-slider--vertical" id="sr3" data-min="1900" data-max="2008" data-inc="1"
+                data-jump="10" data-show-vals="true" data-range="true" data-val1="1950" data-val2="2008">
+            </div>
         </div>
+
+        <?php includeShowcode("vertical-example")?>
+        <script type="application/json" id="vertical-example-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [
+                {
+                    "label": "Insert class in root element to make this slider vertical",
+                    "highlight": "enable-slider--vertical",
+                    "notes": "All the other steps are the same as the previous example."
+                }
+            ]
+        }
+        </script>
 
 
     </main>
@@ -459,7 +465,8 @@
                         aria-labelledby="${arialabelledby} ${id}_val" aria-describedby="${ariadescribedby}"></div>
 
                     <div id="${ariadescribedby}" class="${classNameRoot}__hidden-label">
-                        Use arrow keys to adjust the slider value. Touch devices will need to swipe right to adjust these
+                        Use arrow keys to adjust the slider value. Touch devices will need to swipe right to adjust
+                        these
                         values.
                     </div>
                     <span

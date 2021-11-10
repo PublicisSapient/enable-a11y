@@ -1,8 +1,11 @@
 @import "shared/mixins-and-vars";
 
 .pauseable-animated-gif {
-  display: inline-block;
+  display: block;
   position: relative;
+  margin: 0 auto;
+  font-size: 0; // this is to remove a gap in the open expando at the bottom of it.
+  .width-fit-content();
 
   summary {
     color: #fff;

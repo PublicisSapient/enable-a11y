@@ -383,7 +383,8 @@ input[type="submit"] {
   border-bottom: 2px black solid;
 }
 fieldset,
-.fieldset {
+.fieldset,
+[role="radiogroup"] {
   padding: 0.5em;
   margin-top: 1em;
   padding-top: 2em;
@@ -391,8 +392,10 @@ fieldset,
 }
 fieldset legend,
 .fieldset legend,
+[role="radiogroup"] legend,
 fieldset .legend,
-.fieldset .legend {
+.fieldset .legend,
+[role="radiogroup"] .legend {
   position: relative;
   top: 1.5em;
   border-color: #aaaaaa;
@@ -400,18 +403,11 @@ fieldset .legend,
   font-size: 1em;
 }
 fieldset .legend,
-.fieldset .legend {
+.fieldset .legend,
+[role="radiogroup"] .legend {
   top: -1.5em;
   margin-bottom: -1em;
 }
-/*
-fieldset label {
-  font-weight: normal;
-
-  @media @mobile {
-    width: 100%;
-  }
-} */
 body {
   margin: 0;
   position: relative;
@@ -553,7 +549,7 @@ footer,
   width: 100%;
   background: black;
   color: white;
-  padding: 1em 0;
+  padding: 1em;
   text-align: center;
 }
 footer a,

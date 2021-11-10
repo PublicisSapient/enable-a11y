@@ -12,8 +12,11 @@
 <!-- hamburger menu -->
 <link id="hamburger-style" rel="stylesheet" type="text/css" href="css/hamburger-menu.css" />
 
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
 
 <link id="site-css" rel="stylesheet" href="css/site.css" />
+
 
 
 <?php

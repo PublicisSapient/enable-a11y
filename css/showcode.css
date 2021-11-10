@@ -2,6 +2,9 @@ html,
 body {
   width: 100vw;
 }
+code {
+  font-family: "ModeSeven", "Consolas", monospace;
+}
 .showcode {
   border: solid 1px #999;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));

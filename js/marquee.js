@@ -25,13 +25,13 @@ const marqueeExample = new function () {
     }
 
     const showFailMessage = (ex) => {
-        marqueeEl.innerHTML += "<div>Failed to news items.</div>"
+        marqueeEl.innerHTML += "Failed to news items.";
     }
 
     const rotateMarquee = () => {
        currentArticle = (currentArticle + 1) % articles.length;
 
-       marqueeEl.innerHTML = "<div>" + articles[currentArticle].title + "</div>";
+       marqueeEl.innerHTML = articles[currentArticle].title;
 
        setTimeout(rotateMarquee, 10000);
 

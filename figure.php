@@ -34,7 +34,7 @@
 
 
         <h2>HTML5 Example</h2>
-        <div id="html5-example">
+        <div id="html5-example" class="enable-example">
             <figure>
                 
                 <code>

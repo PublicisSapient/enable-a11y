@@ -1,9 +1,15 @@
 @import "shared/mixins-and-vars";
 
+@code-font-stack: "ModeSeven", "Consolas", monospace;
+
 html,
 body {
   width: 100vw;
   // overflow-x: hidden;
+}
+
+code {
+  font-family: @code-font-stack;
 }
 
 .showcode {
@@ -36,7 +42,7 @@ body {
   &__example {
     display: block;
     position: relative;
-    font-family: "ModeSeven", "Consolas", monospace;
+    font-family: @code-font-stack;
     background: black;
     color: #090;
 

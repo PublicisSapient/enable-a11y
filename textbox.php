@@ -44,7 +44,7 @@
 
         <h2>HTML example</h2>
 
-        <div id="html-example">
+        <div id="html-example" class="enable-example">
             <form>
                 <fieldset>
                     <legend>Payment information</legend>
@@ -91,7 +91,7 @@
 
         <h2>ARIA example</h2>
 
-        <div id="aria-example">
+        <div id="aria-example" class="enable-example">
             <div role="group" aria-labelledby="aria-payment-info-label" class="fieldset">
                 <div id="aria-payment-info-label" class="legend">Payment Information</div>
 

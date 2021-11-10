@@ -37,9 +37,9 @@
 
 
 
-        <h2>Top rated craft beers</h2>
+        <h2>ARIA Tab Example</h2>
 
-        <div id="example1">
+        <div id="example1" class="enable-example">
 
             <div id="tabs">
 

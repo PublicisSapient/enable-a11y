@@ -15,7 +15,7 @@
                     <?php if ($isInteractive): ?>
                     <div id="<?php echo $id ?>__steps" class="showcode__steps"></div>
                     <?php endif ?>
-                    <div id="<?php echo $id ?>__notes" class="showcode__notes read-more" role="alert" aria-live="assertive"></div>
+                    <div id="<?php echo $id ?>__notes" class="showcode__notes " role="alert" aria-live="assertive"></div>
 
                     <div class="showcode__example--desc">
                         ☜ Swipe to see full source ☞

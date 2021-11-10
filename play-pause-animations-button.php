@@ -194,7 +194,7 @@
                 work".</strong>
         </p>
 
-        <div id="elastic-collision-demo">
+        <div id="elastic-collision-demo" class="enable-example">
             <canvas id="elastic-collision-demo__canvas"></canvas>
         </div>
 
@@ -240,7 +240,7 @@
         </p>
         <!-- SMIL demo from  by Lenka (codepen @madetoday) -->
 
-        <div id="svg-smil-demo">
+        <div id="svg-smil-demo" class="enable-example">
             <svg id="wrap" width="300" height="300">
 
                 <!-- background -->
@@ -355,7 +355,7 @@
                 the animated gif pause button</a> examples).
         </p>
 
-        <div id="anim-gif-demo">
+        <div id="anim-gif-demo" class="enable-example">
             <div class="play-pause-animation-button__gif">
                 <img class="play-pause-animation-button__gif--animated" src="images/running-man-anim.gif"
                     alt="Animated drawing of a man running" />

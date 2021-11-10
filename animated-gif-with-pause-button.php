@@ -16,37 +16,41 @@
 
         <aside class="notes">
 
-            <p>This idea was stolen from <a href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven Faulkner</a>.
-            The pause first example was from <a href="https://css-tricks.com/pause-gif-details-summary/">Chris Coyier</a>.
+            <p>This idea was stolen from <a href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
+                    Faulkner</a>.
+                The pause first example was from <a href="https://css-tricks.com/pause-gif-details-summary/">Chris
+                    Coyier</a>.
         </aside>
 
         <h1>Animated GIF With Pause Button Without JavaScript</h1>
-        
+
 
         <h2>Animation off by default</h2>
 
-        <div id="example1" class="pauseable-animated-gif">
-            <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
-            <details>
+        <div id="example1" class="enable-example">
 
-                <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="play"></summary>
+            <div class="pauseable-animated-gif">
+                <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
+                <details>
 
-                <div class="pausable-animated-gif__animated-image">
-                    <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running" loading="lazy">
-                </div>
-            </details>
+                    <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="play">
+                    </summary>
+
+                    <div class="pausable-animated-gif__animated-image">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy"></div>
+                </details>
+            </div>
         </div>
 
-        
+
 
         <?php includeShowcode("example1")?>
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
-            },
-            "steps": [
-                {
+            "replaceHTMLRules": {},
+            "steps": [{
                     "label": "Put in details and summary tag structure in HTML",
                     "highlight": "%OPENCLOSETAG%details ||| %OPENCLOSECONTENTTAG%summary",
                     "notes": ""
@@ -87,28 +91,30 @@
 
         <h2>Animation on by default</h2>
 
-        <div id="example2" class="pauseable-animated-gif">
-            <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
-            <details open>
+        <div id="example2" class="enable-example">
+            <div class="pauseable-animated-gif">
+                <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
+                <details open>
 
-                <!-- added role=button to summary to resolve iOS funkiness -->
+                    <!-- added role=button to summary to resolve iOS funkiness -->
 
-                <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="pause"></summary>
+                    <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="pause">
+                    </summary>
 
-                <div class="pausable-animated-gif__animated-image">
-                    <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running" loading="lazy">
-                </div>
-            </details>
+                    <div class="pausable-animated-gif__animated-image">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy">
+                    </div>
+                </details>
+            </div>
         </div>
 
         <?php includeShowcode("example2")?>
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {
-            },
-            "steps": [
-                {
+            "replaceHTMLRules": {},
+            "steps": [{
                     "label": "Ensure details has open attribute set",
                     "highlight": "open",
                     "notes": "This ensures the animated version is shown by default."
@@ -125,11 +131,11 @@
         <h2>Animation off when OS prefers reduced motion.</h2>
 
         <p>
-            This is the only example on this page that does require JavaScript.  It detect whether the OS
-            has "reduced motion" turned on by default.  If it is, then it keeps the details widget closed.
+            This is the only example on this page that does require JavaScript. It detect whether the OS
+            has "reduced motion" turned on by default. If it is, then it keeps the details widget closed.
         </p>
 
-        <div id="example3">
+        <div id="example3" class="enable-example">
             <div class="pauseable-animated-gif pauseable-animated-gif--respects-os-motion-settings">
                 <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
                 <details>
@@ -139,7 +145,8 @@
                     <summary role="button" class="pauseable-animated-gif__play-pause-button"></summary>
 
                     <div class="pausable-animated-gif__animated-image">
-                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running" loading="lazy">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy">
                     </div>
                 </details>
             </div>
@@ -149,10 +156,8 @@
 
         <script type="application/json" id="example3-props">
         {
-            "replaceHTMLRules": {
-            },
-            "steps": [
-                {
+            "replaceHTMLRules": {},
+            "steps": [{
                     "label": "Put CSS class on container to configure the player",
                     "highlight": "pauseable-animated-gif--respects-os-motion-settings",
                     "notes": "This class will be used in step 3."
@@ -171,12 +176,12 @@
         }
         </script>
 
-            
+
     </main>
 
     <script src="js/shared/enable-animatedGif.js"></script>
 
-<?php include "includes/example-footer.php" ?>
+    <?php include "includes/example-footer.php" ?>
 </body>
 
 </html>

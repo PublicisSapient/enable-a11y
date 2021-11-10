@@ -3,7 +3,7 @@
 
 <head>
     <title>Aria Log Role Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
+	<?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/log.css" />
     
 </head>
@@ -30,10 +30,13 @@
         </aside>
         <h2>Example 1: </h2>
 
-        <pre id="syslog" role="log" aria-atomic="false"></pre>
+        <pre id="syslog" role="log" aria-atomic="false">
+            Loading ...
+        </pre>
 
     </main>
     <script src="js/log.js"></script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

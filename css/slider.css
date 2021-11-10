@@ -224,7 +224,6 @@ input[type="range"]:focus::-moz-range-thumb {
   display: block;
   margin: 0;
   padding: 0;
-  margin-top: 3em;
   margin-bottom: 0.5em;
   clear: both;
   font-weight: bold;
@@ -239,7 +238,6 @@ input[type="range"]:focus::-moz-range-thumb {
   display: block;
   margin: 0;
   padding: 0;
-  margin-top: 3em;
   margin-bottom: 0.5em;
   clear: both;
   font-weight: bold;

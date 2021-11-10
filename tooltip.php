@@ -28,7 +28,7 @@
         </ul>
       </aside>
 
-      <div id="example1">
+      <div id="example1" class="enable-example">
         <p>
           <a href="/" data-tooltip="This tooltip is accessible!"
             >This link has a tooltip</a
@@ -38,7 +38,7 @@
             id="input-tooltip-example"
             type="text"
             data-tooltip="You can put tooltips on any focusable item."
-          />.
+          />
         </p>
       </div>
 

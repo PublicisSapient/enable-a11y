@@ -1,3 +1,45 @@
+input[type="submit"] {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+input[type="submit"] {
+  margin-bottom: 1em;
+}
+.form-heading {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  border-bottom: 2px black solid;
+}
+fieldset,
+.fieldset,
+[role="radiogroup"] {
+  padding: 0.5em;
+  margin-top: 1em;
+  padding-top: 2em;
+  background-color: #eeeeee;
+}
+fieldset legend,
+.fieldset legend,
+[role="radiogroup"] legend,
+fieldset .legend,
+.fieldset .legend,
+[role="radiogroup"] .legend {
+  position: relative;
+  top: 1.5em;
+  border-color: #aaaaaa;
+  font-weight: bold;
+  font-size: 1em;
+}
+fieldset .legend,
+.fieldset .legend,
+[role="radiogroup"] .legend {
+  top: -1.5em;
+  margin-bottom: -1em;
+}
 /* ARIA radio buttons */
 /* This is the radio button's outer circle */
 [role="radio"] {

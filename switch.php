@@ -41,7 +41,7 @@
 
       <h2>A simple switch coded with ARIA.</h2>
 
-      <div id="example1">
+      <div id="example1" class="enable-example">
         <button
           type="button"
           aria-labelledby="speakerPower__label"

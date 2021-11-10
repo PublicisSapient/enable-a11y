@@ -2,14 +2,19 @@
 const timerExample = new function () {
 
     this.init = function () {
-        setInterval(displayTime, 60000);
+        setInterval(displayTime, 5000);
 
-        setTimeout(displayTime, 2000);
+        displayTime();
     }
 
     const displayTime = function() {
-        var now = new Date();
-        document.getElementById('clock').innerHTML = "The time now is " + now.getHours() + ":" + ("0"+now.getMinutes()).substr(-2);
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = ("0"+now.getMinutes()).substr(-2);
+        const secs = ("0"+now.getSeconds()).substr(-2);
+        const $clock = document.getElementById('clock');
+
+        $clock.innerHTML = `The time now is ${hours}:${minutes}:${secs}`;
     }
 }
 

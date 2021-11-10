@@ -4,14 +4,13 @@ textarea,
   width: 200px;
   font-size: 1rem;
   line-height: 1.375;
-  height: 200px;
   border: solid 1px black;
   background: #fff;
   vertical-align: bottom;
 }
-textarea[aria-multiline="true"],
-[role="textbox"][aria-multiline="true"] {
-  min-height: 2.75rem;
+textarea,
+[aria-multiline="true"] {
+  min-height: 8.25rem;
   overflow: auto;
   -webkit-appearance: textarea;
   -khtml-appearance: textarea;

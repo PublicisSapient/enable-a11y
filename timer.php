@@ -3,9 +3,9 @@
 
 <head>
     <title>ARIA Timer Role Examples</title>
-		<?php include("includes/common-head-tags.php"); ?>
+    <?php include("includes/common-head-tags.php"); ?>
     <link rel="stylesheet" type="text/css" href="css/timer.css" />
-    
+
 </head>
 
 <body>
@@ -31,12 +31,38 @@
 
         <h2>Timer Example</h2>
 
-        <div id="clock" role="timer" aria-live="polite"></div>
+        <div id="timer-example" class="enable-example">
+            <div id="clock" role="timer" aria-live="polite"></div>
+        </div>
+
+        <?php includeShowcode("timer-example")?>
+        <script type="application/json" id="timer-example-props">
+        {
+            "replaceHTMLRules": {},
+            "steps": [{
+                    "label": "Add role",
+                    "highlight": "role",
+                    "notes": ""
+                },
+                {
+                    "label": "Add aria-live attribute",
+                    "highlight": "aria-live",
+                    "notes": "Only put this in if you want this timer to be read aloud by screen readers when it updates.  If it updates a lot (like once a second), it will make the screen reader rather noisy and be really annoying."
+                },
+                {
+                    "label": "Use .innerHTML to update the timer",
+                    "highlight": "%JS% timerExample ||| \\$clock.innerHTML[^;]*;",
+                    "notes": ""
+                }
+            ]
+        }
+        </script>
 
     </main>
 
 
     <script src="js/timer.js"></script>
+    <?php include "includes/example-footer.php"?>
 </body>
 
 </html>

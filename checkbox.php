@@ -35,7 +35,7 @@
             <code>&lt;label&gt;</code> tag describing what it is for.
         </p>
 
-        <div id="example1">
+        <div id="example1" class="enable-example">
             <div class="checkbox-container">
                 <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
                 <input id="html-checkbox" type="checkbox" />
@@ -56,7 +56,7 @@
 
         <h2>A real styled HTML5 checkbox</h2>
 
-        <div id="example2">
+        <div id="example2" class="enable-example">
             <div class="enable-checkbox">
                 <label for="checkbox_1">I agree to sell my soul to Zoltan:</label>
                 <input type="checkbox" id="checkbox_1">
@@ -89,7 +89,7 @@
             <code>checkbox</code>.
         </p>
 
-        <div id="example-role-checkbox">
+        <div id="example-role-checkbox" class="enable-example">
             <div class="checkbox-container">
                 <label id="div-checkbox-label">I agree to sell my soul to Zoltan:</label>
                 <div aria-labelledby="div-checkbox-label" role="checkbox" tabindex="0" aria-checked="true">
@@ -132,7 +132,7 @@
             If the checkbox below is checked, content appears.
         </p>
 
-        <div id="example-visibleif">
+        <div id="example-visibleif" class="enable-example">
             <div class="checkbox-container">
                 <form>
                     <label for="html-checkbox-with-visibleif">I want to subscribe to the Zoltanic Foundation's
@@ -194,7 +194,7 @@
 
         <h2>HTML checkbox group</h2>
 
-        <div id="html5-example">
+        <div id="html5-example" class="enable-example">
             <div role="group" aria-labelledby="html-checkbox-multi-label">
                 <p id="html-checkbox-multi-label">
                     The following people will have my soul when I die:
