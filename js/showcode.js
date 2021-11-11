@@ -218,6 +218,24 @@ const showcode = new (function () {
     },2000);
   }
 
+  const toggleClickEvent = (e) => {
+    const { id } = e.currentTarget;
+    e.preventDefault();
+    const notesId = id.replace('-view-toggle', '');
+    const notesEl = document.getElementById(notesId);
+    notesEl.classList.toggle('is-expanded');
+  }
+
+  function setReadMoreCSSVar(notesEl) {
+    const overflowEl = notesEl.querySelector('div');
+
+    if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight) {
+      notesEl.classList.add('showcode__notes--is-overflowed');
+    } else {
+      notesEl.classList.remove('showcode__notes--is-overflowed');
+    }
+  }
+
   /**
    * 
    * @param {String} value - The string containing the `highlight` element in the json package. 
@@ -231,7 +249,9 @@ const showcode = new (function () {
     let replaceRegex;
 
 
-    notesEl.innerHTML = showcodeNotes || '';
+    notesEl.innerHTML = showcodeNotes ? `<div>${showcodeNotes}</div>` : '';
+
+    setReadMoreCSSVar(notesEl);
 
     const highlightStrings = value.split('|||');
     let command;
@@ -578,11 +598,13 @@ const showcode = new (function () {
   const displayStepsWidget = (codeblockId, stepsJson, replaceHTMLRules) => {
     const widgetId =  codeblockId + '__steps';
     const notesId = codeblockId + '__notes';
+    const toggleId = codeblockId + '__notes-view-toggle';
     const selectEl = document.createElement('SELECT');
     const labelEl = document.createElement('LABEL');
     const defaultOptionEl = document.createElement('OPTION');
     const widgetContainerEl = document.getElementById(widgetId);
     const notesEl = document.getElementById(notesId);
+    const toggleEl = document.getElementById(toggleId);
     const codeEl = document.querySelector('[data-showcode-id="'+ codeblockId + '"]');
 
 
@@ -630,10 +652,9 @@ const showcode = new (function () {
           widgetContainerEl.appendChild(labelEl)
           widgetContainerEl.appendChild(selectEl);
 
-          selectEl.addEventListener('change', selectChangeEvent)
+          selectEl.addEventListener('change', selectChangeEvent);
+          toggleEl.addEventListener('click', toggleClickEvent);
           
-
-
         } catch (ex) {
           console.log(ex);
         }
@@ -732,6 +753,14 @@ const showcode = new (function () {
     };
   }
 
+  const handleResize = (e) => {
+    const notesEls = document.querySelectorAll('.showcode__notes');
+    notesEls.forEach((el) => {
+      el.classList.remove('is-expanded');
+      setReadMoreCSSVar(el);
+    })
+  }
+
   const scrollEvent = (e) => {
     const { target } = e;
 
@@ -752,6 +781,8 @@ const showcode = new (function () {
 
   function setEvents() {
     document.body.addEventListener('scroll', throttle(scrollEvent, 100), true)
+    window.addEventListener("resize", throttle(handleResize, 100));
+    window.addEventListener("orientationchange", throttle(handleResize, 100));
   }
 
   this.init = () => {

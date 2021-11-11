@@ -15,7 +15,13 @@
                     <?php if ($isInteractive): ?>
                     <div id="<?php echo $id ?>__steps" class="showcode__steps"></div>
                     <?php endif ?>
-                    <div id="<?php echo $id ?>__notes" class="showcode__notes " role="alert" aria-live="assertive"></div>
+                    <div id="<?php echo $id ?>__notes" class="showcode__notes " role="alert" aria-live="assertive"
+                    ></div>
+                    <button id="<?php echo $id ?>__notes-view-toggle" class="showcode__notes-view-toggle" aria-describedby="<?php echo $id ?>__toggle-desc"><span
+                        class="showcode__notes-view-toggle--more">View More</span><span
+                        class="showcode__notes-view-toggle--less">View Less</span>
+                    </button>
+                    <div id="<?php echo $id ?>__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
 
                     <div class="showcode__example--desc">
                         ☜ Swipe to see full source ☞

@@ -99,13 +99,58 @@ code {
   background-color: #f5deb3;
   padding: 0.01em;
 }
+.showcode__notes + .showcode__notes-view-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 4em;
+  right: 0;
+  text-align: center;
+  width: 100%;
+}
 .showcode__notes code {
   font-weight: bold;
   font-family: "ModeSeven", "Consolas", monospace;
 }
 .showcode__notes:not(:empty) {
   border: dashed #705029 3px;
-  padding: 1em;
+  padding: 1em 1em 1em 1em;
   margin: 0 10px 1em 10px;
   background-color: #ffffee;
+}
+.showcode__notes:not(:empty) > div {
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .showcode__notes:not(:empty) > div {
+    display: block;
+  }
+}
+.showcode__notes:not(:empty).is-expanded > div {
+  display: block;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .showcode__notes:not(:empty).is-expanded > div {
+    display: none !important;
+  }
+}
+.showcode__notes.showcode__notes--is-overflowed.is-expanded:not(:empty) + .showcode__notes-view-toggle .showcode__notes-view-toggle--more {
+  display: none;
+}
+.showcode__notes.showcode__notes--is-overflowed.is-expanded:not(:empty) + .showcode__notes-view-toggle .showcode__notes-view-toggle--less {
+  display: block;
+}
+.showcode__notes.showcode__notes--is-overflowed:not(:empty) {
+  padding-bottom: 2em;
+}
+.showcode__notes.showcode__notes--is-overflowed:not(:empty) + .showcode__notes-view-toggle {
+  display: inherit;
+}
+.showcode__notes.showcode__notes--is-overflowed:not(:empty) + .showcode__notes-view-toggle .showcode__notes-view-toggle--less {
+  display: none;
 }
