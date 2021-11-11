@@ -21,14 +21,19 @@
             <ul>
                 <li>Marquees have an default <code>aria-live</code> value of <code>"off"</code></li>
                 <li>When setting <code>aria-live</code> to another value, NVDA and ChromeVox will read the value, but
-                    Voiceover will not.</li>
+                    older versions of Voiceover may not.</li>
                 <li>The role is not reported in any of the screen readers tested in reading mode.</li>
             </ul>
         </aside>
 
         <h2>Example 1 - News Ticker</h2>
+
+        <p>
+            The news headlines in this ticker are provided by <a href="https://newsapi.org">News API</a>.
+        </p>
+
         <div id="marquee-example" class="enable-example">
-            <div id="myMarquee" role="marquee" aria-live="assertive">
+            <div id="myMarquee" role="marquee" aria-live="polite">
                 Loading News Articles.
             </div>
         </div>
@@ -36,10 +41,8 @@
         <?php includeShowcode("marquee-example")?>
         <script type="application/json" id="marquee-example-props">
         {
-            "replaceHTMLRules": {
-            },
-            "steps": [
-                {
+            "replaceHTMLRules": {},
+            "steps": [{
                     "label": "Add role",
                     "highlight": "role",
                     "notes": ""
@@ -54,7 +57,8 @@
                     "highlight": "%JS% marqueeExample ||| \\marqueeEl.innerHTML[^;]*;",
                     "notes": ""
                 }
-        ]}
+            ]
+        }
         </script>
 
     </main>

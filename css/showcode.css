@@ -6,6 +6,7 @@ code {
   font-family: "ModeSeven", "Consolas", monospace;
 }
 .showcode {
+  background-color: #f5deb3;
   border: solid 1px #999;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
 }
@@ -84,6 +85,7 @@ code {
 .showcode__steps {
   border-bottom: none;
   padding: 10px 0;
+  background-color: #f5deb3;
 }
 .showcode__steps select {
   width: calc(100% - 10rem - 40px);
@@ -94,7 +96,8 @@ code {
   position: sticky;
   top: 0;
   z-index: 1;
-  padding-bottom: 10px;
+  background-color: #f5deb3;
+  padding: 0.01em;
 }
 .showcode__notes code {
   font-weight: bold;

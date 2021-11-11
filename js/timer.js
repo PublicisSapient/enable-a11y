@@ -1,8 +1,10 @@
 // Credit: Mateusz Rybczonec
 
 const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 10;
-const ALERT_THRESHOLD = 5;
+
+const TIME_LIMIT = 5;
+const WARNING_THRESHOLD = TIME_LIMIT / 2;
+const ALERT_THRESHOLD = TIME_LIMIT / 4;
 
 const COLOR_CODES = {
   info: {
@@ -18,7 +20,6 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -27,6 +28,7 @@ let remainingPathColor = COLOR_CODES.info.color;
 document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <title></title>
     <g class="base-timer__circle">
       <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
       <path
@@ -48,25 +50,34 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-startTimer();
+document.querySelector('.base-timer__start-timer').addEventListener('click', startTimer);
 
 function onTimesUp() {
   clearInterval(timerInterval);
 }
 
 function startTimer() {
-  timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-      timeLeft
-    );
-    setCircleDasharray();
-    setRemainingPathColor(timeLeft);
+  if (timerInterval) {
+      clearInterval(timerInterval);
+      timePassed = 0;
+      timeLeft = TIME_LIMIT;
+      resetPathColor();
+  }
 
-    if (timeLeft === 0) {
-      onTimesUp();
-    }
+  timerInterval = setInterval(() => {
+    requestAnimationFrame(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+          timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+    
+        if (timeLeft === 0) {
+          onTimesUp();
+        }
+    });
   }, 1000);
 }
 
@@ -79,6 +90,14 @@ function formatTime(time) {
   }
 
   return `${minutes}:${seconds}`;
+}
+
+function resetPathColor() {
+    document
+        .getElementById("base-timer-path-remaining").classList.value='base-timer__path-remaining green';
+    document
+        .getElementById("base-timer-path-remaining")
+        .setAttribute("stroke-dasharray", FULL_DASH_ARRAY);
 }
 
 function setRemainingPathColor(timeLeft) {

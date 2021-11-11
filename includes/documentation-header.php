@@ -185,7 +185,7 @@
                                             <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
                                                 <img class="enable-flyout__link-image"
                                                     src="images/main-menu/multi-level-hamburger-menu.png" alt="">
-                                                Hybrid Desktop and Mobile Hamburger Menu
+                                                Flyout / Hamburger Menu
                                             </a>
                                         </li>
                                         <li class="enable-flyout__menu-item">
@@ -213,7 +213,7 @@
                                             <a href="skip-link.php" class="enable-flyout__link">
                                                 <img class="enable-flyout__link-image"
                                                     src="images/main-menu/skip-link.png" alt="">
-                                                Skip Links (a.k.a. Visible on Focus CTAs)
+                                                Skip Links
                                             </a>
                                         </li>
 
@@ -255,13 +255,13 @@
                                 <a href="description-list.php" class="enable-flyout__link">
                                     <img class="enable-flyout__link-image" src="images/main-menu/description-list.png"
                                         alt="">
-                                    Description List (formally Definition List)
+                                    Description List
                                 </a>
                             </li>
                             <li class="enable-flyout__menu-item">
                                 <a href="progress.php" class="enable-flyout__link">
                                     <img class="enable-flyout__link-image" src="images/main-menu/progress.png" alt="">
-                                    Progress Bar (a.k.a. Loaders/Spinners)
+                                    Progress Bar
                                 </a>
                             </li>
                             <li class="enable-flyout__menu-item">
@@ -315,7 +315,7 @@
                                 <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
                                     <img class="enable-flyout__link-image"
                                         src="images/main-menu/animated-gif-with-pause-button.png" alt="">
-                                    Animated Images (e.g. GIF, WEBP, etc)
+                                    Animated GIF/WEBP
                                 </a>
                             </li>
                             <li class="enable-flyout__menu-item">
@@ -356,6 +356,8 @@
                             <li class="enable-flyout__menu-item">
                               <a href="alert.php"
                                 class="enable-flyout__link">
+                                <img class="enable-flyout__link-image"
+                                        src="images/main-menu/alert.png" alt="" />
                                 Alert
                               </a>
                             </li>
@@ -363,24 +365,33 @@
                             <li class="enable-flyout__menu-item">
                               <a href="log.php"
                                 class="enable-flyout__link">
+                                <img class="enable-flyout__link-image"
+                                        src="images/main-menu/log.png" alt="" />
                                 Log
                               </a>
                             </li>
                             <li class="enable-flyout__menu-item">
                               <a href="timer.php"
                                 class="enable-flyout__link">
+                                <img class="enable-flyout__link-image"
+                                        src="images/main-menu/timer.png" alt="" />
                                 Timer
                               </a>
                             </li>
                             <li class="enable-flyout__menu-item">
                               <a href="marquee.php"
                                 class="enable-flyout__link">
+
+                                <img class="enable-flyout__link-image"
+                                        src="images/main-menu/marquee.png" alt="" />
                                 Marquee
                               </a>
                             </li>
                             <li class="enable-flyout__menu-item">
                               <a href="status.php"
                                 class="enable-flyout__link">
+                                <img class="enable-flyout__link-image"
+                                        src="images/main-menu/status.png" alt="" />
                                 Status
                               </a>
                             </li>

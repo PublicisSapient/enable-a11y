@@ -330,6 +330,7 @@
   .enable-flyout__level.enable-flyout--is-open {
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
     visibility: visible;
+    padding-bottom: 3em;
   }
   .enable-flyout__open-level-button:hover,
   .enable-flyout__close-level-button:hover,

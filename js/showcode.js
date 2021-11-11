@@ -560,7 +560,7 @@ const showcode = new (function () {
   
 
   function formatHTML(unformattedHTML) {
-    return removeBlankAttrValues(
+    let s = removeBlankAttrValues(
       insertEllipses(
         removeBlankLines(
           indent.html(
@@ -569,6 +569,10 @@ const showcode = new (function () {
         )
       )
     );
+
+    // now, let's ensure <title></title> always appears on one line.
+    s = s.replace(/<title>[\s]*<\/title>/, '<title></title>');
+    return s;
   }
 
   const displayStepsWidget = (codeblockId, stepsJson, replaceHTMLRules) => {

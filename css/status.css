@@ -1,21 +1,10 @@
-[role="status"] {
-  font-size: 4rem;
-  font-weight: bold;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+.wiktionary-lookup__content {
+  height: 200px;
+  overflow: auto;
+  margin: 1em 0;
+  padding: 1em;
+  border: solid 1px #999;
 }
-[role="status"].neutral {
-  color: black;
-}
-[role="status"].low {
-  background-color: #0f0;
-  color: black;
-}
-[role="status"].medium {
-  background-color: #ff9;
-  color: black;
-}
-[role="status"].high {
-  background-color: #f00;
+.mw-editsection {
+  display: none;
 }

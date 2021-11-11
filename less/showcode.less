@@ -17,6 +17,7 @@ code {
   @border: solid 1px #999;
   @select-width: (160 / @px);
   @clip-bottom: 45px;
+  background-color: rgb(245, 222, 179);
 
   border: @border;
   clip-path: polygon(
@@ -132,6 +133,7 @@ code {
   &__steps {
     border-bottom: none;
     padding: 10px 0;
+    background-color: rgb(245, 222, 179);
 
     select {
       width: calc(100% - @select-width - 40px);
@@ -144,7 +146,8 @@ code {
     position: sticky;
     top: 0;
     z-index: 1;
-    padding-bottom: 10px;
+    background-color: rgb(245, 222, 179);
+    padding: 0.01em;
   }
 
   &__notes {
