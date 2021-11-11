@@ -35,17 +35,23 @@
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     width: 136px;
     float: left;
-    min-height: 235px;
+    min-height: 155px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
-    min-height: 235px;
+    min-height: 155px;
     letter-spacing: 0.03125rem;
+    box-sizing: border-box;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover,
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
     letter-spacing: 0;
-    border: solid 1px #666;
     box-shadow: 2px 2px 5px #999;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover {
+    outline: solid 1px #666;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    outline: solid 2px #3b99fc;
   }
   .enable-flyout__level .enable-flyout__menu-item--close {
     display: none;

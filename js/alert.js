@@ -62,10 +62,11 @@ const dictLookup = new (function () {
       fetch(baseURL + word).then((response) => {
         if (response.status === 200) {
           response.json().then((json) => {
-            const msg = `<p>Unable to find any information about "${word}".</p>`;
             if (json && json.parse && json.parse.revid > 0) {
+              return;
               showPage(word, json.parse.text["*"]);
             } else {
+              const msg = `<p>Unable to find any information about "${word}".</p>`;
               $wikiInfo.innerHTML = msg;
               $pageAlert.innerHTML = msg;
               $licenceInfo.style.display = "block";

@@ -8,9 +8,9 @@ const logExample = new function () {
             console.log('header', response.headers.get('Content-Type'));
             return response.text();
         }).then(function (text) {
-            sysLogEl.innerHTML += `<div>${text}</div>`;
+            sysLogEl.innerHTML += `<span>${text}</span>`;
         }).catch(function (ex) {
-            sysLogEl.innerHTML += "<div>Failed to get system info.</div>"
+            sysLogEl.innerHTML += "<span>Failed to get system info.</span>"
         });
     }
 

@@ -136,6 +136,8 @@ table {
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
+  color: #444;
+  background-color: #f5f5f7;
 }
 strong {
   font-weight: bold;

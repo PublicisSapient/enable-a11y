@@ -1,5 +1,6 @@
 - style examples 
 - first rule of ARIA explanations on where to use each.
+- optimize images.
 - hamburger menu page with enable one instead of video game example.
 - videos showing screen reader usage (with captions and transcripts)
 - read more UI for mobile users of the code notes.

@@ -12,7 +12,6 @@ code {
 .showcode__container {
   position: relative;
   z-index: 1;
-  background: white;
 }
 .showcode__heading {
   font-weight: bold;
@@ -95,11 +94,11 @@ code {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: white;
   padding-bottom: 10px;
 }
 .showcode__notes code {
   font-weight: bold;
+  font-family: "ModeSeven", "Consolas", monospace;
 }
 .showcode__notes:not(:empty) {
   border: dashed #705029 3px;

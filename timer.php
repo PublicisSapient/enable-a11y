@@ -32,7 +32,7 @@
         <h2>Timer Example</h2>
 
         <div id="timer-example" class="enable-example">
-            <div id="clock" role="timer" aria-live="polite"></div>
+            <div id="app" role="timer" aria-live="polite"></div>
         </div>
 
         <?php includeShowcode("timer-example")?>
@@ -61,8 +61,8 @@
     </main>
 
 
-    <script src="js/timer.js"></script>
     <?php include "includes/example-footer.php"?>
+    <script src="js/timer.js"></script>
 </body>
 
 </html>

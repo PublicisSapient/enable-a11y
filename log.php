@@ -30,9 +30,44 @@
         </aside>
         <h2>Example 1: </h2>
 
+        <p>
+            The following example is a log that will announce the CPU usage of the webserver every five seconds.
+
+        <div id="log-example" class="enable-example">
         <pre id="syslog" role="log" aria-atomic="false">
-            Loading ...
+<span>Initializing.  Please wait …</span>
         </pre>
+</div>
+
+        <?php includeShowcode("log-example")?>
+        <script type="application/json" id="log-example-props">
+        {
+            "replaceHTMLRules": {
+                "#syslog": [
+                    "<span>Initializing.  Please wait …</span>",
+                    "<span>CPU load at 4:00:08 pm: 2%</span>",
+                    "<span>CPU load at 4:00:13 pm: 2%</span>",
+                    "..."
+                ]
+            },
+            "steps": [
+            {
+                "label": "Add role of log",
+                "highlight": "role",
+                "notes": ""
+            },
+            {
+                "label": "Add aria-atomic=\"false\"",
+                "highlight": "aria-atomic",
+                "notes": "Doing this will ensure that only the updates are read out by screen readers."
+            },
+            {
+                "label": "Ensure new information are encapsulated in separate DOM nodes.",
+                "highlight": "%OPENCLOSECONTENTTAG%span",
+                "notes": "The aria-atomic attribute will ensure only new DOM elements will be announced.  If you don't add the information in separate DOM nodes, screen readers will read the entire contents of the log."
+            }
+        ]}
+        </script>
 
     </main>
     <script src="js/log.js"></script>

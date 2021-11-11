@@ -154,12 +154,12 @@
                 {
                     "label": "Set aria-autocomplete attribute",
                     "highlight": "aria-autocomplete",
-                    "notes": "This tells the screen reader the type of autocompletion that is being done.  Possible values are <strong>list</strong> and <strong>inline</strong>."
+                    "notes": "This tells the screen reader the type of autocompletion that is being done.  Possible values are <code>list</code> and <code>inline</code>."
                 },
                 {
                     "label": "Expose state of the dropdown",
                     "highlight": "aria-expanded",
-                    "notes": "<p>When the menu is expanded, this should be set to <strong>\"true\"</strong>. Otherwise, it is set to <strong>\"false\"</strong>.</p><p>Note that when the dropdown is expanded, focus should go to the first element in the dropdown. The user should be able to cycle through the elements in the dropdown using the arrow keys.</p><p>When the user picks an element with the ENTER key, the dropdown should close and the element should be selected."
+                    "notes": "<p>When the menu is expanded, this should be set to <code>\"true\"</code>. Otherwise, it is set to <code>\"false\"</code>.</p><p>Note that when the dropdown is expanded, focus should go to the first element in the dropdown. The user should be able to cycle through the elements in the dropdown using the arrow keys.</p><p>When the user picks an element with the ENTER key, the dropdown should close and the element should be selected."
                 },
                 {
                     "label": "Turn off autocorrect and autocomplete",

@@ -271,11 +271,13 @@ const EnableFlyoutMenu = new function() {
   }
 
   this.blurEvent = (e) => {
-    console.log('fired', e);
+    
     if (!isHamburger()) {
       accessibility.doIfBlurred(e, () => {
-        console.log('is done')
-        this.closeAllFlyouts();
+        if (!e.relatedTarget.closest(isOpenSel)) {
+          this.closeAllFlyouts();
+        }
+        
       });
     }
   }
@@ -334,7 +336,7 @@ const EnableFlyoutMenu = new function() {
     document.addEventListener('animationend', this.openMenuAnimationEnd);
 
     // For all dropdowns, we must fire this event.
-    document.querySelectorAll('.enable-flyout__dropdown').forEach((el) => {
+    document.querySelectorAll(dropdownSel).forEach((el) => {
       el.addEventListener(
         'blur', this.blurEvent, true
       );

@@ -38,7 +38,7 @@
 
 @media @desktop {
   .enable-flyout {
-    @item-height: 235px;
+    @item-height: 155px;
 
     &__link-image {
       width: 105px;
@@ -59,12 +59,20 @@
     &__level &__level &__list--photo-layout &__link {
       min-height: @item-height;
       letter-spacing: (0.5 / @px);
+      box-sizing: border-box;
 
       &:hover,
       &:focus {
         letter-spacing: 0;
-        border: solid 1px #666;
         box-shadow: 2px 2px 5px #999;
+      }
+
+      &:hover {
+        outline: solid 1px #666;
+      }
+
+      &:focus {
+        outline: solid 2px @focus-color;
       }
     }
 
