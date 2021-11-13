@@ -149,26 +149,6 @@
 }
 
 
-// This mixin allows focus rules for (mostly) keyboard only.
-// It is based on this great blog post above :focus-visible 
-//
-// https://www.tpgi.com/focus-visible-and-backwards-compatibility/
-//
-// Usage:
-// 
-// .interactive-element {
-//   	.enable-focus(
-//      // Focus styles
-//  		{
-//  			outline: solid 2px @focus-color;
-//  		},
-//
-//      // CSS to undo the focus styles above
-//  		{
-//  			outline: none;
-//  		}
-//  	);
-// }
 .enable-focus(@focus-rules, @unfocus-rules) {
   &:focus {
     /* Outline focus state for all browsers */
