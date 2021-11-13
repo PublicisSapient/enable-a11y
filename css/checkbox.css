@@ -32,9 +32,29 @@
 }
 /* This is the CSS to style the custom HTML5 checkbox */
 .enable-checkbox input[type="checkbox"] {
+  /*Adding focus styles on the outer-box of the fake checkbox*/
   /*Hide the checkmark by default*/
   /*Unhide on the checked state*/
-  /*Adding focus styles on the outer-box of the fake checkbox*/
+}
+.enable-checkbox input[type="checkbox"]:focus {
+  /* Outline focus state for all browsers */
+}
+.enable-checkbox input[type="checkbox"]:focus + label::before {
+  outline: #3b99fc auto 5px;
+}
+.enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) {
+  /* Undo all the above focused button styles
+      if the element has focus but the browser wouldn't normally
+      show default focus styles */
+}
+.enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) + label::before {
+  outline: none;
+}
+.enable-checkbox input[type="checkbox"]:focus-visible {
+  /* Put the focus CSS back in if the browser would normally show default focus style */
+}
+.enable-checkbox input[type="checkbox"]:focus-visible + label::before {
+  outline: #3b99fc auto 5px;
 }
 .enable-checkbox input[type="checkbox"],
 .enable-checkbox input[type="checkbox"] + label::before {
@@ -63,9 +83,6 @@
   transform: rotate(-45deg) scale(2);
   left: 0.43rem;
   top: -0.31rem;
-}
-.enable-checkbox input[type="checkbox"]:focus + label::before {
-  outline: #3b99fc auto 5px;
 }
 .enable-checkbox input[type="checkbox"] + label {
   position: absolute;

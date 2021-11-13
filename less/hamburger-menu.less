@@ -16,15 +16,15 @@
 .icon-mixin(@img) {
   content: "";
   display: inline-block;
-  width: 26px;
-  height: 31px;
+  width: (26/@px);
+  height: (31/@px);
   background: url(@img);
   background-repeat: no-repeat;
-  background-position: 0 6px;
-  background-size: 26px 26px;
+  background-position: 0 (6 / @px);
+  background-size: (20/@px) (20/@px);
   filter: invert();
   position: absolute;
-  top: 5px;
+  top: (7 / @px);
 } 
 
 @menu-orientation: right;

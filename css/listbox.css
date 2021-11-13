@@ -134,7 +134,6 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
-  background-color: #f5f5f7;
 }
 strong {
   font-weight: bold;
@@ -308,30 +307,18 @@ select {
 .bypass-block-target:focus:target {
   outline: solid 2px #3b99fc;
 }
-a[href]:focus,
-area[href]:focus,
-details:focus,
-iframe:focus,
-[contentEditable=true]:focus,
-:enabled:focus,
-object:focus,
-embed:focus,
-[tabindex]:focus {
-  /* You can replace this with whatever style you want for focus state */
+*:focus {
+  /* Outline focus state for all browsers */
   outline: solid 2px #3b99fc;
 }
-a[href]:hover:focus,
-area[href]:hover:focus,
-details:hover:focus,
-iframe:hover:focus,
-[contentEditable=true]:hover:focus,
-:enabled:hover:focus,
-object:hover:focus,
-embed:hover:focus,
-[tabindex]:hover:focus {
-  outline: solid 2px transparent;
+*:focus:not(:focus-visible) {
+  /* Undo all the above focused button styles
+      if the element has focus but the browser wouldn't normally
+      show default focus styles */
+  outline: none;
 }
-*:focus {
+*:focus-visible {
+  /* Put the focus CSS back in if the browser would normally show default focus style */
   outline: solid 2px #3b99fc;
 }
 /*

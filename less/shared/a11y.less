@@ -56,29 +56,16 @@
 	outline: solid 2px @focus-color; 
 }
 
-a[href],
-area[href],
-details,
-iframe,
-[contentEditable=true],
-:enabled,
-object,
-embed,
-[tabindex] {
-	//&:not([tabindex="-1"]) {
-		&:focus {
-			/* You can replace this with whatever style you want for focus state */
+
+* {
+	.enable-focus(
+		{
 			outline: solid 2px @focus-color;
+		},
+		{
+			outline: none;
 		}
-
-		&:hover:focus {
-			outline: solid 2px transparent;
-		}
-	//}
-}
-
-*:focus {
-	outline: solid 2px @focus-color ;
+	);
 }
 
 /*

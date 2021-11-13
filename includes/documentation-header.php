@@ -175,6 +175,15 @@
                                         </li>
 
                                         <li class="enable-flyout__menu-item">
+                                          <a href="dropdown.php"
+                                            class="enable-flyout__link">
+                                            <img class="enable-flyout__link-image"
+                                              src="images/hamburger-menu/dropdown.png" alt="">
+                                            Dropdown / Drawer / Expando
+                                          </a>
+                                        </li>
+
+                                        <li class="enable-flyout__menu-item">
                                             <a href="tooltip.php" class="enable-flyout__link">
                                                 <img class="enable-flyout__link-image"
                                                     src="images/main-menu/tooltip.png" alt="">
@@ -334,7 +343,7 @@
                     <!-- Begin section ARIA Live Regions -->
                     <button aria-expanded="false" aria-controls="aria-live-regions-section"
                         class="enable-flyout__open-level-button">
-                        ARIA Live Regions
+                        Code Patterns
                     </button>
                     <div id="aria-live-regions-section" aria-label="ARIA Live Regions" role="group"
                         class="enable-flyout enable-flyout__level enable-flyout__dropdown">

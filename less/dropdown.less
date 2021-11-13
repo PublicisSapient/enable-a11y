@@ -3,6 +3,16 @@
 @import "shared/a11y";
 @import "shared/landmarks";
 
+.remove-default-details-styles(@rules) {
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    content: "";
+  }
+}
+
 
 .enable-drawer {
   & > .enable-drawer__button {
@@ -23,9 +33,7 @@
     padding-left: (25/@px);
     background-repeat: no-repeat;
    
-    &::-webkit-details-marker {
-      display: none;
-    }
+    .remove-default-details-styles();
 
   }
 
@@ -69,9 +77,7 @@
     border-radius: 8px;
 
    
-    &::-webkit-details-marker {
-      display: none;
-    }
+    .remove-default-details-styles();
   }
 
   &__checkbox:checked + &__label {
@@ -101,9 +107,7 @@
     background-color: white;
 
 
-    &::-webkit-details-marker {
-      display: none;
-    }
+    .remove-default-details-styles();
   }
 
   &__contents {

@@ -1,6 +1,8 @@
 - style examples XXXX
 - first rule of ARIA explanations on where to use each.
 - optimize images. XXXX
+- focus keyboard only.
+- tabs with multiple levels
 - hamburger menu page with enable one instead of video game example.
 - videos showing screen reader usage (with captions and transcripts)
 - read more UI for mobile users of the code notes.
@@ -10,6 +12,7 @@
     - text-zoom.js
     - using <template> on complex components.
     - how to create focus loops.
+    - focus-within pattern (point to blog post https://www.tpgi.com/focus-visible-and-backwards-compatibility/)
 - tooltip with a close button? https://sarahmhigley.com/writing/tooltips-in-wcag-21/
 - make packages for users to download and use.
 - Further reading links.

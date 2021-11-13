@@ -24,10 +24,6 @@
   background-repeat: no-repeat;
   border-bottom: solid 1px #41a6df;
 }
-.details-accordion__drawer .details-accordion__button:focus {
-  outline: none;
-  background-color: #ccc;
-}
 .details-accordion__drawer .details-accordion__button::-webkit-details-marker {
   display: none;
 }

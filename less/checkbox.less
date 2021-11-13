@@ -46,6 +46,19 @@
 
   input[type="checkbox"] {
 
+    /*Adding focus styles on the outer-box of the fake checkbox*/
+    .enable-focus(
+      {
+        + label::before {
+          outline: @focus-color auto 5px;
+        }
+      }, {
+        + label::before {
+          outline: none;
+        }
+      }
+    );
+
     &, & + label::before {
       .vendor(appearance, none);
       box-sizing: border-box;
@@ -74,11 +87,6 @@
 
       left: ((0.43 * @width-checkbox) / @px);
       top: ((-0.31 * @width-checkbox) / @px);
-    }
-
-    /*Adding focus styles on the outer-box of the fake checkbox*/
-    &:focus + label::before {
-      outline: @focus-color auto 5px;
     }
 
     + label {

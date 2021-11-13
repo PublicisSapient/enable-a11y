@@ -150,15 +150,15 @@
 .enable-flyout__with-home-icon::before {
   content: "";
   display: inline-block;
-  width: 26px;
-  height: 31px;
+  width: 1.625rem;
+  height: 1.9375rem;
   background: url("../images/Home.svg");
   background-repeat: no-repeat;
-  background-position: 0 6px;
-  background-size: 26px 26px;
+  background-position: 0 0.375rem;
+  background-size: 1.25rem 1.25rem;
   filter: invert();
   position: absolute;
-  top: 5px;
+  top: 0.4375rem;
   position: static;
 }
 .enable-flyout__menu-item {
@@ -171,15 +171,15 @@
 .enable-flyout__open-level-button::after {
   content: "";
   display: inline-block;
-  width: 26px;
-  height: 31px;
+  width: 1.625rem;
+  height: 1.9375rem;
   background: url("../images/chevron-right.svg");
   background-repeat: no-repeat;
-  background-position: 0 6px;
-  background-size: 26px 26px;
+  background-position: 0 0.375rem;
+  background-size: 1.25rem 1.25rem;
   filter: invert();
   position: absolute;
-  top: 5px;
+  top: 0.4375rem;
 }
 .enable-flyout__body--is-open {
   height: 100%;
@@ -216,15 +216,15 @@
 .enable-flyout__close-level-button::before {
   content: "";
   display: inline-block;
-  width: 26px;
-  height: 31px;
+  width: 1.625rem;
+  height: 1.9375rem;
   background: url("../images/chevron-left.svg");
   background-repeat: no-repeat;
-  background-position: 0 6px;
-  background-size: 26px 26px;
+  background-position: 0 0.375rem;
+  background-size: 1.25rem 1.25rem;
   filter: invert();
   position: absolute;
-  top: 5px;
+  top: 0.4375rem;
   margin-left: -33px;
 }
 .enable-flyout__close-level-button:hover {
