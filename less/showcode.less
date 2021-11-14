@@ -4,8 +4,8 @@
 
 html,
 body {
-  width: 100vw;
-  // overflow-x: hidden;
+  width: calc(100vw - 16px);
+  overflow-x: hidden;
 }
 
 code {
@@ -53,8 +53,20 @@ code {
     code {
       display: block;
       padding: 10px;
-      max-width: calc(100vw - 20px);
-      overflow: scroll;
+      overflow-x: scroll;
+      transform-origin: 50% 0;
+      transition: transform 0.25s ease-in-out;
+
+      .enable-focus(
+        {
+          transform: scale(0.99);
+          border: solid 2px orange;
+          outline: none;
+        },
+        {
+          transform: scale(1); 
+        }
+      );
     }
 
     &--desc {

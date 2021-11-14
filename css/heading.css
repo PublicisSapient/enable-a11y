@@ -1,4 +1,7 @@
 @import url("demo.css");
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 body {
   background: #f0f0f0 url(../images/cream_dust.jpg);
 }

@@ -23,8 +23,8 @@
                     </button>
                     <div id="<?php echo $id ?>__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
 
-                    <div class="showcode__example--desc">
-                        ☜ Swipe to see full source ☞
+                    <div id="<?php echo $id ?>__example-desc" class="showcode__example--desc">
+                        ☜ Scroll to see full source ☞
                     </div>
                     <?php if ($isInteractive): ?>
                 </form><?php endif ?>
@@ -33,6 +33,7 @@
                         data-showcode-id="<?php echo $id ?>"
                         data-showcode-props="<?php echo $id ?>-props"
                         tabindex="0"
+                        aria-describedby="<?php echo $id ?>__example-desc"
                     >
                     </code>
                 </pre>

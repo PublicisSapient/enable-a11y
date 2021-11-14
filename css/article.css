@@ -1,3 +1,6 @@
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 .sticky-table__keyboard-instructions {
   display: none;
   background: black;

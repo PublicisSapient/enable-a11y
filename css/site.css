@@ -1,3 +1,6 @@
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 .enable-flyout__open-level-button {
   font-weight: normal;
   letter-spacing: 0.03125rem;

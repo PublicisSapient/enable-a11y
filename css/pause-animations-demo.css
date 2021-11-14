@@ -1,3 +1,6 @@
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 .play-pause-anim {
   /*
     *  For the page

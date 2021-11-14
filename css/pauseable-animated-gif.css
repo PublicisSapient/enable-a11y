@@ -8,6 +8,9 @@
   /* for blink/webkit */
   /* for firefox */
 }
+.pauseable-animated-gif img {
+  max-width: 100%;
+}
 .pauseable-animated-gif summary {
   color: #fff;
   background: #000;

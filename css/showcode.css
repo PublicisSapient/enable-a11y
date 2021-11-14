@@ -1,6 +1,7 @@
 html,
 body {
-  width: 100vw;
+  width: calc(100vw - 16px);
+  overflow-x: hidden;
 }
 code {
   font-family: "ModeSeven", "Consolas", monospace;
@@ -33,8 +34,27 @@ code {
 .showcode__example code {
   display: block;
   padding: 10px;
-  max-width: calc(100vw - 20px);
-  overflow: scroll;
+  overflow-x: scroll;
+  transform-origin: 50% 0;
+  transition: transform 0.25s ease-in-out;
+}
+.showcode__example code:focus {
+  /* Outline focus state for all browsers */
+  transform: scale(0.99);
+  border: solid 2px orange;
+  outline: none;
+}
+.showcode__example code:focus:not(:focus-visible) {
+  /* Undo all the above focused button styles
+      if the element has focus but the browser wouldn't normally
+      show default focus styles */
+  transform: scale(1);
+}
+.showcode__example code:focus-visible {
+  /* Put the focus CSS back in if the browser would normally show default focus style */
+  transform: scale(0.99);
+  border: solid 2px orange;
+  outline: none;
 }
 .showcode__example--desc {
   display: none;

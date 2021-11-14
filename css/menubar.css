@@ -1,3 +1,6 @@
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 ul[role="menubar"] {
   margin: 10px;
   padding: 10px;

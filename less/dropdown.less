@@ -3,7 +3,7 @@
 @import "shared/a11y";
 @import "shared/landmarks";
 
-.remove-default-details-styles(@rules) {
+.remove-default-details-styles() {
   &::-webkit-details-marker {
     display: none;
   }
@@ -89,9 +89,12 @@
     background-color: #ccffcc;
   }
 
+
+  // We don't use the `enable
   &__checkbox:focus + &__label {
     outline: solid 2px @focus-color;
   }
+
 
   &__button {
     .vendor(appearance, none);
@@ -105,7 +108,6 @@
     width: 130px;
     border: solid 1px #ccc;
     background-color: white;
-
 
     .remove-default-details-styles();
   }

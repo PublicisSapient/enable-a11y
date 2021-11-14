@@ -1,3 +1,6 @@
+__checkbox:focus + __label {
+  outline: solid 2px #3b99fc;
+}
 [role="switch"],
 [role="switch"][aria-checked] {
   margin: 0;
