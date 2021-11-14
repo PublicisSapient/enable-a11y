@@ -1,6 +1,3 @@
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 .enable-aria-hidden {
   display: contents;
 }

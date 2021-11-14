@@ -1,6 +1,3 @@
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 .details-accordion {
   border: solid 1px #41a6df;
   border-radius: 10px;

@@ -7,9 +7,6 @@
  * 
  * https://opensource.org/licenses/MIT
  ********************************************************/
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 .sr-only {
   clip: rect(1px 1px 1px 1px);
   /* IE 6/7 */

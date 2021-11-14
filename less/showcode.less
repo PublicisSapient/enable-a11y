@@ -4,6 +4,11 @@
 
 html,
 body {
+  //width: 100vw;
+  // overflow-x: hidden;
+}
+
+html {
   width: calc(100vw - 16px);
   overflow-x: hidden;
 }
@@ -17,6 +22,8 @@ code {
   @border: solid 1px #999;
   @select-width: (160 / @px);
   @clip-bottom: 45px;
+  @code-focus-outline-width: 4px;
+  @code-focus-outline-gap: 4px;
   background-color: rgb(245, 222, 179);
 
   border: @border;
@@ -30,6 +37,7 @@ code {
   &__container {
     position: relative;
     z-index: 1;
+
   }
 
   &__heading {
@@ -40,11 +48,37 @@ code {
   }
 
   &__example {
+    @gap-shadow-width: @code-focus-outline-gap + @code-focus-outline-width;
+    @gap-color: white;
+
     display: block;
     position: relative;
     font-family: @code-font-stack;
     background: black;
     color: #090;
+    box-shadow:
+        @gap-shadow-width 0 0 black inset,
+        -@gap-shadow-width 0 0 black inset,
+        0 @gap-shadow-width 0 black inset,
+        0 ( -@gap-shadow-width - @clip-bottom) 0 black inset;
+
+    
+    &:focus-within {
+
+      box-shadow:
+        @code-focus-outline-width 0 0 @focus-color inset,
+        -@code-focus-outline-width 0 0 @focus-color inset,
+        0 @code-focus-outline-width 0 @focus-color inset,
+        0 ( -@code-focus-outline-width - @clip-bottom) 0 @focus-color inset,
+        @gap-shadow-width 0 0 @gap-color inset,
+        -@gap-shadow-width 0 0 @gap-color inset,
+        0 @gap-shadow-width 0 @gap-color inset,
+        0 ( -@gap-shadow-width - @clip-bottom) 0 @gap-color inset;
+      
+      code {
+        outline: 0;
+      }
+    }
 
     /* @media @mobile {
             margin: 0 -2em -25px -1em;
@@ -53,20 +87,9 @@ code {
     code {
       display: block;
       padding: 10px;
-      overflow-x: scroll;
-      transform-origin: 50% 0;
-      transition: transform 0.25s ease-in-out;
+      max-width: calc(100vw - 20px);
+      overflow-x: auto;
 
-      .enable-focus(
-        {
-          transform: scale(0.99);
-          border: solid 2px orange;
-          outline: none;
-        },
-        {
-          transform: scale(1); 
-        }
-      );
     }
 
     &--desc {
@@ -101,6 +124,13 @@ code {
         );
         width: 100%;
         height: 100%;
+      }
+
+      &:focus-within::after {
+        top: @code-focus-outline-width;
+        left: @code-focus-outline-width;
+        width: calc(100% - 2 * @code-focus-outline-width);
+        height: calc(100% - 2 * @code-focus-outline-width);
       }
 
       &.fade-both::after {

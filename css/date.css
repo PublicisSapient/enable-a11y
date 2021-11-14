@@ -133,9 +133,6 @@ table {
 * {
   box-sizing: border-box;
 }
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -508,7 +505,7 @@ article:after {
 aside,
 [role="complementary"] {
   display: block;
-  background: #ddd url('../../images/notepad-icon.svg') no-repeat 1em 1em;
+  background: #ddd url("../../images/notepad-icon.svg") no-repeat 1em 1em;
   margin: 1em auto;
   padding: 1em 1em 1em calc(100px + 2em);
   min-height: 8.6875rem;
@@ -522,9 +519,17 @@ aside,
     padding-left: 1rem;
     background: #ddd;
   }
-  aside h2,
-  [role="complementary"] h2 {
-    margin-left: 5rem;
+  aside h2::before,
+  [role="complementary"] h2::before {
+    content: "";
+    background: url("../../images/notepad-icon.svg");
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0.4rem;
   }
 }
 aside h3,

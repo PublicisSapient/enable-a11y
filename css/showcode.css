@@ -1,5 +1,4 @@
-html,
-body {
+html {
   width: calc(100vw - 16px);
   overflow-x: hidden;
 }
@@ -27,34 +26,22 @@ code {
   font-family: "ModeSeven", "Consolas", monospace;
   background: black;
   color: #090;
+  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -53px 0 black inset;
   /* @media @mobile {
             margin: 0 -2em -25px -1em;
         } */
 }
+.showcode__example:focus-within {
+  box-shadow: 4px 0 0 #3b99fc inset, -4px 0 0 #3b99fc inset, 0 4px 0 #3b99fc inset, 0 -49px 0 #3b99fc inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
+}
+.showcode__example:focus-within code {
+  outline: 0;
+}
 .showcode__example code {
   display: block;
   padding: 10px;
-  overflow-x: scroll;
-  transform-origin: 50% 0;
-  transition: transform 0.25s ease-in-out;
-}
-.showcode__example code:focus {
-  /* Outline focus state for all browsers */
-  transform: scale(0.99);
-  border: solid 2px orange;
-  outline: none;
-}
-.showcode__example code:focus:not(:focus-visible) {
-  /* Undo all the above focused button styles
-      if the element has focus but the browser wouldn't normally
-      show default focus styles */
-  transform: scale(1);
-}
-.showcode__example code:focus-visible {
-  /* Put the focus CSS back in if the browser would normally show default focus style */
-  transform: scale(0.99);
-  border: solid 2px orange;
-  outline: none;
+  max-width: calc(100vw - 20px);
+  overflow-x: auto;
 }
 .showcode__example--desc {
   display: none;
@@ -79,6 +66,12 @@ code {
     background-image: linear-gradient(-270deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 80%, #000);
     width: 100%;
     height: 100%;
+  }
+  .showcode__example:focus-within::after {
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 2 * 4px);
+    height: calc(100% - 2 * 4px);
   }
   .showcode__example.fade-both::after {
     background-image: linear-gradient(-270deg, #000, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #000);

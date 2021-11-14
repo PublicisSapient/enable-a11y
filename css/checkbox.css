@@ -1,6 +1,3 @@
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 /* From the old stuff */
 /* These are the styles for the ARIA example */
 [role="checkbox"] {

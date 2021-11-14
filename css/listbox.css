@@ -130,9 +130,6 @@ table {
 * {
   box-sizing: border-box;
 }
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;

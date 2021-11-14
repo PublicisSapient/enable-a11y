@@ -1,6 +1,3 @@
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 .enable__video-player {
   background: rgba(18, 21, 30, 0.8);
 }

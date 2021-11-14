@@ -1,6 +1,3 @@
-__checkbox:focus + __label {
-  outline: solid 2px #3b99fc;
-}
 /*
  * This CSS from http://gdkraus.github.io/accessible-modal-dialog/
  */
