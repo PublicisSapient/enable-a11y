@@ -112,3 +112,18 @@
   height: 0.7rem;
   margin-right: 0.5em;
 }
+#html5-example .checkbox-container {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+#html5-example .checkbox-container label {
+  width: 190px;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 5px;
+}
+#html5-example .error {
+  width: fit-content;
+  margin: 0 auto 1em auto;
+}
