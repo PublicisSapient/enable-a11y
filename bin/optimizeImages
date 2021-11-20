@@ -1,0 +1,16 @@
+#!/bin/sh
+
+for i in images/main-menu images/ images/hamburger-menu-copy
+do
+    cd $i
+    compressPng *.png
+
+    for j in *.png
+    do
+        image="${j%.*}"
+        cwebp -q 100 -m 6 -lossless $j -o $image.webp
+    done
+
+    # needs to be more bulletproof
+    cd ..
+done
