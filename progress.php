@@ -16,7 +16,7 @@
 
 
 
-        <h1>ARIA Progress Role Example</h1>
+        <h1>ARIA Progress Bar Examples</h1>
         <aside class="notes">
             <h2>Notes:</h2>
 
@@ -66,10 +66,33 @@
             </ul>
         </aside>
 
+        <h2>Overview</h2>
+
+        <p>
+            Progress bars show the completion status of a current task.  It may be something that is fairly static 
+            for the page (e.g. A page with a progress bar indicating the delivery status of a package is unlikely 
+            to be updated in real time after the page is loaded), then you won't need an aria-live region that 
+            announces the status value.  However, if it is a task that is being reported in real time (e.g. 
+            how log it will take to upload a movie file to a web server), then you will want that information 
+            updated to the user in real time as it happens.  In the latter case, the developer and UX designer should
+            think how immediate this information should be given to screen reader users, since this information cause
+            a bit of noise, and set the aria-live level appropriately. If the user is not going to be doing anything
+            else on the screen while the action is happening and needs immediate updates, use <code>aria-live="assertive"</code>.
+            If the user is going to be doing other things on the page while the progress bar is updating, use <code>"polite"</code>
+            instead.
+        </p>
+
+
+
         <h2>HTML5 progress bar</h2>
 
-        <p>This progress bar uses aria-live regions to update the status of the progress bar. It works in for all screen
-            readers.</p>
+        <p>
+            This progress bar uses aria-live regions to update the status of the progress bar. It works in for all
+            screen
+            readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
+            users are updated as soon as the progress bar value changes.
+
+        </p>
 
         <div id="html5-example" class="enable-example">
             <progress id="html1" class="uam" max="100" value="0" data-timeout="1000" data-alert="html1-alert">
@@ -97,7 +120,8 @@
 
         <p>
             This progress bar uses the screen reader's native functionality to read the
-            progress bar by setting keyboard focus on the bar when incrementing.
+            progress bar by setting keyboard focus on the bar when incrementing.  
+            <strong>This doesn't announce updates on Mac OSX Voiceover with Safari.</strong>
         </p>
 
         <div id="html5-focus-example" class="enable-example">
@@ -129,10 +153,6 @@
 
         <p>This progress bar uses aria-live regions to update the status of the progress bar. It is the safest way to
             ensure your progress bars are accessible.
-
-            <strong>Note: this doesn't do anything in VoiceOver for OSX</strong>
-
-
         </p>
 
         <div id="aria-example1" class="enable-example">

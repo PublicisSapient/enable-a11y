@@ -37,5 +37,14 @@
             'headingLevel' => $headingLevel
         ));
     }
+
+    function pictureWebpPng($src, $alt = "")
+    {
+        includeFileWithVariables('includes/picture-webp-png.php', array(
+            'src' => $src,
+            'alt' => $alt
+        ));
+    }
+
 ?>
 

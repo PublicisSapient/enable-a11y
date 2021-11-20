@@ -9,227 +9,8 @@
 </head>
 
 <body>
-
-    <div role="banner" tabindex="0">
-        <?php include "includes/logo-link.php";?>
-    </div>
-
-    <div id="example1">
-        <nav class="enable-flyout__container" aria-label="main menu">
-            <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
-
-                <!-- This is the hamburger menu icon -->
-                <span aria-label="main menu" class="enable-flyout__hamburger-icon" role="img" >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-            </span>
-
-            </button>
-            <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
-                <button class="enable-flyout__hamburger-icon-facade">
-                    <span class="sr-only">close mobile flyout</span>
-                </button>
-                <ul class="enable-flyout__list">
-                    <li class="enable-flyout__menu-item">
-                        <a href="/enable" class="enable-flyout__link enable-flyout__with-home-icon">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="enable-flyout__menu-item">
-                        <!-- Begin section 1 -->
-                        <button aria-expanded="false" aria-controls="section1"
-                            class="enable-flyout__open-level-button">
-                            Game Consoles
-
-                        </button>
-                        <div id="section1" aria-label="Game Consoles" role="group"
-                            class="enable-flyout enable-flyout__level  enable-flyout__dropdown">
-                            <button class="enable-flyout__hamburger-icon-facade"><span class="sr-only">close
-                                    mobile flyout</span></button>
-                            <ul class="enable-flyout__list">
-                                <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                    <button class="enable-flyout__close-level-button">
-                                        Go Back
-                                    </button>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <button aria-expanded="false" aria-controls="section1-1"
-                                        class="enable-flyout__open-level-button">
-                                        Atari
-                                    </button>
-                                    <div role="group" id="section1-1"  aria-label="Atari" class="enable-flyout enable-flyout__level">
-                                        <button class="enable-flyout__hamburger-icon-facade"><span
-                                                class="sr-only">close mobile flyout</span></button>
-                                        <div class="enable-flyout__level-heading">Atari</div>
-                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                                <button
-                                                    class="enable-flyout__close-level-button">
-                                                    Go Back
-                                                </button>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="https://atariage.com/software_page.php?SoftwareLabelID=459"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/space-invaders.png" alt=""
-                                                        />
-                                                    Space Invaders
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://atariage.com/software_page.php?SoftwareLabelID=1007"
-                                                    class="enable-flyout__link"><img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/asteroids.png" alt=""
-                                                        /> Asteroids</a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://atariage.com/software_page.php?SoftwareLabelID=342"
-                                                    class="enable-flyout__link"><img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/pac-man.png" alt=""
-                                                        /> Pac-Man</a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://atariage.com/software_page.php?SoftwareLabelID=2718"
-                                                    class="enable-flyout__link"><img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/yars-revenge.png" alt=""
-                                                        />
-                                                    Yars' Revenge</a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://atariage.com/software_page.php?SoftwareID=1380"
-                                                    class="enable-flyout__link"><img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/superman.png" alt=""
-                                                        /> Superman</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <button aria-expanded="false" aria-controls="section1-2"
-                                        class="enable-flyout__open-level-button">
-                                        Intellivision
-
-                                    </button>
-                                    <div role="group" id="section1-2" aria-label="Intellivision"
-                                        class="enable-flyout enable-flyout__level">
-                                        <button class="enable-flyout__hamburger-icon-facade"><span
-                                                class="sr-only">close mobile flyout</span></button>
-                                        <div class="enable-flyout__level-heading">Intellivision</div>
-                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
-                                                    class="enable-flyout__close-level-button">
-
-                                                    Go Back
-                                                </button></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://history.blueskyrangers.com/mattelelectronics/games/spacearmada.html"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/space-armada.png" alt=""
-                                                        />
-                                                    Space Armada
-                                                </a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://history.blueskyrangers.com/mattelelectronics/games/astrosmash.html"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/astrosmash.png" alt=""
-                                                        />
-                                                    Astrosmash
-                                                </a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://history.blueskyrangers.com/mattelelectronics/games/locknchase.html"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/lock-n-chase.png" alt=""
-                                                        />
-                                                    Lock 'n Chase
-                                                </a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://history.blueskyrangers.com/mattelelectronics/games/addcloudy.html"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/dnd.png" alt=""
-                                                        />
-                                                    Advanced Dungeons and Dragons</a></li>
-                                            <li class="enable-flyout__menu-item"><a
-                                                    href="https://history.blueskyrangers.com/mattelelectronics/games/masters.html"
-                                                    class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/he-man.png" alt=""
-                                                        />
-                                                    He-Man</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        ColecoVision
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Nintendo Entertainment System
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li><!-- End section 1 -->
-
-                    <li class="enable-flyout__menu-item">
-                        <button aria-expanded="false" aria-controls="section2"
-                            class="enable-flyout__open-level-button">
-                            Handheld Game Devices
-
-                        </button>
-                        <div role="group" id="section2" aria-label="Handheld Game Machines" 
-                            class="enable-flyout enable-flyout__level enable-flyout__dropdown ">
-                            <div class="enable-flyout__level-heading">Handheld Game Machines</div>
-                            <button class="enable-flyout__hamburger-icon-facade"><span class="sr-only">close
-                                    mobile flyout</span></button>
-                            <ul class="enable-flyout__list">
-                                <li class="enable-flyout__menu-item enable-flyout__menu-item--close"><button
-                                        class="enable-flyout__close-level-button">
-                                        Go Back
-                                    </button></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Milton Bradley Microvision
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Entex Select A Game
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Entex Adventure Vision
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Atari Lynx
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Game Boy
-                                    </a></li>
-                                <li class="enable-flyout__menu-item "><a href="#"
-                                        class="enable-flyout__link">
-                                        Playstation Portable
-                                    </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="enable-flyout__menu-item">
-                        <a href="https://atariage.com/" class="enable-flyout__link">Atari Age</a>
-                    </li>
-                    <li class="enable-flyout__menu-item">
-                        <a href="https://history.blueskyrangers.com/index.html" class="enable-flyout__link">Blue Sky
-                            Rangers</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <span class="enable-flyout__overlay-screen"></span>
-    </div>
+    <!-- need id for hamburger menu (was example1) -->
+    <?php include "includes/documentation-header.php";?>
 
 
     <main>
@@ -259,8 +40,7 @@
 
         <figure>
 
-            <img src="images/hamburger-menu-copy/hamburger-menu-icon-screenshot.jpg"
-                alt="Screenshot of the banner on the top of this page in the mobile breakpoint" />
+            <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-icon-screenshot","Screenshot of the banner on the top of this page in the mobile breakpoint")?>
 
             <figcaption>Figure 1. The hamburger menu icon appears on the upper right hand side of the page. It is
                 denoted by three horizontal lines that has become the standard.</figcaption>
@@ -276,8 +56,7 @@
 
         <figure>
 
-            <img src="images/hamburger-menu-copy/hamburger-menu-opened.jpg"
-                alt="Screenshot of the hamburger menu when opened." />
+            <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-opened","Screenshot of the hamburger menu when opened.")?>
 
             <figcaption>
                 Figure 2. When the hamburger menu icon is clicked, the black menu above appears.
@@ -314,8 +93,7 @@
 
         <figure>
 
-            <img src="images/hamburger-menu-copy/mega-menu-onload.jpg"
-                alt="Screenshot of the mega menu when the page is first loaded." />
+            <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-onload","Screenshot of the mega menu when the page is first loaded.")?>
 
             <figcaption>
                 Figure 3. The mega menu is a horizontal bar with the
@@ -335,8 +113,7 @@
 
         <figure>
 
-            <img src="images/hamburger-menu-copy/mega-menu-open.jpg"
-                alt="Screenshot of the mega menu when one of the submenus opened." />
+            <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-open","Screenshot of the mega menu when one of the submenus opened.")?>
 
             <figcaption>
                 Figure 3. When a submenu category is clicked with either,
@@ -354,9 +131,9 @@
             inside the menu until they close the menu with the CTA that opened it.
         </p>
 
-        <?php includeShowcode("example1")?>
+        <?php includeShowcode("enable-hamburger-menu")?>
 
-        <script type="application/json" id="example1-props">
+        <script type="application/json" id="enable-hamburger-menu-props">
         {
             "replaceHTMLRules": {},
             "steps": [
@@ -367,7 +144,7 @@
             },
             {
                 "label": "Set an aria-label on the nav tag",
-                "highlight": "aria-label=\"main menu\"",
+                "highlight": "aria-label=\"main\"",
                 "notes": "This aria-label is useful when using NVDAs element list or VoiceOver's rotor when looking at all the landmarks, since it helps distinguish it from other pieces of navigation on the page."
             },
             {
@@ -377,13 +154,18 @@
             },
             {
                 "label": "Give the hamburger icon a role of image.",
-                "highlight": "role=\"image\"",
+                "highlight": "role=\"img\"",
                 "notes": "Since we used <a href=\"https://codepen.io/designcouch/pen/Atyop\">the third CSS animation example in this codepen</a> to create the hamburger icon, we want to ensure screenreaders interpret this as an image by adding the role of image to it"
             },
             {
-                "label": "Set screen reader text for the hamburger icon and close button icons",
-                "highlight": "%OPENCLOSECONTENTTAG%span sr-only",
+                "label": "Set aria-label for hamburger menu icon",
+                "highlight": "aria-label=\"main\\smenu\"",
                 "notes": ""
+            },
+            {
+                "label": "Set screen reader text close button icons",
+                "highlight": "%OPENCLOSECONTENTTAG%span sr-only",
+                "notes": "We use screen reader only text instead of an aria-label because buttons should not be empty."
             },
             {
                 "label": "Markup hamburger menu panels",

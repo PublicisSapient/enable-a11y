@@ -1,6 +1,7 @@
 - style examples XXXX
 - first rule of ARIA explanations on where to use each.
 - optimize images. XXXX
+- product tile demo.    
 - focus keyboard only.
 - tabs with multiple levels
 - hamburger menu page with enable one instead of video game example.

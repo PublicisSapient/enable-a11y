@@ -28,6 +28,7 @@ do
 	TEMP_FILES="$TEMP_FILES $TEMP_FILE"
 done
 echo	
+echo "FILES: $TEMP_FILES"
 		
 
 echo "Checking HTML..."
@@ -51,6 +52,7 @@ OUTPUT="${OUTPUT##*( )}"
 
 #.. Let's see if we can get the PHP output into each error to give the dev some context.
 READ_RETURN="0"
+
 echo "$OUTPUT" | (
 	while [ "$READ_RETURN" = "0" ]
 	do

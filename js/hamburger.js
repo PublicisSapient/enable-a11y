@@ -70,8 +70,6 @@ const EnableFlyoutMenu = new function() {
         $el.setAttribute('tabindex', '-1');
         $el.setAttribute('aria-hidden', 'true');
       });
-      
-      // requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
     })
   }
 

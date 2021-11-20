@@ -84,6 +84,7 @@
 
 
 
+
         <h2>A link with the role of button</h2>
 
         <p>
@@ -194,6 +195,49 @@
         }
         </script>
 
+
+
+
+        <h2>Disabled HTML Button.</h2>
+
+        <p>There are two ways of making a button disabled.</p>
+
+        <ol>
+            <li>Use the <code>disabled</code> attribute. This removes the button
+                from the keyboard tabbing order. It also doesn't prevents click events
+                from being fired.
+            </li>
+            <li>
+                Use <code>aria-disabled="true"</code> attribute. This doesn't remove the button
+                from the keyboard tabbing order. It also doesn't prevents click events
+                from being fired <strong>except for Chrome on Google Android with Talkback on</strong> (Thanks to Noel
+                Tibbles for pointing this out).
+            </li>
+        </ol>
+
+        <div class="enable-example">
+            <p>The following is disabled with the <code>disabled</code> attribute
+            </p>
+            <div id="html-disabled" class="button-container">
+                <label for="html-disabled-button">If you are sure you want to give Facebook your data, push
+                    this:</label>
+                <button disabled id="html-disabled-button">
+                    Submit
+                </button>
+            </div>
+
+            <p>
+                THe following is disabled with aria-disabled="true"</p>
+
+            <div id="aria-disabled" class="button-container">
+                <label for="aria-disabled-button">If you are sure you want to give Facebook your data, push
+                    this:</label>
+                <button aria-disabled="true" id="aria-disabled-button">
+                    Submit
+                </button>
+            </div>
+
+        </div>
 
     </main>
 
