@@ -85,57 +85,49 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="button.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/button.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/button", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Button
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="checkbox.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/checkbox.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/checkbox", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Checkboxes
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="radiogroup.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/radiogroup.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/radiogroup", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Radio Button Group
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="listbox.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/listbox.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/listbox", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Select Box / Listbox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="textbox.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/textbox.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/textbox", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Textbox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="combobox.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/combobox.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/combobox", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Autocomplete Combobox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="slider.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/slider.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/slider", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Slider / Range Input
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="spinner.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/spinner.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/spinner", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Numeric Input Spinner
                                                 </a>
                                             </li>
@@ -168,59 +160,51 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="link.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/link.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/link", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Link
                                                 </a>
                                             </li>
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="dropdown.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/hamburger-menu/dropdown.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/dropdown", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Dropdown / Drawer / Expando
                                                 </a>
                                             </li>
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="tooltip.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/tooltip.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/tooltip", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Tooltip
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/multi-level-hamburger-menu.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/multi-level-hamburger-menu", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Flyout / Hamburger Menu
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="tabs.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/tabs.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/tabs", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Tablist
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="switch.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/switch.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/switch", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Switch
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="carousel.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/carousel.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/carousel", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Carousel
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="skip-link.php" class="enable-flyout__link">
-                                                    <img class="enable-flyout__link-image"
-                                                        src="images/main-menu/skip-link.png" alt="">
+                                                    <?php pictureWebpPng("images/main-menu/skip-link", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Skip Links
                                                 </a>
                                             </li>
@@ -255,46 +239,43 @@
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="table.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/table.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/table", "", "class=\"enable-flyout__link-image\""); ?>
                                         Table
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="description-list.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image"
-                                            src="images/main-menu/description-list.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/description-list", "", "class=\"enable-flyout__link-image\""); ?>
                                         Description List
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="progress.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/progress.png"
-                                            alt="">
+                                        <?php pictureWebpPng("images/main-menu/progress", "", "class=\"enable-flyout__link-image\""); ?>
                                         Progress Bar
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="img.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/img.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/img", "", "class=\"enable-flyout__link-image\""); ?>
                                         Image
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="figure.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/figure.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/figure", "", "class=\"enable-flyout__link-image\""); ?>
                                         Figure
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="heading.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/heading.png"
-                                            alt="">
+                                        <?php pictureWebpPng("images/main-menu/heading", "", "class=\"enable-flyout__link-image\""); ?>
                                         Heading
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="math.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/math.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/math", "", "class=\"enable-flyout__link-image\""); ?>
                                         Math
                                     </a>
                                 </li>
@@ -323,15 +304,13 @@
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image"
-                                            src="images/main-menu/animated-gif-with-pause-button.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/animated-gif-with-pause-button", "", "class=\"enable-flyout__link-image\""); ?>
                                         Animated GIF/WEBP
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="play-pause-animations-button.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image"
-                                            src="images/main-menu/play-pause-animations-button.png" alt="">
+                                        <?php pictureWebpPng("images/main-menu/play-pause-animations-button", "", "class=\"enable-flyout__link-image\""); ?>
                                         Pause All Animations Control
                                     </a>
                                 </li>
@@ -365,37 +344,33 @@
 
                                 <li class="enable-flyout__menu-item">
                                     <a href="alert.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/alert.png"
-                                            alt="" />
+                                        <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
                                         Alert
                                     </a>
                                 </li>
 
                                 <li class="enable-flyout__menu-item">
                                     <a href="log.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/log.png" alt="" />
+                                        <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
                                         Log
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="timer.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/timer.png"
-                                            alt="" />
+                                        <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
                                         Timer
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="marquee.php" class="enable-flyout__link">
 
-                                        <img class="enable-flyout__link-image" src="images/main-menu/marquee.png"
-                                            alt="" />
+                                        <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
                                         Marquee
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="status.php" class="enable-flyout__link">
-                                        <img class="enable-flyout__link-image" src="images/main-menu/status.png"
-                                            alt="" />
+                                        <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
                                         Status
                                     </a>
                                 </li>

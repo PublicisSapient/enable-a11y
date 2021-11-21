@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in images/main-menu images/ images/hamburger-menu-copy
+for i in images/main-menu images/hamburger-menu-copy
 do
     cd $i
     compressPng *.png

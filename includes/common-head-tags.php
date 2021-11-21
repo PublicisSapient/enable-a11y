@@ -38,11 +38,12 @@
         ));
     }
 
-    function pictureWebpPng($src, $alt = "")
+    function pictureWebpPng($src, $alt = "", $otherAttrs = "")
     {
         includeFileWithVariables('includes/picture-webp-png.php', array(
             'src' => $src,
-            'alt' => $alt
+            'alt' => $alt,
+            'otherAttrs' => $otherAttrs
         ));
     }
 
