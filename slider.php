@@ -17,6 +17,7 @@
     <main>
         <h1>ARIA Slider Examples</h1>
 
+
         <aside class="notes">
             <h2>Notes:</h2>
 
@@ -465,24 +466,23 @@
                         aria-labelledby="${arialabelledby} ${id}_val" aria-describedby="${ariadescribedby}"></div>
 
                     <div id="${ariadescribedby}" class="${classNameRoot}__hidden-label">
-                        Use arrow keys to adjust the slider value. Touch devices will need to swipe right to adjust
-                        these
-                        values.
+                        Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+                        the slider value.
                     </div>
                     <span
-                        class="enable-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
+                        class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
                         <div id="${id}__decrease-label" class="${classNameRoot}__hidden-label">Decrease Value</div>
                         <button aria-labelledby="${arialabelledby} ${id}_val ${id}__decrease-label"
-                            class="enable-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button"
+                            class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button"
                             tabindex="-1">
                             ‹
                         </button>
                     </span>
                     <span
-                        class="enable-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
+                        class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
                         <div id="${id}__increase-label" class="${classNameRoot}__hidden-label">Increase Value</div>
                         <button aria-labelledby="${arialabelledby} ${id}_val ${id}__increase-label"
-                            class="enable-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button"
+                            class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button"
                             tabindex="-1">
                             ›
                         </button>
@@ -538,7 +538,6 @@
     <script src="js/shared/interpolate.js"></script>
     <script src="js/accessibility.js"></script>
     <script src="js/enable-slider.js"></script>
-    <script src="js/shared/enable-visible-on-focus.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

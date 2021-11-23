@@ -15,3 +15,5 @@
     <!-- Hamburger Menu -->
     <script src="js/accessibility.js"></script>
     <script src="js/hamburger.js"></script>
+
+    <script src="js/shared/enable-visible-on-focus.js"></script>

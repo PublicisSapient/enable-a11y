@@ -103,6 +103,21 @@
 			"Usage: %OPENCLOSECONTENTTAG%<HTML TAG NAME>"
 		]
 	},
+	"hamburger-submenu": {
+		"scope": "",
+		"prefix": "hamburger-submenu",
+		"body": [
+			"<ul class=\"enable-flyout__list  enable-flyout__list--photo-layout\">",
+			"<li class=\"enable-flyout__menu-item enable-flyout__menu-item--close\">",
+			"  <button class=\"enable-flyout__close-level-button\">",
+			"    Go Back",
+			"  </button>",
+			"</li>",
+			"<!-- Start menu items for section ARIA Live Regions -->",
+			"",
+			"</ul>"
+		]
+	},
 	"hamburger-button": {
 		"scope": "",
 		"prefix": "hamburger-button",
@@ -140,8 +155,7 @@
 			"<li class=\"enable-flyout__menu-item\">",
 			"  <a href=\"$1.php\"",
 			"    class=\"enable-flyout__link\">",
-			"    <img class=\"enable-flyout__link-image\"",
-			"      src=\"images/hamburger-menu/$1.png\" alt=\"\">",
+			"    <?php pictureWebpPng(\"images/main-menu/$1\", \"\", \"class=\\\"enable-flyout__link-image\\\"\"); ?>",
 			"    $2",
 			"  </a>",
 			"</li>"
@@ -158,6 +172,11 @@
 			"  </a>",
 			"</li>"
 		]
+	},
+	"hamburger-heading": {
+		"scope": "",
+		"prefix": "hamburger-heading",
+		"body": "<div class=\"enable-flyout__level-heading\">$1</div>"
 	},
 	"enable-example": {
 		"scope": "",

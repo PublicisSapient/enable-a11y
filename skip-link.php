@@ -627,7 +627,6 @@
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="js/shared/enable-visible-on-focus.js"></script>
 </body>
 
 </html>
