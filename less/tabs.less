@@ -1,6 +1,7 @@
-@import "shared/all"; 
-
-
+@import "shared/mixins-and-vars";
+.zoltan {
+    this: that;
+}
 
 #tabs h2 {
     margin: 0.5em 0;
@@ -74,9 +75,14 @@
                 text-shadow: 0 1px 1px rgba(0, 0, 0,.2);
             }
 
-            &:focus {
-                outline-offset: 5px;
-            }
+            .enable-focus(
+                {
+                    outline-offset: 5px;
+                },
+                {
+                    outline: none;
+                }
+            );
 
             &:active { 
                 top: 2px;
@@ -106,8 +112,6 @@
                 color: #333;
                 background-color: #fafafa;
             }
-
-            &:focus { outline: 1px dotted #444; }
 
             span {
                 position: absolute;

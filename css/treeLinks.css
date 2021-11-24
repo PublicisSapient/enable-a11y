@@ -318,7 +318,7 @@ select {
   /* Undo all the above focused button styles
       if the element has focus but the browser wouldn't normally
       show default focus styles */
-  outline: solid 2px #3b99fc;
+  outline: none;
 }
 *:focus-visible {
   /* Put the focus CSS back in if the browser would normally show default focus style */
