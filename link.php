@@ -48,7 +48,7 @@
 
       <script type="application/json" id="html5-examples-props">
       {
-        "replaceHTMLRules": {
+        "replaceHtmlRules": {
         },
         "steps": [
           {
@@ -109,7 +109,7 @@
 
       <script type="application/json" id="aria-examples-props">
       {
-        "replaceHTMLRules": {
+        "replaceHtmlRules": {
         },
         "steps": [
           {

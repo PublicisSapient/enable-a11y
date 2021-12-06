@@ -42,7 +42,7 @@
         <?php includeShowcode("log-example")?>
         <script type="application/json" id="log-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "#syslog": [
                     "<span>Initializing.  Please wait …</span>",
                     "<span>CPU load at 4:00:08 pm: 2%</span>",

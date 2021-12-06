@@ -45,7 +45,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                 "label": "Use label tags to label form element",
                 "highlight": "for",
@@ -68,7 +68,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use label tags to label form element",
                     "highlight": "for",
@@ -101,7 +101,7 @@
 
         <script type="application/json" id="example-role-checkbox-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use label tags with id",
                     "highlight": "id",
@@ -171,7 +171,7 @@
 
         <script type="application/json" id="example-visibleif-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Use label tags to label form element",
@@ -230,7 +230,7 @@
 
         <script type="application/json" id="html5-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use label tags to label form element",
                     "highlight": "for",

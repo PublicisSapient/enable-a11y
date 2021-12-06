@@ -49,7 +49,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Put in details and summary tag structure in HTML",
                     "highlight": "%OPENCLOSETAG%details ||| %OPENCLOSECONTENTTAG%summary",
@@ -113,7 +113,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Ensure details has open attribute set",
                     "highlight": "open",
@@ -156,7 +156,7 @@
 
         <script type="application/json" id="example3-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Put CSS class on container to configure the player",
                     "highlight": "pauseable-animated-gif--respects-os-motion-settings",

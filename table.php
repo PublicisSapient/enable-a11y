@@ -95,7 +95,7 @@
 
         <script type="application/json" id="table-example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Give table a label using the <strong>caption</strong> element",
                     "highlight": "&lt;caption&gt;[\\s\\S]*&lt;/caption&gt;",
@@ -173,7 +173,7 @@
 
         <script type="application/json" id="example3-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                 "label": "Give table a label using the <strong>caption</strong> element",
                 "highlight": "\\s*&lt;figcaption[\\s\\S]*&lt;/figcaption&gt ||| aria-labelledby=\"fig-caption\"",
@@ -254,7 +254,7 @@
 
         <script type="application/json" id="complex-table-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "tbody": "<!-- Table data is here -->"
             },
             "steps": [{
@@ -350,7 +350,7 @@
 
         <script type="application/json" id="aria-example-1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Mark the root with a role of table",
@@ -445,7 +445,7 @@
 
         <script type="application/json" id="complex-aria-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Use <code>aria-colspan</code> and <code>aria-rowspan</code> when you have a cell that spans multiple columns and rows",
@@ -542,7 +542,7 @@
 
         <script type="application/json" id="sortable-table-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Ensure the table tag is marked up as a grid",
@@ -2369,7 +2369,7 @@
 
         <script type="application/json" id="paginated-table-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "table": "<!-- Insert table data here -->"
             },
             "steps": [
@@ -4136,7 +4136,7 @@
 
         <script type="application/json" id="sticky-header-table-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "tbody": "<!-- Insert table data here -->"
             },
             "steps": [

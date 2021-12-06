@@ -50,7 +50,7 @@
 
         <script type="application/json" id="visually-hidden-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "this": "that"
             },
             "steps": [{

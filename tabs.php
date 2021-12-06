@@ -168,7 +168,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 ".tab__content": "<!-- insert tab panel content here -->",
                 "[role=\"tab\"]": "<!-- insert tab label here -->"
             },

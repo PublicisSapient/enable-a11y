@@ -91,7 +91,7 @@
         <?php includeShowcode("html-example")?>
         <script type="application/json" id="html-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use an input of type range",
                     "highlight": "type=\"range\"",
@@ -177,7 +177,7 @@
         <?php includeShowcode("html-multi-example")?>
         <script type="application/json" id="html-multi-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use two range inputs",
                     "highlight": "%OPENTAG%input",
@@ -277,7 +277,7 @@
         <?php includeShowcode("template-code")?>
         <script type="application/json" id="template-code-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Insert dynamic values placeholders in the template",
                     "highlight": "\\$\\{[^}]+\\}",
@@ -312,7 +312,7 @@
         <?php includeShowcode("aria-example1")?>
         <script type="application/json" id="aria-example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Place ARIA slider roles in document",
                     "highlight": "role=\"slider\"",
@@ -380,7 +380,7 @@
         <?php includeShowcode("aria-example2")?>
         <script type="application/json" id="aria-example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Place ARIA slider roles in document",
                     "highlight": "role=\"slider\"",
@@ -443,7 +443,7 @@
         <?php includeShowcode("vertical-example")?>
         <script type="application/json" id="vertical-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Insert class in root element to make this slider vertical",

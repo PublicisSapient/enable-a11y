@@ -61,7 +61,7 @@
 .enable-logo {
   width: 100px;
 }
-.enable-logo__link {
+.enable-logo__container {
   text-decoration: none;
   font-family: "Specify Condensed", Arial, Helvetica, sans-serif;
   color: black;
@@ -72,9 +72,12 @@
   text-align: center;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
-  .enable-logo__link {
+  .enable-logo__container {
     transform: scale(0.75);
   }
+}
+.enable-logo__link {
+  text-decoration: none;
 }
 .enable-logo__text {
   display: block;

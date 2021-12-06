@@ -13,7 +13,7 @@
   display: block;
   background: black;
   color: white;
-  height: 109vw !important;
+  height: 77vw !important;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
   .glider-slide {

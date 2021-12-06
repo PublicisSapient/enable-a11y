@@ -128,7 +128,7 @@
         <?php includeShowcode("example1")?>
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "[role=\"listbox\"]": "<li role=\"option\" value=\"Apple\">Apple</li><li role=\"option\" value=\"Artichoke\">Artichoke</li> ..."
             },
             "steps": [{
@@ -444,7 +444,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "[role=\"listbox\"]":  [
                     "<div class=\"enable-combobox__group\" role=\"presentation\">",
                         "<h2 class=\"enable-combobox__group-header\">Communist States</h2>",
@@ -742,7 +742,7 @@
 
         <script type="application/json" id="example2-submit-on-select-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "[role=\"listbox\"]":  [
                     "<div class=\"enable-combobox__group\" role=\"presentation\">",
                         "<h2 class=\"enable-combobox__group-header\">Communist States</h2>",
@@ -891,7 +891,7 @@
 
         <script type="application/json" id="dataset-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "datalist":  [
                     "<option id=\"Apple\" value=\"Apple\">Apple</option>",
                     "<option id=\"Artichoke\" value=\"Artichoke\">Artichoke</option>",

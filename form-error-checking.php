@@ -77,7 +77,7 @@
 
       <script type="application/json" id="example1-props">
       {
-        "replaceHTMLRules": {
+        "replaceHtmlRules": {
         },
         "steps": [
           {
@@ -200,7 +200,7 @@
 
       <script type="application/json" id="example2-props">
       {
-        "replaceHTMLRules": {
+        "replaceHtmlRules": {
         },
         "steps": [
           {

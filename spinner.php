@@ -68,7 +68,7 @@
         <?php includeShowcode("html-example")?>
         <script type="application/json" id="html-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Attach label to input",
                     "highlight": "for",
@@ -99,7 +99,7 @@
         <?php includeShowcode("non-quantity-example")?>
         <script type="application/json" id="non-quantity-example-props">
         {
-          "replaceHTMLRules": {
+          "replaceHtmlRules": {
           },
           "steps": [
           {
@@ -156,7 +156,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Place ARIA roles in document",
                     "highlight": "role",

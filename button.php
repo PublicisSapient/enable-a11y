@@ -66,7 +66,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Create markup",
                     "highlight": "%OPENCLOSECONTENTTAG%button",
@@ -107,7 +107,7 @@
         <?php includeShowcode("example3")?>
         <script type="application/json" id="example3-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Put button role on links that are really fake buttons",
                     "highlight": "role=\"button\"",
@@ -165,7 +165,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Put button role on fake buttons",
                     "highlight": "role=\"button\"",

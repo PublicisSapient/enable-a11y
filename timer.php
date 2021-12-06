@@ -47,7 +47,7 @@
         <?php includeShowcode("timer-example")?>
         <script type="application/json" id="timer-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "#app": [
                     "<div class=\"base-timer\">",
                     "    <svg",

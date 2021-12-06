@@ -4,7 +4,7 @@
     </a>
 </div>
 
-<div role="banner" tabindex="0">
+<div role="banner">
     <h1>
         <?php include("includes/logo-link.php"); ?>
     </h1>
