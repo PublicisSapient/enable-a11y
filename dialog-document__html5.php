@@ -10,19 +10,6 @@
 
     <link media="all" id="dialog-polyfill" rel="stylesheet" href="css/shared/dialog-polyfill.css" />
 
-    <style>
-      dialog {
-        position: fixed;
-      }
-      
-      .a11y-modal__button--close:focus {
-        outline: none !important;
-      }
-      .a11y-modal__button--close:focus img {
-        filter: drop-shadow(0px 2px 0 orange) drop-shadow(0px -2px 0 orange)
-          drop-shadow(-2px 0px 0 orange) drop-shadow(2px 0px 0 orange);
-      }
-    </style>
 
     <script>
       function onModalButtonClick() {
@@ -123,7 +110,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [
                 {

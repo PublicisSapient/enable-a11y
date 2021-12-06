@@ -1,0 +1,21 @@
+const inAllWebComponents = new function () {
+    this.getComponentNodes = function () {
+        const docTags = document.querySelectorAll('*');
+        const webComponentTags = [];
+
+        docTags.forEach(el => {
+            if (el.nodeName.indexOf('-') > 0) {
+                webComponentTags.push(el);
+            }
+        });
+
+        return webComponentTags;
+    }
+
+
+    this.call = (funcName, ... args) => {
+        const webComponentNodes = getComponentNodes();
+
+
+    }
+}

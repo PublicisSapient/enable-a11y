@@ -52,7 +52,7 @@
 
         <script type="application/json" id="visual-alert-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "this": "that"
             },
             "steps": [{

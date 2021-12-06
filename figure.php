@@ -51,7 +51,7 @@
         <?php includeShowcode("html5-example")?>
         <script type="application/json" id="html5-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [
             {
@@ -77,7 +77,7 @@
         <?php includeShowcode("aria-example")?>
         <script type="application/json" id="aria-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [
             {

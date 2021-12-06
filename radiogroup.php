@@ -80,7 +80,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use a fieldset to group the related radio buttons",
                     "highlight": "%OPENCLOSECONTENTTAG%fieldset",
@@ -148,7 +148,7 @@
 
         <script type="application/json" id="example1-styled-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Set enable-radio class on the section that will have the custom radio buttons",
                     "highlight": "class=\"enable-radio\"",
@@ -228,7 +228,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use an HTML element with role=\"radiogroup\" set to group the related radio buttons",
                     "highlight": "role=\"radiogroup\"",
@@ -316,7 +316,7 @@
 
         <script type="application/json" id="example4-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                 "label": "Set group elements aria-labelledby elements",
                 "highlight": "aria-labelledby ||| role=\"radiogroup\"",

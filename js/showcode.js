@@ -187,14 +187,14 @@ const showcode = new (function () {
     const { target } = e;
     const { value, dataset } = target;
     const optionValue = 'option[value=\''+ value + '\']'
-    const { showcodeFor } = dataset;
+    const { showcodeFor, replaceHtmlRules } = dataset;
     const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
     const { showcodeNotes } = optionEl.dataset;
     const { body } = document;
 
     const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
 
-    displayStep(value, showcodeNotes, showcodeFor, codeEl);
+    displayStep(value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules);
 
 
 
@@ -242,7 +242,7 @@ const showcode = new (function () {
    * @param {(String|Array)} showcodeNotes - HTML containing the notes (the `notes` element in the json package)
    * @param {String} showcodeFor - the ID for the code snippet that will be displayed 
    */
-  const displayStep = (value, showcodeNotes, showcodeFor, codeEl) => {
+  const displayStep = (value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules) => {
 
     const notesEl = document.getElementById(showcodeFor + '__notes');
     let code = htmlCache[showcodeFor];
@@ -377,13 +377,10 @@ const showcode = new (function () {
                   // with `this.propertyName =`.  Otherwise, prefix with
                   // `const funcName =`.
                   if (command === '%JSHTML%') {
-
-                    const { showcodeFor, replaceHtmlRules } = dataset;
                     const replaceRulesJson = JSON.parse(this.unentify(replaceHtmlRules));
                     const showcodeProps = `${showcodeFor}-props`;
                     const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
                     const {steps} = json;
-                    const { showcodeId } = dataset;
                     const tmpNode = document.createElement('div');
                     tmpNode.innerHTML = funcCode;
                     formatHTMLInBlock(tmpNode, );
@@ -435,7 +432,7 @@ const showcode = new (function () {
             for (let j=0; j<matches.length; j++) {
               let ids = matches[j].split('"')[1];
 
-              if (attribute === 'href' && id.indexOf('#') === 0) {
+              if (attribute === 'href' && ids.indexOf('#') === 0) {
                 ids = ids.substring(1);
               }
 
@@ -595,7 +592,7 @@ const showcode = new (function () {
     return s;
   }
 
-  const displayStepsWidget = (codeblockId, stepsJson, replaceHTMLRules) => {
+  const displayStepsWidget = (codeblockId, stepsJson, replaceHtmlRules) => {
     const widgetId =  codeblockId + '__steps';
     const notesId = codeblockId + '__notes';
     const toggleId = codeblockId + '__notes-view-toggle';
@@ -619,7 +616,7 @@ const showcode = new (function () {
       defaultOptionEl.innerHTML = '';
       defaultOptionEl.value='';
       selectEl.appendChild(defaultOptionEl);
-      selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHTMLRules), {
+      selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHtmlRules), {
         ignoreReturns: true,
         ignoreSpace: true
       });
@@ -663,7 +660,7 @@ const showcode = new (function () {
       // This is for a static, non-interactive showcode block.
       const step = stepsJson && stepsJson[0];
 
-      displayStep(step.highlight, step.notes, codeblockId, codeEl)
+      displayStep(step.highlight, step.notes, codeblockId, codeEl, replaceHtmlRules)
       return;
     }
   }
@@ -679,11 +676,11 @@ const showcode = new (function () {
       } else {
         try {
           const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
-          const {replaceHTMLRules, steps} = json;
+          const {replaceHtmlRules, steps} = json;
           const { showcodeId } = dataset;
           
-          displayCode(htmlBlock, showcodeId, replaceHTMLRules);
-          displayStepsWidget(showcodeId, steps, replaceHTMLRules);
+          displayCode(htmlBlock, showcodeId, replaceHtmlRules);
+          displayStepsWidget(showcodeId, steps, replaceHtmlRules);
         } catch (ex) {
           console.error(ex);
         }

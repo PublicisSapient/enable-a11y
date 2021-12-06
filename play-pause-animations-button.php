@@ -71,7 +71,7 @@
         <?php includeShowcode("document", "", "", "", "", false)?>
         <script type="application/json" id="document-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "head": "<!-- head content -->",
                 "body": "...<script src=\"js/play-pause-animations-button.js\"><\/script>"
             },
@@ -91,7 +91,7 @@
         <?php includeShowcode("checkbox-container", "", "", "", "", false)?>
         <script type="application/json" id="checkbox-container-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                 "label": "",
                 "highlight": "for",
@@ -138,7 +138,7 @@
         <?php includeShowcode("css-anim-example", "", "", "", true, 4)?>
         <script type="application/json" id="css-anim-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "picture": "<!-- code for image of saturn -->"
             },
             "steps": [{
@@ -201,7 +201,7 @@
         <?php includeShowcode("elastic-collision-demo", "", "", "", true, 4)?>
         <script type="application/json" id="elastic-collision-demo-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Cache the browser requestAnimationFrame method",
                     "highlight": "%JS%  playPauseAnimationButton ||| let cachedRAF[^;]*;",
@@ -327,7 +327,7 @@
         <?php includeShowcode("svg-smil-demo", "", "", "", true, 4)?>
         <script type="application/json" id="svg-smil-demo-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Add SMIL animation tags in the original SVG",
                     "highlight": "%OPENCLOSECONTENTTAG%animateTransform ||| %OPENCLOSECONTENTTAG%animate ||| %OPENCLOSECONTENTTAG%animateMotion",
@@ -367,7 +367,7 @@
         <?php includeShowcode("anim-gif-demo", "", "", "", true, 4)?>
         <script type="application/json" id="anim-gif-demo-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Put the animated and unanimated images inside the DOM",
                     "highlight": "class",

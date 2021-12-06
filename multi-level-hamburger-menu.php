@@ -136,7 +136,7 @@
 
         <script type="application/json" id="enable-hamburger-menu-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use the nav HTML5 tag",
                     "highlight": "%OPENTAG%nav",

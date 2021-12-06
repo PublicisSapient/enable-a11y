@@ -52,7 +52,7 @@
 
         <script type="application/json" id="html5-def-list-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [{
                 "label": "Use <code>dl</code> tag to encapsulate the whole list",
@@ -98,7 +98,7 @@
 
         <script type="application/json" id="aria-def-list-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [{
                 "label": "Use <code>list</code> role to encapsulate the whole list",

@@ -41,7 +41,7 @@
 
             <script type="application/json" id="example1-props">
             {
-                "replaceHTMLRules": {
+                "replaceHtmlRules": {
                     "main": "<!-- main content here -->",
                     ".bottom-fixed-nav__list": "<!-- navigation list HTML here -->"
                 },

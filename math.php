@@ -89,7 +89,7 @@
         <?php includeShowcode("equation")?>
         <script type="application/json" id="equation-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [
             {

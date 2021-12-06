@@ -35,7 +35,8 @@
 
         <div id="example1" class="enable-example">
             <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
-                <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
+                <a href="#end-of-component-1" id="beginning-of-component-1"
+                    class="enable-mobile-visible-on-focus enable-skip-link">
                     Skip to end of promotional links
                 </a>
             </div>
@@ -64,8 +65,9 @@
                                 enslaving
                                 the local population.</p>
                             <a class="enable-carousel__slide-cta"
-                                href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
-                                aria-describedby="slide02-title">Learn More</a>
+                                href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam">Learn More <span
+                                    class="sr-only">about <span lang="tr">Dünyayı Kurtaran
+                                        Adam</span></span></a>
                         </div>
                     </div>
                     <div class="enable-carousel__slide">
@@ -101,7 +103,8 @@
             </div>
 
             <div class="enable-mobile-visible-on-focus__container  enable-skip-link--end">
-                <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">Skip to
+                <a href="#beginning-of-component-1" id="end-of-component-1"
+                    class="enable-mobile-visible-on-focus enable-skip-link">Skip to
                     beginning of promotional links</a>
             </div>
         </div>
@@ -110,13 +113,13 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
                 ".glider .enable-carousel__slide p": "<!-- Copy here -->"
             },
             "steps": [{
                     "label": "Put skip links around the carousel",
-                    "highlight": "%OPENCLOSECONTENTTAG%a class=\"enable-mobile-visible-on-focus\"",
+                    "highlight": "class=\"enable-mobile-visible-on-focus\\s[^\"]*\"",
                     "notes": "In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information."
                 },
                 {
@@ -176,6 +179,6 @@
     <script src="js/shared/enable-visible-on-focus.js"></script>
     <script src="node_modules/glider-js/glider.min.js"></script>
     <script src="js/shared/enable-carousel.js"></script>
-    </body>
+</body>
 
 </html>

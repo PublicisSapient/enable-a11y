@@ -68,7 +68,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "summary": "<!-- Insert dropdown button label here -->",
                 ".content": "<!-- Insert dropdown content here. Doesn't have to wrapped in a div  -->"
             },
@@ -120,7 +120,7 @@
 
         <script type="application/json" id="example1a-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "summary": "<!-- Insert dropdown button label here -->",
                 ".content": "<!-- Insert dropdown content here. Doesn't have to wrapped in a div  -->"
             },
@@ -189,7 +189,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "[aria-expanded]": "<!-- Insert dropdown button label here -->",
                 "[role=\"region\"]": "<!-- Insert dropdown content here -->"
             },
@@ -257,7 +257,7 @@
 
         <script type="application/json" id="example-aria-multiselect-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "summary": "<!-- Insert dropdown button label here -->",
                 ".content": "<!-- Insert dropdown content here. Doesn't have to wrapped in a div  -->"
             },
@@ -327,7 +327,7 @@
 
         <script type="application/json" id="example-multi-level-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
             },
             "steps": [
                 {

@@ -56,6 +56,9 @@
 #a11y-modal__overlay.visible {
   display: block;
 }
+dialog {
+  position: fixed;
+}
 /*
  * For decorating the page (not the modal)
  */

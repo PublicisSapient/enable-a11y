@@ -171,7 +171,7 @@
 
         <script type="application/json" id="html5-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
 
             },
             "steps": [{
@@ -319,7 +319,7 @@
 
         <script type="application/json" id="aria-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 "[role=\"listbox\"]": "<!-- This is a the selected item in the dropdown --><li id=\"exp_elem_Np\" role=\"option\" aria-selected=\"true\">Neptunium</li><!-- This is an unselected item --><li id=\"exp_elem_Pu\" role=\"option\" aria-selected=\"false\">Plutonium</li>..."
             },
             "steps": [{

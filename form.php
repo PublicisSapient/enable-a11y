@@ -77,7 +77,7 @@
 
         <script type="application/json" id="example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Insert form tag",
                     "highlight": "\\s*&lt;[\/]?form&gt;",
@@ -118,7 +118,7 @@
 
         <script type="application/json" id="example2-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Insert form tag",
                     "highlight": "\\s*&lt;[\/]?div role=\"form\"&gt;",
@@ -159,7 +159,7 @@
 
         <script type="application/json" id="search-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
                 {
                     "label": "Add role of search to the form tag",

@@ -64,7 +64,7 @@
 
       <script type="application/json" id="example1-props">
       {
-        "replaceHTMLRules": {},
+        "replaceHtmlRules": {},
         "steps": [{
             "label": "Put in roles",
             "highlight": "role",

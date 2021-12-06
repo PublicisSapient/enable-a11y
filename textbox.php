@@ -66,7 +66,7 @@
 
         <script type="application/json" id="html-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [
 
                 {
@@ -115,7 +115,7 @@
 
         <script type="application/json" id="aria-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Insert roles to ensure they are reported correctly by screen readers",
                     "highlight": "role",

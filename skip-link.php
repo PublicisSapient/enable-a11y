@@ -282,7 +282,7 @@
 
         <script type="application/json" id="desktop-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 ".fake-component": "<!-- insert HTML with a lot of CTAs here -->"
             },
             "steps": [{
@@ -555,7 +555,7 @@
 
         <script type="application/json" id="mobile-example-props">
         {
-            "replaceHTMLRules": {
+            "replaceHtmlRules": {
                 ".fake-component": "<!-- insert HTML with a lot of CTAs here -->"
             },
             "steps": [{

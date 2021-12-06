@@ -41,7 +41,7 @@
         <?php includeShowcode("marquee-example")?>
         <script type="application/json" id="marquee-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Add role",
                     "highlight": "role",

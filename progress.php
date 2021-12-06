@@ -102,7 +102,7 @@
         <?php includeShowcode("html5-example")?>
         <script type="application/json" id="html5-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Use the HTML5 progress tag to make your progress bar",
                     "highlight": "%OPENCLOSECONTENTTAG%progress",
@@ -133,7 +133,7 @@
         <?php includeShowcode("html5-focus-example")?>
         <script type="application/json" id="html5-focus-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Ensure tabindex=\"-1\" is set on progress bar",
                     "highlight": "tabindex=\"-1\"",
@@ -164,7 +164,7 @@
         <?php includeShowcode("aria-example1")?>
         <script type="application/json" id="aria-example1-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "Mark up your progress bar with role=\"progressbar\".",
                     "highlight": "role=\"progressbar\"",
@@ -221,7 +221,7 @@
         <?php includeShowcode("aria-valuetext-example")?>
         <script type="application/json" id="aria-valuetext-example-props">
         {
-            "replaceHTMLRules": {},
+            "replaceHtmlRules": {},
             "steps": [{
                     "label": "First add the progressbar role",
                     "highlight": "role=\"progressbar\"",
