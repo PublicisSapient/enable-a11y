@@ -23,7 +23,7 @@
 			"<?php includeShowcode(\"$1\")?>",
 			"<script type=\"application/json\" id=\"$1-props\">",
 			"{",
-			"\t\"replaceHTMLRules\": {",
+			"\t\"replaceHtmlRules\": {",
 			"\t},",
 			"\t\"steps\": [",
 			"\t{",
@@ -177,6 +177,34 @@
 		"scope": "",
 		"prefix": "hamburger-heading",
 		"body": "<div class=\"enable-flyout__level-heading\">$1</div>"
+	},
+	"hamburger-flyout-subsection": {
+		"scope": "",
+		"prefix": "hamburger-flyout-subsection",
+		"body": [
+			"<li class=\"enable-flyout__menu-item\">",
+			"  <!-- Begin section $1 -->",
+			"  <button aria-expanded=\"false\" aria-controls=\"$2-section\"",
+			"    class=\"enable-flyout__open-level-button\">",
+			"    $1",
+			"  </button>",
+			"  <div class=\"enable-flyout__level-heading\">$1</div>",
+			"    <div id=\"$2-section\" aria-label=\"$1\" role=\"group\"",
+			"      class=\"enable-flyout enable-flyout__level enable-flyout__dropdown\">",
+			"    <button class=\"enable-flyout__hamburger-icon-facade\">",
+			"      <span class=\"sr-only\">",
+			"        close mobile flyout",
+			"      </span>",
+			"    </button>",
+			"    <ul class=\"enable-flyout__list enable-flyout__list--photo-layout\">",
+			"      <li class=\"enable-flyout__menu-item enable-flyout__menu-item--close\">",
+			"        <button class=\"enable-flyout__close-level-button\">",
+			"          Go Back",
+			"        </button>",
+			"      </li>",
+			"      ",
+			"      <!-- Start menu items for section $1 -->"
+		]
 	},
 	"enable-example": {
 		"scope": "",

@@ -1,0 +1,62 @@
+@import "shared/mixins-and-vars";
+
+.text-resize {
+  &__hero {
+    position: relative;
+    color: #fff;
+
+    &--image {
+      width: 100%;
+    }
+
+    &--text {
+      position: absolute;
+
+      top: 6vw;
+      left: 10px;
+      width: calc(100% - 20px);
+      max-width: initial;
+      transform: none;
+      background: rgba(0, 0, 0, 0.70);
+      padding: 10px;
+      text-align: center;
+
+
+      @media only screen and (min-width: 455px) {
+        top: 37vw;
+        transform: translateY(-50%);
+      }
+
+
+      @media @tablet-up {
+
+        left: 30px;
+        top: 50%;
+        width: 40vw;
+        transform: translateY(-50%);
+        max-width: 395px;
+      }
+
+    }
+
+    &--main-text {
+      line-height: 1;
+      font-size: (60 / @px);
+      font-weight: bold;
+
+      @media only screen and (max-width: 455px) {
+          font-size: (20 / @px)
+      }
+    }
+
+    &--sub-text {
+        margin-bottom: 0;
+        font-size: (12/@px);
+
+        @media @tablet-up {
+            font-size: (16/@px);
+        }
+    }
+
+  }
+}

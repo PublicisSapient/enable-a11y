@@ -65,7 +65,7 @@
                 },
                 {
                     "label": "Hide the alert with <code>sr-only</code> class",
-                    "highlight": "class=\"sr-only\"",
+                    "highlight": "sr-only",
                     "notes": "This is a standard class that hides items visually but allows screen readers to access them."
                 },
                 {

@@ -1,3 +1,4 @@
+- webcomponents focus loop.
 - style examples XXXX
 - first rule of ARIA explanations on where to use each.
 - optimize images. XXXX

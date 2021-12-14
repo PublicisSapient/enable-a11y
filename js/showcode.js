@@ -194,23 +194,8 @@ const showcode = new (function () {
 
     const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
 
-    displayStep(value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules);
+    displayStep(value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules, true);
 
-
-
-    // now ... let's see if we can scroll the page to the first highlighted part
-    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
-    
-
-    if (firstHighlightdElement) {
-      const componentRoot = codeEl.closest('.showcode');
-      const uiEl = componentRoot.querySelector('.showcode__ui');
-      const highlightRect = firstHighlightdElement.getBoundingClientRect();
-      const uiRect = uiEl.getBoundingClientRect();
-      const behavior = body.classList.contains('play-pause-animation-button__prefers-reduced-motion') ? 'auto' : 'smooth';
-
-      firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
-    }
     
 
     requestAnimationFrame(() => {
@@ -242,7 +227,7 @@ const showcode = new (function () {
    * @param {(String|Array)} showcodeNotes - HTML containing the notes (the `notes` element in the json package)
    * @param {String} showcodeFor - the ID for the code snippet that will be displayed 
    */
-  const displayStep = (value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules) => {
+  const displayStep = (value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules, doScroll) => {
 
     const notesEl = document.getElementById(showcodeFor + '__notes');
     let code = htmlCache[showcodeFor];
@@ -280,6 +265,9 @@ const showcode = new (function () {
         //    You can seperate multiple selectors with a semi-colon.
         // "%JS% functionName"
         //    Will show the JS function that matches the string given (in this case, `functionName()`) 
+        // "%INLINE% id"
+        //    Will show HTML comment encased in div with given id
+
         command = highlightString.match(commandsRe);
 
         
@@ -403,6 +391,18 @@ const showcode = new (function () {
 
               //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
               break;
+            case "%INLINE%":
+              console.log(`-${highlightString}-`);
+              const codeTemplateEl = document.getElementById(highlightString.trim());
+              if (codeTemplateEl) {
+                if (codeTemplateEl.dataset.type === 'less') {
+                  code = formatCSS(codeTemplateEl.innerHTML);
+                } else {
+                  code = codeTemplateEl.innerHTML;
+                }
+              }
+              
+              break;
             default: 
               console.warn('Invalid command used', command);
           }
@@ -459,6 +459,23 @@ const showcode = new (function () {
 
 
     codeEl.innerHTML = code;
+
+    if (doScroll) {
+      // now ... let's see if we can scroll the page to the first highlighted part
+      const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
+      
+
+      if (firstHighlightdElement) {
+        const { body } = document;
+        const componentRoot = codeEl.closest('.showcode');
+        const uiEl = componentRoot.querySelector('.showcode__ui');
+        const highlightRect = firstHighlightdElement.getBoundingClientRect();
+        const uiRect = uiEl.getBoundingClientRect();
+        const behavior = body.classList.contains('play-pause-animation-button__prefers-reduced-motion') ? 'auto' : 'smooth';
+
+        firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
+      }
+    }
   }
 
   function removeBlankLines(almostFormatted) {
@@ -623,34 +640,40 @@ const showcode = new (function () {
 
       if (stepsJson) {
         try {
+          console.log('whoah!');
+          if (stepsJson.length > 1) {
+            for (let i in stepsJson) {
+              const optionEl = document.createElement('OPTION');
+              const step = stepsJson[i];
+              const { label, highlight, notes } = step;
 
-          for (let i in stepsJson) {
-            const optionEl = document.createElement('OPTION');
-            const step = stepsJson[i];
-            const { label, highlight, notes } = step;
+              optionEl.value = highlight;
 
-            optionEl.value = highlight;
+              switch(typeof notes) {
+                case "object":
+                  // assume it's an array.  Make it into a string
+                  optionEl.dataset.showcodeNotes = notes.join(' ');
+                  break;
+                default:
+                  optionEl.dataset.showcodeNotes = notes || '';
+              }
+              optionEl.innerHTML = `Step #${parseInt(i) + 1}: ${label}`;
+              
 
-            switch(typeof notes) {
-              case "object":
-                // assume it's an array.  Make it into a string
-                optionEl.dataset.showcodeNotes = notes.join(' ');
-                break;
-              default:
-                optionEl.dataset.showcodeNotes = notes || '';
+              selectEl.appendChild(optionEl);
+                        
             }
-            optionEl.innerHTML = `Step #${parseInt(i) + 1}: ${label}`;
             
+            widgetContainerEl.appendChild(labelEl)
+            widgetContainerEl.appendChild(selectEl);
 
-            selectEl.appendChild(optionEl);
-                      
+            selectEl.addEventListener('change', selectChangeEvent);
+            toggleEl.addEventListener('click', toggleClickEvent);
+          } else {
+            const { label, highlight, notes } = stepsJson[0];
+            widgetContainerEl.innerHTML = `<p>${label}</p>`;
+            displayStep(highlight, notes, codeblockId, codeEl, replaceHtmlRules, false);
           }
-          
-          widgetContainerEl.appendChild(labelEl)
-          widgetContainerEl.appendChild(selectEl);
-
-          selectEl.addEventListener('change', selectChangeEvent);
-          toggleEl.addEventListener('click', toggleClickEvent);
           
         } catch (ex) {
           console.log(ex);
@@ -660,7 +683,7 @@ const showcode = new (function () {
       // This is for a static, non-interactive showcode block.
       const step = stepsJson && stepsJson[0];
 
-      displayStep(step.highlight, step.notes, codeblockId, codeEl, replaceHtmlRules)
+      displayStep(step.highlight, step.notes, codeblockId, codeEl, replaceHtmlRules, false)
       return;
     }
   }

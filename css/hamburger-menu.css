@@ -331,6 +331,8 @@
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
     visibility: visible;
     padding-bottom: 3em;
+    padding-left: calc(50vw - (960px / 2));
+    padding-right: calc(50vw - (960px / 2));
   }
   .enable-flyout__open-level-button:hover,
   .enable-flyout__close-level-button:hover,
