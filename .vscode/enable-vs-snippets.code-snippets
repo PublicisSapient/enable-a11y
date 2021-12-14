@@ -203,7 +203,10 @@
 			"        </button>",
 			"      </li>",
 			"      ",
-			"      <!-- Start menu items for section $1 -->"
+			"      <!-- Start menu items for section $1 -->",
+			"    </ul>",
+			"  </div>",
+			"</li>"
 		]
 	},
 	"enable-example": {

@@ -16,7 +16,7 @@ fi
 DIR="$PWD"
 
 
-for i in images/main-menu images/hamburger-menu-copy
+for i in images/main-menu images/hamburger-menu-copy images/hero-image-text-resize
 do
     cd "$DIR"
     echo "CWD: $DIR"

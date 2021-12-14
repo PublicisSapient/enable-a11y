@@ -339,115 +339,172 @@
                                     </button>
                                 </li>
 
-                            
-                            <li class="enable-flyout__menu-item">
-                                <!-- Begin section ARIA Live Regions -->
-                                <button aria-expanded="false" aria-controls="aria-live-section"
-                                    class="enable-flyout__open-level-button">
-                                    ARIA Live Regions
-                                </button>
-                                <div class="enable-flyout__level-heading">ARIA Live Regions</div>
-                                <div id="aria-live-section" aria-label="ARIA Live Regions" role="group"
-                                    class="enable-flyout enable-flyout__level enable-flyout__dropdown">
-                                    <button class="enable-flyout__hamburger-icon-facade">
-                                        <span class="sr-only">
-                                            close mobile flyout
-                                        </span>
+
+                                <li class="enable-flyout__menu-item">
+                                    <!-- Begin section ARIA Live Regions -->
+                                    <button aria-expanded="false" aria-controls="aria-live-section"
+                                        class="enable-flyout__open-level-button">
+                                        ARIA Live Regions
                                     </button>
-                                    <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                        <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                            <button class="enable-flyout__close-level-button">
-                                                Go Back
-                                            </button>
-                                        </li>
+                                    <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+                                    <div id="aria-live-section" aria-label="ARIA Live Regions" role="group"
+                                        class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                        <button class="enable-flyout__hamburger-icon-facade">
+                                            <span class="sr-only">
+                                                close mobile flyout
+                                            </span>
+                                        </button>
+                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                                <button class="enable-flyout__close-level-button">
+                                                    Go Back
+                                                </button>
+                                            </li>
 
-                                        <!-- Start menu items for section ARIA Live Regions -->
+                                            <!-- Start menu items for section ARIA Live Regions -->
 
-                                        <li class="enable-flyout__menu-item">
-                                            <a href="alert.php" class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Alert
-                                            </a>
-                                        </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="alert.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Alert
+                                                </a>
+                                            </li>
 
-                                        <li class="enable-flyout__menu-item">
-                                            <a href="log.php" class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Log
-                                            </a>
-                                        </li>
-                                        <li class="enable-flyout__menu-item">
-                                            <a href="timer.php" class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Timer
-                                            </a>
-                                        </li>
-                                        <li class="enable-flyout__menu-item">
-                                            <a href="marquee.php" class="enable-flyout__link">
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="log.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Log
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="timer.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Timer
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="marquee.php" class="enable-flyout__link">
 
-                                                <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Marquee
-                                            </a>
-                                        </li>
-                                        <li class="enable-flyout__menu-item">
-                                            <a href="status.php" class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Status
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            
-                            <li class="enable-flyout__menu-item">
-                              <!-- Begin section Focus Management -->
-                              <button aria-expanded="false" aria-controls="focus-management-section"
-                                class="enable-flyout__open-level-button">
-                                Focus Management
-                              </button>
-                              <div class="enable-flyout__level-heading">Focus Management</div>
-                                <div id="focus-management-section" aria-label="Focus Management" role="group"
-                                  class="enable-flyout enable-flyout__level enable-flyout__dropdown">
-                                <button class="enable-flyout__hamburger-icon-facade">
-                                  <span class="sr-only">
-                                    close mobile flyout
-                                  </span>
-                                </button>
-                                <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                  <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                    <button class="enable-flyout__close-level-button">
-                                      Go Back
+                                                    <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Marquee
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="status.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Status
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="enable-flyout__menu-item">
+                                    <!-- Begin section Focus Management -->
+                                    <button aria-expanded="false" aria-controls="focus-management-section"
+                                        class="enable-flyout__open-level-button">
+                                        Focus Management
                                     </button>
-                                  </li>
-                                  
-                                  <!-- Start menu items for section Focus Management -->
+                                    <div class="enable-flyout__level-heading">Focus Management</div>
+                                    <div id="focus-management-section" aria-label="Focus Management" role="group"
+                                        class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                        <button class="enable-flyout__hamburger-icon-facade">
+                                            <span class="sr-only">
+                                                close mobile flyout
+                                            </span>
+                                        </button>
+                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                                <button class="enable-flyout__close-level-button">
+                                                    Go Back
+                                                </button>
+                                            </li>
 
-                                  <li class="enable-flyout__menu-item">
-                                    <a href="form-error-checking.php"
-                                      class="enable-flyout__link">
-                                      <?php pictureWebpPng("images/main-menu/form-error-checking", "", "class=\"enable-flyout__link-image\""); ?>
-                                      Form Error Checking
-                                    </a>
-                                  </li>
+                                            <!-- Start menu items for section Focus Management -->
 
-                                  <li class="enable-flyout__menu-item">
-                                    <a href="text-resize.php"
-                                      class="enable-flyout__link">
-                                      <?php pictureWebpPng("images/main-menu/text-resize", "", "class=\"enable-flyout__link-image\""); ?>
-                                      Text Resize Strategies
-                                    </a>
-                                  </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="form-error-checking.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/form-error-checking", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Form Error Checking
+                                                </a>
+                                            </li>
 
-                                  <li class="enable-flyout__menu-item">
-                                    <a href="focus-styling.php"
-                                      class="enable-flyout__link">
-                                      <?php pictureWebpPng("images/main-menu/focus-styling", "", "class=\"enable-flyout__link-image\""); ?>
-                                      Focus Styling Tips
-                                    </a>
-                                  </li>
+
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="focus-styling.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/focus-styling", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Focus Styling Tips
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="enable-flyout__menu-item">
+                                    <!-- Begin section Typography -->
+                                    <button aria-expanded="false" aria-controls="typography-section"
+                                        class="enable-flyout__open-level-button">
+                                        Typography
+                                    </button>
+                                    <div class="enable-flyout__level-heading">Typography</div>
+                                    <div id="typography-section" aria-label="Typography" role="group"
+                                        class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                        <button class="enable-flyout__hamburger-icon-facade">
+                                            <span class="sr-only">
+                                                close mobile flyout
+                                            </span>
+                                        </button>
+                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                                <button class="enable-flyout__close-level-button">
+                                                    Go Back
+                                                </button>
+                                            </li>
+
+                                            <!-- Start menu items for section Typography -->
+
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="text-resize.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/text-resize", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Basic Resizable Text
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="text-spacing.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/text-spacing", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Accessible Text Spacing
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="hero-image-text-resize.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/hero-image-text-resize", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Resizing Text In Hero Images
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="zoomable-viewport-units.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/zoomable-viewport-units", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Zoomable Viewport Units
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="accessible-text-svg.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/accessible-text-svg", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Accessible Text in SVGs
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                              <a href="text-contrast.php"
+                                                class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/text-contrast", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Text Contrast Strategies
+                                              </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </nav>

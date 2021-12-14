@@ -7,6 +7,11 @@
 
     &--image {
       width: 100%;
+
+      .text-zoom & {
+          clip-path: inset(66vw 0 0 0);
+          margin-top: -66vw;
+      }
     }
 
     &--text {
@@ -21,42 +26,59 @@
       padding: 10px;
       text-align: center;
 
-
-      @media only screen and (min-width: 455px) {
-        top: 37vw;
-        transform: translateY(-50%);
+      .text-zoom & {
+          position: static;
+          transform: none;
+          width: 100%;
+          max-width: initial;
+          background: #000;
       }
-
-
-      @media @tablet-up {
-
-        left: 30px;
-        top: 50%;
-        width: 40vw;
-        transform: translateY(-50%);
-        max-width: 395px;
-      }
-
     }
 
     &--main-text {
       line-height: 1;
-      font-size: (60 / @px);
+      font-size: (20 / @px);
       font-weight: bold;
 
-      @media only screen and (max-width: 455px) {
-          font-size: (20 / @px)
-      }
     }
 
     &--sub-text {
         margin-bottom: 0;
         font-size: (12/@px);
-
-        @media @tablet-up {
-            font-size: (16/@px);
-        }
     }
 
+    @media only screen and (min-width: 455px) {
+        &--text {
+            top: 37vw;
+            transform: translateY(-50%);
+        }
+    
+        &--main-text {
+            font-size: (60 / @px)
+        }
+      }
+    
+      @media @tablet-up {
+          &--text {
+            left: 30px;
+            top: 50%;
+            width: 40vw;
+            transform: translateY(-50%);
+            max-width: 395px;
+          }
+    
+          &--sub-text {
+            font-size: (15/@px);
+          }
+
+          &--image {
+            .text-zoom & {
+                clip-path: none;
+                margin-top: 0;
+            }
+          }
+      }
+
   }
+
 }
