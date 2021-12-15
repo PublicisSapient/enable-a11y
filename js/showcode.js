@@ -266,7 +266,9 @@ const showcode = new (function () {
         // "%JS% functionName"
         //    Will show the JS function that matches the string given (in this case, `functionName()`) 
         // "%INLINE% id"
-        //    Will show HTML comment encased in div with given id
+        //    Will show HTML encased in tag with given id
+        // "%OUTERHTML% id"
+        //    Will show HTML encased in tag with given id (including the tag)
 
         command = highlightString.match(commandsRe);
 
@@ -392,7 +394,6 @@ const showcode = new (function () {
               //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
               break;
             case "%INLINE%":
-              console.log(`-${highlightString}-`);
               const codeTemplateEl = document.getElementById(highlightString.trim());
               if (codeTemplateEl) {
                 if (codeTemplateEl.dataset.type === 'less') {
@@ -400,6 +401,17 @@ const showcode = new (function () {
                 } else {
                   code = codeTemplateEl.innerHTML;
                 }
+              }
+              
+              break;
+            case "%OUTERHTML%":
+              const id = highlightString.trim();
+              const outerHTMLTemplateEl = document.getElementById(id);
+              if (outerHTMLTemplateEl) {
+                let html = outerHTMLTemplateEl.outerHTML;
+                html = html.replace(`id="${id}"`, "");
+                html = html.replace(/\s{2,}/g, " ");
+                code = this.entify(formatHTML(html));
               }
               
               break;

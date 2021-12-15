@@ -95,7 +95,7 @@
         </p>
 
         <div id="html5-example" class="enable-example">
-            <progress id="html1" class="uam" max="100" value="0" data-timeout="1000" data-alert="html1-alert">
+            <progress aria-label="Loading progress" id="html1" class="uam" max="100" value="0" data-timeout="1000" data-alert="html1-alert">
             </progress>
             <strong class="sr-only" id="html1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
@@ -190,7 +190,7 @@
         </p>
 
         <div class="enable-example">
-            <div id="ex2" role="progressbar" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+            <div id="ex2" role="progressbar" aria-label="Loading progress" class="uam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
                 data-alert="ex2-alert" tabindex="-1" data-timeout="1000">
             </div>
         </div>

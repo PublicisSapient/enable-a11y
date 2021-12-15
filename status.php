@@ -15,6 +15,7 @@
 
 
     <main>
+        <h1>ARIA Status Role</h1>
         <h2>Visually Hidden Alert</h2>
 
         <p>This example is based on <a href="https://gist.github.com/nichtich/674522">this wiktionary lookup gist</a> by

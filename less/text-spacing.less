@@ -1,0 +1,66 @@
+@import "shared/mixins-and-vars";
+
+body {
+  // This is the default zoom factor (for progressive enhancement)
+}
+
+#text-spacing-demo {
+
+
+  &__text {
+    fill:black;
+    stroke-width: 2px; 
+    font-size: calc(32.5px * var(--text-zoom-factor)); 
+    
+    /* VML will not accept @font-face fonts (!!!) */
+    font-family: "Georgia", "Times New Roman", serif;
+    panose-1: 0 0 0 0 0 0 0 0 0 0;
+    font-style: italic;
+  }
+
+
+  &__svg {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(-4px);
+  }
+
+
+  &__shape-container {
+    position: relative;
+  }
+
+  &__shape-container {
+    width: 1024px;
+    height: 481px;
+    overflow: hidden;
+  }
+  
+  &__shape-container,
+  &__roller-coaster-image {
+    width: 100%;
+  }
+
+
+
+  &__roller-coaster-image {
+    left: 0px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__control {
+    z-index: 10;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  &__svg-text-path {
+    offset-distance: 50%;
+  }
+}

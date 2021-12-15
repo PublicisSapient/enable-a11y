@@ -4,7 +4,6 @@
 <head>
     <title>ARIA Slider Examples</title>
     <?php include "includes/common-head-tags.php";?>
-    <link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
     <link id="enable-slider-style" rel="stylesheet" type="text/css" href="css/slider.css" />
 
 </head>

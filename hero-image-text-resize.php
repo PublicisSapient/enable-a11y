@@ -16,7 +16,7 @@
 
 
 
-        <h2>Adjusting Layout on Text Resize</h2>
+        <h1>Adjusting Layout on Text Resize</h1>
 
         <p>
             For text inside hero images to be considered accessible, they must conform to the following guidelines:
@@ -47,30 +47,32 @@
 
         <p>Consider this screenshot of a typical desktop-sized hero image:</p>
 
-
-        <div class="text-resize__hero">
-            <div class="text-resize__container">
-                <div class="text-resize__hero--text">
-                    <div class="text-resize__hero--main-text" lang="tr">Cüneyt Arkın</div>
-                    <p class="text-resize__hero--sub-text">is a Turkish film actor, director, producer and martial
-                        artist. He is widely considered one of the most prominent Turkish actors of all
-                        time. Arkın's films have ranged from
-                        well-received dramas to mockbusters throughout his career spanning four decades. </p>
+        <div id="hero-example" class="enable-example">
+            <div class="text-resize__hero">
+                <div class="text-resize__container">
+                    <div class="text-resize__hero--text">
+                        <div class="text-resize__hero--main-text" lang="tr">Cüneyt Arkın</div>
+                        <p class="text-resize__hero--sub-text">is a Turkish film actor, director, producer and martial
+                            artist. He is widely considered one of the most prominent Turkish actors of all
+                            time. Arkın's films have ranged from
+                            well-received dramas to mockbusters throughout his career spanning four decades. </p>
+                    </div>
+                    <picture>
+                        <source
+                            srcset="images/text-resize/cuneyt-1024.webp 1024w, images/text-resize/cuneyt-960.webp 960w"
+                            media="(min-width: 720px)" type="image/webp">
+                        <source
+                            srcset="images/text-resize/cuneyt-portrait-729.webp 729w, images/text-resize/cuneyt-portrait-375.webp 375w"
+                            type="image/webp">
+                        <source
+                            srcset="images/text-resize/cuneyt-1024.jpg 1024w, images/text-resize/cuneyt-960.jpg 960w"
+                            media="(min-width: 720px)">
+                        <img class="text-resize__hero--image"
+                            alt="Portrait shot of Cüneyt Arkın in front of a starry background"
+                            srcset="images/text-resize/cuneyt-portrait-729.jpg 729w, images/text-resize/cuneyt-portrait-375.jpg 375w"
+                            sizes="100vw" />
+                    </picture>
                 </div>
-                <picture>
-                    <source srcset="images/text-resize/cuneyt-1024.webp 1024w, images/text-resize/cuneyt-960.webp 960w"
-                        media="(min-width: 720px)" type="image/webp">
-                    <source
-                        srcset="images/text-resize/cuneyt-portrait-729.webp 729w, images/text-resize/cuneyt-portrait-375.webp 375w"
-                        type="image/webp">
-                    <source srcset="images/text-resize/cuneyt-1024.jpg 1024w, images/text-resize/cuneyt-960.jpg 960w"
-                        media="(min-width: 720px)">
-                    <img class="text-resize__hero--image"
-                        alt="Portrait shot of Cüneyt Arkın in front of a starry background"
-                        srcset="images/text-resize/cuneyt-portrait-729.jpg 729w, images/text-resize/cuneyt-portrait-375.jpg 375w"
-                        sizes="100vw" />
-
-                </picture>
             </div>
         </div>
 
@@ -120,41 +122,83 @@
 
         <figure>
 
-            <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-spacing--fixed", "Screenshot of the above hero image with the browser's text-zoom set to 150% with JavaScript solution applied.  The layout has been altered so now the text is above the hero image instead of inside of it.")?>
+            <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-resize--fixed", "Screenshot of the above hero image with the browser's text-zoom set to 150% with JavaScript solution applied.  The layout has been altered so now the text is above the hero image instead of inside of it.")?>
 
             <figcaption>
                 Figure 3. Hero image with text zoom set to 150% and JavaScript solution applied.
             </figcaption>
         </figure>
 
-        
+        <p>
+            How does this work? When the user resizes text on the screen using the browser's text zooming functionality,
+            the JavaScript library adds the <code>text-zoom</code> class on the <code>body</code> tag. Additional styles
+            were created to adjust the layout of the hero.
+        </p>
+
+        <?php includeShowcode("hero-example")?>
+        <script type="application/json" id="hero-example-props">
+        {
+            "replaceHtmlRules": {
+            },
+            "steps": [
+            {
+                "label": "Code for the HTML text",
+                "highlight": "%OPENTAG%div class=\"text-resize__hero\" ||| &lt;/div&gt;[\\s]*$",
+                "notes": "Note the class for the container.  It will be used in the next step"
+            },
+            {
+                "label": "Make the container relatively positioned",
+                "highlight": "%CSS%text-resize-css~ .text-resize__hero ||| position:[^;]*;",
+                "notes": "This sets up the coordinate system for the container's absolute positioned children"
+            },
+            {
+                "label": "Position the text container",
+                "highlight": "%CSS%text-resize-css~ .text-resize__hero--text ||| position:[^;]*; ||| left:[^;]*; ||| top:[^;]*; ||| %CSS%text-resize-css~ @media only screen and (min-width: 720px) ||| position:[^;]*; ||| left:[^;]*; ||| top:[^;]*50%; ||| transform:[^;]*;",
+                "notes": "This positions the text overlaying the image.  Note there is different positioning for the mobile breakpoint (the first rule) as well as the mobile breakpoint (larger than 720px wide).  Note the <code>transform</code> code centers the text block vertically in the desktop breakpoint (thanks to CSS Tricks' article <a href=\"https://css-tricks.com/centering-css-complete-guide/\">Centering in CSS: A Complete Guide</a>)."
+            },
+            {
+                "label": "Code alterative CSS to position the text container when the user zooms the text within the browser",
+                "highlight": "%CSS%text-resize-css~ .text-zoom .text-resize__hero--text ||| position:[^;]*; ||| transform:[^;]*;",
+                "notes": "This one line of CSS puts the text container on top of the image."
+            },
+            {
+                "label": "Insert text-zoom-event.js at the end of the document",
+                "highlight": "%OUTERHTML% text-zoom-event-js",
+                "notes": ""
+            },
+            {
+                "label": "Ensure <code>text-zoom</code> class is added to the <code>body</code> tag when the user zooms text more than 100%",
+                "highlight": "%JS% textZoomDemo ||| body.classList[^;]*;",
+                "notes": "Full information about this library is available on my blog post, <a href=\"https://www.useragentman.com/blog/2019/05/26/how-to-style-resized-text-and-quickly-fix-wcag-1-4-4-issues/\">How To Style Resized Text and Quickly Fix WCAG 1.4.4 Issues</a>"
+            }
+        ]}
+        </script>
 
 
-        <p>
-        <p>
-        <p>
     </main>
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js"></script><br />
+    <script id="text-zoom-event-js" src="https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js"></script>
     <script>
-    const body = document.body;
+    const textZoomDemo = new function () {
+        const body = document.body;
 
-    function setCssTextZoomFactor() {
-        console.log(textZoomEvent.resizeFactor());
-        if (textZoomEvent.resizeFactor() > 1) {
-            body.classList.add('text-zoom');
-        } else {
-            body.classList.remove('text-zoom');
+        function setCssTextZoomFactor() {
+            if (textZoomEvent.resizeFactor() > 1) {
+                body.classList.add('text-zoom');
+            } else {
+                body.classList.remove('text-zoom');
+            }
         }
+        
+        // It is better if you give this the value of 
+        // parseFloat(getComputedStyle(document.documentElement).fontSize
+        // when the doc is not zoomed.
+        textZoomEvent.init(16);
+        setCssTextZoomFactor();
+        document.addEventListener('textzoom', setCssTextZoomFactor);
     }
-    // It is better if you give this the value of 
-    // parseFloat(getComputedStyle(document.documentElement).fontSize
-    // when the doc is not zoomed.
-    textZoomEvent.init(16);
-    setCssTextZoomFactor();
-    document.addEventListener('textzoom', setCssTextZoomFactor);
     </script>
 </body>
 

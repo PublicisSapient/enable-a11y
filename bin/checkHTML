@@ -1,19 +1,24 @@
 #!/bin/bash
 
 VNU_CMD='java -jar node_modules/vnu-jar/build/dist/vnu.jar '
-
-URLS=`lynx -dump http://localhost:8888/aria-role-demos |awk '/http/{print $2}' | grep -v '#' | grep localhost | sort -u`
+MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+A=`lynx -dump http://$MYIP:8888/enable/index.php`
+URLS=`lynx -dump http://$MYIP:8888/enable/index.php | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
 DOWNLOADED_URLS=""
 TEMP_FILES=""
 
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
-AXE_DELAYED_FILES="21-math.php"
+AXE_DELAYED_FILES="math.php"
 
 echo "Downloading rendered HTML..."
 
-rm tmp/* 2> /dev/null
+if [ ! -d tmp ]
+then
+	mkdir tmp
+fi
 
+rm tmp/* 2> /dev/null
 
 for i in $URLS
 do
@@ -28,8 +33,6 @@ do
 	TEMP_FILES="$TEMP_FILES $TEMP_FILE"
 done
 echo	
-echo "FILES: $TEMP_FILES"
-		
 
 echo "Checking HTML..."
 echo
@@ -42,7 +45,8 @@ OUTPUT=`$VNU_CMD $TEMP_FILES 2>&1 |
 	grep -v 'The “role” attribute must not be used on a “td” element' |
 	grep -v 'error: When the “srcset” attribute has any image candidate string with a width descriptor, the “sizes” attribute must also be present.' |
 	grep -v 'An “img” element which has an “alt” attribute whose value is the empty string must not have a “role” attribute.' |
-	grep -v 'info warning:'`
+	grep -v 'info warning:'|
+	grep -v 'Element “img” is missing required attribute “src”'`
 VNU_ERR_CODE="$?"
 
 echo "ERROR CODE: $VNU_ERR_CODE"
@@ -52,6 +56,7 @@ OUTPUT="${OUTPUT##*( )}"
 
 #.. Let's see if we can get the PHP output into each error to give the dev some context.
 READ_RETURN="0"
+
 
 echo "$OUTPUT" | (
 	while [ "$READ_RETURN" = "0" ]
@@ -68,16 +73,22 @@ echo "$OUTPUT" | (
 			BEGIN_LINE_NUM=`echo $BEGIN | awk -F'.' '{print $1}'`
 			END_LINE_NUM=`echo $END | awk -F'.' '{print $1}'`
 
-			echo "TEST: $BEGIN $END"
-			DIFF_NUM=`expr $END_LINE_NUM - $BEGIN_LINE_NUM + 1`
+			# echo "TEST: $BEGIN $END"
 
-			FILE=`echo $LINE | awk -F':' '{print $2}' | sed 's/"//g'`
-			CONTEXT=`cat $FILE | head -$END_LINE_NUM | tail -$DIFF_NUM`
+			if [ "$BEGIN" != "error" ]
+			then
+				DIFF_NUM=`expr $END_LINE_NUM - $BEGIN_LINE_NUM + 1`
+
+				FILE=`echo $LINE | awk -F':' '{print $2}' | sed 's/"//g'`
+				CONTEXT=`cat $FILE | head -$END_LINE_NUM | tail -$DIFF_NUM`
 
 
-			# echo "LINES_INFO: $LINES_INFO"
-			# echo "LINE_NUM: $BEGIN_LINE_NUM $END_LINE_NUM"
-			printf "$LINE\n\n$CONTEXT\n\n"
+				# echo "LINES_INFO: $LINES_INFO"
+				# echo "LINE_NUM: $BEGIN_LINE_NUM $END_LINE_NUM"
+				printf "$LINE\n\n$CONTEXT\n\n"
+			else
+				printf "GLOBAL ERROR: $LINE\n\n"
+			fi
 		fi
 	done
 )
@@ -92,6 +103,7 @@ if [ "$OUTPUT_LEN" -gt "1" ]
 then
 	# echo "$OUTPUT"
 	rm $TEMP_FILES
+	echo "Removed temp files."
 	exit
 fi
 
@@ -110,10 +122,13 @@ do
 	AXE_UNDELAYED_URLS=`echo "$AXE_UNDELAYED_URLS" | grep -v $delayed_file`
 done
 
-axe --exit --load-delay=2000 --chromedriver-path="node_modules/chromedriver/bin/chromedriver" $AXE_DELAYED_URLS
+echo "C: $AXE_DELAYED_URLS"
+echo "D: $AXE_UNDELAYED_URLS"
+
+axe --exit --load-delay=2000 --exclude ".enable-logo__text" $AXE_DELAYED_URLS
 AXE_DELAY_RETURN="$?"
 
-axe --exit --verbose --chromedriver-path="node_modules/chromedriver/bin/chromedriver" $AXE_UNDELAYED_URLS 
+axe --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS 
 AXE_UNDELAY_RETURN="$?"
 
 

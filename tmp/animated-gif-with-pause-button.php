@@ -1,4 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>Accessible Animated GIF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta charset="utf-8" />
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link rel="stylesheet" type="text/css" href="css/showcode.css">
+<link href="css/libs/prism.css" rel="stylesheet" />
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css" />
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css" />
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/hamburger-menu.css" />
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet" />
+
+<link id="site-css" rel="stylesheet" href="css/site.css" />
+
+
+
+
+    <link id="pauseable-animated-gif-style1" rel="stylesheet" type="text/css" href="css/pauseable-animated-gif.css" />
+
+</head>
+
+<body>
+
+    
 
 <div role="banner">
     <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
@@ -6,8 +39,13 @@
             Skip to Main Content
         </a>
     </div>
-    <?php include("includes/logo-link.php"); ?>
-
+    <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation" />
+        <span class="enable-logo__text">Enable</span>
+    </a>
+    <span class="enable-logo__sub-text">Modern Web Code Examples Accessible To Everyone</span>
+</div>
 
     <!-- Here is the main menu -->
     <div id="enable-hamburger-menu">
@@ -85,50 +123,66 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="button.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/button", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Button
+                                                    <picture>
+  <source srcset="images/main-menu/button.webp" type="image/webp">
+  <img src="images/main-menu/button.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Button
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="checkbox.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/checkbox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Checkboxes
+                                                    <picture>
+  <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+  <img src="images/main-menu/checkbox.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Checkboxes
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="radiogroup.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/radiogroup", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Radio Button Group
+                                                    <picture>
+  <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+  <img src="images/main-menu/radiogroup.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Radio Button Group
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="listbox.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/listbox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Select Box / Listbox
+                                                    <picture>
+  <source srcset="images/main-menu/listbox.webp" type="image/webp">
+  <img src="images/main-menu/listbox.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Select Box / Listbox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="textbox.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/textbox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Textbox
+                                                    <picture>
+  <source srcset="images/main-menu/textbox.webp" type="image/webp">
+  <img src="images/main-menu/textbox.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Textbox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="combobox.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/combobox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Autocomplete Combobox
+                                                    <picture>
+  <source srcset="images/main-menu/combobox.webp" type="image/webp">
+  <img src="images/main-menu/combobox.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Autocomplete Combobox
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="slider.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/slider", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Slider / Range Input
+                                                    <picture>
+  <source srcset="images/main-menu/slider.webp" type="image/webp">
+  <img src="images/main-menu/slider.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Slider / Range Input
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="spinner.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/spinner", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Numeric Input Spinner
+                                                    <picture>
+  <source srcset="images/main-menu/spinner.webp" type="image/webp">
+  <img src="images/main-menu/spinner.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Numeric Input Spinner
                                                 </a>
                                             </li>
                                         </ul>
@@ -160,52 +214,68 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="link.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/link", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Link
+                                                    <picture>
+  <source srcset="images/main-menu/link.webp" type="image/webp">
+  <img src="images/main-menu/link.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Link
                                                 </a>
                                             </li>
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="dropdown.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/dropdown", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Dropdown / Drawer / Expando
+                                                    <picture>
+  <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+  <img src="images/main-menu/dropdown.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Dropdown / Drawer / Expando
                                                 </a>
                                             </li>
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="tooltip.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/tooltip", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Tooltip
+                                                    <picture>
+  <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+  <img src="images/main-menu/tooltip.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Tooltip
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/multi-level-hamburger-menu", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Flyout / Hamburger Menu
+                                                    <picture>
+  <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+  <img src="images/main-menu/multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Flyout / Hamburger Menu
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="tabs.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/tabs", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Tablist
+                                                    <picture>
+  <source srcset="images/main-menu/tabs.webp" type="image/webp">
+  <img src="images/main-menu/tabs.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Tablist
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="switch.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/switch", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Switch
+                                                    <picture>
+  <source srcset="images/main-menu/switch.webp" type="image/webp">
+  <img src="images/main-menu/switch.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Switch
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="carousel.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/carousel", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Carousel
+                                                    <picture>
+  <source srcset="images/main-menu/carousel.webp" type="image/webp">
+  <img src="images/main-menu/carousel.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Carousel
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="skip-link.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/skip-link", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Skip Links
+                                                    <picture>
+  <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+  <img src="images/main-menu/skip-link.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Skip Links
                                                 </a>
                                             </li>
 
@@ -239,44 +309,58 @@
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="table.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/table", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Table
+                                        <picture>
+  <source srcset="images/main-menu/table.webp" type="image/webp">
+  <img src="images/main-menu/table.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Table
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="description-list.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/description-list", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Description List
+                                        <picture>
+  <source srcset="images/main-menu/description-list.webp" type="image/webp">
+  <img src="images/main-menu/description-list.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Description List
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="progress.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/progress", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Progress Bar
+                                        <picture>
+  <source srcset="images/main-menu/progress.webp" type="image/webp">
+  <img src="images/main-menu/progress.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Progress Bar
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="img.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/img", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Image
+                                        <picture>
+  <source srcset="images/main-menu/img.webp" type="image/webp">
+  <img src="images/main-menu/img.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Image
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="figure.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/figure", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Figure
+                                        <picture>
+  <source srcset="images/main-menu/figure.webp" type="image/webp">
+  <img src="images/main-menu/figure.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Figure
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="heading.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/heading", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Heading
+                                        <picture>
+  <source srcset="images/main-menu/heading.webp" type="image/webp">
+  <img src="images/main-menu/heading.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Heading
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="math.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/math", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Math
+                                        <picture>
+  <source srcset="images/main-menu/math.webp" type="image/webp">
+  <img src="images/main-menu/math.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Math
                                     </a>
                                 </li>
                                 <!-- Start menu items for section Content Elements -->
@@ -304,14 +388,18 @@
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/animated-gif-with-pause-button", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Animated GIF/WEBP
+                                        <picture>
+  <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+  <img src="images/main-menu/animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Animated GIF/WEBP
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
                                     <a href="play-pause-animations-button.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/play-pause-animations-button", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Pause All Animations Control
+                                        <picture>
+  <source srcset="images/main-menu/play-pause-animations-button.webp" type="image/webp">
+  <img src="images/main-menu/play-pause-animations-button.png" alt="" class="enable-flyout__link-image" />
+</picture>                                        Pause All Animations Control
                                     </a>
                                 </li>
 
@@ -365,34 +453,44 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="alert.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Alert
+                                                    <picture>
+  <source srcset="images/main-menu/alert.webp" type="image/webp">
+  <img src="images/main-menu/alert.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Alert
                                                 </a>
                                             </li>
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="log.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Log
+                                                    <picture>
+  <source srcset="images/main-menu/log.webp" type="image/webp">
+  <img src="images/main-menu/log.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Log
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="timer.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Timer
+                                                    <picture>
+  <source srcset="images/main-menu/timer.webp" type="image/webp">
+  <img src="images/main-menu/timer.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Timer
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="marquee.php" class="enable-flyout__link">
 
-                                                    <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Marquee
+                                                    <picture>
+  <source srcset="images/main-menu/marquee.webp" type="image/webp">
+  <img src="images/main-menu/marquee.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Marquee
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="status.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Status
+                                                    <picture>
+  <source srcset="images/main-menu/status.webp" type="image/webp">
+  <img src="images/main-menu/status.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Status
                                                 </a>
                                             </li>
                                         </ul>
@@ -424,16 +522,20 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="form-error-checking.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/form-error-checking", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Form Error Checking
+                                                    <picture>
+  <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+  <img src="images/main-menu/form-error-checking.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Form Error Checking
                                                 </a>
                                             </li>
 
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="focus-styling.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/focus-styling", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Focus Styling Tips
+                                                    <picture>
+  <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+  <img src="images/main-menu/focus-styling.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Focus Styling Tips
                                                 </a>
                                             </li>
                                         </ul>
@@ -464,39 +566,51 @@
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="text-resize.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/text-resize", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Basic Resizable Text
+                                                    <picture>
+  <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+  <img src="images/main-menu/text-resize.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Basic Resizable Text
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="text-spacing.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/text-spacing", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Accessible Text Spacing
+                                                    <picture>
+  <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+  <img src="images/main-menu/text-spacing.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Accessible Text Spacing
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="hero-image-text-resize.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/hero-image-text-resize", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Resizing Text In Hero Images
+                                                    <picture>
+  <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+  <img src="images/main-menu/hero-image-text-resize.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Resizing Text In Hero Images
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="zoomable-viewport-units.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/zoomable-viewport-units", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Zoomable Viewport Units
+                                                    <picture>
+  <source srcset="images/main-menu/zoomable-viewport-units.webp" type="image/webp">
+  <img src="images/main-menu/zoomable-viewport-units.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Zoomable Viewport Units
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                                 <a href="accessible-text-svg.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/accessible-text-svg", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Accessible Text in SVGs
+                                                    <picture>
+  <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+  <img src="images/main-menu/accessible-text-svg.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                    Accessible Text in SVGs
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
                                               <a href="text-contrast.php"
                                                 class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/text-contrast", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Text Contrast Strategies
+                                                <picture>
+  <source srcset="images/main-menu/text-contrast.webp" type="image/webp">
+  <img src="images/main-menu/text-contrast.png" alt="" class="enable-flyout__link-image" />
+</picture>                                                Text Contrast Strategies
                                               </a>
                                             </li>
                                         </ul>
@@ -518,3 +632,284 @@
     </div>
 
 </div>
+
+    <main>
+
+        <aside class="notes">
+
+            <p>This idea was stolen from <a href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
+                    Faulkner</a>.
+                The pause first example was from <a href="https://css-tricks.com/pause-gif-details-summary/">Chris
+                    Coyier</a>.
+        </aside>
+
+        <h1>Animated GIF With Pause Button Without JavaScript</h1>
+
+
+        <h2>Animation off by default</h2>
+
+        <div id="example1" class="enable-example">
+
+            <div class="pauseable-animated-gif">
+                <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
+                <details>
+
+                    <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="play">
+                    </summary>
+
+                    <div class="pausable-animated-gif__animated-image">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy"></div>
+                </details>
+            </div>
+        </div>
+
+
+
+                <div class="showcode__container">
+                        <h3 class="showcode__heading">Example code explanation</h3>
+            <p>
+                Below is the HTML of the above example. Use the dropdown
+                to highlight each of the individual steps that makes the
+                example accessible.
+            </p>
+
+                                    <div class="showcode">
+                <form class="showcode__ui">                                        <div id="example1__steps" class="showcode__steps"></div>
+                                        <div id="example1__notes" class="showcode__notes " role="alert" aria-live="assertive"
+                    ></div>
+                    <button id="example1__notes-view-toggle" class="showcode__notes-view-toggle" aria-describedby="example1__toggle-desc"><span
+                        class="showcode__notes-view-toggle--more">View More</span><span
+                        class="showcode__notes-view-toggle--less">View Less</span>
+                    </button>
+                    <div id="example1__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
+
+                    <div id="example1__example-desc" class="showcode__example--desc">
+                        ☜ Scroll to see full source ☞
+                    </div>
+                                    </form>
+                <pre class="showcode__example"><code
+                        data-showcode-id="example1"
+                        data-showcode-props="example1-props"
+                        tabindex="0"
+                        aria-describedby="example1__example-desc"
+                    >
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <script type="application/json" id="example1-props">
+        {
+            "replaceHtmlRules": {},
+            "steps": [{
+                    "label": "Put in details and summary tag structure in HTML",
+                    "highlight": "%OPENCLOSETAG%details ||| %OPENCLOSECONTENTTAG%summary",
+                    "notes": ""
+                },
+                {
+                    "label": "Place role of button inside the summary",
+                    "highlight": "role",
+                    "notes": "This is to ensure iOS reports this correctly to VoiceOver"
+                },
+                {
+                    "label": "Put animated GIF after the summary tag and the poster image of the animation just before the details tag",
+                    "highlight": "%OPENTAG%img",
+                    "notes": "Note that the div surrounding the animated GIF is there for styling purposes.  It ensures that, when the summary widget is expanded, the animated image is placed over the still poster"
+                },
+                {
+                    "label": "Don't forget the alternative text for the images!",
+                    "highlight": "alt",
+                    "notes": "Alternative text describes these images to screen reader users in reading mode."
+                },
+                {
+                    "label": "Add lazy attributes to images",
+                    "highlight": "loading",
+                    "notes": "This adds a performance boost by only showing the image when it is visible in the browser viewport."
+                },
+                {
+                    "label": "Put aria label inside of summary tag",
+                    "highlight": "aria-label",
+                    "notes": "Note that when the summary is opened, this aria-label must be changed to <strong>'pause'</strong> and <strong>'play'</strong> when it is closed again."
+                },
+                {
+                    "label": "Change the summary tag's aria-label onclick",
+                    "highlight": "%JS% 'const animatedGifPause = new function () {'; animatedGifPause.setSummaryAriaLabel; animatedGifPause.summaryClickHandler; animatedGifPause.init#document.addEventListener; '}'; '// Initialize the object.\nanimatedGifPause.init();'",
+                    "notes": "This is the only JavaScript really needed for this example.  Without it, the state of the pause/play button would not be reported to screen readers."
+                }
+            ]
+        }
+        </script>
+
+        <h2>Animation on by default</h2>
+
+        <div id="example2" class="enable-example">
+            <div class="pauseable-animated-gif">
+                <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
+                <details open>
+
+                    <!-- added role=button to summary to resolve iOS funkiness -->
+
+                    <summary role="button" class="pauseable-animated-gif__play-pause-button" aria-label="pause">
+                    </summary>
+
+                    <div class="pausable-animated-gif__animated-image">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy">
+                    </div>
+                </details>
+            </div>
+        </div>
+
+                <div class="showcode__container">
+                        <h3 class="showcode__heading">Example code explanation</h3>
+            <p>
+                Below is the HTML of the above example. Use the dropdown
+                to highlight each of the individual steps that makes the
+                example accessible.
+            </p>
+
+                                    <div class="showcode">
+                <form class="showcode__ui">                                        <div id="example2__steps" class="showcode__steps"></div>
+                                        <div id="example2__notes" class="showcode__notes " role="alert" aria-live="assertive"
+                    ></div>
+                    <button id="example2__notes-view-toggle" class="showcode__notes-view-toggle" aria-describedby="example2__toggle-desc"><span
+                        class="showcode__notes-view-toggle--more">View More</span><span
+                        class="showcode__notes-view-toggle--less">View Less</span>
+                    </button>
+                    <div id="example2__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
+
+                    <div id="example2__example-desc" class="showcode__example--desc">
+                        ☜ Scroll to see full source ☞
+                    </div>
+                                    </form>
+                <pre class="showcode__example"><code
+                        data-showcode-id="example2"
+                        data-showcode-props="example2-props"
+                        tabindex="0"
+                        aria-describedby="example2__example-desc"
+                    >
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <script type="application/json" id="example2-props">
+        {
+            "replaceHtmlRules": {},
+            "steps": [{
+                    "label": "Ensure details has open attribute set",
+                    "highlight": "open",
+                    "notes": "This ensures the animated version is shown by default."
+                },
+                {
+                    "label": "Ensure the summary tag has the correct aria-label",
+                    "highlight": "aria-label",
+                    "notes": "After doing this step, make sure all other steps in example 1 above are followed."
+                }
+            ]
+        }
+        </script>
+
+        <h2>Animation off when OS prefers reduced motion.</h2>
+
+        <p>
+            This is the only example on this page that does require JavaScript. It detect whether the OS
+            has "reduced motion" turned on by default. If it is, then it keeps the details widget closed.
+        </p>
+
+        <div id="example3" class="enable-example">
+            <div class="pauseable-animated-gif pauseable-animated-gif--respects-os-motion-settings">
+                <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
+                <details>
+
+                    <!-- added role=button to summary to resolve iOS funkiness -->
+
+                    <summary role="button" class="pauseable-animated-gif__play-pause-button"></summary>
+
+                    <div class="pausable-animated-gif__animated-image">
+                        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running"
+                            loading="lazy">
+                    </div>
+                </details>
+            </div>
+        </div>
+
+                <div class="showcode__container">
+                        <h3 class="showcode__heading">Example code explanation</h3>
+            <p>
+                Below is the HTML of the above example. Use the dropdown
+                to highlight each of the individual steps that makes the
+                example accessible.
+            </p>
+
+                                    <div class="showcode">
+                <form class="showcode__ui">                                        <div id="example3__steps" class="showcode__steps"></div>
+                                        <div id="example3__notes" class="showcode__notes " role="alert" aria-live="assertive"
+                    ></div>
+                    <button id="example3__notes-view-toggle" class="showcode__notes-view-toggle" aria-describedby="example3__toggle-desc"><span
+                        class="showcode__notes-view-toggle--more">View More</span><span
+                        class="showcode__notes-view-toggle--less">View Less</span>
+                    </button>
+                    <div id="example3__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
+
+                    <div id="example3__example-desc" class="showcode__example--desc">
+                        ☜ Scroll to see full source ☞
+                    </div>
+                                    </form>
+                <pre class="showcode__example"><code
+                        data-showcode-id="example3"
+                        data-showcode-props="example3-props"
+                        tabindex="0"
+                        aria-describedby="example3__example-desc"
+                    >
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <script type="application/json" id="example3-props">
+        {
+            "replaceHtmlRules": {},
+            "steps": [{
+                    "label": "Put CSS class on container to configure the player",
+                    "highlight": "pauseable-animated-gif--respects-os-motion-settings",
+                    "notes": "This class will be used in step 3."
+                },
+                {
+                    "label": "Use CSS variables to store prefers motion settings",
+                    "highlight": "%CSS%pauseable-animated-gif-style1~ :root;@media (prefers-reduced-motion)",
+                    "notes": "This sets the CSS variable <strong>--prefers-reduced-motion</strong> to 1 if the user has asked the OS to reduce animations, and 0 otherwise."
+                },
+                {
+                    "label": "Use JS to find out if it should show the animation ot not",
+                    "highlight": "%JS%animatedGifPause.respectReduceMotionSettings",
+                    "notes": "This function, if run at load time, will initially show the animation if the OS prefers-reduced-motion setting is not on."
+                }
+            ]
+        }
+        </script>
+
+
+    </main>
+
+    <script src="js/shared/enable-animatedGif.js"></script>
+
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love originally by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>, released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>
+
+    </footer> 
+        
+
+    <!-- These three script tags are for the code samples -->
+    <script src="node_modules/indent.js/lib/indent.min.js"></script>
+    <script src="js/libs/prism.js" data-manual></script>
+    <script src="js/showcode.js"></script>
+
+    <!-- Hamburger Menu -->
+    <script src="js/accessibility.js"></script>
+    <script src="js/hamburger.js"></script>
+
+    <script src="js/shared/enable-visible-on-focus.js"></script></body>
+
+</html>

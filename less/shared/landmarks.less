@@ -100,8 +100,9 @@ nav {
   width: 500px;
 }
 
-main,
-[role="main"] {
+main:not(.with-full-bleed-hero),
+[role="main"]:not(.with-full-bleed-hero),
+.with-full-bleed-hero__content {
   padding: 1em;
   margin: 0 auto;
   max-width: 1024px;
