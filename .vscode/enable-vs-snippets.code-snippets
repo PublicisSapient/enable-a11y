@@ -218,5 +218,18 @@
 		"scope": "",
 		"prefix": "class-enable-example",
 		"body": "class=\"enable-example\""
+	},
+	"figure": {
+		"scope": "",
+		"prefix": "figure",
+		"body":  [
+			"<figure>",
+
+			"  <?php pictureWebpPng(\"$1\", \"$2\")?>",
+			"  <figcaption>",
+			"    Figure $3: $4",
+			"  </figcaption>",
+			"</figure>"
+		]
 	}
 }

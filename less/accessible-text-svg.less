@@ -1,0 +1,78 @@
+@import "shared/mixins-and-vars";
+
+body {
+  // This is the default zoom factor (for progressive enhancement)
+  --text-zoom-factor: 1;
+}
+
+#accessible-text-svg-demo {
+
+
+  &__text {
+    fill:black;
+    stroke-width: 2px; 
+    font-size: calc(54px * var(--text-zoom-factor)); 
+    font-family: "Georgia", "Times New Roman", serif;
+    panose-1: 0 0 0 0 0 0 0 0 0 0;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  &__svgTextPath2 {
+    transform: translateY(-50px);
+  }
+
+  &__svg {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    transform: translateY(-4px);
+  }
+
+  &__intro-text {
+    font-size: calc(54px * var(--text-zoom-factor));
+    z-index: 2;
+    color: black;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    dominant-baseline: hanging;
+  }
+
+
+  &__shape-container {
+    position: relative;
+    width: 1024px;
+    height: 62.7vw;
+    overflow: hidden;
+
+    @media @desktop {
+      height: 681px;
+    }
+  }
+  
+  &__shape-container,
+  &__roller-coaster-image {
+    width: 100%;
+  }
+
+
+
+  &__roller-coaster-image {
+    left: 0px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__control {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  &__svg-text-path {
+    offset-distance: 50%;
+  }
+}

@@ -35,7 +35,8 @@ const showcode = new (function () {
     'aria-posinset',
     'aria-setsize',
     'for',
-    'href'
+    'href',
+    'xlink:href'
   ]
 
   this.entify = function (s, options) {
@@ -444,7 +445,7 @@ const showcode = new (function () {
             for (let j=0; j<matches.length; j++) {
               let ids = matches[j].split('"')[1];
 
-              if (attribute === 'href' && ids.indexOf('#') === 0) {
+              if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
                 ids = ids.substring(1);
               }
 

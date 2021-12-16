@@ -178,9 +178,15 @@ code {
     background-color: rgb(245, 222, 179);
 
     select {
-      width: calc(100% - @select-width - 40px);
-      float: right;
-      margin: 3px 40px 0 0;
+      display: block;
+      width: calc(100% - 20px);
+      margin: 0 auto;
+
+      @media @tablet-up {
+        width: calc(100% - 10rem - 10px);
+        float: right;
+        margin: 3px 10px 0 0;
+      }
     }
   }
 

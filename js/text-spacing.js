@@ -1,5 +1,5 @@
 const textpathAnimation = new function () {
-    const buttonEl = document.getElementById('text-spacing-demo__control');
+    const buttonEl = document.getElementById('accessible-text-svg-demo__control');
     const rolloutEl = document.getElementById('rollout');
     const rollinEl = document.getElementById('rollin');
     let state = 'rollout';

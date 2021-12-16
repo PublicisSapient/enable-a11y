@@ -57,66 +57,32 @@
         </script>
 
         <template id="px-to-rem__less">
-            // 1. Define a base font size. For example,
-            // 16px for the html root would translate to @px: 16rem;
+// 1. Define a base font size. For example,
+// 16px for the html root would translate to @px: 16rem;
 
-            @px: 16rem;
+@px: 16rem;
 
-            // 2. Set your pixel values as fractions. For example,
-            // 16px would be 16/@px, 200px would be 200/@px, and so on.
+// 2. Set your pixel values as fractions. For example,
+// 16px would be 16/@px, 200px would be 200/@px, and so on.
 
-            .example {
-            font-size: 16/@px;
-            margin: 20/@px 0;
-            padding: 20/@px 10/@px;
-            }
+.example {
+font-size: 16/@px;
+margin: 20/@px 0;
+padding: 20/@px 10/@px;
+}
 
-            // Compiled output
+// Compiled output
 
-            // .example {
-            // font-size: 1rem;
-            // margin: 1.25rem 0;
-            // padding: 1.25rem 0.625rem;
-            // }
+// .example {
+// font-size: 1rem;
+// margin: 1.25rem 0;
+// padding: 1.25rem 0.625rem;
+// }
 
-            // http://lesscss.org/features/#features-overview-feature-operations
+// http://lesscss.org/features/#features-overview-feature-operations
         </template>
 
-        <h2>Adjusting Layout on Text Resize</h2>
-
-
-        <!--
-            <picture>
-              <source srcset='images/text-resize/images/text-resize/cuneyt-portrait-375.webp 375w, images/text-resize/images/text-resize/cuneyt-portrait-729.webp 729w, images/text-resize/images/text-resize/cuneyt-portrait-960.webp 960w, images/text-resize/images/text-resize/cuneyt-portrait-1024.webp 1024w' type='image/webp'>
-              <img alt="Portrait shot of Cüneyt Arkın in front of a starry background" srcset='images/text-resize/images/text-resize/cuneyt-portrait-375.jpg 375w, images/text-resize/images/text-resize/cuneyt-portrait-729.jpg 729w, images/text-resize/cuneyt-portrait-960.jpg 960w, images/text-resize/cuneyt-portrait-1024.jpg 1024w'  />
-            </picture>
-            -->
-
-        <div class="text-resize__hero">
-            <div class="text-resize__container">
-                <div class="text-resize__hero--text">
-                    <div class="text-resize__hero--main-text" lang="tr">Cüneyt Arkın</div>
-                    <p class="text-resize__hero--sub-text">is a Turkish film actor, director, producer and martial
-                        artist. He is widely considered one of the most prominent Turkish actors of all
-                        time. Arkın's films have ranged from
-                        well-received dramas to mockbusters throughout his career spanning four decades. </p>
-                </div>
-                <picture>
-                    <source srcset="images/text-resize/cuneyt-1024.webp 1024w, images/text-resize/cuneyt-960.webp 960w"
-                        media="(min-width: 720px)" type="image/webp">
-                    <source
-                        srcset="images/text-resize/cuneyt-portrait-729.webp 729w, images/text-resize/cuneyt-portrait-375.webp 375w"
-                        type="image/webp">
-                    <source srcset="images/text-resize/cuneyt-1024.jpg 1024w, images/text-resize/cuneyt-960.jpg 960w"
-                        media="(min-width: 720px)">
-                    <img class="text-resize__hero--image"
-                        alt="Portrait shot of Cüneyt Arkın in front of a starry background"
-                        srcset="images/text-resize/cuneyt-portrait-729.jpg 729w, images/text-resize/cuneyt-portrait-375.jpg 375w"
-                        sizes="100vw" />
-
-                </picture>
-            </div>
-        </div>
+        
 
         <h2>How to Resize Text in Modern Browsers</h2>
         <p>
