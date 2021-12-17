@@ -588,29 +588,12 @@
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
-                                                <a href="zoomable-viewport-units.php" class="enable-flyout__link">
-                                                    <picture>
-  <source srcset="images/main-menu/zoomable-viewport-units.webp" type="image/webp">
-  <img src="images/main-menu/zoomable-viewport-units.png" alt="" class="enable-flyout__link-image" />
-</picture>                                                    Zoomable Viewport Units
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
                                                 <a href="accessible-text-svg.php" class="enable-flyout__link">
                                                     <picture>
   <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
   <img src="images/main-menu/accessible-text-svg.png" alt="" class="enable-flyout__link-image" />
 </picture>                                                    Accessible Text in SVGs
                                                 </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                              <a href="text-contrast.php"
-                                                class="enable-flyout__link">
-                                                <picture>
-  <source srcset="images/main-menu/text-contrast.webp" type="image/webp">
-  <img src="images/main-menu/text-contrast.png" alt="" class="enable-flyout__link-image" />
-</picture>                                                Text Contrast Strategies
-                                              </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -662,57 +645,8 @@
             href="javascript:(function(){var d=document,id='phltsbkmklt',el=d.getElementById(id),f=d.querySelectorAll('iframe'),i=0,l=f.length;if(el){function removeFromShadows(root){for(var el of root.querySelectorAll('*')){if(el.shadowRoot){el.shadowRoot.getElementById(id).remove();removeFromShadows(el.shadowRoot);}}}el.remove();if(l){for(i=0;i<l;i++){try{f[i].contentWindow.document.getElementById(id).remove();removeFromShadows(f[i].contentWindow.document);}catch(e){console.log(e)}}}removeFromShadows(d);}else{s=d.createElement('style');s.id=id;s.appendChild(d.createTextNode('*{line-height:1.5 !important;letter-spacing:0.12em !important;word-spacing:0.16em !important;}p{margin-bottom:2em !important;}'));function applyToShadows(root){for(var el of root.querySelectorAll('*')){if(el.shadowRoot){el.shadowRoot.appendChild(s.cloneNode(true));applyToShadows(el.shadowRoot);}}}d.getElementsByTagName('head')[0].appendChild(s);for(i=0;i<l;i++){try{f[i].contentWindow.document.getElementsByTagName('head')[0].appendChild(s.cloneNode(true));applyToShadows(f[i].contentWindow.document);}catch(e){console.log(e)}}applyToShadows(d);}})();">
             Change the text spacing on this page
         </a>
-
-        <h2>Fixing Text Spacing Issues</h2>
-
-        <div class="text-spacing-demo">
-            <div id="text-spacing-demo__shape-container">
-                <svg id="text-spacing-demo__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0,0,1024,481">
-                    <defs>
-
-                        <!-- This is a path with two curves fused together -->
-                        <path id="text-spacing-demo__path1" fill="none" stroke="black" stroke-width="1" d="M 1, 281 
-				           C 479, 74, 502, 65, 779, 200
-				        	   834, 236, 915, 343, 1023, 468">
-                        </path>
-                    </defs>
-                    <text id="text-spacing-demo__text">
-                        <textpath id="text-spacing-demo__svgTextPath" class="textpath" xlink:href="#text-spacing-demo__path1" startOffset="1%">
-                            <tspan dy="0.3em">Type Doesn't Have To Be Flat!</tspan>
-                            <animate
-                                attributeName="startOffset"
-                                to="100%"
-                                begin="indefinite"
-                                dur="1s"
-                                repeatCount="1"
-                                id="rollout"
-                                fill="freeze"
-                            />
-                            <animate
-                                attributeName="startOffset"
-                                to="1%"
-                                begin="indefinite"
-                                dur="1s"
-                                id="rollin"
-                                fill="freeze"
-                            />
-                            
-                        </textpath>
-                    </text>
-
-                </svg>
-
-                <img id="text-spacing-demo__roller-coaster-image" src="images/text-spacing/roller-coaster.jpg" alt="Rollercoaster" />
-
-                <button id="text-spacing-demo__control">Animate Text</button>
-            </div>
-        </div>
-
-
-
-
     </main>
+
 
         <footer aria-label="Copyright Information">
             
@@ -732,32 +666,6 @@
     <script src="js/accessibility.js"></script>
     <script src="js/hamburger.js"></script>
 
-    <script src="js/shared/enable-visible-on-focus.js"></script>
-    <script src="js/text-spacing.js"></script>
-
-    <script id="text-zoom-event-js" src="https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js"></script>
-    <script>
-    const svgTextSpacingDemo = new function () {
-        const body = document.body;
-
-        function setTextZoomFactor() {
-            const zoomFactor = textZoomEvent.resizeFactor();
-            document.body.style.setProperty("--text-zoom-factor", zoomFactor);
-        }
-
-        function init() {
-            // It is better if you give this the value of 
-            // parseFloat(getComputedStyle(document.documentElement).fontSize
-            // when the doc is not zoomed.
-            textZoomEvent.init(16);
-            setTextZoomFactor();
-            document.addEventListener('textzoom', setTextZoomFactor);
-        }
-        
-        init();
-    }
-    </script>
-
-</body>
+    <script src="js/shared/enable-visible-on-focus.js"></script></body>
 
 </html>

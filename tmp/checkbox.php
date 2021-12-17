@@ -592,29 +592,12 @@
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
-                                                <a href="zoomable-viewport-units.php" class="enable-flyout__link">
-                                                    <picture>
-  <source srcset="images/main-menu/zoomable-viewport-units.webp" type="image/webp">
-  <img src="images/main-menu/zoomable-viewport-units.png" alt="" class="enable-flyout__link-image" />
-</picture>                                                    Zoomable Viewport Units
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
                                                 <a href="accessible-text-svg.php" class="enable-flyout__link">
                                                     <picture>
   <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
   <img src="images/main-menu/accessible-text-svg.png" alt="" class="enable-flyout__link-image" />
 </picture>                                                    Accessible Text in SVGs
                                                 </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                              <a href="text-contrast.php"
-                                                class="enable-flyout__link">
-                                                <picture>
-  <source srcset="images/main-menu/text-contrast.webp" type="image/webp">
-  <img src="images/main-menu/text-contrast.png" alt="" class="enable-flyout__link-image" />
-</picture>                                                Text Contrast Strategies
-                                              </a>
                                             </li>
                                         </ul>
                                     </div>

@@ -481,23 +481,10 @@
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
-                                                <a href="zoomable-viewport-units.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/zoomable-viewport-units", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Zoomable Viewport Units
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
                                                 <a href="accessible-text-svg.php" class="enable-flyout__link">
                                                     <?php pictureWebpPng("images/main-menu/accessible-text-svg", "", "class=\"enable-flyout__link-image\""); ?>
                                                     Accessible Text in SVGs
                                                 </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                              <a href="text-contrast.php"
-                                                class="enable-flyout__link">
-                                                <?php pictureWebpPng("images/main-menu/text-contrast", "", "class=\"enable-flyout__link-image\""); ?>
-                                                Text Contrast Strategies
-                                              </a>
                                             </li>
                                         </ul>
                                     </div>
