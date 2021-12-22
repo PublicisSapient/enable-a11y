@@ -79,11 +79,14 @@ const showcode = new (function () {
     return localCode + '\n\n';
   }
 
-  const getRawCSSData = async (el) => {
-    const response = await fetch(el.href).then(response => {
+  const getTextFromFile = async (url) => {
+    console.log('url', url)
+    const response = await fetch(url).then(response => {
       
       return response.clone().text();
     });
+
+    console.log('response', response);
 
     return response;
   } 
@@ -135,7 +138,7 @@ const showcode = new (function () {
 
       let returnedSelectorVal;
       const r = (async () => {
-        getRawCSSData(el).then((css) => {
+        getTextFromFile(el.href).then((css) => {
           const index = css.indexOf(selectorPropertyPairs[0]); //css.match(selectorRegEx);
           returnedSelectorVal = css.substring(index);
           const endBraceIndex = returnedSelectorVal.indexOf('}');
@@ -293,7 +296,8 @@ const showcode = new (function () {
               
               
           }
-          
+          let splitHighlightString;
+
           switch (command) {
             case '%OPENTAG%':
               highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
@@ -306,8 +310,19 @@ const showcode = new (function () {
             case '%OPENCLOSECONTENTTAG%':
               highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?\/${highlightString}&gt;`
               break;
+            case '%FILE%':
+              splitHighlightString = highlightString.split('~');
+              console.log('file', splitHighlightString);
+              const fileName = splitHighlightString[0].trim();
+              code = (async () => {
+                getTextFromFile(fileName).then((text) => {
+                  codeEl.innerHTML = text
+                });
+              })();
+              console.log('returned', code);
+              break;
             case '%CSS%':
-              const splitHighlightString = highlightString.split('~');
+              splitHighlightString = highlightString.split('~');
               const cssID = splitHighlightString[0].trim();
               let localCode;
 

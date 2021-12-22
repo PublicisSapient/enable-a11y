@@ -1,21 +1,32 @@
-(function ($) {
+function ablePlayerCustomizations($) {
     $(document).ready(function () {
 
+        // Replace initDescription and handleTranscriptToggle methods with custom ones 
+        // that add extra functionality
         AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
         AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
+
+        // Add event listener for when fullscreen functionality is activated on AblePlayer
         document.addEventListener('fullscreenchange', fullScreenChangeHandler, true);
         
+        // Ensure cookies that pause the video while audio descriptions are read are
+        // set before audio description functionality is initialized.  After
+        // initialization, adjust layout of page if transcript is visible.
         AblePlayer.prototype.initDescription = function () {
             setDescriptionCookies();
             this.oldInitDescription();
             adjustTranscriptVisibility(this);
         }
 
+        // When transcript button is clicked, adjust layout of page.
         AblePlayer.prototype.handleTranscriptToggle = function () {
             this.oldHandleTranscriptToggle();
             adjustTranscriptVisibility(this);
         }
 
+        // When transcript is visible, ensure proper CSS classes are 
+        // set the DOM so that the video takes up half the screen
+        // and that the transcript placed next to the video.
         function adjustTranscriptVisibility(player) {
             if (player.$transcriptDiv.is(':visible')) {
                 player.$ableDiv.addClass('able-transcript-visible');
@@ -24,6 +35,8 @@
             }
         }
         
+        // This ensures that the video is paused when audio descriptions are
+        // being read out. 
         function setDescriptionCookies() {
             AblePlayerInstances.forEach((el) => {
                 /* Ensure Audio Descriptions pause video when they are spoken */
@@ -34,10 +47,7 @@
             });
         }
 
-
-
-
-        //override default Able Player controls icons
+        // Override default Able Player controls icons
         window.AblePlayer.prototype.getSvgData = function (button) {
             // returns array of values for creating <svg> tag for specified button
             // 0 = <svg> viewBox attribute
@@ -208,7 +218,7 @@
         };
     });
 
-  
+    // Adjust layout when video full screen functionality is activated.
     function fullScreenChangeHandler(e) {
         if (document.fullscreenElement) {
             document.fullscreenElement.classList.add('is-fullscreen');
@@ -217,4 +227,6 @@
         }
     }
 
-})(jQuery);
+}
+
+ablePlayerCustomizations(jQuery);

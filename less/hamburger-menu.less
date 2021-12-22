@@ -13,6 +13,10 @@
 @hamburger-translate-y: min(@flyout-width, 350px);
 @hamburger-offset-y: calc(-1 * @hamburger-translate-y);
 
+// This would be normally set to a lower number.  However, AblePlayer's
+// max z-index is 10000, so we are compensating.
+@min-z-index: 10001;
+
 .icon-mixin(@img) {
   content: "";
   display: inline-block;
@@ -53,7 +57,7 @@
   position: absolute;
   text-decoration: none;
   top: 0;
-  z-index: 100;
+  z-index: (@min-z-index + 1);
   display: none;
   height: 100vh;
   overflow-x: hidden;
@@ -299,7 +303,7 @@
     position: absolute;
     right: 2px;
     top: 0;
-    z-index: 101;
+    z-index: (@min-z-index + 2);
 
   }
 
@@ -313,7 +317,7 @@
     top: 0;
     transition: opacity @large-anim-time ease-in-out;
     width: 100%;
-    z-index: 3;
+    z-index: @min-z-index;
   }
 
   &__open-menu-button {

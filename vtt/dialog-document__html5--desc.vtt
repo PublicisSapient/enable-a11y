@@ -55,10 +55,10 @@
 (The user double taps the screen.  A modal opens, that reads "Login" with a form so the user can log into the webpage.  Keyboard focus is on the close button of the modal)
 
 00:05:18.000 --> 00:05:20.009
-(The user tries to swipe backwards part the close button.  Focus goes to the whole document in the web browser.)
+(The user tries to swipe backwards past the close button.  Focus goes to the whole document in the web browser.)
 
 00:05:45.000 --> 00:05:47.009
-(Scene changes to a Firefox's development tools, which shows aria-hidden="true" being set on HTML elements outside of the dialog HTML element.)
+(Scene changes to Firefox's development tools, which shows aria-hidden="true" being set on HTML elements outside of the dialog HTML element.)
 
 00:06:01.000 --> 00:06:03.009
 (Scene changes to a blog post entitled "Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile" on the useragentman.com website.)
