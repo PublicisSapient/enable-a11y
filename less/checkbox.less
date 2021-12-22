@@ -70,12 +70,12 @@
       border: solid 1px #333;
     }
 
-    /*Hide the checkmark by default*/
+    /* Hide the checkmark by default */
     + label::after {
       content: none;
     }
 
-    /*Unhide on the checked state*/
+    /* Unhide on the checked state */
     &:checked + label::after {
       content: "";
       height: ((0.31 * @width-checkbox)  / @px);
@@ -93,7 +93,7 @@
       position: absolute;
       display: inline-block;
 
-      /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+      /* 16px width of fake checkbox + 6px distance between fake checkbox and text */
       margin-left: ((0 - @width-checkbox ) / @px);
 
       &::before,
@@ -101,7 +101,7 @@
         position: absolute;
         content: "";
 
-        /*Needed for the line-height to take effect*/
+        /* Needed for the line-height to take effect */
         display: inline-block;
         pointer-events: none;
       }

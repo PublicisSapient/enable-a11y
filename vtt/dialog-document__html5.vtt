@@ -1,0 +1,340 @@
+﻿WEBVTT FILE
+
+1
+00:01.000 --> 00:07.605
+In this video, I will be demonstrating how to create an
+accessible modal dialog using the HTML5  tag.
+
+2
+00:07.854 --> 00:11.603
+It uses a polyfill for browsers
+that don't support it yet natively.
+
+3
+00:11.644 --> 00:15.894
+For details on the
+polyfill and more information on how this demo was
+built,
+
+4
+00:15.895 --> 00:21.146
+please checkout the video's accompanying
+blog post on useragentman.com.
+
+5
+00:21.897 --> 00:26.645
+The first browser we are going to demonstrate is
+Safari using VoiceOver, which is built into OSX.
+
+6
+00:27.146 --> 00:33.143
+Right now, keyboard focus is on the link just
+before the button labelled "Log in to our website",
+
+7
+00:33.144 --> 00:35.395
+which will open the modal when pressed.
+
+8
+00:35.396 --> 00:38.646
+So, let's use the keyboard to
+navigate to the button...
+
+9
+00:38.647 --> 00:41.396
+[VoiceOver says: Log in to our website, button, main, two items]
+
+10
+00:41.644 --> 00:43.894
+and now we'll hit the enter key.
+
+11
+00:43.918 --> 00:49.146
+[VoiceOver says: Close this dialog, web dialog, login, 1 item. In order to continue, please log into the application.]
+
+12
+00:49.147 --> 00:53.646
+You may have noticed that when the dialog
+opened, the close button gains focus.
+
+13
+00:53.647 --> 00:58.142
+Also, note that the screen reader
+said "close this dialog, button".
+
+14
+00:58.143 --> 01:03.394
+This tells the screen reader user that focus
+is on a button labelled "close this dialog".
+
+15
+01:04.500 --> 01:10.528
+(Incidentally, this label was coded as
+alt attribute for the button's  tag).
+
+16
+01:09.424 --> 01:14.395
+You'll also note that the screen
+reader reports it is a web dialog.
+
+17
+01:14.396 --> 01:17.895
+That's because the button is
+inside a HTML  tag.
+
+18
+01:18.000 --> 01:25.249
+VoiceOver would also announce this if the modal was coded as a  tag with its role attribute set to "dialog".
+
+19
+01:25.146 --> 01:33.146
+In fact, setting the role to dialog is what the polyfill does on all  dialog tags so screen readers can report the dialog properly to the user.
+
+20
+01:33.650 --> 01:39.143
+Finally, you will notice the screen reader reads
+out the header, and the description in the dialog.
+
+21
+01:39.144 --> 01:44.453
+This happens because the  tag has its
+aria-labelledby attribute set to the id of the header,
+
+22
+01:44.478 --> 01:49.666
+and its aria-describedby attribute
+set the id of the description text.
+
+23
+01:50.269 --> 01:56.020
+Now, let's find out what happens when
+we tab past the end of the dialog.
+
+24
+01:56.520 --> 01:58.226
+[VoiceOver: Username, edit text with autofill menu.]
+
+25
+01:58.227 --> 02:00.480
+[Password, secure edit text with...]
+
+26
+02:00.481 --> 02:01.729
+[Cancel, button.]
+
+27
+02:01.730 --> 02:03.479
+[Confirm, button.]
+
+28
+02:03.503 --> 02:05.726
+[Close this dialog, button.]
+
+29
+02:05.727 --> 02:12.475
+You'll notice that when I hit the tab key after the "Confirm" button, focus goes to the first element in the dialog.
+
+30
+02:12.476 --> 02:16.227
+Focus never goes to any interactive
+element behind the modal.
+
+31
+02:16.228 --> 02:22.228
+For browsers that support the  tag, this
+automatically happens because it is native browser behavior.
+
+32
+02:22.229 --> 02:29.229
+However, for browsers that don't, the polyfill
+steps in and uses focus events to implement this.
+
+33
+02:29.230 --> 02:33.727
+If focus goes outside the dialog,
+it loops back to the first element of the modal...
+
+34
+02:33.728 --> 02:36.476
+if we are tabbing forward, of course.
+
+35
+02:36.477 --> 02:41.728
+If we are tabbing backward, using a shift-TAB,
+then focus goes the last element of the modal.
+
+36
+02:41.729 --> 02:45.727
+And now, let's find out what
+happens when I close the modal...
+
+37
+02:45.751 --> 02:48.476
+[VoiceOver: Login in to our website, button, main, 2 items.]
+
+38
+02:48.477 --> 02:51.232
+You'll notice that focus is placed
+back to the button that opened it.
+
+39
+02:51.233 --> 02:58.977
+Surprisingly, this is not default browser behavior, even though this is considered best practice in the WAI-ARIA documentation.
+
+40
+02:58.978 --> 03:01.517
+It is added by a bit of code in the
+polyfill.
+
+41
+03:01.518 --> 03:06.769
+This code is executed for all browsers, including those with native support for the dialog tag.
+
+42
+03:06.770 --> 03:14.268
+Now let's look at Google Chrome using
+Android's built in screen reader, Talkback.
+
+43
+03:14.269 --> 03:22.269
+I am using a Samsung tablet for this demonstration, but the behavior for this  device is, more or less, the same on any Android device using this software.
+
+44
+03:24.526 --> 03:28.520
+I'm going to start by navigating to the link
+just before the button that opens the modal.
+
+45
+03:28.770 --> 03:36.521
+Since this device doesn't have a keyboard, Talkback users must swipe left and right to navigate back and forth within the document.
+
+46
+03:36.522 --> 03:43.517
+[(Talkback says short beginnings of dialog while user swipes through text)]
+
+47
+03:43.522 --> 03:48.771
+[Talkback: Creating Accessible HTML5 Modal Dialogs for Desktop and Modal, link.]
+
+48
+03:48.772 --> 03:53.023
+[Log in to our website, button, out of list.]
+
+49
+03:53.024 --> 04:01.024
+You'll also note that it looks like focus is not just going to the interactive elements on the page (like the tab key does on a keyboard enabled device).
+
+50
+04:03.018 --> 04:10.019
+Instead, Talkback's so-called "accessibility focus"
+goes to all the items on the page that can be read.
+
+51
+04:10.020 --> 04:16.516
+This is default behavior for Talkback, and iOS's
+VoiceOver screen reader has similar behavior.
+
+52
+04:16.517 --> 04:20.019
+This can be changed, but I will
+leave that for a future video.
+
+53
+04:20.019 --> 04:23.023
+Now let's double tap to
+activate this button.
+
+54
+04:23.024 --> 04:27.268
+[Talkback: Close this dialog, button. Double-tap to activate.]
+
+55
+04:29.521 --> 04:32.272
+Again, you will notice that
+focus goes to the close button.
+
+56
+04:32.273 --> 04:37.520
+However, unlike VoiceOver, Talkback didn't
+read the dialog's heading or the description.
+
+57
+04:37.521 --> 04:41.021
+It also doesn't mention that you
+are now inside a web dialog.
+
+58
+04:41.185 --> 04:45.437
+This is because different screen readers don't
+support all the ARIA-attributes equally.
+
+59
+04:45.438 --> 04:51.933
+This is the reason why I chose "close this dialog"
+as the alt attribute for the close button image.
+
+60
+04:51.934 --> 04:57.940
+It tells the user that they are inside a dialog, even if a
+particular screen reader doesn't support the dialog role.
+
+61
+04:57.941 --> 05:05.941
+This is a good example that, just like in all aspects of web development, you should use progressive-enhancement to make your code bullet-proof.
+
+62
+05:06.936 --> 05:11.938
+Now, let's try to swipe backwards past the
+close button at the beginning of the dialog.
+
+63
+05:11.962 --> 05:18.436
+[Talkback says: Creating An Accessible Dialog Using the HTML5 Dialog Tag, web view.]
+
+64
+05:18.437 --> 05:23.934
+You'll notice that focus doesn't go behind the modal,
+just like when I was using a desktop screen reader.
+
+65
+05:23.935 --> 05:28.436
+However, this is not because of the
+focus events I described earlier.
+
+66
+05:28.437 --> 05:36.437
+The problem with most (if not all) mobile screen readers is that they don't fire focus and blur events back to the browser when swiping over the document.
+
+67
+05:36.686 --> 05:44.686
+In order to code this behavior on mobile, developers must set aria-hidden= "true" to all elements outside of the modal dialog.
+
+68
+05:45.187 --> 05:49.934
+This may seem a little scary if you have a lot
+of interactive elements outside the dialog,
+
+69
+05:49.935 --> 05:55.186
+I mean, who wants to set aria-hidden
+attributes on all of those DOM nodes?
+
+70
+05:55.187 --> 06:00.684
+However, this is an efficient algorithm to do this, and
+it's in the blog post that accompanies this video.
+
+71
+06:00.685 --> 06:07.185
+If you are playing this video on the YouTube website,
+the link to the post is the description below it.
+
+72
+06:07.186 --> 06:12.185
+Hope this demonstration was helpful! Please
+feel free to comment on the my YouTube page,
+
+73
+06:12.186 --> 06:19.184
+or my blog, useragentman.com. I'd
+love to hear your feedback. Thank you.

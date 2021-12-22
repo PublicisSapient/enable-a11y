@@ -7301,7 +7301,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 (function ($) {
 	AblePlayer.prototype.initDescription = function() {
-
 		// set default mode for delivering description (open vs closed)
 		// based on availability and user preference
 
@@ -7321,9 +7320,9 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		// exposeTextDescriptions == true if text description is to be announced audibly; otherwise false
 
 		var thisObj = this;
-    if (this.refreshingDesc) {
-		  this.prevDescFormat = this.useDescFormat;
-    }
+		if (this.refreshingDesc) {
+			this.prevDescFormat = this.useDescFormat;
+		}
 		else {
 			// this is the initial build
 			// first, check to see if there's an open-described version of this video
@@ -7394,6 +7393,8 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 						}
 					}
 				}
+
+				console.log('!!!!', this);
 			}
 		}
 		if (this.descOn) {
@@ -7621,7 +7622,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					msg.voice = this.descVoices[this.descVoiceIndex]; // Note: some voices don't support altering params
 					msg.voiceURI = 'native';
 					msg.volume = 1; // 0 to 1
-					msg.rate = 1.5; // 0.1 to 10 (1 is normal human speech; 2 is fast but easily decipherable; anything above 2 is blazing fast)
+					msg.rate = 1; // 0.1 to 10 (1 is normal human speech; 2 is fast but easily decipherable; anything above 2 is blazing fast)
 					msg.pitch = 1; //0 to 2
 					msg.text = descText;
 					msg.lang = this.captionLang;

@@ -1,0 +1,452 @@
+{
+    "wireMagic": "pb3",
+    "pens": [ {
+    
+    } ],
+    "wsWinStyles": [ {
+    
+    } ],
+    "wpWinPositions": [ {
+    
+    } ],
+    "events": [ {
+      "tStartMs": 1000,
+      "dDurationMs": 6605,
+      "segs": [ {
+        "utf8": "In this video, I will be demonstrating how to create an\n accessible modal dialog using the HTML5 \u003cdialog\u003e tag."
+      } ]
+    }, {
+      "tStartMs": 7854,
+      "dDurationMs": 3749,
+      "segs": [ {
+        "utf8": "It uses a polyfill for browsers\n that don't support it yet natively."
+      } ]
+    }, {
+      "tStartMs": 11644,
+      "dDurationMs": 4250,
+      "segs": [ {
+        "utf8": "For details on the\n polyfill and more information on how this demo was\n built,"
+      } ]
+    }, {
+      "tStartMs": 15895,
+      "dDurationMs": 5251,
+      "segs": [ {
+        "utf8": "please checkout the video's accompanying\n blog post on useragentman.com."
+      } ]
+    }, {
+      "tStartMs": 21897,
+      "dDurationMs": 4748,
+      "segs": [ {
+        "utf8": "The first browser we are going to demonstrate is\n Safari using VoiceOver, which is built into OSX."
+      } ]
+    }, {
+      "tStartMs": 27146,
+      "dDurationMs": 5997,
+      "segs": [ {
+        "utf8": "Right now, keyboard focus is on the link just\n before the button labelled \"Log in to our website\","
+      } ]
+    }, {
+      "tStartMs": 33144,
+      "dDurationMs": 2251,
+      "segs": [ {
+        "utf8": "which will open the modal when pressed."
+      } ]
+    }, {
+      "tStartMs": 35396,
+      "dDurationMs": 3250,
+      "segs": [ {
+        "utf8": "So, let's use the keyboard to\n navigate to the button..."
+      } ]
+    }, {
+      "tStartMs": 38647,
+      "dDurationMs": 2749,
+      "segs": [ {
+        "utf8": "[VoiceOver says: Log in to our website, button, main, two items]"
+      } ]
+    }, {
+      "tStartMs": 41644,
+      "dDurationMs": 2250,
+      "segs": [ {
+        "utf8": "and now we'll hit the enter key."
+      } ]
+    }, {
+      "tStartMs": 43918,
+      "dDurationMs": 5228,
+      "segs": [ {
+        "utf8": "[VoiceOver says: Close this dialog, web dialog, login, 1 item. In order to continue, please log into the application.]"
+      } ]
+    }, {
+      "tStartMs": 49147,
+      "dDurationMs": 4499,
+      "segs": [ {
+        "utf8": "You may have noticed that when the dialog\n opened, the close button gains focus."
+      } ]
+    }, {
+      "tStartMs": 53647,
+      "dDurationMs": 4495,
+      "segs": [ {
+        "utf8": "Also, note that the screen reader\n said \"close this dialog, button\"."
+      } ]
+    }, {
+      "tStartMs": 58143,
+      "dDurationMs": 5251,
+      "segs": [ {
+        "utf8": "This tells the screen reader user that focus\n is on a button labelled \"close this dialog\"."
+      } ]
+    }, {
+      "tStartMs": 63395,
+      "dDurationMs": 6028,
+      "segs": [ {
+        "utf8": "(Incidentally, this label was coded as\n alt attribute for the button's \u003cimg\u003e tag)."
+      } ]
+    }, {
+      "tStartMs": 69424,
+      "dDurationMs": 4971,
+      "segs": [ {
+        "utf8": "You'll also note that the screen\n reader reports it is a web dialog."
+      } ]
+    }, {
+      "tStartMs": 74396,
+      "dDurationMs": 3499,
+      "segs": [ {
+        "utf8": "That's because the button is\n inside a HTML \u003cdialog\u003e tag."
+      } ]
+    }, {
+      "tStartMs": 77896,
+      "dDurationMs": 7249,
+      "segs": [ {
+        "utf8": "VoiceOver would also announce this if the modal was coded as a \u003cdiv\u003e tag with its role attribute set to \"dialog\"."
+      } ]
+    }, {
+      "tStartMs": 85146,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "In fact, setting the role to dialog is what the polyfill does on all  dialog tags so screen readers can report the dialog properly to the user."
+      } ]
+    }, {
+      "tStartMs": 93650,
+      "dDurationMs": 5493,
+      "segs": [ {
+        "utf8": "Finally, you will notice the screen reader reads\n out the header, and the description in the dialog."
+      } ]
+    }, {
+      "tStartMs": 99144,
+      "dDurationMs": 5309,
+      "segs": [ {
+        "utf8": "This happens because the \u003cdialog\u003e tag has its\n aria-labelledby attribute set to the id of the header,"
+      } ]
+    }, {
+      "tStartMs": 104478,
+      "dDurationMs": 5188,
+      "segs": [ {
+        "utf8": "and its aria-describedby attribute\n set the id of the description text."
+      } ]
+    }, {
+      "tStartMs": 110269,
+      "dDurationMs": 5751,
+      "segs": [ {
+        "utf8": "Now, let's find out what happens when\n we tab past the end of the dialog."
+      } ]
+    }, {
+      "tStartMs": 116520,
+      "dDurationMs": 1706,
+      "segs": [ {
+        "utf8": "[VoiceOver: Username, edit text with autofill menu.]"
+      } ]
+    }, {
+      "tStartMs": 118227,
+      "dDurationMs": 2253,
+      "segs": [ {
+        "utf8": "[Password, secure edit text with...]"
+      } ]
+    }, {
+      "tStartMs": 120481,
+      "dDurationMs": 1248,
+      "segs": [ {
+        "utf8": "[Cancel, button.]"
+      } ]
+    }, {
+      "tStartMs": 121730,
+      "dDurationMs": 1749,
+      "segs": [ {
+        "utf8": "[Confirm, button.]"
+      } ]
+    }, {
+      "tStartMs": 123503,
+      "dDurationMs": 2223,
+      "segs": [ {
+        "utf8": "[Close this dialog, button.]"
+      } ]
+    }, {
+      "tStartMs": 125727,
+      "dDurationMs": 6748,
+      "segs": [ {
+        "utf8": "You'll notice that when I hit the tab key after the \"Confirm\" button, focus goes to the first element in the dialog."
+      } ]
+    }, {
+      "tStartMs": 132476,
+      "dDurationMs": 3751,
+      "segs": [ {
+        "utf8": "Focus never goes to any interactive\n element behind the modal."
+      } ]
+    }, {
+      "tStartMs": 136228,
+      "dDurationMs": 6000,
+      "segs": [ {
+        "utf8": "For browsers that support the \u003cdialog\u003e tag, this\n automatically happens because it is native browser behavior."
+      } ]
+    }, {
+      "tStartMs": 142229,
+      "dDurationMs": 7000,
+      "segs": [ {
+        "utf8": "However, for browsers that don't, the polyfill\n steps in and uses focus events to implement this."
+      } ]
+    }, {
+      "tStartMs": 149230,
+      "dDurationMs": 4497,
+      "segs": [ {
+        "utf8": "If focus goes outside the dialog,\n it loops back to the first element of the modal..."
+      } ]
+    }, {
+      "tStartMs": 153728,
+      "dDurationMs": 2748,
+      "segs": [ {
+        "utf8": "if we are tabbing forward, of course."
+      } ]
+    }, {
+      "tStartMs": 156477,
+      "dDurationMs": 5251,
+      "segs": [ {
+        "utf8": "If we are tabbing backward, using a shift-TAB,\n then focus goes the last element of the modal."
+      } ]
+    }, {
+      "tStartMs": 161729,
+      "dDurationMs": 3998,
+      "segs": [ {
+        "utf8": "And now, let's find out what\n happens when I close the modal..."
+      } ]
+    }, {
+      "tStartMs": 165751,
+      "dDurationMs": 2725,
+      "segs": [ {
+        "utf8": "[VoiceOver: Login in to our website, button, main, 2 items.]"
+      } ]
+    }, {
+      "tStartMs": 168477,
+      "dDurationMs": 2755,
+      "segs": [ {
+        "utf8": "You'll notice that focus is placed\n back to the button that opened it."
+      } ]
+    }, {
+      "tStartMs": 171233,
+      "dDurationMs": 7744,
+      "segs": [ {
+        "utf8": "Surprisingly, this is not default browser behavior, even though this is considered best practice in the WAI-ARIA documentation."
+      } ]
+    }, {
+      "tStartMs": 178978,
+      "dDurationMs": 2539,
+      "segs": [ {
+        "utf8": "It is added by a bit of code in the\n polyfill."
+      } ]
+    }, {
+      "tStartMs": 181518,
+      "dDurationMs": 5251,
+      "segs": [ {
+        "utf8": "This code is executed for all browsers, including those with native support for the dialog tag."
+      } ]
+    }, {
+      "tStartMs": 186770,
+      "dDurationMs": 7498,
+      "segs": [ {
+        "utf8": "Now let's look at Google Chrome using\n Android's built in screen reader, Talkback."
+      } ]
+    }, {
+      "tStartMs": 194269,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "I am using a Samsung tablet for this demonstration, but the behavior for this  device is, more or less, the same on any Android device using this software."
+      } ]
+    }, {
+      "tStartMs": 204526,
+      "dDurationMs": 3994,
+      "segs": [ {
+        "utf8": "I'm going to start by navigating to the link\n just before the button that opens the modal."
+      } ]
+    }, {
+      "tStartMs": 208770,
+      "dDurationMs": 7751,
+      "segs": [ {
+        "utf8": "Since this device doesn't have a keyboard, Talkback users must swipe left and right to navigate back and forth within the document."
+      } ]
+    }, {
+      "tStartMs": 216522,
+      "dDurationMs": 6995,
+      "segs": [ {
+        "utf8": "[(Talkback says short beginnings of dialog while user swipes through text)]"
+      } ]
+    }, {
+      "tStartMs": 223522,
+      "dDurationMs": 5249,
+      "segs": [ {
+        "utf8": "[Talkback: Creating Accessible HTML5 Modal Dialogs for Desktop and Modal, link.]"
+      } ]
+    }, {
+      "tStartMs": 228772,
+      "dDurationMs": 4251,
+      "segs": [ {
+        "utf8": "[Log in to our website, button, out of list.]"
+      } ]
+    }, {
+      "tStartMs": 233024,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "You'll also note that it looks like focus is not just going to the interactive elements on the page (like the tab key does on a keyboard enabled device)."
+      } ]
+    }, {
+      "tStartMs": 243018,
+      "dDurationMs": 7001,
+      "segs": [ {
+        "utf8": "Instead, Talkback's so-called \"accessibility focus\"\n goes to all the items on the page that can be read."
+      } ]
+    }, {
+      "tStartMs": 250020,
+      "dDurationMs": 6496,
+      "segs": [ {
+        "utf8": "This is default behavior for Talkback, and iOS's\n VoiceOver screen reader has similar behavior."
+      } ]
+    }, {
+      "tStartMs": 256517,
+      "dDurationMs": 3502,
+      "segs": [ {
+        "utf8": "This can be changed, but I will\n leave that for a future video."
+      } ]
+    }, {
+      "tStartMs": 260020,
+      "dDurationMs": 3003,
+      "segs": [ {
+        "utf8": "Now let's double tap to\n activate this button."
+      } ]
+    }, {
+      "tStartMs": 263024,
+      "dDurationMs": 4244,
+      "segs": [ {
+        "utf8": "[Talkback: Close this dialog, button. Double-tap to activate.]"
+      } ]
+    }, {
+      "tStartMs": 269521,
+      "dDurationMs": 2751,
+      "segs": [ {
+        "utf8": "Again, you will notice that\n focus goes to the close button."
+      } ]
+    }, {
+      "tStartMs": 272273,
+      "dDurationMs": 5247,
+      "segs": [ {
+        "utf8": "However, unlike VoiceOver, Talkback didn't\n read the dialog's heading or the description."
+      } ]
+    }, {
+      "tStartMs": 277521,
+      "dDurationMs": 3500,
+      "segs": [ {
+        "utf8": "It also doesn't mention that you\n are now inside a web dialog."
+      } ]
+    }, {
+      "tStartMs": 281185,
+      "dDurationMs": 4252,
+      "segs": [ {
+        "utf8": "This is because different screen readers don't\n support all the ARIA-attributes equally."
+      } ]
+    }, {
+      "tStartMs": 285438,
+      "dDurationMs": 6495,
+      "segs": [ {
+        "utf8": "This is the reason why I chose \"close this dialog\"\n as the alt attribute for the close button image."
+      } ]
+    }, {
+      "tStartMs": 291934,
+      "dDurationMs": 6006,
+      "segs": [ {
+        "utf8": "It tells the user that they are inside a dialog, even if a\n particular screen reader doesn't support the dialog role."
+      } ]
+    }, {
+      "tStartMs": 297941,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "This is a good example that, just like in all aspects of web development, you should use progressive-enhancement to make your code bullet-proof."
+      } ]
+    }, {
+      "tStartMs": 306936,
+      "dDurationMs": 5002,
+      "segs": [ {
+        "utf8": "Now, let's try to swipe backwards past the\n close button at the beginning of the dialog."
+      } ]
+    }, {
+      "tStartMs": 311962,
+      "dDurationMs": 6474,
+      "segs": [ {
+        "utf8": "[Talkback says: Creating An Accessible Dialog Using the HTML5 Dialog Tag, web view.]"
+      } ]
+    }, {
+      "tStartMs": 318437,
+      "dDurationMs": 5497,
+      "segs": [ {
+        "utf8": "You'll notice that focus doesn't go behind the modal,\n just like when I was using a desktop screen reader."
+      } ]
+    }, {
+      "tStartMs": 323935,
+      "dDurationMs": 4501,
+      "segs": [ {
+        "utf8": "However, this is not because of the\n focus events I described earlier."
+      } ]
+    }, {
+      "tStartMs": 328437,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "The problem with most (if not all) mobile screen readers is that they don't fire focus and blur events back to the browser when swiping over the document."
+      } ]
+    }, {
+      "tStartMs": 336686,
+      "dDurationMs": 8000,
+      "segs": [ {
+        "utf8": "In order to code this behavior on mobile, developers must set aria-hidden= \"true\" to all elements outside of the modal dialog."
+      } ]
+    }, {
+      "tStartMs": 345187,
+      "dDurationMs": 4747,
+      "segs": [ {
+        "utf8": "This may seem a little scary if you have a lot\n of interactive elements outside the dialog,"
+      } ]
+    }, {
+      "tStartMs": 349935,
+      "dDurationMs": 5251,
+      "segs": [ {
+        "utf8": "I mean, who wants to set aria-hidden\n attributes on all of those DOM nodes?"
+      } ]
+    }, {
+      "tStartMs": 355187,
+      "dDurationMs": 5497,
+      "segs": [ {
+        "utf8": "However, this is an efficient algorithm to do this, and\n it's in the blog post that accompanies this video."
+      } ]
+    }, {
+      "tStartMs": 360685,
+      "dDurationMs": 6500,
+      "segs": [ {
+        "utf8": "If you are playing this video on the YouTube website,\n the link to the post is the description below it."
+      } ]
+    }, {
+      "tStartMs": 367186,
+      "dDurationMs": 4999,
+      "segs": [ {
+        "utf8": "Hope this demonstration was helpful! Please\n feel free to comment on the my YouTube page,"
+      } ]
+    }, {
+      "tStartMs": 372186,
+      "dDurationMs": 6998,
+      "segs": [ {
+        "utf8": "or my blog, useragentman.com. I'd\n love to hear your feedback. Thank you."
+      } ]
+    } ]
+  }
+  

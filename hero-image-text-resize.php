@@ -39,7 +39,7 @@
 
         <p>The first item is easily resolved: just use "live" HTML text. Checking contrast is covered in the <a
                 href="text-contrast.php">Text Contrast Strategies</a> section of Enable. The final two requirements,
-            though, can bring up some hard-numbing issues that I have seen over and over again, so I thought I'd show
+            though, can bring up some hard, mind-numbing issues that I have seen over and over again, so I thought I'd show
             how I've fixed these.
         </p>
 

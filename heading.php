@@ -28,7 +28,7 @@
                     <a href="https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/">Heading Set Styling
                         with CSS </a>
                     by
-                    <a href="https://hugogiraudel.com/">Hugo Giraudel</a>
+                    <a href="https://kittygiraudel.com">Kitty Giraudel</a>
                 </li>
             </ul>
         </aside>

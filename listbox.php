@@ -44,12 +44,14 @@
                     Opening the widget:
                     <ul>
                         <li>
-                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how many
+                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how
+                            many
                             other
                             options there are (e.g. menu 26 items)
                         </li>
                         <li>
-                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the selected
+                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the
+                            selected
                             value.
                             The ARIA version is described as a list and the HTML version is a "combo box, expanded".
                         </li>
@@ -58,10 +60,12 @@
                 <li>
                     Selecting a value:
                 <li>
-                    <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the list
+                    <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the
+                    list
                     (e.g.
                     Californium, text, 2 of 26). Native version just reads the just the value
-                    <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the list.</strong>
+                    <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the
+                        list.</strong>
 
                 </li>
             </ul>
@@ -194,8 +198,12 @@
 
         <h2>Custom select CSS</h2>
 
-        <p>What follows is an excellent customly styled native HTML5 select box.  It uses code from <a href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross browser CSS demo</a> that you can download via NPM.
-        Instead of putting my usual notes as an explantion, visit their blog post <a href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It’s 2019</a>.
+        <p>What follows is an excellent customly styled native HTML5 select box. It uses code from <a
+                href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a
+                href="https://github.com/filamentgroup/select-css">cross browser CSS demo</a> that you can download via
+            NPM.
+            Instead of putting my usual notes as an explantion, visit their blog post <a
+                href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It’s 2019</a>.
 
         <div class="enable-example">
             <label class="select-css__label" for="fave-fruit">
@@ -208,12 +216,18 @@
                 <option>Grapes</option>
                 <option>Oranges</option>
             </select>
-    </div>
+        </div>
 
 
 
         <h2>ARIA listbox example</h2>
 
+        <p>
+            <strong>Note:</strong> The styling of this component is taken from <a
+                href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">The W3C's
+                Collapsible Dropdown Listbox Example</a> &mdash; the script, however, has been replaced with custom
+            code.
+        </p>
         <p>
             Choose your favorite transuranic element (actinide or transactinide).
         </p>
@@ -313,7 +327,7 @@
             </div>
         </div>
 
-        
+
 
         <?php includeShowcode("aria-example")?>
 

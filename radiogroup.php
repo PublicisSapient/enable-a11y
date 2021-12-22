@@ -25,7 +25,7 @@
                         Grouping Roles to Identify Related Form Controls</a>
                     from the W3C. The styling on the ARIA version was refactored from
                     <a
-                        href="https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072">http://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/</a>
+                        href="http://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/">Styling checkboxes and radio buttons using CSS</a>
                     by
                     <a href="http://code.iamkate.com/">Kate Morley</a>.
                 </li>
@@ -104,7 +104,7 @@
         <h2>Example 2: HTML5 radio butons that have custom styling</h2>
 
         <p>I refactored the basic CSS from this <a href="https://codepen.io/manabox/pen/raQmpL">codepen</a>
-            by <a href="webcreatormana.com">Mana</a>. I added focus states as well <a
+            by <a href="http://webcreatormana.com">Mana</a>. I added focus states as well <a
                 href="https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/">ensuring
                 that these styled facades will be discoverable to users navigating by touch</a>.
         </p>

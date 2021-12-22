@@ -1,6 +1,59 @@
 (function ($) {
     $(document).ready(function () {
-        autoPlayVideoModal();
+
+        AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
+
+        AblePlayer.prototype.initDescription = function () {
+            setDescriptionCookies();
+            this.oldInitDescription();
+            changeVoice();
+        }
+
+        function setDescriptionCookies() {
+            console.log('cookies', AblePlayerInstances)
+            AblePlayerInstances.forEach((el) => {
+                /* Ensure Audio Descriptions pause video when they are spoken */
+                var playerCookie = el.getCookie();
+                console.log(playerCookie.preferences.prefDescPause);
+                playerCookie.preferences.prefDescPause = 1;
+                el.setCookie(playerCookie);
+                el.prefDescPause = 1;
+                console.log(playerCookie.preferences.prefDescPause);
+            });
+        }
+
+        function changeVoice () {
+            AblePlayerInstances.forEach((el) => {
+                const { descVoices, descVoiceIndex } = el;
+
+                if (descVoices && descVoiceIndex != null) {
+                    const currentVoice = descVoices[descVoiceIndex];
+
+                    function findAnotherAmericanVoice() {
+                        for (let i=0; i<descVoices.length; i++) {
+                            const voice = descVoices[i];
+                            if (i !== descVoiceIndex  && (voice.lang.indexOf('en-') >= 0)) {
+                                return i;
+                            }
+                        }
+                        return descVoiceIndex;
+                    }
+                
+                    if (currentVoice.name === 'Alex' && currentVoice.voiceURI.indexOf('osx:') >= 0) {
+                        const newVoiceIndex = findAnotherAmericanVoice();
+                        console.log('new voice index', newVoiceIndex);
+                        el.descVoiceIndex = newVoiceIndex;
+                    }
+
+                    console.log('is setting');
+                }
+                
+            });
+        }
+
+
+
+
         //override default Able Player controls icons
         window.AblePlayer.prototype.getSvgData = function (button) {
             // returns array of values for creating <svg> tag for specified button
@@ -178,47 +231,7 @@
         $errantButtons.attr("aria-label", "Play");
     };
 
-    function autoPlayVideoModal() {
-        var trigger = $('.trigger');
-        var $video = $('#video1');
-
-        const observer = new MutationObserver(videoMutationHandler);
-        observer.observe($('.enable-video-player')[0], {subtree: true, childList: true});
-
-        var player = new AblePlayer($video);
-
-        /* Ensure Audio Descriptions pause video when they are spoken */
-        var playerCookie = player.getCookie();
-        playerCookie.preferences.prefDescPause = 1;
-        player.setCookie(playerCookie);
-
-
-        trigger.on('click', function (e) {
-
-            e.preventDefault();
-            var theModal = $(this).data("target");
-            var $transcriptButton = $('.able-button-handler-transcript');
-            var $transcriptArea = $('.able-transcript-area');
-
-            if (!$transcriptButton.hasClass('has-transcript')) {
-                $transcriptArea.css('display', 'none');
-            }
-
-            changeVideoPlayerLocation($transcriptButton);
-            $transcriptButton.on('click', changeVideoPlayerLocationEvent);
-            document.addEventListener('fullscreenchange', fullScreenChangeHandler, true);
-
-            $(theModal).on('hidden.bs.modal', function (e) {
-                $transcriptButton.off('click', changeVideoPlayerLocationEvent);
-                document.removeEventListener('fullscreenchange', fullScreenChangeHandler, true);
-                $transcriptButton.addClass('buttonOff');
-                player.pauseMedia();
-            });
-        });
-
-
-
-    };
+    
 
     function changeVideoPlayerLocation($transcriptButton) {
         const $modelContent = $transcriptButton.closest('.modal-content');
@@ -296,6 +309,8 @@
       });
     }
 
+
+    /*
     const $videoPlayer = $('[data-target="#videoModal"]');
 
     $videoPlayer.on('click', function() {
@@ -315,5 +330,6 @@
         return clearTimeout(readTranscript);
       }
     });
+    */
 
 })(jQuery);

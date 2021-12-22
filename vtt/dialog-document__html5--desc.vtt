@@ -1,0 +1,67 @@
+﻿WEBVTT
+
+00:00:00.500 --> 00:00:01.909
+(Scene is a title screen, which reads "Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile.  Zoltan Hawryluk - useragentman.com")
+
+00:00:21.540 --> 00:00:23.549
+(A web page appears inside the OSX Safari web browser.  The web page has a picture of a woman and a gnome looking at an HTML button labelled "Log in to our website")
+
+00:00:38.500 --> 00:00:40.509
+(As the user uses his keyboard to navigate to the "Log in to our website" button, the VoiceOver screen reader reports what items are focused.)
+
+00:00:43.400 --> 00:00:45.409
+(The user hits the enter key.  A dialog opens up with a log in form in it.  The web browser automatically places focus on the dialog's "close" button.)
+
+00:00:57.500 --> 00:00:59.509
+(A close up appears on VoiceOver's caption panel, which reads "Close this dialog, button, web dialog, Login, 1 item.  In order to continue, please log into the application".  The words "close this dialog, button" are outlined in a red box).
+
+00:01:04.100 --> 00:01:06.659
+(Scene changes to the example's HTML code, which highlights a "button" tag that contains an "img" tag with its alt attribute set to "close this dialog".)
+
+00:01:10.000 --> 00:01:12.109
+(Scene changes back to the close up of the VoiceOver caption panel, this time with the words "web dialog" highlighted)
+
+00:01:17.900 --> 00:01:20.569
+(Scene changes to the example's HTML code, highlighting the "dialog" tag)
+
+00:01:24.500 --> 00:01:26.719
+(Scene changes to a "div" tag, whose role attribute is set to "dialog".)
+
+00:01:25.000 --> 00:01:27.009
+(Scene changes to Firefox's Develop Tool's, showing the DOM of the web page.  The code that is highlighted is a "dialog" tag with its "role" attribute set to "dialog".)
+
+00:01:39.000 --> 00:01:41.539
+(Scene changes back to the close up of the VoiceOver caption panel, this time with the words "Login" and  "In order to continue, please log into the application" highlighted)
+
+00:01:49.000 --> 00:01:51.599
+(Scene changes to the example's HTML code, with the "dialog" tag's "aria-labelledby" attribute is set to an id of the "h2" tag of the page that encapsulates the word "Login", and its "aria-describedby" attribute is set to an id of the "p" tag of the page that encapsulates the words "In order to continue, please log into the application".)
+
+00:01:56.000 --> 00:01:58.009
+(The user starts using the tab key to navigate through the interactive elements on the web page)
+
+00:02:04.000 --> 00:02:06.009
+(The user uses the keyboard to tab to the next interactive element. Since there is no interactive element after the confirm button, focus goes back to the dialog's close button)
+
+00:02:47.500 --> 00:02:49.509
+(The user hits the enter key in order to activate the close button.  Focus goes back the button that originally opened the modal.)
+
+00:03:13.000 --> 00:03:15.009
+(Scene changes from Safari on OSX to Google Chrome on Android, showing the same web page.)
+
+00:03:36.000 --> 00:03:38.009
+(The user swipes through the document to get to the "Log in to our website" button.  Focus seems to go to not just the interactive elements on the page, but on all elements on the page.  Talkback says short beginnings of dialog while user swipes through text. Finally, focus gets to the button.)
+
+00:04:28.000 --> 00:04:30.009
+(The user double taps the screen.  A modal opens, that reads "Login" with a form so the user can log into the webpage.  Keyboard focus is on the close button of the modal)
+
+00:05:18.000 --> 00:05:20.009
+(The user tries to swipe backwards part the close button.  Focus goes to the whole document in the web browser.)
+
+00:05:45.000 --> 00:05:47.009
+(Scene changes to a Firefox's development tools, which shows aria-hidden="true" being set on HTML elements outside of the dialog HTML element.)
+
+00:06:01.000 --> 00:06:03.009
+(Scene changes to a blog post entitled "Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile" on the useragentman.com website.)
+
+00:06:17.000 --> 00:06:19.009
+(Scene changes to a picture of the narrator, Zoltan Hawryluk, which shows his twitter handle, @zoltandulac, and his blog's URL, useragentman.com)

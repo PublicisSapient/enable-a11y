@@ -1,0 +1,20 @@
+Kate Morley, ARIA radio buttons, https://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/, https://code.iamkate.com, https://twitter.com/KateRoseMorley,  CC0 1.0 Universal (CC0 1.0)
+Mana, HTML5 radio buttons, https://www.webcreatormana.com/, https://twitter.com/chibimana, ?
+Scott Jehl, custom select CSS, https://github.com/filamentgroup/select-css, https://twitter.com/scottjehl, https://twitter.com/scottjehl, ?
+W3C, ARIA listbox example, https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html, https://www.w3.org, https://www.w3.org, https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+James Craig, ARIA combobox example, https://webkit.org/blog/3302/aria-and-accessibility-inspector/, https://webkit.org/blog/, https://twitter.com/cookiecrook, ?
+Open Ajax Alliance, ARIA slider, https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/, http://www.openajax.org/, jferrai@us.ibm.com
+Ana Tudor, HTML5 range css, https://css-tricks.com/sliding-nightmare-understanding-range-input/, https://twitter.com/anatudor, https://twitter.com/anatudor
+Haley Tong, Multi-level burger menu, https://codepen.io/hayleyt/pen/ZyqBYW, https://web.archive.org/web/20190525003059/https://hayley.cc/, https://www.instagram.com/hayleytea/, ?
+Jeff Smith, Style of accessible tabs, https://codepen.io/jeffsmith/pen/mPByya/, http://simplyaccessible.com/article/author/jeffsmith/, https://twitter.com/jeffsmith, ? 
+MDN, Code for accessible switch, https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Switch_role, https://developer.mozilla.org, https://developer.mozilla.org
+Alison Walden, UX for accessible carousel / Form Validation, https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4, https://twitter.com/lsnrae, https://twitter.com/lsnrae
+Deque University, Sortable Table example,  https://dequeuniversity.com/library/aria/table-sortable, https://dequeuniversity.com/, ?
+Paul J Adams, ARIA img role example,  http://pauljadam.com/demos/img.html, https://pauljadam.com/, https://twitter.com/pauljadam, ?
+Steve Faulkner, Figure/Figcaption example / Animated GIF pause / Text Spacing Bookmarklet, https://www.tpgi.com/html5-accessibility-chops-the-figure-and-figcaption-elements/, https://www.24a11y.com, https://www.linkedin.com/in/steven-faulkner-3781ab1/?originalSubdomain=uk, 
+Kitty Giraudel, Headings CSS, https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/, https://twitter.com/KittyGiraudel, https://twitter.com/KittyGiraudel
+MathJax, MathML polyfill, https://www.mathjax.org/, https://www.mathjax.org/, https://www.mathjax.org/
+Chris Coyier, Animation GIF pause first, https://css-tricks.com/pause-gif-details-summary/, https://css-tricks.com/, https://twitter.com/chriscoyier
+Mateusz Rybczonek, Timer demo (not a11y), https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/, https://css-tricks.com/author/mateuszrybczonek/, https://medium.com/@m.rybczonek
+Jakob Voß, Wiktionary Lookup Gist used for ARIA status role, https://gist.github.com/nichtich/674522, http://jakoblog.de/, jakob.voss@nichtich.de 
+Jano Garcia, LESS px to rem, https://codepen.io/janogarcia/pen/bNrKEP, https://janogarcia.com/, hello@janogarcia.com | https://twitter.com/janogarcia
