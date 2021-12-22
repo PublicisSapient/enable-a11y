@@ -36,19 +36,6 @@
 
                 <div id="example1-transcript" class="enable-video-player__transcript"></div>
             </div>
-            <template id="enable-video-player__transcript-button-template">
-                <div
-                    role="button"
-                    tabindex="0"
-                    aria-label="Hide transcript"
-                    class="able-button-handler-transcript"
-                >
-                    <svg focusable="false" aria-hidden="true" viewBox="${viewBox}">
-                        <path d="${path}"></path>
-                    </svg>
-                    <span class="able-clipped">Hide transcript</span>
-                </div>
-            </template>
         </div>
 
     </main>
@@ -58,7 +45,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>
     <script src="js/libs/ableplayer/build/ableplayer.js"></script>
-    <script src="js/shared/interpolate.js"></script>
     <script src="js/videoPlayer.js"></script>
 
     <script>

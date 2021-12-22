@@ -3,63 +3,34 @@
 
         AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
         AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
+        document.addEventListener('fullscreenchange', fullScreenChangeHandler, true);
         
         AblePlayer.prototype.initDescription = function () {
             setDescriptionCookies();
             this.oldInitDescription();
-            changeVoice();
+            adjustTranscriptVisibility(this);
         }
 
         AblePlayer.prototype.handleTranscriptToggle = function () {
-            
             this.oldHandleTranscriptToggle();
-            if (this.$transcriptDiv.is(':visible')) {
-                this.$ableDiv.addClass('able-transcript-visible');
+            adjustTranscriptVisibility(this);
+        }
+
+        function adjustTranscriptVisibility(player) {
+            if (player.$transcriptDiv.is(':visible')) {
+                player.$ableDiv.addClass('able-transcript-visible');
             } else {
-                this.$ableDiv.removeClass('able-transcript-visible');
+                player.$ableDiv.removeClass('able-transcript-visible');
             }
         }
         
-
         function setDescriptionCookies() {
-            console.log('cookies', AblePlayerInstances)
             AblePlayerInstances.forEach((el) => {
                 /* Ensure Audio Descriptions pause video when they are spoken */
                 var playerCookie = el.getCookie();
-                console.log(playerCookie.preferences.prefDescPause);
                 playerCookie.preferences.prefDescPause = 1;
                 el.setCookie(playerCookie);
                 el.prefDescPause = 1;
-                console.log(playerCookie.preferences.prefDescPause);
-            });
-        }
-
-        function changeVoice () {
-            AblePlayerInstances.forEach((el) => {
-                const { descVoices, descVoiceIndex } = el;
-
-                if (descVoices && descVoiceIndex != null) {
-                    const currentVoice = descVoices[descVoiceIndex];
-
-                    function findAnotherAmericanVoice() {
-                        for (let i=0; i<descVoices.length; i++) {
-                            const voice = descVoices[i];
-                            if (i !== descVoiceIndex  && (voice.lang.indexOf('en-') >= 0)) {
-                                return i;
-                            }
-                        }
-                        return descVoiceIndex;
-                    }
-                
-                    if (currentVoice.name === 'Alex' && currentVoice.voiceURI.indexOf('osx:') >= 0) {
-                        const newVoiceIndex = findAnotherAmericanVoice();
-                        console.log('new voice index', newVoiceIndex);
-                        el.descVoiceIndex = newVoiceIndex;
-                    }
-
-                    console.log('is setting');
-                }
-                
             });
         }
 
@@ -236,12 +207,6 @@
             return svg;
         };
     });
-
-    function videoMutationHandler(e) {
-        // if a play button is inserted without an aria-label, put the aria-label in.
-        const $errantButtons = $('.able-media-container .icon-play[aria-label!="Play"]');
-        $errantButtons.attr("aria-label", "Play");
-    };
 
   
     function fullScreenChangeHandler(e) {

@@ -3,7 +3,7 @@
 .enable-video-player {
   .able-descriptions {
     display: none !important;
-    border: solid 1px red; 
+    border: solid 1px red;
   }
 
   .able-status-bar {
@@ -11,5 +11,24 @@
     min-height: 2.4em;
   }
 
+  * {
+    box-sizing: content-box;
+  }
 
+  .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible {
+    width: calc(50% - 20px);
+    display: inline-block;
+    margin-right: 20px;
+
+    + .able-transcript-area {
+      width: calc(50% - 2px);
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 1em;
+    }
+  }
+
+  .able-media-container iframe {
+    width: 100%;
+  }
 }
