@@ -2,12 +2,24 @@
     $(document).ready(function () {
 
         AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
-
+        AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
+        
         AblePlayer.prototype.initDescription = function () {
             setDescriptionCookies();
             this.oldInitDescription();
             changeVoice();
         }
+
+        AblePlayer.prototype.handleTranscriptToggle = function () {
+            
+            this.oldHandleTranscriptToggle();
+            if (this.$transcriptDiv.is(':visible')) {
+                this.$ableDiv.addClass('able-transcript-visible');
+            } else {
+                this.$ableDiv.removeClass('able-transcript-visible');
+            }
+        }
+        
 
         function setDescriptionCookies() {
             console.log('cookies', AblePlayerInstances)
@@ -231,22 +243,7 @@
         $errantButtons.attr("aria-label", "Play");
     };
 
-    
-
-    function changeVideoPlayerLocation($transcriptButton) {
-        const $modelContent = $transcriptButton.closest('.modal-content');
-        if ($transcriptButton.hasClass('buttonOff')) {
-            $modelContent.removeClass('has-transcript');
-        } else {
-            $modelContent.addClass('has-transcript');
-        }
-    }
-
-    function changeVideoPlayerLocationEvent(e) {
-        const $target = $(e.currentTarget);
-        changeVideoPlayerLocation($target);
-    }
-
+  
     function fullScreenChangeHandler(e) {
         if (document.fullscreenElement) {
             document.fullscreenElement.classList.add('is-fullscreen');
@@ -254,82 +251,5 @@
             document.querySelector('.is-fullscreen').classList.remove('is-fullscreen');
         }
     }
-
-    function renderTranscript() {
-      return $(this).children().each(function(index, key) {
-        const $node = $(key);
-        const timeStart = Math.trunc(parseInt($node.attr('data-start')));
-        const text = $node.text();
-        let seekPoint = '0:00';
-        let minute = 0;
-
-        // Translating secs to min:secs
-        const minutes = [0, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 660, 720, 780, 840, 900, 960, 1020, 1080, 1140, 1200, 1260, 1320, 1380, 1440, 1500, 1560, 1620, 1680, 1740, 1800]
-        const matchedMin = [0];
-
-        for (let i = 0; i <= timeStart; i++) {
-          if (timeStart === i) {
-            seekPoint = `${minute}:0${i}`;
-
-            if (i >= 10 && i < 60) {
-              seekPoint = `${minute}:${i}`;
-            }
-
-            if (i >= 60) {
-              let closest = minutes.reduce((a, b) => Math.abs(b - i) < Math.abs(a - i) ? b : a);
-
-              if (closest > i) {
-                const matchIndex = minutes.findIndex(m => m === closest);
-                closest = minutes[matchIndex - 1];
-              }
-
-              if (minutes.find(m => m === closest) && !matchedMin.find(m => m === closest)) {
-                matchedMin.push(closest);
-                minute++;
-              }
-
-              const processedSec = i - minutes[minute];
-
-              seekPoint = `${minute}:0${processedSec}`;
-
-              if (processedSec >= 10 && processedSec < 60) {
-                seekPoint = `${minute}:${processedSec}`;
-              }
-            }
-          }
-        }
-
-        const $captionsStr = $('#transcript-caption-inner-t').html();
-        const mutatedHTML = interpolate($captionsStr, {
-          seekPoint,
-          text,
-        });
-
-        return $node.html(mutatedHTML);
-      });
-    }
-
-
-    /*
-    const $videoPlayer = $('[data-target="#videoModal"]');
-
-    $videoPlayer.on('click', function() {
-      let read = false;
-      const readTranscript = setTimeout(() => {
-        const $transcriptBlock = $('.able-transcript-block');
-
-        if ($transcriptBlock.length > 0 && !read) {
-          read = true;
-          $transcriptBlock.each(renderTranscript);
-        } else {
-          stopReadTranscript();
-        }
-      }, 250);
-
-      function stopReadTranscript() {
-        return clearTimeout(readTranscript);
-      }
-    });
-    */
 
 })(jQuery);
