@@ -80,94 +80,91 @@
 
         <div id="html5-example" class="enable-example">
             <form>
-                <fieldset>
-                    <legend>Choose your favorite transuranic element (actinide or transactinide).</legend>
+                
+                <label for="form1-element">
+                    Choose an element:
+                </label>
 
-                    <label for="form1-element">
-                        Choose an element:
-                    </label>
-
-                    <select id="form1-element" name="element">
-                        <option value="Np">
-                            Neptunium
-                        </option>
-                        <option value="Pu">
-                            Plutonium
-                        </option>
-                        <option value="Am">
-                            Americium
-                        </option>
-                        <option value="Cm">
-                            Curium
-                        </option>
-                        <option value="Bk">
-                            Berkelium
-                        </option>
-                        <option value="Cf">
-                            Californium
-                        </option>
-                        <option value="Es">
-                            Einsteinium
-                        </option>
-                        <option value="Fm">
-                            Fermium
-                        </option>
-                        <option value="Md">
-                            Mendelevium
-                        </option>
-                        <option value="No">
-                            Nobelium
-                        </option>
-                        <option value="Lr">
-                            Lawrencium
-                        </option>
-                        <option value="Rf">
-                            Rutherfordium
-                        </option>
-                        <option value="Db">
-                            Dubnium
-                        </option>
-                        <option value="Sg">
-                            Seaborgium
-                        </option>
-                        <option value="Bh">
-                            Bohrium
-                        </option>
-                        <option value="Hs">
-                            Hassium
-                        </option>
-                        <option value="Mt">
-                            Meitnerium
-                        </option>
-                        <option value="Ds">
-                            Darmstadtium
-                        </option>
-                        <option value="Rg">
-                            Roentgenium
-                        </option>
-                        <option value="Cn">
-                            Copernicium
-                        </option>
-                        <option value="Nh">
-                            Nihonium
-                        </option>
-                        <option value="Fl">
-                            Flerovium
-                        </option>
-                        <option value="Mc">
-                            Moscovium
-                        </option>
-                        <option value="Lv">
-                            Livermorium
-                        </option>
-                        <option value="Ts">
-                            Tennessine
-                        </option>
-                        <option value="Og">
-                            Oganesson
-                        </option>
-                    </select>
-                </fieldset>
+                <select id="form1-element" name="element">
+                    <option value="Np">
+                        Neptunium
+                    </option>
+                    <option value="Pu">
+                        Plutonium
+                    </option>
+                    <option value="Am">
+                        Americium
+                    </option>
+                    <option value="Cm">
+                        Curium
+                    </option>
+                    <option value="Bk">
+                        Berkelium
+                    </option>
+                    <option value="Cf">
+                        Californium
+                    </option>
+                    <option value="Es">
+                        Einsteinium
+                    </option>
+                    <option value="Fm">
+                        Fermium
+                    </option>
+                    <option value="Md">
+                        Mendelevium
+                    </option>
+                    <option value="No">
+                        Nobelium
+                    </option>
+                    <option value="Lr">
+                        Lawrencium
+                    </option>
+                    <option value="Rf">
+                        Rutherfordium
+                    </option>
+                    <option value="Db">
+                        Dubnium
+                    </option>
+                    <option value="Sg">
+                        Seaborgium
+                    </option>
+                    <option value="Bh">
+                        Bohrium
+                    </option>
+                    <option value="Hs">
+                        Hassium
+                    </option>
+                    <option value="Mt">
+                        Meitnerium
+                    </option>
+                    <option value="Ds">
+                        Darmstadtium
+                    </option>
+                    <option value="Rg">
+                        Roentgenium
+                    </option>
+                    <option value="Cn">
+                        Copernicium
+                    </option>
+                    <option value="Nh">
+                        Nihonium
+                    </option>
+                    <option value="Fl">
+                        Flerovium
+                    </option>
+                    <option value="Mc">
+                        Moscovium
+                    </option>
+                    <option value="Lv">
+                        Livermorium
+                    </option>
+                    <option value="Ts">
+                        Tennessine
+                    </option>
+                    <option value="Og">
+                        Oganesson
+                    </option>
+                </select>
             </form>
         </div>
 

@@ -11,7 +11,7 @@
     display: block;
     background: black;
     color: white;
-    height: 77vw !important;
+    // height: 77vw !important;
 
     @media @tablet {
       height: 72vw !important;
@@ -26,18 +26,24 @@
   &-next {
     background: #000;
     color: white;
-    top: 224px;
     padding: 5px 10px;
-    transform: scaleY(1.5);
+    transform: scale(0.8, 1.5);
     clip: rect(6px 100px 100px 0);
+    top: calc(24vw - (75px / 2));
+
+    @media @desktop {
+      top: 200px;
+    } 
   }
 
   &-prev {
     left: 0;
+    transform-origin: 0 50%;
   }
 
   &-next {
     right: 0;
+    transform-origin: 100% 50%;
   }
 }
 
@@ -74,8 +80,8 @@
       box-sizing: border-box;
       background: #000;
       color: white;
-      position: absolute;
-      bottom: 0;
+      // position: absolute;
+      // bottom: 0;
       width: 100%;
       padding: 20px 40px;
     }

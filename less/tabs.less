@@ -34,8 +34,12 @@
     li {
         position: relative; /*for z-index*/
         float: left;
-        margin: 0 .5em 0 0;
+        margin: 0 0.1em 0 0;
         z-index: 1;
+
+        @media @desktop {
+            margin: 0 0.5em 0 0;
+        }
         
         [role="tab"] {
             appearance: none;

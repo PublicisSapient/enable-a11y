@@ -669,7 +669,7 @@ const showcode = new (function () {
       if (stepsJson) {
         try {
           console.log('whoah!');
-          if (stepsJson.length > 1) {
+          if (stepsJson.length > 0) {
             for (let i in stepsJson) {
               const optionEl = document.createElement('OPTION');
               const step = stepsJson[i];

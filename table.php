@@ -299,18 +299,33 @@
          list of <code>cell</code>s:
         </p>
 
-        <blockquote>
-            <pre>
-&lt;div role="row"&gt;
-    <strong>&lt;div role="presentation"&gt;</strong>
-        &lt;span role="rowheader"&gt;Jackie&lt;/span&gt;
-        &lt;span role="cell"&gt;5&lt;/span&gt;
-        &lt;span role="cell"&gt;April 5&lt;/span&gt;
-    <strong>&lt;/div&gt;</strong>
-&lt;/div&gt;
 
             </pre>
         </blockquote>
+
+        <template id="role-presentation-code">
+        <div role="row">
+            <div role="presentation">
+                <span role="rowheader">Jackie</span>
+                <span role="cell">5</span>
+                <span role="cell">April 5</span>
+            </div>
+        </div>
+        </template>
+
+        <?php includeShowcode("role-presentation-code", "", "", "", false)?>
+        <script type="application/json" id="role-presentation-code-props">
+        {
+            "replaceHtmlRules": {
+            },
+            "steps": [
+            {
+                "label": "",
+                "highlight": "role=\"presentation\"",
+                "notes": ""
+            }
+        ]}
+        </script>
 
 
         <div class="enable-example" id="aria-example-1">

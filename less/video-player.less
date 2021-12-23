@@ -1,6 +1,10 @@
 @import "shared/mixins-and-vars";
 
 .enable-video-player {
+  .able-wrapper {
+    max-width: initial !important;
+  }
+
   .able-descriptions {
     display: none !important;
     border: solid 1px red;
@@ -16,19 +20,51 @@
   }
 
   .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible {
-    width: calc(50% - 20px);
-    display: inline-block;
-    margin-right: 20px;
 
     + .able-transcript-area {
-      width: calc(50% - 2px);
-      display: inline-block;
-      vertical-align: top;
-      margin-top: 1em;
+      max-width: 100% !important;
     }
-  }
+
+    @media @tablet-up {
+      
+        width: calc(50% - 20px);
+        display: inline-block;
+        margin-right: 20px;
+
+        + .able-transcript-area {
+          max-width: calc(50% - 2px) !important;
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 1em;
+        }
+      }
+    }
+
 
   .able-media-container iframe {
     width: 100%;
+  }
+}
+
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+
+  margin: 1em auto 3em auto;
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  tr {
+    background: none !important;
+  }
+
+  td {
+    border: solid 1px black;
+  }
+
+  &__icon {
+    width: 20px;
   }
 }

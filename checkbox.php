@@ -136,14 +136,13 @@
             <div class="checkbox-container">
                 <form>
                     <label for="html-checkbox-with-visibleif">I want to subscribe to the Zoltanic Foundation's
-                        newsletter
+                        newsletter:
                         <span class="sr-only visibleIf" data-visibleif-rule="iAgree != 'yes'">
                             (checking this will add mailing information fields below)
                         </span>
                         <span class="sr-only visibleIf" data-visibleif-rule="iAgree == 'yes'">
                             (unchecking this will remove the mailing information fields below)
                         </span>
-                        :
                     </label>
                     <input id="html-checkbox-with-visibleif" name="iAgree" type="checkbox" value="yes" />
 

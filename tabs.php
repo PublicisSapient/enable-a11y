@@ -39,7 +39,7 @@
 
         <h2>ARIA Tab Example</h2>
 
-        <div id="example1" class="enable-example">
+        <div id="example1">
 
             <div id="tabs">
 
