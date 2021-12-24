@@ -48,14 +48,17 @@
             <form>
                 <fieldset>
                     <legend>Payment information</legend>
-                    <div>
-                        <label for="ccinfo">Billing Address:</label>
-                        <input type="text" name="ccinfo" id="ccinfo" />
-                    </div>
 
-                    <div>
-                        <label for="notes" class="textarea-label">Notes:</label>
-                        <textarea id="notes" name="notes"></textarea>
+                    <div class="form__fieldset-inner-container">
+                        <div>
+                            <label for="ccinfo">Billing Address:</label>
+                            <input type="text" name="ccinfo" id="ccinfo" />
+                        </div>
+
+                        <div>
+                            <label for="notes" class="textarea-label">Notes:</label>
+                            <textarea id="notes" name="notes"></textarea>
+                        </div>
                     </div>
                 </fieldset>
 
@@ -95,16 +98,18 @@
             <div role="group" aria-labelledby="aria-payment-info-label" class="fieldset">
                 <div id="aria-payment-info-label" class="legend">Payment Information</div>
 
-                <div>
-                    <label id="address-label"  class="textarea-label">Address to deliver to:</label>
-                    <div aria-labelledby="address-label" role="textbox" contenteditable="true"></div>
-                </div>
-
-                <div>
-                    <label id="notes-label"  class="textarea-label">Delivery Notes:</label>
-                    <div aria-labelledby="notes-label" role="textbox" contenteditable="true" aria-multiline="true">
+                <div class="form__fieldset-inner-container">
+                    <div>
+                        <label id="address-label"  class="textarea-label">Address to deliver to:</label>
+                        <div aria-labelledby="address-label" role="textbox" contenteditable="true"></div>
                     </div>
-                </div>
+
+                    <div>
+                        <label id="notes-label"  class="textarea-label">Delivery Notes:</label>
+                        <div aria-labelledby="notes-label" role="textbox" contenteditable="true" aria-multiline="true">
+                        </div>
+                    </div>
+    </div>
             </div>
         </div>
 

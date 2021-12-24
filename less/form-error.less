@@ -1,5 +1,15 @@
 @import "shared/mixins-and-vars";
 
+.form__fieldset-inner-container {
+  width: min-content;
+  margin: 0 auto;
+
+  @media @tablet-up {
+    width: initial;
+    margin: 0;
+  }
+}
+
 label {
   font-weight: bold;
   display: block;
@@ -20,8 +30,12 @@ label {
 }
 
 input, .desc, [role="textbox"] {
-  width: 45%;
-  max-width: 20rem;
+  width: 200px;
+  
+  @media @desktop {
+    width: 45%;
+    max-width: 20rem;
+  }
 }
 
 .form-instructions {
