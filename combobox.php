@@ -804,7 +804,7 @@
                 <label id="html5-fruit__label" for="html5-fruit" class="combobox-label">
                     Enter a Fruit or Vegetable
                 </label>
-                <input id="html5-fruit" name="friuit" type="text" list="languages" aria-describedby="html5-fruit__desc" />
+                <input id="html5-fruit" name="fruit" type="text" list="languages" aria-describedby="html5-fruit__desc" />
                 <div class="sr-only" id="html5-fruit__desc">
                     As you type, use the up and down arrow keys to choose the autocomplete
                     items.
