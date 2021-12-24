@@ -779,7 +779,7 @@
 
         <ul>
             <li>
-                The autocomplete features are available to mobile screen reader users.
+                The autocomplete features are not available to mobile screen reader users.
                 I was not able to figure out how to gain access to the datalist values
                 using either Talkback/Chrome on Android or VoiceOver/Safari for iOS.
             <li>
@@ -790,6 +790,9 @@
                 If the user uses the up and down arrow keys, some browsers doesn't read
                 these values out (e.g. older versions of Safari with VoiceOver).
             </li>
+            <li>
+                The autocomplete features do not appear at all in Firefox for Android (at the time of this writing, it was version 96).
+    </li>
             <li>
                 Because of the above reasons, it is one of the cases where ARIA works
                 better.

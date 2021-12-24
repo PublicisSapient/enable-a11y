@@ -9,9 +9,13 @@
     /* pc is positioning context */
     position: relative;
     width: 30em;
-    max-width: 400px;
+    max-width: 100%;
     font-size: 100%;
     font-family: sans-serif;
+
+    @media @desktop {
+      max-width: 400px;
+    }
   }
 
   &__group {
