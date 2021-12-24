@@ -3,24 +3,31 @@
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
 MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
-PROJECT_URL="http://$MYIP:8888/enable/index.php"
+PROJECT_URL="http://$MYIP:8888/index.php"
 
 
 echo "Checking if dependencies are installed ..."
 
-for i in lynx java
+for i in lynx java php axe
 do
 	which $i > /dev/null 2> /dev/null
 	if [ "$?" != "0" ]
 	then
-		echo "Need to install $i. Bailing" 1>&2 
+		echo "Need to install $i." 1>&2
+		if [ "$i" = "axe" ]
+		then
+			echo "Install axe using:" 1>&2
+			echo "  npm install axe-cli -g" 1>&2
+		else
+			echo "Please install this software using your operating systems package management" 1>&2
+		fi 
 		exit 1
 	fi
 done
 
-if [ !-d $VNU_JAR ]
+if [ ! -f "$VNU_JAR" ]
 then
-	echo "Need to install VNU.  Please run `npm install`." 1>&2
+	echo "Need to install VNU.  Please run 'npm install'." 1>&2
 	exit 2
 fi
 

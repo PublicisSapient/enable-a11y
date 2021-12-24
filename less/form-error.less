@@ -1,10 +1,15 @@
 @import "shared/mixins-and-vars";
 
 label {
-  display: inline-block;
-  width: 45%;
-  text-align: right;
   font-weight: bold;
+  display: block;
+  text-align: left;
+
+  @media @tablet-up {
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+  }
 }
 
 .desc {

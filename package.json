@@ -32,9 +32,11 @@
   },
   "dependencies": {
     "axe-cli": "^3.2.1",
+    "express": "^4.17.2",
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
     "lessc": "^1.0.2",
+    "php-express": "^0.0.3",
     "prismjs": "^1.24.0",
     "selenium-webdriver": "^4.0.0-beta.4",
     "vnu-jar": "^21.6.11"
