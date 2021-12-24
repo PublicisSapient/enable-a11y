@@ -1,9 +1,40 @@
 #!/bin/bash
 
-VNU_CMD='java -jar node_modules/vnu-jar/build/dist/vnu.jar '
+VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
+VNU_CMD="java -jar $VNU_JAR"
 MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
-A=`lynx -dump http://$MYIP:8888/enable/index.php`
-URLS=`lynx -dump http://$MYIP:8888/enable/index.php | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+PROJECT_URL="http://$MYIP:8888/enable/index.php"
+
+
+echo "Checking if dependencies are installed ..."
+
+for i in lynx java
+do
+	which $i > /dev/null 2> /dev/null
+	if [ "$?" != "0" ]
+	then
+		echo "Need to install $i. Bailing" 1>&2 
+		exit 1
+	fi
+done
+
+if [ !-d $VNU_JAR ]
+then
+	echo "Need to install VNU.  Please run `npm install`." 1>&2
+	exit 2
+fi
+
+
+A=`lynx -dump $PROJECT_URL`
+if [ "$?" != "0" ]
+then
+	echo "You need to turn on your apache server that has ENABLE on it."
+	exit 3
+fi
+
+
+
+URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
 DOWNLOADED_URLS=""
 TEMP_FILES=""
 
