@@ -48,6 +48,10 @@
 }
 
 .enable-carousel {
+  &__example {
+    padding: 0;
+  }
+
   &__skip-link {
     display: block;
     margin: 2px auto;
@@ -83,7 +87,11 @@
       // position: absolute;
       // bottom: 0;
       width: 100%;
-      padding: 20px 40px;
+      padding: 10px;
+      
+      @media @tablet-up {
+        padding: 20px 40px;
+      }
     }
 
     &-cta {

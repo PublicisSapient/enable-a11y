@@ -33,7 +33,7 @@
 
         <h2>Carousels with CTAs</h2>
 
-        <div id="example1" class="enable-example">
+        <div id="example1" class="enable-example enable-carousel__example">
             <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
                 <a href="#end-of-component-1" id="beginning-of-component-1"
                     class="enable-mobile-visible-on-focus enable-skip-link">
