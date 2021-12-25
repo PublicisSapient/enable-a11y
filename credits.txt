@@ -18,3 +18,4 @@ Chris Coyier, Animation GIF pause first, https://css-tricks.com/pause-gif-detail
 Mateusz Rybczonek, Timer demo (not a11y), https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/, https://css-tricks.com/author/mateuszrybczonek/, https://medium.com/@m.rybczonek
 Jakob Voß, Wiktionary Lookup Gist used for ARIA status role, https://gist.github.com/nichtich/674522, http://jakoblog.de/, jakob.voss@nichtich.de 
 Jano Garcia, LESS px to rem, https://codepen.io/janogarcia/pen/bNrKEP, https://janogarcia.com/, hello@janogarcia.com | https://twitter.com/janogarcia
+Yale University, https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text, accessibility@yale.edu, ?
