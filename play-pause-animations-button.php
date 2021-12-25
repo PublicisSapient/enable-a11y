@@ -18,19 +18,19 @@
 
 <body>
     <?php include "includes/documentation-header.php";?>
-    
+    <div class="play-pause-anim__checkbox-container" id="checkbox-container">
+        <label for="play-pause-animation-button">
+            Pause animations
+            <input type="checkbox" id="play-pause-animation-button"
+                class="play-pause-animation-button__checkbox" />
+        </label>
+
+    </div>
    
     <main class="with-full-bleed-hero">
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">
-                <div class="play-pause-anim__checkbox-container" id="checkbox-container">
-                    <label for="play-pause-animation-button">
-                        Pause animations
-                        <input type="checkbox" id="play-pause-animation-button"
-                            class="play-pause-animation-button__checkbox" />
-                    </label>
-
-                </div>
+                
                 <picture>
                     <source
                         srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320.jxr 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600.jxr 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640.jxr 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024.jxr 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200.jxr 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016.jxr 2016w"

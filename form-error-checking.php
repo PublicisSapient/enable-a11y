@@ -39,34 +39,36 @@
 
             <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
-            <div class="field-block">
-              <label class="required" for="name_html5">Full Name:</label>
-              <input id="name_html5" size="25" type="text" required  autocomplete="name" />
-            </div>
-
-            <div class="field-block">
-              <label class="required" for="email_html5">E-mail address:</label>
-              <input id="email_html5" size="25" type="email" required autocomplete="email" />
-            </div>
-
-            <div class="field-block">
-              <label class="required" for="phone_html5">Phone Number:</label>
-              <input
-                id="phone_html5"
-                size="25"
-                type="text"
-                required
-                pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                aria-describedby="phone-desc"
-                autocomplete="tel"
-              />
-              <div id="phone-desc" class="desc">
-                Format is xxx-xxx-xxxx<br />
-                (where x is a digit)
+            <div class="form__fieldset-inner-container">
+              <div class="field-block">
+                <label class="required" for="name_html5">Full Name:</label>
+                <input id="name_html5" size="25" type="text" required  autocomplete="name" />
               </div>
-            </div>
 
-            <input value="Add Contact" type="submit" />
+              <div class="field-block">
+                <label class="required" for="email_html5">E-mail address:</label>
+                <input id="email_html5" size="25" type="email" required autocomplete="email" />
+              </div>
+
+              <div class="field-block">
+                <label class="required" for="phone_html5">Phone Number:</label>
+                <input
+                  id="phone_html5"
+                  size="25"
+                  type="text"
+                  required
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  aria-describedby="phone-desc"
+                  autocomplete="tel"
+                />
+                <div id="phone-desc" class="desc">
+                  Format is xxx-xxx-xxxx<br />
+                  (where x is a digit)
+                </div>
+              </div>
+
+              <input value="Add Contact" type="submit" />
+            </div>
           </fieldset>
         </form>
       </div>
@@ -144,52 +146,55 @@
           <fieldset>
             <legend id="contact_js">Contact Information</legend>
 
-            <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
+            <div class="form__fieldset-inner-container">
 
-            <div class="field-block">
-              <label class="required" for="name_js">Full Name:</label>
-              <input id="name_js" name="name_js" size="25" type="text" required />
-            </div>
+              <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
-            <div class="field-block">
-              <label class="required" for="email_js">E-mail address:</label>
-              <input
-                id="email_js"
-                name="email_js"
-                size="25"
-                type="email"
-                required
-              />
-            </div>
-
-            <div class="field-block">
-              <label class="required" for="phone_js">Phone Number:</label>
-              <input
-                id="phone_js"
-                name="phone_js"
-                size="25"
-                type="text"
-                required
-                pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                aria-describedby="phone-desc2"
-              />
-              <div id="phone-desc2" class="desc">
-                Format is xxx-xxx-xxxx<br />
-                (where x is a digit).
+              <div class="field-block">
+                <label class="required" for="name_js">Full Name:</label>
+                <input id="name_js" name="name_js" size="25" type="text" required />
               </div>
-            </div>
 
-            <div class="field-block">
-              <label for="age-range">Age Range:</label>
-              <select id="age-range">
-                <option>Choose one</option>
-                <option value="a">0 to 18 years old</option>
-                <option value="b">19 - 50 years old</option>
-                <option value="c">51 - 150 years old</option>
-              </select>
-            </div>
+              <div class="field-block">
+                <label class="required" for="email_js">E-mail address:</label>
+                <input
+                  id="email_js"
+                  name="email_js"
+                  size="25"
+                  type="email"
+                  required
+                />
+              </div>
 
-            <input value="Add Contact" type="submit" />
+              <div class="field-block">
+                <label class="required" for="phone_js">Phone Number:</label>
+                <input
+                  id="phone_js"
+                  name="phone_js"
+                  size="25"
+                  type="text"
+                  required
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  aria-describedby="phone-desc2"
+                />
+                <div id="phone-desc2" class="desc">
+                  Format is xxx-xxx-xxxx<br />
+                  (where x is a digit).
+                </div>
+              </div>
+
+              <div class="field-block">
+                <label for="age-range">Age Range:</label>
+                <select id="age-range">
+                  <option>Choose one</option>
+                  <option value="a">0 to 18 years old</option>
+                  <option value="b">19 - 50 years old</option>
+                  <option value="c">51 - 150 years old</option>
+                </select>
+              </div>
+
+              <input value="Add Contact" type="submit" />
+            </div>
           </fieldset>
         </form>
       </div>

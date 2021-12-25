@@ -6,17 +6,28 @@
     *  For the page
     */
     &__checkbox-container {
-
-        position: fixed;
+        position: sticky;
+        width: 100%;
+        top: 0;
+        left: 0;
         z-index: 3;
-        top: 5px;
-        right: 20px;
         max-height: 70vh;
-        border-radius: 50px;
-        border: solid 2px white;
         color: white;
         padding: 0;
         background-color: #000;
+        white-space: nowrap;
+        text-align: center;
+        
+
+        @media @desktop {
+
+          position: fixed;
+          top: 5px;
+          left: 20px;
+          border-radius: 50px;
+          border: solid 2px white;
+          width: min-content;
+        }
 
         label {
           padding: 10px 20px;

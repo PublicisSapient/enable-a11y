@@ -102,3 +102,21 @@
 	 color: #777;
 	 opacity: 1;
 }
+
+/*
+ *	Fixes to ensure text zoom works correctly in Safari/OSX
+ */
+body {
+    /*
+     * This tells Safari to use the OS's base font and
+     * the size set in the iOS Accessibility settings.
+     */
+    font: -apple-system-body;
+
+    /*
+     * Put whatever font you want to use here.  The font
+     * size will still be grabbed by the iOS Accessibility
+     * settings.
+     */
+	 font-family: "Helvetica", "Arial", sans-serif;
+}

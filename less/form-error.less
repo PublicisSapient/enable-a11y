@@ -23,10 +23,14 @@ label {
 }
 
 .desc {
-  margin: 0.2rem 0 0 45%;
+  margin: 0.2rem 0 0 0;
   font-style: italic;
   font-size: 0.9rem;
   text-align: right;
+
+  @media @tablet-up {
+    margin-left: 45%;
+  }
 }
 
 input, .desc, [role="textbox"] {
@@ -50,9 +54,15 @@ input, .desc, [role="textbox"] {
 }
 
 label.error {
-  margin-left: calc(45% + 10px);
   text-align: left;
   color: #e60000;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  @media @tablet-up {
+    margin-left: calc(45% + 10px);
+    margin-bottom: 10px;
+  }
 
   &::before {
     content: '';
@@ -64,6 +74,7 @@ label.error {
     margin-right: 0.5em;
   }
 }
+
 input[type="radio"],
 input[type="checkbox"],
 [role="radio"],
@@ -73,7 +84,6 @@ input[type="checkbox"],
         display: inline; 
     }
 }
-
 
 input[type=submit] {
   display: block;

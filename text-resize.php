@@ -41,7 +41,7 @@
         </p>
 
         <div id="less-px-to-rem">
-            <div id="xyz"></div>
+            
         </div>
 
         <?php includeShowcode("less-px-to-rem", "", "", "", false)?>
@@ -103,8 +103,25 @@ padding: 20/@px 10/@px;
                 you put the following CSS into your page, you can get Safari to resize the text according to the
                 system
                 settings:<br>
-                <blockquote class="code">
-                    <pre>body {
+
+<div id="apple-css">
+</div>
+
+<?php includeShowcode("apple-css", "", "", "", false)?>
+<script type="application/json" id="apple-css-props">
+{
+    "replaceHtmlRules": {
+    },
+    "steps": [{
+        "label": "CSS markup",
+        "highlight": "%INLINE%apple-css__code",
+        "notes": ""
+    }]
+}
+</script>
+
+<template id="apple-css__code">
+body {
     /*
      * This tells Safari to use the OS's base font and
      * the size set in the iOS Accessibility settings.
@@ -118,8 +135,7 @@ padding: 20/@px 10/@px;
      */
     font-family: "Times New Roman", serif;
 }
-</pre>
-                </blockquote>
+</template>
                 <p> I encourage everyone to put these styles in their base styles. It will make visually impaired
                     iOS
                     users happy. The only caveat here is that the font resize will not happen until after the user
