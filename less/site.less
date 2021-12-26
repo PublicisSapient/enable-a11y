@@ -32,7 +32,7 @@
 
   &__list &__list {
     width: @desktop-min;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 }
 
@@ -58,13 +58,13 @@
 
     &__level &__level &__list--photo-layout &__link {
       min-height: @item-height;
-      letter-spacing: (0.5 / @px);
+      //letter-spacing: (0.5 / @px);
       box-sizing: border-box;
       font-size: (13 / @px);
 
       &:hover,
       &:focus {
-        letter-spacing: 0;
+        //letter-spacing: 0;
         box-shadow: 2px 2px 5px #999;
       }
 
@@ -80,7 +80,51 @@
     &__level &__menu-item--close {
       display: none;
     }
+
+    @mulit-column-menu-margin: 36px;
+
+
+    /* styles specific to Interactive Elements flyout */
+    #interactive-elements-section > :not(&__menu-item) > &__menu-item {
+
+      width: calc(50% - 72px);
+      float: left;
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
+
+      .enable-flyout__list {
+        width: 100%;
+      }
+    }
+
+    #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(2) {
+      width: calc(100% / 3 - 48px);
+      float: left;
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
+
+      .enable-flyout__list {
+        width: 100%;
+      }
+    }
+
+    #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
+      width: calc(200% / 3 - 96px);
+      float: left;
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
+
+      .enable-flyout__list {
+        width: 100%;
+      }
+    }
+
+    #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
+    }
   }
+
 }
 
 

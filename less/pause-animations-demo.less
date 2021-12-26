@@ -1,7 +1,16 @@
 @import "shared/mixins-and-vars";
 
-.play-pause-anim {
+@checkbox-height: (40 / @px);
 
+.showcode_ui {
+  top: @checkbox-height;
+
+  @media @tablet-up {
+    top: 0;
+  }
+}
+
+.play-pause-anim {
     /*
     *  For the page
     */
@@ -10,13 +19,13 @@
         width: 100%;
         top: 0;
         left: 0;
-        z-index: 3;
-        max-height: 70vh;
+        z-index: (@able-player-max-z-index + 2);
         color: white;
         padding: 0;
         background-color: #000;
         white-space: nowrap;
         text-align: center;
+        height: @checkbox-height;
         
 
         @media @desktop {

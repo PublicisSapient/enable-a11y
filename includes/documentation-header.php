@@ -339,66 +339,6 @@
                                     </button>
                                 </li>
 
-
-                                <li class="enable-flyout__menu-item">
-                                    <!-- Begin section ARIA Live Regions -->
-                                    <button aria-expanded="false" aria-controls="aria-live-section"
-                                        class="enable-flyout__open-level-button">
-                                        ARIA Live Regions
-                                    </button>
-                                    <div class="enable-flyout__level-heading">ARIA Live Regions</div>
-                                    <div id="aria-live-section" aria-label="ARIA Live Regions" role="group"
-                                        class="enable-flyout enable-flyout__level enable-flyout__dropdown">
-                                        <button class="enable-flyout__hamburger-icon-facade">
-                                            <span class="sr-only">
-                                                close mobile flyout
-                                            </span>
-                                        </button>
-                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                                <button class="enable-flyout__close-level-button">
-                                                    Go Back
-                                                </button>
-                                            </li>
-
-                                            <!-- Start menu items for section ARIA Live Regions -->
-
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="alert.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Alert
-                                                </a>
-                                            </li>
-
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="log.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Log
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="timer.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Timer
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="marquee.php" class="enable-flyout__link">
-
-                                                    <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Marquee
-                                                </a>
-                                            </li>
-                                            <li class="enable-flyout__menu-item">
-                                                <a href="status.php" class="enable-flyout__link">
-                                                    <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Status
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
                                 <li class="enable-flyout__menu-item">
                                     <!-- Begin section Focus Management -->
                                     <button aria-expanded="false" aria-controls="focus-management-section"
@@ -489,6 +429,67 @@
                                         </ul>
                                     </div>
                                 </li>
+
+
+                                <li class="enable-flyout__menu-item">
+                                    <!-- Begin section ARIA Live Regions -->
+                                    <button aria-expanded="false" aria-controls="aria-live-section"
+                                        class="enable-flyout__open-level-button">
+                                        ARIA Live Regions
+                                    </button>
+                                    <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+                                    <div id="aria-live-section" aria-label="ARIA Live Regions" role="group"
+                                        class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                        <button class="enable-flyout__hamburger-icon-facade">
+                                            <span class="sr-only">
+                                                close mobile flyout
+                                            </span>
+                                        </button>
+                                        <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                            <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                                <button class="enable-flyout__close-level-button">
+                                                    Go Back
+                                                </button>
+                                            </li>
+
+                                            <!-- Start menu items for section ARIA Live Regions -->
+
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="alert.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/alert", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Alert
+                                                </a>
+                                            </li>
+
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="log.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/log", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Log
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="timer.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/timer", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Timer
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="marquee.php" class="enable-flyout__link">
+
+                                                    <?php pictureWebpPng("images/main-menu/marquee", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Marquee
+                                                </a>
+                                            </li>
+                                            <li class="enable-flyout__menu-item">
+                                                <a href="status.php" class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/status", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Status
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
                             </ul>
                         </div>
                     </li>

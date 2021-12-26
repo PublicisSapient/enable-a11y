@@ -18,16 +18,17 @@
 
 <body>
     <?php include "includes/documentation-header.php";?>
-    <div class="play-pause-anim__checkbox-container" id="checkbox-container">
-        <label for="play-pause-animation-button">
-            Pause animations
-            <input type="checkbox" id="play-pause-animation-button"
-                class="play-pause-animation-button__checkbox" />
-        </label>
-
-    </div>
+    
    
     <main class="with-full-bleed-hero">
+        <div class="play-pause-anim__checkbox-container" id="checkbox-container">
+            <label for="play-pause-animation-button">
+                Pause animations
+                <input type="checkbox" id="play-pause-animation-button"
+                    class="play-pause-animation-button__checkbox" />
+            </label>
+
+        </div>
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">
                 

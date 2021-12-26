@@ -1473,7 +1473,7 @@
 
         <ul>
             <li>
-                The autocomplete features are available to mobile screen reader users.
+                The autocomplete features are not available to mobile screen reader users.
                 I was not able to figure out how to gain access to the datalist values
                 using either Talkback/Chrome on Android or VoiceOver/Safari for iOS.
             <li>
@@ -1485,6 +1485,9 @@
                 these values out (e.g. older versions of Safari with VoiceOver).
             </li>
             <li>
+                The autocomplete features do not appear at all in Firefox for Android (at the time of this writing, it was version 96).
+    </li>
+            <li>
                 Because of the above reasons, it is one of the cases where ARIA works
                 better.
             </li>
@@ -1495,7 +1498,7 @@
                 <label id="html5-fruit__label" for="html5-fruit" class="combobox-label">
                     Enter a Fruit or Vegetable
                 </label>
-                <input id="html5-fruit" name="friuit" type="text" list="languages" aria-describedby="html5-fruit__desc" />
+                <input id="html5-fruit" name="fruit" type="text" list="languages" aria-describedby="html5-fruit__desc" />
                 <div class="sr-only" id="html5-fruit__desc">
                     As you type, use the up and down arrow keys to choose the autocomplete
                     items.

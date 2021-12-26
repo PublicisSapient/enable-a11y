@@ -15,7 +15,7 @@
 
 // This would be normally set to a lower number.  However, AblePlayer's
 // max z-index is 10000, so we are compensating.
-@min-z-index: 10001;
+@min-z-index: (@able-player-max-z-index + 3);
 
 .icon-mixin(@img) {
   content: "";
@@ -192,7 +192,6 @@
     display: block;
     
     font-size: 1em;
-    font-weight: 100;
     padding: 1em 1em 1em 0;
     text-decoration: none;
     text-indent: 20px;
@@ -266,7 +265,6 @@
   }
 
   &__close-level-button {
-    color: @color2;
     cursor: pointer;
     display: block;
     font-size: 1em;
@@ -433,7 +431,7 @@
       font-weight: bold;
       font-size: (26 / @px);
       border-bottom: 1px solid #999;
-      padding: 20px 20px 0 20px;
+      padding: 0 14px;
       display: block;
       text-align: left;
     }
