@@ -168,17 +168,17 @@
                     },
                     {
                         "label": "Set up the checkbox click event",
-                        "highlight": "%JS%playPauseAnimationButton ||| document.addEventListener\\('change'[^\\)]*\\); ||| this.clickEvent =",
+                        "highlight": "%JS%playPauseAnimationControl ||| document.addEventListener\\('change'[^\\)]*\\); ||| this.clickEvent =",
                         "notes": ""
                     },
                     {
                         "label": "Call the appropriate method when the checkbox is clicked and unclicked",
-                        "highlight": "%JS%playPauseAnimationButton ||| this.play\\(\\); ||| this.pause\\(\\);",
+                        "highlight": "%JS%playPauseAnimationControl ||| this.play\\(\\); ||| this.pause\\(\\);",
                         "notes": "You will also notice that the pause and play methods are fired when in and out of the <code>prefers-reduced-motion</code> breakpoint."
                     },
                     {
                         "label": "In the pause and play methods, add the appropriate classes to the body",
-                        "highlight": "%JS%playPauseAnimationButton ||| body.classList[^\\)]*\\);",
+                        "highlight": "%JS%playPauseAnimationControl ||| body.classList[^\\)]*\\);",
                         "notes": "This adds the <code>play-pause-animation-button__prefers-reduced-motion</code> to the body (this was the class that stops the CSS animation in one of the previous steps)."
                     }
                 ]
@@ -207,22 +207,22 @@
                 "replaceHtmlRules": {},
                 "steps": [{
                         "label": "Cache the browser requestAnimationFrame method",
-                        "highlight": "%JS%  playPauseAnimationButton ||| let cachedRAF[^;]*;",
+                        "highlight": "%JS%  playPauseAnimationControl ||| this.cachedRAF =[^;]*;",
                         "notes": ""
                     },
                     {
                         "label": "Create a dummy function that calls itself one every 100 ms",
-                        "highlight": "%JS% playPauseAnimationButton ||| this.dummyRAF =",
+                        "highlight": "%JS% playPauseAnimationControl ||| this.dummyRAF =",
                         "notes": ""
                     },
                     {
                         "label": "When pause method is executed, set requestAnimationFrame to dummy function",
-                        "highlight": "%JS% playPauseAnimationButton ||| window.requestAnimationFrame = this.dummyRAF;",
+                        "highlight": "%JS% playPauseAnimationControl ||| window.requestAnimationFrame = this.dummyRAF;",
                         "notes": "Since most canvas animation rely on requestAnimationFrame to produce and animation frame, this should stop any animations from executing."
                     },
                     {
                         "label": "When play method is executed, set requestAnimationFrame back to the browser default",
-                        "highlight": "%JS% playPauseAnimationButton ||| window.requestAnimationFrame = cachedRAF;",
+                        "highlight": "%JS% playPauseAnimationControl ||| window.requestAnimationFrame = this.cachedRAF;",
                         "notes": ""
                     }
                 ]
@@ -338,7 +338,7 @@
                     },
                     {
                         "label": "Use the SVG <code>pauseAnimations</code> and <code>playAnimations</code> methods",
-                        "highlight": "%JS% playPauseAnimationButton ||| document.querySelectorAll\\('svg'\\) ||| el.pauseAnimations\\(\\);  ||| el.unpauseAnimations\\(\\);",
+                        "highlight": "%JS% playPauseAnimationControl ||| document.querySelectorAll\\('svg'\\) ||| el.pauseAnimations\\(\\);  ||| el.unpauseAnimations\\(\\);",
                         "notes": "Every SVG object has these methods."
                     }
                 ]
@@ -396,8 +396,8 @@
 
     </main>
 
-    <script src="js/play-pause-animations-button.js"></script>
     <script src="js/demos/ana-tudor/elastic-collision.js"></script>
+    <script src="js/play-pause-animations-button.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

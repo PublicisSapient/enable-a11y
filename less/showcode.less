@@ -192,10 +192,14 @@ code {
 
   &__ui {
     position: sticky;
-    top: 0;
+    top: (40/@px);
     z-index: 1;
     background-color: rgb(245, 222, 179);
     padding: 0.01em;
+
+    @media @desktop {
+      top: 0;
+    }
   }
 
   &__notes {

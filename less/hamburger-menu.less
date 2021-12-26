@@ -248,16 +248,25 @@
 
   animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
   &--is-open {
-    animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
     display: block;
+    animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+
+    /* fallback if animation is not supported *or* turned off */
+    right: 0; 
   }
 
   &--is-closed {
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out reverse;
+
+    /* fallback if animation is not supported *or* turned off */
+    right: @hamburger-offset-y;
   }
 
   &__level&--is-open {
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
+
+    /* fallback if animation is not supported *or* turned off */
+    right: 0;
   }
 
   &__level-heading {
@@ -545,11 +554,6 @@
 
 @keyframes enable-flyout__anim--mobile-open {
   0% {
-    display: block;
-  }
-
-  0.001% {
-    display: block;
     right: @hamburger-offset-y;
   }
 

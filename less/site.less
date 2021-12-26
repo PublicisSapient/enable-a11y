@@ -27,7 +27,7 @@
 
   &__link {
     text-indent: 0px;
-    padding: 1em;
+    padding: 13px;
   }
 
   &__list &__list {
@@ -38,7 +38,7 @@
 
 @media @desktop {
   .enable-flyout {
-    @item-height: 167px;
+    @item-height: (167 / @px);
 
     &__link-image {
       width: 105px;
@@ -46,7 +46,7 @@
     }
 
     &__level &__level &__menu-item {
-      width: 100%;
+      width: (@desktop-min - 70px);
       padding-bottom: 10px;
     }
 

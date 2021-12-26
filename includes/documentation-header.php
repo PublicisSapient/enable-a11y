@@ -92,7 +92,7 @@
                                             <li class="enable-flyout__menu-item">
                                                 <a href="checkbox.php" class="enable-flyout__link">
                                                     <?php pictureWebpPng("images/main-menu/checkbox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Checkboxes
+                                                    Check&shy;boxes
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">
@@ -116,7 +116,7 @@
                                             <li class="enable-flyout__menu-item">
                                                 <a href="combobox.php" class="enable-flyout__link">
                                                     <?php pictureWebpPng("images/main-menu/combobox", "", "class=\"enable-flyout__link-image\""); ?>
-                                                    Autocomplete Combobox
+                                                    Auto&shy;complete Combo&shy;box
                                                 </a>
                                             </li>
                                             <li class="enable-flyout__menu-item">

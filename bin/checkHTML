@@ -145,7 +145,7 @@ then
 	exit
 fi
 
-# rm $TEMP_FILES
+rm $TEMP_FILES
 
 echo "Running accessibility tests..."
 
