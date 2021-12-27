@@ -176,9 +176,7 @@
 
     <?php include "includes/example-footer.php" ?>
 
-    <script src="js/shared/enable-visible-on-focus.js"></script>
-    <script src="node_modules/glider-js/glider.min.js"></script>
-    <script src="js/shared/enable-carousel.js"></script>
+    <script src="js/shared/enable-carousel.js" type="module"></script>
 </body>
 
 </html>

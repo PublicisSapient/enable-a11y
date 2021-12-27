@@ -1,3 +1,20 @@
+'use strict'
+
+/*******************************************************************************
+* enable-carousel.js - Accessible shim over the Glider carousel
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released December 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/carousel.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+
+import '../../node_modules/glider-js/glider.min.js';
+
 const EnableCarousel = function (container) {
   let glider;
   this.container = container;
@@ -5,6 +22,7 @@ const EnableCarousel = function (container) {
   this.init = function () {
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
+    // eslint-disable-next-line no-undef
     glider = new Glider(this.container, {
       slidesToShow: 1,
       dots: "#dots",
@@ -51,7 +69,7 @@ const EnableCarousel = function (container) {
     }
   };
 
-  this.clickHandler = (e) => {
+  this.clickHandler = () => {
     // this is a mouse user, so let's make the carousel animated.
     glider.setOption({
       duration: 0.5,
@@ -72,5 +90,6 @@ const EnableCarousel = function (container) {
   this.init();
 }
 
+new EnableCarousel(document.querySelector(".glider"));
 
-const a = new EnableCarousel(document.querySelector(".glider"));
+export default EnableCarousel;
