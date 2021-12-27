@@ -1,5 +1,7 @@
 const playPauseAnimationControl = new function () {
     let timePausePressed = null;
+    const pauseEvent = new Event('enable-pause');
+    const playEvent = new Event('enable-play');
 
     this.cachedRAF = window.requestAnimationFrame;
 
@@ -10,8 +12,6 @@ const playPauseAnimationControl = new function () {
             setTimeout(() => {
                 window.requestAnimationFrame(func, true);
             }, 500);
-        } else {
-            console.log('bad frame dropped');
         }
         return;
     }
@@ -37,14 +37,28 @@ const playPauseAnimationControl = new function () {
             // for AblePlayer videos
             if (typeof(AblePlayerInstances) !== 'undefined') {
                 AblePlayerInstances.forEach(el => {
-                    el.pauseMedia();
+                    if (el.playing) {
+                        el.pausedWithEnableControl = true;
+                        el.pauseMedia();
+                    }
                 });
             }
+
+            // for vanilla HTML5 Videos
+            document.querySelectorAll('video').forEach((el) => {
+                const { dataset } = el;
+                if (!dataset.ablePlayer && !dataset.notPausableByEnable && !el.paused) {
+                    dataset.pausedWithEnableControl = true;
+                    el.pause();
+                } 
+            });
+
+            // fire play event
+            document.dispatchEvent(pauseEvent);
 
             localStorage.setItem(this.reduceMotionKey, true);
 
             timePausePressed = Date.now();
-            console.log('pause', timePausePressed);
         }
     }
 
@@ -66,9 +80,25 @@ const playPauseAnimationControl = new function () {
         // for AblePlayer videos
         if (typeof(AblePlayerInstances) !== 'undefined') {
             AblePlayerInstances.forEach(el => {
-                el.playMedia();
+                if (el.pausedWithEnableControl) {
+                    el.pausedWithEnableControl = false;
+                    el.playMedia();
+                }
             });
         }
+
+        // for vanilla HTML5 Videos
+        document.querySelectorAll('video').forEach((el) => {
+            const { dataset } = el;
+            
+            if (dataset.pausedWithEnableControl) {
+                dataset.pausedWithEnableControl = false;
+                el.play();
+            } 
+        });
+
+        // fire pause event.
+        document.dispatchEvent(playEvent);
 
         localStorage.removeItem(this.reduceMotionKey);
     }
@@ -76,7 +106,6 @@ const playPauseAnimationControl = new function () {
     this.clickEvent = (e) => {
         if (this.$checkbox.classList.contains(this.checkboxClass)) {
             if (this.$checkbox.checked) {
-                console.log('3');
                 this.pause();
             } else {
                 this.play();
@@ -86,7 +115,7 @@ const playPauseAnimationControl = new function () {
     
 
     this.init = function () {
-        this.rootClass = 'play-pause-animation-button';
+        this.rootClass = 'play-pause-animation-control';
         this.pauseClass = `${this.rootClass}__prefers-reduced-motion`;
         this.playClass = `${this.rootClass}__prefers-motion`;
         this.checkboxClass = `${this.rootClass}__checkbox`;
@@ -97,7 +126,6 @@ const playPauseAnimationControl = new function () {
 
         if (this.prefersReducedMotionMq.matches || this.wasSetByUser) {
             this.$checkbox.checked = true;
-            console.log('1');
             this.pause();
         } else {
             this.$checkbox.checked = false;
@@ -107,7 +135,6 @@ const playPauseAnimationControl = new function () {
         this.prefersReducedMotionMq.addEventListener('change', (e) => {
             if (e.matches) {
                 this.$checkbox.checked = true;
-                console.log('2');
                 this.pause();
             } else {
                 this.$checkbox.checked = false;

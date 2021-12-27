@@ -4,7 +4,11 @@
 <head>
     <title>Play and Pause CSS, Canvas SVG SMIL and GIF animations with Javascript</title>
     <?php include "includes/common-head-tags.php";?>
-    <link id="pause-anim-css" rel="stylesheet" type="text/css" href="css/pause-animations-demo.css" />
+    <link id="pause-anim-css" rel="stylesheet" href="css/pause-animations-demo.css" />
+
+    <!-- For AblePlayer -->
+    <link id="able-player-css" href="js/libs/ableplayer/styles/ableplayer.css" rel="stylesheet" />
+    <link id="enable-video-player-css" href="css/video-player.css" rel="stylesheet" />
 
     <!-- for the elastic collision demo -->
     <style>
@@ -22,10 +26,10 @@
    
     <main class="with-full-bleed-hero">
         <div class="play-pause-anim__checkbox-container" id="checkbox-container">
-            <label for="play-pause-animation-button">
+            <label for="play-pause-animation-control">
                 Pause animations
-                <input type="checkbox" id="play-pause-animation-button"
-                    class="play-pause-animation-button__checkbox" />
+                <input type="checkbox" id="play-pause-animation-control"
+                    class="play-pause-animation-control__checkbox" />
             </label>
 
         </div>
@@ -75,7 +79,7 @@
             <script type="application/json" id="document-props">
             {
                 "replaceHtmlRules": {
-                    "head": "<!-- head content -->",
+                    "head": "... <link rel=\"stylesheet\" href=\"css/pause-animations-demo.css\" /> ...",
                     "body": "...<script src=\"js/play-pause-animations-button.js\"><\/script>"
                 },
                 "steps": [{
@@ -115,9 +119,9 @@
                         href="">prefers-reduced-motion media query</a>).
                 <li>If <code>prefers-reduced-motion</code> media-query is set to "reduce", the script turns off the
                     animations and checks the checkbox by default.
-                <li>If the checkmark is checked, the class <code>play-pause-animation-button__prefers-reduced-motion</code>
+                <li>If the checkmark is checked, the class <code>play-pause-animation-control__prefers-reduced-motion</code>
                     is set on the <code>body</code> tag. Otherwise, the <code>body</code> tag has the
-                    <code>play-pause-animation-button__prefers-motion</code> class set. These classes are used to pause and
+                    <code>play-pause-animation-control__prefers-motion</code> class set. These classes are used to pause and
                     play CSS and GIF/WEBP animations.
                 </li>
                 <li>The script does some extra magic to turn off the other animations (see below).</li>
@@ -151,12 +155,12 @@
                     },
                     {
                         "label": "Add CSS that will stop all CSS animations",
-                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [ ]*animation-delay[^}]*transition-delay[^;]*; ||| %CSS% pause-anim-css ~ body.play-pause-animation-button__prefers-reduced-motion ||| [ ]*animation-delay[^}]*transition-delay[^;]*;",
+                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [ ]*animation-delay[^}]*transition-delay[^;]*; ||| %CSS% pause-anim-css ~ body.play-pause-animation-control__prefers-reduced-motion ||| [ ]*animation-delay[^}]*transition-delay[^;]*;",
                         "notes": [
                             "The highlighted code will activate if:",
                             "<ul>",
                             "  <li>The user has configured the operating system to reduce motion animations, <strong>or</strong></li>",
-                            "  <li>The <code>.play-pause-animation-button__prefers-reduced-motion</code> is set to the <code>body</code> tag.",
+                            "  <li>The <code>.play-pause-animation-control__prefers-reduced-motion</code> is set to the <code>body</code> tag.",
                             "</ul>",
                             "<p>This code was provided in Bruce's Lawson's awesome blog post <a href=\"https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/\">prefers-reduced-motion and browser defaults</a>."
                         ]
@@ -179,7 +183,7 @@
                     {
                         "label": "In the pause and play methods, add the appropriate classes to the body",
                         "highlight": "%JS%playPauseAnimationControl ||| body.classList[^\\)]*\\);",
-                        "notes": "This adds the <code>play-pause-animation-button__prefers-reduced-motion</code> to the body (this was the class that stops the CSS animation in one of the previous steps)."
+                        "notes": "This adds the <code>play-pause-animation-control__prefers-reduced-motion</code> to the body (this was the class that stops the CSS animation in one of the previous steps)."
                     }
                 ]
             }
@@ -359,10 +363,10 @@
             </p>
 
             <div id="anim-gif-demo" class="enable-example">
-                <div class="play-pause-animation-button__gif">
-                    <img class="play-pause-animation-button__gif--animated" src="images/running-man-anim.gif"
+                <div class="play-pause-animation-control__gif">
+                    <img class="play-pause-animation-control__gif--animated" src="images/running-man-anim.gif"
                         alt="Animated drawing of a man running" />
-                    <img class="play-pause-animation-button__gif--still" src="images/running-man-anim__still.jpg"
+                    <img class="play-pause-animation-control__gif--still" src="images/running-man-anim__still.jpg"
                         alt="A drawing of a man running" />
                 </div>
             </div>
@@ -378,17 +382,114 @@
                     },
                     {
                         "label": "Make the animated GIF visible and the still variation hidden by default",
-                        "highlight": "%CSS% pause-anim-css ~ .play-pause-animation-button__gif--animated ||| %CSS% pause-anim-css ~ .play-pause-animation-button__gif--still",
+                        "highlight": "%CSS% pause-anim-css ~ .play-pause-animation-control__gif--animated ||| %CSS% pause-anim-css ~ .play-pause-animation-control__gif--still",
                         "notes": ""
                     },
                     {
                         "label": "When the user wants the animation to be hidden, show only the still variation.",
-                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [^\\n]*body:not\\(.play-pause-animation-button__prefers-motion\\)\\s.play-pause-animation-button__gif-[^}]*} ||| %CSS% pause-anim-css ~ body.play-pause-animation-button__prefers-reduced-motion ||| body.play-pause-animation-button__prefers-reduced-motion\\s.play-pause-animation-button__gif-[^}]*}",
+                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [^\\n]*body:not\\(.play-pause-animation-control__prefers-motion\\)\\s.play-pause-animation-control__gif-[^}]*} ||| %CSS% pause-anim-css ~ body.play-pause-animation-control__prefers-reduced-motion ||| body.play-pause-animation-control__prefers-reduced-motion\\s.play-pause-animation-control__gif-[^}]*}",
                         "notes": ""
                     }
                 ]
             }
             </script>
+
+            <h3>Vanilla HTML5 Video</h3>
+
+            <p>
+                Videos embedded by the video tag can be paused automatically by the script as well.
+                Note that when the user unchecks the "Pause animations" checkbox, 
+                the videos will only start playing if they were playing when the checkbox was 
+                originally checked.
+            </p> 
+
+            <div id="html5-video-example">
+                <video controls="" preload="metadata" autoplay muted loop>
+                    <source src="videos/test-pattern.mp4" type="video/mp4">
+                    Video not supported.
+                </video>
+            </div>
+
+            <?php includeShowcode("html5-video-example")?>
+            <script type="application/json" id="html5-video-example-props">
+            {
+                "replaceHtmlRules": {
+                },
+                "steps": [
+                {
+                    "label": "Insert the video tag.",
+                    "highlight": "%OPENCLOSECONTENTTAG%video",
+                    "notes": "Note that if you are going to autoplay, most browsers also require that you also mute the video as well.  Autoplaying videos can be annoying to many users, so avoid when possible.  Please read <a href=\"https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide\">Autoplay guide for media and Web Audio APIs</a> from <a href=\"https://developer.mozilla.org/\">MDN</a> for more information."
+                },
+                {
+                    "label": "The script will use the standard <code>.pause()</code> and <code>play()</code> methods for the video element when the checkbox is checked/unchecked",
+                    "highlight": "%JS%playPauseAnimationControl ||| el.play\\(\\); ||| el.pause\\(\\)",
+                    "notes": ""
+                }
+            ]}
+            </script>
+
+            <h3>AblePlayer</h3>
+
+            <p>
+                Since AblePlayer plays videos 
+                Note that when the user unchecks the "Pause animations" checkbox, 
+                the videos will only start playing if they were playing when the checkbox was 
+                originally checked. <strong><em>(Since this video does not autoplay, you must play it first and then check the "Pause Animations" checkbox in order to test it properly)</em></strong>
+            </p>
+                
+        
+            <div id="ableplayer-example">
+                <div class="enable-video-player">
+                    <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" >
+                        <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English" />
+                        <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
+                            label="English Audio Descriptions" />
+                    </video>
+                </div>
+            </div>
+
+            <?php includeShowcode("ableplayer-example")?>
+            <script type="application/json" id="ableplayer-example-props">
+            {
+                "replaceHtmlRules": {
+                },
+                "steps": [
+                {
+                    "label": "As usual, make sure the Able player video tag is marked up correctly.",
+                    "highlight": "data-able-player ||| data-youtube-id ||| data-skin",
+                    "notes": "Please read the documentation for <a href=\"https://ableplayer.github.io/ableplayer/\">AblePlayer</a> as well as <a href=\"video-player.php\">our video player</a> page for more information on how to mark up AblePlayer videos."
+                },
+                {
+                    "label": "The script will use the AblePlayer's <code>.pauseMedia()</code> and <code>playMedia()</code> methods for all the videos when the checkbox is checked/unchecked",
+                    "highlight": "%JS%playPauseAnimationControl ||| el.playMedia\\(\\); ||| el.pauseMedia\\(\\)",
+                    "notes": ""
+                }
+            ]}
+            </script>
+
+            <h3>Making scrollIntoView() Respect the Pause Control</h3>
+
+            <p>
+                It is possible to make the a DOM element's <code>scrollIntoView()</code> method respect the setting of the pause control.  You will notice that all the code walkthroughs will not animate when changing steps and the "Pause animations" control is checked.  This part of the code shows you how this works:
+            </p>
+
+            <div id="empty-example"></div>
+
+            <?php includeShowcode("empty-example")?>
+            <script type="application/json" id="empty-example-props">
+            {
+                "replaceHtmlRules": {
+                },
+                "steps": [
+                {
+                    "label": "Set the behavior value correctly in the scrollIntoView() call",
+                    "highlight": "%JS%showcode.scrollToHighlightedText ||| const behavior[^;]*; ||| firstHighlightdElement.scrollIntoView[^;]*;",
+                    "notes": ""
+                }
+            ]}
+            </script>
+
         </div>
 
 
@@ -396,9 +497,16 @@
 
     </main>
 
+    <?php include "includes/example-footer.php"?>
+
+
     <script src="js/demos/ana-tudor/elastic-collision.js"></script>
     <script src="js/play-pause-animations-button.js"></script>
-    <?php include "includes/example-footer.php"?>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>
+    <script src="js/libs/ableplayer/build/ableplayer.js"></script>
+    <script src="js/ablePlayerCustomizations.js"></script>
 </body>
 
 </html>

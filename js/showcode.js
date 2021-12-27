@@ -489,20 +489,29 @@ const showcode = new (function () {
     codeEl.innerHTML = code;
 
     if (doScroll) {
-      // now ... let's see if we can scroll the page to the first highlighted part
-      const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
+      this.scrollToHighlightedText(codeEl);
+    }
+  }
+
+  this.scrollToHighlightedText = (codeEl) => {
+    // now ... let's see if we can scroll the page to the first highlighted part
+    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
       
 
-      if (firstHighlightdElement) {
-        const { body } = document;
-        const componentRoot = codeEl.closest('.showcode');
-        const uiEl = componentRoot.querySelector('.showcode__ui');
-        const highlightRect = firstHighlightdElement.getBoundingClientRect();
-        const uiRect = uiEl.getBoundingClientRect();
-        const behavior = body.classList.contains('play-pause-animation-button__prefers-reduced-motion') ? 'auto' : 'smooth';
+    if (firstHighlightdElement) {
+      const { body } = document;
+      const componentRoot = codeEl.closest('.showcode');
+      const uiEl = componentRoot.querySelector('.showcode__ui');
+      const highlightRect = firstHighlightdElement.getBoundingClientRect();
+      const uiRect = uiEl.getBoundingClientRect();
 
-        firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
-      }
+      // If the pause animations checkbox is checked, 
+      // set behavior to "auto" (no animatied scrolling).
+      // Otherwise, set it to "smooth" (animated scrolling).
+      const behavior = body.classList.contains('play-pause-animation-control__prefers-reduced-motion') ? 'auto' : 'smooth';
+
+      // set the value correctly in the .scrollIntoView() method.
+      firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
     }
   }
 
@@ -668,7 +677,6 @@ const showcode = new (function () {
 
       if (stepsJson) {
         try {
-          console.log('whoah!');
           if (stepsJson.length > 0) {
             for (let i in stepsJson) {
               const optionEl = document.createElement('OPTION');
