@@ -309,8 +309,8 @@
                                     </a>
                                 </li>
                                 <li class="enable-flyout__menu-item">
-                                    <a href="play-pause-animations-button.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/play-pause-animations-button", "", "class=\"enable-flyout__link-image\""); ?>
+                                    <a href="pause-anim-control.php" class="enable-flyout__link">
+                                        <?php pictureWebpPng("images/main-menu/pause-anim-control", "", "class=\"enable-flyout__link-image\""); ?>
                                         Pause All Animations Control
                                     </a>
                                 </li>

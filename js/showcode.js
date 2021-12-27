@@ -508,7 +508,7 @@ const showcode = new (function () {
       // If the pause animations checkbox is checked, 
       // set behavior to "auto" (no animatied scrolling).
       // Otherwise, set it to "smooth" (animated scrolling).
-      const behavior = body.classList.contains('play-pause-animation-control__prefers-reduced-motion') ? 'auto' : 'smooth';
+      const behavior = body.classList.contains('pause-anim-control__prefers-reduced-motion') ? 'auto' : 'smooth';
 
       // set the value correctly in the .scrollIntoView() method.
       firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });

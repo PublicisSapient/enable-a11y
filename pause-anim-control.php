@@ -26,10 +26,10 @@
    
     <main class="with-full-bleed-hero">
         <div class="play-pause-anim__checkbox-container" id="checkbox-container">
-            <label for="play-pause-animation-control">
+            <label for="pause-anim-control">
                 Pause animations
-                <input type="checkbox" id="play-pause-animation-control"
-                    class="play-pause-animation-control__checkbox" />
+                <input type="checkbox" id="pause-anim-control"
+                    class="pause-anim-control__checkbox" />
             </label>
 
         </div>
@@ -71,7 +71,7 @@
             <h2>Quick Start guide</h2>
 
             <p>
-                Just <a href="js/play-pause-animations-button.js">download the script</a> and include it at the end of the
+                Just <a href="js/pause-anim-control.js">download the script</a> and include it at the end of the
                 <code>body</code>:
             </p>
 
@@ -80,11 +80,11 @@
             {
                 "replaceHtmlRules": {
                     "head": "... <link rel=\"stylesheet\" href=\"css/pause-animations-demo.css\" /> ...",
-                    "body": "...<script src=\"js/play-pause-animations-button.js\"><\/script>"
+                    "body": "...<script src=\"js/pause-anim-control.js\"><\/script>"
                 },
                 "steps": [{
                     "label": "",
-                    "highlight": "src=\"js/play-pause-animations-button.js\"",
+                    "highlight": "src=\"js/pause-anim-control.js\"",
                     "notes": ""
                 }]
             }
@@ -119,9 +119,9 @@
                         href="">prefers-reduced-motion media query</a>).
                 <li>If <code>prefers-reduced-motion</code> media-query is set to "reduce", the script turns off the
                     animations and checks the checkbox by default.
-                <li>If the checkmark is checked, the class <code>play-pause-animation-control__prefers-reduced-motion</code>
+                <li>If the checkmark is checked, the class <code>pause-anim-control__prefers-reduced-motion</code>
                     is set on the <code>body</code> tag. Otherwise, the <code>body</code> tag has the
-                    <code>play-pause-animation-control__prefers-motion</code> class set. These classes are used to pause and
+                    <code>pause-anim-control__prefers-motion</code> class set. These classes are used to pause and
                     play CSS and GIF/WEBP animations.
                 </li>
                 <li>The script does some extra magic to turn off the other animations (see below).</li>
@@ -155,12 +155,12 @@
                     },
                     {
                         "label": "Add CSS that will stop all CSS animations",
-                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [ ]*animation-delay[^}]*transition-delay[^;]*; ||| %CSS% pause-anim-css ~ body.play-pause-animation-control__prefers-reduced-motion ||| [ ]*animation-delay[^}]*transition-delay[^;]*;",
+                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [ ]*animation-delay[^}]*transition-delay[^;]*; ||| %CSS% pause-anim-css ~ body.pause-anim-control__prefers-reduced-motion ||| [ ]*animation-delay[^}]*transition-delay[^;]*;",
                         "notes": [
                             "The highlighted code will activate if:",
                             "<ul>",
                             "  <li>The user has configured the operating system to reduce motion animations, <strong>or</strong></li>",
-                            "  <li>The <code>.play-pause-animation-control__prefers-reduced-motion</code> is set to the <code>body</code> tag.",
+                            "  <li>The <code>.pause-anim-control__prefers-reduced-motion</code> is set to the <code>body</code> tag.",
                             "</ul>",
                             "<p>This code was provided in Bruce's Lawson's awesome blog post <a href=\"https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/\">prefers-reduced-motion and browser defaults</a>."
                         ]
@@ -172,18 +172,18 @@
                     },
                     {
                         "label": "Set up the checkbox click event",
-                        "highlight": "%JS%playPauseAnimationControl ||| document.addEventListener\\('change'[^\\)]*\\); ||| this.clickEvent =",
+                        "highlight": "%JS%pauseAnimControl ||| document.addEventListener\\('change'[^\\)]*\\); ||| this.clickEvent =",
                         "notes": ""
                     },
                     {
                         "label": "Call the appropriate method when the checkbox is clicked and unclicked",
-                        "highlight": "%JS%playPauseAnimationControl ||| this.play\\(\\); ||| this.pause\\(\\);",
+                        "highlight": "%JS%pauseAnimControl ||| this.play\\(\\); ||| this.pause\\(\\);",
                         "notes": "You will also notice that the pause and play methods are fired when in and out of the <code>prefers-reduced-motion</code> breakpoint."
                     },
                     {
                         "label": "In the pause and play methods, add the appropriate classes to the body",
-                        "highlight": "%JS%playPauseAnimationControl ||| body.classList[^\\)]*\\);",
-                        "notes": "This adds the <code>play-pause-animation-control__prefers-reduced-motion</code> to the body (this was the class that stops the CSS animation in one of the previous steps)."
+                        "highlight": "%JS%pauseAnimControl ||| body.classList[^\\)]*\\);",
+                        "notes": "This adds the <code>pause-anim-control__prefers-reduced-motion</code> to the body (this was the class that stops the CSS animation in one of the previous steps)."
                     }
                 ]
             }
@@ -211,22 +211,22 @@
                 "replaceHtmlRules": {},
                 "steps": [{
                         "label": "Cache the browser requestAnimationFrame method",
-                        "highlight": "%JS%  playPauseAnimationControl ||| this.cachedRAF =[^;]*;",
+                        "highlight": "%JS%  pauseAnimControl ||| this.cachedRAF =[^;]*;",
                         "notes": ""
                     },
                     {
                         "label": "Create a dummy function that calls itself one every 100 ms",
-                        "highlight": "%JS% playPauseAnimationControl ||| this.dummyRAF =",
+                        "highlight": "%JS% pauseAnimControl ||| this.dummyRAF =",
                         "notes": ""
                     },
                     {
                         "label": "When pause method is executed, set requestAnimationFrame to dummy function",
-                        "highlight": "%JS% playPauseAnimationControl ||| window.requestAnimationFrame = this.dummyRAF;",
+                        "highlight": "%JS% pauseAnimControl ||| window.requestAnimationFrame = this.dummyRAF;",
                         "notes": "Since most canvas animation rely on requestAnimationFrame to produce and animation frame, this should stop any animations from executing."
                     },
                     {
                         "label": "When play method is executed, set requestAnimationFrame back to the browser default",
-                        "highlight": "%JS% playPauseAnimationControl ||| window.requestAnimationFrame = this.cachedRAF;",
+                        "highlight": "%JS% pauseAnimControl ||| window.requestAnimationFrame = this.cachedRAF;",
                         "notes": ""
                     }
                 ]
@@ -342,7 +342,7 @@
                     },
                     {
                         "label": "Use the SVG <code>pauseAnimations</code> and <code>playAnimations</code> methods",
-                        "highlight": "%JS% playPauseAnimationControl ||| document.querySelectorAll\\('svg'\\) ||| el.pauseAnimations\\(\\);  ||| el.unpauseAnimations\\(\\);",
+                        "highlight": "%JS% pauseAnimControl ||| document.querySelectorAll\\('svg'\\) ||| el.pauseAnimations\\(\\);  ||| el.unpauseAnimations\\(\\);",
                         "notes": "Every SVG object has these methods."
                     }
                 ]
@@ -363,10 +363,10 @@
             </p>
 
             <div id="anim-gif-demo" class="enable-example">
-                <div class="play-pause-animation-control__gif">
-                    <img class="play-pause-animation-control__gif--animated" src="images/running-man-anim.gif"
+                <div class="pause-anim-control__gif">
+                    <img class="pause-anim-control__gif--animated" src="images/running-man-anim.gif"
                         alt="Animated drawing of a man running" />
-                    <img class="play-pause-animation-control__gif--still" src="images/running-man-anim__still.jpg"
+                    <img class="pause-anim-control__gif--still" src="images/running-man-anim__still.jpg"
                         alt="A drawing of a man running" />
                 </div>
             </div>
@@ -382,12 +382,12 @@
                     },
                     {
                         "label": "Make the animated GIF visible and the still variation hidden by default",
-                        "highlight": "%CSS% pause-anim-css ~ .play-pause-animation-control__gif--animated ||| %CSS% pause-anim-css ~ .play-pause-animation-control__gif--still",
+                        "highlight": "%CSS% pause-anim-css ~ .pause-anim-control__gif--animated ||| %CSS% pause-anim-css ~ .pause-anim-control__gif--still",
                         "notes": ""
                     },
                     {
                         "label": "When the user wants the animation to be hidden, show only the still variation.",
-                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [^\\n]*body:not\\(.play-pause-animation-control__prefers-motion\\)\\s.play-pause-animation-control__gif-[^}]*} ||| %CSS% pause-anim-css ~ body.play-pause-animation-control__prefers-reduced-motion ||| body.play-pause-animation-control__prefers-reduced-motion\\s.play-pause-animation-control__gif-[^}]*}",
+                        "highlight": "%CSS% pause-anim-css ~ @media (prefers-reduced-motion: reduce) ||| [^\\n]*body:not\\(.pause-anim-control__prefers-motion\\)\\s.pause-anim-control__gif-[^}]*} ||| %CSS% pause-anim-css ~ body.pause-anim-control__prefers-reduced-motion ||| body.pause-anim-control__prefers-reduced-motion\\s.pause-anim-control__gif-[^}]*}",
                         "notes": ""
                     }
                 ]
@@ -423,7 +423,7 @@
                 },
                 {
                     "label": "The script will use the standard <code>.pause()</code> and <code>play()</code> methods for the video element when the checkbox is checked/unchecked",
-                    "highlight": "%JS%playPauseAnimationControl ||| el.play\\(\\); ||| el.pause\\(\\)",
+                    "highlight": "%JS%pauseAnimControl ||| el.play\\(\\); ||| el.pause\\(\\)",
                     "notes": ""
                 }
             ]}
@@ -462,7 +462,7 @@
                 },
                 {
                     "label": "The script will use the AblePlayer's <code>.pauseMedia()</code> and <code>playMedia()</code> methods for all the videos when the checkbox is checked/unchecked",
-                    "highlight": "%JS%playPauseAnimationControl ||| el.playMedia\\(\\); ||| el.pauseMedia\\(\\)",
+                    "highlight": "%JS%pauseAnimControl ||| el.playMedia\\(\\); ||| el.pauseMedia\\(\\)",
                     "notes": ""
                 }
             ]}
@@ -501,7 +501,7 @@
 
 
     <script src="js/demos/ana-tudor/elastic-collision.js"></script>
-    <script src="js/play-pause-animations-button.js"></script>
+    <script src="js/pause-anim-control.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>

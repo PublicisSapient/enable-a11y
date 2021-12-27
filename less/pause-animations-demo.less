@@ -76,7 +76,7 @@ main {
   }
 }
 
-.play-pause-animation-control__gif {
+.pause-anim-control__gif {
     &--animated,
     &--still {
       max-width: 100%;
@@ -104,7 +104,7 @@ main {
         transition-delay: 0s !important;
     }
 
-    .play-pause-animation-control__gif {
+    .pause-anim-control__gif {
         &--animated {
             display: none;
         }
@@ -121,12 +121,12 @@ main {
  * https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/
  */
 @media (prefers-reduced-motion: reduce) {
-    body:not(.play-pause-animation-control__prefers-motion) {
+    body:not(.pause-anim-control__prefers-motion) {
         .prefers-reduced-motion(); 
     }
 }
 
-body.play-pause-animation-control__prefers-reduced-motion {
+body.pause-anim-control__prefers-reduced-motion {
     .prefers-reduced-motion();
 }
 

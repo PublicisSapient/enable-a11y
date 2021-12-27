@@ -53,7 +53,7 @@ const EnableFlyoutMenu = new function() {
   }
 
   this.openFlyout = () => {
-    const requestAnimationFrame = (typeof(playPauseAnimationControl) !== 'undefined') ? playPauseAnimationControl.cachedRAF : window.requestAnimationFrame;
+    const requestAnimationFrame = (typeof(pauseAnimControl) !== 'undefined') ? pauseAnimControl.cachedRAF : window.requestAnimationFrame;
 
     $root.classList.add(willAnimate);
 
@@ -150,7 +150,7 @@ const EnableFlyoutMenu = new function() {
   this.openMenuAnimationEnd = (e) => {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
-    const requestAnimationFrame = (typeof(playPauseAnimationControl) !== 'undefined') ? playPauseAnimationControl.cachedRAF : window.requestAnimationFrame;
+    const requestAnimationFrame = (typeof(pauseAnimControl) !== 'undefined') ? pauseAnimControl.cachedRAF : window.requestAnimationFrame;
 
     // When the menu is initially opened, set focus to the close button facade.
     if (target === $root) {

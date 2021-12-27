@@ -316,7 +316,7 @@
                     <li><a href="37-carousel.php">Carousel</a></li>
                     <li><a href="38-visible-on-focus.php">Visible On Focus CTAs/Skip Links</a></li>
                     <li><a href="43-read-more.php">Read More buttons</a></li>
-                    <li><a href="42-play-pause-animations-button.php">Pause animation Widget</a></li>
+                    <li><a href="42-pause-anim-control.php">Pause animation Widget</a></li>
 
                 </ul>
 

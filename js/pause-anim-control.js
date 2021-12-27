@@ -1,4 +1,4 @@
-const playPauseAnimationControl = new function () {
+const pauseAnimControl = new function () {
     let timePausePressed = null;
     const pauseEvent = new Event('enable-pause');
     const playEvent = new Event('enable-play');
@@ -115,7 +115,7 @@ const playPauseAnimationControl = new function () {
     
 
     this.init = function () {
-        this.rootClass = 'play-pause-animation-control';
+        this.rootClass = 'pause-anim-control';
         this.pauseClass = `${this.rootClass}__prefers-reduced-motion`;
         this.playClass = `${this.rootClass}__prefers-motion`;
         this.checkboxClass = `${this.rootClass}__checkbox`;
