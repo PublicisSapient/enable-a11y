@@ -1,10 +1,22 @@
+'use strict'
+
+/*******************************************************************************
+* sortable-table.js - A sortable table script
+* 
+* This has been mofified from the excellent script from Deque University:
+* https://dequeuniversity.com/library/aria/table-sortable
+*
+*******************************************************************************/
+
+
 const sortableTables = new (function () {
  /*
-  *  sortableTable script.  This has been mofified from the excellent script from Deque University:
-  *  https://dequeuniversity.com/library/aria/table-sortable
+  * sortableTable script.  This has been mofified from the excellent
+  * script from Deque University:
+  * https://dequeuniversity.com/library/aria/table-sortable
   */
 
-  function createSortableTable(tableGroup) {
+  const createSortableTable = (tableGroup) => {
     var table = tableGroup.querySelector("table");
     var headerGroup = table.querySelector("thead");
     var headerRow = headerGroup.querySelector("tr");
@@ -37,6 +49,10 @@ const sortableTables = new (function () {
 
     var sortOrder = null;
     var sortDirection = 1;
+
+    if (document.querySelector('.showcode')) {
+      window.sortableTables = this;
+    }
 
     function getSortHeader() {
       if (sortOrder === null) {
@@ -225,3 +241,5 @@ const sortableTables = new (function () {
 
   activateAllSortableTables();
 })();
+
+export default sortableTables;

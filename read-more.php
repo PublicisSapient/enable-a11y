@@ -112,7 +112,7 @@
 
     </main>
 
-    <script src="js/read-more.js"></script>
+    <script src="js/read-more.js" type="module"></script>
 
     <?php include "includes/example-footer.php"?>
   </body>

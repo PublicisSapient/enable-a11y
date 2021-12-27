@@ -119,7 +119,6 @@
         </script>
     </main>
 
-    <script src="js/role-checkbox.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

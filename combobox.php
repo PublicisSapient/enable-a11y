@@ -926,8 +926,10 @@
 
     </main>
 
-    <script src="js/accessibility.js"></script>
-    <script src="js/combobox__improved.js"></script>
+    
+    <?php include "includes/example-footer.php"?>
+
+    <script src="js/modules/combobox__improved.js" type="module"></script>
 
     <!-- This is the submit handler for example 2a -->
     <script>
@@ -943,7 +945,6 @@
             this.init();
         }
     </script>
-    <?php include "includes/example-footer.php"?>
 
 </body>
 

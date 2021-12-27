@@ -501,7 +501,7 @@
 
 
     <script src="js/demos/ana-tudor/elastic-collision.js"></script>
-    <script src="js/pause-anim-control.js"></script>
+    <script src="js/modules/pause-anim-control.js" type="module"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>

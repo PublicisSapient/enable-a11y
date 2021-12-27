@@ -1,4 +1,23 @@
-const showcode = new (function () {
+'use strict'
+
+/* global indent */
+
+/*******************************************************************************
+* showcode.js - A code walkthrough component
+*
+* This code is used in the Enable accessible component library
+* examples to show developers how and why components work.
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released 
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/showcode.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+const showcode = new function () {
   const htmlBlocks = document.querySelectorAll("[data-showcode-props]");
   const htmlCache = {};
   const codeblockCache = {};
@@ -13,13 +32,11 @@ const showcode = new (function () {
   const cr = /\n/g; // UNIX carriage return
   const mscr = /\r\n/g; // Microsoft carriage return
   const nbspStr = '\u00a0';
-  const nbsp = /\u00a0/g;
   const beginningSpaces = /^\s*/g;
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
-  const comment = /<\!--/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate|open|disabled)=\"\"/g;
+  const blankAttrValueRe = /(required|novalidate|open|disabled)=""/g;
   const commandsRe = /^%[A-Z]*?%/;
   
 
@@ -74,7 +91,7 @@ const showcode = new (function () {
 
   function formatCSS(localCode) {
     //localCode = localCode.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
-    localCode = localCode.replace(/([\{\,;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+    localCode = localCode.replace(/([{,;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
     localCode = indent.css(localCode, {tabString: '  '});
     return localCode + '\n\n';
   }
@@ -120,7 +137,7 @@ const showcode = new (function () {
 
 
           for (let k=0; k<properties.length; k++) {
-            let propertyRegEx = new RegExp(`${properties[k]}\:[^;]*\\;`);
+            let propertyRegEx = new RegExp(`${properties[k]}:[^;]*\\;`);
             code = code.replace(propertyRegEx, highlightFunc);
           }
           
@@ -137,7 +154,7 @@ const showcode = new (function () {
       console.info(`Unable to retrieve selector CSS rule for selector ${selectorPropertyPairs[0]}. This may be because this browser's CSS parser is not storing rules it cannot understand. Attempting to get the information from the CSS file itself.`)
 
       let returnedSelectorVal;
-      const r = (async () => {
+      (async () => {
         getTextFromFile(el.href).then((css) => {
           const index = css.indexOf(selectorPropertyPairs[0]); //css.match(selectorRegEx);
           returnedSelectorVal = css.substring(index);
@@ -190,11 +207,9 @@ const showcode = new (function () {
   const selectChangeEvent = (e) => {
     const { target } = e;
     const { value, dataset } = target;
-    const optionValue = 'option[value=\''+ value + '\']'
     const { showcodeFor, replaceHtmlRules } = dataset;
     const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
     const { showcodeNotes } = optionEl.dataset;
-    const { body } = document;
 
     const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
 
@@ -288,29 +303,32 @@ const showcode = new (function () {
           switch(command) {
             case '%OPENTAG%':
             case '%OPENCLOSETAG%':
-            case '%OPENCLOSECONTENTTAG%':
+            case '%OPENCLOSECONTENTTAG%': {
               stringSplit = highlightString.split(/\s+/);
               
               highlightString = stringSplit[0];
               attribute = (stringSplit[1] ? `[^&]*${stringSplit[1]}` : '');
               
-              
+            } 
           }
           let splitHighlightString;
 
           switch (command) {
-            case '%OPENTAG%':
+            case '%OPENTAG%': {
               highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
               break;
-            case '%OPENCLOSETAG%':
+            }
+            case '%OPENCLOSETAG%': {
               // The [^&] will give false positives if there is a & in the tag before
               // the tag closes. 
-              highlightString = `\\s*&lt;[\/]?${highlightString}[^&]*&gt;`;
+              highlightString = `\\s*&lt;[/]?${highlightString}[^&]*&gt;`;
               break;
-            case '%OPENCLOSECONTENTTAG%':
-              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?\/${highlightString}&gt;`
+            }
+            case '%OPENCLOSECONTENTTAG%': {
+              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?/${highlightString}&gt;`
               break;
-            case '%FILE%':
+            }
+            case '%FILE%': {
               splitHighlightString = highlightString.split('~');
               console.log('file', splitHighlightString);
               const fileName = splitHighlightString[0].trim();
@@ -321,7 +339,8 @@ const showcode = new (function () {
               })();
               console.log('returned', code);
               break;
-            case '%CSS%':
+            }
+            case '%CSS%': {
               splitHighlightString = highlightString.split('~');
               const cssID = splitHighlightString[0].trim();
               let localCode;
@@ -335,8 +354,9 @@ const showcode = new (function () {
               code += formatCSS(localCode);
               //code = Prism.highlight(code, Prism.languages.css, 'css');
               break;
+            }
             case '%JS%':
-            case '%JSHTML%':
+            case '%JSHTML%': {
               const funcNames = highlightString.split(';');
               code = '';
 
@@ -348,7 +368,6 @@ const showcode = new (function () {
                 let funcName = funcNameSplit[0].trim();
                 const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
                 let funcCode;
-                let funcObjectCode;
 
                 const toHighlightSplit = funcName.split('~');
                 if (toHighlightSplit.length === 2) {
@@ -383,10 +402,6 @@ const showcode = new (function () {
                   // with `this.propertyName =`.  Otherwise, prefix with
                   // `const funcName =`.
                   if (command === '%JSHTML%') {
-                    const replaceRulesJson = JSON.parse(this.unentify(replaceHtmlRules));
-                    const showcodeProps = `${showcodeFor}-props`;
-                    const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
-                    const {steps} = json;
                     const tmpNode = document.createElement('div');
                     tmpNode.innerHTML = funcCode;
                     formatHTMLInBlock(tmpNode, );
@@ -409,7 +424,8 @@ const showcode = new (function () {
 
               //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
               break;
-            case "%INLINE%":
+            }
+            case "%INLINE%": {
               const codeTemplateEl = document.getElementById(highlightString.trim());
               if (codeTemplateEl) {
                 if (codeTemplateEl.dataset.type === 'less') {
@@ -420,7 +436,7 @@ const showcode = new (function () {
               }
               
               break;
-            case "%OUTERHTML%":
+            } case "%OUTERHTML%": {
               const id = highlightString.trim();
               const outerHTMLTemplateEl = document.getElementById(id);
               if (outerHTMLTemplateEl) {
@@ -431,8 +447,9 @@ const showcode = new (function () {
               }
               
               break;
-            default: 
+            } default: {
               console.warn('Invalid command used', command);
+            }
           }
         }
 
@@ -500,10 +517,6 @@ const showcode = new (function () {
 
     if (firstHighlightdElement) {
       const { body } = document;
-      const componentRoot = codeEl.closest('.showcode');
-      const uiEl = componentRoot.querySelector('.showcode__ui');
-      const highlightRect = firstHighlightdElement.getBoundingClientRect();
-      const uiRect = uiEl.getBoundingClientRect();
 
       // If the pause animations checkbox is checked, 
       // set behavior to "auto" (no animatied scrolling).
@@ -521,7 +534,6 @@ const showcode = new (function () {
 
     for (var i=0; i<lines.length; i++) {
       const line = lines[i];
-      const nextLine = lines[i+1]
       if (line.search(blankString) < 0 ) {
         fixedLines.push(indentAttrs(line));
       }
@@ -614,7 +626,7 @@ const showcode = new (function () {
       for (let i in replaceRulesJson) {
         const nodesToReplace = block.querySelectorAll(i);
 
-        for (let j in nodesToReplace) {
+        for (let j=0; j<nodesToReplace.length; j++) {
           const node = nodesToReplace[j];
           const content = replaceRulesJson[i];
           if (Array.isArray(content)) {
@@ -648,13 +660,11 @@ const showcode = new (function () {
 
   const displayStepsWidget = (codeblockId, stepsJson, replaceHtmlRules) => {
     const widgetId =  codeblockId + '__steps';
-    const notesId = codeblockId + '__notes';
     const toggleId = codeblockId + '__notes-view-toggle';
     const selectEl = document.createElement('SELECT');
     const labelEl = document.createElement('LABEL');
     const defaultOptionEl = document.createElement('OPTION');
     const widgetContainerEl = document.getElementById(widgetId);
-    const notesEl = document.getElementById(notesId);
     const toggleEl = document.getElementById(toggleId);
     const codeEl = document.querySelector('[data-showcode-id="'+ codeblockId + '"]');
 
@@ -747,30 +757,6 @@ const showcode = new (function () {
     }
   }
 
-  function debounce(func, wait, immediate) {
-    var timeout;
-
-    return function () {
-        var context = this,
-            args = arguments;
-
-        var later = function () {
-            timeout = null;
-
-            if (!immediate) {
-                func.apply(context, args);
-            }
-        };
-
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait || 200);
-
-        if (callNow) {
-            func.apply(context, args);
-        }
-    };
-  }
 
   // Returns a function, that, when invoked, will only be triggered at most once
   // during a given window of time. Normally, the throttled function will run
@@ -809,7 +795,7 @@ const showcode = new (function () {
     };
   }
 
-  const handleResize = (e) => {
+  const handleResize = () => {
     const notesEls = document.querySelectorAll('.showcode__notes');
     notesEls.forEach((el) => {
       el.classList.remove('is-expanded');
@@ -844,8 +830,7 @@ const showcode = new (function () {
   this.init = () => {
     showCodeBlocks();
     setEvents();
-    //smoothscroll.polyfill();
   }
-})();
+}
 
 showcode.init();

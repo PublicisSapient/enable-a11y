@@ -534,10 +534,9 @@
     rangeInputEvent.init();
     </script>
 
-    <script src="js/shared/interpolate.js"></script>
-    <script src="js/accessibility.js"></script>
-    <script src="js/enable-slider.js"></script>
     <?php include "includes/example-footer.php"?>
+
+    <script src="js/modules/enable-slider.js" type="module"></script>
 </body>
 
 </html>

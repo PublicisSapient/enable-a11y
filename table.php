@@ -4181,11 +4181,8 @@
 
     </main>
 
-
-
-    <script src="js/shared/interpolate.js"></script>
-    <script src="js/sortable-table.js"></script>
-    <script src="js/paginate.js"></script>
+    <script src="js/modules/sortable-table.js" type="module"></script>
+    <script src="js/modules/paginate.js" type="module"></script>
 
     <!--
     <script>

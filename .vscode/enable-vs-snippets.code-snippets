@@ -235,11 +235,53 @@
 		"scope": "javascript",
 		"prefix": "js-header",
 		"body": [
-			"/*",
-			"* $1 - $2.",
-			"* by Zoltan Hawryluk (zoltan.dulac@gmail.com)",
-			"* MIT License."
+			"'use strict'",
+			"",
+			"/*******************************************************************************",
+			"* $1.js - $2",
+			"* ",
+			"* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>",
+			"* Part of the Enable accessible component library.",
+			"* Version 1.0 released $3",
+			"*",
+			"* More information about this script available at:",
+			"* https://www.useragentman.com/enable/$4",
+			"* ",
+			"* Released under the MIT License.",
+			"******************************************************************************/",
+			""
 		]
 		
+	},
+	"js-module-clientside-only-header": {
+		"scope": "javascript",
+		"prefix": "js-clientside-only-header",
+		"body": [
+			"// Only run if this is being run client side.",
+			"if (typeof window !== 'undefined' && typeof document !== 'undefined') {"
+		]
+	},
+	"js-module-footer": {
+		"scope": "javascript",
+		"prefix": "js-module-footer",
+		"body": [
+			"}",
+			"",
+			"if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {",
+			"  module.exports = ($1 || new function () {});",
+			"}",
+			"",
+			"export default $1;"
+		]
+	},
+	"js-expose-module-globally": {
+		"scope": "javascript",
+		"prefix": "js-expose-module-globally",
+		"body": [
+			// expose this object globally only if on a page with showcode
+			"if (document.querySelector('.showcode')) {",
+			"  window.$1 = this;",
+			"}"
+		]
 	}
 }

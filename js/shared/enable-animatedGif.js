@@ -1,3 +1,23 @@
+'use strict'
+
+/*******************************************************************************
+* enable-animatedGif.js - Pausable Animated GIF library
+* 
+* Code originally written by Steve Faulkner:
+* available https://codepen.io/stevef/pen/ExPdNMM
+* and ideas added by Chris Coyier:
+* https://css-tricks.com/pause-gif-details-summary/
+*
+* Refactored by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/animated-gif-with-pause-button.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+
 const animatedGifPause = new function () {
     let summaryPauseClass;
 
@@ -59,3 +79,5 @@ const animatedGifPause = new function () {
 }
 
 animatedGifPause.init();
+
+export default animatedGifPause;

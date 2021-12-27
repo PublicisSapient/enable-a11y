@@ -199,17 +199,17 @@
                 },
                 {
                     "label": "Ensure focus stays within hamburger menu when the user clicks on the hamburger menu icon",
-                    "highlight": "%JS% EnableFlyoutMenu.onHamburgerIconClick ; EnableFlyoutMenu.openFlyout; EnableFlyoutMenu.openMenuAnimationEnd ||| [ ]*forEach[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, true\\)\\;  ||| requestAnimationFrame[^}]*\\}\\)\\;",
+                    "highlight": "%JS% EnableFlyoutHamburger.onHamburgerIconClick ; EnableFlyoutHamburger.openFlyout; EnableFlyoutHamburger.openMenuAnimationEnd ||| [ ]*forEach[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, true\\)\\;  ||| requestAnimationFrame\\([^}]*\\}\\)\\;",
                     "notes": "Note that when the user click on the hamburger menu, we call <code>accessibility.setKeepFocusInside($container, true);</code>. This ensures keyboard focus (and mobile accessibility focus) stays inside the open menu, and not on the content outside of it.  We also make the button that opened it inaccessible to screen readers and keyboards, since focus will be applied to the close button, as seen in the openMenuAnimationEnd method at the bottom."
                 },
                 {
                     "label": "Ensure focus restrictions are removed when hamburger menu is closed",
-                    "highlight": "%JS% EnableFlyoutMenu.closeAllFlyouts ; EnableFlyoutMenu.openMenuAnimationEnd ||| [ ]*forEach\\.call\\(\\$mainMenuButton[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, false\\)\\; ||| \\$menuEl\\.focus\\(\\)\\;",
+                    "highlight": "%JS% EnableFlyoutHamburger.closeAllFlyouts ; EnableFlyoutHamburger.openMenuAnimationEnd ||| [ ]*forEach\\.call\\(\\$mainMenuButton[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, false\\)\\; ||| \\$menuEl\\.focus\\(\\)\\;",
                     "notes": "When the close button is clicked, all cancel the focus loop by calling <code>accessibility.setKeepFocusInside($container, false);</code>.  We also ensure that keyboard focus can be applied to the hamburger menu icon before we apply focus to it in the openMenuAnimationEnd method at the bottom."
                 },
                 {
                     "label": "Ensure hamburger item is visible in Windows High Contrast Mode.",
-                    "highlight": "%CSS%hamburger-style~ .enable-flyout__hamburger-icon span |||  border[^:]*: 1px solid transparent;",
+                    "highlight": "%CSS%hamburger-style~ .enable-flyout__hamburger-icon span |||  border:[^;]*;",
                     "notes": "We have a transparent <code>border</code> on the <code>div</code> elements that make up the hamburger menu icon by default. Even though this is normally invisible, <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">transparent borders show up in Windows High Contrast Mode</a>. If we didn't have this included, the icon would be invisible."
                 }
             ]

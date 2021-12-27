@@ -2,8 +2,12 @@
 - Need to modularize js code
 - module server side parse test
 - eslint
+- showcode demo page.
 - less lint
+- focus Windows High Contrast
 
+template.php (it's referenced in interpolate.js)
+readmore.php
 
 
 

@@ -1,7 +1,23 @@
 const express = require('express');
 const app = express();
 const port = 8888;
-var path = require('path');
+const fs = require('fs');
+
+// we must copy the needed node modules into the lib directory
+const nodeFiles = [
+  'node_modules/indent.js/lib/indent.min.js',
+]
+
+
+nodeFiles.forEach((fullPath) => {
+  console.log(`Copying requireJS node module ${fullPath} to js/libs.`);
+
+  let fileName = fullPath.split('/').pop();
+  fs.copyFile(fullPath, `js/libs/${fileName}`, (err) => {
+    if (err) throw err;
+    console.log(`${fullPath} was not copied to js/libs`);
+  })
+})
 
 
 // must specify options hash even if no options provided!

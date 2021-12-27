@@ -1,3 +1,5 @@
+'use strict'
+
 /*******************************************************************************
  * enableVisibleOnFocus - a library to implement CTAs that are not
  * visible until focused, even in mobile browsers where focus() 
@@ -13,7 +15,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const enableVisibleOnFocus = new (function (e) {
+const enableVisibleOnFocus = new (function () {
   const containerSelector = ".enable-mobile-visible-on-focus__container";
 
   this.init = function () {
@@ -25,6 +27,11 @@ const enableVisibleOnFocus = new (function (e) {
     // Firefox will cache the scroll location of all scrollable
     // containers, so we want to reset our skip links onload.
     this.hideAll();
+
+    // expose this object globally only if on a page with showcode
+    if (document.querySelector('.showcode')) {
+      window.$1 = this;
+    }
   };
 
   /**
@@ -130,3 +137,5 @@ const enableVisibleOnFocus = new (function (e) {
 
   this.init();
 })();
+
+export default enableVisibleOnFocus;
