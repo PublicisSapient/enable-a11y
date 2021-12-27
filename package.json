@@ -36,6 +36,7 @@
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
     "lessc": "^1.0.2",
+    "node-html-parser": "^5.2.0",
     "php-express": "^0.0.3",
     "prismjs": "^1.24.0",
     "selenium-webdriver": "^4.0.0-beta.4",

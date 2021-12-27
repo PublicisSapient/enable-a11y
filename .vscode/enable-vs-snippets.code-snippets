@@ -224,12 +224,22 @@
 		"prefix": "figure",
 		"body":  [
 			"<figure>",
-
 			"  <?php pictureWebpPng(\"$1\", \"$2\")?>",
 			"  <figcaption>",
 			"    Figure $3: $4",
 			"  </figcaption>",
 			"</figure>"
 		]
+	},
+	"js-header": {
+		"scope": "javascript",
+		"prefix": "js-header",
+		"body": [
+			"/*",
+			"* $1 - $2.",
+			"* by Zoltan Hawryluk (zoltan.dulac@gmail.com)",
+			"* MIT License."
+		]
+		
 	}
 }

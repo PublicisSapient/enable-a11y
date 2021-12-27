@@ -1,16 +1,15 @@
-//
-// Function spinbutton() is a constructor for an ARIA spinbutton widget. The widget
-// binds to an element with role='spinbutton'.
-//
-// @param (id string) id is the html id of the spinbutton element
-//
-// @param (upID string) upID is the html id of the spinbutton control's increase value button
-//
-// @param (downID string) downID is the html id of the spinbutton control's decrease value button
-//
-// @param (skipVal integer) skipVal is the amount to change the control by for pgUp/pgDown
-// @return N/A
-//
+/*
+* spinbutton.js - A library to enable the UI for the spinbutton ARIA role.
+* Based on code by the AJAX Alliance
+* 
+* Original Code:
+* https://web.archive.org/web/20170424171217/http://oaa-accessibility.org/examplep/spinbutton1/
+* 
+* Refactored by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+* to remove jQuery dependency 
+* MIT License.
+*/
+
 function spinbutton(el) {
 
   const id = el.id;

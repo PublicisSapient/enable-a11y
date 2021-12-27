@@ -1,0 +1,27 @@
+- Need to catagorize js code
+- Need to modularize js code
+- module server side parse test
+- eslint
+- less lint
+
+
+
+
+
+Files to put in:
+alert-dialog
+dialog
+form.php - need to extract the search form from the page.
+zoomable-viewport-units.php
+text-contrast.php
+
+Files to archive:
+animated-hide-show.php
+bottom-fixed-navigation.php
+date.php
+index2.php - change this to landmarks.php
+menu.php
+read-more.php
+
+Files to remove: 
+dialog-document.php grid.php group.php hamburger.php listbox-old.php pause-testing.php roles.php role-tabs.php set.php slider-old.php template.php tree.php

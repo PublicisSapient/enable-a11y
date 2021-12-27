@@ -19,3 +19,4 @@ Mateusz Rybczonek, Timer demo (not a11y), https://css-tricks.com/how-to-create-a
 Jakob Voß, Wiktionary Lookup Gist used for ARIA status role, https://gist.github.com/nichtich/674522, http://jakoblog.de/, jakob.voss@nichtich.de 
 Jano Garcia, LESS px to rem, https://codepen.io/janogarcia/pen/bNrKEP, https://janogarcia.com/, hello@janogarcia.com | https://twitter.com/janogarcia
 Yale University, https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text, accessibility@yale.edu, ?
+Bruce Lawson, https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/, https://twitter.com/brucel
