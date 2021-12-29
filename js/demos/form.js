@@ -9,7 +9,7 @@
 /* global $ */
 import '../../node_modules/jquery/dist/jquery.min.js';
 import '../../node_modules/jquery-validation/dist/jquery.validate.min.js';
-import accessibility from '../accessibility.js';
+import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 const formValidator = new (function () {
   this.init = () => {

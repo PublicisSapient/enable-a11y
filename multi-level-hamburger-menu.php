@@ -229,9 +229,6 @@
     console.log('bw', breakpointWidth);
     </script>
 
-    <script src="js/accessibility.js"></script>
-    <script src="js/hamburger.js"></script>
-
     <?php include "includes/example-footer.php"?>
 </body>
 

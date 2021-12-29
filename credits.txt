@@ -20,3 +20,4 @@ Jakob Voß, Wiktionary Lookup Gist used for ARIA status role, https://gist.githu
 Jano Garcia, LESS px to rem, https://codepen.io/janogarcia/pen/bNrKEP, https://janogarcia.com/, hello@janogarcia.com | https://twitter.com/janogarcia
 Yale University, https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text, accessibility@yale.edu, ?
 Bruce Lawson, https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/, https://twitter.com/brucel
+Sam Thorogood, https://gist.github.com/samthor, https://twitter.com/samthor

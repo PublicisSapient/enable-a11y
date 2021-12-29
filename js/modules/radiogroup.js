@@ -15,7 +15,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-import accessibility from '../accessibility.js';
+import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 const radiogroup = new function () {
 

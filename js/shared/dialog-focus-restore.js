@@ -3,17 +3,14 @@
 /*******************************************************************************
 * dialog-polyfill-a11y-fixes.js - Fixes for the HTML5 dialog polyfill
 * 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released Dec. 28, 2021
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/dialog.php
+* Based on this gist: https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1
+* Written by Sam Thorogood.
+* Updated by Zoltan Hawryluk to implement focus loop in open dialog.
 * 
 * Released under the MIT License.
 ******************************************************************************/
 
-import accessibility from '../accessibility.module.js';
+import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 /**
  * Updates the passed dialog to retain focus and restore it when the dialog is closed. Won't

@@ -40,11 +40,15 @@ if (!supportsDialog) {
   console.log('loading polyfill')
   import ('../node_modules/dialog-polyfill/index.js')
   .then((dialogPolyfill) => {
-    console.log(dialogPolyfill);
     dialogPolyfill.default.registerDialog(favDialog);
-    import ('./shared/dialog-polyfill-a11y-fixes.js')
+    import ('./shared/dialog-focus-restore.js')
     .then((registerFocusRestoreDialog) => {
       registerFocusRestoreDialog.default(favDialog);
+
+      // expose this module to showcode if it is on the page
+      if (document.querySelector('.showcode')) {
+        window.registerFocusRestoreDialog = registerFocusRestoreDialog.default;
+      }
     });
   });
 }

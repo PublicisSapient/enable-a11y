@@ -44,26 +44,6 @@
   }
 }
 
-#a11y-modal {
-  &__overlay {
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* places the modal overlay between the main page and the modal dialog*/
-    background-color: #000;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    margin: 0;
-    padding: 0;
-
-    &.visible {
-      display: block;
-    }
-  }
-}
-
 dialog {
 	position: fixed;
 }
@@ -92,9 +72,4 @@ dialog {
   left: calc(50% - 27vmin);
   top: 22vmin;
   font-size: 3vmin;
-}
-
-[data-old-aria-hidden] {
-  opacity: 0.3;
-  filter: blur(1px);
 }

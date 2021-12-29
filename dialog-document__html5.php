@@ -154,8 +154,8 @@
                   "notes": "The polyfill won't work without it."
                 },
                 {
-                  "label": "Add the accessibility fixes for the polyfill and native implementations",
-                  "highlight": "%JS% registerFocusRestoreDialog ||| // watch for 'open' change and clear saved[\\s\\S]*\\['open'\\]}\\);",
+                  "label": "Add the accessibility fixes for the polyfill",
+                  "highlight": "%JS% registerFocusRestoreDialog ||| // watch for 'open' change and clear saved[\\s\\S]*\\['open'\\]\\s*}\\);",
                   "notes": "<p>This script adds some small bits of extra accessibility goodness:</p> <ol><li>When the dialog is closed, focus goes back to the button that opened it</li><li>This adds a mobile focus loop via the <code>accessibility.setKeepFocusInside()</code> routines (highlighted below)</li></ol><p>This code based on <a href=\"https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1\">this Gist by Sam Thorogood </a></p>"
                 }
             ]
