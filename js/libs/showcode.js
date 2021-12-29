@@ -17,6 +17,7 @@
 * 
 * Released under the MIT License.
 ******************************************************************************/
+
 const showcode = new function () {
   const htmlBlocks = document.querySelectorAll("[data-showcode-props]");
   const htmlCache = {};
@@ -415,12 +416,14 @@ const showcode = new function () {
                   }
                 }
 
-                funcCode = this.entify(funcCode);
+                //funcCode = this.entify(funcCode);
 
                 code = code + funcCode + '\n\n';
               }
 
+              console.log('test', code);
               code = indent.js(code, {tabString: '  '});
+              code = this.entify(code);
 
               //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
               break;

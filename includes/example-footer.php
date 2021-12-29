@@ -7,13 +7,6 @@
     </footer> 
         
 
-    <!-- These three script tags are for the code samples -->
-    <!-- TODO: make this a module.  It's a bit difficult to do, since it uses commonjs modules -->
+    <!-- indent won't load as a module, even though the docs say it can -->
     <script src="node_modules/indent.js/lib/indent.min.js"></script>
-    <script src="js/libs/prism.js" data-manual></script>
-    <script src="js/libs/showcode.js"></script>
-
-    <!-- Hamburger Menu -->
-    <script src="js/modules/hamburger.js" type="module"></script>
-
-    <script src="js/shared/enable-visible-on-focus.js" type="module"></script>
+    <script src="js/global.js" type="module"></script>

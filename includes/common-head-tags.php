@@ -3,7 +3,6 @@
 
 <!-- These two stylesheets are for the code walkthroughs -->
 <link rel="stylesheet" type="text/css" href="css/showcode.css">
-<link href="css/libs/prism.css" rel="stylesheet" />
 
 <!-- This is the global stylesheet -->
 <link id="all-css" rel="stylesheet" href="css/shared/all.css" />
