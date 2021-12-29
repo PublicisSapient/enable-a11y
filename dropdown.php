@@ -334,28 +334,13 @@
                     "label": "Set up the details and summary tags",
                     "highlight": "\\s*&lt;summary[^;]*&gt; ||| \\s*&lt;\/summary&gt; ||| \\s*&lt;details[^;]*&gt; ||| \\s*&lt;\/details&gt;",
                     "notes": "It's just like the first details/summary example on this page, just nested."
-                    "notes": "It's just like the first details/summary example on this page, just nested."
                 }
             ]
         }
         </script>
     </main>
     <?php include "includes/example-footer.php"?>
-
-    <script>
-    document.body.addEventListener("click", function(e) {
-        var target = e.target;
-
-        if (target.classList.contains('enable-drawer__button')) {
-            const contentEl = document.getElementById(target.getAttribute('aria-controls'));
-            if (target.getAttribute('aria-expanded') !== 'true') {
-                target.setAttribute('aria-expanded', 'true');
-            } else {
-                target.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-    </script>
+    <script src="js/modules/enable-drawer.js"></script>
 </body>
 
 </html>

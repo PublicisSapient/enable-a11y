@@ -11,4 +11,4 @@
 
 import "./libs/showcode.js";
 import "./modules/hamburger.js";
-import "./shared/enable-visible-on-focus.js";
+import "./modules/enable-visible-on-focus.js";
