@@ -5,15 +5,15 @@ https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js NPM 
 js/ablePlayerCustomizations.js MODULE DONE
 js/accessibility.js NPM DONE
 js/accessible-text-svg.js DEMO DONE
-js/alert.js DEMO
+js/alert.js DEMO DONE
 js/combobox__improved.js MODULE DONE
-js/demos/ana-tudor/elastic-collision.js DEMO
-js/dialog-example.js DEMO
+js/demos/ana-tudor/elastic-collision.js DEMO DONE
+js/dialog-example.js DEMO DONE
 js/enable-slider.js MODULE DONE
 js/hamburger.js MODULE DONE
 js/libs/ableplayer/build/ableplayer.js DOWNLOAD
 js/libs/ableplayer/thirdparty/js.cookie.js DOWNLOAD
-js/link.js DEMO
+js/link.js DEMO DONE
 js/log.js DEMO
 js/marquee.js DEMO
 js/paginate.js MODULE DONE

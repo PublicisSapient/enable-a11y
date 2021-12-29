@@ -138,7 +138,7 @@
 
     </main>
 
-    <script src="js/link.js"></script>
+    <script src="js/demos/link.js"></script>
 
     <?php include "includes/example-footer.php"?>
   </body>
