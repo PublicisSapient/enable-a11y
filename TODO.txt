@@ -4,6 +4,10 @@ ENSURE all modules play nice with showcode
 fix dialog page and put in menu.
 ableplayer - need to do build -- maybe PRs?
 
+test new NPM mods with a build process: text-zoom-resize, accessibility and visibleIf
+
+jsdoc
+
 
 - Need to catagorize js code
 - Need to modularize js code

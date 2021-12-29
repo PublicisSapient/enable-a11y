@@ -2,17 +2,17 @@
 https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js NPM DONE
 https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js NPM DONE
 https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js NPM  DONE
-js/ablePlayerCustomizations.js
-js/accessibility.js NPM
-js/accessible-text-svg.js DEMO
+js/ablePlayerCustomizations.js MODULE DONE
+js/accessibility.js NPM DONE
+js/accessible-text-svg.js DEMO DONE
 js/alert.js DEMO
 js/combobox__improved.js MODULE DONE
 js/demos/ana-tudor/elastic-collision.js DEMO
 js/dialog-example.js DEMO
 js/enable-slider.js MODULE DONE
 js/hamburger.js MODULE DONE
-js/libs/ableplayer/build/ableplayer.js NPM
-js/libs/ableplayer/thirdparty/js.cookie.js NPM
+js/libs/ableplayer/build/ableplayer.js DOWNLOAD
+js/libs/ableplayer/thirdparty/js.cookie.js DOWNLOAD
 js/link.js DEMO
 js/log.js DEMO
 js/marquee.js DEMO
@@ -20,8 +20,8 @@ js/paginate.js MODULE DONE
 js/pause-anim-control.js MODULE DONE
 js/progress.js DEMO
 js/read-more.js MODULE DONE
-js/shared/dialog-polyfill-a11y-fixes.js MODULE
-js/shared/dialog-polyfill.js NPM
+js/shared/dialog-polyfill-a11y-fixes.js MODULE DONE
+js/shared/dialog-polyfill.js NPM DONE
 js/shared/enable-animatedGif.js MODULE DONE
 js/shared/enable-carousel.js MODULE DONE
 js/shared/enable-listbox.js MODULE DONE
@@ -35,9 +35,9 @@ js/shared/switch.js MODULE DONE
 js/shared/tooltip.js MODULE DONE
 js/shared/visibleIf.js NPM
 js/sortable-table.js MODULE DONE
-js/spinbutton.js MODULE REFACTOR
+js/spinbutton.js MODULE DONE
 js/status.js DEMO
 js/tabs.js MODULE DONE
 js/timer.js DEMO
 node_modules/glider-js/glider.min.js LEAVE
-text-zoom-event-js NPM
+text-zoom-event-js NPM DONE

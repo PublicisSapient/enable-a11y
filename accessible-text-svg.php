@@ -152,41 +152,8 @@
               </script>
       </div>
     </main>
-    <script src="js/accessible-text-svg.js"></script>
+    <script src="js/demos/accessible-text-svg.js" type="module"></script>
 
-    <script id="text-zoom-event-js" src="https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js">
-    </script>
-    <script>
-    const svgTextSpacingDemo = new function() {
-        const body = document.body;
-        const pathEl = document.getElementById('accessible-text-svg-demo__svgTextPath');
-        const rollinEl = document.getElementById('rollin');
-
-        function setTextZoomFactor() {
-            const zoomFactor = textZoomEvent.resizeFactor();
-            document.body.style.setProperty("--text-zoom-factor", zoomFactor);
-
-            if (zoomFactor > 1) {
-                pathEl.setAttribute('startOffset', '3%');
-                rollinEl.setAttribute('to', '3%')
-            } else {
-                pathEl.setAttribute('startOffset', '20%');
-                rollinEl.setAttribute('to', '20%');
-            }
-        }
-
-        function init() {
-            // It is better if you give this the value of
-            // parseFloat(getComputedStyle(document.documentElement).fontSize
-            // when the doc is not zoomed.
-            textZoomEvent.init(16);
-            setTextZoomFactor();
-            document.addEventListener('textzoom', setTextZoomFactor);
-        }
-
-        init();
-    }
-    </script>
 
     <?php include "includes/example-footer.php"?>
 </body>

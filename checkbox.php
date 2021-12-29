@@ -7,7 +7,6 @@
     <title>Checkbox demo</title>
     <?php include "includes/common-head-tags.php";?>
 
-    <link rel="stylesheet" type="text/css" href="css/shared/visibleIf.css" />
     <link rel="stylesheet" type="text/css" href="css/form.css" />
     <link id="checkbox-css" rel="stylesheet" type="text/css" href="css/checkbox.css" />
 </head>
@@ -126,70 +125,7 @@
         </script>
 
 
-        <h2>A Checkbox with content that only appears when it is checked.</h2>
-
-        <p>
-            If the checkbox below is checked, content appears.
-        </p>
-
-        <div id="example-visibleif" class="enable-example">
-            <div class="checkbox-container">
-                <form>
-                    <label for="html-checkbox-with-visibleif">I want to subscribe to the Zoltanic Foundation's
-                        newsletter:
-                        <span class="sr-only visibleIf" data-visibleif-rule="iAgree != 'yes'">
-                            (checking this will add mailing information fields below)
-                        </span>
-                        <span class="sr-only visibleIf" data-visibleif-rule="iAgree == 'yes'">
-                            (unchecking this will remove the mailing information fields below)
-                        </span>
-                    </label>
-                    <input id="html-checkbox-with-visibleif" name="iAgree" type="checkbox" value="yes" />
-
-                    <div class="visibleIf" data-visibleif-rule="iAgree == 'yes'">
-                        <div>
-                            <label for="name">Your name:</label>
-                            <input type="text" name="name" id="name" />
-                        </div>
-
-                        <div>
-                            <label for="address">Your address:</label>
-                            <input type="text" name="address" id="address" />
-                        </div>
-
-                        <div>
-                            <label for="emailaddress">Your email address:</label>
-                            <input type="text" name="emailaddress" id="emailaddress" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <?php includeShowcode("example-visibleif")?>
-
-        <script type="application/json" id="example-visibleif-props">
-        {
-            "replaceHtmlRules": {},
-            "steps": [
-                {
-                    "label": "Use label tags to label form element",
-                    "highlight": "for",
-                    "notes": "Like any other form element, it needs a label. However, since we want to add custom styles, we need an additional empty label to apply the custom style \"façade\" to, since we cannot apply them directly to the checkbox itself."
-                },
-                {
-                    "label": "Create instructions inside the label to tell screen reader users what will happen if the checkbox is checked",
-                    "highlight": "%OPENCLOSECONTENTTAG%span",
-                    "notes": "These instructions are great since screen reader users will know checking the checkbox will cause changes on the screen."
-                },
-                {
-                    "label": "Create visibleIf rules",
-                    "highlight": "(data-visibleif-rule=\"[^\"]*\"|name=\"iAgree\")",
-                    "notes": "This allows different HTML to appear on the screen depending on the value of the form element <code>iAgree</code>.  You will need to include the visibleIf script in order for this to work.  Details on this script are on my blog post <a href=\"https://www.useragentman.com/blog/2010/06/20/visibleif-html5-custom-data-attributes-with-javascript-make-dynamic-interactive-forms/\">visibleIf – Dynamic and Complex Interactive Forms Using HTML5 Custom Data Attributes</a>."
-                }
-            ]
-        }
-    </script>
+       
 
         <h2>HTML checkbox group</h2>
 
@@ -266,7 +202,6 @@
     <?php include "includes/example-footer.php"?>
 
     <script src="js/modules/radio-and-checkbox-roles.js" type="module"></script>
-    <script src="js/shared/visibleIf.js"></script>
 
 </body>
 

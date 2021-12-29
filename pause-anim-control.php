@@ -441,7 +441,7 @@
         
             <div id="ableplayer-example">
                 <div class="enable-video-player">
-                    <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" >
+                    <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/" >
                         <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English" />
                         <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
                             label="English Audio Descriptions" />

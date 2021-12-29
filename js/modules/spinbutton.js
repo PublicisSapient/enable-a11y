@@ -420,4 +420,4 @@ for (let i = 0; i < els.length; i++) {
   spinbuttons[i] = new spinbutton(els[i]);
 }
 
-export { spinbuttons, spinbutton};
+export { spinbuttons, spinbutton };
