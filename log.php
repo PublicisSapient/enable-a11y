@@ -70,7 +70,7 @@
         </script>
 
     </main>
-    <script src="js/log.js"></script>
+    <script src="js/demos/log.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

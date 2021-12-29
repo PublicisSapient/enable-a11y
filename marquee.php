@@ -64,7 +64,7 @@
     </main>
 
 
-    <script src="js/marquee.js"></script>
+    <script src="js/demos/marquee.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

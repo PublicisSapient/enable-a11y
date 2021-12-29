@@ -87,7 +87,7 @@
     </main>
 
 
-    <script src="js/status.js"></script>
+    <script src="js/demos/status.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

@@ -14,8 +14,8 @@ js/hamburger.js MODULE DONE
 js/libs/ableplayer/build/ableplayer.js DOWNLOAD
 js/libs/ableplayer/thirdparty/js.cookie.js DOWNLOAD
 js/link.js DEMO DONE
-js/log.js DEMO
-js/marquee.js DEMO
+js/log.js DEMO 
+js/marquee.js DEMO DONE
 js/paginate.js MODULE DONE
 js/pause-anim-control.js MODULE DONE
 js/progress.js DEMO
@@ -28,12 +28,11 @@ js/shared/enable-listbox.js MODULE DONE
 js/shared/enable-visible-on-focus.js MODULE DONE
 js/shared/form.js DEMO
 js/shared/interpolate.js MODULE DONE
-js/shared/polyfills.js TMP
+js/shared/polyfills.js TMP DELETED
 js/shared/radio-and-checkbox-roles.js MODULE DONE
 js/shared/radiogroup.js MODULE DONE
 js/shared/switch.js MODULE DONE
 js/shared/tooltip.js MODULE DONE
-js/shared/visibleIf.js NPM
 js/sortable-table.js MODULE DONE
 js/spinbutton.js MODULE DONE
 js/status.js DEMO
