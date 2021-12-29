@@ -49,7 +49,6 @@
     "prismjs": "^1.24.0",
     "selenium-webdriver": "^4.0.0-beta.4",
     "text-zoom-event": "^1.5.2",
-    "visibleif": "^1.0.1",
     "vnu-jar": "^21.6.11"
   }
 }
