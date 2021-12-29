@@ -80,7 +80,7 @@
       </script>
     </main>
 
-    <script src="js/shared/tooltip.js"></script>
+    <script src="js/modules/tooltip.js" type="module"></script>
 
     <?php include "includes/example-footer.php" ?>
   </body>

@@ -278,7 +278,7 @@
 		"scope": "javascript",
 		"prefix": "js-expose-module-globally",
 		"body": [
-			// expose this object globally only if on a page with showcode
+			"// expose this module to showcode if it is on the page",
 			"if (document.querySelector('.showcode')) {",
 			"  window.$1 = this;",
 			"}"

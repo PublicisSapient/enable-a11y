@@ -1,3 +1,20 @@
+'use strict'
+
+/*******************************************************************************
+* enable-listbox.js - UI for the ARIA listbox role
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released 
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/
+* 
+* Released under the MIT License.
+******************************************************************************/
+
+import accessibility from '../accessibility.js';
+
 const enableListbox = new function() {
   
   this.init = function () {
@@ -25,7 +42,7 @@ const enableListbox = new function() {
     }
   }
 
-  this.onKeydown = (e) => {
+  this.onKeydown = () => {
     this.lastKeydownEl = document.activeElement;
   }
 
@@ -37,14 +54,12 @@ const enableListbox = new function() {
       return;
     }
 
-    lastKeydownEl = null; 
     const { activeElement } = document;
 
     if (activeElement.getAttribute('role') === 'option') {
 
       const root = activeElement.closest('.enable-listbox');
       const listboxEl = root.querySelector('[role="listbox"]');
-      const optionEls = listboxEl.querySelectorAll('[role="option"]');
       const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
 
       if (normalizedKey === 'Escape') {
@@ -120,7 +135,7 @@ const enableListbox = new function() {
 
   }
 
-  this.collapseAllListboxes = function(e) {
+  this.collapseAllListboxes = function() {
     const roots = document.querySelectorAll('.enable-listbox');
 
     for (let i = 0; i < roots.length; i++ ) {
@@ -152,7 +167,7 @@ const enableListbox = new function() {
       listboxEl,
       {
           doKeyChecking: false,
-          ariaCheckedCallback: (e, currentlyCheckedEl, currentlyCheckedIndex, previouslyCheckedEl, groupEls) => {
+          ariaCheckedCallback: (e, currentlyCheckedEl) => {
               buttonEl.innerHTML = currentlyCheckedEl.innerHTML;
               this.collapse(buttonEl, listboxEl, true);
               accessibility.removeMobileFocusLoop();
@@ -181,3 +196,5 @@ const enableListbox = new function() {
 }
 
 enableListbox.init();
+
+export default enableListbox;

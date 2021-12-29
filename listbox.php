@@ -387,8 +387,7 @@
     </main>
 
 
-    <script src="js/shared/enable-listbox.js"></script>
-    <script src="js/accessibility.js"></script>
+    <script src="js/modules/enable-listbox.js" type="module"></script>
 
     <?php include "includes/example-footer.php"?>
 

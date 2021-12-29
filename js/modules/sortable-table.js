@@ -50,6 +50,7 @@ const sortableTables = new (function () {
     var sortOrder = null;
     var sortDirection = 1;
 
+    // expose this module to showcode if it is on the page */
     if (document.querySelector('.showcode')) {
       window.sortableTables = this;
     }

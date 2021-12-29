@@ -1,3 +1,9 @@
+ENSURE ALL modules are in the modules directory
+ENSURE all modules play nice with showcode
+
+ableplayer - need to do build -- maybe PRs?
+
+
 - Need to catagorize js code
 - Need to modularize js code
 - module server side parse test
@@ -5,10 +11,14 @@
 - showcode demo page.
 - less lint
 - focus Windows High Contrast
+- refactor initEvent calls
 
 template.php (it's referenced in interpolate.js)
 readmore.php
+NPM accessibility
+radiogroup vs radio-and-checkbox-roles ??? 
 
+send permission emails.
 
 
 

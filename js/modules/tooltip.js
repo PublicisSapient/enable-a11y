@@ -1,3 +1,18 @@
+'use strict'
+
+/*******************************************************************************
+* tooltip.js - Accessible Tooltip Module
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec. 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/tooltip.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+
 const tooltip = new function () {
     // global constants
     const mainEl = document.getElementsByTagName('main')[0];
@@ -18,6 +33,11 @@ const tooltip = new function () {
         // used to make tooltip disappear when ESC key 
         // is pressed.
         mainEl.addEventListener('keyup', this.onKeyup);
+
+        // expose this module to showcode if it is on the page */
+        if (document.querySelector('.showcode')) {
+          window.tooltip = this;
+        }
     }
 
     this.create = () => {
@@ -32,7 +52,7 @@ const tooltip = new function () {
 
     this.onKeyup = (e) => {
         // check if escape is pressed
-        if (e.which ==27)  {
+        if (e.which === 27)  {
             this.hide();
             e.preventDefault(); 
         }
@@ -63,7 +83,7 @@ const tooltip = new function () {
         }
     }
 
-    this.hide = (e) => {
+    this.hide = () => {
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
     }
@@ -71,3 +91,5 @@ const tooltip = new function () {
 }
 
 tooltip.init();
+
+export default tooltip;

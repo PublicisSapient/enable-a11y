@@ -166,10 +166,7 @@
     </main>
 
 
-    <script src="js/accessibility.js"></script>
-    <script src="js/shared/dialog-polyfill.js"></script>
-    <script src="js/shared/dialog-polyfill-a11y-fixes.js"></script>
-    <script src="js/dialog-example.js"></script>
+    <script src="js/dialog-example.js" type="module"></script>
 
     <?php include "includes/example-footer.php"?>
   </body>

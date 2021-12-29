@@ -1,3 +1,19 @@
+'use strict'
+
+/*******************************************************************************
+* tabs.js - UI for Accessible tabs
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec. 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/tabs.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+import accessibility from '../accessibility.js';
+
 const tabgroup = new (function () {
   let lastMouseDownEl = null;
 
@@ -46,10 +62,7 @@ const tabgroup = new (function () {
         // one with the ID on the tab's aria-owns attribute).
         ariaCheckedCallback: function (
           e,
-          currentlyCheckedEl,
-          currentlyCheckedIndex,
-          previouslyCheckedEl,
-          groupEls
+          currentlyCheckedEl
         ) {
           if (!currentlyCheckedEl) {
             return;
@@ -59,9 +72,6 @@ const tabgroup = new (function () {
           const activePanelId = currentlyCheckedEl.getAttribute("aria-owns");
           const panelEls =
             groupEl.parentNode.querySelectorAll('[role="tabpanel"]');
-          const { href } = currentlyCheckedEl;
-          const split = href && href.split("#");
-          const hash = split && split[1];
 
           for (let i = 0; i < panelEls.length; i++) {
             var panel = panelEls[i];
@@ -92,6 +102,11 @@ const tabgroup = new (function () {
 
     if (activeTab) {
       activeTab.click();
+    }
+
+    // expose this module to showcode if it is on the page */
+    if (document.querySelector('.showcode')) {
+      window.tabgroup = this;
     }
   };
 
@@ -157,3 +172,5 @@ const tabgroup = new (function () {
   };
 })();
 tabgroup.init();
+
+export default tabgroup;

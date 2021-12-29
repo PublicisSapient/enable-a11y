@@ -1,3 +1,16 @@
+'use strict'
+
+/*******************************************************************************
+* form.js - Demo of accessible forms with jquery. 
+* 
+* Released under the MIT License.
+******************************************************************************/
+
+/* global $ */
+import '../../node_modules/jquery/dist/jquery.min.js';
+import '../../node_modules/jquery-validation/dist/jquery.validate.min.js';
+import accessibility from '../accessibility.js';
+
 const formValidator = new (function () {
   this.init = () => {
     // Initialize form validation on the registration form.
@@ -72,7 +85,6 @@ const formValidator = new (function () {
           }
         }
 
-        const formEl = form[0];
         accessibility.applyFormFocus(form.target);
       }
     });
@@ -84,6 +96,10 @@ const formValidator = new (function () {
       );
     };
 
+    // expose this module to showcode if it is on the page
+    if (document.querySelector('.showcode')) {
+      window.formValidator = this;
+    }
   };
 })();
 

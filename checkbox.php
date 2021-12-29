@@ -265,7 +265,7 @@
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="js/shared/radio-and-checkbox-roles.js"></script>
+    <script src="js/modules/radio-and-checkbox-roles.js" type="module"></script>
     <script src="js/shared/visibleIf.js"></script>
 
 </body>

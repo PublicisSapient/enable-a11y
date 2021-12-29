@@ -95,7 +95,7 @@
         <h2>Video Player With Text-To-Speech Audio Descriptions</h2>
         <div id="example1">
             <div class="enable-video-player">
-                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020">
+                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/">
                     <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English" />
                     <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
                         label="English Audio Descriptions" />
@@ -145,10 +145,8 @@
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>
-    <script src="js/libs/ableplayer/build/ableplayer.js"></script>
-    <script src="js/ablePlayerCustomizations.js"></script>
+    
+    <script src="js/modules/ablePlayerCustomizations.js" type="module"></script>
 
 </body>
 

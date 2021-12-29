@@ -16188,3 +16188,5 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	};
 
 })(jQuery);
+
+export { AblePlayerInstances };

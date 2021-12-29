@@ -1,7 +1,7 @@
-//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js NPM
-https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js NPM
-https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js NPM 
+//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js DONE
+https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js NPM DONE
+https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js NPM DONE
+https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js NPM  DONE
 js/ablePlayerCustomizations.js
 js/accessibility.js NPM
 js/accessible-text-svg.js DEMO
@@ -23,21 +23,21 @@ js/read-more.js MODULE DONE
 js/shared/dialog-polyfill-a11y-fixes.js MODULE
 js/shared/dialog-polyfill.js NPM
 js/shared/enable-animatedGif.js MODULE DONE
-js/shared/enable-carousel.js MODULE
-js/shared/enable-listbox.js MODULE
-js/shared/enable-visible-on-focus.js MODULE
+js/shared/enable-carousel.js MODULE DONE
+js/shared/enable-listbox.js MODULE DONE
+js/shared/enable-visible-on-focus.js MODULE DONE
 js/shared/form.js DEMO
 js/shared/interpolate.js MODULE DONE
 js/shared/polyfills.js TMP
-js/shared/radio-and-checkbox-roles.js MODULE
-js/shared/radiogroup.js MODULE
-js/shared/switch.js MODULE
-js/shared/tooltip.js MODULE
+js/shared/radio-and-checkbox-roles.js MODULE DONE
+js/shared/radiogroup.js MODULE DONE
+js/shared/switch.js MODULE DONE
+js/shared/tooltip.js MODULE DONE
 js/shared/visibleIf.js NPM
 js/sortable-table.js MODULE DONE
 js/spinbutton.js MODULE REFACTOR
 js/status.js DEMO
-js/tabs.js MODULE
+js/tabs.js MODULE DONE
 js/timer.js DEMO
 node_modules/glider-js/glider.min.js LEAVE
-text-zoom-event-js MODULE
+text-zoom-event-js NPM

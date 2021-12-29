@@ -37,14 +37,18 @@
   },
   "dependencies": {
     "axe-cli": "^3.2.1",
+    "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3",
     "lessc": "^1.0.2",
     "node-html-parser": "^5.2.0",
     "php-express": "^0.0.3",
     "prismjs": "^1.24.0",
     "selenium-webdriver": "^4.0.0-beta.4",
+    "text-zoom-event": "^1.5.2",
     "vnu-jar": "^21.6.11"
   }
 }

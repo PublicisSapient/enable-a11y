@@ -179,7 +179,7 @@
 
     </main>
 
-    <script src="js/shared/enable-animatedGif.js" type="module"></script>
+    <script src="js/modules/enable-animatedGif.js" type="module"></script>
 
     <?php include "includes/example-footer.php" ?>
 </body>

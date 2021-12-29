@@ -177,6 +177,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             // after being pushed in the background, so we do this to work around it.
             document.addEventListener('visibilitychange', this.clickEvent);
 
+            // expose this module to showcode if it is on the page */
             if (document.querySelector('.showcode')) {
               window.pauseAnimControl = this;
             }

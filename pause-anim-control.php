@@ -404,7 +404,7 @@
             </p> 
 
             <div id="html5-video-example">
-                <video controls="" preload="metadata" autoplay muted loop>
+                <video controls="" preload="metadata" data-root-path="./js/libs/ableplayer/" autoplay muted loop>
                     <source src="videos/test-pattern.mp4" type="video/mp4">
                     Video not supported.
                 </video>
@@ -503,10 +503,8 @@
     <script src="js/demos/ana-tudor/elastic-collision.js"></script>
     <script src="js/modules/pause-anim-control.js" type="module"></script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/libs/ableplayer/thirdparty/js.cookie.js"></script>
-    <script src="js/libs/ableplayer/build/ableplayer.js"></script>
-    <script src="js/ablePlayerCustomizations.js"></script>
+
+    <script src="js/modules/ablePlayerCustomizations.js" type="module"></script>
 </body>
 
 </html>

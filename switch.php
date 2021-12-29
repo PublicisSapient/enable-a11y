@@ -97,6 +97,6 @@
     </main>
 
     <?php include "includes/example-footer.php" ?>
-    <script src="js/shared/switch.js"></script>
+    <script src="js/modules/switch.js" type="module"></script>
   </body>
 </html>

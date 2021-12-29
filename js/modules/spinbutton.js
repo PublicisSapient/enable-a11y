@@ -125,7 +125,6 @@ function spinbutton(el) {
   this.handleClick = (e) => {
     const { currentTarget } = e;
     const id = currentTarget.getAttribute("id")
-    console.log(currentTarget, id, this.upID);
 
     if (id == this.upID) {
       // if valuemax isn't met, increment valnow
@@ -390,7 +389,7 @@ function spinbutton(el) {
   //
   // @return (boolean) Returns true
   //
-  this.handleFocus = (e) => {
+  this.handleFocus = () => {
     // add the focus styling class to the control
     this.$el.classList.add("focus");
 
@@ -404,7 +403,7 @@ function spinbutton(el) {
   //
   // @return (boolean) Returns true
   //
-  this.handleBlur = (e) => {
+  this.handleBlur = () => {
     // Remove the focus styling class from the control
     this.$el.classList.remove("focus");
 
@@ -421,3 +420,4 @@ for (let i = 0; i < els.length; i++) {
   spinbuttons[i] = new spinbutton(els[i]);
 }
 
+export { spinbuttons, spinbutton};

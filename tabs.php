@@ -228,8 +228,7 @@
     </main>
 
     <div id="scripts">
-        <script src="js/accessibility.js"></script>
-        <script src="js/tabs.js"></script>
+        <script src="js/modules/tabs.js" type="module"></script>
     </div>
 
     <?php include "includes/example-footer.php"?>

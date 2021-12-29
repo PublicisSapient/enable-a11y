@@ -1,3 +1,20 @@
+'use strict'
+
+/*******************************************************************************
+* switch.js - Implements UI for the ARIA switch role
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec. 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/switch.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+
+
+
 const Switch = new function () {
     const customEvent = document.createEvent('Event');
 
@@ -9,10 +26,8 @@ const Switch = new function () {
     this.onClick = (evt) => {
         let el = evt.target;
         const id = el.id;
-        const alertEl = document.getElementById(id + '__alert');
-        const labelEl = document.getElementById(id + '__label');
-        let ariaDescribedByEl;
         const switchEl = el.closest('[role="switch"]');
+        let ariaDescribedBy;
 
         if (switchEl) {
             el = switchEl;
@@ -33,3 +48,5 @@ const Switch = new function () {
 }
 
 Switch.init();
+
+export default Switch;

@@ -176,7 +176,7 @@
 
     <?php include "includes/example-footer.php" ?>
 
-    <script src="js/shared/enable-carousel.js" type="module"></script>
+    <script src="js/modules/enable-carousel.js" type="module"></script>
 </body>
 
 </html>

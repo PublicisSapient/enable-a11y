@@ -326,8 +326,7 @@
         </script>
     </main>
 
-    <script src="js/accessibility.js"></script>
-    <script src="js/shared/radiogroup.js"></script>
+    <script src="js/modules/radiogroup.js" type="module"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

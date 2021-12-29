@@ -201,7 +201,7 @@
     </main>
 
 
-    <script src="js/spinbutton.js"></script>
+    <script src="js/modules/spinbutton.js" type="module"></script>
     <?php include "includes/example-footer.php" ?>
 </body>
 
