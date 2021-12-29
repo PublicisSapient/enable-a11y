@@ -77,8 +77,7 @@
     </main>
 
 
-    <script src="js/shared/polyfills.js"></script>
-    <script src="js/alert.js"></script>
+    <script src="js/demos/alert.js"></script>
 
 
     <?php include "includes/example-footer.php"?>
