@@ -166,7 +166,7 @@
     </main>
 
 
-    <script src="js/dialog-example.js" type="module"></script>
+    <script src="js/demos/dialog-example.js" type="module"></script>
 
     <?php include "includes/example-footer.php"?>
   </body>

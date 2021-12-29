@@ -208,6 +208,13 @@
                                                     Skip Links
                                                 </a>
                                             </li>
+                                            <li class="enable-flyout__menu-item">
+                                              <a href="dialog.php"
+                                                class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/dialog", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Modal Dialog
+                                              </a>
+                                            </li>
 
                                         </ul>
                                     </div>
@@ -313,6 +320,13 @@
                                         <?php pictureWebpPng("images/main-menu/pause-anim-control", "", "class=\"enable-flyout__link-image\""); ?>
                                         Pause All Animations Control
                                     </a>
+                                </li>
+                                <li class="enable-flyout__menu-item">
+                                  <a href="video-player.php"
+                                    class="enable-flyout__link">
+                                    <?php pictureWebpPng("images/main-menu/video-player", "", "class=\"enable-flyout__link-image\""); ?>
+                                    Video Player
+                                  </a>
                                 </li>
 
                                 <!-- Start menu items for section Animated Content -->
