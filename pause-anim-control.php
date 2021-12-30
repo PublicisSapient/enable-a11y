@@ -31,7 +31,6 @@
                 <input type="checkbox" id="pause-anim-control"
                     class="pause-anim-control__checkbox" />
             </label>
-
         </div>
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">

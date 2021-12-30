@@ -1,19 +1,44 @@
 ENSURE ALL modules are in the modules directory
 ENSURE all modules play nice with showcode
 
+INSERT pause animations thing on all pages.
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.
 
 Do we need mobile visible on focus for the header? 
 
+PAGES TO BE DONE:
 FOCUS STYLING
+alert-dialog.php
+animated-hide-show.php
+bottom-fixed-navigation.php
+date.php
+form.php
+index2.php - this should be put into the landmarks page.
+read-more.php
+redirect.php
+text-contrast.php
+zoomable-viewport-units.php
+
+VIDEOS FOR:
+focus-styling.php
+skip-links
+slider
+select box
+autocomplete
+tablist
+tooltip
+carousel
+modal dialog
+table
+
+
+
 
 jsdoc
 
 
-- Need to catagorize js code
-- Need to modularize js code
 - module server side parse test
 - eslint
 - showcode demo page.

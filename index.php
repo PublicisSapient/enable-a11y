@@ -18,8 +18,7 @@
     <?php include "includes/documentation-header.php";?>
 
     <main>
-        <h1>What is Enable</h1>
-
+        <h1>The Enable Project</h1>
 
         <ul>
             <li>Are you trying to learn how to build accessible code from scratch?</li>

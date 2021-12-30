@@ -4,7 +4,18 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
-  // background-color: rgb(245, 245, 247);
+
+  // This forces the footer to go to the bottom.
+  // Brilliant idea from:
+  // https://stackoverflow.com/questions/4575826/how-to-push-a-footer-to-the-bottom-of-page-when-content-is-short-or-missing
+
+  /* @media @tablet-up {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+  } */
 }
 
 strong {
@@ -148,6 +159,30 @@ select {
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
+}
+
+/* z-index overrides */
+.enable-flyout {
+  z-index: (@able-player-max-z-index + 1) !important;
+
+  &__overlay-screen {
+    z-index: (@able-player-max-z-index) !important;
+  }
+
+  &__open-menu-button {
+    z-index: (@able-player-max-z-index + 2) !important;
+
+  }
+}
+
+.play-pause-anim {
+  &__checkbox-container {
+      z-index: (@able-player-max-z-index - 1) !important;
+      
+      @media @desktop {
+        z-index: (@able-player-max-z-index + 2) !important;
+      }
+  }
 }
 
 /*

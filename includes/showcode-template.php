@@ -1,12 +1,14 @@
         <div class="showcode__container">
-            <?php if ($isInteractive): ?>
-            <?php echo "<h$headingLevel class=\"showcode__heading\">Example code explanation</h$headingLevel>" ?>
+            <div class="showcode__copy">
+                <?php if ($isInteractive): ?>
+                <?php echo "<h$headingLevel class=\"showcode__heading\">Example code explanation</h$headingLevel>" ?>
 
-            <p>
-                Below is the HTML of the above example. Use the dropdown
-                to highlight each of the individual steps that makes the
-                example accessible.
-            </p>
+                <p>
+                    Below is the HTML of the above example. Use the dropdown
+                    to highlight each of the individual steps that makes the
+                    example accessible.
+                </p>
+            </div>
 
             <?php echo $extra ?>
             <?php endif ?>
