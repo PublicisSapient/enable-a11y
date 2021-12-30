@@ -283,5 +283,22 @@
 			"  window.$1 = this;",
 			"}"
 		]
+	},
+	"skiplink-mobile": {
+		"scope": "",
+		"prefix": "skiplink-mobile",
+		"body": [
+			"<div", 
+			"  class=\"enable-mobile-visible-on-focus__container enable-skip-link--begin\"", 
+			">", 
+			"  <a", 
+			"    id=\"$1\"",
+			"    href=\"#$2\"",  
+			"    class=\"enable-mobile-visible-on-focus enable-skip-link\"",
+			"  >",
+			"    $3", 
+			"  </a>", 
+			"</div>" 
+		]
 	}
 }

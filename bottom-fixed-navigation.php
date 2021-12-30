@@ -11,9 +11,19 @@
 
 </head>
 
-<body>
-
-    <?php include "includes/documentation-header.php";?>
+<body class="bottom-fixed-nav__body">
+    <div
+      class="enable-mobile-visible-on-focus__container enable-skip-link--begin"
+    >
+      <a
+        id="top-of-page"
+        href="#main-nav-link"
+        class="enable-mobile-visible-on-focus enable-skip-link"
+      >
+        Skip to bottom navigation
+      </a>
+    </div>
+    
 
     <div id="example1">
         <div class="enable-visible-on-focus__container enable-skip-link--begin">
@@ -59,10 +69,16 @@
 
 
         <nav class="bottom-fixed-nav" aria-label="main">
-            <div class="enable-visible-on-focus__container enable-skip-link--begin">
-                <a href="#top-of-page" id="main-nav-link" class="enable-visible-on-focus enable-skip-link">
-                    Back to top of page
-                </a>
+            <div
+              class="enable-mobile-visible-on-focus__container enable-skip-link--begin"
+            >
+              <a
+                id="main-nav-link"
+                href="#top-of-page"
+                class="enable-mobile-visible-on-focus enable-skip-link"
+              >
+                Back to top of the page
+              </a>
             </div>
             <ul class="bottom-fixed-nav__list">
                 <li class="bottom-fixed-nav__list-item">
@@ -130,7 +146,7 @@
     </div>
 
     <?php include "includes/example-footer.php"?>
-
+    <script src="js/demos/bottom-fixed-nav.js"></script>
 </body>
 
 </html>

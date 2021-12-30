@@ -244,7 +244,7 @@
 
     </main>
 
-    <script src="js/progress.js"></script>
+    <script src="js/demos/progress.js"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

@@ -97,7 +97,7 @@
 
 
     <?php include "includes/example-footer.php"?>
-    <script src="js/timer.js"></script>
+    <script src="js/demos/timer.js"></script>
 </body>
 
 </html>

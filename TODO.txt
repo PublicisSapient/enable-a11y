@@ -1,13 +1,13 @@
 ENSURE ALL modules are in the modules directory
 ENSURE all modules play nice with showcode
 
-fix dialog page and put in menu.
-ableplayer - need to do build -- maybe PRs?
 
-test new NPM mods with a build process: text-zoom-resize, accessibility and visibleIf
+test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.
 
 Do we need mobile visible on focus for the header? 
+
+FOCUS STYLING
 
 jsdoc
 
