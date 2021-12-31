@@ -12,3 +12,6 @@
 import "./libs/showcode.js";
 import "./modules/hamburger.js";
 import "./modules/enable-visible-on-focus.js";
+import offscreenObserver from "./modules/offscreen-observer.js"
+
+offscreenObserver.init(document.querySelector('[role="banner"]'));

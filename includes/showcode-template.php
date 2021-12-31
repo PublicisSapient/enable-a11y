@@ -8,9 +8,11 @@
                     to highlight each of the individual steps that makes the
                     example accessible.
                 </p>
+                <?php endif ?>
             </div>
 
-            <?php echo $extra ?>
+            <?php if ($isInteractive): ?>
+                <?php echo $extra ?>
             <?php endif ?>
             <div class="showcode">
                 <?php if ($isInteractive): ?><form class="showcode__ui"><?php endif ?>

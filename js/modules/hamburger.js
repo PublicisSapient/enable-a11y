@@ -330,6 +330,7 @@ EnableFlyoutHamburger = new function() {
     }
   }
 
+
   this.init = function() {
 
     document.body.addEventListener('click', this.onDocumentClick);
@@ -368,7 +369,6 @@ EnableFlyoutHamburger = new function() {
 
     // This is supposed to be deprecated, but I don't know what its replacement is.
     $body.addEventListener("orientationchange", this.onBreakpointChange);
-
 
     document.addEventListener('keyup', this.keyPressEvent);
 

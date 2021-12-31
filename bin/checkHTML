@@ -140,9 +140,10 @@ OUTPUT_LEN=`echo "$OUTPUT" | wc -c`
 if [ "$OUTPUT_LEN" -gt "1" ]
 then
 	# echo "$OUTPUT"
-	rm $TEMP_FILES
-	echo "Removed temp files."
-	exit
+	# rm $TEMP_FILES
+	echo "The generated html from the PHP files are in tmp/" 1>&2
+	echo "Please use them to debug in order to fix the above issues." 1>&2
+	exit 1
 fi
 
 rm $TEMP_FILES

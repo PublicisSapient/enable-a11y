@@ -25,13 +25,7 @@
     
    
     <main class="with-full-bleed-hero">
-        <div class="play-pause-anim__checkbox-container" id="checkbox-container">
-            <label for="pause-anim-control">
-                Pause animations
-                <input type="checkbox" id="pause-anim-control"
-                    class="pause-anim-control__checkbox" />
-            </label>
-        </div>
+        <?php include "includes/pause-anim-control.php" ?>
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">
                 
@@ -115,9 +109,9 @@
 
             <ul>
                 <li>When the page loads, the script checks to see what the OS setting for animations (via the <a
-                        href="">prefers-reduced-motion media query</a>).
+                        href="">prefers-reduced-motion media query</a>).</li>
                 <li>If <code>prefers-reduced-motion</code> media-query is set to "reduce", the script turns off the
-                    animations and checks the checkbox by default.
+                    animations and checks the checkbox by default.</li>
                 <li>If the checkmark is checked, the class <code>pause-anim-control__prefers-reduced-motion</code>
                     is set on the <code>body</code> tag. Otherwise, the <code>body</code> tag has the
                     <code>pause-anim-control__prefers-motion</code> class set. These classes are used to pause and
@@ -490,10 +484,6 @@
             </script>
 
         </div>
-
-
-
-
     </main>
 
     <?php include "includes/example-footer.php"?>

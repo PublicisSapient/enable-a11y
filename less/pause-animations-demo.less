@@ -30,12 +30,16 @@
         @media @desktop {
 
           position: fixed;
-          top: 5px;
+          top: 45px;
           left: initial;
           right: 20px;
           border-radius: 50px;
           border: solid 2px white;
           width: min-content;
+          
+          .offscreen-observer__is-header-offscreen & {
+            top: 10px;
+          }
         }
 
         label {
@@ -61,6 +65,7 @@
       width: 100vw;
     }
   }
+
 }
 
 main {
