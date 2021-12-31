@@ -12,6 +12,7 @@
 @desktop: ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
 @hamburger-translate-y: min(@flyout-width, 350px);
 @hamburger-offset-y: calc(-1 * @hamburger-translate-y);
+@hamburger-menu-icon-top: 12px;
 
 // This would be normally set to a lower number.  However, AblePlayer's
 // max z-index is 10000, so we are compensating.
@@ -62,7 +63,8 @@
   text-decoration: none;
   top: 0;
   z-index: (@min-z-index + 1);
-  display: none;
+  //display: none;
+  visibility: hidden;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -74,11 +76,13 @@
 
 
   &--hidden {
-    display: none;
+    //display: none;
+    visibility: hidden;
   }
 
   &--will-animate {
-    display: block;
+    // display: block;
+    visibility: visible;
 
     .enable-flyout {
       will-change: right;
@@ -120,7 +124,7 @@
       height: @hamburger-height + (2 * @hamburger-padding-vert);
       position: absolute;
       right: 2px;
-      top: 0px;
+      top: @hamburger-menu-icon-top;
       background: none;
       border: none;
     }
@@ -256,6 +260,7 @@
   animation: enable-flyout__anim--mobile-close @anim-time ease-in-out forwards;
   &--is-open {
     display: block;
+    visibility: visible;
     animation: enable-flyout__anim--mobile-open @anim-time ease-in-out forwards;
 
     /* fallback if animation is not supported *or* turned off */
@@ -323,7 +328,7 @@
   &__open-menu-button {
     position: absolute;
     right: 2px;
-    top: 12px;
+    top: @hamburger-menu-icon-top;
     z-index: (@min-z-index + 2);
 
   }
