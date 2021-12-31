@@ -29,6 +29,10 @@
   filter: invert();
   position: absolute;
   top: (7 / @px);
+
+  @media @desktop {
+    top: (21 / @px);
+  }
 } 
 
 @menu-orientation: right;
@@ -301,8 +305,15 @@
     padding: 1em 0;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
+    
     &:hover {
       background: @color1;
+    }
+
+    @media @desktop {
+      /* This is how you increase the hit area of a CTA */
+      padding: 27px 0;
+      margin: (-27px + 5px) 0;
     }
   }
   &__close-level-button {
