@@ -21,3 +21,4 @@ Jano Garcia, LESS px to rem, https://codepen.io/janogarcia/pen/bNrKEP, https://j
 Yale University, https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text, accessibility@yale.edu, ?
 Bruce Lawson, https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/, https://twitter.com/brucel
 Sam Thorogood, https://gist.github.com/samthor, https://twitter.com/samthor
+Edric Studio, https://edricstudio.com/monice-sans-serif-font/, Monice font

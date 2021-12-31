@@ -8,6 +8,8 @@ write about polyfill not necessary in chrome and difference.
 
 Do we need mobile visible on focus for the header? 
 
+SVG in Windows High Contrast mode.
+
 PAGES TO BE DONE:
 FOCUS STYLING
 alert-dialog.php

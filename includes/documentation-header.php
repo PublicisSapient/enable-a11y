@@ -40,12 +40,12 @@
                         </a>
                     </li>
                     <li class="enable-flyout__menu-item">
-                        <!-- Begin section Interactive Elements -->
-                        <button aria-expanded="false" aria-controls="interactive-elements-section"
+                        <!-- Begin section Controls -->
+                        <button aria-expanded="false" aria-controls="controls-section"
                             class="enable-flyout__open-level-button">
-                            Interactive Elements
+                            Controls
                         </button>
-                        <div id="interactive-elements-section" aria-label="Interactive Elements" role="group"
+                        <div id="controls-section" aria-label="Controls" role="group"
                             class="enable-flyout enable-flyout__level enable-flyout__dropdown">
                             <button class="enable-flyout__hamburger-icon-facade">
                                 <span class="sr-only">
@@ -136,13 +136,13 @@
                                 </li>
 
                                 <li class="enable-flyout__menu-item">
-                                    <!-- Begin section Other Interactive Elements -->
-                                    <button aria-expanded="false" aria-controls="other-interactive-elements-section"
+                                    <!-- Begin section Other Controls -->
+                                    <button aria-expanded="false" aria-controls="other-controls-section"
                                         class="enable-flyout__open-level-button">
-                                        Other Interactive Elements
+                                        Other Controls
                                     </button>
-                                    <div class="enable-flyout__level-heading">Other Interactive Elements</div>
-                                    <div id="other-interactive-elements-section" aria-label="Other Interactive Elements"
+                                    <div class="enable-flyout__level-heading">Other Controls</div>
+                                    <div id="other-controls-section" aria-label="Other Controls"
                                         role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
                                         <button class="enable-flyout__hamburger-icon-facade">
                                             <span class="sr-only">
@@ -156,7 +156,7 @@
                                                 </button>
                                             </li>
 
-                                            <!-- Start menu items for section Other Interactive Elements -->
+                                            <!-- Start menu items for section Other Controls -->
 
                                             <li class="enable-flyout__menu-item">
                                                 <a href="link.php" class="enable-flyout__link">
@@ -226,12 +226,12 @@
                     </li>
 
                     <li class="enable-flyout__menu-item">
-                        <!-- Begin section Content Elements -->
-                        <button aria-expanded="false" aria-controls="content-elements-section"
+                        <!-- Begin section Content -->
+                        <button aria-expanded="false" aria-controls="content-section"
                             class="enable-flyout__open-level-button">
-                            Content Elements
+                            Content
                         </button>
-                        <div id="content-elements-section" aria-label="Content Elements" role="group"
+                        <div id="content-section" aria-label="Content" role="group"
                             class="enable-flyout enable-flyout__level enable-flyout__dropdown">
                             <button class="enable-flyout__hamburger-icon-facade">
                                 <span class="sr-only">
@@ -286,7 +286,7 @@
                                         Math
                                     </a>
                                 </li>
-                                <!-- Start menu items for section Content Elements -->
+                                <!-- Start menu items for section Content -->
                             </ul>
                         </div>
                     </li>

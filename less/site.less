@@ -21,9 +21,6 @@
     margin-right: 0;
   }
 
-  &__hamburger-icon span {
-    background-color: black;
-  }
 
   &__link {
     text-indent: 0px;
@@ -85,7 +82,7 @@
 
 
     /* styles specific to Interactive Elements flyout */
-    #interactive-elements-section > :not(&__menu-item) > &__menu-item {
+    #controls-section > :not(&__menu-item) > &__menu-item {
 
       width: calc(50% - 72px);
       float: left;
@@ -131,25 +128,31 @@
 // Logo in the header
 
 .enable-logo {
-  width: 100px;
+  width: 60px;
+  color: #fff;
+
+  @media @tablet-up {
+    width: 100px;
+  }
 
   &__container {
     text-decoration: none;
-    font-family: "Specify Condensed", Arial, Helvetica, sans-serif;
+    font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
 
-    color: black;
-    -webkit-text-stroke: none;
-    display: table;
-    margin: 0 auto;
-    padding-bottom: 10px;
-    text-align: center;
+    color: #fff;
+    margin-bottom: -10px;
 
     @media @mobile {
       transform: scale(0.75);
     }
+
+    @media @tablet-up {
+      padding: 10px 30px 0px 30px;
+    }
   }
 
   &__link {
+    color: #fff;
     text-decoration: none;
   }
 
@@ -157,12 +160,15 @@
     display: block;
     position: relative;
     display: inline-block;
-    color: #ffa500;
-    font-size: 70px;
-    top: -25px;
-    -webkit-text-stroke: 1px #333;
-    text-shadow: 2px 2px 0 black;
-    font-style: italic;
+    color: #fff;
+    font-size: (50/@px);
+    top: (-9/@px);
+    left: (20/@px);
+
+    @media @tablet-up {
+      font-size: (70/@px);
+      top: (-25/@px);
+    }
   }
 
   &__sub-text {

@@ -84,6 +84,7 @@
   &__container {
     padding: 0;
     margin-bottom: 0;
+    color: @color0;
   }
 
   // Animation for the hamburger menu icon stolen from:
@@ -106,6 +107,8 @@
     transform: rotate(0deg);
     transition: 0.5s ease-in-out;
     cursor: pointer;
+    top: 0;
+    
 
     &-facade {
       display: block;
@@ -153,7 +156,7 @@
         background-color: white;
       }
       span:nth-child(1) {
-        top: (@hamburger-height-div-five * 2);
+        top: (@hamburger-height-div-five * 2) ;
         width: 0%;
         left: 50%;
       }
@@ -309,7 +312,7 @@
   &__open-menu-button {
     position: absolute;
     right: 2px;
-    top: 0;
+    top: 12px;
     z-index: (@min-z-index + 2);
 
   }
