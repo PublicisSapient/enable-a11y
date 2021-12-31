@@ -13,27 +13,23 @@
 @hamburger-translate-y: min(@flyout-width, 350px);
 @hamburger-offset-y: calc(-1 * @hamburger-translate-y);
 @hamburger-menu-icon-top: 12px;
+@focus-area-padding: 27px;
 
 // This would be normally set to a lower number.  However, AblePlayer's
 // max z-index is 10000, so we are compensating.
 @min-z-index: 0;
 
-.icon-mixin(@img) {
+.icon-mixin(@img, @width: 20, @height: 20) {
   content: "";
   display: inline-block;
-  width: (26/@px);
-  height: (31/@px);
+  width: (@width/@px);
+  height: (@height/@px);
   background: url(@img);
   background-repeat: no-repeat;
-  background-position: 0 (6 / @px);
-  background-size: (20/@px) (20/@px);
+  background-position: 0 0;
+  background-size: (@width/@px) (@height/@px);
   filter: invert();
-  position: absolute;
-  top: (5 / @px);
-
-  @media @desktop {
-    top: (19 / @px);
-  }
+  position: relative;
 } 
 
 @menu-orientation: right;
@@ -250,11 +246,9 @@
 
   &__with-home-icon {
     position: relative;
-    padding-left: 32px;
     &::before {
       .icon-mixin("../images/Home.svg");
-      position: relative;
-      top: (6/@px);
+      top: (2/@px)
     }
   }
 
@@ -268,6 +262,11 @@
 
     &::after {
       .icon-mixin("../images/chevron-right.svg");
+      top: (5/ @px);
+
+      @media @desktop {
+        top: (5 / @px);
+      }
     }
   }
 
@@ -322,6 +321,11 @@
     &::before {
       .icon-mixin("../images/chevron-left.svg");
       margin-left: -33px;
+      top: (4 / @px);
+
+      @media @desktop {
+        top: (5/ @px);
+      }
     }
 
     &:hover {
@@ -341,8 +345,8 @@
 
     @media @desktop {
       /* This is how you increase the hit area of a CTA */
-      padding: 27px 0;
-      margin: (-27px + 5px) 0;
+      padding: @focus-area-padding 0;
+      margin: (-@focus-area-padding) 0;
     }
   }
   &__close-level-button {
@@ -490,6 +494,7 @@
       padding-bottom: 3em;
       padding-left: calc(50vw - (@desktop-min / 2));
       padding-right: calc(50vw - (@desktop-min / 2));
+      margin-top: 4px;
     }
 
     &__open-level-button,
