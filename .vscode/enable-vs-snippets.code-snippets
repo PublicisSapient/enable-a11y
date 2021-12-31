@@ -103,6 +103,16 @@
 			"Usage: %OPENCLOSECONTENTTAG%<HTML TAG NAME>"
 		]
 	},
+	"hamburger-root": {
+		"scope": "",
+		"prefix": "hamburger-root",
+		"body": [
+			"<ul class=\"enable-flyout__list\">",
+			"  $1",
+			"</ul>"
+		],
+		"description": "  "
+	},
 	"hamburger-submenu": {
 		"scope": "",
 		"prefix": "hamburger-submenu",

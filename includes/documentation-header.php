@@ -6,7 +6,13 @@
             Skip to Main Content
         </a>
     </div>
+    
     <?php include("includes/logo-link.php"); ?>
+    
+    <nav aria-label="About Enable" class="enable-flyout__secondary-navigation--desktop">
+        <?php include("about-enable-nav.php"); ?>
+    </nav>
+
 
 
     <!-- Here is the main menu -->
@@ -503,11 +509,13 @@
                                         </ul>
                                     </div>
                                 </li>
-
                             </ul>
                         </div>
                     </li>
                 </ul>
+                <div class="enable-flyout__secondary-navigation--mobile">
+                    <?php include "about-enable-nav.php"; ?>
+                </div>
             </div>
         </nav>
         <span class="enable-flyout__overlay-screen">

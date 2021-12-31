@@ -29,17 +29,17 @@
   background-size: (20/@px) (20/@px);
   filter: invert();
   position: absolute;
-  top: (7 / @px);
+  top: (5 / @px);
 
   @media @desktop {
-    top: (21 / @px);
+    top: (19 / @px);
   }
 } 
 
 @menu-orientation: right;
 
 // Height variables (appears count calculates by raw css)
-@height0: 100%; // Appears 3 times
+@height0: 100vh; // Appears 3 times
 
 * {
   box-sizing: border-box;
@@ -56,15 +56,14 @@
   background: #2e2f35;
   color: @color0;
   
-  font-size: 1em;
+  font-size: (14/@px);
   font-weight: 100;
   height: @height0;
   position: absolute;
   text-decoration: none;
   top: 0;
   z-index: (@min-z-index + 1);
-  //display: none;
-  visibility: hidden;
+  display: none;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
@@ -76,13 +75,11 @@
 
 
   &--hidden {
-    //display: none;
-    visibility: hidden;
+    display: none;
   }
 
   &--will-animate {
-    // display: block;
-    visibility: visible;
+    display: block;
 
     .enable-flyout {
       will-change: right;
@@ -93,6 +90,31 @@
     padding: 0;
     margin-bottom: 0;
     color: @color0;
+  }
+
+  &__secondary-navigation {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      .enable-flyout__list {
+        padding-top: 20px;
+        margin-top: 20px;
+        position: relative;
+        
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 20px;
+          width: calc(100% - 40px);
+          height: 1px;
+          background: @color0;
+
+        }
+      }
+    }
   }
 
   // Animation for the hamburger menu icon stolen from:
@@ -202,8 +224,9 @@
     color: @color0;
     display: block;
     
-    font-size: 1em;
-    padding: 1em 1em 1em 0;
+    font-family: "Helvetica", "Arial", "sans-serif";
+    font-size: (14/@px);
+    padding: (14/@px) (14/@px) (14/@px) 0;
     text-decoration: none;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
@@ -230,7 +253,8 @@
     padding-left: 32px;
     &::before {
       .icon-mixin("../images/Home.svg");
-      position: static;
+      position: relative;
+      top: (6/@px);
     }
   }
 
@@ -253,7 +277,7 @@
   }
 
   &__body--is-open &__overlay-screen {
-    height: @height0;
+    height: 100%;
     opacity: 1;
   }
 
@@ -288,8 +312,8 @@
   &__close-level-button {
     cursor: pointer;
     display: block;
-    font-size: 1em;
-    padding: 1em 0;
+    font-size: (14/@px);
+    padding: (14/@px) 0;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
     position: relative;
@@ -307,7 +331,7 @@
   &__open-level-button {
     cursor: pointer;
     display: block;
-    padding: 1em 0;
+    padding: (14/@px) 0;
     text-indent: 20px;
     transition: background @anim-time ease-in-out;
     
@@ -400,6 +424,33 @@
     min-height: auto;
 
     --enable-flyout__is-hamburger: 0;
+
+    &__secondary-navigation {
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+        position: absolute;
+        padding: 0;
+        background: transparent;
+        top: 0px;
+        right: 10px;
+
+        & .enable-flyout {
+          &__menu-item {
+
+          }
+
+          &__link {
+            padding: 17px 0;
+            margin: -17px 0;
+            margin: 0;
+          }
+        }
+      }
+    }
     
     &__hamburger-icon {
       &-facade {
