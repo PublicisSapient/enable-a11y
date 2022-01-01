@@ -26,11 +26,6 @@ const radiogroup = new function () {
             accessibility.initGroup(this.radioGroupEls[i], {doKeyChecking: true});
         }
 
-        // expose this module to showcode if it is on the page */
-        if (document.querySelector('.showcode')) {
-          window.radiogroup = this;
-        }
-
     }
 }
 radiogroup.init();

@@ -86,7 +86,4 @@ function ablePlayerCustomizations($) {
 
 ablePlayerCustomizations(jQuery);
 
-// expose this module to showcode if it is on the page
-if (document.querySelector('.showcode')) {
-  window.ablePlayerCustomizations = ablePlayerCustomizations;
-}
+export { ablePlayerCustomizations, AblePlayerInstances};

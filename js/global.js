@@ -9,9 +9,14 @@
 *
 ******************************************************************************/
 
-import "./libs/showcode.js";
-import "./modules/hamburger.js";
-import "./modules/enable-visible-on-focus.js";
+import showcode from "./libs/showcode.js";
+import EnableFlyoutHamburger from "./modules/hamburger.js";
+import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
 import offscreenObserver from "./modules/offscreen-observer.js"
 
 offscreenObserver.init(document.querySelector('[role="banner"]'));
+
+
+showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
+showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
+

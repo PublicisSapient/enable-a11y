@@ -489,11 +489,7 @@
     <?php include "includes/example-footer.php"?>
 
 
-    <script src="js/demos/ana-tudor/elastic-collision.js"></script>
-    <script src="js/modules/pause-anim-control.js" type="module"></script>
-
-
-    <script src="js/modules/ablePlayerCustomizations.js" type="module"></script>
+    <script src="js/demos/pause-anim-control.js" type="module"></script>
 </body>
 
 </html>

@@ -13,6 +13,8 @@
  * Released under the MIT License.
  ******************************************************************************/
 
+import showcode from "../libs/showcode.js";
+
 const supportsDialog = !!document.createElement('dialog').show;
 
 // Button that opens the dialog
@@ -46,9 +48,8 @@ if (!supportsDialog) {
       registerFocusRestoreDialog.default(favDialog);
 
       // expose this module to showcode if it is on the page
-      if (document.querySelector('.showcode')) {
-        window.registerFocusRestoreDialog = registerFocusRestoreDialog.default;
-      }
+      showcode.addJsObj('registerFocusRestoreDialog', registerFocusRestoreDialog.default);
+      
     });
   });
 }

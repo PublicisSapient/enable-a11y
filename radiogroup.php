@@ -257,7 +257,7 @@
                 },
                 {
                     "label": "Ensure the arrow keys can be used to cycle through the radio buttons after they receive keyboard focus",
-                    "highlight": "%JS% radiogroup",
+                    "highlight": "%FILE% js/modules/radiogroup.js ~ accessibility.initGroup",
                     "notes": "The <strong>accessibility.initGroup()</strong> method does the heavy lifting here.  It is also used to do the same thing in the <a href=\"08a-tabs.php\">Enable Tabs example</a>.  The <strong>doKeyChecking</strong> option passed to it ensures that the Space and Enter keys can be used to check the radio buttons when pressed."
                 },
                 {
@@ -327,7 +327,7 @@
         </script>
     </main>
 
-    <script src="js/modules/radiogroup.js" type="module"></script>
+    <script src="js/demos/radiogroup.js" type="module"></script>
     <?php include "includes/example-footer.php"?>
 </body>
 

@@ -34,10 +34,6 @@ const tooltip = new function () {
         // is pressed.
         mainEl.addEventListener('keyup', this.onKeyup);
 
-        // expose this module to showcode if it is on the page */
-        if (document.querySelector('.showcode')) {
-          window.tooltip = this;
-        }
     }
 
     this.create = () => {

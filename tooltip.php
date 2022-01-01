@@ -81,7 +81,7 @@
       </script>
     </main>
 
-    <script src="js/modules/tooltip.js" type="module"></script>
+    <script src="js/demos/tooltip.js" type="module"></script>
 
     <?php include "includes/example-footer.php" ?>
   </body>

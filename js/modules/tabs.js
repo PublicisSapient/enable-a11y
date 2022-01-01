@@ -103,11 +103,6 @@ const tabgroup = new (function () {
     if (activeTab) {
       activeTab.click();
     }
-
-    // expose this module to showcode if it is on the page */
-    if (document.querySelector('.showcode')) {
-      window.tabgroup = this;
-    }
   };
 
   this.addRoles = function () {

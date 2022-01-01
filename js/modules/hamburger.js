@@ -372,10 +372,6 @@ EnableFlyoutHamburger = new function() {
 
     document.addEventListener('keyup', this.keyPressEvent);
 
-    // expose this module to showcode if it is on the page */
-    if (document.querySelector('.showcode')) {
-      window.EnableFlyoutHamburger = this;
-    }
   }
 }
 

@@ -119,7 +119,7 @@
                 },
                 {
                     "label": "Add JavaScript to make the checkbox functional",
-                    "highlight": "%JS%ariaRadioCheckboxShim"
+                    "highlight": "%FILE% js/modules/radio-and-checkbox-roles.js"
                 }
             ]
         }
@@ -202,7 +202,7 @@
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="js/modules/radio-and-checkbox-roles.js" type="module"></script>
+    <script src="js/demos/checkbox.js" type="module"></script>
 
 </body>
 

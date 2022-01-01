@@ -1,3 +1,4 @@
+import showcode from "../libs/showcode.js";
 import textZoomEvent from '../../node_modules/text-zoom-event/dist/textZoomEvent.module.js';
 
 const svgTextSpacingDemo = new function() {
@@ -44,10 +45,6 @@ const textpathAnimation = new function () {
 
 }
 
-// expose this module to showcode if it is on the page
-if (document.querySelector('.showcode')) {
-  window.svgTextSpacingDemo = svgTextSpacingDemo;
-}
-
+showcode.addJsObj('svgTextSpacingDemo', svgTextSpacingDemo);
 svgTextSpacingDemo.init();
 textpathAnimation.init();

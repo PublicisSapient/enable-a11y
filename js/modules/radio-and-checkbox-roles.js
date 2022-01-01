@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const ariaRadioCheckboxShim = new (function () {
+const ariaRadioCheckboxShim = new function () {
   const keycodes = { SPACE: 32, ENTER: 13 };
 
   this.navigate = (evt) => {
@@ -74,13 +74,15 @@ const ariaRadioCheckboxShim = new (function () {
     }
   };
 
-  document.addEventListener("click", this.navigate);
-  document.addEventListener("keydown", this.navigate);
-
-  // expose this module to showcode if it is on the page */
-  if (document.querySelector('.showcode')) {
-    window.ariaRadioCheckboxShim = this;
+  this.init = () => {
+    document.addEventListener("click", this.navigate);
+    document.addEventListener("keydown", this.navigate);
   }
-})();
+
+  this.init();
+
+};
+
+console.log(ariaRadioCheckboxShim);
 
 export default ariaRadioCheckboxShim;

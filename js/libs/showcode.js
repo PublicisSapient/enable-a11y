@@ -24,6 +24,8 @@ const showcode = new function () {
   const codeblockCache = {};
   const debug = false;
 
+  const jsObjs = [];
+
   // Needed by entify()
   const amp = /&/g;
   const lt = /</g;
@@ -98,13 +100,12 @@ const showcode = new function () {
   }
 
   const getTextFromFile = async (url) => {
-    console.log('url', url)
-    const response = await fetch(url).then(response => {
-      
+    const response = await fetch(url).then(response => {  
+      console.log('xxx');
       return response.clone().text();
     });
 
-    console.log('response', response);
+    console.log('yyy response', response);
 
     return response;
   } 
@@ -335,7 +336,8 @@ const showcode = new function () {
               const fileName = splitHighlightString[0].trim();
               code = (async () => {
                 getTextFromFile(fileName).then((text) => {
-                  codeEl.innerHTML = text
+                  codeEl.innerHTML = this.entify(text.trim());
+                  console.log('done 1');
                 });
               })();
               console.log('returned', code);
@@ -380,8 +382,13 @@ const showcode = new function () {
                   // print out the funcName literally
                   funcCode = funcName.replace(/'/g, '');
                 } else {
-                  const evalFuncName = eval(funcName);
-                  const evalFuncString = evalFuncName.toString();
+                  const evalFuncName = `jsObjs.${funcName}`;
+                  let evalFuncString;
+                  try {
+                    evalFuncString = eval(evalFuncName).toString();
+                  } catch(ex) {
+                    throw(`The function ${funcName}() was not registered to showcode.`);
+                  }
                   if (evalFuncString.indexOf('object Object') >= 0) {
                     funcCode = getConstructorInfo(evalFuncName);
                   } else {
@@ -455,6 +462,8 @@ const showcode = new function () {
             }
           }
         }
+
+        console.log('done 2');
 
         highlightString=highlightString.replace(space, nbspStr);
         const attribute = highlightString.split('=')[0];
@@ -830,10 +839,19 @@ const showcode = new function () {
     window.addEventListener("orientationchange", throttle(handleResize, 100));
   }
 
+
+  this.addJsObj = (name, value) => {
+    jsObjs[name] = value;
+  }
+
   this.init = () => {
+    console.log('init!');
     showCodeBlocks();
     setEvents();
   }
+
 }
 
 showcode.init();
+
+export default showcode;

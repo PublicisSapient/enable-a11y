@@ -216,7 +216,7 @@
                 },
                 {
                     "label": "Set up JavaScript that activates the tabs when they have keyboard focus",
-                    "highlight": "%JS% tabgroup",
+                    "highlight": "%FILE% js/modules/tabs.js",
                     "notes": ""
                 }
             ]

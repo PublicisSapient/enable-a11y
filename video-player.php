@@ -147,7 +147,7 @@
     <?php include "includes/example-footer.php"?>
 
     
-    <script src="js/modules/ablePlayerCustomizations.js" type="module"></script>
+    <script src="js/demos/video-player.js" type="module"></script>
 
 </body>
 

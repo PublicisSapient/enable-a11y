@@ -28,10 +28,6 @@ const enableVisibleOnFocus = new (function () {
     // containers, so we want to reset our skip links onload.
     this.hideAll();
 
-    // expose this object globally only if on a page with showcode
-    if (document.querySelector('.showcode')) {
-      window.$1 = this;
-    }
   };
 
   /**
