@@ -15,6 +15,7 @@
     
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
             <h1>HTML5 Date Input Example</h1>
 
             <aside class="notes">

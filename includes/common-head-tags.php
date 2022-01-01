@@ -17,6 +17,9 @@
 <link id="site-css" rel="stylesheet" href="css/site.css" />
 
 
+<link id="pause-anim-css" rel="stylesheet" href="css/pause-animations-demo.css" />
+
+
 
 <?php
     function includeFileWithVariables($fileName, $variables)

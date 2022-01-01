@@ -23,6 +23,7 @@
     <?php include "includes/documentation-header.php";?>
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
       <h1>Modal Dialog Example</h1>
       <aside class="notes">
         <h2>Notes:</h2>

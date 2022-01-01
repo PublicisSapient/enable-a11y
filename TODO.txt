@@ -1,3 +1,6 @@
+Video player layout bug.
+Events of components.
+
 ENSURE ALL modules are in the modules directory
 ENSURE all modules play nice with showcode
 

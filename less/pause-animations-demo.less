@@ -16,7 +16,7 @@
     */
     &__checkbox-container {
         position: sticky;
-        width: 100%;
+        width: 100vw;
         top: 0;
         left: 0;
         color: white;
@@ -25,6 +25,10 @@
         white-space: nowrap;
         text-align: center;
         height: @checkbox-height;
+
+        main:not(.with-full-bleed-hero) & {
+          margin: -16px -16px 10px -16px;
+        }
         
 
         @media @desktop {

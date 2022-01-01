@@ -12,6 +12,7 @@
     <?php include "includes/documentation-header.php";?>
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <h1>Basic Text Resize Stategies</h1>
 
         <h2>Replace Pixels With Ems</h2>

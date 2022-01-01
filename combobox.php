@@ -11,6 +11,7 @@
     <?php include "includes/documentation-header.php";?>
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <aside class="notes">
             <p>
                 Example 1 is heavily refactored version of

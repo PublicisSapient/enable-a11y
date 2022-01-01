@@ -15,6 +15,7 @@
 
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <h1>ARIA Status Role</h1>
         <h2>Visually Hidden Alert</h2>
 

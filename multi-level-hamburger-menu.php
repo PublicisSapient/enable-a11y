@@ -15,6 +15,7 @@
 
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <aside class="notes">
             <p>
                 This is a heavily modified version of <a href="https://codepen.io/hayleyt/pen/ZyqBYW">

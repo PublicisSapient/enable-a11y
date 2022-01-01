@@ -18,6 +18,7 @@
     <?php include "includes/documentation-header.php";?>
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         
     <h1>
         Contributers

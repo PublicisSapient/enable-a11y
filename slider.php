@@ -14,6 +14,7 @@
 
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <h1>ARIA Slider Examples</h1>
 
 

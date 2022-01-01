@@ -17,6 +17,7 @@
 
 
     <main>
+    <?php include "includes/pause-anim-control.php" ?>
         <h1>ARIA Textbox Role Example</h1>
         <aside class="notes">
             <h2>Notes:</h2>

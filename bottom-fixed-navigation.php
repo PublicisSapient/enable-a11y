@@ -33,6 +33,7 @@
         </div>
 
         <main>
+    <?php include "includes/pause-anim-control.php" ?>
 
             <aside class="notes">
                 <p>
