@@ -19,6 +19,9 @@ const tooltip = new function () {
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
 
+    let isTooltipVisible;
+    let tooltipBelongsTo;
+
     this.init = () => {
         this.create();
 
@@ -61,6 +64,11 @@ const tooltip = new function () {
         // data-tooltip attribute
         const text = target.dataset.tooltip;
 
+        // don't do this if the tooltip is visible for this element already
+        if (!text || (isTooltipVisible && tooltipBelongsTo === target)) {
+            return;
+        }
+
         // If this is an element with a tooltip,
         if (text) {
             // the coordinates of the target
@@ -76,12 +84,33 @@ const tooltip = new function () {
             // position the tooltip below the target
             tooltipStyle.top = 'calc(' + (targetRect.bottom + window.pageYOffset) + 'px + 1em)';
             tooltipStyle.left = (targetRect.left + window.pageXOffset) + 'px';
+            isTooltipVisible = true;
+            tooltipBelongsTo = target;
         }
+        target.dispatchEvent(
+            new CustomEvent(
+                'enable-show',
+                {
+                    'bubbles': true,
+                }
+            )
+        );
     }
 
     this.hide = () => {
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
+        isTooltipVisible = false;
+        tooltipBelongsTo = null;
+
+        tooltipEl.dispatchEvent(
+            new CustomEvent(
+                'enable-hide',
+                {
+                    'bubbles': true,
+                }
+            )
+        );
     }
 
 }

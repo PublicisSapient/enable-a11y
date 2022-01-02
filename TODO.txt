@@ -3,7 +3,7 @@
 Events of components.
 listbox issue.
 accessibility focus loop event bug in combobox_improved
-
+push changes to accessibility.js
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.

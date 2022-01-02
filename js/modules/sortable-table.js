@@ -136,6 +136,18 @@ const sortableTables = new (function () {
         e.preventDefault();
         rows = sortByIndex(rows, i);
         table.renderData(rows);
+        table.dispatchEvent(
+          new CustomEvent(
+            'enable-table-sort',
+            {
+              'bubbles': true,
+              'detail': {
+                'index': () => i,
+                'direction': () => sortDirection
+              }
+            }
+          )
+        );
       });
     });
 

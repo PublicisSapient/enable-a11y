@@ -17,7 +17,6 @@ const readMore = new function() {
 
   this.clickEvent = (e) => {
     const { target, currentTarget } = e;
-    console.log('target', target, currentTarget);
 
     if (target.classList.contains('read-more__button')) {
       const isExpanded = target.getAttribute('aria-expanded') === 'true';
@@ -31,11 +30,27 @@ const readMore = new function() {
           target.setAttribute('aria-expanded', 'false');
           overflowContent.classList.remove('read-more__overflow-content--visible');
           target.innerHTML = "Show more";
+          target.dispatchEvent(
+            new CustomEvent(
+              'enable-collapsed',
+              {
+                bubbles: 'true'
+              }
+            )
+          );
         } else {
           target.setAttribute('aria-expanded', 'true');
           overflowContent.classList.add('read-more__overflow-content--visible');
           focusPoint.focus();
           target.innerHTML = "Show less";
+          target.dispatchEvent(
+            new CustomEvent(
+              'enable-expanded',
+              {
+                bubbles: 'true'
+              }
+            )
+          );
         }
       }
     }

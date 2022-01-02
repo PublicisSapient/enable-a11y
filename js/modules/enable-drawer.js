@@ -15,12 +15,6 @@
 
 
 const enableDrawer = new function() {
-  const changeEventName = 'enable-drawer-change';
-
-  const getState = () => {
-
-  }
-
   this.init = function() {
     document.body.addEventListener("click", function(e) {
       var target = e.target;
@@ -29,23 +23,17 @@ const enableDrawer = new function() {
         if (target.getAttribute('aria-expanded') !== 'true') {
           target.setAttribute('aria-expanded', 'true');
           target.dispatchEvent(new CustomEvent(
-            changeEventName,
+            'enable-expanded',
             {
-              bubbles: true,
-              detail: {
-                isExpanded: () => true
-              }
+              bubbles: true
             }
           ));
         } else {
           target.setAttribute('aria-expanded', 'false');
           target.dispatchEvent(new CustomEvent(
-            changeEventName,
+            'enable-collapsed',
             {
-              bubbles: true,
-              detail: {
-                isExpanded: () => false
-              }
+              bubbles: true
             }
           ));
         }

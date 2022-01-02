@@ -16,10 +16,8 @@
 
 
 const Switch = new function () {
-    const customEvent = document.createEvent('Event');
 
     this.init = () => {
-        customEvent.initEvent('switch-change', true, true);
         document.body.addEventListener('click', this.onClick);
     }
 
@@ -28,6 +26,7 @@ const Switch = new function () {
         const id = el.id;
         const switchEl = el.closest('[role="switch"]');
         let ariaDescribedBy;
+        let isChecked;
 
         if (switchEl) {
             el = switchEl;
@@ -37,12 +36,24 @@ const Switch = new function () {
             if (el.getAttribute('aria-checked') === 'true') {
                 el.setAttribute('aria-checked', 'false');
                 ariaDescribedBy = id + '-unchecked'
+                isChecked = false;
             } else {
                 el.setAttribute('aria-checked', 'true');
                 ariaDescribedBy =  id + '-checked';
+                isChecked = true;
             }
             el.setAttribute('aria-describedby', ariaDescribedBy);
-            el.dispatchEvent(customEvent);
+            el.dispatchEvent(
+                new CustomEvent(
+                    'enable-switch-change',
+                    {
+                        bubbles: true,
+                        detail: {
+                            isChecked: () => isChecked
+                        }
+                    }
+                )
+            );
         }    
     }
 }

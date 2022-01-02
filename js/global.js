@@ -23,15 +23,20 @@ showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 // debug on event handlers 
 const events = {
   'combobox-change': 'value',
-  'enable-drawer-change': 'isExpanded',
-  'enable-slider-change': 'value',
   'enable-focus-show': '',
   'enable-focus-hide': '',
   'enable-paginate-render': 'page',
   'enable-pause-animations': '',
   'enable-play-animations': '',
   'enable-checked': 'group',
-  'enable-unchecked': 'group'
+  'enable-unchecked': 'group',
+  'enable-expanded': '',
+  'enable-collapsed': '',
+  'enable-table-sort': 'index',
+  'enable-switch-change': 'isChecked',
+  'enable-selected': '',
+  'enable-show': '',
+  'enable-hide': ''
 };
 
 for (let eventName in events) {

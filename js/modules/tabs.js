@@ -82,6 +82,7 @@ const tabgroup = new (function () {
             }
           }
         },
+        activatedEventName: 'enable-selected'
       });
 
       // If the tabs are links with hashed href's, this code will
@@ -112,7 +113,7 @@ const tabgroup = new (function () {
       // If the role has been set here, we assume the structure is okay
       // and don't add the roles.
       if (tabListEl.getAttribute("role") !== "tablist") {
-        console.log('Roles do not exist. Adding');
+        console.info('Roles do not exist. Adding');
         const tabEls = tabListEl.querySelectorAll(".enable-tab");
         tabListEl.setAttribute("role", "tablist");
         tabEls.forEach((tabEl) => {
@@ -148,7 +149,6 @@ const tabgroup = new (function () {
   this.keyUpEvent = (e) => {
     const { target, key } = e;
     const role = target.getAttribute("role");
-    console.log(role, lastMouseDownEl, target);
 
     if (role === "tab" && key === "Enter") {
       const { href } = target;
