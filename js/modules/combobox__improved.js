@@ -3,7 +3,10 @@
 /*******************************************************************************
  * enable-combobox.js - Implementation of the ARIA combobox UI
  *
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Script based on combobox example on the Webkit Blog:
+ * https://webkit.org/blog-files/aria1.0/combobox_with_live_region_status.html
+ * 
+ * Refactored by Zoltan Hawryluk <zoltan.dulac@gmail.com>
  * Part of the Enable accessible component library.
  * Version 1.0 released Dec 27, 2021
  *
@@ -41,7 +44,7 @@ const EnableCombobox = function(componentRoot) {
     kUP = "ArrowUp",
     kDOWN = "ArrowDown",
     firstVisibleOptionSelector = '[role="option"]:not([hidden])',
-    chooseEvent = new CustomEvent('combobox-change', {
+    chooseEvent = new CustomEvent('enable-combobox-change', {
       bubbles: true,
       detail: {
         value: () => field && field.value
@@ -175,15 +178,37 @@ const EnableCombobox = function(componentRoot) {
   }
 
   function showMenu() {
+    if (!list.hidden) {
+      return;
+    }
     accessibility.setMobileFocusLoop(controlsContainer);
     list.hidden = false;
+    field.dispatchEvent(
+      new CustomEvent(
+        'enable-combobox-show',
+        {
+          'bubbles': true
+        }
+      )
+    );
   }
 
   function hideMenu(message) {
+    if (list.hidden) {
+      return;
+    }
     list.hidden = true;
     field.setAttribute("aria-expanded", "false");
     accessibility.removeMobileFocusLoop();
     updateStatus(message, true);
+    field.dispatchEvent(
+      new CustomEvent(
+        'enable-combobox-hide',
+        {
+          'bubbles': true
+        }
+      )
+    );
   }
 
   function clearField() {
@@ -293,6 +318,7 @@ const EnableCombobox = function(componentRoot) {
         status.innerHTML = "<span class='sr-only'>Selected " + value + ".</span>";
       })
 
+      // hideMenu();
       // fire the `onchange` event.
       field.dispatchEvent(chooseEvent);
     }

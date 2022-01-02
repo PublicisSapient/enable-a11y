@@ -22,7 +22,9 @@ showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 
 // debug on event handlers 
 const events = {
-  'combobox-change': 'value',
+  'enable-combobox-change': 'value',
+  'enable-combobox-show': '',
+  'enable-combobox-hide': '',
   'enable-focus-show': '',
   'enable-focus-hide': '',
   'enable-paginate-render': 'page',
