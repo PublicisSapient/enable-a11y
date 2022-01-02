@@ -151,7 +151,6 @@ const EnableCombobox = function(componentRoot) {
   }
 
   function containerBlurHandler() {
-    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
     requestAnimationFrame(() => {
       const { activeElement, body } = document;
 
@@ -306,7 +305,6 @@ const EnableCombobox = function(componentRoot) {
   }
 
   function insertValue() {
-    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
     const value = (selectedOption && selectedOption.textContent) ? selectedOption.textContent.trim().replace(spaceRe, ' ') : null;
     if (selectedOption) {
       if (field.value) {

@@ -29,11 +29,14 @@ const marqueeExample = new function () {
     }
 
     const rotateMarquee = () => {
+       
        currentArticle = (currentArticle + 1) % articles.length;
 
        marqueeEl.innerHTML = articles[currentArticle].title;
 
-       setTimeout(rotateMarquee, 10000);
+       setTimeout(() => {
+           requestAnimationFrame(rotateMarquee, { ignoreTime: true })
+       }, 10000);
 
     }
 }

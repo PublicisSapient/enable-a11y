@@ -57,7 +57,10 @@ radiogroup vs radio-and-checkbox-roles ???
 
 send permission emails.
 
-
+tests:
+ - all pages pause
+ - all pages play
+ - all pages mobile/desktop/mobile
 
 Files to put in:
 alert-dialog

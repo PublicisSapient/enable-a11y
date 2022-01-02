@@ -24,12 +24,35 @@ const pauseAnimControl = new function() {
   // this without having to load this module.
   window.enableRealRAF = window.requestAnimationFrame;
 
-  this.dummyRAF = (func, ignoreTime) => {
+  /**
+   * This will replace the real requestAnimationFrame method when the "Pause Animations"
+   * checkbox is checked.  It basically does two things:
+   * 
+   * 1) For requestAnimationFrame calls done right after the checkbox is checked, 
+   * this method will "hold on to them" until the checked box is unchecked.
+   * 2) requestAnimationFrame calls after 500 ms will be dropped.
+   * 
+   * @param {func} func - A JavaScript function to be executed when a frame is available   
+   * @param {Object} options - A JavaScript object with the following properties:
+   *   - ignoreTime: this is used internally by dummyRAF to ensure that
+   *     requestAnimationFrame calls that call itself will continute to do so until the 
+   *     "Pause Animations" checkbox is unchecked.
+   *   - useRealRAF: this can be used by developers to tell this method that 
+   *     what they are doing is not an actual animation, but they want to do something
+   *     at the next repaint.  
+   */
+  this.dummyRAF = (func, options) => {
     const millisecs = Date.now() - timePausePressed;
+    const { ignoreTime, useRealRAF } = options || {};
+    const isAnimation = (func.toString().indexOf('requestAnimationFrame') > -1);
 
-    if (ignoreTime || millisecs <= 500) {
+    if (!isAnimation || useRealRAF) {
+      window.enableRealRAF(func);
+    } else if (ignoreTime || millisecs <= 500) {
       setTimeout(() => {
-        window.requestAnimationFrame(func, true);
+        window.requestAnimationFrame(func, {
+          ignoreTime: true
+        });
       }, 500);
     }
     return;

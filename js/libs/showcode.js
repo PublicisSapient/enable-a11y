@@ -3,22 +3,22 @@
 /* global indent */
 
 /*******************************************************************************
-* showcode.js - A code walkthrough component
-*
-* This code is used in the Enable accessible component library
-* examples to show developers how and why components work.
-* 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released 
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/showcode.php
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * showcode.js - A code walkthrough component
+ *
+ * This code is used in the Enable accessible component library
+ * examples to show developers how and why components work.
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released 
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/showcode.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
-const showcode = new function () {
+const showcode = new function() {
   const htmlBlocks = document.querySelectorAll("[data-showcode-props]");
   const htmlCache = {};
   const codeblockCache = {};
@@ -41,7 +41,7 @@ const showcode = new function () {
   const ellipsesRe = /(\s*\.\.\.)/g;
   const blankAttrValueRe = /(required|novalidate|open|disabled)=""/g;
   const commandsRe = /^%[A-Z]*?%/;
-  
+
 
   // Most of this list from
   // https://www.w3.org/TR/wai-aria-1.0/states_and_properties#attrs_relationships
@@ -59,7 +59,7 @@ const showcode = new function () {
     'xlink:href'
   ]
 
-  this.entify = function (s, options) {
+  this.entify = function(s, options) {
     if (!options) {
       options = {};
     }
@@ -81,26 +81,26 @@ const showcode = new function () {
     return result;
   };
 
-  this.unentify = function (s) {
-		
-		return s.replace(/&amp;/g, '&').
-			replace(/&lt;/g, '<').
-			replace(/&gt;/g, '>');
-	}
+  this.unentify = function(s) {
+
+    return s.replace(/&amp;/g, '&').
+    replace(/&lt;/g, '<').
+    replace(/&gt;/g, '>');
+  }
 
   function highlightFunc(s) {
-    return '<span class="showcode__highlight">' + s + '</span>'; 
+    return '<span class="showcode__highlight">' + s + '</span>';
   }
 
   function formatCSS(localCode) {
     //localCode = localCode.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
     localCode = localCode.replace(/([{,;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
-    localCode = indent.css(localCode, {tabString: '  '});
+    localCode = indent.css(localCode, { tabString: '  ' });
     return localCode + '\n\n';
   }
 
-  const getTextFromFile = async (url) => {
-    const response = await fetch(url).then(response => {  
+  const getTextFromFile = async(url) => {
+    const response = await fetch(url).then(response => {
       console.log('xxx');
       return response.clone().text();
     });
@@ -108,20 +108,20 @@ const showcode = new function () {
     console.log('yyy response', response);
 
     return response;
-  } 
+  }
 
   const getInnerCSS = (el, selectorPropertyPairs, codeEl) => {
 
     const showAllCSS = (selectorPropertyPairs.length === 1 && selectorPropertyPairs[0] === '');
-    
+
     const cssTextBuffer = [];
     const { cssRules } = el.sheet;
-    for (let i=0; i<cssRules.length; i++) {
+    for (let i = 0; i < cssRules.length; i++) {
 
       if (debug) { console.log('x', showAllCSS); }
       const cssRule = cssRules[i].cssText.trim();
 
-      for (let j=0; j<selectorPropertyPairs.length; j++) {
+      for (let j = 0; j < selectorPropertyPairs.length; j++) {
         const selectorPropertyPair = selectorPropertyPairs[j].trim();
         const properties = selectorPropertyPair.split('|');
         const selector = properties[0];
@@ -138,11 +138,11 @@ const showcode = new function () {
 
 
 
-          for (let k=0; k<properties.length; k++) {
+          for (let k = 0; k < properties.length; k++) {
             let propertyRegEx = new RegExp(`${properties[k]}:[^;]*\\;`);
             code = code.replace(propertyRegEx, highlightFunc);
           }
-          
+
           cssTextBuffer.push(code);
         }
       }
@@ -156,7 +156,7 @@ const showcode = new function () {
       console.info(`Unable to retrieve selector CSS rule for selector ${selectorPropertyPairs[0]}. This may be because this browser's CSS parser is not storing rules it cannot understand. Attempting to get the information from the CSS file itself.`)
 
       let returnedSelectorVal;
-      (async () => {
+      (async() => {
         getTextFromFile(el.href).then((css) => {
           const index = css.indexOf(selectorPropertyPairs[0]); //css.match(selectorRegEx);
           returnedSelectorVal = css.substring(index);
@@ -166,11 +166,11 @@ const showcode = new function () {
           codeEl.innerHTML = codeEl.innerHTML.replace(/\n\n$/, '');
           codeEl.innerHTML += formatCSS(returnedSelectorVal);
 
-          
+
           return returnedSelectorVal;
         })
       })();
-      
+
     }
 
     return cssTextBuffer.join('\n\n');
@@ -179,11 +179,11 @@ const showcode = new function () {
   function abbreviateJS(code, grep) {
     let lines = code.split('\n');
     lines[0] += '\n';
-    lines[lines.length - 1] +='\n';
+    lines[lines.length - 1] += '\n';
 
     let hasEllipsesAlready = false;
 
-    for (let i=1; i<lines.length - 1; i++) {
+    for (let i = 1; i < lines.length - 1; i++) {
       const line = lines[i];
 
       if (line.indexOf(grep) === -1) {
@@ -212,17 +212,16 @@ const showcode = new function () {
     const { showcodeFor, replaceHtmlRules } = dataset;
     const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
     const { showcodeNotes } = optionEl.dataset;
-    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
 
-    const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
+    const codeEl = document.querySelector('[data-showcode-id="' + showcodeFor + '"]');
 
     displayStep(value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules, true);
 
-    
+
 
     requestAnimationFrame(() => {
       target.focus();
-    },2000);
+    }, { notAnimation: true});
   }
 
   const toggleClickEvent = (e) => {
@@ -263,7 +262,7 @@ const showcode = new function () {
     const highlightStrings = value.split('|||');
     let command;
 
-    for (let i=0; i<highlightStrings.length; i++) {
+    for (let i = 0; i < highlightStrings.length; i++) {
       let highlightString = highlightStrings[i].trim();
 
       if (highlightString !== "") {
@@ -294,179 +293,191 @@ const showcode = new function () {
 
         command = highlightString.match(commandsRe);
 
-        
+
         if (command && command.length > 0) {
           let stringSplit, attribute;
-          
+
           command = command[0];
           highlightString = highlightString.split('%')[2];
-          
-          
-          
-          switch(command) {
+
+
+
+          switch (command) {
             case '%OPENTAG%':
             case '%OPENCLOSETAG%':
-            case '%OPENCLOSECONTENTTAG%': {
-              stringSplit = highlightString.split(/\s+/);
-              
-              highlightString = stringSplit[0];
-              attribute = (stringSplit[1] ? `[^&]*${stringSplit[1]}` : '');
-              
-            } 
+            case '%OPENCLOSECONTENTTAG%':
+              {
+                stringSplit = highlightString.split(/\s+/);
+
+                highlightString = stringSplit[0];
+                attribute = (stringSplit[1] ? `[^&]*${stringSplit[1]}` : '');
+
+              }
           }
           let splitHighlightString;
 
           switch (command) {
-            case '%OPENTAG%': {
-              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
-              break;
-            }
-            case '%OPENCLOSETAG%': {
-              // The [^&] will give false positives if there is a & in the tag before
-              // the tag closes. 
-              highlightString = `\\s*&lt;[/]?${highlightString}[^&]*&gt;`;
-              break;
-            }
-            case '%OPENCLOSECONTENTTAG%': {
-              highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?/${highlightString}&gt;`
-              break;
-            }
-            case '%FILE%': {
-              splitHighlightString = highlightString.split('~');
-              console.log('file', splitHighlightString);
-              const fileName = splitHighlightString[0].trim();
-              code = (async () => {
-                getTextFromFile(fileName).then((text) => {
-                  codeEl.innerHTML = this.entify(text.trim());
-                  console.log('done 1');
-                });
-              })();
-              console.log('returned', code);
-              break;
-            }
-            case '%CSS%': {
-              splitHighlightString = highlightString.split('~');
-              const cssID = splitHighlightString[0].trim();
-              let localCode;
-
-              if (code === htmlCache[showcodeFor]) {
-                code = '';
+            case '%OPENTAG%':
+              {
+                highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?&gt;`
+                break;
               }
+            case '%OPENCLOSETAG%':
+              {
+                // The [^&] will give false positives if there is a & in the tag before
+                // the tag closes. 
+                highlightString = `\\s*&lt;[/]?${highlightString}[^&]*&gt;`;
+                break;
+              }
+            case '%OPENCLOSECONTENTTAG%':
+              {
+                highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?/${highlightString}&gt;`
+                break;
+              }
+            case '%FILE%':
+              {
+                splitHighlightString = highlightString.split('~');
+                console.log('file', splitHighlightString);
+                const fileName = splitHighlightString[0].trim();
+                code = (async() => {
+                  getTextFromFile(fileName).then((text) => {
+                    codeEl.innerHTML = this.entify(text.trim());
+                    console.log('done 1');
+                  });
+                })();
+                console.log('returned', code);
+                break;
+              }
+            case '%CSS%':
+              {
+                splitHighlightString = highlightString.split('~');
+                const cssID = splitHighlightString[0].trim();
+                let localCode;
 
-              highlightString = splitHighlightString[1].trim();
-              localCode = getInnerCSS(document.getElementById(cssID), highlightString.split(';'), codeEl);
-              code += formatCSS(localCode);
-              //code = Prism.highlight(code, Prism.languages.css, 'css');
-              break;
-            }
-            case '%JS%':
-            case '%JSHTML%': {
-              const funcNames = highlightString.split(';');
-              code = '';
-
-              for (let j=0; j<funcNames.length; j++) {
-                if (debug) { console.log('j', j, funcNames, funcNames[j]) }
-
-                // see animatedGIF example on how this works.
-                const funcNameSplit = funcNames[j].split('#');
-                let funcName = funcNameSplit[0].trim();
-                const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
-                let funcCode;
-
-                const toHighlightSplit = funcName.split('~');
-                if (toHighlightSplit.length === 2) {
-                  funcName = toHighlightSplit[0];
-                  highlightString = toHighlightSplit[1];
+                if (code === htmlCache[showcodeFor]) {
+                  code = '';
                 }
 
-                if (funcName.indexOf('\'') === 0) {
-                  // print out the funcName literally
-                  funcCode = funcName.replace(/'/g, '');
-                } else {
-                  const evalFuncName = `jsObjs.${funcName}`;
-                  let evalFuncString;
-                  try {
-                    evalFuncString = eval(evalFuncName).toString();
-                  } catch(ex) {
-                    throw(`The function ${funcName}() was not registered to showcode.`);
+                highlightString = splitHighlightString[1].trim();
+                localCode = getInnerCSS(document.getElementById(cssID), highlightString.split(';'), codeEl);
+                code += formatCSS(localCode);
+                //code = Prism.highlight(code, Prism.languages.css, 'css');
+                break;
+              }
+            case '%JS%':
+            case '%JSHTML%':
+              {
+                const funcNames = highlightString.split(';');
+                code = '';
+
+                for (let j = 0; j < funcNames.length; j++) {
+                  if (debug) { console.log('j', j, funcNames, funcNames[j]) }
+
+                  // see animatedGIF example on how this works.
+                  const funcNameSplit = funcNames[j].split('#');
+                  let funcName = funcNameSplit[0].trim();
+                  const grep = funcNameSplit.length === 2 ? funcNameSplit[1].trim() : null;
+                  let funcCode;
+
+                  const toHighlightSplit = funcName.split('~');
+                  if (toHighlightSplit.length === 2) {
+                    funcName = toHighlightSplit[0];
+                    highlightString = toHighlightSplit[1];
                   }
-                  if (evalFuncString.indexOf('object Object') >= 0) {
-                    funcCode = getConstructorInfo(evalFuncName);
+
+                  if (funcName.indexOf('\'') === 0) {
+                    // print out the funcName literally
+                    funcCode = funcName.replace(/'/g, '');
                   } else {
-                    if (funcName.indexOf('.') >= 0) {
-                      // this is inside an object, so let's get the object context
+                    const evalFuncName = `jsObjs.${funcName}`;
+                    let evalFuncString;
+                    try {
+                      evalFuncString = eval(evalFuncName).toString();
+                    } catch (ex) {
+                      throw (`The function ${funcName}() was not registered to showcode.`);
+                    }
+                    if (evalFuncString.indexOf('object Object') >= 0) {
+                      funcCode = getConstructorInfo(evalFuncName);
+                    } else {
+                      if (funcName.indexOf('.') >= 0) {
+                        // this is inside an object, so let's get the object context
+                      }
+
+                      funcCode = evalFuncString;
                     }
 
-                    funcCode = evalFuncString;
+
+                    if (grep) {
+                      funcCode = abbreviateJS(funcCode, grep);
+                    }
+
+                    //funcCode = indent.js(funcCode, {tabString: '  '});
+
+                    // If funcName is an object property, prefix the funcCode
+                    // with `this.propertyName =`.  Otherwise, prefix with
+                    // `const funcName =`.
+                    if (command === '%JSHTML%') {
+                      const tmpNode = document.createElement('div');
+                      tmpNode.innerHTML = funcCode;
+                      formatHTMLInBlock(tmpNode, );
+                      code = this.entify(formatHTML(funcCode));
+                      funcCode = '';
+                    } else if (funcName.indexOf('.') > -1) {
+                      const propertyName = funcName.split('.')[1];
+                      funcCode = `this.${propertyName} = ${funcCode}`;
+                    } else {
+                      funcCode = `const ${funcName} = ${funcCode}`;
+                    }
                   }
-                  
 
-                  if (grep) {
-                    funcCode = abbreviateJS(funcCode, grep);
-                  }
+                  //funcCode = this.entify(funcCode);
 
-                  //funcCode = indent.js(funcCode, {tabString: '  '});
+                  code = code + funcCode + '\n\n';
+                }
 
-                  // If funcName is an object property, prefix the funcCode
-                  // with `this.propertyName =`.  Otherwise, prefix with
-                  // `const funcName =`.
-                  if (command === '%JSHTML%') {
-                    const tmpNode = document.createElement('div');
-                    tmpNode.innerHTML = funcCode;
-                    formatHTMLInBlock(tmpNode, );
-                    code = this.entify(formatHTML(funcCode));
-                    funcCode = '';
-                  } else if (funcName.indexOf('.') > -1) {
-                    const propertyName = funcName.split('.')[1];
-                    funcCode = `this.${propertyName} = ${funcCode}`;
+                console.log('test', code);
+                code = indent.js(code, { tabString: '  ' });
+                code = this.entify(code);
+
+                //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
+                break;
+              }
+            case "%INLINE%":
+              {
+                const codeTemplateEl = document.getElementById(highlightString.trim());
+                if (codeTemplateEl) {
+                  if (codeTemplateEl.dataset.type === 'less') {
+                    code = formatCSS(codeTemplateEl.innerHTML);
                   } else {
-                    funcCode = `const ${funcName} = ${funcCode}`;
+                    code = codeTemplateEl.innerHTML;
                   }
                 }
 
-                //funcCode = this.entify(funcCode);
-
-                code = code + funcCode + '\n\n';
+                break;
               }
-
-              console.log('test', code);
-              code = indent.js(code, {tabString: '  '});
-              code = this.entify(code);
-
-              //code = Prism.highlight(code, Prism.languages.javascript, 'javascript');
-              break;
-            }
-            case "%INLINE%": {
-              const codeTemplateEl = document.getElementById(highlightString.trim());
-              if (codeTemplateEl) {
-                if (codeTemplateEl.dataset.type === 'less') {
-                  code = formatCSS(codeTemplateEl.innerHTML);
-                } else {
-                  code = codeTemplateEl.innerHTML;
+            case "%OUTERHTML%":
+              {
+                const id = highlightString.trim();
+                const outerHTMLTemplateEl = document.getElementById(id);
+                if (outerHTMLTemplateEl) {
+                  let html = outerHTMLTemplateEl.outerHTML;
+                  html = html.replace(`id="${id}"`, "");
+                  html = html.replace(/\s{2,}/g, " ");
+                  code = this.entify(formatHTML(html));
                 }
+
+                break;
               }
-              
-              break;
-            } case "%OUTERHTML%": {
-              const id = highlightString.trim();
-              const outerHTMLTemplateEl = document.getElementById(id);
-              if (outerHTMLTemplateEl) {
-                let html = outerHTMLTemplateEl.outerHTML;
-                html = html.replace(`id="${id}"`, "");
-                html = html.replace(/\s{2,}/g, " ");
-                code = this.entify(formatHTML(html));
+            default:
+              {
+                console.warn('Invalid command used', command);
               }
-              
-              break;
-            } default: {
-              console.warn('Invalid command used', command);
-            }
           }
         }
 
         console.log('done 2');
 
-        highlightString=highlightString.replace(space, nbspStr);
+        highlightString = highlightString.replace(space, nbspStr);
         const attribute = highlightString.split('=')[0];
         const hasValue = (highlightString.indexOf('=') >= 0)
 
@@ -483,11 +494,11 @@ const showcode = new function () {
 
           // get all the unique matches
           const matches = [...new Set(code.match(replaceRegex))];
-          
+
           // if the highlightString is one of the relationship attributes,
           // highlight the ids these matches points to.
-          if (relationshipAttributes.indexOf(attribute) >= 0 ) {
-            for (let j=0; j<matches.length; j++) {
+          if (relationshipAttributes.indexOf(attribute) >= 0) {
+            for (let j = 0; j < matches.length; j++) {
               let ids = matches[j].split('"')[1];
 
               if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
@@ -496,14 +507,14 @@ const showcode = new function () {
 
               ids = ids.split(/\s+/);
 
-              for (let k=0; k<ids.length; k++) {
+              for (let k = 0; k < ids.length; k++) {
                 const id = ids[k];
                 const idReplaceRegex = new RegExp(`id="${id}"`);
                 code = code.replace(idReplaceRegex, highlightFunc);
               }
 
-            }  
-          
+            }
+
           }
         }
       }
@@ -512,7 +523,7 @@ const showcode = new function () {
         code = code.replace(replaceRegex, highlightFunc);
       }
 
-     
+
     }
 
 
@@ -526,7 +537,7 @@ const showcode = new function () {
   this.scrollToHighlightedText = (codeEl) => {
     // now ... let's see if we can scroll the page to the first highlighted part
     const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
-      
+
 
     if (firstHighlightdElement) {
       const { body } = document;
@@ -545,9 +556,9 @@ const showcode = new function () {
     let lines = almostFormatted.split('\n');
     let fixedLines = [];
 
-    for (var i=0; i<lines.length; i++) {
+    for (var i = 0; i < lines.length; i++) {
       const line = lines[i];
-      if (line.search(blankString) < 0 ) {
+      if (line.search(blankString) < 0) {
         fixedLines.push(indentAttrs(line));
       }
     }
@@ -558,12 +569,12 @@ const showcode = new function () {
   function explodeLine(s) {
     const explodedLine = s.split(' ');
 
-    for (let i=0; i<explodedLine.length; ) {
+    for (let i = 0; i < explodedLine.length;) {
       const line = explodedLine[i];
       // number of strings is odd, then join with next line;
       if (line.split('"').length % 2 === 0) {
-        explodedLine[i] = line + ' ' + explodedLine[i+1];
-        explodedLine.splice(i+1, 1);
+        explodedLine[i] = line + ' ' + explodedLine[i + 1];
+        explodedLine.splice(i + 1, 1);
       } else {
         i++;
       }
@@ -580,7 +591,7 @@ const showcode = new function () {
       const trimmedLine = line.trim();
       const explodedLine = explodeLine(trimmedLine)
       const formattedLine = explodedLine.join('\n' + begin + '  ');
-      
+
       return (begin + formattedLine).replace(gt, '\n' + begin + '>');
     } else if (isComment) {
       return '\n' + line + '\n';
@@ -594,7 +605,7 @@ const showcode = new function () {
     return s;
   }
 
-  function insertEllipses(html){
+  function insertEllipses(html) {
     const s = html.replace(ellipsesRe, '\n\n$1\n\n');
     return s;
   }
@@ -613,7 +624,7 @@ const showcode = new function () {
   const displayCode = (htmlBlock, originalHTMLId, replaceRulesJson) => {
     const isWholeDoc = (originalHTMLId === 'document');
     let block;
-    
+
     if (isWholeDoc) {
       block = document.querySelector('html').cloneNode(true);
     } else {
@@ -622,11 +633,11 @@ const showcode = new function () {
 
     if (block) {
       formatHTMLInBlock(block, replaceRulesJson)
-      // let's do search and replace here
+        // let's do search and replace here
       const unformattedHTML = isWholeDoc ? block.outerHTML : block.innerHTML;
       const formattedHTML = formatHTML(unformattedHTML)
-      //indent.html(unformattedHTML, {tabString: ' '});
-      const entifiedHTML = this.entify(formattedHTML, {ignoreSpace: true});
+        //indent.html(unformattedHTML, {tabString: ' '});
+      const entifiedHTML = this.entify(formattedHTML, { ignoreSpace: true });
       htmlCache[originalHTMLId] = entifiedHTML;
       codeblockCache[originalHTMLId] = block;
       htmlBlock.innerHTML = entifiedHTML.trim();
@@ -639,7 +650,7 @@ const showcode = new function () {
       for (let i in replaceRulesJson) {
         const nodesToReplace = block.querySelectorAll(i);
 
-        for (let j=0; j<nodesToReplace.length; j++) {
+        for (let j = 0; j < nodesToReplace.length; j++) {
           const node = nodesToReplace[j];
           const content = replaceRulesJson[i];
           if (Array.isArray(content)) {
@@ -653,14 +664,14 @@ const showcode = new function () {
       console.log(ex);
     }
   }
-  
+
 
   function formatHTML(unformattedHTML) {
     let s = removeBlankAttrValues(
       insertEllipses(
         removeBlankLines(
           indent.html(
-            seperateTags(unformattedHTML), {tabString: '  '}
+            seperateTags(unformattedHTML), { tabString: '  ' }
           )
         )
       )
@@ -672,14 +683,14 @@ const showcode = new function () {
   }
 
   const displayStepsWidget = (codeblockId, stepsJson, replaceHtmlRules) => {
-    const widgetId =  codeblockId + '__steps';
+    const widgetId = codeblockId + '__steps';
     const toggleId = codeblockId + '__notes-view-toggle';
     const selectEl = document.createElement('SELECT');
     const labelEl = document.createElement('LABEL');
     const defaultOptionEl = document.createElement('OPTION');
     const widgetContainerEl = document.getElementById(widgetId);
     const toggleEl = document.getElementById(toggleId);
-    const codeEl = document.querySelector('[data-showcode-id="'+ codeblockId + '"]');
+    const codeEl = document.querySelector('[data-showcode-id="' + codeblockId + '"]');
 
 
     if (widgetContainerEl) {
@@ -691,7 +702,7 @@ const showcode = new function () {
       labelEl.innerHTML = 'Code to highlight:'
 
       defaultOptionEl.innerHTML = '';
-      defaultOptionEl.value='';
+      defaultOptionEl.value = '';
       selectEl.appendChild(defaultOptionEl);
       selectEl.dataset.replaceHtmlRules = this.entify(JSON.stringify(replaceHtmlRules), {
         ignoreReturns: true,
@@ -708,7 +719,7 @@ const showcode = new function () {
 
               optionEl.value = highlight;
 
-              switch(typeof notes) {
+              switch (typeof notes) {
                 case "object":
                   // assume it's an array.  Make it into a string
                   optionEl.dataset.showcodeNotes = notes.join(' ');
@@ -717,12 +728,12 @@ const showcode = new function () {
                   optionEl.dataset.showcodeNotes = notes || '';
               }
               optionEl.innerHTML = `Step #${parseInt(i) + 1}: ${label}`;
-              
+
 
               selectEl.appendChild(optionEl);
-                        
+
             }
-            
+
             widgetContainerEl.appendChild(labelEl)
             widgetContainerEl.appendChild(selectEl);
 
@@ -733,7 +744,7 @@ const showcode = new function () {
             widgetContainerEl.innerHTML = `<p>${label}</p>`;
             displayStep(highlight, notes, codeblockId, codeEl, replaceHtmlRules, false);
           }
-          
+
         } catch (ex) {
           console.log(ex);
         }
@@ -758,9 +769,9 @@ const showcode = new function () {
       } else {
         try {
           const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
-          const {replaceHtmlRules, steps} = json;
+          const { replaceHtmlRules, steps } = json;
           const { showcodeId } = dataset;
-          
+
           displayCode(htmlBlock, showcodeId, replaceHtmlRules);
           displayStepsWidget(showcodeId, steps, replaceHtmlRules);
         } catch (ex) {

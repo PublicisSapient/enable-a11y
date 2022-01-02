@@ -103,8 +103,6 @@ const enableListbox = new function() {
           this.collapse(buttonEl, listboxEl, true);
         // if the listbox is collapsed, expand it.
         } else {
-          const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
-
           target.setAttribute('aria-expanded', 'true');
           listboxEl.classList.remove('hidden');
           // set focus on appropriate option
@@ -117,7 +115,7 @@ const enableListbox = new function() {
             if (listboxEl.dataset.enableListboxInit !== 'true') {
               this.initListbox(listboxEl, buttonEl);
             }
-          });
+          }, { notAnimation: true });
 
         }
       }
