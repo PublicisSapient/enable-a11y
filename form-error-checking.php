@@ -32,7 +32,7 @@
       </p>
 
       <div id="example1">
-        <form
+        <form class="enable-form-example"
           onSubmit="alert('form submitted'); return false;"
         >
           <fieldset>
@@ -40,7 +40,7 @@
 
             <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
-            <div class="form__fieldset-inner-container">
+            <div class="enable-form-example__fieldset-inner-container">
               <div class="field-block">
                 <label class="required" for="name_html5">Full Name:</label>
                 <input id="name_html5" size="25" type="text" required  autocomplete="name" />
@@ -143,11 +143,11 @@
       </p>
 
       <div id="example2">
-        <form novalidate class="js-form-validation">
+        <form novalidate class="js-form-validation enable-form-example">
           <fieldset>
             <legend id="contact_js">Contact Information</legend>
 
-            <div class="form__fieldset-inner-container">
+            <div class="enable-form-example__fieldset-inner-container">
 
               <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 

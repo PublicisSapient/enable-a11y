@@ -1,9 +1,5 @@
 
 
-Events of components.
-listbox issue.
-accessibility focus loop event bug in combobox_improved
-push changes to accessibility.js
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.
@@ -11,6 +7,8 @@ write about polyfill not necessary in chrome and difference.
 Do we need mobile visible on focus for the header? 
 
 SVG in Windows High Contrast mode.
+
+form.php - put aria fieldsets in form-error page and search in its own page.
 
 PAGES TO BE DONE:
 FOCUS STYLING
