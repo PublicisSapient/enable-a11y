@@ -16,7 +16,7 @@
 import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 const enableListbox = new function() {
-  
+
   this.init = function () {
     const { body } = document;
     
@@ -75,7 +75,6 @@ const enableListbox = new function() {
   }
 
   this.onClick = (e) => {
-    
     const { target } = e;
     const root = target.closest('.enable-listbox');
 
@@ -104,10 +103,12 @@ const enableListbox = new function() {
           this.collapse(buttonEl, listboxEl, true);
         // if the listbox is collapsed, expand it.
         } else {
+          const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
+
           target.setAttribute('aria-expanded', 'true');
           listboxEl.classList.remove('hidden');
           // set focus on appropriate option
-          window.requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
             const itemToFocus = listboxEl.querySelector('[aria-selected="true"]') || optionEls[0];
             
             itemToFocus.focus();

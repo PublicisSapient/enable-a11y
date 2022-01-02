@@ -73,7 +73,7 @@ EnableFlyoutHamburger = new function() {
   }
 
   this.openFlyout = () => {
-    const requestAnimationFrame = (typeof(pauseAnimControl) !== 'undefined') ? pauseAnimControl.cachedRAF : window.requestAnimationFrame;
+    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
 
     $root.classList.add(willAnimate);
 
@@ -170,7 +170,7 @@ EnableFlyoutHamburger = new function() {
   this.openMenuAnimationEnd = (e) => {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
-    const requestAnimationFrame = (typeof(pauseAnimControl) !== 'undefined') ? pauseAnimControl.cachedRAF : window.requestAnimationFrame;
+    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
 
     // When the menu is initially opened, set focus to the close button facade.
     if (target === $root) {

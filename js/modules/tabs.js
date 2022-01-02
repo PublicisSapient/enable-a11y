@@ -147,6 +147,7 @@ const tabgroup = new (function () {
   // we ensure that focus goes to the heading of the tabpanel it is
   // connected to.  This does not happen for mouse users.
   this.keyUpEvent = (e) => {
+    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
     const { target, key } = e;
     const role = target.getAttribute("role");
 

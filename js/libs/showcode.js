@@ -212,6 +212,7 @@ const showcode = new function () {
     const { showcodeFor, replaceHtmlRules } = dataset;
     const optionEl = target.getElementsByTagName('option')[target.selectedIndex];
     const { showcodeNotes } = optionEl.dataset;
+    const requestAnimationFrame = window.enableRealRAF || window.requestAnimationFrame;
 
     const codeEl = document.querySelector('[data-showcode-id="'+ showcodeFor + '"]');
 

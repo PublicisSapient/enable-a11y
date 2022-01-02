@@ -20,7 +20,9 @@ const pauseAnimControl = new function() {
   const pauseEvent = new CustomEvent('enable-pause-animations', { bubbles: true } );
   const playEvent = new CustomEvent('enable-play-animations', { bubbles: true } );
 
-  this.cachedRAF = window.requestAnimationFrame;
+  // we store this globally so other components can use 
+  // this without having to load this module.
+  window.enableRealRAF = window.requestAnimationFrame;
 
   this.dummyRAF = (func, ignoreTime) => {
     const millisecs = Date.now() - timePausePressed;
@@ -87,7 +89,7 @@ const pauseAnimControl = new function() {
     body.classList.add(this.playClass);
 
     // For JS animations
-    window.requestAnimationFrame = this.cachedRAF;
+    window.requestAnimationFrame = enableRealRAF;
 
     // for SVG animations
     document.querySelectorAll('svg').forEach((el) => {
