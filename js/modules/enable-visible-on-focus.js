@@ -17,6 +17,9 @@
 
 const enableVisibleOnFocus = new (function () {
   const containerSelector = ".enable-mobile-visible-on-focus__container";
+  const showEvent = new CustomEvent('enable-focus-show');
+  const hideEvent = new CustomEvent('enable-focus-hide');
+  let lastEventFiredAt = 0;
 
   this.init = function () {
     document.addEventListener("click", this.clickEvent, true);
@@ -67,16 +70,17 @@ const enableVisibleOnFocus = new (function () {
 
     if (skipLinkContainer) {
       if (skipLinkContainer.scrollLeft !== 0) {
+        const eventFiredAt = new Date().getTime();
         skipLinkContainer.classList.add(
           "enable-mobile-visible-on-focus__container--visible"
         );
+        const link = skipLinkContainer.querySelector('a');
         const destinationLink = skipLinkContainer.querySelector(
           ".enable-mobile-visible-on-focus"
         );
         const top = destinationLink.getBoundingClientRect().top;
         const htmlEl = document.querySelector("html");
 
-        console.log(target, destinationLink, htmlEl.scrollTop, top);
         if (htmlEl.scrollTop > top) {
           htmlEl.scrollTop = top - 100;
         } else if (htmlEl.scrollTop + window.innerHeight < top) {
@@ -86,7 +90,19 @@ const enableVisibleOnFocus = new (function () {
         if (!this.isElementInViewport(skipLinkContainer)) {
           skipLinkContainer.scrollIntoView({ block: "center" });
         }
+
+
+        if (eventFiredAt - lastEventFiredAt > 100) {
+          link.dispatchEvent(
+            showEvent,
+            {
+              bubbles: true
+            }
+          );
+          lastEventFiredAt = new Date().getTime();
+        }
       }
+
     }
   };
 
@@ -96,7 +112,15 @@ const enableVisibleOnFocus = new (function () {
   this.hideAll = () => {
     const containers = document.querySelectorAll(containerSelector);
     for (let i = 0; i < containers.length; i++) {
-      this.hide(containers[i]);
+      const container = containers[i];
+      const link = container.querySelector('a');
+      this.hide(container);
+      link.dispatchEvent(
+        hideEvent,
+        {
+          bubbles: true
+        }
+      );
     }
   };
 

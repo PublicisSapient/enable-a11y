@@ -41,7 +41,12 @@ const EnableCombobox = function(componentRoot) {
     kUP = "ArrowUp",
     kDOWN = "ArrowDown",
     firstVisibleOptionSelector = '[role="option"]:not([hidden])',
-    chooseEvent = document.createEvent('Event');
+    chooseEvent = new CustomEvent('combobox-change', {
+      bubbles: true,
+      detail: {
+        value: () => field && field.value
+      }
+    });
 
   function submitHandler(e) {
     updateMenuDisplay();
@@ -371,11 +376,6 @@ const EnableCombobox = function(componentRoot) {
       var optionNum = i + 1;
       option.setAttribute('id', field.id + '__field-' + optionNum);
     }
-
-    chooseEvent.initEvent('combobox-change', true, true);
-    field.addEventListener('combobox-change', (e) => {
-      console.log('choose', e);
-    })
 
     // Apply aria-describedby for close button on all the options.
     if (resetAriaDesc) {

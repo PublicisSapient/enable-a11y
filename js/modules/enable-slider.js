@@ -17,7 +17,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import interpolate from "interpolate.js";
+import { interpolate } from "../modules/interpolate.js";
 
 /**
  * keyCodes() is an object to contain key code values for the application
@@ -227,6 +227,7 @@ const enableSlider = function(
     let yPos; // calculated vertical position of the handle;
     let valPos; //calculated new pixel position for the value;
     const { offsetWidth, offsetHeight } = this.$container;
+    let didChange;
 
     if (!this.vert) {
       // horizontal slider
@@ -256,10 +257,18 @@ const enableSlider = function(
     // Update the stored handle values
     if (/1$/.test($handle.getAttribute("id"))) {
       // first handle
-      this.val1 = val;
+      didChange = (this.val1 !== val);
+
+      if (didChange) {
+        this.val1 = val;
+      }
     } else {
       // second handle
-      this.val2 = val;
+      didChange = (this.val2 !== val);
+
+      if (didChange) {
+        this.val2 = val;
+      }
     }
 
     // if range is true, set the position of the range div
@@ -270,6 +279,18 @@ const enableSlider = function(
     // if showVal is true, update the value container
     if (this.showVals) {
       this.updateValBox($handle, $handleButton, Math.round(valPos));
+    }
+    
+    if (didChange) {
+      $handle.dispatchEvent(
+        new CustomEvent('enable-slider-change',
+        {
+          bubbles: true,
+          detail: {
+            value: () => $handleButton.getAttribute("aria-valuenow")
+          }
+        }
+      ));
     }
   }; // end positionHandle()
 

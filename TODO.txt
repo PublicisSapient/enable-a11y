@@ -1,13 +1,9 @@
-showcode fix: tooltips
-
 
 
 Events of components.
+listbox issue.
+accessibility focus loop event bug in combobox_improved
 
-ENSURE ALL modules are in the modules directory
-ENSURE all modules play nice with showcode
-
-INSERT pause animations thing on all pages.
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.

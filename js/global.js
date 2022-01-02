@@ -20,3 +20,23 @@ offscreenObserver.init(document.querySelector('[role="banner"]'));
 showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
 showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 
+// debug on event handlers 
+const events = {
+  'combobox-change': 'value',
+  'enable-drawer-change': 'isExpanded',
+  'enable-slider-change': 'value',
+  'enable-focus-show': '',
+  'enable-focus-hide': ''
+};
+
+for (let eventName in events) {
+  const property = events[eventName]
+  document.body.addEventListener(eventName, (event) => {
+    console.log(
+      `${eventName} fired. ${property}:`, 
+      event.detail ? event.detail[property]() : '',
+      event.target
+    );
+  }, true);
+}
+

@@ -7,10 +7,6 @@
     </title>
     <?php include "includes/common-head-tags.php";?>
 
-    <link rel="stylesheet" type="text/css" href="css/all.css" />
-    <link rel="stylesheet" type="text/css" href="css/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="css/home.css" />
-
 
 </head>
 
@@ -360,7 +356,6 @@
 
     <?php include "includes/example-footer.php"?>
 
-    <script src="js/tabs.js"></script>
 </body>
 
 </html>

@@ -155,8 +155,7 @@ const enableListbox = new function() {
     accessibility.removeMobileFocusLoop();
     buttonEl.removeAttribute('aria-expanded');
 
-    if (doFocus) {
-      
+    if (doFocus) {   
       buttonEl.focus();
     }
     listboxEl.classList.add('hidden');

@@ -15,6 +15,12 @@
 
 
 const enableDrawer = new function() {
+  const changeEventName = 'enable-drawer-change';
+
+  const getState = () => {
+
+  }
+
   this.init = function() {
     document.body.addEventListener("click", function(e) {
       var target = e.target;
@@ -22,8 +28,26 @@ const enableDrawer = new function() {
       if (target.classList.contains('enable-drawer__button')) {
         if (target.getAttribute('aria-expanded') !== 'true') {
           target.setAttribute('aria-expanded', 'true');
+          target.dispatchEvent(new CustomEvent(
+            changeEventName,
+            {
+              bubbles: true,
+              detail: {
+                isExpanded: () => true
+              }
+            }
+          ));
         } else {
           target.setAttribute('aria-expanded', 'false');
+          target.dispatchEvent(new CustomEvent(
+            changeEventName,
+            {
+              bubbles: true,
+              detail: {
+                isExpanded: () => false
+              }
+            }
+          ));
         }
       }
     });

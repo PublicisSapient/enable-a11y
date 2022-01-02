@@ -4,14 +4,14 @@
 
 .enable-flyout {
 
-  &__open-level-button {
+  &__open-level-button,
+  &__link {
     font-weight: normal;
-    letter-spacing: (0.5 / @px);
 
     &:hover,
     &:focus {
-      font-weight: bold;
-      letter-spacing: 0;
+      font-weight: normal;
+      -webkit-text-stroke: 0.5px white;
     }
   }
 
