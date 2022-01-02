@@ -39,7 +39,8 @@ const pauseAnimControl = new function() {
    *     "Pause Animations" checkbox is unchecked.
    *   - useRealRAF: this can be used by developers to tell this method that 
    *     what they are doing is not an actual animation, but they want to do something
-   *     at the next repaint.  
+   *     at the next repaint.
+   *   - isDelayed:  
    */
   this.dummyRAF = (func, options) => {
     const millisecs = Date.now() - timePausePressed;
