@@ -26,15 +26,20 @@ const events = {
   'enable-drawer-change': 'isExpanded',
   'enable-slider-change': 'value',
   'enable-focus-show': '',
-  'enable-focus-hide': ''
+  'enable-focus-hide': '',
+  'enable-paginate-render': 'page',
+  'enable-pause-animations': '',
+  'enable-play-animations': '',
+  'enable-checked': 'group',
+  'enable-unchecked': 'group'
 };
 
 for (let eventName in events) {
   const property = events[eventName]
-  document.body.addEventListener(eventName, (event) => {
+  document.addEventListener(eventName, (event) => {
     console.log(
       `${eventName} fired. ${property}:`, 
-      event.detail ? event.detail[property]() : '',
+      event.detail && event.detail[property] ? event.detail[property]() : '',
       event.target
     );
   }, true);

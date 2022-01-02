@@ -26,7 +26,8 @@ const ariaRadioCheckboxShim = new function () {
       const ref = evt.target != null ? evt.target : evt.srcElement;
       const role = ref.getAttribute("role");
 
-      if (ref)
+      if (ref) {
+        let newState;
         switch (role) {
 
           // For a radio button group, we must ensure only the element that
@@ -47,6 +48,7 @@ const ariaRadioCheckboxShim = new function () {
 
             // Now, check the element that fired the event.
             ref.setAttribute("aria-checked", "true");
+            newState = "enable-checkbox-checked";
 
             // Ensure we don't fire any other event handler, including
             // browser defaults (e.g. pressing SPACE may cause the
@@ -58,9 +60,11 @@ const ariaRadioCheckboxShim = new function () {
           // For checkboxes, we just have to toggle the checked state
           // of the element that fired the event.
           case "checkbox": {
+            const ariaChecked = ref.getAttribute("aria-checked")
+            newState = ariaChecked === "true" ? 'enable-unchecked': 'enable-checked';
             ref.setAttribute(
               "aria-checked",
-              ref.getAttribute("aria-checked") === "true" ? "false" : "true"
+               ariaChecked === "true" ? "false" : "true"
             );
             
             // Ensure we don't fire any other event handler, including
@@ -71,6 +75,13 @@ const ariaRadioCheckboxShim = new function () {
             break;
           }
         }
+        ref.dispatchEvent(new CustomEvent(
+          newState,
+          {
+            'bubbles': true
+          }
+        ))
+      }
     }
   };
 

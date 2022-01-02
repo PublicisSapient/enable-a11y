@@ -17,8 +17,8 @@
  ******************************************************************************/
 const pauseAnimControl = new function() {
   let timePausePressed = null;
-  const pauseEvent = new Event('enable-pause');
-  const playEvent = new Event('enable-play');
+  const pauseEvent = new CustomEvent('enable-pause-animations', { bubbles: true } );
+  const playEvent = new CustomEvent('enable-play-animations', { bubbles: true } );
 
   this.cachedRAF = window.requestAnimationFrame;
 

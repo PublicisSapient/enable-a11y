@@ -23,7 +23,14 @@ const radiogroup = new function () {
         this.radioGroupEls = document.querySelectorAll('.enable-custom-radiogroup');
 
         for (let i=0; i<this.radioGroupEls.length; i++) {
-            accessibility.initGroup(this.radioGroupEls[i], {doKeyChecking: true});
+            accessibility.initGroup(
+                this.radioGroupEls[i],
+                {
+                    doKeyChecking: true,
+                    activatedEventName: 'enable-checked',
+                    deactivatedEventName: 'enable-unchecked'
+                }
+            );
         }
 
     }

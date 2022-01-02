@@ -96,6 +96,16 @@ const paginationTable = new(function() {
     });
 
     renderPaginationButtons(table, parseInt(currentpage));
+    table.dispatchEvent(
+      new CustomEvent('enable-paginate-render',
+      {
+        bubble: true,
+        detail: {
+          page: () => currentpage,
+          row: () => start
+        }
+      }
+    ));
   }
 
   function createTableMeta(table) {
@@ -111,7 +121,6 @@ const paginationTable = new(function() {
       const $container = target.closest(baseSelector);
       const $pager = target.closest(pagerSelector);
 
-      console.log($pager, pagerSelector);
       const $table = $container.querySelector(tableSelector);
       const index = target.dataset.index;
       var parent = target.parentNode;
@@ -144,7 +153,6 @@ const paginationTable = new(function() {
     const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
     let begin, end;
 
-    console.log(mobileMql.matches, buttonSpreadNum)
     if (table.querySelector("th")) hasHeader = true;
 
     var rows = table.rows.length;
@@ -163,12 +171,10 @@ const paginationTable = new(function() {
       }
 
       end = begin + buttonSpreadNum;
-      console.log('end 1', end, numPages, typeof(end), typeof(numPages));
       if (end > numPages) {
         end = numPages + 1;
         begin = Math.max(end - buttonSpreadNum, 0);
       }
-      console.log('end 2', end, numPages);
     }
 
 
