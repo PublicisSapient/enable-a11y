@@ -4,8 +4,7 @@
 <head>
     <title>Play and Pause CSS, Canvas SVG SMIL and GIF animations with Javascript</title>
     <?php include "includes/common-head-tags.php";?>
-    <link id="pause-anim-css" rel="stylesheet" href="css/pause-animations-demo.css" />
-
+    
     <!-- For AblePlayer -->
     <link id="able-player-css" href="js/libs/ableplayer/styles/ableplayer.css" rel="stylesheet" />
     <link id="enable-video-player-css" href="css/video-player.css" rel="stylesheet" />
