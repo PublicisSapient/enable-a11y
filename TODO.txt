@@ -1,5 +1,5 @@
 
-
+SHOWCODE for blind users.
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.

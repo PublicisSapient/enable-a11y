@@ -23,6 +23,7 @@ const showcode = new function() {
   const htmlCache = {};
   const codeblockCache = {};
   const debug = false;
+  let doesCodeWrap = localStorage.getItem('showcode__wrap-text');
 
   const jsObjs = [];
 
@@ -89,12 +90,12 @@ const showcode = new function() {
   }
 
   function highlightFunc(s) {
-    return '<span class="showcode__highlight">' + s + '</span>';
+    return `<span class="showcode__highlight" tabindex="-1">${s}</span>`;
   }
 
   function formatCSS(localCode) {
     //localCode = localCode.replace(/\}/g, '\n}').replace(/([\{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
-    localCode = localCode.replace(/([{,;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
+    localCode = localCode.replace(/([{;])/g, '$1\n').replace(/\n\s*\n/, '\n\n');
     localCode = indent.css(localCode, { tabString: '  ' });
     return localCode + '\n\n';
   }
@@ -225,13 +226,50 @@ const showcode = new function() {
   }
 
   const toggleClickEvent = (e) => {
-    const { id } = e.currentTarget;
     e.preventDefault();
+    
+    const { id } = e.currentTarget;
     const notesId = id.replace('-view-toggle', '');
     const notesEl = document.getElementById(notesId);
     notesEl.classList.toggle('is-expanded');
   }
 
+  const changeCodeFormattingEvent = (e) => {
+    
+    const { currentTarget } = e;
+    changeCodeFormatting(currentTarget, true);
+  }
+
+  const changeCodeFormatting = (checkboxEl, changeAllCheckboxes) => {
+    const wrappedTextClass = 'showcode__has-wrapped-text-in-code';
+    const root = checkboxEl.closest('.showcode');
+
+    if (checkboxEl.checked) {
+      root.classList.add(wrappedTextClass);
+    } else {
+      root.classList.remove(wrappedTextClass);
+    }
+
+    if (changeAllCheckboxes) {
+      // now check all of these checkboxes
+      const wrapTextCheckboxes = document.querySelectorAll('.showcode__wrap-text');
+      wrapTextCheckboxes.forEach((el) => {
+        el.checked = checkboxEl.checked;
+        changeCodeFormatting(el, false);
+      })
+    }
+  }
+
+  function setCodeFormatting(value) {
+    const wrapTextCheckboxes = document.querySelectorAll('.showcode__wrap-text');
+    wrapTextCheckboxes.forEach((el) => {
+      el.checked = value;
+      changeCodeFormatting(el, false);
+    });
+    localStorage.setItem('showcode__wrap-text', value);
+    doesCodeWrap = value;
+  }
+  
   function setReadMoreCSSVar(notesEl) {
     const overflowEl = notesEl.querySelector('div');
 
@@ -685,11 +723,13 @@ const showcode = new function() {
   const displayStepsWidget = (codeblockId, stepsJson, replaceHtmlRules) => {
     const widgetId = codeblockId + '__steps';
     const toggleId = codeblockId + '__notes-view-toggle';
+    const wrapTextId = codeblockId + '__wrap-text';
     const selectEl = document.createElement('SELECT');
     const labelEl = document.createElement('LABEL');
     const defaultOptionEl = document.createElement('OPTION');
     const widgetContainerEl = document.getElementById(widgetId);
     const toggleEl = document.getElementById(toggleId);
+    const wrapTextEl = document.getElementById(wrapTextId);
     const codeEl = document.querySelector('[data-showcode-id="' + codeblockId + '"]');
 
 
@@ -739,6 +779,7 @@ const showcode = new function() {
 
             selectEl.addEventListener('change', selectChangeEvent);
             toggleEl.addEventListener('click', toggleClickEvent);
+            wrapTextEl.addEventListener('click', changeCodeFormattingEvent);
           } else {
             const { label, highlight, notes } = stepsJson[0];
             widgetContainerEl.innerHTML = `<p>${label}</p>`;
@@ -779,6 +820,8 @@ const showcode = new function() {
         }
       }
     }
+    setCodeFormatting(doesCodeWrap);
+    
   }
 
 
