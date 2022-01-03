@@ -6,6 +6,7 @@
 
 /* All HTML5 progress enabled browsers */
 .uam {
+    display: block;
 
     /* Turns off styling - not usually needed, but good to know. */
     .vendor(appearance, none);
@@ -75,9 +76,18 @@ progress.uam {
         }
         .generate-progress-frames(@n, (@i + 1));
     }
-
-
 }
+
+.uam,
+.progress-test__button {
+    display: block;
+    margin: 0 auto;
+}
+
+.progress-test__button {
+    margin-top: 10px;
+}
+
 
 .verbose {
 

@@ -19,7 +19,7 @@ const progressTest = new function () {
             }
 
             const submitEl = document.createElement('input');
-            submitEl.className = 'progressTest';
+            submitEl.className = 'progress-test__button';
             submitEl.dataset.for = el.id;
             submitEl.setAttribute('type', 'submit');
             submitEl.value = 'Test Progress Bar';
