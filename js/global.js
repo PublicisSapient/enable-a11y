@@ -20,6 +20,8 @@ offscreenObserver.init(document.querySelector('[role="banner"]'));
 showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
 showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 
+
+/*
 // debug on event handlers 
 const events = {
   'enable-combobox-change': 'value',
@@ -51,4 +53,4 @@ for (let eventName in events) {
     );
   }, true);
 }
-
+*/

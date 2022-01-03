@@ -50,9 +50,10 @@
   &__container {
     display: block;
     width: @skip-link-width;
-    margin: 0;
+    margin: 3px 0 0 0;
     overflow: hidden;
     pointer-events: none;
+    z-index: 2;
 
     // to make it hidden
     clip: rect(1px, 1px, 1px, 1px);
@@ -62,6 +63,10 @@
       outline: solid 2px @focus-color;
       outline-offset: 2px;
       z-index: 2;
+
+      a {
+        outline: none;
+      }
     }
 
     &--visible {

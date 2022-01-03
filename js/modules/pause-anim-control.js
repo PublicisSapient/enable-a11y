@@ -22,7 +22,7 @@ const pauseAnimControl = new function() {
 
   // we store this globally so other components can use 
   // this without having to load this module.
-  window.enableRealRAF = window.requestAnimationFrame;
+  this.realRAF = window.requestAnimationFrame;
 
   /**
    * This will replace the real requestAnimationFrame method when the "Pause Animations"
@@ -47,8 +47,10 @@ const pauseAnimControl = new function() {
     const { ignoreTime, useRealRAF } = options || {};
     const isAnimation = (func.toString().indexOf('requestAnimationFrame') > -1);
 
+    console.log('dummyRAF', import.meta);
+
     if (!isAnimation || useRealRAF) {
-      window.enableRealRAF(func);
+      this.realRAF(func);
     } else if (ignoreTime || millisecs <= 500) {
       setTimeout(() => {
         window.requestAnimationFrame(func, {
@@ -113,7 +115,7 @@ const pauseAnimControl = new function() {
     body.classList.add(this.playClass);
 
     // For JS animations
-    window.requestAnimationFrame = enableRealRAF;
+    window.requestAnimationFrame = this.realRAF;
 
     // for SVG animations
     document.querySelectorAll('svg').forEach((el) => {

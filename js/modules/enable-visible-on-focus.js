@@ -26,6 +26,7 @@ const enableVisibleOnFocus = new (function () {
     document.addEventListener("scroll", this.scrollEvent, true);
     window.addEventListener("resize", this.hideAll);
     window.addEventListener("orientationchange", this.hideAll);
+    document.addEventListener("blur", this.blurEvent, true);
 
     // Firefox will cache the scroll location of all scrollable
     // containers, so we want to reset our skip links onload.
@@ -135,6 +136,20 @@ const enableVisibleOnFocus = new (function () {
     el.classList.remove("enable-mobile-visible-on-focus__container--visible");
   };
 
+  this.blurEvent = (e) => {
+    const { target } = e;
+
+    if (target.classList && target.classList.contains("enable-skip-link")) {
+      const containerEl = target.closest(containerSelector);
+      requestAnimationFrame(() => {
+
+        if (document.activeElement !== target) {
+          this.hide(containerEl);
+        }
+      })
+    }
+  }
+
   /**
    * clickEvent(): fires when a CTA is clicked.  If the CTA is an enable-skip-link,
    * then it should focus on the target hash coded.  This function is needed since
@@ -151,6 +166,7 @@ const enableVisibleOnFocus = new (function () {
       let { href } = target;
       href = href.split("#");
       const destinationLink = document.getElementById(href[href.length - 1]);
+      this.hideAll();
       destinationLink.focus();
     }
   };
