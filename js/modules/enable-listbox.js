@@ -115,7 +115,7 @@ const enableListbox = new function() {
             if (listboxEl.dataset.enableListboxInit !== 'true') {
               this.initListbox(listboxEl, buttonEl);
             }
-          }, { notAnimation: true });
+          });
 
         }
       }

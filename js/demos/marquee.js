@@ -1,3 +1,5 @@
+import pauseAnimControl from "../modules/pause-anim-control.js";
+
 const marqueeExample = new function () {
     const marqueeEl = document.getElementById('myMarquee');
     let articles = [];
@@ -17,9 +19,9 @@ const marqueeExample = new function () {
             console.log('response', json.articles.length);
             if (json.articles.length > 0) {
                 articles = json.articles;
-                requestAnimationFrame(rotateMarquee);
+                rotateMarquee();
             } else {
-                requestAnimationFrame(showFailMessage);
+                showFailMessage();
             }
         }).catch(showFailMessage);
     }
@@ -35,7 +37,7 @@ const marqueeExample = new function () {
        marqueeEl.innerHTML = articles[currentArticle].title;
 
        setTimeout(() => {
-           requestAnimationFrame(rotateMarquee, { ignoreTime: true })
+           pauseAnimControl.requestAnimationFrame(rotateMarquee, { ignoreTime: true })
        }, 10000);
 
     }

@@ -15,17 +15,6 @@
 
 import '../../node_modules/glider-js/glider.js';
 
-/* 
-// eslint-disable-next-line no-undef
-class MyGlider extends Glider {
-  constructor(container, options) {
-    super(container, options);
-
-    this.useRealRAF = true;
-    console.log('contructor');
-  } 
-}
-*/
 
 const EnableCarousel = function (container) {
   let glider;
@@ -35,7 +24,7 @@ const EnableCarousel = function (container) {
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
-    glider = new MyGlider(this.container, {
+    glider = new Glider(this.container, {
       slidesToShow: 1,
       dots: "#dots",
       duration: 0,

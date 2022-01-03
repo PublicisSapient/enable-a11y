@@ -1,3 +1,5 @@
+import pauseAnimControl from '../../modules/pause-anim-control.js';
+
 Object.getOwnPropertyNames(Math).map(function(p) {
   window[p] = Math[p];
 });
@@ -296,7 +298,7 @@ var draw = function() {
   }
   
   if(!EXPLAIN_MODE || running) {
-    r_id = requestAnimationFrame(draw);
+    r_id = pauseAnimControl.requestAnimationFrame(draw);
   }
 };
 

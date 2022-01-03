@@ -222,7 +222,7 @@ const showcode = new function() {
 
     requestAnimationFrame(() => {
       target.focus();
-    }, { notAnimation: true});
+    });
   }
 
   const toggleClickEvent = (e) => {
