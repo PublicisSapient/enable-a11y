@@ -1,11 +1,14 @@
 
 SHOWCODE for blind users. - talk to Ritesh.
 
+carousel fix for pauseAnimControl 
+
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.
 
 Do we need mobile visible on focus for the header? 
 requestAnimationFrame fix writeup.
+
 
 SVG in Windows High Contrast mode.
 

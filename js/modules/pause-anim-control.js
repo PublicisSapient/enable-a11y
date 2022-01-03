@@ -15,7 +15,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-const pauseAnimControl = new function() {
+ function PauseAnimControlDef() {
   let timePausePressed = null;
   const pauseEvent = new CustomEvent('enable-pause-animations', { bubbles: true } );
   const playEvent = new CustomEvent('enable-play-animations', { bubbles: true } );
@@ -204,6 +204,7 @@ const pauseAnimControl = new function() {
   this.init();
 }
 
+const pauseAnimControl = new PauseAnimControlDef();
 
 
-export default pauseAnimControl;
+export {pauseAnimControl as default, PauseAnimControlDef};

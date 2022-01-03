@@ -202,8 +202,8 @@
             {
                 "replaceHtmlRules": {},
                 "steps": [{
-                        "label": "Cache the browser requestAnimationFrame method",
-                        "highlight": "%JS%  pauseAnimControl ||| this.cachedRAF =[^;]*;",
+                        "label": "Cache the browser requestAnimationFrame method in the script",
+                        "highlight": "%JS% pauseAnimControl ||| this.realRAF =[^;]*;",
                         "notes": ""
                     },
                     {
@@ -212,13 +212,13 @@
                         "notes": ""
                     },
                     {
-                        "label": "When pause method is executed, set requestAnimationFrame to dummy function",
-                        "highlight": "%JS% pauseAnimControl ||| window.requestAnimationFrame = this.dummyRAF;",
+                        "label": "When pause method is executed, set object's requestAnimationFrame to dummy function",
+                        "highlight": "%JS% pauseAnimControl ||| this.requestAnimationFrame = this.dummyRAF;",
                         "notes": "Since most canvas animation rely on requestAnimationFrame to produce and animation frame, this should stop any animations from executing."
                     },
                     {
                         "label": "When play method is executed, set requestAnimationFrame back to the browser default",
-                        "highlight": "%JS% pauseAnimControl ||| window.requestAnimationFrame = this.cachedRAF;",
+                        "highlight": "%JS% pauseAnimControl ||| this.requestAnimationFrame = this.realRAF;",
                         "notes": ""
                     }
                 ]
