@@ -43,6 +43,10 @@
       border: solid 1px #999999;
     }
 
+    &__link {
+      padding: 0;
+    }  
+
     &__level &__level &__menu-item {
       width: (@desktop-min - 70px);
       padding-bottom: 10px;
@@ -52,7 +56,16 @@
       width: 136px;
       float: left;
       height: @item-height;
+
+      #controls-section& {
+        width: 146px;
+      }
+
+      #code-patterns-section& {
+        width: 134px;
+      }
     }
+
 
     &__level &__level &__list--photo-layout &__link {
       min-height: @item-height;
@@ -79,13 +92,13 @@
       display: none;
     }
 
-    @mulit-column-menu-margin: 36px;
+    @mulit-column-menu-margin: 18px;
 
 
     /* styles specific to Interactive Elements flyout */
     #controls-section > :not(&__menu-item) > &__menu-item {
 
-      width: calc(50% - 72px);
+      width: calc(50% - @mulit-column-menu-margin * 2);
       float: left;
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
@@ -96,7 +109,7 @@
     }
 
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(2) {
-      width: calc(100% / 3 - 48px);
+      width: calc(100% / 3 - 36px);
       float: left;
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
@@ -107,7 +120,7 @@
     }
 
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
-      width: calc(200% / 3 - 96px);
+      width: calc(200% / 3 - 36px);
       float: left;
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
