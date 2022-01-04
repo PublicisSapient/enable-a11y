@@ -169,7 +169,6 @@ EnableFlyoutHamburger = new function() {
   this.openMenuAnimationEnd = (e) => {
     const { target, animationName } = e;
     const $root = target.closest(topNavSel);
-    console.log('end');
 
     // When the menu is initially opened, set focus to the close button facade.
     if (target === $root) {
@@ -250,9 +249,11 @@ EnableFlyoutHamburger = new function() {
       if ($flyoutMenu) {
         $flyoutMenu.classList.remove(isOpenClass);
       }
-
-      accessibility.setKeepFocusInside($el.parentNode.closest(navLevelSel), true);
-      $el.focus();
+      
+      if (isHamburger()) {
+        accessibility.setKeepFocusInside($el.parentNode.closest(navLevelSel), true);
+        $el.focus();
+      }
     } else {
       const $navLevel = $el.closest(navLevelSel);
       const { id } = $navLevel;
@@ -266,12 +267,15 @@ EnableFlyoutHamburger = new function() {
       $navLevel.classList.remove(isOpenClass);
       $button.setAttribute('aria-expanded', 'false');
 
-      const $panel = $button.parentNode.closest(navLevelSel);
-      if ($panel) {
-        accessibility.setKeepFocusInside($panel, true);
-      }
 
       if (isHamburger()) {
+        const $panel = $button.parentNode.closest(navLevelSel);
+      
+        if ($panel) {
+          console.log('p', $panel)
+          accessibility.setKeepFocusInside($panel, true);
+        }
+
         $button.focus();
       }
     }
