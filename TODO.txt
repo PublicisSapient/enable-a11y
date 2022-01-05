@@ -1,6 +1,7 @@
 
 SHOWCODE for blind users. - talk to Ritesh.
 ENABLE LOGO text size issue.
+Pause animations button focus order issue?
 
 test new NPM mods with a build process: text-zoom-resize, accessibility, ableplayer
 write about polyfill not necessary in chrome and difference.
