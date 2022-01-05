@@ -500,9 +500,21 @@
     &__open-level-button,
     &__close-level-button,
     &__link {
+      position: relative;
+
       &:hover {
         background: none;
         font-weight: bold;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: calc(100% - 20px);
+          height: 2px;
+          background-color: #fff;
+          bottom: 23px;
+          left: 0;
+        }
       }
     }
 

@@ -11,7 +11,6 @@
     &:hover,
     &:focus {
       font-weight: normal;
-      -webkit-text-stroke: 0.5px white;
     }
   }
 
@@ -163,13 +162,14 @@
     }
 
     @media @tablet-up {
-      padding: 10px 30px 0px 30px;
+      padding: 0 30px;
     }
   }
 
   &__link {
     color: #fff;
     text-decoration: none;
+    display: inline-block;
   }
 
   &__text {
@@ -178,8 +178,7 @@
     display: inline-block;
     color: #fff;
     font-size: (50/@px);
-    top: (-9/@px);
-    left: (20/@px);
+    padding-left: (20/@px);
 
     @media @tablet-up {
       font-size: (70/@px);
