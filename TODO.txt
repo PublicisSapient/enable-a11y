@@ -1,3 +1,5 @@
+Meta info and title framework.
+
 
 SHOWCODE for blind users. - talk to Ritesh.
 ENABLE LOGO text size issue.
