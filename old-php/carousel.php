@@ -5,7 +5,7 @@
     <title>Accessible Carousel</title>
     <?php include("includes/common-head-tags.php"); ?>
 
-    <link href="node_modules/glider-js/glider.css" rel="stylesheet" />
+    <link href="libs/glider-js/glider.css" rel="stylesheet" />
 
     <link href="css/enable-visible-on-focus.css" rel="stylesheet" />
     <link href="css/enable-carousel.css" rel="stylesheet" />

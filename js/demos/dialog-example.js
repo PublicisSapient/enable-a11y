@@ -40,7 +40,7 @@ const favDialog = document.getElementById('favDialog');
 // as the polyfill accessibility fixes.
 if (!supportsDialog) {
   console.log('loading polyfill')
-  import ('../../node_modules/dialog-polyfill/index.js')
+  import ('../../libs/dialog-polyfill/index.js')
   .then((dialogPolyfill) => {
     dialogPolyfill.default.registerDialog(favDialog);
     import ('../libs/dialog-focus-restore.js')

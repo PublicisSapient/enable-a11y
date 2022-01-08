@@ -8,5 +8,5 @@
         
 
     <!-- indent won't load as a module, even though the docs say it can -->
-    <script src="node_modules/indent.js/lib/indent.min.js"></script>
+    <script src="libs/indent.js/lib/indent.min.js"></script>
     <script src="js/global.js" type="module"></script>

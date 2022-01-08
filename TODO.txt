@@ -87,3 +87,56 @@ read-more.php
 
 Files to remove: 
 dialog-document.php grid.php group.php hamburger.php listbox-old.php pause-testing.php roles.php role-tabs.php set.php slider-old.php template.php tree.php
+
+
+
+======
+
+17 results - 15 files
+
+content/head/carousel.php:
+  1: <link href="node_modules/glider-js/glider.css" rel="stylesheet" >
+
+js/demos/accessible-text-svg.js:
+  2: import textZoomEvent from '../../node_modules/text-zoom-event/dist/textZoomEvent.module.js';
+
+js/demos/dialog-example.js:
+  43:   import ('../../node_modules/dialog-polyfill/index.js')
+
+js/demos/form.js:
+  11: import '../../node_modules/jquery/dist/jquery.min.js';
+  12: import '../../node_modules/jquery-validation/dist/jquery.validate.min.js';
+  13: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
+
+js/demos/hero-image-text-resize.js:
+  15: import textZoomEvent from '../../node_modules/text-zoom-event/dist/textZoomEvent.module.js';
+
+js/libs/dialog-focus-restore.js:
+  13: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
+
+js/modules/ablePlayerCustomizations.js:
+  17: import '../../node_modules/jquery/dist/jquery.min.js';
+
+js/modules/combobox__improved.js:
+  19: import accessibility from "../../node_modules/accessibility-js-routines/dist/accessibility.module.js";
+
+js/modules/enable-carousel.js:
+  16: import '../../node_modules/glider-js/glider.js';
+
+js/modules/enable-listbox.js:
+  16: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
+
+js/modules/hamburger.js:
+  17: import accessibility from "../../node_modules/accessibility-js-routines/dist/accessibility.module.js"
+
+js/modules/radiogroup.js:
+  18: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
+
+js/modules/tabs.js:
+  15: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
+
+old-php/carousel.php:
+  8:     <link href="node_modules/glider-js/glider.css" rel="stylesheet" />
+
+templates/includes/example-footer.php:
+  11:     <script src="node_modules/indent.js/lib/indent.min.js"></script>

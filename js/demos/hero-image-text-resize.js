@@ -12,7 +12,7 @@
 * 
 * Released under the MIT License.
 ******************************************************************************/
-import textZoomEvent from '../../node_modules/text-zoom-event/dist/textZoomEvent.module.js';
+import textZoomEvent from '../../libs/text-zoom-event/dist/textZoomEvent.module.js';
 
 const textZoomDemo = new function () {
     const body = document.body;

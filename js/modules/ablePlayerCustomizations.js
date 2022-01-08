@@ -14,7 +14,7 @@
 ******************************************************************************/
 
 /* global AblePlayer, jQuery */
-import '../../node_modules/jquery/dist/jquery.min.js';
+import '../../libs/jquery/dist/jquery.min.js';
 import '../libs/ableplayer/thirdparty/js.cookie.js';
 import { AblePlayerInstances } from '../libs/ableplayer/build/ableplayer.js';
 
