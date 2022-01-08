@@ -42,10 +42,17 @@ function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR'
     ));
 } 
 
+function getURIFilename() {
+  $uri =  $_SERVER['REQUEST_URI'];
+  $uriFile = explode('/', $uri);
+  $uriFile = $uriFile[count($uriFile) - 1];
+  return $uriFile;
+}
+
 function getMetadata() {
     global $fileProps;
-    $uri =  $_SERVER['REQUEST_URI'];
-    $tokenToFind = trim(preg_replace('/^\//', '', $uri));
+    $uriFile = getURIFilename();
+    $tokenToFind = trim(preg_replace('/^\//', '', $uriFile));
     $metaFile = './data/meta-info.json';
 
     if (file_exists($metaFile)) {
@@ -72,20 +79,20 @@ function getMetadata() {
 }
 
 function getContent($title = '') {
-  includeFileWithVariables('../content/body' . $_SERVER["REQUEST_URI"], array(
+  includeFileWithVariables('../content/body/' . getURIFilename(), array(
     'title' => $title
   ));
 }
 
 function getHeadTags() {
-  $headFile = '../content/head/' . $_SERVER["REQUEST_URI"];
+  $headFile = '../content/head/' . getURIFilename();
   if (file_exists($headFile)) {
     includeFileWithVariables($headFile, array());
   }
 }
 
 function getBottomBodyTags() {
-  $file = '../content/bottom/' . $_SERVER["REQUEST_URI"];
+  $file = '../content/bottom/' . getURIFilename();
   if (file_exists($file)) {
     includeFileWithVariables($file, array());
   }

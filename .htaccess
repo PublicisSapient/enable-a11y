@@ -1,3 +1,6 @@
 AddType application/x-httpd-php .html .htm
 AddType text/css .css
 RewriteEngine On
+RewriteBase /aria-role-demos/
+RewriteRule "^[^.]*\.php$"  "templates/main.php" 
+# RewriteRule ^(.+)$ templates/main.php [QSA,L]
