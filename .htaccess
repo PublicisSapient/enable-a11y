@@ -1,4 +1,3 @@
 AddType application/x-httpd-php .html .htm
 AddType text/css .css
-
-
+RewriteEngine On
