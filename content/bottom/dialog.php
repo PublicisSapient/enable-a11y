@@ -1,0 +1,1 @@
+<script src="js/demos/dialog-example.js" type="module"></script>

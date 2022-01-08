@@ -71,7 +71,7 @@ function getMetadata() {
 }
 
 function getContent() {
-  includeFileWithVariables('../content/' . $_SERVER["REQUEST_URI"], array());
+  includeFileWithVariables('../content/body' . $_SERVER["REQUEST_URI"], array());
 }
 
 function getHeadTags() {

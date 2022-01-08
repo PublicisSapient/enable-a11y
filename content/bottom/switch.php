@@ -1,0 +1,1 @@
+<script src="js/modules/switch.js" type="module"></script>

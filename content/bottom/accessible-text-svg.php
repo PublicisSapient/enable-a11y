@@ -1,0 +1,1 @@
+<script src="js/demos/accessible-text-svg.js" type="module"></script>
