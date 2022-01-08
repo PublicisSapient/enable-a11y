@@ -5,7 +5,7 @@ const fs = require('fs');
 const testFolder = '.';
 fs.readdir(testFolder, (err, files) => {
   files.forEach(file => {
-    if (file.match(/^[\S]*.php$/)) {
+    if (file.match(/^[a-zA-Z][\S]*.php$/)) {
 
 
       fs.readFile(file, 'utf8', function(err, data) {
@@ -16,7 +16,7 @@ fs.readdir(testFolder, (err, files) => {
         try {
           const root = HTMLParser.parse(data);
 
-          const links = root.querySelectorAll('head link');
+          const links = root.querySelectorAll('head link, head style');
           const linkHTML = [];
           links.forEach((el) => {
             linkHTML.push(el.outerHTML);
@@ -26,8 +26,26 @@ fs.readdir(testFolder, (err, files) => {
             console.log(`writing head of ${file}`)
           });
 
+          try {
+            console.log('MAIN:', root.querySelector('main').classList.length);
+          } catch (ex) {
+            console.log('ERROR', file);
+          }
 
-          const body = root.querySelector('body main').innerHTML.replace('<?php include "includes/pause-anim-control.php" ?>', '').replace(/<h1>[\s\S]*<\/h1>/g, '');
+          const mainClass = root.querySelector('main').classList;
+          console.log(`mainClass: ${mainClass}`);
+          let body = root.querySelector('main').innerHTML.replace('<?php include "includes/pause-anim-control.php" ?>', '');
+          
+          if (mainClass.length > 0) {
+            body = body.replace(/<h1>[\s\S]*<\/h1>/g, '<h1><?= $title ?></h1>  ');
+            body = `<main class="${mainClass}">${body}</main>`;
+          } else {
+
+            body = body.replace(/<h1>[\s\S]*<\/h1>/g, '');
+            body = `<main>${body}</main>`;
+          }
+          
+          
           fs.writeFile(`content/body/${file}`, body, () => {
             if (err) return console.log(err);
             console.log(`writing body of ${file}`)

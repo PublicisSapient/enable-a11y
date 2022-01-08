@@ -32,12 +32,13 @@ function pictureWebpPng($src, $alt = "", $otherAttrs = "")
     ));
 }
 
-function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR')
+function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR', $mainClass = null)
 {
     includeFileWithVariables('includes/meta-info.php', array(
         'title' => $title,
         'desc' => $desc,
-        'posterImg' => $posterImg
+        'posterImg' => $posterImg,
+        'mainClass' => $mainClass
     ));
 } 
 
@@ -70,8 +71,10 @@ function getMetadata() {
     $fileProps = new stdClass();
 }
 
-function getContent() {
-  includeFileWithVariables('../content/body' . $_SERVER["REQUEST_URI"], array());
+function getContent($title = '') {
+  includeFileWithVariables('../content/body' . $_SERVER["REQUEST_URI"], array(
+    'title' => $title
+  ));
 }
 
 function getHeadTags() {
@@ -90,7 +93,7 @@ function getBottomBodyTags() {
 
 getMetadata();
 
-includeMetaInfo($fileProps -> title ?? 'ERROR', $fileProps -> desc ?? 'ERROR', $fileProps -> posterImg ?? 'ERROR');
+includeMetaInfo($fileProps -> title ?? 'ERROR', $fileProps -> desc ?? 'ERROR', $fileProps -> posterImg ?? 'ERROR', $fileProps -> mainClass ?? '');
 
 ?>
 

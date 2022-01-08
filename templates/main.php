@@ -13,13 +13,20 @@
 </head>
 
 <body>
-    <?php include "includes/documentation-header.php";?>
-
-    <main>
+  
+  <?php include "includes/documentation-header.php";?>
+  <main class="<?= $fileProps->mainClass ?>">
     <?php include "includes/pause-anim-control.php" ?>
-        <h1><?= $fileProps->title ?></h1>
-        <?= getContent() ?>
-      </main>
+
+    <?php 
+      if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero') {
+        print '<h1>' . $fileProps->title . '</h1>';
+        getContent($fileProps->title);
+      } else { 
+        getContent();
+      }
+    ?>
+  </main>
 
     <?php getBottomBodyTags() ?>
     <?php include "includes/example-footer.php"?>

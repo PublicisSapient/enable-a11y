@@ -6,5 +6,10 @@
   "button.php": {
     "title": "Accessible Buttons",
     "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
+  },
+  "pause-anim-control.php": {
+    "title": "Pause Animation Controls",
+    "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
+    "mainClass": "with-full-bleed-hero"
   }
 }

@@ -1,6 +1,23 @@
-
+<main>
     
-        
+
+        <h2>Visually Hidden Alert</h2>
+
+        <p>This example is based on <a href="https://gist.github.com/nichtich/674522">this wiktionary lookup gist</a> by
+            <a lang="de" href="https://gist.github.com/nichtich">Jakob Voß</a>,
+            modified to add accessibility features, including an <code>alert</code> that will tell screen reader users
+            that content has changed on the page.</p>
+
+
+        <div id="visually-hidden-example" class="enable-example">
+            <form class="wiktionary-lookup__form">
+                <label for="wiktionary-lookup__word-input">
+                    Lookup a word:
+                </label>
+                <input type="text" id="wiktionary-lookup__word-input" class="wiktionary-lookup__word" >
+                <button type="submit">Find word</button>
+            </form>
+            <h3 class="wiktionary-lookup__page-title"></h3>
             <div class="wiktionary-lookup__page-alert sr-only" role="alert" aria-live="polite">
 
             </div>
@@ -52,4 +69,4 @@
         }
         </script>
 
-    
+    </main>

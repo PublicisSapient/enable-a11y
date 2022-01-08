@@ -21,6 +21,7 @@ form.php - put aria fieldsets in form-error page and search in its own page.
 
 PAGES TO BE DONE:
 FOCUS STYLING
+pager.php
 alert-dialog.php
 animated-hide-show.php
 bottom-fixed-navigation.php

@@ -8,3 +8,4 @@
 <meta name="twitter:card" content="photo">
 <meta name="twitter:title" content="<?= $title ?>" />
 <meta name="twitter:image" content="<?= $posterImg ?>" />
+

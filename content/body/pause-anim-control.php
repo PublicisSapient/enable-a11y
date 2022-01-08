@@ -1,4 +1,4 @@
-
+<main class="with-full-bleed-hero">
         
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">
@@ -18,7 +18,7 @@
             </div> 
         </div>
         <div class="with-full-bleed-hero__content">
-            
+            <h1><?= $title ?></h1>  
             <p>
                 Pause all the CSS, Canvas, SVG SMIL and GIF
                 animations on this page with the checkbox at the top of this page.
@@ -452,4 +452,4 @@
             </script>
 
         </div>
-    
+    </main>

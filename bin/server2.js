@@ -34,6 +34,11 @@ app.set('views', './views');
 app.engine('php', phpExpress.engine);
 app.set('view engine', 'php');
 
+
+// routing all things in /bin/ to phpExpress.
+app.all(/\/bin\/.+\.php$/, phpExpress.router);
+
+// All things outside of bin goes through our template engine at template/main.php
 app.get('/*.php', render)
 
 function render(req, res) {
@@ -57,9 +62,6 @@ function render(req, res) {
 // serve static files.
 app.use(express.static('.'))
 
-/* app.get('/', (req, res) => {
-  res.send('Hello World!')
-}) */
 
 const server = app.listen(port  , function () {
   const port = server.address().port

@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Accessible Animated GIF</title>
-  <?php include("includes/common-head-tags.php"); ?>
-  <link id="pauseable-animated-gif-style1"
-    rel="stylesheet"
-    type="text/css"
-    href="css/pauseable-animated-gif.css" />
-</head>
-
-<body>
-  <main>
-    <?php include "includes/pause-anim-control.php" ?>
+<main>
+    
 
     <aside class="notes">
 
-      <p>This idea was stolen from <a
-          href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
+      <p>This idea was stolen from <a           href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
           Faulkner</a>.
-        The pause first example was from <a
-          href="https://css-tricks.com/pause-gif-details-summary/">Chris
+        The pause first example was from <a           href="https://css-tricks.com/pause-gif-details-summary/">Chris
           Coyier</a>.
 </p>
     </aside>
 
-    <h1>Animated GIF With Pause Button Without JavaScript</h1>
+    
 
 
     <h2>Animation off by default</h2>
@@ -110,7 +95,7 @@
           loading="lazy">
         <details open>
 
-          <!-- added role=button to summary to resolve iOS funkiness -->
+          
 
           <summary role="button"
             class="pauseable-animated-gif__play-pause-button"
@@ -157,14 +142,13 @@
 
     <div id="example3"
       class="enable-example">
-      <div
-        class="pauseable-animated-gif pauseable-animated-gif--respects-os-motion-settings">
+      <div         class="pauseable-animated-gif pauseable-animated-gif--respects-os-motion-settings">
         <img src="images/running-man-anim__still.jpg"
           alt="A drawing of a man running"
           loading="lazy">
         <details>
 
-          <!-- added role=button to summary to resolve iOS funkiness -->
+          
 
           <summary role="button"
             class="pauseable-animated-gif__play-pause-button"></summary>
@@ -205,11 +189,3 @@
 
 
   </main>
-
-  <script src="js/modules/enable-animatedGif.js"
-    type="module"></script>
-
-  <?php include "includes/example-footer.php" ?>
-</body>
-
-</html>

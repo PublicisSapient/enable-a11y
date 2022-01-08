@@ -1,4 +1,4 @@
-
+<main>
     
         
 
@@ -438,5 +438,40 @@
         }
         </script>
 
+        
+        <div id="template-code">
+            <template id="enable-slider__handle--template">
+                <div>
+                    <div id="${id}" class="${classNameRoot}__handle">
+                        <div role="slider" tabindex="0" class="${classNameRoot}__handle-button" aria-valuemin="${valuemin}"
+                            aria-valuemax="${valuemax}" aria-valuenow="${valuenow}"
+                            aria-labelledby="${arialabelledby} ${id}_val" aria-describedby="${ariadescribedby}"></div>
 
-    
+                        <div id="${ariadescribedby}" class="${classNameRoot}__hidden-label">
+                            Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+                            the slider value.
+                        </div>
+                        <span                             class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
+                            <div id="${id}__decrease-label" class="${classNameRoot}__hidden-label">Decrease Value</div>
+                            <button aria-labelledby="${arialabelledby} ${id}_val ${id}__decrease-label"
+                                class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button"
+                                tabindex="-1">
+                                ‹
+                            </button>
+                        </span>
+                        <span                             class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
+                            <div id="${id}__increase-label" class="${classNameRoot}__hidden-label">Increase Value</div>
+                            <button aria-labelledby="${arialabelledby} ${id}_val ${id}__increase-label"
+                                class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button"
+                                tabindex="-1">
+                                ›
+                            </button>
+                        </span>
+                    </div>
+                    <div id="${id}_val" class="${classNameRoot}__value" role="alert" aria-live="assertive">
+                        ${valuenow}
+                    </div>
+                </div>
+            </template>
+        </div>
+    </main>

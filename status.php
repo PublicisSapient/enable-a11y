@@ -16,7 +16,7 @@
 
     <main>
     <?php include "includes/pause-anim-control.php" ?>
-        <h1>ARIA Status Role</h1>
+
         <h2>Visually Hidden Alert</h2>
 
         <p>This example is based on <a href="https://gist.github.com/nichtich/674522">this wiktionary lookup gist</a> by
@@ -33,7 +33,7 @@
                 <input type="text" id="wiktionary-lookup__word-input" class="wiktionary-lookup__word" />
                 <button type="submit">Find word</button>
             </form>
-            <h1 class="wiktionary-lookup__page-title"></h1>
+            <h3 class="wiktionary-lookup__page-title"></h3>
             <div class="wiktionary-lookup__page-alert sr-only" role="alert" aria-live="polite">
 
             </div>

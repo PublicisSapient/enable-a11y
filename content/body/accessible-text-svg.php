@@ -1,4 +1,4 @@
-
+<main class="with-full-bleed-hero">
       <div id="svg-textpath-example" class="accessible-text-svg-demo">
         <div id="accessible-text-svg-demo__shape-container">
           <svg id="accessible-text-svg-demo__svg" xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@
       <button id="accessible-text-svg-demo__control">Animate Text</button>
 
       <div class="with-full-bleed-hero__content">
-          
+          <h1><?= $title ?></h1>  
 
               <p>
                   Consider the text that is overlaying the image below. You will notice that
@@ -137,4 +137,4 @@
               }
               </script>
       </div>
-    
+    </main>
