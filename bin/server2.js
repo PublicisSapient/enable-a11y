@@ -38,7 +38,7 @@ app.get('/*.php', render)
 
 function render(req, res) {
 
-  phpExpress.engine(path.join(__dirname, '..', req.url), {
+  phpExpress.engine(path.join(__dirname, '..', 'templates/main.php'), {
     method: req.method,
     get: req.query,
     post: req.body,
@@ -49,9 +49,9 @@ function render(req, res) {
     if (err) {
       res.status(500).send(err)
     } else {
-      res.send(body)
+      res.send(body);
     }
-  })
+  });
 }
 
 // serve static files.

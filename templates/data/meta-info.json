@@ -1,0 +1,10 @@
+{
+  "index.php": {
+    "title": "The Enable Project",
+    "desc": "A website that shows web developers how to make their work accessible."
+  },
+  "button.php": {
+    "title": "Accessible Buttons",
+    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
+  }
+}
