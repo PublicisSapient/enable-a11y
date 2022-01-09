@@ -27,7 +27,7 @@
     "./tooltip": "./js/modules/tooltip.js"
   },
   "files": [
-    "css", "less", 
+    "css", "less", "js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
