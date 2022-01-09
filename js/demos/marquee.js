@@ -26,8 +26,8 @@ const marqueeExample = new function () {
         }).catch(showFailMessage);
     }
 
-    const showFailMessage = (ex) => {
-        marqueeEl.innerHTML += "Failed to news items.";
+    const showFailMessage = () => {
+        marqueeEl.innerHTML += "Failed to load news items.";
     }
 
     const rotateMarquee = () => {
