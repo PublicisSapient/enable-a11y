@@ -3,7 +3,7 @@ import pauseAnimControl from "../modules/pause-anim-control.js";
 const marqueeExample = new function () {
     const marqueeEl = document.getElementById('myMarquee');
     let articles = [];
-    let currentArticle = -1;
+    let currentArticleIndex = -1;
 
     this.init = () => {
         this.getHeadlines();
@@ -32,9 +32,11 @@ const marqueeExample = new function () {
 
     const rotateMarquee = () => {
        
-       currentArticle = (currentArticle + 1) % articles.length;
+       currentArticleIndex = (currentArticleIndex + 1) % articles.length;
+       const currentArticle = articles[currentArticleIndex];
+       const { title, url } = currentArticle;
 
-       marqueeEl.innerHTML = articles[currentArticle].title;
+       marqueeEl.innerHTML = `<a href="${url}">${title}</a>`;
 
        setTimeout(() => {
            pauseAnimControl.requestAnimationFrame(rotateMarquee, { ignoreTime: true })

@@ -32,7 +32,7 @@ function pictureWebpPng($src, $alt = "", $otherAttrs = "")
     ));
 }
 
-function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR', $mainClass = null)
+function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR', $mainClass = '')
 {
     includeFileWithVariables('includes/meta-info.php', array(
         'title' => $title,
@@ -63,9 +63,21 @@ function getMetadata() {
         foreach( $content as $file => $fileProps ) {
             $title = "";
             $desc = "";
+
+            if ( !property_exists($fileProps, 'mainClass')) {
+              $fileProps->mainClass = '';
+            }
+
             //This loop allows me to work around with the keys 
             if (strcmp($tokenToFind, $file) == 0) {
+
+
                 $fileProps->posterImg = '/images/posters/' . preg_replace('/\.php$/', '.jpg', $tokenToFind);
+
+                // Let's ensure these properties are entified.
+                foreach($fileProps as $prop => $propValue) {
+                  $fileProps->{$prop} = htmlentities($propValue);
+                }
                 return;
             }  
         }

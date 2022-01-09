@@ -1,4 +1,4 @@
-<main>
+
     
 
         <h2>Visually Hidden Alert</h2>
@@ -69,4 +69,4 @@
         }
         </script>
 
-    </main>
+    

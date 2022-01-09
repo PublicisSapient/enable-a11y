@@ -28,7 +28,7 @@
                     <div id="<?php echo $id ?>__toggle-desc" class="sr-only">This control is not needed for screen reader users.</div>
 
                     <div id="<?php echo $id ?>__example-desc" class="showcode__example--desc">
-                        <label for="<?php echo $id ?>__wraptext">Wrap text</label>
+                        <label for="<?php echo $id ?>__wrap-text">Wrap text</label>
                         <input type="checkbox" id="<?php echo $id ?>__wrap-text" class="showcode__wrap-text" />
                         <div class="showcode__scroll-message">☜ Scroll to see full source ☞</div>
                     </div>

@@ -21,10 +21,8 @@
     <?php 
       if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero') {
         print '<h1>' . $fileProps->title . '</h1>';
-        getContent($fileProps->title);
-      } else { 
-        getContent();
       }
+      getContent($fileProps->title);
     ?>
   </main>
 

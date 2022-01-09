@@ -1,5 +1,7 @@
-<title><?= $title ?></title>
-
+<title><?php
+if ($title != '') {
+  printf("%s | The Enable Project", $title);
+} ?></title>
 
 <meta property="og:title" content="<?= $title ?>" />
 <meta property="og:description" content="<?= $desc ?>" />

@@ -1,5 +1,10 @@
 Meta info and title framework.
 
+alert.php: output tag.
+pausable animated GIF respecting global pause button
+bin - CORS.
+
+
 SEPERATE tasks with Cgi-bin
 
 SHOWCODE for blind users. - talk to Ritesh.

@@ -1,4 +1,4 @@
-<main>
+
     
         
 
@@ -227,4 +227,4 @@ body {
                 Text</a> from <a href="https://usability.yale.edu/">Yale University’s Usability &amp; Web
                 Accessibility
                 site</a>). </p>
-    </main>
+    

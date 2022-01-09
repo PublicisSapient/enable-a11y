@@ -1,4 +1,4 @@
-<main class="with-full-bleed-hero">
+
         
         <div id="css-anim-example">
             <div class="play-pause-anim__full-bleed-image-demo">
@@ -452,4 +452,4 @@
             </script>
 
         </div>
-    </main>
+    

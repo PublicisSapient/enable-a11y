@@ -38,4 +38,3 @@ attention. <button data-modal-function="show"
 data-modal-button-for="alertdialog-example">Show me an example of
 an alertdialog</button></li>
 </ul>
-</main>
