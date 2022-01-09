@@ -1,5 +1,5 @@
 const dictLookup = new (function () {
-    const baseURL = "./bin/lookupWord.php?word=";
+    const baseURL = "./services/lookupWord.php?word=";
   
     const $pageTitle = document.querySelector(".wiktionary-lookup__page-title");
     const $wikiInfo = document.querySelector(".wiktionary-lookup__content");

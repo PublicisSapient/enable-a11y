@@ -20,7 +20,7 @@ app.set('view engine', 'php');
 
 
 // routing all things in /bin/ to phpExpress.
-app.all(/\/bin\/.+\.php$/, phpExpress.router);
+app.all(/\/services\/.+\.php$/, phpExpress.router);
 
 // All things outside of bin goes through our template engine at template/main.php
 app.get('/*.php', render)

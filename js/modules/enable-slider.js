@@ -589,7 +589,7 @@ const enableSlider = function(
   this.handleFocus = function($handle) {
     $handle.setAttribute(
       "src",
-      "images/slider_" + (this.vert ? "v" : "h") + "-focus.png"
+      "js/modules/images/slider_" + (this.vert ? "v" : "h") + "-focus.png"
     );
     $handle.classList.add("focus");
     $handle.style.zIndex = "20";
@@ -607,7 +607,7 @@ const enableSlider = function(
   this.handleBlur = function($handle) {
     $handle.setAttribute(
       "src",
-      "images/slider_" + (this.vert ? "v" : "h") + ".png"
+      "js/modules/images/slider_" + (this.vert ? "v" : "h") + ".png"
     );
     $handle.classList.remove("focus");
     $handle.style.zIndex = "10";

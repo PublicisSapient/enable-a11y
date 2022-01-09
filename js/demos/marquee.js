@@ -10,7 +10,7 @@ const marqueeExample = new function () {
     }
 
     this.getHeadlines = () => {
-        var result = fetch('bin/getHeadlines.php');
+        var result = fetch('services/getHeadlines.php');
         result.then(function (response) {
            
             

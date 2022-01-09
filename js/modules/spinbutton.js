@@ -160,12 +160,12 @@ function spinbutton(el) {
     if ($button.getAttribute("id") == this.upID) {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-up-pressed-hl.png'
+        'js/modules/images/spinbutton/button-arrow-up-pressed-hl.png'
       );
     } else {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-down-pressed-hl.png'
+        'js/modules/images/spinbutton/button-arrow-down-pressed-hl.png'
       );
     }
 
@@ -190,12 +190,12 @@ function spinbutton(el) {
     if ($button.getAttribute("id") == this.upID) {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-up-hl.png'
+        'js/modules/images/spinbutton/button-arrow-up-hl.png'
       );
     } else {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-down-hl.png'
+        'js/modules/images/spinbutton/button-arrow-down-hl.png'
       );
     }
 
@@ -220,12 +220,12 @@ function spinbutton(el) {
     if ($button.getAttribute("id") == this.upID) {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-up-hl.png'
+        'js/modules/images/spinbutton/button-arrow-up-hl.png'
       );
     } else {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-down-hl.png'
+        'js/modules/images/spinbutton/button-arrow-down-hl.png'
       );
     }
 
@@ -250,12 +250,12 @@ function spinbutton(el) {
     if ($button.getAttribute("id") == this.upID) {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-up.png'
+        'js/modules/images/spinbutton/button-arrow-up.png'
       );
     } else {
       $img.setAttribute(
         'src',
-        'images/spinbutton/button-arrow-down.png'
+        'js/modules/images/spinbutton/button-arrow-down.png'
       );
     }
 

@@ -2,7 +2,7 @@ const logExample = new function () {
     const sysLogEl = document.getElementById('syslog');
 
     const reportCPUUsage = function () {
-        var result = fetch('bin/sysinfo.php');
+        var result = fetch('services/sysinfo.php');
         result.then(function (response) {
             console.log('response', response);
             console.log('header', response.headers.get('Content-Type'));

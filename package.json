@@ -26,6 +26,9 @@
     "./tabs": "./js/modules/tabs.js",
     "./tooltip": "./js/modules/tooltip.js"
   },
+  "files": [
+    "css", "less", 
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node bin/server.js"
