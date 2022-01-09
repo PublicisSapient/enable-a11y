@@ -365,10 +365,12 @@
             </p> 
 
             <div id="html5-video-example">
-                <video controls="" preload="metadata" data-root-path="./js/libs/ableplayer/" autoplay muted loop>
-                    <source src="videos/test-pattern.mp4" type="video/mp4">
-                    Video not supported.
-                </video>
+                <div role="region">
+                    <video controls="" preload="metadata" data-root-path="./js/libs/ableplayer/" autoplay muted loop>
+                        <source src="videos/test-pattern.mp4" type="video/mp4">
+                        Video not supported.
+                    </video>
+                </div>
             </div>
 
             <?php includeShowcode("html5-video-example")?>

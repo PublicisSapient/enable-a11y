@@ -1,6 +1,6 @@
 
     
-            <aside class="notes">
+            <!-- <aside class="notes">
                 <h2>Notes:</h2>
                 <ul>
                     <li>This page uses is an example of how to use the <code>dialog</code> and <code>alertdialog</code> ARIA roles.</li>
@@ -20,7 +20,7 @@
                         </ul>
                     </li>
                 </ul>
-            </aside>
+            </aside> -->
 
 
             <p>We have two examples of dialogs on this page:</p>

@@ -1,7 +1,7 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <p>Many web developers don't know that they need to put the following in tables in order for them to work
@@ -33,7 +33,7 @@
                 </li>
             </ul>
 
-        </aside>
+        </aside> -->
 
 
         

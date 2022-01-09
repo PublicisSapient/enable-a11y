@@ -1,6 +1,6 @@
 
     
-        <aside class="notes">
+        <!-- <aside class="notes">
             <p>
                 This is a heavily modified version of <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
                     this hamburger menu</a>. I removed jQuery as a dependancy,
@@ -8,7 +8,7 @@
                 it into a mega menu at the desktop breakpoint. I
                 also made the styles follow the BEM design pattern.
             </p>
-        </aside>
+        </aside> -->
 
         
 

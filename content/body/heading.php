@@ -1,4 +1,4 @@
-<aside class="notes">
+<!-- <aside class="notes">
   <h2>Notes:</h2>
 
   <ul>
@@ -17,7 +17,7 @@
       <a href="https://kittygiraudel.com">Kitty Giraudel</a>
     </li>
   </ul>
-</aside>
+</aside> -->
 
 <div id="html-example">
     <h2>This is an h2</h2>

@@ -1,7 +1,7 @@
 
     
       
-      <aside class="notes">
+      <!-- <aside class="notes">
         <h2>Notes:</h2>
 
         <ul>
@@ -24,7 +24,7 @@
             supplementary info to the state of the switch
           </li>
         </ul>
-      </aside>
+      </aside> -->
 
       <h2>A simple switch coded with ARIA.</h2>
 

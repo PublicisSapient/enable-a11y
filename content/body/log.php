@@ -3,7 +3,7 @@
 
 
         
-        <aside class="notes">
+        <!-- <aside class="notes">
 
             <h2>Notes:</h2>
 
@@ -15,7 +15,7 @@
                     NVDA does not just read the differences, even when hitting NVDA+5
                 </li>
             </ul>
-        </aside>
+        </aside> -->
         <h2>Example 1: </h2>
 
         <p>

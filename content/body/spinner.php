@@ -2,7 +2,7 @@
     
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -39,7 +39,7 @@
                         information that isn't a quantity</a>.
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
 
 

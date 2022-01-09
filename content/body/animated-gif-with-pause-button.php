@@ -1,14 +1,14 @@
 
     
 
-    <aside class="notes">
+    <!-- <aside class="notes">
 
       <p>This idea was stolen from <a           href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
           Faulkner</a>.
         The pause first example was from <a           href="https://css-tricks.com/pause-gif-details-summary/">Chris
           Coyier</a>.
 </p>
-    </aside>
+    </aside> -->
 
     
 

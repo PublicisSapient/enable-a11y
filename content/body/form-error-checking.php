@@ -1,13 +1,13 @@
 
     
-      <aside class="notes">
+      <!-- <aside class="notes">
         <h2>Notes</h2>
         <ul>
           <li>Use these forms with a screen reader to understand why they are
               accessible.
           </li>
         </ul>
-      </aside>
+      </aside> -->
 
       
 

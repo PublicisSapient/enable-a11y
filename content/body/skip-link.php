@@ -4,7 +4,7 @@
 
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
 
             <h2>What is a Skip Link?</h2>
 
@@ -24,7 +24,7 @@
                 This page discusses two types of skip links: the traditional one that works for desktop computers, and
                 one that also works for mobile devices (which will only be experienced by mobile screen-reader users)
             </p>
-        </aside>
+        </aside> -->
 
 
         <h2>Traditional Skip Link</h2>

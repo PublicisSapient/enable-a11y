@@ -1,11 +1,11 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <p>All screenreaders seem to read both HTML and ARIA version the same way.</p>
-        </aside>
+        </aside> -->
 
         
 

@@ -1,14 +1,14 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <p>
                 These carousel examples use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but the
                 instructions will contain information to make carousels accessible for all carousel frameworks. The
                 implementation presented here is based on <a                     href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
                     excellent article by Alison Walden</a>.
             </p>
-        </aside>
+        </aside> -->
 
         
 

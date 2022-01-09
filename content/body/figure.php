@@ -1,7 +1,7 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes</h2>
             <ul>
                 <li>This is new tech that most assistive technologies don't implement.</li>
@@ -14,7 +14,7 @@
                 <li>The structure of the ARIA example is
                     <strong>not</strong> reported correctly in Voiceover.</li>
             </ul>
-        </aside>
+        </aside> -->
 
         
 

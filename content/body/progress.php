@@ -4,7 +4,7 @@
 
 
         
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <p>The most bulletproof of the methods below to use is the ARIA version, without changing focus to the
@@ -51,7 +51,7 @@
                 </li>
                 <li>For ARIA progress bars (not HTML ones), Voiceover will tick when the progress bar updates.</li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>Overview</h2>
 

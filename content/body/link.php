@@ -1,12 +1,12 @@
 
     
-      <aside class="notes">
+      <!-- <aside class="notes">
         <h2>Notes:</h2>
 
         <ul>
           <li>HTML and ARIA links work the same way</li>
         </ul>
-      </aside>
+      </aside> -->
 
       
 

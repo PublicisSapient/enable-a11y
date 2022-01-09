@@ -2,7 +2,7 @@
     
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -11,7 +11,7 @@
                     older versions of Voiceover may not.</li>
                 <li>The role is not reported in any of the screen readers tested in reading mode.</li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>Example 1 - News Ticker</h2>
 

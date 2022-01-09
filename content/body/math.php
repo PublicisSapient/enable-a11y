@@ -4,7 +4,7 @@
 
 
         
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes</h2>
             <ul>
                 <li>This page uses MathJax to implement
@@ -21,7 +21,7 @@
                     </ul>
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>Polynomial (MathML)</h2>
         <div id="equation" class="enable-example">

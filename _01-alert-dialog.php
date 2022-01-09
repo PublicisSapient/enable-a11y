@@ -13,7 +13,7 @@
 <?php include("includes/documentation-header.php"); ?>
 <main>
     <?php include "includes/pause-anim-control.php" ?>
-<aside class="notes">
+<!-- <aside class="notes">
 <h2>Notes:</h2>
 <ul>
 <li>This page uses is an example of how to use the
@@ -32,7 +32,7 @@ screen reader will anounce that the user is inside a modal.</li>
 </ul>
 </li>
 </ul>
-</aside>
+</aside> -->
 <h1>Dialog Examples</h1>
 <p>We have two examples of dialogs on this page:</p>
 <ul>

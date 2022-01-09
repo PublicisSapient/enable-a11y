@@ -47,7 +47,7 @@ TEMP_FILES=""
 
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
-AXE_DELAYED_FILES="math.php"
+AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
 
 echo "Downloading rendered HTML..."
 
@@ -56,7 +56,6 @@ then
 	mkdir tmp
 fi
 
-rm tmp/* 2> /dev/null
 
 for i in $URLS
 do
@@ -146,10 +145,8 @@ then
 	exit 1
 fi
 
-rm $TEMP_FILES
 
 echo "Running accessibility tests..."
-
 
 #.. Make a list of the delayed URLS
 AXE_DELAYED_URLS=""
@@ -161,18 +158,21 @@ do
 	AXE_UNDELAYED_URLS=`echo "$AXE_UNDELAYED_URLS" | grep -v $delayed_file`
 done
 
-echo "C: $AXE_DELAYED_URLS"
-echo "D: $AXE_UNDELAYED_URLS"
-
-axe --exit --load-delay=2000 --exclude ".enable-logo__text" $AXE_DELAYED_URLS
+echo "Running delayed tests"
+axe --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS
 AXE_DELAY_RETURN="$?"
+echo "Result: $AXE_DELAY_RETURN"
 
+echo "Running immediate tests"
 axe --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS 
 AXE_UNDELAY_RETURN="$?"
+echo "Result: $AXE_UNDELAY_RETURN"
 
-
-if [ "$AXE_DELAY_RETURN" -ne "0" -a "$AXE_UNDELAY_RETURN" -ne "0" ]
+if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
 then
 	echo "There are accessibility issues"
 	exit 1
 fi
+
+
+rm tmp/* 2> /dev/null

@@ -2,7 +2,7 @@
     
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <p>The HTML5 version does not update its state on all browser/screen-reader combinations
@@ -19,7 +19,7 @@
             </ul>
 
             <p>For now, it is advisable to use the ARIA version.</p>
-        </aside>
+        </aside> -->
 
         <h2>HTML5 version using details and summary tags</h2>
 

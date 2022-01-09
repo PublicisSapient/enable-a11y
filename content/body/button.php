@@ -1,5 +1,5 @@
 
-    <aside class="notes">
+    <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -22,7 +22,7 @@
 
             </ul>
 
-        </aside>
+        </aside> -->
 
 
         <p>This page shows different ways a button can be marked up to see how screen readers will describe them to

@@ -7,7 +7,7 @@
     </div>
 </div>
 
-            <aside class="notes">
+            <!-- <aside class="notes">
                 <p>
                     Instagram's main navigation menu is at the bottom of the screen.  It is 
                     extremely hard for screen reader users to discover it when just swiping through
@@ -15,7 +15,7 @@
                     <a href="38-visible-on-focus">mobile friendly skip links</a> to address this
                     issue by making it discoverable at the very beginning of the page.
                 </p>
-            </aside>
+            </aside> -->
 
             
 

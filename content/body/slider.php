@@ -3,7 +3,7 @@
         
 
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -17,7 +17,7 @@
                         only visible when using a mobile screen reader.</strong>
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>A Simple HTML5 Slider (i.e. an <code>input</code> with <code>type="range"</code>)</h2>
 

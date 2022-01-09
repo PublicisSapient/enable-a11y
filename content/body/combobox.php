@@ -1,6 +1,6 @@
 
     
-        <aside class="notes">
+        <!-- <aside class="notes">
             <p>
                 Example 1 is heavily refactored version of
                 <a href="https://webkit.org/blog-files/aria1.0/combobox_with_live_region_status.html">the combobox
@@ -11,7 +11,7 @@
                 is a huge exception to the rule that native works better than
                 ARIA-based code.
             </p>
-        </aside>
+        </aside> -->
 
         
 

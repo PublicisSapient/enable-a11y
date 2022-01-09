@@ -1,14 +1,14 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
 
             <h2>Notes</h2>
 
             <ul>
                 <li>Both HTML and ARIA role work that same in NVDA and Voiceover.</li>
             </ul>
-        </aside>
+        </aside> -->
 
         
 

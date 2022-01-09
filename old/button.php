@@ -14,7 +14,7 @@
     <main>
     <?php include "includes/pause-anim-control.php" ?>
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -37,7 +37,7 @@
 
             </ul>
 
-        </aside>
+        </aside> -->
 
 
 

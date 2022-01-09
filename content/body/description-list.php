@@ -2,7 +2,7 @@
     
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
 
             <h2>Notes:</h2>
             <ul>
@@ -17,7 +17,7 @@
                 </li>
                 <li>The screen reader user experience is better if you surround your <code>dt</code>/<code>dd</code> pairs with a <code>div</code>.</li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>A HTML example</h2>
 

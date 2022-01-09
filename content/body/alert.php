@@ -3,7 +3,7 @@
 
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -21,7 +21,7 @@
                     saying the alert to the user.
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
         <h2>Example 1: Visual alert</h2>
 

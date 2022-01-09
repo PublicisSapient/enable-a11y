@@ -1,7 +1,7 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes</h2>
             <ul>
                 <li>tl;dr: Both versions are accessible, with slight differences in how they are reported to users.</li>
@@ -54,7 +54,7 @@
 
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
         
 

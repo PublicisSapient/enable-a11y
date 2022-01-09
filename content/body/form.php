@@ -1,7 +1,7 @@
 
     
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes</h2>
             <ul>
 
@@ -26,7 +26,7 @@
                     </ol>
                 </li>
             </ul>
-        </aside>
+        </aside> -->
 
 
         

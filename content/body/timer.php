@@ -7,7 +7,7 @@
 
 
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <p>This demo is based on code from
@@ -18,7 +18,7 @@
 
                 It has been modified to add accessibility features to it.
             </p>
-        </aside>
+        </aside> -->
 
         <h2>Timer Example</h2>
 

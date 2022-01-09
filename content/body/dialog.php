@@ -1,7 +1,7 @@
 
     
       
-      <aside class="notes">
+      <!-- <aside class="notes">
         <h2>Notes:</h2>
 
         <ul>
@@ -22,7 +22,7 @@
               >Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile</a>
           </li>
         </ul>
-      </aside>
+      </aside> -->
 
       <div id="example1">
         
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <?php includeShowcode("example1")?>
+      <?php includeShowcode("example1", "", "", "", true, 2)?>
 
         <script type="application/json" id="example1-props">
         {

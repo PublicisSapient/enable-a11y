@@ -3,7 +3,7 @@
 
         
 
-        <aside class="notes">
+        <!-- <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -15,7 +15,7 @@
                     not.</li>
                 <li>Screen reader users will hear the instructions when they focus on the tabs as well.</li>
             </ul>
-        </aside>
+        </aside> -->
 
 
 

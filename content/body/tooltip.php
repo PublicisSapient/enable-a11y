@@ -4,7 +4,7 @@
 
       <h2>JavaScript tooltips</h2>
 
-      <aside class="notes">
+      <!-- <aside class="notes">
         <h2>Notes:</h2>
 
         <ul>
@@ -15,7 +15,7 @@
             so the AT can inform the user of it.
           </li>
         </ul>
-      </aside>
+      </aside> -->
 
       <div id="example1" class="enable-example">
         <p>
