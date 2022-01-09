@@ -1,4 +1,4 @@
-# aria-role-demos
+# enable-a11y
 A list of demos to show how aria roles function with screen readers.
 
 ## Set up

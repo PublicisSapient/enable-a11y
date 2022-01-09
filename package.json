@@ -1,5 +1,5 @@
 {
-  "name": "aria-role-demos",
+  "name": "enable-a11y",
   "version": "0.5.0",
   "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
   "main": "js/modules/index.js",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zoltan-dulac/aria-role-demos.git"
+    "url": "git+https://github.com/zoltan-dulac/enable-a11y.git"
   },
   "keywords": [
     "ARIA",
@@ -46,9 +46,9 @@
   "author": "Zoltan Hawryluk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zoltan-dulac/aria-role-demos/issues"
+    "url": "https://github.com/zoltan-dulac/enable-a11y/issues"
   },
-  "homepage": "https://github.com/zoltan-dulac/aria-role-demos#readme",
+  "homepage": "https://github.com/zoltan-dulac/enable-a11y#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",

@@ -319,7 +319,7 @@
                 and show each rendition according the user's preference.</p>
 
             <p>(If you are looking for a way to add pause buttons on GIF animations, please
-                take a look at <a href="http://localhost:8888/aria-role-demos/36-animated-gif-with-pause-button.php">
+                take a look at <a href="http://localhost:8888/enable-a11y/36-animated-gif-with-pause-button.php">
                     the animated gif pause button</a> examples).
             </p>
 
