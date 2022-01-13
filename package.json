@@ -76,7 +76,9 @@
     "php-express": "^0.0.3",
     "selenium-webdriver": "^4.0.0-beta.4",
     "text-zoom-event": "^1.5.2",
-    "vnu-jar": "^21.6.11"
+    "vnu": "^20.6.30",
+    "vnu-jar": "^21.6.11",
+    "wget-improved": "^3.2.1"
   },
   "bin": {
     "enable-a11y": "bin/server.js"
