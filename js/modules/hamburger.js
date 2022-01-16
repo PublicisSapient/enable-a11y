@@ -14,7 +14,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 import pauseAnimControl from "./pause-anim-control.js";
-import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js"
+import accessibility from "../libs/accessibility-js-routines/dist/accessibility.module.js"
 
 let EnableFlyoutHamburger;
 
