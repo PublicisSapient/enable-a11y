@@ -1,0 +1,108 @@
+@import url("demo.css");
+body {
+  background: #f0f0f0 url(../images/cream_dust.jpg);
+}
+div.heading-example {
+  width: 100%;
+  max-width: 960px;
+  padding: 40px;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+div.heading-example p {
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: justify;
+}
+div.heading-example p:nth-of-type(2) {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  -ms-column-count: 2;
+  -ms-column-gap: 20px;
+  -o-column-count: 2;
+  -o-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+}
+div.heading-example p:nth-of-type(4) {
+  -moz-column-count: 3;
+  -moz-column-gap: 15px;
+  -o-column-count: 3;
+  -o-column-gap: 15px;
+  -ms-column-count: 3;
+  -ms-column-gap: 15px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 15px;
+  column-count: 3;
+  column-gap: 15px;
+}
+/* DEMO 1 */
+div.heading-example h1,
+div.heading-example [role="heading"][aria-level="1"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Ultra', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  text-shadow: 0 2px white, 0 3px #777;
+}
+div.heading-example h2,
+div.heading-example h5 [role="heading"][aria-level="2"],
+div.heading-example [role="heading"][aria-level="5"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Orienta', sans-serif;
+  border: none;
+}
+div.heading-example h2,
+div.heading-example [role="heading"][aria-level="2"] {
+  font-size: 33px;
+  line-height: 36.36363636px;
+}
+div.heading-example h5,
+div.heading-example [role="heading"][aria-level="5"] {
+  font-size: 22px;
+  line-height: 54.54545455px;
+}
+div.heading-example h3,
+div.heading-example h6,
+div.heading-example [role="heading"][aria-level="3"],
+div.heading-example [role="heading"][aria-level="6"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Orienta', sans-serif;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+div.heading-example h3,
+div.heading-example [role="heading"][aria-level="3"] {
+  font-size: 30px;
+  line-height: 29.33333333px;
+}
+div.heading-example h6,
+div.heading-example [role="heading"][aria-level="6"] {
+  font-size: 18px;
+  line-height: 48.88888889px;
+}
+div.heading-example h4,
+div.heading-example [role="heading"][aria-level="7"] {
+  margin: 1em 0 0.5em 0;
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Orienta', sans-serif;
+}
+div.heading-example h4,
+div.heading-example [role="heading"][aria-level="4"] {
+  font-size: 25px;
+  line-height: 14.4px;
+}
+div.heading-example [role="heading"][aria-level="7"] {
+  font-size: 18px;
+  line-height: 20px;
+}

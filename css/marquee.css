@@ -1,0 +1,9 @@
+[role="marquee"] {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+[role="marquee"] a {
+  color: white;
+}

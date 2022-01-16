@@ -1,0 +1,100 @@
+.glider {
+  border: solid 1px black;
+  /* IE and edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+  /* Safari & Chrome */
+}
+.glider::-webkit-scrollbar {
+  display: none;
+}
+.glider-slide {
+  display: block;
+  background: black;
+  color: white;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .glider-slide {
+    height: 72vw !important;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .glider-slide {
+    height: 689px !important;
+  }
+}
+.glider-prev,
+.glider-next {
+  background: #000;
+  color: white;
+  padding: 5px 10px;
+  transform: scale(0.8, 1.5);
+  clip: rect(6px 100px 100px 0);
+  top: calc(24vw - (75px / 2));
+}
+@media only screen and (min-width: 960px) {
+  .glider-prev,
+  .glider-next {
+    top: 200px;
+  }
+}
+.glider-prev {
+  left: 0;
+  transform-origin: 0 50%;
+}
+.glider-next {
+  right: 0;
+  transform-origin: 100% 50%;
+}
+.enable-carousel__example {
+  padding: 0;
+  margin: 0 -1em;
+}
+.enable-carousel__skip-link {
+  display: block;
+  margin: 2px auto;
+  background: #2A6803;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  z-index: 5;
+  transform: translateZ(1px);
+}
+.enable-carousel__slide {
+  position: relative;
+}
+.enable-carousel__slide-heading {
+  margin: 0;
+  padding: 0;
+}
+.enable-carousel__slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.enable-carousel__slide-copy {
+  box-sizing: border-box;
+  background: #000;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+@media only screen and (min-width: 720px) {
+  .enable-carousel__slide-copy {
+    padding: 20px 40px;
+  }
+}
+.enable-carousel__slide-cta {
+  display: block;
+  margin: 0 auto;
+  background: #2A6803;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,0 +1,129 @@
+.showcode_ui {
+  top: 2.5rem;
+}
+@media only screen and (min-width: 720px) {
+  .showcode_ui {
+    top: 0;
+  }
+}
+.play-pause-anim {
+  /*
+    *  For the page
+    */
+}
+.play-pause-anim__checkbox-container {
+  position: sticky;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 0;
+  background-color: #000;
+  white-space: nowrap;
+  text-align: center;
+  height: 2.5rem;
+}
+main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
+  margin: -16px -16px 10px -16px;
+}
+@media only screen and (min-width: 960px) {
+  .play-pause-anim__checkbox-container {
+    position: fixed;
+    top: 2.8125rem;
+    left: initial;
+    right: 20px;
+    border-radius: 50px;
+    border: solid 2px white;
+    width: min-content;
+    line-height: 2.4;
+  }
+  .offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container {
+    top: 0.625rem;
+  }
+  main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
+    margin: 0;
+  }
+}
+.play-pause-anim__checkbox-container label {
+  padding: 10px 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (min-width: 960px) {
+  .play-pause-anim__checkbox-container label {
+    padding: 0 20px;
+  }
+}
+.play-pause-anim__full-bleed-image-demo {
+  position: relative;
+}
+.play-pause-anim__full-bleed-image-demo--image {
+  background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
+  background-size: 100vw auto;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  background-size: auto;
+  animation: animatedBackground 60s linear infinite;
+  width: 100vw;
+}
+main {
+  min-height: 54vw;
+}
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1920px 0;
+  }
+}
+.pause-anim-control__gif--animated,
+.pause-anim-control__gif--still {
+  max-width: 100%;
+}
+.pause-anim-control__gif--animated {
+  display: initial;
+}
+.pause-anim-control__gif--still {
+  display: none;
+}
+/*
+ * From Bruce Lawson's awesome blog post
+ * https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/
+ */
+@media (prefers-reduced-motion: reduce) {
+  body:not(.pause-anim-control__prefers-motion) *,
+  body:not(.pause-anim-control__prefers-motion) ::before,
+  body:not(.pause-anim-control__prefers-motion) ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  body:not(.pause-anim-control__prefers-motion) .pause-anim-control__gif--animated {
+    display: none;
+  }
+  body:not(.pause-anim-control__prefers-motion) .pause-anim-control__gif--still {
+    display: initial;
+  }
+}
+body.pause-anim-control__prefers-reduced-motion *,
+body.pause-anim-control__prefers-reduced-motion ::before,
+body.pause-anim-control__prefers-reduced-motion ::after {
+  animation-delay: -1ms !important;
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  background-attachment: initial !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--animated {
+  display: none;
+}
+body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--still {
+  display: initial;
+}

@@ -1,0 +1,87 @@
+.deque-table-sortable-group caption {
+  margin-bottom: 15px;
+}
+.deque-table-sortable-group table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: visible;
+  margin-top: 8px;
+  width: 100%;
+}
+.deque-table-sortable-group table thead {
+  border-bottom: 1px solid #e3e3e3;
+}
+.deque-table-sortable-group table thead th {
+  position: relative;
+}
+.deque-table-sortable-group table thead th:last-child {
+  border-right: none;
+}
+.deque-table-sortable-group table thead th .sortableColumnLabel {
+  display: inline-block;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 0 0 1.5625rem;
+  text-align: left;
+}
+.deque-table-sortable-group table thead th .sortableColumnLabel:hover {
+  outline: 1px dashed #767676;
+}
+.deque-table-sortable-group table thead th button {
+  color: white;
+  background: transparent;
+  border: 0;
+  padding-left: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.deque-table-sortable-group table thead th button:hover {
+  margin: 0;
+}
+.deque-table-sortable-group table thead th button:focus {
+  margin: 0;
+  z-index: 1;
+}
+.deque-table-sortable-group table thead th button:active {
+  color: #000000;
+  outline: 1px solid transparent;
+  margin: 0;
+}
+.deque-table-sortable-group table thead th[colspan]:not([colspan='1']) {
+  text-align: center;
+}
+.deque-table-sortable-group table thead th .sortableColumnLabel:after {
+  content: url('../images/sort-up-down.svg');
+  height: 1.0625rem;
+  width: 0.76425439rem;
+  position: absolute;
+  left: 6px;
+  top: calc(50% - 1.0625rem / 2);
+}
+.deque-table-sortable-group table thead th[aria-sort='ascending'] .sortableColumnLabel:after {
+  content: url('../images/sort-asc.svg');
+}
+.deque-table-sortable-group table thead th[aria-sort='descending'] .sortableColumnLabel:after {
+  content: url('../images/sort-asc.svg');
+  transform: scaleY(-1) translateY(-0.3125rem);
+}
+.deque-table-sortable-group table thead:before {
+  content: '';
+  display: block;
+  width: 7px;
+}
+.deque-table-sortable-group table thead td,
+.deque-table-sortable-group table thead th {
+  padding: 12px 11px 12px 0;
+  text-align: left;
+  vertical-align: middle;
+}
+.deque-table-sortable-group table tbody td table tbody th {
+  text-align: left;
+  padding: 7px;
+  border-right: 1px solid #cccccc;
+}
+.deque-table-sortable-group table tbody td:last-child,
+.deque-table-sortable-group table tbody th:last-child {
+  border-right: none;
+}

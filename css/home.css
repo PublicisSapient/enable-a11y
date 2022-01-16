@@ -1,0 +1,37 @@
+html,
+body {
+  min-height: 100vh;
+}
+a {
+  color: #3333ff;
+}
+.home h1 {
+  text-align: center;
+}
+.home h2 {
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  border: none;
+}
+.home h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-bottom: solid 1px #999999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.options {
+  background: #000;
+  color: #fff;
+  margin: 0 -10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+body.with-open-dyslexia,
+body.with-open-dyslexia * {
+  font-family: "OpenDyslexic", sans-serif;
+}
+#dyslexia-switch__label {
+  font-family: "OpenDyslexic", sans-serif;
+}

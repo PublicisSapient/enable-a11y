@@ -1,0 +1,125 @@
+/*********************************************************
+ * a11y.css - a stylesheet to help create 
+ * accessible websites.
+ * 
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * Licensed under the MIT License
+ * 
+ * https://opensource.org/licenses/MIT
+ ********************************************************/
+.sr-only {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+/*
+ * For `.sr-only` elements that should be visible when it gains focus. 
+ */
+.visible-when-focused:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+}
+/*
+ * Style for "Skip Navigation" type links.  Should have an href linked to 
+ * a `.ally-target` element.
+ */
+.bypass-block-link:focus {
+  position: absolute;
+  text-decoration: none;
+  background: #ffffcc;
+  padding: 0.2em;
+  z-index: 10;
+}
+/*
+ * We don't want the `.bypass-block-target` to have an outline on *just* focus,
+ * since this will look strange if regular users click inside this element,
+ * since it will look like it was tabbed into
+ */
+.bypass-block-target:focus {
+  outline: none;
+}
+/*
+ * We do, however, want the `.bypass-block-target` to have an outline when
+ * it has focus and it is the target of the document (i.e. the hash tag of the
+ * document URL is the same as the "Skip Nav" link).
+ * 
+ * Note that this style is the same as the focus state on all the tabbable 
+ * elements.  It doesn't have to be.  WCAG 2.4.7 – Focus Visible (Level AA) 
+ * only requires that the focus state is visible, so you can have, say, the 
+ * focus state of a button different than that of a form element. 
+ */
+.bypass-block-target:focus:target {
+  outline: solid 2px #3b99fc;
+}
+*:focus {
+  /* Outline focus state for all browsers */
+  outline: solid 2px #3b99fc;
+}
+*:focus:not(:focus-visible) {
+  /* Undo all the above focused button styles
+      if the element has focus but the browser wouldn't normally
+      show default focus styles */
+  outline: none;
+}
+*:focus-visible {
+  /* Put the focus CSS back in if the browser would normally show default focus style */
+  outline: solid 2px #3b99fc;
+}
+/*
+ * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
+ * Level AA
+ * 
+ * From https://www.w3.org/WAI/tutorials/forms/instructions/
+ */
+.placeholder-removed {
+  opacity: 0.999;
+}
+[placeholder] {
+  background-color: #fff;
+  border: solid 1px #777;
+}
+::-webkit-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #777;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #777;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #777;
+  opacity: 1;
+}
+/*
+ *	Fixes to ensure text zoom works correctly in Safari/OSX
+ */
+body {
+  /*
+     * This tells Safari to use the OS's base font and
+     * the size set in the iOS Accessibility settings.
+     */
+  font: -apple-system-body;
+  /*
+     * Put whatever font you want to use here.  The font
+     * size will still be grabbed by the iOS Accessibility
+     * settings.
+     */
+  font-family: "Helvetica", "Arial", sans-serif;
+}

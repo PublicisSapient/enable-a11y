@@ -1,0 +1,151 @@
+.enable-flyout__open-level-button,
+.enable-flyout__link {
+  font-weight: normal;
+}
+.enable-flyout__open-level-button:hover,
+.enable-flyout__link:hover,
+.enable-flyout__open-level-button:focus,
+.enable-flyout__link:focus {
+  font-weight: normal;
+}
+.enable-flyout__level .enable-flyout__menu-item {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 0;
+}
+.enable-flyout__link {
+  text-indent: 0px;
+  padding: 13px 13px 13px 21px;
+}
+.enable-flyout__list .enable-flyout__list {
+  width: 960px;
+  width: fit-content;
+  margin: 20px auto;
+}
+@media only screen and (min-width: 960px) {
+  .enable-flyout {
+    /* styles specific to Interactive Elements flyout */
+  }
+  .enable-flyout__link-image {
+    width: 105px;
+    border: solid 1px #999999;
+  }
+  .enable-flyout__link {
+    padding: 0;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__menu-item {
+    width: 890px;
+    padding-bottom: 10px;
+  }
+  #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout {
+    width: fit-content;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
+    width: 134px;
+    float: left;
+    height: 10.4375rem;
+    background: white;
+  }
+  #controls-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
+    width: 145px;
+  }
+  #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
+    width: 134px;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
+    min-height: 10.4375rem;
+    box-sizing: border-box;
+    font-size: 0.8125rem;
+    padding: 0 20px;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover,
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    box-shadow: 2px 2px 5px #999;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover {
+    outline: solid 1px #666;
+  }
+  .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    outline: solid 2px #3b99fc;
+  }
+  .enable-flyout__level .enable-flyout__menu-item--close {
+    display: none;
+  }
+  #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item {
+    width: calc(50% - 18px * 2);
+    float: left;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item .enable-flyout__list {
+    width: 100%;
+  }
+  #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2) {
+    width: calc(100% / 3 - 36px);
+    float: left;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
+    width: calc(200% / 3 - 36px);
+    float: left;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(4) {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}
+.enable-logo {
+  width: 60px;
+  color: #fff;
+}
+@media only screen and (min-width: 720px) {
+  .enable-logo {
+    width: 100px;
+  }
+}
+.enable-logo__container {
+  text-decoration: none;
+  font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
+  color: #fff;
+  margin-bottom: -10px;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .enable-logo__container {
+    transform: scale(0.75);
+  }
+}
+@media only screen and (min-width: 720px) {
+  .enable-logo__container {
+    padding: 0 30px;
+  }
+}
+.enable-logo__link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+.enable-logo__text {
+  display: block;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 3.125rem;
+  padding-left: 1.25rem;
+}
+@media only screen and (min-width: 720px) {
+  .enable-logo__text {
+    font-size: 4.375rem;
+    top: -1.5625rem;
+  }
+}
+.enable-logo__sub-text {
+  display: block;
+  font-size: 17px;
+  font-style: italic;
+  padding: 0 10px;
+  margin-top: -8px;
+  font-style: normal;
+}

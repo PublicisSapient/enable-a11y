@@ -1,0 +1,107 @@
+/* Traditional skip links */
+.enable-visible-on-focus {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+.enable-visible-on-focus:focus {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+  width: 100%;
+  /*
+    * We use a negative outline-offset here. If we didn't,
+    * the outline would get cut off due to the container's
+    * `overflow: hidden` property
+    */
+  outline-offset: -1px;
+}
+.enable-visible-on-focus__container {
+  display: block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.enable-visible-on-focus__container:focus-within {
+  height: auto;
+  overflow: auto;
+}
+.enable-mobile-visible-on-focus {
+  /* Make sure the width and margin-left are the same value */
+  margin-left: 100%;
+}
+.enable-mobile-visible-on-focus:focus {
+  /*
+     * We use a negative outline-offset here. If we didn't,
+     * the outline would get cut off due to the container's
+     * `overflow: hidden` property
+     */
+  outline-offset: -1px;
+}
+.enable-mobile-visible-on-focus__container {
+  display: block;
+  width: 100%;
+  margin: 3px 0 0 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+.enable-mobile-visible-on-focus__container:focus-within {
+  outline: solid 2px #3b99fc;
+  outline-offset: 2px;
+  z-index: 2;
+}
+.enable-mobile-visible-on-focus__container:focus-within a {
+  outline: none;
+}
+.enable-mobile-visible-on-focus__container--visible {
+  clip: auto;
+  position: relative;
+  pointer-events: auto;
+}
+.enable-skip-link {
+  /* Here is the general styles of the link */
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  background: #225502;
+  color: #fff;
+  padding: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+.enable-skip-link--begin {
+  top: 0;
+}
+.enable-skip-link--end {
+  bottom: 0;
+}
+/* This is just a mock of the component */
+.fake-component {
+  display: block;
+  background: white;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  color: black;
+  padding: 10px;
+  overflow-y: scroll;
+  border: solid 1px #ccc;
+}
+.fake-component a {
+  color: #330000;
+}
