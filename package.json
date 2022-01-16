@@ -1,6 +1,6 @@
 {
   "name": "enable-a11y",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
   "main": "js/modules/index.js",
   "exports": {
