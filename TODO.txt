@@ -110,8 +110,8 @@ js/demos/dialog-example.js:
   43:   import ('../../node_modules/dialog-polyfill/index.js')
 
 js/demos/form.js:
-  11: import '../../node_modules/jquery/dist/jquery.min.js';
-  12: import '../../node_modules/jquery-validation/dist/jquery.validate.min.js';
+  11: import '../node_modules/jquery/dist/jquery.min.js';
+  12: import '../node_modules/jquery-validation/dist/jquery.validate.min.js';
   13: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 js/demos/hero-image-text-resize.js:
@@ -121,13 +121,13 @@ js/libs/dialog-focus-restore.js:
   13: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 
 js/modules/ablePlayerCustomizations.js:
-  17: import '../../node_modules/jquery/dist/jquery.min.js';
+  17: import '../node_modules/jquery/dist/jquery.min.js';
 
 js/modules/combobox__improved.js:
   19: import accessibility from "../../node_modules/accessibility-js-routines/dist/accessibility.module.js";
 
 js/modules/enable-carousel.js:
-  16: import '../../node_modules/glider-js/glider.js';
+  16: import '../node_modules/glider-js/glider.js';
 
 js/modules/enable-listbox.js:
   16: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';

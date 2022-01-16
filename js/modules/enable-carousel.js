@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-import '../../libs/glider-js/glider.js';
+import '../libs/glider-js/glider.js';
 
 
 const EnableCarousel = function (container) {
