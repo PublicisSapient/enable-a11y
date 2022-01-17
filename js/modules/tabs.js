@@ -12,9 +12,9 @@
 * 
 * Released under the MIT License.
 ******************************************************************************/
-import accessibility from '../libs/accessibility-js-routines/dist/accessibility.module.js';
+import accessibility from '../../libs/accessibility-js-routines/dist/accessibility.module.js'; 
 
-const tabgroup = new (function () {
+const tabgroup = new function () {
   let lastMouseDownEl = null;
 
   this.init = function () {
@@ -165,7 +165,6 @@ const tabgroup = new (function () {
 
     lastMouseDownEl = null;
   };
-})();
-tabgroup.init();
+};
 
 export default tabgroup;

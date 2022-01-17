@@ -58,6 +58,5 @@ const Switch = new function () {
     }
 }
 
-Switch.init();
 
 export default Switch;

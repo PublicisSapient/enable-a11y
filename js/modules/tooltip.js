@@ -112,9 +112,7 @@ const tooltip = new function () {
             )
         );
     }
-
 }
 
-tooltip.init();
 
 export default tooltip;
