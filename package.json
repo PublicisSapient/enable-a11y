@@ -29,7 +29,8 @@
   "files": [
     "css",
     "less",
-    "js"
+    "js",
+    "libs"
   ],
   "scripts": {
     "test": "bin/checkHTML; exit 0",
