@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-import '../libs/glider-js/glider.js';
+import '../../libs/glider-js/glider.js';
 
 
 const EnableCarousel = function (container) {
@@ -88,10 +88,6 @@ const EnableCarousel = function (container) {
       });
     }
   };
-
-  this.init();
 }
-
-new EnableCarousel(document.querySelector(".glider"));
 
 export default EnableCarousel;

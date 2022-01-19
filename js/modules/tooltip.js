@@ -15,7 +15,7 @@
 
 const tooltip = new function () {
     // global constants
-    const mainEl = document.getElementsByTagName('main')[0];
+    const { body } = document;
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
 
@@ -26,16 +26,16 @@ const tooltip = new function () {
         this.create();
 
         // mouse events
-        mainEl.addEventListener('mouseover', this.show);
-        mainEl.addEventListener('mouseleave', this.hide);
+        body.addEventListener('mouseover', this.show);
+        body.addEventListener('mouseleave', this.hide);
 
         // equivalent keyboard events
-        mainEl.addEventListener('focus', this.show, true);
-        mainEl.addEventListener('blur', this.hide, true);
+        body.addEventListener('focus', this.show, true);
+        body.addEventListener('blur', this.hide, true);
         
         // used to make tooltip disappear when ESC key 
         // is pressed.
-        mainEl.addEventListener('keyup', this.onKeyup);
+        body.addEventListener('keyup', this.onKeyup);
 
     }
 
@@ -46,7 +46,7 @@ const tooltip = new function () {
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = 'Loading ...';
         tooltipEl.setAttribute('aria-hidden', 'true');
-        mainEl.appendChild(tooltipEl);
+        body.appendChild(tooltipEl);
     }
 
     this.onKeyup = (e) => {

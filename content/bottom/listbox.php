@@ -1,1 +1,5 @@
-<script src="js/modules/enable-listbox.js" type="module"></script>
+<script type="module">
+    import enableListbox from "./js/modules/enable-listbox.js" 
+
+    enableListbox.init();
+</script>

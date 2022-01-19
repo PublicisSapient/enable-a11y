@@ -42,4 +42,4 @@ const enableDrawer = new function() {
   }
 }
 
-enableDrawer.init();
+export default enableDrawer;

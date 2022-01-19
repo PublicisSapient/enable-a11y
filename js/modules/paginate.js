@@ -15,7 +15,7 @@
 
 import { interpolate, htmlToDomNode } from './interpolate.js'
 
-const paginationTable = new(function() {
+const paginationTables = new(function() {
   var perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
@@ -50,13 +50,15 @@ const paginationTable = new(function() {
 
   const buttonTemplate = $buttonTemplate.innerHTML;
 
-  function genTables() {
-    $tables.forEach(($table) => {
-      perPage = parseInt($table.dataset.pagecount);
-      renderPaginationButtons($table, 0);
-      createTableMeta($table);
-      renderTable($table);
-    });
+  this.add = ($table) => {
+    perPage = parseInt($table.dataset.pagecount);
+    renderPaginationButtons($table, 0);
+    createTableMeta($table);
+    renderTable($table);
+  }
+
+  this.init = () => {
+    $tables.forEach(this.add);
 
     if (mobileMql.addEventListener) {
       mobileMql.addEventListener('change', onBreakpointChange);
@@ -214,8 +216,7 @@ const paginationTable = new(function() {
 
   }
 
-  genTables();
 })();
 
 
-export default paginationTable;
+export default paginationTables;

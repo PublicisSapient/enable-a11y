@@ -1,1 +1,5 @@
-<script src="js/modules/enable-carousel.js" type="module"></script>
+<script type="module">
+    import EnableCarousel from "./js/modules/enable-carousel.js";
+    const myCarousel = new EnableCarousel(document.querySelector(".glider"));
+    myCarousel.init();
+</script>

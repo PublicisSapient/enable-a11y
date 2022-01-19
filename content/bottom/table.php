@@ -3,4 +3,8 @@
 
     sortableTables.init();
 </script>
-<script src="js/modules/paginate.js" type="module"></script>
+<script type="module">
+    import paginationTables from "./js/modules/paginate.js";
+    
+    paginationTables.init();
+</script>

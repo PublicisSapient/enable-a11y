@@ -413,11 +413,23 @@ function spinbutton(el) {
   this.init();
 }
 
-const spinbuttons = [];
-const els = document.getElementsByClassName('spinbutton');
+const spinbuttons = new function () {
+  const buttons = [];
 
-for (let i = 0; i < els.length; i++) {
-  spinbuttons[i] = new spinbutton(els[i]);
+  this.add = ($el) => {
+    buttons.push(new spinbutton($el));
+  }
+
+  this.init = () => {
+    const els = document.getElementsByClassName('spinbutton');
+
+    for (let i = 0; i < els.length; i++) {
+      this.add(els[i])
+    }
+  }
+  
 }
+
+
 
 export { spinbuttons, spinbutton };

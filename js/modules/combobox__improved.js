@@ -18,9 +18,6 @@
 
 import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js";
 
-
-
-
 const EnableCombobox = function(componentRoot) {
   let root = null,
     form = null,
@@ -417,15 +414,18 @@ const EnableCombobox = function(componentRoot) {
 const enableComboboxes = new function() {
   this.list = [];
 
+  this.add = ($root) => {
+    this.list.push(new EnableCombobox($root));
+  }
+
   this.init = () => {
     const $roots = document.querySelectorAll('.enable-combobox');
 
     for (let i = 0; i < $roots.length; i++) {
-      this.list.push(new EnableCombobox($roots[i]));
+      this.add($roots[i]);
     }
   }
 }
 
-enableComboboxes.init();
 
 export default enableComboboxes;

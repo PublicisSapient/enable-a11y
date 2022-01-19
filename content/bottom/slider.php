@@ -35,5 +35,9 @@
     }
 
     rangeInputEvent.init();
-    </script>
-<script src="js/modules/enable-slider.js" type="module"></script>
+</script>
+
+<script type="module">
+    import enableSliders from "./js/modules/enable-slider.js"; 
+    enableSliders.init();
+</script>

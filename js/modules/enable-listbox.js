@@ -193,6 +193,5 @@ const enableListbox = new function() {
   }
 }
 
-enableListbox.init();
 
 export default enableListbox;
