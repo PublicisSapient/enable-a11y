@@ -16,7 +16,7 @@ const sortableTables = new (function () {
   * https://dequeuniversity.com/library/aria/table-sortable
   */
 
-  const createSortableTable = (tableGroup) => {
+  this.createSortableTable = (tableGroup) => {
     var table = tableGroup.querySelector("table");
     var headerGroup = table.querySelector("thead");
     var headerRow = headerGroup.querySelector("tr");
@@ -238,16 +238,18 @@ const sortableTables = new (function () {
       .join("");
   }
 
-  function activateAllSortableTables() {
-    var sortableTables = document.querySelectorAll(
+  this.activateAllSortableTables = (withinEl) => {
+    var sortableTables = (withinEl || document).querySelectorAll(
       ".deque-table-sortable-group"
     );
     for (var i = 0; i < sortableTables.length; i++) {
-      createSortableTable(sortableTables[i]);
+      this.createSortableTable(sortableTables[i]);
     }
   }
 
-  activateAllSortableTables();
+  this.init = () => {
+    this.activateAllSortableTables();
+  }
 })();
 
 export default sortableTables;

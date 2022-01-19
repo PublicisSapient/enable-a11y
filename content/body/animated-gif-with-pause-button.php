@@ -1,16 +1,10 @@
 
-    
 
-    <!-- <aside class="notes">
 
-      <p>This idea was stolen from <a           href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
+    <p>The ideas in this demo were stolen from <a           href="https://codepen.io/stevef/pen/ExPdNMM">this CodePen by Steven
           Faulkner</a>.
         The pause first example was from <a           href="https://css-tricks.com/pause-gif-details-summary/">Chris
           Coyier</a>.
-</p>
-    </aside> -->
-
-    
 
 
     <h2>Animation off by default</h2>

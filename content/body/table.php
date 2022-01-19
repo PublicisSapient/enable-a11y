@@ -178,8 +178,9 @@
 
         <div class="enable-example" id="complex-table">
         <figure>
-            <figcaption             id="complex-table__caption"
-            class="caption"
+            <figcaption 
+                id="complex-table__caption"
+                class="caption"
             >
                 Complex Table Example: Racing Times
             </figcaption>
@@ -460,7 +461,7 @@
 
         <p>
             The script for this table was based on the 
-            <a href="https://dequeuniversity.com/library/aria/table-sortable">Sortable Table Example from Deque University</a>.
+            <a href="https://dequeuniversity.com/library/aria/table-sortable">excellent sortable table example from Deque University</a>.
         </p>    
         <div class="enable-example" id="sortable-table-example">
             <div class="deque-table-sortable-group" id="sortable-table">
@@ -534,9 +535,9 @@
             </div>
         </div>
 
-        <?php includeShowcode("sortable-table")?>
+        <?php includeShowcode("sortable-table-example")?>
 
-        <script type="application/json" id="sortable-table-props">
+        <script type="application/json" id="sortable-table-example-props">
         {
             "replaceHtmlRules": {},
             "steps": [
@@ -2404,8 +2405,9 @@
         <h2>Sticky Header Table</h2>
 
         <p>
-            Instead of using the paginated table as shown above, I would
-            suggest using a table with a fixed table header.  It has a
+            If you are not worried about large hits to a backend database for generating
+            the data or a ridiculously huge HTTP payload, I would
+            suggest considering the use of a table with a fixed table header.  It has a
             way less complicated UI, and if marked up correctly, is totally
             accessible via screen readers and keyboard.
         </p>
@@ -2415,8 +2417,14 @@
                 <figcaption id="sticky-table__caption" class="caption">
                     Sticky Header Example: GDP of the World Nations 
                 </figcaption>
+
+                <div id="sticky-table__instructions" class="sr-only">
+                    Sighted users can use the arrow keys to scroll through the table.
+                </div>
                 <div class="sticky-table__container" tabindex="0">
-                    <table                         aria-labelledby="sticky-table__caption"
+                    <table
+                        aria-labelledby="sticky-table__caption"
+                        aria-describedby="sticky-table__instructions"
                     >
                     <thead>
                         <tr>
@@ -4152,6 +4160,11 @@
                         "If you want more information about how this works, please read the excellent article",
                         "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>"
                     ]
+                },
+                {
+                    "label": "Set tabindex=\"0\" on the table's container element",
+                    "highlight": "tabindex=\"0\"",
+                    "notes": "This is to ensure that keyboard users can scroll through the data without the use of a mouse."
                 }
 
             ]
