@@ -30,6 +30,9 @@ const Switch = new function () {
 
         if (switchEl) {
             el = switchEl;
+        } else {
+            // Element clicked was not a switch. Bailing.
+            return;
         }
 
         if (el.getAttribute('role', 'switch')) {

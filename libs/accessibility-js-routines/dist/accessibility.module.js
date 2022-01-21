@@ -212,7 +212,7 @@ const a11yGroup = function(el, options) {
 
       if (!allowTabbing) {
         if (checkedState === 'true') {
-          currentEl.removeAttribute('tabIndex');
+          currentEl.setAttribute('tabIndex', '0');
         } else {
           currentEl.setAttribute('tabIndex', '-1');
         }
