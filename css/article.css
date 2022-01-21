@@ -69,8 +69,9 @@ figcaption {
   caption:after,
   .caption:after,
   figcaption:after {
+    /* This is the squiggly line PNG used to decorate the caption */
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAQCAYAAAC4LkmaAAACLElEQVR42uzXAwhdcRTH8dm2bdu2bdtptm3b3sLsLc1WnG3bZ9/qVM/2e6c+1/r/rqOISIQLPLmxSHBUA0xAnFBqLBVV+xnQHRtxDS/xFndwCM2dDo6ai3+4gBdIFAKB5Uc3bMMHiLqH49iMVdiEE/iibW/mUHBUAXxGGh2fh0FeblQqtMUwjEMnZPXQtjviJj5C1CG0QlokQSyTdWLpMY2AYKojwXXCaoPxLFjg4aASIh/G4DHExD/tX0NlRHNi23GRFxPwB4JXOIX2LhxrfXxHTXvB9cIMg/GCaOGhwApgvgYi6jV2YyxaoApKoyyaYjbGIY6dbafHKJyGqANojWxuHndn3LYXXF1cMxiv5O7DGFVxCYK/eIYJyGiybGpEtXKFZjXZZnTE0LCvGFypXzALST1w3Cm0nxgPUd5WcEnwGfXc3HE5Dec+BHexEJVtrJMb49EDhTTIZEiHfKiH/liEUxD1EOvQyIOPk0KGGVA7MdPeW3UAPiCjkzuLicHakJ8QnEVpJHBwG4kwC4LPeIf3OvzL5Dm4GSWREFE9/BxegVIG49uxyJHvuB24i+KIbaOROdESeyDqETYhnxsHngLjcASXcBlHMR3VfPD5shL9dDgpnqCiI8HFxFyIHvQC9MdQLMR+3MQPCP5gDeogbQh89+XDZyzHDRx26peLyo7j+IZf+Inv+KrBzcb/mQ/HLhW0Rv4ASSSYnQBSyi8ZIJYeiJ7EaCd/NOBGMQAC8O/gL/6CHwAAAABJRU5ErkJggg==);
     display: inline-block;
-    content: url(../images/squiggly.png);
     position: absolute;
     margin: 0 1em;
     top: 3px;
