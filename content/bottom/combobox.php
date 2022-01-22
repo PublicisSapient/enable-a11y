@@ -1,7 +1,7 @@
 <script type="module">
-    import enableComboboxes from "./js/modules/combobox__improved.js";
+    import comboboxes from "./js/modules/combobox.js";
 
-    enableComboboxes.init();
+    comboboxes.init();
 </script>
 <script>
         const autocompleteSubmit = new function () {

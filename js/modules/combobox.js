@@ -18,7 +18,7 @@
 
 import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js";
 
-const EnableCombobox = function(componentRoot) {
+const Combobox = function(componentRoot) {
   let root = null,
     form = null,
     field = null,
@@ -411,11 +411,11 @@ const EnableCombobox = function(componentRoot) {
   this.initCombo(componentRoot);
 };
 
-const enableComboboxes = new function() {
+const comboboxes = new function() {
   this.list = [];
 
   this.add = ($root) => {
-    this.list.push(new EnableCombobox($root));
+    this.list.push(new Combobox($root));
   }
 
   this.init = () => {
@@ -428,4 +428,4 @@ const enableComboboxes = new function() {
 }
 
 
-export default enableComboboxes;
+export default comboboxes;

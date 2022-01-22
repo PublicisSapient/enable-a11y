@@ -24,7 +24,7 @@ const checkbox = new function () {
       if (
         evt.type === "click" ||
         evt.key === ' ' ||
-        evt.keyCode === 'Enter'
+        evt.key === 'Enter'
       ) {
 
         if (ref) {

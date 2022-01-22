@@ -5,7 +5,7 @@ const progressTest = new function () {
 
     this.init = function () {
         const progressEls = document.querySelectorAll('progress, [role="progressbar"]');
-        progressEls.forEach((el, index) => {
+        progressEls.forEach((el) => {
             const next = el.nextElementSibling;
             const nextClassList = next && next.classList;
 

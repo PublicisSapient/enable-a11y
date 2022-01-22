@@ -6,7 +6,7 @@
   "exports": {
     ".": "./js/modules/index.js",
     "./ablePlayerCustomizations": "./js/modules/ablePlayerCustomizations.js",
-    "./combobox__improved": "./js/modules/combobox__improved.js",
+    "./combobox": "./js/modules/combobox.js",
     "./enable-animatedGif": "./js/modules/enable-animatedGif.js",
     "./enable-carousel": "./js/modules/enable-carousel.js",
     "./enable-drawer": "./js/modules/enable-drawer.js",

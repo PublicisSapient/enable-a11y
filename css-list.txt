@@ -6,7 +6,7 @@ css/article.css
 css/bottom-fixed-nav.css
 css/button.css
 css/checkbox.css
-css/combobox__improved.css
+css/combobox.css
 css/date.css
 css/definition-term.css
 css/deque-table-sortable.css
