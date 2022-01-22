@@ -67,7 +67,7 @@ jsdoc
 template.php (it's referenced in interpolate.js)
 readmore.php
 NPM accessibility
-radiogroup vs radio-and-checkbox-roles ??? 
+radiogroup vs checkbox ??? 
 
 send permission emails.
 

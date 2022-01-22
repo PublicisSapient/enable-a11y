@@ -103,7 +103,7 @@
                 },
                 {
                     "label": "Add JavaScript to make the checkbox functional",
-                    "highlight": "%FILE% js/modules/radio-and-checkbox-roles.js"
+                    "highlight": "%FILE% js/modules/checkbox.js"
                 }
             ]
         }

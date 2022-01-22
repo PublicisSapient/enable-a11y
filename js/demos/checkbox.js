@@ -1,5 +1,5 @@
 import showcode from '../libs/showcode.js';
-import ariaRadioCheckboxShim from '../modules/radio-and-checkbox-roles.js';
+import checkbox from '../modules/checkbox.js';
 
-console.log(ariaRadioCheckboxShim);
-showcode.addJsObj('ariaRadioCheckboxShim', ariaRadioCheckboxShim);
+console.log(checkbox);
+showcode.addJsObj('checkbox', checkbox);

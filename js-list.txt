@@ -29,7 +29,7 @@ js/shared/enable-visible-on-focus.js MODULE DONE
 js/shared/form.js DEMO
 js/shared/interpolate.js MODULE DONE
 js/shared/polyfills.js TMP DELETED
-js/shared/radio-and-checkbox-roles.js MODULE DONE
+js/shared/checkbox.js MODULE DONE
 js/shared/radiogroup.js MODULE DONE
 js/shared/switch.js MODULE DONE
 js/shared/tooltip.js MODULE DONE

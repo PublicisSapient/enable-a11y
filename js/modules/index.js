@@ -12,7 +12,7 @@ import { interpolate, htmlToDomNode } from "interpolate.js";
 import offscreenObserver from "offscreen-observer.js";
 import paginationTable from "paginate.js";
 import { pauseAnimControl, PauseAnimControlDef } from "pause-anim-control.js";
-import ariaRadioCheckboxShim from "radio-and-checkbox-roles.js";
+import checkbox from "checkbox.js";
 import radiogroup from "radiogroup.js";
 import readMore from "read-more.js";
 import sortableTables from "sortable-table.js";

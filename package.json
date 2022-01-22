@@ -17,7 +17,7 @@
     "./interpolate": "./js/modules/interpolate.js",
     "./paginate": "./js/modules/paginate.js",
     "./pause-anim-control": "./js/modules/pause-anim-control.js",
-    "./radio-and-checkbox-roles": "./js/modules/radio-and-checkbox-roles.js",
+    "./checkbox": "./js/modules/checkbox.js",
     "./radiogroup": "./js/modules/radiogroup.js",
     "./read-more": "./js/modules/read-more.js",
     "./sortable-table": "./js/modules/sortable-table.js",
