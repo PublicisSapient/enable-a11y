@@ -13,6 +13,8 @@
                     drawer is opened.
                 </li>
                 <li>
+                    Chrome with Voiceover report "Disclosure triangle" as the role, which is odd.
+                <li>
                     Chromevox doesn't indicate that the <code>summary</code> is
                     expandable when it gains keyboard focus
                 </li>

@@ -8,10 +8,6 @@
   margin: 0.25rem 0.5rem 0.25rem 0.25rem;
   border: 0.0625rem solid #444;
   background: #e0e0e0;
-  background-image: -webkit-linear-gradient(90deg, #ffffff, #e0e0e0);
-  background-image: -moz-linear-gradient(90deg, #ffffff, #e0e0e0);
-  background-image: -ms-linear-gradient(90deg, #ffffff, #e0e0e0);
-  background-image: -o-linear-gradient(90deg, #ffffff, #e0e0e0);
   background-image: linear-gradient(0deg, #ffffff, #e0e0e0);
   vertical-align: bottom;
 }

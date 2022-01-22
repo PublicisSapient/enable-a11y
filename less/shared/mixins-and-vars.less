@@ -36,7 +36,8 @@
   @prefix: extract(@prefixes, @index);
   @dir-old: 90 - (@dir);
 
-  background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  // We don't need this anymore, but I don't want to refactor all the code yet to not use the mixin.
+  // background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
   & when ( @index = length(@prefixes) ) {
     background-image: ~"@{type}-gradient(@{dir}, @{colors})";
   }

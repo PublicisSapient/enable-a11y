@@ -17,7 +17,7 @@
     cursor: default;
     width: 100%;
     text-align: left;
-    background-image: url("../images/plus.svg");
+    background-image: data-uri('../images/plus.svg');
     background-size: (20/@px) (20/@px);
     background-repeat: no-repeat;
     background-position: 0px 5px;
@@ -44,7 +44,7 @@
 
   &__drawer[open] &__button,
   & &__button[aria-expanded="true"] { 
-      background-image: url('../images/minus.svg');
+      background-image: data-uri('../images/minus.svg');
   }
 }
 
