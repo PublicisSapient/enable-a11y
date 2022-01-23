@@ -376,7 +376,7 @@ const Combobox = function(componentRoot) {
     const resetAriaDesc = resetButton.getAttribute('aria-describedby');
 
     // Events
-    form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
+    form && form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
 
     controlsContainer.addEventListener("keyup", keyUpHandler, true);
     controlsContainer.addEventListener("keydown", keyDownHandler, true);

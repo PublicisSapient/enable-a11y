@@ -20,96 +20,97 @@
         <p>Here is a standard autocomplete example using ARIA.</p>
 
         <div class="enable-example">
-        <form>
             <div id="example1" class="enable-combobox">
-                <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
-                <div class="enable-combobox__inner-container">
-                    <div class="enable-combobox__controls-container">
-                        <div role="status" aria-atomic="true"></div>
-                        <input type="text" id="aria-fruit" aria-describedby="aria-fruit__desc" role="combobox"
-                            aria-autocomplete="list" aria-owns="aria-fruit__list" aria-expanded="false"
-                            autocomplete="off" autocorrect="off" autocapitalize="off" required >
-                        <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset"
-                            aria-describedby="aria-fruit__label">
-                            <img class="enable-combobox__reset-button-image" src="images/close-window.svg"
-                                alt="Clear" >
-                        </button>
+                <form>
+                    <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
+                    <div class="enable-combobox__inner-container">
+                        <div class="enable-combobox__controls-container">
+                            <div role="status" aria-atomic="true"></div>
+                            <input type="text" id="aria-fruit" aria-describedby="aria-fruit__desc" role="combobox"
+                                aria-autocomplete="list" aria-owns="aria-fruit__list" aria-expanded="false"
+                                autocomplete="off" autocorrect="off" autocapitalize="off" required >
+                            <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset"
+                                aria-describedby="aria-fruit__label">
+                                <img class="enable-combobox__reset-button-image" src="images/close-window.svg"
+                                    alt="Clear" >
+                            </button>
 
-                        
-                        <ul role="listbox" id="aria-fruit__list" tabindex="-1" hidden>
-                            <li tabindex="-1" role="option" >Apple</li>
-                            <li tabindex="-1" role="option" >Artichoke</li>
-                            <li tabindex="-1" role="option" >Asparagus</li>
-                            <li tabindex="-1" role="option" >Banana</li>
-                            <li tabindex="-1" role="option" >Beets</li>
-                            <li tabindex="-1" role="option" >Bell pepper</li>
-                            <li tabindex="-1" role="option" >Broccoli</li>
-                            <li tabindex="-1" role="option" >Brussels sprout</li>
-                            <li tabindex="-1" role="option" >Cabbage</li>
-                            <li tabindex="-1" role="option" >Carrot</li>
-                            <li tabindex="-1" role="option" >Cauliflower</li>
-                            <li tabindex="-1" role="option" >Celery</li>
-                            <li tabindex="-1" role="option" >Chard</li>
-                            <li tabindex="-1" role="option" >Chicory</li>
-                            <li tabindex="-1" role="option" >Corn</li>
-                            <li tabindex="-1" role="option" >Cucumber</li>
-                            <li tabindex="-1" role="option" >Daikon</li>
-                            <li tabindex="-1" role="option" >Date</li>
-                            <li tabindex="-1" role="option" >Edamame</li>
-                            <li tabindex="-1" role="option" >Eggplant</li>
-                            <li tabindex="-1" role="option" >Elderberry</li>
-                            <li tabindex="-1" role="option" >Fennel</li>
-                            <li tabindex="-1" role="option" >Fig</li>
-                            <li tabindex="-1" role="option" >Garlic</li>
-                            <li tabindex="-1" role="option" >Grape</li>
-                            <li tabindex="-1" role="option" >Honeydew melon</li>
-                            <li tabindex="-1" role="option" >Iceberg lettuce</li>
-                            <li tabindex="-1" role="option" >
-                                Jerusalem artichoke
-                            </li>
-                            <li tabindex="-1" role="option" >Kale</li>
-                            <li tabindex="-1" role="option" >Kiwi</li>
-                            <li tabindex="-1" role="option" >Leek</li>
-                            <li tabindex="-1" role="option" >Lemon</li>
-                            <li tabindex="-1" role="option" >Mango</li>
-                            <li tabindex="-1" role="option" >Mangosteen</li>
-                            <li tabindex="-1" role="option" >Melon</li>
-                            <li tabindex="-1" role="option" >Mushroom</li>
-                            <li tabindex="-1" role="option" >Nectarine</li>
-                            <li tabindex="-1" role="option" >Okra</li>
-                            <li tabindex="-1" role="option" >Olive</li>
-                            <li tabindex="-1" role="option" >Onion</li>
-                            <li tabindex="-1" role="option" >Orange</li>
-                            <li tabindex="-1" role="option" >Parship</li>
-                            <li tabindex="-1" role="option" >Pea</li>
-                            <li tabindex="-1" role="option" >Pear</li>
-                            <li tabindex="-1" role="option" >Pineapple</li>
-                            <li tabindex="-1" role="option" >Potato</li>
-                            <li tabindex="-1" role="option" >Pumpkin</li>
-                            <li tabindex="-1" role="option" >Quince</li>
-                            <li tabindex="-1" role="option" >Radish</li>
-                            <li tabindex="-1" role="option" >Rhubarb</li>
-                            <li tabindex="-1" role="option" >Shallot</li>
-                            <li tabindex="-1" role="option" >Spinach</li>
-                            <li tabindex="-1" role="option" >Squash</li>
-                            <li tabindex="-1" role="option" >Strawberry</li>
-                            <li tabindex="-1" role="option" >Sweet potato</li>
-                            <li tabindex="-1" role="option" >Tomato</li>
-                            <li tabindex="-1" role="option" >Turnip</li>
-                            <li tabindex="-1" role="option" >Ugli fruit</li>
-                            <li tabindex="-1" role="option" >Victoria plum</li>
-                            <li tabindex="-1" role="option" >Watercress</li>
-                            <li tabindex="-1" role="option" >Watermelon</li>
-                            <li tabindex="-1" role="option" >Yam</li>
-                            <li tabindex="-1" role="option" >Zucchi</li>
-                        </ul>
-                    </div>
-                    <div class="sr-only" id="aria-fruit__desc">
-                        As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
-                    </div>
+                            
+                            <ul role="listbox" id="aria-fruit__list" tabindex="-1" hidden>
+                                <li tabindex="-1" role="option" >Apple</li>
+                                <li tabindex="-1" role="option" >Artichoke</li>
+                                <li tabindex="-1" role="option" >Asparagus</li>
+                                <li tabindex="-1" role="option" >Banana</li>
+                                <li tabindex="-1" role="option" >Beets</li>
+                                <li tabindex="-1" role="option" >Bell pepper</li>
+                                <li tabindex="-1" role="option" >Broccoli</li>
+                                <li tabindex="-1" role="option" >Brussels sprout</li>
+                                <li tabindex="-1" role="option" >Cabbage</li>
+                                <li tabindex="-1" role="option" >Carrot</li>
+                                <li tabindex="-1" role="option" >Cauliflower</li>
+                                <li tabindex="-1" role="option" >Celery</li>
+                                <li tabindex="-1" role="option" >Chard</li>
+                                <li tabindex="-1" role="option" >Chicory</li>
+                                <li tabindex="-1" role="option" >Corn</li>
+                                <li tabindex="-1" role="option" >Cucumber</li>
+                                <li tabindex="-1" role="option" >Daikon</li>
+                                <li tabindex="-1" role="option" >Date</li>
+                                <li tabindex="-1" role="option" >Edamame</li>
+                                <li tabindex="-1" role="option" >Eggplant</li>
+                                <li tabindex="-1" role="option" >Elderberry</li>
+                                <li tabindex="-1" role="option" >Fennel</li>
+                                <li tabindex="-1" role="option" >Fig</li>
+                                <li tabindex="-1" role="option" >Garlic</li>
+                                <li tabindex="-1" role="option" >Grape</li>
+                                <li tabindex="-1" role="option" >Honeydew melon</li>
+                                <li tabindex="-1" role="option" >Iceberg lettuce</li>
+                                <li tabindex="-1" role="option" >
+                                    Jerusalem artichoke
+                                </li>
+                                <li tabindex="-1" role="option" >Kale</li>
+                                <li tabindex="-1" role="option" >Kiwi</li>
+                                <li tabindex="-1" role="option" >Leek</li>
+                                <li tabindex="-1" role="option" >Lemon</li>
+                                <li tabindex="-1" role="option" >Mango</li>
+                                <li tabindex="-1" role="option" >Mangosteen</li>
+                                <li tabindex="-1" role="option" >Melon</li>
+                                <li tabindex="-1" role="option" >Mushroom</li>
+                                <li tabindex="-1" role="option" >Nectarine</li>
+                                <li tabindex="-1" role="option" >Okra</li>
+                                <li tabindex="-1" role="option" >Olive</li>
+                                <li tabindex="-1" role="option" >Onion</li>
+                                <li tabindex="-1" role="option" >Orange</li>
+                                <li tabindex="-1" role="option" >Parship</li>
+                                <li tabindex="-1" role="option" >Pea</li>
+                                <li tabindex="-1" role="option" >Pear</li>
+                                <li tabindex="-1" role="option" >Pineapple</li>
+                                <li tabindex="-1" role="option" >Potato</li>
+                                <li tabindex="-1" role="option" >Pumpkin</li>
+                                <li tabindex="-1" role="option" >Quince</li>
+                                <li tabindex="-1" role="option" >Radish</li>
+                                <li tabindex="-1" role="option" >Rhubarb</li>
+                                <li tabindex="-1" role="option" >Shallot</li>
+                                <li tabindex="-1" role="option" >Spinach</li>
+                                <li tabindex="-1" role="option" >Squash</li>
+                                <li tabindex="-1" role="option" >Strawberry</li>
+                                <li tabindex="-1" role="option" >Sweet potato</li>
+                                <li tabindex="-1" role="option" >Tomato</li>
+                                <li tabindex="-1" role="option" >Turnip</li>
+                                <li tabindex="-1" role="option" >Ugli fruit</li>
+                                <li tabindex="-1" role="option" >Victoria plum</li>
+                                <li tabindex="-1" role="option" >Watercress</li>
+                                <li tabindex="-1" role="option" >Watermelon</li>
+                                <li tabindex="-1" role="option" >Yam</li>
+                                <li tabindex="-1" role="option" >Zucchi</li>
+                            </ul>
+                        </div>
+                        <div class="sr-only" id="aria-fruit__desc">
+                            As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
+                        </div>
+
+                    </form>
                 </div>
             </div>
-        </form>
 </div>
 
         
