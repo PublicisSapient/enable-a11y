@@ -4,6 +4,10 @@ alert.php: output tag.
 pausable animated GIF respecting global pause button
 bin - CORS.
 
+slider - documentation rewrite to talk about initial HTML onload.
+
+match names of CSS, JS, classes and exports.
+disabled button bug in paginate.js
 
 SEPERATE tasks with Cgi-bin
 

@@ -43,7 +43,7 @@ const paginationTables = new(function() {
   const previousButtonClass = 'pagination__pager-item--previous';
   const nextButtonClass = 'pagination__pager-item--next';
 
-  const mobileMq = window.getComputedStyle($pagers[0]).getPropertyValue('--mobile-mq');
+  const mobileMq = ($pagers && $pagers[0]) ? window.getComputedStyle($pagers[0]).getPropertyValue('--mobile-mq') : null;
   const mobileMql = window.matchMedia(mobileMq);
 
 
@@ -51,6 +51,10 @@ const paginationTables = new(function() {
   const buttonTemplate = $buttonTemplate.innerHTML;
 
   this.add = ($table) => {
+    if ($pagers.length === 0) {
+      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
+    }
+
     perPage = parseInt($table.dataset.pagecount);
     renderPaginationButtons($table, 0);
     createTableMeta($table);
