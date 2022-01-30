@@ -2,7 +2,7 @@
 
 /* eslint-disable no-unused-vars */
 import { ablePlayerCustomizations, AblePlayerInstances } from "ablePlayerCustomizations.js";
-import enableComboboxes from "combobox__improved.js";
+import enableComboboxes from "combobox.js";
 import animatedGifPause from "enable-animatedGif.js";
 import EnableCarousel from "enable-carousel.js";
 import enableListbox from "enable-listbox.js";

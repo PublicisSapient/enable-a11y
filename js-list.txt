@@ -6,7 +6,7 @@ js/ablePlayerCustomizations.js MODULE DONE
 js/accessibility.js NPM DONE
 js/accessible-text-svg.js DEMO DONE
 js/alert.js DEMO DONE
-js/combobox__improved.js MODULE DONE
+js/combobox.js MODULE DONE
 js/demos/ana-tudor/elastic-collision.js DEMO DONE
 js/dialog-example.js DEMO DONE
 js/enable-slider.js MODULE DONE

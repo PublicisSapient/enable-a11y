@@ -1,4 +1,4 @@
-<script src="js/modules/combobox__improved.js" type="module"></script>
+<script src="js/modules/combobox.js" type="module"></script>
 <script>
         const autocompleteSubmit = new function () {
             this.init = () => {
