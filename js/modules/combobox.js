@@ -18,7 +18,10 @@
 
 import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js";
 
-const Combobox = function(componentRoot) {
+
+
+
+const EnableCombobox = function(componentRoot) {
   let root = null,
     form = null,
     field = null,
@@ -376,7 +379,7 @@ const Combobox = function(componentRoot) {
     const resetAriaDesc = resetButton.getAttribute('aria-describedby');
 
     // Events
-    form && form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
+    form.addEventListener("submit", submitHandler); // Search on iOS "Go" button.
 
     controlsContainer.addEventListener("keyup", keyUpHandler, true);
     controlsContainer.addEventListener("keydown", keyDownHandler, true);
@@ -411,21 +414,18 @@ const Combobox = function(componentRoot) {
   this.initCombo(componentRoot);
 };
 
-const comboboxes = new function() {
+const enableComboboxes = new function() {
   this.list = [];
-
-  this.add = ($root) => {
-    this.list.push(new Combobox($root));
-  }
 
   this.init = () => {
     const $roots = document.querySelectorAll('.enable-combobox');
 
     for (let i = 0; i < $roots.length; i++) {
-      this.add($roots[i]);
+      this.list.push(new EnableCombobox($roots[i]));
     }
   }
 }
 
+enableComboboxes.init();
 
-export default comboboxes;
+export default enableComboboxes;
