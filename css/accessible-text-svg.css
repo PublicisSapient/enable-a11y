@@ -1,0 +1,55 @@
+body {
+  --text-zoom-factor: 1;
+}
+#accessible-text-svg-demo__text {
+  fill: black;
+  stroke-width: 2px;
+  font-size: calc(54px * var(--text-zoom-factor));
+  font-family: "Georgia", "Times New Roman", serif;
+  panose-1: 0 0 0 0 0 0 0 0 0 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+#accessible-text-svg-demo__svgTextPath2 {
+  transform: translateY(-50px);
+}
+#accessible-text-svg-demo__svg {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  transform: translateY(-4px);
+}
+#accessible-text-svg-demo__intro-text {
+  font-size: calc(54px * var(--text-zoom-factor));
+  z-index: 2;
+  color: black;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
+  dominant-baseline: hanging;
+}
+#accessible-text-svg-demo__shape-container {
+  position: relative;
+  width: 1024px;
+  height: 62.7vw;
+  overflow: hidden;
+}
+#accessible-text-svg-demo__shape-container,
+#accessible-text-svg-demo__roller-coaster-image {
+  width: 100%;
+}
+#accessible-text-svg-demo__roller-coaster-image {
+  left: 0px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+#accessible-text-svg-demo__control {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  cursor: pointer;
+  padding: 10px;
+}
+#accessible-text-svg-demo__svg-text-path {
+  offset-distance: 50%;
+}

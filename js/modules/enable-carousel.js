@@ -88,10 +88,6 @@ const EnableCarousel = function (container) {
       });
     }
   };
-
-  this.init();
 }
-
-new EnableCarousel(document.querySelector(".glider"));
 
 export default EnableCarousel;

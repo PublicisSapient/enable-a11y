@@ -1,0 +1,135 @@
+input[type="submit"] {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+input[type="submit"] {
+  margin-bottom: 1em;
+}
+.form-heading {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  border-bottom: 2px black solid;
+}
+fieldset,
+.fieldset,
+[role="radiogroup"] {
+  padding: 0.5em;
+  margin-top: 1em;
+  padding-top: 2em;
+  background-color: #eeeeee;
+}
+fieldset legend,
+.fieldset legend,
+[role="radiogroup"] legend,
+fieldset .legend,
+.fieldset .legend,
+[role="radiogroup"] .legend {
+  position: relative;
+  top: 1.5em;
+  border-color: #aaaaaa;
+  font-weight: bold;
+  font-size: 1em;
+}
+fieldset .legend,
+.fieldset .legend,
+[role="radiogroup"] .legend {
+  top: -1.5em;
+  margin-bottom: -1em;
+}
+.annotate {
+  font-style: italic;
+  color: #366ED4;
+}
+.enable-example fieldset {
+  margin-top: -0.5em;
+}
+.enable-listbox {
+  padding: 20px;
+  background: #eee;
+  border: 1px solid #aaa;
+}
+.enable-listbox__left-area,
+.enable-listbox__right-area {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  width: 50%;
+}
+.enable-listbox__left-area {
+  padding-right: 10px;
+}
+.enable-listbox__right-area {
+  padding-left: 10px;
+}
+.enable-listbox [role="listbox"] {
+  min-height: 18em;
+  padding: 0px;
+  background: white;
+  border: 1px solid #aaa;
+  border-top: 0;
+  max-height: 10em;
+  overflow-y: auto;
+  position: absolute;
+  margin: 0;
+  width: 9.25rem;
+  z-index: 2;
+}
+.enable-listbox [role="option"] {
+  display: block;
+  padding: 0 1em;
+  position: relative;
+  line-height: 1.8em;
+}
+.enable-listbox [role="option"]:focus {
+  background: #bde4ff;
+}
+.enable-listbox [role="option"][aria-selected] {
+  padding-left: 1.5em;
+}
+.enable-listbox [role="option"][aria-selected="true"]::before {
+  position: absolute;
+  left: 0.5em;
+}
+@supports (content: "x" / "y") {
+  .enable-listbox [role="option"][aria-selected="true"]::before {
+    content: "✓" / "";
+  }
+}
+@supports not (content: "x" / "y") {
+  .enable-listbox [role="option"][aria-selected="true"]::before {
+    content: "✓";
+    alt: "";
+  }
+}
+.enable-listbox button {
+  border-radius: 0;
+  font-size: 16px;
+  text-align: left;
+  padding: 5px 10px;
+  width: 9.375rem;
+  position: relative;
+}
+.enable-listbox button[aria-disabled="true"] {
+  opacity: 0.5;
+}
+.enable-listbox button::after {
+  content: url('data:image/svg+xml;utf8,<svg width="15.277" height="10" viewBox="0 0 4.042 2.646" xmlns="http://www.w3.org/2000/svg"><path d="M5.41 1.007a.151.151 0 0 0-.135-.085h-3.74a.151.151 0 0 0-.118.245l1.87 2.344a.15.15 0 0 0 .235 0l1.87-2.344a.15.15 0 0 0 .019-.16z" style="stroke-width:.0138559;" transform="translate(-1.384 -.922)"/></svg>');
+  color: #333;
+  position: absolute;
+  right: 0.3125rem;
+  top: 0.1875rem;
+  font-size: 1rem;
+  transform: scale(0.7);
+}
+.enable-listbox button[aria-expanded="true"]::after {
+  transform: scaleX(0.7) scaleY(-0.7);
+  top: 0.3125rem;
+}
+.enable-listbox .hidden {
+  display: none;
+}

@@ -76,8 +76,9 @@ const animatedGifPause = new function () {
             this.setSummaryAriaLabel(summaryPauseEls[i]);
         }
     }
+
+    this.init();
 }
 
-animatedGifPause.init();
 
 export default animatedGifPause;

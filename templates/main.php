@@ -26,8 +26,9 @@
     ?>
   </main>
 
-    <?php getBottomBodyTags() ?>
     <?php include "includes/example-footer.php"?>
+
+    <?php getBottomBodyTags() ?>
 </body>
 
 </html>

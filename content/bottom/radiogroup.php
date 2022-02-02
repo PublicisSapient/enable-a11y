@@ -1,1 +1,5 @@
-<script src="js/demos/radiogroup.js" type="module"></script>
+<script type="module">
+    import radiogroups from "./js/modules/radiogroup.js";
+
+    radiogroups.init();
+</script>

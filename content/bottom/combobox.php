@@ -1,4 +1,8 @@
-<script src="js/modules/combobox.js" type="module"></script>
+<script type="module">
+    import comboboxes from "./js/modules/combobox.js";
+
+    comboboxes.init();
+</script>
 <script>
         const autocompleteSubmit = new function () {
             this.init = () => {

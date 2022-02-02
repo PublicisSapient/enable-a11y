@@ -170,8 +170,6 @@ const enableVisibleOnFocus = new (function () {
       destinationLink.focus();
     }
   };
-
-  this.init();
 })();
 
 export default enableVisibleOnFocus;

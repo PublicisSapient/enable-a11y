@@ -17,24 +17,27 @@
 
 import accessibility from '../../libs/accessibility-js-routines/dist/accessibility.module.js';
 
-const radiogroup = new function () {
+const radiogroups = new function () {
 
     this.init = function () {
         this.radioGroupEls = document.querySelectorAll('.enable-custom-radiogroup');
 
         for (let i=0; i<this.radioGroupEls.length; i++) {
-            accessibility.initGroup(
-                this.radioGroupEls[i],
-                {
-                    doKeyChecking: true,
-                    activatedEventName: 'enable-checked',
-                    deactivatedEventName: 'enable-unchecked'
-                }
-            );
+            this.add(this.radioGroupEls[i]);
         }
 
     }
-}
-radiogroup.init();
 
-export default radiogroup;
+    this.add = ($radioGroupEl) => {
+        accessibility.initGroup(
+            $radioGroupEl,
+            {
+                doKeyChecking: true,
+                activatedEventName: 'enable-checked',
+                deactivatedEventName: 'enable-unchecked'
+            }
+        );
+    }
+}
+
+export default radiogroups;

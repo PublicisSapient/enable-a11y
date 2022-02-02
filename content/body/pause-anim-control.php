@@ -59,8 +59,8 @@
                 The control to pause the animations must be structured the following way:
             </p>
 
-            <?php includeShowcode("checkbox-container", "", "", "", "", false)?>
-            <script type="application/json" id="checkbox-container-props">
+            <?php includeShowcode("enable-pause-control", "", "", "", "", false)?>
+            <script type="application/json" id="enable-pause-control-props">
             {
                 "replaceHtmlRules": {},
                 "steps": [{

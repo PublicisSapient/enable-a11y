@@ -37,7 +37,7 @@ nodeFiles.forEach((fullPath) => {
     if (err) {
       throw err;
     } else {
-      console.log(`${fullPath} was copied to js/libs`);
+      console.log(`${fullPath} was copied to ${newPath}`);
     }
   })
 });

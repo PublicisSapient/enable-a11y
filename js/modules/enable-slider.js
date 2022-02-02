@@ -839,34 +839,38 @@ const enableSlider = function(
 const enableSliders = new(function() {
   this.list = [];
 
+  this.add = ($root) => {
+    const { min, max, inc, jump, showVals, range, val1, val2 } =
+    $root.dataset;
+
+    if (!$root.id) {
+      $root.id = "enable-slider__" + i;
+    }
+
+    this.list.push(
+      new enableSlider(
+        $root.id,
+        $root.classList.contains("enable-slider--vertical"),
+        parseFloat(min),
+        parseFloat(max),
+        parseFloat(inc),
+        parseFloat(jump),
+        showVals === "true",
+        range === "true",
+        parseFloat(val1),
+        parseFloat(val2)
+      )
+    );
+  }
+
   this.init = () => {
     const $roots = document.querySelectorAll(".enable-slider");
 
     for (let i = 0; i < $roots.length; i++) {
       const $root = $roots[i];
-      const { min, max, inc, jump, showVals, range, val1, val2 } =
-      $root.dataset;
-
-      if (!$root.id) {
-        $root.id = "enable-slider__" + i;
-      }
-
-      this.list.push(
-        new enableSlider(
-          $root.id,
-          $root.classList.contains("enable-slider--vertical"),
-          parseFloat(min),
-          parseFloat(max),
-          parseFloat(inc),
-          parseFloat(jump),
-          showVals === "true",
-          range === "true",
-          parseFloat(val1),
-          parseFloat(val2)
-        )
-      );
+      this.add($root);
     }
   };
 })();
 
-enableSliders.init();
+export default enableSliders;

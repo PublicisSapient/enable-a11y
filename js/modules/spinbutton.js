@@ -13,6 +13,11 @@
 function spinbutton(el) {
 
   const id = el.id;
+
+  if (!id) {
+    console.error('Element has no ID passed. Bailing');
+    return;
+  }
   const liveID = id + '__live';
   const upID = id + '__up';
   const downID = id + '__down';
@@ -90,24 +95,14 @@ function spinbutton(el) {
     const thisObj = this;
 
     //////// bind mouse event handlers to the up button //////////////
-    this.$upButton.addEventListener("mousedown", thisObj.handleMouseDown);
-    this.$upButton.addEventListener("mouseup", thisObj.handleMouseUp);
-    this.$upButton.addEventListener("mouseenter", thisObj.handleMouseEnter);
-    this.$upButton.addEventListener("mouseout", thisObj.handleMouseOut);
     this.$upButton.addEventListener("click", thisObj.handleClick);
 
     //////// bind mouse event handlers to the down button //////////////
-    this.$downButton.addEventListener("mousedown", thisObj.handleMouseDown);
-    this.$downButton.addEventListener("mouseup", thisObj.handleMouseUp);
-    this.$downButton.addEventListener("mouseenter", thisObj.handleMouseEnter);
-    this.$downButton.addEventListener("mouseout", thisObj.handleMouseOut);
-    this.$downButton.addEventListener("focus", thisObj.handleFocus);
     this.$downButton.addEventListener("click", thisObj.handleClick);
 
     //////// bind event handlers to the spinbutton //////////////
     this.$el.addEventListener("keydown", thisObj.handleKeyDown);
     this.$el.addEventListener("keypress", thisObj.handleKeyPress);
-    this.$el.addEventListener("focus", thisObj.handleFocus);
     this.$el.addEventListener("blur", thisObj.handleBlur);
     this.$el.parentNode.addEventListener("focusout", thisObj.handleBlur);
   }; // end bindHandlers()
@@ -143,125 +138,7 @@ function spinbutton(el) {
     return false;
   }; // end handleClick()
 
-  //
-  // Function handleMouseDown() is a member function to handle mousedown events for the control
-  // buttons
-  //
-  // @param (e object) e is the event object
-  //
-  // @param ($button object) $button is the jQuery object of the button clicked
-  //
-  // @return (boolean) Returns false
-  //
-  this.handleMouseDown = (e) => {
-    const $button = e.currentTarget;
-    const $img = $button.querySelector("img");
-
-    if ($button.getAttribute("id") == this.upID) {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-up-pressed-hl.png'
-      );
-    } else {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-down-pressed-hl.png'
-      );
-    }
-
-    e.stopPropagation();
-    return false;
-  }; // end handleMouseDown()
-
-  //
-  // Function handleMouseUp() is a member function to handle mouseup events for the control
-  // buttons
-  //
-  // @param (e object) e is the event object
-  //
-  // @param ($button object) $button is the jQuery object of the button clicked
-  //
-  // @return (boolean) Returns false
-  //
-  this.handleMouseUp = (e) => {
-    const $button = e.currentTarget;
-    const $img = $button.querySelector("img");
-
-    if ($button.getAttribute("id") == this.upID) {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-up-hl.png'
-      );
-    } else {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-down-hl.png'
-      );
-    }
-
-    e.stopPropagation();
-    return false;
-  }; // end handleMouseUp()
-
-  //
-  // Function handleMouseEnter() is a member function to handle mouseenter events for the control
-  // buttons
-  //
-  // @param (e object) e is the event object
-  //
-  // @param ($button object) $button is the jQuery object of the button
-  //
-  // @return (boolean) Returns false
-  //
-  this.handleMouseEnter = (e) => {
-    const $button = e.currentTarget;
-    const $img = $button.querySelector("img");
-
-    if ($button.getAttribute("id") == this.upID) {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-up-hl.png'
-      );
-    } else {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-down-hl.png'
-      );
-    }
-
-    e.stopPropagation();
-    return false;
-  }; // end handleMouseOutEnter()
-
-  //
-  // Function handleMouseOut() is a member function to handle mouseout events for the control
-  // buttons
-  //
-  // @param (e object) e is the event object
-  //
-  // @param ($button object) $button is the jQuery object of the button
-  //
-  // @return (boolean) Returns false
-  //
-  this.handleMouseOut = (e) => {
-    const $button = e.currentTarget;
-    const $img = $button.querySelector("img");
-
-    if ($button.getAttribute("id") == this.upID) {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-up.png'
-      );
-    } else {
-      $img.setAttribute(
-        'src',
-        'js/modules/images/spinbutton/button-arrow-down.png'
-      );
-    }
-
-    e.stopPropagation();
-    return false;
-  }; // end handleMouseOutUp()
+  
 
   this.stopPropagation = function (e) {
     e.stopPropagation();
@@ -382,42 +259,27 @@ function spinbutton(el) {
     return true;
   }; // end handleKeyPress()
 
-  //
-  // Function handleFocus() is a member function to handle focus events for the control.
-  //
-  // @param (e object) e is the event object
-  //
-  // @return (boolean) Returns true
-  //
-  this.handleFocus = () => {
-    // add the focus styling class to the control
-    this.$el.classList.add("focus");
-
-    return true;
-  }; // end handleFocus()
-
-  //
-  // Function handleBlur() is a member function to handle blur events for the control.
-  //
-  // @param (e object) e is the event object
-  //
-  // @return (boolean) Returns true
-  //
-  this.handleBlur = () => {
-    // Remove the focus styling class from the control
-    this.$el.classList.remove("focus");
-
-    return true;
-  }; // end handleBlur()
 
   this.init();
 }
 
-const spinbuttons = [];
-const els = document.getElementsByClassName('spinbutton');
+const spinbuttons = new function () {
+  const buttons = [];
 
-for (let i = 0; i < els.length; i++) {
-  spinbuttons[i] = new spinbutton(els[i]);
+  this.add = ($el) => {
+    buttons.push(new spinbutton($el));
+  }
+
+  this.init = () => {
+    const els = document.getElementsByClassName('spinbutton');
+
+    for (let i = 0; i < els.length; i++) {
+      this.add(els[i])
+    }
+  }
+  
 }
+
+
 
 export { spinbuttons, spinbutton };

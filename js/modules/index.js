@@ -2,7 +2,7 @@
 
 /* eslint-disable no-unused-vars */
 import { ablePlayerCustomizations, AblePlayerInstances } from "ablePlayerCustomizations.js";
-import enableComboboxes from "combobox.js";
+import comboboxes from "combobox.js";
 import animatedGifPause from "enable-animatedGif.js";
 import EnableCarousel from "enable-carousel.js";
 import enableListbox from "enable-listbox.js";
@@ -12,7 +12,7 @@ import { interpolate, htmlToDomNode } from "interpolate.js";
 import offscreenObserver from "offscreen-observer.js";
 import paginationTable from "paginate.js";
 import { pauseAnimControl, PauseAnimControlDef } from "pause-anim-control.js";
-import ariaRadioCheckboxShim from "radio-and-checkbox-roles.js";
+import checkbox from "checkbox.js";
 import radiogroup from "radiogroup.js";
 import readMore from "read-more.js";
 import sortableTables from "sortable-table.js";

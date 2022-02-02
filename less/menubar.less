@@ -17,7 +17,7 @@ ul[role="menubar"] {
   
   ul[role="menubar"] [role="separator"] {
     padding-top: 0.15em;
-    background-image: url('../images/separator.png');
+    background-image: data-uri('../images/separator.png');
     background-position: center;
     background-repeat: repeat-x;
   }
@@ -47,7 +47,7 @@ ul[role="menubar"] {
   }
   
   ul[role="menubar"] > li > a:after {
-    content: url('../images/down-arrow-brown.png');
+    content: data-uri('../images/down-arrow-brown.png');
     padding-left: .25em;
   }
   
@@ -68,6 +68,6 @@ ul[role="menubar"] {
   }
   
   ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]:after {
-    content: url('../images/right-arrow-brown.png');
+    content: data-uri('../images/right-arrow-brown.png');
     padding-right: 2em;
   }

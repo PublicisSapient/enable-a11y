@@ -585,12 +585,12 @@
       padding-right: 35px;
 
       &::after {
-        background-image: url("../images/chevron-down.svg");
+        background-image: data-uri('../images/chevron-down.svg');
       }
 
       &[aria-expanded="true"] {
         &::after {
-          background-image: url("../images/chevron-up.svg");
+          background-image: data-uri('../images/chevron-up.svg');
         }
       }
     }

@@ -135,7 +135,7 @@ article {
 aside,
 [role="complementary"] {
   display: block;
-  background: #ddd url("../../images/notepad-icon.svg") no-repeat 1em 1em;
+  background: #ddd data-uri('../../images/notepad-icon.svg') no-repeat 1em 1em;
   margin: 1em auto;
   padding: 1em 1em 1em calc(100px + 2em);
   min-height: (139 / @px);
@@ -150,7 +150,7 @@ aside,
     h2 {
       &::before {
         content: "";
-        background: url("../../images/notepad-icon.svg");
+        background: data-uri('../../images/notepad-icon.svg');
         width: 2rem;
         height: 2rem;
         display: inline-block;

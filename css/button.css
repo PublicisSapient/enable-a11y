@@ -1,0 +1,27 @@
+.button-container {
+  margin-bottom: 1rem;
+}
+.button-container [role="button"] {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: default;
+  color: black;
+  padding: 2px 6px 3px 6px;
+  border-top: outset 2px white;
+  border-left: outset 2px white;
+  border-bottom: outset 2px black;
+  border-right: outset 2px black;
+  background-color: #999999;
+  box-sizing: border-box;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 0.8rem;
+  transition: background-color 250ms ease-in-out;
+}
+.button-container [role="button"]:hover {
+  background-color: #cccccc;
+}
+#short-button {
+  height: 0px;
+  overflow: hidden;
+}

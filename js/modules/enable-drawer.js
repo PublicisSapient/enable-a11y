@@ -19,7 +19,7 @@ const enableDrawer = new function() {
     document.body.addEventListener("click", function(e) {
       var target = e.target;
 
-      if (target.classList.contains('enable-drawer__button')) {
+      if (target.classList.contains('enable-drawer__button') && target.nodeName !== 'SUMMARY') {
         if (target.getAttribute('aria-expanded') !== 'true') {
           target.setAttribute('aria-expanded', 'true');
           target.dispatchEvent(new CustomEvent(
@@ -42,4 +42,4 @@ const enableDrawer = new function() {
   }
 }
 
-enableDrawer.init();
+export default enableDrawer;

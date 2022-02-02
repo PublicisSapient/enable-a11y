@@ -1,1 +1,5 @@
-<script src="js/modules/switch.js" type="module"></script>
+<script type="module">
+    import Switch from "./js/modules/Switch.js";
+
+    Switch.init();
+</script>

@@ -1,1 +1,5 @@
-<script src="js/modules/spinbutton.js" type="module"></script>
+<script  type="module">
+    import { spinbuttons } from './js/modules/spinbutton.js'
+
+    spinbuttons.init();
+</script>

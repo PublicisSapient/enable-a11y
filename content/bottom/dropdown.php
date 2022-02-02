@@ -1,1 +1,5 @@
-<script src="js/modules/enable-drawer.js"></script>
+<script type="module">
+    import enableDrawer from "./js/modules/enable-drawer.js"
+
+    enableDrawer.init();
+</script>

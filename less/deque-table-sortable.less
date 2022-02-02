@@ -1,7 +1,7 @@
 @import "shared/mixins-and-vars";
 
 .deque-table-sortable-group {
-caption {
+    caption {
         margin-bottom: 15px;
     }
     table {
@@ -10,96 +10,107 @@ caption {
         overflow: visible;
         margin-top: 8px;
         width: 100%;
-    }
-    table thead {
-        border-bottom: 1px solid #e3e3e3;
-    }
 
-    table thead th {
-        position: relative;
-    }
+        thead {
+            border-bottom: 1px solid #e3e3e3;
+       
+            th {
+                position: relative;
+            }
 
-    table thead th:last-child {
-        border-right: none;
-    }
-    table thead th .sortableColumnLabel {
-        display: inline-block;
-        height: 100%;
-        cursor: pointer;
-        padding: 0 0 0 (25/@px);
-        text-align: left;
-    }
-    table thead th .sortableColumnLabel:hover {
-        outline: 1px dashed #767676;
-    }
-    table thead th .sortableColumnLabel:after {
-    }
-    table thead th button {
-        color: white;
-        background: transparent;
-        border: 0;
-        padding-left: 0;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-    table thead th button:hover {
-        margin: 0;
-    }
-    table thead th button:focus {
-        margin: 0;
-        z-index: 1;
-    }
-    table thead th button:active {
-        color: #000000;
-        outline: 1px solid transparent;
-        margin: 0;
-    }
-    table thead th[colspan]:not([colspan='1']) {
-        text-align: center;
-    }
-    table thead th .sortableColumnLabel:after {
-        // the aspect ratio is the width and height of the original image.
-        content: url('../images/sort-up-down.svg');
+            th:last-child {
+                border-right: none;
+            }
+            th .sortableColumnLabel {
+                display: inline-block;
+                height: 100%;
+                cursor: pointer;
+                padding: 0 0 0 (25/@px);
+                text-align: left;
+            }
+            th .sortableColumnLabel:hover {
+                outline: 1px dashed #767676;
+            }
+            th .sortableColumnLabel:after {
+            }
+            th button {
+                color: white;
+                background: transparent;
+                border: 0;
+                padding-left: 0;
+                font-size: inherit;
+                font-weight: inherit;
+            }
 
-        @aspectRatio: (41/57);
-        @height: (17/@px);
-        @width: (@height * @aspectRatio);
+            th button {
+                margin: -25px 0;
+                padding: 25px 0;
+            }
 
-        height: @height;
-        width: @width;
+            th button:hover {
+                margin: 0;
+            }
+            th button:focus {
+                margin: 0;
+                z-index: 1;
+            }
+            th button:active {
+                color: #000000;
+                outline: 1px solid transparent;
+                margin: 0;
+            }
+            th[colspan]:not([colspan='1']) {
+                text-align: center;
+            }
+            th .sortableColumnLabel:after {
+                /* This is the up and down arrow SVG. */
+                content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 41 57' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle /%3E%3Cdesc /%3E%3Cdefs /%3E%3Cg fill='none' fill-rule='evenodd' id='Icons' stroke='none' stroke-width='1'%3E%3Cg fill='%23fff' stroke='%23000' id='XXX-Artboard-1' transform='translate(-1239.000000, -138.000000)'%3E%3Cg id='Double-Arrows' transform='translate(1239.000000, 138.150000)'%3E%3Cpath d='M10.5623119,31.5480425 C9.30468998,32.6283056 8.28518598,32.1695935 8.28518598,30.5136396 L8.28518598,-6.51787882 C8.28518598,-8.16942688 9.29767763,-8.63856827 10.5623119,-7.55228175 L31.0451159,10.041891 C32.3027378,11.1221541 32.3097502,12.8675832 31.0451159,13.9538698 L10.5623119,31.5480425 Z' id='Triangle-1' transform='translate(20.138075, 11.997111) rotate(-90.000000) translate(-20.138075, -11.997111) ' /%3E%3Cpath d='M10.5623119,63.8182709 C9.30468998,64.898534 8.28518598,64.4398218 8.28518598,62.7838679 L8.28518598,25.7523495 C8.28518598,24.1008014 9.29767763,23.6316601 10.5623119,24.7179466 L31.0451159,42.3121194 C32.3027378,43.3923825 32.3097502,45.1378116 31.0451159,46.2240981 L10.5623119,63.8182709 Z' id='Triangle-1' transform='translate(20.138075, 44.267339) scale(1, -1) rotate(-90.000000) translate(-20.138075, -44.267339) ' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        
+                // the aspect ratio is the width and height of the original image.
+                @aspectRatio: (41/57);
+                @height: (17/@px);
+                @width: (@height * @aspectRatio);
 
-        position: absolute;
-        left: 6px;
-        top: calc(50% - @height / 2);
-    }
-    table thead th[aria-sort='ascending'] .sortableColumnLabel:after {
-        content: url('../images/sort-asc.svg');
-    }
+                height: @height;
+                width: @width;
 
-    table thead th[aria-sort='descending'] .sortableColumnLabel:after {
-        content: url('../images/sort-asc.svg');
-        transform: scaleY(-1) translateY( (-5/@px) );
-    }
+                position: absolute;
+                left: 6px;
+                top: calc(50% - @height / 2);
+            }
+            th[aria-sort] .sortableColumnLabel:after {
+                /* This is the down arrow SVG. */ 
+                content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 41 57' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle /%3E%3Cdesc /%3E%3Cdefs /%3E%3Cg fill='none' fill-rule='evenodd' id='Icons' stroke='none' stroke-width='1'%3E%3Cg fill='%23fff' stroke='%23000' id='XXX-Artboard-1' transform='translate(-1239.000000, -138.000000)'%3E%3Cg id='Double-Arrows' transform='translate(1239.000000, 138.150000)'%3E%3Cpath d='M10.5623119,63.8182709 C9.30468998,64.898534 8.28518598,64.4398218 8.28518598,62.7838679 L8.28518598,25.7523495 C8.28518598,24.1008014 9.29767763,23.6316601 10.5623119,24.7179466 L31.0451159,42.3121194 C32.3027378,43.3923825 32.3097502,45.1378116 31.0451159,46.2240981 L10.5623119,63.8182709 Z' id='Triangle-1' transform='translate(20.138075, 44.267339) scale(1, -1) rotate(-90.000000) translate(-20.138075, -44.267339) ' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
 
-    table thead:before {
-        content: '';
-        display: block;
-        width: 7px;
-    }
-    table thead td,
-    table thead th {
-        padding: 12px 11px 12px 0;
-        text-align: left;
-        vertical-align: middle;
-    }
-    table tbody td
-    table tbody th {
-        text-align: left;
-        padding: 7px;
-        border-right: 1px solid #cccccc;
-    }
-    table tbody td:last-child,
-    table tbody th:last-child {
-        border-right: none;
+            th[aria-sort='descending'] .sortableColumnLabel:after {
+                transform: scaleY(-1) translateY( (-5/@px) );
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                width: 7px;
+            }
+            td,
+            th {
+                padding: 12px 11px 12px 0;
+                text-align: left;
+                vertical-align: middle;
+            }
+        }
+
+        tbody {
+            td
+            th {
+                text-align: left;
+                padding: 7px;
+                border-right: 1px solid #cccccc;
+            }
+            td:last-child,
+            th:last-child {
+                border-right: none;
+            }
+        }
     }
 }

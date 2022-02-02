@@ -1,2 +1,10 @@
-<script src="js/modules/sortable-table.js" type="module"></script>
-<script src="js/modules/paginate.js" type="module"></script>
+<script type="module">
+    import sortableTables from './js/modules/sortable-table.js';
+
+    sortableTables.init();
+</script>
+<script type="module">
+    import paginationTables from "./js/modules/paginate.js";
+    
+    paginationTables.init();
+</script>
