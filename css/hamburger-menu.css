@@ -169,7 +169,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: data-url("../images/Home.svg");
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22windows-1252%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2016.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%22460.298px%22%20height%3D%22460.297px%22%20viewBox%3D%220%200%20460.298%20460.297%22%20style%3D%22enable-background%3Anew%200%200%20460.298%20460.297%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cg%3E%0A%09%09%3Cpath%20d%3D%22M230.149%2C120.939L65.986%2C256.274c0%2C0.191-0.048%2C0.472-0.144%2C0.855c-0.094%2C0.38-0.144%2C0.656-0.144%2C0.852v137.041%20%20%20%20c0%2C4.948%2C1.809%2C9.236%2C5.426%2C12.847c3.616%2C3.613%2C7.898%2C5.431%2C12.847%2C5.431h109.63V303.664h73.097v109.64h109.629%20%20%20%20c4.948%2C0%2C9.236-1.814%2C12.847-5.435c3.617-3.607%2C5.432-7.898%2C5.432-12.847V257.981c0-0.76-0.104-1.334-0.288-1.707L230.149%2C120.939%20%20%20%20z%22%20fill%3D%22%23000000%22%20%2F%3E%0A%09%09%3Cpath%20d%3D%22M457.122%2C225.438L394.6%2C173.476V56.989c0-2.663-0.856-4.853-2.574-6.567c-1.704-1.712-3.894-2.568-6.563-2.568h-54.816%20%20%20%20c-2.666%2C0-4.855%2C0.856-6.57%2C2.568c-1.711%2C1.714-2.566%2C3.905-2.566%2C6.567v55.673l-69.662-58.245%20%20%20%20c-6.084-4.949-13.318-7.423-21.694-7.423c-8.375%2C0-15.608%2C2.474-21.698%2C7.423L3.172%2C225.438c-1.903%2C1.52-2.946%2C3.566-3.14%2C6.136%20%20%20%20c-0.193%2C2.568%2C0.472%2C4.811%2C1.997%2C6.713l17.701%2C21.128c1.525%2C1.712%2C3.521%2C2.759%2C5.996%2C3.142c2.285%2C0.192%2C4.57-0.476%2C6.855-1.998%20%20%20%20L230.149%2C95.817l197.57%2C164.741c1.526%2C1.328%2C3.521%2C1.991%2C5.996%2C1.991h0.858c2.471-0.376%2C4.463-1.43%2C5.996-3.138l17.703-21.125%20%20%20%20c1.522-1.906%2C2.189-4.145%2C1.991-6.716C460.068%2C229.007%2C459.021%2C226.961%2C457.122%2C225.438z%22%20%20fill%3D%22%23000000%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fg%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -189,7 +189,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: data-url("../images/chevron-right.svg");
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cpolyline%20points%3D%229%2018%2015%2012%209%206%22%2F%3E%0A%3Cscript%20xmlns%3D%22%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -245,7 +245,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: data-url("../images/chevron-left.svg");
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cpolyline%20points%3D%2215%2018%209%2012%2015%206%22%2F%3E%0A%3Cscript%20xmlns%3D%22%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
