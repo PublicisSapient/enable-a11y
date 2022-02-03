@@ -169,7 +169,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/Home.svg");
+  background: data-url("../images/Home.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -189,7 +189,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/chevron-right.svg");
+  background: data-url("../images/chevron-right.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -245,7 +245,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/chevron-left.svg");
+  background: data-url("../images/chevron-left.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
