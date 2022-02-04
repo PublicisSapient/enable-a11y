@@ -19,14 +19,12 @@ import accessibility from "../../libs/accessibility-js-routines/dist/accessibili
 let EnableFlyoutHamburger;
 
 
+
 EnableFlyoutHamburger = new function() {
   // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
-  const $mainMenuButton = document.querySelectorAll(menuSel);
   const topNavSel = '.enable-flyout__top-level';
-  const $root = document.querySelector(topNavSel);
   const containerSel = '.enable-flyout__container';
-  const $container = document.querySelector(containerSel);
   const openLevelSel = '.enable-flyout__open-level-button';
   const closeLevelSel = '.enable-flyout__close-level-button';
   const closeLevelTopSel = '.enable-flyout__close-top-level';
@@ -36,14 +34,17 @@ EnableFlyoutHamburger = new function() {
   const isOpenClass = 'enable-flyout--is-open';
   const isOpenSel = '.' + isOpenClass;
   const $body = document.body;
-  const $screen = document.querySelector('.enable-flyout__overlay-screen');
   const mobileOpenMenuAnim = 'enable-flyout__anim--mobile-open';
   const mobileCloseMenuAnim = 'enable-flyout__anim--mobile-close';
   const dropdownSel = '.enable-flyout__dropdown';
   const hamburgerIconFacadeSel = '.enable-flyout__hamburger-icon-facade';
-  const $rootCloseMenuButton = document.querySelector(hamburgerIconFacadeSel);
-  const desktopMq = window.getComputedStyle($root).getPropertyValue('--enable-flyout__desktop-media-query');
-  const desktopMql = window.matchMedia(desktopMq);
+  let $mainMenuButton;
+  let $root;
+  let $container;
+  let $screen;
+  let $rootCloseMenuButton;
+  let desktopMq;
+  let desktopMql;
 
   function delegate(eventName, elementSelector, handler) {
     document.body.addEventListener(eventName, function(e) {
@@ -249,7 +250,7 @@ EnableFlyoutHamburger = new function() {
       if ($flyoutMenu) {
         $flyoutMenu.classList.remove(isOpenClass);
       }
-      
+
       if (isHamburger()) {
         accessibility.setKeepFocusInside($el.parentNode.closest(navLevelSel), true);
         $el.focus();
@@ -270,7 +271,7 @@ EnableFlyoutHamburger = new function() {
 
       if (isHamburger()) {
         const $panel = $button.parentNode.closest(navLevelSel);
-      
+
         if ($panel) {
           console.log('p', $panel)
           accessibility.setKeepFocusInside($panel, true);
@@ -336,6 +337,15 @@ EnableFlyoutHamburger = new function() {
 
   this.init = function() {
 
+    // Let's cache queries 
+    $mainMenuButton = document.querySelectorAll(menuSel);
+    $root = document.querySelector(topNavSel);
+    $container = document.querySelector(containerSel);
+    $screen = document.querySelector('.enable-flyout__overlay-screen');
+    $rootCloseMenuButton = document.querySelector(hamburgerIconFacadeSel);
+    desktopMq = window.getComputedStyle($root).getPropertyValue('--enable-flyout__desktop-media-query');
+    desktopMql = window.matchMedia(desktopMq);
+
     document.body.addEventListener('click', this.onDocumentClick);
 
 
@@ -378,6 +388,6 @@ EnableFlyoutHamburger = new function() {
   }
 }
 
-EnableFlyoutHamburger.init();
+// EnableFlyoutHamburger.init();
 
 export default EnableFlyoutHamburger;
