@@ -1,5 +1,7 @@
 Meta info and title framework.
 
+review content with Flesch-Kincaid reading ease test https://www.webfx.com/tools/read-able/flesch-kincaid.html
+
 alert.php: output tag.
 pausable animated GIF respecting global pause button
 bin - CORS.

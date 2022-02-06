@@ -451,7 +451,7 @@
                             Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
                             the slider value.
                         </div>
-                        <span                             class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
+                        <span class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
                             <div id="${id}__decrease-label" class="${classNameRoot}__hidden-label">Decrease Value</div>
                             <button aria-labelledby="${arialabelledby} ${id}_val ${id}__decrease-label"
                                 class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button"
@@ -459,7 +459,7 @@
                                 ‹
                             </button>
                         </span>
-                        <span                             class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
+                        <span class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
                             <div id="${id}__increase-label" class="${classNameRoot}__hidden-label">Increase Value</div>
                             <button aria-labelledby="${arialabelledby} ${id}_val ${id}__increase-label"
                                 class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button"

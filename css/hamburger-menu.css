@@ -169,7 +169,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/Home.svg");
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22460.298%22%20height%3D%22460.297%22%20style%3D%22enable-background%3Anew%200%200%20460.298%20460.297%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20d%3D%22M230.149%20120.939%2065.986%20256.274c0%20.191-.048.472-.144.855-.094.38-.144.656-.144.852v137.041c0%204.948%201.809%209.236%205.426%2012.847%203.616%203.613%207.898%205.431%2012.847%205.431h109.63V303.664h73.097v109.64h109.629c4.948%200%209.236-1.814%2012.847-5.435%203.617-3.607%205.432-7.898%205.432-12.847V257.981c0-.76-.104-1.334-.288-1.707L230.149%20120.939z%22%2F%3E%3Cpath%20d%3D%22M457.122%20225.438%20394.6%20173.476V56.989c0-2.663-.856-4.853-2.574-6.567-1.704-1.712-3.894-2.568-6.563-2.568h-54.816c-2.666%200-4.855.856-6.57%202.568-1.711%201.714-2.566%203.905-2.566%206.567v55.673l-69.662-58.245c-6.084-4.949-13.318-7.423-21.694-7.423-8.375%200-15.608%202.474-21.698%207.423L3.172%20225.438c-1.903%201.52-2.946%203.566-3.14%206.136-.193%202.568.472%204.811%201.997%206.713l17.701%2021.128c1.525%201.712%203.521%202.759%205.996%203.142%202.285.192%204.57-.476%206.855-1.998L230.149%2095.817l197.57%20164.741c1.526%201.328%203.521%201.991%205.996%201.991h.858c2.471-.376%204.463-1.43%205.996-3.138l17.703-21.125c1.522-1.906%202.189-4.145%201.991-6.716-.195-2.563-1.242-4.609-3.141-6.132z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -189,7 +189,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/chevron-right.svg");
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m9%2018%206-6-6-6%22%2F%3E%3Cscript%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
@@ -245,7 +245,7 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
-  background: url("../images/chevron-left.svg");
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m15%2018-6-6%206-6%22%2F%3E%3Cscript%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 1.25rem 1.25rem;
