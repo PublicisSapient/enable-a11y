@@ -1,7 +1,7 @@
 "use strict";
 
 /*******************************************************************************
- * enable-slider.js -Implementation of the ARIA slider role UI.
+ * enable-slider.js - Implementation of the ARIA slider role UI.
  * 
  * Based on code by the Open Ajax Alliance
  * Original code available at:
@@ -17,7 +17,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import { interpolate } from "../modules/interpolate.js";
+import { interpolate, htmlToDomNode } from "../modules/interpolate.js";
 
 /**
  * keyCodes() is an object to contain key code values for the application
@@ -124,15 +124,6 @@ const enableSlider = function(
     }
   };
 
-  /**
-   *
-   * @param { String } html - A string of HTML code
-   * @returns { HTMLElement } - a DOM element representation of the HTML code.
-   */
-  this.htmlToDomNode = function(html) {
-    const doc = this.domParser.parseFromString(html, "text/html");
-    return doc.body.firstChild;
-  };
 
   /**
    * createHandle() creates a handle for the enableSlider. It defines ARIA attributes for
@@ -160,7 +151,7 @@ const enableSlider = function(
       valuenow: val === undefined ? this.min : val
     });
 
-    this.$container.appendChild(this.htmlToDomNode(handle));
+    this.$container.appendChild(htmlToDomNode(handle));
     const $handle = document.getElementById(id);
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
@@ -191,7 +182,7 @@ const enableSlider = function(
       '__slider-range"></div>';
 
     // Store the div object
-    this.$rangeDiv = this.htmlToDomNode(range);
+    this.$rangeDiv = htmlToDomNode(range);
 
     // Create the range div
     this.$container.appendChild(this.$rangeDiv);
@@ -280,17 +271,15 @@ const enableSlider = function(
     if (this.showVals) {
       this.updateValBox($handle, $handleButton, Math.round(valPos));
     }
-    
+
     if (didChange) {
       $handle.dispatchEvent(
-        new CustomEvent('enable-slider-change',
-        {
+        new CustomEvent('enable-slider-change', {
           bubbles: true,
           detail: {
             value: () => $handleButton.getAttribute("aria-valuenow")
           }
-        }
-      ));
+        }));
     }
   }; // end positionHandle()
 
@@ -694,7 +683,6 @@ const enableSlider = function(
   this.handleDecrementorClick = function($handle, evt) {
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
-    console.log($handleButton);
     const newVal = $handleButton.getAttribute("aria-valuenow") - this.inc;
     let stopVal = this.min; // where to stop moving
 
