@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "test": "bin/checkHTML",
-    "server": "node bin/server.js"
+    "server": "concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
   },
   "repository": {
     "type": "git",
@@ -57,6 +57,7 @@
     "@babel/core": "^7.2.2",
     "accessibility-js-routines": "^3.3.3",
     "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^7.0.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",

@@ -251,94 +251,125 @@
                                     </button>
                                 </li>
                                 <li class="enable-flyout__menu-item">
-                                    <a href="table.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/table", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Table
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="description-list.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/description-list", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Description List
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="progress.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/progress", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Progress Bar
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="img.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/img", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Image
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="figure.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/figure", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Figure
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="heading.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/heading", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Heading
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="math.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/math", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Math
-                                    </a>
-                                </li>
-                                <!-- Start menu items for section Content -->
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="enable-flyout__menu-item">
-                        <!-- Begin section Animated Content -->
-                        <button aria-expanded="false" aria-controls="animated-content-section"
-                            class="enable-flyout__open-level-button">
-                            Animated Content
-                        </button>
-                        <div id="animated-content-section" aria-label="Animated Content" role="group"
-                            class="enable-flyout enable-flyout__level enable-flyout__dropdown">
-                            <button class="enable-flyout__hamburger-icon-facade">
-                                <span class="sr-only">
-                                    close mobile flyout
-                                </span>
-                            </button>
-                            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
-                                <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
-                                    <button class="enable-flyout__close-level-button">
-                                        Go Back
+                                  <!-- Begin section Static Content -->
+                                  <button aria-expanded="false" aria-controls="static-content-section"
+                                    class="enable-flyout__open-level-button">
+                                    Static Content
+                                  </button>
+                                  <div class="enable-flyout__level-heading">Static Content</div>
+                                    <div id="static-content-section" aria-label="Static Content" role="group"
+                                      class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                    <button class="enable-flyout__hamburger-icon-facade">
+                                      <span class="sr-only">
+                                        close mobile flyout
+                                      </span>
                                     </button>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/animated-gif-with-pause-button", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Animated GIF/WEBP
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                    <a href="pause-anim-control.php" class="enable-flyout__link">
-                                        <?php pictureWebpPng("images/main-menu/pause-anim-control", "", "class=\"enable-flyout__link-image\""); ?>
-                                        Pause All Animations Control
-                                    </a>
-                                </li>
-                                <li class="enable-flyout__menu-item">
-                                  <a href="video-player.php"
-                                    class="enable-flyout__link">
-                                    <?php pictureWebpPng("images/main-menu/video-player", "", "class=\"enable-flyout__link-image\""); ?>
-                                    Video Player
-                                  </a>
+                                    <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                      <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                        <button class="enable-flyout__close-level-button">
+                                          Go Back
+                                        </button>
+                                      </li>
+                                      
+                                      <!-- Start menu items for section Static Content -->
+
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="table.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/table", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Table
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="description-list.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/description-list", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Description List
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="progress.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/progress", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Progress Bar
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="img.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/img", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Image
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="figure.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/figure", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Figure
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="heading.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/heading", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Heading
+                                            </a>
+                                        </li>
+                                        <li class="enable-flyout__menu-item">
+                                            <a href="math.php" class="enable-flyout__link">
+                                                <?php pictureWebpPng("images/main-menu/math", "", "class=\"enable-flyout__link-image\""); ?>
+                                                Math
+                                            </a>
+                                        </li>
+                                    </ul>
+                                  </div>
                                 </li>
 
-                                <!-- Start menu items for section Animated Content -->
+                                
+                                      
+                                      <li class="enable-flyout__menu-item">
+                                        <!-- Begin section Animated Content -->
+                                        <button aria-expanded="false" aria-controls="animated-content-section"
+                                            class="enable-flyout__open-level-button">
+                                            Animated Content
+                                        </button>
+                                        <div class="enable-flyout__level-heading">Animated Content</div>
+                                        <div id="animated-content-section" aria-label="Animated Content" role="group"
+                                            class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                                            <button class="enable-flyout__hamburger-icon-facade">
+                                                <span class="sr-only">
+                                                    close mobile flyout
+                                                </span>
+                                            </button>
+                                            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+                                                <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                                                    <button class="enable-flyout__close-level-button">
+                                                        Go Back
+                                                    </button>
+                                                </li>
+                                                <li class="enable-flyout__menu-item">
+                                                    <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+                                                        <?php pictureWebpPng("images/main-menu/animated-gif-with-pause-button", "", "class=\"enable-flyout__link-image\""); ?>
+                                                        Animated GIF/WEBP
+                                                    </a>
+                                                </li>
+                                                <li class="enable-flyout__menu-item">
+                                                    <a href="pause-anim-control.php" class="enable-flyout__link">
+                                                        <?php pictureWebpPng("images/main-menu/pause-anim-control", "", "class=\"enable-flyout__link-image\""); ?>
+                                                        Pause All Animations Control
+                                                    </a>
+                                                </li>
+                                                <li class="enable-flyout__menu-item">
+                                                <a href="video-player.php"
+                                                    class="enable-flyout__link">
+                                                    <?php pictureWebpPng("images/main-menu/video-player", "", "class=\"enable-flyout__link-image\""); ?>
+                                                    Video Player
+                                                </a>
+                                                </li>
+
+                                                <!-- Start menu items for section Animated Content -->
+                                            </ul>
+                                        </div>
+                                    </li>
                             </ul>
+                            
                         </div>
                     </li>
+                    
                     <li class="enable-flyout__menu-item">
                         <!-- Begin section Code Patterns -->
                         <button aria-expanded="false" aria-controls="code-patterns-section"

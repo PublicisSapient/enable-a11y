@@ -103,7 +103,8 @@
 
 
     /* styles specific to Interactive Elements flyout */
-    #controls-section > :not(&__menu-item) > &__menu-item {
+    #controls-section > :not(&__menu-item) > &__menu-item
+    {
 
       width: calc(50% - @mulit-column-menu-margin * 2);
       float: left;
@@ -134,6 +135,16 @@
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
+    }
+
+
+    #content-section > :not(&__menu-item) > &__menu-item {
+      width: 100%;
+      float: left;
+    }
+
+    #content-section &__list--photo-layout &__menu-item {
+      height: (225/@px);
     }
   }
 
