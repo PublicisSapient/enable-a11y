@@ -90,7 +90,7 @@ const showcode = new function() {
   }
 
   function highlightFunc(s) {
-    return `<span class="showcode__highlight" tabindex="-1">${s}</span>`;
+    return `<em class="showcode__highlight" tabindex="-1">${s}</em>`;
   }
 
   function formatCSS(localCode) {

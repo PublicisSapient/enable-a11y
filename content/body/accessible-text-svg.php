@@ -1,5 +1,5 @@
 
-      <div id="svg-textpath-example" class="accessible-text-svg-demo">
+      <div id="accessible-text-svg-demo">
         <div id="accessible-text-svg-demo__shape-container">
           <svg id="accessible-text-svg-demo__svg" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,1024,681">
@@ -35,9 +35,9 @@
 
 
         </div>
+        <button id="accessible-text-svg-demo__control">Animate Text</button>
       </div>
 
-      <button id="accessible-text-svg-demo__control">Animate Text</button>
 
       <div class="with-full-bleed-hero__content">
           <h1><?= $title ?></h1>  
@@ -84,8 +84,8 @@
                   </figcaption>
               </figure>
 
-              <?php includeShowcode("svg-textpath-example", "", "", "", true, 2)?>
-              <script type="application/json" id="svg-textpath-example-props">
+              <?php includeShowcode("accessible-text-svg-demo", "", "", "", true, 2)?>
+              <script type="application/json" id="accessible-text-svg-demo-props">
               {
                   "replaceHtmlRules": {},
                   "steps": [{

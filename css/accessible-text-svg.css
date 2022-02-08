@@ -1,6 +1,9 @@
 body {
   --text-zoom-factor: 1;
 }
+#accessible-text-svg-demo {
+  position: relative;
+}
 #accessible-text-svg-demo__text {
   fill: black;
   stroke-width: 2px;
@@ -44,11 +47,15 @@ body {
   z-index: 1;
 }
 #accessible-text-svg-demo__control {
+  position: absolute;
   display: block;
   width: 200px;
   margin: 20px auto;
   cursor: pointer;
   padding: 10px;
+  top: 2vw;
+  right: 4vw;
+  z-index: 2;
 }
 #accessible-text-svg-demo__svg-text-path {
   offset-distance: 50%;

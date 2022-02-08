@@ -4,7 +4,6 @@ const app = express();
 const port = 8888;
 
 
-
 // must specify options hash even if no options provided!
 var phpExpress = require('./php-express/index.js')({
 
@@ -22,8 +21,16 @@ app.set('view engine', 'php');
 // routing all things in /bin/ to phpExpress.
 app.all(/\/services\/.+\.php$/, phpExpress.router);
 
+
 // All things outside of bin goes through our template engine at template/main.php
-app.get('/*.php', render)
+app.get('/*.php', render);
+
+
+
+/* GET home page. */
+app.get('/', function(req, res) {
+  res.redirect('./index.php');
+});
 
 function render(req, res) {
 

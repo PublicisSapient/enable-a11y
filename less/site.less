@@ -74,11 +74,12 @@
 
 
     &__level &__level &__list--photo-layout &__link {
+      position: relative;
       min-height: @item-height;
       //letter-spacing: (0.5 / @px);
       box-sizing: border-box;
       font-size: (13 / @px);
-      padding: 0 20px;
+      padding: 10px 20px 0 20px;
 
       &:hover,
       &:focus {
@@ -88,6 +89,7 @@
 
       &:hover {
         outline: solid 1px #666;
+        z-index: 2;
       }
 
       &:focus {

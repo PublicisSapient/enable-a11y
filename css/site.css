@@ -53,10 +53,11 @@
     width: 134px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
+    position: relative;
     min-height: 10.4375rem;
     box-sizing: border-box;
     font-size: 0.8125rem;
-    padding: 0 20px;
+    padding: 10px 20px 0 20px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover,
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
@@ -64,6 +65,7 @@
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover {
     outline: solid 1px #666;
+    z-index: 2;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
     outline: solid 2px #3b99fc;

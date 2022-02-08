@@ -6,7 +6,7 @@ body {
 }
 
 #accessible-text-svg-demo {
-
+  position: relative;
 
   &__text {
     fill:black;
@@ -61,11 +61,15 @@ body {
   }
 
   &__control {
+    position: absolute;
     display: block;
     width: 200px;
     margin: 20px auto;
     cursor: pointer;
     padding: 10px;
+    top: 2vw;
+    right: 4vw;
+    z-index: 2;
   }
 
   &__svg-text-path {

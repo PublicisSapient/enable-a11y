@@ -5,7 +5,8 @@
   },
   "accessible-text-svg.php": {
     "title": "Accessible Text in SVG",
-    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)"
+    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)",
+    "mainClass": "with-full-bleed-hero"
   },
   "alert-dialog.php": {
     "title": "Alert Dialog",
