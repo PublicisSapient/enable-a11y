@@ -26,6 +26,7 @@ var engine = function (filePath, opts, callback) {
         Object.keys(server).forEach(key => {
             env[key] = server[key]
         });
+    console.error('help ', binPath)
 
     var command = util.format(
         '%s %s %s %s',

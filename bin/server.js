@@ -2,13 +2,14 @@ const express = require('express');
 const path = require('path')
 const app = express();
 const port = 8888;
+const { exec } = require("child_process");
 
+let phpCmd = 'php';
 
 // must specify options hash even if no options provided!
 var phpExpress = require('./php-express/index.js')({
-
     // assumes php is in your PATH
-    binPath: 'php'
+    binPath: phpCmd
   });
   
 

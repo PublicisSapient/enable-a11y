@@ -98,6 +98,13 @@
     margin-left: 18px;
     margin-right: 18px;
   }
+  #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item {
+    width: 100%;
+    float: left;
+  }
+  #content-section .enable-flyout__list--photo-layout .enable-flyout__menu-item {
+    height: 14.0625rem;
+  }
 }
 .enable-logo {
   width: 60px;

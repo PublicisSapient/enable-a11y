@@ -1,3 +1,14 @@
+Keyboard accessibility issues:
+
+FIrefox OSX:
+https://www.scottohara.me/blog/2014/10/03/link-tabbing-firefox-osx.html
+
+Safari OSX:
+
+
+
+
+
 Meta info and title framework.
 
 review content with Flesch-Kincaid reading ease test https://www.webfx.com/tools/read-able/flesch-kincaid.html
