@@ -1,7 +1,7 @@
 @import "mixins-and-vars";
 
 body {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "DroidSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
 
@@ -22,6 +22,11 @@ strong {
   font-weight: bold;
 }
 
+em {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-style: italic;
+}
+
 ul {
   list-style: initial;
 }
@@ -31,16 +36,19 @@ ol {
 }
 
 h1 {
+  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: #222;
+  font-size: ( 35 / @px );
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
+  font-size: ( 29 / @px ); 
   border-bottom: solid 1px #999999;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: ( 29 / @px ) 0 0 0;
+  color: #222;
 }
 
 h3 {
@@ -107,6 +115,7 @@ select {
   padding: 1em;
   border: solid 1px black;
   margin: 3em 0;
+  border-left: solid 5px black;
 }
 
 .clearfix:after {
@@ -185,6 +194,12 @@ select {
   }
 }
 
+code {
+  font-family: "ModeSeven", "Consolas", monospace;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 3px;
+}
 /*
 @media (prefers-color-scheme: dark) {
   body {

@@ -24,11 +24,29 @@
 
         </aside> -->
 
+        <p>
+            <strong>A Button is an interactive element that cause an action on a page or submit a form.</strong>
+            For a long time now, we have had the <code>&lt;button&gt;</code> tag.  Developers should use these
+            for this purpose.
+        </p>
 
-        <p>This page shows different ways a button can be marked up to see how screen readers will describe them to
-            users.</p>
+        <p>
+            This may seem obvious to many developers.
+            Unfortunately there is a lot of code out there that uses <code>&lt;a&gt;</code> tags
+            to do the work of a <code>&lt;button&gt;</code>.
+            Marking them up this way is an accessibility issue, since screen reader users will assume that pressing it
+            will go to another page.  When I review code like this, it makes me sad.  If you do this in a new project,
+            think about how sad I will be, and change your ways.
+        </p>
+
+        <p>
+            This page covers how to make buttons in three ways.  Review all scenarios and decide which is best for
+            your use-case (but read the disclaimers made before you make that decision).  
+        </p>
+
 
         <h2>An HTML Button.</h2>
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
 
         <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 
@@ -69,7 +87,9 @@
 
 
         <h2>A link with the role of button</h2>
-
+        <?php includeStats(array(
+            'isForNewBuilds' => false
+        )) ?>
         <p>
             I can't tell you how many times I have seen buttons marked up as links on a project.
             When the project is an older one, and it would take a long time to refactor the existing
@@ -121,6 +141,10 @@
         </script>
 
         <h2>A DIV with a role of button</h2>
+        <?php includeStats(array(
+            'isForNewBuilds' => NULL,
+            'doNot' => true
+        )) ?>
         <p>
             There have been a few projects (usually, in my experience, in ones done in React and Angular for some
             reason) where I have seen
@@ -129,7 +153,7 @@
 
         <p>
             This hurts my brain. It goes against the ideas of semantic HTML and it makes Tim Berners-Lee cry.
-            Please don't be someone who does this.
+            Do you really want to make the Father of the Web cry?  What kind of monster are you?
         </p>
 
         <p>

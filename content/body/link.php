@@ -8,8 +8,14 @@
         </ul>
       </aside> -->
 
+      <p>
+          Don't be fooled -- even if they look like buttons, they are links and should be marked up like links,
+          so screen reader users know what will happen when the press it (I would argue that 
+          <a href="https://medium.com/simple-human/but-sometimes-links-look-like-buttons-and-buttons-look-like-links-9b371c57b3d2">there links should visually
+          look like links</a> (kudos to <a href="https://medium.com/@adambsilver">Adam Silver</a> for articulating this point
+          extremely well).
+      </p>
       
-
       <h2>Native HTML5</h2>
 
       <div id="html5-examples" class="enable-example">

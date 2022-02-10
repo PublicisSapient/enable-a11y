@@ -40,7 +40,17 @@ function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR'
         'posterImg' => $posterImg,
         'mainClass' => $mainClass
     ));
-} 
+}
+
+function includeStats($props) {
+  unset($isForNewBuilds, $doNot, $isNPM);
+  extract($props);
+  includeFileWithVariables('includes/stats.php', array(
+    'isForNewBuilds' => $isForNewBuilds,
+    'doNot' => isset($doNot),
+    'isNPM' => isset($isNPM)
+  ));
+}
 
 function getURIFilename() {
   $uri =  $_SERVER['REQUEST_URI'];

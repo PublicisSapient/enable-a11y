@@ -23,3 +23,8 @@ Bruce Lawson, https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-
 Sam Thorogood, https://gist.github.com/samthor, https://twitter.com/samthor
 Edric Studio, https://edricstudio.com/monice-sans-serif-font/, Monice font
 Jesse Couch, https://codepen.io/designcouch/pen/Atyop, https://twitter.com/designcouch, Hamburger Menu Animation
+
+
+Adrien Coquet, https://www.behance.net/coquet_adrien, Integration Icon
+Icongrapher, https://thenounproject.com/icondownloads/, Build Icon
+Gendis Studio, https://thenounproject.com/gendis.studio/, Do Not Icon

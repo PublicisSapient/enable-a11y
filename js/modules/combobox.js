@@ -69,6 +69,7 @@ const EnableCombobox = function(componentRoot) {
         return;
     }
     updateMenuDisplay();
+    
   }
 
   function keyDownHandler(e) {
@@ -181,7 +182,11 @@ const EnableCombobox = function(componentRoot) {
     if (!list.hidden) {
       return;
     }
-    accessibility.setMobileFocusLoop(controlsContainer);
+
+    if (!enableComboboxes.isKeyboardUser) {
+      accessibility.setMobileFocusLoop(controlsContainer);
+    }
+    
     list.hidden = false;
     field.dispatchEvent(
       new CustomEvent(
@@ -191,6 +196,15 @@ const EnableCombobox = function(componentRoot) {
         }
       )
     );
+    console.log('xxxx');
+  }
+
+  function displayNone(elem) {
+    elem.style.display = 'none';
+  }
+
+  function removeDisplayNone(elem) {
+    elem.style.display = 'block';
   }
 
   function hideMenu(message) {
@@ -199,7 +213,14 @@ const EnableCombobox = function(componentRoot) {
     }
     list.hidden = true;
     field.setAttribute("aria-expanded", "false");
-    accessibility.removeMobileFocusLoop();
+
+    // Chrome Desktop has a bug regarding aria-hidden on surrounding
+    // DOM elements, so we will only implement the mobile focus loop
+    // for keyboard users.
+    if (!enableComboboxes.isKeyboardUser) {
+      accessibility.removeMobileFocusLoop();
+    }
+
     updateStatus(message, true);
     field.dispatchEvent(
       new CustomEvent(
@@ -332,8 +353,10 @@ const EnableCombobox = function(componentRoot) {
     for (let i = 0, c = options.length; i < c; i++) {
       const o = options[i];
       const t = o.textContent.toUpperCase();
-      // if typed string is not substring of state name or code (case insensitive), and is not exact match for state
-      if ((t.indexOf(s) == -1 && o.id.indexOf(s) == -1) || t == s) {
+      // If typed string is not substring of state name or code (case insensitive).
+      // (The original code also removed if there was an exact match for state, but
+      // we didn't think that made sense).
+      if ((t.indexOf(s) == -1 && o.id.indexOf(s) == -1)) {
         o.hidden = true;
       } else {
         o.hidden = false;
@@ -369,7 +392,7 @@ const EnableCombobox = function(componentRoot) {
     root = componentRoot;
     field = root.querySelector('[role="combobox"]');
     form = field.form;
-    status = root.querySelector('[role="status"]');
+    status = root.querySelector('[role="alert"]');
     list = document.getElementById(field.getAttribute("aria-owns"));
     options = list.querySelectorAll('[role="option"]');
     listGroups = list.querySelectorAll('.enable-combobox__group');
@@ -409,13 +432,26 @@ const EnableCombobox = function(componentRoot) {
         el.setAttribute('aria-describedby', resetAriaDesc);
       });
     }
+
   };
 
   this.initCombo(componentRoot);
 };
 
 const enableComboboxes = new function() {
+  this.isKeyboardUser = false;
+
   this.list = [];
+
+  const keyUpEvent = (e) => {
+    const { key } = e;
+    console.log('key', key);
+    if (key === 'Tab') {
+      // we assume this is a keyboard user
+      this.isKeyboardUser = true;
+      document.removeEventListener('keyup', keyUpEvent);
+    }
+  }
 
   this.init = () => {
     const $roots = document.querySelectorAll('.enable-combobox');
@@ -423,6 +459,8 @@ const enableComboboxes = new function() {
     for (let i = 0; i < $roots.length; i++) {
       this.list.push(new EnableCombobox($roots[i]));
     }
+
+    document.addEventListener('keyup', keyUpEvent);
   }
 }
 

@@ -51,7 +51,7 @@
   box-sizing: border-box;
   z-index: 1;
 }
-.enable-combobox [role="status"] {
+.enable-combobox [role="alert"] {
   position: absolute;
   top: 0.3em;
   right: 2em;

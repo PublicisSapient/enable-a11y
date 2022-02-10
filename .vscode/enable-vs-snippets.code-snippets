@@ -310,5 +310,14 @@
 			"  </a>", 
 			"</div>" 
 		]
-	}
+	}, "stats-new": {
+		"scope": "",
+		"prefix": "stats-new",
+		"body": "<?php includeStats(array('isForNewBuilds' => true)) ?>"
+	}, "stats-existing": {
+		"scope": "",
+		"prefix": "stats-existing",
+		"body": "<?php includeStats(array('isForNewBuilds' => false)) ?>"
+	}, 
+
 }

@@ -23,10 +23,10 @@
             <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
             <div class="enable-combobox__inner-container">
                 <div class="enable-combobox__controls-container">
-                    <div role="status" aria-atomic="true"></div>
                     <input type="text" id="aria-fruit" aria-describedby="aria-fruit__desc" role="combobox"
                         aria-autocomplete="list" aria-owns="aria-fruit__list" aria-expanded="false" autocomplete="off"
                         autocorrect="off" autocapitalize="off" required>
+                    <div role="alert" aria-atomic="true" aria-live="assertive"></div>
                     <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset"
                         aria-describedby="aria-fruit__label">
                         <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear">
@@ -100,9 +100,10 @@
                         <li tabindex="-1" role="option">Yam</li>
                         <li tabindex="-1" role="option">Zucchi</li>
                     </ul>
-                </div>
-                <div class="sr-only" id="aria-fruit__desc">
-                    As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
+
+                    <div class="sr-only" id="aria-fruit__desc">
+                        As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
+                    </div>
                 </div>
             </div>
         </form>
@@ -183,7 +184,7 @@
                     </div>
 
 
-                    <div role="status" aria-atomic="true">
+                    <div role="alert" aria-atomic="true" aria-live="polite">
 
                     </div>
 
@@ -472,7 +473,7 @@
                     </div>
 
 
-                    <div role="status" aria-atomic="true">
+                    <div role="alert" aria-atomic="true" aria-live="polite">
 
                     </div>
 
@@ -776,7 +777,7 @@
             As you type, use the up and down arrow keys to choose the autocomplete
             items.
         </div>
-        <div id="html5-fruit__statys" role="status" aria-atomic="true">
+        <div id="html5-fruit__statys" role="alert" aria-atomic="true" aria-live="polite">
 
         </div>
         <datalist id="languages">

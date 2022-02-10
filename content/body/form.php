@@ -33,7 +33,7 @@
 
 
 
-        <h2>HTML5 example</h2>
+        <h2 id="html5" tabindex="-1">HTML5 example</h2>
 
         <div id="example1">
             <form>
@@ -74,7 +74,7 @@
         }
         </script>
 
-        <h2>ARIA form role example (with ARIA used to replace fieldset and legend as well)</h2>
+        <h2 id="aria" tabindex="-1">ARIA form role example (with ARIA used to replace fieldset and legend as well)</h2>
 
         <div id="example2">
             <div role="form">

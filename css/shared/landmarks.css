@@ -3,9 +3,11 @@
    License: none (public domain)
 */
 @import "../../fonts/specify/stylesheet.css";
-@import "../../fonts/open-dyslexic/stylesheet.css";
 @import "../../fonts/modeseven/stylesheet.css";
 @import "../../fonts/monice/stylesheet.css";
+@import "../../fonts/Droid-Sans/stylesheet.css";
+@import "../../fonts/OpenSans/stylesheet.css";
+@import "../../fonts/GraublauSansWeb/stylesheet.css";
 html,
 body,
 div,
@@ -135,7 +137,7 @@ table {
   box-sizing: border-box;
 }
 body {
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "DroidSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
   /* @media @tablet-up {
@@ -149,6 +151,10 @@ body {
 strong {
   font-weight: bold;
 }
+em {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-style: italic;
+}
 ul {
   list-style: initial;
 }
@@ -156,15 +162,18 @@ ol {
   list-style: decimal;
 }
 h1 {
+  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: #222;
+  font-size: 2.1875rem;
 }
 h2 {
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
+  font-size: 1.8125rem;
   border-bottom: solid 1px #999999;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.8125rem 0 0 0;
+  color: #222;
 }
 h3 {
   font-weight: bold;
@@ -216,6 +225,7 @@ select {
   padding: 1em;
   border: solid 1px black;
   margin: 3em 0;
+  border-left: solid 5px black;
 }
 .clearfix:after {
   content: "";
@@ -286,6 +296,12 @@ select {
   .play-pause-anim__checkbox-container {
     z-index: 10002 !important;
   }
+}
+code {
+  font-family: "ModeSeven", "Consolas", monospace;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 3px;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -360,17 +376,12 @@ select {
   outline: solid 2px #3b99fc;
 }
 *:focus {
-  /* Outline focus state for all browsers */
   outline: solid 2px #3b99fc;
 }
 *:focus:not(:focus-visible) {
-  /* Undo all the above focused button styles
-      if the element has focus but the browser wouldn't normally
-      show default focus styles */
   outline: none;
 }
 *:focus-visible {
-  /* Put the focus CSS back in if the browser would normally show default focus style */
   outline: solid 2px #3b99fc;
 }
 /*
@@ -414,11 +425,13 @@ body {
      */
   font: -apple-system-body;
   /*
-     * Put whatever font you want to use here.  The font
+     * Put whatever font you want to use here or in the body
+	 * selector of another stylesheet.  The font
      * size will still be grabbed by the iOS Accessibility
      * settings.
+
+	 font-family: "Helvetica", "Arial", sans-serif;
      */
-  font-family: "Helvetica", "Arial", sans-serif;
 }
 body {
   margin: 0;

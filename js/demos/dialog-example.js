@@ -1,5 +1,6 @@
 'use strict'
 
+import registerFocusRestoreDialog from "../libs/dialog-focus-restore.js";
 /*******************************************************************************
  * dialog-example.js - An example of an accessible dialog.
  * 
@@ -15,7 +16,6 @@
 
 import showcode from "../libs/showcode.js";
 
-const supportsDialog = !!document.createElement('dialog').show;
 
 // Button that opens the dialog
 const updateButton = document.getElementById('updateDetails');
@@ -36,6 +36,21 @@ cancelButton.addEventListener('click', function() {
 // The <dialog> element itself
 const favDialog = document.getElementById('favDialog');
 
+function importA11yFixes() {
+  import ('../libs/dialog-focus-restore.js').then((registerFocusRestoreDialog) => {
+
+    if (registerFocusRestoreDialog) {
+      registerFocusRestoreDialog.default(favDialog);
+
+      // expose this module to showcode if it is on the page
+      showcode.addJsObj('registerFocusRestoreDialog', registerFocusRestoreDialog.default);
+    }
+
+  });  
+}
+
+
+const supportsDialog = !!document.createElement('dialog').show;
 // If we are using the polyfill, then load it as well
 // as the polyfill accessibility fixes.
 if (!supportsDialog) {
@@ -43,13 +58,11 @@ if (!supportsDialog) {
   import ('../../libs/dialog-polyfill/index.js')
   .then((dialogPolyfill) => {
     dialogPolyfill.default.registerDialog(favDialog);
-    import ('../libs/dialog-focus-restore.js')
-    .then((registerFocusRestoreDialog) => {
-      registerFocusRestoreDialog.default(favDialog);
-
-      // expose this module to showcode if it is on the page
-      showcode.addJsObj('registerFocusRestoreDialog', registerFocusRestoreDialog.default);
-      
-    });
+    importA11yFixes();
   });
+} else {
+  // We load the accessibility fixes since they work even
+  // when the polyfill is loaded.  Chrome needs this to 
+  // have a focus loop like polyfilled versions.
+  importA11yFixes();
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 /*******************************************************************************
-* dialog-polyfill-a11y-fixes.js - Fixes for the HTML5 dialog polyfill
+* dialog-focus-restore.js - Fixes for the HTML5 dialog polyfill
 * 
 * Based on this gist: https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1
 * Written by Sam Thorogood.
@@ -50,7 +50,10 @@ const registerFocusRestoreDialog = (function() {
       realShowModal.call(this);
     };
 
-    // watch for 'open' change and clear saved
+    // Watch for 'open' change and clear saved.
+    // Note this executes with native implementations, so
+    // native implementations, like Chrome's will have a focus
+    // loop and not go into the browser chrome.
     var mo = new MutationObserver(function() {
       if (dialog.hasAttribute('open')) {
         accessibility.setKeepFocusInside(dialog, true);
@@ -60,7 +63,7 @@ const registerFocusRestoreDialog = (function() {
     });
     mo.observe(dialog, { attributes: true, attributeFilter: ['open'] });
 
-    // on close, try to focus saved, if possible
+    // For polyfill on close, try to focus saved, if possible
     dialog.addEventListener('close', function() {
       if (dialog.hasAttribute('open')) {
         return; // in native, this fires the frame later

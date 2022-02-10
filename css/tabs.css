@@ -78,17 +78,12 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 [role="tablist"] li [role="tab"]:focus {
-  /* Outline focus state for all browsers */
   outline-offset: 5px;
 }
 [role="tablist"] li [role="tab"]:focus:not(:focus-visible) {
-  /* Undo all the above focused button styles
-      if the element has focus but the browser wouldn't normally
-      show default focus styles */
   outline: none;
 }
 [role="tablist"] li [role="tab"]:focus-visible {
-  /* Put the focus CSS back in if the browser would normally show default focus style */
   outline-offset: 5px;
 }
 [role="tablist"] li [role="tab"]:active {

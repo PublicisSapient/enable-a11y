@@ -12,33 +12,12 @@
         <p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to
             users.</p>
 
-        <h2>A real HTML checkbox</h2>
-
-        <p>The following is an
-            <code>&lt;input&gt;</code> tag with a
-            <code>&lt;label&gt;</code> tag describing what it is for.
-        </p>
-
-        <div id="example1" class="enable-example">
-            <div class="checkbox-container">
-                <label for="html-checkbox">I agree to sell my soul to Zoltan:</label>
-                <input id="html-checkbox" type="checkbox" >
-            </div>
-        </div>
-        <?php includeShowcode("example1")?>
-
-        <script type="application/json" id="example1-props">
-        {
-            "replaceHtmlRules": {},
-            "steps": [{
-                "label": "Use label tags to label form element",
-                "highlight": "for",
-                "notes": "This is just like any other form element"
-            }]
-        }
-        </script>
-
         <h2>A real styled HTML5 checkbox</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+
+        You can style an HTML5 checkbox using CSS easily.  You don't need to make faux chekcboxe 
+        using <code>&lt;div&gt;</code> tags.  
 
         <div id="example2" class="enable-example">
             <div class="enable-checkbox">
@@ -68,9 +47,13 @@
 
 
         <h2>A DIV with a role of checkbox</h2>
-        <p>This is a
-            <code>&lt;div&gt;</code> tag that has its role attribute set to
-            <code>checkbox</code>.
+        
+        <?php includeStats(array('isForNewBuilds' => false)) ?>
+
+        <p>
+            If you come across a <code>&lt;div&gt;</code> in existing code that is marked up like a checkbox,
+            you can fix it this way.  It is preferable to use the HTML5 version instead, if you can implement
+            it quickly.
         </p>
 
         <div id="example-role-checkbox" class="enable-example">
@@ -114,37 +97,51 @@
 
         <h2>HTML checkbox group</h2>
 
-        <div id="html5-example" class="enable-example">
-            <div role="group" aria-labelledby="html-checkbox-multi-label">
-                <p id="html-checkbox-multi-label">
-                    The following people will have my soul when I die:
-                </p>
+        <?php includeStats(array('isForNewBuilds' => false)) ?>
 
+        <p>
+            If you have a group of checkboxes, this is the proper way to style them.  Instead of fieldsets,
+            you could use <code>&lt;role="group"&gt;</code>, which is described in the
+            <a href="http://localhost:8888/form.php#aria">ARIA form role example</a>.
+        </p>
 
-                <div id="html-checkbox__error" class="error">You must choose at least one of the following.</div>
+        <div id="group-example" class="enable-example">
+            <form id="group-example__form">
+                <fieldset role="group">
+                    <legend>
+                        The following people will have my soul when I die:
+                    </legend>
 
-                <div class="checkbox-container">
-                    <label for="html-checkbox-multi1">Zoltan:</label>
-                    <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true"
-                        aria-describedby="html-checkbox__error" >
-                </div>
-                <div class="checkbox-container">
-                    <label for="html-checkbox-multi2">Noel:</label>
-                    <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true"
-                        aria-describedby="html-checkbox__error" >
-                </div>
-                <div class="checkbox-container">
-                    <label for="html-checkbox-multi3">Alison:</label>
-                    <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true"
-                        aria-describedby="html-checkbox__error" >
-                </div>
-                <div class="checkbox-container">
-                    <label for="html-checkbox-multi4">That guy who smokes in the alleyway at work:</label>
-                    <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true"
-                        aria-describedby="html-checkbox__error" >
-                </div>
+                    <div id="html-checkbox__error" class="error" tabindex="-1">You must choose at least one of the following.</div>
 
-            </div>
+                    <div class="checkbox-container">
+                        <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true"
+                            aria-describedby="html-checkbox__error" >
+
+                        <label for="html-checkbox-multi1">Zoltan</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true"
+                            aria-describedby="html-checkbox__error" >
+                        
+                            <label for="html-checkbox-multi2">Noel</label>
+                    </div>
+                    <div class="checkbox-container">
+                        
+                        <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true"
+                            aria-describedby="html-checkbox__error" >
+                        <label for="html-checkbox-multi3">Alison</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true"
+                            aria-describedby="html-checkbox__error" >
+                        <label for="html-checkbox-multi4">That guy who looks like Gandalf who smokes in the alleyway at the office</label>
+                    </div>
+
+                    <button type="submit">Submit</button>
+
+                </div>
+            </form>
         </div>
         <?php includeShowcode("html5-example")?>
 

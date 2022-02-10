@@ -1,0 +1,39 @@
+@import "shared/mixins-and-vars";
+
+
+/* From the old stuff */
+
+@checkbox-size: 24;
+@checkbox-border: 1;
+
+/* These are the styles for the ARIA example */
+[role="checkbox"] {
+  display: inline-block;
+  position: relative;
+  width: (@checkbox-size/@px);
+  height: (@checkbox-size/@px);
+  margin: (4/@px) (8/@px) (4/@px) (4/@px);
+  border: (@checkbox-border/@px) solid #444;
+
+  background: rgb(224, 224, 224);
+  .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
+  vertical-align: bottom;
+
+  &[aria-checked="true"] {
+    &:after {
+      content: "✓";
+      display: block;
+      position: absolute;
+      top: (6/@px);
+      left: (5/@px);
+      width: 1em;
+      color: #060;
+      font-size: 0.875em;
+      line-height: 1em;
+      text-align: center;
+      text-shadow: 0 0 0.0714em rgb(115, 153, 77);
+      font-weight: bold;
+      transform: scale(2.5) translateY(-2px);
+    }
+  }
+}
