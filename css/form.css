@@ -54,37 +54,3 @@ fieldset .legend,
   height: 0.7rem;
   margin-right: 0.5em;
 }
-#group-example legend {
-  width: 100%;
-  text-align: center;
-  border-bottom: 3px solid black;
-}
-#group-example .checkbox-container {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  position: relative;
-}
-#group-example .checkbox-container input {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#group-example .checkbox-container label {
-  width: 190px;
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 5px;
-  padding-left: 1.875rem;
-}
-#group-example .error {
-  width: fit-content;
-  margin: 0 auto 1em auto;
-}
-#group-example button {
-  margin: 0 auto;
-  margin-top: 0px;
-  text-align: center;
-  display: block;
-  margin-top: 10px;
-}

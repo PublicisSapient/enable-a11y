@@ -1,13 +1,7 @@
 
     
 
-        <!-- <aside class="notes">
-            <h2>Notes:</h2>
-
-            <p>All screenreaders seem to read both HTML and ARIA version the same way.</p>
-        </aside> -->
-
-        
+    
 
         <p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to
             users.</p>
@@ -21,9 +15,10 @@
 
         <div id="example2" class="enable-example">
             <div class="enable-checkbox">
-                <label for="checkbox_1">I agree to sell my soul to Zoltan:</label>
-                <input type="checkbox" id="checkbox_1">
-                <label for="checkbox_1"></label>
+                <label class="form-control">
+                    <input type="checkbox" checked id="checkbox_1">
+                    I agree to sell my soul to Zoltan
+                </label>
             </div>
         </div>
 
@@ -39,7 +34,8 @@
                 },
                 {
                     "label": "Add custom styles",
-                    "highlight": "%CSS%checkbox-css~ .enable-checkbox"
+                    "highlight": "%CSS%checkbox-css~ .enable-checkbox",
+                    "notes": "There are many tutorials to do this that you can find on the web.  The CSS used below is based on <a href=\"https://twitter.com/5t3ph/\">Stephanie Eckles'</a> excellent article <a href=\"https://moderncss.dev/pure-css-custom-checkbox-style/\">Pure CSS Custom Checkbox Style</a>."
                 }
             ]
         }
@@ -97,7 +93,7 @@
 
         <h2>HTML checkbox group</h2>
 
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
 
         <p>
             If you have a group of checkboxes, this is the proper way to style them.  Instead of fieldsets,
@@ -107,35 +103,40 @@
 
         <div id="group-example" class="enable-example">
             <form id="group-example__form">
-                <fieldset role="group">
+                <fieldset>
                     <legend>
                         The following people will have my soul when I die:
                     </legend>
 
                     <div id="html-checkbox__error" class="error" tabindex="-1">You must choose at least one of the following.</div>
 
-                    <div class="checkbox-container">
+                    <div class="checkbox-container enable-checkbox">
+                        <label class="form-control">
                         <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true"
                             aria-describedby="html-checkbox__error" >
 
-                        <label for="html-checkbox-multi1">Zoltan</label>
+                        Zoltan</label>
                     </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-container enable-checkbox">
+                        <label class="form-control">
                         <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true"
                             aria-describedby="html-checkbox__error" >
                         
-                            <label for="html-checkbox-multi2">Noel</label>
+                            Noel</label>
                     </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-container enable-checkbox">
+                        <label class="form-control">
                         
                         <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true"
                             aria-describedby="html-checkbox__error" >
-                        <label for="html-checkbox-multi3">Alison</label>
+                        Alison</label>
                     </div>
-                    <div class="checkbox-container">
+                    <div class="checkbox-container enable-checkbox">
+
+                    <label class="form-control">
                         <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true"
                             aria-describedby="html-checkbox__error" >
-                        <label for="html-checkbox-multi4">That guy who looks like Gandalf who smokes in the alleyway at the office</label>
+                        That guy who looks like Gandalf who smokes in the alleyway at the office</label>
                     </div>
 
                     <button type="submit">Submit</button>
@@ -143,9 +144,9 @@
                 </div>
             </form>
         </div>
-        <?php includeShowcode("html5-example")?>
+        <?php includeShowcode("group-example")?>
 
-        <script type="application/json" id="html5-example-props">
+        <script type="application/json" id="group-example-props">
         {
             "replaceHtmlRules": {},
             "steps": [{
@@ -154,14 +155,9 @@
                     "notes": "This is just like any other form element"
                 },
                 {
-                    "label": "Surround the whole checkbox group, with instructions, in a div with group role assigned",
-                    "highlight": "role=\"group\"",
-                    "notes": "This will let the browser know these checkboxes are related."
-                },
-                {
-                    "label": "Ensure the whole group is labelled correctly",
-                    "highlight": "aria-labelledby",
-                    "notes": "Setting the aria-labelledby on the group will tell screen readers to announce the instructions for the whole group when users tab into the first checkbox in the group (sometimes all).  If there is an error that pertains to the whole group, it can be encapsulated in this label."
+                    "label": "Surround the whole checkbox with a fieldset",
+                    "highlight": "%OPENCLOSETAG%fieldset ||| %OPENCLOSECONTENTTAG%legend",
+                    "notes": "This will let the browser know these checkboxes are related. The legend is used as the group's label"
                 },
                 {
                     "label": "Errors must be marked up with aria-describedby",
