@@ -167,15 +167,19 @@
   overflow: hidden;
   color: #000;
   text-align: center;
-  background-color: #ccffcc;
 }
 .enable-stats__desc {
-  height: 2.5rem;
+  height: 100%;
   line-height: 2.5rem;
   padding: 0 20px;
   display: inline-block;
   position: relative;
   padding-left: 3.125rem;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .enable-stats__desc {
+    padding: 0 10px 0 3.125rem;
+  }
 }
 .enable-stats__desc:only-child {
   width: 100%;
@@ -189,13 +193,18 @@
 .enable-stats__desc--do-not {
   background-color: #ccccff;
 }
+.enable-stats__desc--style {
+  background-color: #ccccff;
+}
 .enable-stats__icon {
   height: 1.875rem;
-  margin-top: 5px;
+  margin: 5px;
   display: inline-block;
   position: absolute;
-  margin-left: -3.125rem;
+  margin-left: -2.5rem;
 }
 .enable-stats__label {
   display: inline-block;
+  line-height: 1.5;
+  text-align: left;
 }

@@ -222,15 +222,22 @@
   overflow: hidden;
   color: #000;
   text-align: center;
-  background-color: #ccffcc;
+  
+
 
   &__desc {
-    height: (40/@px);
+    height: 100%;
     line-height: (40/@px);
     padding: 0 20px;
     display: inline-block;
     position: relative;
     padding-left: @icon-width;
+    
+
+
+    @media @mobile {
+      padding: 0 10px 0 @icon-width;
+    }
 
     &:only-child {
       width: 100%;
@@ -247,17 +254,23 @@
     &--do-not {
       background-color: #ccccff;
     }
+
+    &--style {
+      background-color: #ccccff;
+    }
   }
   &__icon {
     height: (30/@px);
-    margin-top: 5px;
+    margin: 5px;
     display: inline-block;
     position: absolute;
-    margin-left: ( 0 - @icon-width);
+    margin-left: ( (10/@px) - @icon-width);
     
   }
 
   &__label {
     display: inline-block;
+    line-height: 1.5;
+    text-align: left;
   }
 }

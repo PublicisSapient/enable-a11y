@@ -43,12 +43,32 @@ function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR'
 }
 
 function includeStats($props) {
-  unset($isForNewBuilds, $doNot, $isNPM);
+  unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $comment);
   extract($props);
+
+  if (!isset($comment)) {
+    if (isset($isForNewBuilds)) {
+      if ($isForNewBuilds == true) {
+        $comment = 'This is the best solution to use, especially when building from scratch.';
+      } else if ($isForNewBuilds == false) {
+        $comment = 'Recommended to fix existing, in production work quickly with the least amount of effort.';
+      }
+    } else if (isSet($doNot)) {
+      $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.';
+    } else if (isSet($isNPM)) {
+      $comment = 'This solution available as an NPM module.';
+    } else if (isSet($isStyle)) {
+      $comment = 'This is a great solution to make CSS styling easier for developers.';
+    }
+  }
+
+
   includeFileWithVariables('includes/stats.php', array(
-    'isForNewBuilds' => $isForNewBuilds,
+    'isForNewBuilds' => isSet($isForNewBuilds) ? $isForNewBuilds : NULL,
     'doNot' => isset($doNot),
-    'isNPM' => isset($isNPM)
+    'isNPM' => isset($isNPM),
+    'isStyle' => isSet($isStyle),
+    'comment' => $comment
   ));
 }
 
