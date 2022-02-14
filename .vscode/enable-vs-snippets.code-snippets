@@ -322,6 +322,18 @@
 		"scope": "",
 		"prefix": "stats-style",
 		"body": "<?php includeStats(array('isStyle' => false)) ?>"
-	}, 
+	}, "stats-doNot": {
+		"scope": "",
+		"prefix": "stats-doNot",
+		"body": "<?php includeStats(array('doNot' => true)) ?>"
+	}, "stats-npm": {
+		"scope": "",
+		"prefix": "stats-npm",
+		"body": "<?php includeStats(array('isNPM' => true)) ?>"
+	}, "npm": {
+		"scope": "",
+		"prefix": "npm",
+		"body": "<?= includeNPMInstructions('$1') ?>"
+	}
 
 }

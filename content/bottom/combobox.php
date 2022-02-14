@@ -6,8 +6,7 @@
 <script>
         const autocompleteSubmit = new function () {
             this.init = () => {
-                document.getElementById('aria-example-2a').addEventListener('enable-combobox-change', (e) => {
-                    alert('x');
+                document.getElementById('video-game').addEventListener('enable-combobox-change', (e) => {
                     const { currentTarget } = e;
                     const { value } = currentTarget;
                     const q = `https://www.google.com/search?${new URLSearchParams(`q=${value}`).toString()}`

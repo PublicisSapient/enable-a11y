@@ -41,9 +41,20 @@
             </ul>
         </aside> -->
 
+        <p>
+            Numeric form fields fall into two categories: ones that are supposed to measure a quantity (e.g. items in a shopping cart, number of dependants in your family), and ones that don't (e.g. a zip code, a social insurance number, etc).
+            On mobile devices for both of these fields you will want a virtual numeric keyboard to appear. However, it doesn't make sense for increase/decrease controls to appear for either mouse or keyboard users for those that don't represent a quanity.
+        </p>
+
+        <p>
+            This page will cover both use cases using native HTML form fields.  We will briefly also cover the ARIA <code>spinner</code> role. 
+        </p>
 
 
         <h2>HTML input type="number" example</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(array('isForNewBuilds' => false, 'comment' => 'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may really want to question some of your other life choices)')) ?>
 
         <div id="html-example" class="enable-example">
             <label id="html_number" class="sbLabel" for="type-number">Quantity between 500 and 1000</label>

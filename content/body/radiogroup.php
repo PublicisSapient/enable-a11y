@@ -12,7 +12,7 @@
         </aside> -->
 
 <p>
-  Radio buttons are the easiest way to get users to chose one of a set of choices. Many developers forget that
+  Radio buttons are the easiest way to get users to chose one of a <em>small</em> set of choices. Many developers forget that
   a radio button has <strong>two</strong> labels: one unique to each radio button, and one for the entire group.
 </p>
 
@@ -282,12 +282,9 @@
 
 <p>
     When it comes to styling fieldsets, they can sometimes be as stubborn as my Mom when I tell her it's time for a medical
-    checkup.  Unlike my Mom, I can replace fieldsets with an ARIA <code>radiogroup</code> role.
+    checkup.  Unlike my Mom, who is absolutely irreplacable to me, I can replace fieldsets with an ARIA <code>radiogroup</code> role.
 </p>
 
-<p>
-    <em>(Please don't tell my Mom I said that.  She scares me.)</em>
-</p>
 
 <div id="example4" class="enable-example">
   <h3 class="form-heading">Set Alerts for your Account</h3>

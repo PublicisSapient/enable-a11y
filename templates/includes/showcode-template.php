@@ -8,6 +8,8 @@
                     to highlight each of the individual steps that makes the
                     example accessible.
                 </p>
+
+                <?php echo $prologue ?>
                 <?php endif ?>
             </div>
 

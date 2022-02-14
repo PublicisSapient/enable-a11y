@@ -57,11 +57,72 @@
 
 
 
+<p>
+  Like radio button, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
+  buttons are great for a small amount of choices, select boxes are better for a large set of choices.
+</p>
+
+<p>
+    The TL;DR here is that you can use native <code>&lt;select&gt;</code> tags to create listboxes that are accessible and give a UI that is best for the device they are being displayed on (which is the recommended variation).  If you want to control every aspect of the design, however, you can do this using ARIA <code>listbox</code> controls to do that.
+</p>
+
+<p>
+    Please read this entire page before deciding.  You don't want to make a decision that you regret as much as the one I made when I didn't invest in the Google IPO back in 2004.
+</p>
+
+
 <h2>HTML5 native select element example</h2>
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
 
-<h2>Custom select CSS</h2>
+<p>
+    Although native HTML5 select boxes were difficult to style in the past, <strong>it is possible to style the default (i.e. closed) state completely using CSS</strong>. We have used <a
+    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
+    browser CSS demo</a> to style our demo below.</p>
+
+<p>
+    <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
+    The gut reaction from a lot of designers is to change their appearance, since they understanably want to control
+    ever aspect of the design of the user interface consistantly across browsers and devices. However, mobile browser
+    manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.  
+    Take a look at how the options are displayed when the activates the control:
+</p>
+
+<figcaption id="screenshot-table__caption" class="caption">
+    Screenshots of the HTML5 select box by platform
+</figcaption>
+
+<div class="sticky-table__container">
+    <table class="screenshot-table">
+    <thead>
+        <tr>
+        <th scope="col">Firefox Desktop</th>
+        <th scope="col">Chrome Android</th>
+        <th scope="col">Safari iOS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td><img src="images/pages/listbox/desktop-select-options.png"
+            alt="Like all desktop web browsers, Firefox on OSX displays the select box options are in a scrollable list positioned directly below the button that opens it.">
+        </td>
+        <td><img src="images/pages/listbox/android-select-options.png"
+            alt="The options of the select box in Chrome for Android appear in a scrollable modal overlayed on top of the page. The options text takes up most of the width of the viewport.">
+        </td>
+        <td><img src="images/pages/listbox/ios-select-options.png"
+            alt="Safari for iOS displays the select box options in a 3-D scroll wheel on the bottom of the viewport. It also takes up the full width of the screen.">
+        </td>
+
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<p>
+    Designers can style the closed version of HTML5 select boxes, but not that of the optimized UI.  I urge designers to embrace this <strong>feature, not a bug</strong> mantra for select boxes.  You will make your users happier.
+</p>
+
+
 
 <p>What follows is an excellent customly styled native HTML5 select box. It uses code from <a
     href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
@@ -77,11 +138,87 @@
     Favourite fruit:
   </label>
   <select id="fave-fruit" class="select-css">
-    <option value="">Choose one ...</option>
-    <option>Apples</option>
-    <option>Bananas</option>
-    <option>Grapes</option>
-    <option>Oranges</option>
+    <option value=""></option>
+
+    <option value="Np">
+      Neptunium
+    </option>
+    <option value="Pu">
+      Plutonium
+    </option>
+    <option value="Am">
+      Americium
+    </option>
+    <option value="Cm">
+      Curium
+    </option>
+    <option value="Bk">
+      Berkelium
+    </option>
+    <option value="Cf">
+      Californium
+    </option>
+    <option value="Es">
+      Einsteinium
+    </option>
+    <option value="Fm">
+      Fermium
+    </option>
+    <option value="Md">
+      Mendelevium
+    </option>
+    <option value="No">
+      Nobelium
+    </option>
+    <option value="Lr">
+      Lawrencium
+    </option>
+    <option value="Rf">
+      Rutherfordium
+    </option>
+    <option value="Db">
+      Dubnium
+    </option>
+    <option value="Sg">
+      Seaborgium
+    </option>
+    <option value="Bh">
+      Bohrium
+    </option>
+    <option value="Hs">
+      Hassium
+    </option>
+    <option value="Mt">
+      Meitnerium
+    </option>
+    <option value="Ds">
+      Darmstadtium
+    </option>
+    <option value="Rg">
+      Roentgenium
+    </option>
+    <option value="Cn">
+      Copernicium
+    </option>
+    <option value="Nh">
+      Nihonium
+    </option>
+    <option value="Fl">
+      Flerovium
+    </option>
+    <option value="Mc">
+      Moscovium
+    </option>
+    <option value="Lv">
+      Livermorium
+    </option>
+    <option value="Ts">
+      Tennessine
+    </option>
+    <option value="Og">
+      Oganesson
+    </option>
+
   </select>
 </div>
 
@@ -90,8 +227,8 @@
 <script type="application/json" id="html5-example-props">
 {
   "replaceHtmlRules": {
-
-  },
+    "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
+},
   "steps": [{
       "label": "Mark up the component with a select tag",
       "highlight": "%OPENCLOSETAG%select",
@@ -113,20 +250,27 @@
 
 <h2>ARIA listbox example</h2>
 
+<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(array('isNPM' => true)) ?>
+
 <p>
-  <strong>Note:</strong> The styling of this component is taken from <a
-    href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">The W3C's
-    Collapsible Dropdown Listbox Example</a> &mdash; the script, however, has been replaced with custom
-  code.
+    This listbox I made is accessible, and I have used in a few projects in the past.  It works well, a developer can ensure it looks the same in all browsers, and I am happy with the accessibilty features in it.  However, I strongly recommend you use the <code>&lt;select&gt;</code> box example instead.  Using this library means that:
 </p>
+
+<ol>
+    <li>You are adding more JavaScript to your application.</li>
+    <li>You are not taking advantage of the optimized <code>&lt;select&gt;</code> box styling for the device using the control.</li>
+    <li>You are going to spend more development time to get this to work.</li>
+</ol>
+
 <p>
-  Choose your favorite transuranic element (actinide or transactinide).
+    If after reading the warning on the label, you decide that still want to use this product, read the code walkthrough and the installation instructions after the demo.
 </p>
+
 <div id="aria-example">
   <div class="enable-listbox listbox-area">
     <div class="left-area">
       <span id="exp_elem" class="enable-listbox__exp_elem">
-        Choose an element:
       </span>
       <div id="exp_wrapper" class="enable-listbox__wrapper">
         <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button"
@@ -218,6 +362,12 @@
   </div>
 </div>
 
+<p>
+  (<em><strong>Note:</strong> The styling of this component is taken from <a
+    href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">The W3C's
+    Collapsible Dropdown Listbox Example</a> &mdash; the script, however, has been replaced with custom
+  code.</em>)
+</p>
 
 
 <?php includeShowcode("aria-example")?>
@@ -276,3 +426,6 @@
   ]
 }
 </script>
+
+<?= includeNPMInstructions('enable-listbox') ?>
+

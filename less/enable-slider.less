@@ -207,8 +207,8 @@ input[type="range"] {
     }
 
     &--container {
-      --minValue: calc(min(var(--a), var(--b)));
-      --maxValue: calc(max(var(--a), var(--b)));
+      --minValue: ~"calc(min(var(--a), var(--b)))";
+      --maxValue: ~"calc(max(var(--a), var(--b)))";
       --dif: calc(var(--max) - var(--min));
       position: relative;
       padding: 0;

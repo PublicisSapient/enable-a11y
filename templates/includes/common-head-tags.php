@@ -11,7 +11,7 @@ function includeFileWithVariables($fileName, $variables)
     include($fileName);
 }
 
-function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteractive = true, $headingLevel = 3)
+function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteractive = true, $headingLevel = 3, $prologue = '')
 {
     includeFileWithVariables('includes/showcode-template.php', array(
         'id' => $id,
@@ -19,7 +19,8 @@ function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteracti
         'jsId' => $jsId,
         'extra' => $extra,
         'isInteractive' => $isInteractive,
-        'headingLevel' => $headingLevel
+        'headingLevel' => $headingLevel,
+        'prologue' => $prologue
     ));
 }
 
@@ -42,9 +43,18 @@ function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR'
     ));
 }
 
+function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js')) {
+  includeFileWithVariables('includes/npm.php', array(
+    'moduleName' => $moduleName,
+    'supportingModuleNames' => $supportingModuleNames
+  ));
+}
+
 function includeStats($props) {
-  unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $comment);
+  unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $isExperimental, $comment);
   extract($props);
+
+  $npmLink = '(<a href="#npm-instructions">Module installation instructions</a>)';
 
   if (!isset($comment)) {
     if (isset($isForNewBuilds)) {
@@ -54,11 +64,15 @@ function includeStats($props) {
         $comment = 'Recommended to fix existing, in production work quickly with the least amount of effort.';
       }
     } else if (isSet($doNot)) {
-      $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.';
+      $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
     } else if (isSet($isNPM)) {
-      $comment = 'This solution available as an NPM module.';
+      $comment = 'This solution available as an NPM module. ' . $npmLink;
     } else if (isSet($isStyle)) {
       $comment = 'This is a great solution to make CSS styling easier for developers.';
+    }
+  } else {
+    if (isSet($isNPM)) {
+      $comment = $comment . ' ' . $npmLink;
     }
   }
 
