@@ -1,6 +1,4 @@
-
-    
-      <!-- <aside class="notes">
+<!-- <aside class="notes">
         <h2>Notes:</h2>
 
         <ul>
@@ -8,121 +6,125 @@
         </ul>
       </aside> -->
 
-      <p>
-          Don't be fooled -- even if they look like buttons, they are links and should be marked up like links,
-          so screen reader users know what will happen when the press it (I would argue that 
-          <a href="https://medium.com/simple-human/but-sometimes-links-look-like-buttons-and-buttons-look-like-links-9b371c57b3d2">there links should visually
-          look like links</a> (kudos to <a href="https://medium.com/@adambsilver">Adam Silver</a> for articulating this point
-          extremely well).
-      </p>
-      
-      <h2>Native HTML5</h2>
+<p>
+  Don't be fooled -- even if they look like buttons, they are links and should be marked up like links,
+  so screen reader users know what will happen when the press it (I would argue that
+  <a
+    href="https://medium.com/simple-human/but-sometimes-links-look-like-buttons-and-buttons-look-like-links-9b371c57b3d2">there
+    links should visually
+    look like links</a> (kudos to <a href="https://medium.com/@adambsilver">Adam Silver</a> for articulating this point
+  extremely well).
+</p>
 
-      <div id="html5-examples" class="enable-example">
-        <p>
-          This paragraph has a few native
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
-            >HTML5 links</a>
-          in it. It is best to use native, non-ARIA links because they are
-          guarenteed to be used in
-          <a href="https://en.wikipedia.org/wiki/Netscape_Navigator"
-            >older browsers</a>
-          and <a href="https://en.wikipedia.org/wiki/Wget">other user agents</a>.
-        </p>
+<h2>Native HTML5</h2>
 
-        <p>
-          This paragraph has a
-          <a aria-current="page" href="18-link.html">self-referring link</a>
-          (i.e. a page that links to itself). It is marked up with
-          <code>aria-current="page"</code>.
-        </p>
-      </div>
+<?php includeStats(array('isForNewBuilds' => true)) ?>
 
-      <?php includeShowcode("html5-examples")?>
+<p>
+  Everyone who took basic HTML knows how to code these, but there are a few things below that you may have never known
+  about (like how to code a self-referring link)
+</p>
 
-      <script type="application/json" id="html5-examples-props">
-      {
-        "replaceHtmlRules": {
-        },
-        "steps": [
-          {
-            "label": "Use a tags",
-            "highlight": "%OPENCLOSECONTENTTAG%a",
-            "notes": "As long as the <code>a</code> tag has an <code>href</code> attribute, it is keyboard accessible by default."
-          },
-          {
-            "label": "Use aria-current for self referring links",
-            "highlight": "aria-current",
-            "notes": "Screen readers will announce that a link points the current page if this attribute is set."
-          }
-        ]
-      }
-      </script>
+<div id="html5-examples" class="enable-example">
+  <p>
+    This paragraph has a few native
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">HTML5 links</a>
+    in it. It is best to use native, non-ARIA links because they are
+    guarenteed to be used in
+    <a href="https://en.wikipedia.org/wiki/Netscape_Navigator">older browsers</a>
+    and <a href="https://en.wikipedia.org/wiki/Wget">other user agents</a>.
+  </p>
 
-      <h2>Using ARIA</h2>
+  <p>
+    This paragraph has a
+    <a aria-current="page" href="18-link.html">self-referring link</a>
+    (i.e. a page that links to itself). It is marked up with
+    <code>aria-current="page"</code>.
+  </p>
+</div>
 
-      <div id="aria-examples" class="enable-example">
-        <p>
-          This paragraph has a few
-          <span             data-href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_link_role"
-            tabindex="0"
-            role="link"
-            >ARIA link tags</span>
-          in it. They are coded as <code>span</code> tags with the following
-          attributes set:
-        </p>
-        <ul>
-          <li>
-            <code>tabindex="0"</code> set (to make them keyboard accessible)
-          </li>
-          <li>
-            <code>role="link"</code>, so that a screen reader reports them
-            correctly.
-          </li>
-        </ul>
+<?php includeShowcode("html5-examples")?>
 
-        <p>
-          In order for them to be functional, they need to have
-          <span             data-href="https://en.wikipedia.org/wiki/JavaScript"
-            tabindex="0"
-            role="link"
-            >JavaScript</span>
-          added to them to make them functional. Feel free to use
-          <span data-href="js/link.js" tabindex="0" role="link"
-            >the script we use in this demo</span>
-          if you need to use it.
-        </p>
-      </div>
+<script type="application/json" id="html5-examples-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use a tags",
+      "highlight": "%OPENCLOSECONTENTTAG%a",
+      "notes": "As long as the <code>a</code> tag has an <code>href</code> attribute, it is keyboard accessible by default."
+    },
+    {
+      "label": "Use aria-current for self referring links",
+      "highlight": "aria-current",
+      "notes": "Screen readers will announce that a link points the current page if this attribute is set.  This is very useful when implementing breadcrumbs."
+    }
+  ]
+}
+</script>
 
-      <?php includeShowcode("aria-examples")?>
+<h2>Using ARIA</h2>
 
-      <script type="application/json" id="aria-examples-props">
-      {
-        "replaceHtmlRules": {
-        },
-        "steps": [
-          {
-            "label": "Use role=\"link\" on elements you want to be fake tags",
-            "highlight": "role=\"link\"",
-            "notes": "Screen readers will now report these as links"
-          },
-          {
-            "label": "Make sure you remember to add tabindex=\"0\" on fake links",
-            "highlight": "tabindex=\"0\"",
-            "notes": "This makes the fake links accessible."
-          },
-          {
-            "label": "Create Javascript events",
-            "highlight": "%JS% ariaLinkShim",
-            "notes": "This code will activate the links using mouse clicks or hitting the ENTER key"
-          },
-          {
-            "label": "Create CSS",
-            "highlight": "%CSS%link-css~ [role=\"link\"]",
-            "notes": "Make sure the CSS makes a link look like a link"
-          }
-        ]
-      }
-      </script>
+<?php includeStats(array('isForNewBuilds' => false)) ?>
 
-    
+<p>
+  I am not sure why anyone would code a link with anything but an <code>&lt;a&gt;</code> tag, but 
+  then again, I am not sure <a href="https://www.denofgeek.com/movies/what-went-wrong-with-highlander-ii-the-quickening/">why someone would think Highlanger II
+  was a good idea either</a>, so I guess anything's possible.
+</p>
+
+<div id="aria-examples" class="enable-example">
+  <p>
+    This paragraph has a few
+    <span
+      data-href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_link_role"
+      tabindex="0" role="link">ARIA link tags</span>
+    in it. They are coded as <code>span</code> tags with the following
+    attributes set:
+  </p>
+  <ul>
+    <li>
+      <code>tabindex="0"</code> set (to make them keyboard accessible)
+    </li>
+    <li>
+      <code>role="link"</code>, so that a screen reader reports them
+      correctly.
+    </li>
+  </ul>
+
+  <p>
+    In order for them to be functional, they need to have
+    <span data-href="https://en.wikipedia.org/wiki/JavaScript" tabindex="0" role="link">JavaScript</span>
+    added to them to make them functional. Feel free to use
+    <span data-href="js/link.js" tabindex="0" role="link">the script we use in this demo</span>
+    if you need to use it.
+  </p>
+</div>
+
+<?php includeShowcode("aria-examples")?>
+
+<script type="application/json" id="aria-examples-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use role=\"link\" on elements you want to be fake tags",
+      "highlight": "role=\"link\"",
+      "notes": "Screen readers will now report these as links"
+    },
+    {
+      "label": "Make sure you remember to add tabindex=\"0\" on fake links",
+      "highlight": "tabindex=\"0\"",
+      "notes": "This makes the fake links accessible."
+    },
+    {
+      "label": "Create Javascript events",
+      "highlight": "%JS% ariaLinkShim",
+      "notes": "This code will activate the links using mouse clicks or hitting the ENTER key"
+    },
+    {
+      "label": "Create CSS",
+      "highlight": "%CSS%link-css~ [role=\"link\"]",
+      "notes": "Make sure the CSS makes a link look like a link"
+    }
+  ]
+}
+</script>

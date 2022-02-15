@@ -23,9 +23,26 @@
 
     </aside> -->
 
+    <p>
+      It may surprise a lot of people that you can make editable textboxes without JavaScript and without using <code>&lt;input type="text"&gt;</code> or <code>&lt;textarea&gt;</code> tags.  
+    </p>
+
+    <p>
+      Why would you use the ARIA method?  I can see two reasons: 
+    </p>
+      
+      <ol>
+        <li><em>Maybe</em> because you can't use <code>::before</code> or <code>::after</code> pseudo-elements to style form elements, although there are <a href="https://www.scottohara.me/blog/2014/06/24/pseudo-element-input.html">other ways around this without using ARIA</a>.</li>
+        <li>If you wanted to create a WYSIWYG editor then you would have to do this, since form elements don't allow the editing of formatted text.</li>
+      </ol>
+
+    <p>This last use case we do not cover, since creating an accessible WYSIWYG editor would involve quite a bit of JavaScript (I will be adding a page in Enable about WYSIWYG editors in the future).
+    </p>
 
 
     <h2>HTML example</h2>
+
+    <?php includeStats(array('isForNewBuilds' => true)) ?>
 
     <div id="html-example" class="enable-example">
       <form class="enable-form-example">
@@ -65,7 +82,7 @@
           "highlight": "%OPENTAG%input"
         },
         {
-          "label": "USe <code>&lt;textarea&gt;</code> for multiline text inputs",
+          "label": "Use <code>&lt;textarea&gt;</code> for multiline text inputs",
           "highlight": "%OPENCLOSETAG%textarea"
         }
       ]
@@ -76,6 +93,25 @@
 
 
     <h2>ARIA example</h2>
+
+    <?php includeStats(array('isForNewBuilds' => false, 'comment' => "Recommended only if you needed to create a JavaScript WYSIWYG editor.")) ?>
+
+    <p>
+      Keep in mind that if you use this in a form, none of the nice free form functionality (e.g.: HTML5 validation, inclusion of data when submitting a form in an HTTP request, etc), won't work. These example do, however, show up in Voiceover's Rotor and NVDA's Element Dialogue.</li>
+    </p>
+
+    <ul>
+        <li>No JavaScript was involved in making these (you would need to use JavaScript, though, to make a true WYSIWYG editor).</li>
+        <li>The first example is simply a
+          <code>div</code> with its
+          <code>contenteditable</code> attribute set to
+          <code>"true"</code>.
+          Textareas can be simulated using <code>aria-multiline="true"</code> and using CSS
+          <code>resize: both</code> to make them resizable.
+        </li>
+        
+        <li>The element will not submit its data to the server like a real form field.</li>
+      </ul>
 
     <div id="aria-example" class="enable-example">
       <div class="enable-form-example">
@@ -128,8 +164,8 @@
         },
         {
           "label": "Use CSS to style multiline textboxes differently",
-          "highlight": "%CSS%textbox-css~ [role=\"textbox\"]; [role=\"textbox\"][aria-multiline=\"true\"]",
-          "notes": "Note the <code>resize: both</code> CSS on the multiline textbox.  This allows the browser to all the user to resize the textbox with a mouse (but not with a keyboard, as far as I'm aware).  <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/resize\">More information about this CSS property</a>."
+          "highlight": "%CSS%textbox-css~ [role=\"textbox\"]; textarea, [aria-multiline=\"true\"] ||| resize:\\sboth;",
+          "notes": "Note the <code>resize: both</code> CSS on the multiline textbox.  Browsers that support it will allow the user to resize the textbox with a mouse (but not with a keyboard, as far as I'm aware).  <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/resize\">More information about this CSS property</a>."
         }
       ]
     }

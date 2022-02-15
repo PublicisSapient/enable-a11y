@@ -291,7 +291,7 @@
                         Example</a> with quite a few modifications to remove jQuery as a dependency.
             </li>
             <li>
-                I also refactored it to work with mobile. I couldn't use the same UI as the native <code>&lt;input type="range'</code>,
+                I also refactored it to work with mobile. I couldn't use the same UI as the native <code>&lt;input type="range"&gt;</code>,
                 since using either iOS's vertical swiping and Android's hardware volume buttons to control the slider is impossible
                 today.
             </li>

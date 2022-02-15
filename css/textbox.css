@@ -18,6 +18,8 @@ textarea,
   -moz-appearance: textarea;
   appearance: textarea;
   resize: both;
+  min-width: 20rem;
+  max-width: none !important;
 }
 .textarea-label {
   vertical-align: top;
