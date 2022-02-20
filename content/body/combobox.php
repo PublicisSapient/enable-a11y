@@ -43,7 +43,7 @@
 </ul>
 
 <div id="dataset-example" class="enable-example">
-  <form>
+  <form class="combobox-example">
     <label id="html5-fruit__label" for="html5-fruit" class="combobox-label">
       Enter a Fruit or Vegetable
     </label>
@@ -130,6 +130,8 @@
       <option id="Yam" value="Yam">Yam</option>
       <option id="Zucchi" value="Zucchi">Zucchi</option>
     </datalist>
+
+    <button type="submit" class="combobox-example__button">Submit</button>
   </form>
 </div>
 
@@ -183,7 +185,7 @@
 
 <div class="enable-example">
   <div id="example1" class="enable-combobox">
-    <form>
+    <form class="combobox-example">
       <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
       <div class="enable-combobox__inner-container">
         <div class="enable-combobox__controls-container">
@@ -270,6 +272,7 @@
           </div>
         </div>
       </div>
+      <button type="submit" class="combobox-example__button">Submit</button>
     </form>
   </div>
 </div>
@@ -338,18 +341,18 @@
 </p>
 
 <div id="submit-on-select-example" class="enable-example">
-  <form role="search" aria-label="Example 2a combobox example" tabindex="-1">
+  <form role="search" aria-label="1980s video game search" tabindex="-1" class="combobox-example">
     <div class="enable-combobox">
-      <label for="video-game">Search for your favourite 1980s Video Game:</label>
+      <label id="video-games__label" for="video-games">Search for your favourite 1980s Video Game:</label>
       <div class="enable-combobox__inner-container">
-        <div id="video-game__close-desc" class="sr-only">
+        <div id="video-games__close-desc" class="sr-only">
           Please choose a value using the arrow keys or clear the combobox by either pressing the escape key or activating the
           clear button.  Pressing enter will search for the item on Google.
         </div>
 
         <div class="enable-combobox__controls-container">
 
-          <div class="sr-only" id="video-game__desc">
+          <div class="sr-only" id="video-games__desc">
             As you type, use the up and down arrow keys or press ENTER and swipe to choose the autocomplete
             items.
           </div>
@@ -360,17 +363,17 @@
           </div>
 
 
-          <input type="text" tabindex="0" id="video-game" role="combobox" aria-autocomplete="list"
-            aria-owns="video-game__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off"
-            aria-describedby="video-game__desc">
+          <input type="text" tabindex="0" id="video-games" role="combobox" aria-autocomplete="list"
+            aria-owns="video-games__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off"
+            aria-describedby="video-games__desc">
 
           <button class="enable-combobox__reset-button" aria-controls="video-games__list" type="reset"
-            aria-describedby="video-game__close-desc">
+            aria-describedby="video-games__label">
             <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear"
               aria-describedby="video-games__label">
           </button>
 
-          <ul role="listbox" id="video-game__list" tabindex="-1" hidden>
+          <ul role="listbox" id="video-games__list" tabindex="-1" hidden>
             <li tabindex="-1" role="option">1942</li>
             <li tabindex="-1" role="option">Asteroids</li>
             <li tabindex="-1" role="option">Battlezone</li>
@@ -435,6 +438,8 @@
 
         </div>
       </div>
+
+      <button type="submit" class="combobox-example__button">Submit</button>
     </div>
   </form>
 </div>
@@ -482,9 +487,9 @@
   in a lot of modern searchboxes in the headings of a lot of e-commerce sites.</p>
 
 <div id="example2" class="enable-example">
-  <form>
+  <form class="combobox-example">
     <div class="enable-combobox">
-      <label for="aria-example-2"> Enter a name of a country or de jure sovereign state</label>
+      <label id="aria-example-2__label" for="aria-example-2"> Enter a name of a country or de jure sovereign state</label>
       <div class="enable-combobox__inner-container">
         <div class="enable-combobox__controls-container">
 
@@ -504,7 +509,7 @@
             autocapitalize="off" aria-describedby="aria-example-2__desc">
           <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset">
             <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear"
-              aria-describedby="aria-fruit__label">
+              aria-describedby="aria-example-2__label">
           </button>
 
           <div role="listbox" id="aria-example-2__list" hidden>
@@ -721,6 +726,7 @@
         </div>
       </div>
     </div>
+    <button type="submit" class="combobox-example__button">Submit</button> 
   </form>
 
   <template id="enable_combobox__group-select-alert-template">

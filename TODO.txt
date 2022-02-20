@@ -17,6 +17,8 @@ I think we need to put all the a11y modules (accessibility.js, text-zoom-event.j
 npm.php
 webpack.php
 
+Multilanguage sections of a page.
+
 
 Meta info and title framework.
 

@@ -1,14 +1,10 @@
 @import "shared/mixins-and-vars"; 
 
-input[type="submit"] {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0;
+input[type="submit"],
+button[type="submit"] {
+  display: block; 
+  margin: 1em auto 1em auto;
   padding-bottom: 0;
-}
-
-input[type="submit"] {
-  margin-bottom: 1em;
 }
 
 .form-heading {
@@ -25,7 +21,7 @@ fieldset,
   padding: 0.5em;
   margin-top: 1em;
   padding-top: 2em;
-  background-color: #eeeeee;
+  background-color: #fafafa;
 
   legend,
   .legend {
@@ -34,11 +30,13 @@ fieldset,
     border-color: #aaaaaa;
     font-weight: bold;
     font-size: 1em;
+    text-align: center;
+    border-bottom: solid 1px black;
   }
 
   .legend {
     top: -1.5em;
-    margin-bottom: -1em;
+    margin-bottom: 0px !important;
   }
 }
  

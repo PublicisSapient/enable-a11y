@@ -6,7 +6,6 @@
     echo $response;
 
 
-
 /**
  * API Request Caching
  *
@@ -42,7 +41,7 @@ function json_cached_api_results($cache_file = null, $expires = null)
         }
     } else {
         // Check for the number of purge cache requests to avoid abuse
-        if (intval($_SESSION['views']) >= $request_limit) {
+        if (isset($_SESSION) && intval($_SESSION['views']) >= $request_limit) {
             $limit_reached = " <span class='error'>Request limit reached ($request_limit). Please try purging the cache later.</span>";
         }
         // Fetch cache

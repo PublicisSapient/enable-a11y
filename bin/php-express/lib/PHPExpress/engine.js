@@ -20,8 +20,9 @@ var engine = function (filePath, opts, callback) {
             REQUEST_METHOD: method,
             CONTENT_LENGTH: body.length,
             QUERY_STRING: query,
-            SERVER_NAME: 'localhost'
+            SERVER_NAME: 'localhost',
         };
+        
 
         Object.keys(server).forEach(key => {
             env[key] = server[key]

@@ -189,46 +189,46 @@
                 
                 <thead>
                     <tr>
-                        <th rowspan="2" scope="col" class="sticky-table__sticky-horiz-heading"><span class="sr-only">Distances</span></th>
-                        <th colspan="3" scope="colgroup">Females</th>
-                        <th colspan="3" scope="colgroup">Males</th>
+                        <th id="distances-header" rowspan="2" scope="col" class="sticky-table__sticky-horiz-heading"><span class="sr-only">Distances</span></th>
+                        <th id="females-header" colspan="3" scope="colgroup">Females</th>
+                        <th id="males-header" colspan="3" scope="colgroup">Males</th>
                     </tr>
                     <tr>
-                        <th scope="col">Mary</th>
-                        <th scope="col">Betsy</th>
-                        <th scope="col">Joanne</th>
-                        <th scope="col">Matt</th>
-                        <th scope="col">Todd</th>
-                        <th scope="col">Jake</th>
+                        <th id="u1" headers="females-header" scope="col">Mary</th>
+                        <th id="u2" headers="females-header" scope="col">Betsy</th>
+                        <th id="u3" headers="females-header" scope="col">Joanne</th>
+                        <th id="u4" headers="males-header" scope="col">Matt</th>
+                        <th id="u5" headers="males-header" scope="col">Todd</th>
+                        <th id="u6" headers="males-header" scope="col">Jake</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1 mile</th>
-                        <td>8:32</td>
-                        <td>7:43</td>
-                        <td>9:51</td>
-                        <td>7:55</td>
-                        <td>7:01</td>
-                        <td>7:51</td>
+                        <th id="r1" headers="distances-header" scope="row">1 mile</th>
+                        <td headers="females-header r1 u1">8:32</td>
+                        <td headers="females-header r1 u2">7:43</td>
+                        <td headers="females-header r1 u3">9:51</td>
+                        <td headers="males-header r1 u4">7:55</td>
+                        <td headers="males-header r1 u5">7:01</td>
+                        <td headers="males-header r1 u6">7:51</td>
                     </tr>
                     <tr>
-                        <th scope="row">5 km</th>
-                        <td>28:04</td>
-                        <td>26:47</td>
-                        <td>38:15</td>
-                        <td>27:27</td>
-                        <td>24:21</td>
-                        <td>24:31</td>
+                        <th id="r2" headers="distances-header" scope="row">5 km</th>
+                        <td headers="females-header r2 u1">28:04</td>
+                        <td headers="females-header r2 u2">26:47</td>
+                        <td headers="females-header r2 u3">38:15</td>
+                        <td headers="males-header r2 u4">27:27</td>
+                        <td headers="males-header r2 u5">24:21</td>
+                        <td headers="males-header r2 u6">24:31</td>
                     </tr>
                     <tr>
-                        <th scope="row">10 km</th>
-                        <td>1:01:16</td>
-                        <td>55:38</td>
-                        <td>1:56:01</td>
-                        <td>57:04</td>
-                        <td>50:35</td>
-                        <td>50:45</td>
+                        <th id="r3" headers="distances-header" scope="row">10 km</th>
+                        <td headers="females-header r3 u1">1:01:16</td>
+                        <td headers="females-header r3 u2">55:38</td>
+                        <td headers="females-header r3 u3">1:56:01</td>
+                        <td headers="males-header r3 u4">57:04</td>
+                        <td headers="males-header r3 u5">50:35</td>
+                        <td headers="males-header r3 u6">50:45</td>
                     </tr>
                 </tbody>
             </table></div>
@@ -240,7 +240,6 @@
         <script type="application/json" id="complex-table-props">
         {
             "replaceHtmlRules": {
-                "tbody": "<!-- Table data is here -->"
             },
             "steps": [{
                 "label": "Use <code>figure</code> and <code>figcaption</code> to caption the table",
@@ -256,6 +255,16 @@
                 "label": "Mark up the columns underneath the normal way",
                 "highlight": "scope=\"col\"",
                 "notes": "This is just like the previous examples"
+            },
+            {
+                "label": "All table headings must have an id",
+                "highlight": "id",
+                "notes": "These ids will be used in the next step."
+            },
+            {
+                "label": "All table cells should have headers attributes",
+                "highlight": "headers",
+                "notes": "Screen readers sometimes have problems parsing complex tables.  In order to clarify how the table should be parsed, developers should put <code>headers</code> attributes.  I have found that using <a href="https://github.com/pa11y/pa11y-ci">the pa11y command line tool</a> is a great way to work through the occasional confusion that can happen with this, as it not only tells you what is wrong, but the recommended way of fixing it."
             },
             {
                 "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",

@@ -5,6 +5,12 @@
   padding: 1em;
   border: solid 1px #999;
 }
+.wiktionary-lookup__content-container {
+  display: none;
+}
+.wiktionary-lookup__content-container--is-loaded {
+  display: block;
+}
 .mw-editsection {
   display: none;
 }

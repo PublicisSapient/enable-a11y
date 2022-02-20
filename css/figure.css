@@ -28,3 +28,23 @@ figure code,
   width: 100%;
   border: solid 1px #ccc;
 }
+a.tile-cta {
+  display: block;
+  padding: 0 20px 0 30px;
+  border-radius: 0.9375rem;
+  color: white;
+  background-color: #3030f8;
+  width: fit-content;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  margin: 30px auto;
+}
+a.tile-cta::after {
+  content: url("../images/chevron-right.svg");
+  filter: invert();
+  transform: scale(0.8) translateY(0.375rem);
+  display: inline-block;
+}

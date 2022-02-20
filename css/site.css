@@ -169,7 +169,6 @@
   text-align: center;
 }
 .enable-stats__desc {
-  height: 100%;
   line-height: 2.5rem;
   padding: 0 20px;
   display: inline-block;
@@ -217,7 +216,6 @@
 }
 .enable-stats__label {
   display: inline-block;
-  line-height: 1.5;
   text-align: left;
 }
 .screenshot-table {

@@ -6,9 +6,10 @@ MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tai
 PROJECT_URL="http://$MYIP:8888/index.php"
 
 
+
 echo "Checking if dependencies are installed ..."
 
-for i in lynx java php axe
+for i in lynx java php81 axe
 do
 	which $i > /dev/null 2> /dev/null
 	if [ "$?" != "0" ]
@@ -23,6 +24,24 @@ do
 		fi 
 		exit 1
 	fi
+
+
+	#.. Special case with java -- if it returns 1, it is probably because it
+	#   not really installed and it's giving a message to install the runtime.
+	if [ "$i" == "java" ]
+	then
+		OUT=`java 2>&1`
+		CHECK=`echo "$OUT" | grep "Unable to locate a Java Runtime." | wc -l`
+		
+		if [ $CHECK = "1" ]
+		then
+			echo 1>&2
+			echo "$OUT" 1>&2
+			echo 1>&2
+			exit 1
+		fi
+	fi
+
 done
 
 if [ ! -f "$VNU_JAR" ]
@@ -70,6 +89,8 @@ do
 	TEMP_FILES="$TEMP_FILES $TEMP_FILE"
 done
 echo	
+
+if false; then
 
 echo "Checking HTML..."
 echo
@@ -146,7 +167,7 @@ then
 fi
 
 
-echo "Running accessibility tests..."
+echo "Running aXe tests..."
 
 #.. Make a list of the delayed URLS
 AXE_DELAYED_URLS=""
@@ -170,8 +191,30 @@ echo "Result: $AXE_UNDELAY_RETURN"
 
 if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
 then
-	echo "There are accessibility issues"
+	echo "aXe failed. See information above."
 	exit 1
+fi
+
+fi
+
+
+echo "Running pa11y tests ..."
+
+DID_PALLY_SUCCEED="0"
+
+for i in $DOWNLOADED_URLS
+do
+	pa11y $i
+
+	if [ "$?" != "0" ]
+	then
+		DID_PALLY_SUCCEED="1"
+	fi
+done
+
+if [ $DID_PALLY_SUCCEED = "1" ]
+then
+	echo "Pa11y failed.  See information above."
 fi
 
 

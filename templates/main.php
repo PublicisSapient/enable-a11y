@@ -1,8 +1,10 @@
 <?php 
+  include "includes/functions.php";
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1); 
   
-  global $fileProps;  
+
+  give404IfNotValid();
 ?>
 <!DOCTYPE html>
 <html lang="en">
