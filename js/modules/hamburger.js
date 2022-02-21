@@ -176,7 +176,7 @@ EnableFlyoutHamburger = new function() {
       requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
 
       // When a submenu is opened
-    } else if (animationName === mobileOpenMenuAnim) {
+    } else if (animationName.indexOf(mobileOpenMenuAnim) === 0) {
 
       if (target.matches(navLevelSel)) {
         target.querySelector(closeLevelSel).focus();
@@ -185,7 +185,7 @@ EnableFlyoutHamburger = new function() {
       }
 
       // When a menu panel is being closed.
-    } else if (animationName === mobileCloseMenuAnim) {
+    } else if (animationName.indexOf(mobileCloseMenuAnim) === 0) {
       const $menuEl = document.querySelector('[aria-controls="' + $root.id + '"]');
 
       // When the close button is clicked

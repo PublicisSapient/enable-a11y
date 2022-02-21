@@ -178,7 +178,7 @@
     "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
   },
   "tooltip.php": {
-    "title": "ARIA Tooltip",
+    "title": "Tooltip",
     "desc": "If you have a tooltip, ensure it follows accessibility best practices."
   },
   "video-player.php": {

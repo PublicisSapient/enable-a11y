@@ -41,9 +41,24 @@ function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR'
     ));
 }
 
+// From https://stackoverflow.com/questions/2791998/convert-string-with-dashes-to-camelcase
+function dashesToCamelCase($string, $capitalizeFirstCharacter = false) 
+{
+
+    $str = str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+
+    if (!$capitalizeFirstCharacter) {
+        $str[0] = strtolower($str[0]);
+    }
+
+    return $str;
+}
+
+
 function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js')) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
+    'moduleVar' => dashesToCamelCase($moduleName),
     'supportingModuleNames' => $supportingModuleNames
   ));
 }
