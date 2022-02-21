@@ -18,6 +18,10 @@ const tooltip = new function () {
     const { body } = document;
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
+    const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
+    let timeout;
+    let tooltipTarget = null;
+
 
     let isTooltipVisible;
     let tooltipBelongsTo;
@@ -27,7 +31,7 @@ const tooltip = new function () {
 
         // mouse events
         body.addEventListener('mouseover', this.show);
-        body.addEventListener('mouseleave', this.hide);
+        //body.addEventListener('mouseleave', this.hide);
 
         // equivalent keyboard events
         body.addEventListener('focus', this.show, true);
@@ -36,6 +40,7 @@ const tooltip = new function () {
         // used to make tooltip disappear when ESC key 
         // is pressed.
         body.addEventListener('keyup', this.onKeyup);
+
 
     }
 
@@ -57,37 +62,45 @@ const tooltip = new function () {
         }
     }
     this.show = (e) => {
+        timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
+    }
+
+    this.showTimeout = (e) => {
         // This is the element that needs the tooltip
-        const target = e.target;
+        tooltipTarget = e.target;
         
         // The text the tooltip contains is in the
         // data-tooltip attribute
-        const text = target.dataset.tooltip;
+        const text = tooltipTarget.dataset.tooltip;
 
         // don't do this if the tooltip is visible for this element already
-        if (!text || (isTooltipVisible && tooltipBelongsTo === target)) {
+        if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
         }
 
         // If this is an element with a tooltip,
         if (text) {
-            // the coordinates of the target
-            const targetRect = target.getBoundingClientRect();
+            // the coordinates of the tooltipTarget
+            const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
 
-            target.setAttribute('aria-describedby', 'tooltip');
+            tooltipTarget.setAttribute('aria-describedby', 'tooltip');
 
             // show the tool tip
             tooltipEl.innerHTML = text;
             tooltipEl.setAttribute('aria-hidden', "false");
             tooltipEl.classList.remove('tooltip--hidden');
 
-            // position the tooltip below the target
-            tooltipStyle.top = 'calc(' + (targetRect.bottom + window.pageYOffset) + 'px + 1em)';
-            tooltipStyle.left = (targetRect.left + window.pageXOffset) + 'px';
+            // position the tooltip below the tooltipTarget
+            tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.pageYOffset) + 'px + 1em)';
+            tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
             isTooltipVisible = true;
-            tooltipBelongsTo = target;
+            tooltipBelongsTo = tooltipTarget;
         }
-        target.dispatchEvent(
+
+        tooltipTarget.addEventListener('mouseleave', this.hide);
+
+
+        tooltipTarget.dispatchEvent(
             new CustomEvent(
                 'enable-show',
                 {
@@ -97,7 +110,13 @@ const tooltip = new function () {
         );
     }
 
-    this.hide = () => {
+    this.hide = (e) => {
+        if (tooltipTarget) {
+            tooltipTarget.removeEventListener('mouseleave', this.hide);
+            tooltipTarget = null;
+        }
+        console.log('hide', e.type);
+        clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
         isTooltipVisible = false;

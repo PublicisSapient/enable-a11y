@@ -38,13 +38,13 @@
     You can use the module like this:
 
     <code class="showcode--no-js">
-import enableListbox from '~enable-a11y/js/modules/<?= $moduleName ?>';
+import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 @import '~enable-a11y/css/<?= $moduleName ?>';
 
 ...
 
-// How to initialize the enableListbox library
-enableListbox.init();
+// How to initialize the <?= $moduleVar ?> library
+<?= $moduleVar ?>.init();
 
 ...
 
@@ -82,13 +82,33 @@ enableListbox.init();
     in the appropriate directories in your project (all JS files must be in the same directory).
   </li>
   <li>
+    Load the CSS in the head of you document:
+
+    <code class="showcode--no-js">
+&lt;html&gt;
+  &lt;head&gt;
+
+    ...
+
+    &lt;link rel="stylesheet" href="path-to/css/<?= $moduleName ?>.css" &gt;
+
+    ...
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+
+    </code>
+  <li>
     Load your scripts using:
 
     <code class="showcode--no-js">
 &lt;script type="module"&gt;
-    import enableListbox from "path-to/<?= $moduleName ?>.js" 
+    import <?= $moduleVar ?> from "path-to/<?= $moduleName ?>.js" 
 
-    enableListbox.init();
+    <?= $moduleVar ?>.init();
 &lt;/script&gt;
         </code>
 </ol>

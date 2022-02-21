@@ -78,6 +78,10 @@
   background: none;
   border: none;
 }
+.enable-flyout-container--positioned-left .enable-flyout__hamburger-icon-facade {
+  right: initial;
+  left: 2px;
+}
 .enable-flyout__hamburger-icon span {
   display: block;
   position: absolute;
@@ -150,6 +154,11 @@
   -moz-appearance: none;
   appearance: none;
 }
+.enable-flyout-container--positioned-left .enable-flyout__open-level-button,
+.enable-flyout-container--positioned-left .enable-flyout__close-level-button,
+.enable-flyout-container--positioned-left .enable-flyout__link {
+  text-align: right;
+}
 .enable-flyout__open-level-button:hover,
 .enable-flyout__close-level-button:hover,
 .enable-flyout__link:hover {
@@ -160,6 +169,15 @@
 .enable-flyout__link:focus {
   position: relative;
   z-index: 2;
+}
+.enable-flyout-container--positioned-left .enable-flyout__open-level-button {
+  padding-right: 10px;
+}
+.enable-flyout-container--positioned-left .enable-flyout__close-level-button {
+  padding-right: 20px;
+}
+.enable-flyout-container--positioned-left .enable-flyout__link {
+  padding-right: 19px;
 }
 .enable-flyout__with-home-icon {
   position: relative;
@@ -217,15 +235,30 @@
   /* fallback if animation is not supported *or* turned off */
   right: 0;
 }
+.enable-flyout-container--positioned-left .enable-flyout--is-open {
+  animation: enable-flyout__anim--mobile-open-left 0.2s ease-in-out forwards;
+  /* fallback if animation is not supported *or* turned off */
+  left: 0;
+}
 .enable-flyout--is-closed {
   animation: enable-flyout__anim--mobile-open 0.2s ease-in-out reverse;
   /* fallback if animation is not supported *or* turned off */
   right: calc(-1 * min(75vw, 350px));
 }
+.enable-flyout-container--positioned-left .enable-flyout--is-closed {
+  animation: enable-flyout__anim--mobile-open-left 0.2s ease-in-out reverse;
+  /* fallback if animation is not supported *or* turned off */
+  left: calc(-1 * min(75vw, 350px));
+}
 .enable-flyout__level.enable-flyout--is-open {
   animation: enable-flyout__anim--mobile-open 0.2s ease-in-out forwards;
   /* fallback if animation is not supported *or* turned off */
   right: 0;
+}
+.enable-flyout-container--positioned-left .enable-flyout__level.enable-flyout--is-open {
+  animation: enable-flyout__anim--mobile-open-left 0.2s ease-in-out forwards;
+  /* fallback if animation is not supported *or* turned off */
+  left: 0;
 }
 .enable-flyout__level-heading {
   display: none;
@@ -287,6 +320,10 @@
   right: 2px;
   top: 12px;
   z-index: 2;
+}
+.enable-flyout-container--positioned-left .enable-flyout__open-menu-button {
+  right: initial;
+  left: 2px;
 }
 .enable-flyout__overlay-screen {
   background: rgba(0, 0, 0, 0.7);
@@ -522,5 +559,21 @@
   }
   0.999% {
     right: calc(-1 * min(75vw, 350px));
+  }
+}
+@keyframes enable-flyout__anim--mobile-open-left {
+  0% {
+    left: calc(-1 * min(75vw, 350px));
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes enable-flyout__anim--mobile-close-left {
+  0% {
+    left: 0;
+  }
+  0.999% {
+    left: calc(-1 * min(75vw, 350px));
   }
 }

@@ -66,7 +66,10 @@
 <h2>Links That "Look Like Buttons"</h2>
 
 <p>
-  There are many times where you want a CTA to stick out from the rest of the text, maybe even covering a more prominent and bigger area on the screen.  If you make the CTA look like a button, you are being dishonest: it <em>looks</em> like a button, but its not since it has a URL associated with it.  In order to distinguish this from other buttons, we should make a small change to it, like adding a right pointing chevron to the CTA like the example below:
+  There are many times where you want a CTA to stick out from the rest of the text, maybe even covering a more prominent
+  and bigger area on the screen. If you make the CTA look like a button, you are being dishonest: it <em>looks</em> like
+  a button, but its not since it has a URL associated with it. In order to distinguish this from other buttons, we
+  should make a small change to it, like adding a right pointing chevron to the CTA like the example below:
 </p>
 
 <?php
@@ -76,25 +79,24 @@
 <?php includeShowcode("hero-example")?>
 <script type="application/json" id="hero-example-props">
 {
-  "replaceHtmlRules": {
-  },
-  "steps": [
-  {
-    "label": "Mark up CTA as a link",
-    "highlight": "%OPENCLOSECONTENTTAG%a",
-    "notes": ""
-  },
-  {
-    "label": "Use an aria-label to give context to screen reader users",
-    "highlight": "aria-label",
-    "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Austrailia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
-  },
-  {
-    "label": "Add chevron via CSS",
-    "highlight": "%CSS% figure-css~ a.tile-cta::after",
-    "notes": ""
-  }
-]}
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Mark up CTA as a link",
+      "highlight": "%OPENCLOSECONTENTTAG%a",
+      "notes": ""
+    },
+    {
+      "label": "Use an aria-label to give context to screen reader users",
+      "highlight": "aria-label",
+      "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Austrailia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
+    },
+    {
+      "label": "Add chevron via CSS",
+      "highlight": "%CSS% figure-css~ a.tile-cta::after",
+      "notes": ""
+    }
+  ]
+}
 </script>
 
 
@@ -169,7 +171,7 @@
   I am not sure why anyone would code a link with anything but an <code>&lt;a&gt;</code> tag, but
   then again, I am not sure <a
     href="https://www.denofgeek.com/movies/what-went-wrong-with-highlander-ii-the-quickening/">why someone would think
-    Highlanger II
+    Highlander II
     was a good idea either</a>, so I guess anything's possible.
 </p>
 
