@@ -20,7 +20,8 @@ code {
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
-.showcode__example {
+.showcode__example,
+.showcode--no-js {
   display: block;
   position: relative;
   font-family: "ModeSeven", "Consolas", monospace;
@@ -31,24 +32,29 @@ code {
             margin: 0 -2em -25px -1em;
         } */
 }
-.showcode__example:focus-within {
+.showcode__example:focus-within,
+.showcode--no-js:focus-within {
   box-shadow: 4px 0 0 #3b99fc inset, -4px 0 0 #3b99fc inset, 0 4px 0 #3b99fc inset, 0 -49px 0 #3b99fc inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
 }
-.showcode__example:focus-within code {
+.showcode__example:focus-within code,
+.showcode--no-js:focus-within code {
   outline: 0;
 }
-.showcode__example code {
+.showcode__example code,
+.showcode--no-js code {
   display: block;
   padding: 10px;
   max-width: calc(100vw - 20px);
   overflow-x: auto;
   background: #000;
 }
-.showcode__example--desc {
+.showcode__example--desc,
+.showcode--no-js--desc {
   display: none;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
-  .showcode__example--desc {
+  .showcode__example--desc,
+  .showcode--no-js--desc {
     font-family: "Arial", "Helvetica", sans-serif;
     background: white;
     color: black;
@@ -56,7 +62,8 @@ code {
     text-align: center;
     display: block;
   }
-  .showcode__example::after {
+  .showcode__example::after,
+  .showcode--no-js::after {
     content: "";
     display: block;
     position: absolute;
@@ -68,18 +75,26 @@ code {
     width: 100%;
     height: 100%;
   }
-  .showcode__example:focus-within::after {
+  .showcode__example:focus-within::after,
+  .showcode--no-js:focus-within::after {
     top: 4px;
     left: 4px;
     width: calc(100% - 2 * 4px);
     height: calc(100% - 2 * 4px);
   }
-  .showcode__example.fade-both::after {
+  .showcode__example.fade-both::after,
+  .showcode--no-js.fade-both::after {
     background-image: linear-gradient(-270deg, #000, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, #000);
   }
-  .showcode__example.fade-left::after {
+  .showcode__example.fade-left::after,
+  .showcode--no-js.fade-left::after {
     background-image: linear-gradient(-270deg, #000, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0));
   }
+}
+.showcode--no-js {
+  white-space: pre;
+  margin: 20px 0;
+  padding: 10px;
 }
 .showcode__highlight {
   display: inline-block;

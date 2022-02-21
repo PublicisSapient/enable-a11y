@@ -98,9 +98,9 @@
 .enable-form-example fieldset,
 .enable-form-example .aria-form-group {
   padding: 0.5em;
-  margin-top: 1em;
+  margin-top: -1em;
   padding-top: 2em;
-  background-color: #EEEEEE;
+  background-color: #fefefe;
 }
 .enable-form-example fieldset legend,
 .enable-form-example .aria-form-group legend,

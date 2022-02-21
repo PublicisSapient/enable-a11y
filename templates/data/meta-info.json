@@ -137,7 +137,7 @@
     "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relavant, especially for mobile screen reader users."
   },
   "spinner.php": {
-    "title": "Access Number Fields",
+    "title": "Accessible Numeric Fields",
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
   "status.php": {
@@ -178,7 +178,7 @@
     "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
   },
   "tooltip.php": {
-    "title": "ARIA Tooltip",
+    "title": "Tooltip",
     "desc": "If you have a tooltip, ensure it follows accessibility best practices."
   },
   "video-player.php": {

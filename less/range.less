@@ -123,10 +123,7 @@
     --ticks-count: calc(var(--max) - var(--min)) / var(--step);
     --maxTicksAllowed: 30;
     --too-many-ticks: ~"min(1, max(var(--ticks-count) - var(--maxTicksAllowed), 0))";
-    --x-step: ~"max(
-      var(--step),
-      var(--too-many-ticks) * (var(--max) - var(--min))
-    )"; // manipulate the number of steps if too many ticks exist, so there would only be 2
+    --x-step: ~"max(var(--step),var(--too-many-ticks) * (var(--max) - var(--min)))"; // manipulate the number of steps if too many ticks exist, so there would only be 2
     --tickInterval: 100/ ((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
     --tickIntervalPerc: calc(
       (100% - var(--thumb-size)) / ((var(--max) - var(--min)) / var(--x-step)) *
@@ -147,19 +144,15 @@
     --completed-b: calc(
       (var(--value-b) - var(--min)) / (var(--max) - var(--min)) * 100
     );
-    --ca: Min(var(--completed-a), var(--completed-b));
-    --cb: Max(var(--completed-a), var(--completed-b));
+    --ca: ~"Min(var(--completed-a), var(--completed-b))";
+    --cb: ~"Max(var(--completed-a), var(--completed-b))";
   
     // breakdown of the below super-complex brain-breaking CSS math:
     // "clamp" is used to ensure either "-1" or "1"
     // "calc" is used to inflat the outcome into a huge number, to get rid of any value between -1 & 1
     // if absolute diff of both completed % is above "5" (%)
     // ".001" bumps the value just a bit, to avoid a scenario where calc resulted in "0" (then clamp will also be "0")
-    --thumbs-too-close: ~"Clamp(
-      -1,
-      1000 * (Min(1, Max(var(--cb) - var(--ca) - 5, -1)) + 0.001),
-      1
-    )";
+    --thumbs-too-close: ~"Clamp( -1,1000 * (Min(1, Max(var(--cb) - var(--ca) - 5, -1)) + 0.001),  1)";
     --thumb-close-to-min: ~"Min(1, Max(var(--ca) - 2, 0))"; // 2% threshold
     --thumb-close-to-max: ~"Min(1, Max(98 - var(--cb), 0))"; // 2% threshold
   
@@ -177,7 +170,7 @@
     }
   
     display: inline-block;
-    height: Max(var(--track-height), var(--thumb-size));
+    height: ~"Max(var(--track-height), var(--thumb-size))";
     // margin: calc((var(--thumb-size) - var(--track-height)) * -.25) var(--thumb-size) 0;
     background: linear-gradient(
         to right,

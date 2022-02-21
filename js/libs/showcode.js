@@ -272,8 +272,10 @@ const showcode = new function() {
   
   function setReadMoreCSSVar(notesEl) {
     const overflowEl = notesEl.querySelector('div');
+    
 
-    if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight) {
+    // The +1 in the formula below is because firefox has rounding errors.
+    if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight + 1) {
       notesEl.classList.add('showcode__notes--is-overflowed');
     } else {
       notesEl.classList.remove('showcode__notes--is-overflowed');

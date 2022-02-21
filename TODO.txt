@@ -5,8 +5,21 @@ https://www.scottohara.me/blog/2014/10/03/link-tabbing-firefox-osx.html
 
 Safari OSX:
 
+Aria-label vs tabindex="-1"
 
+NEED TO LOOK AT MOBILE TOOLTIPS.
 
+mobile discovery through feeling (Sara S's post on checkmarks) - see if it works with our carousel as well.
+
+remove alerts.
+check init() is being called once.
+
+I think we need to put all the a11y modules (accessibility.js, text-zoom-event.js, etc) in this project.
+
+npm.php
+webpack.php
+
+Multilanguage sections of a page.
 
 
 Meta info and title framework.

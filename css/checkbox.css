@@ -1,54 +1,75 @@
 /* This is the CSS to style the custom HTML5 checkbox */
-.enable-checkbox input[type="checkbox"]:focus + label::before {
-  outline: #3b99fc auto 5px;
+.enable-checkbox {
+  width: fit-content;
+  margin: 0 auto;
 }
-.enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) + label::before {
-  outline: none;
+.enable-checkbox .form-control {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
 }
-.enable-checkbox input[type="checkbox"]:focus-visible + label::before {
-  outline: #3b99fc auto 5px;
+.enable-checkbox .form-control + .form-control {
+  margin-top: 1em;
 }
-.enable-checkbox input[type="checkbox"],
-.enable-checkbox input[type="checkbox"] + label::before {
+.enable-checkbox .form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+.enable-checkbox input[type="checkbox"] {
   -webkit-appearance: none;
   -khtml-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  box-sizing: border-box;
-  width: 1rem;
-  height: 1rem;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
   margin: 0;
-  padding: 0;
-  display: inline-block;
-  border: solid 1px #333;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
 }
-.enable-checkbox input[type="checkbox"] + label::after {
-  content: none;
+.enable-checkbox input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid #3b99fc;
+  outline-offset: max(2px, 0.15em);
 }
-.enable-checkbox input[type="checkbox"]:checked + label::after {
+.enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) {
+  outline: none;
+  outline-offset: 0;
+}
+.enable-checkbox input[type="checkbox"]:focus-visible {
+  outline: max(2px, 0.15em) solid #3b99fc;
+  outline-offset: max(2px, 0.15em);
+}
+.enable-checkbox input[type="checkbox"]::before {
   content: "";
-  height: 0.31rem;
-  width: 0.87rem;
-  border-left: 0.125rem solid #600;
-  border-bottom: 0.125rem solid #600;
-  transform: rotate(-45deg) scale(2);
-  left: 0.43rem;
-  top: -0.31rem;
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
 }
-.enable-checkbox input[type="checkbox"] + label {
-  position: absolute;
-  display: inline-block;
-  /* 16px width of fake checkbox + 6px distance between fake checkbox and text */
-  margin-left: -1rem;
+.enable-checkbox input[type="checkbox"]:checked::before {
+  transform: scale(1);
 }
-.enable-checkbox input[type="checkbox"] + label::before,
-.enable-checkbox input[type="checkbox"] + label::after {
-  position: absolute;
-  content: "";
-  /* Needed for the line-height to take effect */
-  display: inline-block;
-  pointer-events: none;
+.enable-checkbox input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
 }
 #html-checkbox-multi-label {
   border-bottom: solid 3px black;
@@ -60,4 +81,35 @@
 #html-checkbox__error.visible {
   display: block;
   margin: 10px auto;
+}
+#group-example legend {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+#group-example .checkbox-container {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+#group-example .checkbox-container input {
+  position: absolute;
+  left: 0;
+}
+#group-example .checkbox-container label {
+  width: 190px;
+  margin-bottom: 10px;
+  padding-left: 1.875rem;
+  grid-template-columns: initial;
+}
+#group-example .error {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1em auto;
+}
+#group-example button {
+  margin: 10px auto;
+  text-align: center;
+  display: block;
 }

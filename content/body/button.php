@@ -142,7 +142,6 @@
 
         <h2>A DIV with a role of button</h2>
         <?php includeStats(array(
-            'isForNewBuilds' => NULL,
             'doNot' => true
         )) ?>
         <p>

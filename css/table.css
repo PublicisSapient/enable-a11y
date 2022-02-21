@@ -12,10 +12,10 @@
   max-height: 70vh;
   position: relative;
 }
-.sticky-table__container:focus {
+.sticky-table__container:focus-within {
   outline: #3b99fc 2px solid;
 }
-.sticky-table__container:focus .sticky-table__keyboard-instructions {
+.sticky-table__container:focus-within .sticky-table__keyboard-instructions {
   display: block;
 }
 .sticky-table__container table,

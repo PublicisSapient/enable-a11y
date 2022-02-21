@@ -214,6 +214,8 @@
 
 .enable-stats {
   @icon-width: (50/@px);
+  @npm-icon-width: (100/@px);
+
   list-style-type: none;
   margin: 14px 0;
   padding: 0;
@@ -222,15 +224,27 @@
   overflow: hidden;
   color: #000;
   text-align: center;
-  background-color: #ccffcc;
+  
+  
 
   &__desc {
-    height: (40/@px);
     line-height: (40/@px);
     padding: 0 20px;
     display: inline-block;
     position: relative;
     padding-left: @icon-width;
+    
+    &--npm {
+      padding-left: @npm-icon-width;
+    }
+
+    @media @mobile {
+      padding: 0 10px 0 @icon-width;
+      
+      &--npm {
+        padding: 0 10px 0 @npm-icon-width;
+      }
+    }
 
     &:only-child {
       width: 100%;
@@ -247,17 +261,41 @@
     &--do-not {
       background-color: #ccccff;
     }
+
+    &--style {
+      background-color: #ccccff;
+    }
+
+    &--npm {
+      background-color: #ffcccc;
+    }
   }
   &__icon {
     height: (30/@px);
-    margin-top: 5px;
+    margin: 5px;
     display: inline-block;
     position: absolute;
-    margin-left: ( 0 - @icon-width);
-    
+    margin-left: ( (10/@px) - @icon-width);
+  }
+
+  &__desc--npm &__icon {
+    margin-left: ( (10/@px) - @npm-icon-width);
   }
 
   &__label {
     display: inline-block;
+    text-align: left;
+  }
+}
+
+.screenshot-table {
+  margin-bottom: 40px;
+  thead th,
+  td {
+    text-align: center;
+  }
+
+  td {
+    border: solid 1px black;
   }
 }

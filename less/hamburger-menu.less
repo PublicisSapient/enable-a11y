@@ -10,8 +10,8 @@
 @desktop-min: 960px;
 @flyout-width: 75vw;
 @desktop: ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
-@hamburger-translate-y: min(@flyout-width, 350px);
-@hamburger-offset-y: calc(-1 * @hamburger-translate-y);
+@hamburger-translate-y: ~"min(@{flyout-width}, 350px)";
+@hamburger-offset-y: ~"calc(-1 * @{hamburger-translate-y})";
 @hamburger-menu-icon-top: 12px;
 @focus-area-padding: 27px;
 
@@ -47,7 +47,7 @@
   --enable-flyout__is-hamburger: 1;
   --enable-flyout__desktop-min: @desktop-min;
 
-  width: calc(min(@flyout-width, 350px));
+  width: ~"calc(min(@{flyout-width}, 350px))";
   right: @hamburger-offset-y;
   background: #2e2f35;
   color: @color0;
@@ -145,7 +145,13 @@
       top: @hamburger-menu-icon-top;
       background: none;
       border: none;
+
+      .enable-flyout-container--positioned-left & {
+        right: initial;
+        left: 2px;
+      }
     }
+
 
     span {
       display: block;
@@ -231,6 +237,10 @@
     border: none;
     text-align: left;
 
+    .enable-flyout-container--positioned-left & {
+      text-align: right;
+    }
+
     // Corrects inability to style clickable `input` types in iOS
     .vendor(appearance, none);
     &:hover {
@@ -241,6 +251,24 @@
     &:focus {
       position: relative;
       z-index: 2;
+    }
+  }
+
+  &__open-level-button {
+    .enable-flyout-container--positioned-left & {
+      padding-right: 10px;
+    }
+  }
+
+  &__close-level-button {
+    .enable-flyout-container--positioned-left & {
+      padding-right: 20px;
+    }
+  }
+
+  &__link {
+    .enable-flyout-container--positioned-left & {
+      padding-right: 19px;
     }
   }
 
@@ -288,6 +316,14 @@
 
     /* fallback if animation is not supported *or* turned off */
     right: 0; 
+
+    .enable-flyout-container--positioned-left & {
+      animation: enable-flyout__anim--mobile-open-left @anim-time ease-in-out forwards;
+
+      /* fallback if animation is not supported *or* turned off */
+      left: 0; 
+    }
+
   }
 
   &--is-closed {
@@ -295,6 +331,13 @@
 
     /* fallback if animation is not supported *or* turned off */
     right: @hamburger-offset-y;
+
+    .enable-flyout-container--positioned-left & {
+      animation: enable-flyout__anim--mobile-open-left @anim-time ease-in-out reverse;
+
+      /* fallback if animation is not supported *or* turned off */
+      left: @hamburger-offset-y;
+    }
   }
 
   &__level&--is-open {
@@ -302,6 +345,13 @@
 
     /* fallback if animation is not supported *or* turned off */
     right: 0;
+
+    .enable-flyout-container--positioned-left & {
+      animation: enable-flyout__anim--mobile-open-left @anim-time ease-in-out forwards;
+
+      /* fallback if animation is not supported *or* turned off */
+      left: 0;
+    }
   }
 
   &__level-heading {
@@ -359,6 +409,11 @@
     top: @hamburger-menu-icon-top;
     z-index: (@min-z-index + 2);
 
+
+    .enable-flyout-container--positioned-left &{
+      right: initial;
+      left: 2px;
+    }
   }
 
   &__overlay-screen {
@@ -656,5 +711,26 @@
 
   0.999% {
     right: @hamburger-offset-y;
+  }
+}
+
+
+@keyframes enable-flyout__anim--mobile-open-left {
+  0% {
+    left: @hamburger-offset-y;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes enable-flyout__anim--mobile-close-left {
+  0% {
+    left: 0;
+  }
+
+  0.999% {
+    left: @hamburger-offset-y;
   }
 }

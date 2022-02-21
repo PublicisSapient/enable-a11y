@@ -17,8 +17,7 @@
  ******************************************************************************/
 
 import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js";
-
-
+import { interpolate } from "./interpolate.js";
 
 
 const EnableCombobox = function(componentRoot) {
@@ -36,7 +35,11 @@ const EnableCombobox = function(componentRoot) {
     ariaDescriptionEl = null,
     resetButton,
     listGroups = [],
-    clearMessage = 'Cleared form field.';
+    clearMessage = 'Cleared form field.',
+    groups,
+    groupAlert,
+    labelEl,
+    groupSelectAlertTemplateStr;
 
   const spaceRe = /\s+/g,
     kRETURN = "Enter",
@@ -121,7 +124,7 @@ const EnableCombobox = function(componentRoot) {
       // and then focus the option after 1200 ms.
       field.blur();
       setTimeout(() => {
-        updateSelectedOption(so[0]);
+        updateSelectedOption(so, 0);
       }, 1200);
     } else {
       field.blur();
@@ -138,7 +141,23 @@ const EnableCombobox = function(componentRoot) {
   }
 
   function listMouseDownHandler(e) {
-    updateSelectedOption(e.target);
+    const { target } = e;
+    const so = shownOptions();
+    let index = -1;
+    for (var i = 0, c = so.length; i < c; i++) {
+      var o = so[i];
+      if (o == target) {
+        index = i+1;
+        break;
+      }
+    }
+
+    if (index === -1) {
+      console.error('Mouse chose option not in list', target);
+      throw "Error in listMouseDownHandler";
+    }
+
+    updateSelectedOption(e.target, index);
     e.target.focus();
     insertValue();
     field.dispatchEvent(chooseEvent);
@@ -196,7 +215,6 @@ const EnableCombobox = function(componentRoot) {
         }
       )
     );
-    console.log('xxxx');
   }
 
   function displayNone(elem) {
@@ -252,19 +270,48 @@ const EnableCombobox = function(componentRoot) {
     hideMenu(statusMessage);
   }
 
-  function updateSelectedOption(el) {
+  function updateSelectedOption(so, index) {
+    const el = so[index];
+    
     if (!el) {
       return;
     }
+
     if (selectedOption) {
       selectedOption.removeAttribute("aria-selected");
     }
+
     selectedOption = el;
     list.setAttribute("data-selection", el.id);
     el.setAttribute("aria-selected", "true");
     field.setAttribute("aria-activedescendant", el.id);
 
     selectedOption.focus();
+    
+
+    if (groups.length > 0) {
+      // we need to announce the group and option using ARIA live.
+      try {
+        const groupEl = el.closest('[role="group"]');
+        const descId = groupEl.getAttribute('aria-describedby');
+        const descEl = document.getElementById(descId);
+        const desc = descEl.innerText;
+        const value = el.innerText;
+        const label = labelEl.innerText;
+        groupAlert.innerHTML = interpolate(
+          groupSelectAlertTemplateStr,
+          {
+            value: value,
+            desc: desc,
+            label: label,
+            index: index + 1,
+            length: so.length
+          }
+        );
+      } catch (ex) {
+        console.error(`Option ${el.innerText} is not in a proper group`);
+      }
+    }
   }
 
   function selectNextOption() {
@@ -272,13 +319,13 @@ const EnableCombobox = function(componentRoot) {
     for (var i = 0, c = so.length; i < c; i++) {
       var o = so[i];
       if (o == selectedOption) {
-        if (so[i + 1]) updateSelectedOption(so[i + 1]);
+        if (so[i + 1]) updateSelectedOption(so, i + 1);
         return;
       }
     }
     // otherwise, select the first option
     if (!selectedOption && so.length) {
-      updateSelectedOption(so[0]);
+      updateSelectedOption(so, 0);
     }
   }
 
@@ -287,13 +334,13 @@ const EnableCombobox = function(componentRoot) {
     for (let i = so.length - 1; i > 0; i--) {
       const o = so[i];
       if (o == selectedOption) {
-        if (so[i - 1]) updateSelectedOption(so[i - 1]);
+        if (so[i - 1]) updateSelectedOption(so, i - 1);
         return;
       }
     }
     // otherwise, select the last option
     if (!selectedOption && so.length) {
-      updateSelectedOption(so[so.length - 1]);
+      updateSelectedOption(so, so.length - 1);
     }
   }
 
@@ -336,7 +383,7 @@ const EnableCombobox = function(componentRoot) {
       clearSelectedOption();
       requestAnimationFrame(() => {
         resetButton.focus();
-        status.innerHTML = "<span class='sr-only'>Selected " + value + ".</span>";
+        status.innerHTML = `<span class='sr-only'>Selected ${value}.</span>`;
       })
 
       // hideMenu();
@@ -388,6 +435,8 @@ const EnableCombobox = function(componentRoot) {
   }
 
   this.initCombo = function(componentRoot) {
+    const groupSelectAlertTemplate = document.getElementById('enable_combobox__group-select-alert-template');
+
     // TODO: If time allows, update example to account for multiple comboboxes.
     root = componentRoot;
     field = root.querySelector('[role="combobox"]');
@@ -395,9 +444,24 @@ const EnableCombobox = function(componentRoot) {
     status = root.querySelector('[role="alert"]');
     list = document.getElementById(field.getAttribute("aria-owns"));
     options = list.querySelectorAll('[role="option"]');
-    listGroups = list.querySelectorAll('.enable-combobox__group');
+    listGroups = list.querySelectorAll('.enable-combobox__group'); // xxxxxx
     resetButton = root.querySelector('.enable-combobox__reset-button');
     controlsContainer = root.querySelector('.enable-combobox__controls-container');
+    groups = root.querySelectorAll('[role="listbox"] [role="group"]');
+    groupAlert = root.querySelector('.enable-combobox__category-alert');
+    labelEl = root.querySelector('label');
+
+    if (groups.length > 0 && !groupAlert) {
+      console.error('Grouped listbox does not have an alert. Treating as a non-grouped listbox.', root.querySelector('[role="listbox"] [role="group"]'));
+      groups = false;
+    }
+
+    if (groupSelectAlertTemplate) {
+      groupSelectAlertTemplateStr = groupSelectAlertTemplate.innerHTML.trim();
+    } else {
+      console.info('Group template not in DOM. Default to English');
+      groupSelectAlertTemplateStr = '${value}, Group ${desc}, ${label}, selected, item ${index} of ${length}';
+    }
 
     const resetAriaDesc = resetButton.getAttribute('aria-describedby');
 
@@ -445,7 +509,6 @@ const enableComboboxes = new function() {
 
   const keyUpEvent = (e) => {
     const { key } = e;
-    console.log('key', key);
     if (key === 'Tab') {
       // we assume this is a keyboard user
       this.isKeyboardUser = true;
@@ -464,6 +527,5 @@ const enableComboboxes = new function() {
   }
 }
 
-enableComboboxes.init();
 
 export default enableComboboxes;

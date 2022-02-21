@@ -16,9 +16,9 @@
 
 
     <!-- Here is the main menu -->
-    <div id="enable-hamburger-menu">
+    <div id="enable-hamburger-menu" >
         <nav class="site__nav enable-flyout__container" aria-label="main">
-            <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+            <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="main menu">
 
                 <!-- This is the hamburger menu icon -->
 

@@ -3,6 +3,8 @@ const dictLookup = new (function () {
   
     const $pageTitle = document.querySelector(".wiktionary-lookup__page-title");
     const $wikiInfo = document.querySelector(".wiktionary-lookup__content");
+    const $wikiInfoContainer = document.querySelector(".wiktionary-lookup__content-container");
+
     const $sourceURL = document.querySelector(".wiktionary-lookup__source-url");
     const $licenceInfo = document.querySelector(
       ".wiktionary-lookup__license-info"
@@ -47,6 +49,7 @@ const dictLookup = new (function () {
         $pageAlert.innerHTML = $msg;
         fetch(baseURL + word).then((response) => {
           if (response.status === 200) {
+            $wikiInfoContainer.classList.add('wiktionary-lookup__content-container--is-loaded')
             response.json().then((json) => {
               if (json && json.parse && json.parse.revid > 0) {
                 showPage(word, json.parse.text["*"]);
@@ -55,6 +58,7 @@ const dictLookup = new (function () {
                 $wikiInfo.innerHTML = msg;
                 $pageAlert.innerHTML = msg;
                 $licenceInfo.style.display = "block";
+                $pageTitle.innerHTML = "Not Found";
               }
             });
           }

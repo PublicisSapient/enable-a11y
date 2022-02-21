@@ -137,7 +137,7 @@ table {
   box-sizing: border-box;
 }
 body {
-  font-family: "DroidSans", "Helvetica", "Arial", sans-serif;
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
   /* @media @tablet-up {
@@ -150,6 +150,7 @@ body {
 }
 strong {
   font-weight: bold;
+  color: #222;
 }
 em {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
@@ -177,17 +178,25 @@ h2 {
 }
 h3 {
   font-weight: bold;
-  font-size: 20px;
-  margin-top: 45px;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+h4 {
+  font-weight: 500;
+  padding: 20px 0;
+  font-size: 1.25rem;
 }
 ul,
 ol {
   padding-left: 1.2rem;
+  margin-left: 1.2rem;
 }
 ul {
   list-style: disc;
 }
 ul,
+ol,
 p {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -433,14 +442,11 @@ body {
 	 font-family: "Helvetica", "Arial", sans-serif;
      */
 }
-input[type="submit"] {
+input[type="submit"],
+button[type="submit"] {
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0;
+  margin: 1em auto 1em auto;
   padding-bottom: 0;
-}
-input[type="submit"] {
-  margin-bottom: 1em;
 }
 .form-heading {
   font-weight: bold;
@@ -455,7 +461,7 @@ fieldset,
   padding: 0.5em;
   margin-top: 1em;
   padding-top: 2em;
-  background-color: #eeeeee;
+  background-color: #fafafa;
 }
 fieldset legend,
 .fieldset legend,
@@ -468,12 +474,14 @@ fieldset .legend,
   border-color: #aaaaaa;
   font-weight: bold;
   font-size: 1em;
+  text-align: center;
+  border-bottom: solid 1px black;
 }
 fieldset .legend,
 .fieldset .legend,
 [role="radiogroup"] .legend {
   top: -1.5em;
-  margin-bottom: -1em;
+  margin-bottom: 0px !important;
 }
 /* These are styles just for the global error */
 .error {
@@ -488,40 +496,6 @@ fieldset .legend,
   width: 0.7rem;
   height: 0.7rem;
   margin-right: 0.5em;
-}
-#group-example legend {
-  width: 100%;
-  text-align: center;
-  border-bottom: 3px solid black;
-}
-#group-example .checkbox-container {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  position: relative;
-}
-#group-example .checkbox-container input {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#group-example .checkbox-container label {
-  width: 190px;
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 5px;
-  padding-left: 1.875rem;
-}
-#group-example .error {
-  width: fit-content;
-  margin: 0 auto 1em auto;
-}
-#group-example button {
-  margin: 0 auto;
-  margin-top: 0px;
-  text-align: center;
-  display: block;
-  margin-top: 10px;
 }
 body {
   margin: 0;

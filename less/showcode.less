@@ -41,7 +41,8 @@ code {
     border-bottom: double 3px #000;
   }
 
-  &__example {
+  &__example,
+  &--no-js {
     @gap-shadow-width: @code-focus-outline-gap + @code-focus-outline-width;
     @gap-color: white;
 
@@ -147,6 +148,14 @@ code {
         );
       }
     }
+  }
+
+
+
+  &--no-js {
+    white-space: pre;
+    margin: 20px 0;
+    padding: 10px;
   }
 
   &__highlight {
