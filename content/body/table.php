@@ -2383,8 +2383,8 @@
                 },
                 {
                     "label": "Use <code>interpolate()</code> to place dynamic content inside the templates.",
-                    "highlight": "%JS%paginationTable ||| interpolate",
-                    "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>"
+                    "highlight": "%JS%paginationTables.renderTable ||| interpolate",
+                    "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>, with a few <a href=\"https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/\">XSS sanatizing logic included</a>"
                 },
                 {
                     "label": "Mark up the pagination widget correctly",

@@ -1,4 +1,5 @@
 <?php
+$walkthroughIndex = 1;
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1); 
@@ -55,17 +56,19 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
 }
 
 
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js')) {
+function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
     'moduleVar' => dashesToCamelCase($moduleName),
-    'supportingModuleNames' => $supportingModuleNames
+    'supportingModuleNames' => $supportingModuleNames,
+    'isPolyfill' => $isPolyfill
   ));
 }
 
 function includeStats($props) {
   unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $isExperimental, $comment);
   extract($props);
+  global $walkthroughIndex;
 
   $npmLink = '(<a href="#npm-instructions">Module installation instructions</a>)';
 
@@ -74,7 +77,7 @@ function includeStats($props) {
       if ($isForNewBuilds == true) {
         $comment = 'This is the best solution to use, especially when building from scratch.';
       } else if ($isForNewBuilds == false) {
-        $comment = 'Recommended to fix existing, in production work quickly with the least amount of effort.';
+        $comment = 'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' . $walkthroughIndex . '">developer walkthrough</a> of this section to see we made our implementation accessible.';
       }
     } else if (isSet($doNot)) {
       $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';

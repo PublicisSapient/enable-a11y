@@ -17,8 +17,8 @@
 <body>
   
   <?php include "includes/documentation-header.php";?>
+  <?php include "includes/pause-anim-control.php" ?>
   <main class="<?= $fileProps->mainClass ?>">
-    <?php include "includes/pause-anim-control.php" ?>
 
     <?php 
       if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero') {

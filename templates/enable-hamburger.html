@@ -1,0 +1,128 @@
+<!-- MAIN MENU TEMPLATES -->
+
+<!--
+  This is HTML used for the base of the component.  It contains 
+  - the hamburger menu icon that appears in mobile
+  - the top level panel that appears in the first panel (mobile) the top level menu items that appear on load (desktop).
+-->
+<template id="flyout__container">
+  <nav class="site__nav enable-flyout__container" aria-label="main">
+    <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+      <!-- This is the hamburger menu icon -->
+
+      <span aria-label="main menu" class="enable-flyout__hamburger-icon" role="img">
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+        <span>
+        </span>
+      </span>
+    </button>
+    <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+      <button class="enable-flyout__hamburger-icon-facade">
+        <span class="sr-only">
+          close mobile flyout
+        </span>
+      </button>
+
+      <!-- Here is where the content is placed -->
+      <ul class="enable-flyout__list">
+        ${html:content}
+      </ul>
+
+    </div>
+  </nav>
+  <span class="enable-flyout__overlay-screen">
+  </span>
+</template>
+
+
+
+<!-- This contains the panel for submenus -->
+<template id="flyout__submenu">
+  <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+    <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+      <button class="enable-flyout__close-level-button">
+        Go Back
+      </button>
+    </li>
+
+    ${html:content}
+  </ul>
+</template>
+
+<template id="flyout__button">
+  <li class="enable-flyout__menu-item">
+    <!-- Begin section ${sectionName} -->
+    <button aria-expanded="false" aria-controls="${id}" class="enable-flyout__open-level-button">
+      ${sectionName}
+    </button>
+    <div id="${id}" aria-label="${sectionName}" role="group"
+      class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+      <button class="enable-flyout__hamburger-icon-facade">
+        <span class="sr-only">
+          close mobile flyout
+        </span>
+      </button>
+      <ul class="enable-flyout__list my-custom-list__layout">
+        <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+          <button class="enable-flyout__close-level-button">
+            Go Back
+          </button>
+        </li>
+
+        <!-- Start menu items for section ${sectionName} -->
+        ${html:content}
+      </ul>
+    </div>
+  </li>
+</template>
+
+
+<template id="flyout__home">
+  <li class="enable-flyout__menu-item">
+    <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+      Home
+    </a>
+  </li>
+</template>
+
+<template id="flyout__link">
+  <li class="enable-flyout__menu-item">
+    <a href="${url}" class="enable-flyout__link">
+      <picture>
+        <source srcset="images/main-menu/${thumbnailSrcPrefix}.webp" type="image/webp">
+        <img src="${thumbnailSrcPrefix}.png" alt="${alt}" class="enable-flyout__link-image" />
+      </picture>
+      ${label}
+    </a>
+  </li>
+</template>
+
+<template id="flyout__link--no-image">
+  <li class="enable-flyout__menu-item">
+    <a href="${url}" class="enable-flyout__link">
+      ${label}
+    </a>
+  </li>
+</template>
+
+<template id="flyout__link--with-icon">
+  <li class="enable-flyout__menu-item">
+    <a href="${url}" class="enable-flyout__link">
+      <img alt="${alt}" src="${src}">
+      ${label}
+    </a>
+  </li>
+</template>
+
+<template id="flyout__heading">
+  <div class="enable-flyout__level-heading">${label}</div>
+</template>
+
+
+

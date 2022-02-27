@@ -496,14 +496,17 @@ const showcode = new function() {
                 break;
               }
             case "%OUTERHTML%":
+            case "%INNERHTML%":
               {
                 const id = highlightString.trim();
-                const outerHTMLTemplateEl = document.getElementById(id);
-                if (outerHTMLTemplateEl) {
-                  let html = outerHTMLTemplateEl.outerHTML;
+                const HTMLTemplateEl = document.getElementById(id);
+                const htmlAttr = (command === '%OUTERHTML%' ? 'outerHTML' : 'innerHTML');
+                if (HTMLTemplateEl) {
+                  let html = HTMLTemplateEl[htmlAttr];
                   html = html.replace(`id="${id}"`, "");
                   html = html.replace(/\s{2,}/g, " ");
                   code = this.entify(formatHTML(html));
+                  highlightString = null;
                 }
 
                 break;
@@ -516,45 +519,46 @@ const showcode = new function() {
         }
 
         console.log('done 2');
+        if (highlightString !== null) {
+          highlightString = highlightString.replace(space, nbspStr);
+          const attribute = highlightString.split('=')[0];
+          const hasValue = (highlightString.indexOf('=') >= 0)
 
-        highlightString = highlightString.replace(space, nbspStr);
-        const attribute = highlightString.split('=')[0];
-        const hasValue = (highlightString.indexOf('=') >= 0)
-
-        if (hasValue) {
-          replaceRegex = new RegExp(highlightString, 'g');
-        } else {
-
-          // 'for' is a special case -- we don't want it to match <form>.
-          if (highlightString === 'for') {
-            replaceRegex = new RegExp(highlightString + '="[^=]*"', 'g');
+          if (hasValue) {
+            replaceRegex = new RegExp(highlightString, 'g');
           } else {
-            replaceRegex = new RegExp(highlightString + '(="[^=]*")*', 'g');
-          }
 
-          // get all the unique matches
-          const matches = [...new Set(code.match(replaceRegex))];
+            // 'for' is a special case -- we don't want it to match <form>.
+            if (highlightString === 'for') {
+              replaceRegex = new RegExp(highlightString + '="[^=]*"', 'g');
+            } else {
+              replaceRegex = new RegExp(highlightString + '(="[^=]*")*', 'g');
+            }
 
-          // if the highlightString is one of the relationship attributes,
-          // highlight the ids these matches points to.
-          if (relationshipAttributes.indexOf(attribute) >= 0) {
-            for (let j = 0; j < matches.length; j++) {
-              let ids = matches[j].split('"')[1];
+            // get all the unique matches
+            const matches = [...new Set(code.match(replaceRegex))];
 
-              if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
-                ids = ids.substring(1);
-              }
+            // if the highlightString is one of the relationship attributes,
+            // highlight the ids these matches points to.
+            if (relationshipAttributes.indexOf(attribute) >= 0) {
+              for (let j = 0; j < matches.length; j++) {
+                let ids = matches[j].split('"')[1];
 
-              ids = ids.split(/\s+/);
+                if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
+                  ids = ids.substring(1);
+                }
 
-              for (let k = 0; k < ids.length; k++) {
-                const id = ids[k];
-                const idReplaceRegex = new RegExp(`id="${id}"`);
-                code = code.replace(idReplaceRegex, highlightFunc);
+                ids = ids.split(/\s+/);
+
+                for (let k = 0; k < ids.length; k++) {
+                  const id = ids[k];
+                  const idReplaceRegex = new RegExp(`id="${id}"`);
+                  code = code.replace(idReplaceRegex, highlightFunc);
+                }
+
               }
 
             }
-
           }
         }
       }
@@ -668,7 +672,12 @@ const showcode = new function() {
     if (isWholeDoc) {
       block = document.querySelector('html').cloneNode(true);
     } else {
-      block = document.getElementById(originalHTMLId).cloneNode(true);
+      const $originalHTML = document.getElementById(originalHTMLId);
+      if ($originalHTML) {
+        block = $originalHTML.cloneNode(true);
+      } else {
+        throw `Showcode cannot display code for element with ID "${originalHTMLId}". That node doesn't exist.`
+      }
     }
 
     if (block) {

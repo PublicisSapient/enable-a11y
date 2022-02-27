@@ -107,12 +107,12 @@
   }
 }
 .enable-logo {
-  width: 60px;
+  width: 3.75rem;
   color: #fff;
 }
 @media only screen and (min-width: 720px) {
   .enable-logo {
-    width: 100px;
+    width: 6.25rem;
   }
 }
 .enable-logo__container {
@@ -124,30 +124,36 @@
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   .enable-logo__container {
     transform: scale(0.75);
+    height: 4.6875rem;
+    transform-origin: 0 50%;
+    margin-left: 10px;
   }
 }
 @media only screen and (min-width: 720px) {
   .enable-logo__container {
     padding: 0 30px;
+    height: 7.6875rem;
   }
 }
 .enable-logo__link {
   color: #fff;
   text-decoration: none;
   display: inline-block;
+  position: relative;
 }
 .enable-logo__text {
   display: block;
-  position: relative;
+  position: absolute;
   display: inline-block;
   color: #fff;
-  font-size: 3.125rem;
+  font-size: 3.6875rem;
   padding-left: 1.25rem;
+  top: 0.5rem;
 }
 @media only screen and (min-width: 720px) {
   .enable-logo__text {
     font-size: 4.375rem;
-    top: -1.5625rem;
+    top: 1.25rem;
   }
 }
 .enable-logo__sub-text {
@@ -169,7 +175,7 @@
   text-align: center;
 }
 .enable-stats__desc {
-  line-height: 2.5rem;
+  min-height: 2.5rem;
   padding: 0 20px;
   display: inline-block;
   position: relative;
@@ -180,10 +186,10 @@
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   .enable-stats__desc {
-    padding: 0 10px 0 3.125rem;
+    padding: 5px 10px 5px 3.125rem;
   }
   .enable-stats__desc--npm {
-    padding: 0 10px 0 6.25rem;
+    padding: 5px 10px 5px 6.25rem;
   }
 }
 .enable-stats__desc:only-child {
@@ -204,12 +210,18 @@
 .enable-stats__desc--npm {
   background-color: #ffcccc;
 }
+.enable-stats__center {
+  display: flex;
+  justify-content: center;
+  min-height: 2.5rem;
+  resize: vertical;
+  align-items: center;
+}
 .enable-stats__icon {
   height: 1.875rem;
   margin: 5px;
   display: inline-block;
-  position: absolute;
-  margin-left: -2.5rem;
+  margin-right: 10px;
 }
 .enable-stats__desc--npm .enable-stats__icon {
   margin-left: -5.625rem;
@@ -227,4 +239,7 @@
 }
 .screenshot-table td {
   border: solid 1px black;
+}
+.enable-flyout__open-menu-button {
+  margin-top: -3px;
 }

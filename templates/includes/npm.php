@@ -6,24 +6,47 @@
   <li>as an ES6 module using <a href="https://webpack.js.org/concepts/modules/">Webpack</a>.</li>
   <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
       browser</a>.</li>
-  <li>as an old-school ES4/JavaScript library.</li>
+  <?php
+    if (!$isPolyfill) {
+  ?>
+    <li>as an old-school ES4/JavaScript library.</li>
+  <?php
+    }
+  ?>
 </ul>
 
-<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
-  Here are a few articles that will help you decide:
-</p>
+<?php
+  if ($isPolyfill) {
+?>
+  <p>
+    <strong>Note: Unlike most of the other Enable Javascript modules, you cannot load this one as an old-school ES4 Javascript library.</strong>
+    This is because it tests for browser features (in this case, the <code>&lt;dialog&gt;</code> tag) and if the browser
+    doesn't support it, load the polyfill using<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import"> the ES6 <code>import()</code> function</a>.
+  </p>
+<?php
+  } else {
+?>
 
-<ul>
-  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
-    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
-  </li>
-  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
-      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
-      HTTP/2 You May Not Need Webpack Anymore</a>
-  <li>Stack Overflow has a really good thread about <a
-      href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
-  </li>
-</ul>
+  <p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+    Here are a few articles that will help you decide:
+  </p>
+
+
+  <ul>
+    <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+      <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+    </li>
+    <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
+        href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+        HTTP/2 You May Not Need Webpack Anymore</a>
+    <li>Stack Overflow has a really good thread about <a
+        href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+    </li>
+  </ul>
+
+<?php
+  }
+?>
 
 
 
@@ -113,7 +136,21 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
         </code>
 </ol>
 
+<?php
+  if (!$isPolyfill) {
+?>
 <h4>Using ES4</h4>
 
 Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
-directory instead of the <code>js/modules/</code>
+directory instead of the <code>js/modules/</code>:
+
+<blockquote>
+<code class="showcode--no-js">
+&lt;script src="path-to/es4/<?= $moduleName ?>.js"&gt;&lt;/script&gt;
+
+</code>
+      </blockquote>
+
+<?php
+  }
+?>

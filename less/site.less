@@ -156,11 +156,11 @@
 // Logo in the header
 
 .enable-logo {
-  width: 60px;
+  width: (60/@px);
   color: #fff;
 
   @media @tablet-up {
-    width: 100px;
+    width: (100/@px);
   }
 
   &__container {
@@ -172,10 +172,14 @@
 
     @media @mobile {
       transform: scale(0.75);
+      height: (75/@px);
+      transform-origin: 0 50%;
+      margin-left: 10px;
     }
 
     @media @tablet-up {
       padding: 0 30px;
+      height: (123/@px);
     }
   }
 
@@ -183,19 +187,21 @@
     color: #fff;
     text-decoration: none;
     display: inline-block;
+    position: relative;
   }
 
   &__text {
     display: block;
-    position: relative;
+    position: absolute;
     display: inline-block;
     color: #fff;
-    font-size: (50/@px);
+    font-size: (59/@px);
     padding-left: (20/@px);
+    top: (8/@px);
 
     @media @tablet-up {
       font-size: (70/@px);
-      top: (-25/@px);
+      top: (20/@px);
     }
   }
 
@@ -208,6 +214,8 @@
     font-style: normal;
   }
 }
+
+
 
 
 
@@ -225,10 +233,9 @@
   color: #000;
   text-align: center;
   
-  
 
   &__desc {
-    line-height: (40/@px);
+    min-height: (40/@px);
     padding: 0 20px;
     display: inline-block;
     position: relative;
@@ -239,10 +246,10 @@
     }
 
     @media @mobile {
-      padding: 0 10px 0 @icon-width;
+      padding: 5px 10px 5px @icon-width;
       
       &--npm {
-        padding: 0 10px 0 @npm-icon-width;
+        padding: 5px 10px 5px @npm-icon-width;
       }
     }
 
@@ -270,12 +277,20 @@
       background-color: #ffcccc;
     }
   }
+
+  &__center {
+
+    display: flex;
+    justify-content: center;
+    min-height: (40/@px);
+    resize: vertical;
+    align-items: center;
+  }
   &__icon {
     height: (30/@px);
     margin: 5px;
     display: inline-block;
-    position: absolute;
-    margin-left: ( (10/@px) - @icon-width);
+    margin-right: 10px;
   }
 
   &__desc--npm &__icon {
@@ -298,4 +313,9 @@
   td {
     border: solid 1px black;
   }
+}
+
+
+.enable-flyout__open-menu-button {
+  margin-top: -3px;
 }

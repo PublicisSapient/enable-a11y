@@ -15,7 +15,7 @@
 
 import { interpolate, htmlToDomNode } from './interpolate.js'
 
-const paginationTables = new(function() {
+const paginationTables = new function() {
   var perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
@@ -58,7 +58,7 @@ const paginationTables = new(function() {
     perPage = parseInt($table.dataset.pagecount);
     renderPaginationButtons($table, 0);
     createTableMeta($table);
-    renderTable($table);
+    this.renderTable($table);
   }
 
   this.init = () => {
@@ -77,7 +77,7 @@ const paginationTables = new(function() {
   }
 
   // based on current page, only show the elements in that range
-  function renderTable(table) {
+  this.renderTable = (table) => {
     var startIndex = 0;
     const $container = table.closest(baseSelector);
     const $alert = $container.querySelector(alertSelector);
@@ -118,7 +118,7 @@ const paginationTables = new(function() {
     table.dataset.currentpage = "0";
   }
 
-  function pagerItemClickEvent(e) {
+  const pagerItemClickEvent = (e) => {
     const { target } = e;
     const isPrevious = target.classList.contains(previousButtonClass);
     const isNext = target.classList.contains(nextButtonClass);
@@ -136,7 +136,7 @@ const paginationTables = new(function() {
       }
       //target.classList.add(pagerItemSelectedClass);
       $table.dataset.currentpage = target.dataset.index;
-      renderTable($table);
+      this.renderTable($table);
 
       if ($pager) {
         let toFocus;
@@ -220,7 +220,7 @@ const paginationTables = new(function() {
 
   }
 
-})();
+};
 
 
 export default paginationTables;

@@ -561,6 +561,10 @@
         background: none;
         font-weight: bold;
 
+        .enable-flyout__secondary-navigation--desktop & {
+          text-decoration: underline;
+        }
+
         &:before {
           content: "";
           position: absolute;
@@ -569,7 +573,12 @@
           background-color: #fff;
           bottom: 23px;
           left: 0;
+
+          .enable-flyout__secondary-navigation--desktop & {
+            content: none;
+          }
         }
+
       }
     }
 
@@ -580,7 +589,7 @@
 
     &__level-heading {
       font-weight: bold;
-      font-size: (26 / @px);
+      font-size: (25 / @px);
       border-bottom: 1px solid #999;
       padding: 0 14px;
       display: block;

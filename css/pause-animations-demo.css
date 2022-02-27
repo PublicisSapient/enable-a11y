@@ -12,7 +12,7 @@
     */
 }
 .play-pause-anim__checkbox-container {
-  position: sticky;
+  position: relative;
   width: 100vw;
   top: 0;
   left: 0;
@@ -23,8 +23,12 @@
   text-align: center;
   height: 2.5rem;
 }
+.offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container {
+  position: fixed;
+  top: 0rem;
+}
 main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
-  margin: -16px -16px 10px -16px;
+  margin: -1rem -1rem 0.625rem -1rem;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {

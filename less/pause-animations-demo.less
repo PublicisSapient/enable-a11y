@@ -15,7 +15,7 @@
     *  For the page
     */
     &__checkbox-container {
-        position: sticky;
+        position: relative;
         width: 100vw;
         top: 0;
         left: 0;
@@ -26,8 +26,13 @@
         text-align: center;
         height: @checkbox-height;
 
+        .offscreen-observer__is-header-offscreen & {
+          position: fixed;
+          top: (0/@px);
+        }
+
         main:not(.with-full-bleed-hero) & {
-          margin: -16px -16px 10px -16px;
+          margin: (-16/@px) (-16/@px) (10/@px) (-16/@px);
         }
         
 
