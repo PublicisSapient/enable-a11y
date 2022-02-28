@@ -557,6 +557,12 @@ aside,
   border: solid 1px black;
   box-shadow: 4px 4px 0 black;
 }
+aside h2,
+[role="complementary"] h2 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  margin-top: 0;
+}
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   aside,
   [role="complementary"] {

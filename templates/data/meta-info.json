@@ -152,6 +152,14 @@
     "title": "Accessible Tables",
     "desc": "Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone."
   },
+  "sortable-table.php": {
+    "title": "Accessible Sortable Tables",
+    "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly."
+  },
+  "pagination-table.php": {
+    "title": "Accessible Pagination Table",
+    "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this."
+  },
   "tabs.php": {
     "title": "Accessible Tabs",
     "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back."
