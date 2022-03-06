@@ -37,7 +37,8 @@
     width: 890px;
     padding-bottom: 10px;
   }
-  #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout {
+  #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout,
+  #content-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout {
     width: fit-content;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
@@ -82,7 +83,8 @@
   #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item .enable-flyout__list {
     width: 100%;
   }
-  #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2) {
+  #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2),
+  #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
     width: calc(100% / 3 - 36px);
     float: left;
     margin-left: 18px;
@@ -90,6 +92,19 @@
   }
   #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
     width: calc(200% / 3 - 36px);
+    float: left;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
+    width: calc(300% / 3 - 36px);
+    float: left;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+  #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3),
+  #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(4) {
+    width: calc(150% / 3 - 36px);
     float: left;
     margin-left: 18px;
     margin-right: 18px;

@@ -97,7 +97,7 @@
         }
       });
 
-      // fire play event
+      // fire pause event
       document.dispatchEvent(pauseEvent);
 
       localStorage.setItem(this.reduceMotionKey, true);

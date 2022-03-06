@@ -11,13 +11,27 @@
         </aside> -->
 
         
+        <p>
+            When the HTML <code>&lt;img&gt;</code> tag was first supported the NCSA Mosaic web browser by Marc Andreeson in 1993, it changed the World Wide Web from a text-only to a multimedia platform.  Other browsers that couldn't render images (like the terminal based Lynx web browser) needed a fallback so that users of their browsers could show something meaningful instead of images. Tony Johnson, the creator of the Midas web browser, requested a text altenative that could be used, and eventually that became the <code>alt</code> attribute.
+        </p>
 
+        <p>
+            "Alt text" not only is great for accessibility, it's also good to make your images come up in search engines.  Good "alt text" handles both use cases well.
+        </p>
 
-        <p>Code based on that from
-            <a href="http://pauljadam.com/demos/img.html">Paul J Adam's img role demo</a>.</p>
+        <p>
+            Creating accessible alternative text is a discussion on itself.  <a href="https://webaim.org">WebAIM</a> has a great introductory article about <a href="https://webaim.org/techniques/alttext/">Alternative Text</a> that is highly recommended.  I also recommend <a href="https://www.scottohara.me/">Scott O'Hara's</a> in depth article <a href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html">Contextually Marking up accessible images and SVGs</a>.
+        </p>
 
 
         <h2>HTML5 img tag</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+
+        <p>
+            The easiest way to add images to a web page.
+        </p>
+
         <div id="html5-example" class="enable-example">
             <img src="images/card_icons.png" width="100" height="94" alt="Debit, Visa, MasterCard, American Express, Discover Network"
             >
@@ -38,6 +52,8 @@
         </script>
 
         <h2>Decorative Image</h2>
+
+        <?php includeStats(array('isStyle' => false, 'comment' => 'Important if the image has the same information available in the surrounding text.')) ?>
 
         <p>
             A decorative image is an image that is used to enhance an idea presented in text,
@@ -67,6 +83,18 @@
 
 
         <h2>ARIA Example</h2>
+
+        <p>There are many sites that include images using the CSS <code>background-image</code> or <code>background</code> properties.  Unless these images are decorative, we need to include alternative text as a fallback for these images as well.  This can be done using <code>aria-label</code> with the <code>img</code> role.
+        </p>
+
+        <p>Note that developers should use <code>&lt;img&gt;</code> tags wherever possible instead of this method.  Not only is it better for SEO, but also for text based browsers as well.</p>
+
+        <p>The code in this example is based on that from
+            <a href="http://pauljadam.com/demos/img.html">Paul J Adam's img role demo</a>.</p>
+
+
+
+
         <div id="aria-example" class="enable-example clearfix">
             <div class="sprite card_icons amex" role="img" aria-label="American Express"></div>
             <div class="sprite card_icons discover" role="img" aria-label="Discover Network"></div>
@@ -95,8 +123,15 @@
        
 
         <h2>Inline SVG example with text markup</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'These rules should always be applied to all inline SVG images.')) ?>
+
+        <p>
+            Although using the <code>&lt;img&gt;</code> tag is the best way to include an SVG into your web page (it's cachable, the markup is less heavy, etc.), it is sometimes desirable to include the image inline (especially if you are making it interactive via JavaScript).  Follow the instructions below if you want your inline SVGs to be accessible.
+        </p>
+
         <div id="inline-svg-example" class="enable-example">
-            <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text">
+            <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text" focusable="false">
                 <title id="circle-alt">A dark blue circle with text inside</title>
                 
                 <rect x="0" y="0" width="200" height="163" fill="#ffffff" fill-opacity="1"></rect>
@@ -117,6 +152,11 @@
                 "label": "Add a role of img",
                 "highlight": "role",
                 "notes": "Just like the previous example"
+            },
+            {
+                "label": "Add focusable=\"false\" to the SVG tag",
+                "highlight": "focusable",
+                "notes": "This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document."
             },
             {
                 "label": "Add aria-labelledby",

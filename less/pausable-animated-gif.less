@@ -1,6 +1,6 @@
 @import "shared/mixins-and-vars";
 
-.pauseable-animated-gif {
+.pausable-animated-gif {
   display: block;
   position: relative;
   margin: 0 auto;
@@ -21,7 +21,7 @@
     right: 0.5rem;
     z-index: 2;
     border-radius: 50%;
-    background-image: data-uri('../images/pauseable-animated-gif/play_circle_filled-24px.svg');
+    background-image: data-uri('../images/pausable-animated-gif/play_circle_filled-24px.svg');
     background-size: 90% auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,7 +30,7 @@
   }
 
   [open] summary {
-    background-image: data-uri('../images/pauseable-animated-gif/pause_circle_filled-24px.svg');
+    background-image: data-uri('../images/pausable-animated-gif/pause_circle_filled-24px.svg');
     box-shadow: 0 0 0 2px #fff;
     background-color: white;
 
@@ -70,6 +70,14 @@
     top: 0px;
     left: 0px;
     overflow: visible;
+  }
+
+  &__warning-message {
+    display: none;
+
+    .pause-anim-control__prefers-reduced-motion & {
+      display: block;
+    }
   }
 
 }

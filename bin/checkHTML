@@ -90,7 +90,6 @@ do
 done
 echo	
 
-if false; then
 
 echo "Checking HTML..."
 echo
@@ -195,7 +194,6 @@ then
 	exit 1
 fi
 
-fi
 
 
 echo "Running pa11y tests ..."

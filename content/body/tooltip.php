@@ -4,7 +4,7 @@
   information about an existing UI control. It is hidden by default, and becomes available on hover or focus of the
   control it describes.</strong> <a href="https://sarahmhigley.com/">Sarah M. Higley</a> came up with this definition for what a
   tooltip is in her article <a href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG
-    2.1</a>, and its better than anything I could write, so I hope she doesn't mind me stealing it.</p>
+    2.1</a>, and its better than anything I could write, so I hope she doesn't mind me stealing it.
 </p>
 
 
@@ -57,8 +57,8 @@
 
   <p>
     <a href="/" title="This tooltip is accessible!">This link has a tooltip</a>
-    <label for="input-tooltip-example">and so does this input field:</label>
-    <input id="input-tooltip-example" type="text" title="You can put tooltips on any focusable item.">
+    <label for="input-tooltip-example1">and so does this input field:</label>
+    <input id="input-tooltip-example1" type="text" title="You can put tooltips on any focusable item.">
   </p>
 
 </div>
@@ -77,8 +77,8 @@
 <div id="example1" class="enable-example">
   <p>
     <a href="/" data-tooltip="This tooltip is accessible!">This link has a tooltip</a>
-    <label for="input-tooltip-example">and so does this input field:</label>
-    <input id="input-tooltip-example" type="text" data-tooltip="You can put tooltips on any focusable item.">
+    <label for="input-tooltip-example2">and so does this input field:</label>
+    <input id="input-tooltip-example2" type="text" data-tooltip="You can put tooltips on any focusable item.">
   </p>
 </div>
 

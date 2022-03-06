@@ -15,18 +15,18 @@ const sortableTables = new (function () {
   * script from Deque University:
   * https://dequeuniversity.com/library/aria/table-sortable
   */
+  this.functions = {};
 
-  this.add = (tableGroup) => {
+  this.add = (tableGroup, options) => {
     var table = tableGroup.querySelector("table");
     var headerGroup = table.querySelector("thead");
     var headerRow = headerGroup.querySelector("tr");
     var headers = headerRow.querySelectorAll("th");
     var rowGroup = table.querySelector("tbody");
     var rows = rowGroup.querySelectorAll("tr");
-    var captionElement = table.querySelector("caption");
+    var captionElement = table.querySelector("caption") || document.getElementById(table.getAttribute('aria-labelledby'));
     var captionDetailsElement = captionElement.querySelector('.deque-table-sortable__caption-details')
     var caption = captionElement.innerText;
-    
     var hasRowHeadings = (table.querySelector('tbody th') !== null);
     var ariaLiveUpdateTemplate =
       table.getAttribute("data-aria-live-update") ||
@@ -40,12 +40,15 @@ const sortableTables = new (function () {
       ".deque-table-sortable__live-region"
     );
     var readCaptions = liveRegion.getAttribute("data-read-captions");
+
     if (readCaptions === null) {
       readCaptions = false;
     }
     liveRegion.notify = function (text) {
       liveRegion.innerHTML = text;
     };
+
+    table.options = options;
 
     var sortOrder = null;
     var sortDirection = 1;
@@ -133,9 +136,21 @@ const sortableTables = new (function () {
     headers = Array.prototype.slice.call(headers);
     [].slice.call(headers).forEach(function (header, i) {
       createHeaderCell(header, function (e) {
+        const { options } = table;
+
         e.preventDefault();
+
+        if (options && options.onBeforeSort) {
+          options.onBeforeSort(table);
+        }
+
         rows = sortByIndex(rows, i);
         table.renderData(rows);
+
+        if (options && options.onAfterSort) {
+          options.onAfterSort(table);
+        }
+
         table.dispatchEvent(
           new CustomEvent(
             'enable-table-sort',
@@ -158,7 +173,64 @@ const sortableTables = new (function () {
 
     table.renderData(rows);
 
-    function sortByIndex(rows, index) {
+    const createCompareFunc = (baseFunc, index) => {
+      return (
+        function (a, b) {
+          a = Array.prototype.slice.call(a.children);
+          b = Array.prototype.slice.call(b.children);
+          var aVal = null;
+          var bVal = null;
+    
+          if (a[index]) {
+            aVal = a[index].innerText;
+          }
+    
+          if (b[index]) {
+            bVal = b[index].innerText;
+          }
+
+          return baseFunc(aVal, bVal);
+        }
+      )
+    }
+
+    const sortByIndex = (rows, index) => {
+      const tableHeadings = tableGroup.querySelectorAll('thead th');
+      const sortByFuncName = tableHeadings[index].dataset.sortableTablesCompareFunc;
+      const customCompareFunc = this.functions[sortByFuncName];
+      const compareFunc = customCompareFunc ? createCompareFunc(customCompareFunc, index) : (function (a, b) {
+        a = Array.prototype.slice.call(a.children);
+        b = Array.prototype.slice.call(b.children);
+        var aVal = null;
+        var bVal = null;
+  
+        if (a[index]) {
+          aVal = a[index].innerText;
+        }
+  
+        if (b[index]) {
+          bVal = b[index].innerText;
+        }
+  
+        if (!isNaN(parseInt(aVal)) && !isNaN(parseInt(bVal))) {
+          if (parseInt(aVal) < parseInt(bVal)) {
+            return -1;
+          }
+          if (parseInt(aVal) > parseInt(bVal)) {
+            return 1;
+          }
+          return 0;
+        } else {
+          if (aVal < bVal) {
+            return -1;
+          }
+          if (aVal > bVal) {
+            return 1;
+          }
+          return 0;
+        }
+      });
+
       rows = tableGroup.querySelectorAll("tbody tr");
       rows = [].slice.call(rows);
 
@@ -168,38 +240,7 @@ const sortableTables = new (function () {
       } else {
         sortDirection = 1;
         sortOrder = index;
-        return rows.sort(function (a, b) {
-          a = Array.prototype.slice.call(a.children);
-          b = Array.prototype.slice.call(b.children);
-          var aVal = null;
-          var bVal = null;
-
-          if (a[index]) {
-            aVal = a[index].innerText;
-          }
-
-          if (b[index]) {
-            bVal = b[index].innerText;
-          }
-
-          if (!isNaN(parseInt(aVal)) && !isNaN(parseInt(bVal))) {
-            if (parseInt(aVal) < parseInt(bVal)) {
-              return -1;
-            }
-            if (parseInt(aVal) > parseInt(bVal)) {
-              return 1;
-            }
-            return 0;
-          } else {
-            if (aVal < bVal) {
-              return -1;
-            }
-            if (aVal > bVal) {
-              return 1;
-            }
-            return 0;
-          }
-        });
+        return rows.sort(compareFunc);
       }
     }
 
@@ -219,9 +260,11 @@ const sortableTables = new (function () {
   function toHTML(rows , hasRowHeadings) {
     return rows
       .map(function (row) {
+        const { className } = row;
+
         row = Array.prototype.slice.call(row.children);
         return (
-          '<tr role="row">\n    ' +
+          `<tr role="row" class="${className}">\n    ` +
           row
             .map(function (item, index) {
               if (index === 0 && hasRowHeadings) {
@@ -238,17 +281,21 @@ const sortableTables = new (function () {
       .join("");
   }
 
-  this.activateAllSortableTables = (withinEl) => {
+  this.activateAllSortableTables = (withinEl, options) => {
     var sortableTables = (withinEl || document).querySelectorAll(
       ".deque-table-sortable-group"
     );
     for (var i = 0; i < sortableTables.length; i++) {
-      this.add(sortableTables[i]);
+      this.add(sortableTables[i], options);
     }
   }
 
-  this.init = () => {
-    this.activateAllSortableTables();
+  this.addSortFunction = (funcName, func) => {
+    this.functions[funcName] = func;
+  }
+
+  this.init = (options) => {
+    this.activateAllSortableTables(document, options);
   }
 })();
 

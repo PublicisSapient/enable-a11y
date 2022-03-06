@@ -53,7 +53,6 @@
             </ul>
         </aside> -->
 
-        <h2>Overview</h2>
 
         <p>
             Progress bars show the completion status of a current task.  It may be something that is fairly static 
@@ -73,11 +72,14 @@
 
         <h2>HTML5 progress bar</h2>
 
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+
         <p>
             This progress bar uses aria-live regions to update the status of the progress bar. It works in for all
             screen
             readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
-            users are updated as soon as the progress bar value changes.
+            users are updated as soon as the progress bar value changes.  Be mindful of how often the ARIA live region updates, so it
+            doesn't cause unnecessary noise for screen readers users.
 
         </p>
 
@@ -138,8 +140,9 @@
 
         <h2>ARIA role="progressbar" Example</h2>
 
-        <p>This progress bar uses aria-live regions to update the status of the progress bar. It is the safest way to
-            ensure your progress bars are accessible.
+        <?php includeStats(array('isForNewBuilds' => false)) ?>
+
+        <p>This progress bar uses aria-live regions to update the status of the progress bar. Same rules for updating this aria-live region applies as the HTML5 example above.
         </p>
 
         <div id="aria-example1" class="enable-example">
@@ -183,6 +186,8 @@
         </div>
 
         <h2>Advanced ARIA progressbar role example</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is when you want to add text descriptions to the values inside a progress bar.  The example below is just one way this can be implemented.')) ?>
 
         <p>
             This uses the <code>aria-valuetext</code> to update the progress bar.

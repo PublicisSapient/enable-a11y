@@ -121,6 +121,7 @@
       <li><a href="form.php">Form Elements</a></li>
       <li><a href="link.php" aria-current="page">Links</a></li>
     </ol>
+  </nav>
 </div>
 
 <?php includeShowcode("breadcrumb-example")?>

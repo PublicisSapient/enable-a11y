@@ -147,7 +147,7 @@
     may be easier to use a JSON to structure your menu and have the libary do it for you.</li>
 </ol>
 
-<h3>Coding HTML by Hand</h3>
+<h3 id="enable-hamburger-menu__heading" tabindex="-1">Coding HTML by Hand</h3>
 
 <p>If you wanted to code this menu's HTML by hand, you can use the following guide.  Just keep in mind that each level is basically a list of buttons and links.  The links will go to new </p>
 

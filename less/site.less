@@ -52,7 +52,8 @@
     }
 
     &__level &__level &__list--photo-layout {
-      #code-patterns-section& {
+      #code-patterns-section&,
+      #content-section& {
         width: fit-content;
       }
     }
@@ -70,6 +71,7 @@
       #code-patterns-section& {
         width: 134px;
       }
+      
     }
 
 
@@ -118,7 +120,8 @@
       }
     }
 
-    #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(2) {
+    #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(2),
+    #content-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
       width: calc(100% / 3 - 36px);
       float: left;
       margin-left: @mulit-column-menu-margin;
@@ -126,12 +129,29 @@
 
     }
 
+    
+
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
       width: calc(200% / 3 - 36px);
       float: left;
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
 
+    }
+
+    #content-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
+      width: calc(300% / 3 - 36px);
+      float: left;
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
+    }
+
+    #content-section > :not(&__menu-item) > &__menu-item:nth-child(3),
+    #content-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
+      width: calc(150% / 3 - 36px);
+      float: left;
+      margin-left: @mulit-column-menu-margin;
+      margin-right: @mulit-column-menu-margin;
     }
 
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
@@ -148,6 +168,8 @@
     #content-section &__list--photo-layout &__menu-item {
       height: (225/@px);
     }
+
+    
   }
 
 }

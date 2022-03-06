@@ -1,17 +1,21 @@
 
     
-      <!-- <aside class="notes">
-        <h2>Notes</h2>
-        <ul>
-          <li>Use these forms with a screen reader to understand why they are
-              accessible.
-          </li>
-        </ul>
-      </aside> -->
+     
+
+      <p>
+        There are two ways to make accessible forms: the native HTML5 way, or using JavaScript.  You would think 
+        it would be a no-brainer to just code things the HTML5 way and call it a day instead of creating custom 
+        code.  However, many designers don't like the design of native HTML5 error message "bubbles", and want/demand 
+        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have laballed
+        both of the solution below good for new and existing work: the HTML5 one is good if you want to implement 
+        validation quickly, and the custom JavaScript implementation is good if you want design flexibility.</p>
+
 
       
 
       <h2>Using native HTML5 validation</h2>
+
+      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is great if you want to implement validation quickly and don\'t care about the styling restrictions of native HTML5 validation.' )) ?>
 
       <p>
         You can use just <code>required</code> and
@@ -109,11 +113,15 @@
 
       <h2>Using custom validation</h2>
 
+      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is good if you want custom styling of the error messages')); ?>
+      <?php includeStats(array('isNPM' => true, 'comment' => 'The solution below involves using Enable\'s accessibility.js library to make it easier to code.')) ?>
+
       <p>
         You can do the custom validation as well, but you have to ensure that
         when the form submits and there is an error, the first input value with
         an error receives focus so that keyboard and/or screen reader users can
-        correct mistakes easily.
+        correct mistakes easily.  You also have to ensure that form errors are marked
+        up as <code>&lt;label&gt;</code> tags for the form fields they are associated with.
       </p>
 
       <p>
@@ -255,6 +263,6 @@
       </script>
 
       
-
+<?= includeNPMInstructions('accessibility') ?>
 
     

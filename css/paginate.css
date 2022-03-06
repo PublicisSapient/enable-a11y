@@ -1,5 +1,5 @@
 .pagination__inactive {
-  display: none;
+  display: none !important;
 }
 .pagination__pager {
   /*

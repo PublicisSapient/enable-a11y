@@ -95,7 +95,6 @@
 }
 </script>
 
-<!--
 <h2>HTML5 dropdown with checkboxes</h2>
 
 <p>Frequently, there is a requirement to create a "multi-select selectbox". It is possible to do this with the
@@ -322,24 +321,3 @@
 </script>
 
 
-
-<script type="application/json" id="example-aria-multiselect-props">
-{
-  "replaceHtmlRules": {
-    "summary": "<!-- Insert dropdown button label here -->",
-    ".content": "<!-- Insert dropdown content here. Doesn't have to wrapped in a div  -->"
-  },
-  "steps": [{
-      "label": "Set up the details and summary tags",
-      "highlight": "\\s*&lt;summary[^;]*&gt;[\\s\\S]*&lt;/summary&gt; ||| \\s*&lt;details[^;]*&gt; ||| \\s*&lt;\/details&gt;",
-      "notes": "It's really this easy.  Everything else is done for you."
-    },
-    {
-      "label": "Create a fieldset with a legend so the checkboxes can be treated as a group.",
-      "highlight": "\\s*&lt;legend[^;]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset[^;]*&gt; ||| \\s*&lt;\/fieldset&gt;",
-      "notes": "Note the legend is visally-hidden with the `sr-only` class."
-    },
-
-  ]
-}
-</script>

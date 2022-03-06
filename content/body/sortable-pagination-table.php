@@ -1,48 +1,50 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'If you are going to use this in a new webpage, please review our <a href="table.php#sticky-header-example">Sticky Table Header Example</a> and decide which solution is better for your use-case.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'You may want to read inform')) ?>
+<?php includeStats(array('isNPM' => true, 'comment' => 'There are NPM modules for both the <a href="sortable-table.php#npm-instructions">Sortable Table</a> and the <a href="pagination-table.php#npm-instructions">Pagination Table</a> Enable Scripts used in this demo.')) ?>
 
-<p>
-  If you have a lot of data in a table that you want to present the user in small, bite-sized chunks, you may want to
-  use a pagination UI element to do this. The solution presented below is accessible and works for keyboard and screen
-  reader users.
-</p>
 
-<p>
-  <strong>That said, it is a bit of work for a keyboard and screen reader use to any pagination UI, even if it is
-    accessible.</strong> It may be easier for users to navigate <a href="table.php#sticky-header-example">a table with a
-    sticky header
-    instead</a>. Before you implement this solution (or if you are trying to make an existing pagination component
-  accessible), weigh the pros and cons between this and the Sticky Header solution.
-</p>
 
-<h2 tabindex="-1">Paginated Table Example</h2>
+<h2 tabindex="-1">Sortable Paginated Table</h2>
 
-<div class="enable-example" id="paginated-table-example">
-  <div class="pagination">
-    <div id="pagination-table-example__desc--top" class="sr-only">
+<div class="enable-example" id="sortable-paginated-table-example">
+  <div class="pagination deque-table-sortable-group">
+    <div id="sortable-paginated-table-example__desc--top" class="sr-only">
       <p>
         The buttons inside this control allow you to paginate through
         the data in the table below, 10 columns at a time.
       </p>
     </div>
-    <div class="pagination__pager" role="group" aria-labelledby="pagination-table-example__desc--top"></div>
+    <div id="sortable-paginated-table-example__sort-instructions">
+      Click the table heading buttons to sort the table by the data in its column.
+    </div>
+    <div class="pagination__pager" role="group" aria-labelledby="sortable-paginated-table-example__desc--top"></div>
     <figure>
-      <figcaption id="pagination-table-example__caption" class="caption">
+      <figcaption id="sortable-paginated-table-example__caption" class="caption">
         Pagination Table Example: GDP of the World Nations
       </figcaption>
       <div class="sticky-table__container" tabindex="0">
-        <table class="pagination__table" data-pagecount="7"
+        <table role="grid" aria-readonly="true" class="pagination__table deque-table-sortable" data-pagecount="7"
           data-pagination-alert-template="Now dislaying rows ${n} through ${m}" data-pagination-button-spread="5"
-          data-pagination-mobile-button-spread="4" aria-labelledby="pagination-table-example__caption">
+          data-pagination-mobile-button-spread="4" aria-labelledby="sortable-paginated-table-example__caption"
+          data-aria-live-update="The table ${caption} is now ${sortedBy}"
+          data-ascending-label="Sorted in ascending order" data-descending-label="Sorted in descending order">
           <thead>
             <tr>
-              <th scope="col">Rank</th>
-              <th scope="col">Name</th>
-              <th scope="col">GDP (IMF '19)</th>
-              <th scope="col">GDP (UN '16)</th>
-              <th scope="col">GDP Per Capita</th>
-              <th scope="col">Population</th>
+              <th scope="col"><button class="sortableColumnLabel"
+                  aria-describedby="sortable-paginated-table-example__sort-instructions">Rank</button></th>
+              <th scope="col"><button class="sortableColumnLabel"
+                  aria-describedby="sortable-paginated-table-example__sort-instructions">Name</button></th>
+              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
+                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
+                  (IMF '19)</button></th>
+              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
+                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
+                  (UN '16)</button></th>
+              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
+                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
+                  Per Capita</button></th>
+              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
+                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions"
+                  data-sortable-tables-compare-func="exampleCustomCompare">Population</button></th>
             </tr>
           </thead>
           <tbody>
@@ -1740,79 +1742,7 @@
     </figure>
 
     <div class="pagination__alert sr-only" role="alert" aria-live="polite"></div>
+    <span class="deque-table-sortable__live-region sr-only" aria-live="polite" data-read-captions="false">
+    </span>
 
-    <div id="pagination-table-example__desc--bottom" class="sr-only">
-      <p>
-        The buttons inside this control allow you to paginate through
-        the data in the table above, 10 columns at a time.
-      </p>
-    </div>
-    <div class="pagination__pager" role="group" aria-labelledby="pagination-table-example__desc--bottom"></div>
-
-    <template id="pagination__template--button">
-      <button class="pagination__pager-item ${isSelectedClass}" data-index="${index}"
-        aria-label="Display page ${label} of ${totalPages}">
-        ${label}
-      </button>
-    </template>
-
-    <template id="pagination__template--previous-button">
-      <button class="pagination__pager-item pagination__pager-item--previous" ${disabledattr}
-        aria-label="Display previous page" data-index=${index}>
-        &lt;
-      </button>
-    </template>
-
-    <template id="pagination__template--next-button">
-      <button class="pagination__pager-item pagination__pager-item--next" ${disabledattr} aria-label="Display next page"
-        data-index=${index}>
-        &gt;
-      </button>
-    </template>
   </div>
-</div>
-
-<?php includeShowcode("paginated-table-example")?>
-
-<script type="application/json" id="paginated-table-example-props">
-{
-  "replaceHtmlRules": {
-    "table": "<!-- Insert table data here -->"
-  },
-  "steps": [{
-      "label": "Use the template HTML instead of hardcoding HTML inside your script",
-      "highlight": "%OPENCLOSECONTENTTAG%template",
-      "notes": "Hardcoding HTML in scripts is bad for two reasons: It prevents a developer for customizing the controls, and it can also hardcode the human language to a specific language.  In this example, we use the <code>template</code> HTML tag to create the HTML fragments for the script.  The dynamic content is added using template string style variable syntax(e.g. ${x}).  See the next step to see how this is replaced"
-    },
-    {
-      "label": "Use <code>interpolate()</code> to place dynamic content inside the templates.",
-      "highlight": "%JS%paginationTables.renderTable ||| interpolate",
-      "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>, with a few <a href=\"https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/\">XSS sanatizing logic included</a>"
-    },
-    {
-      "label": "Mark up the pagination widget correctly",
-      "highlight": "role=\"group\" ||| aria-labelledby=\"pagination-table-example__desc--top\" ||| id=\"pagination-table-example__desc--top\" ||| aria-labelledby=\"pagination-table-example__desc--bottom\" ||| id=\"pagination-table-example__desc--bottom\"",
-      "notes": "This widget is marked up as a group so screen readers will announce instructions on how it works when they navigate inside of it.  Note the instructions are screen reader only using the <code>sr-only</code> class."
-    },
-    {
-      "label": "Ensure all pagination buttons have an aria-label",
-      "highlight": "aria-label=\"[^\"]*\"",
-      "notes": "This is to ensure the purpose of every button is reported to screen readers, since words like  \"Greater than\", \"one\", \"two\", etc., would be confusing"
-    },
-    {
-      "label": "Disable buttons that are not useful to screen reader users",
-      "highlight": "disabled",
-      "notes": "This element will be skipped in the tabbing order.  If you wanted to ensure it is discoverable, you could use <code>aria-disabled=\"true\"</code> instead"
-    },
-    {
-      "label": "Use an ARIA live region to give update information to screen reader users",
-      "highlight": "aria-live ||| role=\"alert\"",
-      "notes": "This aria-live region will be updated with information for screen reader users on what has changed in the table when the pagination buttons are pressed."
-    }
-
-  ]
-}
-</script>
-
-<?= includeNPMInstructions('paginate') ?>
-

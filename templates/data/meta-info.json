@@ -160,6 +160,10 @@
     "title": "Accessible Pagination Table",
     "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this."
   },
+  "sortable-pagination-table.php": {
+    "title": "Accessible Sortable Paginated Tables",
+    "desc": "Combine two accessible table scripts to make sortable and paginated tables."
+  },
   "tabs.php": {
     "title": "Accessible Tabs",
     "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back."

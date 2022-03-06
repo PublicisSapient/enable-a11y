@@ -2,25 +2,16 @@
     
         
 
-        <!-- <aside class="notes">
+       
 
-            <h2>Notes:</h2>
-            <ul>
-                <li>that the roles of
-                    <code>definition</code> and
-                    <code>term</code> and their relationship to the HTML
-                    <code>dt</code>,
-                    <code>dd</code>,
-                    <code>dl</code> and
-                    <code>dfn</code> tags
-                    <a href="https://github.com/w3c/aria/issues/504">are being questioned</a>
-                </li>
-                <li>The screen reader user experience is better if you surround your <code>dt</code>/<code>dd</code> pairs with a <code>div</code>.</li>
-            </ul>
-        </aside> -->
+        <p>Description lists used to be called definition lists.  They used to be used when defining a list of related items (e.g. like the list of movie monsters below).  In the HTML5 era, its semantic definition is a lot more broad and is now used to give descriptions to a list of related items.</p>
 
-        <h2>A HTML example</h2>
+        <h2>A HTML Description List</h2>
 
+        <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd</code> tags, respectively.
+        Note that, unlike the ARIA version, there is no group tag around the name value pairs.</p>
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
         
         <div id="html5-def-list-example" class="enable-example">
             <dl>
@@ -61,6 +52,10 @@
         </script>
 
         <h2>Aria Roles example</h2>
+
+        <?php includeStats(array('isForNewBuilds' => false)) ?>
+
+        <p>This is the ARIA equivalent of the definition list.  While I do like the semantic addition of the <code>listitem</code> role to group the name/value pairs, it is still best to use the native HTML5 definition lists.</p>
 
         <div id="aria-def-list-example" class="enable-example">
             <div class="dl" role="list">

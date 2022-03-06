@@ -16,7 +16,7 @@
 import { interpolate, htmlToDomNode } from './interpolate.js'
 
 const paginationTables = new function() {
-  var perPage = 20;
+  let perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
   const tableSelector = `.${baseClass}__table`;
@@ -24,7 +24,7 @@ const paginationTables = new function() {
   const inactiveClass = `${baseClass}__inactive`;
   const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
   const pagerSelector = `${baseSelector}__pager`
-  const $pagers = document.querySelectorAll(pagerSelector);
+  const $allPagers = document.querySelectorAll(pagerSelector);
   const pagerItemClass = `${baseClass}__pager-item`;
   const pagerItemSelector = `.${pagerItemClass}`;
   const alertSelector = `.${baseClass}__alert`;
@@ -43,14 +43,16 @@ const paginationTables = new function() {
   const previousButtonClass = 'pagination__pager-item--previous';
   const nextButtonClass = 'pagination__pager-item--next';
 
-  const mobileMq = ($pagers && $pagers[0]) ? window.getComputedStyle($pagers[0]).getPropertyValue('--mobile-mq') : null;
+  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
   const mobileMql = window.matchMedia(mobileMq);
-
-
+  console.log('hmmm', $allPagers, $allPagers[2], mobileMq, mobileMql);
 
   const buttonTemplate = $buttonTemplate.innerHTML;
 
   this.add = ($table) => {
+    const $base = $table.closest(baseSelector);
+    const $pagers = $base.querySelectorAll(pagerSelector);
+
     if ($pagers.length === 0) {
       throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
     }
@@ -69,6 +71,16 @@ const paginationTables = new function() {
     }
   }
 
+  this.showAll = (table) => {
+    const rows = table.getElementsByClassName(inactiveClass);
+
+    for (let i=0; i<rows.length; i++) {
+      rows[i].classList.remove(inactiveClass);
+    };
+
+    table.dataset.currentpage = 0;
+  }
+
   function onBreakpointChange() {
     $tables.forEach((table) => {
       const { currentpage } = table.dataset;
@@ -78,22 +90,26 @@ const paginationTables = new function() {
 
   // based on current page, only show the elements in that range
   this.renderTable = (table) => {
-    var startIndex = 0;
+    let startIndex = 0;
     const $container = table.closest(baseSelector);
     const $alert = $container.querySelector(alertSelector);
     const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
 
     if (table.querySelector("th")) startIndex = 1;
 
-    var start =
+    let start =
       parseInt(currentpage) * pagecount +
       startIndex;
-    var end = start + parseInt(pagecount);
-    var rows = table.rows;
+    let end = start + parseInt(pagecount);
+    let rows = table.rows;
 
-    for (var x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) rows[x].classList.add(inactiveClass);
-      else rows[x].classList.remove(inactiveClass);
+
+    for (let x = startIndex; x < rows.length; x++) {
+      if (x < start || x >= end) {
+        rows[x].classList.add(inactiveClass);
+      } else {
+        rows[x].classList.remove(inactiveClass);
+      }
     }
 
     $alert.innerHTML = interpolate(paginationAlertTemplate, {
@@ -129,9 +145,9 @@ const paginationTables = new function() {
 
       const $table = $container.querySelector(tableSelector);
       const index = target.dataset.index;
-      var parent = target.parentNode;
-      var items = parent.querySelectorAll(pagerItemSelector);
-      for (var x = 0; x < items.length; x++) {
+      let parent = target.parentNode;
+      let items = parent.querySelectorAll(pagerItemSelector);
+      for (let x = 0; x < items.length; x++) {
         items[x].classList.remove(pagerItemSelectedClass);
       }
       //target.classList.add(pagerItemSelectedClass);
@@ -154,18 +170,23 @@ const paginationTables = new function() {
   }
 
   function renderPaginationButtons(table, selectedIndex) {
-    var hasHeader = false;
+
+    const $base = table.closest(baseSelector);
+    const $pagers = $base.querySelectorAll(pagerSelector);
+    let hasHeader = false;
     const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
     const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
     let begin, end;
 
-    if (table.querySelector("th")) hasHeader = true;
+    if (table.querySelector("th")) {
+      hasHeader = true;
+    }
 
-    var rows = table.rows.length;
+    let rows = table.rows.length;
 
     if (hasHeader) rows = rows - 1;
 
-    var numPages = Math.floor(rows / perPage);
+    let numPages = Math.floor(rows / perPage);
 
     if (paginationButtonSpread === 0) {
       begin = 0;
@@ -197,7 +218,7 @@ const paginationTables = new function() {
         }
       )));
 
-      for (var i = begin; i < end; i++) {
+      for (let i = begin; i < end; i++) {
         const pageHTML = interpolate(buttonTemplate, {
           index: i,
           label: i + 1,

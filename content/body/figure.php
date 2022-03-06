@@ -16,11 +16,18 @@
             </ul>
         </aside> -->
 
-        
-
-
+        <p>The <code>&lt;figure&gt;</code> tag is used to describe illustrations, diagrams, photos, code listings, etc.  Usually this description is visible.  Figures are very common in the non-digital world in text books.  They are great to give a TL;DR summary of a more complex piece of content.</p>
 
         <h2>HTML5 Example</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+
+        <p>
+            Here is the correct way to use the <code>&lt;figure&gt;</code> tag.  Note that this traditional styling in this example (i.e. with the more complex content visually above the description) is only one way of styling figures, and is not the only way to do so.
+        </p>
+
+
+
         <div id="html5-example" class="enable-example">
             <figure>
                 
@@ -51,6 +58,15 @@
 
 
         <h2>ARIA Example</h2>
+
+        <?php includeStats(array('isForNewBuilds' => false)) ?>
+
+        <p>
+            If you have existing markup that has the meaning as the example of above, you can mark it up using ARIA.
+        </p>
+        
+
+
         <div id="aria-example" class="enable-example">
             <div role="figure" aria-labelledby="aria-caption">
                 <code>

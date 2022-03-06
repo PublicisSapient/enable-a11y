@@ -17,7 +17,7 @@
   This page discusses two types of skip links: the <strong>traditional skip link that works for desktop computers</strong>, and
   <strong>one that also works for mobile devices (which will only be experienced by mobile screen-reader users)</strong>.  
 </p>
-</aside>
+
 <h2>Traditional Skip Link</h2>
 
 <?php includeStats(array('doNot' => true, 'comment' => 'Please review our mobile friendly solution before you decide to choose this one.')) ?>

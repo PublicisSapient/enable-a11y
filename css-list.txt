@@ -29,7 +29,7 @@ css/marquee.css
 css/math.css
 css/menubar.css
 css/paginate.css
-css/pauseable-animated-gif.css
+css/pausable-animated-gif.css
 css/pause-animations-demo.css
 css/progress.css
 css/radiogroup.css

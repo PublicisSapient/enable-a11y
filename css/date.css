@@ -505,9 +505,11 @@ header,
 [role="banner"] {
   background: #450a0a;
   margin: 0;
-  position: relative;
   border-bottom: solid 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  transform: translateZ(2px);
+  position: relative;
+  z-index: 2;
 }
 header h1,
 [role="banner"] h1 {

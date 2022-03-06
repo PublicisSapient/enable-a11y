@@ -15,14 +15,31 @@ import EnableFlyoutHamburger from "./modules/enable-hamburger.js";
 import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
 import offscreenObserver from "./modules/offscreen-observer.js"
 
-offscreenObserver.init(document.querySelector('[role="banner"]'));
+function initEnable() {
+
+  offscreenObserver.init(document.querySelector('[role="banner"]'));
+
+
+  enableVisibleOnFocus.init();
+  EnableFlyoutHamburger.init();
+
+  // So screen reader users, like VoiceOver users, can navigate via heading and have focus
+  // applied to the heading.
+  document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
+    if (el.getAttribute('tabIndex') === null) {
+      el.setAttribute('tabIndex', '-1');
+    }
+  })
+
+}
+
+initEnable();
 
 
 showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
 showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
+showcode.addJsObj('initEnable', initEnable);
 
-enableVisibleOnFocus.init();
-EnableFlyoutHamburger.init();
 
 
 /*

@@ -131,7 +131,6 @@ function getMetadata() {
             //This loop allows me to work around with the keys 
             if (strcmp($tokenToFind, $file) == 0) {
 
-
                 $fileProps->posterImg = '/images/posters/' . preg_replace('/\.php$/', '.jpg', $tokenToFind);
 
                 // Let's ensure these properties are entified.
@@ -179,6 +178,14 @@ function getBottomBodyTags() {
     includeFileWithVariables($file, array());
   }
 }
+
+function getPreBottomBodyTags() {
+  $file = '../content/pre-bottom/' . getURIFilename();
+  if (file_exists($file)) {
+    includeFileWithVariables($file, array());
+  }
+}
+
 
 getMetadata();
 

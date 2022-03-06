@@ -18,7 +18,7 @@
 
 <p>When you have a group of content items that you want to show users one at a time, a tablist is usually desired.
   Tablists is another common component on the web that does not have a native HTML5 implementation (i.e. there is no
-  such thing as a <tablist> tag), although there is a <a href="https://daverupert.com/2021/10/native-html-tabs/">group
+  such thing as a <code>&gt;tablist&lt;</code> tag), although there is a <a href="https://daverupert.com/2021/10/native-html-tabs/">group
       of people who are working to eventually get this in the HTML5 specification)</a>.
 </p>
 

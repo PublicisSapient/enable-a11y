@@ -28,6 +28,8 @@
     ?>
   </main>
 
+    <?php getPreBottomBodyTags() ?>
+
     <?php include "includes/example-footer.php"?>
 
     <?php getBottomBodyTags() ?>
