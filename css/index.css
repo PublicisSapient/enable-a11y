@@ -1,0 +1,19 @@
+.homepage__intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.homepage__intro--section {
+  flex-grow: 1;
+  width: 33%;
+}
+.homepage__intro--section + .homepage__intro--section {
+  margin-left: 2%;
+}
+.homepage__intro--header {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: none;
+  margin-bottom: 20px;
+}

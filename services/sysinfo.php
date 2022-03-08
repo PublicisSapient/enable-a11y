@@ -3,7 +3,6 @@
 
     // from http://php.net/manual/en/function.sys-getloadavg.php
 
-    header("Content-Type: text/plain");
 
     function _getServerLoadLinuxData()
     {

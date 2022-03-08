@@ -41,14 +41,14 @@ h1 {
   font-weight: bold;
   font-size: 2rem;
   color: #222;
-  font-size: ( 35 / @px );
+  font-size: (35 / @px );
 }
 
 h2 {
   font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
-  font-size: ( 29 / @px ); 
+  font-size: (29 / @px );
   border-bottom: solid 1px #999999;
-  margin: ( 29 / @px ) 0 0 0;
+  margin: (29 / @px ) 0 0 0;
   color: #222;
 }
 
@@ -94,8 +94,10 @@ p {
     max-width: 1024px;
     margin: 0 auto;
   }
+
   .example-nav {
     text-align: center;
+
     ul {
       li {
         display: inline-block;
@@ -139,6 +141,7 @@ select {
 
 .mobile {
   display: none !important;
+
   @media @mobile {
     display: inherit !important;
   }
@@ -146,21 +149,24 @@ select {
 
 
 .tablet {
-  display: none  !important;
+  display: none !important;
+
   @media @tablet {
     display: inherit !important;
   }
 }
 
 .desktop {
-  display: none  !important;
+  display: none !important;
+
   @media @desktop {
     display: inherit !important;
   }
 }
 
 .mobile-and-tablet {
-  display: none  !important;
+  display: none !important;
+
   @media @mobile-and-tablet {
     display: inherit !important;
   }
@@ -198,12 +204,17 @@ select {
 
 .play-pause-anim {
   &__checkbox-container {
-      z-index: (@able-player-max-z-index - 1) !important;
-      
-      @media @desktop {
-        z-index: (@able-player-max-z-index + 2) !important;
-      }
+    z-index: (@able-player-max-z-index - 1) !important;
+
+    @media @desktop {
+      z-index: (@able-player-max-z-index + 2) !important;
+    }
+
+    .enable-flyout__body--is-open & {
+      z-index: 0 !important;
+    }
   }
+
 }
 
 code {
@@ -212,6 +223,7 @@ code {
   border-radius: 3px;
   padding: 3px;
 }
+
 /*
 @media (prefers-color-scheme: dark) {
   body {

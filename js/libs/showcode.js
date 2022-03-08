@@ -102,11 +102,8 @@ const showcode = new function() {
 
   const getTextFromFile = async(url) => {
     const response = await fetch(url).then(response => {
-      console.log('xxx');
       return response.clone().text();
     });
-
-    console.log('yyy response', response);
 
     return response;
   }
@@ -377,15 +374,22 @@ const showcode = new function() {
             case '%FILE%':
               {
                 splitHighlightString = highlightString.split('~');
-                console.log('file', splitHighlightString);
                 const fileName = splitHighlightString[0].trim();
-                code = (async() => {
+                (async() => {
                   getTextFromFile(fileName).then((text) => {
                     codeEl.innerHTML = this.entify(text.trim());
-                    console.log('done 1');
+                    code = text.trim();
+                    highlightCode(command, highlightString, code, codeEl);
+
+                    if (doScroll) {
+                      this.scrollToHighlightedText(codeEl);
+                    }
+                    console.log('haha', text);
                   });
                 })();
                 console.log('returned', code);
+                highlightString = splitHighlightString[1].trim();
+                
                 break;
               }
             case '%CSS%':
@@ -518,49 +522,7 @@ const showcode = new function() {
           }
         }
 
-        console.log('done 2');
-        if (highlightString !== null) {
-          highlightString = highlightString.replace(space, nbspStr);
-          const attribute = highlightString.split('=')[0];
-          const hasValue = (highlightString.indexOf('=') >= 0)
-
-          if (hasValue) {
-            replaceRegex = new RegExp(highlightString, 'g');
-          } else {
-
-            // 'for' is a special case -- we don't want it to match <form>.
-            if (highlightString === 'for') {
-              replaceRegex = new RegExp(highlightString + '="[^=]*"', 'g');
-            } else {
-              replaceRegex = new RegExp(highlightString + '(="[^=]*")*', 'g');
-            }
-
-            // get all the unique matches
-            const matches = [...new Set(code.match(replaceRegex))];
-
-            // if the highlightString is one of the relationship attributes,
-            // highlight the ids these matches points to.
-            if (relationshipAttributes.indexOf(attribute) >= 0) {
-              for (let j = 0; j < matches.length; j++) {
-                let ids = matches[j].split('"')[1];
-
-                if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
-                  ids = ids.substring(1);
-                }
-
-                ids = ids.split(/\s+/);
-
-                for (let k = 0; k < ids.length; k++) {
-                  const id = ids[k];
-                  const idReplaceRegex = new RegExp(`id="${id}"`);
-                  code = code.replace(idReplaceRegex, highlightFunc);
-                }
-
-              }
-
-            }
-          }
-        }
+        highlightCode(command, highlightString, code, codeEl);
       }
 
       if (command !== '%CSS%' && command !== '%JS%') {
@@ -576,6 +538,66 @@ const showcode = new function() {
     if (doScroll) {
       this.scrollToHighlightedText(codeEl);
     }
+  }
+
+  const highlightCode = (command, highlightString, code, codeEl) => {
+    let replaceRegex;
+    if (highlightString !== null) {
+      highlightString = highlightString.replace(space, nbspStr);
+      const attribute = highlightString.split('=')[0];
+      const hasValue = (highlightString.indexOf('=') >= 0)
+
+      if (hasValue) {
+        replaceRegex = new RegExp(highlightString, 'g');
+      } else {
+
+        if (command === '%FILE%') {
+          replaceRegex = new RegExp(highlightString, 'g');
+          // 'for' is a special case -- we don't want it to match <form>.
+        } else if (highlightString === 'for') {
+          replaceRegex = new RegExp(highlightString + '="[^=]*"', 'g');
+        } else {
+          replaceRegex = new RegExp(highlightString + '(="[^=]*")*', 'g');
+        }
+
+        // get all the unique matches
+        const matches = [...new Set(code.match(replaceRegex))];
+        console.log('matches', code, replaceRegex, matches);
+
+        // if the highlightString is one of the relationship attributes,
+        // highlight the ids these matches points to.
+        if (relationshipAttributes.indexOf(attribute) >= 0) {
+          for (let j = 0; j < matches.length; j++) {
+            let ids = matches[j].split('"')[1];
+
+            if ((attribute === 'href' || attribute === 'xlink:href') && ids.indexOf('#') === 0) {
+              ids = ids.substring(1);
+            }
+
+            ids = ids.split(/\s+/);
+
+            for (let k = 0; k < ids.length; k++) {
+              const id = ids[k];
+              const idReplaceRegex = new RegExp(`id="${id}"`);
+              code = code.replace(idReplaceRegex, highlightFunc);
+            }
+          }
+        }
+      }
+
+      if (command !== '%CSS%' && command !== '%JS%') {
+        code = code.replace(replaceRegex, highlightFunc);
+      }
+
+    }
+
+
+    codeEl.innerHTML = code;
+
+    if (doScroll) {
+      this.scrollToHighlightedText(codeEl);
+    }
+
   }
 
   this.scrollToHighlightedText = (codeEl) => {

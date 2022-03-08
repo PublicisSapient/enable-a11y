@@ -24,7 +24,7 @@
 <link id="hamburger-style"
   rel="stylesheet"
   type="text/css"
-  href="css/hamburger-menu.css" />
+  href="css/enable-hamburger.css" />
 
 <!-- Skip links styles -->
 <link id="enable-skip-link-style"

@@ -1,4 +1,6 @@
-
+<p>
+    Marquees are meant for content that scrolls or updates consistently, like a stock ticker or a news feed. Although the have a default <code>aria-live</code> value of <code>off</code>, you can use <code>aria-live="polite"</code> to let users hear the information within a marquee in almost real-time.  Do this carefully, the last thing you would want is have a screen reader update too much in a way that would make the rest of your application unusable to screen reader users due to too much screen reader noise.
+</p>
     
         
 
@@ -14,6 +16,8 @@
         </aside> -->
 
         <h2>Example 1 - News Ticker</h2>
+        
+        <?php includeStats(array('isForNewBuilds' => true, 'This solution is good for new and existing work.')) ?>
 
         <p>
             The news headlines in this ticker are provided by <a href="https://newsapi.org">News API</a>.

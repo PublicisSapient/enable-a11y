@@ -1,4 +1,6 @@
-
+<p>
+    An <code>alert</code> is an ARIA live region is meant for error or warning messages that appear on the screen.  It is usally implied to have a <code>aria-live</code> value of <code>assertive</code>
+</p>
     
 
         
@@ -24,6 +26,12 @@
         </aside> -->
 
         <h2>Example 1: Visual alert</h2>
+
+        <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution works well for new and existing work.')) ?>
+
+        <p>
+            Clicking the button below will show the current time on the screen.  Since the current time text is inside an div with <code>role="alert"</code> and <code>aria-live="assertive"</code>, the text will be announced immediately by screen readers.
+        </p>
 
         <div id="visual-alert-example" class="enable-example">
 

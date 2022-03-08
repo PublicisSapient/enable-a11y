@@ -18,6 +18,7 @@
   
   <?php include "includes/documentation-header.php";?>
   <?php include "includes/pause-anim-control.php" ?>
+  <?php getAsideContent() ?>
   <main class="<?= $fileProps->mainClass ?>">
 
     <?php 

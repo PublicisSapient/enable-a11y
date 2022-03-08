@@ -42,6 +42,7 @@
       <div class="with-full-bleed-hero__content">
           <h1><?= $title ?></h1>  
 
+            <?php includeStats(array('isForNewBuilds' => true)) ?>
               <p>
                   Consider the text that is overlaying the image below. You will notice that
                   clicking the "Animate Text" button moves the text along the path of the roller
@@ -120,17 +121,17 @@
                       },
                       {
                           "label": "Insert text-zoom-event.js at the end of the document",
-                          "highlight": "%OUTERHTML% text-zoom-event-js",
+                          "highlight": "%FILE% js/demos/accessible-text-svg.js ~ import\\stextZoomEvent[^;]*;",
                           "notes": ""
                       },
                       {
                           "label": "Use JavaScript to scale the text when uses the browser to zoom the text",
-                          "highlight": "%JS%svgTextSpacingDemo ||| document.addEventListener[^;]*; ||| document.body.style.setProperty[^;]*;",
+                          "highlight": "%FILE% js/demos/accessible-text-svg.js ~  document.addEventListener[^;]*; ||| document.body.style.setProperty[^;]*;",
                           "notes": "On textzoom, we ensure the font scales by the zoom factor calculated by the JavaScript library."
                       },
                       {
                           "label": "Use JavaScript to alter other relevent parts of the SVG when text zoom is applied.",
-                          "highlight": "%JS%svgTextSpacingDemo ||| pathEl.setAttribute[^;]*;",
+                          "highlight": "%FILE% js/demos/accessible-text-svg.js ~ pathEl.setAttribute[^;]*;",
                           "notes": "If the text zoom is less than or equal to 1, we push the text a bit into the text path, so users can see the text curving over the roller coaster's \"hump\".  If the text zoom is greater than 1, we ensure that the text starts right at the beginning of the textpath, since we want to make sure there is enough room for the text when the text is scaled up."
                       }
                   ]

@@ -1,4 +1,4 @@
-<div id="enable-pause-control">
+<div role="navigation" aria-label="Pause Animation" id="enable-pause-control">
     <div class="play-pause-anim__checkbox-container">
         <label for="pause-anim-control">
             Pause animations

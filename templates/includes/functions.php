@@ -82,7 +82,7 @@ function includeStats($props) {
     } else if (isSet($doNot)) {
       $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
     } else if (isSet($isNPM)) {
-      $comment = 'This solution available as an NPM module. ' . $npmLink;
+      $comment = 'This solution described below is available as an NPM module. ' . $npmLink;
     } else if (isSet($isStyle)) {
       $comment = 'This is a great solution to make CSS styling easier for developers.';
     }
@@ -186,6 +186,12 @@ function getPreBottomBodyTags() {
   }
 }
 
+function getAsideContent() {
+  $file = '../content/aside/' . getURIFilename();
+  if (file_exists($file)) {
+    includeFileWithVariables($file, array());
+  }
+}
 
 getMetadata();
 

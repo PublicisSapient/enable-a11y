@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("sortable-table-example")?>
+        <?php includeShowcode("sortable-table-example", null, null, null, true, 2)?>
 
         <script type="application/json" id="sortable-table-example-props">
         {

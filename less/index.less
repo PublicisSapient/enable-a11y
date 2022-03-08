@@ -1,0 +1,27 @@
+@import "shared/mixins-and-vars";
+
+.homepage {
+
+  &__intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &--section {
+      flex-grow: 1;
+      width: 33%;
+    }
+
+    &--section + &--section {
+      margin-left: 2%;
+    }
+
+    &--header {
+      font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+      font-weight: bold;
+      font-size: (20/@px);
+      border: none;
+      margin-bottom: 20px;
+    }
+  }
+}
