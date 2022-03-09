@@ -201,7 +201,6 @@
 
     @media @tablet-up {
       padding: 0 30px;
-      height: (123/@px);
     }
   }
 
@@ -210,6 +209,11 @@
     text-decoration: none;
     display: inline-block;
     position: relative;
+
+    @media @desktop {
+      transform: scale(0.5);
+      transform-origin: 0 50%;
+    }
   }
 
   &__text {
@@ -280,23 +284,23 @@
     }
 
     &--scratch {
-      background-color: #ccffcc;
+      background-color: @color-scratch;
     }
 
     &--integrate {
-      background-color: #ffffcc;
+      background-color: @color-integrate;
     }
 
     &--do-not {
-      background-color: #ccccff;
+      background-color: @color-do-not;
     }
 
     &--style {
-      background-color: #ccccff;
+      background-color: @color-style;
     }
 
     &--npm {
-      background-color: #ffcccc;
+      background-color: @color-npm;
     }
   }
 

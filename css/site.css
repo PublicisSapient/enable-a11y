@@ -1,3 +1,10 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
 .enable-flyout__open-level-button,
 .enable-flyout__link {
   font-weight: normal;
@@ -147,7 +154,6 @@
 @media only screen and (min-width: 720px) {
   .enable-logo__container {
     padding: 0 30px;
-    height: 7.6875rem;
   }
 }
 .enable-logo__link {
@@ -155,6 +161,12 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
+}
+@media only screen and (min-width: 960px) {
+  .enable-logo__link {
+    transform: scale(0.5);
+    transform-origin: 0 50%;
+  }
 }
 .enable-logo__text {
   display: block;

@@ -14,7 +14,7 @@
     <?php getHeadTags(); ?>
 </head>
 
-<body>
+<body class="<?= isSet($fileProps->bodyClass) ? $fileProps->bodyClass : '' ?>">
   
   <?php include "includes/documentation-header.php";?>
   <?php include "includes/pause-anim-control.php" ?>

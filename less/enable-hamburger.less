@@ -19,18 +19,7 @@
 // max z-index is 10000, so we are compensating.
 @min-z-index: 0;
 
-.icon-mixin(@img, @width: 20, @height: 20) { 
-  content: "";
-  display: inline-block;
-  width: (@width/@px);
-  height: (@height/@px);
-  background: data-uri(@img);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: (@width/@px) (@height/@px);
-  filter: invert();
-  position: relative;
-} 
+ 
 
 @menu-orientation: right;
 

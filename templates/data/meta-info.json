@@ -1,7 +1,9 @@
 {
   "index.php": {
-    "title": "The Enable Accessibility Project",
-    "desc": "A website that shows web developers how to make their work accessible."
+    "title": "Enable",
+    "desc": "A website that shows web developers how to make their work accessible.",
+    "mainClass": "with-full-bleed-hero",
+    "bodyClass": "index"
   },
   "accessible-text-svg.php": {
     "title": "Accessible Text in SVG",

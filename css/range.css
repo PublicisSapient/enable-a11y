@@ -81,10 +81,7 @@
   --ticks-count: calc(var(--max) - var(--min)) / var(--step);
   --maxTicksAllowed: 30;
   --too-many-ticks: min(1, max(var(--ticks-count) - var(--maxTicksAllowed), 0));
-  --x-step: max(
-      var(--step),
-      var(--too-many-ticks) * (var(--max) - var(--min))
-    );
+  --x-step: max(var(--step),var(--too-many-ticks) * (var(--max) - var(--min)));
   --tickInterval: 100/ ((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
   --tickIntervalPerc: calc((100% - var(--thumb-size)) / ((var(--max) - var(--min)) / var(--x-step)) * var(--tickEvery, 1));
   --value-a: Clamp(var(--min), var(--value, 0), var(--max));
@@ -94,11 +91,7 @@
   --completed-b: calc((var(--value-b) - var(--min)) / (var(--max) - var(--min)) * 100);
   --ca: Min(var(--completed-a), var(--completed-b));
   --cb: Max(var(--completed-a), var(--completed-b));
-  --thumbs-too-close: Clamp(
-      -1,
-      1000 * (Min(1, Max(var(--cb) - var(--ca) - 5, -1)) + 0.001),
-      1
-    );
+  --thumbs-too-close: Clamp( -1,1000 * (Min(1, Max(var(--cb) - var(--ca) - 5, -1)) + 0.001),  1);
   --thumb-close-to-min: Min(1, Max(var(--ca) - 2, 0));
   --thumb-close-to-max: Min(1, Max(98 - var(--cb), 0));
   display: inline-block;
@@ -214,7 +207,10 @@
   margin: 0;
   position: absolute;
   left: 0;
-  top: calc(50% - Max(var(--track-height), var(--thumb-size)) / 2 + calc(var(--ticks-gap) / 2 * var(--flip-y, -1)));
+  top: calc(
+        50% - Max(var(--track-height), var(--thumb-size)) / 2 +
+          calc(var(--ticks-gap) / 2 * var(--flip-y, -1))
+      );
   cursor: -webkit-grab;
   cursor: grab;
   outline: none;

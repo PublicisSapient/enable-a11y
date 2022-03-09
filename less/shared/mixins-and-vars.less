@@ -29,6 +29,20 @@
 @font-default-copy: "OpenSans", "Helvetica", "Arial", sans-serif;
 @font-default-heading: "GraublauWeb", "Arial", "Helvetica", sans-serif;
 @font-default-code: "ModeSeven", "Consolas", monospace;
+@font-default-brand: "MoniceDemo", Arial, Helvetica, sans-serif;
+
+@color0: #301414;
+@color1: #006600;
+@color2: #919594;
+@color3: #e7e2c5;
+
+@color-scratch: #ccffcc;
+@color-integrate: #ffffcc;
+@color-do-not: #ccccff;
+@color-style: #ccccff;
+@color-npm: #ffcccc;
+
+
 
 .font-copy() {
   font-family: @font-default-copy;
@@ -72,6 +86,19 @@
     background-image: ~"@{type}-gradient(@{dir}, @{colors})";
   }
 }
+
+.icon-mixin(@img, @width: 20, @height: 20) { 
+  content: "";
+  display: inline-block;
+  width: (@width/@px);
+  height: (@height/@px);
+  background: data-uri(@img);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: (@width/@px) (@height/@px);
+  filter: invert();
+  position: relative;
+} 
 
 .no-scrollbars() {
   /* IE and edge */

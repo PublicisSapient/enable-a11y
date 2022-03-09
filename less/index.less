@@ -1,6 +1,76 @@
 @import "shared/mixins-and-vars";
 
+main {
+  background-color: #444;
+  color: white;
+}
+
+strong {
+  color: #fff !important;
+}
+
+
 .homepage {
+  &__hero {
+    color: @color0;
+    background: lighten(@color0, 75%);
+    min-height: 30vh;
+    padding: 40px;
+    text-align: center;
+
+    // center text vertically
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--heading {
+      font-family: @font-default-brand;
+      font-size: (100/@px);
+      width: 50vw;
+      margin: 0 auto;
+      font-weight: normal;
+      color: darken(@color1, 5%);
+    }
+
+    &--copy {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__hero-link {
+    @button-height: (50/@px);
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--main {
+      display: inline-block;
+      height: @button-height;
+      line-height: @button-height;
+      background: @color1;
+      color: white;
+      padding: 0 20px;
+      margin-right: 20px;
+    }
+
+    &--secondary {
+      white-space: nowrap;
+      color: @color0;
+      padding-right: 35px;
+
+      &:after {
+        .icon-mixin('../images/chevron-up.svg');
+        filter: none;
+        transform: rotate(90deg);
+        top: (4.5/@px);
+      }
+    }
+
+  }
+
 
   &__intro {
     display: flex;
@@ -12,9 +82,15 @@
       width: 33%;
     }
 
-    &--section + &--section {
+    &--section+&--section {
       margin-left: 2%;
     }
+
+    &--section-icon {
+      width: 100px;
+      height: 100px;
+    }
+
 
     &--header {
       font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
@@ -22,6 +98,51 @@
       font-size: (20/@px);
       border: none;
       margin-bottom: 20px;
+      color: #ccc;
+      text-align: center;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto 30px auto;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-size: 80px 80px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+
+      &--code::before {
+        background-image: data-uri('../images/icons/code.svg');
+        background-color: @color-scratch;
+      }
+
+      &--existing::before {
+        background-image: data-uri('../images/icons/integrate.svg');
+        background-color: @color-integrate;
+      }
+
+      &--npm::before {
+        background-image: data-uri('../images/icons/npm.svg');
+        background-color: @color-npm;
+      }
+    }
+
+    a {
+      color: @color-style;
+    }
+  }
+
+  &__bottom-copy {
+    &--heading {
+      font-family: @font-default-copy;
+      font-weight: bold;
+      font-size: (22/@px);
+      color: #444;
+
     }
   }
 }
