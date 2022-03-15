@@ -1,5 +1,4 @@
 @import "shared/mixins-and-vars";
-@import "form.less";
 
 @radio-size: 24;
 @radio-border: 1;
@@ -143,3 +142,13 @@
     }
   }
 }
+
+fieldset,
+.fieldset,
+[role="radiogroup"] {
+  legend,
+  .legend {
+    border-bottom: none;
+    text-align: left;
+  }
+} 

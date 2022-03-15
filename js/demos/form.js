@@ -57,7 +57,6 @@ const formValidator = new (function () {
           // the first valid one if option.firstValue === true). Since fieldsets
           // are part of the elements array, we must exclude those.
           const isValid = formField.validity.valid;
-          console.log(formField.validity.valid);
           if (
             formField.nodeName !== "FIELDSET" &&
             formField.required &&

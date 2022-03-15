@@ -62,6 +62,5 @@ const checkbox = new function () {
 
 };
 
-console.log(checkbox);
 
 export default checkbox;

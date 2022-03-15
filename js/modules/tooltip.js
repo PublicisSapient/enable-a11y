@@ -115,7 +115,6 @@ const tooltip = new function () {
             tooltipTarget.removeEventListener('mouseleave', this.hide);
             tooltipTarget = null;
         }
-        console.log('hide', e.type);
         clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');

@@ -29,10 +29,7 @@ const dictLookup = new (function () {
           '.wiktionary-lookup__content a'
         ).forEach((el) => {
           const href = el.getAttribute('href');
-          //console.log(el.getAttribute('href'), el.getAttribute('href').indexOf('/wiki/'));
           if (href.indexOf('/wiki/') === 0) {
-
-            console.log(el);
             el.href = 'https://en.wiktionary.org' + href;
           }
         });

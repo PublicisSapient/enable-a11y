@@ -24,8 +24,8 @@ using <code>&lt;div&gt;</code> tags.
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Use label tags to label form element",
-      "highlight": "for",
-      "notes": "Like any other form element, it needs a label. However, since we want to add custom styles, we need an additional empty label to apply the custom style \"façade\" to, since we cannot apply them directly to the checkbox itself."
+      "highlight": "%OPENCLOSECONTENTTAG%label",
+      "notes": "Like any other form element, it needs a label.  Unlike some of the other examples in Enable, we are using an implicit label (i.e. a <code>label</code> tag that is wrapped around the <code>input</code>)."
     },
     {
       "label": "Add custom styles",

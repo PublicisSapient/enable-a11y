@@ -16,7 +16,6 @@ const marqueeExample = new function () {
             
             return response.json();
         }).then(function (json) {
-            console.log('response', json.articles.length);
             if (json.articles.length > 0) {
                 articles = json.articles;
                 rotateMarquee();

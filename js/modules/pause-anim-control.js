@@ -157,13 +157,10 @@
   }
 
   this.clickEvent = () => {
-    console.log('huh');
     if (this.$checkbox.classList.contains(this.checkboxClass)) {
       if (this.$checkbox.checked) {
-        console.log('pausing');
         this.pause();
       } else {
-        console.log('playing');
         this.play();
       }
     }

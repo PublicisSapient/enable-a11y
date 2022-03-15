@@ -159,7 +159,7 @@
     {
       "label": "Use the label's ::before and ::after pseudo-elements to style the custom radio button",
       "highlight": "%CSS% radiogroup-css~ .enable-radio [type=\"radio\"] + label::before, .enable-radio [type=\"radio\"] + label::after { ||| width:[^;]*; ||| height:[^;]*;",
-      "notes": "The label's <strong>::before</strong> pseudo-element will be the radio buttons outer border.  The label's <strong>::after</strong> pseudo-element will have the styles for the inner circle when the radio button is checked.  Both have the same width and height as the hidden native radio button."
+      "notes": "The label's <strong>::before</strong> pseudo-element will be the radio buttons outer border.  The label's <strong>::after</strong> pseudo-element will have the styles for the inner circle when the radio button is checked.  Both have the same width and height as the hidden native radio button.  We have used <code>rem</code> units on the width and height so they grow when the user zooms text (see <a href=\"text-resize.php\">our text resize page</a> for more information on how we do this in a pixel perfect way)."
     },
     {
       "label": "Show the inner circle when the radio button is checked",

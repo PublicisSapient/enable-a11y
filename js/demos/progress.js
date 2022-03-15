@@ -33,7 +33,6 @@ const progressTest = new function () {
     }
 
     this.progressTestClickEvent = (e) => {
-        console.log('hx');
         if (timeout) {
             clearTimeout(timeout);
         }

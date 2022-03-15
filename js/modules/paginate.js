@@ -45,7 +45,6 @@ const paginationTables = new function() {
 
   const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
   const mobileMql = window.matchMedia(mobileMq);
-  console.log('hmmm', $allPagers, $allPagers[2], mobileMq, mobileMql);
 
   const buttonTemplate = $buttonTemplate.innerHTML;
 
