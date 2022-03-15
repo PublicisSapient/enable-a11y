@@ -18,7 +18,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const showcode = new function() {
+const showcode = new function () {
   const htmlBlocks = document.querySelectorAll("[data-showcode-props]");
   const htmlCache = {};
   const codeblockCache = {};
@@ -60,7 +60,7 @@ const showcode = new function() {
     'xlink:href'
   ]
 
-  this.entify = function(s, options) {
+  this.entify = function (s, options) {
     if (!options) {
       options = {};
     }
@@ -82,11 +82,11 @@ const showcode = new function() {
     return result;
   };
 
-  this.unentify = function(s) {
+  this.unentify = function (s) {
 
     return s.replace(/&amp;/g, '&').
-    replace(/&lt;/g, '<').
-    replace(/&gt;/g, '>');
+      replace(/&lt;/g, '<').
+      replace(/&gt;/g, '>');
   }
 
   function highlightFunc(s) {
@@ -100,7 +100,7 @@ const showcode = new function() {
     return localCode + '\n\n';
   }
 
-  const getTextFromFile = async(url) => {
+  const getTextFromFile = async (url) => {
     const response = await fetch(url).then(response => {
       return response.clone().text();
     });
@@ -154,7 +154,7 @@ const showcode = new function() {
       console.info(`Unable to retrieve selector CSS rule for selector ${selectorPropertyPairs[0]}. This may be because this browser's CSS parser is not storing rules it cannot understand. Attempting to get the information from the CSS file itself.`)
 
       let returnedSelectorVal;
-      (async() => {
+      (async () => {
         getTextFromFile(el.href).then((css) => {
           const index = css.indexOf(selectorPropertyPairs[0]); //css.match(selectorRegEx);
           returnedSelectorVal = css.substring(index);
@@ -224,7 +224,7 @@ const showcode = new function() {
 
   const toggleClickEvent = (e) => {
     e.preventDefault();
-    
+
     const { id } = e.currentTarget;
     const notesId = id.replace('-view-toggle', '');
     const notesEl = document.getElementById(notesId);
@@ -232,7 +232,7 @@ const showcode = new function() {
   }
 
   const changeCodeFormattingEvent = (e) => {
-    
+
     const { currentTarget } = e;
     changeCodeFormatting(currentTarget, true);
   }
@@ -266,10 +266,10 @@ const showcode = new function() {
     localStorage.setItem('showcode__wrap-text', value);
     doesCodeWrap = value;
   }
-  
+
   function setReadMoreCSSVar(notesEl) {
     const overflowEl = notesEl.querySelector('div');
-    
+
 
     // The +1 in the formula below is because firefox has rounding errors.
     if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight + 1) {
@@ -291,6 +291,7 @@ const showcode = new function() {
     let code = htmlCache[showcodeFor];
     let replaceRegex;
 
+    codeEl.innerHTML = code;
 
     notesEl.innerHTML = showcodeNotes ? `<div>${showcodeNotes}</div>` : '';
 
@@ -375,15 +376,21 @@ const showcode = new function() {
               {
                 splitHighlightString = highlightString.split('~');
                 const fileName = splitHighlightString[0].trim();
-                (async() => {
+                (async () => {
                   getTextFromFile(fileName).then((text) => {
                     codeEl.innerHTML = this.entify(text.trim());
                     code = text.trim();
                     highlightCode(command, highlightString, code, codeEl, doScroll);
+
+                    /* if (doScroll) {
+                      this.scrollToHighlightedText(codeEl);
+                    }
+                    console.log('haha', text); */
                   });
                 })();
+
                 highlightString = splitHighlightString[1].trim();
-                
+
                 break;
               }
             case '%CSS%':
@@ -409,6 +416,7 @@ const showcode = new function() {
                 code = '';
 
                 for (let j = 0; j < funcNames.length; j++) {
+                  if (debug) { console.log('j', j, funcNames, funcNames[j]) }
 
                   // see animatedGIF example on how this works.
                   const funcNameSplit = funcNames[j].split('#');
@@ -456,7 +464,7 @@ const showcode = new function() {
                     if (command === '%JSHTML%') {
                       const tmpNode = document.createElement('div');
                       tmpNode.innerHTML = funcCode;
-                      formatHTMLInBlock(tmpNode, );
+                      formatHTMLInBlock(tmpNode,);
                       code = this.entify(formatHTML(funcCode));
                       funcCode = '';
                     } else if (funcName.indexOf('.') > -1) {
@@ -472,6 +480,7 @@ const showcode = new function() {
                   code = code + funcCode + '\n\n';
                 }
 
+
                 code = indent.js(code, { tabString: '  ' });
                 code = this.entify(code);
 
@@ -486,6 +495,12 @@ const showcode = new function() {
                     code = formatCSS(codeTemplateEl.innerHTML);
                   } else {
                     code = codeTemplateEl.innerHTML;
+
+                    if (codeTemplateEl.nodeName === 'SCRIPT') {
+                      code = indent.js(code, { tabString: '  ' });
+                      //code = this.entify(code);
+                    }
+
                   }
                 }
 
@@ -512,20 +527,20 @@ const showcode = new function() {
                 console.warn('Invalid command used', command);
               }
           }
+          highlightCode(command, highlightString, code, codeEl, doScroll);
+        } else {
+          highlightCode(command, highlightString, codeEl.innerHTML, codeEl, doScroll);
         }
 
-        highlightCode(command, highlightString, code, codeEl);
       }
 
       if (command !== '%CSS%' && command !== '%JS%') {
         code = code.replace(replaceRegex, highlightFunc);
+        // codeEl.innerHTML = code;
       }
 
 
     }
-
-
-    codeEl.innerHTML = code;
 
     if (doScroll) {
       this.scrollToHighlightedText(codeEl);
@@ -695,10 +710,10 @@ const showcode = new function() {
 
     if (block) {
       formatHTMLInBlock(block, replaceRulesJson)
-        // let's do search and replace here
+      // let's do search and replace here
       const unformattedHTML = isWholeDoc ? block.outerHTML : block.innerHTML;
       const formattedHTML = formatHTML(unformattedHTML)
-        //indent.html(unformattedHTML, {tabString: ' '});
+      //indent.html(unformattedHTML, {tabString: ' '});
       const entifiedHTML = this.entify(formattedHTML, { ignoreSpace: true });
       htmlCache[originalHTMLId] = entifiedHTML;
       codeblockCache[originalHTMLId] = block;
@@ -845,7 +860,7 @@ const showcode = new function() {
       }
     }
     setCodeFormatting(doesCodeWrap);
-    
+
   }
 
 
@@ -859,13 +874,13 @@ const showcode = new function() {
     var timeout = null;
     var previous = 0;
     if (!options) options = {};
-    var later = function() {
+    var later = function () {
       previous = options.leading === false ? 0 : Date.now();
       timeout = null;
       result = func.apply(context, args);
       if (!timeout) context = args = null;
     };
-    return function() {
+    return function () {
       var now = Date.now();
       if (!previous && options.leading === false) previous = now;
       var remaining = wait - (now - previous);
@@ -924,6 +939,7 @@ const showcode = new function() {
   }
 
   this.init = () => {
+    console.log('init!');
     showCodeBlocks();
     setEvents();
   }

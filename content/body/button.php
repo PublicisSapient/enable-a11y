@@ -123,7 +123,7 @@
                 },
                 {
                     "label": "Create JS that should be triggered when pressed",
-                    "highlight": "%JS% ariaButtonExample",
+                    "highlight": "%INLINE% ariaButtonExample ||| document.addEventListener[^;]*;",
                     "notes": "You must ensure that you include the keyup event as well as click, since click doesn't fire on keyboard events on DOM elements that aren't natively keyboard accessible by default."
                 },
                 {
@@ -184,7 +184,7 @@
                 },
                 {
                     "label": "Create JS that should be triggered when pressed",
-                    "highlight": "%JS% ariaButtonExample ||| document.addEventListener[^;]*;",
+                    "highlight": "%INLINE% ariaButtonExample ||| document.addEventListener[^;]*;",
                     "notes": "You must ensure that you include the keyup event as well as click, since click doesn't fire on keyboard events on DOM elements that aren't natively keyboard accessible by default."
                 },
                 {
