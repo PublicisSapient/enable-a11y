@@ -150,11 +150,12 @@ function getMetadata() {
 }
 
 function give404IfNotValid() {
-  if (!file_exists('../content/body/' . getURIFilename())) {
+  $file = '../content/body/' . getURIFilename();
+  if (!file_exists($file)) {
     http_response_code(404);
 
     echo "";
-    echo "<html><h1>404 Not Found</h1></html>";
+    echo "<html><h1>404 Not Found</h1><!--" . $file . "--> </html>";
     exit;
  }
 }

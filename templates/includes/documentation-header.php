@@ -7,9 +7,6 @@
 
   <?php include("includes/logo-link.php"); ?>
 
-  <nav aria-label="About Enable" class="enable-flyout__secondary-navigation--desktop">
-    <?php include("about-enable-nav.php"); ?>
-  </nav>
 
 
 
@@ -44,6 +41,9 @@
               Home
             </a>
           </li>
+
+          <?php include("about-enable-nav.php"); ?>
+
           <li class="enable-flyout__menu-item">
             <!-- Begin section Controls -->
             <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
@@ -185,7 +185,7 @@
                       <li class="enable-flyout__menu-item">
                         <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
                           <?php pictureWebpPng("images/main-menu/multi-level-hamburger-menu", "", "class=\"enable-flyout__link-image\""); ?>
-                          Flyout / Hamburger Menu
+                          Flyout Hamburger Menu
                         </a>
                       </li>
                       <li class="enable-flyout__menu-item">
@@ -578,9 +578,7 @@
             </div>
           </li>
         </ul>
-        <div class="enable-flyout__secondary-navigation--mobile">
-          <?php include "about-enable-nav.php"; ?>
-        </div>
+        
       </div>
     </nav>
     <span class="enable-flyout__overlay-screen">

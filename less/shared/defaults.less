@@ -208,6 +208,8 @@ select {
 
     @media @desktop {
       z-index: (@able-player-max-z-index + 2) !important;
+      // Safari needs some help here
+      transform: translateZ(2px);
     }
 
     .enable-flyout__body--is-open & {

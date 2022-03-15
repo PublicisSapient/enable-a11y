@@ -147,11 +147,23 @@
     localStorage.removeItem(this.reduceMotionKey);
   }
 
+  this.pauseSMIL = (el) => {
+    console.log('PAUSE', el.outerHTML);
+    const svgEl = el.closest('svg');
+
+    if (this.$checkbox.checked) {
+      svgEl.pauseAnimations();
+    }
+  }
+
   this.clickEvent = () => {
+    console.log('huh');
     if (this.$checkbox.classList.contains(this.checkboxClass)) {
       if (this.$checkbox.checked) {
+        console.log('pausing');
         this.pause();
       } else {
+        console.log('playing');
         this.play();
       }
     }
@@ -194,6 +206,12 @@
 
     // Click event for the checkbox
     document.addEventListener('change', this.clickEvent);
+
+    document.addEventListener('load', this.clickEvent);
+    window.addEventListener('focus', this.clickEvent);
+    document.querySelectorAll('animateMotion, animate').forEach((el) => {
+      this.pauseSMIL(el);
+    });
 
     // Safari will restart SVG animations when the browser tab becomes visible
     // after being pushed in the background, so we do this to work around it.

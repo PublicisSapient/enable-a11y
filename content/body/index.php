@@ -21,7 +21,7 @@
 
   <div class="homepage__intro">
     <div class="homepage__intro--section">
-      
+
       <h2 class="homepage__intro--header homepage__intro--header--code">Learn How To Create Accessible Code</h2>
       <p>
         Whether you are new to accessibility or are a seasoned veteran, Enable's aim to <strong>teach devlopers how to
@@ -34,7 +34,8 @@
       </p>
     </div>
     <div class="homepage__intro--section">
-      <h2 class="homepage__intro--header homepage__intro--header--existing">Add Accessible Code Quickly To Existing Projects</h2>
+      <h2 class="homepage__intro--header homepage__intro--header--existing">Add Accessible Code Quickly To Existing
+        Projects</h2>
 
       <p>
         The Enable Accessibility Project follows the <a href="https://www.w3.org/TR/using-aria/#rule1">First Rule of
@@ -60,13 +61,15 @@
         the developer community at large.
     </div>
   </div>
+</div>
 
-  <div class="homepage__bottom-copy">
+<div class="homepage__bottom-copy">
     <h2 class="homepage__bottom-copy--heading">What Makes Enable Different?</h2>
 
     <ul>
       <li>
-       We strive to keep our <strong>codebase up-to-date</strong>, with a <strong>focus on innovation</strong> (some of the examples have not appeared on any other site before).
+        We strive to keep our <strong>codebase up-to-date</strong>, with a <strong>focus on innovation</strong> (some of
+        the examples have not appeared on any other site before).
       </li>
       <li>
         The components have been <strong>tested on mobile devices</strong> (a lot of
@@ -89,6 +92,4 @@
         request.
       </li>
     </ul>
-</div>
-
-</div>
+  </div>

@@ -379,15 +379,9 @@ const showcode = new function() {
                   getTextFromFile(fileName).then((text) => {
                     codeEl.innerHTML = this.entify(text.trim());
                     code = text.trim();
-                    highlightCode(command, highlightString, code, codeEl);
-
-                    if (doScroll) {
-                      this.scrollToHighlightedText(codeEl);
-                    }
-                    console.log('haha', text);
+                    highlightCode(command, highlightString, code, codeEl, doScroll);
                   });
                 })();
-                console.log('returned', code);
                 highlightString = splitHighlightString[1].trim();
                 
                 break;
@@ -415,7 +409,6 @@ const showcode = new function() {
                 code = '';
 
                 for (let j = 0; j < funcNames.length; j++) {
-                  if (debug) { console.log('j', j, funcNames, funcNames[j]) }
 
                   // see animatedGIF example on how this works.
                   const funcNameSplit = funcNames[j].split('#');
@@ -479,7 +472,6 @@ const showcode = new function() {
                   code = code + funcCode + '\n\n';
                 }
 
-                console.log('test', code);
                 code = indent.js(code, { tabString: '  ' });
                 code = this.entify(code);
 
@@ -540,7 +532,7 @@ const showcode = new function() {
     }
   }
 
-  const highlightCode = (command, highlightString, code, codeEl) => {
+  const highlightCode = (command, highlightString, code, codeEl, doScroll) => {
     let replaceRegex;
     if (highlightString !== null) {
       highlightString = highlightString.replace(space, nbspStr);
@@ -562,7 +554,6 @@ const showcode = new function() {
 
         // get all the unique matches
         const matches = [...new Set(code.match(replaceRegex))];
-        console.log('matches', code, replaceRegex, matches);
 
         // if the highlightString is one of the relationship attributes,
         // highlight the ids these matches points to.
@@ -933,7 +924,6 @@ const showcode = new function() {
   }
 
   this.init = () => {
-    console.log('init!');
     showCodeBlocks();
     setEvents();
   }

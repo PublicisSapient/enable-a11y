@@ -8,13 +8,14 @@
 main {
   background-color: #444;
   color: white;
+  width: 100%;
 }
 strong {
   color: #fff !important;
 }
 .homepage__hero {
   color: #301414;
-  background: #edd5d5;
+  background: #ccc;
   min-height: 30vh;
   padding: 40px;
   text-align: center;
@@ -121,6 +122,25 @@ strong {
 }
 .homepage__intro a {
   color: #ccccff;
+}
+.homepage__bottom-copy {
+  background: #ccc;
+  color: #222;
+  padding: 20px calc((100% - 1024px) / 2);
+  line-height: 1.5;
+}
+.homepage__bottom-copy strong {
+  color: #000 !important;
+}
+.homepage__bottom-copy::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .homepage__bottom-copy--heading {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;

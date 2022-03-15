@@ -47,6 +47,9 @@
   margin-bottom: 0;
   color: #fff;
 }
+.enable-flyout > .enable-flyout__list .enable-flyout__link {
+  top: -1px;
+}
 .enable-flyout__secondary-navigation--desktop {
   display: none;
 }
@@ -63,6 +66,9 @@
   width: calc(100% - 40px);
   height: 1px;
   background: #fff;
+}
+.enable-flyout__last-top-level-link {
+  margin-right: 40px !important;
 }
 .enable-flyout__hamburger-icon {
   width: 30px;
@@ -313,10 +319,11 @@
   background: #494a50;
 }
 @media only screen and (min-width: 960px) {
-  .enable-flyout__open-level-button {
+  .enable-flyout__open-level-button,
+  .enable-flyout__link {
     /* This is how you increase the hit area of a CTA */
-    padding: 27px 0;
-    margin: -27px 0;
+    padding: 15px 0;
+    margin: -15px 0;
   }
 }
 .enable-flyout__close-level-button {
@@ -398,7 +405,7 @@
     padding: 0;
     background: transparent;
     top: 0px;
-    right: 10px;
+    right: 14.375rem;
   }
   .enable-flyout__secondary-navigation--desktop .enable-flyout__link {
     padding: 17px 0;
@@ -421,7 +428,7 @@
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
     visibility: visible;
     border-bottom: 1px solid #ccc;
-    box-shadow: 0 5px 5px #999;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   }
   .enable-flyout--is-closed {
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out reverse;
@@ -432,7 +439,7 @@
     padding-bottom: 3em;
     padding-left: calc(50vw - (960px / 2));
     padding-right: calc(50vw - (960px / 2));
-    margin-top: 4px;
+    margin-top: 3px;
   }
   .enable-flyout__open-level-button,
   .enable-flyout__close-level-button,
@@ -450,20 +457,20 @@
   .enable-flyout__secondary-navigation--desktop .enable-flyout__link:hover {
     text-decoration: underline;
   }
-  .enable-flyout__open-level-button:hover:before,
-  .enable-flyout__close-level-button:hover:before,
-  .enable-flyout__link:hover:before {
+  .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__open-level-button:hover:before,
+  .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__close-level-button:hover:before,
+  .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__link:hover:before {
     content: "";
     position: absolute;
     width: calc(100% - 20px);
     height: 2px;
     background-color: #fff;
-    bottom: 23px;
-    left: 0;
+    bottom: 12px;
+    left: 14px;
   }
-  .enable-flyout__secondary-navigation--desktop .enable-flyout__open-level-button:hover:before,
-  .enable-flyout__secondary-navigation--desktop .enable-flyout__close-level-button:hover:before,
-  .enable-flyout__secondary-navigation--desktop .enable-flyout__link:hover:before {
+  .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__open-level-button:hover:before,
+  .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__close-level-button:hover:before,
+  .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__link:hover:before {
     content: none;
   }
   .enable-flyout__level {
@@ -518,7 +525,7 @@
     text-align: center;
   }
   .enable-flyout__open-level-button {
-    padding-right: 35px;
+    padding-right: 5px;
   }
   .enable-flyout__open-level-button::after {
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%0A%3Cscript%20xmlns%3D%22%22%2F%3E%3C%2Fsvg%3E");
@@ -539,6 +546,7 @@
   .enable-flyout__link {
     display: inline-block;
     text-align: center;
+    padding-right: 25px !important;
   }
   .enable-flyout__link-image {
     display: block;

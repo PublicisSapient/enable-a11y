@@ -1,7 +1,9 @@
-AddType application/x-httpd-php .html .htm
+# AddType application/x-httpd-php .html .htm
 AddType text/css .css
 
 RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteBase /enable-a11y/
 RewriteRule "^[^.]*\.php$"  "templates/main.php"
 

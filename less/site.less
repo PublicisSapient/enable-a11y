@@ -35,16 +35,13 @@
 
 @media @desktop {
   .enable-flyout {
-    @item-height: (167 / @px);
+    @item-height: (188 / @px);
 
     &__link-image {
       width: 105px;
       border: solid 1px #999999;
     }
 
-    &__link {
-      padding: 0;
-    }  
 
     &__level &__level &__menu-item {
       width: (@desktop-min - 70px);
@@ -82,6 +79,11 @@
       box-sizing: border-box;
       font-size: (13 / @px);
       padding: 10px 20px 0 20px;
+
+      #content-section&,
+      #code-patterns-section& {
+        padding: 10px 15.5px 0 15.5px;
+      }
 
       &:hover,
       &:focus {
@@ -182,7 +184,8 @@
   color: #fff;
 
   @media @tablet-up {
-    width: (100/@px);
+    width: (50/@px);
+
   }
 
   &__container {
@@ -201,6 +204,7 @@
 
     @media @tablet-up {
       padding: 0 30px;
+      margin-bottom: 0;
     }
   }
 
@@ -210,10 +214,6 @@
     display: inline-block;
     position: relative;
 
-    @media @desktop {
-      transform: scale(0.5);
-      transform-origin: 0 50%;
-    }
   }
 
   &__text {
@@ -226,8 +226,8 @@
     top: (8/@px);
 
     @media @tablet-up {
-      font-size: (70/@px);
-      top: (20/@px);
+      font-size: (30/@px);
+      top: (15/@px);
     }
   }
 

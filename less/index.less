@@ -3,6 +3,7 @@
 main {
   background-color: #444;
   color: white;
+  width: 100%;
 }
 
 strong {
@@ -13,7 +14,7 @@ strong {
 .homepage {
   &__hero {
     color: @color0;
-    background: lighten(@color0, 75%);
+    background: #ccc;
     min-height: 30vh;
     padding: 40px;
     text-align: center;
@@ -137,12 +138,31 @@ strong {
   }
 
   &__bottom-copy {
+    
+    background: #ccc;
+    color: #222;
+    padding: 20px calc(~"(100% - 1024px) / 2");
+    line-height: 1.5;
+
+    strong {
+      color: #000 !important;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100vw;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
     &--heading {
       font-family: @font-default-copy;
       font-weight: bold;
       font-size: (22/@px);
       color: #444;
-
     }
   }
 }

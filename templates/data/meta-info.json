@@ -202,5 +202,9 @@
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",
     "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this."
+  },
+  "credits.php": {
+    "title": "Credits",
+    "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
   }
 }

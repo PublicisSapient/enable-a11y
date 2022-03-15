@@ -37,9 +37,6 @@
     width: 105px;
     border: solid 1px #999999;
   }
-  .enable-flyout__link {
-    padding: 0;
-  }
   .enable-flyout__level .enable-flyout__level .enable-flyout__menu-item {
     width: 890px;
     padding-bottom: 10px;
@@ -51,7 +48,7 @@
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     width: 134px;
     float: left;
-    height: 10.4375rem;
+    height: 11.75rem;
     background: white;
   }
   #controls-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
@@ -62,10 +59,14 @@
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
     position: relative;
-    min-height: 10.4375rem;
+    min-height: 11.75rem;
     box-sizing: border-box;
     font-size: 0.8125rem;
     padding: 10px 20px 0 20px;
+  }
+  #content-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link,
+  #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
+    padding: 10px 15.5px 0 15.5px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover,
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
@@ -134,7 +135,7 @@
 }
 @media only screen and (min-width: 720px) {
   .enable-logo {
-    width: 6.25rem;
+    width: 3.125rem;
   }
 }
 .enable-logo__container {
@@ -154,6 +155,7 @@
 @media only screen and (min-width: 720px) {
   .enable-logo__container {
     padding: 0 30px;
+    margin-bottom: 0;
   }
 }
 .enable-logo__link {
@@ -161,12 +163,6 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
-}
-@media only screen and (min-width: 960px) {
-  .enable-logo__link {
-    transform: scale(0.5);
-    transform-origin: 0 50%;
-  }
 }
 .enable-logo__text {
   display: block;
@@ -179,8 +175,8 @@
 }
 @media only screen and (min-width: 720px) {
   .enable-logo__text {
-    font-size: 4.375rem;
-    top: 1.25rem;
+    font-size: 1.875rem;
+    top: 0.9375rem;
   }
 }
 .enable-logo__sub-text {

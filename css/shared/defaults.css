@@ -173,6 +173,7 @@ select {
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
     z-index: 10002 !important;
+    transform: translateZ(2px);
   }
 }
 .enable-flyout__body--is-open .play-pause-anim__checkbox-container {

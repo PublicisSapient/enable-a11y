@@ -28,7 +28,7 @@
   background-color: #000;
   white-space: nowrap;
   text-align: center;
-  height: 2.5rem;
+  height: 2.4;
 }
 .offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container {
   position: fixed;
@@ -40,7 +40,7 @@ main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
     position: fixed;
-    top: 2.8125rem;
+    top: 0.3125rem;
     left: initial;
     right: 20px;
     border-radius: 50px;
