@@ -138,22 +138,22 @@
     },
     {
       "label": "Initialize the carousel via JavaScript",
-      "highlight": "%JS% a.init",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.init =",
       "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
     },
     {
       "label": "Carousel slide focus event",
-      "highlight": "%JS% a.focusCTAHandler; a.slideToTarget",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.slideToTarget =",
       "notes": "When a CTA in a slide gains focus, we tell the carousel to display the slide that contains that CTA"
     },
     {
       "label": "Carousel mouse event",
-      "highlight": "%JS% a.clickHandler",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.clickHandler =",
       "notes": "When the user clicks the CTA, we assume they are a mouse user so we allow the carousel to animate between slides."
     },
     {
       "label": "Carousel key up event",
-      "highlight": "%JS% a.keyUpHandler",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.keyUpHandler =",
       "notes": "When the user hits the TAB key, we assume they are a keyboard user and tell the carousel to turn animations off."
     }
   ]
