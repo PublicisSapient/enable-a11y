@@ -92,7 +92,7 @@
     },
     {
       "label": "Add chevron via CSS",
-      "highlight": "%CSS% figure-css~ a.tile-cta::after",
+      "highlight": "%CSS% figure-css~ a.tile-cta::after ||| content:[^;]*;",
       "notes": ""
     }
   ]

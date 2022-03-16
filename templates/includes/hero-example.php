@@ -8,7 +8,7 @@
           time. Arkın's films have ranged from
           well-received dramas to mockbusters throughout his career spanning four decades. </p>
 
-          <a href="#" class="tile-cta" aria-label="Learn more about Cüneyt Arkın">Learn more</a>
+          <a href="https://en.wikipedia.org/wiki/C%C3%BCneyt_Ark%C4%B1n" class="tile-cta" aria-label="Learn more about Cüneyt Arkın">Learn more</a>
       </div>
       <picture>
         <source srcset="images/text-resize/cuneyt-1024.webp 1024w, images/text-resize/cuneyt-960.webp 960w"
