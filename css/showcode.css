@@ -155,10 +155,13 @@ code {
   background: transparent;
   text-decoration: underline;
   position: absolute;
-  bottom: 4em;
+  bottom: 5.0625rem;
   right: 0;
   text-align: center;
   width: 100%;
+}
+.showcode__has-wrapped-text-in-code .showcode__notes + .showcode__notes-view-toggle {
+  bottom: 3.625rem;
 }
 .showcode__notes code {
   font-family: "ModeSeven", "Consolas", monospace;

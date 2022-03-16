@@ -177,42 +177,42 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
   },
   "steps": [{
       "label": "Create basic DOM for users without JavaScript",
-      "highlight": "%JSHTML%originalHTMLExample1~href",
+      "highlight": "href ",
       "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
     },
     {
       "label": "Ensure classes are set up so roles will be assigned for JavaScript users",
-      "highlight": "%JSHTML%originalHTMLExample1~class=\"enable-tablist\" ||| class=\"enable-tab\" ||| class=\"enable-tabpanel\"",
+      "highlight": "%INLINE%originalHTMLExample1 ||| class=\"enable-tablist\" ||| class=\"enable-tab\" ||| class=\"enable-tabpanel\"",
       "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
     },
     {
       "label": "Use data-owns to connect tabs with their tabpanel",
-      "highlight": "%JSHTML%originalHTMLExample1~data-owns",
+      "highlight": "%INLINE%originalHTMLExample1 ||| data-owns",
       "notes": "This will be used by the JavaScript code to connect the tab with the tabpanel using aria-owns"
     },
     {
       "label": "Your JavaScript should place ARIA roles in document",
-      "highlight": "role=\"tablist\" ||| role=\"presentation\" ||| role=\"tab\" ||| role=\"tabpanel\"",
+      "highlight": "%INLINE%example1 ||| role",
       "notes": "JavaScript should assign these roles to non-JavaScript users that user screen readers don't get these roles.  Note that <strong>tabs</strong> should be a direct child of the <strong>tablist</strong>. If this is not possible, then all the nodes in between them should have a role of <strong>presentation</strong>."
     },
     {
       "label": "Your JavaScript should connect tabs to tabpanels",
-      "highlight": "aria-owns",
+      "highlight": "%INLINE%example1 ||| aria-owns",
       "notes": "Each <strong>tab</strong> must have an <strong>aria-owns</strong> attribute that corresponds to its <strong>tabpanel</strong>."
     },
     {
       "label": "Your JavaScript should apply aria-selected values are set correctly",
-      "highlight": "aria-selected",
+      "highlight": "%INLINE%example1 ||| aria-selected",
       "notes": "When a tab is selected, its <strong>aria-selected</strong> attribute must be set to <strong>true</strong>, while all the other tabs must have it set to <strong>false</strong>"
     },
     {
       "label": "Your JavaScript should ensure only the selected tab is accessible via tab key",
-      "highlight": "tabindex=\"-1\"",
+      "highlight": "%INLINE%example1 ||| tabindex=\"-1\" ||| aria-selected",
       "notes": "In order switch tabs with the arrow keys, all tabs that have <strong>aria-selected=\"false\"</strong> must also have <strong>tabindex=\"-1\"</strong> set as well."
     },
     {
       "label": "Your JavaScript should use aria-describedby to give keyboard instructions when user focuses on tabs",
-      "highlight": "aria-describedby",
+      "highlight": "%INLINE%example1 ||| aria-describedby",
       "notes": "This gives screen reader users instructions how to use the tabs when they navigate into them via keyboard"
     },
     {

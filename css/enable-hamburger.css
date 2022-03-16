@@ -70,6 +70,14 @@
 .enable-flyout__last-top-level-link {
   margin-right: 40px !important;
 }
+.enable-flyout__last-top-level-link::after {
+  content: "";
+  display: block;
+  width: calc(100% - 40px);
+  height: 1px;
+  background: #fff;
+  margin: 0 auto;
+}
 .enable-flyout__hamburger-icon {
   width: 30px;
   height: 30px;

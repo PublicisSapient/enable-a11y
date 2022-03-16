@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$#" = "1" -a "$1" = "--force" ]
+if [ "$#" -ge "1" -a "$1" = "--force" ]
 then
     FORCE="1"
     echo "Generating webp renditions for all pngs, including those rendered already." 2>&1
@@ -13,10 +13,17 @@ else
     echo "To force re-rendering all PNGs as WEBP, please use the --force flag". 2>&1
 fi
 
+if [ "$#" = "2" ]
+then
+    LIST="$2"
+else
+    LIST="images/main-menu images/hamburger-menu-copy images/hero-image-text-resize images/text-spacing images/focus";
+fi
+
 DIR="$PWD"
 
 
-for i in images/main-menu images/hamburger-menu-copy images/hero-image-text-resize images/text-spacing images/focus
+for i in $LIST
 do
     cd "$DIR"
     echo "CWD: $DIR"

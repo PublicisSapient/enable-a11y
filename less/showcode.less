@@ -217,10 +217,14 @@ code {
       background: transparent;
       text-decoration: underline;
       position: absolute;
-      bottom: 4em;
+      bottom: (81/@px);
       right: 0;
       text-align: center;
       width: 100%;
+
+      .showcode__has-wrapped-text-in-code & {
+        bottom: (58/@px);
+      }
     }
 
     code {

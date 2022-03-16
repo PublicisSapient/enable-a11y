@@ -108,6 +108,15 @@
 
   &__last-top-level-link {
     margin-right: 40px !important;
+
+    &::after {
+      content: "";
+      display: block;
+      width: calc(100% - 40px);
+      height: 1px;
+      background: #fff;
+      margin: 0 auto;
+    }
   }
 
   // Animation for the hamburger menu icon stolen from:
