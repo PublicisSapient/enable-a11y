@@ -97,30 +97,32 @@
     Screenshots of the HTML5 select box by platform
   </figcaption>
 
-  <div class="sticky-table__container">
-    <table class="screenshot-table" tabindex="0">
-      <thead>
-        <tr>
-          <th scope="col">Firefox Desktop</th>
-          <th scope="col">Chrome Android</th>
-          <th scope="col">Safari iOS</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><img src="images/pages/listbox/desktop-select-options.png"
-              alt="Like all desktop web browsers, Firefox on OSX displays the select box options are in a scrollable list positioned directly below the button that opens it.">
-          </td>
-          <td><img src="images/pages/listbox/android-select-options.png"
-              alt="The options of the select box in Chrome for Android appear in a scrollable modal overlayed on top of the page. The options text takes up most of the width of the viewport.">
-          </td>
-          <td><img src="images/pages/listbox/ios-select-options.png"
-              alt="Safari for iOS displays the select box options in a 3-D scroll wheel on the bottom of the viewport. It also takes up the full width of the screen.">
-          </td>
+  <div class="can-horizontally-scroll__parent">
+    <div class="sticky-table__container sticky-table__container--horizontal-scroll can-horizontally-scroll">
+      <table class="screenshot-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Firefox Desktop</th>
+            <th scope="col">Chrome Android</th>
+            <th scope="col">Safari iOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/pages/listbox/desktop-select-options.png"
+                alt="Like all desktop web browsers, Firefox on OSX displays the select box options are in a scrollable list positioned directly below the button that opens it.">
+            </td>
+            <td><img src="images/pages/listbox/android-select-options.png"
+                alt="The options of the select box in Chrome for Android appear in a scrollable modal overlayed on top of the page. The options text takes up most of the width of the viewport.">
+            </td>
+            <td><img src="images/pages/listbox/ios-select-options.png"
+                alt="Safari for iOS displays the select box options in a 3-D scroll wheel on the bottom of the viewport. It also takes up the full width of the screen.">
+            </td>
 
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </figure>
 
@@ -391,7 +393,7 @@
   "steps": [{
       "label": "Place ARIA roles in document",
       "highlight": "role",
-      "notes": "The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements"
+      "notes": "The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements. If not, you must use the <code>presentation</code> role for the nodes in between the <code>listbox</code> and the <code>option</code>, in a similar way described in <a href=\"table.php#table-aria\">we describe using presentation roles in our ARIA tables demo</a>."
     },
     {
       "label": "Place <strong>aria-haspopup</strong> attribute on button that activates dropdown functionality.",

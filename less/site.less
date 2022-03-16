@@ -262,21 +262,15 @@
 
   &__desc {
     min-height: (40/@px);
-    padding: 0 20px;
+    padding: 5px 20px;
     display: inline-block;
     position: relative;
     padding-left: @icon-width;
     
-    &--npm {
-      padding-left: @npm-icon-width;
-    }
 
     @media @mobile {
-      padding: 5px 10px 5px @icon-width;
+      padding: 5px 10px 5px (@icon-width / 2); 
       
-      &--npm {
-        padding: 5px 10px 5px @npm-icon-width;
-      }
     }
 
     &:only-child {
@@ -307,21 +301,17 @@
   &__center {
 
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     min-height: (40/@px);
     resize: vertical;
     align-items: center;
   }
   &__icon {
     height: (30/@px);
-    margin: 5px;
+    margin: 0px 15px 5px 0px;
     display: inline-block;
-    margin-right: 10px;
   }
 
-  &__desc--npm &__icon {
-    margin-left: ( (10/@px) - @npm-icon-width);
-  }
 
   &__label {
     display: inline-block;

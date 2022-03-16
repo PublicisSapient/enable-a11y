@@ -25,8 +25,7 @@ strong {
 }
 .homepage__hero--heading {
   font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  font-size: 6.25rem;
-  width: 50vw;
+  font-size: 5rem;
   margin: 0 auto;
   font-weight: normal;
   color: #004d00;
@@ -51,9 +50,16 @@ strong {
   margin-right: 20px;
 }
 .homepage__hero-link--secondary {
+  display: inline-block;
   white-space: nowrap;
   color: #301414;
-  padding-right: 35px;
+  height: 3.125rem;
+  line-height: 3.125rem;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .homepage__hero-link--secondary {
+    margin-top: 20px;
+  }
 }
 .homepage__hero-link--secondary:after {
   content: "";
@@ -72,12 +78,22 @@ strong {
 }
 .homepage__intro {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  flex-direction: column;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__intro {
+    flex-direction: row;
+  }
 }
 .homepage__intro--section {
   flex-grow: 1;
-  width: 33%;
+  width: 100%;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__intro--section {
+    width: 33%;
+  }
 }
 .homepage__intro--section + .homepage__intro--section {
   margin-left: 2%;
@@ -126,8 +142,13 @@ strong {
 .homepage__bottom-copy {
   background: #ccc;
   color: #222;
-  padding: 20px calc((100% - 1024px) / 2);
   line-height: 1.5;
+  padding: 20px;
+}
+@media only screen and (min-width: 960px) {
+  .homepage__bottom-copy {
+    padding: 20px calc((100% - 1024px) / 2 + 20px);
+  }
 }
 .homepage__bottom-copy strong {
   color: #000 !important;

@@ -35,7 +35,7 @@
     ?>
         <div class="enable-stats__desc enable-stats__desc--npm">
             <div class="enable-stats__center">
-                <img class="enable-stats__icon" src="images/icons/npm.svg" alt="" role="presentation">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
                 <span class="enable-stats__label"><?= $comment ?></span>
             </div>
         </div>

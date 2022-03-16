@@ -26,8 +26,7 @@ strong {
 
     &--heading {
       font-family: @font-default-brand;
-      font-size: (100/@px);
-      width: 50vw;
+      font-size: (80/@px);
       margin: 0 auto;
       font-weight: normal;
       color: darken(@color1, 5%);
@@ -58,9 +57,16 @@ strong {
     }
 
     &--secondary {
+      display: inline-block;
       white-space: nowrap;
       color: @color0;
-      padding-right: 35px;
+
+      height: @button-height;
+      line-height: @button-height;
+
+      @media @mobile {
+        margin-top: 20px;
+      }
 
       &:after {
         .icon-mixin('../images/chevron-up.svg');
@@ -75,12 +81,20 @@ strong {
 
   &__intro {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    flex-direction: column;
+
+    @media @tablet-up {
+      flex-direction: row;
+    }
 
     &--section {
       flex-grow: 1;
-      width: 33%;
+      width: 100%;
+
+      @media @tablet-up {
+        width: 33%;
+      }
     }
 
     &--section+&--section {
@@ -141,8 +155,12 @@ strong {
     
     background: #ccc;
     color: #222;
-    padding: 20px calc(~"(100% - 1024px) / 2");
     line-height: 1.5;
+    padding: 20px;
+
+    @media @desktop {
+      padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
+    }
 
     strong {
       color: #000 !important;

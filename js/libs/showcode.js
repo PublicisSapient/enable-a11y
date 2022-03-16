@@ -869,6 +869,8 @@ const showcode = new function () {
   // as much as it can, without ever going more than once per `wait` duration;
   // but if you'd like to disable the execution on the leading edge, pass
   // `{leading: false}`. To disable execution on the trailing edge, ditto.
+  //
+  // From: https://stackoverflow.com/questions/63564213/how-to-use-a-function-that-returns-another-function
   function throttle(func, wait, options) {
     var context, args, result;
     var timeout = null;

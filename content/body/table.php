@@ -280,7 +280,7 @@
 </script>
 
 
-<h2>A Simple Table Made Using Aria Roles</h2>
+<h2 id="table-aria">A Simple Table Made Using Aria Roles</h2>
 
 <?php includeStats(array('isForNewBuilds' => false, 'comment' => 'This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.')) ?>
 

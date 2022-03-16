@@ -199,20 +199,14 @@
 }
 .enable-stats__desc {
   min-height: 2.5rem;
-  padding: 0 20px;
+  padding: 5px 20px;
   display: inline-block;
   position: relative;
   padding-left: 3.125rem;
 }
-.enable-stats__desc--npm {
-  padding-left: 6.25rem;
-}
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   .enable-stats__desc {
-    padding: 5px 10px 5px 3.125rem;
-  }
-  .enable-stats__desc--npm {
-    padding: 5px 10px 5px 6.25rem;
+    padding: 5px 10px 5px 1.5625rem;
   }
 }
 .enable-stats__desc:only-child {
@@ -235,19 +229,15 @@
 }
 .enable-stats__center {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   min-height: 2.5rem;
   resize: vertical;
   align-items: center;
 }
 .enable-stats__icon {
   height: 1.875rem;
-  margin: 5px;
+  margin: 0px 15px 5px 0px;
   display: inline-block;
-  margin-right: 10px;
-}
-.enable-stats__desc--npm .enable-stats__icon {
-  margin-left: -5.625rem;
 }
 .enable-stats__label {
   display: inline-block;

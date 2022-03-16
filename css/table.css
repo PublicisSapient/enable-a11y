@@ -19,6 +19,9 @@
         max-height: 70vh; */
   position: relative;
 }
+.sticky-table__container--horizontal-scroll {
+  overflow: auto;
+}
 .sticky-table__container:focus-within {
   outline: #3b99fc 2px solid;
 }
