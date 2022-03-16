@@ -379,7 +379,7 @@ const showcode = new function () {
                 (async () => {
                   getTextFromFile(fileName).then((text) => {
                     codeEl.innerHTML = this.entify(text.trim());
-                    code = text.trim();
+                    code = this.entify(text.trim());
                     highlightCode(command, highlightString, code, codeEl, doScroll);
 
                     /* if (doScroll) {
@@ -499,6 +499,8 @@ const showcode = new function () {
                     if (codeTemplateEl.nodeName === 'SCRIPT') {
                       code = indent.js(code, { tabString: '  ' });
                       //code = this.entify(code);
+                    } else {
+                      code = this.entify(formatHTML(code));
                     }
 
                   }

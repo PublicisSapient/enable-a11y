@@ -111,12 +111,17 @@
   outline-offset: 4px;
 }
 
+.undo-thumb-focus() {
+  outline: none;
+}
+
 /*
  * Track focus styles
  */
 .track-focus() {
   background: @track-focus-color;
 }
+
 
 input[type="range"] {
   .appearance(none);
@@ -154,15 +159,28 @@ input[type="range"] {
     &::-moz-range-track {
       .track-focus();
     }
-
-    &::-webkit-slider-thumb {
-      .thumb-focus();
-    }
-
-    &::-moz-range-thumb {
-      .thumb-focus();
-    }
   }
+
+  .enable-focus(
+    {
+      &::-webkit-slider-thumb {
+        .thumb-focus();
+      }
+
+      &::-moz-range-thumb {
+        .thumb-focus();
+      }
+    },
+    {
+      &::-webkit-slider-thumb {
+        .undo-thumb-focus();
+      }
+
+      &::-moz-range-thumb {
+        .undo-thumb-focus();
+      }
+    }
+  );
 }
 
 .html-slider {

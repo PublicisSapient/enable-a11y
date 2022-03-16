@@ -97,6 +97,20 @@ input[type="range"]:focus::-moz-range-thumb {
   outline: solid 2px #3b99fc;
   outline-offset: 4px;
 }
+input[type="range"]:focus:not(:focus-visible)::-webkit-slider-thumb {
+  outline: none;
+}
+input[type="range"]:focus:not(:focus-visible)::-moz-range-thumb {
+  outline: none;
+}
+input[type="range"]:focus-visible::-webkit-slider-thumb {
+  outline: solid 2px #3b99fc;
+  outline-offset: 4px;
+}
+input[type="range"]:focus-visible::-moz-range-thumb {
+  outline: solid 2px #3b99fc;
+  outline-offset: 4px;
+}
 .html-slider__container {
   width: calc(100% - 6.3em);
   display: inline-block;

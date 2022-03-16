@@ -195,7 +195,7 @@ code {
   display: block;
 }
 .showcode__notes.showcode__notes--is-overflowed:not(:empty) {
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 }
 .showcode__notes.showcode__notes--is-overflowed:not(:empty) + .showcode__notes-view-toggle {
   display: inherit;

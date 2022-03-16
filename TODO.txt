@@ -8,6 +8,7 @@ Safari OSX:
 Aria-label vs tabindex="-1"
 
 NEED TO LOOK AT MOBILE TOOLTIPS.
+INTERPOLATE.JS and other modules.
 
 mobile discovery through feeling (Sara S's post on checkmarks) - see if it works with our carousel as well.
 

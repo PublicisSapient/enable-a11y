@@ -251,17 +251,17 @@
     },
     {
       "label": "Ensure each of the output elements display their respective slider values.",
-      "highlight": "%JS% rangeInputEvent.init ||| [\\S]*\\.innerHTML[^;]*;",
+      "highlight": "%INLINE% range-input-event ||| [\\S]*\\.innerHTML[^;]*;",
       "notes": "These values will be used the CSS code shown in the next step."
     },
     {
       "label": "Ensure CSS variables containing the slider values are set when the sliders are used.",
-      "highlight": "%JS% rangeInputEvent.init ||| [\\S]*.setProperty[^;]*;",
+      "highlight": "%INLINE% range-input-event |||   [\\S]*.setProperty[^;]*;",
       "notes": "These values will be used the CSS code shown in the next step."
     },
     {
       "label": "Style area on track between the two slider controls using the container's ::after pseudo-element",
-      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container { ||| --minValue ||| --maxValue ||| --dif ||| %CSS% enable-slider-style~ .html-slider__multi--container::after { ||| --minValue ||| --maxValue ||| --dif ||| --a ||| --b",
+      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container { ||| --minValue ||| --maxValue ||| --dif ||| %CSS% enable-slider-style~ .html-slider__multi--container::after { ||| --minValue:[^;]*; ||| --maxValue:[^;]*; ||| --dif:[^;]*; ||| --a:[^;]*; ||| --b:[^;]*;",
       "notes": "This CSS ensures that the container's <code>::after</code> pseudo-element acts as the area of the track that is in between the two slider controls.  For a detailed explanation as to why, see <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/#the-tricky-part\">The Tricky Part</a> of Ana Tudor's article <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/\">Multi-Thumb Sliders: Particular Two-Thumb Case</a>."
     },
     {
@@ -326,12 +326,12 @@
     },
     {
       "label": "Create an interpolation function",
-      "highlight": "%JS% interpolate",
-      "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step."
+      "highlight": "%FILE% js/modules/interpolate.js",
+      "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
     },
     {
       "label": "Insert dymanic values into the template using the interpolation function.",
-      "highlight": "%JS% enableSliders.list[0].createHandle ||| const handle =[^;]*;",
+      "highlight": "%FILE% js/modules/enable-slider.js ~ const handle =[^;]*;",
       "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
     }
   ]
@@ -356,42 +356,42 @@
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Place ARIA slider roles in document",
-      "highlight": "role=\"slider\"",
+      "highlight": "%INLINE% aria-example1 ||| role=\"slider\"",
       "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\"0\"</strong> and some JS routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
     },
     {
       "label": "Add the min, max and current values that the slider can be set to, as well as the current value",
-      "highlight": "aria-valuemin ||| aria-valuemax ||| aria-valuenow",
+      "highlight": "%INLINE% aria-example1 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow",
       "notes": "The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively"
     },
     {
       "label": "Set the slider's label",
-      "highlight": "aria-labelledby=\"sr1_label sr1_handle_val\" ||| id=\"sr1_label\" ||| id=\"sr1_handle_val\"",
+      "highlight": "%INLINE% aria-example1 ||| aria-labelledby=\"sr1_label sr1_handle_val\" ||| id=\"sr1_label\" ||| id=\"sr1_handle_val\"",
       "notes": "The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component."
     },
     {
       "label": "Set the slider instructions",
-      "highlight": "aria-describedby=\"sr1_desc\" ||| id=\"sr1_desc\"",
+      "highlight": "%INLINE% aria-example1 ||| aria-describedby=\"sr1_desc\" ||| id=\"sr1_desc\"",
       "notes": "Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers."
     },
     {
       "label": "Surround the visual numeric value of the slider with an aria-live region",
-      "highlight": "role=\"alert\" ||| aria-live=\"assertive\"",
+      "highlight": "%INLINE% aria-example1 ||| role=\"alert\" ||| aria-live=\"assertive\"",
       "notes": ""
     },
     {
       "label": "Create alternative UI for mobile screen readers",
-      "highlight": "%OPENCLOSECONTENTTAG%span",
+      "highlight": "%INLINE% aria-example1 ||| %OPENCLOSECONTENTTAG%span",
       "notes": "Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=\"-1\"</strong>, mobile screen readers are the only devices that can make them visible."
     },
     {
       "label": "Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.",
-      "highlight": "tabindex=\"-1\"",
+      "highlight": "%INLINE% aria-example1 ||| tabindex=\"-1\"",
       "notes": "See previous step for details."
     },
     {
       "label": "Create labels for mobile screen reader UI buttons",
-      "highlight": "aria-labelledby=\"sr1_label sr1_handle_val sr1_handle__decrease-label\" ||| id=\"sr1_label\" ||| id=\"sr1_handle_val\" ||| id=\"sr1_handle__decrease-label\" ||| aria-labelledby=\"sr1_label sr1_handle_val sr1_handle__increase-label\" ||| id=\"sr1_handle__increase-label\"",
+      "highlight": "%INLINE% aria-example1 ||| aria-labelledby=\"sr1_label sr1_handle_val sr1_handle__decrease-label\" ||| id=\"sr1_label\" ||| id=\"sr1_handle_val\" ||| id=\"sr1_handle__decrease-label\" ||| aria-labelledby=\"sr1_label sr1_handle_val sr1_handle__increase-label\" ||| id=\"sr1_handle__increase-label\"",
       "notes": "The \"decrementor\" will have a label of \"JPEG compression factor: 30, decrease value\". The \"incrementor\" will have a similar label, except for the \"increase value\" at the end."
     }
   ]
@@ -424,42 +424,42 @@
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Place ARIA slider roles in document",
-      "highlight": "role=\"slider\"",
+      "highlight": "%INLINE% aria-example2 ||| role=\"slider\"",
       "notes": "Note, unlike the previous example, there are two of these now."
     },
     {
       "label": "Add the min, max and current values that the slider can be set to, as well as the current value",
-      "highlight": "aria-valuemin ||| aria-valuemax ||| aria-valuenow",
+      "highlight": "%INLINE% aria-example2 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow",
       "notes": "The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively"
     },
     {
       "label": "Set the labels for both slider handles",
-      "highlight": "aria-labelledby=\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val\" ||| id=\"sr[0-9]_label[0-9]\" ||| id=\"sr[0-9]_handle[0-9]_val\"",
+      "highlight": "%INLINE% aria-example2 ||| aria-labelledby=\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val\" ||| id=\"sr[0-9]_label[0-9]\" ||| id=\"sr[0-9]_handle[0-9]_val\"",
       "notes": "The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component."
     },
     {
       "label": "Set the instructions for both sliders",
-      "highlight": "aria-describedby=\"sr[0-9]_desc[0-9]\" ||| id=\"sr[0-9]_desc[0-9]\"",
+      "highlight": "%INLINE% aria-example2 ||| aria-describedby=\"sr[0-9]_desc[0-9]\" ||| id=\"sr[0-9]_desc[0-9]\"",
       "notes": "Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers."
     },
     {
       "label": "Surround the visual numeric value of the slider with an aria-live region",
-      "highlight": "role=\"alert\" ||| aria-live=\"assertive\"",
+      "highlight": "%INLINE% aria-example2 ||| role=\"alert\" ||| aria-live=\"assertive\"",
       "notes": ""
     },
     {
       "label": "Create alternative UI for mobile screen readers",
-      "highlight": "%OPENCLOSECONTENTTAG%span",
+      "highlight": "%INLINE% aria-example2 ||| %OPENCLOSECONTENTTAG%span",
       "notes": "Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=\"-1\"</strong>, mobile screen readers are the only devices that can make them visible."
     },
     {
       "label": "Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.",
-      "highlight": "tabindex=\"-1\"",
+      "highlight": "%INLINE% aria-example2 ||| tabindex=\"-1\"",
       "notes": "See previous step for details."
     },
     {
       "label": "Create labels for mobile screen reader UI buttons",
-      "highlight": "aria-labelledby=\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__decrease-label\" ||| id=\"sr[0-9]_label[0-9]\" ||| id=\"sr[0-9]_handle[0-9]_val\" ||| id=\"sr[0-9]_handle[0-9]__decrease-label\" ||| aria-labelledby=\"sr[0-9]_label sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__increase-label\" ||| id=\"sr[0-9]_handle[0-9]__increase-label\"",
+      "highlight": "%INLINE% aria-example2 ||| aria-labelledby=\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__decrease-label\" ||| id=\"sr[0-9]_label[0-9]\" ||| id=\"sr[0-9]_handle[0-9]_val\" ||| id=\"sr[0-9]_handle[0-9]__decrease-label\" ||| aria-labelledby=\"sr[0-9]_label sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__increase-label\" ||| id=\"sr[0-9]_handle[0-9]__increase-label\"",
       "notes": "The \"decrementor\" will have a label of \"JPEG compression factor: 30, decrease value\". The \"incrementor\" will have a similar label, except for the \"increase value\" at the end."
     }
   ]
