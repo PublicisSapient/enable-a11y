@@ -71,7 +71,7 @@
     },
     {
       "label": "Use Javascript to allow users to turn the switch on and off",
-      "highlight": "%JS%Switch",
+      "highlight": "%FILE%./js/modules/switch.js ||| switch-change",
       "notes": "Note that the switch changes state when the button is clicked.  This will work for both mice and keyboard since click fires using both devices when attached to buttons.  Note as well we set a custom event, <code>switch-change</code>, so developers can set event handler when the switch changes value."
     },
     {
