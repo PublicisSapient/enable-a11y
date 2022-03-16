@@ -63,6 +63,20 @@
 
 </div>
 
+<?php includeShowcode("native-example")?>
+<script type="application/json" id="native-example-props">
+{
+  "replaceHtmlRules": {
+  },
+  "steps": [
+  {
+    "label": "Add title attribute to elements that need tooltips.",
+    "highlight": "title",
+    "notes": "It doesn't get easier than this."
+  }
+]}
+</script>
+
 
 
 <h2>JavaScript tooltips</h2>
