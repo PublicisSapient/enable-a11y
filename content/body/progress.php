@@ -226,7 +226,7 @@
                 },
                 {
                     "label": "Use aria-valuetext with a user friendly message when you update the aria-valuenow",
-                    "highlight": "%JS% progressTest ||| el.setAttribute\\('aria-valuetext'[^\\s]*;",
+                    "highlight": "%FILE% js/demos/progress.js ~  [\\s]*el.setAttribute\\([^']*'aria-valuetext'[^;]*;",
                     "notes": "You can use <code>aria-valuetext</code> with any message. It will announce this instead of just the value."
                 }
 

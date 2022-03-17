@@ -1,1 +1,1 @@
-<script src="js/demos/progress.js"></script>
+<script src="js/demos/progress.js" type="module"></script>

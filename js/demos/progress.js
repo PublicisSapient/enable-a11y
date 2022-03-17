@@ -1,3 +1,5 @@
+import showcode from "../libs/showcode.js";
+
 const progressTest = new function () {
 
     let counter = 1;
@@ -119,5 +121,5 @@ const progressTest = new function () {
     }
 }
 
-
+showcode.addJsObj('progressTest', progressTest);
 progressTest.init();

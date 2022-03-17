@@ -60,7 +60,7 @@
   },
   {
     "label": "Optional: Add tabindex=\"-1\" to all headings",
-    "highlight": "%JS% initEnable ||| \\s\\sdocument\\.querySelectorAll[\\s\\S]*\\}\\)",
+    "highlight": "%JS% initEnable ||| document.querySelectorAll[\\s\\S]*\\}\\)",
     "notes": "This makes it easier for users of screen readers like Voiceover to skip over headings."
   }]
 }
