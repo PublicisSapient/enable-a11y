@@ -1,6 +1,5 @@
 
     
-
         
 
         <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
@@ -78,6 +77,12 @@
         </p>
 
         <h2>Video Player With Text-To-Speech Audio Descriptions</h2>
+
+
+        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(array('isNPM' => true)) ?>
+
+
         <div id="example1">
             <div class="enable-video-player">
                 <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/">
@@ -126,4 +131,4 @@
         }
         </script>
 
-    
+    <?= includeNPMInstructions('ablePlayerCustomizations') ?>

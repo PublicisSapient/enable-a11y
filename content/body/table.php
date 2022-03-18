@@ -271,7 +271,7 @@
     },
     {
       "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
-      "highlight": "%CSS%table-css ~ .sticky-table__container ||| overflow[^;]*; ||| position: sticky;",
+      "highlight": "%CSS%table-css ~ .sticky-table__container |||  position: sticky;",
       "notes": "This effect is only seen in lower breakpoints where the width of the table is larger than the viewport width."
     }
 
@@ -2237,21 +2237,14 @@
     "steps": [
         {
             "label": "Ensure the table has a container element which you want the heading to stick to",
-            "highlight": "%OPENCLOSETAG%div",
+            "highlight": "tabindex=\"0\"",
             "notes": "This is the element that will scroll.  Notice the <code>tabindex=\"0\"</code>.  This is so keyboard users are able to focus on it and use the keyboard to scroll the data up and down. "
         },
         {
             "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
-            "highlight": "%CSS%table-css ~ .sticky-table__container { ||| overflow[^;]*; ",
+            "highlight": "%CSS%table-css ~ .sticky-table__container th[scope=\"col\"]",
             "notes": [
-                "You must mark the ancestor of what the table header should stick to with an <code>overflow</code>",
-                " property value of <code>hidden</code>, <code>scroll</code>, <code>auto</code>, or <code>overlay</code>."
-            ]
-        },
-        {
-            "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
-            "highlight": "%CSS%table-css ~ .sticky-table__container |||  position: sticky;",
-            "notes": [
+                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls horizontally through the data in the table.",
                 "If you want more information about how this works, please read the excellent article",
                 "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>"
             ]

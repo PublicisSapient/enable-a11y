@@ -1,4 +1,4 @@
-<script>
+<script id="mathml-options">
         MathJax = {
             options: {
                 menuOptions: {

@@ -70,7 +70,9 @@
 
 </div>
 
-<?php includeShowcode("equation")?>
+<p>The code below is the source for the equation above. To understand how MathML works, please visit the <a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MDN MathML page</a> for more information.</p>
+
+<?php includeShowcode("equation", "", "", "", false)?>
 <script type="application/json" id="equation-props">
 {
   "replaceHtmlRules": {},

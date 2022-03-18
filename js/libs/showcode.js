@@ -40,7 +40,7 @@ const showcode = new function () {
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate|open|disabled)=""/g;
+  const blankAttrValueRe = /(required|novalidate|open|disabled|\$\{[^}]*\})=""/g;
   const commandsRe = /^%[A-Z]*?%/;
 
 
@@ -405,7 +405,9 @@ const showcode = new function () {
 
                 highlightString = splitHighlightString[1].trim();
                 localCode = getInnerCSS(document.getElementById(cssID), highlightString.split(';'), codeEl);
+                localCode = replaceCSSinString(localCode);
                 code += formatCSS(localCode);
+
                 //code = Prism.highlight(code, Prism.languages.css, 'css');
                 break;
               }
@@ -464,7 +466,7 @@ const showcode = new function () {
                     if (command === '%JSHTML%') {
                       const tmpNode = document.createElement('div');
                       tmpNode.innerHTML = funcCode;
-                      formatHTMLInBlock(tmpNode,);
+                      formatHTMLInBlock(tmpNode, replaceHtmlRules);
                       code = this.entify(formatHTML(funcCode));
                       funcCode = '';
                     } else if (funcName.indexOf('.') > -1) {
@@ -742,6 +744,27 @@ const showcode = new function () {
     } catch (ex) {
       console.log(ex);
     }
+  }
+
+  function replaceCSSinString(string) {
+    const replaceRulesJson = {
+      "content:[^;]*;": "/* Image URL below obfuscated */\ncontent: url(' ... ');"
+    };
+
+    let newString = string;
+    try {
+      for (let i in replaceRulesJson) {
+        const patternToReplace = new RegExp(i, 'g');
+        const content = replaceRulesJson[i];
+        newString = newString.replace(patternToReplace, content);
+      }
+    } catch (ex) {
+      console.error(ex);
+      console.error('string:', string);
+      console.error('replaceRulesJson:', replaceRulesJson);
+      return 'Error.';
+    }
+    return newString;
   }
 
 

@@ -9,6 +9,8 @@ Aria-label vs tabindex="-1"
 
 NEED TO LOOK AT MOBILE TOOLTIPS.
 INTERPOLATE.JS and other modules.
+RECHECK ES6 MODULE INFO.
+ACCESSIBILITY OF CODE WALKTHROUGH.
 
 mobile discovery through feeling (Sara S's post on checkmarks) - see if it works with our carousel as well.
 

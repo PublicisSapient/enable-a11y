@@ -300,12 +300,12 @@
                           Heading
                         </a>
                       </li>
-                      <li class="enable-flyout__menu-item">
+                      <!-- <li class="enable-flyout__menu-item">
                         <a href="math.php" class="enable-flyout__link">
                           <?php pictureWebpPng("images/main-menu/math", "", "class=\"enable-flyout__link-image\""); ?>
                           Math
                         </a>
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </li>

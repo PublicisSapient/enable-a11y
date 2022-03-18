@@ -84,9 +84,14 @@
       "notes": "Note that when the summary is opened, this aria-label must be changed to <strong>'pause'</strong> and <strong>'play'</strong> when it is closed again."
     },
     {
-      "label": "Change the summary tag's aria-label onclick",
-      "highlight": "%JS% 'const animatedGifPause = new function () {'; animatedGifPause.setSummaryAriaLabel; animatedGifPause.summaryClickHandler; animatedGifPause.init#document.addEventListener; '}'; '// Initialize the object.\nanimatedGifPause.init();'",
-      "notes": "This is the only JavaScript really needed for this example.  Without it, the state of the pause/play button would not be reported to screen readers."
+      "label": "Add small accessibility extras via JavaScript",
+      "highlight": "%FILE% js/modules/enable-animatedGif.js",
+      "notes": "I added extra JavaScript to the original example to handle: <ul><li>the state of the pause/play button to be reported to screen readers.</li><li>to ensure this component respects the user's <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion\"><code>prefers-reduced-motion</code> settings</a></li></ul>"
+    },
+    {
+      "label": "Add support for Enable's Pause Animation Control",
+      "highlight": "%FILE% js/modules/enable-animatedGif.js ~ document.addEventListener\\('enable-play-animations'[^\\)]*\\);",
+      "notes": "I added extra JavaScript to the original example to handle: <ul><li>the state of the pause/play button to be reported to screen readers.</li><li>to ensure this component respects the user's <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion\"><code>prefers-reduced-motion</code> settings</a></li></ul>"
     }
   ]
 }
@@ -175,7 +180,7 @@
     },
     {
       "label": "Use JS to find out if it should show the animation ot not",
-      "highlight": "%JS%animatedGifPause.respectReduceMotionSettings",
+      "highlight": "%FILE% js/modules/enable-animatedGif.js ~ this.respectReduceMotionSettings",
       "notes": "This function, if run at load time, will initially show the animation if the OS prefers-reduced-motion setting is not on."
     }
   ]

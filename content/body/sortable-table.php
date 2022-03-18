@@ -130,13 +130,22 @@
                 },
                 {
                     "label": "Add an aria-sort attribute to the table column that is currently sorted",
-                    "highlight": "aria-sort",
+                    "highlight": "%INLINE%sortable-table-example ||| aria-sort",
                     "notes": "This is used by screen reader users to know which column is sorted"
                 },
                 {
                     "label": "Add CSS",
-                    "highlight": "%CSS%deque-table-sortable-css~ .deque-table-sortable-group table thead th .sortableColumnLabel::after; .deque-table-sortable-group table thead th[aria-sort=\"ascending\"] .sortableColumnLabel::after ; .deque-table-sortable-group table thead th[aria-sort=\"descending\"] .sortableColumnLabel::after ||| content:[^;]*; ||| transform: [^;]*;",
-                    "notes": "Note that it is okay to insert the visual cues via CSS since the screen reader information is given by the aria-label"
+                    "highlight": "%CSS%deque-table-sortable-css~ .deque-table-sortable-group table thead th .sortableColumnLabel::after; .deque-table-sortable-group table thead th[aria-sort] .sortableColumnLabel::after ; .deque-table-sortable-group table thead th[aria-sort=\"descending\"] .sortableColumnLabel::after ||| content:[^;]*; ||| transform:[^;]*;",
+                    "notes": [
+                        "<p>The CSS rules here include the following visual icons (from top to bottom):</p>",
+                        "<ul>",
+                            "<li>The up and down arrow button</li>",
+                            "<li>The down arrow icon</li>",
+                            "<li>The up arrow icon (by flipping the down arrow icon in the previous rule)</li>",
+                        "</ul>",
+                        "<p>Note that it is okay to insert the visual cues via CSS since the screen reader Information is given by the aria-label</p>"
+                        
+                    ]
                 },
                 {
                     "label": "Add JS",

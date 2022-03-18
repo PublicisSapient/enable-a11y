@@ -1801,8 +1801,8 @@
     },
     {
       "label": "Disable buttons that are not useful to screen reader users",
-      "highlight": "disabled",
-      "notes": "This element will be skipped in the tabbing order.  If you wanted to ensure it is discoverable, you could use <code>aria-disabled=\"true\"</code> instead"
+      "highlight": "\\$\\{disabledattr\\}",
+      "notes": "This variable will be set to <code>\"disabled\"</code> if the arrow is supposed to be disabled, and to a blank string if not.  This element will be skipped in the tabbing order."
     },
     {
       "label": "Use an ARIA live region to give update information to screen reader users",

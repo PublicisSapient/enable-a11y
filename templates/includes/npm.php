@@ -61,7 +61,7 @@
     You can use the module like this:
 
     <code class="showcode--no-js">
-import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>.module';
+import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 @import '~enable-a11y/css/<?= $moduleName ?>';
 
 ...
