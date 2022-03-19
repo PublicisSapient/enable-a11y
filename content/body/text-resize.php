@@ -59,30 +59,31 @@
 }
 </script>
 
-<template id="px-to-rem__less">
-  // 1. Define a base font size. For example,
-  // 16px for the html root would translate to @px: 16rem;
+<template id="px-to-rem__less" data-type="text">
+// 1. Define a base font size. For example,
+// 16px for the html root would translate to @px: 16rem;
 
-  @px: 16rem;
+@px: 16rem;
 
-  // 2. Set your pixel values as fractions. For example,
-  // 16px would be 16/@px, 200px would be 200/@px, and so on.
+// 2. Set your pixel values as fractions. For example,
+// 16px would be 16/@px, 200px would be 200/@px, and so on.
 
-  .example {
+.example {
   font-size: 16/@px;
   margin: 20/@px 0;
   padding: 20/@px 10/@px;
-  }
+}
 
-  // Compiled output
+// Compiled output
 
-  // .example {
-  // font-size: 1rem;
-  // margin: 1.25rem 0;
-  // padding: 1.25rem 0.625rem;
-  // }
+// .example {
+// font-size: 1rem;
+// margin: 1.25rem 0;
+// padding: 1.25rem 0.625rem;
+// }
 
-  // http://lesscss.org/features/#features-overview-feature-operations
+// http://lesscss.org/features/#features-overview-feature-operations
+
 </template>
 
 
@@ -119,21 +120,22 @@
     }
     </script>
 
-    <template id="apple-css__code">
-      body {
-      /*
-      * This tells Safari to use the OS's base font and
-      * the size set in the iOS Accessibility settings.
-      */
-      font: -apple-system-body;
+    <template id="apple-css__code" data-type="text">
+body {
+  /*
+   * This tells Safari to use the OS's base font and
+   * the size set in the iOS Accessibility settings.
+   */
+  font: -apple-system-body;
 
-      /*
-      * Put whatever font you want to use here. The font
-      * size will still be grabbed by the iOS Accessibility
-      * settings.
-      */
-      font-family: "Times New Roman", serif;
-      }
+  /*
+   * Put whatever font you want to use here. The font
+   * size will still be grabbed by the iOS Accessibility
+   * settings.
+   */
+  font-family: "Times New Roman", serif;
+}
+
     </template>
     <p> I encourage everyone to put these styles in their base styles. It will make visually impaired
       iOS

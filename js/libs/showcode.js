@@ -493,8 +493,10 @@ const showcode = new function () {
               {
                 const codeTemplateEl = document.getElementById(highlightString.trim());
                 if (codeTemplateEl) {
-                  if (codeTemplateEl.dataset.type === 'less') {
+                  if (codeTemplateEl.dataset.type === 'less' || codeTemplateEl.dataset.type === 'css') {
                     code = formatCSS(codeTemplateEl.innerHTML);
+                  } else if (codeTemplateEl.dataset.type === 'text') {
+                    code = this.entify(codeTemplateEl.innerHTML); 
                   } else {
                     code = codeTemplateEl.innerHTML;
 

@@ -42,7 +42,6 @@
               </div>
               <?php if ($isInteractive): ?>
             </form><?php endif ?>
-
             <pre class="showcode__example"><code
                         data-showcode-id="<?= $id ?>"
                         data-showcode-props="<?= $id ?>-props"

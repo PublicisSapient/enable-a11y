@@ -119,13 +119,16 @@
       "notes": "This one line of CSS puts the text container on top of the image."
     },
     {
-      "label": "Insert text-zoom-event.js at the end of the document",
-      "highlight": "%OUTERHTML% text-zoom-event-js",
-      "notes": ""
+      "label": "Add text-zoom-event.js to your project and add the text-zoom class to the body when text zooming is occurs.",
+      "highlight": "%FILE% js/demos/hero-image-text-resize.js ~ (import[^;]*;|document.addEventListener[^;]*;)",
+      "notes": [
+        "<ul><li>Note the <code>textzoom</code> event.  It is a custom event fired by the text-zoom-event.js script.</li>",
+        "<li>You can also include the script in other ways.  Please <a href=\"#npm-instructions\">read the setup instructions</a> for more information.</li></ul>"
+      ]
     },
     {
       "label": "Ensure <code>text-zoom</code> class is added to the <code>body</code> tag when the user zooms text more than 100%",
-      "highlight": "%JS% textZoomDemo ||| body.classList[^;]*;",
+      "highlight": "%FILE% js/demos/hero-image-text-resize.js ~  body.classList[^;]*;",
       "notes": "Full information about this library is available on my blog post, <a href=\"https://www.useragentman.com/blog/2019/05/26/how-to-style-resized-text-and-quickly-fix-wcag-1-4-4-issues/\">How To Style Resized Text and Quickly Fix WCAG 1.4.4 Issues</a>"
     }
   ]

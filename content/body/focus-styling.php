@@ -33,11 +33,8 @@
 }
 </script>
 
-<template id="focus-remove">
-  *:focus {
-    outline: none;
-  }
-
+<template id="focus-remove" data-type="css">
+  *:focus {  outline: none;  }
 </template>
 
 <p>
@@ -72,24 +69,18 @@
 }
 </script>
 
-<template id="css-focus-visible">
+<template id="css-focus-visible" data-type="css">
   /* Initial focus style for all browsers (keyboard and mouse users). */
-  *:focus {
-  outline: solid 2px #3b99fc;
-  }
+  *:focus { outline: solid 2px #3b99fc; }
 
   /* Turn off focus style above if browser supports :focus-visible. */
-  *:focus:not(:focus-visible) {
-  outline: none;
-  }
+  *:focus:not(:focus-visible) { outline: none; }
 
   /*
   * For browsers that support :focus-visible, use it to show focus
   * indicators to keyboard users only.
   */
-  *:focus-visible {
-  outline: solid 2px #3b99fc;
-  }
+  *:focus-visible { outline: solid 2px #3b99fc; }
 
 </template>
 
@@ -132,11 +123,8 @@
 }
 </script>
 
-<template id="css-focus-hitarea">
-  .enable-flyout__open-level-button {
-    padding: 27px 0;
-    margin: -27px 0;
-  }
+<template id="css-focus-hitarea" data-type="css">
+  .enable-flyout__open-level-button { padding: 27px 0; margin: -27px 0; }
 
 </template>
 

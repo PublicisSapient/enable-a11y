@@ -85,7 +85,7 @@
 
         <div id="example1">
             <div class="enable-video-player">
-                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/">
+                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/" data-heading-level="3">
                     <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English" >
                     <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
                         label="English Audio Descriptions" >
@@ -106,6 +106,22 @@
                     "label": "Include YouTube video ID",
                     "highlight": "data-youtube-id",
                     "notes": "If you video is already on you tube, it is the one that appears as the <code>v</code> variable in the URL (e.g. <code>https://www.youtube.com/watch?v=<strong>NINogq4BS68</strong></code>)"
+                },
+                {
+                    "label": "Add appropriate heading level",
+                    "highlight": "data-heading-level",
+                    "notes": [
+                        "<p>This dictates the (visually-hidden) heading level that is produced by JavaScript for the media player.",
+                        "According to the code comments:</p>",
+                        "<blockquote><em>By default, an off-screen heading is automatically added to the top of the media player",
+                        "It is intelligently assigned a heading level based on context, via misc.js &gt; ",
+                        "<code>getNextHeadingLevel()</code>.",
+                        "Authors can override this behavior by manually assigning a heading level using ",
+                        "<code>data-heading-level</code>",
+                        "Accepted values are 1-6, or 0 which indicates \"no heading\"",
+                        "(i.e., author has already hard-coded a heading before the media player; Able Player doesn't ",
+                        "need to do this)</em></blockquote>"
+                    ]
                 },
                 {
                     "label": "Add the caption and audio description vtt file URLs",

@@ -207,7 +207,7 @@
           },
           {
             "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
-            "highlight": "class=\"js-form-validation\"",
+            "highlight": "js-form-validation",
             "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/shared/form.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
           },
           {
@@ -245,7 +245,7 @@
           },
           {
             "label": "Ensure error messages are prefixed with the word \"Error\"",
-            "highlight": "%JS% formValidator.init ||| [ ]*messages: {[^}]*}[^}]",
+            "highlight": "%JS% formValidator.init ||| (&nbsp;)*messages:[^\\}]*\\},",
             "notes": "This is best practice to ensure screen reader users know easily that what is being read is an error"
           },
           {

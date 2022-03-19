@@ -11,6 +11,7 @@ html {
 }
 code {
   font-family: "ModeSeven", "Consolas", monospace;
+  font-style: normal;
 }
 .showcode {
   background-color: #f5deb3;
@@ -165,6 +166,7 @@ code {
 }
 .showcode__notes code {
   font-family: "ModeSeven", "Consolas", monospace;
+  font-style: normal;
 }
 .showcode__notes:not(:empty) {
   border: dashed #705029 3px;
