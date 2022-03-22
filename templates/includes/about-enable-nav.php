@@ -1,12 +1,12 @@
 
-  <li class="enable-flyout__menu-item">
+  <!-- <li class="enable-flyout__menu-item">
     <a href="#"
       class="enable-flyout__link">
       How to Use
     </a>
-  </li>
+  </li> -->
   <li class="enable-flyout__menu-item">
-    <a href="#"
+    <a href="faq.php"
       class="enable-flyout__link">
       FAQ
     </a>

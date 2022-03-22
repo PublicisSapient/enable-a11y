@@ -206,5 +206,10 @@
   "credits.php": {
     "title": "Credits",
     "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
+  },
+  "faq.php": {
+    "title": "FAQ",
+    "desc": "FAQ of the Enable Project.",
+    "email": "zoltan.dulac@gmail.com"
   }
 }

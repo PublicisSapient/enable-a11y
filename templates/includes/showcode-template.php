@@ -1,7 +1,7 @@
         <?php
           global $walkthroughIndex;
         ?>
-        
+
         <div class="showcode__container">
           <div class="showcode__copy">
             <?php if ($isInteractive && $headingLevel > 0): ?>
@@ -23,10 +23,12 @@
           <?= $extra ?>
           <?php endif ?>
           <div class="showcode">
-            <?php if ($isInteractive): ?><form class="showcode__ui"><?php endif ?>
-              <?php if ($isInteractive): ?>
+            <?php if ($isInteractive): ?>
+              <form class="showcode__ui">
+            <?php endif ?>
+            <?php if ($isInteractive): ?>
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
-              <?php endif ?>
+            <?php endif ?>
               <div id="<?= $id ?>__notes" class="showcode__notes " role="alert" aria-live="assertive"></div>
               <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
                 aria-describedby="<?= $id ?>__toggle-desc"><span class="showcode__notes-view-toggle--more">View

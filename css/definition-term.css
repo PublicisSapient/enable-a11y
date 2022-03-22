@@ -27,10 +27,12 @@ dl [role="definition"],
 .dl [role="definition"] {
   font-style: italic;
 }
-dl dd:after,
-.dl dd:after,
-dl [role="definition"]:after,
-.dl [role="definition"]:after {
+dl dd::after,
+.dl dd::after,
+dl [role="definition"]::after,
+.dl [role="definition"]::after {
   content: "\A";
   white-space: pre;
+  display: block;
+  height: 1rem;
 }

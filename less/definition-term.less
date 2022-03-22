@@ -1,23 +1,29 @@
 @import "shared/mixins-and-vars";
 
-dl, .dl {
-    dd, dt,
-    [role="definition"], [role="term"] {
+dl,
+.dl {
+
+    dd,
+    dt,
+    [role="definition"],
+    [role="term"] {
         display: inline;
     }
 
-    dt, 
+    dt,
     [role="term"] {
-        font-weight:bold;
+        font-weight: bold;
     }
 
     dd,
     [role="definition"] {
         font-style: italic;
 
-        &:after {
+        &::after {
             content: "\A";
             white-space: pre;
+            display: block;
+            height: 1rem;
         }
     }
 }

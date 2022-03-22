@@ -78,6 +78,11 @@
   background: #fff;
   margin: 0 auto;
 }
+@media only screen and (min-width: 960px) {
+  .enable-flyout__last-top-level-link::after {
+    content: none;
+  }
+}
 .enable-flyout__hamburger-icon {
   width: 30px;
   height: 30px;
