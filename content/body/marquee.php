@@ -45,7 +45,7 @@
                 },
                 {
                     "label": "Use .innerHTML to update the timer",
-                    "highlight": "%JS% marqueeExample ||| \\marqueeEl.innerHTML[^;]*;",
+                    "highlight": "%JS% rotateMarquee ||| \\marqueeEl.innerHTML = `[^`]*`;",
                     "notes": ""
                 }
             ]

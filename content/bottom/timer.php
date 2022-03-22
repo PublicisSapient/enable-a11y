@@ -1,1 +1,1 @@
-<script src="js/demos/timer.js"></script>
+<script type="module" src="js/demos/timer.js"></script>

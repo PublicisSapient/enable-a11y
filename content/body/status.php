@@ -61,8 +61,8 @@
     },
     {
       "label": "use .innerHTML to update the live region",
-      "highlight": "%JS% dictLookup ||| const \\$pageAlert[^;]*; ||| \\$pageAlert.innerHTML[^;]*;",
-      "notes": ""
+      "highlight": "%JS% dictLookup.init ||| const \\$pageAlert[^;]*; ||| \\$pageAlert.innerHTML[^;]*;",
+      "notes": "The <code>$pageAlert</code> variable is set to the ARIA live region in the previous steps."
     }
 
   ]

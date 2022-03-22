@@ -1,4 +1,5 @@
 import pauseAnimControl from "../modules/pause-anim-control.js";
+import showcode from "../libs/showcode.js";
 
 const marqueeExample = new function () {
     const marqueeEl = document.getElementById('myMarquee');
@@ -42,6 +43,9 @@ const marqueeExample = new function () {
        }, 10000);
 
     }
+
+    showcode.addJsObj('rotateMarquee', rotateMarquee); 
 }
+
 
 marqueeExample.init();

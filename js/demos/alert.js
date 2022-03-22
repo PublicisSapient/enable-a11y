@@ -1,3 +1,5 @@
+import showcode from "../libs/showcode.js";
+
 const alert = new (function () {
   const sayTimeEl = document.getElementById("say-time");
   const assertiveAlertEl = document.getElementById("assertive-alert");
@@ -18,6 +20,7 @@ const alert = new (function () {
   };
 })();
 
+showcode.addJsObj('alert', alert);
 
 alert.init();
 

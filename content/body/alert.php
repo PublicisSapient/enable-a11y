@@ -61,8 +61,8 @@
                 },
                 {
                     "label": "Inject what you want alerted by screen readers into the aria-live region",
-                    "highlight": "%JS%alert.sayTimeClickHandler",
-                    "notes": "Just using <code>innerHTML</code> on the aria-live region is enough."
+                    "highlight": "%JS%alert.sayTimeClickHandler ||| assertiveAlertEl.innerHTML[^;]*;",
+                    "notes": "Note that <code>assertiveAlertEl = document.getElementById('assertive-alert')</code> (from the previous step).  Just using <code>innerHTML</code> on the aria-live region is enough."
                 }
             ]
         }

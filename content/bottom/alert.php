@@ -1,1 +1,1 @@
-<script src="js/demos/alert.js"></script>
+<script type="module" src="js/demos/alert.js"></script>

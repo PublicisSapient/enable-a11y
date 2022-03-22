@@ -1,3 +1,5 @@
+import showcode from "../libs/showcode.js";
+
 // Credit: Mateusz Rybczonec
 
 const FULL_DASH_ARRAY = 283;
@@ -132,3 +134,5 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+showcode.addJsObj('startTimer', startTimer);

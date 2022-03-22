@@ -1,1 +1,1 @@
-<script src="js/demos/status.js"></script>
+<script type="module" src="js/demos/status.js"></script>

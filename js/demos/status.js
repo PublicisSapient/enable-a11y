@@ -1,3 +1,5 @@
+import showcode from "../libs/showcode.js";
+
 const dictLookup = new (function () {
     const baseURL = "./services/lookupWord.php?word=";
   
@@ -66,3 +68,5 @@ const dictLookup = new (function () {
   })();
 
   dictLookup.init();
+
+  showcode.addJsObj('dictLookup', dictLookup);

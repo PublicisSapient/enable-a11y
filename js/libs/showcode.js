@@ -533,9 +533,11 @@ const showcode = new function () {
                 console.warn('Invalid command used', command);
               }
           }
-          highlightCode(command, highlightString, code, codeEl, doScroll);
+          console.log('a', code);
+          code = highlightCode(command, highlightString, code, codeEl, doScroll);
         } else {
-          highlightCode(command, highlightString, codeEl.innerHTML, codeEl, doScroll);
+          console.log('b', code);
+          code = highlightCode(command, highlightString, code , codeEl, doScroll);
         }
 
       }
@@ -554,6 +556,7 @@ const showcode = new function () {
   }
 
   const highlightCode = (command, highlightString, code, codeEl, doScroll) => {
+    console.log('code', code);
     let replaceRegex;
     if (highlightString !== null) {
       highlightString = highlightString.replace(space, nbspStr);
@@ -609,6 +612,8 @@ const showcode = new function () {
     if (doScroll) {
       this.scrollToHighlightedText(codeEl);
     }
+
+    return code;
 
   }
 
