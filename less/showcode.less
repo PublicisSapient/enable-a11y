@@ -42,8 +42,7 @@ code {
     border-bottom: double 3px #000;
   }
 
-  &__example,
-  &--no-js {
+  &__example {
     @gap-shadow-width: @code-focus-outline-gap + @code-focus-outline-width;
     @gap-color: white;
 
@@ -130,32 +129,34 @@ code {
         height: calc(100% - 2 * @code-focus-outline-width);
       }
 
-      &.fade-both::after {
-        background-image: linear-gradient(
-          -270deg,
-          @fade-color,
-          rgba(0, 0, 0, 0) 20%,
-          rgba(0, 0, 0, 0) 80%,
-          @fade-color
-        );
-      }
+      /* Fade CSS */
+      
+        &.fade-both::after {
+          background-image: linear-gradient(
+            -270deg,
+            @fade-color,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 0) 80%,
+            @fade-color
+          );
+        }
 
-      &.fade-left::after {
-        background-image: linear-gradient(
-          -270deg,
-          @fade-color,
-          rgba(0, 0, 0, 0) 20%,
-          rgba(0, 0, 0, 0)
-        );
+        &.fade-left::after {
+          background-image: linear-gradient(
+            -270deg,
+            @fade-color,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 0)
+          );
+        }
       }
-    }
   }
 
 
 
   &--no-js {
     white-space: pre;
-    margin: 20px 0;
+    margin: 0 0 20px 0;
     padding: 10px;
     overflow: auto;
   }
@@ -284,7 +285,7 @@ code {
     }
   }
 
-  &__has-wrapped-text-in-code &__example {
+  &__has-wrapped-text-in-code:not(&--no-js-container) &__example {
     white-space: pre-wrap;
 
     &::after {
@@ -296,5 +297,12 @@ code {
     display: none;
   }
 
+   &__has-wrapped-text-in-code &--no-js {
+     white-space: break-spaces;
+   }
+
+   &--no-js-container {
+     margin-top: 20px;
+   }
 
 }

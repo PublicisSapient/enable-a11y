@@ -438,7 +438,7 @@ const showcode = new function () {
                   } else {
                     const evalFuncName = `jsObjs.${funcName}`;
                     let evalFuncString;
-                    try {
+                    try { 
                       evalFuncString = eval(evalFuncName).toString();
                     } catch (ex) {
                       throw (`The function ${funcName}() was not registered to showcode.`);
@@ -850,7 +850,6 @@ const showcode = new function () {
 
             selectEl.addEventListener('change', selectChangeEvent);
             toggleEl.addEventListener('click', toggleClickEvent);
-            wrapTextEl.addEventListener('click', changeCodeFormattingEvent);
           } else {
             const { label, highlight, notes } = stepsJson[0];
             widgetContainerEl.innerHTML = `<p>${label}</p>`;
@@ -946,7 +945,7 @@ const showcode = new function () {
   const scrollEvent = (e) => {
     const { target } = e;
 
-    if (target.dataset.showcodeId) {
+    if (target.dataset.showcodeId || target.classList.contains('showcode--no-js')) {
       const { parentNode } = target;
       const { classList } = parentNode;
       if (target.scrollLeft === 0) {
@@ -965,6 +964,12 @@ const showcode = new function () {
     document.body.addEventListener('scroll', throttle(scrollEvent, 100), true)
     window.addEventListener("resize", throttle(handleResize, 100));
     window.addEventListener("orientationchange", throttle(handleResize, 100));
+
+    const wrapTextEls = document.querySelectorAll('.showcode__wrap-text');
+
+    wrapTextEls.forEach((el) => {
+      el.addEventListener('click', changeCodeFormattingEvent);
+    });
   }
 
 

@@ -9,7 +9,7 @@
   <?php
     if (!$isPolyfill) {
   ?>
-    <li>as an old-school ES4/JavaScript library.</li>
+  <li>as an old-school ES4/JavaScript library.</li>
   <?php
     }
   ?>
@@ -18,31 +18,34 @@
 <?php
   if ($isPolyfill) {
 ?>
-  <p>
-    <strong>Note: Unlike most of the other Enable Javascript modules, you cannot load this one as an old-school ES4 Javascript library.</strong>
-    This is because it tests for browser features (in this case, the <code>&lt;dialog&gt;</code> tag) and if the browser
-    doesn't support it, load the polyfill using<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import"> the ES6 <code>import()</code> function</a>.
-  </p>
+<p>
+  <strong>Note: Unlike most of the other Enable Javascript modules, you cannot load this one as an old-school ES4
+    Javascript library.</strong>
+  This is because it tests for browser features (in this case, the <code>&lt;dialog&gt;</code> tag) and if the browser
+  doesn't support it, load the polyfill using<a
+    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import"> the ES6
+    <code>import()</code> function</a>.
+</p>
 <?php
   } else {
 ?>
 
-  <p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
-    Here are a few articles that will help you decide:
-  </p>
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
 
 
-  <ul>
-    <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
-      <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
-    </li>
-    <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
-        href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
-        HTTP/2 You May Not Need Webpack Anymore</a>
-    <li>Stack Overflow has a really good thread about <a
-        href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
-    </li>
-  </ul>
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
+      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  <li>Stack Overflow has a really good thread about <a
+      href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
 
 <?php
   }
@@ -60,7 +63,7 @@
   <li>
     You can use the module like this:
 
-    <code class="showcode--no-js">
+    <?php includeShowcodeStaticBegin() ?>
 import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 @import '~enable-a11y/css/<?= $moduleName ?>';
 
@@ -71,14 +74,15 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 
 ...
 
-        </code>
+    <?php includeShowcodeStaticEnd() ?>
+    <?= $other["es6Notes"] ?? '' ?>
   </li>
   <li>
     Alternatively, you can include the styles in your project's CSS using:
 
-    <code class="showcode--no-js">
+    <?php includeShowcodeStaticBegin() ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
-        </code>
+    <?php includeShowcodeStaticEnd() ?>
   </li>
 </ol>
 
@@ -107,7 +111,7 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
   <li>
     Load the CSS in the head of you document:
 
-    <code class="showcode--no-js">
+    <?php includeShowcodeStaticBegin() ?>
 &lt;html&gt;
   &lt;head&gt;
 
@@ -123,17 +127,17 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
   &lt;/body&gt;
 &lt;/html&gt;
 
-    </code>
+  <?php includeShowcodeStaticEnd() ?>
   <li>
     Load your scripts using:
 
-    <code class="showcode--no-js">
+    <?php includeShowcodeStaticBegin() ?>
 &lt;script type="module"&gt;
     import <?= $moduleVar ?> from "path-to/<?= $moduleName ?>.js" 
 
     <?= $moduleVar ?>.init();
 &lt;/script&gt;
-        </code>
+    <?php includeShowcodeStaticEnd() ?>
 </ol>
 
 <?php
@@ -144,12 +148,9 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
 directory instead of the <code>js/modules/</code>:
 
-<blockquote>
-<code class="showcode--no-js">
+<?php includeShowcodeStaticBegin() ?>
 &lt;script src="path-to/es4/<?= $moduleName ?>.js"&gt;&lt;/script&gt;
-
-</code>
-      </blockquote>
+<?php includeShowcodeStaticEnd() ?>
 
 <?php
   }

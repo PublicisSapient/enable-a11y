@@ -6,6 +6,7 @@
       <p>A place to learn and share with developers what makes web work accessible.</p>
     </div>
 
+    <!--
     <div class="homepage__hero--ctas">
       <a href="#getting-started.php" class="homepage__hero-link homepage__hero-link--main">
         Getting Started
@@ -14,6 +15,7 @@
         How to Contribute
       </a>
     </div>
+--> 
   </div>
 </div>
 

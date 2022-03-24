@@ -4,7 +4,7 @@ $walkthroughIndex = 1;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1); 
 
-function includeFileWithVariables($fileName, $variables)
+function includeFileWithVariables($fileName, $variables = array())
 {
     extract($variables);
     include($fileName);
@@ -56,12 +56,13 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
 }
 
 
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false) {
+function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false, $other = array()) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
     'moduleVar' => dashesToCamelCase($moduleName),
     'supportingModuleNames' => $supportingModuleNames,
-    'isPolyfill' => $isPolyfill
+    'isPolyfill' => $isPolyfill,
+    'other' => $other
   ));
 }
 
@@ -100,6 +101,20 @@ function includeStats($props) {
     'isStyle' => isSet($isStyle),
     'comment' => $comment
   ));
+}
+
+function includeShowcodeStaticBegin() {
+  global $walkthroughIndex;
+
+  includeFileWithVariables('includes/showcode-static-begin.php', array(
+    'id' => 'showcode-static__' . $walkthroughIndex
+  ));
+
+  $walkthroughIndex ++;
+}
+
+function includeShowcodeStaticEnd() {
+  includeFileWithVariables('includes/showcode-static-end.php');
 }
 
 function getURIFilename() {
