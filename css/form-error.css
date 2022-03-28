@@ -175,9 +175,10 @@
   text-shadow: 0 0 0.0714em #73994d;
   font-weight: bold;
 }
-.enable-form-example form label.required::after {
+.enable-form-example label.required::after {
   color: #e60000;
   content: " *";
+  font-weight: normal;
 }
 .enable-form-example .required-symbol {
   color: #e60000;

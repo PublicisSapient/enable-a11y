@@ -235,7 +235,7 @@
 }
 </script>
 
-<h2>ARIA dropdown with checkboxes</h2>
+<h2 id="multiselect">ARIA dropdown with checkboxes</h2>
 
 <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is a better solution that using multi-select <code>&lt;select&gt;</code> boxes, in my opinion.')) ?>
 
