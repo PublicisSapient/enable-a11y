@@ -15,8 +15,10 @@ code {
 }
 .showcode {
   background-color: #f5deb3;
-  border: solid 1px #999;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
+}
+.showcode--no-js-container {
+  clip-path: none;
 }
 .showcode__container {
   position: relative;
@@ -138,6 +140,7 @@ code {
   z-index: 1;
   background-color: #f5deb3;
   padding: 0.01em;
+  border: solid 1px #666;
 }
 @media only screen and (min-width: 960px) {
   .showcode__ui {

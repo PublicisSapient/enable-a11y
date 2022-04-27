@@ -5,6 +5,13 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+/*
+ * This file contains CSS code specific to the demo.
+ * For general code that pertains to the component 
+ * itself, including general CSS code to pause CSS
+ * transitions and animations as well as code to 
+ * pause animated GIFs, so pause-animation-control.less
+ */
 .showcode_ui {
   top: 2.5rem;
 }
@@ -13,56 +20,19 @@
     top: 0;
   }
 }
-.play-pause-anim {
-  /*
-    *  For the page
-    */
-}
-.play-pause-anim__checkbox-container {
-  position: relative;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  color: white;
-  padding: 0;
-  background-color: #000;
-  white-space: nowrap;
-  text-align: center;
-  height: 2.4;
-}
-.offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container {
+.offscreen-observer__is-header-offscreen .play-pause-anim {
   position: fixed;
   top: 0rem;
 }
-main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
+main:not(.with-full-bleed-hero) .play-pause-anim {
   margin: -1rem -1rem 0.625rem -1rem;
 }
 @media only screen and (min-width: 960px) {
-  .play-pause-anim__checkbox-container {
-    position: fixed;
-    top: 0.3125rem;
-    left: initial;
-    right: 20px;
-    border-radius: 50px;
-    border: solid 2px white;
-    width: min-content;
-    line-height: 2.4;
-  }
-  .offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container {
+  .offscreen-observer__is-header-offscreen .play-pause-anim {
     top: 0.625rem;
   }
-  main:not(.with-full-bleed-hero) .play-pause-anim__checkbox-container {
+  main:not(.with-full-bleed-hero) .play-pause-anim {
     margin: 0;
-  }
-}
-.play-pause-anim__checkbox-container label {
-  padding: 10px 20px;
-  display: inline-block;
-  cursor: pointer;
-}
-@media only screen and (min-width: 960px) {
-  .play-pause-anim__checkbox-container label {
-    padding: 0 20px;
   }
 }
 .play-pause-anim__full-bleed-image-demo {
@@ -87,54 +57,4 @@ main {
   to {
     background-position: -1920px 0;
   }
-}
-.pause-anim-control__gif--animated,
-.pause-anim-control__gif--still {
-  max-width: 100%;
-}
-.pause-anim-control__gif--animated {
-  display: initial;
-}
-.pause-anim-control__gif--still {
-  display: none;
-}
-/*
- * From Bruce Lawson's awesome blog post
- * https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/
- */
-@media (prefers-reduced-motion: reduce) {
-  body:not(.pause-anim-control__prefers-motion) *,
-  body:not(.pause-anim-control__prefers-motion) ::before,
-  body:not(.pause-anim-control__prefers-motion) ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
-  body:not(.pause-anim-control__prefers-motion) .pause-anim-control__gif--animated {
-    display: none;
-  }
-  body:not(.pause-anim-control__prefers-motion) .pause-anim-control__gif--still {
-    display: initial;
-  }
-}
-body.pause-anim-control__prefers-reduced-motion *,
-body.pause-anim-control__prefers-reduced-motion ::before,
-body.pause-anim-control__prefers-reduced-motion ::after {
-  animation-delay: -1ms !important;
-  animation-duration: 1ms !important;
-  animation-iteration-count: 1 !important;
-  background-attachment: initial !important;
-  scroll-behavior: auto !important;
-  transition-duration: 0s !important;
-  transition-delay: 0s !important;
-}
-body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--animated {
-  display: none;
-}
-body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--still {
-  display: initial;
 }

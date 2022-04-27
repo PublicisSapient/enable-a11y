@@ -1,3 +1,13 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+body {
+  --text-zoom-factor: 1;
+}
 .chart-example path {
   stroke: steelblue;
   stroke-width: 2;
@@ -13,4 +23,10 @@
 .chart-example table {
   margin: 20px auto 0 auto;
   border: solid 1px black;
+}
+.chart-example svg {
+  font-size: 16px;
+}
+.chart-example .tick text {
+  font-size: calc(10px * var(--text-zoom-factor));
 }

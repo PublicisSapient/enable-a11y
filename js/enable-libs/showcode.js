@@ -239,7 +239,13 @@ const showcode = new function () {
 
   const changeCodeFormatting = (checkboxEl, changeAllCheckboxes) => {
     const wrappedTextClass = 'showcode__has-wrapped-text-in-code';
-    const root = checkboxEl.closest('.showcode');
+    let root = checkboxEl.closest('.showcode__container');
+
+    if (root) {
+      root = root.querySelector('.showcode');
+    } else {
+      root = checkboxEl.closest('.showcode');
+    }
 
     if (checkboxEl.checked) {
       root.classList.add(wrappedTextClass);
@@ -972,6 +978,15 @@ const showcode = new function () {
     });
   }
 
+  function jumpToDeepLink() {
+    const { hash } = window.location;
+
+    if (hash) {
+      const el = document.querySelector(hash);
+      el.scrollIntoView();
+    }
+  }
+
 
   this.addJsObj = (name, value) => {
     jsObjs[name] = value;
@@ -981,6 +996,7 @@ const showcode = new function () {
     console.log('init!');
     showCodeBlocks();
     setEvents();
+    jumpToDeepLink();
   }
 
 }

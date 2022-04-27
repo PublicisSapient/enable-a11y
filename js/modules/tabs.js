@@ -12,7 +12,7 @@
 * 
 * Released under the MIT License.
 ******************************************************************************/
-import accessibility from '../../libs/accessibility-js-routines/dist/accessibility.module.js'; 
+import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js'; 
 
 const tabgroup = new function () {
 
@@ -61,7 +61,7 @@ const tabgroup = new function () {
       // When the user uses the arrow key to select on of the tabs,
       // this method is called afterwards.  It hides all the tabpanels
       // except for the one that checked tab is supposed to show (the
-      // one with the ID on the tab's aria-owns attribute).
+      // one with the ID on the tab's aria-controls attribute).
       ariaCheckedCallback: function (
         e,
         currentlyCheckedEl
@@ -71,7 +71,7 @@ const tabgroup = new function () {
         }
 
         const groupEl = currentlyCheckedEl.closest('[role="tablist"]');
-        const activePanelId = currentlyCheckedEl.getAttribute("aria-owns");
+        const activePanelId = currentlyCheckedEl.getAttribute("aria-controls");
         const panelEls =
           groupEl.parentNode.querySelectorAll('[role="tabpanel"]');
 
@@ -127,7 +127,7 @@ const tabgroup = new function () {
     const ownsEl = owns && document.getElementById(owns);
     tabEl.setAttribute("role", "tab");
     if (ownsEl) {
-      tabEl.setAttribute('aria-owns', owns);
+      tabEl.setAttribute('aria-controls', owns);
       ownsEl.setAttribute("role", "tabpanel");
     }
   };

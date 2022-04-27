@@ -1814,5 +1814,11 @@
 }
 </script>
 
-<?= includeNPMInstructions('paginate') ?>
+<?= includeNPMInstructions(
+  'paginate',
+  array(), 
+  false, 
+  array(),
+  '.pagination__table'
+) ?>
 

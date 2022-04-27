@@ -1,5 +1,5 @@
 import pauseAnimControl from "../modules/pause-anim-control.js";
-import showcode from "../libs/showcode.js";
+import showcode from "../enable-libs/showcode.js";
 
 const marqueeExample = new function () {
     const marqueeEl = document.getElementById('myMarquee');

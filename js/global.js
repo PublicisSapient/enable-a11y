@@ -9,7 +9,7 @@
  *
  ******************************************************************************/
 
-import showcode from "./libs/showcode.js";
+import showcode from "./enable-libs/showcode.js";
 import pauseAnimControl from "./modules/pause-anim-control.js";
 import EnableFlyoutHamburger from "./modules/enable-hamburger.js";
 import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
@@ -19,9 +19,9 @@ function initEnable() {
 
   offscreenObserver.init(document.querySelector('[role="banner"]'));
 
-
   enableVisibleOnFocus.init();
   EnableFlyoutHamburger.init();
+  pauseAnimControl.init();
 
   // So screen reader users, like VoiceOver users, can navigate via heading and have focus
   // applied to the heading.

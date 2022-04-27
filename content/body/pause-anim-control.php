@@ -20,6 +20,9 @@
 </div>
 <div class="with-full-bleed-hero__content">
   <h1><?= $title ?></h1>
+
+  <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This can be used for new builds or existing work with animations.  You should always test the animations you are using to see if it works with this component.  If not, please look at the detailed notes below on how to have your animations support this component.')) ?>
+  <?php includeStats(array('isNPM' => true)) ?>
   <p>
     Pause all the CSS, Canvas, SVG SMIL and GIF
     animations on this page with the checkbox at the top of this page.
@@ -367,7 +370,7 @@
 
   <div id="html5-video-example">
     <div role="region">
-      <video controls="" preload="metadata" data-root-path="./js/libs/ableplayer/" autoplay muted loop>
+      <video controls="" preload="metadata"  autoplay muted loop>
         <source src="videos/test-pattern.mp4" type="video/mp4">
         Video not supported.
       </video>
@@ -406,7 +409,7 @@
   <div id="ableplayer-example">
     <div class="enable-video-player">
       <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
-        data-root-path="./js/libs/ableplayer/">
+        data-root-path="./js/enable-libs/ableplayer/">
         <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English">
         <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
           label="English Audio Descriptions">
@@ -454,4 +457,12 @@
   }
   </script>
 
+
+<?= includeNPMInstructions(
+    'pause-anim-control'
+  ) 
+?>
+
 </div>
+
+

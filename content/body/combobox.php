@@ -790,4 +790,4 @@
 </script>
 
 
-<?= includeNPMInstructions('combobox') ?>
+<?= includeNPMInstructions('combobox', array(), false, array(), '.enable-combobox') ?>

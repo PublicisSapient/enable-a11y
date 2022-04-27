@@ -31,8 +31,8 @@
 
 <ul>
   <li>
-    Safari with Voiceover doesn't update the state when the
-    drawer is opened.
+    Safari with Voiceover <strong>occasionally</strong> doesn't announce the state when the
+    drawer is opened (most of the time it does, but I have noticed it enough to make mention of it here).
   </li>
   <li>
     Chrome with Voiceover report "Disclosure triangle" as the role, which is a quite odd and misleading.
@@ -166,6 +166,7 @@
 <h2>ARIA version</h2>
 
 <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is best solution for both new and existing work.')) ?>
+<?php includeStats(array('isNPM' => true)) ?>
 
 <p>
   Even though this is not native, it is pretty easy to set up. There is really one HTML attribute that you have to
@@ -321,3 +322,13 @@
 </script>
 
 
+
+<?= includeNPMInstructions(
+    'enable-drawer',
+    array(),
+    false,
+    array(),
+    null,
+    true
+  ) 
+?>

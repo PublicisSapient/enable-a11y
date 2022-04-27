@@ -160,6 +160,13 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-carousel', array(), false, array(
-  "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>"
-)) ?>
+<?= includeNPMInstructions(
+    'enable-carousel', 
+    array(), 
+    false, 
+    array(
+      "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
+      "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load."
+    )
+  ) 
+?>

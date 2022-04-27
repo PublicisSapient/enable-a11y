@@ -21,7 +21,8 @@
   },
   "animated-gif-with-pause-button.php": {
     "title": "Animated GIFs with Pause Buttons",
-    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag"
+    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
+    "isNPM": "true"
   },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
@@ -33,7 +34,8 @@
   },
   "carousel.php": {
     "title": "Accessible Carousels",
-    "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users."
+    "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
+    "isNPM": "true"
   },
   "checkbox.php": {
     "title": "Accessible Checkboxes",
@@ -41,7 +43,8 @@
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
-    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role"
+    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
+    "isNPM": "true"
   },
   "date.php": {
     "title": "Accessible Date Widget",
@@ -54,11 +57,13 @@
   },
   "dialog.php": {
     "title": "Accessible Modal Dialog",
-    "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are."
+    "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are.",
+    "isNPM": "true"
   },
   "dropdown.php": {
     "title": "Accessible Dropdowns/Drawers/Expando",
-    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accesible with just a little bit of markup."
+    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accesible with just a little bit of markup.",
+    "isNPM": "true"
   },
   "figure.php": {
     "title": "Accessible Figures",
@@ -83,8 +88,9 @@
     "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework."
   },
   "hero-image-text-resize.php": {
-    "title": "Accessible Text in Hero Images",
-    "desc": "How to make text in hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)"
+    "title": "Advanced Text Resizing",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)",
+    "isNPM": "true"
   },
   "img.php": {
     "title": "Accessible Images",
@@ -97,7 +103,8 @@
   },
   "listbox.php": {
     "title": "Accessible Select Boxes (a.k.a. Listboxes)",
-    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what devs must do if they have to use a custom one."
+    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what devs must do if they have to use a custom one.",
+    "isNPM": "true"
   },
   "log.php": {
     "title": "Accessible Log Displays",
@@ -115,12 +122,14 @@
   },
   "multi-level-hamburger-menu.php": {
     "title": "Accessible Flyout/Hamburger Hybrid Menus",
-    "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be."
+    "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
+    "isNPM": "true"
   },
   "pause-anim-control.php": {
     "title": "Pause Animation Controls",
     "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
-    "mainClass": "with-full-bleed-hero"
+    "mainClass": "with-full-bleed-hero",
+    "isNPM": "true"
   },
   "progress.php": {
     "title": "Accessible Progress Bars",
@@ -131,8 +140,9 @@
     "desc": "They way radio buttons are made accessible is slightly different than other form controls."
   },
   "skip-link.php": {
-    "title": "Skip Links",
-    "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does."
+    "title": "Skip Links (That Work In Mobile Too!)",
+    "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
+    "isNPM": "true"
   },
   "slider.php": {
     "title": "Accessible Sliders",
@@ -156,11 +166,13 @@
   },
   "sortable-table.php": {
     "title": "Accessible Sortable Tables",
-    "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly."
+    "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.",
+    "isNPM": "true"
   },
   "pagination-table.php": {
     "title": "Accessible Pagination Table",
-    "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this."
+    "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
+    "isNPM": "true"
   },
   "sortable-pagination-table.php": {
     "title": "Accessible Sortable Paginated Tables",
@@ -168,7 +180,8 @@
   },
   "tabs.php": {
     "title": "Accessible Tabs",
-    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back."
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back.",
+    "isNPM": "true"
   },
   "textbox.php": {
     "title": "Accessible Textboxes",
@@ -193,11 +206,13 @@
   },
   "tooltip.php": {
     "title": "Tooltip",
-    "desc": "If you have a tooltip, ensure it follows accessibility best practices."
+    "desc": "If you have a tooltip, ensure it follows accessibility best practices.",
+    "isNPM": "true"
   },
   "video-player.php": {
     "title": "Accessible Video Player",
-    "desc": "Most web developers don't realize that videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time, and get a WCAG AAA transcript for free!"
+    "desc": "Most web developers don't realize that videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time, and get a WCAG AAA transcript for free!",
+    "isNPM": "true"
   },
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",
@@ -215,5 +230,9 @@
     "title": "FAQ",
     "desc": "FAQ of the Enable Project.",
     "email": "zoltan.dulac@gmail.com"
+  },
+  "npm.php": {
+    "title": "NPM Installation Instructions",
+    "desc": "Instructions on how to install Enables NPM modules into your own projects."
   }
 }

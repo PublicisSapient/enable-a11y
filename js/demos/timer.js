@@ -1,4 +1,4 @@
-import showcode from "../libs/showcode.js";
+import showcode from "../enable-libs/showcode.js";
 
 // Credit: Mateusz Rybczonec
 

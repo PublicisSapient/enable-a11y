@@ -7,10 +7,10 @@
 ******************************************************************************/
 
 /* global $ */
-import showcode from "../libs/showcode.js";
-import '../../libs/jquery/dist/jquery.min.js';
-import '../../libs/jquery-validation/dist/jquery.validate.min.js';
-import accessibility from '../../libs/accessibility-js-routines/dist/accessibility.module.js';
+import showcode from "../enable-libs/showcode.js";
+import '../../enable-node-libs/jquery/dist/jquery.min.js';
+import '../../enable-node-libs/jquery-validation/dist/jquery.validate.min.js';
+import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
 
 const formValidator = new (function () {
   this.init = () => {

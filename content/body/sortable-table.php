@@ -156,4 +156,9 @@
         }
         </script>
 
-        <?= includeNPMInstructions('sortable-tables') ?>
+<?= includeNPMInstructions(
+    'sortable-tables',
+    array(),
+    false,
+    array(),
+    '.pagination__table') ?>

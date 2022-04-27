@@ -1,7 +1,7 @@
 <script type="module">
     import sortableTables from './js/modules/sortable-table.js';
     import paginationTables from "./js/modules/paginate.js";
-    import showcode from "./js/libs/showcode.js";
+    import showcode from "./js/enable-libs/showcode.js";
     
     paginationTables.init();
     sortableTables.init();

@@ -16,7 +16,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import accessibility from "../../libs/accessibility-js-routines/dist/accessibility.module.js";
+import accessibility from "../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js";
 import { interpolate } from "./interpolate.js";
 
 
@@ -157,14 +157,14 @@ const EnableCombobox = function(componentRoot) {
       throw "Error in listMouseDownHandler";
     }
 
-    updateSelectedOption(e.target, index);
+    updateSelectedOption(shownOptions(), index);
     e.target.focus();
+    console.log('inserting value', e.target);
     insertValue();
     field.dispatchEvent(chooseEvent);
   }
 
   function listClickHandler(e) {
-
     if (e.target.getAttribute('role').toLowerCase() === "option") {
       listMouseDownHandler(e);
     }
@@ -516,11 +516,15 @@ const enableComboboxes = new function() {
     }
   }
 
+  this.add = ($el) => {
+    this.list.push(new EnableCombobox($el))
+  }
+
   this.init = () => {
     const $roots = document.querySelectorAll('.enable-combobox');
 
     for (let i = 0; i < $roots.length; i++) {
-      this.list.push(new EnableCombobox($roots[i]));
+      this.add($roots[i]);
     }
 
     document.addEventListener('keyup', keyUpEvent);

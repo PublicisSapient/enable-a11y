@@ -14,9 +14,10 @@
  ******************************************************************************/
 
 /* global AblePlayer, jQuery */
-import '../../libs/jquery/dist/jquery.min.js';
-import '../libs/ableplayer/thirdparty/js.cookie.js';
-import { AblePlayerInstances } from '../libs/ableplayer/build/ableplayer.js';
+import '../../enable-node-libs/jquery/dist/jquery.min.js';
+import '../enable-libs/ableplayer/thirdparty/js.cookie.js';
+import { AblePlayerInstances } from '../enable-libs/ableplayer/build/ableplayer.js';
+
 
 function ablePlayerCustomizations($, extraCustomizations) {
 

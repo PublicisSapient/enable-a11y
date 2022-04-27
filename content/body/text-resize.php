@@ -65,7 +65,13 @@
 
 @px: 16rem;
 
-// 2. Set your pixel values as fractions. For example,
+// 2. set the base font-size of the body tag to the same
+// amount in pixels.
+body {
+  font-size: 16px;
+}
+
+// 3. Set your pixel values as fractions. For example,
 // 16px would be 16/@px, 200px would be 200/@px, and so on.
 
 .example {
@@ -77,9 +83,9 @@
 // Compiled output
 
 // .example {
-// font-size: 1rem;
-// margin: 1.25rem 0;
-// padding: 1.25rem 0.625rem;
+//   font-size: 1rem;
+//   margin: 1.25rem 0;
+//   padding: 1.25rem 0.625rem;
 // }
 
 // http://lesscss.org/features/#features-overview-feature-operations

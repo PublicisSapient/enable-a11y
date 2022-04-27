@@ -1,4 +1,4 @@
-import showcode from "../libs/showcode.js";
+import showcode from "../enable-libs/showcode.js";
 
 const alert = new (function () {
   const sayTimeEl = document.getElementById("say-time");

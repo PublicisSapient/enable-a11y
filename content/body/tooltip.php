@@ -131,4 +131,11 @@
 }
 </script>
 
-<?= includeNPMInstructions('tooltip', array()) ?>
+<?= includeNPMInstructions(
+  'tooltip',
+  array(),
+  false,
+  array(),
+  null,
+  true
+) ?>

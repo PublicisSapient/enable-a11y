@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-import accessibility from '../../libs/accessibility-js-routines/dist/accessibility.module.js';
+import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
 
 
 
@@ -103,7 +103,7 @@ const enableDialog = new function () {
     // If we are using the polyfill, then load it as well
     // as the polyfill accessibility fixes.
     if (!supportsDialog) {
-      import ('../../libs/dialog-polyfill/index.js')
+      import ('../../enable-node-libs/dialog-polyfill/index.js')
       .then((dialogPolyfill) => {
         dialogPolyfill.default.registerDialog(favDialog);
         this.registerFocusRestoreDialog(favDialog);

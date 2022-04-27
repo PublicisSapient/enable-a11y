@@ -584,6 +584,12 @@ accessibility = {
     return r;
   },
 
+  /**
+   * Creates a visually hidden HTML element that will only be accessible
+   * to keyboard users.  
+   * 
+   * @returns The new HTML trap element.
+   */
   createKeyboardTrap() {
     const trap = document.createElement("div");
     trap.classList.add("enable-tabtrap");
@@ -594,6 +600,12 @@ accessibility = {
   },
 
 
+  /**
+   * Removes a keyboard focus loop on the passed element
+   * that was set by the `setKeyboardFocusLoop()` method.
+   * 
+   * @param {HTMLElement} element - The HTML trap element to remove. 
+   */
   removeKeyboardFocusLoop(element) {
     document.querySelectorAll('.enable-tabtrap').forEach((el) => {
       if (el.classList.contains('enable-tabtrap__first')) {
@@ -605,6 +617,11 @@ accessibility = {
     })
   },
 
+  /**
+   * Sets a keyboard focus loop on the passed element.
+   *  
+   * @param {HTMLElement} el - The HTML element that a focus loop will be applied to.
+   */
   setKeyboardFocusLoop(el) {
     const firstTrap = this.createKeyboardTrap();
     const lastTrap = this.createKeyboardTrap();
@@ -612,18 +629,41 @@ accessibility = {
     this.applyKeyboardTraps(el, firstTrap, lastTrap);
   },
 
+  /**
+   * Determines what element has a focus loop applied, and applies focus to the
+   * first tabbable HTML element in it.
+   * 
+   * @param {Event} e - the focus event fired from the `applyKeyboardTraps()` method.
+   */
   focusFirstElement(e) {
     const { activeSubdocument, tabbableSelector } = this;
     const tabbableEls = activeSubdocument.querySelectorAll(tabbableSelector);
     tabbableEls[1].focus();
   },
   
+  /**
+   * Determines what element has a focus loop applied, and applies focus to the
+   * last tabbable HTML element in it.
+   * 
+   * @param {Event} e - the focus event fired from the `applyKeyboardTraps()` method.
+   */
   focusLastElement(e) {
     const { activeSubdocument, tabbableSelector } = this;
     const tabbableEls = activeSubdocument.querySelectorAll(tabbableSelector);
     tabbableEls[tabbableEls.length - 2].focus();
   },
 
+  /**
+   * Used by setKeyboardFocusLoop().  Inserts the two visually hidden focus trap 
+   * elements to the passed element: one as its first tabbable element, the other
+   * as the last.
+   * 
+   * @param {HTMLElement} element - the element where a focus loop should be applied.
+   * @param {HTMLElement} firstTrap - the first visually hidden focus trap 
+   * element
+   * @param {HTMLElement} lastTrap - the last visually hidden focus trap 
+   * element
+   */
   applyKeyboardTraps(element, firstTrap, lastTrap) {
     firstTrap.classList.add('enable-tabtrap__first');
     firstTrap.addEventListener("focus", this.focusLastElement.bind(this));
@@ -860,4 +900,5 @@ accessibility = {
     this.initGroup(el, options);
   }
 };
+
 export default accessibility;

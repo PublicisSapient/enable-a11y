@@ -13,7 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import showcode from "../libs/showcode.js";
+import showcode from "../enable-libs/showcode.js";
 import enableDialog from "../modules/enable-dialog.js";
 
 

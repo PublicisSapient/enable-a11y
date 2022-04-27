@@ -39,7 +39,7 @@
           <figure>
 
             <figcaption id="line-chart__fig-caption" class="caption">
-              Family Birthdays (Table Coded Using Figcaption)
+              Canadian Ice Cream Mix Production, in kilolitres
             </figcaption>
             <div id="raw-data__content">
               <!-- This will have the table data inserted here via JavaScript -->

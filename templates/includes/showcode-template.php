@@ -22,8 +22,8 @@
           <?php if ($isInteractive): ?>
           <?= $extra ?>
           <?php endif ?>
-          <div class="showcode">
-            <?php if ($isInteractive): ?>
+
+          <?php if ($isInteractive): ?>
               <form class="showcode__ui">
             <?php endif ?>
             <?php if ($isInteractive): ?>
@@ -44,6 +44,10 @@
               </div>
               <?php if ($isInteractive): ?>
             </form><?php endif ?>
+
+
+          <div class="showcode">
+            
             <pre class="showcode__example"><code
                         data-showcode-id="<?= $id ?>"
                         data-showcode-props="<?= $id ?>-props"

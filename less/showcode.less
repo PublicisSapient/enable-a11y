@@ -21,13 +21,16 @@ code {
   @code-focus-outline-gap: 4px;
   background-color: rgb(245, 222, 179);
 
-  border: @border;
   clip-path: polygon(
     0 0,
     100% 0%,
     100% calc(100% - @clip-bottom),
     0 calc(100% - @clip-bottom)
   );
+
+  &--no-js-container {
+    clip-path: none;
+  }
 
   &__container {
     position: relative;
@@ -205,6 +208,7 @@ code {
     z-index: 1;
     background-color: rgb(245, 222, 179);
     padding: 0.01em;
+    border: solid 1px #666;
 
     @media @desktop {
       top: 0;

@@ -131,8 +131,97 @@
 <p>I encourage everyone reading this to implement this on all the websites they code. From a UX perspective, it just
   makes it easier for everyone to use the websites you code.</p>
 
-<!--
+<h2>Issues with CSS Transitions and CSS outline in Safari</h2>
+
+<p>
+  On a few projects, I have noticed that Safari focus states don't appear correctly when the element that is focused has the following CSS applied to it:
+</p>
+
+<figure class="wide">
+  <?php includeShowcode("transition-all-code", "", "", "", false)?>
+
+  <figcaption>Figure 4. CSS <strong>transition: all</strong> code that should be avoided.</figcaption>
+</figure>
+
+<script type="application/json" id="transition-all-code-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Bad transition all CSS code that should be avoided.",
+    "highlight": "%INLINE%transition-all-code",
+    "notes": ""
+  }]
+}
+</script>
+
+<template id="transition-all-code" data-type="css">
+  a {
+    transition: all 0.3s ease-in-out;
+  }
+</template>
+
+<p>
+  The above CSS can mess up Safari focus states: they may appear cut off or may not appear at all in Safari, while they may appear fine in other web browsers.  <strong>The correct way to fix this is to <em>never</em> use <code> transition: all</code> in your CSS.</strong> Using <code>all</code>.  There are many reasons why you should never use not use the <code>all</code> keyword for transitions (in this case, because of unwanted side-effects, but also for performance reasons).  <a href="https://www.pno.dev/"></a> has written a great write-up on <a href="https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/">why you shouldn't use the 'all' keyword in CSS transitions</a>, and I suggest all developers read this.
+</p>
+
+<p>
+  If removing the <code>all</code> transition code will cause problems in your project, you can use the following hack to fix the code in Safari:
+</p>
+
+<figure class="wide">
+  <?php includeShowcode("fix-transition-all-code", "", "", "", false)?>
+
+  <figcaption>Figure 5. Fix for Safari to work around <strong>transition: all</strong> code issue.</figcaption>
+</figure>
+
+<script type="application/json" id="fix-transition-all-code-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Fix for Safari.",
+    "highlight": "%INLINE%fix-transition-all-code",
+    "notes": ""
+  }]
+}
+</script>
+
+<template id="fix-transition-all-code" data-type="css">
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  /* Safari only*/
+  *:focus { transition: none !important; }
+
+}
+</template>
+
+
+<p>
+  Note that <strong>it is much better to remove the <code>all</code> keyword and just transtition what you need instead.</strong>  This solution should only be a band-aid solution until you can fix the issue properly.
+</p>
+
+
 <h2>Don't Forget Windows High Contrast Mode Users.</h2>
 
-Sometimes, you will want to style focus states without the CSS <code>outline</code> property.  If you do this, consider also using outline with the <code>transparent</code> colour:
--->
+Sometimes, you will want to style focus states without the CSS <code>outline</code> property.  If you do this, but instead of using <code>outline: none</code> to remove the default focus ring, developers should use outline with the <code>transparent</code> colour:
+
+
+<figure class="wide">
+  <?php includeShowcode("transparent-outline-code", "", "", "", false)?>
+
+  <figcaption>Figure 6. Adding a transparent outline along with your custom focus state that doesn't have an outline</figcaption>
+</figure>
+
+<script type="application/json" id="transparent-outline-code-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Transparent outline fix",
+    "highlight": "%INLINE%transparent-outline-code",
+    "notes": ""
+  }]
+}
+</script>
+
+<template id="transparent-outline-code" data-type="css">
+button.special-style:focus { outline: transparent 2px solid; border-bottom: 2px solid #00f; }
+</template>

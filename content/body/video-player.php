@@ -85,7 +85,7 @@
 
         <div id="example1">
             <div class="enable-video-player">
-                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/libs/ableplayer/" data-heading-level="3">
+                <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
                     <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English" >
                     <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
                         label="English Audio Descriptions" >
@@ -147,4 +147,15 @@
         }
         </script>
 
-    <?= includeNPMInstructions('ablePlayerCustomizations') ?>
+    <?= includeNPMInstructions(
+        'ablePlayerCustomizations',
+        array(),
+        false,
+        array(
+            "otherImports" => "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';"
+        ),
+        null,
+        false,
+        true
+    )
+    ?>

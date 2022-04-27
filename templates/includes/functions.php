@@ -56,13 +56,16 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
 }
 
 
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false, $other = array()) {
+function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false, $other = array(), $doesHaveAddMethod = null, $willWorkAfterPageLoad = false, $noInit = false) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
     'moduleVar' => dashesToCamelCase($moduleName),
     'supportingModuleNames' => $supportingModuleNames,
     'isPolyfill' => $isPolyfill,
-    'other' => $other
+    'other' => $other,
+    'doesHaveAddMethod' => $doesHaveAddMethod,
+    'willWorkAfterPageLoad' => $willWorkAfterPageLoad,
+    'noInit' => $noInit
   ));
 }
 
@@ -119,9 +122,17 @@ function includeShowcodeStaticEnd() {
 
 function getURIFilename() {
   $uri =  $_SERVER['REQUEST_URI'];
+
   $uriFile = explode('/', $uri);
-  $uriFile = $uriFile[count($uriFile) - 1];
-  return $uriFile;
+
+  $lastIndex = count($uriFile) - 1;
+  $dirSlug = $uriFile[$lastIndex - 1];
+  $fileSlug =  $uriFile[$lastIndex];
+  if ($dirSlug === 'info') {
+    return $dirSlug . '/' . $fileSlug;
+  } else {
+    return $fileSlug;
+  }
 }
 
 function getMetadata() {

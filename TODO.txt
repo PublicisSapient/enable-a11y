@@ -7,6 +7,41 @@ Safari OSX:
 
 Aria-label vs tabindex="-1"
 
+COMPONENTS ADDED AFTER PAGE LOAD
+CAROUSEL -- NEW ITEMS AFTER PAGE LOAD.
+
+EDITING VTT FILES FROM TEAMS:
+
+1) Open Visual Studio Code with the vtt file and do a reg ex searchon this:
+
+([^0-9])\n([^\r\n0-9])
+
+And replace with this;
+
+$1 $2
+
+
+2) Do a sync on the subtitles (there will be a delta of about X seconds -- i think it's about 10 ... not sure).
+
+3) Do a repetitive Tools -> Break/split small links
+
+4) Do a spell check
+
+5) Go over copy once over in Visual Studio code.
+
+6) Go over copy again in Subtitle Edit.
+
+
+
+
+
+
+
+
+
+
+
+
 NEED TO LOOK AT MOBILE TOOLTIPS.
 INTERPOLATE.JS and other modules.
 RECHECK ES6 MODULE INFO.

@@ -1,5 +1,5 @@
-import showcode from "../libs/showcode.js";
-import textZoomEvent from '../../libs/text-zoom-event/dist/textZoomEvent.module.js';
+import showcode from "../enable-libs/showcode.js";
+import textZoomEvent from '../../enable-node-libs/text-zoom-event/dist/textZoomEvent.module.js';
 
 const svgTextSpacingDemo = new function() {
     const pathEl = document.getElementById('accessible-text-svg-demo__svgTextPath');

@@ -40,5 +40,7 @@
   rel="stylesheet"
   href="css/pause-animations-demo.css" />
 
-
+  <link id="pause-anim-css"
+  rel="stylesheet"
+  href="css/pause-anim-control.css" />
 

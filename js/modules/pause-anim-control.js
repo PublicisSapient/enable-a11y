@@ -91,7 +91,7 @@
       // for vanilla HTML5 Videos
       document.querySelectorAll('video').forEach((el) => {
         const { dataset } = el;
-        if (!dataset.ablePlayer && !dataset.notPausableByEnable && !el.paused) {
+        if (!dataset.ablePlayer && !dataset.notPausableByEnable) {
           dataset.pausedWithEnableControl = true;
           el.pause();
         }
@@ -148,7 +148,6 @@
   }
 
   this.pauseSMIL = (el) => {
-    console.log('PAUSE', el.outerHTML);
     const svgEl = el.closest('svg');
 
     if (this.$checkbox.checked) {
@@ -216,7 +215,6 @@
 
   }
 
-  this.init();
 }
 
 const pauseAnimControl = new PauseAnimControlDef();

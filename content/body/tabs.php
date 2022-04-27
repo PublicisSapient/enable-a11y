@@ -188,7 +188,7 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
     {
       "label": "Use data-owns to connect tabs with their tabpanel",
       "highlight": "%INLINE%originalHTMLExample1 ||| data-owns",
-      "notes": "This will be used by the JavaScript code to connect the tab with the tabpanel using aria-owns"
+      "notes": "This will be used by the JavaScript code to connect the tab with the tabpanel using aria-controls"
     },
     {
       "label": "Your JavaScript should place ARIA roles in document",
@@ -197,8 +197,8 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
     },
     {
       "label": "Your JavaScript should connect tabs to tabpanels",
-      "highlight": "%INLINE%example1 ||| aria-owns",
-      "notes": "Each <strong>tab</strong> must have an <strong>aria-owns</strong> attribute that corresponds to its <strong>tabpanel</strong>."
+      "highlight": "%INLINE%example1 ||| aria-controls",
+      "notes": "Each <strong>tab</strong> must have an <strong>aria-controls</strong> attribute that corresponds to its <strong>tabpanel</strong>."
     },
     {
       "label": "Your JavaScript should apply aria-selected values are set correctly",
@@ -224,4 +224,10 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 }
 </script>
 
-<?= includeNPMInstructions('tabs') ?>
+<?= includeNPMInstructions(
+  'tabs',
+  array(),
+  false,
+  array(),
+  '.enable-tablist'
+) ?>

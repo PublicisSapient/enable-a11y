@@ -57,32 +57,69 @@
 
 <ol>
   <li>
-    <a href="info/npm.php">Install the <code>enable-a11y</code> NPM project</a>. Developers who are using webpack should
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>. Developers who are using webpack should
     know <a href="info/webpack.php">how to configure webpack to import the enable modules correctly</a>.
   </li>
   <li>
     You can use the module like this:
 
     <?php includeShowcodeStaticBegin() ?>
+// import the JS module
 import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
-@import '~enable-a11y/css/<?= $moduleName ?>';
 
-...
+<?= $other["otherImports"] ?? '' ?>
 
+
+// import the CSS for the module
+import '~enable-a11y/css/<?= $moduleName ?>';
+
+
+<?php 
+  if (!$noInit) {
+?> 
 // How to initialize the <?= $moduleVar ?> library
 <?= $moduleVar ?>.init();
+<?php
+  } else {
+?>
+// There is no .init() function to call.
+<?php
+  }
+?>
 
-...
+<?php
+  if (isset($doesHaveAddMethod)) {
+?>
+// If you are adding a new instance of this component after page load, 
+// then do the following (where el is the DOM node of the newly created 
+// element, which contains the CSS class <?= $doesHaveAddMethod ?>):
+el.add();
+<?php
+  }
+?>
 
+<?php 
+  if ($willWorkAfterPageLoad) {
+?>
+// Note that this component will work with DOM elements coded like
+// the examples above added after page load.  There is no need to call
+// an .add() method, like we do with the Enable combobox component.
+<?php
+  }
+?>
+
+<?= $other["otherSampleCode"] ?? '' ?>
     <?php includeShowcodeStaticEnd() ?>
     <?= $other["es6Notes"] ?? '' ?>
   </li>
   <li>
-    Alternatively, you can include the styles in your project's CSS using:
+    Alternatively, if you are using LESS you can include the styles in your project's CSS using:
 
     <?php includeShowcodeStaticBegin() ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
     <?php includeShowcodeStaticEnd() ?>
+
+    (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
   </li>
 </ol>
 
@@ -94,7 +131,7 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 
 <ol>
   <li>
-    Grab the source by either <a href="info/npm.php">using NPM</a>, <a
+    Grab the source by either <a href="npm.php">using NPM</a>, <a
       href="https://github.com/zoltan-dulac/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a
       href="https://github.com/zoltan-dulac/enable-a11y">cloning the enable source code</a> from github.
   </li>

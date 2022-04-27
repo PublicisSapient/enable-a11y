@@ -2,7 +2,7 @@ const fs = require('fs');
 const fsExtra = require('fs-extra')
 
 console.log('clearing lib directory');
-fsExtra.emptyDirSync('libs');
+fsExtra.emptyDirSync('enable-node-libs');
 
 
 // we must copy the needed node modules into the lib directory
@@ -21,7 +21,7 @@ const nodeFiles = [
 nodeFiles.forEach((fullPath) => {
   const explodedPath = fullPath.split('/');
   let fileName = explodedPath.pop();
-  let dir = explodedPath.join('/').replace(/^node_modules\//, 'libs/');
+  let dir = explodedPath.join('/').replace(/^node_modules\//, 'enable-node-libs/');
   console.log('dir', dir);
   
   if (!fs.existsSync(dir)) {

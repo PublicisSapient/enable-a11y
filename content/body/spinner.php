@@ -205,4 +205,10 @@
 }
 </script>
 
-<?= includeNPMInstructions('spinbutton', array()) ?>
+<?= includeNPMInstructions(
+  'spinbutton',
+  array(),
+  false,
+  array(),
+  '.spinbutton'
+) ?>

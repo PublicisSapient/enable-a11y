@@ -15,7 +15,7 @@ const parseDate = d3.timeParse("%d-%b-%y");
 // Set the ranges
 // Enable changed d3.time.scale changed to d3.scaleTime and d3.scale.linear changed to d3.scaleLinear
 // details: https://stackoverflow.com/questions/39369789/how-to-solve-typeerror-d3-time-is-undefined
-const x = d3.scaleLinear().range([0, width]);
+const x = d3.scaleTime().range([0, width]);
 const y = d3.scaleLinear().range([height, 0]);
 
 // Define the axes
@@ -23,15 +23,15 @@ const y = d3.scaleLinear().range([height, 0]);
 // to d3.axisBottom(x) and
 // d3.svg.axis().scale(y).orient("left") to d3.axisLeft(y) as per
 // https://stackoverflow.com/questions/40465283/what-is-d3-svg-axis-in-d3-version-4
-const xAxis = d3.axisBottom(x).ticks(10).tickFormat(d3.format("d"));
+const xAxis = d3.axisBottom(x).ticks(5);
 
 const yAxis = d3.axisLeft(y).ticks(5);
 
 // Define the line
 // https://github.com/d3/d3/blob/main/CHANGES.md
 const valueline = d3.line()
-  .x(function (d) { return x(d.year); })
-  .y(function (d) { return y(d.amount); });
+  .x(function (d) { return x(d.date1); })
+  .y(function (d) { return y(d.close); });
 
 // Adds the svg canvas
 const svg = d3.select("#visual-chart__content")
@@ -43,16 +43,17 @@ const svg = d3.select("#visual-chart__content")
     "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("../../data/ice-cream.csv").then(function (data) {
+d3.csv("../../data/line-chart.csv").then(function (data) {
   data.forEach(function (d) {
-    console.log(d);
-    //d.year = +d.year;
-    d.amount = +d.amount;
+    d.date1 = parseDate(d.date);    //  <= Change to date1
+    d.close = +d.close;
+    d.open = +d.open;  //  <= added this for tidy house keeping
+    d.diff = Math.round((d.close - d.open) * 100) / 100;
   });
 
   // Scale the range of the data
-  x.domain(d3.extent(data, function (d) { return d.year; }));//<=year
-  y.domain([0, d3.max(data, function (d) { return d.amount; })]);
+  x.domain(d3.extent(data, function (d) { return d.date1; }));//<=date1
+  y.domain([0, d3.max(data, function (d) { return d.close; })]);
 
   // Add the valueline path.
   svg.append("path")
@@ -110,7 +111,7 @@ d3.csv("../../data/ice-cream.csv").then(function (data) {
   }
 
   // render the table
-  const peopleTable = tabulate(data, ["year", "amount"]);
+  const peopleTable = tabulate(data, ["date", "close", "open", "diff"]);
 
   peopleTable.selectAll("tbody tr")
     .sort(function (a, b) {

@@ -1,3 +1,9 @@
+@import "shared/mixins-and-vars";
+
+body {
+  --text-zoom-factor: 1;
+}
+
 .chart-example {
   path {
     stroke: steelblue;
@@ -18,5 +24,12 @@
     border: solid 1px black;
   }
 
+  svg {
+    font-size: 16px;
+  }
+
+  .tick text{
+    font-size: calc(10px * var(--text-zoom-factor ));
+  }
 
 }

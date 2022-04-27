@@ -440,4 +440,11 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-listbox') ?>
+<?= includeNPMInstructions(
+  'enable-listbox',
+  array(),
+  false,
+  array(),
+  null,
+  true
+) ?>
