@@ -61,6 +61,7 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined' && typeof E
  */
 const a11yGroup = function(el, options) {
   let mousedown = false;
+  let keydown = false;
   let keyboardOnlyInstructionsId;
   let keyboardOnlyInstructionsEl;
 
@@ -117,6 +118,7 @@ const a11yGroup = function(el, options) {
       el.addEventListener('focusout', this.focusoutEvent);
     }
 
+    document.addEventListener('keydown', this.keydownEvent);
     el.addEventListener('focusin', this.focusinEvent);
 
     /* if (focusCallback) {
@@ -131,6 +133,10 @@ const a11yGroup = function(el, options) {
     mousedown = true;
   }
 
+  this.keydownEvent = (e) => {
+    keydown = true;
+  }
+
   /**
    * Fired when a group is focused into. Used internally only.
    * 
@@ -139,13 +145,13 @@ const a11yGroup = function(el, options) {
   this.focusinEvent = (e) => {
     const groupEls = e.currentTarget.querySelectorAll(`[role="${this.groupType}"]`);
     if (keyboardOnlyInstructionsEl) {
-      if (!mousedown) {
+      if (!mousedown && keydown) {
         // show instructions if they exist
         keyboardOnlyInstructionsEl.classList.remove(this.visuallyHiddenClass);
       }
     }
 
-    if (!mousedown && !this.allowTabbing && this.groupType !== 'option') {
+    if (!mousedown && keydown && !this.allowTabbing && this.groupType !== 'option') {
       for (let i = 0; i < groupEls.length; i++) {
         const el = groupEls[i];
         if (el.getAttribute(this.checkedAttribute) === 'true') {
@@ -155,13 +161,16 @@ const a11yGroup = function(el, options) {
       }
     }
     mousedown = false;
+    keydown = false;
   }
 
   /**
    * Fired when a group is focused out. Used internally only.
    */
   this.focusoutEvent = () => {
-    keyboardOnlyInstructionsEl.classList.add(this.visuallyHiddenClass);
+    if (!mousedown && keydown) {
+      keyboardOnlyInstructionsEl.classList.add(this.visuallyHiddenClass);
+    }
   }
 
   /**

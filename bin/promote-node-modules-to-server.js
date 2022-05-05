@@ -1,6 +1,7 @@
 const fs = require('fs');
 const fsExtra = require('fs-extra')
 
+console.log('echo "Running promote-node-modules-to-server.js')
 console.log('clearing lib directory');
 fsExtra.emptyDirSync('enable-node-libs');
 

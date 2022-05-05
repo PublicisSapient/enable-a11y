@@ -58,6 +58,7 @@ const tabgroup = new function () {
       // This sets what the sr-only class is (default is .sr-only)
       visuallyHiddenClass: "sr-only",
 
+
       // When the user uses the arrow key to select on of the tabs,
       // this method is called afterwards.  It hides all the tabpanels
       // except for the one that checked tab is supposed to show (the

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Running convert-modules-to-libs.sh";
+
 cd js/modules/
 
 if [ ! -d "es4" ]
