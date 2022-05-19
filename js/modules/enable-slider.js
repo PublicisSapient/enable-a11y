@@ -155,8 +155,8 @@ const enableSlider = function(
     const $handle = document.getElementById(id);
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
-    const $incrementor = $handle.querySelector(".enable-slider__increase");
-    const $decrementor = $handle.querySelector(".enable-slider__decrease");
+    const $incrementor = $handle.querySelector(".enable-slider__increase .enable-slider__button-label");
+    const $decrementor = $handle.querySelector(".enable-slider__decrease .enable-slider__button-label");
 
     // position handle
     this.positionHandle($handle, $handleButton, val);

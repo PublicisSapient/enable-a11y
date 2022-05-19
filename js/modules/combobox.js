@@ -138,6 +138,16 @@ const EnableCombobox = function(componentRoot) {
     } else {
       hideMenu();
     }
+
+    // ensure this doesn't result is a page zoom in iOS
+    resetPageZoom();
+  }
+
+  const resetPageZoom = () => {
+    const viewportmeta = document.querySelector('meta[name=viewport]');
+    if (viewportmeta) {
+      accessibility.resetZoom();
+    }
   }
 
   function listMouseDownHandler(e) {
@@ -146,8 +156,8 @@ const EnableCombobox = function(componentRoot) {
     let index = -1;
     for (var i = 0, c = so.length; i < c; i++) {
       var o = so[i];
-      if (o == target) {
-        index = i+1;
+      if (o === target) {
+        index = i;
         break;
       }
     }
@@ -159,7 +169,6 @@ const EnableCombobox = function(componentRoot) {
 
     updateSelectedOption(shownOptions(), index);
     e.target.focus();
-    console.log('inserting value', e.target);
     insertValue();
     field.dispatchEvent(chooseEvent);
   }
@@ -203,6 +212,7 @@ const EnableCombobox = function(componentRoot) {
     }
 
     if (!enableComboboxes.isKeyboardUser) {
+      console.log('setting loop');
       accessibility.setMobileFocusLoop(controlsContainer);
     }
     
@@ -237,6 +247,10 @@ const EnableCombobox = function(componentRoot) {
     // for keyboard users.
     if (!enableComboboxes.isKeyboardUser) {
       accessibility.removeMobileFocusLoop();
+      requestAnimationFrame(() => {
+        // executing here due to a bug in VoiceOver iOS
+        accessibility.removeMobileFocusLoop();
+      });
     }
 
     updateStatus(message, true);

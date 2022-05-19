@@ -349,17 +349,46 @@ input[type="range"] {
   &__button {
     .appearance(none);
     border: none;
+    background: green;
+    color: white;
+
+    &-label {
+      display: inline-block;
+      transform: translateY(-2px);
+
+
+      .enable-slider--vertical & {
+        transform: rotate(90deg) translateX(-3px);
+      }
+    }
 
     &-container {
       position: absolute;
-      top: -3px;
+      top: -2px;
+      width: (8/@px);
+      height: (12/@px);
+
+      .enable-slider--vertical & { 
+        height: (10/@px);
+      }
+
 
       &--decrease {
-        left: -25px;
+        left: 2px;
+
+        .enable-slider--vertical & {
+          left: 3px;
+          bottom: 6px;
+        }
       }
 
       &--increase {
-        right: -25px;
+        right: 2px;
+
+        .enable-slider--vertical & {
+          right: 3px;
+          top: 8px;
+        }
       }
     }
   }

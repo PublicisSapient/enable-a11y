@@ -1,7 +1,7 @@
 <script id="range-input-event">
     var rangeInputEvent = new function() {
         this.init = () => {
-            document.addEventListener('input', e => {
+            document.addEventListener('input', e => { 
                 const {
                     target
                 } = e;

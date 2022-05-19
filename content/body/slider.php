@@ -43,12 +43,14 @@
 
 
 <div id="html-example" class="enable-example">
-  <form oninput="this.elements.myOutput.innerHTML = parseFloat(this.elements.donationAmount.value);">
+  <form ">
     <label for="horizontal-slider" class="html-slider__label enable-slider__label">Amount you want
       to donate to the Zoltan Hawryluk Developer Fund: </label>
     <div>
       <div class="html-slider__container">
-        <input type="range" id="horizontal-slider" name="donationAmount" value="500" min="0" max="1000" step="50">
+        <input type="range" id="horizontal-slider" name="donationAmount" value="500" min="0" max="1000" step="50"
+        onchange="this.form.elements.myOutput.innerHTML = parseFloat(this.value);"       
+        >
       </div>
       <output class="html-slider__output" name="myOutput" role="presentation">500</output>
     </div>
@@ -99,9 +101,12 @@
       "notes": "Just like any inteactive component, it needs a label"
     },
     {
-      "label": "Set an oninput event to display current value.",
-      "highlight": "oninput=\"[^\"]*\" ||| id=\"myOutput\"",
-      "notes": "This is so sighted users can see the value of the slider."
+      "label": "Set an onchange event to display current value.",
+      "highlight": "onchange=\"[^\"]*\" ||| id=\"myOutput\"",
+      "notes": [
+        "<p>This is so sighted users can see the value of the slider.  Although I implemented this inline, you should use <code>.addEventListener</code> instead.</p>",
+        "<p><strong>Note:</strong> Originally, I used an <code>oninput</code> event on the form element to do this, but this wasn't being captured by iOS with VoiceOver on, so I changed it to this.  Keep that in mind when you implement this yourself.</p>"
+      ]
     },
     {
       "label": "Set the output tag's role to presentation",
@@ -467,31 +472,7 @@
 </script>
 
 
-<h2>A Vertical ARIA Slider</h2>
 
-<div id="vertical-example" class="enable-example">
-  <div id="sr3_global_label" class="enable-slider__label">Approximately how much money would you be willing to
-    invest in your RRSPs in the next
-    years</div>
-
-  <div id="sr3_label1" class="enable-slider__hidden-label">Minimum investment amount</div>
-  <div id="sr3_label2" class="enable-slider__hidden-label">Maximum investment amount </div>
-  <div class="enable-slider enable-slider--vertical" id="sr3" data-min="1900" data-max="2008" data-inc="1"
-    data-jump="10" data-show-vals="true" data-range="true" data-val1="1950" data-val2="2008">
-  </div>
-</div>
-
-<?php includeShowcode("vertical-example")?>
-<script type="application/json" id="vertical-example-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [{
-    "label": "Insert class in root element to make this slider vertical",
-    "highlight": "enable-slider--vertical",
-    "notes": "All the other steps are the same as the previous example."
-  }]
-}
-</script>
 
 
 <div id="template-code">
@@ -511,7 +492,7 @@
           <div id="${id}__decrease-label" class="${classNameRoot}__hidden-label">Decrease Value</div>
           <button aria-labelledby="${arialabelledby} ${id}_val ${id}__decrease-label"
             class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button" tabindex="-1">
-            ‹
+            <span class="${classNameRoot}__button-label">‹</span>
           </button>
         </span>
         <span
@@ -519,7 +500,7 @@
           <div id="${id}__increase-label" class="${classNameRoot}__hidden-label">Increase Value</div>
           <button aria-labelledby="${arialabelledby} ${id}_val ${id}__increase-label"
             class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button" tabindex="-1">
-            ›
+            <span class="${classNameRoot}__button-label">›</span>
           </button>
         </span>
       </div>

@@ -59,7 +59,7 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined' && typeof E
  *      - el (the element that was checked),
  *      - group (the radiogroup that el is contained in)
  */
-const a11yGroup = function(el, options) {
+const a11yGroup = function (el, options) {
   let mousedown = false;
   let keydown = false;
   let keyboardOnlyInstructionsId;
@@ -72,7 +72,7 @@ const a11yGroup = function(el, options) {
    * @param {int} m - the divisor
    * @returns {int} The positive modulo of n mod m.
    */
-  this.mod = function(n, m) {
+  this.mod = function (n, m) {
     return ((n % m) + m) % m;
   };
 
@@ -206,11 +206,11 @@ const a11yGroup = function(el, options) {
         currentEl.setAttribute(checkedAttribute, checkedState);
         currentEl.dispatchEvent(new CustomEvent(
           (checkedState === 'true' ? this.activatedEventName : this.deactivatedEventName), {
-            'bubbles': true,
-            detail: {
-              group: () => group
-            }
+          'bubbles': true,
+          detail: {
+            group: () => group
           }
+        }
         ))
         if (currentEl === memberEl) {
           if (document.activeElement !== document.body) {
@@ -649,7 +649,7 @@ accessibility = {
     const tabbableEls = activeSubdocument.querySelectorAll(tabbableSelector);
     tabbableEls[1].focus();
   },
-  
+
   /**
    * Determines what element has a focus loop applied, and applies focus to the
    * last tabbable HTML element in it.
@@ -875,6 +875,74 @@ accessibility = {
     return $ariaControlsEl;
   },
 
+  /*!
+   * Determine if an element is in the viewport
+   * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+   * @param  {Node}    elem The element
+   * @return {Boolean}      Returns true if element is in the viewport
+   */
+  isInViewport(elem) {
+    var distance = elem.getBoundingClientRect();
+    return (
+      distance.top >= 0 &&
+      distance.left >= 0 &&
+      distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  },
+
+
+  /**
+   * Resets the page zoom on a webpage when virtual keyboard appears when an input
+   * field is focused on iOS.  Doesn't affect Android, since it doesn't have this
+   * default behavior.
+   * 
+   * Code based on Jason Miller's Codepen:
+   * https://codepen.io/developit/pen/YBgjoo
+   */
+  resetZoom() {
+    const $origMetaViewport = document.querySelector('meta[name="viewport"]');
+    const origContentValue = $origMetaViewport.getAttribute('content');
+    
+    if (origContentValue.indexOf('user-scalable=no') > -1) {
+      console.warn('user-scalable=no is set in the <meta name="viewport">.  You must fix this in order for the page to be accessible');
+    }
+
+    // Let's temporarily turn off the ability to turn off zooming.
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', 'viewport')
+    meta.setAttribute('content', 'width=device-width, initial-scale=1, user-scalable=no');
+
+    const zoom = document.documentElement.style.zoom;
+    document.documentElement.style.zoom = 0.99;
+    document.head.appendChild(meta);
+
+    window.requestAnimationFrame(() => {
+      // reset zoom level back to what it was.
+      document.documentElement.style.zoom = zoom;
+
+      // Let's turn zooming back on.
+      document.head.removeChild(meta);
+
+      // if the virtual keyboard is opened, we need to check to see if the
+      // focused element is under it. If so, nudge it so it is visible onscreen.
+      if (window.visualViewport !== 0) {
+        const  { pageYOffset, innerHeight } = window;
+        const bottomY = pageYOffset + innerHeight;
+        const midY = pageYOffset + (innerHeight / 2);
+        const { activeElement } = document;
+        const activeElementY = pageYOffset + activeElement.getBoundingClientRect().top;
+
+        if (midY <= activeElementY && activeElementY <= bottomY) {
+          setTimeout(() => {
+            window.scrollTo(0, activeElementY - (innerHeight / 4));
+          }, 100);
+        }
+      }
+    });
+  },
+
+
   /**
    * Calling this method will give accessibility debugging information
    * into your app.  For now, this consists of stack trace information
@@ -883,7 +951,7 @@ accessibility = {
   setDebugMode() {
     HTMLElement.prototype.oldFocus = HTMLElement.prototype.focus;
 
-    HTMLElement.prototype.focus = function() {
+    HTMLElement.prototype.focus = function () {
       this.oldFocus();
     };
   },
@@ -894,7 +962,7 @@ accessibility = {
    * @param {HTMLElement} el - the group element
    * @param {Object} options - see a11yGroup.init for possible properties.
    */
-  initGroup: function(el, options) {
+  initGroup: function (el, options) {
     this.groups.push(new a11yGroup(el, options));
   },
 
@@ -904,7 +972,7 @@ accessibility = {
    * @param {HTMLElement} el - the group element
    * @param {Object} options - see a11yGroup.init for possible properties.
    */
-  setArrowKeyRadioGroupEvents: function(el, options) {
+  setArrowKeyRadioGroupEvents: function (el, options) {
     console.warn('Note: this method is deprecated.  Please use .initGroup instead.');
     this.initGroup(el, options);
   }

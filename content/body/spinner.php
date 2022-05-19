@@ -56,8 +56,11 @@
 <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.')) ?>
 
 <div id="html-example" class="enable-example">
-  <label id="html_number" class="sbLabel" for="type-number">Quantity between 500 and 1000</label>
-  <input id="type-number" type="number" min="500" max="1000" value="500">
+  <form>
+    <label id="html_number" class="sbLabel" for="type-number">Quantity between 500 and 1000</label>
+    <input id="type-number" type="number" inputmode="numeric" min="500" max="1000" value="500">
+    <button type="submit">Submit</button>
+  </form>
 </div>
 
 
@@ -76,6 +79,11 @@
       "notes": ""
     },
     {
+      "label": "Add inputmode attribute to text input",
+      "highlight": "inputmode",
+      "notes": "This is needed so iOS Safari users will receive a numeric keyboard instead of the full querty keyboard when the edit the data in this control. If you don't need the decimal point, you can use <code>pattern=\"\\d*\"</code> instead.  Chrome on Android only needs the <code>type=\"number\"</code> to bring up the numeric keyboard."
+    },
+    {
       "label": "Add min, max and current value attributes",
       "highlight": "min ||| max ||| value",
       "notes": ""
@@ -85,6 +93,16 @@
 </script>
 
 <h2>HTML numeric value that isn't a quanity</h2>
+
+<p>
+  It is possible to have a numeric input without the spinner by using
+  <code>&lt;input type="text" inputmode="numeric"
+              pattern="[0-9]*"&gt;</code>. This is currently what the
+  <a
+    href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">recommendation
+    of the UK government when dealing with numeric
+    information that isn't a quantity</a>.
+</p>
 
 <div id="non-quantity-example" class="enable-example">
 
@@ -128,8 +146,10 @@
     - Spinbutton using IMG elements for buttons</a>
   by the
   <a href="http://oaa-accessibility.org/">Open Ajax Alliance</a> (now
-  currently offline).  I refactored the code and released it as an NPM module for yoru convenience. It was created before <code>&lt;input type="number"&gt;</code> was supported on all browsers.
-  I would recommend to just use that instead, but if you have existing code you need to fix, use the instructions below to 
+  currently offline). I refactored the code and released it as an NPM module for yoru convenience. It was created before
+  <code>&lt;input type="number"&gt;</code> was supported on all browsers.
+  I would recommend to just use that instead, but if you have existing code you need to fix, use the instructions below
+  to
   make it work.
 </p>
 

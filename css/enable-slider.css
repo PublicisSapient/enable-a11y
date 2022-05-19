@@ -288,16 +288,38 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   border: none;
+  background: green;
+  color: white;
+}
+.enable-slider__button-label {
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.enable-slider--vertical .enable-slider__button-label {
+  transform: rotate(90deg) translateX(-3px);
 }
 .enable-slider__button-container {
   position: absolute;
-  top: -3px;
+  top: -2px;
+  width: 0.5rem;
+  height: 0.75rem;
+}
+.enable-slider--vertical .enable-slider__button-container {
+  height: 0.625rem;
 }
 .enable-slider__button-container--decrease {
-  left: -25px;
+  left: 2px;
+}
+.enable-slider--vertical .enable-slider__button-container--decrease {
+  left: 3px;
+  bottom: 6px;
 }
 .enable-slider__button-container--increase {
-  right: -25px;
+  right: 2px;
+}
+.enable-slider--vertical .enable-slider__button-container--increase {
+  right: 3px;
+  top: 8px;
 }
 .enable-slider--horizontal {
   margin: 20px 0 50px 0;

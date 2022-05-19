@@ -983,7 +983,9 @@ const showcode = new function () {
 
     if (hash) {
       const el = document.querySelector(hash);
-      el.scrollIntoView();
+      if (el) {
+        el.scrollIntoView();
+      }
     }
   }
 
