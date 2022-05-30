@@ -350,16 +350,22 @@ accessibility = {
 
   tempFocusElement: null,
   tempFocusElementText: ' select ',
-  tabbableSelector: `a[href]:not([tabindex="-1"]):not([disabled]),
-     area[href]:not([tabindex="-1"]):not([disabled]),
-     details:not([tabindex="-1"]):not([disabled]),
-     iframe:not([tabindex="-1"]):not([disabled]),
-     keygen:not([tabindex="-1"]):not([disabled]),
-     [contentEditable=true]:not([tabindex="-1"]):not([disabled]),
-     :enabled:not(fieldset):not([tabindex="-1"]):not([disabled]),
-     object:not([tabindex="-1"]):not([disabled]),
-     embed:not([tabindex="-1"]):not([disabled]),
-     [tabindex]:not([tabindex="-1"]):not([disabled])`,
+
+  // This selector has been added to over the years.  Some of these 
+  // items added from
+  // https://github.com/zellwk/javascript/blob/master/src/browser/accessibility/focusable/focusable.js
+  tabbableSelector: `a[href]:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     area[href]:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     details:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     iframe:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     keygen:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     [contentEditable=true]:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     :enabled:not(fieldset):not([tabindex="-1"]):not([disabled]):not([hidden]),
+     object:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     embed:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     [tabindex]:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     video[controls]:not([tabindex="-1"]):not([disabled]):not([hidden]),
+     audio[controls]:not([tabindex="-1"]):not([disabled]):not([hidden])`,
   htmlTagRegex: /(<([^>]+)>)/gi,
   hasSecondaryNavSkipTarget: false,
 
@@ -604,7 +610,6 @@ accessibility = {
     trap.classList.add("enable-tabtrap");
     trap.classList.add("sr-only");
     trap.setAttribute("tabindex", "0");
-
     return trap;
   },
 
@@ -646,7 +651,7 @@ accessibility = {
    */
   focusFirstElement(e) {
     const { activeSubdocument, tabbableSelector } = this;
-    const tabbableEls = activeSubdocument.querySelectorAll(tabbableSelector);
+    const tabbableEls = this.getAlTabbableEls(activeSubdocument);
     tabbableEls[1].focus();
   },
 
@@ -657,9 +662,36 @@ accessibility = {
    * @param {Event} e - the focus event fired from the `applyKeyboardTraps()` method.
    */
   focusLastElement(e) {
+
     const { activeSubdocument, tabbableSelector } = this;
-    const tabbableEls = activeSubdocument.querySelectorAll(tabbableSelector);
+    const tabbableEls = this.getAlTabbableEls(activeSubdocument);
+
     tabbableEls[tabbableEls.length - 2].focus();
+  },
+
+  /**
+   * Grabs all the tabbable children inside an element.
+   * Based on code by Zell Liew:
+   * https://github.com/zellwk/javascript/blob/master/src/browser/accessibility/focusable/focusable.js
+   * 
+   * Code modified to have support for our tabbableSelector object and to ensure invisible elements are
+   * not counted.
+   * 
+   * @param {HTMLElement} el - the root element 
+   * @returns {Array} - all the HTML elements that can gain keyboard focus
+   */
+  getAlTabbableEls(el) {
+    return [
+      ...el.querySelectorAll(
+        this.tabbableSelector
+      )
+    ].filter(el => {
+      return (
+        el.offsetWidth !== 0 &&
+        el.offsetHeight !== 0 && 
+        el.style.display !== 'none'
+      )
+    })
   },
 
   /**
@@ -674,6 +706,7 @@ accessibility = {
    * element
    */
   applyKeyboardTraps(element, firstTrap, lastTrap) {
+
     firstTrap.classList.add('enable-tabtrap__first');
     firstTrap.addEventListener("focus", this.focusLastElement.bind(this));
     lastTrap.classList.add('enable-tabtrap__last');

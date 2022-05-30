@@ -92,9 +92,72 @@ body {
 
 </template>
 
+<h2>Use Unitless Line Heights</h2>
 
+<p>
+  This is something that a lot of seasoned front-end developers still get wrong: using units with the <code>line-height</code> CSS attribute.  Using units in <code>line-height</code> is bad because:
+
+  <ul>
+    <li>Using absolute units in <code>line-height</code> mean they don't grow when text-zoom is activated in most browsers.</li>
+    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decices to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
+    <code>line-height</code> will be automatically adjusted, since it represents the <code>font-size</code> multiplied by that value.
+  </ul>
+
+  <p>
+    For example, let's take the following LESS:
+</p>
+
+<div id="unitless-line-height"></div>
+
+<?php includeShowcode("unitless-line-height", "", "", "", false)?>
+<script type="application/json" id="unitless-line-height-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "LESS markup",
+    "highlight": "%INLINE%unitless-line-height__less",
+    "notes": ""
+  }]
+}
+</script>
+
+<template id="unitless-line-height__less" data-type="text">
+  ul {
+    font-size: (15/@px);
+
+    /* 1 * 15px = 15px line-height */
+    line-height: 1;  
+  }
+
+  li {
+    font-size: (20/@px);
+
+    /*
+     * Even thought it's not declared here, the
+     * line-height is 20px.  This is because 
+     * the font-size is 20px, so the line-height
+     * will also be 20px because the parent's
+     * line-height is 1, and 1 * 20px = 20px.
+     */
+  }
+
+</template>
+
+<p>
+  These two articles are really good at explaining this in detail:
+</p>
+
+<ul>
+  <li><a href="https://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/">Unitless line-heights</a>
+  by <a href="https://meyerweb.com">Eric Meyer</a>.</li>
+  <li><a href="https://css-tricks.com/almanac/properties/l/line-height/">Line-height</a> by <a href="https://www.sara.io">Sara Cope</a>.</li>
+</ul>
 
 <h2>How to Resize Text in Modern Browsers</h2>
+
+<p>
+  There is a lot of confusion on how to actually test <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">the WCAG Success Criterion 1.4.4: Resize text</a>.  The requirement states that users should be able to resize text (and only text) up to 200% without any loss of information.  It is possible to test this in all browsers, but you should be familiar with all the caveats, which are listed below.
+</p>
 
 <h3>Safari:</h3>
 <ol>
@@ -254,8 +317,8 @@ body {
     grained control by clicking “Custom fonts” and moving the “Font size” slider.</li>
 </ul>
 
-<p>(This list was lifted from <a href="https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text">Zoom
+<p>(This list was partially lifted from <a href="https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text">Zoom
     &amp; Resizing
     Text</a> from <a href="https://usability.yale.edu/">Yale University’s Usability &amp; Web
     Accessibility
-    site</a>). </p>
+    site</a>). Some of the content has been updated using our own research (most notably, the Mobile Chrome issues stated above).</p>

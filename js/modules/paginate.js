@@ -221,7 +221,8 @@ const paginationTables = new function() {
         const pageHTML = interpolate(buttonTemplate, {
           index: i,
           label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : "",
+          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
+          ariaCurrent: i === selectedIndex ? 'true' : 'false',
           totalPages: numPages,
         });
         const page = htmlToDomNode(pageHTML);

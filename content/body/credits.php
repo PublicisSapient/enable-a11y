@@ -111,6 +111,9 @@
   <li><a href="https://twitter.com/hedgerwang">Hedger Wang</a> for <a
       href="https://web.archive.org/web/20061031093917/http://www.hedgerwow.com/360/dhtml/js-onfontresize.html">the
       script that text-zoom-resize.js is based on</a>.</li>
+  <li><a href="https://zellwk.com/">Zell Liew</a> for
+    the routine for <a href="https://github.com/zellwk/javascript/blob/master/src/browser/accessibility/focusable/focusable.js">
+      getting all the focusable elements inside a DOM element</a> that <code>accessibility.getAlTabbableEls()</code> is based on.</li>
 </ul>
 
 <h2>Icons</h2>

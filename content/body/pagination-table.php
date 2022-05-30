@@ -1751,7 +1751,7 @@
 
     <template id="pagination__template--button">
       <button class="pagination__pager-item ${isSelectedClass}" data-index="${index}"
-        aria-label="Display page ${label} of ${totalPages}">
+        aria-label="Display page ${label} of ${totalPages}" aria-current="${ariaCurrent}">
         ${label}
       </button>
     </template>
