@@ -44,6 +44,7 @@ showcode.addJsObj('initEnable', initEnable);
 console.log('x', document.location.hash);
 
 if (document.location.hash === '#debug') {
+  console.log('logging enable events (debug mode)')
 
   // debug on event handlers 
   const events = {
@@ -66,7 +67,8 @@ if (document.location.hash === '#debug') {
     'enable-switch-change': 'isChecked',
     'enable-selected': '',
     'enable-show': '',
-    'enable-hide': ''
+    'enable-hide': '',
+    'enable-spinbutton-change': 'value'
   };
 
   for (let eventName in events) {

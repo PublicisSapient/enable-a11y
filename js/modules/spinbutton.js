@@ -68,6 +68,15 @@ function spinbutton(el) {
     if (isKeyEvent) {
       this.$el.focus();
     }
+
+    // Fire event
+    const changeEvent = new CustomEvent('enable-spinbutton-change', {
+      bubbles: true,
+      detail: {
+        value: () => valNow
+      }
+    });
+    this.$el.dispatchEvent(changeEvent);
   };
 
   this.selectText = function () {
