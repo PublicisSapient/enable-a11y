@@ -180,7 +180,7 @@
       aria-expanded="false">
       Information on the aria-expanded version.
     </button>
-    <div id="enable-drawer1__content" class="enable-drawer__content" role="region">
+    <div id="enable-drawer1__content" class="enable-drawer__content" role="group">
 
       <p>
         This is the contents of the dropdown. For more information about
@@ -212,7 +212,7 @@
 {
   "replaceHtmlRules": {
     "[aria-expanded]": "<!-- Insert dropdown button label here -->",
-    "[role=\"region\"]": "<!-- Insert dropdown content here -->"
+    "[role=\"group\"]": "<!-- Insert dropdown content here -->"
   },
   "steps": [{
       "label": "Set up the dropdown state on button with aria-expanded",
@@ -230,7 +230,7 @@
     },
     {
       "label": "Set the aria roles",
-      "highlight": "role=\"region\""
+      "highlight": "role=\"group\""
     }
   ]
 }
@@ -257,7 +257,7 @@
       aria-controls="aria-dropdown-multiselect__content" aria-expanded="false">
       Products
     </button>
-    <div id="aria-dropdown-multiselect__content" class="enable-drawer__content" role="region">
+    <div id="aria-dropdown-multiselect__content" class="enable-drawer__content" role="group">
       <div class="enable-multiselect__contents">
         <ul aria-label="Products" class="enable-multiselect__list">
           <li class="enable-multiselect__list-item">
@@ -304,8 +304,8 @@
       "notes": ""
     },
     {
-      "label": "Create a region checkboxes can be treated as a group.",
-      "highlight": "role=\"region\""
+      "label": "All the checkboxes should be part of the same group.",
+      "highlight": "role=\"group\""
     },
     {
       "label": "Create the checkboxes",
