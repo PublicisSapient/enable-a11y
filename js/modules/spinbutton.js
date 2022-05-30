@@ -59,7 +59,8 @@ function spinbutton(el) {
   this.setValue = function (valNow, isKeyEvent) {
     this.valNow = valNow;
     // update the control
-    this.$el.getAttribute("aria-valuenow", this.valNow);
+    console.log('update');
+    this.$el.setAttribute("aria-valuenow", this.valNow);
     this.$el.innerHTML = this.valNow;
     this.$live.innerHTML = this.valNow;
     this.selectText();
