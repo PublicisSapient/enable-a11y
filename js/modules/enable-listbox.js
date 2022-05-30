@@ -42,11 +42,14 @@ const enableListbox = new function() {
     }
   }
 
-  this.onKeydown = () => {
+  this.onKeydown = (e) => {
+    console.log('down', e.key);
     this.lastKeydownEl = document.activeElement;
+    if (e.key === )
   }
 
   this.onKeyup = (e) => {
+    console.log('up', e.key);
     const { key, target } = e;
     const normalizedKey = accessibility.normalizedKey(key);
 
@@ -164,7 +167,7 @@ const enableListbox = new function() {
     accessibility.initGroup(
       listboxEl,
       {
-          doKeyChecking: false,
+          doKeyChecking: true,
           ariaCheckedCallback: (e, currentlyCheckedEl) => {
               buttonEl.innerHTML = currentlyCheckedEl.innerHTML;
               this.collapse(buttonEl, listboxEl, true);

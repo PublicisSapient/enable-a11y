@@ -187,11 +187,14 @@
 
         <h2>Advanced ARIA progressbar role example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is when you want to add text descriptions to the values inside a progress bar.  The example below is just one way this can be implemented.')) ?>
+        <?php includeStats(array('doNot' => true, 'comment' => 'This example is provided for informational purposes only, since this solution does not work for all web browser/screen reader combinations (e.g. Safari with VoiceOver on OSX &lt;= 12.13.1 and Safari with VoiceOver on iOS &lt;= 14.6 ')) ?>
 
         <p>
+        This is when you want to add text descriptions to the values inside a progress bar.  The example below is just one way this can be implemented.
+        </p>
+        <p>
             This uses the <code>aria-valuetext</code> to update the progress bar.
-            <strong>At the time of this writing, this doesn't work in Voiceover on OSX &lt;= 10.15.7</strong>
+            
         </p>
 
         <div id="aria-valuetext-example" class="enable-example">

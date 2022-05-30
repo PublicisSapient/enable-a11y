@@ -23,8 +23,7 @@ const checkbox = new function () {
     if (role === 'checkbox') {
       if (
         evt.type === "click" ||
-        evt.key === ' ' ||
-        evt.key === 'Enter'
+        evt.key === ' ' 
       ) {
 
         if (ref) {

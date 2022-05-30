@@ -217,7 +217,7 @@
 
 
   <div id="svg-smil-demo" class="enable-example">
-    <svg id="wrap" width="300" height="300">
+    <svg id="wrap" viewBox="0 0 300 300" width="300" height="300">
 
 
       <svg>
@@ -370,7 +370,7 @@
 
   <div id="html5-video-example">
     <div role="region">
-      <video controls="" preload="metadata"  autoplay muted loop>
+      <video controls="" preload="metadata"  autoplay muted loop playsinline>
         <source src="videos/test-pattern.mp4" type="video/mp4">
         Video not supported.
       </video>
@@ -390,6 +390,11 @@
         "label": "The script will use the standard <code>.pause()</code> and <code>play()</code> methods for the video element when the checkbox is checked/unchecked",
         "highlight": "%JS%pauseAnimControl ||| el.play\\(\\); ||| el.pause\\(\\)",
         "notes": ""
+      },
+      {
+        "label": "Ensure video plays inline for iOS Safari",
+        "highlight": "playsinline",
+        "notes": "Videos without this attribute will play in a modal window in Safari iOS, which will have unpredictable results when using the pause animation control."
       }
     ]
   }
@@ -408,7 +413,7 @@
 
   <div id="ableplayer-example">
     <div class="enable-video-player">
-      <video data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
+      <video playsinline data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
         data-root-path="./js/enable-libs/ableplayer/">
         <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English">
         <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
@@ -430,6 +435,11 @@
         "label": "The script will use the AblePlayer's <code>.pauseMedia()</code> and <code>playMedia()</code> methods for all the videos when the checkbox is checked/unchecked",
         "highlight": "%JS%pauseAnimControl ||| el.playMedia\\(\\); ||| el.pauseMedia\\(\\)",
         "notes": ""
+      },
+      {
+        "label": "Ensure video plays inline for iOS Safari",
+        "highlight": "playsinline",
+        "notes": "Videos without this attribute will play in a modal window in Safari iOS, which will have unpredictable results when using the pause animation control."
       }
     ]
   }

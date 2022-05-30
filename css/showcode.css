@@ -142,11 +142,6 @@ code {
   padding: 0.01em;
   border: solid 1px #666;
 }
-@media only screen and (min-width: 960px) {
-  .showcode__ui {
-    top: 0;
-  }
-}
 .showcode__notes + .showcode__notes-view-toggle {
   display: none;
   border: none;

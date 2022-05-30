@@ -18,6 +18,38 @@
   }
 }
 
+#enable-pause-control {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  @media @desktop {
+    position: static;
+    top: auto;
+    z-index: inherit;
+
+    .offscreen-observer__is-header-offscreen & .play-pause-anim__checkbox-container {
+       top: 0;
+       left: 0;
+       right: initial;
+       width: 100%;
+       border: none;
+       border-radius: 0;
+    }
+  }
+}
+
+#svg-smil-demo svg,
+#html5-video-example video {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#anim-gif-demo .pause-anim-control__gif {
+  text-align: center;
+}
+
 .play-pause-anim {
   .offscreen-observer__is-header-offscreen & {
     position: fixed;

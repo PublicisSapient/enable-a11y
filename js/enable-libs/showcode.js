@@ -90,7 +90,7 @@ const showcode = new function () {
   }
 
   function highlightFunc(s) {
-    return `<em class="showcode__highlight" tabindex="-1">${s}</em>`;
+    return `<em class="showcode__highlight" tabindex="-1" ><span class="sr-only">Start of highlighted code. </span>${s}<span class="sr-only"> End of highlighted code.</span></em>`;
   }
 
   function formatCSS(localCode) {
@@ -298,8 +298,6 @@ const showcode = new function () {
     let replaceRegex;
 
     codeEl.innerHTML = code;
-
-    notesEl.innerHTML = showcodeNotes ? `<div>${showcodeNotes}</div>` : '';
 
     setReadMoreCSSVar(notesEl);
 
@@ -559,6 +557,23 @@ const showcode = new function () {
     if (doScroll) {
       this.scrollToHighlightedText(codeEl);
     }
+
+    const highlightedItems = document.querySelectorAll(`[data-showcode-id="${showcodeFor}"] > .showcode__highlight`);
+    let screenReaderAlert;
+    
+    switch (highlightedItems.length) {
+      case 0:
+        screenReaderAlert = '(Updated code below.)';
+        break;
+      case 1:
+        screenReaderAlert = "(Now highlighting 1 item in the code below.)";
+        break;
+      default: 
+        screenReaderAlert = `(Now highlighting ${highlightedItems.length} items in the code below.)`;    
+    }
+
+    notesEl.innerHTML = showcodeNotes ? `<div>${showcodeNotes}</div><div class="sr-only">${screenReaderAlert}</div>` : '';
+
   }
 
   const highlightCode = (command, highlightString, code, codeEl, doScroll) => {

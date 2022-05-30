@@ -25,6 +25,7 @@
   white-space: nowrap;
   text-align: center;
   height: 2.4;
+  transition: width 1s ease-in-out;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
