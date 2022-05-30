@@ -284,12 +284,12 @@
   <div class="enable-listbox listbox-area">
     <div class="left-area">
       <span id="exp_elem" class="enable-listbox__exp_elem">
+        Choose an element:
       </span>
+      
       <div id="exp_wrapper" class="enable-listbox__wrapper">
         <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button"
-          class="enable-listbox__button">
-          Neptunium
-        </button>
+          class="enable-listbox__button">&nbsp;</button>
         <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem">
           <li id="exp_elem_Np" role="option">
             Neptunium

@@ -41,37 +41,46 @@ showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 showcode.addJsObj('initEnable', initEnable);
 
 
+console.log('x', document.location.hash);
 
-/*
-// debug on event handlers 
-const events = {
-  'enable-combobox-change': 'value',
-  'enable-combobox-show': '',
-  'enable-combobox-hide': '',
-  'enable-focus-show': '',
-  'enable-focus-hide': '',
-  'enable-paginate-render': 'page',
-  'enable-pause-animations': '',
-  'enable-play-animations': '',
-  'enable-checked': 'group',
-  'enable-unchecked': 'group',
-  'enable-expanded': '',
-  'enable-collapsed': '',
-  'enable-table-sort': 'index',
-  'enable-switch-change': 'isChecked',
-  'enable-selected': '',
-  'enable-show': '',
-  'enable-hide': ''
-};
+if (document.location.hash === '#debug') {
 
-for (let eventName in events) {
-  const property = events[eventName]
-  document.addEventListener(eventName, (event) => {
-    console.log(
-      `${eventName} fired. ${property}:`, 
-      event.detail && event.detail[property] ? event.detail[property]() : '',
-      event.target
-    );
-  }, true);
+  // debug on event handlers 
+  const events = {
+    'enable-listbox-change': 'value, id',
+    'enable-listbox-show': '',
+    'enable-listbox-hide': '',
+    'enable-combobox-change': 'value',
+    'enable-combobox-show': '',
+    'enable-combobox-hide': '',
+    'enable-focus-show': '',
+    'enable-focus-hide': '',
+    'enable-paginate-render': 'page',
+    'enable-pause-animations': '',
+    'enable-play-animations': '',
+    'enable-checked': 'group',
+    'enable-unchecked': 'group',
+    'enable-expanded': '',
+    'enable-collapsed': '',
+    'enable-table-sort': 'index',
+    'enable-switch-change': 'isChecked',
+    'enable-selected': '',
+    'enable-show': '',
+    'enable-hide': ''
+  };
+
+  for (let eventName in events) {
+    const properties = events[eventName].split(',')
+    document.addEventListener(eventName, (event) => {
+      for (var i=0; i<properties.length; i++) {
+        const property = properties[i].trim();
+        console.log(
+          `${eventName} fired. ${property}:`, 
+          event.detail && event.detail[property] ? event.detail[property]() : '',
+          'target:',
+          event.target
+        );
+      }
+    }, true);
+  }
 }
-*/
