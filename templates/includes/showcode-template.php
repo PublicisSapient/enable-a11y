@@ -24,7 +24,7 @@
           <?php endif ?>
 
           <?php if ($isInteractive): ?>
-              <form class="showcode__ui">
+              <div class="showcode__ui">
             <?php endif ?>
             <?php if ($isInteractive): ?>
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
@@ -43,7 +43,7 @@
                 <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
               </div>
               <?php if ($isInteractive): ?>
-            </form><?php endif ?>
+              </div><?php endif ?>
 
 
           <div class="showcode">

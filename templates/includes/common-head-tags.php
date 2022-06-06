@@ -36,7 +36,7 @@
   href="css/site.css" />
 
 
-<link id="pause-anim-css"
+<link id="pause-anim-css-demo"
   rel="stylesheet"
   href="css/pause-animations-demo.css" />
 

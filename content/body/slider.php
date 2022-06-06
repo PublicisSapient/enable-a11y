@@ -43,7 +43,7 @@
 
 
 <div id="html-example" class="enable-example">
-  <form ">
+  <form>
     <label for="horizontal-slider" class="html-slider__label enable-slider__label">Amount you want
       to donate to the Zoltan Hawryluk Developer Fund: </label>
     <div>

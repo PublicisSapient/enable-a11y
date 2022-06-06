@@ -134,13 +134,8 @@
         ]
       },
       {
-        "label": "Mark up checkbox",
-        "highlight": "for",
-        "notes": "Standard checkbox markup.  Just make sure the id is set as shown."
-      },
-      {
         "label": "Set up the checkbox click event",
-        "highlight": "%JS%pauseAnimControl ||| document.addEventListener\\('change'[^\\)]*\\); ||| this.clickEvent =",
+        "highlight": "%JS%pauseAnimControl ||| this.clickEvent = ||| document.addEventListener\\('change'[^\\)]*\\);",
         "notes": ""
       },
       {
@@ -414,7 +409,7 @@
   <div id="ableplayer-example">
     <div class="enable-video-player">
       <video playsinline data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
-        data-root-path="./js/enable-libs/ableplayer/">
+        data-root-path="./js/enable-libs/ableplayer/" data-heading-level="4">
         <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English">
         <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en"
           label="English Audio Descriptions">

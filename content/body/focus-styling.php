@@ -161,7 +161,7 @@
 </template>
 
 <p>
-  The above CSS can mess up Safari focus states: they may appear cut off or may not appear at all in Safari, while they may appear fine in other web browsers.  <strong>The correct way to fix this is to <em>never</em> use <code> transition: all</code> in your CSS.</strong> Using <code>all</code>.  There are many reasons why you should never use not use the <code>all</code> keyword for transitions (in this case, because of unwanted side-effects, but also for performance reasons).  <a href="https://www.pno.dev/"></a> has written a great write-up on <a href="https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/">why you shouldn't use the 'all' keyword in CSS transitions</a>, and I suggest all developers read this.
+  The above CSS can mess up Safari focus states: they may appear cut off or may not appear at all in Safari, while they may appear fine in other web browsers.  <strong>The correct way to fix this is to <em>never</em> use <code> transition: all</code> in your CSS.</strong> Using <code>all</code>.  There are many reasons why you should never use not use the <code>all</code> keyword for transitions (in this case, because of unwanted side-effects, but also for performance reasons).  <a href="https://www.pno.dev/">Philipp Nowinski</a> has written a great write-up on <a href="https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/">why you shouldn't use the 'all' keyword in CSS transitions</a>, and I suggest all developers read this.
 </p>
 
 <p>
