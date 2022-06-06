@@ -29,7 +29,8 @@
             <?php if ($isInteractive): ?>
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
             <?php endif ?>
-              <div id="<?= $id ?>__notes" class="showcode__notes " role="alert" aria-live="assertive"></div>
+              <div id="<?= $id ?>__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
               <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
                 aria-describedby="<?= $id ?>__toggle-desc"><span class="showcode__notes-view-toggle--more">View
                   More</span><span class="showcode__notes-view-toggle--less">View Less</span>

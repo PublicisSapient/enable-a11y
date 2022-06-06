@@ -293,6 +293,7 @@ const showcode = new function () {
    */
   const displayStep = (value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules, doScroll) => {
 
+    console.log('sss');
     const notesEl = document.getElementById(showcodeFor + '__notes');
     let code = htmlCache[showcodeFor];
     let replaceRegex;
@@ -305,7 +306,9 @@ const showcode = new function () {
     let command;
 
     for (let i = 0; i < highlightStrings.length; i++) {
+      const isFinalStep = (i === (highlightStrings.length - 1));
       let highlightString = highlightStrings[i].trim();
+      let isFileCommandExecuted = false;
 
       if (highlightString !== "") {
 
@@ -378,15 +381,16 @@ const showcode = new function () {
               }
             case '%FILE%':
               {
+                isFileCommandExecuted = true;
                 splitHighlightString = highlightString.split('~');
                 const fileName = splitHighlightString[0].trim();
                 (async () => {
                   getTextFromFile(fileName).then((text) => {
                     codeEl.innerHTML = this.entify(text.trim());
                     code = this.entify(text.trim());
-                    highlightCode(command, highlightString, code, codeEl, doScroll);
+                    highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep);
 
-                    /* if (doScroll) {
+                    /* if (doScroll, isFinalStep) {
                       this.scrollToHighlightedText(codeEl);
                     }
                     console.log('haha', text); */
@@ -537,11 +541,9 @@ const showcode = new function () {
                 console.warn('Invalid command used', command);
               }
           }
-          console.log('a', code);
-          code = highlightCode(command, highlightString, code, codeEl, doScroll);
+          code = highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep && !isFileCommandExecuted);
         } else {
-          console.log('b', code);
-          code = highlightCode(command, highlightString, code , codeEl, doScroll);
+          code = highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code , codeEl, doScroll, isFinalStep);
         }
 
       }
@@ -558,26 +560,10 @@ const showcode = new function () {
       this.scrollToHighlightedText(codeEl);
     }
 
-    const highlightedItems = document.querySelectorAll(`[data-showcode-id="${showcodeFor}"] > .showcode__highlight`);
-    let screenReaderAlert;
     
-    switch (highlightedItems.length) {
-      case 0:
-        screenReaderAlert = '(Updated code below.)';
-        break;
-      case 1:
-        screenReaderAlert = "(Now highlighting 1 item in the code below.)";
-        break;
-      default: 
-        screenReaderAlert = `(Now highlighting ${highlightedItems.length} items in the code below.)`;    
-    }
-
-    notesEl.innerHTML = showcodeNotes ? `<div>${showcodeNotes}</div><div class="sr-only">${screenReaderAlert}</div>` : '';
-
   }
 
-  const highlightCode = (command, highlightString, code, codeEl, doScroll) => {
-    console.log('code', code);
+  const highlightCode = (command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep) => {
     let replaceRegex;
     if (highlightString !== null) {
       highlightString = highlightString.replace(space, nbspStr);
@@ -633,6 +619,35 @@ const showcode = new function () {
     if (doScroll) {
       this.scrollToHighlightedText(codeEl);
     }
+
+    // Set up the ARIA alert to announce changes to screen readers.
+    if (isFinalStep) {
+      const query = `[data-showcode-id="${showcodeFor}"] > .showcode__highlight`;
+      const changesAlertQuery = `#${showcodeFor}__changes-alert`;
+      const highlightedItems = document.querySelectorAll(`[data-showcode-id="${showcodeFor}"] > .showcode__highlight`);
+      const changesAlertEl = document.querySelector(changesAlertQuery);
+      let screenReaderAlert;
+
+      switch (highlightedItems.length) {
+        case 0:
+          screenReaderAlert = '(Updated code below.)';
+          break;
+        case 1:
+          screenReaderAlert = "(Now highlighting 1 item in the code below.)";
+          break;
+        default: 
+          screenReaderAlert = `(Now highlighting ${highlightedItems.length} items in the code below.)`;    
+      }
+
+
+      console.log('query', query, highlightedItems, screenReaderAlert, isFinalStep, changesAlertEl);
+      
+
+      notesEl.innerHTML = showcodeNotes || '';
+      changesAlertEl.innerHTML = showcodeNotes ? `${showcodeNotes} ${screenReaderAlert}` : ''; 
+    }
+
+
 
     return code;
 
