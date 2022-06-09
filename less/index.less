@@ -133,7 +133,7 @@ strong {
       &--code::before {
         background-image: data-uri('../images/icons/code.svg');
         background-color: @color-scratch;
-      }
+      } 
 
       &--existing::before {
         background-image: data-uri('../images/icons/integrate.svg');
@@ -143,6 +143,21 @@ strong {
       &--npm::before {
         background-image: data-uri('../images/icons/npm.svg');
         background-color: @color-npm;
+      }
+
+      &--question::before {
+        background-image: data-uri('../images/icons/question.svg');
+        background-color: @color-npm;
+      }
+
+      &--donate:before {
+        background-image: data-uri('../images/icons/donate.svg');
+        background-color: @color-scratch;
+      }
+
+      &--bug:before {
+        background-image: data-uri('../images/icons/bug.svg');
+        background-color: @color-integrate;
       }
     }
 
@@ -157,6 +172,10 @@ strong {
     color: #222;
     line-height: 1.5;
     padding: 20px;
+
+    &:nth-child(2n) {
+      background: #eee;
+    }
 
     @media @desktop {
       padding: 20px calc(~"(100% - 1024px) / 2 + 20px");

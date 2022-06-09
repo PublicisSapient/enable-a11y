@@ -15,7 +15,7 @@
         How to Contribute
       </a>
     </div>
---> 
+-->
   </div>
 </div>
 
@@ -66,32 +66,58 @@
 </div>
 
 <div class="homepage__bottom-copy">
-    <h2 class="homepage__bottom-copy--heading">What Makes Enable Different?</h2>
+  <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--question">What Makes Enable Different?</h2>
 
-    <ul>
-      <li>
-        We strive to keep our <strong>codebase up-to-date</strong>, with a <strong>focus on innovation</strong> (some of
-        the examples have not appeared on any other site before).
-      </li>
-      <li>
-        The components have been <strong>tested on mobile devices</strong> (a lot of
-        other components forget
-        that
-        screen readers on mobile devices work slightly differently to their desktop
-        cousins).
-      </li>
-      <li>
-        <strong>Enable is focused on UX.</strong> It's goal is to help developers make an
-        accessible web that is
-        usable by everyone.
-      </li>
-      <li>
-        Not only do we want to help developers, but <strong>we want the help from
-          developers to contribute their
-          accessible code.</strong>
-        If you have an accessible component that you don't see here, please consider
-        donating by raising a pull
-        request.
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li>
+      We strive to keep our <strong>codebase up-to-date</strong>, with a <strong>focus on innovation</strong> (some of
+      the examples have not appeared on any other site before).
+    </li>
+    <li>
+      The components have been <strong>tested on mobile devices</strong> (a lot of
+      other components forget
+      that
+      screen readers on mobile devices work slightly differently to their desktop
+      cousins).
+    </li>
+    <li>
+      <strong>Enable is focused on UX.</strong> It's goal is to help developers make an
+      accessible web that is
+      usable by everyone.
+    </li>
+    <li>
+      Not only do we want to help developers, but <strong>we want the help from
+        developers to contribute their
+        accessible code.</strong>
+      If you have an accessible component that you don't see here, please consider
+      donating by raising a pull
+      request.
+    </li>
+  </ul>
+</div>
+<div class="homepage__bottom-copy">
+
+  <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--donate">Want to donate code to Enable?</h2>
+
+  <p>We would love to know about any code you would like to donate to enable!</p>
+
+  <ul>
+    <li> If you would like to discuss this with us first,
+      please go to the <a href="https://github.com/zoltan-dulac/enable-a11y/issues">Enable Github issue page</a> and
+      opening up a new issue describing the code you would like to donate and a sample page on how it works.</li>
+    <li>
+      If you would like to submit a PR, feel free to do so! Please read <a
+        href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
+        Github article about creating a pull request from a fork</a> for more information on how to do this.</li>
+</div>
+<div class="homepage__bottom-copy">
+
+  <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--bug">Found a bug?</h2>
+
+  <p>
+    Feel free to log a bug on our Github project page!  If are a developer and know how to fix, please create a PR (if
+    you have never done this before, read the <a
+        href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
+        Github article about creating a pull request from a fork</a>).
+
+</div>

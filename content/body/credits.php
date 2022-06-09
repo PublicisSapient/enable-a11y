@@ -123,8 +123,9 @@
   <li><a href="https://thenounproject.com/icondownloads/">Icongrapher</a> for the Build Icon.</li>
   <li><a href="https://thenounproject.com/gendis.studio/">Gendis Studio</a> for the "Do Not Use" Icon.</li>
   <li><a href="https://thenounproject.com/LAFS/">LAFS</a> for the Style Icon.</li>
-  <li><a href="https://iconscout.com/contributors/daniel-bruce">Daniel Bruce</a> Code Icon
-  <li><a href="https://iconscout.com/contributors/ibm-design">IBM Design</a> Add Icon
+  <li><a href="https://iconscout.com/contributors/daniel-bruce">Daniel Bruce</a> Code Icon</li>
+  <li><a href="https://iconscout.com/contributors/ibm-design">IBM Design</a> Add Icon</li>
+  <li><a href="https://dribbble.com/Luizcarvalhoid">Luiz Carvalho</a> for the <a href="https://thenounproject.com/icon/bug-2277444/">Bug Icon</a>
 </ul>
 
 <h2>Typography</h2>
