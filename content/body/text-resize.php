@@ -1,6 +1,5 @@
 
 <p>
-  Many developers get confused about what it means to conform to WCAG AA 1.4.4 - Text Resize.  
   Many users, myself included, use the text-resizing functionality offered by their browser and/or operating system.
   This functionality is not only used by people who are partially sighted, but also those who wear glasses and for those
   who want to see text on their mobile devices in the sunlight.
@@ -31,9 +30,9 @@
 </ol>
 
 <p>
-  People who use their browser functionality to resize text will not be able to resize text measured in
+  In most browsers users who use their browser functionality to resize text will not be able to resize text measured in
   pixels,
-  since pixels are absolute. Text sized in rems, however, will resize, becuase the browsers' text resize
+  since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, becuase the browsers' text resize
   functionality
   <strong>should</strong> change the base font of the document (please see the note on Chrome for Android below).
 </p>
@@ -153,7 +152,7 @@ body {
   <li><a href="https://css-tricks.com/almanac/properties/l/line-height/">Line-height</a> by <a href="https://www.sara.io">Sara Cope</a>.</li>
 </ul>
 
-<h2>How to Resize Text in Modern Browsers</h2>
+<h2 id="text-resize-instructions" tabindex="-1">How to Resize Text in Modern Browsers</h2>
 
 <p>
   There is a lot of confusion on how to actually test <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">the WCAG Success Criterion 1.4.4: Resize text</a>.  The requirement states that users should be able to resize text (and only text) up to 200% without any loss of information.  It is possible to test this in all browsers, but you should be familiar with all the caveats, which are listed below.
