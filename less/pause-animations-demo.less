@@ -89,6 +89,58 @@
       animation: animatedBackground 60s linear infinite;
       width: 100vw;
     }
+
+    &--copy {
+      @rightMargin: 80px;
+      position: absolute;
+      top: 3vw;
+      right: @rightMargin;
+      max-width: initial;
+      width: calc(50% - @rightMargin * 2);
+      transform: none;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      text-align: center;
+      color: white;
+
+      .text-zoom & {
+        position: static;
+        width: 100%;
+        background: #000;
+      }
+
+
+      h2 {
+        border-bottom: none;
+        font-size: (60/@px);
+      };
+
+      p {
+        font-size: (30/@px);
+      }
+
+      strong {
+        color: white;
+      }
+
+
+
+      @media @mobile-and-tablet {
+        position: static;
+        width: 100%;
+        background: #000;
+
+        h2 {
+          font-size: (24/@px);
+          display: inline;
+        }
+
+        p {
+          font-size: (24/@px);
+          display: inline;
+        }
+      }
+    }
   }
 
 }

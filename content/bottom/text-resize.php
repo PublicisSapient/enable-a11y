@@ -16,4 +16,4 @@
     textZoomEvent.init(16);
     setCssTextZoomFactor();
     document.addEventListener('textzoom', setCssTextZoomFactor);
-    </script>
+</script>

@@ -76,6 +76,48 @@ main:not(.with-full-bleed-hero) .play-pause-anim {
   animation: animatedBackground 60s linear infinite;
   width: 100vw;
 }
+.play-pause-anim__full-bleed-image-demo--copy {
+  position: absolute;
+  top: 3vw;
+  right: 80px;
+  max-width: initial;
+  width: calc(50% - 80px * 2);
+  transform: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+.text-zoom .play-pause-anim__full-bleed-image-demo--copy {
+  position: static;
+  width: 100%;
+  background: #000;
+}
+.play-pause-anim__full-bleed-image-demo--copy h2 {
+  border-bottom: none;
+  font-size: 3.75rem;
+}
+.play-pause-anim__full-bleed-image-demo--copy p {
+  font-size: 1.875rem;
+}
+.play-pause-anim__full-bleed-image-demo--copy strong {
+  color: white;
+}
+@media only screen and (min-width: 1px) and (max-width: 959px) {
+  .play-pause-anim__full-bleed-image-demo--copy {
+    position: static;
+    width: 100%;
+    background: #000;
+  }
+  .play-pause-anim__full-bleed-image-demo--copy h2 {
+    font-size: 1.5rem;
+    display: inline;
+  }
+  .play-pause-anim__full-bleed-image-demo--copy p {
+    font-size: 1.5rem;
+    display: inline;
+  }
+}
 main {
   min-height: 54vw;
 }
