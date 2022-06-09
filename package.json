@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zoltan-dulac/enable-a11y.git"
+    "url": "git+https://github.com/PublicisSapient/enable-a11y.git"
   },
   "keywords": [
     "ARIA",
@@ -49,9 +49,9 @@
   "author": "Zoltan Hawryluk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zoltan-dulac/enable-a11y/issues"
+    "url": "https://github.com/PublicisSapient/enable-a11y/issues"
   },
-  "homepage": "https://github.com/zoltan-dulac/enable-a11y#readme",
+  "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",

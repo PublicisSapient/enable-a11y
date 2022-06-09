@@ -9,7 +9,7 @@
     on how to install it are given at the bottom of the component's page as well.</dd>
 
   <dt>I have found a bug in one of the components! What should I do?</dt>
-  <dd>Please let us know by going to the <a href="https://github.com/zoltan-dulac/enable-a11y/issues">Enable Github
+  <dd>Please let us know by going to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github
       issue page</a> and opening up a new issue. If you know how to fix it, please open up a pull request with the fix
     in it so we can review the fix. Please read <a
       href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
@@ -17,7 +17,7 @@
 
   <dt>I have made an accessible component that is not in Enable! Can I donate it?</dt>
   <dd>Absolutely! Please send us a PR (see the previous comment). If you would like to discuss this with us first,
-    please go to the <a href="https://github.com/zoltan-dulac/enable-a11y/issues">Enable Github issue page</a> and
+    please go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> and
     opening up a new issue describing the code you would like to donate and a sample page on how it works.</dd>
 
 </dl>

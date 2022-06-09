@@ -132,8 +132,8 @@ el.add();
 <ol>
   <li>
     Grab the source by either <a href="npm.php">using NPM</a>, <a
-      href="https://github.com/zoltan-dulac/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a
-      href="https://github.com/zoltan-dulac/enable-a11y">cloning the enable source code</a> from github.
+      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a
+      href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
   </li>
   <li>
     If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>,

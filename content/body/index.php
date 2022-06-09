@@ -103,7 +103,7 @@
 
   <ul>
     <li> If you would like to discuss this with us first,
-      please go to the <a href="https://github.com/zoltan-dulac/enable-a11y/issues">Enable Github issue page</a> and
+      please go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> and
       opening up a new issue describing the code you would like to donate and a sample page on how it works.</li>
     <li>
       If you would like to submit a PR, feel free to do so! Please read <a
