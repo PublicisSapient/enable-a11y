@@ -31,7 +31,6 @@ const tooltip = new function () {
 
         // mouse events
         body.addEventListener('mouseover', this.show);
-        //body.addEventListener('mouseleave', this.hide);
 
         // equivalent keyboard events
         body.addEventListener('focus', this.show, true);
@@ -49,7 +48,7 @@ const tooltip = new function () {
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
-        tooltipEl.innerHTML = 'Loading ...';
+        tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
         tooltipEl.setAttribute('aria-hidden', 'true');
         body.appendChild(tooltipEl);
     }
@@ -99,6 +98,8 @@ const tooltip = new function () {
 
         tooltipTarget.addEventListener('mouseleave', this.hide);
 
+        tooltipEl.addEventListener('mouseleave', this.hide);
+
 
         tooltipTarget.dispatchEvent(
             new CustomEvent(
@@ -111,8 +112,18 @@ const tooltip = new function () {
     }
 
     this.hide = (e) => {
+        if (e.type === 'mouseleave') {
+            const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+            if (hoveredElement === tooltipEl) {
+                return;
+            }
+        }
+
+
         if (tooltipTarget) {
+            console.log("cancelling");
             tooltipTarget.removeEventListener('mouseleave', this.hide);
+            tooltipEl.removeEventListener('mouseleave', this.hide);
             tooltipTarget = null;
         }
         clearTimeout(timeout);

@@ -33,6 +33,14 @@
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
 }
+.tooltip:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.1rem;
+  top: -1.1rem;
+  left: 0;
+}
 .tooltip--hidden {
   clip: rect(1px 1px 1px 1px);
   /* IE 6/7 */

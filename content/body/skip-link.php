@@ -1,3 +1,10 @@
+<aside class="notes">
+  <h2>Note:</h2>
+  <p>
+    <strong>We realize that this is a slight variation of the traditional skip link that is implemented on a lot of websites</strong>, where the skip link jumps to the main content, not a CTA before it. If you feel more comfortable implementing that, a great resource is  <a href="https://css-tricks.com/how-to-create-a-skip-to-content-link/">How to Create a “Skip to Content” Link</a> by <a href="https://css-tricks.com/author/paulryan/">Paul Ryan</a>.
+  </p>
+</aside>
+
 <p>
   When keyboard users encounter components with a lot of interactive elements in them (e.g. a website's
   main
@@ -28,7 +35,6 @@
 <p>Unlike a lot of implementations, this example has, in my opinion, one really super helpful feature: we have two skip links pointing to each other. If a keyboard user triggers the skip link by accident, they can <strong>undo
   their mistakes</strong> by pressing they ENTER key again, which will return focus back to where they came from.  <strong>This is useful for people who have hand tremors.</strong> This feature was thought up by my colleague Alison Hall during an accessibility hackathon.</p>
 
-<p></p>
 
 <div id="desktop-example" class="enable-example">
   <div class="enable-visible-on-focus__container enable-skip-link--begin">
