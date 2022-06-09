@@ -109,6 +109,7 @@
       If you would like to submit a PR, feel free to do so! Please read <a
         href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
         Github article about creating a pull request from a fork</a> for more information on how to do this.</li>
+  </ul>
 </div>
 <div class="homepage__bottom-copy">
 

@@ -42,7 +42,7 @@
 .sticky-table__container [role="columnheader"] {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 2.375rem;
 }
 .sticky-table__container th[scope="row"],
 .sticky-table__container [role="rowheader"] {

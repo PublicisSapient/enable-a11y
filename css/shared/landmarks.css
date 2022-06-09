@@ -588,6 +588,7 @@ aside,
   min-height: 8.6875rem;
   border: solid 1px black;
   box-shadow: 4px 4px 0 black;
+  line-height: 1.4;
   max-width: 1024px;
 }
 aside h2,

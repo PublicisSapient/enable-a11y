@@ -2246,7 +2246,7 @@
             "notes": [
                 "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls horizontally through the data in the table.",
                 "If you want more information about how this works, please read the excellent article",
-                "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>"
+                "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>.   The <code>top</code> property is set to the height of the \"Pause animation\" control that is on the top of the Enable page so that it appears below it (measured in rems, so it works even if you resize the text on the page."
             ]
         },
         {
