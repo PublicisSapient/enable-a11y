@@ -1,6 +1,6 @@
 <div role="banner">
   <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
-    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+    <a href="#end-of-nav" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
       Skip to Main Content
     </a>
   </div>
@@ -585,5 +585,9 @@
     </span>
   </div>
 
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--end">
+    <a href="#beginning-of-nav" id="end-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">Back to Main
+      Navigation</a>
+  </div>
 
 </div>
