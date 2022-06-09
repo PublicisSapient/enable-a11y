@@ -180,7 +180,7 @@
       aria-expanded="false">
       Information on the aria-expanded version.
     </button>
-    <div id="enable-drawer1__content" class="enable-drawer__content" role="group">
+    <div id="enable-drawer1__content" class="enable-drawer__content" role="group" aria-label="Expanded content">
 
       <p>
         This is the contents of the dropdown. For more information about
@@ -257,7 +257,7 @@
       aria-controls="aria-dropdown-multiselect__content" aria-expanded="false">
       Products
     </button>
-    <div id="aria-dropdown-multiselect__content" class="enable-drawer__content" role="group">
+    <div id="aria-dropdown-multiselect__content" class="enable-drawer__content" role="group" aria-label="Expanded content">
       <div class="enable-multiselect__contents">
         <ul aria-label="Products" class="enable-multiselect__list">
           <li class="enable-multiselect__list-item">
