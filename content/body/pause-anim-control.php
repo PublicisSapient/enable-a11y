@@ -30,16 +30,16 @@
   <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This can be used for new builds or existing work with animations.  You should always test the animations you are using to see if it works with this component.  If not, please look at the detailed notes below on how to have your animations support this component.')) ?>
   <?php includeStats(array('isNPM' => true)) ?>
   <p>
-    Pause all the CSS, Canvas, SVG SMIL and GIF
+    Pause all the CSS, Canvas, Video, SVG SMIL and GIF
     animations on this page with the checkbox at the top of this page.
-    The CSS, Canvas and SVG SMIL animations don't know
-    anything about the checkbox. The GIF animations only require
+    The CSS, Video and SVG SMIL animations don't know
+    anything about the checkbox. The Canvas and GIF animations only require
     a small amount of set up to work.
   </p>
 
   <p>
     (Note: if you have set your operating system to Reduce Motion,
-    it will be checked by default)
+    it will be checked by default and animations on the page will not play until the checkbox is unchecked)
   </p>
 
   <h2>Quick Start guide</h2>

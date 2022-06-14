@@ -11,7 +11,7 @@
 <body>
 <div id="a11y-modal__non-modal-content">
 <?php include("includes/documentation-header.php"); ?>
-<main>
+<main id="main" tabindex="-1">
     <?php include "includes/pause-anim-control.php" ?>
 <!-- <aside class="notes">
 <h2>Notes:</h2>

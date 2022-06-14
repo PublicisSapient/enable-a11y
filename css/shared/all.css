@@ -561,6 +561,8 @@ main:not(.with-full-bleed-hero),
   margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;
+  position: relative;
+  z-index: 2;
 }
 .inline-left {
   float: left;
@@ -632,6 +634,7 @@ footer,
   color: white;
   padding: 1em;
   text-align: center;
+  line-height: 1.4;
 }
 footer a,
 [role="contentinfo"] a {

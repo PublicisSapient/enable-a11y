@@ -19,7 +19,7 @@
   <?php include "includes/documentation-header.php";?>
   <?php include "includes/pause-anim-control.php" ?>
   <?php getAsideContent() ?>
-  <main class="<?= $fileProps->mainClass ?>">
+  <main id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
     <?php 
       if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero') {

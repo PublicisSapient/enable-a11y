@@ -13,7 +13,7 @@
 <body>
     <?php include "includes/documentation-header.php";?>
 
-    <main>
+    <main id="main" tabindex="-1">
     <?php include "includes/pause-anim-control.php" ?>
         <h1><?= $fileProps->$title ?></h1>
 

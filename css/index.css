@@ -156,6 +156,17 @@ strong {
   color: #222;
   line-height: 1.5;
   padding: 20px;
+  /* I have no idea why this was put here -- commenting out for now */
+  /* &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100vw;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    } */
 }
 .homepage__bottom-copy:nth-child(2n) {
   background: #eee;
@@ -167,16 +178,6 @@ strong {
 }
 .homepage__bottom-copy strong {
   color: #000 !important;
-}
-.homepage__bottom-copy::after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100vw;
-  top: 0;
-  right: 0;
-  bottom: 0;
 }
 .homepage__bottom-copy--heading {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
