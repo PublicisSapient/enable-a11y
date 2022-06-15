@@ -1,6 +1,10 @@
 <p>
     Marquees are meant for content that scrolls or updates consistently, like a stock ticker or a news feed. Although the have a default <code>aria-live</code> value of <code>off</code>, you can use <code>aria-live="polite"</code> to let users hear the information within a marquee in almost real-time.  Do this carefully, the last thing you would want is have a screen reader update too much in a way that would make the rest of your application unusable to screen reader users due to too much screen reader noise.
 </p>
+
+<p>
+    <strong>Note:</strong> just like all animations, there should be a pause button to stop the marquee from rotating in order to comply with <a href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html">WCAG 2.2.2: Pause, Stop, Hide</a>.  In this example, the user can use the "Pause All Animations" widget at the top of the page to do this.
+</p>
     
         
 
