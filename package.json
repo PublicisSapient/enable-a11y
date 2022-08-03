@@ -33,8 +33,13 @@
     "libs"
   ],
   "scripts": {
-    "test": "bin/checkHTML",
+    "test": "jest",
+    "lint": "bin/checkHTML",
     "server": "node bin/promote-node-modules-to-server.js && bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
+  },
+  "jest": {
+    "verbose": true,
+    "preset": "jest-puppeteer"
   },
   "repository": {
     "type": "git",
@@ -64,6 +69,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "jest": "^28.1.3",
+    "jest-puppeteer": "^6.1.1",
     "jsdoc": "^3.6.6"
   },
   "dependencies": {
@@ -79,6 +85,7 @@
     "lessc": "^1.0.2",
     "node-html-parser": "^5.2.0",
     "php-express": "^0.0.3",
+    "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
     "text-zoom-event": "^1.5.2",
     "vnu": "^20.6.30",

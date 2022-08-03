@@ -44,6 +44,7 @@ EnableFlyoutHamburger = new function() {
   let $rootCloseMenuButton;
   let desktopMq;
   let desktopMql;
+  let areFlyoutsOpen = false;
 
   function delegate(eventName, elementSelector, handler) {
     document.body.addEventListener(eventName, function(e) {
@@ -91,7 +92,9 @@ EnableFlyoutHamburger = new function() {
         $el.setAttribute('tabindex', '-1');
         $el.setAttribute('aria-hidden', 'true');
       });
-    })
+    });
+
+    areFlyoutsOpen = true;
   }
 
   this.closeFlyout = ($flyoutMenu) => {
@@ -113,6 +116,7 @@ EnableFlyoutHamburger = new function() {
       })
     });
 
+
   }
 
   this.closeAllFlyouts = () => {
@@ -133,6 +137,7 @@ EnableFlyoutHamburger = new function() {
       $el.removeAttribute('aria-hidden');
     });
 
+    areFlyoutsOpen = false;
   }
 
 
@@ -312,7 +317,7 @@ EnableFlyoutHamburger = new function() {
   this.keyPressEvent = (e) => {
     const { key } = e;
 
-    if (key === 'Esc' || key === 'Escape') {
+    if (areFlyoutsOpen && (key === 'Esc' || key === 'Escape')) {
       this.closeAllFlyouts();
     }
   }
