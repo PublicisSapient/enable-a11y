@@ -90,8 +90,15 @@
   "steps": [{
     "label": "Set up the details and summary tags",
     "highlight": "\\s*&lt;summary[^;]*&gt;[\\s\\S]*&lt;/summary&gt; ||| \\s*&lt;details[^;]*&gt; ||| \\s*&lt;\/details&gt;",
-    "notes": "It's really, just the previous example"
-  }]
+    "notes": "The markup is <strong>really</strong> easy."
+  },
+  {
+    "label": "set up the optional CSS",
+    "highlight": "%CSS%enable-dropdown~ .enable-drawer",
+    "notes": ""
+  }
+  
+  ]
 }
 </script>
 

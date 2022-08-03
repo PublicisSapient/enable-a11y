@@ -25,7 +25,21 @@ function initEnable() {
 
   // So screen reader users, like VoiceOver users, can navigate via heading and have focus
   // applied to the heading.
+  let headingIndex = 0;
   document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
+
+    if (!el.id) {
+      const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
+
+      console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
+      if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
+        headingIndex++;
+        el.id = `${innerTextId}-${headingIndex}`;
+      } else {
+        el.id = `${innerTextId}`;
+      }
+    }
+
     if (el.getAttribute('tabIndex') === null) {
       el.setAttribute('tabIndex', '-1');
     }

@@ -11,7 +11,7 @@
 </p>
 
 <p>
-    <strong>If you are looking how to alter the design slightly when font-resizing is triggered, you may want to checkout our page on <a href="http://localhost:8888/hero-image-text-resize.php">Accessible Text in Hero Images</a>.</strong>  The article demos a lightweight JavaScript library that can treat text-resizing almost like another breakpoint.
+    <strong>If you are looking how to alter the design slightly when font-resizing is triggered, you may want to checkout our page on <a href="hero-image-text-resize.php">Accessible Text in Hero Images</a>.</strong>  The article demos a lightweight JavaScript library that can treat text-resizing almost like another breakpoint.
 </p>
 
 <h2>Replace Pixels With Ems</h2>

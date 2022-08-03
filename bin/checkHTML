@@ -44,6 +44,32 @@ do
 
 done
 
+#.. let's ensure axe has the right chromedriver installed
+echo "Checking aXe"
+axe http://www.useragentman.com 2>&1 | grep "This version of ChromeDriver only supports"
+
+if [ "$?" = "0" ]
+then
+  echo 
+	echo "-----------------------------------------------------------------"
+	echo "It seems that you do not have the correct Chromedriver installed."
+	echo '
+	
+If there is a problem with running Chromedriver, then you should ensure your chromedriver is installed with the right version.
+
+sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
+
+You can install the right zip file from here:
+
+https://chromedriver.storage.googleapis.com/index.html
+
+(you may need to change the $PATH variable)
+
+https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9'
+exit
+fi
+
+
 if [ ! -f "$VNU_JAR" ]
 then
 	echo "Need to install VNU.  Please run 'npm install'." 1>&2

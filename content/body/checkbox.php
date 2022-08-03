@@ -93,7 +93,7 @@ using <code>&lt;div&gt;</code> tags.
 <p>
   If you have a group of checkboxes, this is the proper way to style them. Instead of fieldsets,
   you could use <code>&lt;role="group"&gt;</code>, which is described in the
-  <a href="http://localhost:8888/form.php#aria">ARIA form role example</a>.
+  <a href="form.php#aria">ARIA form role example</a>.
 </p>
 
 <div id="group-example" class="enable-example">

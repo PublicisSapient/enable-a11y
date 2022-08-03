@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  What follows are not just credits to existing accessible code examples used in Enable, but also to other code I have
+  What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code I have
   built on that I have accessibility features to.
 </p>
 

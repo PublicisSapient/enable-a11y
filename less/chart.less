@@ -22,6 +22,7 @@ body {
   table {
     margin: 20px auto 0 auto;
     border: solid 1px black;
+    width: initial;
   }
 
   svg {
@@ -32,4 +33,45 @@ body {
     font-size: calc(10px * var(--text-zoom-factor ));
   }
 
+}
+
+#bar-chart {
+  height: 400px;
+
+
+  .ct-horizontal.ct-label {
+    display: block;
+    padding-right: 10px;
+    white-space: nowrap;
+    transform-origin: center right;
+    transform: translateX(-170px) translateY(-10px) rotate(-35deg);
+    min-width: 200px;
+    text-align: right;
+  }
+
+  .ct-label {
+    fill: #000;
+    color: #000;
+  }
+
+  &.bar-chart--initialized {
+    margin-bottom: 55px;
+
+    svg {
+      overflow: visible;
+      padding-bottom: 200px;
+    }
+  }
+
+
+}
+
+.checker {
+  fill: black;
+}
+
+
+
+.checker {
+  fill: white;
 }

@@ -11,9 +11,15 @@
       FAQ
     </a>
   </li>
-  <li class="enable-flyout__menu-item enable-flyout__last-top-level-link"> 
-    <a href="credits.php"
+  <li class="enable-flyout__menu-item">
+    <a href="code-quality.php"
       class="enable-flyout__link">
-      Contributors
+      Code Quality Stategies
+    </a>
+  </li>
+  <li class="enable-flyout__menu-item enable-flyout__last-top-level-link"> 
+    <a href="acknowledgements.php"
+      class="enable-flyout__link">
+      Acknowledgements
     </a>
   </li>

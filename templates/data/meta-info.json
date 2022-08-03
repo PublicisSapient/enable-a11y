@@ -222,8 +222,8 @@
     "title": "Accessible Charts",
     "desc": "Demos of accessible charts using d3.js"
   },
-  "credits.php": {
-    "title": "Credits",
+  "acknowledgements.php": {
+    "title": "Acknowledgements",
     "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
   },
   "faq.php": {
@@ -234,5 +234,9 @@
   "npm.php": {
     "title": "NPM Installation Instructions",
     "desc": "Instructions on how to install Enables NPM modules into your own projects."
+  },
+  "code-quality.php": {
+    "title": "Code Quality Stategies",
+    "desc": "What are the automated tools we use in Enable to ensure code quality."
   }
 }
