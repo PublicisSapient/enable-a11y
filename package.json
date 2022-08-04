@@ -76,6 +76,7 @@
     "chromedriver": "^103.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
+    "dom-to-json": "^0.0.4",
     "express": "^4.17.2",
     "fs-extra": "^10.0.0",
     "glider-js": "^1.7.7",
