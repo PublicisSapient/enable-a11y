@@ -85,13 +85,15 @@
     "jquery-validation": "^1.19.3",
     "lessc": "^1.0.2",
     "node-html-parser": "^5.2.0",
+    "parse5": "^7.0.0",
     "php-express": "^0.0.3",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
     "text-zoom-event": "^1.5.2",
     "vnu": "^20.6.30",
     "vnu-jar": "^21.6.11",
-    "wget-improved": "^3.2.1"
+    "wget-improved": "^3.2.1",
+    "xmlserializer": "^0.6.1"
   },
   "bin": {
     "enable-a11y": "bin/server.js"

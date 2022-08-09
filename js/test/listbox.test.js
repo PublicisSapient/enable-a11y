@@ -2,6 +2,7 @@
 
 import config from './test-config.js';
 import enableTestHelpers from './enable-test-helpers.js';
+let parser = require('parse5');
 
 
 // let el = await page.evaluateHandle(() => document.activeElement);
@@ -106,9 +107,9 @@ describe('ARIA Listbox', () => {
     // focus on the listbox button and check attributes;
     await page.waitForSelector('#exp_button');
     await page.focus('#exp_button');
-    console.log('a');
-    el = await enableTestHelpers.getClonedActiveEl(page);
-console.log('b');
+    el = parser.parse(await enableTestHelpers.getClonedActiveEl(page));
+    
+    console.log('b', el);
     console.log('first clone', el);
     expect(el.getAttribute('aria-haspopup')).toBe('listbox');
     expect(el.getAttribute('aria-expanded')).toBe('false');
