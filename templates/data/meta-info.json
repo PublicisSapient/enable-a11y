@@ -236,7 +236,11 @@
     "desc": "Instructions on how to install Enables NPM modules into your own projects."
   },
   "code-quality.php": {
-    "title": "Code Quality Stategies",
+    "title": "Accessible Code Quality",
     "desc": "What are the automated tools we use in Enable to ensure code quality."
+  },
+  "exposing-style-info-to-screen-readers.php": {
+    "title": "Exposing Style Information To Screen Readers",
+    "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?"
   }
 }

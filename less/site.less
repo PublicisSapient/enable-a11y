@@ -1,7 +1,8 @@
 @import "shared/mixins-and-vars";
 
 // site specific hamburger menu styles
-
+@default-menu-item-with-photo-width: 118px;
+@default-menu-item-with-photo-horiz-padding: 5px;
 .enable-flyout {
 
   &__open-level-button,
@@ -31,6 +32,7 @@
     width: fit-content;
     margin: 20px auto;
   }
+
 }
 
 @media @desktop {
@@ -56,17 +58,15 @@
     }
 
     &__level &__level &__list--photo-layout &__menu-item {
-      width: 134px;
+      width: @default-menu-item-with-photo-width;
       float: left;
       height: @item-height;
       background: white;
 
-      #controls-section& {
-        width: 145px; 
-      }
 
       #code-patterns-section& {
-        width: 134px;
+        width: @default-menu-item-with-photo-width;
+
       }
       
     }
@@ -82,7 +82,7 @@
 
       #content-section&,
       #code-patterns-section& {
-        padding: 10px 15.5px 0 15.5px;
+        padding: 10px @default-menu-item-with-photo-horiz-padding 0 @default-menu-item-with-photo-horiz-padding;
       }
 
       &:hover,
@@ -119,7 +119,12 @@
 
       .enable-flyout__list {
         width: 100%;
+        padding-left: 30px;
       }
+    }
+
+    #controls-section .enable-flyout__level-heading {
+      text-align: center;
     }
 
     #code-patterns-section > :not(&__menu-item) > &__menu-item:nth-child(2),
@@ -128,6 +133,10 @@
       float: left;
       margin-left: @mulit-column-menu-margin;
       margin-right: @mulit-column-menu-margin;
+
+      .text-zoom & {
+        width: auto;
+      }
 
     }
 
@@ -171,8 +180,13 @@
       height: (225/@px);
     }
 
+
+    &__open-level-button, &__close-level-button, &__link {
+      width: initial;
+    }
     
   }
+
 
 }
 

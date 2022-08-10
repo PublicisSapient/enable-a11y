@@ -170,6 +170,20 @@ code {
     border: solid 2px white;
     font-family: @code-font-stack;
     font-style: normal;
+    background: none;
+
+    &::before, &::after {
+      .enable__visually-hidden;
+      user-select: none;
+    }
+
+    &::before {
+      content: "Start of highlighted code.";
+    }
+
+    &::after {
+      content: "End of highlighted code."
+    }
 
     & & {
       border: none;

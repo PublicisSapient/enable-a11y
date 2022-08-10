@@ -90,7 +90,7 @@ const showcode = new function () {
   }
 
   function highlightFunc(s) {
-    return `<em class="showcode__highlight" tabindex="-1" ><span class="sr-only">Start of highlighted code. </span>${s}<span class="sr-only"> End of highlighted code.</span></em>`;
+    return `<mark class="showcode__highlight" tabindex="-1" >${s}</mark>`;
   }
 
   function formatCSS(localCode) {
@@ -275,12 +275,15 @@ const showcode = new function () {
 
   function setReadMoreCSSVar(notesEl) {
     const overflowEl = notesEl.querySelector('div');
+    console.log(notesEl);
 
 
     // The +1 in the formula below is because firefox has rounding errors.
     if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight + 1) {
+      console.log('a');
       notesEl.classList.add('showcode__notes--is-overflowed');
     } else {
+      console.log('b');
       notesEl.classList.remove('showcode__notes--is-overflowed');
     }
   }
@@ -791,7 +794,7 @@ const showcode = new function () {
 
   function replaceCSSinString(string) {
     const replaceRulesJson = {
-      "content:[^;]*;": "/* Image URL below obfuscated */\ncontent: url(' ... ');"
+      "content: url[^;]*;": "/* Image URL below obfuscated */\ncontent: url(' ... ');"
     };
 
     let newString = string;

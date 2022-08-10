@@ -67,7 +67,7 @@
 </p>
 
 <p>
-  Enable has a non-public set of experimental unit tests that have been implemented.  These haven't been released to the public yet due to us wanting to ensure the unit tests we give are a good model for developers to use in their own projects.  In the meantime, <a href="https://www.24a11y.com/2017/writing-automated-tests-accessibility/">Writing Automated Tests for Accessibility</a> by <a href="https://www.deque.com/blog/author/marcy-sutton/">Marcie Sutton</a> is a great place to start (it's where we started).
+  Enable currently is testing out using <a href="https://jestjs.io/">Jest</a> with <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> to do unit tests.  These tests haven't been released to the public yet because we haven't finished our testing, and we want to ensure the unit test advice we give are a good model for developers to use in their own projects.  In the meantime, <a href="https://www.24a11y.com/2017/writing-automated-tests-accessibility/">Writing Automated Tests for Accessibility</a> by <a href="https://www.deque.com/blog/author/marcy-sutton/">Marcie Sutton</a> and <a href="https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032">Web Accessibility Testing</a> by <a href="https://www.kfirzuberi.com/">Kfir Zuberi</a> are great places to start (it's where we started).
   </p>
 
 

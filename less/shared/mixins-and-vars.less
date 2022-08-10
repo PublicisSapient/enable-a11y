@@ -187,7 +187,14 @@
 	margin: auto;
 }
 
+.not-selectable() {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+// This is experimental and not recommended to be
+// used in a production environment.
 .content-with-alt-text(@content: ""; @alt: "") {
 	@supports (content: "x" / "y") {
 		& {

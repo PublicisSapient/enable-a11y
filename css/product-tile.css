@@ -1,0 +1,51 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.product-tile {
+  display: block;
+  width: 12.5rem;
+  border: solid 1px #999;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 2.5rem 10px;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  overflow: hidden;
+  text-align: center;
+}
+.product-tile__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #aaa;
+  padding: 5px;
+}
+.product-tile__name {
+  font-weight: bold;
+}
+.product-tile--good-example del::before,
+.product-tile--good-example ins::before {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.product-tile--good-example del::before {
+  content: "Old price: ";
+}
+.product-tile--good-example ins::before {
+  content: "Current price: ";
+}

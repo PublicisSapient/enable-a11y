@@ -1,0 +1,47 @@
+@import "shared/mixins-and-vars";
+
+
+.product-tile {
+  display: block;
+  width: (200/@px);
+  border: solid 1px #999;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: (40/@px) 10px;
+  position: relative;
+  text-decoration: none;
+  color: #111;
+  overflow: hidden;
+  text-align: center;
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #aaa;
+    padding: 5px;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &--good-example {
+    del::before, ins::before {
+      .enable__visually-hidden;
+      .not-selectable;
+    }
+
+    del {
+      &::before {
+        content: "Old price: ";
+      }
+    }
+
+    ins {
+      &::before {
+        content: "Current price: ";
+      }
+    }
+  }
+}

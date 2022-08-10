@@ -128,10 +128,16 @@ strong {
         background-size: 80px 80px;
         background-repeat: no-repeat;
         background-position: 50% 50%;
+
+        @media (forced-colors: active) {
+          & {
+            filter: invert() brightness(61%) contrast(434%)
+          }
+        }
       }
 
-      &--code::before {
-        background-image: data-uri('../images/icons/code.svg');
+      &--code::before { 
+        background-image: data-uri('../images/icons/code.svg');  
         background-color: @color-scratch;
       } 
 
@@ -143,6 +149,13 @@ strong {
       &--npm::before {
         background-image: data-uri('../images/icons/npm.svg');
         background-color: @color-npm;
+
+        @media (forced-colors: active) {
+          & {
+            background-color: #fff;
+            filter: grayscale() invert() contrast(434%);
+          }
+        }
       }
 
       &--question::before {
@@ -188,7 +201,7 @@ strong {
     /* I have no idea why this was put here -- commenting out for now */
     /* &::after {
       content: "";
-      position: absolute;
+      position: absolute; 
       display: block;
       left: 0;
       width: 100vw;
