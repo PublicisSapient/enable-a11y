@@ -26,6 +26,22 @@ const tooltip = new function () {
     let isTooltipVisible;
     let tooltipBelongsTo;
 
+    /*!
+    * Determine if an element is in the viewport
+    * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+    * @param  {Node}    elem The element
+    * @return {Boolean}      Returns true if element is in the viewport
+    */
+    function isInViewport(elem) {
+        var distance = elem.getBoundingClientRect();
+        return (
+        distance.top >= 0 &&
+        distance.left >= 0 &&
+        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
     this.init = () => {
         this.create();
 
@@ -94,6 +110,20 @@ const tooltip = new function () {
             tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
             isTooltipVisible = true;
             tooltipBelongsTo = tooltipTarget;
+
+            // if the tooltip element is not in the viewport, we should scroll the page down so the user can see it.
+            // Note that this always assumes that the tooltip is below the focused element.
+            if (!isInViewport(tooltipEl)) {
+                const afterStyle = window.getComputedStyle(tooltipEl, '::after');
+                const afterHeight = parseInt(afterStyle.height);
+                const tooltipY = element.getBoundingClientRect().top;
+
+                if (window.scrollY < tooltipY) {
+                    window.scrollTo(window.scrollX, tooltipY);
+                }
+
+                
+            }
         }
 
         tooltipTarget.addEventListener('mouseleave', this.hide);
@@ -112,7 +142,7 @@ const tooltip = new function () {
     }
 
     this.hide = (e) => {
-        if (e.type === 'mouseleave') {
+        if (e && e.type === 'mouseleave') {
             const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
             if (hoveredElement === tooltipEl) {
                 return;

@@ -1,0 +1,10 @@
+Attribute “autocorrect” not allowed on element “input” at this point.
+inputmode
+The “dialog” element is not supported in all browsers
+Bad value “dialog” for attribute “method” on element “form”.
+The “button” role is unnecessary
+The “role” attribute must not be used on a “td” element which has a “table” ancestor with no “role” attribute, or with a “role” attribute whose value is “table”, “grid”, or “treegrid”.
+When the “srcset” attribute has any image candidate string with a width descriptor, the “sizes” attribute must also be present.
+An “img” element which has an “alt” attribute whose value is the empty string must not have a “role” attribute.
+info warning:
+Element “img” is missing required attribute “src”.

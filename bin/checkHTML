@@ -4,7 +4,7 @@ VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
 MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
 PROJECT_URL="http://$MYIP:8888/index.php"
-
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 
 echo "Checking if dependencies are installed ..."
@@ -119,17 +119,7 @@ echo
 
 echo "Checking HTML..."
 echo
-OUTPUT=`$VNU_CMD $TEMP_FILES 2>&1 | 
-	grep -v autocorrect | 
-	grep -v inputmode | 
-	grep -v 'The “dialog” element is not supported in all browsers' |
-	grep -v 'Bad value “dialog” for attribute “method”' |
-	grep -v 'The “button” role is unnecessary' |
-	grep -v 'The “role” attribute must not be used on a “td” element' |
-	grep -v 'error: When the “srcset” attribute has any image candidate string with a width descriptor, the “sizes” attribute must also be present.' |
-	grep -v 'An “img” element which has an “alt” attribute whose value is the empty string must not have a “role” attribute.' |
-	grep -v 'info warning:'|
-	grep -v 'Element “img” is missing required attribute “src”'`
+OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
 VNU_ERR_CODE="$?"
 
 echo "ERROR CODE: $VNU_ERR_CODE"
@@ -191,7 +181,7 @@ then
 	exit 1
 fi
 
-
+<<comment
 echo "Running aXe tests..."
 
 #.. Make a list of the delayed URLS
@@ -219,12 +209,23 @@ then
 	echo "aXe failed. See information above."
 	exit 1
 fi
-
+comment
 
 
 echo "Running pa11y tests ..."
 
 DID_PALLY_SUCCEED="0"
+
+echo '{
+    "urls": [ '
+
+echo "$DOWNLOADED_URLS" | awk '{ printf("\"%s\",\n", $1) }'
+
+        
+echo '    ]
+}'
+
+exit
 
 for i in $DOWNLOADED_URLS
 do
