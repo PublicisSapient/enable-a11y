@@ -41,7 +41,7 @@ describe('Dialog Tests', () => {
   }
   
   it('Focus on open and close tests', async () => {
-    let el;
+    let domInfo;
 
     await page.goto(`${config.BASE_URL}/dialog.php`);
     // focus on button that opens modal;
@@ -49,7 +49,7 @@ describe('Dialog Tests', () => {
     await page.focus('#updateDetails');
 
     // check to see if the modal is visible
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const dialogEl = document.querySelector('#favDialog');
       
       return {
@@ -57,7 +57,7 @@ describe('Dialog Tests', () => {
       };
     });
 
-    expect(el.isOpen).toBe(false);
+    expect(domInfo.isOpen).toBe(false);
 
 
 
@@ -67,7 +67,7 @@ describe('Dialog Tests', () => {
     await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
 
     // check to see if the close button has focus and the dialog is visible.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const dialogEl = document.querySelector('#favDialog');
       
@@ -79,8 +79,8 @@ describe('Dialog Tests', () => {
     });
 
    
-    expect(el.isProperClass).toBe(true);
-    expect(el.isOpen).toBe(true);
+    expect(domInfo.isProperClass).toBe(true);
+    expect(domInfo.isOpen).toBe(true);
 
     // Click close button
     page.keyboard.press('Space');
@@ -89,7 +89,7 @@ describe('Dialog Tests', () => {
     await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
 
     // check to see if the button that opened the modal is now focused.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const dialogEl = document.querySelector('#favDialog');
 
@@ -98,13 +98,13 @@ describe('Dialog Tests', () => {
         isOpen: (dialogEl.getAttribute('open') !== null)
       };
     });
-    expect(el.isProperId).toBe(true);
-    expect(el.isOpen).toBe(false);
+    expect(domInfo.isProperId).toBe(true);
+    expect(domInfo.isOpen).toBe(false);
 
   });
 
   it('Check Focus Loop', async () => {
-    let el, focusedNodes = [];
+    let domInfo, focusedNodes = [];
 
     await page.goto(`${config.BASE_URL}/dialog.php`);
     // focus on button that opens modal;
@@ -116,7 +116,7 @@ describe('Dialog Tests', () => {
     await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
 
     // need page.evaluate to find aria attributes.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       
       return {
@@ -126,14 +126,14 @@ describe('Dialog Tests', () => {
     });
 
 
-    expect(el.isProperClass).toBe(true);
+    expect(domInfo.isProperClass).toBe(true);
 
-    el = {};
+    domInfo = {};
 
     // Lets tab through the modal and see if there is a loop.
     do {
-      if (el.html) {
-        focusedNodes.push(el.html);
+      if (domInfo.html) {
+        focusedNodes.push(domInfo.html);
       }
       page.keyboard.press('Tab');
 
@@ -141,7 +141,7 @@ describe('Dialog Tests', () => {
       await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
 
       // grab HTML of activeElement and make sure it is in dialog
-      el = await page.evaluate(() => {
+      domInfo = await page.evaluate(() => {
         const { activeElement } = document;
         
         return {
@@ -150,8 +150,8 @@ describe('Dialog Tests', () => {
         };
       });
 
-      expect(el.isInsideModal).toBe(true);
-    } while (!focusedNodes.includes(el.html));
+      expect(domInfo.isInsideModal).toBe(true);
+    } while (!focusedNodes.includes(domInfo.html));
   });
 
   it('Check To Ensure Nodes Outside Dialog are hidden with aria-hidden', async () => {
@@ -177,7 +177,7 @@ describe('Dialog Tests', () => {
   });
 
   it('Ensure dialog has proper label and description', async () => {
-    let el;
+    let domInfo;
 
     await page.goto(`${config.BASE_URL}/dialog.php`);
     // focus on button that opens modal;
@@ -185,7 +185,7 @@ describe('Dialog Tests', () => {
     await page.focus('#updateDetails');
 
     // Ensure dialog has aria-labelledby and aria-describedby
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const dialog = document.querySelector('#favDialog');
       const ariaLabelledby = dialog.getAttribute('aria-labelledby');
       const ariaDescribedby = dialog.getAttribute('aria-describedby');
@@ -198,10 +198,10 @@ describe('Dialog Tests', () => {
       };
     });
 
-    console.log('info', el.label, el.desc);
+    console.log('info', domInfo.label, domInfo.desc);
 
-    expect(el.label.trim()).not.toBe('');
-    expect(el.desc.trim()).not.toBe('');
+    expect(domInfo.label.trim()).not.toBe('');
+    expect(domInfo.desc.trim()).not.toBe('');
 
   });
   

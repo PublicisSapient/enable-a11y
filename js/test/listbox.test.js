@@ -4,7 +4,7 @@ import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
 
-// let el = await page.evaluateHandle(() => document.activeElement);
+// let domInfo = await page.evaluateHandle(() => document.activeElement);
 
 /* const result = await page.evaluate(() => {
   return document.activeElement.outerHTML;
@@ -15,7 +15,7 @@ describe('ARIA Listbox', () => {
   });
   
   async function cycleThroughItems() {
-    let el, listboxValues;
+    let domInfo, listboxValues;
 
 
     // focus on the listbox button and check attributes;
@@ -46,7 +46,7 @@ describe('ARIA Listbox', () => {
 
 
       // now, let's press enter and cycle through all the elements with the down arrow.
-      el = await page.evaluate(() => {
+      domInfo = await page.evaluate(() => {
         const { activeElement } = document;
 
         return {
@@ -54,7 +54,7 @@ describe('ARIA Listbox', () => {
         };
       });
       
-      expect(el.value).toBe(listboxValues[i]);
+      expect(domInfo.value).toBe(listboxValues[i]);
       // console.log('value selected:', el.value);
       
     }
@@ -66,7 +66,7 @@ describe('ARIA Listbox', () => {
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
 
       return {
@@ -74,7 +74,7 @@ describe('ARIA Listbox', () => {
       };
     });
     
-    expect(el.value).toBe(listboxValues[0]);
+    expect(domInfo.value).toBe(listboxValues[0]);
     // console.log('value selected 1:', el.value);
 
     // one more up arrow should go to the last element.
@@ -84,7 +84,7 @@ describe('ARIA Listbox', () => {
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
 
       return {
@@ -92,14 +92,14 @@ describe('ARIA Listbox', () => {
       };
     });
     
-    expect(el.value).toBe(listboxValues[listboxValues.length - 1]);
+    expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
 
     return listboxValues;
   }
   
 
   it('Try keyboard tabbing and picking 2nd value with the Enter key', async () => {
-    let el;
+    let domInfo;
 
     await page.goto(`${config.BASE_URL}/listbox.php`);
     // focus on the listbox button and check attributes;
@@ -107,7 +107,7 @@ describe('ARIA Listbox', () => {
     await page.focus('#exp_button');
 
     // need page.evaluate to find aria attributes.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       let ariaExpanded = activeElement.getAttribute('aria-expanded');
 
@@ -122,8 +122,8 @@ describe('ARIA Listbox', () => {
       };
     });
 
-    expect(el.ariaHaspopup).toBe('listbox');
-    expect(el.ariaExpanded).toBe('false');
+    expect(domInfo.ariaHaspopup).toBe('listbox');
+    expect(domInfo.ariaExpanded).toBe('false');
 
     // press the space key and check if the component has aria-expanded to be true.
     page.keyboard.press('Space');
@@ -131,7 +131,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const button = document.getElementById('exp_button');
 
@@ -144,10 +144,10 @@ describe('ARIA Listbox', () => {
 
       };
     });
-    expect(el.buttonAriaExpanded).toBe('true');
-    expect(el.value).toBe('Neptunium');
-    expect(el.role).toBe('option'),
-    expect(el.ariaSelected).toBe('false');
+    expect(domInfo.buttonAriaExpanded).toBe('true');
+    expect(domInfo.value).toBe('Neptunium');
+    expect(domInfo.role).toBe('option'),
+    expect(domInfo.ariaSelected).toBe('false');
 
 
     // Press down arrow and make sure new Element gets focus.
@@ -155,7 +155,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const button = document.getElementById('exp_button');
 
@@ -168,10 +168,10 @@ describe('ARIA Listbox', () => {
 
       };
     });
-    expect(el.buttonAriaExpanded).toBe('true');
-    expect(el.value).toBe('Plutonium');
-    expect(el.role).toBe('option'),
-    expect(el.ariaSelected).toBe('false')
+    expect(domInfo.buttonAriaExpanded).toBe('true');
+    expect(domInfo.value).toBe('Plutonium');
+    expect(domInfo.role).toBe('option'),
+    expect(domInfo.ariaSelected).toBe('false')
 
 
 
@@ -180,7 +180,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       let ariaExpanded = activeElement.getAttribute('aria-expanded');
       
@@ -196,13 +196,13 @@ describe('ARIA Listbox', () => {
     });
 
 
-    expect(el.ariaHaspopup).toBe('listbox');
-    expect(el.ariaExpanded).toBe('false');
-    expect(el.value).toBe('Plutonium');
+    expect(domInfo.ariaHaspopup).toBe('listbox');
+    expect(domInfo.ariaExpanded).toBe('false');
+    expect(domInfo.value).toBe('Plutonium');
   });
 
   it('Try keyboard tabbing and picking 2nd value with the tab key', async () => {
-    let el;
+    let domInfo;
 
     await page.goto(`${config.BASE_URL}/listbox.php`);
     // focus on the listbox button and check attributes;
@@ -210,7 +210,7 @@ describe('ARIA Listbox', () => {
     await page.focus('#exp_button');
 
     // need page.evaluate to find aria attributes.
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       let ariaExpanded = activeElement.getAttribute('aria-expanded');
 
@@ -225,8 +225,8 @@ describe('ARIA Listbox', () => {
       };
     });
 
-    expect(el.ariaHaspopup).toBe('listbox');
-    expect(el.ariaExpanded).toBe('false');
+    expect(domInfo.ariaHaspopup).toBe('listbox');
+    expect(domInfo.ariaExpanded).toBe('false');
 
     // press the space key and check if the component has aria-expanded to be true.
     page.keyboard.press('Space');
@@ -234,7 +234,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const button = document.getElementById('exp_button');
 
@@ -247,10 +247,10 @@ describe('ARIA Listbox', () => {
 
       };
     });
-    expect(el.buttonAriaExpanded).toBe('true');
-    expect(el.value).toBe('Neptunium');
-    expect(el.role).toBe('option'),
-    expect(el.ariaSelected).toBe('false');
+    expect(domInfo.buttonAriaExpanded).toBe('true');
+    expect(domInfo.value).toBe('Neptunium');
+    expect(domInfo.role).toBe('option'),
+    expect(domInfo.ariaSelected).toBe('false');
 
 
     // Press down arrow and make sure new Element gets focus.
@@ -258,7 +258,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       const button = document.getElementById('exp_button');
 
@@ -271,10 +271,10 @@ describe('ARIA Listbox', () => {
 
       };
     });
-    expect(el.buttonAriaExpanded).toBe('true');
-    expect(el.value).toBe('Plutonium');
-    expect(el.role).toBe('option'),
-    expect(el.ariaSelected).toBe('false')
+    expect(domInfo.buttonAriaExpanded).toBe('true');
+    expect(domInfo.value).toBe('Plutonium');
+    expect(domInfo.role).toBe('option'),
+    expect(domInfo.ariaSelected).toBe('false')
 
 
 
@@ -283,7 +283,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
       let ariaExpanded = activeElement.getAttribute('aria-expanded');
       
@@ -301,14 +301,14 @@ describe('ARIA Listbox', () => {
 
     // console.log('html', el.html);
 
-    expect(el.ariaHaspopup).toBe('listbox');
-    expect(el.ariaExpanded).toBe('false');
-    expect(el.value).toBe('Plutonium');
+    expect(domInfo.ariaHaspopup).toBe('listbox');
+    expect(domInfo.ariaExpanded).toBe('false');
+    expect(domInfo.value).toBe('Plutonium');
   });
 
 
   it('Iterate through all values and click ENTER to choose value', async () => {
-    let el, listboxValues;
+    let domInfo, listboxValues;
 
     await page.goto(`${config.BASE_URL}/listbox.php`);
 
@@ -319,7 +319,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
 
       return {
@@ -328,13 +328,13 @@ describe('ARIA Listbox', () => {
       };
     });
 
-    expect(el.value).toBe(listboxValues[listboxValues.length - 1]);
-    expect(el.ariaHaspopup).toBe('listbox');
+    expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
+    expect(domInfo.ariaHaspopup).toBe('listbox');
 
   });
 
   it('Iterate through all values and click ESCAPE to choose value', async () => {
-    let el, listboxValues;
+    let domInfo, listboxValues;
 
     await page.goto(`${config.BASE_URL}/listbox.php`);
 
@@ -346,7 +346,7 @@ describe('ARIA Listbox', () => {
     // await 100ms before continuing further
     await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
-    el = await page.evaluate(() => {
+    domInfo = await page.evaluate(() => {
       const { activeElement } = document;
 
       return {
@@ -357,8 +357,8 @@ describe('ARIA Listbox', () => {
     });
     // console.log('html', el.html);
 
-    expect(el.value).toBe('');
-    expect(el.ariaHaspopup).toBe('listbox');
+    expect(domInfo.value).toBe('');
+    expect(domInfo.ariaHaspopup).toBe('listbox');
   });
 
 
