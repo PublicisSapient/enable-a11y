@@ -218,6 +218,17 @@ table.fixed-headers .tbody,
   width: calc(100% + 16px);
   height: 80vh;
 }
+.screenshot-table {
+  margin: 0 auto;
+  width: initial;
+  max-width: initial;
+}
+.screenshot-table th[scope="row"] {
+  vertical-align: middle;
+}
+.screenshot-table td {
+  padding: 0;
+}
 table td:first-child,
 table td:nth-child(2) {
   font-family: "Consolas", monospace;

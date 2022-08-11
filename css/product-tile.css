@@ -28,6 +28,9 @@
 .product-tile__name {
   font-weight: bold;
 }
+.product-tile__image {
+  width: 100%;
+}
 .product-tile--good-example del::before,
 .product-tile--good-example ins::before {
   clip: rect(1px 1px 1px 1px);

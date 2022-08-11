@@ -83,6 +83,7 @@ if (typeof document !== 'undefined') {
             dFrame = document.createElement('IFRAME');
             dFrame.setAttribute('aria-hidden', 'true');
             dFrame.setAttribute('tabindex', '-1');
+            dFrame.setAttribute('title', 'Text Zoom Event Iframe');
 
             document.body.insertBefore(dFrame, b);
 

@@ -11,9 +11,9 @@
       </span>
     </div>
 
-    <div class="product-tile__image">
-      <img src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt=""
-        role="presentation" width="100%" height="100%">
+    <div class="product-tile__image-container">
+      <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt=""
+        role="presentation" >
     </div>
 
     <div class="product-tile__name">
@@ -25,6 +25,8 @@
     </div>
   </a>
 </div>
+
+<h2>CSS Generated Content To The Rescue</h2>
 
 <p>
   If you use a screen reader and tab into the product tile, more likely or not, your screen reader will announce
@@ -44,9 +46,9 @@
       </span>
     </div>
 
-    <div class="product-tile__image">
-      <img src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt=""
-        role="presentation" width="100%" height="100%">
+    <div class="product-tile__image-container">
+      <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt=""
+        role="presentation" >
     </div>
 
     <div class="product-tile__name">

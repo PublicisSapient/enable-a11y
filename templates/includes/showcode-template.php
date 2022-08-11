@@ -34,8 +34,8 @@
               <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
                 ><span class="showcode__notes-view-toggle--more">View
                   More</span><span class="showcode__notes-view-toggle--less">View Less</span>
-                  <div class="sr-only">(This control is not needed for screen reader
-                users.)</div>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
               </button>
               
 
