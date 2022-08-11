@@ -36,3 +36,5 @@ const textZoomDemo = new function () {
 }
 
 textZoomDemo.init();
+
+export default textZoomDemo;

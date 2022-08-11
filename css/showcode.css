@@ -106,6 +106,26 @@ code {
   border: solid 2px white;
   font-family: "ModeSeven", "Consolas", monospace;
   font-style: normal;
+  background: none;
+}
+.showcode__highlight::before,
+.showcode__highlight::after {
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+  user-select: none;
+}
+.showcode__highlight::before {
+  content: "Start of highlighted code.";
+}
+.showcode__highlight::after {
+  content: "End of highlighted code.";
 }
 .showcode__highlight .showcode__highlight {
   border: none;

@@ -46,16 +46,13 @@
     width: fit-content;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
-    width: 134px;
+    width: 118px;
     float: left;
     height: 11.75rem;
     background: white;
   }
-  #controls-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
-    width: 145px;
-  }
   #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__menu-item {
-    width: 134px;
+    width: 118px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
     position: relative;
@@ -66,7 +63,7 @@
   }
   #content-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link,
   #code-patterns-section.enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link {
-    padding: 10px 15.5px 0 15.5px;
+    padding: 10px 5px 0 5px;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:hover,
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
@@ -90,6 +87,10 @@
   }
   #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item .enable-flyout__list {
     width: 100%;
+    padding-left: 30px;
+  }
+  .enable-flyout #controls-section .enable-flyout__level-heading {
+    text-align: center;
   }
   #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2),
   #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
@@ -97,6 +98,10 @@
     float: left;
     margin-left: 18px;
     margin-right: 18px;
+  }
+  .text-zoom #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2),
+  .text-zoom #content-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
+    width: auto;
   }
   #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(3) {
     width: calc(200% / 3 - 36px);
@@ -127,6 +132,11 @@
   }
   #content-section .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     height: 14.0625rem;
+  }
+  .enable-flyout__open-level-button,
+  .enable-flyout__close-level-button,
+  .enable-flyout__link {
+    width: initial;
   }
 }
 .enable-logo {

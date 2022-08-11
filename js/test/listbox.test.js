@@ -10,7 +10,6 @@ import testHelpers from './test-helpers.js';
   return document.activeElement.outerHTML;
 }); */
 
-
 describe('ARIA Listbox', () => {
   beforeAll(async () => {
   });
@@ -37,13 +36,13 @@ describe('ARIA Listbox', () => {
       return listboxValues;
     });
 
-    console.log('all values', listboxValues);
+    // console.log('all values', listboxValues);
 
     for (let i=0; i<listboxValues.length; i++) {
       // Press down arrow and make sure new Element gets focus.
       page.keyboard.press('ArrowDown');
       // await 100ms before continuing further
-      await new Promise(res => setTimeout(res, 100));
+      await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
 
       // now, let's press enter and cycle through all the elements with the down arrow.
@@ -56,14 +55,14 @@ describe('ARIA Listbox', () => {
       });
       
       expect(el.value).toBe(listboxValues[i]);
-      console.log('value selected:', el.value);
+      // console.log('value selected:', el.value);
       
     }
 
     // one more down arrow should go to the first element.
     page.keyboard.press('ArrowDown');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
@@ -76,12 +75,12 @@ describe('ARIA Listbox', () => {
     });
     
     expect(el.value).toBe(listboxValues[0]);
-    console.log('value selected 1:', el.value);
+    // console.log('value selected 1:', el.value);
 
     // one more up arrow should go to the last element.
     page.keyboard.press('ArrowUp');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
@@ -130,7 +129,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -154,7 +153,7 @@ describe('ARIA Listbox', () => {
     // Press down arrow and make sure new Element gets focus.
     page.keyboard.press('ArrowDown');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -179,7 +178,7 @@ describe('ARIA Listbox', () => {
     // Press Enter to see if the new value gets populated in the button.
     page.keyboard.press('Enter');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -233,7 +232,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -257,7 +256,7 @@ describe('ARIA Listbox', () => {
     // Press down arrow and make sure new Element gets focus.
     page.keyboard.press('ArrowDown');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -282,7 +281,7 @@ describe('ARIA Listbox', () => {
     // Press Enter to see if the new value gets populated in the button.
     page.keyboard.press('Tab');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -300,7 +299,7 @@ describe('ARIA Listbox', () => {
     });
 
 
-    console.log('html', el.html);
+    // console.log('html', el.html);
 
     expect(el.ariaHaspopup).toBe('listbox');
     expect(el.ariaExpanded).toBe('false');
@@ -318,7 +317,7 @@ describe('ARIA Listbox', () => {
     // Now let's press ENTER to check if the correct value is set.
     page.keyboard.press('Enter');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -345,7 +344,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Escape');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, 100));
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
 
     el = await page.evaluate(() => {
       const { activeElement } = document;
@@ -356,7 +355,7 @@ describe('ARIA Listbox', () => {
         html: activeElement.outerHTML
       };
     });
-    console.log('html', el.html);
+    // console.log('html', el.html);
 
     expect(el.value).toBe('');
     expect(el.ariaHaspopup).toBe('listbox');

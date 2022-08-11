@@ -559,7 +559,6 @@
   .enable-flyout__link {
     display: inline-block;
     text-align: center;
-    padding-right: 25px !important;
   }
   .enable-flyout__link-image {
     display: block;

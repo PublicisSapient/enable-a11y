@@ -168,9 +168,9 @@ echo "$OUTPUT" | (
 
 				# echo "LINES_INFO: $LINES_INFO"
 				# echo "LINE_NUM: $BEGIN_LINE_NUM $END_LINE_NUM"
-				printf "$LINE\n\n$CONTEXT\n\n"
+				echo -e "$LINE\n\n$CONTEXT\n\n"
 			else
-				printf "GLOBAL ERROR: $LINE\n\n"
+				echo -e "GLOBAL ERROR: $LINE\n\n"
 			fi
 		fi
 	done

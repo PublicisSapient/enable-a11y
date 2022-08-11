@@ -1,4 +1,3 @@
-<script src="https://useragentman.com/examples/text-zoom-event/dist/textZoomEvent-es4.js"></script>
 <script>
     const body = document.body;
 

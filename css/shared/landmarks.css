@@ -569,7 +569,6 @@ main:not(.with-full-bleed-hero),
   max-width: 1024px;
   line-height: 1.4;
   position: relative;
-  z-index: 2;
 }
 .inline-left {
   float: left;

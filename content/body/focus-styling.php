@@ -18,7 +18,7 @@
 
   <?php includeShowcode("focus-remove", "", "", "", false)?>
 
-  <figcaption>Figure 1. Horrible code a lot of developers use to turn off focus states.  Never do this.</figcaption>
+  <figcaption>Figure 1. Horrible code a lot of developers use to turn off focus states. Never do this.</figcaption>
 
 
 </figure>
@@ -34,7 +34,7 @@
 </script>
 
 <template id="focus-remove" data-type="css">
-  *:focus {  outline: none;  }
+  *:focus { outline: none; }
 </template>
 
 <p>
@@ -55,7 +55,8 @@
 <figure class="wide">
   <?php includeShowcode("css-focus-visible", "", "", "", false)?>
 
-  <figcaption>Figure 2. Much better code that styles focus states for keyboard users, while minimizing its visibility for mouse users.</figcaption>
+  <figcaption>Figure 2. Much better code that styles focus states for keyboard users, while minimizing its visibility
+    for mouse users.</figcaption>
 </figure>
 
 <script type="application/json" id="css-focus-visible-props">
@@ -99,12 +100,11 @@
 </p>
 
 
-<figure>
+<figure class="wide centered-image">
 
   <?php pictureWebpPng("images/focus/clickable-hit-state", "Screenshot of the Enable website's main navigation, with keyboard focus applied to the 'controls' navigation drawer.")?>
 
-  <figcaption>Figure 3. The focus state of the "Contols" navigation button. Note that the hit area is a lot larger than
-    the visual height of the thin horizontal gray strip where the drawer sits inside.</figcaption>
+  <figcaption>Figure 3. The focus state of the "Contols" navigation button. Note the large hit area.</figcaption>
 </figure>
 
 <p>We increased the hit area to conform to <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html">WCAG
@@ -134,7 +134,8 @@
 <h2>Issues with CSS Transitions and CSS outline in Safari</h2>
 
 <p>
-  On a few projects, I have noticed that Safari focus states don't appear correctly when the element that is focused has the following CSS applied to it:
+  On a few projects, I have noticed that Safari focus states don't appear correctly when the element that is focused has
+  the following CSS applied to it:
 </p>
 
 <figure class="wide">
@@ -156,16 +157,23 @@
 
 <template id="transition-all-code" data-type="css">
   a {
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   }
 </template>
 
 <p>
-  The above CSS can mess up Safari focus states: they may appear cut off or may not appear at all in Safari, while they may appear fine in other web browsers.  <strong>The correct way to fix this is to <em>never</em> use <code> transition: all</code> in your CSS.</strong> Using <code>all</code>.  There are many reasons why you should never use not use the <code>all</code> keyword for transitions (in this case, because of unwanted side-effects, but also for performance reasons).  <a href="https://www.pno.dev/">Philipp Nowinski</a> has written a great write-up on <a href="https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/">why you shouldn't use the 'all' keyword in CSS transitions</a>, and I suggest all developers read this.
+  The above CSS can mess up Safari focus states: they may appear cut off or may not appear at all in Safari, while they
+  may appear fine in other web browsers. <strong>The correct way to fix this is to <em>never</em> use
+    <code> transition: all</code> in your CSS.</strong> Using <code>all</code>. There are many reasons why you should
+  never use not use the <code>all</code> keyword for transitions (in this case, because of unwanted side-effects, but
+  also for performance reasons). <a href="https://www.pno.dev/">Philipp Nowinski</a> has written a great write-up on <a
+    href="https://www.pno.dev/articles/dont-use-the-all-keyword-in-css-transitions/">why you shouldn't use the 'all'
+    keyword in CSS transitions</a>, and I suggest all developers read this.
 </p>
 
 <p>
-  If removing the <code>all</code> transition code will cause problems in your project, you can use the following hack to fix the code in Safari:
+  If removing the <code>all</code> transition code will cause problems in your project, you can use the following hack
+  to fix the code in Safari:
 </p>
 
 <figure class="wide">
@@ -186,29 +194,33 @@
 </script>
 
 <template id="fix-transition-all-code" data-type="css">
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
 
   /* Safari only*/
   *:focus { transition: none !important; }
 
-}
+  }
 </template>
 
 
 <p>
-  Note that <strong>it is much better to remove the <code>all</code> keyword and just transtition what you need instead.</strong>  This solution should only be a band-aid solution until you can fix the issue properly.
+  Note that <strong>it is much better to remove the <code>all</code> keyword and just transtition what you need
+    instead.</strong> This solution should only be a band-aid solution until you can fix the issue properly.
 </p>
 
 
 <h2>Don't Forget Windows High Contrast Mode Users.</h2>
 
-Sometimes, you will want to style focus states without the CSS <code>outline</code> property.  If you do this, but instead of using <code>outline: none</code> to remove the default focus ring, developers should use outline with the <code>transparent</code> colour:
+Sometimes, you will want to style focus states without the CSS <code>outline</code> property. If you do this, but
+instead of using <code>outline: none</code> to remove the default focus ring, developers should use outline with the
+<code>transparent</code> colour:
 
 
 <figure class="wide">
   <?php includeShowcode("transparent-outline-code", "", "", "", false)?>
 
-  <figcaption>Figure 6. Adding a transparent outline along with your custom focus state that doesn't have an outline</figcaption>
+  <figcaption>Figure 6. Adding a transparent outline along with your custom focus state that doesn't have an outline
+  </figcaption>
 </figure>
 
 <script type="application/json" id="transparent-outline-code-props">
@@ -223,5 +235,88 @@ Sometimes, you will want to style focus states without the CSS <code>outline</co
 </script>
 
 <template id="transparent-outline-code" data-type="css">
-button.special-style:focus { outline: transparent 2px solid; border-bottom: 2px solid #00f; }
+  button.special-style:focus { outline: transparent 2px solid; border-bottom: 2px solid #00f; }
 </template>
+
+<h2>Guaranteed Contrast on Focus Rings, Regardless of Background</h2>
+
+<p>
+  If you don't know what colour background your focus rings will be on top of, there is a simple way of ensuring your
+  focus rings will follow contrast rules: using <code>outline</code> and <code>box-shadow</code> at the same time.
+</p>
+
+<p>
+  Here is an example you can tab into to see this combo in action:
+</p>
+
+<div id="double-focus-ring-example" class="enable-example">
+  <p>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+    <a href="#">This is a dummy link</a>
+  </p>
+</div>
+
+<p>
+  If you are using a mobile device, here are some screenshots you can look at to show how it looks:
+</p>
+
+
+<figure class="wide centered-image">
+  <table class="screenshot-table" aria-labelledby="double-focus-screenshot-table-caption">
+    
+    <thead>
+      <tr>
+        <th scope="col">
+          Focus State
+        </th>
+        <th scope="col">
+          Screenshot
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">No Element is Focused</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__initial-state", "Two yellow blocky interactive elements on a gradient background. The gradient is starts on a light yellow on the left and ends with a darker red on the right.", ""); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Focus on Lighter Area of Gradient</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__light-bg", "The same interactive elements on the same gradient background.  The interactive element on the left is focused, and the blue focus outline around it is easily seen in contrast with the light background.", ""); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Focus on Darker Area of Gradient</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__darker-bg", "The same interactive elements on the same gradient background.  The interactive element on the right is now focused, and the white box shadow that appears outside the darker blue focus outline ensures the focus ring has enough contrast with the dark background.", ""); ?>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
+</figure>
+
+<p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>
+
+<?php includeShowcode("double-focus-ring-example", "", "", "", false)?>
+<script type="application/json" id="double-focus-ring-example-props">
+{
+  "replaceHtmlRules": {
+  },
+  "steps": [
+  {
+    "label": "Implement the double focus ring",
+    "highlight": "%CSS%focus-styling-css~ #double-focus-ring-example *:focus-visible",
+    "notes": ""
+  }
+]}
+</script>

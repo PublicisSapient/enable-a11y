@@ -20,4 +20,11 @@
     please go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> and
     opening up a new issue describing the code you would like to donate and a sample page on how it works.</dd>
 
+  <dt>Do you have any advice on how I can add automated accessibility testing to my CI/CD pipeline?</dt>
+  <dd>
+    Enable uses a few tools to find the 20% to 50% of accessibility errors that can be captured by automated tools.  We also have
+    started to do unit testing to ensure that accessibility features added to our components are not removed by accident.
+    To understand more about what tools we use and how we have done this, please read our page on <a href="code-quality.php">   
+      Accessible Code Quality
+    </a>.
 </dl>

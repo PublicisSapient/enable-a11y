@@ -511,6 +511,12 @@
                           Accessible Text in SVGs
                         </a>
                       </li>
+                      <li class="enable-flyout__menu-item">
+                        <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+                          <?php pictureWebpPng("images/main-menu/exposing-style-info-to-screen-readers", "", "class=\"enable-flyout__link-image\""); ?>
+                          Exposing Style Information To Screen Readers
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </li>

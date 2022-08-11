@@ -32,11 +32,12 @@
               <div id="<?= $id ?>__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
               <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
               <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
-                aria-describedby="<?= $id ?>__toggle-desc"><span class="showcode__notes-view-toggle--more">View
+                ><span class="showcode__notes-view-toggle--more">View
                   More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
               </button>
-              <div id="<?= $id ?>__toggle-desc" class="sr-only">This control is not needed for screen reader
-                users.</div>
+              
 
               <div id="<?= $id ?>__example-desc" class="showcode__example--desc">
                 <label for="<?= $id ?>__wrap-text">Wrap text</label>

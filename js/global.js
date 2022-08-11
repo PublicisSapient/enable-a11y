@@ -13,7 +13,8 @@ import showcode from "./enable-libs/showcode.js";
 import pauseAnimControl from "./modules/pause-anim-control.js";
 import EnableFlyoutHamburger from "./modules/enable-hamburger.js";
 import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
-import offscreenObserver from "./modules/offscreen-observer.js"
+import offscreenObserver from "./modules/offscreen-observer.js";
+import textZoom from './demos/hero-image-text-resize.js';
 
 function initEnable() {
 

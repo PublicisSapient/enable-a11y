@@ -1,0 +1,28 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+#double-focus-ring-example {
+  background-image: linear-gradient(to right, #fffbd5, #b20a2c);
+}
+#double-focus-ring-example a {
+  margin: 5px;
+  padding: 10px;
+  background: #ffffcc;
+  display: inline-block;
+}
+#double-focus-ring-example *:focus {
+  outline: solid 2px #3b99fc;
+  box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
+}
+#double-focus-ring-example *:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+#double-focus-ring-example *:focus-visible {
+  outline: solid 2px #3b99fc;
+  box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
+}

@@ -8,7 +8,8 @@
 <meta charset="utf-8" />
 
 <!-- These two stylesheets are for the code walkthroughs -->
-<link rel="stylesheet"
+<link id="showcode-css"
+  rel="stylesheet"
   type="text/css"
   href="css/showcode.css" />
 
