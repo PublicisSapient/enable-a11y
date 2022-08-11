@@ -100,12 +100,11 @@
 </p>
 
 
-<figure>
+<figure class="wide centered-image">
 
   <?php pictureWebpPng("images/focus/clickable-hit-state", "Screenshot of the Enable website's main navigation, with keyboard focus applied to the 'controls' navigation drawer.")?>
 
-  <figcaption>Figure 3. The focus state of the "Contols" navigation button. Note that the hit area is a lot larger than
-    the visual height of the thin horizontal gray strip where the drawer sits inside.</figcaption>
+  <figcaption>Figure 3. The focus state of the "Contols" navigation button. Note the large hit area.</figcaption>
 </figure>
 
 <p>We increased the hit area to conform to <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html">WCAG
@@ -266,44 +265,45 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
   If you are using a mobile device, here are some screenshots you can look at to show how it looks:
 </p>
 
-<div class="enable-example">
-<table class="screenshot-table">
-  <caption>
-    Focus States on a Gradient Background
-  </caption>
-  <thead>
-    <tr>
-      <th scope="col">
-        Focus State
-      </th>
-      <th scope="col">
-        Screenshot
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">No Element is Focused</th>
-      <td>
-        <?php pictureWebpPng("images/focus/double-focus-ring__initial-state", "Two yellow blocky interactive elements on a gradient background. The gradient is starts on a light yellow on the left and ends with a darker red on the right.", ""); ?>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Focus on Lighter Area of Gradient</th>
-      <td>
-        <?php pictureWebpPng("images/focus/double-focus-ring__light-bg", "The same interactive elements on the same gradient background.  The interactive element on the left is focused, and the blue focus outline around it is easily seen in contrast with the light background.", ""); ?>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Focus on Darker Area of Gradient</th>
-      <td>
-        <?php pictureWebpPng("images/focus/double-focus-ring__darker-bg", "The same interactive elements on the same gradient background.  The interactive element on the right is now focused, and the white box shadow that appears outside the darker blue focus outline ensures the focus ring has enough contrast with the dark background.", ""); ?>
-      </td>
 
-    </tr>
-  </tbody>
-</table>
-</div>
+<figure class="wide centered-image">
+  <table class="screenshot-table" aria-labelledby="double-focus-screenshot-table-caption">
+    
+    <thead>
+      <tr>
+        <th scope="col">
+          Focus State
+        </th>
+        <th scope="col">
+          Screenshot
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">No Element is Focused</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__initial-state", "Two yellow blocky interactive elements on a gradient background. The gradient is starts on a light yellow on the left and ends with a darker red on the right.", ""); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Focus on Lighter Area of Gradient</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__light-bg", "The same interactive elements on the same gradient background.  The interactive element on the left is focused, and the blue focus outline around it is easily seen in contrast with the light background.", ""); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Focus on Darker Area of Gradient</th>
+        <td>
+          <?php pictureWebpPng("images/focus/double-focus-ring__darker-bg", "The same interactive elements on the same gradient background.  The interactive element on the right is now focused, and the white box shadow that appears outside the darker blue focus outline ensures the focus ring has enough contrast with the dark background.", ""); ?>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
+</figure>
 
 <p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>
 

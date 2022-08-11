@@ -42,6 +42,11 @@ figure.wide,
 [role="figure"].wide {
   width: 100%;
 }
+figure.centered-image img,
+[role="figure"].centered-image img {
+  display: block;
+  margin: 0 auto;
+}
 a.tile-cta {
   display: block;
   padding: 0 20px 0 30px;
