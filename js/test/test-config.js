@@ -6,7 +6,9 @@ const config = {
   "KEYPRESS_TIMEOUT": 250,
   "KEYPRESS_FAST_TIMEOUT": 100,
   "DESKTOP_WIDTH": 1024,
-  "DESKTOP_HEIGHT": 768
+  "DESKTOP_HEIGHT": 768,
+  "MOBILE_WIDTH": 400,
+  "MOBILE_HEIGHT": 800
 };
 
 export default config;
