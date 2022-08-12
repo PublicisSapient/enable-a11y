@@ -22,7 +22,7 @@ describe('Hamburger Menu Tests', () => {
       // Test on initial load.
 
       // Step 1: Wait for element to load on page.
-      await page.waitForSelector('.enable-flyout__open-menu-button');
+      await page.waitForSelector('footer');
 
       // Step 2: Focus on appropriate element
       await page.focus('.enable-flyout__open-menu-button');
@@ -36,8 +36,6 @@ describe('Hamburger Menu Tests', () => {
 
         return {
           isMobileMenuButtonHidden: ( buttonStyle.display === 'none'),
-          style: buttonStyle.display,
-          html: mobileMenuButton.outerHTML,
           width: window.innerWidth
         };
       });
@@ -58,22 +56,78 @@ describe('Hamburger Menu Tests', () => {
   it('Desktop - ensure hamburger menu icon is not visisble', async () => {
     let domInfo;
     
-    console.log('here');
     domInfo = await loadPage(true);
-    console.log('outside', domInfo);
     // Step 4: Do Tests
     expect(domInfo.isMobileMenuButtonHidden).toBe(true)
+    expect(domInfo.width).toBe(config.DESKTOP_WIDTH);
 
   });
+
+  it('Desktop - ensure menu closes when focus goes outside submenu', async () => {
+    let domInfo;
+    
+    domInfo = await loadPage(true);
+
+    await page.focus('[aria-controls="controls-section"]');
+    await page.keyboard.press('Space');
+    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+
+    domInfo = await page.evaluate(() => {
+      const { activeElement } = document;
+      const ariaControls = activeElement.getAttribute('aria-controls');
+      const controlledEl = document.getElementById(ariaControls);
+
+      return {
+        isMenuExpanded: activeElement.getAttribute('aria-expanded') === 'true',
+        hasControlledEl: controlledEl !== null,
+        ariaControls,
+      };
+    });
+
+    expect(domInfo.ariaControls).not.toBe(null);
+    expect(domInfo.ariaControls).not.toBe('');
+
+    const { ariaControls } = domInfo;
+
+    // now, let's tab all the way through the document until we tab out of the
+    // open menu
+    do {
+      expect(domInfo.isMenuExpanded).toBe(true);
+
+      page.keyboard.press('Tab');
+      await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+      
+      domInfo = await page.evaluate((ariaControls) => {
+        const {activeElement} = document;
+        const controlledEl = document.getElementById(ariaControls);
+        const menuButton = document.querySelector(`[aria-controls="${ariaControls}"]`);
+
+        return {
+          isFocusedInsideMenu: (conrolledEl.contains(activeEement)),
+          isMenuExpanded: menuButton.getAttribute('aria-expanded', 'true')
+        }
+
+      })(ariaControls);
+
+    } while (!domInfo.isFocusedInsideMenu);
+
+    expect(domInfo.isMenuExpanded).toBe(false);
+    
+
+  });
+
+
 
   it('Mobile - ensure hamburger menu icon is visisble', async () => {
     let domInfo;
     
-    console.log('here');
     domInfo = await loadPage(false);
-    console.log('outside', domInfo);
     // Step 4: Do Tests
-    expect(domInfo.isMobileMenuButtonHidden).toBe(false)
-
+    expect(domInfo.isMobileMenuButtonHidden).toBe(false);
+    expect(domInfo.width).toBe(config.MOBILE_WIDTH);
   });
+
+
+
+
 });
