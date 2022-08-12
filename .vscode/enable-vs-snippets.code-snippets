@@ -334,6 +334,80 @@
 		"scope": "",
 		"prefix": "npm",
 		"body": "<?= includeNPMInstructions('$1') ?>"
+	}, "unit-test-skeleton": {
+		"scope": "",
+		"prefix": "unit-test-skeleton",
+		"body": [
+			"'use strict'",
+			"",
+			"import config from './test-config.js';",
+			"import testHelpers from './test-helpers.js';",
+			"",
+			"describe('$1', () => {",
+			"  beforeAll(async () => {",
+			"",
+			"  // Put code here that should execute before starting tests.",
+			"  });",
+			"",
+			"});"
+		]
+	},
+	"unit-test__load": {
+		"scope": "",
+		"prefix": "unit-test-load",
+		"body": [
+			
+			"it('$2', async () => {",
+			"let domInfo;",
+			"",
+			"await page.goto(`${config.BASE_URL}/$3.php`);",
+			"",
+			"// Test on initial load.",
+			"",
+			"// Step 1: Wait for element to load on page.",
+			"await page.waitForSelector('$4');",
+			"",
+			"// Step 2: Focus on appropriate element",
+			"await page.focus('$4');",
+			"",
+			"// Step 3: Check the DOM",
+			"domInfo = await page.evaluate(() => {",
+			"const dialogEl = document.querySelector('#favDialog');",
+			"",
+			"return {",
+			"isOpen: (dialogEl.getAttribute('open') !== null)",
+			"};",
+			"});",
+			"",
+			"// Step 4: Do Tests",
+			"expect(domInfo.isOpen).toBe(false);"
+				
+		]
+	},
+	"unit-test__key-event": {
+		"scope": "",
+		"prefix": "unit-test-load",
+		"body": [
+			"// Test for $1",
+			"",
+			"// Step 1: User presses key",
+			"page.keyboard.press('Space');",
+			"",
+			"// Step 2: Pause before DOM is checked",
+			"await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));",
+			"",
+			"// Step 3: Check DOM for $2",
+			"domInfo = await page.evaluate(() => {",
+			"  const { activeElement } = document;",
+			"",
+			"  return {",
+			"",
+			"  };",
+			"});",
+			"",
+			"// Step 4: Use expect to check to see if the DOM contains what you expect.",
+			"// e.g. expect(domInfo.ariaLabel).not.toBe('');",
+			"expect(domInfo.isOpen).toBe(true);"
+		]
 	}
-
 }
