@@ -106,7 +106,7 @@ code {
   border: solid 2px white;
   font-family: "ModeSeven", "Consolas", monospace;
   font-style: normal;
-  background: none;
+  background: black;
 }
 .showcode__highlight::before,
 .showcode__highlight::after {
