@@ -17,6 +17,18 @@ code {
   background-color: #f5deb3;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
 }
+.showcode__example--code:focus {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -4px;
+}
+.showcode__example--code:focus:not(:focus-visible) {
+  outline: none !important;
+  outline-offset: 0;
+}
+.showcode__example--code:focus-visible {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -4px;
+}
 .showcode--no-js-container {
   clip-path: none;
 }

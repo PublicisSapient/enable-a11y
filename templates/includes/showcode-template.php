@@ -51,6 +51,7 @@
           <div class="showcode">
             
             <pre class="showcode__example"><code
+                        class="showcode__example--code"
                         data-showcode-id="<?= $id ?>"
                         data-showcode-props="<?= $id ?>-props"
                         tabindex="0"

@@ -20,13 +20,26 @@ code {
   @code-focus-outline-width: 4px;
   @code-focus-outline-gap: 4px;
   background-color: rgb(245, 222, 179);
-
+  
   clip-path: polygon(
     0 0,
     100% 0%,
     100% calc(100% - @clip-bottom),
     0 calc(100% - @clip-bottom)
   );
+
+  &__example--code {
+
+    // We use a negative focus outline-offset since the 
+    // this is clipped.
+    .enable-focus({
+      outline: solid 2px @focus-color !important;
+      outline-offset: -4px;
+    }, {
+      outline: none !important;
+      outline-offset: 0;
+    })
+  }
 
   &--no-js-container {
     clip-path: none;
