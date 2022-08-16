@@ -46,6 +46,17 @@
 .enable-video-player .able-media-container iframe {
   width: 100%;
 }
+.enable-video-player .able-media-container iframe:focus {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
+}
+.enable-video-player .able-media-container iframe:focus:not(:focus-visible) {
+  outline: none !important;
+}
+.enable-video-player .able-media-container iframe:focus-visible {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
+}
 .compliance-table {
   width: 450px;
   max-width: 100%;

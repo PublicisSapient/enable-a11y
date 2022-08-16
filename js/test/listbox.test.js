@@ -40,9 +40,15 @@ describe('ARIA Listbox', () => {
 
     for (let i=0; i<listboxValues.length; i++) {
       // Press down arrow and make sure new Element gets focus.
-      page.keyboard.press('ArrowDown');
+      // We use testHelpers.keyUpAndDown() since the enable-listbox
+      // library does things on both events, so using vanilla
+      // page.keyboard.press() doesn't always give us the expected
+      // result.
+      testHelpers.keyDownAndUp(page, 'ArrowDown');
+        
+      
       // await 100ms before continuing further
-      await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+      await testHelpers.fastPause();
 
 
       // now, let's press enter and cycle through all the elements with the down arrow.
@@ -60,9 +66,15 @@ describe('ARIA Listbox', () => {
     }
 
     // one more down arrow should go to the first element.
-    page.keyboard.press('ArrowDown');
+    // We use testHelpers.keyUpAndDown() since the enable-listbox
+    // library does things on both events, so using vanilla
+    // page.keyboard.press() doesn't always give us the expected
+    // result.
+    testHelpers.keyDownAndUp(page, 'ArrowDown');
+      
+    
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
@@ -78,9 +90,15 @@ describe('ARIA Listbox', () => {
     // console.log('value selected 1:', el.value);
 
     // one more up arrow should go to the last element.
-    page.keyboard.press('ArrowUp');
+    // We use testHelpers.keyUpAndDown() since the enable-listbox
+    // library does things on both events, so using vanilla
+    // page.keyboard.press() doesn't always give us the expected
+    // result.
+    testHelpers.keyDownAndUp(page, 'ArrowUp');
+      
+    
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
 
     // now, let's press enter and cycle through all the elements with the down arrow.
@@ -129,7 +147,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -151,9 +169,13 @@ describe('ARIA Listbox', () => {
 
 
     // Press down arrow and make sure new Element gets focus.
-    page.keyboard.press('ArrowDown');
+    // We use testHelpers.keyUpAndDown() since the enable-listbox
+    // library does things on both events, so using vanilla
+    // page.keyboard.press() doesn't always give us the expected
+    // result.
+    testHelpers.keyDownAndUp(page, 'ArrowDown');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -178,7 +200,7 @@ describe('ARIA Listbox', () => {
     // Press Enter to see if the new value gets populated in the button.
     page.keyboard.press('Enter');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -232,7 +254,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -254,9 +276,13 @@ describe('ARIA Listbox', () => {
 
 
     // Press down arrow and make sure new Element gets focus.
-    page.keyboard.press('ArrowDown');
+    // We use testHelpers.keyUpAndDown() since the enable-listbox
+    // library does things on both events, so using vanilla
+    // page.keyboard.press() doesn't always give us the expected
+    // result.
+    testHelpers.keyDownAndUp(page, 'ArrowDown');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -281,7 +307,7 @@ describe('ARIA Listbox', () => {
     // Press Enter to see if the new value gets populated in the button.
     page.keyboard.press('Tab');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -317,7 +343,7 @@ describe('ARIA Listbox', () => {
     // Now let's press ENTER to check if the correct value is set.
     page.keyboard.press('Enter');
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;
@@ -344,7 +370,7 @@ describe('ARIA Listbox', () => {
     page.keyboard.press('Escape');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    await testHelpers.fastPause();
 
     domInfo = await page.evaluate(() => {
       const { activeElement } = document;

@@ -35,7 +35,7 @@ input[type="range"] {
   box-sizing: content-box;
 }
 input[type="range"]:focus {
-  outline: none;
+  outline: solid 2px transparent;
 }
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;

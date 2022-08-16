@@ -49,8 +49,14 @@ using <code>&lt;div&gt;</code> tags.
 
 <div id="example-role-checkbox" class="enable-example">
   <div class="checkbox-container">
-    <label id="div-checkbox-label">I agree to sell my soul to Zoltan:</label>
-    <div aria-labelledby="div-checkbox-label" role="checkbox" tabindex="0" aria-checked="true">
+    <label id="div-checkbox-label-1">I agree to sell my soul to Zoltan:</label>
+    <div aria-labelledby="div-checkbox-label-1" role="checkbox" tabindex="0" aria-checked="true">
+    </div>
+  </div>
+
+  <div class="checkbox-container">
+    <label id="div-checkbox-label-2">I will not fight Zoltan in a lawsuit about this matter:</label>
+    <div aria-labelledby="div-checkbox-label-2" role="checkbox" tabindex="0" aria-checked="false">
     </div>
   </div>
 </div>

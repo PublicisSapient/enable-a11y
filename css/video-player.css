@@ -5,6 +5,13 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
 .enable-video-player .able-wrapper {
   max-width: initial !important;
 }
@@ -45,6 +52,20 @@
 }
 .enable-video-player .able-media-container iframe {
   width: 100%;
+}
+.enable-video-player .able-media-container iframe:focus {
+  outline: solid 2px #3b99fc;
+  outline-offset: -2px;
+}
+.enable-video-player .able-media-container iframe:focus:not(:focus-visible) {
+  outline: none;
+}
+.enable-video-player .able-media-container iframe:focus-visible {
+  outline: solid 2px #3b99fc;
+  outline-offset: -2px;
+}
+.enable-video-player .able-media-container iframe *:focus-visible {
+  outline-style: solid ;
 }
 .compliance-table {
   width: 450px;

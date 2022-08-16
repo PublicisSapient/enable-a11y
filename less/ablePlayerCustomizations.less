@@ -52,6 +52,13 @@
 
   .able-media-container iframe {
     width: 100%;
+
+    .enable-focus({
+      outline: solid 2px @focus-color !important;
+      outline-offset: -2px;
+    }, {
+      outline: none !important;
+    })
   }
 }
 

@@ -1,8 +1,3 @@
-<script type="module">
-    import sortableTables from './js/modules/sortable-tables.js';
-    import showcode from "./js/enable-libs/showcode.js";
+<script type="module" src="js/demos/sortable-table-demo.js">
     
-    sortableTables.init();
-
-    showcode.addJsObj('sortableTables', sortableTables);
 </script>

@@ -1,6 +1,13 @@
 "use strict";
 
-jest.setTimeout(10000);
+const { argv } = process;
+const filenameWithoutPath = argv[argv.length - 1];
+
+if (filenameWithoutPath === 'visibleFocusStates.test.js') {
+  jest.setTimeout(100000);
+} else {
+  jest.setTimeout(10000);
+}
 const config = {
   "BASE_URL": `http://localhost:8888`,
   "KEYPRESS_TIMEOUT": 250,
@@ -11,4 +18,4 @@ const config = {
   "MOBILE_HEIGHT": 800
 };
 
-export default config;
+export default config; 

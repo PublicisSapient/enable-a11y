@@ -64,7 +64,7 @@ describe('Dialog Tests', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+    await testHelpers.fastPause();
 
     // check to see if the close button has focus and the dialog is visible.
     domInfo = await page.evaluate(() => {
@@ -86,7 +86,7 @@ describe('Dialog Tests', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+    await testHelpers.fastPause();
 
     // check to see if the button that opened the modal is now focused.
     domInfo = await page.evaluate(() => {
@@ -113,7 +113,7 @@ describe('Dialog Tests', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+    await testHelpers.fastPause();
 
     // need page.evaluate to find aria attributes.
     domInfo = await page.evaluate(() => {
@@ -138,7 +138,7 @@ describe('Dialog Tests', () => {
       page.keyboard.press('Tab');
 
       // await 100ms before continuing further
-      await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+      await testHelpers.fastPause();
 
       // grab HTML of activeElement and make sure it is in dialog
       domInfo = await page.evaluate(() => {
@@ -166,12 +166,12 @@ describe('Dialog Tests', () => {
     page.keyboard.press('Space');
 
     // await 100ms before continuing further
-    await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+    await testHelpers.fastPause();
     r = await areElementsOutsideDialogSwipable();
     expect(r).toBe(false);
 
     page.keyboard.press('Space');
-    await new Promise(res => setTimeout(res, config.KEYPRESS_FAST_TIMEOUT));
+    await testHelpers.fastPause();
     r = await areElementsOutsideDialogSwipable();
     expect(r).toBe(true);
   });

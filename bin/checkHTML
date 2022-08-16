@@ -181,7 +181,7 @@ then
 	exit 1
 fi
 
-<<comment
+
 echo "Running aXe tests..."
 
 #.. Make a list of the delayed URLS
@@ -216,6 +216,7 @@ echo "Running pa11y tests ..."
 
 DID_PALLY_SUCCEED="0"
 
+<<comment
 echo '{
     "urls": [ '
 
@@ -226,6 +227,8 @@ echo '    ]
 }'
 
 exit
+comment
+
 
 for i in $DOWNLOADED_URLS
 do

@@ -32,7 +32,7 @@ function initEnable() {
     if (!el.id) {
       const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
 
-      console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
+      //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
       if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
         headingIndex++;
         el.id = `${innerTextId}-${headingIndex}`;
@@ -55,8 +55,6 @@ showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
 showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
 showcode.addJsObj('initEnable', initEnable);
 
-
-console.log('x', document.location.hash);
 
 if (document.location.hash === '#debug') {
   console.log('logging enable events (debug mode)')

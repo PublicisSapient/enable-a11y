@@ -26,7 +26,8 @@
   },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
-    "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links."
+    "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
+    "wip": true
   },
   "button.php": {
     "title": "Accessible Buttons",
@@ -176,7 +177,8 @@
   },
   "sortable-pagination-table.php": {
     "title": "Accessible Sortable Paginated Tables",
-    "desc": "Combine two accessible table scripts to make sortable and paginated tables."
+    "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
+    "wip": true
   },
   "tabs.php": {
     "title": "Accessible Tabs",
@@ -220,7 +222,8 @@
   },
   "chart.php": {
     "title": "Accessible Charts",
-    "desc": "Demos of accessible charts using d3.js"
+    "desc": "Demos of accessible charts using d3.js",
+    "wip": true
   },
   "acknowledgements.php": {
     "title": "Acknowledgements",
