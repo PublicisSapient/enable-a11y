@@ -102,14 +102,12 @@ const testHelpers = new function () {
 
     for (let name in pageListJSON) {
       const value = pageListJSON[name];
-      console.log('name', name, value.wip);
      
       if (! value.wip ) {
         r.push(name);
       }
     }
 
-    console.log(r);
     return r;
   }
 }

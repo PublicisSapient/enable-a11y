@@ -137,9 +137,6 @@ describe('Dialog Tests', () => {
       }
       page.keyboard.press('Tab');
 
-      // await 100ms before continuing further
-      await testHelpers.fastPause();
-
       // grab HTML of activeElement and make sure it is in dialog
       domInfo = await page.evaluate(() => {
         const { activeElement } = document;
@@ -198,7 +195,6 @@ describe('Dialog Tests', () => {
       };
     });
 
-    console.log('info', domInfo.label, domInfo.desc);
 
     expect(domInfo.label.trim()).not.toBe('');
     expect(domInfo.desc.trim()).not.toBe('');

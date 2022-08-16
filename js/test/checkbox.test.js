@@ -76,13 +76,13 @@ describe('ARIA Checkbox Tests', () => {
   
       // press space and check if it's unchecked.
       await page.keyboard.press('Space');
-      await testHelpers.fastPause();
+      
       ariaChecked = await getCheckboxValue(i);
       expect(ariaChecked).toBe(notOrigAriaChecked);
   
       // press space again and check if it's unchecked.
       await page.keyboard.press('Space');
-      await testHelpers.fastPause();
+      
       ariaChecked = await getCheckboxValue(i);
       expect(ariaChecked).toBe(origAriaChecked);
     }

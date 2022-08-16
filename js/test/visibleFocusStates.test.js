@@ -5,19 +5,23 @@ import testHelpers from './test-helpers.js';
 import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
-// const fileList = ['skip-link.php'];
-/* fs.readdirSync('./content/body/').forEach(file => {
-  fileList.push(file);
-}); */
-
+let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
 
 describe('Test Focus States on all pages on Enable', () => {
   beforeAll(async () => {
-
-  // Put code here that should execute before starting tests.
+    // Put code here that should execute before starting tests.
+    mobileBrowser = await testHelpers.getMobileBrowser();
+    mobilePage = await mobileBrowser.newPage();
+    desktopBrowser = await testHelpers.getDesktopBrowser();
+    desktopPage = await desktopBrowser.newPage();
   });
 
-  async function testPage(filename) {
+  afterAll(async () => {
+    await mobileBrowser.close();
+    await desktopBrowser.close();
+  });
+
+  async function testPage(filename, page) {
     let domInfo;
 
     await page.goto(`${config.BASE_URL}/${filename}`);
@@ -86,21 +90,20 @@ describe('Test Focus States on all pages on Enable', () => {
         expect(domInfo.hasFocusRing).toBe(true);
       } 
     } while (!domInfo.isBody);
-    return true;
   }
+
+  
+
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
-    if ( file !== 'skip-link.php') {
-      it(`Test focus states on ${fileList[i]}`, async () => {
-        const phpRegex = /\.php$/;
-
-        if (file.match(phpRegex)) {
-          await testPage(fileList[i]);
-        }
-
-        expect(2+2).toBe(4);
-        
+    if ( file !== 'askip-link.php') {
+      it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
+        await testPage(fileList[i], desktopPage);
+      });
+      it(`Mobile Breakpoint: Test focus states on ${fileList[i]}`, async () => {
+        await testPage(fileList[i], mobilePage);
       });
     }
   }
+
 });

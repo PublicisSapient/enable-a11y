@@ -39,7 +39,6 @@ describe('Hamburger Menu Tests', () => {
         };
       });
 
-      console.log('domInfo', domInfo);
 
       await browser.close();
       return domInfo;
@@ -94,10 +93,8 @@ describe('Hamburger Menu Tests', () => {
 
     // find how many aria-controls elements there are
     const ariaControlsEls = Array.from(page.$$(ariaControlsSelector));
-    console.log('help', ariaControlsEls.length)
 
     for (let i=0; i<ariaControlsEls.length; i++) {
-      console.log(i);
 
       domInfo = await page.evaluate((i) => {
       // Check to make sure the item has focus
@@ -115,7 +112,6 @@ describe('Hamburger Menu Tests', () => {
         };
       }, i);
 
-      console.log('element that has focus', domInfo.innerText);
       expect(domInfo.wasFocusAppliedCorrectly).toBe(true);
       expect(domInfo.isExpanded).toBe(false);
 
@@ -150,7 +146,6 @@ describe('Hamburger Menu Tests', () => {
         expect(domInfo.isMenuExpanded).toBe(true);
 
         page.keyboard.press('Tab');
-        await testHelpers.fastPause();
         
         domInfo = await page.evaluate((ariaControls) => {
           const {activeElement} = document;
@@ -178,6 +173,4 @@ describe('Hamburger Menu Tests', () => {
     await browser.close();
 
   });
-
-
 });

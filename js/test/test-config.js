@@ -3,11 +3,9 @@
 const { argv } = process;
 const filenameWithoutPath = argv[argv.length - 1];
 
-if (filenameWithoutPath === 'visibleFocusStates.test.js') {
-  jest.setTimeout(100000);
-} else {
-  jest.setTimeout(10000);
-}
+
+jest.setTimeout(10000);
+
 const config = {
   "BASE_URL": `http://localhost:8888`,
   "KEYPRESS_TIMEOUT": 250,
