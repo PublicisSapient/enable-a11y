@@ -29,7 +29,7 @@
   "files": [
     "css",
     "less",
-    "js",
+    "js/modules/",
     "libs"
   ],
   "scripts": {
@@ -85,6 +85,7 @@
     "lessc": "^1.0.2",
     "node-html-parser": "^5.2.0",
     "node-jq": "^2.3.3",
+    "np": "^7.6.2",
     "php-express": "^0.0.3",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
