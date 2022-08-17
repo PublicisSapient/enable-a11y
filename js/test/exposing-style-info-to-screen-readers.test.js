@@ -3,9 +3,6 @@
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-
-
-
 describe('Styled Elements Tests', () => {
   beforeAll(async () => {
   });
@@ -15,10 +12,10 @@ describe('Styled Elements Tests', () => {
 
     await page.goto(`${config.BASE_URL}/exposing-style-info-to-screen-readers.php`);
 
-    // focus on button that opens modal;
+    // The area of the page that has the product tile
     await page.waitForSelector('#example2');
 
-    // check to see if the modal is visible
+   // check the DOM to see if the visually hidden CSS generated content is there.    
     domInfo = await page.evaluate(() => {
       const delEls = document.querySelectorAll('#example2 del');
       let hasMissingContent = false;
@@ -45,10 +42,10 @@ describe('Styled Elements Tests', () => {
 
     await page.goto(`${config.BASE_URL}/exposing-style-info-to-screen-readers.php`);
 
-    // focus on button that opens modal;
+    // The area of the page that has the highlighted code
     await page.waitForSelector('#highlight-example');
 
-    // check to see if the modal is visible
+    // check the DOM to see if the visually hidden CSS generated content is there.    
     domInfo = await page.evaluate(() => {
       const markEls = document.querySelectorAll('#highlight-example mark');
       let hasMissingContent = false;
@@ -57,7 +54,7 @@ describe('Styled Elements Tests', () => {
         const beforeStyle = window.getComputedStyle(markEls[i], '::before');
         const afterStyle = window.getComputedStyle(markEls[i], '::after');
 
-        if (beforeStyle.content === "\"Start of highlighted code2.\"" && afterStyle.content === "\"End of highlighted code3.\"") {
+        if (beforeStyle.content === "\"Start of highlighted code.\"" && afterStyle.content === "\"End of highlighted code.\"") {
           hasMissingContent = true;
           break;
         }
@@ -68,7 +65,7 @@ describe('Styled Elements Tests', () => {
       };
     });
 
-    expect(domInfo.hasMissingContent).toBe(false);
+    expect(domInfo.hasMissingContent).toBe(true);
   });
 
   
