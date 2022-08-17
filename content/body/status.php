@@ -22,7 +22,7 @@
     </div>
     <div class="wiktionary-lookup__content"></div>
     <div class="wiktionary-lookup__license-info" style="font-size: small; display: none">
-      Modified original content <a class="wiktionary-lookup__source-url">from Wiktionary</a>. Content is
+      Modified original content <a href="https://en.wiktionary.com" class="wiktionary-lookup__source-url">from Wiktionary</a>. Content is
       available
       under the
       <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution/Share-Alike

@@ -291,6 +291,9 @@
         <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button"
           class="enable-listbox__button">&nbsp;</button>
         <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem">
+          <li id="exp_elem_Su" role="option">
+            Supercalifragili sticexpi alidociousium
+          </li>
           <li id="exp_elem_Np" role="option">
             Neptunium
           </li>

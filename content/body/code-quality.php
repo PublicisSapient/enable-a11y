@@ -63,11 +63,64 @@
 
 <p>
   Unit testing is the final tool in your automated testing toolkit that you should use in your project to ensure any accessibility feature
-  you have just implemented stays within the project.  For example, if you create a custom <a href="http://localhost:8888/listbox.php#aria-listbox-example--heading">accessible listbox dropdown</a>, you want to make sure that when keyboard users tab into the component and use the arrow keys that they can change the selected listbox value.
+  you have just implemented stays within the project.  For example, if you create a custom <a href="listbox.php#aria-listbox-example--heading">accessible listbox dropdown</a>, you want to make sure that when keyboard users tab into the component and use the arrow keys that they can change the selected listbox value.
 </p>
 
 <p>
-  Enable currently is testing out using <a href="https://jestjs.io/">Jest</a> with <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> to do unit tests.  These tests haven't been released to the public yet because we haven't finished our testing, and we want to ensure the unit test advice we give are a good model for developers to use in their own projects.  In the meantime, <a href="https://www.24a11y.com/2017/writing-automated-tests-accessibility/">Writing Automated Tests for Accessibility</a> by <a href="https://www.deque.com/blog/author/marcy-sutton/">Marcie Sutton</a> and <a href="https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032">Web Accessibility Testing</a> by <a href="https://www.kfirzuberi.com/">Kfir Zuberi</a> are great places to start (it's where we started).
+  Enable currently uses <a href="https://jestjs.io/">Jest</a> with <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> to do unit tests.  Usually, each test involves:
+</p>  
+
+<ol>
+  <li>Loading a page that contains component examples</li>
+  <li>Querying the DOM on the page to make sure the components in question are coded correctly.</li>
+  <li>Querying the current CSS style in the components to make sure it captures the visual requirements
+    (and/or screen reader contents, when using visually-hidden CSS generated content)</li>
+  <li>If needed, simulate a keyboard user manipulating the components to ensure the user-experience works correctly.</li>
+  <li>After the component is manipulated, go through steps 2-5 again, if necessary.</li>
+</ol>
+
+<h3>A Simple Example</h3>
+
+<p>Let's look at a simple example that just involves just steps 1 through 3. If you look at the page for <a href="exposing-style-info-to-screen-readers.php">Exposing Style Information To Screen Readers</a>, we use visually-hidden CSS generated content on the <code>ins</code>, <code>del</code> and <code>mark</code> tags. We want to ensure that a new developer that contributes code to Enable never removes this CSS by accident, so we create a jest test file, <code>exposing-style-info-to-screen-readers.test.js</code>, to ensure we can test that this CSS is in these example.  Let's walk through this file to show how it works.
+
+<template id="test-code-walkthrough" data-showcode-is-js="true">
+<!--
+<?php include("../js/test/exposing-style-info-to-screen-readers.test.js"); ?>
+-->
+</template>
+
+<?php includeShowcode("test-code-walkthrough")?>
+<script type="application/json" id="test-code-walkthrough-props">
+{
+  "replaceHtmlRules": {
+  },
+  "steps": [
+  {
+    "label": "Import Test Config",
+    "highlight": "import\\sconfig[^;]*;",
+    "notes": "This imports the configuration settings all the tests use."
+  },
+  {
+    "label": "Create a describe for the set of tests you are creating.",
+    "highlight": "describe[^<]*",
+    "notes": ""
+  },
+  {
+    "label": "Create a test for each tag to be tested (ins, del and mark)",
+    "highlight": "\\s+it[^<]*",
+    "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
+  },
+  {
+    "label": "Each test must load the page",
+    "highlight": "await\\spage.goto[^;]*;",
+    "notes": "Note that the <code>BASE_URL</code> is grabbed from the <code>config</code> from step 1"
+  }
+]}
+</script>
+
+  
+<p>
+  If you want to do some further reading, we recommend <a href="https://www.24a11y.com/2017/writing-automated-tests-accessibility/">Writing Automated Tests for Accessibility</a> by <a href="https://www.deque.com/blog/author/marcy-sutton/">Marcie Sutton</a> and <a href="https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032">Web Accessibility Testing</a> by <a href="https://www.kfirzuberi.com/">Kfir Zuberi</a> are great places to start (it's where we started).
   </p>
 
 

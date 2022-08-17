@@ -1,245 +1,222 @@
 'use strict'
 
+/* eslint-disable no-undef */
+
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
+ * pause-anim-control.js - A global pause button for client side motion graphics
+ * and videos.
  * 
  * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
  * Part of the Enable accessible component library.
  * Version 1.0 released Dec 27, 2021
  *
  * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
+ * https://www.useragentman.com/enable/pause-anim-control.php
  * 
  * Released under the MIT License.
  ******************************************************************************/
+ function PauseAnimControlDef() {
+  let timePausePressed = null;
+  const pauseEvent = new CustomEvent('enable-pause-animations', { bubbles: true } );
+  const playEvent = new CustomEvent('enable-play-animations', { bubbles: true } );
 
+  // we store this globally so other components can use 
+  // this without having to load this module.
+  this.realRAF = window.requestAnimationFrame.bind(window);
+  this.requestAnimationFrame = this.realRAF;
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+  /**
+   * This will replace the real requestAnimationFrame method when the "Pause Animations"
+   * checkbox is checked.  It basically does two things:
+   * 
+   * 1) For requestAnimationFrame calls done right after the checkbox is checked, 
+   * this method will "hold on to them" until the checked box is unchecked.
+   * 2) requestAnimationFrame calls after 500 ms will be dropped.
+   * 
+   * @param {func} func - A JavaScript function to be executed when a frame is available   
+   * @param {Object} options - A JavaScript object with the following properties:
+   *   - ignoreTime: this is used internally by dummyRAF to ensure that
+   *     requestAnimationFrame calls that call itself will continute to do so until the 
+   *     "Pause Animations" checkbox is unchecked.
+   *   - useRealRAF: this can be used by developers to tell this method that 
+   *     what they are doing is not an actual animation, but they want to do something
+   *     at the next repaint.
+   *   - isDelayed:  
+   */
+  this.dummyRAF = (func, options) => {
+    const millisecs = Date.now() - timePausePressed;
+    const { ignoreTime, useRealRAF } = options || {};
+    const isAnimation = (func.toString().indexOf('requestAnimationFrame') > -1);
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
-
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
-
-  const buttonTemplate = $buttonTemplate.innerHTML;
-
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
-    }
-
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
-
-  this.init = () => {
-    $tables.forEach(this.add);
-
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
-
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
-
-
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
-    }
-
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
-
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
-      }
-    ));
-  }
-
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
-
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
-    }
-
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
+    if (!isAnimation || useRealRAF) {
+      window.requestAnimationFrame(func);
+    } else if (ignoreTime || millisecs <= 500) {
+      setTimeout(() => {
+        this.requestAnimationFrame(func, {
+          ignoreTime: true
         });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
+      }, 500);
+    }
+    return;
+  }
+
+  this.pause = () => {
+    const { body } = document;
+
+    if (body.classList.contains(this.pauseClass)) {
+      return;
+    } else {
+      // For CSS animations
+      body.classList.add(this.pauseClass);
+      body.classList.remove(this.playClass);
+
+      // For JS animations
+      this.requestAnimationFrame = this.dummyRAF;
+
+      // for SVG animations
+      document.querySelectorAll('svg').forEach((el) => {
+        el.pauseAnimations();
+      });
+
+      // for AblePlayer videos
+      if (typeof(AblePlayerInstances) !== 'undefined') {
+        AblePlayerInstances.forEach(el => {
+          if (el.playing) {
+            el.pausedWithEnableControl = true;
+            el.pauseMedia();
+          }
+        });
       }
 
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
+      // for vanilla HTML5 Videos
+      document.querySelectorAll('video').forEach((el) => {
+        const { dataset } = el;
+        if (!dataset.ablePlayer && !dataset.notPausableByEnable) {
+          dataset.pausedWithEnableControl = true;
+          el.pause();
         }
-      )));
+      });
+
+      // fire pause event
+      document.dispatchEvent(pauseEvent);
+
+      localStorage.setItem(this.reduceMotionKey, true);
+
+      timePausePressed = Date.now();
+    }
+  }
+
+  this.play = () => {
+    const { body } = document;
+
+    // For CSS animations
+    body.classList.remove(this.pauseClass);
+    body.classList.add(this.playClass);
+
+    // For JS animations
+    this.requestAnimationFrame = this.realRAF;
+
+    // for SVG animations
+    document.querySelectorAll('svg').forEach((el) => {
+      el.unpauseAnimations();
     });
 
-    document.body.addEventListener("click", pagerItemClickEvent);
+    // for AblePlayer videos
+    if (typeof(AblePlayerInstances) !== 'undefined') {
+      AblePlayerInstances.forEach(el => {
+        if (el.pausedWithEnableControl) {
+          el.pausedWithEnableControl = false;
+          el.playMedia();
+        }
+      });
+    }
+
+    // for vanilla HTML5 Videos
+    document.querySelectorAll('video').forEach((el) => {
+      const { dataset } = el;
+
+      if (dataset.pausedWithEnableControl) {
+        dataset.pausedWithEnableControl = false;
+        el.play();
+      }
+    });
+
+    // fire pause event.
+    document.dispatchEvent(playEvent);
+
+    localStorage.removeItem(this.reduceMotionKey);
+  }
+
+  this.pauseSMIL = (el) => {
+    const svgEl = el.closest('svg');
+
+    if (this.$checkbox.checked) {
+      svgEl.pauseAnimations();
+    }
+  }
+
+  this.clickEvent = () => {
+    if (this.$checkbox.classList.contains(this.checkboxClass)) {
+      if (this.$checkbox.checked) {
+        this.pause();
+      } else {
+        this.play();
+      }
+    }
+  }
+
+
+  this.init = function() {
+    this.rootClass = 'pause-anim-control';
+    this.pauseClass = `${this.rootClass}__prefers-reduced-motion`;
+    this.playClass = `${this.rootClass}__prefers-motion`;
+    this.checkboxClass = `${this.rootClass}__checkbox`;
+    this.$checkbox = document.querySelector(`.${this.checkboxClass}`);
+    this.prefersReducedMotionMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.reduceMotionKey = `${this.rootClass}__prefers-reduced-motion`;
+    this.wasSetByUser = localStorage.getItem(this.reduceMotionKey) || false;
+
+    if (!this.$checkbox) {
+      console.warn('Pause checkbox is not in DOM. Bailing');
+      return;
+    }
+
+    if (this.prefersReducedMotionMq.matches || this.wasSetByUser) {
+      this.$checkbox.checked = true;
+      this.pause();
+    } else {
+      this.$checkbox.checked = false;
+      this.play();
+    }
+
+    this.prefersReducedMotionMq.addEventListener('change', (e) => {
+      if (e.matches) {
+        this.$checkbox.checked = true;
+        this.pause();
+      } else {
+        this.$checkbox.checked = false;
+        this.play();
+      }
+    });
+
+
+    // Click event for the checkbox
+    document.addEventListener('change', this.clickEvent);
+
+    document.addEventListener('load', this.clickEvent);
+    window.addEventListener('focus', this.clickEvent);
+    document.querySelectorAll('animateMotion, animate').forEach((el) => {
+      this.pauseSMIL(el);
+    });
+
+    // Safari will restart SVG animations when the browser tab becomes visible
+    // after being pushed in the background, so we do this to work around it.
+    document.addEventListener('visibilitychange', this.clickEvent);
 
   }
 
-};
+}
+
+const pauseAnimControl = new PauseAnimControlDef();
 
 

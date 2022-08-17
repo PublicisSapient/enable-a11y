@@ -96,7 +96,7 @@ fieldset .legend,
   overflow-y: auto;
   position: absolute;
   margin: 0;
-  width: 9.25rem;
+  min-width: 9.25rem;
   z-index: 2;
 }
 .enable-listbox [role="option"] {

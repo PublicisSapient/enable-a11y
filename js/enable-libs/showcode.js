@@ -42,6 +42,8 @@ const showcode = new function () {
   const ellipsesRe = /(\s*\.\.\.)/g;
   const blankAttrValueRe = /(required|novalidate|open|disabled|\$\{[^}]*\})=""/g;
   const commandsRe = /^%[A-Z]*?%/;
+  const HTMLCommentBegin = /^\s*<!--/;
+  const HTMLCommentEnd = /-->\s*$/;
 
 
   // Most of this list from
@@ -759,10 +761,19 @@ const showcode = new function () {
     }
 
     if (block) {
+      const isJS = (block.dataset.showcodeIsJs === 'true')
+      
       formatHTMLInBlock(block, replaceRulesJson)
+
       // let's do search and replace here
       const unformattedHTML = isWholeDoc ? block.outerHTML : block.innerHTML;
-      const formattedHTML = formatHTML(unformattedHTML)
+      let formattedHTML;
+      
+      if (isJS) {
+        formattedHTML = unformattedHTML.replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
+      } else {
+        formattedHTML = formatHTML(unformattedHTML);
+      }
       //indent.html(unformattedHTML, {tabString: ' '});
       const entifiedHTML = this.entify(formattedHTML, { ignoreSpace: true });
       htmlCache[originalHTMLId] = entifiedHTML;

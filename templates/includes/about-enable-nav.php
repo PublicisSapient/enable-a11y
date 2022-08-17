@@ -11,12 +11,12 @@
       FAQ
     </a>
   </li>
-  <!-- <li class="enable-flyout__menu-item">
+  <li class="enable-flyout__menu-item">
     <a href="code-quality.php"
       class="enable-flyout__link">
       Accessible Code Quality
     </a>
-  </li> -->
+  </li>
   <li class="enable-flyout__menu-item enable-flyout__last-top-level-link"> 
     <a href="acknowledgements.php"
       class="enable-flyout__link">

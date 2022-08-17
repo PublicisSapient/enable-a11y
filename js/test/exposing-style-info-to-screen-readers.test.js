@@ -1,12 +1,9 @@
 'use strict'
 
 import config from './test-config.js';
-import testHelpers from './test-helpers.js';
 
 describe('Styled Elements Tests', () => {
-  beforeAll(async () => {
-  });
-
+  
   it('Detect if there are ::before rules on del tags', async () => {
     let domInfo;
 

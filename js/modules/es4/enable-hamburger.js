@@ -1,245 +1,395 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
+ * enable-flyout-hamburger.js - An accessible desktop flyout/mobile hamburger
+ * menu hybrid menu.
  * 
  * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
  * Part of the Enable accessible component library.
  * Version 1.0 released Dec 27, 2021
  *
  * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
+ * https://www.useragentman.com/enable/hamburger.php
  * 
  * Released under the MIT License.
  ******************************************************************************/
 
-
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
-
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
-
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
-
-  const buttonTemplate = $buttonTemplate.innerHTML;
-
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
-    }
-
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
-
-  this.init = () => {
-    $tables.forEach(this.add);
-
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
-
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
+let EnableFlyoutHamburger;
 
 
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
-    }
 
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
+EnableFlyoutHamburger = new function() {
+  // cache all the queries, classes, node lists and media queries.
+  const menuSel = '.enable-flyout__open-menu-button';
+  const topNavSel = '.enable-flyout__top-level';
+  const containerSel = '.enable-flyout__container';
+  const openLevelSel = '.enable-flyout__open-level-button';
+  const closeLevelSel = '.enable-flyout__close-level-button';
+  const closeLevelTopSel = '.enable-flyout__close-top-level';
+  const navLevelSel = '.enable-flyout__level';
+  const willAnimate = '.enable-flyout--will-animate';
+  const enableFlyoutOpenClass = 'enable-flyout__body--is-open';
+  const isOpenClass = 'enable-flyout--is-open';
+  const isOpenSel = '.' + isOpenClass;
+  const $body = document.body;
+  const mobileOpenMenuAnim = 'enable-flyout__anim--mobile-open';
+  const mobileCloseMenuAnim = 'enable-flyout__anim--mobile-close';
+  const dropdownSel = '.enable-flyout__dropdown';
+  const hamburgerIconFacadeSel = '.enable-flyout__hamburger-icon-facade';
+  let $mainMenuButton;
+  let $root;
+  let $container;
+  let $screen;
+  let $rootCloseMenuButton;
+  let desktopMq;
+  let desktopMql;
+  let areFlyoutsOpen = false;
 
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
+  function delegate(eventName, elementSelector, handler) {
+    document.body.addEventListener(eventName, function(e) {
+      // loop parent nodes from the target to the delegation node
+      for (var target = e.target; target && target != this; target = target.parentNode) {
+        if (target.matches(elementSelector)) {
+          handler.call(target, e);
+          break;
         }
       }
-    ));
+    }, false);
   }
 
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
+  // I think this should be done for all projects.
+  const forEach = Array.prototype.forEach;
+
+  function isHamburger() {
+    // needs to be trimmed since it had leading spaces.
+    return window.getComputedStyle($root).getPropertyValue('--enable-flyout__is-hamburger').trim() === '1';
   }
 
-  const pagerItemClickEvent = (e) => {
+
+  function getSiblings(el) {
+    return Array.prototype.filter.call(el.parentNode.children, function(child) {
+      return child !== el;
+    });
+  }
+
+  this.openFlyout = () => {
+
+    $root.classList.add(willAnimate);
+
+    requestAnimationFrame(() => {
+      $root.classList.add(isOpenClass);
+      $body.classList.add(enableFlyoutOpenClass);
+
+      accessibility.setKeepFocusInside($container, true);
+
+      // We make the hamburger menu icon not accessible to
+      // screen readers and keyboards. This is because focus
+      // will be applied to the close menu icon when the menu
+      // flies out.  See this.openMenuAnimationEnd().
+      forEach.call($mainMenuButton, function($el) {
+        $el.setAttribute('aria-expanded', 'true');
+        $el.setAttribute('tabindex', '-1');
+        $el.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    areFlyoutsOpen = true;
+  }
+
+  this.closeFlyout = ($flyoutMenu) => {
+    const $openLevel = $flyoutMenu.querySelectorAll(openLevelSel)
+    let $controller = accessibility.getAriaControllerEl($flyoutMenu);
+    $flyoutMenu.classList.remove(isOpenClass);
+    $controller.setAttribute('aria-expanded', 'false');
+
+    forEach.call($openLevel, function($el) {
+      const siblings = getSiblings($el);
+
+      forEach.call(siblings, function(sibling) {
+        if (sibling.getAttribute('role') && sibling.getAttribute('aria-controls')) {
+          sibling.classList.remove(isOpenClass);
+
+          $controller = accessibility.getAriaControllerEl(sibling);
+          $controller.setAttribute('aria-expanded', 'false');
+        }
+      })
+    });
+
+
+  }
+
+  this.closeAllFlyouts = () => {
+    const $flyouts = document.querySelectorAll(topNavSel);
+    forEach.call($flyouts, closeLevel);
+
+    const $openFlyouts = document.querySelectorAll(isOpenSel);
+    forEach.call($openFlyouts, this.closeFlyout);
+
+    $body.classList.remove(enableFlyoutOpenClass);
+
+    accessibility.setKeepFocusInside($container, false);
+    $root.classList.remove(willAnimate);
+
+    forEach.call($mainMenuButton, function($el) {
+      $el.setAttribute('aria-expanded', 'false');
+      $el.removeAttribute('tabindex');
+      $el.removeAttribute('aria-hidden');
+    });
+
+    areFlyoutsOpen = false;
+  }
+
+
+  const closeSiblingFlyouts = ($level) => {
+    const $parentLevel = $level.parentNode.closest(navLevelSel);
+    const $flyouts = $parentLevel.querySelectorAll(navLevelSel);
+
+    forEach.call($flyouts, closeLevel);
+  }
+
+  this.onHamburgerIconClick = (e) => {
     const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
+    const $menuButton = target.closest(menuSel);
 
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
+    e.preventDefault();
+    const $flyoutMenu = accessibility.getAriaControlsEl($menuButton);
+    if ($flyoutMenu.classList.contains(isOpenClass)) {
+      this.closeAllFlyouts();
     } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
+      this.openFlyout();
     }
-
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
-    });
-
-    document.body.addEventListener("click", pagerItemClickEvent);
-
   }
 
-};
+  this.onHamburgerCloseClick = (e) => {
+    e.preventDefault();
+    const $flyoutMenu = document.getElementById(this.getAttribute('aria-controls'));
+    if (!$flyoutMenu) {
+      throw "Error: aria-controls on button must be set to id of flyout menu.";
+    }
+    this.closeFlyout($flyoutMenu)
+  }
 
+
+  this.openMenuAnimationEnd = (e) => {
+    const { target, animationName } = e;
+    const $root = target.closest(topNavSel);
+
+    // When the menu is initially opened, set focus to the close button facade.
+    if (target === $root) {
+      requestAnimationFrame(() => { $rootCloseMenuButton.focus() });
+
+      // When a submenu is opened
+    } else if (animationName.indexOf(mobileOpenMenuAnim) === 0) {
+
+      if (target.matches(navLevelSel)) {
+        target.querySelector(closeLevelSel).focus();
+
+        accessibility.setKeepFocusInside(target, true);
+      }
+
+      // When a menu panel is being closed.
+    } else if (animationName.indexOf(mobileCloseMenuAnim) === 0) {
+      const $menuEl = document.querySelector('[aria-controls="' + $root.id + '"]');
+
+      // When the close button is clicked
+      if (target === $root) {
+
+        accessibility.setKeepFocusInside(target, false);
+        $menuEl.focus();
+
+        // When it is just a submenu that is closed
+      } else if (target.matches(navLevelSel)) {
+        const $upperLevel = target.parentNode.closest(navLevelSel);
+
+        accessibility.setKeepFocusInside($upperLevel, true);
+        const $elToFocus = document.querySelector('[aria-controls="' + target.id + '"]');
+        $elToFocus.focus();
+      }
+
+    }
+  }
+
+
+  const openLevelEvent = (e) => {
+    const { target } = e;
+
+    e.preventDefault();
+    openLevel(target);
+  }
+
+  const openLevel = ($el) => {
+    const $flyoutMenu = accessibility.getAriaControlsEl($el);
+
+    // if this is not the hamburger variant (i.e. the dropdowns
+    // common on desktop menu systems), we want to close the 
+    // sibling flyouts.
+    if (!isHamburger()) {
+      closeSiblingFlyouts($flyoutMenu);
+    }
+    $el.setAttribute('aria-expanded', 'true');
+    if ($flyoutMenu) {
+      const { classList } = $flyoutMenu;
+      if ($flyoutMenu.matches(dropdownSel)) {
+        $flyoutMenu.addEventListener(
+          'blur', this.blurEvent, true
+        );
+      }
+      classList.add(isOpenClass);
+    }
+  }
+
+  this.closeLevelEvent = (e) => {
+    const { target } = e;
+    e.preventDefault();
+
+    closeLevel(target);
+  }
+
+  const closeLevel = ($el) => {
+
+    if ($el.classList.contains('enable-flyout__open-level-button')) {
+      const $flyoutMenu = accessibility.getAriaControlsEl($el);
+      $el.setAttribute('aria-expanded', 'false');
+      if ($flyoutMenu) {
+        $flyoutMenu.classList.remove(isOpenClass);
+      }
+
+      if (isHamburger()) {
+        accessibility.setKeepFocusInside($el.parentNode.closest(navLevelSel), true);
+        $el.focus();
+      }
+    } else {
+      const $navLevel = $el.closest(navLevelSel);
+      const { id } = $navLevel;
+      const $button = document.querySelector('[aria-controls="' + id + '"]');
+
+      if ($navLevel.matches(dropdownSel)) {
+        $navLevel.removeEventListener(
+          'blur', this.blurEvent, true
+        );
+      }
+      $navLevel.classList.remove(isOpenClass);
+      $button.setAttribute('aria-expanded', 'false');
+
+
+      if (isHamburger()) {
+        const $panel = $button.parentNode.closest(navLevelSel);
+
+        if ($panel) {
+          console.log('p', $panel)
+          accessibility.setKeepFocusInside($panel, true);
+        }
+
+        $button.focus();
+      }
+    }
+  }
+
+  this.toggleLevelEvent = (e) => {
+    const { target } = e;
+    const isExpanded = (target.getAttribute('aria-expanded') === 'true');
+
+    if (isExpanded) {
+      this.closeLevelEvent(e);
+    } else {
+      openLevelEvent(e);
+    }
+  }
+
+  this.blurEvent = (e) => {
+
+    if (!isHamburger()) {
+      accessibility.doIfBlurred(e, () => {
+        if (!e.relatedTarget.closest(isOpenSel)) {
+          this.closeAllFlyouts();
+        }
+
+      });
+    }
+  }
+
+  this.onBreakpointChange = () => {
+    // we will close all flyouts, just in case
+    this.closeAllFlyouts();
+  }
+
+  this.keyPressEvent = (e) => {
+    const { key } = e;
+
+    if (areFlyoutsOpen && (key === 'Esc' || key === 'Escape')) {
+      this.closeAllFlyouts();
+    }
+  }
+
+  this.onDocumentClick = (e) => {
+    const { target } = e;
+
+    const currentlyOpenMenu = document.querySelector(isOpenSel);
+    const ariaControls = target.getAttribute('aria-controls');
+
+    // If the document has an open menu
+    // *and* we didn't click on the button that controls that open menu
+    // *and* it we didn't click inside the open menu
+    // *and* we we didn't click inside the menu at all,
+    // then we close all the flyouts.
+    if (currentlyOpenMenu && currentlyOpenMenu.id !== ariaControls && !target.closest(isOpenSel) && !target.closest(menuSel)) {
+      this.closeAllFlyouts();
+    }
+  }
+
+
+  this.init = function() {
+
+    // Let's cache queries 
+    $mainMenuButton = document.querySelectorAll(menuSel);
+    $root = document.querySelector(topNavSel);
+    $container = document.querySelector(containerSel);
+    $screen = document.querySelector('.enable-flyout__overlay-screen');
+    $rootCloseMenuButton = document.querySelector(hamburgerIconFacadeSel);
+    desktopMq = window.getComputedStyle($root).getPropertyValue('--enable-flyout__desktop-media-query');
+    desktopMql = window.matchMedia(desktopMq);
+
+    document.body.addEventListener('click', this.onDocumentClick);
+
+
+    // main menu open
+    delegate('click', menuSel, this.onHamburgerIconClick);
+
+    // level open
+    delegate('click', openLevelSel, this.toggleLevelEvent);
+
+    // level close
+    delegate('click', closeLevelSel, this.closeLevelEvent);
+
+    // main menu close
+    delegate('click', closeLevelTopSel, this.onHamburgerCloseClick);
+
+    // close on close menu facade 
+    delegate('click', hamburgerIconFacadeSel, this.closeAllFlyouts);
+
+    document.addEventListener('animationend', this.openMenuAnimationEnd);
+
+    // For all dropdowns, we must fire this event.
+    document.querySelectorAll(dropdownSel).forEach((el) => {
+      el.addEventListener(
+        'blur', this.blurEvent, true
+      );
+    })
+
+
+    $screen.addEventListener('click', this.closeAllFlyouts);
+
+    if (desktopMql.addEventListener) {
+      desktopMql.addEventListener('change', this.onBreakpointChange);
+    }
+
+    // This is supposed to be deprecated, but I don't know what its replacement is.
+    $body.addEventListener("orientationchange", this.onBreakpointChange);
+
+    document.addEventListener('keyup', this.keyPressEvent);
+
+  }
+}
+
+// EnableFlyoutHamburger.init();
 

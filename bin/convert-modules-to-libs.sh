@@ -11,6 +11,7 @@ fi
 
 for i in *.js
 do
-  grep -v ^import paginate.js | grep -v ^export > es4/$i
+  echo "Converting $i"
+  grep -v ^import $i | grep -v ^export > es4/$i
 done
 

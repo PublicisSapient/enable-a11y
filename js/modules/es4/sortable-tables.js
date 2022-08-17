@@ -1,245 +1,301 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
+* sortable-table.js - A sortable table script
+* 
+* This has been mofified from the excellent script from Deque University:
+* https://dequeuniversity.com/library/aria/table-sortable
+*
+*******************************************************************************/
 
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+const sortableTables = new (function () {
+ /*
+  * sortableTable script.  This has been mofified from the excellent
+  * script from Deque University:
+  * https://dequeuniversity.com/library/aria/table-sortable
+  */
+  this.functions = {};
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
+  this.add = (tableGroup, options) => {
+    var table = tableGroup.querySelector("table");
+    var headerGroup = table.querySelector("thead");
+    var headerRow = headerGroup.querySelector("tr");
+    var headers = headerRow.querySelectorAll("th");
+    var rowGroup = table.querySelector("tbody");
+    var rows = rowGroup.querySelectorAll("tr");
+    var captionElement = table.querySelector("caption") || document.getElementById(table.getAttribute('aria-labelledby'));
+    var captionDetailsElement = captionElement.querySelector('.deque-table-sortable__caption-details')
+    var caption = captionElement.innerText;
+    var hasRowHeadings = (table.querySelector('tbody th') !== null);
+    var ariaLiveUpdateTemplate =
+      table.getAttribute("data-aria-live-update") ||
+      "Table ${caption} is now ${sortedBy}";
+    var ascendingLabel =
+      table.getAttribute("data-ascending-label") || "ascending";
+    var descendingLabel =
+      table.getAttribute("data-descending-label") || "descending";
 
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
+    var liveRegion = tableGroup.querySelector(
+      ".deque-table-sortable__live-region"
+    );
+    var readCaptions = liveRegion.getAttribute("data-read-captions");
 
-  const buttonTemplate = $buttonTemplate.innerHTML;
-
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
+    if (readCaptions === null) {
+      readCaptions = false;
     }
-
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
-
-  this.init = () => {
-    $tables.forEach(this.add);
-
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
-
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
+    liveRegion.notify = function (text) {
+      liveRegion.innerHTML = text;
     };
 
-    table.dataset.currentpage = 0;
-  }
+    table.options = options;
 
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
+    var sortOrder = null;
+    var sortDirection = 1;
 
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
-
-
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
+    function getSortHeader() {
+      if (sortOrder === null) {
+        return null;
       }
+      return headerRow.children[sortOrder];
     }
 
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
-
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
+    function getSortLabel() {
+      var header = getSortHeader();
+      if (!header) {
+        return null;
       }
-    ));
-  }
+      return header.innerText;
+    }
 
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
+    function getSortDirection() {
+      return sortDirection > 0 ? "ascending" : "descending";
+    }
 
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
+    function getSortDirectionLabel() {
+      return sortDirection > 0 ? ascendingLabel : descendingLabel;
+    }
 
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
+    function getSortInfo() {
+      if (sortOrder === null) {
+        return "unsorted";
       }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
 
-      if ($pager) {
-        let toFocus;
+      return "sorted by " + getSortLabel() + ", " + getSortDirectionLabel();
+    }
 
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
+    function renderSorting() {
+      updateCaption();
+      updateAriaSort();
+      updateLiveRegion();
+    }
+
+    function updateAriaSort() {
+      for (var i = 0; i < headerRow.children.length; i++) {
+        var child = headerRow.children[i];
+        var button = child.querySelector('.sortableColumnLabel');
+
+        if (sortOrder !== null && i === Math.abs(sortOrder)) {
+          var direction = getSortDirection();
+          var directionLabel = getSortDirectionLabel();
+          child.setAttribute("aria-sort", direction);
+          button.setAttribute("aria-label", `${button.innerText}, ${directionLabel}`);
         } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
+          child.removeAttribute("aria-sort");
+          button.removeAttribute("aria-label");
         }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
       }
     }
 
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
+    function updateCaption() {
+      if (!captionDetailsElement) {
+        return;
       }
+      var captionDetailsText = getSortInfo();
+      captionDetailsElement.innerText = captionDetailsText;
+    }
 
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
+    function updateLiveRegion() {
+      if (readCaptions) {
+        var captionText = ariaLiveUpdateTemplate
+          .replace("${caption}", caption)
+          .replace("${sortedBy}", getSortInfo());
+        liveRegion.notify(captionText);
+      }
+    }
+
+    rows = Array.prototype.slice.call(rows);
+    var isValid = rows.every(function (row) {
+      return row.children.length === headers.length;
     });
 
-    document.body.addEventListener("click", pagerItemClickEvent);
+    if (!isValid) {
+      throw new Error("Each row must be the same length as the headers row.");
+    }
 
+    headers = Array.prototype.slice.call(headers);
+    [].slice.call(headers).forEach(function (header, i) {
+      createHeaderCell(header, function (e) {
+        const { options } = table;
+
+        e.preventDefault();
+
+        if (options && options.onBeforeSort) {
+          options.onBeforeSort(table);
+        }
+
+        rows = sortByIndex(rows, i);
+        table.renderData(rows);
+
+        if (options && options.onAfterSort) {
+          options.onAfterSort(table);
+        }
+
+        table.dispatchEvent(
+          new CustomEvent(
+            'enable-table-sort',
+            {
+              'bubbles': true,
+              'detail': {
+                'index': () => i,
+                'direction': () => sortDirection
+              }
+            }
+          )
+        );
+      });
+    });
+
+    table.renderData = function (rows) {
+      rowGroup.innerHTML = toHTML(rows, hasRowHeadings);
+      renderSorting();
+    };
+
+    table.renderData(rows);
+
+    const createCompareFunc = (baseFunc, index) => {
+      return (
+        function (a, b) {
+          a = Array.prototype.slice.call(a.children);
+          b = Array.prototype.slice.call(b.children);
+          var aVal = null;
+          var bVal = null;
+    
+          if (a[index]) {
+            aVal = a[index].innerText;
+          }
+    
+          if (b[index]) {
+            bVal = b[index].innerText;
+          }
+
+          return baseFunc(aVal, bVal);
+        }
+      )
+    }
+
+    const sortByIndex = (rows, index) => {
+      const tableHeadings = tableGroup.querySelectorAll('thead th');
+      const sortByFuncName = tableHeadings[index].dataset.sortableTablesCompareFunc;
+      const customCompareFunc = this.functions[sortByFuncName];
+      const compareFunc = customCompareFunc ? createCompareFunc(customCompareFunc, index) : (function (a, b) {
+        a = Array.prototype.slice.call(a.children);
+        b = Array.prototype.slice.call(b.children);
+        var aVal = null;
+        var bVal = null;
+  
+        if (a[index]) {
+          aVal = a[index].innerText;
+        }
+  
+        if (b[index]) {
+          bVal = b[index].innerText;
+        }
+  
+        if (!isNaN(parseInt(aVal)) && !isNaN(parseInt(bVal))) {
+          if (parseInt(aVal) < parseInt(bVal)) {
+            return -1;
+          }
+          if (parseInt(aVal) > parseInt(bVal)) {
+            return 1;
+          }
+          return 0;
+        } else {
+          if (aVal < bVal) {
+            return -1;
+          }
+          if (aVal > bVal) {
+            return 1;
+          }
+          return 0;
+        }
+      });
+
+      rows = tableGroup.querySelectorAll("tbody tr");
+      rows = [].slice.call(rows);
+
+      if (sortOrder === index) {
+        sortDirection = -sortDirection;
+        return rows.reverse();
+      } else {
+        sortDirection = 1;
+        sortOrder = index;
+        return rows.sort(compareFunc);
+      }
+    }
+
+    var firstOne = table.querySelector(".sortableColumnLabel");
+    if (firstOne) {
+      firstOne.click();
+    } // give the table a default sort...
   }
 
-};
+  function createHeaderCell(header, handler) {
+    var button = header.querySelector("button");
+    button.setAttribute("tabindex", "0");
 
+    button.addEventListener("click", handler);
+  }
+
+  function toHTML(rows , hasRowHeadings) {
+    return rows
+      .map(function (row) {
+        const { className } = row;
+
+        row = Array.prototype.slice.call(row.children);
+        return (
+          `<tr role="row" class="${className}">\n    ` +
+          row
+            .map(function (item, index) {
+              if (index === 0 && hasRowHeadings) {
+                return (
+                  '<th scope="row" role="rowheader">' + item.innerText + "</th>"
+                );
+              }
+              return '<td role="gridcell">' + item.innerText + "</td>";
+            })
+            .join("") +
+          "</tr>"
+        );
+      })
+      .join("");
+  }
+
+  this.activateAllSortableTables = (withinEl, options) => {
+    var sortableTables = (withinEl || document).querySelectorAll(
+      ".deque-table-sortable-group"
+    );
+    for (var i = 0; i < sortableTables.length; i++) {
+      this.add(sortableTables[i], options);
+    }
+  }
+
+  this.addSortFunction = (funcName, func) => {
+    this.functions[funcName] = func;
+  }
+
+  this.init = (options) => {
+    this.activateAllSortableTables(document, options);
+  }
+})();
 

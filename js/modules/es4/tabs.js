@@ -1,245 +1,166 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
+* tabs.js - UI for Accessible tabs
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec. 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/tabs.php
+* 
+* Released under the MIT License.
+******************************************************************************/
 
+const tabgroup = new function () {
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+  this.init = function () {
+    this.tabgroupEls = document.querySelectorAll('.enable-tablist');
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
+    // For each of the tabgroups ...
+    for (let i = 0; i < this.tabgroupEls.length; i++) {
+      this.add(this.tabgroupEls[i]);
+    }
+  };
 
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
+  this.add = (tabgroupEl) => {
+    let activeTab = null;
+    const activeHash = location.hash;
+    const { keyboardOnlyInstructions } = tabgroupEl.dataset;
 
-  const buttonTemplate = $buttonTemplate.innerHTML;
+    this.addRoles(tabgroupEl);
 
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
+    if (keyboardOnlyInstructions) {
+      const tabEls = tabgroupEl.querySelectorAll('[role="tab"]');
 
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
+      tabEls.forEach((el) =>
+        el.setAttribute("aria-describedby", keyboardOnlyInstructions)
+      );
     }
 
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
+    // remove no-js from parent
+    tabgroupEl.parentNode.classList.add("tabs--has-js");
 
-  this.init = () => {
-    $tables.forEach(this.add);
+    // When keyboard users click on tab button, focus goes to heading.
+    tabgroupEl.addEventListener("keyup", this.keyUpEvent);
 
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
+    // ... use accessibility.initGroup() to allow the use of arrow keys
+    // to choose each tab one at a time.
+    accessibility.initGroup(tabgroupEl, {
+      // prevents clicking on tab to jump down to the content.
+      preventClickDefault: true,
 
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
+      // This selects the first tab by default.
+      doSelectFirstOnInit: true,
 
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
+      // This sets what the sr-only class is (default is .sr-only)
+      visuallyHiddenClass: "sr-only",
 
 
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
-    }
+      // When the user uses the arrow key to select on of the tabs,
+      // this method is called afterwards.  It hides all the tabpanels
+      // except for the one that checked tab is supposed to show (the
+      // one with the ID on the tab's aria-controls attribute).
+      ariaCheckedCallback: function (
+        e,
+        currentlyCheckedEl
+      ) {
+        if (!currentlyCheckedEl) {
+          return;
+        }
 
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
+        const groupEl = currentlyCheckedEl.closest('[role="tablist"]');
+        const activePanelId = currentlyCheckedEl.getAttribute("aria-controls");
+        const panelEls =
+          groupEl.parentNode.querySelectorAll('[role="tabpanel"]');
+
+        for (let i = 0; i < panelEls.length; i++) {
+          var panel = panelEls[i];
+          if (panel.id === activePanelId) {
+            panel.classList.add("visible");
+          } else {
+            panel.classList.remove("visible");
+          }
+        }
+      },
+      activatedEventName: 'enable-selected'
     });
 
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
-      }
-    ));
-  }
+    // If the tabs are links with hashed href's, this code will
+    // allow the deep linking of the tabbed content.
+    const tabEls = tabgroupEl.querySelectorAll('[role="tab"]');
+    for (let j = 0; j < tabEls.length; j++) {
+      const tabEl = tabEls[j];
+      const { href } = tabEl;
+      const split = href && href.split("#");
+      const hash = split && split[1];
 
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
-
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
+      if (activeHash === "#" + hash) {
+        activeTab = tabEl;
+        break;
       }
     }
 
 
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
-    });
-
-    document.body.addEventListener("click", pagerItemClickEvent);
-
+    if (activeTab) {
+      activeTab.click();
+    }
   }
 
+  this.addRoles = (tabgroupEl) => {
+    // If the role has been set here, we assume the structure is okay
+    // and don't add the roles.
+    if (tabgroupEl.getAttribute("role") !== "tablist") {
+      console.info('Roles do not exist. Adding');
+      const tabEls = tabgroupEl.querySelectorAll(".enable-tab");
+      tabgroupEl.setAttribute("role", "tablist");
+      tabEls.forEach((tabEl) => {
+        this.addTabRole(tabEl);
+        this.addPresentationRoles(tabgroupEl, tabEl);
+      });
+    }
+  };
+
+  this.addTabRole = (tabEl) => {
+    const { owns } = tabEl.dataset
+    const ownsEl = owns && document.getElementById(owns);
+    tabEl.setAttribute("role", "tab");
+    if (ownsEl) {
+      tabEl.setAttribute('aria-controls', owns);
+      ownsEl.setAttribute("role", "tabpanel");
+    }
+  };
+
+  this.addPresentationRoles = (tabgroupEl, tabEl) => {
+    let parentNode = tabEl.parentNode;
+
+    while (parentNode !== tabgroupEl) {
+      parentNode.setAttribute('role', 'presentation');
+      parentNode = parentNode.parentNode;
+    }
+  }
+
+  // If the user fully clicked on a tab with a keyboard,
+  // we ensure that focus goes to the heading of the tabpanel it is
+  // connected to.  This does not happen for mouse users.
+  this.keyUpEvent = (e) => {
+    const { target, key } = e;
+    const role = target.getAttribute("role");
+
+    if (role === "tab" && key === "Enter") {
+      const { href } = target;
+      const splitHref = href.split("#");
+      if (splitHref.length === 2) {
+        const toFocus = document.querySelector(`#${splitHref[1]}`);
+        if (toFocus) {
+          requestAnimationFrame(() => {
+            toFocus.focus();
+          });
+        }
+      }
+    }
+
+  };
 };
-
 

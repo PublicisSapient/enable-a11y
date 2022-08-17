@@ -19,7 +19,7 @@ const dictLookup = new (function () {
       const sourceurl = baseURL + "/wiki/" + page;
       $pageTitle.innerHTML = page;
       $wikiInfo.innerHTML = text;
-      $sourceURL.setAttribute("href", sourceurl);
+      //$sourceURL.setAttribute("href", sourceurl);
       $licenceInfo.style.display = "block";
       $pageAlert.innerHTML = `Now displaying information about the word "${page}".`;
   

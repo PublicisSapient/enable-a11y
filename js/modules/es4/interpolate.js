@@ -1,245 +1,101 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
+ * interpolate.js - Use ES6 template string syntax inside regular
+ * JavaScript strings.
  * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Based on code from https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string
+ * with XSS prevention advice added, which was taken from: 
+ * https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
+ * 
+ * Refactored by Zoltan Hawryluk <zoltan.dulac@gmail.com>
  * Part of the Enable accessible component library.
  * Version 1.0 released Dec 27, 2021
  *
  * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
+ * https://www.useragentman.com/enable/template.php
  * 
  * Released under the MIT License.
  ******************************************************************************/
 
+const interpolateDomParser = new DOMParser();
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+const entities = [
+  { re: /&/g, ent: '&amp;' },
+  { re: /</g, ent: '&lt;' },
+  { re: />/g, ent: '&gt;' },
+  { re: /"/g, ent: '&quot' },
+  { re: /'/g, ent: '&#x27' },
+  { re: /=/g, ent: '&#61;' },
+  { re: /javscript:/g, ent: '' },
+  { re: /\son[a-z]*=/g, ent: '' }, // for inline events, like onclick, etc.
+];
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
+const disallowedInHTMLTemplate = [
+  /<script/gi,
+  /<style/gi,
+]
 
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
 
-  const buttonTemplate = $buttonTemplate.innerHTML;
 
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
+/**
+ * @description A function that will make strings not be prone to XSS attacks when they are placed inside of HTML.
+ * @param {string} s - The input string
+ * @returns {string} - The entified version of the input string s.
+ */
+const entify = function(s) {
+  let result = s;
 
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
-    }
+  entities.forEach((entity) => {
+    result = result.replace(entity.re, entity.ent)
+  });
 
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
+  return result;
+}
 
-  this.init = () => {
-    $tables.forEach(this.add);
+/**
+ * @description A function that will do the same this as ES6 template strings.  This is useful when we are passing Template-like Strings as Props.  It is safe to use from XSS attacks, since it cannot run arbitrary code. Code from https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string
+ * @param {string} [str] - The template-like string.
+ * @param {object} obj - The object that contains all the variables used in the template string
+ * @returns {string} - The constructed string that results putting `string` and `params` together
+ * @example interpolate("Showing ${searchNum} results for '${searchTerm}'", { searchNum: 10, searchTerm: "zoltan" }) = 'Showing 10 results for 'zoltan'
+ */
+const interpolate = function(template, params) {
+  let r = template;
 
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
+  for (let i = 0; i < disallowedInHTMLTemplate.length; i++) {
+    const disallowed = disallowedInHTMLTemplate[i];
+    if (template.indexOf(disallowed) > -1) {
+      console.error(`Error in template: ${template}`);
+      throw `Disallowed string in template: ${disallowed}`;
     }
   }
 
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
+  try {
+    for (const key in params) {
+      const value = entify(params[key] + '');
 
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
-
-
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
+      if ({}.hasOwnProperty.call(params, key)) {
+        r = r.replace(new RegExp("\\$\\{" + key + "\\}", "g"), value);
       }
     }
-
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
-
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
-      }
-    ));
+  } catch (ex) {
+    /* eslint-disable no-console */
+    console.error(`interpolate() failed for string '${template}'. Reason:`, ex);
+    /* eslint-enable no-console */
+    return template;
   }
+  return r;
+};
 
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
-
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
-    }
-
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
-    });
-
-    document.body.addEventListener("click", pagerItemClickEvent);
-
-  }
-
+/**
+ *
+ * @param { String } html - A string of HTML code
+ * @returns { HTMLElement } - a DOM element representation of the HTML code.
+ */
+const htmlToDomNode = function(html) {
+  const doc = interpolateDomParser.parseFromString(html, "text/html");
+  return doc.body.firstChild;
 };
 
 

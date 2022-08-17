@@ -1,245 +1,176 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
+* tooltip.js - Accessible Tooltip Module
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released Dec. 27, 2021
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/tooltip.php
+* 
+* Released under the MIT License.
+******************************************************************************/
+
+const tooltip = new function () {
+    // global constants
+    const { body } = document;
+    const tooltipEl = document.createElement('div');
+    const tooltipStyle = tooltipEl.style;
+    const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
+    let timeout;
+    let tooltipTarget = null;
 
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+    let isTooltipVisible;
+    let tooltipBelongsTo;
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
-
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
-
-  const buttonTemplate = $buttonTemplate.innerHTML;
-
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
+    /*!
+    * Determine if an element is in the viewport
+    * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+    * @param  {Node}    elem The element
+    * @return {Boolean}      Returns true if element is in the viewport
+    */
+    function isInViewport(elem) {
+        var distance = elem.getBoundingClientRect();
+        return (
+        distance.top >= 0 &&
+        distance.left >= 0 &&
+        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
-  }
+    this.init = () => {
+        this.create();
 
-  this.init = () => {
-    $tables.forEach(this.add);
+        // mouse events
+        body.addEventListener('mouseover', this.show);
 
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
-
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
+        // equivalent keyboard events
+        body.addEventListener('focus', this.show, true);
+        body.addEventListener('blur', this.hide, true);
+        
+        // used to make tooltip disappear when ESC key 
+        // is pressed.
+        body.addEventListener('keyup', this.onKeyup);
 
 
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
     }
 
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
+    this.create = () => {
+        tooltipEl.className = 'tooltip';
+        tooltipEl.id = 'tooltip';
+        tooltipEl.setAttribute('role', 'tooltip');
+        tooltipEl.classList.add('tooltip--hidden');
+        tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
+        tooltipEl.setAttribute('aria-hidden', 'true');
+        body.appendChild(tooltipEl);
+    }
 
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
+    this.onKeyup = (e) => {
+        // check if escape is pressed
+        if (e.which === 27)  {
+            this.hide();
+            e.preventDefault(); 
         }
-      }
-    ));
-  }
-
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
-
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
     }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
+    this.show = (e) => {
+        timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
     }
 
-    let rows = table.rows.length;
+    this.showTimeout = (e) => {
+        // This is the element that needs the tooltip
+        tooltipTarget = e.target;
+        
+        // The text the tooltip contains is in the
+        // data-tooltip attribute
+        const text = tooltipTarget.dataset.tooltip;
 
-    if (hasHeader) rows = rows - 1;
+        // don't do this if the tooltip is visible for this element already
+        if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
+            return;
+        }
 
-    let numPages = Math.floor(rows / perPage);
+        // If this is an element with a tooltip,
+        if (text) {
+            // the coordinates of the tooltipTarget
+            const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
 
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
+            tooltipTarget.setAttribute('aria-describedby', 'tooltip');
 
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
+            // show the tool tip
+            tooltipEl.innerHTML = text;
+            tooltipEl.setAttribute('aria-hidden', "false");
+            tooltipEl.classList.remove('tooltip--hidden');
+
+            // position the tooltip below the tooltipTarget
+            tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.pageYOffset) + 'px + 1em)';
+            tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
+            isTooltipVisible = true;
+            tooltipBelongsTo = tooltipTarget;
+
+            // if the tooltip element is not in the viewport, we should scroll the page down so the user can see it.
+            // Note that this always assumes that the tooltip is below the focused element.
+            if (!isInViewport(tooltipEl)) {
+                const afterStyle = window.getComputedStyle(tooltipEl, '::after');
+                const afterHeight = parseInt(afterStyle.height);
+                const tooltipY = element.getBoundingClientRect().top;
+
+                if (window.scrollY < tooltipY) {
+                    window.scrollTo(window.scrollX, tooltipY);
+                }
+
+                
+            }
+        }
+
+        tooltipTarget.addEventListener('mouseleave', this.hide);
+
+        tooltipEl.addEventListener('mouseleave', this.hide);
+
+
+        tooltipTarget.dispatchEvent(
+            new CustomEvent(
+                'enable-show',
+                {
+                    'bubbles': true,
+                }
+            )
+        );
     }
 
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
+    this.hide = (e) => {
+        if (e && e.type === 'mouseleave') {
+            const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+            if (hoveredElement === tooltipEl) {
+                return;
+            }
         }
-      )));
 
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
 
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
+        if (tooltipTarget) {
+            console.log("cancelling");
+            tooltipTarget.removeEventListener('mouseleave', this.hide);
+            tooltipEl.removeEventListener('mouseleave', this.hide);
+            tooltipTarget = null;
         }
-      )));
-    });
+        clearTimeout(timeout);
+        tooltipEl.classList.add('tooltip--hidden');
+        tooltipEl.setAttribute('aria-hidden', 'true');
+        isTooltipVisible = false;
+        tooltipBelongsTo = null;
 
-    document.body.addEventListener("click", pagerItemClickEvent);
-
-  }
-
-};
+        tooltipEl.dispatchEvent(
+            new CustomEvent(
+                'enable-hide',
+                {
+                    'bubbles': true,
+                }
+            )
+        );
+    }
+}
 
 

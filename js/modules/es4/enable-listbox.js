@@ -1,245 +1,254 @@
 'use strict'
 
 /*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
+* enable-listbox.js - UI for the ARIA listbox role
+* 
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Part of the Enable accessible component library.
+* Version 1.0 released 
+*
+* More information about this script available at:
+* https://www.useragentman.com/enable/
+* 
+* Released under the MIT License.
+******************************************************************************/
 
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+const enableListbox = new function() {
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
+  const showEvent = new CustomEvent('enable-listbox-show', {
+    bubbles: true
+  });
 
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
+  const hideEvent = new CustomEvent('enable-listbox-hide', {
+    bubbles: true
+  });
 
-  const buttonTemplate = $buttonTemplate.innerHTML;
-
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
-    }
-
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
+  this.init = function () {
+    const { body } = document;
+    
+    document.addEventListener('click', this.onClick);
+    body.addEventListener('keyup', this.onKeyup);
+    body.addEventListener('keydown', this.onKeydown);
+    body.addEventListener('mousedown', this.onMousedown)
   }
 
-  this.init = () => {
-    $tables.forEach(this.add);
-
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
-    }
-  }
-
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
-
-
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
-    }
-
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
-
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
-      }
-    ));
-  }
-
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
+  this.onMousedown = (e) => {
     const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
+    
+    if (target.classList.contains('enable-listbox__button')) {
+      
+      const root = target.closest('.enable-listbox');
+      const listboxEl = root.querySelector('[role="listbox"]');
 
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
+      listboxEl.removeEventListener('blur', this.blurEvent, true);
+      // ensure this gets focus
+      target.focus();
 
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
+      listboxEl.addEventListener('blur', this.blurEvent, true);
+    }
+  }
+
+  this.onKeydown = (e) => {
+    this.lastKeydownEl = document.activeElement;
+
+
+    // If the down arrow is pressed when the listbox is collapsed, fire a click event
+    const { target, key } = e;
+    const root = target.closest('.enable-listbox');
+
+    if (root) {
+      const normalizedKey = accessibility.normalizedKey(key);
+      const listboxEl = root.querySelector('[role="listbox"]');
+      if ( (normalizedKey === 'ArrowDown' || normalizedKey === 'ArrowUp') && this.isCollapsed(listboxEl)) {
+        e.preventDefault();
+        this.onClick(e);
       }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
+    }
 
-      if ($pager) {
-        let toFocus;
+  }
 
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
+  this.onKeyup = (e) => {
+    const { key, target } = e;
+    const normalizedKey = accessibility.normalizedKey(key);
+
+    if (this.lastKeydownEl !== target || (normalizedKey !== 'Enter' && normalizedKey !== ' ' && normalizedKey !== 'Escape' && normalizedKey !== 'ArrowDown')) {
+      return;
+    }
+
+    const { activeElement } = document;
+    const root = activeElement.closest('.enable-listbox');
+
+    if (root) {
+
+      const listboxEl = root.querySelector('[role="listbox"]');
+      const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
+      if (activeElement.getAttribute('role') === 'option') {
+
+
+        if (normalizedKey === 'Escape') {
+          listboxEl.removeEventListener('blur', this.blurEvent, true);
+        }
+
+        this.collapse(buttonEl, listboxEl, true)
+
+        if (normalizedKey === 'Escape') {
+          listboxEl.addEventListener('blur', this.blurEvent, true);
+        }
+      }
+    }
+  }
+
+  this.onClick = (e) => {
+    const { target } = e;
+    const root = target.closest('.enable-listbox');
+    let hasValueChanged = false;
+
+    if (root) {
+
+      const listboxEl = root.querySelector('[role="listbox"]');
+      const optionEls = listboxEl.querySelectorAll('[role="option"]');
+      const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
+      const activeId = buttonEl.getAttribute('aria-activedescendant');
+
+      // ensure all options can have programmatic focus
+      optionEls.forEach(element => {
+        element.setAttribute('tabIndex', '-1');
+        if (activeId && element.id === activeId) {
+          element.setAttribute('aria-selected', 'true');
+        } else if (!element.getAttribute('aria-selected')) {
+          element.setAttribute('aria-selected', 'false');
+        }
+      });
+
+      
+      if (target.nodeName === 'BUTTON') {
+        const ariaExpanded = target.getAttribute('aria-expanded');
+
+        // if the listbox is already expanded, close it
+        if (ariaExpanded === 'true') {
+          this.collapse(buttonEl, listboxEl, true);
+        // if the listbox is collapsed, expand it.
         } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
+          this.expand(buttonEl, listboxEl);
         }
-        toFocus.focus();
       }
-    }
-  }
 
-  function renderPaginationButtons(table, selectedIndex) {
 
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
+      if (target !== buttonEl || listboxEl.contains(target)) {
+        // the user clicked outside of the control (but inside the root).
+        // We assume the must want to close all dropdowns on the page.
+        this.collapseAllListboxes();
+      }
     } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
+      // same as above, except outside the whole root.
+      this.collapseAllListboxes();
     }
 
 
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
-    });
-
-    document.body.addEventListener("click", pagerItemClickEvent);
-
   }
 
-};
+  this.collapseAllListboxes = function() {
+    const roots = document.querySelectorAll('.enable-listbox');
+
+    for (let i = 0; i < roots.length; i++ ) {
+      const root = roots[i];
+      const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
+      const ariaExpanded = buttonEl.getAttribute('aria-expanded');
+
+      if (ariaExpanded === 'true') {
+        const listboxEl = root.querySelector('[role="listbox"]');
+        this.collapse(buttonEl, listboxEl, false);
+      }
+    }
+  }
+
+  this.isCollapsed = (listboxEl) => {
+    return listboxEl.classList.contains('hidden');
+  }
+
+  this.collapse = (buttonEl, listboxEl, doFocus) => {
+    if (this.isCollapsed(listboxEl)) {
+      return;
+    }
+    listboxEl.classList.add('hidden');
+    accessibility.removeMobileFocusLoop();
+    buttonEl.removeAttribute('aria-expanded');
+
+    if (doFocus) {   
+      buttonEl.focus();
+    }
+    listboxEl.classList.add('hidden');
+    listboxEl.dispatchEvent(hideEvent);
+  }
+
+  this.expand = (buttonEl, listboxEl) => {
+    const optionEls = listboxEl.querySelectorAll('[role="option"]');
+
+    console.log('target', buttonEl);
+    buttonEl.setAttribute('aria-expanded', 'true');
+    listboxEl.classList.remove('hidden');
+    // set focus on appropriate option
+    requestAnimationFrame(() => {
+      const itemToFocus = listboxEl.querySelector('[aria-selected="true"]') || optionEls[0];
+      
+      itemToFocus.focus();
+      accessibility.setMobileFocusLoop(listboxEl);
+      // make the arrow keyup events happen if needed
+      if (listboxEl.dataset.enableListboxInit !== 'true') {
+        this.initListbox(listboxEl, buttonEl);
+      }
+    });
+  }
+
+  this.initListbox = (listboxEl, buttonEl) => {
+    accessibility.initGroup(
+      listboxEl,
+      {
+          doKeyChecking: true,
+          ariaCheckedCallback: (e, currentlyCheckedEl) => {
+              const { previousValue, previousId } = listboxEl.dataset;
+              const eventValue = currentlyCheckedEl.innerText;
+              const eventId = currentlyCheckedEl.id;
+
+              if (previousValue !== eventValue && previousId !== eventId) {
+                buttonEl.innerHTML = currentlyCheckedEl.innerHTML;
+                this.collapse(buttonEl, listboxEl, true);
+                accessibility.removeMobileFocusLoop();
+
+                const changeEvent = new CustomEvent('enable-listbox-change', {
+                  bubbles: true,
+                  detail: {
+                    value: () => eventValue,
+                    id: () => eventId
+                  }
+                });
+                listboxEl.dataset.previousValue = eventValue;
+                listboxEl.dataset.previousId = eventId;
+                listboxEl.dispatchEvent(changeEvent);
+              }
+          }
+      }
+    );
+    listboxEl.addEventListener('blur', this.blurEvent, true);
+
+    listboxEl.dataset.enableListboxInit = 'true';
+  }
+
+  this.blurEvent = (e) => {
+    const { target } = e;
+    const root = target.closest('.enable-listbox');
+    const listboxEl = root.querySelector('[role="listbox"]');
+    const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
+
+    accessibility.doIfBlurred(e, () => {
+      const { target } = e;
+      if (target.getAttribute('role') === 'option') {
+        target.click();
+      }
+      this.collapse(buttonEl, listboxEl, true);
+    });
+  }
+}
 
 

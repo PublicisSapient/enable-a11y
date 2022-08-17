@@ -1,245 +1,294 @@
-'use strict'
+/*
+* spinbutton.js - A library to enable the UI for the spinbutton ARIA role.
+* Based on code by the AJAX Alliance
+* 
+* Original Code:
+* https://web.archive.org/web/20170424171217/http://oaa-accessibility.org/examplep/spinbutton1/
+* 
+* Refactored by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+* to remove jQuery dependency 
+* MIT License.
+*/
 
-/*******************************************************************************
- * enable-paginate.js - Accessible table pagination module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/table.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
+function spinbutton(el) {
 
+  const id = el.id;
 
-const paginationTables = new function() {
-  let perPage = 20;
-  const baseClass = "pagination";
-  const baseSelector = `.${baseClass}`;
-  const tableSelector = `.${baseClass}__table`;
-  const $tables = document.querySelectorAll(tableSelector);
-  const inactiveClass = `${baseClass}__inactive`;
-  const pagerItemSelectedClass = `${baseClass}__pager-item--selected`;
-  const pagerSelector = `${baseSelector}__pager`
-  const $allPagers = document.querySelectorAll(pagerSelector);
-  const pagerItemClass = `${baseClass}__pager-item`;
-  const pagerItemSelector = `.${pagerItemClass}`;
-  const alertSelector = `.${baseClass}__alert`;
-  const $buttonTemplate = document.getElementById(
-    `${baseClass}__template--button`
-  );
-  const $previousButtonTemplate = document.getElementById(
-    `${baseClass}__template--previous-button`
-  );
-  const $nextButtonTemplate = document.getElementById(
-    `${baseClass}__template--next-button`
-  );
-  const previousButtonTemplate = $previousButtonTemplate.innerHTML;
-  const nextButtonTemplate = $nextButtonTemplate.innerHTML;
+  if (!id) {
+    console.error('Element has no ID passed. Bailing');
+    return;
+  }
+  const liveID = id + '__live';
+  const upID = id + '__up';
+  const downID = id + '__down';
+  const skipVal = parseInt(el.dataset.increment || '1');
 
-  const previousButtonClass = 'pagination__pager-item--previous';
-  const nextButtonClass = 'pagination__pager-item--next';
+  this.init = () => {
+    // define widget attributes
+    this.$el = document.getElementById(id);
+    this.$live = document.getElementById(liveID);
 
-  const mobileMq = ($allPagers && $allPagers.length > 0) ? window.getComputedStyle($allPagers[0]).getPropertyValue('--mobile-mq') : null;
-  const mobileMql = window.matchMedia(mobileMq);
+    this.upID = upID;
+    this.$upButton = document.getElementById(upID);
+    this.downID = downID;
+    this.$downButton = document.getElementById(downID);
+    this.skipVal = skipVal;
 
-  const buttonTemplate = $buttonTemplate.innerHTML;
+    this.valMin = parseInt(this.$el.getAttribute("aria-valuemin"));
+    this.valMax = parseInt(this.$el.getAttribute("aria-valuemax"));
+    this.valNow = parseInt(this.$el.getAttribute("aria-valuenow"));
 
-  this.add = ($table) => {
-    const $base = $table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
+    this.$el.getAttribute("aria-live", "polite");
+    this.$el.getAttribute("contenteditable", "true");
 
-    if ($pagers.length === 0) {
-      throw `Cannot apply pagination: missing pager containers with selector ${pagerSelector}`;
+    this.keys = {
+      pageup: 33,
+      pagedown: 34,
+      end: 35,
+      home: 36,
+      left: 37,
+      up: 38,
+      right: 39,
+      down: 40,
+    };
+
+    // bind event handlers
+    this.bindHandlers();
+  }
+
+  this.setValue = function (valNow, isKeyEvent) {
+    this.valNow = valNow;
+    // update the control
+    console.log('update');
+    this.$el.setAttribute("aria-valuenow", this.valNow);
+    this.$el.innerHTML = this.valNow;
+    this.$live.innerHTML = this.valNow;
+    this.selectText();
+
+    if (isKeyEvent) {
+      this.$el.focus();
     }
 
-    perPage = parseInt($table.dataset.pagecount);
-    renderPaginationButtons($table, 0);
-    createTableMeta($table);
-    this.renderTable($table);
+    // Fire event
+    const changeEvent = new CustomEvent('enable-spinbutton-change', {
+      bubbles: true,
+      detail: {
+        value: () => valNow
+      }
+    });
+    this.$el.dispatchEvent(changeEvent);
+  };
+
+  this.selectText = function () {
+    const node = this.$el;
+
+    if (document.body.createTextRange) {
+      const range = document.body.createTextRange();
+      range.moveToElementText(node);
+      range.select();
+    } else if (window.getSelection) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else {
+      console.warn("Could not select text in node: Unsupported browser.");
+    }
+  };
+
+  // Function bindHandlers() is a member function to bind event handlers for the spinbutton control
+  //
+  // @return N/A
+  //
+  this.bindHandlers = function () {
+    const thisObj = this;
+
+    //////// bind mouse event handlers to the up button //////////////
+    this.$upButton.addEventListener("click", thisObj.handleClick);
+
+    //////// bind mouse event handlers to the down button //////////////
+    this.$downButton.addEventListener("click", thisObj.handleClick);
+
+    //////// bind event handlers to the spinbutton //////////////
+    this.$el.addEventListener("keydown", thisObj.handleKeyDown);
+    this.$el.addEventListener("keypress", thisObj.handleKeyPress);
+    this.$el.addEventListener("blur", thisObj.handleBlur);
+    this.$el.parentNode.addEventListener("focusout", thisObj.handleBlur);
+  }; // end bindHandlers()
+
+  //
+  // Function handleClick() is a member function to handle click events for the control
+  // buttons
+  //
+  // @param (e object) e is the event object
+  //
+  // @param ($button object) $button is the jQuery object of the button clicked
+  //
+  // @return (boolean) Returns false
+  //
+  this.handleClick = (e) => {
+    const { currentTarget } = e;
+    const id = currentTarget.getAttribute("id")
+
+    if (id == this.upID) {
+      // if valuemax isn't met, increment valnow
+      if (this.valNow < this.valMax) {
+        this.setValue(this.valNow + 1);
+      }
+    } else {
+      // if valuemax isn't met, decrement valnow
+      if (this.valNow > this.valMin) {
+        this.setValue(this.valNow - 1);
+      }
+    }
+
+
+    e.stopPropagation();
+    return false;
+  }; // end handleClick()
+
+  
+
+  this.stopPropagation = function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
+  //
+  // Function handleKeyDown() is a member function to handle keydown events for the control.
+  //
+  // @param (e object) e is the event object
+  //
+  // @return (boolean) Returns false if consuming; true if propagating
+  //
+  this.handleKeyDown = (e) => {
+    if (e.altKey || e.ctrlKey || e.shiftKey) {
+      // do nothing
+      return true;
+    }
+
+    switch (e.keyCode) {
+      case this.keys.pageup: {
+        if (this.valNow < this.valMax) {
+          // if valnow is small enough, increase by the skipVal,
+          // otherwise just set to valmax
+          if (this.valNow < this.valMax - this.skipVal) {
+            this.setValue(this.valNow + this.skipVal, true);
+          } else {
+            this.setValue(this.valMax, true);
+          }
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+      case this.keys.pagedown: {
+        if (this.valNow > this.valMin) {
+          // if valNow is big enough, decrease by the skipVal,
+          // otherwise just set to valmin
+          if (this.valNow > this.valMin + this.skipVal) {
+            this.setValue(this.valNow - this.skipVal, true);
+          } else {
+            this.setValue(this.valMin, true);
+          }
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+      case this.keys.home: {
+        if (this.valNow < this.valMax) {
+          this.setValue(this.valMax, true);
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+      case this.keys.end: {
+        if (this.valNow > this.valMin) {
+          this.setValue(this.valMin, true);
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+      case this.keys.right:
+      case this.keys.up: {
+        // if valuemin isn't met, increment valnow
+        if (this.valNow < this.valMax) {
+          this.setValue(this.valNow + 1, true);
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+      case this.keys.left:
+      case this.keys.down: {
+        // if valuemax isn't met, decrement valnow
+        if (this.valNow > this.valMin) {
+          this.setValue(this.valNow - 1, true);
+        }
+
+        this.stopPropagation(e);
+        return false;
+      }
+    }
+    return true;
+  }; // end handleKeyDown()
+
+  //
+  // Function handleKeyPress() is a member function to handle keypress events for the control.
+  // This function is required to prevent browser that manipulate the window on keypress (such as Opera)
+  // from performing unwanted scrolling.
+  //
+  // @param (e object) e is the event object
+  //
+  // @return (boolean) Returns false if consuming; true if propagating
+  //
+  this.handleKeyPress = (e) => {
+    if (e.altKey || e.ctrlKey || e.shiftKey) {
+      // do nothing
+      return true;
+    }
+
+    switch (e.keyCode) {
+      case this.keys.pageup:
+      case this.keys.pagedown:
+      case this.keys.home:
+      case this.keys.end:
+      case this.keys.left:
+      case this.keys.up:
+      case this.keys.right:
+      case this.keys.down: {
+        // consume the event
+        this.stopPropagation(e);
+        return false;
+      }
+    }
+    return true;
+  }; // end handleKeyPress()
+
+
+  this.init();
+}
+
+const spinbuttons = new function () {
+  const buttons = [];
+
+  this.add = ($el) => {
+    buttons.push(new spinbutton($el));
   }
 
   this.init = () => {
-    $tables.forEach(this.add);
+    const els = document.getElementsByClassName('spinbutton');
 
-    if (mobileMql.addEventListener) {
-      mobileMql.addEventListener('change', onBreakpointChange);
+    for (let i = 0; i < els.length; i++) {
+      this.add(els[i])
     }
   }
+  
+}
 
-  this.showAll = (table) => {
-    const rows = table.getElementsByClassName(inactiveClass);
-
-    for (let i=0; i<rows.length; i++) {
-      rows[i].classList.remove(inactiveClass);
-    };
-
-    table.dataset.currentpage = 0;
-  }
-
-  function onBreakpointChange() {
-    $tables.forEach((table) => {
-      const { currentpage } = table.dataset;
-      renderPaginationButtons(table, parseInt(currentpage));
-    });
-  }
-
-  // based on current page, only show the elements in that range
-  this.renderTable = (table) => {
-    let startIndex = 0;
-    const $container = table.closest(baseSelector);
-    const $alert = $container.querySelector(alertSelector);
-    const { paginationAlertTemplate, currentpage, pagecount } = table.dataset;
-
-    if (table.querySelector("th")) startIndex = 1;
-
-    let start =
-      parseInt(currentpage) * pagecount +
-      startIndex;
-    let end = start + parseInt(pagecount);
-    let rows = table.rows;
-
-
-    for (let x = startIndex; x < rows.length; x++) {
-      if (x < start || x >= end) {
-        rows[x].classList.add(inactiveClass);
-      } else {
-        rows[x].classList.remove(inactiveClass);
-      }
-    }
-
-    $alert.innerHTML = interpolate(paginationAlertTemplate, {
-      n: start,
-      m: end - 1,
-    });
-
-    renderPaginationButtons(table, parseInt(currentpage));
-    table.dispatchEvent(
-      new CustomEvent('enable-paginate-render',
-      {
-        bubble: true,
-        detail: {
-          page: () => currentpage,
-          row: () => start
-        }
-      }
-    ));
-  }
-
-  function createTableMeta(table) {
-    table.dataset.currentpage = "0";
-  }
-
-  const pagerItemClickEvent = (e) => {
-    const { target } = e;
-    const isPrevious = target.classList.contains(previousButtonClass);
-    const isNext = target.classList.contains(nextButtonClass);
-
-    if (target.classList.contains(pagerItemClass)) {
-      const $container = target.closest(baseSelector);
-      const $pager = target.closest(pagerSelector);
-
-      const $table = $container.querySelector(tableSelector);
-      const index = target.dataset.index;
-      let parent = target.parentNode;
-      let items = parent.querySelectorAll(pagerItemSelector);
-      for (let x = 0; x < items.length; x++) {
-        items[x].classList.remove(pagerItemSelectedClass);
-      }
-      //target.classList.add(pagerItemSelectedClass);
-      $table.dataset.currentpage = target.dataset.index;
-      this.renderTable($table);
-
-      if ($pager) {
-        let toFocus;
-
-        if (isPrevious) {
-          toFocus = $pager.getElementsByClassName(previousButtonClass)[0];
-        } else if (isNext) {
-          toFocus = $pager.getElementsByClassName(nextButtonClass)[0]
-        } else {
-          toFocus = $pager.querySelector(`[data-index="${index}"]`);
-        }
-        toFocus.focus();
-      }
-    }
-  }
-
-  function renderPaginationButtons(table, selectedIndex) {
-
-    const $base = table.closest(baseSelector);
-    const $pagers = $base.querySelectorAll(pagerSelector);
-    let hasHeader = false;
-    const { paginationButtonSpread, paginationMobileButtonSpread } = table.dataset;
-    const buttonSpreadNum = (mobileMql.matches) ? parseInt(paginationMobileButtonSpread) : parseInt(paginationButtonSpread);
-    let begin, end;
-
-    if (table.querySelector("th")) {
-      hasHeader = true;
-    }
-
-    let rows = table.rows.length;
-
-    if (hasHeader) rows = rows - 1;
-
-    let numPages = Math.floor(rows / perPage);
-
-    if (paginationButtonSpread === 0) {
-      begin = 0;
-      end = numPages;
-    } else {
-      begin = selectedIndex - Math.floor(buttonSpreadNum / 2);
-      if (begin < 0) {
-        begin = 0;
-      }
-
-      end = begin + buttonSpreadNum;
-      if (end > numPages) {
-        end = numPages + 1;
-        begin = Math.max(end - buttonSpreadNum, 0);
-      }
-    }
-
-
-    $pagers.forEach(($pager) => {
-      $pager.innerHTML = '';
-      // add an extra page, if we're
-      if (numPages % 1 > 0) numPages = Math.floor(numPages) + 1;
-
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        previousButtonTemplate, {
-          disabledattr: (selectedIndex <= 0) ? 'disabled' : '',
-          index: selectedIndex - 1
-        }
-      )));
-
-      for (let i = begin; i < end; i++) {
-        const pageHTML = interpolate(buttonTemplate, {
-          index: i,
-          label: i + 1,
-          isSelectedClass: i === selectedIndex ? pagerItemSelectedClass : '',
-          ariaCurrent: i === selectedIndex ? 'true' : 'false',
-          totalPages: numPages,
-        });
-        const page = htmlToDomNode(pageHTML);
-        $pager.appendChild(page);
-      }
-
-      $pager.appendChild(htmlToDomNode(interpolate(
-        nextButtonTemplate, {
-          disabledattr: (selectedIndex >= numPages) ? 'disabled' : '',
-          index: selectedIndex + 1
-        }
-      )));
-    });
-
-    document.body.addEventListener("click", pagerItemClickEvent);
-
-  }
-
-};
 
 
