@@ -163,7 +163,7 @@ describe('ARIA Listbox', () => {
       };
     });
     expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Neptunium');
+    expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
     expect(domInfo.role).toBe('option'),
     expect(domInfo.ariaSelected).toBe('false');
 
@@ -270,7 +270,7 @@ describe('ARIA Listbox', () => {
       };
     });
     expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Neptunium');
+    expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
     expect(domInfo.role).toBe('option'),
     expect(domInfo.ariaSelected).toBe('false');
 

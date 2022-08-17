@@ -292,11 +292,9 @@
           class="enable-listbox__button">&nbsp;</button>
         <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem">
           <li id="exp_elem_Su" role="option">
-            Supercalifragili sticexpi alidociousium
+            Supercalifragilisticexpialidociousium
           </li>
-          <li id="exp_elem_Np" role="option">
-            Neptunium
-          </li>
+          
           <li id="exp_elem_Pu" role="option">
             Plutonium
           </li>
@@ -371,6 +369,9 @@
           </li>
           <li id="exp_elem_Og" role="option">
             Oganesson
+          </li>
+          <li id="exp_elem_Np" role="option">
+            Neptunium
           </li>
         </ul>
       </div>
