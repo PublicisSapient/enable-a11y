@@ -854,6 +854,8 @@ const showcode = new function () {
     const codeEl = document.querySelector('[data-showcode-id="' + codeblockId + '"]');
 
 
+    selectEl.className = 'showcode__select';
+    
     if (widgetContainerEl) {
 
       selectEl.id = widgetId + '--select';

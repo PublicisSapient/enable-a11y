@@ -89,7 +89,7 @@
 -->
 </template>
 
-<?php includeShowcode("test-code-walkthrough")?>
+<?php includeShowcode("test-code-walkthrough", "", "", "", true, 4)?>
 <script type="application/json" id="test-code-walkthrough-props">
 {
   "replaceHtmlRules": {
@@ -102,18 +102,33 @@
   },
   {
     "label": "Create a describe for the set of tests you are creating.",
-    "highlight": "describe[^<]*",
+    "highlight": "describe[\\s\\S]*\\}\\);",
     "notes": ""
   },
   {
     "label": "Create a test for each tag to be tested (ins, del and mark)",
-    "highlight": "\\s+it[^<]*",
+    "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
     "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
   },
   {
     "label": "Each test must load the page",
     "highlight": "await\\spage.goto[^;]*;",
     "notes": "Note that the <code>BASE_URL</code> is grabbed from the <code>config</code> from step 1"
+  },
+  {
+    "label": "Each test should wait until a partical part of the page is available to test",
+    "highlight": "await\\spage.waitForSelector[^;]*;",
+    "notes": "Note that the selector used should be unique enough so your know you are hitting the right area of the page."
+  },
+  {
+    "label": "Query the DOM using puppeteer's page.evaluate method.",
+    "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
+    "notes": "Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>."
+  },
+  {
+    "label": "Use jest's expect method to find if the code is doing things right.",
+    "highlight": "expect\\([^;]*;",
+    "notes": "We take the information given to <code>domInfo</code> in the previous step and run tests on it using jest's <code>expect()</code> method."
   }
 ]}
 </script>

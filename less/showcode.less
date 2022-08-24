@@ -28,6 +28,13 @@ code {
     0 calc(100% - @clip-bottom)
   );
 
+  h4&__heading {
+    border-bottom: none;
+    padding: 15px 0 0 0;
+    font-size: (18/@px);
+    margin-bottom: -5px;
+  }
+
   &__example--code {
 
     // We use a negative focus outline-offset since the 
@@ -56,6 +63,7 @@ code {
     padding-top: 20px;
     font-size: 1.25rem;
     border-bottom: double 3px #000;
+
   }
 
   &__example {
@@ -186,18 +194,6 @@ code {
     background: black;
 
 
-    &::before, &::after {
-      .enable__visually-hidden;
-      user-select: none;
-    }
-
-    &::before {
-      content: "Start of highlighted code.";
-    }
-
-    &::after {
-      content: "End of highlighted code."
-    }
 
     & & {
       border: none;

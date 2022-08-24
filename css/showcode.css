@@ -17,6 +17,12 @@ code {
   background-color: #f5deb3;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
 }
+h4.showcode__heading {
+  border-bottom: none;
+  padding: 15px 0 0 0;
+  font-size: 1.125rem;
+  margin-bottom: -5px;
+}
 .showcode__example--code:focus {
   outline: solid 2px #3b99fc !important;
   outline-offset: -4px;
@@ -119,25 +125,6 @@ code {
   font-family: "ModeSeven", "Consolas", monospace;
   font-style: normal;
   background: black;
-}
-.showcode__highlight::before,
-.showcode__highlight::after {
-  clip: rect(1px 1px 1px 1px);
-  /* IE 6/7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  margin: -1px;
-  user-select: none;
-}
-.showcode__highlight::before {
-  content: "Start of highlighted code.";
-}
-.showcode__highlight::after {
-  content: "End of highlighted code.";
 }
 .showcode__highlight .showcode__highlight {
   border: none;
