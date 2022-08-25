@@ -148,8 +148,8 @@ using <code>&lt;div&gt;</code> tags.
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Use label tags to label form element",
-      "highlight": "for",
-      "notes": "This is just like any other form element"
+      "highlight": "%OPENCLOSECONTENTTAG%label",
+      "notes": "Note we are using <a href=\"https://discourse.wicg.io/t/implicit-labels/1542\">implicit labels</a> here.  We don't need to use <code>for</code> to associate the form element with a label as long as the label surrounds the form field and the label text together."
     },
     {
       "label": "Surround the whole checkbox with a fieldset",

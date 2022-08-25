@@ -192,7 +192,7 @@
   "text-contrast.php": {
     "title": "Accessible Text Contrast",
     "desc": "How can you check your design for text contrast issues? How about for text on top of photographic or gradient backgrounds? Read on.",
-    "wip": ""
+    "wip": "true"
   },
   "text-resize.php": {
     "title": "Resizable Typography",
@@ -218,7 +218,8 @@
   },
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",
-    "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this."
+    "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this.",
+    "wip": "true"
   },
   "chart.php": {
     "title": "Accessible Charts",

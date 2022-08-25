@@ -134,7 +134,7 @@
 
 <h2>Solution 2: Using CSS Generated Content</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => '<strong>We do not recommend this solution.</strong> While this seems to be a common way to fix this issue (since it does not require changing the HTML markup), this violates <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using ::before and ::after pseudo-elements and the "content" property in CSS</a>.  We present this solution for informational purposes, and point to some blog posts arguing to using it.' )) ?>
+<?php includeStats(array('doNot' => true, 'comment' => 'Although this works with the majority of screen readers out there, <strong>we do not recommend using this solution in production.</strong> While this seems to be a common way to fix this issue (since it does not require changing the HTML markup), this violates <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using ::before and ::after pseudo-elements and the "content" property in CSS</a>.  The main issue with using this is that if a user uses a custom stylesheet to navigate the web, the code in this solution may be removed.   While some may say this is an edge case, it is still technically a violation, which is why we warn against using it.  We do, however, present this solution for informational purposes, and point to some blog posts arguing to using it below.' )) ?>
 
 <p>Another (flawed) way to tell screen readers about styled content is use visually hidden CSS generated content to insert
   visually hidden text before

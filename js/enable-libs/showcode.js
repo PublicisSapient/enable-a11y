@@ -62,6 +62,12 @@ const showcode = new function () {
     'xlink:href'
   ]
 
+
+
+  this.addJsObj = (name, value) => {
+    jsObjs[name] = value;
+  }
+
   this.entify = function (s, options) {
     if (!options) {
       options = {};
@@ -92,7 +98,7 @@ const showcode = new function () {
   }
 
   function highlightFunc(s) {
-    return `<mark class="showcode__highlight" tabindex="-1" >${s}</mark>`;
+    return `<mark class="showcode__highlight" tabindex="-1" ><span class="sr-only">Start of highlighted code. </span>${s}<span class="sr-only">End of highlighted code. </span></mark>`;
   }
 
   function formatCSS(localCode) {
@@ -676,6 +682,9 @@ const showcode = new function () {
     }
   }
 
+
+  this.addJsObj('scrollToHighlightedText', this.scrollToHighlightedText);
+
   function removeBlankLines(almostFormatted) {
     let lines = almostFormatted.split('\n');
     let fixedLines = [];
@@ -855,7 +864,6 @@ const showcode = new function () {
 
 
     selectEl.className = 'showcode__select';
-    
     if (widgetContainerEl) {
 
       selectEl.id = widgetId + '--select';
@@ -915,7 +923,7 @@ const showcode = new function () {
     } else {
       // This is for a static, non-interactive showcode block.
       const step = stepsJson && stepsJson[0];
-
+      
       displayStep(step.highlight, step.notes, codeblockId, codeEl, replaceHtmlRules, false)
       return;
     }
@@ -1036,10 +1044,6 @@ const showcode = new function () {
   }
 
 
-  this.addJsObj = (name, value) => {
-    jsObjs[name] = value;
-  }
-
   this.init = () => {
     console.log('init!');
     showCodeBlocks();
@@ -1050,5 +1054,6 @@ const showcode = new function () {
 }
 
 showcode.init();
+
 
 export default showcode;

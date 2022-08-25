@@ -456,13 +456,13 @@
 
   <div id="empty-example"></div>
 
-  <?php includeShowcode("empty-example")?>
+  <?php includeShowcode("empty-example", "", "", "", false)?>
   <script type="application/json" id="empty-example-props">
   {
     "replaceHtmlRules": {},
     "steps": [{
       "label": "Set the behavior value correctly in the scrollIntoView() call",
-      "highlight": "%JS%showcode.scrollToHighlightedText ||| const behavior[^;]*; ||| firstHighlightdElement.scrollIntoView[^;]*;",
+      "highlight": "%JS%scrollToHighlightedText ||| \\s*const behavior[^;]*; ||| firstHighlightdElement.scrollIntoView[^;]*;",
       "notes": ""
     }]
   }

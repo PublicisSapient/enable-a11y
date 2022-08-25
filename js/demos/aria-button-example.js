@@ -15,19 +15,9 @@ var ariaButtonExample = new function() {
   }
 
   document.addEventListener('click', activate);
+
+  // This is only needed when the button is a <DIV> or some other
+  // element that isn't natively keyboard accessible.
   document.addEventListener('keyup', activate);
 }
 
-var htmlButtonExample = new function() {
-
-  const activate = (e) => {
-    const {
-      target
-    } = e;
-    if (target.tagName === 'BUTTON' && target.closest('main')) {
-      alert('this HTML button has been triggered');
-    }
-  }
-
-  document.addEventListener('click', activate);
-}
