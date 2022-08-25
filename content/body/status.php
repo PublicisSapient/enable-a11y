@@ -1,8 +1,15 @@
-<h2>Visually Hidden Alert</h2>
+<p>
+  Status messages allow screen readers and other assistive technology to tell users that content has changed on the page 
+  without interrupting what the user is doing by changing element has focused.  A perfect example of this 
+  usecase is in a search component like in the example below.
+</p>
+
+
+<h2>Visually Hidden Status Message</h2>
 
 <p>This example is based on <a href="https://gist.github.com/nichtich/674522">this wiktionary lookup gist</a> by
   <a lang="de" href="https://gist.github.com/nichtich">Jakob Voß</a>,
-  modified to add accessibility features, including an <code>alert</code> that will tell screen reader users
+  modified to add accessibility features, including a visually hidden <code>status</code> message that will tell screen reader users
   that content has changed on the page.
 </p>
 
@@ -17,7 +24,7 @@
   </form>
   <div class="wiktionary-lookup__content-container">
     <h3 class="wiktionary-lookup__page-title">Not found.</h3>
-    <div class="wiktionary-lookup__page-alert sr-only" role="alert" aria-live="polite">
+    <div class="wiktionary-lookup__page-alert sr-only" role="status" aria-live="polite">
 
     </div>
     <div class="wiktionary-lookup__content"></div>
