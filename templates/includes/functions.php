@@ -127,7 +127,10 @@ function getURIFilename() {
 
   $lastIndex = count($uriFile) - 1;
   $dirSlug = $uriFile[$lastIndex - 1];
-  $fileSlug =  $uriFile[$lastIndex];
+  $endSlug =  $uriFile[$lastIndex];
+  $fileSlug = explode('?', $endSlug)[0];
+
+
   if ($dirSlug === 'info') {
     return $dirSlug . '/' . $fileSlug;
   } else {
@@ -138,6 +141,7 @@ function getURIFilename() {
 function getMetadata() {
     global $fileProps;
     $uriFile = getURIFilename();
+    $uriPrefix = getURIPrefix();
     $tokenToFind = trim(preg_replace('/^\//', '', $uriFile));
     $metaFile = './data/meta-info.json';
 
@@ -157,14 +161,22 @@ function getMetadata() {
             //This loop allows me to work around with the keys 
             if (strcmp($tokenToFind, $file) == 0) {
 
-                $fileProps->posterImg = '/images/posters/' . preg_replace('/\.php$/', '.jpg', $tokenToFind);
+                $fileProps->posterImg = $uriPrefix . '/images/posters/' . preg_replace('/\.php$/', '.jpg', $tokenToFind);
+                $fileProps->uri = $uriPrefix . '/' . $file;
+                if (strcmp($file, 'index.php') == 0) {
+                  $fileProps->type = 'website';
+                } else {
+                  $fileProps->type = 'article';
+                }
+                
+                $fileProps->cacheBuster = 1;
 
                 // Let's ensure these properties are entified.
                 foreach($fileProps as $prop => $propValue) {
                   $fileProps->{$prop} = htmlentities($propValue);
                 }
                 return;
-            }  
+            } 
         }
     } else {
       die("Unable to open the file !");
@@ -220,6 +232,21 @@ function getAsideContent() {
   }
 }
 
+function startsWith( $haystack, $needle ) {
+  $length = strlen( $needle );
+  return substr( $haystack, 0, $length ) === $needle;
+}
+
+function getURIPrefix() {
+  if (startsWith($_SERVER['REQUEST_URI'], '/enable/')) {
+    return 'https://www.useragentman.com/enable';
+  } else {
+    return '';
+  }
+}
+
 getMetadata();
+
+
 
 ?>

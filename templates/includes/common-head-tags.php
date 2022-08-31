@@ -1,11 +1,12 @@
 
+<meta charset="utf-8" />
 <?php
   includeMetaInfo(); 
 ?>
 
 <meta name="viewport"
   content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<meta charset="utf-8" />
+
 
 <!-- These two stylesheets are for the code walkthroughs -->
 <link id="showcode-css"

@@ -16,6 +16,7 @@ import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
 import offscreenObserver from "./modules/offscreen-observer.js";
 import textZoom from './demos/hero-image-text-resize.js';
 
+
 function initEnable() {
 
   offscreenObserver.init(document.querySelector('[role="banner"]'));
@@ -43,6 +44,11 @@ function initEnable() {
 
     if (el.getAttribute('tabIndex') === null) {
       el.setAttribute('tabIndex', '-1');
+    }
+
+    // now, let's put a link tag inside the heading so we can deeplink to it easily
+    if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
+      el.innerHTML = `<a class="heading__deeplink" href="#${el.id}">${el.innerHTML}</a>`
     }
   })
 
