@@ -8,7 +8,7 @@
 </p>
 
 
-<h2>Carousels with CTAs</h2>
+<h2>Solution 1: Make Carousel Panel Come Into View When Focused Into</h2>
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
@@ -31,7 +31,7 @@
   </div>
 
   <div class="glider-contain">
-    <div class="glider">
+    <div class="glider enable-carousel--focus-all-panels">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">

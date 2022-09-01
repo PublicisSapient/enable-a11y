@@ -16,9 +16,11 @@
 import '../../enable-node-libs/glider-js/glider.js';
 
 
-const EnableCarousel = function (container) {
+const EnableCarousel = function (container, options) {
   let glider;
   this.container = container;
+  this.options = options || {};
+  this.useArrowButtons = this.options.useArrowButtons || false;
 
   this.init = function () {
     // initializes Glider. We ensure that the carousel
@@ -37,6 +39,17 @@ const EnableCarousel = function (container) {
       animationDuration: 0
     });
 
+    this.slidePanelSelector = '.enable-carousel__slide';
+    this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
+
+
+    // if this doesn't use the `useArrowButtons` option, make it impossible
+    // for keyboard/screen reader users to use the arrow buttons.
+    document.querySelectorAll('.glider-prev, .glider-next').forEach((el) => {
+      el.setAttribute('tabIndex', '-1');
+      el.setAttribute('aria-hidden', 'true');
+    })
+
     // when keyboard focus is applied to a slide's CTA.
     this.container.addEventListener("focus", this.focusCTAHandler, true);
 
@@ -46,7 +59,36 @@ const EnableCarousel = function (container) {
     // When a keyboard is used and the key released is the TAB key,
     // we turn the animations off. 
     document.body.addEventListener("keyup", this.keyUpHandler, true);
+
+    // when `useArrowButtons` option is set, we should ensure the first
+    // CTA inside the visible panel gains focus when it first comes into view.
+    if (true || this.useArrowButtons) {
+      this.container.addEventListener("glider-slide-visible", this.slideVisibleEvent);
+      this.container.addEventListener("glider-slide-hidden", this.slideHiddenEvent);
+    }
   };
+
+  this.setSlideTabIndexes = (value) => {
+    this.slidePanels.forEach((el) => {
+      el.setAttribute('tabIndex', value);
+    })
+  }
+
+  this.slideHiddenEvent = (e) => {
+    const hiddenSlideIndex = e.details.slide;
+    const hiddenSlide = this.container.querySelectorAll(this.slidePanelSelector)[hiddenSlideIndex];
+    hiddenSlide.style.visibility = 'hidden';
+  }
+
+  this.slideVisibleEvent = (e) => {
+    const visibleSlideIndex = e.detail.slide;
+    const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
+    const firstCTA = visibleSlideCTAs[0];
+
+    visibleSlide.style.visibility = 'visible';
+    
+    firstCTA.focus();
+  }
 
   this.focusCTAHandler = (e) => {
     // When keyboard focus is applied to a CTA in a slide,
