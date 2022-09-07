@@ -15,7 +15,8 @@ const nodeFiles = [
   'node_modules/dialog-polyfill/index.js',
   'node_modules/jquery/dist/jquery.min.js',
   'node_modules/jquery-validation/dist/jquery.validate.min.js',
-  'node_modules/accessibility-js-routines/dist/accessibility.module.js'
+  'node_modules/accessibility-js-routines/dist/accessibility.module.js',
+  'node_modules/inert-polyfill/inert-polyfill.js'
 ]
 
 

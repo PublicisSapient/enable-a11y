@@ -46,6 +46,20 @@
     top: 200px;
   }
 }
+.glider-prev:focus,
+.glider-next:focus {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
+}
+.glider-prev:focus:not(:focus-visible),
+.glider-next:focus:not(:focus-visible) {
+  outline: none;
+}
+.glider-prev:focus-visible,
+.glider-next:focus-visible {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
+}
 .glider-prev {
   left: 0;
   transform-origin: 0 50%;

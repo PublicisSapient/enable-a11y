@@ -31,7 +31,7 @@
   </div>
 
   <div class="glider-contain">
-    <div class="glider enable-carousel--focus-all-panels">
+    <div class="glider enable-carousel enable-carousel--focus-arrow-buttons">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
@@ -86,8 +86,8 @@
       </div>
     </div>
 
-    <button class="glider-prev" tabindex="-1" aria-hidden="true">«</button>
-    <button class="glider-next" tabindex="-1" aria-hidden="true">»</button>
+    <button class="glider-prev">«</button>
+    <button class="glider-next">»</button>
     <div role="tablist" class="dots"></div>
   </div>
 
