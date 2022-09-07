@@ -19,6 +19,10 @@ do
 		then
 			echo "Install axe using:" 1>&2
 			echo "  npm install axe-cli -g" 1>&2
+		elif [ "$i" = "pa11y-ci"]
+		then
+			echo "Install pa11y using:" 1>&2
+			echo "  npm install pa11y-ci -g"
 		else
 			echo "Please install this software using your operating systems package management" 1>&2
 		fi 
@@ -213,7 +217,7 @@ fi
 
 
 
-echo "Running pa11y tests ..."
+echo "Running pa11y-ci tests ..."
 
 DID_PALLY_SUCCEED="0"
 
