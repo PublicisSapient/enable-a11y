@@ -243,6 +243,7 @@ done
 if [ $DID_PALLY_SUCCEED = "1" ]
 then
 	echo "Pa11y failed.  See information above."
+	exit 2;
 fi
 
 

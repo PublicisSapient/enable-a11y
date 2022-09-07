@@ -30,25 +30,28 @@ function initEnable() {
   let headingIndex = 0;
   document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
 
-    if (!el.id) {
-      const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
+    // Only do this if the heading doesn't have an ID, and if it is not part of an example.
+    if (el.closest('.enable-example') === null) {
+      if (!el.id) {
+        const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
 
-      //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
-      if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
-        headingIndex++;
-        el.id = `${innerTextId}-${headingIndex}`;
-      } else {
-        el.id = `${innerTextId}`;
+        //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
+        if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
+          headingIndex++;
+          el.id = `${innerTextId}-${headingIndex}`;
+        } else {
+          el.id = `${innerTextId}`;
+        }
       }
-    }
 
-    if (el.getAttribute('tabIndex') === null) {
-      el.setAttribute('tabIndex', '-1');
-    }
+      if (el.getAttribute('tabIndex') === null) {
+        el.setAttribute('tabIndex', '-1');
+      }
 
-    // now, let's put a link tag inside the heading so we can deeplink to it easily
-    if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
-      el.innerHTML = `<a class="heading__deeplink" href="#${el.id}">${el.innerHTML}</a>`
+      // now, let's put a link tag inside the heading so we can deeplink to it easily
+      if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
+        el.innerHTML = `<a class="heading__deeplink" href="#${el.id}">${el.innerHTML}</a>`
+      }
     }
   })
 
