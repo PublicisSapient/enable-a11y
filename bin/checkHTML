@@ -9,7 +9,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 echo "Checking if dependencies are installed ..."
 
-for i in lynx java php81 axe
+for i in lynx java php81 axe pa11y-ci
 do
 	which $i > /dev/null 2> /dev/null
 	if [ "$?" != "0" ]
@@ -26,8 +26,8 @@ do
 	fi
 
 
-	#.. Special case with java -- if it returns 1, it is probably because it
-	#   not really installed and it's giving a message to install the runtime.
+	#.. Special case with java -- if it returns 0, it still may not be installed
+	#   and the command is giving a message to install the runtime (happens on OSX)
 	if [ "$i" == "java" ]
 	then
 		OUT=`java 2>&1`
@@ -93,6 +93,7 @@ TEMP_FILES=""
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
 AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
+
 
 echo "Downloading rendered HTML..."
 
@@ -209,36 +210,41 @@ then
 	echo "aXe failed. See information above."
 	exit 1
 fi
-comment
+
 
 
 echo "Running pa11y tests ..."
 
 DID_PALLY_SUCCEED="0"
 
-<<comment
-echo '{
+# <<comment
+( 
+	echo '{
     "urls": [ '
 
-echo "$DOWNLOADED_URLS" | awk '{ printf("\"%s\",\n", $1) }'
+	echo $DOWNLOADED_URLS | awk '
+		{ 
+			for (i=1; i<=NF; i++) {
+				if (i == NF) {
+					comma = "";
+				} else {
+					comma = ",";
+				}
+				printf("\"%s\"%c\n", $i, comma);
+			} 
+		}
+	'
 
-        
-echo '    ]
-}'
+					
+	echo '    ]
+	}'
+) > tmp/pa11y-config 
 
-exit
-comment
+# comment
 
+pa11y-ci --config tmp/pa11y-config 
+DID_PALLY_SUCCEED="$?"
 
-for i in $DOWNLOADED_URLS
-do
-	pa11y $i
-
-	if [ "$?" != "0" ]
-	then
-		DID_PALLY_SUCCEED="1"
-	fi
-done
 
 if [ $DID_PALLY_SUCCEED = "1" ]
 then
