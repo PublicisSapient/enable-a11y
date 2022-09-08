@@ -50,7 +50,7 @@ function initEnable() {
 
       // now, let's put a link tag inside the heading so we can deeplink to it easily
       if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
-        el.innerHTML = `<a class="heading__deeplink" href="#${el.id}">${el.innerHTML}</a>`
+        el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`
       }
     }
   })

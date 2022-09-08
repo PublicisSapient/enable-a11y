@@ -2,7 +2,6 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
 let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
