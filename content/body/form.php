@@ -151,7 +151,7 @@
                 {
                     "label": "Add label for screen reader users",
                     "highlight": "%OPENCLOSECONTENTTAG%label",
-                    "notes": "Since there is a search icon on this form, it can be argued that this label can be hidden visually with the <code>sr-only</code>."
+                    "notes": "Since there is a search icon on this form, it can be argued that this label can be hidden visually with the <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>."
                 },
                 {
                     "label": "Ensure sizing of the form elements and the icons use relative units",

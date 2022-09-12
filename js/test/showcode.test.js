@@ -26,7 +26,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
 
   async function testPage(filename, page) {
     let domInfo;
-    const showcodeSelectSel = '.showcode__select'
+    const showcodeSelectSel = '.showcode__select';
 
     await page.goto(`${config.BASE_URL}/${filename}`);
     
@@ -35,14 +35,40 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
     // Step 1: Wait for whole page to load (this is so scripts
     // like `enable-visible-on-focus` can initialize)
     await page.waitForSelector('footer');
-    
+
     domInfo = await page.evaluate((showcodeSelectSel) => {
       const selectEls = document.querySelectorAll(showcodeSelectSel);
+      const jsonBlocks = document.querySelectorAll('script[type="application/json"]');
+      let jsonErrorID = '';
+      let allJsonBlocksHaveIDs = true;
+      
+
+      // let's parse these JSON blocks to see if they are valid.
+      for (let i=0; i<jsonBlocks.length; i++) {
+        const jsonBlock = jsonBlocks[i];
+        const json = jsonBlock.innerHTML;
+
+        if (jsonBlock.id === '') {
+          allJsonBlocksHaveIDs = false;
+        }
+
+        try {
+          JSON.parse(json);
+        } catch(ex) {
+          jsonErrorID = jsonBlock.id;
+        }
+      }
+
 
       return {
-        numOfSelects: selectEls.length
+        numOfSelects: selectEls.length,
+        allJsonBlocksHaveIDs,
+        jsonErrorID
       }
     }, showcodeSelectSel);
+
+    expect(domInfo.allJsonBlocksHaveIDs).toBe(true);
+    expect(domInfo.jsonErrorID).toBe('')
 
     const { numOfSelects } = domInfo;
 

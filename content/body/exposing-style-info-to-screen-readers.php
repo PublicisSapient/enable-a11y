@@ -190,7 +190,7 @@ While <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">using CSS generated 
     {
       "label": "Visually hide the text generated in the previous step to ensure only screen readers can read the text",
       "highlight": "%CSS%product-tile-css~ .product-tile--good-example del::before, .product-tile--good-example ins::before",
-      "notes": "Note that this uses similar CSS as the <a href=\"https://www.w3docs.com/snippets/css/why-and-how-the-bootstrap-sr-only-class-is-used.html\"><code>sr-only</code> class</a> to hide the CSS generated content visually.  Note we also use <code>user-select: none</code> so users can't select the text when they are copying and pasting the content into, say, a word document.  You may decide to leave that part out, if you wish."
+      "notes": "Note that this uses similar CSS as the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a> to hide the CSS generated content visually.  Note we also use <code>user-select: none</code> so users can't select the text when they are copying and pasting the content into, say, a word document.  You may decide to leave that part out, if you wish."
     }
   ]
 }

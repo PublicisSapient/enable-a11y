@@ -82,7 +82,8 @@
   "form.php": {
     "title": "This is to be refactored",
     "desc": "This is to be refactored.",
-    "toRefactor": true
+    "toRefactor": true,
+    "wip": true
   },
   "heading.php": {
     "title": "Accessible Headings",
@@ -246,5 +247,9 @@
   "exposing-style-info-to-screen-readers.php": {
     "title": "Exposing Style Information To Screen Readers",
     "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?"
+  },
+  "screen-reader-only-text.php": {
+    "title": "Screen Reader Only Text",
+    "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels."
   }
 }

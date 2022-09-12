@@ -1792,7 +1792,7 @@
     {
       "label": "Mark up the pagination widget correctly",
       "highlight": "role=\"group\" ||| aria-labelledby=\"pagination-table-example__desc--top\" ||| id=\"pagination-table-example__desc--top\" ||| aria-labelledby=\"pagination-table-example__desc--bottom\" ||| id=\"pagination-table-example__desc--bottom\"",
-      "notes": "This widget is marked up as a group so screen readers will announce instructions on how it works when they navigate inside of it.  Note the instructions are screen reader only using the <code>sr-only</code> class."
+      "notes": "This widget is marked up as a group so screen readers will announce instructions on how it works when they navigate inside of it.  Note the instructions are screen reader only using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a> class."
     },
     {
       "label": "Ensure all pagination buttons have an aria-label",

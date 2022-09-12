@@ -297,7 +297,14 @@
                       <li class="enable-flyout__menu-item">
                         <a href="heading.php" class="enable-flyout__link">
                           <?php pictureWebpPng("images/main-menu/heading", "", "class=\"enable-flyout__link-image\""); ?>
-                          Heading
+                          Headings
+                        </a>
+                      </li>
+                      <li class="enable-flyout__menu-item">
+                        <a href="screen-reader-only-text.php"
+                          class="enable-flyout__link">
+                          <?php pictureWebpPng("images/main-menu/screen-reader-only-text", "", "class=\"enable-flyout__link-image\""); ?>
+                          Screen Reader Only Text
                         </a>
                       </li>
                       <!-- <li class="enable-flyout__menu-item">
