@@ -1,5 +1,9 @@
 "use strict";
 
+import failOnConsole from 'jest-fail-on-console'
+
+failOnConsole();
+
 const { argv } = process;
 const filenameWithoutPath = argv[argv.length - 1];
 

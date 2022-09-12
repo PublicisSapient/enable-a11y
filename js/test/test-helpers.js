@@ -113,9 +113,9 @@ const testHelpers = new function () {
 
   this.redirectPuppeteerConsole = (page) => {
     page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-    page.on('pageerror', error => {
+    /* page.on('pageerror', error => {
       console.log(error.message);
-    });
+    }); */
     /* page.on('response', response => {
       console.log(response.status, response.url());
     });
@@ -123,6 +123,38 @@ const testHelpers = new function () {
       console.log(request.failure().errorText, request.url());
     }); */
   }
+
+  this.waitTillHTMLRendered = async (page, timeout = 30000) => {
+    const checkDurationMsecs = 1000;
+    const maxChecks = timeout / checkDurationMsecs;
+    let lastHTMLSize = 0;
+    let checkCounts = 1;
+    let countStableSizeIterations = 0;
+    const minStableSizeIterations = 3;
+  
+    while(checkCounts++ <= maxChecks){
+      let html = await page.content();
+      let currentHTMLSize = html.length; 
+  
+      let bodyHTMLSize = await page.evaluate(() => document.body.innerHTML.length);
+  
+      console.log('last: ', lastHTMLSize, ' <> curr: ', currentHTMLSize, " body html size: ", bodyHTMLSize);
+  
+      if(lastHTMLSize != 0 && currentHTMLSize == lastHTMLSize) 
+        countStableSizeIterations++;
+      else 
+        countStableSizeIterations = 0; //reset the counter
+  
+      if(countStableSizeIterations >= minStableSizeIterations) {
+        console.log("Page rendered fully..");
+        break;
+      }
+  
+      lastHTMLSize = currentHTMLSize;
+      await page.waitForTimeout(checkDurationMsecs);
+    }  
+  };
+  
 
 }
 
