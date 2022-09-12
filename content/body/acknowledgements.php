@@ -126,8 +126,8 @@
   <li><a href="https://iconscout.com/contributors/daniel-bruce">Daniel Bruce</a> Code Icon</li>
   <li><a href="https://iconscout.com/contributors/ibm-design">IBM Design</a> Add Icon</li>
   <li><a href="https://dribbble.com/Luizcarvalhoid">Luiz Carvalho</a> for the <a href="https://thenounproject.com/icon/bug-2277444/">Bug Icon</a>
-  <li><a href="https://iconscout.com/contributors/vaadin-icons">Vaadin Icons</a> for the  <a href="https://iconscout.com/icons/eye">Eye Icon</a> used in the <a href="/images/posters/screen-reader-only-text.jpg">poster image</a> for <a href="screen-reader-only-text.php">our screen reader only text page</a></li>
-  <li><a href="https://thenounproject.com/ASJ/">Andy Santos-Johnson</a> and IYIKON from <a href="https://pngtree.com">Pngtree.com</a> for the elements used in the <a href="exposing-style-info-to-screen-readers.jpg">poster image</a> of <a href="exposing-style-info-to-screen-readers.php">our page on exposing style information to screen readers</a>.</li>
+  <li><a href="https://iconscout.com/contributors/vaadin-icons">Vaadin Icons</a> for the  <a href="https://iconscout.com/icon/eye-498">Eye Icon</a> used in the <a href="/images/posters/screen-reader-only-text.jpg">poster image</a> for <a href="screen-reader-only-text.php">our screen reader only text page</a></li>
+  <li><a href="https://thenounproject.com/ASJ/">Andy Santos-Johnson</a> and IYIKON from <a href="https://pngtree.com">Pngtree.com</a> for the elements used in the <a href="/images/posters/exposing-style-info-to-screen-readers.jpg">poster image</a> of <a href="exposing-style-info-to-screen-readers.php">our page on exposing style information to screen readers</a>.</li>
 </ul>
 
 <h2>Typography</h2>
