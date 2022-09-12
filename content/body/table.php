@@ -371,7 +371,7 @@
     {
       "label": "Give table a label using the <code>aria-labelledby</code> attribute.",
       "highlight": "aria-labelledby",
-      "notes": "All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <code>sr-only</code> class to do so."
+      "notes": "All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a> to do so."
     },
     {
       "label": "Separate the table head and body with separate rowgroups",
@@ -386,7 +386,7 @@
     {
       "label": "Mark up the table column headers",
       "highlight": "role=\"columnheader\"",
-      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <code>sr-only</code> class, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
+      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
     },
     {
       "label": "Mark up the table row headers",

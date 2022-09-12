@@ -203,7 +203,7 @@
     {
       "label": "Code instructions for screen reader users.",
       "highlight": "aria-describedby",
-      "notes": "Note the <code>sr-only</code> class that ensures the instructions are not visible to sighted users."
+      "notes": "Note the <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>  class that ensures the instructions are not visible to sighted users."
     },
     {
       "label": "Explose min, max and current values via ARIA so screen readers can report them",
