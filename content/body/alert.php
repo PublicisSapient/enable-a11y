@@ -52,7 +52,7 @@
             "steps": [{
                     "label": "Add role of alert",
                     "highlight": "role",
-                    "notes": ""
+                    "notes": "This and the <code>aria-live</code> attribute in the next step should be in the DOM <em>before</em> you change its content with JavaScript, preferably when the page loads.  <strong>Never insert an ARIA live region with JavaScript with the content you want to announce at the same time</strong> &mdash; it won't work."
                 },
                 {
                     "label": "Add aria-live level",
@@ -62,7 +62,7 @@
                 {
                     "label": "Inject what you want alerted by screen readers into the aria-live region",
                     "highlight": "%JS%alert.sayTimeClickHandler ||| assertiveAlertEl.innerHTML[^;]*;",
-                    "notes": "Note that <code>assertiveAlertEl = document.getElementById('assertive-alert')</code> (from the previous step).  Just using <code>innerHTML</code> on the aria-live region is enough."
+                    "notes": "Note that <code>assertiveAlertEl = document.getElementById('assertive-alert')</code> (from the previous step).  Just using <code>innerHTML</code> on the aria-live region is enough to have screen readers announce the content."
                 }
             ]
         }

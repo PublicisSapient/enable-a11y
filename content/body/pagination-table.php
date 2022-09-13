@@ -1816,7 +1816,8 @@
 
 <?= includeNPMInstructions(
   'paginate',
-  array(), 
+  array(),
+  'pagination',
   false, 
   array(),
   '.pagination__table'

@@ -28,6 +28,9 @@
 .button-container [role="button"]:hover {
   background-color: #cccccc;
 }
+.button-container button[aria-disabled="true"] {
+  opacity: 0.6;
+}
 #short-button {
   height: 0px;
   overflow: hidden;

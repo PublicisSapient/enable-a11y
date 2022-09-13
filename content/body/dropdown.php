@@ -333,6 +333,7 @@
 <?= includeNPMInstructions(
     'enable-drawer',
     array(),
+    'enable-drawer',
     false,
     array(),
     null,

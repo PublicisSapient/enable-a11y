@@ -56,7 +56,7 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
 }
 
 
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $isPolyfill = false, $other = array(), $doesHaveAddMethod = null, $willWorkAfterPageLoad = false, $noInit = false) {
+function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $bemPrefix = null, $isPolyfill = false, $other = array(), $doesHaveAddMethod = null, $willWorkAfterPageLoad = false, $noInit = false) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
     'moduleVar' => dashesToCamelCase($moduleName),
@@ -65,7 +65,8 @@ function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/
     'other' => $other,
     'doesHaveAddMethod' => $doesHaveAddMethod,
     'willWorkAfterPageLoad' => $willWorkAfterPageLoad,
-    'noInit' => $noInit
+    'noInit' => $noInit,
+    'bemPrefix' => $bemPrefix
   ));
 }
 

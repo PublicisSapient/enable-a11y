@@ -5,19 +5,16 @@ import testHelpers from './test-helpers.js';
 import fs from 'fs';
 
 const fileList =  testHelpers.getPageList();
-let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
+let desktopBrowser, desktopPage;
 
-describe('Test Focus States on all pages on Enable', () => {
+describe('Test all pages on Enable to Ensure the information is written correctly', () => {
   beforeAll(async () => {
     // Put code here that should execute before starting tests.
-    mobileBrowser = await testHelpers.getMobileBrowser();
-    mobilePage = await mobileBrowser.newPage();
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
   });
 
   afterAll(async () => {
-    await mobileBrowser.close();
     await desktopBrowser.close();
   });
 
@@ -45,20 +42,22 @@ describe('Test Focus States on all pages on Enable', () => {
       const twitterGraphPosterContent = twitterGraphPoster.getAttribute('content');
       const openGraphPosterURL = openGraphPosterContent.split('?')[0];
       const twitterGraphPosterURL = twitterGraphPosterContent;
+      const areTherePHPJestErrors = (document.querySelector('.jest-error') !== null);
 
 
       return {
         openGraphPosterURL,
         twitterGraphPosterURL,
+        areTherePHPJestErrors
       }
 
     });
 
-    const { openGraphPosterURL, twitterGraphPosterURL } = domInfo;
+    const { openGraphPosterURL, twitterGraphPosterURL, areTherePHPJestErrors } = domInfo;
 
     expect(openGraphPosterURL).toBe(twitterGraphPosterURL);
     expect(fs.existsSync(`./${openGraphPosterURL}`)).toBe(true);
-
+    expect(areTherePHPJestErrors).toBe(false);
 
   }
 
@@ -66,15 +65,10 @@ describe('Test Focus States on all pages on Enable', () => {
 
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
-      it(`Desktop Breakpoint: Test page setup on ${fileList[i]}`, async () => {
+      it(`Desktop Breakpoint: Test page setup on ${file}`, async () => {
         await testPage(fileList[i], desktopPage);
       });
 
-      /*
-      it(`Mobile Breakpoint: Test page setup on ${fileList[i]}`, async () => {
-        await testPage(fileList[i], mobilePage);
-      });
-      */
   }
 
 });

@@ -1,8 +1,8 @@
-
 @import "shared/mixins-and-vars";
 
 .button-container {
     margin-bottom: 1rem;
+
     [role="button"] {
         display: inline-block;
         text-decoration: none;
@@ -23,6 +23,11 @@
         &:hover {
             background-color: #cccccc;
         }
+    }
+
+
+    button[aria-disabled="true"] {
+        opacity: 0.3;
     }
 
 }

@@ -1,16 +1,15 @@
+/* eslint-disable no-undef */
 'use strict'
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
 const fileList = testHelpers.getPageList();
-let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
+let desktopBrowser, desktopPage;
 
 describe('Test Code Walkthroughs on all pages on Enable', () => {
   beforeAll(async () => {
     // Put code here that should execute before starting tests.
-    mobileBrowser = await testHelpers.getMobileBrowser();
-    mobilePage = await mobileBrowser.newPage();
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
 
@@ -18,7 +17,6 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
   });
 
   afterAll(async () => {
-    await mobileBrowser.close();
     await desktopBrowser.close();
   });
 
@@ -68,6 +66,12 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
     }, showcodeSelectSel);
 
     expect(domInfo.allJsonBlocksHaveIDs).toBe(true);
+
+
+    if (domInfo.jsonErrorID !== '') {
+      console.error(`You must fix the JSON inside the script with id="${domInfo.jsonErrorID}".`);
+    }
+
     expect(domInfo.jsonErrorID).toBe('')
 
     const { numOfSelects } = domInfo;
@@ -83,15 +87,12 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
           
           const codeEl = containerEl.querySelector('.showcode__example--code');
           const hasCodeEl = (codeEl !== null);
-          const onChangeResults = [];
           function findNearestHeading (el) {
             let currentNode = el;
         
             currentNode = currentNode.closest('.showcode__container');
-            console.log('M:', currentNode.tagName);
             do {
-              currentNode = currentNode.previousElementSibling;
-              console.log('N:', currentNode.tagName);
+              currentNode = currentNode.previousElementSibling
               if (currentNode && currentNode.matches('h1, h2, h3, h4, h5, h6')) {
                 break;
               }
@@ -116,7 +117,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
 
 
         if (originalCodeHTML === '') {
-          console.log(`There code tag is blank.  Select index: ${i}\nUnder heading "${domInfo.nearestHeading}"`);
+          console.error(`There code tag is blank.  Select index: ${i}\nUnder heading "${domInfo.nearestHeading}"`);
         }
 
         expect(hasCodeEl).toBe(true);
@@ -128,10 +129,8 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
               const selectEls = document.querySelectorAll(showcodeSelectSel);
               const selectEl = selectEls[i];
               const optionEls = selectEl.getElementsByTagName('option');
-              const optionEl = optionEls[j];
               const origSelectValue = selectEl.value;
               const origSelectedIndex = selectEl.selectedIndex;
-              let nextOptionValue = null;
 
               if (j + 1 < numOptions) {
                 const newSelectValue = optionEls[j+1].getAttribute('value');
@@ -159,23 +158,19 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
             
 
             await testHelpers.pause();
-            domInfo = await page.evaluate((showcodeSelectSel, i, j) => {
+            domInfo = await page.evaluate((showcodeSelectSel, i) => {
               const selectEls = document.querySelectorAll(showcodeSelectSel);
               const selectEl = selectEls[i];
               const containerEl = selectEl.closest('.showcode__container');
               const codeEl = containerEl.querySelector('.showcode__example--code');
-              const optionEls = selectEl.getElementsByTagName('option');
-              const optionEl = optionEls[j+1];
               const value = selectEl.value;
 
               function findNearestHeading (el) {
                 let currentNode = el;
             
                 currentNode = currentNode.closest('.showcode__container');
-                console.log('M:', currentNode.tagName);
                 do {
                   currentNode = currentNode.previousElementSibling;
-                  console.log('N:', currentNode.tagName);
                   if (currentNode && currentNode.matches('h1, h2, h3, h4, h5, h6')) {
                     break;
                   }
@@ -197,7 +192,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
             }, showcodeSelectSel, i, j);
 
             if (domInfo.newCodeHTML === originalCodeHTML || domInfo.newCodeHTML === '') {
-              console.log(`Code walkthrough did not update on ${filename}.  Select index: ${i}, option index: ${j}\nSelected value: ${domInfo.selectValue}.\nUnder heading "${domInfo.nearestHeading}"`);
+              console.error(`Code walkthrough did not update on ${filename}.  Select index: ${i}, option index: ${j}\nSelected value: ${domInfo.selectValue}.\nUnder heading "${domInfo.nearestHeading}"`);
             }
             expect(domInfo.selectValue).toBe(newSelectValue);
             expect(domInfo.newCodeHTML).not.toBe('');
@@ -215,12 +210,10 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
     
-    it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
+    it(`Desktop Breakpoint: Test showcode JSON blocks on ${file}`, async () => {
       await testPage(fileList[i], desktopPage);
     });
-    /* it(`Mobile Breakpoint: Test code walkthroughs on ${fileList[i]}`, async () => {
-      await testPage(fileList[i], mobilePage);
-    }); */
+   
   }
 
 });

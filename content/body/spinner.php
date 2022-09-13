@@ -228,6 +228,7 @@
 <?= includeNPMInstructions(
   'spinbutton',
   array(),
+  '',
   false,
   array(),
   '.spinbutton'

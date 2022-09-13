@@ -447,6 +447,7 @@
 <?= includeNPMInstructions(
   'enable-listbox',
   array(),
+  'enable-listbox',
   false,
   array(),
   null,

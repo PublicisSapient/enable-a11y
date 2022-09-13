@@ -605,4 +605,4 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-visible-on-focus') ?>
+<?= includeNPMInstructions('enable-visible-on-focus', array(), 'enable-mobile-visible-on-focus') ?>
