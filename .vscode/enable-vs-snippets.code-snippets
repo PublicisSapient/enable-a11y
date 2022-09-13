@@ -409,5 +409,10 @@
 			"// e.g. expect(domInfo.ariaLabel).not.toBe('');",
 			"expect(domInfo.isOpen).toBe(true);"
 		]
+	},
+	"checkbox-image": {
+		"scope": "",
+		"prefix": "checkbox-image",
+		"body": "<img class=\"compliance-table__icon\" src=\"images/checkmark.svg\" alt=\"required\">"
 	}
 }
