@@ -133,4 +133,4 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-dialog', array(), true) ?>
+<?= includeNPMInstructions('enable-dialog', array(), '', true) ?>

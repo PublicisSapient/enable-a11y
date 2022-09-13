@@ -283,7 +283,7 @@ const sortableTables = new (function () {
 
   this.activateAllSortableTables = (withinEl, options) => {
     var sortableTables = (withinEl || document).querySelectorAll(
-      ".deque-table-sortable-group"
+      ".deque-table-sortable__group"
     );
     for (var i = 0; i < sortableTables.length; i++) {
       this.add(sortableTables[i], options);

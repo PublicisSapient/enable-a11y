@@ -476,7 +476,9 @@
 
 
 <?= includeNPMInstructions(
-    'pause-anim-control'
+    'pause-anim-control',
+    array(),
+    'pause-anim-control',
   ) 
 ?>
 

@@ -150,6 +150,7 @@
     <?= includeNPMInstructions(
         'ablePlayerCustomizations',
         array(),
+        '',
         false,
         array(
             "otherImports" => "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';"

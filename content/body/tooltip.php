@@ -136,6 +136,7 @@
 <?= includeNPMInstructions(
   'tooltip',
   array(),
+  'tooltip',
   false,
   array(),
   null,

@@ -511,4 +511,4 @@
   </template>
 </div>
 
-<?= includeNPMInstructions('enable-slider', array('js/modules/interpolate.js')) ?>
+<?= includeNPMInstructions('enable-slider', array('js/modules/interpolate.js'), 'enable-slider') ?>

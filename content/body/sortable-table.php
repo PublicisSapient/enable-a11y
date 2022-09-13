@@ -16,7 +16,7 @@
             <a href="https://dequeuniversity.com/library/aria/table-sortable">excellent sortable table example from Deque University</a>.
         </p>    
         <div class="enable-example" id="sortable-table-example">
-            <div class="deque-table-sortable-group" id="sortable-table">
+            <div class="deque-table-sortable__group" id="sortable-table">
 
                 <div id="user-info-table__sort-instructions">
                     Click the table heading buttons to sort the table by the data in its column.
@@ -159,6 +159,7 @@
 <?= includeNPMInstructions(
     'sortable-tables',
     array(),
+    'deque-table-sortable',
     false,
     array(),
     '.pagination__table') ?>

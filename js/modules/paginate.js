@@ -75,7 +75,7 @@ const paginationTables = new function() {
 
     for (let i=0; i<rows.length; i++) {
       rows[i].classList.remove(inactiveClass);
-    };
+    }
 
     table.dataset.currentpage = 0;
   }

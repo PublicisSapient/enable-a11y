@@ -5,36 +5,36 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
-.deque-table-sortable-group caption {
+.deque-table-sortable__group caption {
   margin-bottom: 15px;
 }
-.deque-table-sortable-group table {
+.deque-table-sortable__group table {
   border-collapse: collapse;
   border-spacing: 0;
   overflow: visible;
   margin-top: 8px;
   width: 100%;
 }
-.deque-table-sortable-group table thead {
+.deque-table-sortable__group table thead {
   border-bottom: 1px solid #e3e3e3;
 }
-.deque-table-sortable-group table thead th {
+.deque-table-sortable__group table thead th {
   position: relative;
 }
-.deque-table-sortable-group table thead th:last-child {
+.deque-table-sortable__group table thead th:last-child {
   border-right: none;
 }
-.deque-table-sortable-group table thead th .sortableColumnLabel {
+.deque-table-sortable__group table thead th .sortableColumnLabel {
   display: inline-block;
   height: 100%;
   cursor: pointer;
   padding: 0 0 0 1.5625rem;
   text-align: left;
 }
-.deque-table-sortable-group table thead th .sortableColumnLabel:hover {
+.deque-table-sortable__group table thead th .sortableColumnLabel:hover {
   outline: 1px dashed #767676;
 }
-.deque-table-sortable-group table thead th button {
+.deque-table-sortable__group table thead th button {
   color: white;
   background: transparent;
   border: 0;
@@ -42,26 +42,26 @@
   font-size: inherit;
   font-weight: inherit;
 }
-.deque-table-sortable-group table thead th button {
+.deque-table-sortable__group table thead th button {
   margin: -25px 0;
   padding: 25px 0;
 }
-.deque-table-sortable-group table thead th button:hover {
+.deque-table-sortable__group table thead th button:hover {
   margin: 0;
 }
-.deque-table-sortable-group table thead th button:focus {
+.deque-table-sortable__group table thead th button:focus {
   margin: 0;
   z-index: 1;
 }
-.deque-table-sortable-group table thead th button:active {
+.deque-table-sortable__group table thead th button:active {
   color: #000000;
   outline: 1px solid transparent;
   margin: 0;
 }
-.deque-table-sortable-group table thead th[colspan]:not([colspan='1']) {
+.deque-table-sortable__group table thead th[colspan]:not([colspan='1']) {
   text-align: center;
 }
-.deque-table-sortable-group table thead th .sortableColumnLabel:after {
+.deque-table-sortable__group table thead th .sortableColumnLabel:after {
   /* This is the up and down arrow SVG. */
   content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 41 57' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle /%3E%3Cdesc /%3E%3Cdefs /%3E%3Cg fill='none' fill-rule='evenodd' id='Icons' stroke='none' stroke-width='1'%3E%3Cg fill='%23fff' stroke='%23000' id='XXX-Artboard-1' transform='translate(-1239.000000, -138.000000)'%3E%3Cg id='Double-Arrows' transform='translate(1239.000000, 138.150000)'%3E%3Cpath d='M10.5623119,31.5480425 C9.30468998,32.6283056 8.28518598,32.1695935 8.28518598,30.5136396 L8.28518598,-6.51787882 C8.28518598,-8.16942688 9.29767763,-8.63856827 10.5623119,-7.55228175 L31.0451159,10.041891 C32.3027378,11.1221541 32.3097502,12.8675832 31.0451159,13.9538698 L10.5623119,31.5480425 Z' id='Triangle-1' transform='translate(20.138075, 11.997111) rotate(-90.000000) translate(-20.138075, -11.997111) ' /%3E%3Cpath d='M10.5623119,63.8182709 C9.30468998,64.898534 8.28518598,64.4398218 8.28518598,62.7838679 L8.28518598,25.7523495 C8.28518598,24.1008014 9.29767763,23.6316601 10.5623119,24.7179466 L31.0451159,42.3121194 C32.3027378,43.3923825 32.3097502,45.1378116 31.0451159,46.2240981 L10.5623119,63.8182709 Z' id='Triangle-1' transform='translate(20.138075, 44.267339) scale(1, -1) rotate(-90.000000) translate(-20.138075, -44.267339) ' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   height: 1.0625rem;
@@ -70,30 +70,30 @@
   left: 6px;
   top: calc(50% - 1.0625rem / 2);
 }
-.deque-table-sortable-group table thead th[aria-sort] .sortableColumnLabel:after {
+.deque-table-sortable__group table thead th[aria-sort] .sortableColumnLabel:after {
   /* This is the down arrow SVG. */
   content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 41 57' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle /%3E%3Cdesc /%3E%3Cdefs /%3E%3Cg fill='none' fill-rule='evenodd' id='Icons' stroke='none' stroke-width='1'%3E%3Cg fill='%23fff' stroke='%23000' id='XXX-Artboard-1' transform='translate(-1239.000000, -138.000000)'%3E%3Cg id='Double-Arrows' transform='translate(1239.000000, 138.150000)'%3E%3Cpath d='M10.5623119,63.8182709 C9.30468998,64.898534 8.28518598,64.4398218 8.28518598,62.7838679 L8.28518598,25.7523495 C8.28518598,24.1008014 9.29767763,23.6316601 10.5623119,24.7179466 L31.0451159,42.3121194 C32.3027378,43.3923825 32.3097502,45.1378116 31.0451159,46.2240981 L10.5623119,63.8182709 Z' id='Triangle-1' transform='translate(20.138075, 44.267339) scale(1, -1) rotate(-90.000000) translate(-20.138075, -44.267339) ' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-.deque-table-sortable-group table thead th[aria-sort='descending'] .sortableColumnLabel:after {
+.deque-table-sortable__group table thead th[aria-sort='descending'] .sortableColumnLabel:after {
   transform: scaleY(-1) translateY(-0.3125rem);
 }
-.deque-table-sortable-group table thead:before {
+.deque-table-sortable__group table thead:before {
   content: '';
   display: block;
   width: 7px;
 }
-.deque-table-sortable-group table thead td,
-.deque-table-sortable-group table thead th {
+.deque-table-sortable__group table thead td,
+.deque-table-sortable__group table thead th {
   padding: 12px 11px 12px 0;
   text-align: left;
   vertical-align: middle;
 }
-.deque-table-sortable-group table tbody td th {
+.deque-table-sortable__group table tbody td th {
   text-align: left;
   padding: 7px;
   border-right: 1px solid #cccccc;
 }
-.deque-table-sortable-group table tbody td:last-child,
-.deque-table-sortable-group table tbody th:last-child {
+.deque-table-sortable__group table tbody td:last-child,
+.deque-table-sortable__group table tbody th:last-child {
   border-right: none;
 }

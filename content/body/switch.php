@@ -86,6 +86,7 @@
 <?= includeNPMInstructions(
   'switch',
   array(),
+  '',
   false,
   array(),
   null,
