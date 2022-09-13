@@ -29,7 +29,7 @@
   background-color: #cccccc;
 }
 .button-container button[aria-disabled="true"] {
-  opacity: 0.6;
+  opacity: 0.3;
 }
 #short-button {
   height: 0px;
