@@ -2246,7 +2246,8 @@
             "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
             "highlight": "%CSS%table-css ~ .sticky-table__container th[scope=\"col\"]",
             "notes": [
-                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls horizontally through the data in the table.",
+                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls vertically through the data in the table.",
+                "<strong>Note: that it is important to remember that <a href=\"https://css-tricks.com/dealing-with-overflow-and-position-sticky/\">CSS sticky only works if there is no overflow property on any of the parent elements</a>.</strong>",
                 "If you want more information about how this works, please read the excellent article",
                 "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>.   The <code>top</code> property is set to the height of the \"Pause animation\" control that is on the top of the Enable page so that it appears below it (measured in rems, so it works even if you resize the text on the page."
             ]
