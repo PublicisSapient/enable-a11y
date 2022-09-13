@@ -149,7 +149,7 @@
 
 <h3 id="enable-hamburger-menu__heading" tabindex="-1">Coding HTML by Hand</h3>
 
-<p>If you wanted to code this menu's HTML by hand, you can use the following guide.  Just keep in mind that each level is basically a list of buttons and links.  The links will go to new </p>
+<p>If you wanted to code this menu's HTML by hand, you can use the following guide.  Just keep in mind that each level is basically a list of buttons and links.  The links will go to new pages; the buttons will open up a new section.</p>
 
 <?php includeShowcode("flyout__container", "", "", "", true, 0)?>
 <script type="application/json" id="flyout__container-props">
