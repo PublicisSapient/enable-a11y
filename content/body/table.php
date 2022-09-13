@@ -103,7 +103,7 @@
     {
       "label": "The <strong>tfoot</strong> section",
       "highlight": "\\s*&lt;tfoot&gt;[\\s\\S]*&lt;/tfoot&gt;",
-      "notes": "The <strong>tfoot</strong> contains summary information of the table"
+      "notes": "<strong>Optional.</strong>  The <strong>tfoot</strong> contains summary information of the table"
     },
     {
       "label": "Column headings",
