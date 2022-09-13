@@ -19,14 +19,29 @@ do
 		then
 			echo "Install axe using:" 1>&2
 			echo "  npm install axe-cli -g" 1>&2
-		elif [ "$i" = "pa11y-ci"]
+			exit 1
+		elif [ "$i" = "pa11y-ci" ]
 		then
 			echo "Install pa11y using:" 1>&2
 			echo "  npm install pa11y-ci -g"
+			exit 1
+		elif [ "$i" = "php81" ]
+		then
+			echo "PHP 8.1 is not installed.  Trying PHP ..."
+			which php > /dev/null 2> /dev/null
+
+			if [ "$?" != "0" ]
+			then
+				echo "PHP is not installed.  Bailing"
+				exit 1
+			else
+				echo "A lower version of PHP than 8.1 is being used.  This may have unexpected results."
+			fi
 		else
 			echo "Please install this software using your operating systems package management" 1>&2
+			exit 1
 		fi 
-		exit 1
+		
 	fi
 
 
@@ -50,7 +65,7 @@ done
 
 #.. let's ensure axe has the right chromedriver installed
 echo "Checking aXe"
-axe http://www.useragentman.com 2>&1 | grep "This version of ChromeDriver only supports"
+axe $PROJECT_URL 2>&1 | grep "This version of ChromeDriver only supports"
 
 if [ "$?" = "0" ]
 then
@@ -234,14 +249,12 @@ DID_PALLY_SUCCEED="0"
 				} else {
 					comma = ",";
 				}
-				printf("\"%s\"%c\n", $i, comma);
+				printf("\"%s\"%s\n", $i, comma);
 			} 
 		}
 	'
-
-					
-	echo '    ]
-	}'
+	
+	echo ']}'
 ) > tmp/pa11y-config 
 
 # comment
