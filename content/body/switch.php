@@ -36,7 +36,7 @@
     <a href="https://developer.mozilla.org/en-US/">MDN</a> article on
     <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_switch_role">Using
       the switch role</a>.  The switch reports the checked state as "on" or "off" in VoiceOver
-    and "checked" or "unchecked" in NVDA and ChromeVox.  In order to make some consistancy among user agents, an <code>aria-describedby</code> on the switch can state the "on/off" state to all screen readers. This description is also given visually, to make it obvious what the state is for sighted users.  Developers could hide this text with the <code>sr-only</code>, and put "off" and "on" labels on sides of the right and left sides of the component if they wish instead. 
+    and "checked" or "unchecked" in NVDA and ChromeVox.  In order to make some consistancy among user agents, an <code>aria-describedby</code> on the switch can state the "on/off" state to all screen readers. This description is also given visually, to make it obvious what the state is for sighted users.  Developers could hide this text with the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a>, and put "off" and "on" labels on sides of the right and left sides of the component if they wish instead. 
 </p>
 
 <div id="example1" class="enable-example">
@@ -86,6 +86,7 @@
 <?= includeNPMInstructions(
   'switch',
   array(),
+  '',
   false,
   array(),
   null,

@@ -1,7 +1,0 @@
-[06-Jan-2022 23:43:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mb_detect_encoding() in /home/zhawryluk/git/enable-a11y/includes/common-head-tags.php:89
-Stack trace:
-#0 /home/zhawryluk/git/enable-a11y/includes/documentation-header.php(534): findMeta()
-#1 /home/zhawryluk/git/enable-a11y/index.php(14): include('/home/zhawryluk...')
-#2 /home/zhawryluk/git/enable-a11y/bin/php-express/page_runner.php(15): require_once('/home/zhawryluk...')
-#3 {main}
-  thrown in /home/zhawryluk/git/enable-a11y/includes/common-head-tags.php on line 89

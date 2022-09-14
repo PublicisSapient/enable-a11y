@@ -42,14 +42,14 @@
   try using  <a href="https://html-validate.org/usage/">this Node based HTML validator</a> instead (I have not used this yet, so your mileage may vary).
 </p>
 
-<h2>Using Axe-core and pa11y for Accessibility Linting</h2>
+<h2>Using Axe-core and Pa11y CI for Accessibility Linting</h2>
 
 <p>
-  Enable uses both Deque Labs' <a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli">@axe-core/cli</a> as well as <a href="https://www.npmjs.com/package/pa11y">Pa11y</a> to do accessibility linting.  Why two?  Both are very good tools, but they don't test for the same things, and as Craig Abbott states in this <a href="https://www.craigabbott.co.uk/blog/axe-core-vs-pa11y">excellent article that compares axe-core and pa11y</a>, it's hard to compare the two.  So why not just use both?
+  Enable uses both Deque Labs' <a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/cli">@axe-core/cli</a> as well as <a href="https://github.com/pa11y/pa11y-ci">Pa11y CI</a> to do accessibility linting.  Why two?  Both are very good tools, but they don't test for the same things, and as Craig Abbott states in this <a href="https://www.craigabbott.co.uk/blog/axe-core-vs-pa11y">excellent article that compares axe-core and pa11y</a>, it's hard to compare the two.  So why not just use both?
 </p>
 
 <p>
-  The problem with using axe-core compared to pa11y is that axe-core requires <a href="https://chromedriver.chromium.org/">Chromedriver</a> in order to work (axe-core will run pages in a headless version of Chrome to do ensure the accessibility markup works, including any JavaScript generated markup).  I have personally had problems with Chromedriver updates (<a href="https://github.com/dequelabs/axe-cli/issues/103">here is one of the issues I had in the past</a>).  Pa11y, on the other hand, uses Puppeteer to launch Chrome and do its tests.  You can read
+  The problem with using axe-core compared to Pa11y-CI is that axe-core requires <a href="https://chromedriver.chromium.org/">Chromedriver</a> in order to work (axe-core will run pages in a headless version of Chrome to do ensure the accessibility markup works, including any JavaScript generated markup).  I have personally had problems with Chromedriver updates (<a href="https://github.com/dequelabs/axe-cli/issues/103">here is one of the issues I had in the past</a>).  Pa11y, on the other hand, uses Puppeteer to launch Chrome and do its tests.  You can read
   about <a href="https://www.testim.io/blog/puppeteer-vs-selenium/">how these two technologies differ</a>, but from my experience, it seems
   Chromedriver updates are more likely to break things more often than Puppeteer updates.  You have been warned.
 </p>

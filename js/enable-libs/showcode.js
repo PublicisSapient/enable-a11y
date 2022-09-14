@@ -283,15 +283,12 @@ const showcode = new function () {
 
   function setReadMoreCSSVar(notesEl) {
     const overflowEl = notesEl.querySelector('div');
-    console.log(notesEl);
 
 
     // The +1 in the formula below is because firefox has rounding errors.
     if (overflowEl && overflowEl.scrollHeight > overflowEl.clientHeight + 1) {
-      console.log('a');
       notesEl.classList.add('showcode__notes--is-overflowed');
     } else {
-      console.log('b');
       notesEl.classList.remove('showcode__notes--is-overflowed');
     }
   }
@@ -304,7 +301,6 @@ const showcode = new function () {
    */
   const displayStep = (value, showcodeNotes, showcodeFor, codeEl, replaceHtmlRules, doScroll) => {
 
-    console.log('sss');
     const notesEl = document.getElementById(showcodeFor + '__notes');
     let code = htmlCache[showcodeFor];
     let replaceRegex;
@@ -651,7 +647,7 @@ const showcode = new function () {
       }
 
 
-      console.log('query', query, highlightedItems, screenReaderAlert, isFinalStep, changesAlertEl);
+      // console.log('query', query, highlightedItems, screenReaderAlert, isFinalStep, changesAlertEl);
       
 
       notesEl.innerHTML = showcodeNotes || '';
@@ -1045,7 +1041,6 @@ const showcode = new function () {
 
 
   this.init = () => {
-    console.log('init!');
     showCodeBlocks();
     setEvents();
     jumpToDeepLink();

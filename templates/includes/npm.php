@@ -51,7 +51,23 @@
   }
 ?>
 
+<?php 
+  if ($bemPrefix != '') {
+?>
+<h4>Important Note On The CSS Classes Used In This Module:</h4>
 
+<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the documentation above to see where these CSS classes are inserted.
+
+<?php
+  } else if ($bemPrefix === true || $bemPrefix === false) {
+?>
+
+<div class="jest-error">We forgot to add the $bemPrefix variable on the function call to includeNPMInstructions()</div>
+
+<?php
+  }
+?>
 
 <h4>Using NPM/Webpack to load ES6 Modules:</h4>
 

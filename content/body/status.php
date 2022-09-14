@@ -57,14 +57,14 @@
       "notes": "This should be set to <strong>polite</strong> if you want it to be announced after the screen reader is finished announcing other things, or <strong>assertive</strong> if you want the screen reader to interrupt what it is currently saying to state the message inside.  The latter should only be used sparingly."
     },
     {
-      "label": "Hide the alert with <code>sr-only</code> class",
+      "label": "Hide the alert with sr-only CSS class",
       "highlight": "sr-only",
-      "notes": "This is a standard class that hides items visually but allows screen readers to access them."
+      "notes": "This is <a href=\"screen-reader-only-text.php\">a standard class that hides items visually but allows screen readers to access them</a>."
     },
     {
       "label": "CSS for sr-only",
       "highlight": "%CSS%all-css ~ .sr-only",
-      "notes": "This is the sr-only class we use in the Enable project. There are several variations of this available on the web."
+      "notes": "This is the  <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>   we use in the Enable project. There are several variations of this available on the web."
     },
     {
       "label": "use .innerHTML to update the live region",

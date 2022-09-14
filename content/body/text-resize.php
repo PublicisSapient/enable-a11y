@@ -14,20 +14,21 @@
     <strong>If you are looking how to alter the design slightly when font-resizing is triggered, you may want to checkout our page on <a href="hero-image-text-resize.php">Accessible Text in Hero Images</a>.</strong>  The article demos a lightweight JavaScript library that can treat text-resizing almost like another breakpoint.
 </p>
 
-<h2>Replace Pixels With Ems</h2>
+<h2>Replace Pixels With Rems</h2>
 
 <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is easy to use for new and existing work if you are using a CSS pre-compiler like <a href="https://lesscss.org/">Less</a> or <a href="https://sass-lang.com/">Sass</a>.')) ?>
 
 <p>
-  Developers should use relative units like rems or ems for the majority of their text:
+  Developers should use relative units like rems for the majority of their text:
 </p>
 
 <ol>
   <li>Pixels are an absolute unit.</li>
-  <li>Rems are responsive. If the font-size of the parent of an element sized in rems changes, than the
-    font-size of the element changes.
+  <li>Rems are responsive in that they are relative to the font-size of a parent that is sized in pixels. If the pixel font-size of the parent of an element sized in rems changes, than the font-size of the element changes. 
   </li>
 </ol>
+
+
 
 <p>
   In most browsers users who use their browser functionality to resize text will not be able to resize text measured in
@@ -38,8 +39,7 @@
 </p>
 
 <p>
-  All the pages on the Enable project are designed to resize by using rems, but we use a dead-simple
-  LESS mixin to convert pixels to rems.
+  All the pages on the Enable project are designed to resize by using rems, but we use a dead-simple LESS mixin to convert pixels to rems.
 </p>
 
 <div id="less-px-to-rem">
@@ -90,6 +90,10 @@ body {
 // http://lesscss.org/features/#features-overview-feature-operations
 
 </template>
+
+
+<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programatically).</p>
+
 
 <h2>Use Unitless Line Heights</h2>
 

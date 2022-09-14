@@ -103,7 +103,7 @@
     {
       "label": "The <strong>tfoot</strong> section",
       "highlight": "\\s*&lt;tfoot&gt;[\\s\\S]*&lt;/tfoot&gt;",
-      "notes": "The <strong>tfoot</strong> contains summary information of the table"
+      "notes": "<strong>Optional.</strong>  The <strong>tfoot</strong> contains summary information of the table"
     },
     {
       "label": "Column headings",
@@ -371,7 +371,7 @@
     {
       "label": "Give table a label using the <code>aria-labelledby</code> attribute.",
       "highlight": "aria-labelledby",
-      "notes": "All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <code>sr-only</code> class to do so."
+      "notes": "All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a> to do so."
     },
     {
       "label": "Separate the table head and body with separate rowgroups",
@@ -386,7 +386,7 @@
     {
       "label": "Mark up the table column headers",
       "highlight": "role=\"columnheader\"",
-      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <code>sr-only</code> class, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
+      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
     },
     {
       "label": "Mark up the table row headers",
@@ -2246,7 +2246,8 @@
             "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
             "highlight": "%CSS%table-css ~ .sticky-table__container th[scope=\"col\"]",
             "notes": [
-                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls horizontally through the data in the table.",
+                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls vertically through the data in the table.",
+                "<strong>Note: that it is important to remember that <a href=\"https://css-tricks.com/dealing-with-overflow-and-position-sticky/\">CSS sticky only works if there is no overflow property on any of the parent elements</a>.</strong>",
                 "If you want more information about how this works, please read the excellent article",
                 "<a href=\"https://css-tricks.com/position-sticky-and-table-headers/\">Position Sticky and Table Headers</a>.   The <code>top</code> property is set to the height of the \"Pause animation\" control that is on the top of the Enable page so that it appears below it (measured in rems, so it works even if you resize the text on the page."
             ]

@@ -111,6 +111,19 @@ const testHelpers = new function () {
     return r;
   }
 
+  this.redirectPuppeteerConsole = (page) => {
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    /* page.on('pageerror', error => {
+      console.log(error.message);
+    }); */
+    /* page.on('response', response => {
+      console.log(response.status, response.url());
+    });
+    page.on('requestfailed', request => {
+      console.log(request.failure().errorText, request.url());
+    }); */
+  }
+
 }
 
 export default testHelpers;

@@ -1,5 +1,6 @@
 "use strict";
 
+
 const { argv } = process;
 const filenameWithoutPath = argv[argv.length - 1];
 

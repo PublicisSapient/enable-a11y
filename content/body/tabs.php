@@ -227,6 +227,7 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 <?= includeNPMInstructions(
   'tabs',
   array(),
+  '',
   false,
   array(),
   '.enable-tablist'

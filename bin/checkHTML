@@ -9,7 +9,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 echo "Checking if dependencies are installed ..."
 
-for i in lynx java php81 axe
+for i in lynx java php81 axe pa11y-ci
 do
 	which $i > /dev/null 2> /dev/null
 	if [ "$?" != "0" ]
@@ -19,15 +19,34 @@ do
 		then
 			echo "Install axe using:" 1>&2
 			echo "  npm install axe-cli -g" 1>&2
+			exit 1
+		elif [ "$i" = "pa11y-ci" ]
+		then
+			echo "Install pa11y using:" 1>&2
+			echo "  npm install pa11y-ci -g"
+			exit 1
+		elif [ "$i" = "php81" ]
+		then
+			echo "PHP 8.1 is not installed.  Trying PHP ..."
+			which php > /dev/null 2> /dev/null
+
+			if [ "$?" != "0" ]
+			then
+				echo "PHP is not installed.  Bailing"
+				exit 1
+			else
+				echo "A lower version of PHP than 8.1 is being used.  This may have unexpected results."
+			fi
 		else
 			echo "Please install this software using your operating systems package management" 1>&2
+			exit 1
 		fi 
-		exit 1
+		
 	fi
 
 
-	#.. Special case with java -- if it returns 1, it is probably because it
-	#   not really installed and it's giving a message to install the runtime.
+	#.. Special case with java -- if it returns 0, it still may not be installed
+	#   and the command is giving a message to install the runtime (happens on OSX)
 	if [ "$i" == "java" ]
 	then
 		OUT=`java 2>&1`
@@ -46,7 +65,7 @@ done
 
 #.. let's ensure axe has the right chromedriver installed
 echo "Checking aXe"
-axe http://www.useragentman.com 2>&1 | grep "This version of ChromeDriver only supports"
+axe $PROJECT_URL 2>&1 | grep "This version of ChromeDriver only supports"
 
 if [ "$?" = "0" ]
 then
@@ -93,6 +112,7 @@ TEMP_FILES=""
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
 AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
+
 
 echo "Downloading rendered HTML..."
 
@@ -209,40 +229,44 @@ then
 	echo "aXe failed. See information above."
 	exit 1
 fi
-comment
 
 
-echo "Running pa11y tests ..."
+
+echo "Running pa11y-ci tests ..."
 
 DID_PALLY_SUCCEED="0"
 
-<<comment
-echo '{
+# <<comment
+( 
+	echo '{
     "urls": [ '
 
-echo "$DOWNLOADED_URLS" | awk '{ printf("\"%s\",\n", $1) }'
+	echo $DOWNLOADED_URLS | awk '
+		{ 
+			for (i=1; i<=NF; i++) {
+				if (i == NF) {
+					comma = "";
+				} else {
+					comma = ",";
+				}
+				printf("\"%s\"%s\n", $i, comma);
+			} 
+		}
+	'
+	
+	echo ']}'
+) > tmp/pa11y-config 
 
-        
-echo '    ]
-}'
+# comment
 
-exit
-comment
+pa11y-ci --config tmp/pa11y-config 
+DID_PALLY_SUCCEED="$?"
 
-
-for i in $DOWNLOADED_URLS
-do
-	pa11y $i
-
-	if [ "$?" != "0" ]
-	then
-		DID_PALLY_SUCCEED="1"
-	fi
-done
 
 if [ $DID_PALLY_SUCCEED = "1" ]
 then
 	echo "Pa11y failed.  See information above."
+	exit 2;
 fi
 
 

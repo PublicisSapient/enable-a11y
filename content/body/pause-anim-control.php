@@ -163,7 +163,7 @@
   <p>Most Canvas Animations (like <a href="https://codepen.io/thebabydino/pen/gbJwMQ">this great elastic collision
       demo</a> from
     <a href="https://codepen.io/thebabydino">Ana Tudor</a>) rely on code using
-    <code>requestAnimationFrame()</code> to produces a frame of
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame()</code></a> to produces a frame of
     animation.
     When the checkbox is checked, we just set window.requestAnimationFrame to a dummy function, and set it back
     when the checkbox
@@ -179,7 +179,13 @@
   <script type="application/json" id="elastic-collision-demo-props">
   {
     "replaceHtmlRules": {},
-    "steps": [{
+    "steps": [
+      {
+        "label": "Modify your canvas animation script to use pauseAnimControl.requestAnimationFrame",
+        "highlight": "%FILE% js/demos/ana-tudor/elastic-collision.js ~ pauseAnimControl.requestAnimationFrame[^;]*;",
+        "notes": "The original script used <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame\"><code>window.requestAnimationFrame()</code></a>.  The only modification we made was to have it use <code>pauseAnimControl.requestAnimationFrame</code> instead."
+      },
+      {
         "label": "Cache the browser requestAnimationFrame method in the script",
         "highlight": "%JS% pauseAnimControl ||| this.realRAF =[^;]*;",
         "notes": ""
@@ -470,7 +476,9 @@
 
 
 <?= includeNPMInstructions(
-    'pause-anim-control'
+    'pause-anim-control',
+    array(),
+    'pause-anim-control',
   ) 
 ?>
 
