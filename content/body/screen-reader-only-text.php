@@ -45,7 +45,8 @@
     Snook</a> (or, at least, there earliest reference I have found that combines
   a few techniques that eventually became the <code>sr-only</code> class we see
   being used in the wild today). Enable uses the following in our
-  <code>sr-only</code> class:</p>
+  <code>sr-only</code> class, based on the gist <a href="https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034">Improved .sr-only</a>
+  by Codepen user <a href="https://codepen.io/ffoodd">ffoodd</a>:</p>
 
 
 <div id="sr-only-code"
@@ -84,7 +85,7 @@
       href="https://www.linkedin.com/in/oliverlangmo/">Oliver Langmo</a></li>
   <li><a href="https://webaim.org/techniques/css/invisiblecontent/">Invisible
       Content Just for Screen Reader Users</a> from <a
-      href="https://webaim.org/">WebAIMM</a></li>
+      href="https://webaim.org/">WebAIM</a></li>
   <li><a
       href="https://www.w3docs.com/snippets/css/why-and-how-the-bootstrap-sr-only-class-is-used.html">Why
       and How the Bootstrap sr-only Class is Used</a> which explains how this
