@@ -22,12 +22,18 @@ const EnableCarousel = function (container, options) {
   this.options = options || {};
   this.useArrowButtons = this.options.useArrowButtons || false;
 
+  const supportsInertNatively = HTMLElement.prototype.hasOwnProperty('inert');
+
   this.init = function () {
 
     if (! this.container) {
-      throw "Error: No container for carousel. Bailing";
+      console.error("Error: No container for carousel. Bailing");
+      return;
+    } else {
+      console.log('Initializing.  options:', options)
     }
     
+    console.log('prev', this.container.querySelector(".glider-prev"));
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
@@ -36,8 +42,8 @@ const EnableCarousel = function (container, options) {
       dots: "#dots",
       duration: 0,
       arrows: {
-        prev: ".glider-prev",
-        next: ".glider-next",
+        prev: this.container.parentNode.querySelector(".glider-prev"),
+        next: this.container.parentNode.querySelector(".glider-next"),
       },
       draggable: true,
       scrollLock: true,
@@ -48,11 +54,19 @@ const EnableCarousel = function (container, options) {
     this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
 
     if (this.useArrowButtons) {
-      this.setSlideTabIndexes('-1');
-      import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
-      .then((dialogPolyfill) => {
+
+      if (!supportsInertNatively) {
+        console.log('incuding polyfill');
+        import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
+        .then((dialogPolyfill) => {
+          this.setSlidesInert(true, 0);
+          this.setEvents();
+        });
+      } else {
+        console.log('not including polyfill');
+        this.setSlidesInert(true, 0);
         this.setEvents();
-      });
+      }
     } else {
       this.setEvents();
     }
@@ -77,21 +91,28 @@ const EnableCarousel = function (container, options) {
     }
   };
 
-  this.setSlideTabIndexes = (value) => {
-    this.slidePanels.forEach((el) => {
-      el.setAttribute('tabIndex', value);
+  this.setSlidesInert = (value, exceptionIndex) => {
+    this.slidePanels.forEach((el, i) => {
+      if (i !== exceptionIndex) {
+        console.log('xxx');
+        el.inert = value;
+      }
     })
   }
   
 
   this.slideHiddenEvent = (e) => {
+    
     const hiddenSlideIndex = e.detail.slide;
+    console.log('hide', hiddenSlideIndex);
     const hiddenSlide = this.container.querySelectorAll(this.slidePanelSelector)[hiddenSlideIndex];
-    const hiddenSlider.inert = true;
+    hiddenSlide.inert = true;
   }
 
   this.slideVisibleEvent = (e) => {
+    
     const visibleSlideIndex = e.detail.slide;
+    console.log('show', visibleSlideIndex);
     const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
     visibleSlide.inert = false;
     visibleSlide.focus();

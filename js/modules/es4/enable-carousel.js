@@ -26,6 +26,7 @@ const EnableCarousel = function (container, options) {
     if (! this.container) {
       throw "Error: No container for carousel. Bailing";
     }
+    
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
@@ -45,18 +46,18 @@ const EnableCarousel = function (container, options) {
     this.slidePanelSelector = '.enable-carousel__slide';
     this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
 
-
-    // if this doesn't use the `useArrowButtons` option, make it impossible
-    // for keyboard/screen reader users to use the arrow buttons.
-    if (!this.useArrowButtons) {
-      document.querySelectorAll('.glider-prev, .glider-next').forEach((el) => {
-        el.setAttribute('tabIndex', '-1');
-        el.setAttribute('aria-hidden', 'true');
+    if (this.useArrowButtons) {
+      this.setSlideTabIndexes('-1');
+      import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
+      .then((dialogPolyfill) => {
+        this.setEvents();
       });
     } else {
-      this.setSlideTabIndexes('-1');
+      this.setEvents();
     }
+  }
 
+  this.setEvents = () => {
     // when keyboard focus is applied to a slide's CTA.
     this.container.addEventListener("focus", this.focusCTAHandler, true);
 
@@ -85,16 +86,13 @@ const EnableCarousel = function (container, options) {
   this.slideHiddenEvent = (e) => {
     const hiddenSlideIndex = e.detail.slide;
     const hiddenSlide = this.container.querySelectorAll(this.slidePanelSelector)[hiddenSlideIndex];
-    //hiddenSlide.style.visibility = 'hidden';
+    const hiddenSlider.inert = true;
   }
 
   this.slideVisibleEvent = (e) => {
     const visibleSlideIndex = e.detail.slide;
     const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
-    // const firstCTA = this.visibleSlideCTAs[0];
-
-    visibleSlide.style.visibility = 'visible';
-    
+    visibleSlide.inert = false;
     visibleSlide.focus();
   }
 
