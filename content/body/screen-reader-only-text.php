@@ -35,6 +35,10 @@
     <li>Text read in your screen reader's reading mode (i.e. using it to read the page, not for reading out the interactive elements that have focus), screen reader only text is guarenteed to work.  ARIA labels might not be read in your screen readers reading mode.</li>
 </ul>
 
+<p>
+  <strong>The question you really should ask yourself is: "Would the text I am hiding benefit <em>all users</em>?"</strong> If the answer is yes, don't hide the text (you'd be surprised what useful text is visually hidden by developers).  If it doesn't need to be hidden ... consider not hiding it!
+</p>
+
 <h2>Show Me The CSS That I Can Use To Make Screen Reader Only Text</h2>
 
 <p>There have been many variations of the CSS that makes up our
@@ -74,6 +78,11 @@
   <li><strong>To update the semantic meaning of an element coded with an ARIA <code>role</code> attribute</strong>, such as a step #1 of <a href="progress.php#developer-walkthrough-3">Enable ARIA progress bar example</a>.</li>
   <li><strong>When an accessible label is missing from a control.</strong>  For example, if you have a button that just a background image or an icon font (you could use screen reader only text for this too, but all modern screen readers can understand ARIA labels on interactive elements)</li>
 </ol>
+
+<p>
+  <strong>Be very careful putting ARIA-labels on a <code>div</code> or <code>span</code> tag.</strong>  Sometimes, screen readers like Voiceover will think that those tags with an <code>aria-label</code> imply that the items inside are a group of interactive elements.  Your mileage may vary.
+</p>
+
 
 
 <h2>Further Reading</h2>

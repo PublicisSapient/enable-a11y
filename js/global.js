@@ -28,32 +28,35 @@ function initEnable() {
   // So screen reader users, like VoiceOver users, can navigate via heading and have focus
   // applied to the heading.
   let headingIndex = 0;
-  document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
 
-    // Only do this if the heading doesn't have an ID, and if it is not part of an example.
-    if (el.closest('.enable-example') === null) {
-      if (!el.id) {
-        const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
+  if (location.href.indexOf('index.php') === -1) {
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
 
-        //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
-        if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
-          headingIndex++;
-          el.id = `${innerTextId}-${headingIndex}`;
-        } else {
-          el.id = `${innerTextId}`;
+      // Only do this if the heading doesn't have an ID, and if it is not part of an example.
+      if (el.closest('.enable-example') === null) {
+        if (!el.id) {
+          const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
+
+          //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
+          if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
+            headingIndex++;
+            el.id = `${innerTextId}-${headingIndex}`;
+          } else {
+            el.id = `${innerTextId}`;
+          }
+        }
+
+        if (el.getAttribute('tabIndex') === null) {
+          el.setAttribute('tabIndex', '-1');
+        }
+
+        // now, let's put a link tag inside the heading so we can deeplink to it easily
+        if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
+          el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`
         }
       }
-
-      if (el.getAttribute('tabIndex') === null) {
-        el.setAttribute('tabIndex', '-1');
-      }
-
-      // now, let's put a link tag inside the heading so we can deeplink to it easily
-      if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
-        el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`
-      }
-    }
-  })
+    })
+  }
 
 }
 
