@@ -80,7 +80,7 @@
 </ol>
 
 <p>
-  <strong>Be very careful putting ARIA-labels on a <code>div</code> or <code>span</code> tag.  Sometimes, screen readers like Voiceover will think that those tags with an <code>aria-label</code> imply that the items inside are a group of interactive elements.  Your mileage may vary.
+  <strong>Be very careful putting ARIA-labels on a <code>div</code> or <code>span</code> tag.</strong>  Sometimes, screen readers like Voiceover will think that those tags with an <code>aria-label</code> imply that the items inside are a group of interactive elements.  Your mileage may vary.
 </p>
 
 
