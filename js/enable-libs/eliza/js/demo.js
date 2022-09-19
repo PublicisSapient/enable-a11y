@@ -1,64 +1,67 @@
 'use strict';
 
+import elizaNotifications from './notifications.js';
+import elizaActions from './actions.js';
+
 const elizaDemo = new function () {
 
 	var $sendTextBox = document.querySelector('.send-textbox');
 
-	function runDemo1() {
-		createInfoNotification("Starting demo 1...", 4);
+	this.runDemo1 = () => {
+		elizaNotifications.createInfoNotification("Starting demo 1...", 4);
 
 
 		$sendTextBox.value = ('Hi it\'s nice to see you this afternoon.');
-		getUserInput();
+		elizaActions.getUserInput();
 
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a really long week. It was a very stressful week at school.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 3000);
 		setTimeout(function () {
 			$sendTextBox.value = ('Yeah it was a lot of back to back assignments and tests. I had very little sleep because everything took so much time.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 6000);
 
 	}
-	function runDemo2() {
-		createInfoNotification("Starting demo 2...", 4);
+	this.runDemo2 = () => {
+		elizaNotifications.createInfoNotification("Starting demo 2...", 4);
 
 
 		$sendTextBox.value = ('Hi it\'s nice to see you this afternoon.');
-		getUserInput();
+		elizaActions.getUserInput();
 
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 3000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 6000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 9000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 12000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 15000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 18000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 21000);
 		setTimeout(function () {
 			$sendTextBox.value = ('I had a dream about my dog.');
-			getUserInput();
+			elizaActions.getUserInput();
 		}, 23000);
 
 

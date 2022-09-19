@@ -1,6 +1,7 @@
 'use strict';
 
 import eliza from './eliza.js';
+import elizaDemo from './demo.js';
 import { interpolate } from '/js/modules/interpolate.js';
 
 const elizaActions = new function () {
@@ -19,7 +20,7 @@ const elizaActions = new function () {
 	document.addEventListener('keyup', (e) => {
 		switch (e.key) {
 			case "Enter":
-				getUserInput();
+				this.getUserInput();
 				break;
 			case "ArrowUp":
 				focusPrevMessage();
@@ -83,17 +84,17 @@ const elizaActions = new function () {
 	 * Takes the content out of the textbox,
 	 * error checks, and checks for demos.
 	 */
-	function getUserInput() {
+	this.getUserInput = () => {
 		console.log('input');
 		var inputFromUser = $sendTextBox.value;
 
 		if (inputFromUser == null || inputFromUser != null && inputFromUser.length == 0) {
 			error("Error: Input cannot be blank");
 		} else if (inputFromUser == "run demo1") {
-			runDemo1();
+			elizaDemo.runDemo1();
 			this.clearSendTextbox();
 		} else if (inputFromUser == "run demo2") {
-			runDemo2();
+			elizaDemo.runDemo2();
 			this.clearSendTextbox();
 		} else {
 			eliza.sendElizaNewMessage(inputFromUser);

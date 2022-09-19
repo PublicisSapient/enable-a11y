@@ -1,0 +1,44 @@
+.eliza .chat-message-outter-wrapper {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.eliza .chat-message__highlight {
+  outline: solid 1px blue;
+}
+.eliza .chat-message-icon {
+  height: 40px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.eliza .chat-message-wrapper {
+  max-width: 80%;
+  display: inline-block;
+  border-radius: 6px;
+}
+.eliza .eliza-message {
+  background-color: #F6CECE;
+}
+.eliza .you-message {
+  background-color: #CEECF5;
+}
+.eliza .chat-message-text {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  padding-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.eliza .chat-user-text {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+}
+.eliza .text-right {
+  text-align: right;
+}

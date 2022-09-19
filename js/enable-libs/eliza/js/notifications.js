@@ -10,7 +10,7 @@ const elizaNotifications = new function () {
 	/*
 	 * Creates info notification so one color
 	 */
-	function createInfoNotification(message, seconds) {
+	this.createInfoNotification = (message, seconds) => {
 		createNotification(message, "info", seconds);
 	}
 	/*
@@ -93,17 +93,17 @@ const elizaNotifications = new function () {
 
 	/*
 	 * Run on page shows
-	 */
-	setTimeout(function () {
-		createInfoNotification("Run the demo by sending \"run demo1\"", 9);
-	}, 1000);
-	setTimeout(function () {
-		createInfoNotification("Run the demo by sending \"run demo2\"", 9);
-	}, 2000);
-	setTimeout(function () {
-		createInfoNotification("If you like this project, please go star it!", 6);
-	}, 3000);
 
+	setTimeout(() => {
+		this.createInfoNotification("Run the demo by sending \"run demo1\"", 9);
+	}, 1000);
+	setTimeout(() => {
+		this.createInfoNotification("Run the demo by sending \"run demo2\"", 9);
+	}, 2000);
+	setTimeout(() => {
+		this.createInfoNotification("If you like this project, please go star it!", 6);
+	}, 3000);
+	 */
 	/*
 		* Checks every seconds
 		*/
