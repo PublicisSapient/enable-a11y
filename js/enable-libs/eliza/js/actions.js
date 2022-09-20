@@ -17,7 +17,7 @@ const elizaActions = new function () {
 	/*
 	 * Watches for enter key to be pressed
 	 */
-	document.addEventListener('keyup', (e) => {
+	$sendTextBox.addEventListener('keyup', (e) => {
 		switch (e.key) {
 			case "Enter":
 				this.getUserInput();
@@ -32,6 +32,10 @@ const elizaActions = new function () {
 				unfocusMessages();
 				break;
 		}
+	});
+	
+	$sendTextBox.addEventListener('blur', (e) => {
+		unfocusMessages();
 	});
 
 	function focusPrevMessage() {

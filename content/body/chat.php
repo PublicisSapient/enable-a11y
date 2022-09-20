@@ -1,3 +1,9 @@
+<p class="bottom-label text-center">Built by <a href="https://github.com/kweaver00" target="_blank">Keith
+    Weaver</a>. Modify it by forking the <a href="https://github.com/kweaver00/eliza" target="_blank">repo</a>.
+</p>
+
+
+
 <!-- 
 Credit:
 http://www.flaticon.com/free-icon/doctor_194824
@@ -22,12 +28,10 @@ It's loaded in dynamically with JS
   <div class="container send-wrapper">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 send-inner-wrapper">
-        <label for="eliza-input" class="send-message-help-text">Talk to Eliza by typing into the textbox below:</label>
-        <input type="text" class="send-textbox" id="eliza-input" />
-        <p class="send-message-help-below-text text-right">Send your message by pressing "Enter"</p>
-        <p class="bottom-label text-center">Built by <a href="https://github.com/kweaver00" target="_blank">Keith
-            Weaver</a>. Modify it by forking the <a href="https://github.com/kweaver00/eliza" target="_blank">repo</a>.
-        </p>
+        <label for="eliza-input" class="send-message-help-text">What would you like to say to Eliza?</label>
+        <input type="text" class="send-textbox" id="eliza-input" aria-describedby="send-textbox-desc" />
+			<p id="send-textbox-desc" class="send-message-help-below-text text-right">Send your message by pressing "Enter".  Screen reader users can use the up-and-down arrow keys while editing to hear past entries in the conversation.</p>
+        
       </div>
     </div>
   </div>

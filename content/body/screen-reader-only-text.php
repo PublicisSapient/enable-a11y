@@ -83,7 +83,11 @@
   <strong>Be very careful putting ARIA-labels on a <code>div</code> or <code>span</code> tag.</strong>  Sometimes, screen readers like Voiceover will think that those tags with an <code>aria-label</code> imply that the items inside are a group of interactive elements.  Your mileage may vary.
 </p>
 
-
+/* 
+ * When not to use ARIA labels:
+ * - use of ARIA-labelledby instread of ARIA-label
+ * - https://vox.publicissapient.com/home/ls/content/5167299434643456/methods-to-provide-descriptive-interactive-element-labels-for-accessibility
+ */
 
 <h2>Further Reading</h2>
 

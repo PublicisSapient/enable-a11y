@@ -1,3 +1,10 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
 .eliza .chat-message-outter-wrapper {
   width: 100%;
   padding-top: 5px;
@@ -25,14 +32,14 @@
   background-color: #CEECF5;
 }
 .eliza .chat-message-text {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: 'Lato', sans-serif;
   padding-top: 6px;
   padding-left: 10px;
   padding-right: 10px;
 }
 .eliza .chat-user-text {
-  font-size: 10px;
+  font-size: 0.625rem;
   font-family: 'Lato', sans-serif;
   padding-top: 2px;
   padding-left: 10px;

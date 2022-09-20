@@ -1,3 +1,5 @@
+@import "../shared/mixins-and-vars";
+
 .eliza {
   .chat-message-outter-wrapper {
     width: 100%;
@@ -34,7 +36,7 @@
   }
 
   .chat-message-text {
-    font-size: 14px;
+    font-size: (14/@px);
     font-family: 'Lato', sans-serif;
 
     padding-top: 6px;
@@ -43,7 +45,7 @@
   }
 
   .chat-user-text {
-    font-size: 10px;
+    font-size: (10/@px);
     font-family: 'Lato', sans-serif;
 
     padding-top: 2px;

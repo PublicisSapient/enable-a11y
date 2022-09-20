@@ -1,3 +1,10 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
 .eliza #notification-area {
   position: fixed;
   left: 15px;
@@ -22,11 +29,11 @@
 }
 .eliza .notification-text {
   font-family: 'Lato', sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .eliza .notification-hiding-text {
   font-family: 'Lato', sans-serif;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .eliza .dark-text {
   color: #2e2e2e;
