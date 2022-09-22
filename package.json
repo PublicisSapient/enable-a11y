@@ -36,7 +36,7 @@
     "jest": "jest",
     "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
-    "server": "node bin/promote-node-modules-to-server.js && bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
+    "server": "node bin/promote-node-modules-to-server.js && bash bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
   },
   "jest": {
     "verbose": true,
