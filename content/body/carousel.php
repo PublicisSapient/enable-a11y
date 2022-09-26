@@ -17,7 +17,20 @@
 
 <p>
   This carousel example use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but the
-  instructions will contain information to make carousels accessible for all carousel frameworks. The
+  code walkthrough below will contain information to make carousels accessible for all carousel frameworks. It basically
+  treats the carousel as a list of links.
+</p>
+
+<p>
+  Note that this solution assumes that each carousel panel has at least one link in it.  As a result, keyboard access to the
+  previous and next buttons are considered unnecessary, so we have intentionally removed them from the document tabbing order.
+</p>
+
+<p>
+  (if you are dealing with a carousel that has no links in it, you should look at <a
+    href="#solution-2-have-arrow-keys-focusable--heading">the second carousel example on this page</a>.</p>
+
+<p>The
   implementation presented here is based on <a
     href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
     excellent article by Alison Walden</a>.
@@ -50,11 +63,11 @@
           <h2 id="slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
           <p>Originally called <span lang="tr">Dünyayı Kurtaran
-            Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
-            enslaving
-            the local population.</p>
-          <a class="enable-carousel__slide-cta"
-            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" aria-describedby="slide02-title">Learn More</a>
+              Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
+              enslaving
+              the local population.</p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
+            aria-describedby="slide02-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -167,18 +180,17 @@
 
 
 <p>
-  This carousel example use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but the
-  instructions will contain information to make carousels accessible for all carousel frameworks. The
-  implementation presented here is based on <a
-    href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
-    excellent article by Alison Walden</a>.
+  Like the first example, this carousel example also uses <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that slides into view.
+  This is great if you have carousel panels that don't have any interactive elements.
 </p>
 
 <div id="example2" class="enable-example enable-carousel__example">
-  
-  <p id="carousel-instructions" class="sr-only">Use the Previous and Next Slide buttons to cycle through the panels in the carousel.</p>
-   
-  <div class="glider-contain" role="region" aria-label="Movie Carousel"  >
+
+  <p id="carousel-instructions" class="sr-only">Use the Previous and Next Slide buttons to cycle through the panels in
+    the carousel.</p>
+
+  <div class="glider-contain" role="region" aria-label="Movie Carousel">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
     <div class="glider enable-carousel enable-carousel--focus-arrow-buttons">
@@ -190,21 +202,21 @@
           <p>Also known as <em>Turkish Spider-Man</em>, this 1973 is the story of crime boss
             Spider-Man's battle with law enforcement heros Captain America and El Santo.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/3_Dev_Adam"
-            aria-describedby="slide01-title">Learn More</a>
+            aria-describedby="example2__slide01-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg"
           alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
-          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading" >Turkish Star Wars
+          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
           <p>Originally called <span lang="tr">Dünyayı Kurtaran
-            Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
-            enslaving
-            the local population.</p>
-            <a class="enable-carousel__slide-cta"
-            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" aria-describedby="example2__slide02-title">Learn More</a>
+              Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
+              enslaving
+              the local population.</p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
+            aria-describedby="example2__slide02-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -216,7 +228,7 @@
             parner, take on a gang of cocaine smugglers in early '90's Los Angeles.
           </p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Samurai_Cop"
-            aria-describedby="slide03-title">Learn More</a>
+            aria-describedby="example2__slide03-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -229,7 +241,7 @@
             a man who stole her snake a hundred years before.
           </p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Lady_Terminator"
-            aria-describedby="slide04-title">Learn More</a>
+            aria-describedby="example2__slide04-title">Learn More</a>
         </div>
       </div>
     </div>
@@ -248,11 +260,7 @@
     ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
     ".glider .enable-carousel__slide p": "<!-- Copy here -->"
   },
-  "steps": [{
-      "label": "Put skip links around the carousel",
-      "highlight": "class=\"enable-mobile-visible-on-focus\\s[^\"]*\"",
-      "notes": "In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information."
-    },
+  "steps": [
     {
       "label": "Ensure all images have alt attributes",
       "highlight": "alt",
@@ -265,22 +273,12 @@
     },
     {
       "label": "Link the CTA with the general description of the slide",
-      "highlight": "aria-describedby",
+      "highlight": "aria-describedby=\"example2__slide01-title\" ||| id=\"example2__slide01-title\"",
       "notes": "When the user tabs into the <strong>Learn more</strong> CTA, we want to give the user more context about what they will be <strong>learning more about</strong> if they follow the link.  The aria-describedby will give screen reader users that context"
     },
     {
-      "label": "Ensure the previous and next buttons are not keyboard accessible",
-      "highlight": "tabindex",
-      "notes": "Since keyboard users will be able to cycle through the slides without using these buttons, let's remove them from the tabbing order.  Keyboard users won't need them, and screen reader users will probably not know what they are meant for."
-    },
-    {
-      "label": "Ensure the previous and next buttons are hidden to mobile screen readers",
-      "highlight": "aria-hidden",
-      "notes": "Since mobile screenreaders don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
-    },
-    {
       "label": "Initialize the carousel via JavaScript",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.init =",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\s*// If useArrowButtons is set as an option.+?(?=\\s*// If userArrowButtons)",
       "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
     },
     {

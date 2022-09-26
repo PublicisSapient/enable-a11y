@@ -55,29 +55,39 @@ const EnableCarousel = function (container, options) {
     this.slidePanelSelector = '.enable-carousel__slide';
     this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
 
+    // If useArrowButtons is set as an option, we apply the inert attribute
+    // to the panels that are not visible so keyboard focus won't be applied
+    // to them. We also initialize event handling routines.
     if (this.useArrowButtons) {
-      
+
+      // If the inert attribute is not supported by this browser, then load
+      // the polyfill before using it.
       if (!supportsInertNatively) {
-        console.log('incuding polyfill');
         import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
         .then((dialogPolyfill) => {
           this.setSlidesInert(true, 0);
           this.setEvents();
         });
       } else {
-        console.log('not including polyfill');
         this.setSlidesInert(true, 0);
         this.setEvents();
       }
+    // If userArrowButtons is *not* set as an option, just initialize the event
+    // handler routines. 
     } else {
       this.setEvents();
     }
   }
 
   this.preventSpaceFromScrolling = (e) => {
-    if (e.key === ' ') {
-      console.log('hey');
-      e.stopPropagation();
+    // Because Safari/Voiceover sometimes scroll the page
+    // when Enter or Space is pressed, we ensure that
+    // the carousel comes back into the browser view when
+    // those buttons are pressed.
+    if (e.key === ' ' || e.key === 'Enter') {
+      setTimeout(() => {
+        this.container.scrollIntoView(true);
+      }, 100);
     }
   }
 
@@ -102,8 +112,6 @@ const EnableCarousel = function (container, options) {
       // when buttons are clicked with a Enter key, prevent the page from scrolling
       $previousButton.addEventListener('keypress', this.preventSpaceFromScrolling);
       $nextButton.addEventListener('keypress', this.preventSpaceFromScrolling);
-      $previousButton.addEventListener('keyup', this.preventSpaceFromScrolling);
-      $nextButton.addEventListener('keyup', this.preventSpaceFromScrolling);
     }
   };
 
@@ -119,16 +127,12 @@ const EnableCarousel = function (container, options) {
   
 
   this.slideHiddenEvent = (e) => {
-    
-    console.log('slideHiddenEvent', e.detail.slide);
     const hiddenSlideIndex = e.detail.slide;
     const hiddenSlide = this.container.querySelectorAll(this.slidePanelSelector)[hiddenSlideIndex];
     hiddenSlide.inert = true;
   }
 
   this.slideVisibleEvent = (e) => {
-    
-    console.log('slideVisibleEvent', e.detail.slide);
     const visibleSlideIndex = e.detail.slide;
     const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
     visibleSlide.inert = false;
