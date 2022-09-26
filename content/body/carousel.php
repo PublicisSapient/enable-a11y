@@ -62,8 +62,8 @@
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
           <h2 id="slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
-          <p>Originally called <span lang="tr">Dünyayı Kurtaran
-              Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
+          <p>Originally called <em lang="tr">Dünyayı Kurtaran
+              Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
               enslaving
               the local population.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
@@ -211,8 +211,8 @@
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
           <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
-          <p>Originally called <span lang="tr">Dünyayı Kurtaran
-              Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
+          <p>Originally called <em lang="tr">Dünyayı Kurtaran
+              Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
               enslaving
               the local population.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
