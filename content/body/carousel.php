@@ -47,16 +47,14 @@
         <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg"
           alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
-          <h2 id="slide02-title" class="enable-carousel__slide-heading" lang="tr">Dünyayı Kurtaran
-            Adam
+          <h2 id="slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
-          <p>Two space fighters crash into a desert planet and fights a mysterious Wizard who is
+          <p>Originally called <span lang="tr">Dünyayı Kurtaran
+            Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
             enslaving
             the local population.</p>
           <a class="enable-carousel__slide-cta"
-            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam">Learn More <span class="sr-only">about
-              <span lang="tr">Dünyayı Kurtaran
-                Adam</span></span></a>
+            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" aria-describedby="slide02-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -178,8 +176,11 @@
 
 <div id="example2" class="enable-example enable-carousel__example">
   
+  <p id="carousel-instructions" class="sr-only">Use the Previous and Next Slide buttons to cycle through the panels in the carousel.</p>
+   
+  <div class="glider-contain" role="region" aria-label="Movie Carousel"  >
 
-  <div class="glider-contain">
+    <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
     <div class="glider enable-carousel enable-carousel--focus-arrow-buttons">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
@@ -196,16 +197,14 @@
         <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg"
           alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
-          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading" lang="tr">Dünyayı Kurtaran
-            Adam
+          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading" >Turkish Star Wars
           </h2>
-          <p>Two space fighters crash into a desert planet and fights a mysterious Wizard who is
+          <p>Originally called <span lang="tr">Dünyayı Kurtaran
+            Adam</a>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
             enslaving
             the local population.</p>
-          <a class="enable-carousel__slide-cta"
-            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam">Learn More <span class="sr-only">about
-              <span lang="tr">Dünyayı Kurtaran
-                Adam</span></span></a>
+            <a class="enable-carousel__slide-cta"
+            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" aria-describedby="example2__slide02-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -235,8 +234,7 @@
       </div>
     </div>
 
-    <button class="glider-prev">«</button>
-    <button class="glider-next">»</button>
+    <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide">»</button>
     <div role="tablist" class="dots"></div>
   </div>
 

@@ -17,12 +17,15 @@ import '../../enable-node-libs/glider-js/glider.js';
 
 
 const EnableCarousel = function (container, options) {
+  
   let glider;
   this.container = container;
   this.options = options || {};
   this.useArrowButtons = this.options.useArrowButtons || false;
 
   const supportsInertNatively = HTMLElement.prototype.hasOwnProperty('inert');
+  const $previousButton = this.container.parentNode.querySelector('.glider-prev');
+  const $nextButton = this.container.parentNode.querySelector(".glider-next");
 
   this.init = function () {
 
@@ -33,7 +36,6 @@ const EnableCarousel = function (container, options) {
       console.log('Initializing.  options:', options)
     }
     
-    console.log('prev', this.container.querySelector(".glider-prev"));
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
@@ -42,8 +44,8 @@ const EnableCarousel = function (container, options) {
       dots: "#dots",
       duration: 0,
       arrows: {
-        prev: this.container.parentNode.querySelector(".glider-prev"),
-        next: this.container.parentNode.querySelector(".glider-next"),
+        prev: $previousButton,
+        next: $nextButton,
       },
       draggable: true,
       scrollLock: true,
@@ -54,7 +56,7 @@ const EnableCarousel = function (container, options) {
     this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
 
     if (this.useArrowButtons) {
-
+      
       if (!supportsInertNatively) {
         console.log('incuding polyfill');
         import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
@@ -72,6 +74,13 @@ const EnableCarousel = function (container, options) {
     }
   }
 
+  this.preventSpaceFromScrolling = (e) => {
+    if (e.key === ' ') {
+      console.log('hey');
+      e.stopPropagation();
+    }
+  }
+
   this.setEvents = () => {
     // when keyboard focus is applied to a slide's CTA.
     this.container.addEventListener("focus", this.focusCTAHandler, true);
@@ -83,36 +92,44 @@ const EnableCarousel = function (container, options) {
     // we turn the animations off. 
     document.body.addEventListener("keyup", this.keyUpHandler, true);
 
-    // when `useArrowButtons` option is set, we should ensure the first
-    // CTA inside the visible panel gains focus when it first comes into view.
+    
     if (this.useArrowButtons) {
+      // when `useArrowButtons` option is set, we should ensure the first
+      // CTA inside the visible panel gains focus when it first comes into view.
       this.container.addEventListener("glider-slide-visible", this.slideVisibleEvent);
       this.container.addEventListener("glider-slide-hidden", this.slideHiddenEvent);
+
+      // when buttons are clicked with a Enter key, prevent the page from scrolling
+      $previousButton.addEventListener('keypress', this.preventSpaceFromScrolling);
+      $nextButton.addEventListener('keypress', this.preventSpaceFromScrolling);
+      $previousButton.addEventListener('keyup', this.preventSpaceFromScrolling);
+      $nextButton.addEventListener('keyup', this.preventSpaceFromScrolling);
     }
   };
 
   this.setSlidesInert = (value, exceptionIndex) => {
     this.slidePanels.forEach((el, i) => {
       if (i !== exceptionIndex) {
-        console.log('xxx');
         el.inert = value;
       }
+
+      el.setAttribute('tabindex', '-1');
     })
   }
   
 
   this.slideHiddenEvent = (e) => {
     
+    console.log('slideHiddenEvent', e.detail.slide);
     const hiddenSlideIndex = e.detail.slide;
-    console.log('hide', hiddenSlideIndex);
     const hiddenSlide = this.container.querySelectorAll(this.slidePanelSelector)[hiddenSlideIndex];
     hiddenSlide.inert = true;
   }
 
   this.slideVisibleEvent = (e) => {
     
+    console.log('slideVisibleEvent', e.detail.slide);
     const visibleSlideIndex = e.detail.slide;
-    console.log('show', visibleSlideIndex);
     const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
     visibleSlide.inert = false;
     visibleSlide.focus();
