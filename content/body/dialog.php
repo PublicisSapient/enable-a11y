@@ -1,11 +1,4 @@
-<!-- <aside class="notes">
-        <h2>Notes:</h2>
 
-        <ul>
-          <li>
-            
-        </ul>
-      </aside> -->
 
 <p>
   Modals are pieces of stand-alone content that pop up inside of the main web page document. If that content is not
@@ -34,7 +27,7 @@
               >Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile</a>
 </p>
 
-<div id="example1">
+<div id="example1" class="enable-example enable-example--no-border">
 
   <dialog id="favDialog" aria-labelledby="favDialog__label" aria-describedby="favDialog__description">
     <div role="document">

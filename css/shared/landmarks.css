@@ -273,6 +273,9 @@ select {
   border-left: solid 5px black;
   font-family: "Helvetica", "Arial", sans-serif;
 }
+.enable-example--no-border {
+  border: none;
+}
 .clearfix:after {
   content: "";
   display: table;

@@ -96,14 +96,12 @@ describe('Test Focus States on all pages on Enable', () => {
 
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
-    if ( file !== 'askip-link.php') {
-      it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-        await testPage(fileList[i], desktopPage);
-      });
-      it(`Mobile Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-        await testPage(fileList[i], mobilePage);
-      });
-    }
+    it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
+      await testPage(fileList[i], desktopPage);
+    });
+    it(`Mobile Breakpoint: Test focus states on ${fileList[i]}`, async () => {
+      await testPage(fileList[i], mobilePage);
+    });
   }
 
 });
