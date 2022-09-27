@@ -1,14 +1,22 @@
 <p>
   Carousels are a list of content panels that mouse user can cycle through using arrow controls and panel indicator.
-  Usually carousels show only one panel at a time, and they usually have at least one CTA in them. They exist to cram as
+  Usually carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
+  They exist to cram as
   much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
     Fold</a>" real estate on websites. Although <a href="https://vwo.com/blog/is-above-the-fold-really-dead/">it is
     debatable whether "Above The Fold" is as important as people think it is</a>, it is still a solid requirement for a
   lot of website owners.
 </p>
 
+<p>
+  Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the
+  code walkthrough below will contain information developers need to implement accessible carosuels regardless of the
+  carousel frameworks being used. If the developer is making a carousel from scratch, they can use the NPM module that
+  makes Glider.js accessible (see below).
+</p>
 
-<h2>Solution 1: Make Carousel Panel Come Into View When Focused Into</h2>
+<h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
@@ -16,22 +24,15 @@
 
 
 <p>
-  This carousel example use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but the
-  code walkthrough below will contain information to make carousels accessible for all carousel frameworks. It basically
-  treats the carousel as a list of links.
-</p>
+  Note that this solution assumes that each carousel panel has at least one CTA (i.e., call to action, or control) in
+  it. Keyboard users simply tab into each CTA as they would any other links on the page. When keyboard users tab into a
+  panel that is offscreen, our JavaScript library ensures that the panel comes into focus. As a result, keyboard access
+  to the previous and next buttons are considered unnecessary, so we have intentionally removed them from the document
+  tabbing order. <strong>
+    If you are dealing with a carousel that can have no CTA in one or more panels, you should look at <a
+      href="#solution-2-have-arrow-keys-focusable--heading">the second carousel example on this page</a>.</strong></p>
 
-<p>
-  Note that this solution assumes that each carousel panel has at least one link in it.  As a result, keyboard access to the
-  previous and next buttons are considered unnecessary, so we have intentionally removed them from the document tabbing order.
-</p>
-
-<p>
-  (if you are dealing with a carousel that has no links in it, you should look at <a
-    href="#solution-2-have-arrow-keys-focusable--heading">the second carousel example on this page</a>.</p>
-
-<p>The
-  implementation presented here is based on <a
+<p>The implementation presented here is based on <a
     href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
     excellent article by Alison Walden</a>.
 </p>
@@ -64,8 +65,8 @@
           </h2>
           <p>Originally called <em lang="tr">Dünyayı Kurtaran
               Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
-              enslaving
-              the local population.</p>
+            enslaving
+            the local population.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
             aria-describedby="slide02-title">Learn More</a>
         </div>
@@ -97,8 +98,8 @@
       </div>
     </div>
 
-    <button class="glider-prev" tabindex="-1">«</button>
-    <button class="glider-next" tabindex="-1">»</button>
+    <button class="glider-prev" tabindex="-1" aria-label="Display Previous Slide" aria-hidden="true">«</button>
+    <button class="glider-next" tabindex="-1" aria-label="Display Next Slide" aria-hidden="true">»</button>
     <div role="tablist" class="dots"></div>
   </div>
 
@@ -149,7 +150,7 @@
     },
     {
       "label": "Initialize the carousel via JavaScript",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.init =",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.setTabthroughEvents = ([\\s\\S]*\\s\\s\\})?",
       "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
     },
     {
@@ -172,7 +173,7 @@
 </script>
 
 
-<h2>Solution 2: Have Arrow Keys Focusable</h2>
+<h2>Solution 2: Treat The Carousel Like A List of Content</h2>
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
@@ -180,8 +181,10 @@
 
 
 <p>
-  Like the first example, this carousel example also uses <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
-  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that slides into view.
+  Like the first example, this carousel example also uses <a
+    href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that
+  slides into view.
   This is great if you have carousel panels that don't have any interactive elements.
 </p>
 
@@ -213,8 +216,8 @@
           </h2>
           <p>Originally called <em lang="tr">Dünyayı Kurtaran
               Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
-              enslaving
-              the local population.</p>
+            enslaving
+            the local population.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
             aria-describedby="example2__slide02-title">Learn More</a>
         </div>
@@ -260,8 +263,7 @@
     ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
     ".glider .enable-carousel__slide p": "<!-- Copy here -->"
   },
-  "steps": [
-    {
+  "steps": [{
       "label": "Ensure all images have alt attributes",
       "highlight": "alt",
       "notes": "The content of all the carousel panels must follow accessibility guidelines as well as the carousel itself"

@@ -65,17 +65,15 @@ const EnableCarousel = function (container, options) {
       if (!supportsInertNatively) {
         import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
         .then((dialogPolyfill) => {
-          this.setSlidesInert(true, 0);
-          this.setEvents();
+          this.setArrowButtonEvents();
         });
       } else {
-        this.setSlidesInert(true, 0);
-        this.setEvents();
+        this.setArrowButtonEvents();
       }
     // If userArrowButtons is *not* set as an option, just initialize the event
     // handler routines. 
     } else {
-      this.setEvents();
+      this.setTabthroughEvents();
     }
   }
 
@@ -91,7 +89,8 @@ const EnableCarousel = function (container, options) {
     }
   }
 
-  this.setEvents = () => {
+  // Sets events for the "List of Controls" variation of the carousel.
+  this.setTabthroughEvents = () => {
     // when keyboard focus is applied to a slide's CTA.
     this.container.addEventListener("focus", this.focusCTAHandler, true);
 
@@ -101,18 +100,21 @@ const EnableCarousel = function (container, options) {
     // When a keyboard is used and the key released is the TAB key,
     // we turn the animations off. 
     document.body.addEventListener("keyup", this.keyUpHandler, true);
+  }
 
-    
-    if (this.useArrowButtons) {
-      // when `useArrowButtons` option is set, we should ensure the first
-      // CTA inside the visible panel gains focus when it first comes into view.
-      this.container.addEventListener("glider-slide-visible", this.slideVisibleEvent);
-      this.container.addEventListener("glider-slide-hidden", this.slideHiddenEvent);
+  // Sets events for the "List of Content" variation of the carousel.
+  this.setArrowButtonEvents = () => {
+    // Let's make all the carousel panels inert except the first one.
+    this.setSlidesInert(true, 0);
 
-      // when buttons are clicked with a Enter key, prevent the page from scrolling
-      $previousButton.addEventListener('keypress', this.preventSpaceFromScrolling);
-      $nextButton.addEventListener('keypress', this.preventSpaceFromScrolling);
-    }
+    // We should ensure the first
+    // CTA inside the visible panel gains focus when it first comes into view.
+    this.container.addEventListener("glider-slide-visible", this.slideVisibleEvent);
+    this.container.addEventListener("glider-slide-hidden", this.slideHiddenEvent);
+
+    // when buttons are clicked with a Enter key, prevent the page from scrolling
+    $previousButton.addEventListener('keypress', this.preventSpaceFromScrolling);
+    $nextButton.addEventListener('keypress', this.preventSpaceFromScrolling);
   };
 
   this.setSlidesInert = (value, exceptionIndex) => {
