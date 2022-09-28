@@ -490,6 +490,10 @@ body {
 	 font-family: "Helvetica", "Arial", sans-serif;
      */
 }
+button:focus,
+button:focus-visible {
+  outline: none !important;
+}
 body {
   margin: 0;
   position: relative;

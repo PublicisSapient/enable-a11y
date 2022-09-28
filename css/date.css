@@ -545,6 +545,10 @@ fieldset .legend,
   height: 0.7rem;
   margin-right: 0.5em;
 }
+button:focus,
+button:focus-visible {
+  outline: none !important;
+}
 body {
   margin: 0;
   position: relative;
