@@ -28,6 +28,12 @@ textarea,
   min-width: 20rem;
   max-width: none !important;
 }
+.enable-character-count {
+  display: block;
+  width: 20rem;
+  margin-left: 45%;
+  text-align: right;
+}
 .textarea-label {
   vertical-align: top;
 }

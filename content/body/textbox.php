@@ -43,8 +43,9 @@
 
 
 <h2>HTML example</h2>
-
 <?php includeStats(array('isForNewBuilds' => true)) ?>
+
+
 
 <div id="html-example" class="enable-example">
   <form class="enable-form-example">
@@ -59,13 +60,15 @@
 
         <div>
           <label for="notes" class="textarea-label">Notes:</label>
-          <textarea id="notes" name="notes"></textarea>
+          <textarea id="notes"  name="notes"></textarea>
+          
         </div>
       </div>
     </fieldset>
 
     <button type="submit">Submit</button>
   </form>
+
 </div>
 
 <?php includeShowcode("html-example")?>
@@ -92,6 +95,78 @@
 }
 </script>
 
+
+<h2>HTML version with character count</h2>
+
+<?php includeStats(array('isForNewBuilds' => true)) ?>
+
+
+
+<div id="html-example" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment information</legend>
+
+      <div class="enable-form-example__fieldset-inner-container">
+        <div>
+          <label for="ccinfo--example2">Billing Address:</label>
+          <input type="text" name="ccinfo--example2" id="ccinfo--example2">
+        </div>
+
+        <div>
+          <label for="notes--example2" class="textarea-label">Notes:</label>
+          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100" data-screen-reader-text="${numChars} characters remaining."></textarea>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <template id="enable-character-count__template">
+    <!-- This is for screen readers only -->
+    <span class="sr-only">
+      ${screenReaderText}
+    </span>
+
+    <!-- This is for sighted users -->
+    <span aria-hidden="true">
+      ${visualText}
+    </span>
+  </template>
+
+  <template id="enable-character-count-template__screen-reader">
+  Character count: ${numChars} out of ${maxLength}
+  </template>
+
+  <template id="enable-character-count-template__visual">
+  ${numChars}/${maxLength}
+  </template>
+</div>
+
+<?php includeShowcode("html-example")?>
+
+<script type="application/json" id="html-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [
+
+    {
+      "label": "All form fields need labels",
+      "highlight": "for",
+      "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
+    },
+    {
+      "label": "Use <code>&lt;input type=\"text\"&gt;</code> for single line text inputs.",
+      "highlight": "%OPENTAG%input"
+    },
+    {
+      "label": "Use <code>&lt;textarea&gt;</code> for multiline text inputs",
+      "highlight": "%OPENCLOSETAG%textarea"
+    }
+  ]
+}
+</script>
 
 
 
