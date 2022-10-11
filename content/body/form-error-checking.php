@@ -23,7 +23,7 @@
         validation <strong>without JavaScript</strong>.
       </p>
 
-      <div id="example1">
+      <div id="example1" class="enable-example">
         <form class="enable-form-example"
           onSubmit="alert('form submitted'); return false;"
         >
@@ -135,7 +135,7 @@
           >Alison Walden's excellent article on form validation</a>.
       </p>
 
-      <div id="example2">
+      <div id="example2" class="enable-example">
         <form novalidate class="js-form-validation enable-form-example">
           <fieldset>
             <legend id="contact_js">Contact Information</legend>
