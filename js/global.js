@@ -27,6 +27,15 @@ function initEnable() {
     enableVisibleOnFocus.init();
     const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
     EnableFlyoutHamburger.init();
+
+    // This is so we can use the breakpoint widths inside the documentation.
+    const breakpointWidth = window.getComputedStyle(document.querySelector('.enable-flyout')).getPropertyValue(
+        '--enable-flyout__desktop-min');
+    Array.prototype.forEach.call(document.querySelectorAll('.breakpoint-width'), (el, i) => {
+        el.innerHTML = breakpointWidth;
+    });
+
+
     pauseAnimControl.init();
 
     // So screen reader users, like VoiceOver users, can navigate via heading and have focus

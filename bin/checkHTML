@@ -105,7 +105,8 @@ fi
 
 
 
-URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+#URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+URLS=`bin/getPages.js $MYIP`;
 DOWNLOADED_URLS=""
 TEMP_FILES=""
 

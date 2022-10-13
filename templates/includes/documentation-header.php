@@ -109,12 +109,12 @@
       <template id="flyout__subsection">
         <li class="enable-flyout__menu-item">
           <!-- Begin section ${sectionName} -->
-          <button aria-expanded="false" aria-controls="${id}-section"
+          <button aria-expanded="false" aria-controls="${id}-subsection"
             class="enable-flyout__open-level-button">
             ${sectionName}
           </button>
           <div class="enable-flyout__level-heading">${sectionName}</div>
-            <div id="${id}-section" aria-label="${sectionName}" role="group"
+            <div id="${id}-subsection" aria-label="${sectionName}" role="group"
               class="enable-flyout enable-flyout__level enable-flyout__dropdown">
             <button class="enable-flyout__hamburger-icon-facade">
               <span class="sr-only">
@@ -137,11 +137,11 @@
 
       <template id="flyout__container">
         <nav class="site__nav enable-flyout__container" aria-label="main">
-          <button class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
 
                   <!-- This is the hamburger menu icon -->
 
-                  <span aria-label="main menu" class="enable-flyout__hamburger-icon" role="img">
+                  <span class="enable-flyout__hamburger-icon" role="img">
                       <span>
                       </span>
                       <span>
