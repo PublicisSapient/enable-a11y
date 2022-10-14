@@ -84,7 +84,7 @@
       </template>
 
       <template id="flyout__link--no-image">
-        <li class="enable-flyout__menu-item">
+        <li class="enable-flyout__menu-item ${listItemClasses}">
           <a href="${url}"
             class="enable-flyout__link">
             ${label}
@@ -206,7 +206,8 @@
                             "id": "flyout__link--no-image",
                             "props": {
                                 "label": "Acknowledgements",
-                                "url": "acknowledgements.php"
+                                "url": "acknowledgements.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
                             }
                         },
                         {
@@ -333,8 +334,8 @@
                             {
                               "id": "flyout__subsection",
                               "props": {
-                                  "id": "other-controls",
-                                  "sectionName": "Controls"
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
                               },
                               "content": [
                               {
@@ -364,32 +365,8 @@
                               {
                                   "id": "flyout__link",
                                   "props": {
-                                      "label": "Flyout Hamburger Menu",
-                                      "url-slug": "multi-level-hamburger-menu",
-                                      "alt": ""
-                                  }
-                              },
-                              {
-                                  "id": "flyout__link",
-                                  "props": {
-                                      "label": "Tablist",
-                                      "url-slug": "tabs",
-                                      "alt": ""
-                                  }
-                              },
-                              {
-                                  "id": "flyout__link",
-                                  "props": {
                                       "label": "Switch",
                                       "url-slug": "Switch",
-                                      "alt": ""
-                                  }
-                              },
-                              {
-                                  "id": "flyout__link",
-                                  "props": {
-                                      "label": "Carousel",
-                                      "url-slug": "carousel",
                                       "alt": ""
                                   }
                               },
@@ -400,15 +377,50 @@
                                       "url-slug": "skip-link",
                                       "alt": ""
                                   }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Complex Controls"
                               },
-                              {
+                              "content": [
+
+                                {
                                   "id": "flyout__link",
                                   "props": {
-                                      "label": "Model Dialog",
-                                      "url-slug": "dialog",
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
                                       "alt": ""
                                   }
-                              }]
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Model Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                }
+                              ]
                             }
                           ]
                         }, 
