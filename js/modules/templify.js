@@ -11,8 +11,6 @@ class Templify {
         this.contentToken = '${html:content}';
         this.varRe = /\$\{[^}]*}/g;
 
-        console.log('content', this.props.content);
-
         element.innerHTML = this.renderContent(this.props.content);
     }
 
