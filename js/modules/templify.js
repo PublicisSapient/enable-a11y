@@ -33,16 +33,10 @@ class Templify {
 
         if ($template) {
             const templateHTML = $template.innerHTML;
-            console.log('template', id);
             html = interpolate(templateHTML, props);
             if (html.indexOf(this.contentToken) > -1) {
                 const contentHTML = this.renderContent(content);
-                if (contentHTML === '') {
-                    console.log('content: ', content);
-                }
                 html = html.replace(this.contentToken, contentHTML);
-            } else {
-                console.log(`no content for template ${id}`);
             }
 
             /* Let's remove all other variables that haven't been used. */
