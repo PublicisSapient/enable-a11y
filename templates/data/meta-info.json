@@ -139,6 +139,11 @@
         "title": "Accessible Radio Groups",
         "desc": "They way radio buttons are made accessible is slightly different than other form controls."
     },
+
+    "search.php": {
+        "title": "Accessible Search Forms",
+        "desc": "If you have a search box on your website, you want to make sure it is accessible."
+    },
     "skip-link.php": {
         "title": "Skip Links (That Work In Mobile Too!)",
         "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
