@@ -366,7 +366,7 @@
                                   "id": "flyout__link",
                                   "props": {
                                       "label": "Switch",
-                                      "url-slug": "Switch",
+                                      "url-slug": "switch",
                                       "alt": ""
                                   }
                               },
