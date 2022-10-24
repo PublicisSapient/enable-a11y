@@ -2,63 +2,80 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
+import * as request from "supertest";
+import express from 'express';
 import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
 let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
 
 describe('Test link targets on all pages on Enable', () => {
-    beforeAll(async() => {
+  const app;
 
-    });
+  beforeAll(async() => {
+    app = express();
+  });
 
-    afterAll(async() => {});
+  afterAll(async() => {});
 
-    async function testPage(filename) {
-        let domInfo;
+  async function testPage(filename) {
+    let domInfo;
 
-        await page.goto(`${config.BASE_URL}/${filename}`);
+    await page.goto(`${config.BASE_URL}/${filename}`);
 
-        // Test on initial load.
+    // Test on initial load.
 
-        // Step 1: Wait for whole page to load (this is so scripts
-        // like `enable-visible-on-focus` can initialize)
-        await page.waitForSelector('footer');
+    // Step 1: Wait for whole page to load (this is so scripts
+    // like `enable-visible-on-focus` can initialize)
+    await page.waitForSelector('footer');
 
 
-        domInfo = await page.evaluate(() => {
-            const linkEls = document.querySelectorAll('a');
-            const badLinkHTML = [];
-            for (let i = 0; i < linkEls.length; i++) {
-                const linkEl = linkEls[i];
-                const href = linkEl.getAttribute("href");
+    domInfo = await page.evaluate(() => {
+      const linkEls = document.querySelectorAll('a');
+      const badLinkHTML = [];
+      const urls = [];
 
-                if (href === null || href.indexOf('//localhost') !== -1) {
-                    badLinkHTML.push(linkEl.outerHTML);
-                }
-            }
+      for (let i = 0; i < linkEls.length; i++) {
+        const linkEl = linkEls[i];
+        const href = linkEl.getAttribute("href");
 
-            return {
-                badLinkHTML
-            }
-        });
-        const { badLinkHTML } = domInfo;
-
-        if (badLinkHTML.length > 0) {
-            console.log("Bad HTML:", badLinkHTML);
+        if (href === null || href.indexOf('//localhost') !== -1) {
+          badLinkHTML.push(linkEl.outerHTML);
         }
-        expect(badLinkHTML.length).toBe(0);
 
+        urls.push(href);
+      }
+
+      return {
+        badLinkHTML,
+        urls
+      }
+    });
+    const { badLinkHTML, urls } = domInfo;
+
+    if (badLinkHTML.length > 0) {
+      console.log("Bad HTML:", badLinkHTML);
+    }
+    expect(badLinkHTML.length).toBe(0);
+
+    // check for 404s
+    for (let i = 0; i < urls.length; i++) {
+      const response = await request(app)
+        .get(urls[i])
+        .expect(200);
+      done();
     }
 
+  }
 
 
-    for (let i = 0; i < fileList.length; i++) {
-        const file = fileList[i];
-        it(`Test links on ${file}`, async() => {
-            await testPage(file);
-            console.log('tested', file)
-        });
-    }
+
+  for (let i = 0; i < fileList.length; i++) {
+    const file = fileList[i];
+    it(`Test links on ${file}`, async() => {
+      await testPage(file);
+      console.log('tested', file)
+    });
+  }
 
 });

@@ -8,10 +8,10 @@ let phpCmd = 'php';
 
 // must specify options hash even if no options provided!
 var phpExpress = require('./php-express/index.js')({
-    // assumes php is in your PATH
-    binPath: phpCmd
-  });
-  
+  // assumes php is in your PATH
+  binPath: phpCmd
+});
+
 
 // set view engine to php-express
 app.set('views', '.');
@@ -55,7 +55,9 @@ function render(req, res) {
 app.use(express.static('.'))
 
 
-const server = app.listen(port  , function () {
+const server = app.listen(port, function() {
   const port = server.address().port
   console.log('PHP Express server listening at http://%s:%s', 'localhost', port);
-})
+});
+
+export default app;
