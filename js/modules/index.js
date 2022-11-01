@@ -15,7 +15,7 @@ import { pauseAnimControl, PauseAnimControlDef } from "pause-anim-control.js";
 import checkbox from "checkbox.js";
 import radiogroup from "radiogroup.js";
 import readMore from "read-more.js";
-import sortableTables from "sortable-table.js";
+import sortableTables from "sortable-tables.js";
 import { spinbuttons, spinbutton } from "spinbutton.js";
 import Switch from "switch.js";
 import tabgroup from "tabs.js";

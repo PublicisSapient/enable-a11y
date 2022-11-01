@@ -1,5 +1,6 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
+const rewrite = require('express-urlrewrite');
 const app = express();
 const port = 8888;
 const { exec } = require("child_process");
@@ -8,10 +9,10 @@ let phpCmd = 'php';
 
 // must specify options hash even if no options provided!
 var phpExpress = require('./php-express/index.js')({
-    // assumes php is in your PATH
-    binPath: phpCmd
-  });
-  
+  // assumes php is in your PATH
+  binPath: phpCmd
+});
+
 
 // set view engine to php-express
 app.set('views', '.');
@@ -25,7 +26,6 @@ app.all(/\/services\/.+\.php$/, phpExpress.router);
 
 // All things outside of bin goes through our template engine at template/main.php
 app.get('/*.php', render);
-
 
 
 /* GET home page. */
@@ -51,11 +51,14 @@ function render(req, res) {
   });
 }
 
+// redirect ~ urls to enable-node-libs
+app.use(rewrite('/~*', '/enable-node-libs/$1'));
+
 // serve static files.
 app.use(express.static('.'))
 
 
-const server = app.listen(port  , function () {
+const server = app.listen(port, function() {
   const port = server.address().port
   console.log('PHP Express server listening at http://%s:%s', 'localhost', port);
 })

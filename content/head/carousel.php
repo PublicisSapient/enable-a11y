@@ -1,3 +1,3 @@
-<link href="enable-node-libs/glider-js/glider.css" rel="stylesheet" >
+<link href="~glider-js/glider.css" rel="stylesheet" >
 <link href="css/enable-visible-on-focus.css" rel="stylesheet" >
 <link href="css/enable-carousel.css" rel="stylesheet" >

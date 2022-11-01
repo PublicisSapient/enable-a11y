@@ -1,102 +1,103 @@
 {
-    "name": "enable-a11y",
-    "version": "1.0.3",
-    "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
-    "main": "js/modules/index.js",
-    "exports": {
-        ".": "./js/modules/index.js",
-        "./ablePlayerCustomizations": "./js/modules/ablePlayerCustomizations.js",
-        "./combobox": "./js/modules/combobox.js",
-        "./enable-animatedGif": "./js/modules/enable-animatedGif.js",
-        "./enable-carousel": "./js/modules/enable-carousel.js",
-        "./enable-drawer": "./js/modules/enable-drawer.js",
-        "./enable-listbox": "./js/modules/enable-listbox.js",
-        "./enable-slider": "./js/modules/enable-slider.js",
-        "./enable-visible-on-focus": "./js/modules/enable-visible-on-focus.js",
-        "./hamburger": "./js/modules/hamburger.js",
-        "./interpolate": "./js/modules/interpolate.js",
-        "./paginate": "./js/modules/paginate.js",
-        "./pause-anim-control": "./js/modules/pause-anim-control.js",
-        "./checkbox": "./js/modules/checkbox.js",
-        "./radiogroup": "./js/modules/radiogroup.js",
-        "./read-more": "./js/modules/read-more.js",
-        "./sortable-table": "./js/modules/sortable-table.js",
-        "./spinbutton": "./js/modules/spinbutton.js",
-        "./switch": "./js/modules/switch.js",
-        "./tabs": "./js/modules/tabs.js",
-        "./tooltip": "./js/modules/tooltip.js"
-    },
-    "files": [
-        "css",
-        "less",
-        "js/modules/",
-        "libs"
-    ],
-    "scripts": {
-        "jest": "jest",
-        "test": "bin/checkHTML && jest",
-        "lint": "bin/checkHTML",
-        "server": "node bin/promote-node-modules-to-server.js && bash bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
-    },
-    "jest": {
-        "verbose": true,
-        "preset": "jest-puppeteer"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/PublicisSapient/enable-a11y.git"
-    },
-    "keywords": [
-        "ARIA",
-        "accessibility",
-        "a11y",
-        "examples"
-    ],
-    "author": "Zoltan Hawryluk",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/PublicisSapient/enable-a11y/issues"
-    },
-    "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
-    "devDependencies": {
-        "@babel/cli": "^7.2.3",
-        "@babel/core": "^7.2.2",
-        "accessibility-js-routines": "^3.3.4",
-        "babel-preset-es2015": "^6.24.1",
-        "concurrently": "^7.0.0",
-        "eslint": "^8.25.0",
-        "eslint-config-standard": "^17.0.0",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-node": "^11.1.0",
-        "eslint-plugin-promise": "^6.1.0",
-        "got": "^11.5.5",
-        "jest": "^28.1.3",
-        "jest-puppeteer": "^6.1.1",
-        "jsdoc": "^3.6.6"
-    },
-    "dependencies": {
-        "chromedriver": "^103.0.0",
-        "d3": "^7.3.0",
-        "dialog-polyfill": "^0.5.6",
-        "express": "^4.17.2",
-        "fs-extra": "^10.0.0",
-        "glider-js": "^1.7.7",
-        "indent.js": "^0.3.5",
-        "jquery": "^3.6.0",
-        "jquery-validation": "^1.19.3",
-        "lessc": "^1.0.2",
-        "node-html-parser": "^5.2.0",
-        "node-jq": "^2.3.4",
-        "np": "^7.6.2",
-        "php-express": "^0.0.3",
-        "puppeteer-keyboard": "^0.2.0",
-        "selenium-webdriver": "4.3.0",
-        "text-zoom-event": "^1.5.2",
-        "vnu": "^20.6.30",
-        "vnu-jar": "^21.6.11",
-        "wget-improved": "^3.2.1"
-    },
-    "bin": {
-        "enable-a11y": "bin/server.js"
-    }
+  "name": "enable-a11y",
+  "version": "1.0.3",
+  "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
+  "main": "js/modules/index.js",
+  "exports": {
+    ".": "./js/modules/index.js",
+    "./ablePlayerCustomizations": "./js/modules/ablePlayerCustomizations.js",
+    "./combobox": "./js/modules/combobox.js",
+    "./enable-animatedGif": "./js/modules/enable-animatedGif.js",
+    "./enable-carousel": "./js/modules/enable-carousel.js",
+    "./enable-drawer": "./js/modules/enable-drawer.js",
+    "./enable-listbox": "./js/modules/enable-listbox.js",
+    "./enable-slider": "./js/modules/enable-slider.js",
+    "./enable-visible-on-focus": "./js/modules/enable-visible-on-focus.js",
+    "./hamburger": "./js/modules/hamburger.js",
+    "./interpolate": "./js/modules/interpolate.js",
+    "./paginate": "./js/modules/paginate.js",
+    "./pause-anim-control": "./js/modules/pause-anim-control.js",
+    "./checkbox": "./js/modules/checkbox.js",
+    "./radiogroup": "./js/modules/radiogroup.js",
+    "./read-more": "./js/modules/read-more.js",
+    "./sortable-table": "./js/modules/sortable-tables.js",
+    "./spinbutton": "./js/modules/spinbutton.js",
+    "./switch": "./js/modules/switch.js",
+    "./tabs": "./js/modules/tabs.js",
+    "./tooltip": "./js/modules/tooltip.js"
+  },
+  "files": [
+    "css",
+    "less",
+    "js/modules/",
+    "libs"
+  ],
+  "scripts": {
+    "jest": "jest",
+    "test": "bin/checkHTML && jest",
+    "lint": "bin/checkHTML",
+    "server": "node bin/promote-node-modules-to-server.js && bash bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
+  },
+  "jest": {
+    "verbose": true,
+    "preset": "jest-puppeteer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PublicisSapient/enable-a11y.git"
+  },
+  "keywords": [
+    "ARIA",
+    "accessibility",
+    "a11y",
+    "examples"
+  ],
+  "author": "Zoltan Hawryluk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PublicisSapient/enable-a11y/issues"
+  },
+  "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "accessibility-js-routines": "^3.3.4",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.25.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.0",
+    "got": "^11.5.5",
+    "jest": "^28.1.3",
+    "jest-puppeteer": "^6.1.1",
+    "jsdoc": "^3.6.6"
+  },
+  "dependencies": {
+    "chromedriver": "^103.0.0",
+    "d3": "^7.3.0",
+    "dialog-polyfill": "^0.5.6",
+    "express": "^4.17.2",
+    "express-urlrewrite": "^2.0.0",
+    "fs-extra": "^10.0.0",
+    "glider-js": "^1.7.7",
+    "indent.js": "^0.3.5",
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3",
+    "lessc": "^1.0.2",
+    "node-html-parser": "^5.2.0",
+    "node-jq": "^2.3.4",
+    "np": "^7.6.2",
+    "php-express": "^0.0.3",
+    "puppeteer-keyboard": "^0.2.0",
+    "selenium-webdriver": "4.3.0",
+    "text-zoom-event": "^1.5.2",
+    "vnu": "^20.6.30",
+    "vnu-jar": "^21.6.11",
+    "wget-improved": "^3.2.1"
+  },
+  "bin": {
+    "enable-a11y": "bin/server.js"
+  }
 }

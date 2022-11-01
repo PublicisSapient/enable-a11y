@@ -1,26 +1,26 @@
 'use strict'
 
 /*******************************************************************************
-* enable-carousel.js - Accessible shim over the Glider carousel
-* 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released December 27, 2021
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/carousel.php
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * enable-carousel.js - Accessible shim over the Glider carousel
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released December 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/carousel.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
 import '../../enable-node-libs/glider-js/glider.js';
 
 
-const EnableCarousel = function (container) {
+const EnableCarousel = function(container) {
   let glider;
   this.container = container;
 
-  this.init = function () {
+  this.init = function() {
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
@@ -55,7 +55,7 @@ const EnableCarousel = function (container) {
     this.slideToTarget(target);
   };
 
-  this.slideToTarget = function (target) {
+  this.slideToTarget = function(target) {
     // Figures out what slide the target element is in.
     // The carousel then displays that slide.
     const slide = target.closest(".enable-carousel__slide");

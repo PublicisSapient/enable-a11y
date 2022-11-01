@@ -1,10 +1,10 @@
 'use strict'
 
 /*******************************************************************************
-* form.js - Demo of accessible forms with jquery. 
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * form.js - Demo of accessible forms with jquery. 
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
 /* global $ */
 import showcode from "../enable-libs/showcode.js";
@@ -12,7 +12,7 @@ import '../../enable-node-libs/jquery/dist/jquery.min.js';
 import '../../enable-node-libs/jquery-validation/dist/jquery.validate.min.js';
 import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
 
-const formValidator = new (function () {
+const formValidator = new(function() {
   this.init = () => {
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
@@ -42,12 +42,12 @@ const formValidator = new (function () {
       },
       // Make sure the form is submitted to the destination defined
       // in the "action" attribute of the form when valid
-      submitHandler: function (form) {
+      submitHandler: function(form) {
         window.alert("form submitted");
         form.clear();
         //form.submit();
       },
-      invalidHandler: function (form) {
+      invalidHandler: function(form) {
         // make required fields that are not filled out have their aria-invalid="true"
         const formFields = form.target.elements;
         for (let i = 0; i < formFields.length; i += 1) {
@@ -89,7 +89,7 @@ const formValidator = new (function () {
       }
     });
 
-    $.validator.methods.phoneNumber = function (value, element) {
+    $.validator.methods.phoneNumber = function(value, element) {
       return (
         this.optional(element) ||
         /^[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}$/.test(value)

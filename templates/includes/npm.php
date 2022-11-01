@@ -3,7 +3,8 @@
 <p>You can load this JavaScript library into your application in serveral ways:
 
 <ul>
-  <li>as an ES6 module using <a href="https://webpack.js.org/concepts/modules/">Webpack</a>.</li>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
   <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
       browser</a>.</li>
   <?php
@@ -73,8 +74,44 @@ These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the d
 
 <ol>
   <li>
-    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>. Developers who are using webpack should
-    know <a href="info/webpack.php">how to configure webpack to import the enable modules correctly</a>.
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <?php includeShowcodeStaticBegin() ?>
+module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+<?php if (array_key_exists('needsGlider', $other)) { ?>
+      ,'~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
+      '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider')
+<?php } ?> 
+<?php if (array_key_exists('needsAccessibilityLib', $other)) { ?>
+      ,'../enable-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module')
+<?php } ?>
+<?php if (array_key_exists('needsAblePlayerLibs', $other)) { ?>
+      ,'../../libs/jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
+      '../libs/ableplayer/thirdparty/js.cookie.js': path.resolve(__dirname, 'node_modules/js-cookie/dist/js.cookie')
+<?php } ?>
+    },
+
+    ...
+  },
+
+  ...
+
+}
+<?php includeShowcodeStaticEnd() ?>
   </li>
   <li>
     You can use the module like this:
@@ -138,6 +175,31 @@ el.add();
     (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
   </li>
 </ol>
+
+<h4>Using NPM/Webpack to Load Modules Using CommonJS Syntax</h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>. </a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<?php includeShowcodeStaticBegin() ?>
+var switch = require('enable-a11y/switch').default; 
+
+...
+
+switch.init();
+<?php includeShowcodeStaticEnd() ?>
+    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<?php includeShowcodeStaticBegin() ?>
+@import '~enable-a11y/css/<?= $moduleName ?>';
+<?php includeShowcodeStaticEnd() ?>
+    </li>
+    </ol>
 
 <h4>Using ES6 modules natively.</h4>
 
@@ -208,3 +270,7 @@ directory instead of the <code>js/modules/</code>:
 <?php
   }
 ?>
+
+
+
+<p>Hello: <?= $other["needsGlider"] ?></p>
