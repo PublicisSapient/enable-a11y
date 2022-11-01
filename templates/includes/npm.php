@@ -180,7 +180,7 @@ el.add();
 
 <ol>
 <li>
-    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>. </a>.
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
   </li>
   <li>
     You can import the module using require like this:
