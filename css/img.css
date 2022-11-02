@@ -47,3 +47,60 @@
   float: left;
   margin-right: 20px;
 }
+#icon-font-example {
+  /*------------------------------------------------------------------
+                    SECTION STYLES
+  -------------------------------------------------------------------*/
+}
+#icon-font-example .center {
+  text-align: center;
+}
+#icon-font-example ul {
+  list-style: none;
+  padding: 0;
+}
+#icon-font-example a {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: top;
+}
+#icon-font-example a small {
+  display: block;
+  font-size: 0.625rem;
+}
+#icon-font-example section {
+  margin: 50px 0;
+}
+#icon-font-example section ul {
+  text-align: center;
+}
+#icon-font-example section a {
+  padding: 7px;
+  color: black;
+}
+#icon-font-example section a:not(:first-child) {
+  margin-left: 20px;
+}
+#icon-font-example section i {
+  vertical-align: middle;
+  transition: color 0.3s ease-in-out;
+}
+#icon-font-example section a:nth-child(1):hover i {
+  color: #3B5998;
+}
+#icon-font-example section a:nth-child(2):hover i {
+  color: #4099FF;
+}
+#icon-font-example section a:nth-child(3):hover i {
+  color: #007bb6;
+}
+#icon-font-example section a:nth-child(4):hover i {
+  color: #ccc;
+}
+#icon-font-example section a:nth-child(5):hover i {
+  color: steelblue;
+}
+#icon-font-example .p {
+  text-align: center;
+  margin-top: 120px;
+}
