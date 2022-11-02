@@ -217,6 +217,8 @@
 
   <li>You do a lot of cooler things with SVG (animation, CSS styling, etc)
     that you can't do with font icons.</li>
+
+  <li>As illustrated in <a href="https://www.lambdatest.com/blog/its-2019-lets-end-the-debate-on-icon-fonts-vs-svg-icons/">Icon Fonts vs SVG – Clash of the Icons</a> by <a href="https://www.linkedin.com/in/nikhil-tyagi-735374179/">Nihil Tyagi</a>, SVG are more performant and can be positioned more easily.</li>
 </ol>
 
 <p>Font icons come from the time when IE6 was still a thing, which didn't support
@@ -227,7 +229,8 @@
   and love typography, so the idea of using font technology to render images just
   seems wrong to me ... the above just emphasizes that point-of-view.</p>
 
-<p>That said, here is how you code font icons in an accessible way. This code is refactored from <a
+<p>That said, there are plenty of legacy code out there that use icon fonts.  
+    Here is how you code font icons in an accessible way. This code is refactored from <a
     href="https://codepen.io/SitePoint/pen/xxyQMP">a Codepen demo by George Martsoukos</a> (modified to add the
   accessibility features in it).</p>
 
