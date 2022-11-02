@@ -141,7 +141,7 @@
 
                   <!-- This is the hamburger menu icon -->
 
-                  <span class="enable-flyout__hamburger-icon" role="img">
+                  <span class="enable-flyout__hamburger-icon">
                       <span>
                       </span>
                       <span>
@@ -383,7 +383,7 @@
                             {
                               "id": "flyout__subsection",
                               "props": {
-                                  "id": "simple-controls",
+                                  "id": "complex-controls",
                                   "sectionName": "Complex Controls"
                               },
                               "content": [

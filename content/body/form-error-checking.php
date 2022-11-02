@@ -263,6 +263,12 @@
       </script>
 
       
-<?= includeNPMInstructions('accessibility') ?>
+<?= includeNPMInstructions('accessibility', array(
+    ),
+    null,
+    false, 
+    array(
+      'needsAccessibilityLib' => true
+    )) ?>
 
     

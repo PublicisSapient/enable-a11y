@@ -72,7 +72,7 @@ const EnableCombobox = function(componentRoot) {
         return;
     }
     updateMenuDisplay();
-    
+
   }
 
   function keyDownHandler(e) {
@@ -215,12 +215,11 @@ const EnableCombobox = function(componentRoot) {
       console.log('setting loop');
       accessibility.setMobileFocusLoop(controlsContainer);
     }
-    
+
     list.hidden = false;
     field.dispatchEvent(
       new CustomEvent(
-        'enable-combobox-show',
-        {
+        'enable-combobox-show', {
           'bubbles': true
         }
       )
@@ -256,8 +255,7 @@ const EnableCombobox = function(componentRoot) {
     updateStatus(message, true);
     field.dispatchEvent(
       new CustomEvent(
-        'enable-combobox-hide',
-        {
+        'enable-combobox-hide', {
           'bubbles': true
         }
       )
@@ -286,7 +284,7 @@ const EnableCombobox = function(componentRoot) {
 
   function updateSelectedOption(so, index) {
     const el = so[index];
-    
+
     if (!el) {
       return;
     }
@@ -301,7 +299,7 @@ const EnableCombobox = function(componentRoot) {
     field.setAttribute("aria-activedescendant", el.id);
 
     selectedOption.focus();
-    
+
 
     if (groups.length > 0) {
       // we need to announce the group and option using ARIA live.
@@ -313,8 +311,7 @@ const EnableCombobox = function(componentRoot) {
         const value = el.innerText;
         const label = labelEl.innerText;
         groupAlert.innerHTML = interpolate(
-          groupSelectAlertTemplateStr,
-          {
+          groupSelectAlertTemplateStr, {
             value: value,
             desc: desc,
             label: label,
