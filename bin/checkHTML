@@ -110,6 +110,9 @@ URLS=`bin/getPages.js $MYIP`;
 DOWNLOADED_URLS=""
 TEMP_FILES=""
 
+echo "Generating sitemap..."
+bin/generateSiteMap.sh
+
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
 AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
