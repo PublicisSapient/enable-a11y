@@ -296,8 +296,5 @@
 }
 </script>
 
-<?php
-  include('../templates/enable-hamburger.html');
-?>
 
 <?= includeNPMInstructions('enable-hamburger', array(), 'enable-flyout') ?>

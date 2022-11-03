@@ -24,11 +24,6 @@
   text-indent: 0px;
   padding: 13px 13px 13px 21px;
 }
-.enable-flyout__list .enable-flyout__list {
-  width: 960px;
-  width: fit-content;
-  margin: 20px auto;
-}
 @media only screen and (min-width: 960px) {
   .enable-flyout {
     /* styles specific to Interactive Elements flyout */
@@ -79,17 +74,17 @@
   .enable-flyout__level .enable-flyout__menu-item--close {
     display: none;
   }
-  #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item {
+  #forms-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item {
     width: calc(50% - 18px * 2);
     float: left;
     margin-left: 18px;
     margin-right: 18px;
   }
-  #controls-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item .enable-flyout__list {
+  #forms-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item .enable-flyout__list {
     width: 100%;
     padding-left: 30px;
   }
-  .enable-flyout #controls-section .enable-flyout__level-heading {
+  .enable-flyout #forms-section .enable-flyout__level-heading {
     text-align: center;
   }
   #code-patterns-section > :not(.enable-flyout__menu-item) > .enable-flyout__menu-item:nth-child(2),
@@ -137,6 +132,11 @@
   .enable-flyout__close-level-button,
   .enable-flyout__link {
     width: initial;
+  }
+  .enable-flyout__list .enable-flyout__list {
+    width: 960px;
+    width: fit-content;
+    margin: 20px auto;
   }
 }
 .enable-logo {

@@ -105,9 +105,13 @@ fi
 
 
 
-URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+#URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+URLS=`bin/getPages.js $MYIP`;
 DOWNLOADED_URLS=""
 TEMP_FILES=""
+
+echo "Generating sitemap..."
+bin/generateSiteMap.sh
 
 
 #.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.

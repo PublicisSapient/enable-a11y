@@ -126,4 +126,6 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-dialog', array(), '', true) ?>
+<?= includeNPMInstructions('enable-dialog', array(), '', true, array(
+  'needsAccessibilityLib' => true
+)) ?>
