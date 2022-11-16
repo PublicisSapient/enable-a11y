@@ -1,21 +1,21 @@
 'use strict'
 
 /*******************************************************************************
-* tabs.js - UI for Accessible tabs
-* 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released Dec. 27, 2021
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/tabs.php
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * tabs.js - UI for Accessible tabs
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released Dec. 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/tabs.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
-const tabgroup = new function () {
+const tabgroup = new function() {
 
-  this.init = function () {
+  this.init = function() {
     this.tabgroupEls = document.querySelectorAll('.enable-tablist');
 
     // For each of the tabgroups ...
@@ -62,7 +62,7 @@ const tabgroup = new function () {
       // this method is called afterwards.  It hides all the tabpanels
       // except for the one that checked tab is supposed to show (the
       // one with the ID on the tab's aria-controls attribute).
-      ariaCheckedCallback: function (
+      ariaCheckedCallback: function(
         e,
         currentlyCheckedEl
       ) {

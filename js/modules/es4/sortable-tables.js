@@ -297,3 +297,4 @@ const sortableTables = new(function() {
     this.activateAllSortableTables(document, options);
   }
 })();
+
