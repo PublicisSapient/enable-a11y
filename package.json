@@ -30,7 +30,8 @@
     "css",
     "less",
     "js/modules/",
-    "libs"
+    "libs",
+    "enable-node-libs/"
   ],
   "scripts": {
     "jest": "jest",
