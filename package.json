@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "jest": "jest",
-    "test": "exit 0", //"bin/checkHTML && jest",
+    "test": "exit 0",
     "lint": "bin/checkHTML",
     "server": "node bin/promote-node-modules-to-server.js && bash bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
   },
