@@ -1,4 +1,3 @@
-import { interpolate } from "./interpolate.js";
 
 const enableCharacterCount = new function() {
   let charCountInitEl,
@@ -39,7 +38,6 @@ const enableCharacterCount = new function() {
 
   function setAriaDesc(target) {
     const desc = target.getAttribute('aria-describedby') || '';
-    console.log('setting desc', target, desc);
     target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
   }
 
@@ -49,38 +47,25 @@ const enableCharacterCount = new function() {
   }
 
   function getCounterHTML(target, numChars, maxLength) {
-    const charsRemaining = maxLength - numChars;
     const { dataset } = target;
     const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
     const visualTemplate = dataset.visualTemplate || globalVisualTemplate;
-    const screenReaderText = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
-    const visualText = interpolate(visualTemplate, { numChars, maxLength, charsRemaining });
+    const screenReaderText = interpolate(screenReaderTemplate, { numChars, maxLength });
+    const visualText = interpolate(visualTemplate, { numChars, maxLength });
     const screenReaderCount = interpolate(charCountTemplate, { screenReaderText, visualText });
 
     return screenReaderCount;
   }
 
   function createCounterFor(target) {
-    let ariaDescBy = target.getAttribute('aria-describedby');
-    ariaDescBy = ariaDescBy ? ariaDescBy.replace('character-count__desc', '') : '';
-    ariaDescBy = ariaDescBy.split(/\s+/)[0];
-
-    const ariaDescByEl = ariaDescBy && document.getElementById(ariaDescBy);
-    console.log('desc', ariaDescBy, ariaDescByEl);
     const counterEl = document.createElement('output');
     const targetId = target.id || getNewId();
     counterEl.className = "enable-character-count";
     counterEl.id = `${targetId}__counter`;
     counterEl.setAttribute('aria-live', 'off')
     target.setAttribute('data-character-count-label', counterEl.id);
-    
-    if (ariaDescByEl) {
-      ariaDescByEl.insertAdjacentElement('afterend', counterEl);
-    } else {
-      target.insertAdjacentElement('afterend', counterEl);
-    }
 
-    console.log(counterEl.parentNode);
+    target.insertAdjacentElement('afterend', counterEl);
   }
 
   function addLiveRegion() {
@@ -104,9 +89,6 @@ const enableCharacterCount = new function() {
     const { dataset } = target;
 
     if (dataset.hasCharacterCount) {
-      const inputLength = target.value.length;
-      const { maxLength } = target;
-
       timeout && clearTimeout(timeout);
 
       switch (key) {
@@ -119,11 +101,11 @@ const enableCharacterCount = new function() {
           writeCharCount(target);
           liveRegion.innerHTML = '';
 
-          if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0) {
+          if (target.value.length > target.maxLength - globalWarningThreshold) {
 
             timeout = setTimeout(() => {
               announceCharCount(target);
-            }, 750);
+            }, 100);
 
           }
       }
@@ -146,7 +128,7 @@ const enableCharacterCount = new function() {
     const characterCountLabelEl = document.getElementById(characterCountLabel);
 
     if (maxLength && characterCountLabelEl) {
-      characterCountLabelEl.innerHTML = getCounterHTML(target, value.length, parseInt(maxLength));
+      characterCountLabelEl.innerHTML = getCounterHTML(target, value.length, maxLength);
     }
   }
 
@@ -155,10 +137,9 @@ const enableCharacterCount = new function() {
     const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
     const numChars = target.value.length;
     if (maxLength) {
-      const charsRemaining = parseInt(maxLength) - numChars;
       liveRegion.innerHTML = '';
       setTimeout(() => {
-        liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
+        liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength });
       }, 250);
     }
   }

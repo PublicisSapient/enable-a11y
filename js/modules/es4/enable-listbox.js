@@ -1,17 +1,17 @@
 'use strict'
 
 /*******************************************************************************
-* enable-listbox.js - UI for the ARIA listbox role
-* 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released 
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * enable-listbox.js - UI for the ARIA listbox role
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released 
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
 
 const enableListbox = new function() {
@@ -24,9 +24,9 @@ const enableListbox = new function() {
     bubbles: true
   });
 
-  this.init = function () {
+  this.init = function() {
     const { body } = document;
-    
+
     document.addEventListener('click', this.onClick);
     body.addEventListener('keyup', this.onKeyup);
     body.addEventListener('keydown', this.onKeydown);
@@ -35,9 +35,9 @@ const enableListbox = new function() {
 
   this.onMousedown = (e) => {
     const { target } = e;
-    
+
     if (target.classList.contains('enable-listbox__button')) {
-      
+
       const root = target.closest('.enable-listbox');
       const listboxEl = root.querySelector('[role="listbox"]');
 
@@ -60,7 +60,7 @@ const enableListbox = new function() {
     if (root) {
       const normalizedKey = accessibility.normalizedKey(key);
       const listboxEl = root.querySelector('[role="listbox"]');
-      if ( (normalizedKey === 'ArrowDown' || normalizedKey === 'ArrowUp') && this.isCollapsed(listboxEl)) {
+      if ((normalizedKey === 'ArrowDown' || normalizedKey === 'ArrowUp') && this.isCollapsed(listboxEl)) {
         e.preventDefault();
         this.onClick(e);
       }
@@ -121,14 +121,14 @@ const enableListbox = new function() {
         }
       });
 
-      
+
       if (target.nodeName === 'BUTTON') {
         const ariaExpanded = target.getAttribute('aria-expanded');
 
         // if the listbox is already expanded, close it
         if (ariaExpanded === 'true') {
           this.collapse(buttonEl, listboxEl, true);
-        // if the listbox is collapsed, expand it.
+          // if the listbox is collapsed, expand it.
         } else {
           this.expand(buttonEl, listboxEl);
         }
@@ -151,7 +151,7 @@ const enableListbox = new function() {
   this.collapseAllListboxes = function() {
     const roots = document.querySelectorAll('.enable-listbox');
 
-    for (let i = 0; i < roots.length; i++ ) {
+    for (let i = 0; i < roots.length; i++) {
       const root = roots[i];
       const buttonEl = root.querySelector('[aria-haspopup="listbox"]');
       const ariaExpanded = buttonEl.getAttribute('aria-expanded');
@@ -175,7 +175,7 @@ const enableListbox = new function() {
     accessibility.removeMobileFocusLoop();
     buttonEl.removeAttribute('aria-expanded');
 
-    if (doFocus) {   
+    if (doFocus) {
       buttonEl.focus();
     }
     listboxEl.classList.add('hidden');
@@ -191,7 +191,7 @@ const enableListbox = new function() {
     // set focus on appropriate option
     requestAnimationFrame(() => {
       const itemToFocus = listboxEl.querySelector('[aria-selected="true"]') || optionEls[0];
-      
+
       itemToFocus.focus();
       accessibility.setMobileFocusLoop(listboxEl);
       // make the arrow keyup events happen if needed
@@ -203,31 +203,30 @@ const enableListbox = new function() {
 
   this.initListbox = (listboxEl, buttonEl) => {
     accessibility.initGroup(
-      listboxEl,
-      {
-          doKeyChecking: true,
-          ariaCheckedCallback: (e, currentlyCheckedEl) => {
-              const { previousValue, previousId } = listboxEl.dataset;
-              const eventValue = currentlyCheckedEl.innerText;
-              const eventId = currentlyCheckedEl.id;
+      listboxEl, {
+        doKeyChecking: true,
+        ariaCheckedCallback: (e, currentlyCheckedEl) => {
+          const { previousValue, previousId } = listboxEl.dataset;
+          const eventValue = currentlyCheckedEl.innerText;
+          const eventId = currentlyCheckedEl.id;
 
-              if (previousValue !== eventValue && previousId !== eventId) {
-                buttonEl.innerHTML = currentlyCheckedEl.innerHTML;
-                this.collapse(buttonEl, listboxEl, true);
-                accessibility.removeMobileFocusLoop();
+          if (previousValue !== eventValue && previousId !== eventId) {
+            buttonEl.innerHTML = currentlyCheckedEl.innerHTML;
+            this.collapse(buttonEl, listboxEl, true);
+            accessibility.removeMobileFocusLoop();
 
-                const changeEvent = new CustomEvent('enable-listbox-change', {
-                  bubbles: true,
-                  detail: {
-                    value: () => eventValue,
-                    id: () => eventId
-                  }
-                });
-                listboxEl.dataset.previousValue = eventValue;
-                listboxEl.dataset.previousId = eventId;
-                listboxEl.dispatchEvent(changeEvent);
+            const changeEvent = new CustomEvent('enable-listbox-change', {
+              bubbles: true,
+              detail: {
+                value: () => eventValue,
+                id: () => eventId
               }
+            });
+            listboxEl.dataset.previousValue = eventValue;
+            listboxEl.dataset.previousId = eventId;
+            listboxEl.dispatchEvent(changeEvent);
           }
+        }
       }
     );
     listboxEl.addEventListener('blur', this.blurEvent, true);

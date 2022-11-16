@@ -104,7 +104,7 @@ if (typeof document !== 'undefined') {
             const s = 'style="width:100%;height:100%;padding:0;margin:0;overflow:hidden;"';
 
             doc.open();
-            doc.write('<html ' + s + '><body ' + s + '></body></html>');
+            doc.write('<!DOCTYPE html><html ' + s + '><body ' + s + '></body></html>');
             doc.close();
 
             dWin.addEventListener('resize', onFontSizeChangeHandler);

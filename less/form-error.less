@@ -58,17 +58,30 @@
     display: block;
   }
 
+  label.desc,
   label.error {
     text-align: left;
-    color: #e60000;
     margin-top: 5px;
     margin-bottom: 20px;
-    padding-left: 18px;
+    padding-left: 5px;
     position: relative;
 
     @media @tablet-up {
-      margin-left: calc(45% + 10px);
       margin-bottom: 10px;
+    }
+  }
+
+  label.desc {
+    color: #666666;
+    font-style: italic;
+  }
+
+  label.error {
+    color: #e60000;
+    padding-left: 18px;
+
+    @media @tablet-up {
+      margin-left: calc(45% + 10px);
     }
 
     &::before {
