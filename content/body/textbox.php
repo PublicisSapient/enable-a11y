@@ -115,12 +115,12 @@
 
         <div>
           <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
-          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100"></textarea>
+          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100" data-announce-after-space="true"></textarea>
         </div>
 
         <div>
           <label for="gift-card-text--example2" class="textarea-label">Gift Card:</label>
-          <textarea id="gift-card-text--example2" data-has-character-count="true" name="gift-card-text--example2" maxlength="150"  data-screen-reader-text="${charsRemaining} characters remaining." aria-describedby="gift-card__desc"></textarea>
+          <textarea id="gift-card-text--example2" data-has-character-count="true" name="gift-card-text--example2" maxlength="150"  data-screen-reader-text="${charsRemaining} characters remaining." aria-describedby="gift-card__desc" data-announce-after-escape="true"></textarea>
           <label id="gift-card__desc" class="desc">Write a personalized message on the gift card for the recipient.</label>
         </div>
       </div>
@@ -129,7 +129,7 @@
     <!--
       Help:
          VO/OSX: CAPSLOCK+SHIFT+H
-         NVDA: 
+    -->
 
     <button type="submit">Submit</button>
   </form>

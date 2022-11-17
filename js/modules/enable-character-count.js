@@ -12,7 +12,7 @@ const enableCharacterCount = new function() {
 
   let idIndex = '0';
 
-  this.init = () => {
+  this.init = () => { 
     const charCountEls = document.querySelectorAll('[data-has-character-count]');
     charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
     const charCountTemplateEl = document.getElementById('enable-character-count__template');
@@ -38,9 +38,13 @@ const enableCharacterCount = new function() {
   }
 
   function setAriaDesc(target) {
-    const desc = target.getAttribute('aria-describedby') || '';
-    console.log('setting desc', target, desc);
-    target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
+    const { dataset } = target;
+
+    if (dataset.announceAfterEscape === 'true') {
+      const desc = target.getAttribute('aria-describedby') || '';
+      console.log('setting desc', target, desc);
+      target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
+    }
   }
 
   function getNewId() {
@@ -111,21 +115,21 @@ const enableCharacterCount = new function() {
 
       switch (key) {
         case 'Escape':
-        case 'Tab':
-          e.stopPropagation();
-          announceCharCount(target);
+          if (dataset.announceAfterEscape) {
+            e.stopPropagation();
+            announceCharCount(target);
+          }
           break;
         default:
           writeCharCount(target);
           liveRegion.innerHTML = '';
 
-          if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0) {
-
+          if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0 || (dataset.announceAfterSpace === 'true' && key === ' ')) {
             timeout = setTimeout(() => {
               announceCharCount(target);
-            }, 750);
-
+            }, 1500);
           }
+
       }
 
     }
@@ -157,9 +161,8 @@ const enableCharacterCount = new function() {
     if (maxLength) {
       const charsRemaining = parseInt(maxLength) - numChars;
       liveRegion.innerHTML = '';
-      setTimeout(() => {
-        liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
-      }, 250);
+      liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
+      
     }
   }
 }

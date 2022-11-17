@@ -11,7 +11,7 @@ const enableCharacterCount = new function() {
 
   let idIndex = '0';
 
-  this.init = () => {
+  this.init = () => { 
     const charCountEls = document.querySelectorAll('[data-has-character-count]');
     charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
     const charCountTemplateEl = document.getElementById('enable-character-count__template');
@@ -37,8 +37,13 @@ const enableCharacterCount = new function() {
   }
 
   function setAriaDesc(target) {
-    const desc = target.getAttribute('aria-describedby') || '';
-    target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
+    const { dataset } = target;
+
+    if (dataset.announceAfterEscape === 'true') {
+      const desc = target.getAttribute('aria-describedby') || '';
+      console.log('setting desc', target, desc);
+      target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
+    }
   }
 
   function getNewId() {
@@ -47,25 +52,38 @@ const enableCharacterCount = new function() {
   }
 
   function getCounterHTML(target, numChars, maxLength) {
+    const charsRemaining = maxLength - numChars;
     const { dataset } = target;
     const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
     const visualTemplate = dataset.visualTemplate || globalVisualTemplate;
-    const screenReaderText = interpolate(screenReaderTemplate, { numChars, maxLength });
-    const visualText = interpolate(visualTemplate, { numChars, maxLength });
+    const screenReaderText = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
+    const visualText = interpolate(visualTemplate, { numChars, maxLength, charsRemaining });
     const screenReaderCount = interpolate(charCountTemplate, { screenReaderText, visualText });
 
     return screenReaderCount;
   }
 
   function createCounterFor(target) {
+    let ariaDescBy = target.getAttribute('aria-describedby');
+    ariaDescBy = ariaDescBy ? ariaDescBy.replace('character-count__desc', '') : '';
+    ariaDescBy = ariaDescBy.split(/\s+/)[0];
+
+    const ariaDescByEl = ariaDescBy && document.getElementById(ariaDescBy);
+    console.log('desc', ariaDescBy, ariaDescByEl);
     const counterEl = document.createElement('output');
     const targetId = target.id || getNewId();
     counterEl.className = "enable-character-count";
     counterEl.id = `${targetId}__counter`;
     counterEl.setAttribute('aria-live', 'off')
     target.setAttribute('data-character-count-label', counterEl.id);
+    
+    if (ariaDescByEl) {
+      ariaDescByEl.insertAdjacentElement('afterend', counterEl);
+    } else {
+      target.insertAdjacentElement('afterend', counterEl);
+    }
 
-    target.insertAdjacentElement('afterend', counterEl);
+    console.log(counterEl.parentNode);
   }
 
   function addLiveRegion() {
@@ -89,25 +107,28 @@ const enableCharacterCount = new function() {
     const { dataset } = target;
 
     if (dataset.hasCharacterCount) {
+      const inputLength = target.value.length;
+      const { maxLength } = target;
+
       timeout && clearTimeout(timeout);
 
       switch (key) {
         case 'Escape':
-        case 'Tab':
-          e.stopPropagation();
-          announceCharCount(target);
+          if (dataset.announceAfterEscape) {
+            e.stopPropagation();
+            announceCharCount(target);
+          }
           break;
         default:
           writeCharCount(target);
           liveRegion.innerHTML = '';
 
-          if (target.value.length > target.maxLength - globalWarningThreshold) {
-
+          if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0 || (dataset.announceAfterSpace === 'true' && key === ' ')) {
             timeout = setTimeout(() => {
               announceCharCount(target);
-            }, 100);
-
+            }, 1500);
           }
+
       }
 
     }
@@ -128,7 +149,7 @@ const enableCharacterCount = new function() {
     const characterCountLabelEl = document.getElementById(characterCountLabel);
 
     if (maxLength && characterCountLabelEl) {
-      characterCountLabelEl.innerHTML = getCounterHTML(target, value.length, maxLength);
+      characterCountLabelEl.innerHTML = getCounterHTML(target, value.length, parseInt(maxLength));
     }
   }
 
@@ -137,10 +158,10 @@ const enableCharacterCount = new function() {
     const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
     const numChars = target.value.length;
     if (maxLength) {
+      const charsRemaining = parseInt(maxLength) - numChars;
       liveRegion.innerHTML = '';
-      setTimeout(() => {
-        liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength });
-      }, 250);
+      liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
+      
     }
   }
 }
