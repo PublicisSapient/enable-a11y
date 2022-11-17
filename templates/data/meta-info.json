@@ -42,6 +42,12 @@
         "title": "Accessible Checkboxes",
         "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way."
     },
+    "character-count.php": {
+        "title": "Accessible Character Counter",
+        "desc": "Two variations of an accessible character counter.  Help pick which will is the better UX!",
+        "wip": "true",
+        "isNPM": "true"
+    },
     "combobox.php": {
         "title": "Accessible Autocomplete (a.k.a Combobox)",
         "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",

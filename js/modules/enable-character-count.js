@@ -91,7 +91,8 @@ const enableCharacterCount = new function() {
     const lastBodyEl = document.body.lastElementChild;
 
     const asideEl = document.createElement('aside');
-    asideEl.setAttribute('id', 'enable-character-count__global')
+    asideEl.setAttribute('id', 'enable-character-count__global');
+    asideEl.className="sr-only";
 
     liveRegion = document.createElement('output');
     liveRegion.className = 'sr-only';
@@ -127,7 +128,7 @@ const enableCharacterCount = new function() {
           if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0 || (dataset.announceAfterSpace === 'true' && key === ' ')) {
             timeout = setTimeout(() => {
               announceCharCount(target);
-            }, 1500);
+            }, 500);
           }
 
       }
