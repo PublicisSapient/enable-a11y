@@ -95,7 +95,7 @@
 }
 </script>
 
-
+<!--
 <h2>HTML version with character count</h2>
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
@@ -126,10 +126,6 @@
       </div>
     </fieldset>
 
-    <!--
-      Help:
-         VO/OSX: CAPSLOCK+SHIFT+H
-    -->
 
     <button type="submit">Submit</button>
   </form>
@@ -137,7 +133,7 @@
 </div>
 
 <?php includeShowcode("charcount-example")?>
-
+-->
 <script type="application/json" id="charcount-example-props">
 {
   "replaceHtmlRules": {},
