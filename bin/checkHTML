@@ -99,7 +99,7 @@ fi
 A=`lynx -dump $PROJECT_URL`
 if [ "$?" != "0" ]
 then
-	echo "You need to turn on your apache server that has ENABLE on it."
+	echo "You need to do a `npm run server` in anothe shell before you run this target."
 	exit 3
 fi
 

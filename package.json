@@ -37,11 +37,22 @@
     "jest": "jest",
     "test": "exit 0",
     "lint": "bin/checkHTML",
-    "server": "node bin/promote-node-modules-to-server.js && bash bin/convert-modules-to-libs.sh && concurrently --kill-others \"less-watch-compiler\" \"node bin/server.js\""
+    "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "watch": "npm-watch",
+    "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh"
   },
   "jest": {
     "verbose": true,
     "preset": "jest-puppeteer"
+  },
+  "watch": {
+    "convert-modules-to-libs": {
+      "patterns": [
+        "js/modules/*.js"
+      ],
+      "extensions": "js",
+      "quiet": false
+    }
   },
   "repository": {
     "type": "git",
@@ -90,6 +101,7 @@
     "node-html-parser": "^5.2.0",
     "node-jq": "^2.3.4",
     "np": "^7.6.2",
+    "npm-watch": "^0.11.0",
     "php-express": "^0.0.3",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
