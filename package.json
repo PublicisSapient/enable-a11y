@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "jest": "jest",
-    "test": "exit 0",
+    "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "watch": "npm-watch",
