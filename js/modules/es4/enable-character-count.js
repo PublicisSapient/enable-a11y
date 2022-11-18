@@ -103,6 +103,18 @@ const enableCharacterCount = new function() {
     liveRegion.insertAdjacentHTML('afterend', `<span id="character-count__desc" class="sr-only">${globalCounterInstructions}</span>`);
   }
 
+  function wasArrowPressed(key) {
+    switch(key) {
+      case 'ArrowUp':
+      case 'ArrowDown':
+      case 'ArrowLeft':
+      case 'ArrowRight':
+        return true;
+      default:
+        return false;
+    }
+  }
+
   this.onKeyUp = (e) => {
     const { target, key } = e;
     const { dataset } = target;
@@ -124,7 +136,10 @@ const enableCharacterCount = new function() {
           writeCharCount(target);
           liveRegion.innerHTML = '';
 
-          if (inputLength > maxLength - globalWarningThreshold || (inputLength % 5) === 0 || (dataset.announceAfterSpace === 'true' && key === ' ')) {
+          if (
+            (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) ||
+            (dataset.announceAfterSpace === 'true' && key === ' ')
+          ) {
             timeout = setTimeout(() => {
               announceCharCount(target);
             }, 500);
