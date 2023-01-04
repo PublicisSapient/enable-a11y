@@ -221,6 +221,10 @@ ol {
   padding-left: 1.2rem;
   margin-left: 1.2rem;
 }
+ul table,
+ol table {
+  margin-top: 1.5rem;
+}
 ul {
   list-style: disc;
 }
@@ -229,6 +233,9 @@ ol,
 p {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+table li {
+  margin-bottom: 1.5rem;
 }
 .enable-quote {
   background: #f9f9f9;
@@ -327,6 +334,15 @@ select {
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
+}
+.list--no-decoration {
+  list-style: none;
+  margin-left: 0;
+}
+.break--with-space {
+  content: "A" !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
 }
 /* z-index overrides */
 .enable-flyout {
@@ -489,10 +505,6 @@ body {
 
 	 font-family: "Helvetica", "Arial", sans-serif;
      */
-}
-button:focus,
-button:focus-visible {
-  outline: none !important;
 }
 body {
   margin: 0;

@@ -251,5 +251,9 @@
   "screen-reader-only-text.php": {
     "title": "Screen Reader Only Text",
     "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels."
+  },
+  "bookmarklets.php": {
+    "title": "Bookmarklets to Test Accessibility Features On A Page",
+    "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage."
   }
 }
