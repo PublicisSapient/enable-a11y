@@ -1,264 +1,259 @@
 {
-    "index.php": {
-        "title": "Enable",
-        "desc": "A website that shows web developers how to make their work accessible.",
-        "mainClass": "with-full-bleed-hero",
-        "bodyClass": "index"
-    },
-    "accessible-text-svg.php": {
-        "title": "Accessible Text in SVG",
-        "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)",
-        "mainClass": "with-full-bleed-hero"
-    },
-    "alert-dialog.php": {
-        "title": "Alert Dialog",
-        "desc": "Do we need this?",
-        "wip": true
-    },
-    "alert.php": {
-        "title": "ARIA Alert",
-        "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag"
-    },
-    "animated-gif-with-pause-button.php": {
-        "title": "Animated GIFs with Pause Buttons",
-        "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
-        "isNPM": "true"
-    },
-    "bottom-fixed-navigation.php": {
-        "title": "Accessible Bottom Fixed Navigation",
-        "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
-        "wip": true
-    },
-    "button.php": {
-        "title": "Accessible Buttons",
-        "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
-    },
-    "carousel.php": {
-        "title": "Accessible Carousels",
-        "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
-        "isNPM": "true"
-    },
-    "checkbox.php": {
-        "title": "Accessible Checkboxes",
-        "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way."
-    },
-    "character-count.php": {
-        "title": "Accessible Character Counter",
-        "desc": "Two variations of an accessible character counter.  Help pick which will is the better UX!",
-        "wip": "true",
-        "isNPM": "true"
-    },
-    "combobox.php": {
-        "title": "Accessible Autocomplete (a.k.a Combobox)",
-        "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
-        "isNPM": "true"
-    },
-    "date.php": {
-        "title": "Accessible Date Widget",
-        "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web develper to do?  ",
-        "wip": true
-    },
-    "description-list.php": {
-        "title": "Description List (neé Definition List)",
-        "desc": "Lists of name/value pairs should be coded in a definition list.  This page covers the HTML5 and ARIA variants."
-    },
-    "dialog.php": {
-        "title": "Accessible Modal Dialog",
-        "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are.",
-        "isNPM": "true"
-    },
-    "dropdown.php": {
-        "title": "Accessible Dropdowns/Drawers/Expando",
-        "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accesible with just a little bit of markup.",
-        "isNPM": "true"
-    },
-    "figure.php": {
-        "title": "Accessible Figures",
-        "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
-    },
-    "focus-styling.php": {
-        "title": "Focus Styling",
-        "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them.",
-        "wip": true
-    },
-    "form-error-checking.php": {
-        "title": "Accessible Form Error Checking",
-        "desc": "It is not hard to ensure forms work correctly with screen readers and other technology."
-    },
-    "form.php": {
-        "title": "Accessible Form Structure",
-        "desc": "Forms must be marked up correctly in order for screen reader users to be able to use them correctly."
-    },
-    "heading.php": {
-        "title": "Accessible Headings",
-        "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework."
-    },
-    "hero-image-text-resize.php": {
-        "title": "Advanced Text Resizing",
-        "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)",
-        "isNPM": "true"
-    },
-    "img.php": {
-        "title": "Accessible Images",
-        "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
-    },
-    "link.php": {
-        "title": "Accessible Links",
-        "desc": "Links are easy to code accessibly, but it's nice to give more context",
-        "wip": true
-    },
-    "listbox.php": {
-        "title": "Accessible Select Boxes (a.k.a. Listboxes)",
-        "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what devs must do if they have to use a custom one.",
-        "isNPM": "true"
-    },
-    "log.php": {
-        "title": "Accessible Log Displays",
-        "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
-    },
-    "marquee.php": {
-        "title": "The Marquee Role",
-        "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them.",
-        "wip": true
-    },
-    "math.php": {
-        "title": "Accessible Math Equations",
-        "desc": "Math equations can be made accesible to math students and scholars with MathML.",
-        "wip": true
-    },
-    "multi-level-hamburger-menu.php": {
-        "title": "Accessible Flyout/Hamburger Hybrid Menus",
-        "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
-        "isNPM": "true"
-    },
-    "pause-anim-control.php": {
-        "title": "Pause Animation Controls",
-        "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
-        "mainClass": "with-full-bleed-hero",
-        "isNPM": "true"
-    },
-    "progress.php": {
-        "title": "Accessible Progress Bars",
-        "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
-    },
-    "radiogroup.php": {
-        "title": "Accessible Radio Groups",
-        "desc": "They way radio buttons are made accessible is slightly different than other form controls."
-    },
-
-    "search.php": {
-        "title": "Accessible Search Forms",
-        "desc": "If you have a search box on your website, you want to make sure it is accessible."
-    },
-    "skip-link.php": {
-        "title": "Skip Links (That Work In Mobile Too!)",
-        "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
-        "isNPM": "true"
-    },
-    "slider.php": {
-        "title": "Accessible Sliders",
-        "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relavant, especially for mobile screen reader users."
-    },
-    "spinner.php": {
-        "title": "Accessible Numeric Fields",
-        "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
-    },
-    "status.php": {
-        "title": "The ARIA Status Role",
-        "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
-    },
-    "switch.php": {
-        "title": "The ARIA Switch Role",
-        "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
-    },
-    "table.php": {
-        "title": "Accessible Tables",
-        "desc": "Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone."
-    },
-    "sortable-table.php": {
-        "title": "Accessible Sortable Tables",
-        "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.",
-        "isNPM": "true"
-    },
-    "pagination-table.php": {
-        "title": "Accessible Pagination Table",
-        "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
-        "isNPM": "true"
-    },
-    "sortable-pagination-table.php": {
-        "title": "Accessible Sortable Paginated Tables",
-        "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
-        "wip": true
-    },
-    "tabs.php": {
-        "title": "Accessible Tabs",
-        "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back.",
-        "isNPM": "true"
-    },
-    "textbox.php": {
-        "title": "Accessible Textboxes",
-        "desc": "If you are using custom (i.e. non-native HTML5) textboxes, it's simple to add a few ARIA attributes to make them accessible, if you absolutely have to."
-    },
-    "text-contrast.php": {
-        "title": "Accessible Text Contrast",
-        "desc": "How can you check your design for text contrast issues? How about for text on top of photographic or gradient backgrounds? Read on.",
-        "wip": "true"
-    },
-    "text-resize.php": {
-        "title": "Resizable Typography",
-        "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature."
-    },
-    "text-spacing.php": {
-        "title": "Space-Adjusting Typography",
-        "desc": "How you can ensure that your website's typography is legable for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
-    },
-    "timer.php": {
-        "title": "ARIA Timer",
-        "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
-    },
-    "tooltip.php": {
-        "title": "Tooltip",
-        "desc": "If you have a tooltip, ensure it follows accessibility best practices.",
-        "isNPM": "true"
-    },
-    "video-player.php": {
-        "title": "Accessible Video Player",
-        "desc": "Most web developers don't realize that videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time, and get a WCAG AAA transcript for free!",
-        "isNPM": "true"
-    },
-    "zoomable-viewport-units.php": {
-        "title": "Accessible Viewport Units",
-        "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this.",
-        "wip": "true"
-    },
-    "chart.php": {
-        "title": "Accessible Charts",
-        "desc": "Demos of accessible charts using d3.js",
-        "wip": true
-    },
-    "acknowledgements.php": {
-        "title": "Acknowledgements",
-        "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
-    },
-    "faq.php": {
-        "title": "FAQ",
-        "desc": "FAQ of the Enable Project.",
-        "email": "zoltan.dulac@gmail.com"
-    },
-    "npm.php": {
-        "title": "NPM Installation Instructions",
-        "desc": "Instructions on how to install Enables NPM modules into your own projects."
-    },
-    "code-quality.php": {
-        "title": "Accessible Code Quality",
-        "desc": "What are the automated tools we use in Enable to ensure code quality."
-    },
-    "exposing-style-info-to-screen-readers.php": {
-        "title": "Exposing Style Information To Screen Readers",
-        "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?"
-    },
-    "screen-reader-only-text.php": {
-        "title": "Screen Reader Only Text",
-        "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels."
-    }
+  "index.php": {
+    "title": "Enable",
+    "desc": "A website that shows web developers how to make their work accessible.",
+    "mainClass": "with-full-bleed-hero",
+    "bodyClass": "index"
+  },
+  "accessible-text-svg.php": {
+    "title": "Accessible Text in SVG",
+    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)",
+    "mainClass": "with-full-bleed-hero"
+  },
+  "alert-dialog.php": {
+    "title": "Alert Dialog",
+    "desc": "Do we need this?",
+    "wip": true
+  },
+  "alert.php": {
+    "title": "ARIA Alert",
+    "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag"
+  },
+  "animated-gif-with-pause-button.php": {
+    "title": "Animated GIFs with Pause Buttons",
+    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
+    "isNPM": "true"
+  },
+  "bottom-fixed-navigation.php": {
+    "title": "Accessible Bottom Fixed Navigation",
+    "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
+    "wip": true
+  },
+  "button.php": {
+    "title": "Accessible Buttons",
+    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
+  },
+  "carousel.php": {
+    "title": "Accessible Carousels",
+    "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
+    "isNPM": "true"
+  },
+  "checkbox.php": {
+    "title": "Accessible Checkboxes",
+    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way."
+  },
+  "combobox.php": {
+    "title": "Accessible Autocomplete (a.k.a Combobox)",
+    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
+    "isNPM": "true"
+  },
+  "date.php": {
+    "title": "Accessible Date Widget",
+    "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web develper to do?  ",
+    "wip": true
+  },
+  "description-list.php": {
+    "title": "Description List (neé Definition List)",
+    "desc": "Lists of name/value pairs should be coded in a definition list.  This page covers the HTML5 and ARIA variants."
+  },
+  "dialog.php": {
+    "title": "Accessible Modal Dialog",
+    "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are.",
+    "isNPM": "true"
+  },
+  "dropdown.php": {
+    "title": "Accessible Dropdowns/Drawers/Expando",
+    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accesible with just a little bit of markup.",
+    "isNPM": "true"
+  },
+  "figure.php": {
+    "title": "Accessible Figures",
+    "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
+  },
+  "focus-styling.php": {
+    "title": "Focus Styling",
+    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them.",
+    "wip": true
+  },
+  "form-error-checking.php": {
+    "title": "Accessible Form Error Checking",
+    "desc": "It is not hard to ensure forms work correctly with screen readers and other technology."
+  },
+  "form.php": {
+    "title": "This is to be refactored",
+    "desc": "This is to be refactored.",
+    "toRefactor": true,
+    "wip": true
+  },
+  "heading.php": {
+    "title": "Accessible Headings",
+    "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework."
+  },
+  "hero-image-text-resize.php": {
+    "title": "Advanced Text Resizing",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)",
+    "isNPM": "true"
+  },
+  "img.php": {
+    "title": "Accessible Images",
+    "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
+  },
+  "link.php": {
+    "title": "Accessible Links",
+    "desc": "Links are easy to code accessibly, but it's nice to give more context",
+    "wip": true
+  },
+  "listbox.php": {
+    "title": "Accessible Select Boxes (a.k.a. Listboxes)",
+    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what devs must do if they have to use a custom one.",
+    "isNPM": "true"
+  },
+  "log.php": {
+    "title": "Accessible Log Displays",
+    "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
+  },
+  "marquee.php": {
+    "title": "The Marquee Role",
+    "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them.",
+    "wip": true
+  },
+  "math.php": {
+    "title": "Accessible Math Equations",
+    "desc": "Math equations can be made accesible to math students and scholars with MathML.",
+    "wip": true
+  },
+  "multi-level-hamburger-menu.php": {
+    "title": "Accessible Flyout/Hamburger Hybrid Menus",
+    "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
+    "isNPM": "true"
+  },
+  "pause-anim-control.php": {
+    "title": "Pause Animation Controls",
+    "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
+    "mainClass": "with-full-bleed-hero",
+    "isNPM": "true"
+  },
+  "progress.php": {
+    "title": "Accessible Progress Bars",
+    "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
+  },
+  "radiogroup.php": {
+    "title": "Accessible Radio Groups",
+    "desc": "They way radio buttons are made accessible is slightly different than other form controls."
+  },
+  "skip-link.php": {
+    "title": "Skip Links (That Work In Mobile Too!)",
+    "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
+    "isNPM": "true"
+  },
+  "slider.php": {
+    "title": "Accessible Sliders",
+    "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relavant, especially for mobile screen reader users."
+  },
+  "spinner.php": {
+    "title": "Accessible Numeric Fields",
+    "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
+  },
+  "status.php": {
+    "title": "The ARIA Status Role",
+    "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
+  },
+  "switch.php": {
+    "title": "The ARIA Switch Role",
+    "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
+  },
+  "table.php": {
+    "title": "Accessible Tables",
+    "desc": "Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone."
+  },
+  "sortable-table.php": {
+    "title": "Accessible Sortable Tables",
+    "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.",
+    "isNPM": "true"
+  },
+  "pagination-table.php": {
+    "title": "Accessible Pagination Table",
+    "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
+    "isNPM": "true"
+  },
+  "sortable-pagination-table.php": {
+    "title": "Accessible Sortable Paginated Tables",
+    "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
+    "wip": true
+  },
+  "tabs.php": {
+    "title": "Accessible Tabs",
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back.",
+    "isNPM": "true"
+  },
+  "textbox.php": {
+    "title": "Accessible Textboxes",
+    "desc": "If you are using custom (i.e. non-native HTML5) textboxes, it's simple to add a few ARIA attributes to make them accessible, if you absolutely have to."
+  },
+  "text-contrast.php": {
+    "title": "Accessible Text Contrast",
+    "desc": "How can you check your design for text contrast issues? How about for text on top of photographic or gradient backgrounds? Read on.",
+    "wip": "true"
+  },
+  "text-resize.php": {
+    "title": "Resizable Typography",
+    "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature."
+  },
+  "text-spacing.php": {
+    "title": "Space-Adjusting Typography",
+    "desc": "How you can ensure that your website's typography is legable for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
+  },
+  "timer.php": {
+    "title": "ARIA Timer",
+    "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
+  },
+  "tooltip.php": {
+    "title": "Tooltip",
+    "desc": "If you have a tooltip, ensure it follows accessibility best practices.",
+    "isNPM": "true"
+  },
+  "video-player.php": {
+    "title": "Accessible Video Player",
+    "desc": "Most web developers don't realize that videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time, and get a WCAG AAA transcript for free!",
+    "isNPM": "true"
+  },
+  "zoomable-viewport-units.php": {
+    "title": "Accessible Viewport Units",
+    "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this.",
+    "wip": "true"
+  },
+  "chart.php": {
+    "title": "Accessible Charts",
+    "desc": "Demos of accessible charts using d3.js",
+    "wip": true
+  },
+  "acknowledgements.php": {
+    "title": "Acknowledgements",
+    "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
+  },
+  "faq.php": {
+    "title": "FAQ",
+    "desc": "FAQ of the Enable Project.",
+    "email": "zoltan.dulac@gmail.com"
+  },
+  "npm.php": {
+    "title": "NPM Installation Instructions",
+    "desc": "Instructions on how to install Enables NPM modules into your own projects."
+  },
+  "code-quality.php": {
+    "title": "Accessible Code Quality",
+    "desc": "What are the automated tools we use in Enable to ensure code quality."
+  },
+  "exposing-style-info-to-screen-readers.php": {
+    "title": "Exposing Style Information To Screen Readers",
+    "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?"
+  },
+  "screen-reader-only-text.php": {
+    "title": "Screen Reader Only Text",
+    "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels."
+  },
+  "bookmarklets.php": {
+    "title": "Bookmarklets to Test Accessibility Features On A Page",
+    "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage."
+  }
 }
