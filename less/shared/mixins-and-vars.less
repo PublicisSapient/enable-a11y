@@ -267,3 +267,14 @@
   }
   
 }
+
+.remove-default-details-styles() {
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::marker {
+    content: "";
+    display: none;
+  }
+}
