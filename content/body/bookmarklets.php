@@ -10,7 +10,10 @@
 
 <ol>
   <li>
+
+    The best way to store bookmarklets are to put them on your browser's Bookmarks Toolbar.
     <details class="enable-drawer">
+
       <summary class="enable-drawer__button">
 
         Read how you can make your browser's Bookmarks Toolbar Visible.

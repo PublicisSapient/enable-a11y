@@ -5,3 +5,6 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+.enable-drawer {
+  margin: 20px 0;
+}
