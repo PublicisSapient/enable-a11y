@@ -205,11 +205,19 @@
                         {
                             "id": "flyout__link--no-image",
                             "props": {
-                                "label": "Acknowledgements",
-                                "url": "acknowledgements.php",
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
                                 "listItemClasses": "enable-flyout__last-top-level-link"
                             }
                         },
+
                         {
                             "id": "flyout__button",
                             "props": {
