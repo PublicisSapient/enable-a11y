@@ -42,8 +42,8 @@ const enableCharacterCount = new function() {
 
     if (dataset.announceAfterEscape === 'true') {
       const desc = target.getAttribute('aria-describedby') || '';
-      console.log('setting desc', target, desc);
-      target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim())
+      target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim());
+
     }
   }
 
@@ -70,13 +70,15 @@ const enableCharacterCount = new function() {
     ariaDescBy = ariaDescBy.split(/\s+/)[0];
 
     const ariaDescByEl = ariaDescBy && document.getElementById(ariaDescBy);
-    console.log('desc', ariaDescBy, ariaDescByEl);
     const counterEl = document.createElement('output');
     const targetId = target.id || getNewId();
     counterEl.className = "enable-character-count";
     counterEl.id = `${targetId}__counter`;
     counterEl.setAttribute('aria-live', 'off')
     target.setAttribute('data-character-count-label', counterEl.id);
+
+    // adds the character counter to the textarea's aria-describedby
+    target.setAttribute('aria-describedby', `${ariaDescBy} ${counterEl.id}`)
     
     if (ariaDescByEl) {
       ariaDescByEl.insertAdjacentElement('afterend', counterEl);
@@ -84,7 +86,6 @@ const enableCharacterCount = new function() {
       target.insertAdjacentElement('afterend', counterEl);
     }
 
-    console.log(counterEl.parentNode);
   }
 
   function addLiveRegion() {
@@ -126,27 +127,17 @@ const enableCharacterCount = new function() {
 
       timeout && clearTimeout(timeout);
 
-      switch (key) {
-        case 'Escape':
-          if (dataset.announceAfterEscape) {
-            e.stopPropagation();
-            announceCharCount(target);
-          }
-          break;
-        default:
-          writeCharCount(target);
-          liveRegion.innerHTML = '';
 
-          if (
-            (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) ||
-            (dataset.announceAfterSpace === 'true' && key === ' ')
-          ) {
-            timeout = setTimeout(() => {
-              announceCharCount(target);
-            }, 500);
-          }
+    
+      writeCharCount(target);
+      liveRegion.innerHTML = '';
 
+      if (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) {
+        timeout = setTimeout(() => {
+          announceCharCount(target);
+        }, 1000);
       }
+
 
     }
   }
@@ -183,4 +174,4 @@ const enableCharacterCount = new function() {
   }
 }
 
-enableCharacterCount.init();
+export default enableCharacterCount;

@@ -95,70 +95,6 @@
 }
 </script>
 
-<!--
-<h2>HTML version with character count</h2>
-
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-
-
-
-<div id="charcount-example" class="enable-example">
-  <form class="enable-form-example">
-    <fieldset>
-      <legend>Payment information</legend>
-
-      <div class="enable-form-example__fieldset-inner-container">
-        <div>
-          <label for="ccinfo--example2">Billing Address:</label>
-          <input type="text" name="ccinfo--example2" id="ccinfo--example2">
-        </div>
-
-        <div>
-          <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
-          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100" data-announce-after-space="true"></textarea>
-        </div>
-
-        <div>
-          <label for="gift-card-text--example2" class="textarea-label">Gift Card:</label>
-          <textarea id="gift-card-text--example2" data-has-character-count="true" name="gift-card-text--example2" maxlength="150"  data-screen-reader-text="${charsRemaining} characters remaining." aria-describedby="gift-card__desc" data-announce-after-escape="true"></textarea>
-          <label id="gift-card__desc" class="desc">Write a personalized message on the gift card for the recipient.</label>
-        </div>
-      </div>
-    </fieldset>
-
-
-    <button type="submit">Submit</button>
-  </form>
-
-</div>
-
-<?php includeShowcode("charcount-example")?>
--->
-<script type="application/json" id="charcount-example-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [
-
-    {
-      "label": "Place an aria-describedby for instructions",
-      "highlight": "%INLINE%charcount-example ||| aria-describedby"
-    },
-    {
-      "label": "Code the instructions for this component.",
-      "highlight": "%INLINE%enable-character-count__global ||| id=\"character-count__desc\"",
-      "notes": "This is the target of the <code>aria-describedby</code> in the previous step."
-    },
-    {
-      "label": "Have an ARIA live region to announce when user starts approaching character count limit",
-      "highlight": "%INLINE%enable-character-count__global ||| %OPENCLOSECONTENTTAG%output",
-      "notes": ""
-    }
-  ]
-}
-</script>
-
-
-
 <h2>ARIA example</h2>
 
 <?php includeStats(array('isForNewBuilds' => false, 'comment' => "Recommended only if you needed to create a JavaScript WYSIWYG editor.")) ?>
@@ -240,3 +176,81 @@
   ]
 }
 </script>
+
+
+
+
+<h2>Textbox With Character Counter</h2>
+
+<p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
+
+<ol>
+  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
+  <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
+</ol>
+
+<div id="charcount-example" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment information</legend>
+
+      <div class="enable-form-example__fieldset-inner-container">
+
+
+        <div>
+          <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
+          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100"></textarea>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <!--
+      Help:
+         VO/OSX: CAPSLOCK+SHIFT+H
+    -->
+
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+
+<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
+
+<?php includeShowcode("charcount-example")?>
+
+<script type="application/json" id="charcount-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [
+
+    {
+      "label": "Place an aria-describedby for instructions",
+      "highlight": "%INLINE%charcount-example ||| aria-describedby"
+    },
+    {
+      "label": "Code the instructions for this component.",
+      "highlight": "%INLINE%enable-character-count__global ||| id=\"character-count__desc\"",
+      "notes": "This is the target of the <code>aria-describedby</code> in the previous step."
+    },
+    {
+      "label": "Have an ARIA live region to announce when user starts approaching character count limit",
+      "highlight": "%INLINE%enable-character-count__global ||| %OPENCLOSECONTENTTAG%output",
+      "notes": ""
+    }
+  ]
+}
+</script>
+
+
+
+<?= includeNPMInstructions(
+    'enable-character-count', 
+    array(),
+    '',
+    false, 
+    array(
+      'noCSS' => true
+    )
+  ) 
+?>
