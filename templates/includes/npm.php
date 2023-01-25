@@ -221,13 +221,23 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
       href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
   </li>
   <li>
-    If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>,
+    If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>
     <?php
+       if (!($other["noCSS"] ?? false)) {
+         echo ",";
+       }
+
        foreach ($supportingModuleNames as $name) {
          echo '<code>' . $name . '</code>';
        }
-    ?> and <code>css/<?= $moduleName ?>.css</code> from the repo and put
-    them
+
+       if (!($other["noCSS"] ?? false)) {
+    ?>
+      and <code>css/<?= $moduleName ?>.css</code>
+    <?php
+       }
+    ?>
+    from the repo and put them
     in the appropriate directories in your project (all JS files must be in the same directory).
   </li>
   <li>
