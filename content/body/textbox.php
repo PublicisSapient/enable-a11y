@@ -240,3 +240,54 @@
   ]
 }
 </script>
+
+
+
+
+<h2>Textbox With Character Counter</h2>
+
+<p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
+
+<ol>
+  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
+  <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
+</ol>
+
+<div id="charcount-example" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment information</legend>
+
+      <div class="enable-form-example__fieldset-inner-container">
+
+
+        <div>
+          <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
+          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100"></textarea>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <!--
+      Help:
+         VO/OSX: CAPSLOCK+SHIFT+H
+    -->
+
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+
+
+
+<?= includeNPMInstructions(
+    'enable-character-count', 
+    array(),
+    'enable-character-count',
+    false, 
+    array(
+      'noCSS' => true
+    )
+  ) 
+?>

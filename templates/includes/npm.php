@@ -119,15 +119,15 @@ module.exports = {
     <?php includeShowcodeStaticBegin() ?>
 // import the JS module
 import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
-
 <?= $other["otherImports"] ?? '' ?>
-
+<?php
+  if (!($other["noCSS"] ?? false)) {
+?>
 
 // import the CSS for the module
 import '~enable-a11y/css/<?= $moduleName ?>';
-
-
-<?php 
+<?php
+  }
   if (!$noInit) {
 ?> 
 // How to initialize the <?= $moduleVar ?> library
@@ -165,6 +165,10 @@ el.add();
     <?php includeShowcodeStaticEnd() ?>
     <?= $other["es6Notes"] ?? '' ?>
   </li>
+
+<?php
+  if (!($other["noCSS"] ?? false)) {
+?>
   <li>
     Alternatively, if you are using LESS you can include the styles in your project's CSS using:
 
@@ -174,6 +178,9 @@ el.add();
 
     (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
   </li>
+<?php
+  }
+?>
 </ol>
 
 <h4>Using NPM/Webpack to Load Modules Using CommonJS Syntax</h4>
@@ -186,11 +193,11 @@ el.add();
     You can import the module using require like this:
 
 <?php includeShowcodeStaticBegin() ?>
-var switch = require('enable-a11y/switch').default; 
+var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default; 
 
 ...
 
-switch.init();
+<?= $moduleVar ?>.init();
 <?php includeShowcodeStaticEnd() ?>
     </li>
     <li>You will have to include the CSS as well in your project's CSS using:
