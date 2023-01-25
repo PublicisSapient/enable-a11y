@@ -278,6 +278,3 @@ directory instead of the <code>js/modules/</code>:
   }
 ?>
 
-
-
-<p>Hello: <?= $other["needsGlider"] ?></p>
