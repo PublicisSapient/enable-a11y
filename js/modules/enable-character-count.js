@@ -42,7 +42,6 @@ const enableCharacterCount = new function() {
 
     if (dataset.announceAfterEscape === 'true') {
       const desc = target.getAttribute('aria-describedby') || '';
-      console.log('setting desc', target, desc);
       target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim());
 
     }
@@ -70,10 +69,7 @@ const enableCharacterCount = new function() {
     ariaDescBy = ariaDescBy ? ariaDescBy.replace('character-count__desc', '') : '';
     ariaDescBy = ariaDescBy.split(/\s+/)[0];
 
-    console.log('!!!', ariaDescBy)
-
     const ariaDescByEl = ariaDescBy && document.getElementById(ariaDescBy);
-    console.log('desc', ariaDescBy, ariaDescByEl);
     const counterEl = document.createElement('output');
     const targetId = target.id || getNewId();
     counterEl.className = "enable-character-count";
@@ -90,7 +86,6 @@ const enableCharacterCount = new function() {
       target.insertAdjacentElement('afterend', counterEl);
     }
 
-    console.log(counterEl.parentNode);
   }
 
   function addLiveRegion() {
