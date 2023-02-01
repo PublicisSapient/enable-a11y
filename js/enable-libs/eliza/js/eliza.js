@@ -51,7 +51,7 @@ const eliza = new function () {
 		},
 		"no": {
 			"weight": 1,
-			"responses": ["Why not?", "Are you sure?"]
+			"responses": ["Why not?", "Are you sure?  Answers: <button>Yes</button>, <button>No</button>"]
 		},
 		"i am": {
 			"weight": 1,
