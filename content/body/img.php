@@ -241,8 +241,9 @@
       <p class="center">Feel free to connect with Killer B Cinema on Social Media!</p>
       <ul class="list-inline">
         <li>
-          <a href="https://www.facebook.com/killerbcinema/" aria-label="The Killer B Cinema Facebook page">
-            <i class="fa fa-facebook fa-2x"></i>
+          <a href="https://www.facebook.com/killerbcinema/" >
+            <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+            <span class="sr-only">The Killer B Cinema Facebook page</span>
           </a>
         </li>
         <li>
@@ -263,17 +264,17 @@
   "steps": [{
       "label": "Embed the font using the &lt;i&gt; tag.",
       "highlight": "%OPENCLOSECONTENTTAG%i",
-      "notes": "This is the usual way to embed fonts using Font Awesome.  More information can be read in the article <a href=\"https://www.sitepoint.com/introduction-icon-fonts-font-awesome-icomoon/\">An Introduction to Icon Fonts with Font Awesome and IcoMoon</a>"
+      "notes": "This is the usual way to embed fonts using Font Awesome.  More information can be read in the article <a href=\"https://www.sitepoint.com/introduction-icon-fonts-font-awesome-icomoon/\">An Introduction to Icon Fonts with Font Awesome and IcoMoon</a>."
     },
     {
-      "label": "Code an ARIA-Label if it's interactive and needs context",
-      "highlight": "aria-label",
-      "notes": "As mentioned in on <a href=\"/screen-reader-only-text.php#when-should-i-use-aria-labels-instead---heading\">Enable's screen reader only text page</a>, we should use an aria-label when an accessible label is missing from a control."
+      "label": "Code screen reader text near the icon font",
+      "highlight": "%OPENCLOSECONTENTTAG%span",
+      "notes": "As mentioned in on <a href=\"/screen-reader-only-text.php\">Enable's screen reader only text page</a>, this text will be read out by screen readers, but will be hidden from sighted users.  This acts as the alt text for the first icon font example."
     },
     {
       "label": "Make the decorative icons hidden from screen readers",
       "highlight": "aria-hidden",
-      "notes": "Note that this link already has text inside, so we don't need an aria-label.  We should hide the icon from screen readers, though, in order to prevent the font information from being read."
+      "notes": "Note the <code>aria-hidden=\"true\"</code> ensures the icon will not read out by screen readers.  The second example doesn't need any alt text, since it is decorative due to the supporting text near the icon."
     }
   ]
 }
