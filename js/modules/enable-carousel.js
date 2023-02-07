@@ -60,8 +60,9 @@ const EnableCarousel = function (container, options) {
     if (this.useArrowButtons) {
       import('../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js')
       .then((accessibilityObj) => { 
+
         accessibility = accessibilityObj.default;
-        console.log('loaded accessibility', accessibility);
+        
         // If the inert attribute is not supported by this browser, then load
         // the polyfill before using it.
         if (!supportsInertNatively) {
@@ -72,6 +73,7 @@ const EnableCarousel = function (container, options) {
         } else {
           this.setArrowButtonEvents();
         }
+
       });
     // If userArrowButtons is *not* set as an option, just initialize the event
     // handler routines. 
@@ -110,8 +112,8 @@ const EnableCarousel = function (container, options) {
     // Let's make all the carousel panels inert except the first one.
     this.setSlidesInert(true, 0);
 
-    // We should ensure the first
-    // CTA inside the visible panel gains focus when it first comes into view.
+    // This ensures when the slide comes into view, that focus is applied to it
+    // (or inside of it if it has an interactive element).
     this.container.addEventListener("glider-slide-visible", this.slideVisibleEvent);
     this.container.addEventListener("glider-slide-hidden", this.slideHiddenEvent);
 

@@ -280,20 +280,11 @@
       "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
     },
     {
-      "label": "Carousel slide focus event",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.slideToTarget =",
-      "notes": "When a CTA in a slide gains focus, we tell the carousel to display the slide that contains that CTA"
-    },
-    {
-      "label": "Carousel mouse event",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.clickHandler =",
-      "notes": "When the user clicks the CTA, we assume they are a mouse user so we allow the carousel to animate between slides."
-    },
-    {
-      "label": "Carousel key up event",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.keyUpHandler =",
-      "notes": "When the user hits the TAB key, we assume they are a keyboard user and tell the carousel to turn animations off."
+      "label": "Set up events the manage focus when a new slide comes into view.",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\s*// Sets events for the \"List of Content\" ([\\s\\S]*?\\};)",
+      "notes": "<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>"
     }
+    
   ]
 }
 </script>
