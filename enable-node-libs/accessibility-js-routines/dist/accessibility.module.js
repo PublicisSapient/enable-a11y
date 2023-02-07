@@ -309,6 +309,22 @@ const a11yGroup = function (el, options) {
               this.select(e, elToFocus, true);
             }
             break;
+          case 'Home':
+            e.preventDefault();
+            elToFocus = radioEls[0];
+
+            if (!isOption) {
+              this.select(e, elToFocus, true);
+            }
+            break;
+          case 'End':
+            e.preventDefault();
+            elToFocus = radioEls[radioEls.length-1];
+
+            if (!isOption) {
+              this.select(e, elToFocus, true);
+            }
+            break;
           case ' ':
           case 'Enter':
             if (doKeyChecking) {

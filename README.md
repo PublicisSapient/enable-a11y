@@ -48,6 +48,30 @@ https://chromedriver.storage.googleapis.com/index.html
 
 https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
 
+## Adding An External NPM Module To The Front-End Code
+
+If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JS library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
+
+For example, when I added the `glider-js` library to Enable so I can use it in the Carousel demos, I added the files I needed for the front-end to `nodeFiles` with these two lines:
+
+<pre>
+const nodeFiles = [
+  'node_modules/indent.js/lib/indent.min.js',
+  <b>'node_modules/glider-js/glider.js',
+  'node_modules/glider-js/glider.css',</b>
+  'node_modules/text-zoom-event/dist/textZoomEvent.module.js',
+  'node_modules/dialog-polyfill/index.js',
+  'node_modules/jquery/dist/jquery.min.js',
+  'node_modules/jquery-validation/dist/jquery.validate.min.js',
+  'node_modules/accessibility-js-routines/dist/accessibility.module.js',
+  'node_modules/inert-polyfill/inert-polyfill.js',
+  'node_modules/wicg-inert/inert.min.js'
+]
+</pre>
+
+When you start the project with `npm run server`, the files in the `nodeFiles` array will be placed in the `enable-node-libs` directory in the project root.  Use this directory to load the files in your scripts, css, or HTML files.
+
+
 ## References
 
 https://www.nvaccess.org/files/nvda/documentation/userGuide.html  

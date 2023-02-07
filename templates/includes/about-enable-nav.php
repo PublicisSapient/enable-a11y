@@ -17,9 +17,15 @@
       Accessible Code Quality
     </a>
   </li>
-  <li class="enable-flyout__menu-item enable-flyout__last-top-level-link"> 
+  <li class="enable-flyout__menu-item "> 
     <a href="acknowledgements.php"
       class="enable-flyout__link">
       Acknowledgements
+    </a>
+  </li>
+  <li class="enable-flyout__menu-item enable-flyout__last-top-level-link"> 
+    <a href="bookmarklets.php"
+      class="enable-flyout__link">
+      Bookmarklets
     </a>
   </li>

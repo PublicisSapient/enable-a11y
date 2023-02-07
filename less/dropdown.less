@@ -1,17 +1,5 @@
 @import "shared/mixins-and-vars";
 
-.remove-default-details-styles() {
-  &::-webkit-details-marker {
-    display: none;
-  }
-
-  &::marker {
-    content: "";
-    display: none;
-  }
-}
-
-
 .enable-drawer {
   & > .enable-drawer__button {
     .vendor(appearance, none);

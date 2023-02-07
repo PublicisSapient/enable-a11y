@@ -27,11 +27,6 @@
     padding: 13px 13px 13px 21px;
   }
 
-  &__list &__list {
-    width: @desktop-min;
-    width: fit-content;
-    margin: 20px auto;
-  }
 
 }
 
@@ -61,7 +56,6 @@
       width: @default-menu-item-with-photo-width;
       float: left;
       height: @item-height;
-      background: white;
 
 
       #code-patterns-section& {
@@ -109,7 +103,7 @@
 
 
     /* styles specific to Interactive Elements flyout */
-    #controls-section > :not(&__menu-item) > &__menu-item
+    #forms-section > :not(&__menu-item) > &__menu-item
     {
 
       width: calc(50% - @mulit-column-menu-margin * 2);
@@ -123,7 +117,7 @@
       }
     }
 
-    #controls-section .enable-flyout__level-heading {
+    #forms-section .enable-flyout__level-heading {
       text-align: center;
     }
 
@@ -185,6 +179,11 @@
       width: initial;
     }
     
+    &__list &__list {
+      width: @desktop-min;
+      width: fit-content;
+      margin: 20px auto;
+    }
   }
 
 

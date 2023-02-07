@@ -47,8 +47,8 @@ module.exports = {
       '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y'),
       '~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
       '../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module'),
-      '../../enable-node-libs/glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider'),
-      '../../enable-node-libs/jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
+      '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider'),
+      '~jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
       '../enable-node-libs/ableplayer/thirdparty/js.cookie.js': path.resolve(__dirname, 'node_modules/js-cookie/dist/js.cookie')
     },
 
@@ -57,13 +57,11 @@ module.exports = {
 }
       <?php includeShowcodeStaticEnd() ?>
 
-      <p>Note the <code>../enable-node-libs/</code> and <code>../../enable-node-libs/</code> path aliases.  This is due to the production Enable having fixed versions of some third party JavaScript libraries. In your code, these libraries will point to the production NPM versions inside your code (i.e. <code>glider-js</code>, <code>accessibility-js-routines</code>, <code>js-cookie</code>and <code>jquery</code> (jQuery is needed for AblePlayer only).</p>
+      <p>Note the <code>../enable-node-libs/</code> and <code>~</code> path aliases.  This is due to the production Enable having fixed versions of some third party JavaScript libraries. In your code, these libraries will point to the production NPM versions inside your code (i.e. <code>glider-js</code>, <code>accessibility-js-routines</code>, <code>js-cookie</code>and <code>jquery</code> (jQuery is needed for AblePlayer only).</p>
       
       
   </li>
 </ol>
-
-
 
 
 

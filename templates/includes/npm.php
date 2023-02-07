@@ -3,7 +3,8 @@
 <p>You can load this JavaScript library into your application in serveral ways:
 
 <ul>
-  <li>as an ES6 module using <a href="https://webpack.js.org/concepts/modules/">Webpack</a>.</li>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
   <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
       browser</a>.</li>
   <?php
@@ -73,8 +74,44 @@ These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the d
 
 <ol>
   <li>
-    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>. Developers who are using webpack should
-    know <a href="info/webpack.php">how to configure webpack to import the enable modules correctly</a>.
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <?php includeShowcodeStaticBegin() ?>
+module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+<?php if (array_key_exists('needsGlider', $other)) { ?>
+      ,'~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
+      '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider')
+<?php } ?> 
+<?php if (array_key_exists('needsAccessibilityLib', $other)) { ?>
+      ,'../enable-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module')
+<?php } ?>
+<?php if (array_key_exists('needsAblePlayerLibs', $other)) { ?>
+      ,'../../libs/jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
+      '../libs/ableplayer/thirdparty/js.cookie.js': path.resolve(__dirname, 'node_modules/js-cookie/dist/js.cookie')
+<?php } ?>
+    },
+
+    ...
+  },
+
+  ...
+
+}
+<?php includeShowcodeStaticEnd() ?>
   </li>
   <li>
     You can use the module like this:
@@ -82,15 +119,15 @@ These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the d
     <?php includeShowcodeStaticBegin() ?>
 // import the JS module
 import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
-
 <?= $other["otherImports"] ?? '' ?>
-
+<?php
+  if (!($other["noCSS"] ?? false)) {
+?>
 
 // import the CSS for the module
 import '~enable-a11y/css/<?= $moduleName ?>';
-
-
-<?php 
+<?php
+  }
   if (!$noInit) {
 ?> 
 // How to initialize the <?= $moduleVar ?> library
@@ -128,6 +165,10 @@ el.add();
     <?php includeShowcodeStaticEnd() ?>
     <?= $other["es6Notes"] ?? '' ?>
   </li>
+
+<?php
+  if (!($other["noCSS"] ?? false)) {
+?>
   <li>
     Alternatively, if you are using LESS you can include the styles in your project's CSS using:
 
@@ -137,7 +178,35 @@ el.add();
 
     (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
   </li>
+<?php
+  }
+?>
 </ol>
+
+<h4>Using NPM/Webpack to Load Modules Using CommonJS Syntax</h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<?php includeShowcodeStaticBegin() ?>
+var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default; 
+
+...
+
+<?= $moduleVar ?>.init();
+<?php includeShowcodeStaticEnd() ?>
+    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<?php includeShowcodeStaticBegin() ?>
+@import '~enable-a11y/css/<?= $moduleName ?>';
+<?php includeShowcodeStaticEnd() ?>
+    </li>
+    </ol>
 
 <h4>Using ES6 modules natively.</h4>
 
@@ -152,13 +221,23 @@ el.add();
       href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
   </li>
   <li>
-    If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>,
+    If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>
     <?php
+       if (!($other["noCSS"] ?? false)) {
+         echo ",";
+       }
+
        foreach ($supportingModuleNames as $name) {
          echo '<code>' . $name . '</code>';
        }
-    ?> and <code>css/<?= $moduleName ?>.css</code> from the repo and put
-    them
+
+       if (!($other["noCSS"] ?? false)) {
+    ?>
+      and <code>css/<?= $moduleName ?>.css</code>
+    <?php
+       }
+    ?>
+    from the repo and put them
     in the appropriate directories in your project (all JS files must be in the same directory).
   </li>
   <li>
@@ -208,3 +287,4 @@ directory instead of the <code>js/modules/</code>:
 <?php
   }
 ?>
+

@@ -1,23 +1,21 @@
 'use strict'
 
 /*******************************************************************************
-* enable-carousel.js - Accessible shim over the Glider carousel
-* 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
-* Part of the Enable accessible component library.
-* Version 1.0 released December 27, 2021
-*
-* More information about this script available at:
-* https://www.useragentman.com/enable/carousel.php
-* 
-* Released under the MIT License.
-******************************************************************************/
+ * enable-carousel.js - Accessible shim over the Glider carousel
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released December 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/carousel.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 
 import '../../enable-node-libs/glider-js/glider.js';
 
-
 const EnableCarousel = function (container, options) {
-  
   let glider;
   this.container = container;
   this.options = options || {};
@@ -26,16 +24,12 @@ const EnableCarousel = function (container, options) {
   const supportsInertNatively = HTMLElement.prototype.hasOwnProperty('inert');
   const $previousButton = this.container.parentNode.querySelector('.glider-prev');
   const $nextButton = this.container.parentNode.querySelector(".glider-next");
+  this.$alert = this.container.parentNode.querySelector('.enable-carousel__alert');
+
+  console.log('alert', this.$alert);
+  let accessibility; // for the accessibility library, if it is needed.
 
   this.init = function () {
-
-    if (! this.container) {
-      console.error("Error: No container for carousel. Bailing");
-      return;
-    } else {
-      console.log('Initializing.  options:', options)
-    }
-    
     // initializes Glider. We ensure that the carousel
     // is set to not have any animations by default.
     // eslint-disable-next-line no-undef
@@ -57,19 +51,28 @@ const EnableCarousel = function (container, options) {
 
     // If useArrowButtons is set as an option, we apply the inert attribute
     // to the panels that are not visible so keyboard focus won't be applied
-    // to them. We also initialize event handling routines.
+    // to them (and load the inert polyfill if it is needed).
+    // We also initialize event handling routines.
+    // 
+    // Note the accessibility library is loaded as well since it is used to
+    // discover if there are any interactive elements inside a newly visible
+    // panel. If there is, we apply focus on that instead of the panel itself.
     if (this.useArrowButtons) {
-
-      // If the inert attribute is not supported by this browser, then load
-      // the polyfill before using it.
-      if (!supportsInertNatively) {
-        import('../../enable-node-libs/inert-polyfill/inert-polyfill.js')
-        .then((dialogPolyfill) => {
+      import('../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js')
+      .then((accessibilityObj) => { 
+        accessibility = accessibilityObj.default;
+        console.log('loaded accessibility', accessibility);
+        // If the inert attribute is not supported by this browser, then load
+        // the polyfill before using it.
+        if (!supportsInertNatively) {
+          import('../../enable-node-libs/wicg-inert/dist/inert.min.js')
+          .then((inertPolyfill) => {
+            this.setArrowButtonEvents();
+          });
+        } else {
           this.setArrowButtonEvents();
-        });
-      } else {
-        this.setArrowButtonEvents();
-      }
+        }
+      });
     // If userArrowButtons is *not* set as an option, just initialize the event
     // handler routines. 
     } else {
@@ -115,6 +118,8 @@ const EnableCarousel = function (container, options) {
     // when buttons are clicked with a Enter key, prevent the page from scrolling
     $previousButton.addEventListener('keypress', this.preventSpaceFromScrolling);
     $nextButton.addEventListener('keypress', this.preventSpaceFromScrolling);
+
+    this.container.parentNode.addEventListener('focusin', this.announceCurrentSlide);
   };
 
   this.setSlidesInert = (value, exceptionIndex) => {
@@ -137,8 +142,39 @@ const EnableCarousel = function (container, options) {
   this.slideVisibleEvent = (e) => {
     const visibleSlideIndex = e.detail.slide;
     const visibleSlide = this.container.querySelectorAll(this.slidePanelSelector)[visibleSlideIndex];
+    const { pageXOffset, pageYOffset } = window;
     visibleSlide.inert = false;
-    visibleSlide.focus();
+
+    // Find what to apply focus to.
+    // If there are interactive elements in the slide, focus the first one,
+    // otherwise, focus the slide itself (assuming it has tabindex="-1")
+    const focusableEls = accessibility.getAlTabbableEls(visibleSlide);
+    if (focusableEls.length > 0) {
+      focusableEls[0].focus();
+    } else {
+      visibleSlide.focus();
+    }
+
+    /* We do the set timeout since some browsers will change the
+     * scroll value so that the focused item is hiding behind a
+     * sticky part of the screen. This fixes that.
+     */
+    window.setTimeout(() => {
+      window.scrollTo(pageXOffset, pageYOffset);
+    },100);
+    
+  }
+
+  this.announceCurrentSlide = (e) => {
+    const { relatedTarget } = e;
+    const { parentNode } = this.container;
+    const $currentSlide = parentNode.querySelector('.enable-carousel__slide.visible');
+
+    if (this.$alert && $currentSlide && !parentNode.contains(relatedTarget)) {
+      this.$alert.innerHTML=$currentSlide.innerHTML;
+      console.log('alerted');
+    }
+
   }
 
   this.focusCTAHandler = (e) => {
@@ -148,7 +184,7 @@ const EnableCarousel = function (container, options) {
     this.slideToTarget(target);
   };
 
-  this.slideToTarget = function (target) {
+  this.slideToTarget = function(target) {
     // Figures out what slide the target element is in.
     // The carousel then displays that slide.
     const slide = target.closest(".enable-carousel__slide");

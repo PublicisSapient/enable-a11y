@@ -8,7 +8,19 @@
   lot of website owners.
 </p>
 
+
 <p>
+  <strong>In our opinion, carousels are a hack designed to cram a huge amount of content within a small amount of space.</strong>  There are better alternatives to carousels out there, and these articles are a good place to start if you are looking for them:
+  </p>
+
+<ul>
+  <li><a href="https://www.mightybytes.com/blog/5-alternatives-using-carousel-on-homepage/">5 Alternatives to Using a Carousel on Your Website Homepage</a></li>
+  <li><a href="https://www.mightybytes.com/blog/more-alternatives-to-carousels-on-website/">More Alternatives to Using a Carousel on Your Website</a></li>
+  <li><a href="https://www.boia.org/blog/effective-and-accessible-alternatives-to-website-carousels">Alternatives to carousels in web design</a>
+  </ul>
+
+<p>
+  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarentee</a>.
   Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
   the
   code walkthrough below will contain information developers need to implement accessible carosuels regardless of the
@@ -18,7 +30,7 @@
 
 <h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarentee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
 <?php includeStats(array('isNPM' => true)) ?>
 
@@ -51,7 +63,7 @@
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="slide01-title" class="enable-carousel__slide-heading" lang="tr">3 Dev Adam</h2>
-          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 is the story of crime boss
+          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 film is the story of crime boss
             Spider-Man's battle with law enforcement heros Captain America and El Santo.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/3_Dev_Adam"
             aria-describedby="slide01-title">Learn More</a>
@@ -175,7 +187,7 @@
 
 <h2>Solution 2: Treat The Carousel Like A List of Content</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.')) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
 <?php includeStats(array('isNPM' => true)) ?>
 
@@ -183,8 +195,7 @@
 <p>
   Like the first example, this carousel example also uses <a
     href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
-  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that
-  slides into view.
+  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that slides into view <em>or</em> the first interactive element within the slide if one is available.
   This is great if you have carousel panels that don't have any interactive elements.
 </p>
 
@@ -193,64 +204,57 @@
   <p id="carousel-instructions" class="sr-only">Use the Previous and Next Slide buttons to cycle through the panels in
     the carousel.</p>
 
-  <div class="glider-contain" role="region" aria-label="Movie Carousel">
+  <div class="glider-contain" role="region" aria-label="Movie Carousel" id="example2-carousel">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
-    <div class="glider enable-carousel enable-carousel--focus-arrow-buttons">
-      <div class="enable-carousel__slide">
-        <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
-          alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
+    <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="Tab into the previous and next buttons below to cycle the slides.">
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
-          <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" lang="tr">3 Dev Adam</h2>
-          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 is the story of crime boss
-            Spider-Man's battle with law enforcement heros Captain America and El Santo.</p>
-          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/3_Dev_Adam"
-            aria-describedby="example2__slide01-title">Learn More</a>
+          <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
+          <p id="example2__slide-01-desc">Please note that our office hours have changed. We are now open from Monday to Friday from 8:30AM to 8:45AM. We do not apologize for any inconvenience this may cause.</p>
+          
         </div>
       </div>
-      <div class="enable-carousel__slide">
-        <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg"
-          alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide02-title example2__slide-02-desc">
+       
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
-          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
+          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">
+            Up to 50% off all items.
           </h2>
-          <p>Originally called <em lang="tr">Dünyayı Kurtaran
-              Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
-            enslaving
-            the local population.</p>
-          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
-            aria-describedby="example2__slide02-title">Learn More</a>
+          <p id="example2__slide-02-desc">
+            Starting Tuesday, all of our summer items will be sold for 50% off the sticker price.
+            (Note: offer not available in Newfoundland). 
+          </p>
+          
         </div>
       </div>
-      <div class="enable-carousel__slide">
-        <img class="enable-carousel__background" src="images/carousel-example/01-samurai-cop.jpg"
-          alt="A man with a mullet and a maniacal face holding a sword in the middle of a field.">
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide03-title example2__slide-03-desc">
+        
         <div class="enable-carousel__slide-copy">
-          <h2 id="example2__slide03-title" class="enable-carousel__slide-heading">Samurai Cop</h2>
-          <p>The story of a cop with an epic mullet and a samuari sword who, along with his cool
-            parner, take on a gang of cocaine smugglers in early '90's Los Angeles.
+          <h2 id="example2__slide03-title" class="enable-carousel__slide-heading">Recall Notice:</h2>
+          <p id="example2__slide-03-desc">Please note that if you bought our <em>Pika-homer&trade;</em> brand towels, you should return them to your nearest store for a full refund due to toxicity concerns with the dye used in their manufacture.
           </p>
-          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Samurai_Cop"
+
+          <a class="enable-carousel__slide-cta" href="https://www.reddit.com/r/crappyoffbrands/comments/8v114v/pikadoh/"
             aria-describedby="example2__slide03-title">Learn More</a>
+          
         </div>
       </div>
-      <div class="enable-carousel__slide">
-        <img class="enable-carousel__background" src="images/carousel-example/03-lady-terminator.jpg"
-          alt="An angry woman looking straight at the viewer with a gun blasting rounds in the same direction.">
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide04-title example2__slide-04-desc">
+       
         <div class="enable-carousel__slide-copy">
-          <h2 id="example2__slide04-title" class="enable-carousel__slide-heading">Lady Terminator</h2>
-          <p>
-            A woman is possessed by the legendary South Sea Queen to have revenge on the daughter of
-            a man who stole her snake a hundred years before.
+          <h2 id="example2__slide04-title" class="enable-carousel__slide-heading">Black Friday Event</h2>
+          <p id="example2__slide-04-desc">
+            Note that we will not be having a Black Friday Event this year due to the huge riot that happened last December.    
           </p>
-          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Lady_Terminator"
-            aria-describedby="example2__slide04-title">Learn More</a>
+          
         </div>
       </div>
     </div>
 
     <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide">»</button>
     <div role="tablist" class="dots"></div>
+    <output class="sr-only enable-carousel__alert"></div>
   </div>
 
 </div>
@@ -263,20 +267,12 @@
     ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
     ".glider .enable-carousel__slide p": "<!-- Copy here -->"
   },
-  "steps": [{
-      "label": "Ensure all images have alt attributes",
-      "highlight": "alt",
-      "notes": "The content of all the carousel panels must follow accessibility guidelines as well as the carousel itself"
-    },
+  "steps": [
+    
     {
-      "label": "Ensure CTAs are marked up correctly",
-      "highlight": "%OPENCLOSECONTENTTAG%a",
-      "notes": "More often than not, the CTAs inside a carousel will redirect users to another web page, which would make the CTA a link, <strong>even if the CTA looks like a button.</strong>  This is a very common mistake."
-    },
-    {
-      "label": "Link the CTA with the general description of the slide",
-      "highlight": "aria-describedby=\"example2__slide01-title\" ||| id=\"example2__slide01-title\"",
-      "notes": "When the user tabs into the <strong>Learn more</strong> CTA, we want to give the user more context about what they will be <strong>learning more about</strong> if they follow the link.  The aria-describedby will give screen reader users that context"
+      "label": "Ensure you set configure the carousel correctly",
+      "highlight": "enable-carousel--has-focusable-arrow-buttons",
+      "notes": "For this specific implementation, setting this class on the DOM element that contains the carousel panels will ensure that when the previous and next buttons are pressed, focus goes to the newly visible slide"
     },
     {
       "label": "Initialize the carousel via JavaScript",
@@ -305,12 +301,15 @@
 
 <?= includeNPMInstructions(
     'enable-carousel', 
-    array(),
+    array(
+    ),
     'enable-carousel',
     false, 
     array(
       "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
-      "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load."
+      "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
+
+      'needsGlider' => true
     )
   ) 
 ?>

@@ -34,6 +34,7 @@ fieldset .legend,
 [role="radiogroup"] .legend {
   position: relative;
   top: 1.5em;
+  width: 100%;
   border-color: #aaaaaa;
   font-weight: bold;
   font-size: 1em;
