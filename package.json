@@ -95,7 +95,6 @@
     "fs-extra": "^10.0.0",
     "glider-js": "^1.7.7",
     "indent.js": "^0.3.5",
-    "inert-polyfill": "^0.2.5",
     "jquery": "^3.6.0",
     "jquery-validation": "^1.19.3",
     "lessc": "^1.0.2",
