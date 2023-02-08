@@ -67,6 +67,9 @@ h4.showcode__heading {
             margin: 0 -2em -25px -1em;
         } */
 }
+.showcode__example a {
+  color: #8F8FFF;
+}
 .showcode__example:focus-within {
   box-shadow: 4px 0 0 #3b99fc inset, -4px 0 0 #3b99fc inset, 0 4px 0 #3b99fc inset, 0 -49px 0 #3b99fc inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
 }

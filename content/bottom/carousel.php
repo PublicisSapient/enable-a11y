@@ -10,7 +10,8 @@
      * panel when the arrow keys are pressed.
      */
     const focusArrowButtonsCarousel = new EnableCarousel(document.querySelector(".enable-carousel--has-focusable-arrow-buttons"), {
-        useArrowButtons: true
+        useArrowButtons: true,
+        polyfillURL: 'enable-node-libs/wicg-inert/dist/inert.min.js'
     });
 
     focusAllPanelsCarousel && focusAllPanelsCarousel.init();

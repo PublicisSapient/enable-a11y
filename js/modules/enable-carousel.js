@@ -17,6 +17,7 @@ import '../../enable-node-libs/glider-js/glider.js';
 
 const EnableCarousel = function (container, options) {
   let glider;
+
   this.container = container;
   this.options = options || {};
   this.useArrowButtons = this.options.useArrowButtons || false;
@@ -28,6 +29,23 @@ const EnableCarousel = function (container, options) {
 
   console.log('alert', this.$alert);
   let accessibility; // for the accessibility library, if it is needed.
+
+  this.polyfillURL = this.options.polyfillURL;
+  if (this.polyfillURL) {
+    if (this.polyfillURL.substring(0, 1) !== '/') {
+      // set this as a URL relative to the document.
+      const currentDir = getCurrentDir();
+      this.polyfillURL =  `${currentDir}${this.options.polyfillURL}`
+    }
+  } else {
+    this.polyfillURL = '../../enable-node-libs/wicg-inert/dist/inert.min.js';
+  }
+
+  function getCurrentDir () {
+      const link = document.createElement('a');
+      link.href = '.';
+      return link.pathname;
+  }
 
   this.init = function () {
     // initializes Glider. We ensure that the carousel
@@ -66,9 +84,13 @@ const EnableCarousel = function (container, options) {
         // If the inert attribute is not supported by this browser, then load
         // the polyfill before using it.
         if (!supportsInertNatively) {
-          import('../../enable-node-libs/wicg-inert/dist/inert.min.js')
+          import(this.polyfillURL)
           .then((inertPolyfill) => {
             this.setArrowButtonEvents();
+          })
+          .catch((error) => {
+            console.error(`Inert polyfill failed to load, url: ${this.polyfillURL}`);
+            console.error(error);
           });
         } else {
           this.setArrowButtonEvents();

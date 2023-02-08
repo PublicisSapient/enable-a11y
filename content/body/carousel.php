@@ -281,7 +281,7 @@
     {
       "label": "Set up events the manage focus when a new slide comes into view.",
       "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\s*// Sets events for the \"List of Content\" ([\\s\\S]*?\\};)",
-      "notes": "<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>"
+      "notes": "<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.  We load the <a href=\"https://github.com/WICG/inert\">WICG Inert polyfill</a> only if the browser doesn't support it natively.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>"
     }
     
   ]
