@@ -108,7 +108,8 @@
     "text-zoom-event": "^1.5.2",
     "vnu": "^20.6.30",
     "vnu-jar": "^21.6.11",
-    "wget-improved": "^3.2.1"
+    "wget-improved": "^3.2.1",
+    "wicg-inert": "^3.1.2"
   },
   "bin": {
     "enable-a11y": "bin/server.js"

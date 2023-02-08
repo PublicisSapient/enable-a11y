@@ -17,6 +17,36 @@ import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
 import offscreenObserver from "./modules/offscreen-observer.js";
 import textZoom from './demos/hero-image-text-resize.js';
 
+function scrollToEl(el) {
+    /*
+     * The setTimeout is here to ensure the focused elements coordinates are accurate
+     */
+    window.setTimeout( () => {
+        const rect = el.getBoundingClientRect(),
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop,
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        elTop = rect.top + scrollTop,
+        elLeft = rect.left + scrollLeft;
+        window.scrollTo({
+            top: elTop - 200,
+            left: elLeft
+          });
+    }, 100);
+    
+  }
+
+function focusDeepLink() {
+    const { hash } = window.location;
+    
+    if (hash !== '') {
+        const elToFocus = document.querySelector(hash);
+        console.log('x', hash, elToFocus);
+        if (elToFocus) {
+            elToFocus.focus();
+            scrollToEl(elToFocus);
+        }
+    }
+}
 
 function initEnable() {
     const hamburgerMenuEl = document.getElementById('enable-hamburger-menu');
@@ -70,6 +100,8 @@ function initEnable() {
             }
         })
     }
+
+    focusDeepLink();
 
 }
 

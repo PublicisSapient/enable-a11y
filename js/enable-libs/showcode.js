@@ -311,11 +311,12 @@ const showcode = new function () {
 
     const highlightStrings = value.split('|||');
     let command;
-
     for (let i = 0; i < highlightStrings.length; i++) {
       const isFinalStep = (i === (highlightStrings.length - 1));
       let highlightString = highlightStrings[i].trim();
       let isFileCommandExecuted = false;
+
+      console.log('string', highlightString);
 
       if (highlightString !== "") {
 
@@ -388,6 +389,7 @@ const showcode = new function () {
               }
             case '%FILE%':
               {
+                console.log('command is FILE');
                 isFileCommandExecuted = true;
                 splitHighlightString = highlightString.split('~');
                 const fileName = splitHighlightString[0].trim();

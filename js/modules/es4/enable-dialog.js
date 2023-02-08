@@ -102,7 +102,7 @@ const enableDialog = new function() {
     // If we are using the polyfill, then load it as well
     // as the polyfill accessibility fixes.
     if (!supportsDialog) {
-      import ('../../enable-node-libs/dialog-polyfill/index.js')
+      import('../../enable-node-libs/dialog-polyfill/index.js')
       .then((dialogPolyfill) => {
         dialogPolyfill.default.registerDialog(favDialog);
         this.registerFocusRestoreDialog(favDialog);

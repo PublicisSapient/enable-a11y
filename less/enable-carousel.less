@@ -13,12 +13,25 @@
     color: white;
     // height: 77vw !important;
 
-    @media @tablet {
-      height: 72vw !important;
-    }
+    .enable-focus(
+      {
+        outline: solid 2px @focus-color;
+        outline-offset: -5px;
+      },
+      {
+        outline: none;
+      }
+    );
 
-    @media @desktop {
-      height: 689px !important;
+    .enable-mobile-visible-on-focus__container & {
+
+      @media @tablet {
+        height: 72vw !important;
+      }
+
+      @media @desktop {
+        height: 689px !important;
+      }
     }
   }
 
@@ -33,7 +46,23 @@
 
     @media @desktop {
       top: 200px;
-    } 
+    }
+
+
+    #example2 & {
+      @media @desktop {
+        background: white;
+        color: #000;
+        top: calc(50% - 20px);
+      }
+    }
+
+    .enable-focus({
+      outline: solid 2px @focus-color !important;
+      outline-offset: -2px;
+    }, {
+      outline: none;
+    });
   }
 
   &-prev {
@@ -68,6 +97,8 @@
 
   &__slide {
     position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
 
     &-heading {
       margin: 0;

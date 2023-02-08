@@ -522,6 +522,11 @@ body {
 	 font-family: "Helvetica", "Arial", sans-serif;
      */
 }
+/* Prevents sticky header to obscure focused elements */
+main *:focus,
+main *:focus-visible {
+  scroll-margin-top: 15rem;
+}
 input[type="submit"],
 button[type="submit"] {
   display: block;

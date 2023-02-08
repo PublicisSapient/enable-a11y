@@ -1,6 +1,7 @@
 <p>
   Carousels are a list of content panels that mouse user can cycle through using arrow controls and panel indicator.
-  Usually carousels show only one panel at a time, and they usually have at least one CTA in them. They exist to cram as
+  Usually carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
+  They exist to cram as
   much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
     Fold</a>" real estate on websites. Although <a href="https://vwo.com/blog/is-above-the-fold-really-dead/">it is
     debatable whether "Above The Fold" is as important as people think it is</a>, it is still a solid requirement for a
@@ -8,17 +9,42 @@
 </p>
 
 
-<h2>Carousels with CTAs</h2>
+<p>
+  <strong>In our opinion, carousels are a hack designed to cram a huge amount of content within a small amount of space.</strong>  There are better alternatives to carousels out there, and these articles are a good place to start if you are looking for them:
+  </p>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<ul>
+  <li><a href="https://www.mightybytes.com/blog/5-alternatives-using-carousel-on-homepage/">5 Alternatives to Using a Carousel on Your Website Homepage</a></li>
+  <li><a href="https://www.mightybytes.com/blog/more-alternatives-to-carousels-on-website/">More Alternatives to Using a Carousel on Your Website</a></li>
+  <li><a href="https://www.boia.org/blog/effective-and-accessible-alternatives-to-website-carousels">Alternatives to carousels in web design</a>
+  </ul>
+
+<p>
+  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarentee</a>.
+  Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the
+  code walkthrough below will contain information developers need to implement accessible carosuels regardless of the
+  carousel frameworks being used. If the developer is making a carousel from scratch, they can use the NPM module that
+  makes Glider.js accessible (see below).
+</p>
+
+<h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
+
+<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarentee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
 <?php includeStats(array('isNPM' => true)) ?>
 
 
 <p>
-  This carousel example use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but the
-  instructions will contain information to make carousels accessible for all carousel frameworks. The
-  implementation presented here is based on <a
+  Note that this solution assumes that each carousel panel has at least one CTA (i.e., call to action, or control) in
+  it. Keyboard users simply tab into each CTA as they would any other links on the page. When keyboard users tab into a
+  panel that is offscreen, our JavaScript library ensures that the panel comes into focus. As a result, keyboard access
+  to the previous and next buttons are considered unnecessary, so we have intentionally removed them from the document
+  tabbing order. <strong>
+    If you are dealing with a carousel that can have no CTA in one or more panels, you should look at <a
+      href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the second carousel example on this page</a>.</strong></p>
+
+<p>The implementation presented here is based on <a
     href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
     excellent article by Alison Walden</a>.
 </p>
@@ -31,13 +57,13 @@
   </div>
 
   <div class="glider-contain">
-    <div class="glider">
+    <div class="glider enable-carousel enable-carousel--focus-all-panels">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="slide01-title" class="enable-carousel__slide-heading" lang="tr">3 Dev Adam</h2>
-          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 is the story of crime boss
+          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 film is the story of crime boss
             Spider-Man's battle with law enforcement heros Captain America and El Santo.</p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/3_Dev_Adam"
             aria-describedby="slide01-title">Learn More</a>
@@ -47,16 +73,14 @@
         <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg"
           alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
         <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
-          <h2 id="slide02-title" class="enable-carousel__slide-heading" lang="tr">Dünyayı Kurtaran
-            Adam
+          <h2 id="slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
           </h2>
-          <p>Two space fighters crash into a desert planet and fights a mysterious Wizard who is
+          <p>Originally called <em lang="tr">Dünyayı Kurtaran
+              Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
             enslaving
             the local population.</p>
-          <a class="enable-carousel__slide-cta"
-            href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam">Learn More <span class="sr-only">about
-              <span lang="tr">Dünyayı Kurtaran
-                Adam</span></span></a>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam"
+            aria-describedby="slide02-title">Learn More</a>
         </div>
       </div>
       <div class="enable-carousel__slide">
@@ -86,8 +110,8 @@
       </div>
     </div>
 
-    <button class="glider-prev" tabindex="-1" aria-hidden="true">«</button>
-    <button class="glider-next" tabindex="-1" aria-hidden="true">»</button>
+    <button class="glider-prev" tabindex="-1" aria-label="Display Previous Slide" aria-hidden="true">«</button>
+    <button class="glider-next" tabindex="-1" aria-label="Display Next Slide" aria-hidden="true">»</button>
     <div role="tablist" class="dots"></div>
   </div>
 
@@ -138,7 +162,7 @@
     },
     {
       "label": "Initialize the carousel via JavaScript",
-      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.init =",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.setTabthroughEvents = ([\\s\\S]*\\s\\s\\})?",
       "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
     },
     {
@@ -160,6 +184,111 @@
 }
 </script>
 
+
+<h2>Solution 2: Treat The Carousel Like A List of Content</h2>
+
+<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.')) ?>
+<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(array('isNPM' => true)) ?>
+
+
+<p>
+  Like the first example, this carousel example also uses <a
+    href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that slides into view <em>or</em> the first interactive element within the slide if one is available.
+  This is great if you have carousel panels that don't have any interactive elements.
+</p>
+
+<div id="example2" class="enable-example enable-carousel__example">
+
+  <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
+
+  <div class="glider-contain" role="region" aria-label="Movie Carousel" id="example2-carousel">
+
+    <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
+    <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="carousel-instructions">
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
+        <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
+          <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
+          <p id="example2__slide-01-desc">Please note that our office hours have changed. We are now open from Monday to Friday from 8:30AM to 8:45AM. We do not apologize for any inconvenience this may cause.</p>
+          
+        </div>
+      </div>
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide02-title example2__slide-02-desc">
+       
+        <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
+          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">
+            Up to 50% off all items.
+          </h2>
+          <p id="example2__slide-02-desc">
+            Starting Tuesday, all of our summer items will be sold for 50% off the sticker price.
+            (Note: offer not available in Newfoundland). 
+          </p>
+          
+        </div>
+      </div>
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide03-title example2__slide-03-desc">
+        
+        <div class="enable-carousel__slide-copy">
+          <h2 id="example2__slide03-title" class="enable-carousel__slide-heading">Recall Notice:</h2>
+          <p id="example2__slide-03-desc">Please note that if you bought our <em>Pika-homer&trade;</em> brand towels, you should return them to your nearest store for a full refund due to toxicity concerns with the dye used in their manufacture.
+          </p>
+
+          <a class="enable-carousel__slide-cta" href="https://www.reddit.com/r/crappyoffbrands/comments/8v114v/pikadoh/"
+            aria-describedby="example2__slide03-title">Learn More</a>
+          
+        </div>
+      </div>
+      <div class="enable-carousel__slide" aria-labelledby="example2__slide04-title example2__slide-04-desc">
+       
+        <div class="enable-carousel__slide-copy">
+          <h2 id="example2__slide04-title" class="enable-carousel__slide-heading">Black Friday Event</h2>
+          <p id="example2__slide-04-desc">
+            Note that we will not be having a Black Friday Event this year due to the huge riot that happened last December.    
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide">»</button>
+    <div role="tablist" class="dots"></div>
+    <output class="sr-only enable-carousel__alert"></output>
+  </div>
+
+</div>
+
+<?php includeShowcode("example2")?>
+
+<script type="application/json" id="example2-props">
+{
+  "replaceHtmlRules": {
+    ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
+    ".glider .enable-carousel__slide p": "<!-- Copy here -->"
+  },
+  "steps": [
+    
+    {
+      "label": "Ensure you set configure the carousel correctly",
+      "highlight": "enable-carousel--has-focusable-arrow-buttons",
+      "notes": "For this specific implementation, setting this class on the DOM element that contains the carousel panels will ensure that when the previous and next buttons are pressed, focus goes to the newly visible slide"
+    },
+    {
+      "label": "Initialize the carousel via JavaScript",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\s*// If useArrowButtons is set as an option.+?(?=\\s*// If userArrowButtons)",
+      "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
+    },
+    {
+      "label": "Set up events the manage focus when a new slide comes into view.",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\s*// Sets events for the \"List of Content\" ([\\s\\S]*?\\};)",
+      "notes": "<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.  We load the <a href=\"https://github.com/WICG/inert\">WICG Inert polyfill</a> only if the browser doesn't support it natively.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>"
+    }
+    
+  ]
+}
+</script>
+
+
 <?= includeNPMInstructions(
     'enable-carousel', 
     array(
@@ -170,7 +299,8 @@
       "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
       "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
 
-      'needsGlider' => true
+      'needsGlider' => true,
+      'customInit' => '/Users/zolhawry/git/enable-a11y/content/code-fragments/carousel-init.js'
     )
   ) 
 ?>

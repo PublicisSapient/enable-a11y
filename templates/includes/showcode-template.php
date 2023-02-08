@@ -6,8 +6,7 @@
           <div class="showcode__copy">
             <?php if ($isInteractive && $headingLevel > 0): ?>
             <h<?= $headingLevel ?> id="developer-walkthrough-<?= $walkthroughIndex ?>" tabindex="-1"
-              class="showcode__heading">Example code
-              explanation</h<?= $headingLevel ?>>
+              class="showcode__heading">Code Walkthrough of the Above Example</h<?= $headingLevel ?>>
 
             <p>
               Below is the HTML of the above example. Use the dropdown
