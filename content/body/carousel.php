@@ -203,7 +203,7 @@
 
   <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
 
-  <div class="glider-contain" role="region" aria-label="Movie Carousel" id="example2-carousel">
+  <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="example2-carousel">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
     <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="carousel-instructions">
