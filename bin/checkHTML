@@ -266,8 +266,7 @@ DID_PALLY_SUCCEED="0"
 pa11y-ci --config tmp/pa11y-config 
 DID_PALLY_SUCCEED="$?"
 
-
-if [ $DID_PALLY_SUCCEED = "1" ]
+if [ $DID_PALLY_SUCCEED != "0" ]
 then
 	echo "Pa11y failed.  See information above."
 	exit 2;

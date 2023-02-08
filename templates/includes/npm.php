@@ -128,11 +128,15 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
 import '~enable-a11y/css/<?= $moduleName ?>';
 <?php
   }
-  if (!$noInit && ($other["customInit"] ?? '') != '') {
+  if (!$noInit && ($other["customInit"] ?? '') == '') {
 ?> 
 // How to initialize the <?= $moduleVar ?> library
 <?= $moduleVar ?>.init();
 <?php
+  }
+
+  if (($other["customInit"] ?? '') != '') {
+    include $other["customInit"];
   }
   
   if ($noInit)

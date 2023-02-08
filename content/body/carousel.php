@@ -42,7 +42,7 @@
   to the previous and next buttons are considered unnecessary, so we have intentionally removed them from the document
   tabbing order. <strong>
     If you are dealing with a carousel that can have no CTA in one or more panels, you should look at <a
-      href="#solution-2-have-arrow-keys-focusable--heading">the second carousel example on this page</a>.</strong></p>
+      href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the second carousel example on this page</a>.</strong></p>
 
 <p>The implementation presented here is based on <a
     href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
@@ -201,13 +201,12 @@
 
 <div id="example2" class="enable-example enable-carousel__example">
 
-  <p id="carousel-instructions" class="sr-only">Use the Previous and Next Slide buttons to cycle through the panels in
-    the carousel.</p>
+  <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
 
   <div class="glider-contain" role="region" aria-label="Movie Carousel" id="example2-carousel">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
-    <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="Tab into the previous and next buttons below to cycle the slides.">
+    <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="carousel-instructions">
       <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
@@ -254,7 +253,7 @@
 
     <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide">»</button>
     <div role="tablist" class="dots"></div>
-    <output class="sr-only enable-carousel__alert"></div>
+    <output class="sr-only enable-carousel__alert"></output>
   </div>
 
 </div>
@@ -300,7 +299,8 @@
       "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
       "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
 
-      'needsGlider' => true
+      'needsGlider' => true,
+      'customInit' => '/Users/zolhawry/git/enable-a11y/content/code-fragments/carousel-init.js'
     )
   ) 
 ?>
