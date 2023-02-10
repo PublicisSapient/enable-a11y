@@ -87,7 +87,6 @@
     "jsdoc": "^3.6.6"
   },
   "dependencies": {
-    "chromedriver": "^103.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",

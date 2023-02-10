@@ -73,18 +73,29 @@ then
 	echo "-----------------------------------------------------------------"
 	echo "It seems that you do not have the correct Chromedriver installed."
 	echo '
-	
-If there is a problem with running Chromedriver, then you should ensure your chromedriver is installed with the right version.
+If there is a problem with running Chromedriver, then you should
+ensure your chromedriver is installed with the right version 
+of Chrome (check the version number inside the "About Chrome"
+dialog in Chrome).  For example, if you are on MAC OS, you
+will need to download the mac64 version of the Chromedriver
+and install it like this:
 
 sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
 
-You can install the right zip file from here:
+You can download the right zip file from here:
 
 https://chromedriver.storage.googleapis.com/index.html
 
 (you may need to change the $PATH variable)
 
-https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9'
+https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
+
+If that does not work, you may need to do a global update of axe-cli:
+
+sudo npm update -g axe-cli
+
+
+'
 exit
 fi
 
