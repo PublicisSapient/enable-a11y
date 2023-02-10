@@ -228,7 +228,7 @@ describe('Carousel Tests', () => {
           isFocusInVisiblePanel: (activeElement === $currentSlide || activeElement.closest('.enable-carousel__slide') === $currentSlide)
         }
 
-      }, i);
+      }, i); 
       expect(domInfo.isFocusInVisiblePanel).toBe(true);
     }
 
