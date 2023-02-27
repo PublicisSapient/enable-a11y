@@ -1,0 +1,1 @@
+<script type="module" src="./js/modules/enable-character-count.js"></script>

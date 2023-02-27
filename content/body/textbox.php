@@ -43,8 +43,9 @@
 
 
 <h2>HTML example</h2>
-
 <?php includeStats(array('isForNewBuilds' => true)) ?>
+
+
 
 <div id="html-example" class="enable-example">
   <form class="enable-form-example">
@@ -59,13 +60,15 @@
 
         <div>
           <label for="notes" class="textarea-label">Notes:</label>
-          <textarea id="notes" name="notes"></textarea>
+          <textarea id="notes"  name="notes"></textarea>
+          
         </div>
       </div>
     </fieldset>
 
     <button type="submit">Submit</button>
   </form>
+
 </div>
 
 <?php includeShowcode("html-example")?>
@@ -91,9 +94,6 @@
   ]
 }
 </script>
-
-
-
 
 <h2>ARIA example</h2>
 
@@ -176,3 +176,81 @@
   ]
 }
 </script>
+
+
+
+
+<h2>Textbox With Character Counter</h2>
+
+<p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
+
+<ol>
+  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
+  <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
+</ol>
+
+<div id="charcount-example" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment information</legend>
+
+      <div class="enable-form-example__fieldset-inner-container">
+
+
+        <div>
+          <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
+          <textarea id="notes--example2" data-has-character-count="true" name="notes--example2" maxlength="100"></textarea>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <!--
+      Help:
+         VO/OSX: CAPSLOCK+SHIFT+H
+    -->
+
+    <button type="submit">Submit</button>
+  </form>
+
+</div>
+
+<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
+
+<?php includeShowcode("charcount-example")?>
+
+<script type="application/json" id="charcount-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [
+
+    {
+      "label": "Place an aria-describedby for instructions",
+      "highlight": "%INLINE%charcount-example ||| aria-describedby"
+    },
+    {
+      "label": "Code the instructions for this component.",
+      "highlight": "%INLINE%enable-character-count__global ||| id=\"character-count__desc\"",
+      "notes": "This is the target of the <code>aria-describedby</code> in the previous step."
+    },
+    {
+      "label": "Have an ARIA live region to announce when user starts approaching character count limit",
+      "highlight": "%INLINE%enable-character-count__global ||| %OPENCLOSECONTENTTAG%output",
+      "notes": ""
+    }
+  ]
+}
+</script>
+
+
+
+<?= includeNPMInstructions(
+    'enable-character-count', 
+    array(),
+    '',
+    false, 
+    array(
+      'noCSS' => true
+    )
+  ) 
+?>

@@ -21,13 +21,24 @@
   background: black;
   color: white;
 }
+.glider-slide:focus {
+  outline: solid 2px #3b99fc;
+  outline-offset: -5px;
+}
+.glider-slide:focus:not(:focus-visible) {
+  outline: none;
+}
+.glider-slide:focus-visible {
+  outline: solid 2px #3b99fc;
+  outline-offset: -5px;
+}
 @media only screen and (min-width: 720px) and (max-width: 959px) {
-  .glider-slide {
+  .enable-mobile-visible-on-focus__container .glider-slide {
     height: 72vw !important;
   }
 }
 @media only screen and (min-width: 960px) {
-  .glider-slide {
+  .enable-mobile-visible-on-focus__container .glider-slide {
     height: 689px !important;
   }
 }
@@ -45,6 +56,28 @@
   .glider-next {
     top: 200px;
   }
+}
+@media only screen and (min-width: 960px) {
+  #example2 .glider-prev,
+  #example2 .glider-next {
+    background: white;
+    color: #000;
+    top: calc(50% - 20px);
+  }
+}
+.glider-prev:focus,
+.glider-next:focus {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
+}
+.glider-prev:focus:not(:focus-visible),
+.glider-next:focus:not(:focus-visible) {
+  outline: none;
+}
+.glider-prev:focus-visible,
+.glider-next:focus-visible {
+  outline: solid 2px #3b99fc !important;
+  outline-offset: -2px;
 }
 .glider-prev {
   left: 0;
@@ -72,6 +105,8 @@
 }
 .enable-carousel__slide {
   position: relative;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .enable-carousel__slide-heading {
   margin: 0;

@@ -13,6 +13,14 @@ code {
   font-family: "ModeSeven", "Consolas", monospace;
   font-style: normal;
 }
+.static-code {
+  display: block;
+  position: relative;
+  font-family: "ModeSeven", "Consolas", monospace;
+  background: #000;
+  color: #090;
+  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -53px 0 black inset;
+}
 .showcode {
   background-color: #f5deb3;
   clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
@@ -58,6 +66,9 @@ h4.showcode__heading {
   /* @media @mobile {
             margin: 0 -2em -25px -1em;
         } */
+}
+.showcode__example a {
+  color: #8F8FFF;
 }
 .showcode__example:focus-within {
   box-shadow: 4px 0 0 #3b99fc inset, -4px 0 0 #3b99fc inset, 0 4px 0 #3b99fc inset, 0 -49px 0 #3b99fc inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
@@ -233,4 +244,7 @@ h4.showcode__heading {
 }
 .showcode--no-js-container {
   margin-top: 20px;
+}
+figure.wide .showcode__example {
+  margin-bottom: -2.5rem;
 }

@@ -57,6 +57,10 @@ const testHelpers = new function () {
     return await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
   }
 
+  this.pauseFor = async function(n) {
+    return await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+  }
+
   this.keyDownAndUp = function (page, key) {
     page.keyboard.press(key, {
       delay: config.KEYPRESS_FAST_TIMEOUT - 10

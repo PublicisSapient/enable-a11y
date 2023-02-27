@@ -1,20 +1,20 @@
 'use strict'
 
 /*******************************************************************************
-* sortable-table.js - A sortable table script
-* 
-* This has been mofified from the excellent script from Deque University:
-* https://dequeuniversity.com/library/aria/table-sortable
-*
-*******************************************************************************/
+ * sortable-tables.js - A sortable table script
+ * 
+ * This has been mofified from the excellent script from Deque University:
+ * https://dequeuniversity.com/library/aria/table-sortable
+ *
+ *******************************************************************************/
 
 
-const sortableTables = new (function () {
- /*
-  * sortableTable script.  This has been mofified from the excellent
-  * script from Deque University:
-  * https://dequeuniversity.com/library/aria/table-sortable
-  */
+const sortableTables = new(function() {
+  /*
+   * sortableTable script.  This has been mofified from the excellent
+   * script from Deque University:
+   * https://dequeuniversity.com/library/aria/table-sortable
+   */
   this.functions = {};
 
   this.add = (tableGroup, options) => {
@@ -44,7 +44,7 @@ const sortableTables = new (function () {
     if (readCaptions === null) {
       readCaptions = false;
     }
-    liveRegion.notify = function (text) {
+    liveRegion.notify = function(text) {
       liveRegion.innerHTML = text;
     };
 
@@ -125,7 +125,7 @@ const sortableTables = new (function () {
     }
 
     rows = Array.prototype.slice.call(rows);
-    var isValid = rows.every(function (row) {
+    var isValid = rows.every(function(row) {
       return row.children.length === headers.length;
     });
 
@@ -134,8 +134,8 @@ const sortableTables = new (function () {
     }
 
     headers = Array.prototype.slice.call(headers);
-    [].slice.call(headers).forEach(function (header, i) {
-      createHeaderCell(header, function (e) {
+    [].slice.call(headers).forEach(function(header, i) {
+      createHeaderCell(header, function(e) {
         const { options } = table;
 
         e.preventDefault();
@@ -153,8 +153,7 @@ const sortableTables = new (function () {
 
         table.dispatchEvent(
           new CustomEvent(
-            'enable-table-sort',
-            {
+            'enable-table-sort', {
               'bubbles': true,
               'detail': {
                 'index': () => i,
@@ -166,7 +165,7 @@ const sortableTables = new (function () {
       });
     });
 
-    table.renderData = function (rows) {
+    table.renderData = function(rows) {
       rowGroup.innerHTML = toHTML(rows, hasRowHeadings);
       renderSorting();
     };
@@ -175,16 +174,16 @@ const sortableTables = new (function () {
 
     const createCompareFunc = (baseFunc, index) => {
       return (
-        function (a, b) {
+        function(a, b) {
           a = Array.prototype.slice.call(a.children);
           b = Array.prototype.slice.call(b.children);
           var aVal = null;
           var bVal = null;
-    
+
           if (a[index]) {
             aVal = a[index].innerText;
           }
-    
+
           if (b[index]) {
             bVal = b[index].innerText;
           }
@@ -198,20 +197,20 @@ const sortableTables = new (function () {
       const tableHeadings = tableGroup.querySelectorAll('thead th');
       const sortByFuncName = tableHeadings[index].dataset.sortableTablesCompareFunc;
       const customCompareFunc = this.functions[sortByFuncName];
-      const compareFunc = customCompareFunc ? createCompareFunc(customCompareFunc, index) : (function (a, b) {
+      const compareFunc = customCompareFunc ? createCompareFunc(customCompareFunc, index) : (function(a, b) {
         a = Array.prototype.slice.call(a.children);
         b = Array.prototype.slice.call(b.children);
         var aVal = null;
         var bVal = null;
-  
+
         if (a[index]) {
           aVal = a[index].innerText;
         }
-  
+
         if (b[index]) {
           bVal = b[index].innerText;
         }
-  
+
         if (!isNaN(parseInt(aVal)) && !isNaN(parseInt(bVal))) {
           if (parseInt(aVal) < parseInt(bVal)) {
             return -1;
@@ -257,24 +256,24 @@ const sortableTables = new (function () {
     button.addEventListener("click", handler);
   }
 
-  function toHTML(rows , hasRowHeadings) {
+  function toHTML(rows, hasRowHeadings) {
     return rows
-      .map(function (row) {
+      .map(function(row) {
         const { className } = row;
 
         row = Array.prototype.slice.call(row.children);
         return (
           `<tr role="row" class="${className}">\n    ` +
           row
-            .map(function (item, index) {
-              if (index === 0 && hasRowHeadings) {
-                return (
-                  '<th scope="row" role="rowheader">' + item.innerText + "</th>"
-                );
-              }
-              return '<td role="gridcell">' + item.innerText + "</td>";
-            })
-            .join("") +
+          .map(function(item, index) {
+            if (index === 0 && hasRowHeadings) {
+              return (
+                '<th scope="row" role="rowheader">' + item.innerText + "</th>"
+              );
+            }
+            return '<td role="gridcell">' + item.innerText + "</td>";
+          })
+          .join("") +
           "</tr>"
         );
       })

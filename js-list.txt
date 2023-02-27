@@ -33,7 +33,7 @@ js/shared/checkbox.js MODULE DONE
 js/shared/radiogroup.js MODULE DONE
 js/shared/switch.js MODULE DONE
 js/shared/tooltip.js MODULE DONE
-js/sortable-table.js MODULE DONE
+js/sortable-tables.js MODULE DONE
 js/spinbutton.js MODULE DONE
 js/status.js DEMO
 js/tabs.js MODULE DONE

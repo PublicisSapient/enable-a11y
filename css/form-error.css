@@ -63,18 +63,31 @@
   margin-bottom: 0.5rem;
   display: block;
 }
+.enable-form-example label.desc,
 .enable-form-example label.error {
   text-align: left;
-  color: #e60000;
   margin-top: 5px;
   margin-bottom: 20px;
-  padding-left: 18px;
+  padding-left: 5px;
   position: relative;
+}
+@media only screen and (min-width: 720px) {
+  .enable-form-example label.desc,
+  .enable-form-example label.error {
+    margin-bottom: 10px;
+  }
+}
+.enable-form-example label.desc {
+  color: #666666;
+  font-style: italic;
+}
+.enable-form-example label.error {
+  color: #e60000;
+  padding-left: 18px;
 }
 @media only screen and (min-width: 720px) {
   .enable-form-example label.error {
     margin-left: calc(45% + 10px);
-    margin-bottom: 10px;
   }
 }
 .enable-form-example label.error::before {

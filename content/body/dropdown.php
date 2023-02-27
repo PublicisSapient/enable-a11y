@@ -238,6 +238,11 @@
     {
       "label": "Set the aria roles",
       "highlight": "role=\"group\""
+    },
+    {
+      "label": "Place an aria-label on the dropdown content",
+      "highlight": "aria-label",
+      "notes": "You can also use an aria-labelledby if that is appropriate. The label will be announced by most screen readers when the user focuses inside any of the interactive elements inside the dropdown content."
     }
   ]
 }

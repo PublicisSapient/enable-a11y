@@ -311,11 +311,12 @@ const showcode = new function () {
 
     const highlightStrings = value.split('|||');
     let command;
-
     for (let i = 0; i < highlightStrings.length; i++) {
       const isFinalStep = (i === (highlightStrings.length - 1));
       let highlightString = highlightStrings[i].trim();
       let isFileCommandExecuted = false;
+
+      console.log('string', highlightString);
 
       if (highlightString !== "") {
 
@@ -388,6 +389,7 @@ const showcode = new function () {
               }
             case '%FILE%':
               {
+                console.log('command is FILE');
                 isFileCommandExecuted = true;
                 splitHighlightString = highlightString.split('~');
                 const fileName = splitHighlightString[0].trim();
@@ -508,10 +510,12 @@ const showcode = new function () {
               {
                 const codeTemplateEl = document.getElementById(highlightString.trim());
                 if (codeTemplateEl) {
-                  if (codeTemplateEl.dataset.type === 'less' || codeTemplateEl.dataset.type === 'css') {
+                  const { type } = codeTemplateEl.dataset;
+
+                  if (type === 'less' || type === 'css') {
                     code = formatCSS(codeTemplateEl.innerHTML);
-                  } else if (codeTemplateEl.dataset.type === 'text') {
-                    code = this.entify(codeTemplateEl.innerHTML); 
+                  } else if (type === 'text') {
+                    code = this.entify(codeTemplateEl.innerHTML);
                   } else {
                     code = codeTemplateEl.innerHTML;
 
@@ -935,12 +939,20 @@ const showcode = new function () {
         console.error('Block ' + i + ' does not have any props');
       } else {
         try {
-          const json = JSON.parse(document.getElementById(showcodeProps).innerHTML);
-          const { replaceHtmlRules, steps } = json;
+          const propsEl = document.getElementById(showcodeProps);
           const { showcodeId } = dataset;
 
-          displayCode(htmlBlock, showcodeId, replaceHtmlRules);
-          displayStepsWidget(showcodeId, steps, replaceHtmlRules);
+          if (propsEl) {
+            const json = JSON.parse(propsEl.innerHTML);
+            const { replaceHtmlRules, steps } = json;
+            
+
+            displayCode(htmlBlock, showcodeId, replaceHtmlRules);
+            displayStepsWidget(showcodeId, steps, replaceHtmlRules);
+          } else {
+            console.log('No props file: ', showcodeProps);
+            displayCode(htmlBlock, showcodeId, {});
+          }
         } catch (ex) {
           console.error(ex);
         }

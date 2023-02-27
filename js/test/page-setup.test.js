@@ -4,17 +4,34 @@ import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 import fs from 'fs';
 
-const fileList =  testHelpers.getPageList();
+const fileList = testHelpers.getPageList();
 let desktopBrowser, desktopPage;
 
 describe('Test all pages on Enable to Ensure the information is written correctly', () => {
-  beforeAll(async () => {
+  beforeAll(async() => {
     // Put code here that should execute before starting tests.
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
+
+    // This tests that there are no browser or js errors.
+    desktopPage.on('console', async e => {
+      const args = await Promise.all(e.args().map(a => a.jsonValue()));
+
+      const type = e.type();
+
+      if (type === 'error') {
+        throw `Browser error: ${e.text()}
+        
+        type: ${type}
+        
+        location: ${JSON.stringify(e.location())}
+          
+        stack trace: ${JSON.stringify(e.stackTrace())}`;
+      }
+    });
   });
 
-  afterAll(async () => {
+  afterAll(async() => {
     await desktopBrowser.close();
   });
 
@@ -24,16 +41,16 @@ describe('Test all pages on Enable to Ensure the information is written correctl
     // testHelpers.redirectPuppeteerConsole(page);
     await page.goto(`${config.BASE_URL}/${filename}`);
     // Test on initial load.
-    
+
     // Step 1: Wait for whole page to load (this is so scripts
     // like `enable-visible-on-focus` can initialize)
     await page.waitForSelector('footer');
 
-    
+
     //await testHelpers.fastPause();
     domInfo = await page.evaluate(() => {
       //const { querySelector } = document;
-      
+
       // get meta info posters.
       const openGraphPoster = document.querySelector('meta[property="og:image"]');
       const twitterGraphPoster = document.querySelector('meta[name="twitter:image"]');
@@ -61,13 +78,13 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
   }
 
-  
 
-  for (let i=0; i<fileList.length; i++) {
+
+  for (let i = 0; i < fileList.length; i++) {
     const file = fileList[i];
-      it(`Desktop Breakpoint: Test page setup on ${file}`, async () => {
-        await testPage(fileList[i], desktopPage);
-      });
+    it(`Desktop Breakpoint: Test page setup on ${file}`, async() => {
+      await testPage(fileList[i], desktopPage);
+    });
 
   }
 

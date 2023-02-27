@@ -83,11 +83,16 @@
   <strong>Be very careful putting ARIA-labels on a <code>div</code> or <code>span</code> tag.</strong>  Sometimes, screen readers like Voiceover will think that those tags with an <code>aria-label</code> imply that the items inside are a group of interactive elements.  Your mileage may vary.
 </p>
 
-/* 
- * When not to use ARIA labels:
- * - use of ARIA-labelledby instread of ARIA-label
- * - https://vox.publicissapient.com/home/ls/content/5167299434643456/methods-to-provide-descriptive-interactive-element-labels-for-accessibility
- */
+<h2>What To Remember When Using Screen Reader Only Text Or Aria-Labels In Production</h2>
+
+<ol>
+  <li>If you are using a content management system (CMS), you should remember that you must make screen reader only text and any aria-labels authorable.  I advise always having a default value for these items in case someone forgets to author them, or better still, make them mandatory for authors to fill out in the CMS (since screen reader only text and aria-labels are sometimes forget by content authors). <strong>This is really important when you have a multilingual website, since hard coding screen reader-only text and aria-labels will result in that text may not be understood by users who don't know the language that hard-coded text is written in</strong>.</li>
+  <li>If you are using a third-party like <a href="https://www.motionpoint.com">MotionPoint</a> to do your translation, you will want to make sure their service logs the translation of screen reader only text, aria-labels and image alt text.</li>
+  <li>You should always use screen-reader only text and aria-labels as a last resort.  If there is any visual text that can be used instead, use <code>aria-labelledby</code> to point to that content instead of using an aria-label.  This is to ensure the screen reader user experience is as close to the visual experience as much as posssible.</li>
+</ol>
+  
+
+
 
 <h2>Further Reading</h2>
 
