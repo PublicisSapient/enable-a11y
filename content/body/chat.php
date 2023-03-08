@@ -63,4 +63,8 @@ It's loaded in dynamically with JS
   <template id="screen-reader-message-template">
     <div>${user}: ${message}</div>
   </template>
+
+  <template id="button-template">
+      <button class="eliza__response-button">${label}</button>
+  </template>
 </div>

@@ -51,7 +51,12 @@ const eliza = new function () {
 		},
 		"no": {
 			"weight": 1,
-			"responses": ["Why not?", "Are you sure?  Answers: <button>Yes</button>, <button>No</button>"]
+			"responses": ["Why not?", "Are you sure?"]
+		},
+		"agent": {
+			"weight": 1,
+			"responses": ["Okay. Does this have to do with the quality of therapy you are receiving from me?"],
+			"buttons": ["Yes", "No", "I'd rather not say."]
 		},
 		"i am": {
 			"weight": 1,

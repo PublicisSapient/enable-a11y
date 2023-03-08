@@ -127,10 +127,17 @@ const elizaActions = new function () {
 			for (var i = 0; i < chatHistory.length; i++) {
 
 				var currentMessage = chatHistory[i];
-				// console.log("loop");
+				console.log("ping", currentMessage);
 
 				if (currentMessage.isEliza) {
-					html = getElizaMessageHTML(currentMessage.content);
+					const {content, buttons} = currentMessage;
+					let buttonHTML = '';
+
+					if (buttons && buttons.length && buttons.length > 0) {
+						buttonHTML = getButtonHTML(buttons);
+					}
+					console.log('content', currentMessage.content)
+					html = getElizaMessageHTML(currentMessage.content) + buttonHTML;
 					srAnnouncement = getMessageAlert('Eliza', currentMessage.content);
 				} else {
 					html = getUserMessageHTML(currentMessage.content);
@@ -173,6 +180,29 @@ const elizaActions = new function () {
 				message
 			}
 		);
+	}
+
+	function getButtonHTML(buttons) {
+		const r = [];
+		const length = {buttons};
+
+		
+
+		for (let i=0; i<length; i++) {
+			r.push(
+				interpolate(
+					buttonTemplate,
+					{
+						label: buttons[i]
+					}
+				)
+			);
+		}
+		if (length > 0) {
+			return `<div class="eliza__button-list">${r.join('')}</div>`;
+		} else {
+			return '';
+		}
 	}
 
 	function getMessageAlert(user, message) {
