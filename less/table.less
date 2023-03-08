@@ -16,8 +16,8 @@
     }
 
     &__container {
-        /* overflow: auto;
-        max-height: 70vh; */
+        overflow: auto;
+        max-height: 70vh;
         position: relative;
 
         &--horizontal-scroll {
@@ -50,7 +50,7 @@
         th[scope="col"],
         [role="columnheader"] {    
             .sticky();
-            top: (38/@px);
+            top: 0; // was (38/@px);
         }
 
         th[scope="row"],
