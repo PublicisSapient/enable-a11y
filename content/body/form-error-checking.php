@@ -20,7 +20,10 @@
       <p>
         You can use just <code>required</code> and
         <code>pattern</code> attributes on HTML forms to do client side
-        validation <strong>without JavaScript</strong>.
+        validation <strong>without JavaScript</strong>.  However, in order to make the messaging
+        more accessible, we have added a tiny bit of JS code in order to ensure the error messages
+        themselves are more accessible to screen reader users (see the last step in the code
+        walkthrough for details)
       </p>
 
       <div id="example1" class="enable-example">
@@ -106,6 +109,11 @@
             "label": "Hint text should be marked up using aria-describedby",
             "highlight": "aria-describedby",
             "notes": ""
+          },
+          {
+            "label": "Use Javascript to make the error message text more accessible",
+            "highlight": "%FILE% js/demos/native-form-example.js",
+            "notes": "When a form with errors is submitted, focus goes to the first invalid form field.  Unfortunately, some browser/screen reader pairs don't read out the form field label that the error belongs to, so screen reader users may not know what currently has focus.  This script below ensures the form field label is in the error message to tell screen reader users what currently has focus."
           }
         ]
       }
@@ -208,7 +216,7 @@
           {
             "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
             "highlight": "js-form-validation",
-            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/shared/form.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
+            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/demos/custom-form-example.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
           },
           {
             "label": "Put in fieldsets and legends",
