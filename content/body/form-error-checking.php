@@ -21,7 +21,7 @@
         You can use just <code>required</code> and
         <code>pattern</code> attributes on HTML forms to do client side
         validation <strong>without JavaScript</strong>.  However, in order to make the messaging
-        more accessible, we have added a tiny bit of JS code in order to ensure the error messages
+        more accessible, we have added a tiny bit of JS code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) in order to ensure the error messages
         themselves are more accessible to screen reader users (see the last step in the code
         walkthrough for details)
       </p>
