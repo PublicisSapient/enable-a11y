@@ -148,7 +148,7 @@ const tabgroup = new function() {
     const { target, key } = e;
     const role = target.getAttribute("role");
 
-    if (role === "tab" && key === "Enter") {
+    if (role === "tab" && (key === "Enter" || key === " ")) {
       const { href } = target;
       const splitHref = href.split("#");
       if (splitHref.length === 2) {
