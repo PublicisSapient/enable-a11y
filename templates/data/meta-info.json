@@ -214,8 +214,12 @@
   },
   "video-player.php": {
     "title": "Accessible Video Player",
-    "desc": "Most web developers don't realize that videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time, and get a WCAG AAA transcript for free!",
+    "desc": "Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time and get a WCAG AAA transcript for free!",
     "isNPM": "true"
+  },
+  "video-content.php": {
+    "title": "Accessible Video Content",
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficent? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
   },
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",

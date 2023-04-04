@@ -427,6 +427,13 @@
                                         "url-slug": "tabs",
                                         "alt": ""
                                     }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
                                 }
                               ]
                             }
@@ -518,8 +525,8 @@
                                 }, {
                                   "id": "flyout__link",
                                   "props": {
-                                      "label": "Video Player",
-                                      "url-slug": "video-player",
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
                                       "alt": ""
                                   }
                               }

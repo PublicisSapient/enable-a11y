@@ -70,7 +70,7 @@
 
 caption,
 .caption,
-figcaption {
+table + figcaption {
     display: table-caption;
     text-align: center;
     font-style: italic;
@@ -103,7 +103,7 @@ figcaption {
     }
 }
 
-figcaption.caption {
+table + figcaption.caption {
     display: block;
     margin-top: 1em;
 }
@@ -205,6 +205,24 @@ table,
             height: @table-body-height;
             
         }
+    }
+
+    .rowspan2 {
+        &__top {
+            border-bottom: none;
+            vertical-align: bottom;
+
+            span {
+                display: inline-block;
+                transform: translateY(1rem);
+            }
+        }
+
+        &__bottom {
+            border-top: none; 
+        }
+
+
     }
 }
 

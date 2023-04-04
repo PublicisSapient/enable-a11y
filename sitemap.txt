@@ -35,6 +35,7 @@ https://www.useragentman.com/enable/text-spacing.php
 https://www.useragentman.com/enable/timer.php
 https://www.useragentman.com/enable/tooltip.php
 https://www.useragentman.com/enable/video-player.php
+https://www.useragentman.com/enable/video-content.php
 https://www.useragentman.com/enable/acknowledgements.php
 https://www.useragentman.com/enable/faq.php
 https://www.useragentman.com/enable/npm.php
