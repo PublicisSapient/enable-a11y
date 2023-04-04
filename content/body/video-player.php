@@ -120,29 +120,3 @@
     )
     ?>
 
-
-<h2>OzPlayer Demo</h2>
-
-<div class="enable-example">
-  <figure id="ozplayer-1-container" class="ozplayer-container">
-    <div data-responsive="ozplayer-1-container" data-controls="stack" class="ozplayer" id="ozplayer-1"
-      data-transcript="ozplayer-1-transcript">
-      <video controls="controls" preload="none">
-        <source src="https://www.youtube.com/watch?v=NINogq4BS68" type="video/x-youtube" />
-        <track src="/vtt/dialog-document__html5.vtt" kind="captions" srclang="en"
-          default="default" />
-        <track src="/vtt/dialog-document__html5--desc.vtt" kind="metadata" data-kind="transcript"
-          srclang="en" />
-        <div class="ozplayer-fallback">
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=NINogq4BS68">Video for playback</a></li>
-          </ul>
-        </div>
-      </video>
-    </div>
-    <details class="ozplayer-expander" open="open">
-      <summary>Video Transcript</summary>
-      <div id="ozplayer-1-transcript" class="ozplayer-transcript"></div>
-    </details>
-  </figure>
-</div>
