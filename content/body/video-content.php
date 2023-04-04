@@ -152,6 +152,7 @@ In this video, I will be demonstrating how to create an accessible modal dialog 
   <figcaption>
     Figure 2. A screenshot of the AblePlayer example transcript at the bottom of this page. To sighted users, the visual
     action in the video not covered by the closed captions appear in the red blocks inside the transcript.
+  </figcaption>
 </figure>
 
 <p>
