@@ -57,6 +57,8 @@
   </div>
 
   <div class="glider-contain">
+    <button class="enable-carousel__show-all enable-carousel__slide-cta">Show All Slides</button>
+    <button class="enable-carousel__put-in-carousel enable-carousel__slide-cta">Put Slides In Carousel</button>
     <div class="glider enable-carousel enable-carousel--focus-all-panels">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"

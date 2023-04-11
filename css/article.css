@@ -218,6 +218,20 @@ table.fixed-headers .tbody,
   width: calc(100% + 16px);
   height: 80vh;
 }
+table .rowspan2__top,
+[role="table"] .rowspan2__top {
+  border-bottom: none;
+  vertical-align: bottom;
+}
+table .rowspan2__top span,
+[role="table"] .rowspan2__top span {
+  display: inline-block;
+  transform: translateY(1rem);
+}
+table .rowspan2__bottom,
+[role="table"] .rowspan2__bottom {
+  border-top: none;
+}
 .screenshot-table {
   margin: 0 auto;
   width: initial;

@@ -4,7 +4,6 @@
 
 .glider {
 
-  border: solid 1px black;
   .no-scrollbars();
 
   &-slide {
@@ -137,6 +136,53 @@
       text-decoration: none;
       font-weight: bold;
       text-align: center;
+    }
+  }
+
+  &__show-all,
+  &__put-in-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border: none;
+  }
+
+  &__put-in-carousel {
+    display: none;
+  }
+
+  &__example {
+    border: none;
+  }
+
+  /* Destroyed carousel styles */
+  &--no-js {
+    
+    .glider-prev,
+    .glider-next {
+      display: none;
+    }
+
+    .enable-carousel {
+
+      &__show-all {
+        display: none;
+      }
+
+      &__put-in-carousel {
+        display: block;
+      }
+
+      &__slide {
+        width: 100%;
+        background: black;
+        margin-bottom: 2rem;
+      }
+
+      &__background {
+        width: 100%;
+      }
     }
   }
 }

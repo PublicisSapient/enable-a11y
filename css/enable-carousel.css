@@ -6,7 +6,6 @@
   border-bottom: double 3px #000;
 }
 .glider {
-  border: solid 1px black;
   /* IE and edge */
   -ms-overflow-style: none;
   /* Firefox */
@@ -87,6 +86,9 @@
   right: 0;
   transform-origin: 100% 50%;
 }
+.enable-carousel {
+  /* Destroyed carousel styles */
+}
 .enable-carousel__example {
   padding: 0;
   margin: 0 -1em;
@@ -141,4 +143,36 @@
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+}
+.enable-carousel__show-all,
+.enable-carousel__put-in-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border: none;
+}
+.enable-carousel__put-in-carousel {
+  display: none;
+}
+.enable-carousel__example {
+  border: none;
+}
+.enable-carousel--no-js .glider-prev,
+.enable-carousel--no-js .glider-next {
+  display: none;
+}
+.enable-carousel--no-js .enable-carousel__show-all {
+  display: none;
+}
+.enable-carousel--no-js .enable-carousel__put-in-carousel {
+  display: block;
+}
+.enable-carousel--no-js .enable-carousel__slide {
+  width: 100%;
+  background: black;
+  margin-bottom: 2rem;
+}
+.enable-carousel--no-js .enable-carousel__background {
+  width: 100%;
 }
