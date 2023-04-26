@@ -31,8 +31,8 @@
 .product-tile__image {
   width: 100%;
 }
-.product-tile--good-example del::before,
-.product-tile--good-example ins::before {
+.product-tile--not-as-good-example del::before,
+.product-tile--not-as-good-example ins::before {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
@@ -46,9 +46,9 @@
   -ms-user-select: none;
   user-select: none;
 }
-.product-tile--good-example del::before {
+.product-tile--not-as-good-example del::before {
   content: "Old price: ";
 }
-.product-tile--good-example ins::before {
+.product-tile--not-as-good-example ins::before {
   content: "Current price: ";
 }
