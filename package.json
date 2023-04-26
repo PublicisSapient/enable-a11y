@@ -38,6 +38,7 @@
     "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "start": "npm run server",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh"
   },
@@ -87,6 +88,7 @@
     "jsdoc": "^3.6.6"
   },
   "dependencies": {
+    "chromedriver": "^112.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",

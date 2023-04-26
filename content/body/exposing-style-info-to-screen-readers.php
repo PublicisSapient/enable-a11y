@@ -145,7 +145,7 @@
 
 
 <div id="css-generated-content-example" class="enable-example">
-  <a class="product-tile product-tile--good-example"
+  <a class="product-tile product-tile--not-as-good-example"
     href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/">
     <div class="product-tile__badge">
       <div class="badge-product">

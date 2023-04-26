@@ -97,7 +97,7 @@ table + figcaption {
     transform: scaleX(-1);
   }
 }
-table + figcaption.caption {
+figure figcaption.caption {
   display: block;
   margin-top: 1em;
 }
