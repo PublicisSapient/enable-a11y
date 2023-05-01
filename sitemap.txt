@@ -11,6 +11,7 @@ https://www.useragentman.com/enable/dialog.php
 https://www.useragentman.com/enable/dropdown.php
 https://www.useragentman.com/enable/figure.php
 https://www.useragentman.com/enable/form-error-checking.php
+https://www.useragentman.com/enable/form.php
 https://www.useragentman.com/enable/heading.php
 https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/img.php

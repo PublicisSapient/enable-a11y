@@ -80,10 +80,10 @@
     "desc": "It is not hard to ensure forms work correctly with screen readers and other technology."
   },
   "form.php": {
-    "title": "This is to be refactored",
-    "desc": "This is to be refactored.",
-    "toRefactor": true,
-    "wip": true
+    "title": "Accessible Form Structure",
+    "desc": "Learn about proper HTML form structure.  You'd be surprised how often this is not done correctly.",
+    "toRefactor": false,
+    "wip": false
   },
   "heading.php": {
     "title": "Accessible Headings",
