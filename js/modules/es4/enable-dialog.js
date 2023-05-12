@@ -99,7 +99,6 @@ const enableDialog = new function() {
 
   this.init = () => {
     const supportsDialog = !!document.createElement('dialog').show;
-    console.log('support natively', supportsDialog);
     // If we are using the polyfill, then load it as well
     // as the polyfill accessibility fixes.
     if (!supportsDialog) {
