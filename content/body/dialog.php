@@ -31,7 +31,7 @@
 
   <dialog id="favDialog" aria-labelledby="favDialog__label" aria-describedby="favDialog__description">
     <div role="document">
-      <button id="cancel" class="a11y-modal__button--close">
+      <button id="cancel" class="a11y-modal__button--close" autofocus>
         <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close this dialog">
       </button>
       <h2 id="favDialog__label">Login</h2>
@@ -101,6 +101,11 @@
       "label": "Ensure close button image has appropriate alt text",
       "highlight": "alt",
       "notes": "Just like any image, the close button's must have appropriate alt text.  In this case, it must describe the action it performs when pressed (since it is inside a button"
+    },
+    {
+      "label": "Ensure focus is applied to the close button when modal is opened",
+      "highlight": "autofocus",
+      "notes": "Setting the <code>autofocus</code> attribute on the close button ensures that focus gets applied to it when it is opened. This is desired behaviour since if a keyboard user opens the modal by accident, they can close it immediately with just one keystroke."
     },
     {
       "label": "Ensure the dialog's form has the right method set",
