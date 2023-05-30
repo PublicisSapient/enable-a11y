@@ -27,6 +27,8 @@
       <li>they can be recited by a computer voice speaking over the video content</li>
       <li>they can be implemented as an alternate version of the video that includes audio descriptions.</li>
     </ol>
+
+    <p><strong>Please note: If all of the visual information in described in the video's audio track already, then a separate audio description track is not necessary.</strong></p>
   </dd>
 
   <dt>Transcripts:</dt>
