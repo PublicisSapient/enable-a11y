@@ -96,7 +96,7 @@ sudo npm update -g axe-cli
 
 
 '
-exit
+exit 1
 fi
 
 

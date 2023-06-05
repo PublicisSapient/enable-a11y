@@ -51,6 +51,46 @@
   }
 }
 
+#svg-sprite-example {
+  p {
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  ul {
+    display: table;
+    margin: 0 auto;
+  }
+
+  li {
+    margin-right: 10px;
+  }
+
+
+  svg, a {
+    transform: translateZ(0);
+    width: 45/@px;
+    height: 45/@px;
+    display: inline-block;
+    &:focus, &:focus-within {
+      outline-offset: 2px;
+    }
+
+
+    &.svg-sprite-example__scaled-icon {
+      transform: scale(2);
+
+      &:focus, &:focus-within {
+        outline-width: 1px;
+        outline-offset: -5px;
+      }
+    }
+  }
+}
+
 #icon-font-example {
   .center {
     text-align: center;

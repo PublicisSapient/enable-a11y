@@ -47,6 +47,43 @@
   float: left;
   margin-right: 20px;
 }
+#svg-sprite-example p {
+  text-align: center;
+}
+#svg-sprite-example a {
+  display: inline-block;
+}
+#svg-sprite-example ul {
+  display: table;
+  margin: 0 auto;
+}
+#svg-sprite-example li {
+  margin-right: 10px;
+}
+#svg-sprite-example svg,
+#svg-sprite-example a {
+  transform: translateZ(0);
+  width: 2.8125rem;
+  height: 2.8125rem;
+  display: inline-block;
+}
+#svg-sprite-example svg:focus,
+#svg-sprite-example a:focus,
+#svg-sprite-example svg:focus-within,
+#svg-sprite-example a:focus-within {
+  outline-offset: 2px;
+}
+#svg-sprite-example svg.svg-sprite-example__scaled-icon,
+#svg-sprite-example a.svg-sprite-example__scaled-icon {
+  transform: scale(2);
+}
+#svg-sprite-example svg.svg-sprite-example__scaled-icon:focus,
+#svg-sprite-example a.svg-sprite-example__scaled-icon:focus,
+#svg-sprite-example svg.svg-sprite-example__scaled-icon:focus-within,
+#svg-sprite-example a.svg-sprite-example__scaled-icon:focus-within {
+  outline-width: 1px;
+  outline-offset: -5px;
+}
 #icon-font-example {
   /*------------------------------------------------------------------
                     SECTION STYLES
