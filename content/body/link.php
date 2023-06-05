@@ -130,6 +130,16 @@
 {
   "replaceHtmlRules": {},
   "steps": [{
+    "label": "Make the breadcrumb a nav",
+    "highlight": "%OPENCLOSETAG%nav",
+    "notes": ""
+  },
+  {
+    "label": "Add an aria label to the nav",
+    "highlight": "aria-label",
+    "notes": "This will make it easy for screen reader users to differentiate the breadcrumb navigation from other bits of navigation on the page, espeecially if they would like to jump to it using NVDA's Element List, VoiceOver's rotor, or anything similar in any other screen reader being used."
+  },
+  {
     "label": "Use aria-current for self referring links",
     "highlight": "aria-current",
     "notes": "Screen readers will announce that a link points the current page if this attribute is set.  This is very useful when implementing breadcrumbs."
