@@ -172,6 +172,74 @@
 }
 </script>
 
+<h2>Using SVG Sprites</h2>
+
+<p>
+  Many developers use SVG Sprites so they can put all their SVG icons in one place and have their <code>svg</code> tags point to a shape in the sprite inside their HTML code.  This can make your webpage more efficient when there are a lot of icons on a page, as described in the article <a href="https://cloudfour.com/thinks/svg-icon-stress-test/">Which SVG technique performs best for way too many icons?</a> by <a href="https://tylersticka.com/">Tyler Sticka</a>.  Here, we should you how to embedded them in an accessible ways like the other SVG examples on this page.
+</p>
+
+<p>
+  For more information about SVG Sprites, I would suggest <a href="https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/">Accessible SVG Icons with Inline Sprites</a> by <a href="https://home.social/@nice2meatu">Marco Hengstenberg</a>.
+</p>
+
+<div id="svg-sprite-example" class="enable-example">
+  <?php 
+    include("includes/os-spritesheet.svg");
+  ?>
+
+  <p >Read more about the history of your operating system.</p>
+
+  <ul class="svg-sprite-example__list list--inline">
+    <li><a href="https://en.wikipedia.org/wiki/IOS" class="svg-sprite-example__scaled-icon"><? includeSvgSprite('ios', 'iOS'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Android_(operating_system)"><? includeSvgSprite('android', 'Android'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Microsoft_Windows"><? includeSvgSprite('windows', 'Windows'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/MacOS"><? includeSvgSprite('osx', 'OSX'); ?></a></li>
+    <li><a href=""><? includeSvgSprite('linux', 'Linux'); ?></a></li>
+  </ul>
+  
+</div>
+
+<?php includeShowcode("svg-sprite-example")?>
+<script type="application/json" id="svg-sprite-example-props">
+{
+  "replaceHtmlRules": {
+    "svg symbol": "<!-- insert svg render code here -->"
+  },
+  "steps": [
+    {
+      "label": "Add sprite sheet",
+      "highlight": "%OPENCLOSECONTENTTAG%svg xmlns",
+      "notes": "Inside the <code>symbol</code> tags are the svg code for each individual SVG image inside the sprite."
+    },
+    {
+      "label": "Hide image",
+      "highlight": "style",
+      "notes": "You can either hide with the <code>style</code> attribute or add a class that will apply <code>display: none</code> via CSS"
+    },
+    {
+      "label": "Embed SVG sprites into the HTML",
+      "highlight": "xlink:href",
+      "notes": "Note that the <code>id</code> attributes for each symbol in the sprite sheet matches the <code>xlink:href</code> attributes inside the <code>use</code> tag of the SVG where the image appears on the page."
+    },
+    {
+      "label": "Add a role of img",
+      "highlight": "role",
+      "notes": "Just like the previous example"
+    },
+    {
+      "label": "Add focusable=\"false\" to the SVG tag",
+      "highlight": "focusable",
+      "notes": "This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document."
+    },
+    {
+      "label": "Add aria-labelledby to the SVG tags",
+      "highlight": "aria-labelledby",
+      "notes": "Note that aria-labelledby points to the <code>title</code> tag. Usually the <code>title</code> tag is sufficient on its own, but we put the <code>aria-labelledby</code> in for older browser/screen reader pairs."
+    }
+  ]
+}
+</script>
+
 <h2>Using Icon Fonts</h2>
 
 <?php includeStats(array('isForNewBuilds' => false)) ?>
@@ -239,7 +307,7 @@
   <section>
     <div class="container">
       <p class="center">Feel free to connect with Killer B Cinema on Social Media!</p>
-      <ul class="list-inline">
+      <ul class="list--inline">
         <li>
           <a href="https://www.facebook.com/killerbcinema/" >
             <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>

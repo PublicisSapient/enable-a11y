@@ -32,6 +32,13 @@ function pictureWebpPng($src, $alt = "", $otherAttrs = "")
     ));
 }
 
+function includeSvgSprite($id, $alt) {
+  includeFileWithVariables('includes/svg-sprite.php', array(
+    'id' => $id,
+    'alt' => $alt
+));
+}
+
 function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR', $mainClass = '')
 {
     includeFileWithVariables('includes/meta-info.php', array(
