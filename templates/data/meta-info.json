@@ -176,6 +176,10 @@
     "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
     "isNPM": "true"
   },
+  "search.php": {
+    "title": "Search Form",
+    "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reeder users, but also have the right landmark applied to it."
+  },
   "sortable-pagination-table.php": {
     "title": "Accessible Sortable Paginated Tables",
     "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
