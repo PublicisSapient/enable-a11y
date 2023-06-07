@@ -71,7 +71,6 @@
 
 
   svg, a {
-    transform: translateZ(0);
     width: 45/@px;
     height: 45/@px;
     display: inline-block;
@@ -81,7 +80,11 @@
 
 
     &.svg-sprite-example__scaled-icon {
-      transform: scale(2);
+
+
+      svg {
+        transform: scale(2);
+      }
 
       &:focus, &:focus-within {
         outline-width: 1px;

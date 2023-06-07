@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
+  xmlns:xlink="http://www.w3.org/1999/xlink" style="visibility: hidden" class="sr-only">
   <symbol id="android" viewBox="-147 -70 294 345">
     <g fill="#a4c639">
       <use stroke="#FFF" stroke-width="14.4" xlink:href="#a"/>

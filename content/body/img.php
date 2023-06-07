@@ -212,9 +212,9 @@
       "notes": "Inside the <code>symbol</code> tags are the svg code for each individual SVG image inside the sprite."
     },
     {
-      "label": "Hide image",
-      "highlight": "style",
-      "notes": "You can either hide with the <code>style</code> attribute or add a class that will apply <code>display: none</code> via CSS"
+      "label": "Hide the spritesheet",
+      "highlight": "class=\"sr-only\" ||| style",
+      "notes": "The tutorials linked above tell developer to hide the sprite sheet with <code>display: none</code> via CSS.  This works most of the time, but I have found that when inserting code to display the sprites in the spritesheet on some versions of Safari on OSX (e.g. 16.1), some of the sprites, such as the OSX and Linux icons, are only displayed in black and white:<br /><img src=\"images/bad-safari-svg-sprites.png\" class=\"centered-block\" alt=\"A screenshot of the icon fonts in the example below rendered by Safari 16.1 with the sprite sheet SVG hidden on the page using CSS display: none.  The iOS and Linux logos are rendered in black and white and are missing color information.\" />   Therefore, I use CSS <code>visibility: hidden</code> along with the <a href=\"http://localhost:8888/screen-reader-only-text.php#show-me-the-css-that-i-can-use-to-make-screen-reader-only-text--heading\">sr-only class to generate screenreader only text</a> to hide the image."
     },
     {
       "label": "Embed SVG sprites into the HTML",
