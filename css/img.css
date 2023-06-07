@@ -62,7 +62,6 @@
 }
 #svg-sprite-example svg,
 #svg-sprite-example a {
-  transform: translateZ(0);
   width: 2.8125rem;
   height: 2.8125rem;
   display: inline-block;
@@ -73,8 +72,8 @@
 #svg-sprite-example a:focus-within {
   outline-offset: 2px;
 }
-#svg-sprite-example svg.svg-sprite-example__scaled-icon,
-#svg-sprite-example a.svg-sprite-example__scaled-icon {
+#svg-sprite-example svg.svg-sprite-example__scaled-icon svg,
+#svg-sprite-example a.svg-sprite-example__scaled-icon svg {
   transform: scale(2);
 }
 #svg-sprite-example svg.svg-sprite-example__scaled-icon:focus,
