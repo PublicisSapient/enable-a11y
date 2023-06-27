@@ -45,6 +45,7 @@
 @color-term-code: #090;
 @color-background-term-code: #000;
 
+@page-padding: (16/@px);
 
 
 .font-copy() {
@@ -161,6 +162,16 @@
 .width-fit-content() {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.border-image(@url, @top, @right, @bottom, @left) {
+  padding: @top @right @bottom @left;
+  border-image-slice: unit(@top) unit(@right) unit(@bottom) unit(@left);
+  border-image-width: @top @right @bottom @left;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  border-image-source: @url;
+  border-style: solid;
 }
 
  // Class for elements that are only visible to the screen reader. From

@@ -1,0 +1,26 @@
+@import "shared/mixins-and-vars";
+
+@device-w: 320px;
+@device-h: 480px;
+@border-top: 36px;
+@border-side: 17px;
+@border-bottom: 45px;
+@frame-width: @device-w + @border-side * 2;
+@frame-height: @device-h + @border-top + @border-bottom;
+
+@device-breakpoint-width: @frame-width + 16px * 2;
+@show-device-border-breakpoint: ~"only screen and (min-width: @{device-breakpoint-width})";
+
+.reflow-example {
+  &__frame {
+
+    display: block;
+    margin: 0 auto;
+    width: @frame-width;
+    height: @frame-height;
+
+    @media @show-device-border-breakpoint {
+      .border-image(url("/images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px); 
+    }
+  }
+}

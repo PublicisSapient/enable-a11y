@@ -176,6 +176,15 @@
     "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
     "isNPM": "true"
   },
+  "reflow.php": {
+    "title": "Reflow",
+    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
+    "isNPM": "true"
+  },
+  "reflow__example-of-issue.php": {
+    "title": "Reflow Issue",
+    "bodyClass": "iframed-example"
+  },
   "search.php": {
     "title": "Search Form",
     "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reeder users, but also have the right landmark applied to it."

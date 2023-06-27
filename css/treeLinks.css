@@ -641,7 +641,7 @@ nav ul li a {
 main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-  padding: 1em;
+  padding: 1rem;
   margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;

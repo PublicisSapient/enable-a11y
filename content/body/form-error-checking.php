@@ -85,7 +85,7 @@
           {
             "label": "All form fields need labels",
             "highlight": "for",
-            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>."
+            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>.  <strong>Note that label tags should never have <code>div</code> tags inside of them</strong> since it is invalid HTML and some screenreader/browser pairs (JAWS with Edge, Voiceover with Safari) may have problems with them."
           },
           {
             "label": "All form fields that are required need the required attribute",

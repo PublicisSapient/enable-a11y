@@ -63,7 +63,7 @@
 
 
   <div class="image__container">
-    <button id="updateDetails" class="modal__opener">
+    <button id="updateDetails" class="modal__opener" aria-haspopup="dialog">
       Log in to our website
     </button>
 
@@ -77,7 +77,13 @@
 <script type="application/json" id="example1-props">
 {
   "replaceHtmlRules": {},
-  "steps": [{
+  "steps": [
+    {
+      "label": "Mark up the button that opens the dialog correctly",
+      "highlight": "aria-haspopup",
+      "notes": "This will ensure that screenreader users know that this button will open a modal dialog before they press it."
+    },
+    {
       "label": "Mark up your dialog with the dialog tag",
       "highlight": "%OPENTAG%dialog ||| %OPENCLOSETAG%dialog",
       "notes": "Not all browsers support this natively still, so I am using a polyfill that implements it like Chrome's implementation (it also inserts the <code>role=\"dialog\"</code>)"

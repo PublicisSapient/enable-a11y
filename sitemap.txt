@@ -29,6 +29,8 @@ https://www.useragentman.com/enable/switch.php
 https://www.useragentman.com/enable/table.php
 https://www.useragentman.com/enable/sortable-table.php
 https://www.useragentman.com/enable/pagination-table.php
+https://www.useragentman.com/enable/reflow.php
+https://www.useragentman.com/enable/reflow__example-of-issue.php
 https://www.useragentman.com/enable/search.php
 https://www.useragentman.com/enable/tabs.php
 https://www.useragentman.com/enable/textbox.php

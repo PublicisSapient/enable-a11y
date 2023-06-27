@@ -1,0 +1,92 @@
+@import "shared/mixins-and-vars";
+
+@button-width: (20/@px);
+@double-button-width: @button-width * 3;
+
+.iframed-example {
+  [role="banner"],
+  [role="navigation"],
+  nav,
+  footer {
+    display: none;
+  }
+}
+
+
+.reflow-examples {
+  @font-size-reg: 24/@px;
+
+  &__index {
+    text-align: center;
+    background: black;
+    margin: 0 -1em;
+    overflow:hidden; 
+    padding: 0 1em;
+    position: relative;
+  }
+
+  &__arrow-button {
+    display: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__show-arrow-buttons {
+    padding: 0;
+  }
+
+  &__show-arrow-buttons &__arrow-button {
+    display: inline-block;
+    width: @button-width;
+    position: absolute;
+    top: (10/@px);
+
+    &--previous {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &__show-arrow-buttons &__list {
+    width: ~"calc(100% - @{double-button-width})";
+  }
+
+  &__remove-overflow {
+    white-space: normal;
+  }
+
+
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: calc(100vw - 2em);
+    overflow-x: scroll;
+
+    white-space: nowrap;
+  }
+
+  &__remove-overflow  &__list {
+    overflow: auto;
+    white-space: normal;
+  }
+
+  &__list-item {
+    font-size: ~"max(3vw, @{font-size-reg})";
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.5vw 1vw;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+  }
+}
