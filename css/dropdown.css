@@ -15,8 +15,9 @@
   margin: 0;
   padding: 0;
   color: #000;
-  background: transparent;
+  background: white;
   font-size: 1rem;
+  font-weight: bold;
   list-style: none;
   cursor: default;
   width: 100%;
@@ -42,6 +43,9 @@
 }
 .enable-drawer__button[aria-expanded="true"] + .enable-drawer__content {
   display: block;
+}
+.enable-multiselect__button {
+  font-weight: bold;
 }
 .enable-multiselect__list {
   padding-left: 0;

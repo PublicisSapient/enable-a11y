@@ -32,7 +32,7 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The toolbar in this iframe scrolls in two directions.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<p>The navigation in this iframe scrolls in two directions.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 
@@ -44,10 +44,10 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The toolbar in this iframe differs from the previous one in that it doesn't scroll in two directions, thus avoiding the WCAG reflow violation.</p>
+<p>The navigation in this iframe differs from the previous one in that it doesn't scroll in two directions, thus avoiding the WCAG reflow violation.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<iframe class="reflow-example__frame" src="reflow__example-of-issue.php?className=reflow-examples__remove-overflow" title="Example of a Reflow Issue fixed by removing overflow scroll CSS">
+<iframe class="reflow-example__frame" src="reflow__example-of-issue.php?className=reflow-examples__remove-overflow&copy=<?= $copy ?>" title="Example of a Reflow Issue fixed by removing overflow scroll CSS">
 </iframe>
 
 
@@ -59,7 +59,7 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The toolbar in this iframe scrolls in two directions, but it also has arrow buttons.  Since there is an alternative to scrolling in two dimensions, it is not considered a violation of WCAG 2.1.</p>
+<p>The navigation in this iframe scrolls in two directions, but it also has arrow buttons.  Since there is an alternative to scrolling in two dimensions, it is not considered a violation of WCAG 2.1.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 
@@ -75,8 +75,15 @@
 
 <h2>Use a Dropdown to Expose All Content</h2>
 
+Using a dropdown component, we can hide the navigation until it is really needed.  This solves the issue of the navigation taking up too much space. 
 
-
+<!--
+<?php ob_start(); ?>
+<p>The navigation in this iframe differs from the previous ones in that it only appears when users click the dropdown, thereby avoiding reflow issues.</p>
+<?php $copy = urlencode(ob_get_contents()); ?>
+-->
+<iframe class="reflow-example__frame" src="reflow__example-of-issue.php?className=reflow-examples__remove-overflow+reflow-examples__dropdown&hasDropdown=true&copy=<?= $copy ?>" title="Example of a Reflow Issue fixed by removing horizontal scrolling and putting it in a dropdown.">
+</iframe>
 
 <h2>Use a Modal to Show All the Content</h2>
 

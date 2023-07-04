@@ -1,9 +1,42 @@
+<?php
+
+function getCgiVar($name) {
+  $isVarSet = isset($_GET[$name]);
+  if ($isVarSet) {
+    $r = $_GET[$name];
+  } else {
+    $r = '';
+  }
+
+  return $r;
+}
+
+$copy = getCgiVar('copy');
+$hasDropdown = (getCgiVar('hasDropdown') == 'true');
+
+?>
+
+
 <p>
   This page shows a Reflow issue with the page index below.
 </p>
 
-<div class="reflow-examples__index  <?= $_GET['className'] ?>">
+
+<div class="reflow-examples__index  <?= $_GET['className'] ?>" aria-label="Alphabetical Index">
   
+  <?php
+    if ($hasDropdown) {
+  ?>
+      <details
+        class="enable-drawer"
+      >
+        <summary
+          class="enable-drawer__button"
+        >Display Index Navigation</summary>
+        <div class="content">
+  <?php 
+    }
+  ?>
   <button class="reflow-examples__arrow-button reflow-examples__arrow-button--previous" tabindex="-1" aria-hidden="true">◀<span class="sr-only">Display previous links.</span></button>
   <ul class="reflow-examples__list">
     <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#A">A</a></li>
@@ -35,17 +68,16 @@
   </ul>
 
   <button class="reflow-examples__arrow-button reflow-examples__arrow-button--next" tabindex="-1" aria-hidden="true">▶<span class="sr-only">Display next links.</span></button>
-
+  <?php
+    if ($hasDropdown) {
+  ?>
+        </div>
+      </details>
+  <?php 
+    }
+  ?>
 </div>
 
 <div class="reflow-examples__copy">
-<?php 
-  $iscopyset = isset($_GET['copy']);
-  if ($iscopyset) {
-    $copy = $_GET['copy'];
-  } else {
-    $copy = '';
-  }
-?>
 <?= $copy ?>
 </div>
