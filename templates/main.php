@@ -21,11 +21,16 @@
   <?php getAsideContent() ?>
   <main id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
-    <?php 
-      if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero') {
+    <?php
+      if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero' && isset($fileProps->title)) {
         print '<h1>' . $fileProps->title . '</h1>';
       }
-      getContent($fileProps->title);
+      
+      if (isset($fileProps->title)) {
+        getContent($fileProps->title);
+      } else {
+        getContent('');
+      }
     ?>
   </main>
 

@@ -17,9 +17,13 @@
     display: block;
     margin: 20px auto;
     width: 100%;
-    height: @frame-height;
+    height: ~"min(@{frame-height}, 70vh)";
 
     .border-image(url("/images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px);
+
+    @media @tablet-up {
+      height: @frame-height;
+    } 
 
     @media @show-device-border-breakpoint {
       margin: 0 auto;

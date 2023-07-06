@@ -25,6 +25,7 @@
   </div>
 </div>
 <div class="with-full-bleed-hero__content">
+
   <h1><?= $title ?></h1>
 
   <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This can be used for new builds or existing work with animations.  You should always test the animations you are using to see if it works with this component.  If not, please look at the detailed notes below on how to have your animations support this component.')) ?>

@@ -5,8 +5,6 @@
 @double-button-width: ~"calc(@{button-width} * 3)";
 @button-top: ~"calc(@{button-width}/11)";
 
-
-
 .iframed-example {
   [role="banner"],
   [role="navigation"],
@@ -30,7 +28,7 @@ body {
   &__index {
     text-align: center;
     background: black;
-    margin: 0 -1em;
+    margin: -1em -1em 1em -1em;
     overflow:hidden; 
     padding: 0 1em;
     position: relative;
@@ -80,7 +78,7 @@ body {
     margin: 0;
     padding: 0;
     display: inline-block;
-    width: calc(100vw - 2em);
+    width: calc(100% - 2em);
     overflow-x: scroll;
 
     white-space: nowrap;
@@ -105,10 +103,29 @@ body {
   }
 
   &__dropdown {
-    background: transparent;
+    background: white;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+
+    &--content {
+      padding: 0;
+      margin: 0 -2rem;
+    }
   }
 
   &__dropdown &__list {
     background: black;
   }
+}
+  
+h1 {
+  font-size: (25/@px);
+}
+
+
+// Let's make links with tabindex="-1" set unclickable with a mouse.
+a[tabindex="-1"] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
 }

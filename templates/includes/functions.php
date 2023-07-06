@@ -4,6 +4,19 @@ $walkthroughIndex = 1;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+
+function getCgiVar($name) {
+  $isVarSet = isset($_GET[$name]);
+  if ($isVarSet) {
+    $r = $_GET[$name];
+  } else {
+    $r = '';
+  }
+
+  return $r;
+}
+
+
 function includeFileWithVariables($fileName, $variables = array())
 {
     extract($variables);
@@ -21,6 +34,15 @@ function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteracti
         'headingLevel' => $headingLevel,
         'prologue' => $prologue
     ));
+}
+
+function includeReflowIframe($queryString = "", $copy = "", $title = "Reflow Example", $heading = '') {
+  includeFileWithVariables('includes/reflow-iframe.php', array(
+    'queryString' => $queryString,
+    'copy' => $copy,
+    'title' => $title,
+    'heading' => $heading
+  ));
 }
 
 function pictureWebpPng($src, $alt = "", $otherAttrs = "")

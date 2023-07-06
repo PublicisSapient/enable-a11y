@@ -40,7 +40,6 @@ function focusDeepLink() {
     
     if (hash !== '') {
         const elToFocus = document.querySelector(hash);
-        console.log('x', hash, elToFocus);
         if (elToFocus) {
             elToFocus.focus();
             scrollToEl(elToFocus);
@@ -74,9 +73,11 @@ function initEnable() {
 
     if (location.href.indexOf('index.php') === -1) {
         document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
-
-            // Only do this if the heading doesn't have an ID, and if it is not part of an example.
-            if (el.closest('.enable-example') === null) {
+            // Only do this if:
+            // 1) the heading doesn't have an ID
+            // 2) it is not part of an example
+            // 3) it has an ancestor with class no-permalink-headings.
+            if (el.closest('.enable-example') === null && el.closest('.no-permalink-headings') === null) {
                 if (!el.id) {
                     const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
 

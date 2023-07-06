@@ -34,7 +34,7 @@ body ::-webkit-scrollbar-track {
 .reflow-examples__index {
   text-align: center;
   background: black;
-  margin: 0 -1em;
+  margin: -1em -1em 1em -1em;
   overflow: hidden;
   padding: 0 1em;
   position: relative;
@@ -73,7 +73,7 @@ body ::-webkit-scrollbar-track {
   margin: 0;
   padding: 0;
   display: inline-block;
-  width: calc(100vw - 2em);
+  width: calc(100% - 2em);
   overflow-x: scroll;
   white-space: nowrap;
 }
@@ -92,8 +92,22 @@ body ::-webkit-scrollbar-track {
   text-decoration: none;
 }
 .reflow-examples__dropdown {
-  background: transparent;
+  background: white;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+.reflow-examples__dropdown--content {
+  padding: 0;
+  margin: 0 -2rem;
 }
 .reflow-examples__dropdown .reflow-examples__list {
   background: black;
+}
+h1 {
+  font-size: 1.5625rem;
+}
+a[tabindex="-1"] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
 }

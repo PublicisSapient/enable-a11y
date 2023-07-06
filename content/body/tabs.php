@@ -58,7 +58,7 @@
 </p>
 
 
-<div id="example1">
+<div id="example1" class="enable-example">
 
   <div id="tabs">
 
