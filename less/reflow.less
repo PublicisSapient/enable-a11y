@@ -15,12 +15,15 @@
   &__frame {
 
     display: block;
-    margin: 0 auto;
-    width: @frame-width;
+    margin: 20px auto;
+    width: 100%;
     height: @frame-height;
 
+    .border-image(url("/images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px);
+
     @media @show-device-border-breakpoint {
-      .border-image(url("/images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px); 
+      margin: 0 auto;
+      width: @frame-width;
     }
   }
 }

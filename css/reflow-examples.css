@@ -11,6 +11,26 @@
 .iframed-example footer {
   display: none;
 }
+:root {
+  scrollbar-width: thin;
+}
+body {
+  scrollbar-color: #fff #000;
+  scrollbar-width: thin;
+}
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 3px;
+  height: 3px;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+body ::-webkit-scrollbar-track {
+  background: #000;
+}
 .reflow-examples__index {
   text-align: center;
   background: black;
@@ -26,15 +46,16 @@
   background-color: transparent;
   color: white;
   font-weight: bold;
+  font-size: max(3vw, 1.5rem);
 }
 .reflow-examples__show-arrow-buttons {
   padding: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button {
   display: inline-block;
-  width: 1.25rem;
+  width: max(3vw, 1.5rem);
   position: absolute;
-  top: 0.625rem;
+  top: calc(max(3vw, 1.5rem)/11);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--previous {
   left: 0;
@@ -43,7 +64,7 @@
   right: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__list {
-  width: calc(100% - 3.75rem);
+  width: calc(100% - calc(max(3vw, 1.5rem) * 3));
 }
 .reflow-examples__remove-overflow {
   white-space: normal;

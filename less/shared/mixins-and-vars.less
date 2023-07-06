@@ -289,3 +289,27 @@
     display: none;
   }
 }
+
+// Scrollbar mixin from https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
+.scrollbars(@size; @foreground-color; @background-color) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width:  @size;
+    height: @size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: @foreground-color;
+    border-radius: 4px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: @background-color;
+  }
+
+  // For web standards 
+  scrollbar-color: @foreground-color @background-color;
+  scrollbar-width: thin;
+}

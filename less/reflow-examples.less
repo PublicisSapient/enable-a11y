@@ -1,7 +1,11 @@
 @import "shared/mixins-and-vars";
 
-@button-width: (20/@px);
-@double-button-width: @button-width * 3;
+@font-size-reg: 24/@px;
+@button-width: ~"max(3vw, @{font-size-reg})";
+@double-button-width: ~"calc(@{button-width} * 3)";
+@button-top: ~"calc(@{button-width}/11)";
+
+
 
 .iframed-example {
   [role="banner"],
@@ -12,9 +16,16 @@
   }
 }
 
+:root {
+scrollbar-width: thin;
+}
+
+body {
+  .scrollbars(3px, #fff, #000); 
+}
 
 .reflow-examples {
-  @font-size-reg: 24/@px;
+
 
   &__index {
     text-align: center;
@@ -32,6 +43,8 @@
     background-color: transparent;
     color: white;
     font-weight: bold;
+    font-size: ~"max(3vw, @{font-size-reg})";
+    
   }
 
   &__show-arrow-buttons {
@@ -42,7 +55,7 @@
     display: inline-block;
     width: @button-width;
     position: absolute;
-    top: (10/@px);
+    top: @button-top;
 
     &--previous {
       left: 0;
@@ -84,6 +97,7 @@
     display: inline-block;
     padding: 0.5vw 1vw;
   }
+  
 
   &__link {
     color: white;

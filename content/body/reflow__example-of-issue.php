@@ -13,6 +13,7 @@ function getCgiVar($name) {
 
 $copy = getCgiVar('copy');
 $hasDropdown = (getCgiVar('hasDropdown') == 'true');
+$hasArrows = (getCgiVar('hasArrows') == 'true');
 
 ?>
 
@@ -81,3 +82,13 @@ $hasDropdown = (getCgiVar('hasDropdown') == 'true');
 <div class="reflow-examples__copy">
 <?= $copy ?>
 </div>
+
+
+<?php 
+  if ($hasArrows) {
+?>
+  <script src="js/modules/reflow-arrows.js" type="module">
+  </script>
+<?php
+  }
+?>
