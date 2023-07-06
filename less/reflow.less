@@ -29,5 +29,12 @@
       margin: 0 auto;
       width: @frame-width;
     }
+
+    .enable-focus({
+      outline: solid 2px @focus-color !important;
+      outline-offset: -2px;
+    }, {
+      outline: none !important;
+    })
   }
 }

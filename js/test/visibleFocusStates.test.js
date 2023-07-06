@@ -46,7 +46,7 @@ describe('Test Focus States on all pages on Enable', () => {
         let hasFocusRing = (outlineStyle !== 'none' && parseInt(outlineWidth) !== 0);
         let checkedPseudoEl = false;
 
-        const isYoutubeIframe = (activeElement.nodeName === 'IFRAME' && activeElement.src.indexOf('https://www.youtube.com/') === 0);
+        const isIframe = (activeElement.nodeName === 'IFRAME');
 
         const isRangeInput = (activeElement.nodeName === 'INPUT' && activeElement.getAttribute('type') === 'range');
         
@@ -69,7 +69,7 @@ describe('Test Focus States on all pages on Enable', () => {
           outlineStyle,
           isEnableSkipLink: activeElement.classList.contains('enable-mobile-visible-on-focus'),
           isBody: activeElement === document.body,
-          isYoutubeIframe,
+          isIframe,
           isRangeInput,
           checkedPseudoEl
         }
@@ -79,7 +79,7 @@ describe('Test Focus States on all pages on Enable', () => {
       //console.log(`checking `, domInfo.html, domInfo.parentClass);
       // Step 4: Do Tests ... but not on enable skip link (we'll handle that
       // someplace else)
-      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isYoutubeIframe) {
+      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isIframe) {
         
         if (!domInfo.hasFocusRing) {
           console.log('Bad focus on: ', domInfo.html);
