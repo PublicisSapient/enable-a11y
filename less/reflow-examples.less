@@ -1,7 +1,7 @@
 @import "shared/mixins-and-vars";
 
 @font-size-reg: 24/@px;
-@button-width: ~"max(3vw, @{font-size-reg})";
+@button-width: @font-size-reg;   // was ~"max(3vw, @{font-size-reg})";
 @double-button-width: ~"calc(@{button-width} * 3)";
 @button-top: ~"calc(@{button-width}/11)";
 
@@ -22,13 +22,17 @@ body {
   .scrollbars(3px, #fff, #000); 
 }
 
+main {
+  max-width: 100% !important;
+}
+
 .reflow-examples {
 
 
   &__index {
     text-align: center;
     background: black;
-    margin: -1em -1em 1em -1em;
+    margin: 0 -1em 1em -1em;
     overflow:hidden; 
     padding: 0 1em;
     position: relative;
@@ -41,7 +45,7 @@ body {
     background-color: transparent;
     color: white;
     font-weight: bold;
-    font-size: ~"max(3vw, @{font-size-reg})";
+    font-size: @button-width;
     
   }
 
@@ -72,6 +76,10 @@ body {
     white-space: normal;
   }
 
+  &__content {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 
 
   &__list {
@@ -90,7 +98,7 @@ body {
   }
 
   &__list-item {
-    font-size: ~"max(3vw, @{font-size-reg})";
+    font-size: @button-width;
     font-weight: bold;
     display: inline-block;
     padding: 0.5vw 1vw;
@@ -120,6 +128,8 @@ body {
   
 h1 {
   font-size: (25/@px);
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 

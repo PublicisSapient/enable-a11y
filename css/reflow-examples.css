@@ -31,10 +31,13 @@ body ::-webkit-scrollbar-thumb {
 body ::-webkit-scrollbar-track {
   background: #000;
 }
+main {
+  max-width: 100% !important;
+}
 .reflow-examples__index {
   text-align: center;
   background: black;
-  margin: -1em -1em 1em -1em;
+  margin: 0 -1em 1em -1em;
   overflow: hidden;
   padding: 0 1em;
   position: relative;
@@ -46,16 +49,16 @@ body ::-webkit-scrollbar-track {
   background-color: transparent;
   color: white;
   font-weight: bold;
-  font-size: max(3vw, 1.5rem);
+  font-size: 1.5rem;
 }
 .reflow-examples__show-arrow-buttons {
   padding: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button {
   display: inline-block;
-  width: max(3vw, 1.5rem);
+  width: 1.5rem;
   position: absolute;
-  top: calc(max(3vw, 1.5rem)/11);
+  top: calc(1.5rem/11);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--previous {
   left: 0;
@@ -64,10 +67,14 @@ body ::-webkit-scrollbar-track {
   right: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__list {
-  width: calc(100% - calc(max(3vw, 1.5rem) * 3));
+  width: calc(100% - calc(1.5rem * 3));
 }
 .reflow-examples__remove-overflow {
   white-space: normal;
+}
+.reflow-examples__content {
+  max-width: 1024px;
+  margin: 0 auto;
 }
 .reflow-examples__list {
   margin: 0;
@@ -82,7 +89,7 @@ body ::-webkit-scrollbar-track {
   white-space: normal;
 }
 .reflow-examples__list-item {
-  font-size: max(3vw, 1.5rem);
+  font-size: 1.5rem;
   font-weight: bold;
   display: inline-block;
   padding: 0.5vw 1vw;
@@ -105,6 +112,8 @@ body ::-webkit-scrollbar-track {
 }
 h1 {
   font-size: 1.5625rem;
+  text-align: center;
+  margin-bottom: 1em;
 }
 a[tabindex="-1"] {
   pointer-events: none;
