@@ -77,7 +77,13 @@ main {
 
   &__show-arrow-buttons &__list {
     //width: ~"calc(100% - @{double-font-size-reg})";
-    padding: 0 ~"calc(@{font-size-reg} + @{menu-padding})";
+    padding: 0 @button-width;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: @button-width;
+    }
   }
 
   &__remove-overflow {

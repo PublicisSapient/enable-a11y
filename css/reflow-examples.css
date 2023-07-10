@@ -73,6 +73,11 @@ main {
 .reflow-examples__show-arrow-buttons .reflow-examples__list {
   padding: 0 calc(1.5rem + 12px);
 }
+.reflow-examples__show-arrow-buttons .reflow-examples__list::after {
+  display: inline-block;
+  content: "";
+  width: calc(1.5rem + 12px);
+}
 .reflow-examples__remove-overflow {
   white-space: normal;
 }

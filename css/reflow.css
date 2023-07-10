@@ -15,7 +15,7 @@
   border-image-width: 36px 17px 45px 17px;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: stretch stretch;
-  border-image-source: url("/images/reflow/mobile-phone--border.webp");
+  border-image-source: url("../images/reflow/mobile-phone--border.webp");
   border-style: solid;
 }
 @media only screen and (min-width: 720px) {
