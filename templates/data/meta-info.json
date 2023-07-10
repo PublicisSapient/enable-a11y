@@ -181,7 +181,9 @@
     "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues."
   },
   "reflow__example-of-issue.php": {
-    "bodyClass": "iframed-example"
+    "bodyClass": "iframed-example",
+    "title": "Reflow example",
+    "hideTitle": true
   },
   "search.php": {
     "title": "Search Form",

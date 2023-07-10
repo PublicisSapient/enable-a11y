@@ -1,6 +1,6 @@
 <p>
-  When Reflow was first introduced into WCAG 2.1, the wording of the requirement was a little hard for some people to understand. Basically,
-  content should be understandable without the user having to scroll in two dimensions. Exceptions to this is content
+  When Reflow was first introduced into WCAG 2.1, the wording of the requirement was a little hard for some people to understand. <strong>Basically,
+  content should be understandable without the user having to scroll in two dimensions (or, in developer terms, make your layout responsive).</strong> Exceptions to this is content
   which requires the given layout in order to preserve the content's meaning, including:
 </p>
 
@@ -33,12 +33,12 @@
 <h2>Common Reflow Problem #1: Horizontally Scrolling Navigation</h2>
 
 <p>
-  Consider a piece of horizontally-scrolling navigation like this (which doesn't reflow) that has a lot of vertically scrolling content underneath:
+  Consider the horizontally-scrolling navigation in the iframe below <strong>which doesn't reflow in the mobile breakpoint.</strong> The navigation, instead, requires the user to vertically scroll to access the content:
 </p>
 
 <!--
 <?php ob_start(); ?>
-<p>The navigation in this iframe scrolls in two directions.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
@@ -72,7 +72,7 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The navigation in this iframe scrolls in two directions, but it also has arrow buttons.  Since there is an alternative to scrolling in two dimensions, it is not considered a violation of WCAG 2.1.</p>
+<p>The navigation in this iframe scrolls vertically, but it also has arrow buttons.  Since there is an alternative to scrolling in two dimensions, it is not considered a violation of WCAG 2.1.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 
@@ -154,3 +154,5 @@
     the list of filter checkboxes in the desktop view. This modal appears when the "Filter Results" button is
     pressed.</figcaption>
 </figure>
+
+<p>You could also put the filter UI in a the mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>

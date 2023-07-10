@@ -1,9 +1,12 @@
 @import "shared/mixins-and-vars";
 
+@menu-padding: 12px;
 @font-size-reg: 24/@px;
-@button-width: @font-size-reg;   // was ~"max(3vw, @{font-size-reg})";
-@double-button-width: ~"calc(@{button-width} * 3)";
+@button-font-size: 20/@px;
+@button-width: ~"calc(@{font-size-reg} + @{menu-padding})";  
+@double-button-width: ~"calc(@{button-width} * 2)";
 @button-top: ~"calc(@{button-width}/11)";
+
 
 .iframed-example {
   [role="banner"],
@@ -34,7 +37,7 @@ main {
     background: black;
     margin: 0 -1em 1em -1em;
     overflow:hidden; 
-    padding: 0 1em;
+    padding: 0 @menu-padding;
     position: relative;
   }
 
@@ -45,7 +48,7 @@ main {
     background-color: transparent;
     color: white;
     font-weight: bold;
-    font-size: @button-width;
+    font-size: @button-font-size;
     
   }
 
@@ -60,16 +63,21 @@ main {
     top: @button-top;
 
     &--previous {
+      text-align: left;
       left: 0;
+      background: linear-gradient(to right, #000, #000 @font-size-reg, rgba(0, 0, 0, 0) 100%);
     }
 
     &--next {
+      text-align: right;
       right: 0;
+      background: linear-gradient(to left, #000, #000 @font-size-reg, rgba(0, 0, 0, 0) 100%);
     }
   }
 
   &__show-arrow-buttons &__list {
-    width: ~"calc(100% - @{double-button-width})";
+    //width: ~"calc(100% - @{double-font-size-reg})";
+    padding: 0 ~"calc(@{font-size-reg} + @{menu-padding})";
   }
 
   &__remove-overflow {
@@ -86,7 +94,7 @@ main {
     margin: 0;
     padding: 0;
     display: inline-block;
-    width: calc(100% - 2em);
+    width: 100%; 
     overflow-x: scroll;
 
     white-space: nowrap;
@@ -98,7 +106,7 @@ main {
   }
 
   &__list-item {
-    font-size: @button-width;
+    font-size: @font-size-reg;
     font-weight: bold;
     display: inline-block;
     padding: 0.5vw 1vw;
@@ -117,7 +125,7 @@ main {
 
     &--content {
       padding: 0;
-      margin: 0 -2rem;
+      margin: 0 -(12/@px);
     }
   }
 

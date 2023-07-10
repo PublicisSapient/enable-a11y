@@ -22,7 +22,7 @@
   <main id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
     <?php
-      if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero' && isset($fileProps->title)) {
+      if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero' && isset($fileProps->title) && !isset($fileProps->hideTitle)) {
         print '<h1>' . $fileProps->title . '</h1>';
       }
       

@@ -14,6 +14,8 @@ if ($heading == '') {
 
 <h1><?= $heading ?></h1>
 
+<p>(The reflow test is best experienced at the mobile breakpoint)</p>
+
 <div class="reflow-examples__index  <?= $className ?>" aria-label="Alphabetical Index">
 
   <?php

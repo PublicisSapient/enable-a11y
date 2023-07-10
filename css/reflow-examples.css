@@ -39,7 +39,7 @@ main {
   background: black;
   margin: 0 -1em 1em -1em;
   overflow: hidden;
-  padding: 0 1em;
+  padding: 0 12px;
   position: relative;
 }
 .reflow-examples__arrow-button {
@@ -49,25 +49,29 @@ main {
   background-color: transparent;
   color: white;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 .reflow-examples__show-arrow-buttons {
   padding: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button {
   display: inline-block;
-  width: 1.5rem;
+  width: calc(1.5rem + 12px);
   position: absolute;
-  top: calc(1.5rem/11);
+  top: calc(calc(1.5rem + 12px)/11);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--previous {
+  text-align: left;
   left: 0;
+  background: linear-gradient(to right, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--next {
+  text-align: right;
   right: 0;
+  background: linear-gradient(to left, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__list {
-  width: calc(100% - calc(1.5rem * 3));
+  padding: 0 calc(1.5rem + 12px);
 }
 .reflow-examples__remove-overflow {
   white-space: normal;
@@ -80,7 +84,7 @@ main {
   margin: 0;
   padding: 0;
   display: inline-block;
-  width: calc(100% - 2em);
+  width: 100%;
   overflow-x: scroll;
   white-space: nowrap;
 }
@@ -105,7 +109,7 @@ main {
 }
 .reflow-examples__dropdown--content {
   padding: 0;
-  margin: 0 -2rem;
+  margin: 0 -0.75rem;
 }
 .reflow-examples__dropdown .reflow-examples__list {
   background: black;
