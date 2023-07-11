@@ -7,7 +7,7 @@
 }
 .reflow-example__frame {
   display: block;
-  margin: 20px auto;
+  margin: 20px auto 0;
   width: 100%;
   height: min(561px, 70vh);
   padding: 36px 17px 45px 17px;
@@ -25,7 +25,6 @@
 }
 @media only screen and (min-width: 386px) {
   .reflow-example__frame {
-    margin: 0 auto;
     width: 354px;
   }
 }

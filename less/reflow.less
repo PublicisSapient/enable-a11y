@@ -15,7 +15,7 @@
   &__frame {
 
     display: block;
-    margin: 20px auto;
+    margin: 20px auto 0;
     width: 100%;
     height: ~"min(@{frame-height}, 70vh)";
 
@@ -26,7 +26,6 @@
     } 
 
     @media @show-device-border-breakpoint {
-      margin: 0 auto;
       width: @frame-width;
     }
 

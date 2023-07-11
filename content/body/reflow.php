@@ -42,7 +42,7 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeReflowIframe('x=y', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
+  includeMobileIframe('reflow__example-of-issue.php', 'x=y', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
 ?>
 
 <p>This is obviously a Reflow violation.  But how do we fix this?</p>
@@ -59,7 +59,7 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeReflowIframe('className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
+  includeMobileIframe('reflow__example-of-issue.php', 'className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
 ?>
 
 <h3>Solution #2: Use Arrow Buttons to Access Offscreen Content</h3>
@@ -77,7 +77,7 @@
 -->
 
 <?php
-  includeReflowIframe('hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
+  includeMobileIframe('reflow__example-of-issue.php', 'hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
 ?>
 
 
@@ -92,7 +92,7 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeReflowIframe(
+  includeMobileIframe('reflow__example-of-issue.php', 
     'hasDropdown=true&className=reflow-examples__remove-overflow', 
     $copy,'Example of a Reflow Issue fixed by using a dropdown to display the navigation bar',
     'Solution 3: Use a Drawer');
@@ -156,3 +156,19 @@
 </figure>
 
 <p>You could also put the filter UI in a the mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>
+
+<h2>Common Reflow Problem #3: Using a Carousel</h2>
+
+<p>
+  While I would use any of the above solutions first, you could use a carousel to solve reflow issues, as long as your carousel is accessible (but I would read the <a href="carousel.php">Enable Carousel Page</a> first to understand why carousels are not the best UX choice).
+</p>
+
+
+<!--
+<?php ob_start(); ?>
+<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<?php $copy = urlencode(ob_get_contents()); ?>
+-->
+<?php
+  includeMobileIframe('reflow__example-of-product-tile-carousel.php', 'x=y', $copy, 'Example of using Indicators in a carousel to resolve reflow issues', 'Using a Carousel');
+?>

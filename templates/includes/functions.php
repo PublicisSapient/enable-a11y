@@ -36,8 +36,9 @@ function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteracti
     ));
 }
 
-function includeReflowIframe($queryString = "", $copy = "", $title = "Reflow Example", $heading = '') {
-  includeFileWithVariables('includes/reflow-iframe.php', array(
+function includeMobileIframe($url, $queryString = "", $copy = "", $title = "Reflow Example", $heading = '') {
+  includeFileWithVariables('includes/mobile-iframe.php', array(
+    'url' => $url,
     'queryString' => $queryString,
     'copy' => $copy,
     'title' => $title,

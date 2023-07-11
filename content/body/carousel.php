@@ -57,7 +57,13 @@
   </div>
 
   <div class="glider-contain">
-    <div class="glider enable-carousel enable-carousel--focus-all-panels">
+
+    <!-- 
+      The ID of the carousel is used as a prefix
+      for the dot indicators at the bottom
+      of the carousel (mockbuster-carousel__indicators)
+    -->
+    <div id="mockbuster-carousel" class="glider enable-carousel enable-carousel--focus-all-panels">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
@@ -112,7 +118,7 @@
 
     <button class="glider-prev" tabindex="-1" aria-label="Display Previous Slide" aria-hidden="true">«</button>
     <button class="glider-next" tabindex="-1" aria-label="Display Next Slide" aria-hidden="true">»</button>
-    <div role="tablist" class="dots"></div>
+    <div id="mockbuster-carousel__indicators" class="dots"></div>
   </div>
 
   <div class="enable-mobile-visible-on-focus__container  enable-skip-link--end">
@@ -203,10 +209,10 @@
 
   <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
 
-  <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="example2-carousel">
+  <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
-    <div class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="example2-carousel" aria-describedby="carousel-instructions">
+    <div id="announcements-carousel" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
       <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
@@ -252,9 +258,10 @@
     </div>
 
     <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide">»</button>
-    <div role="tablist" class="dots"></div>
     <output class="sr-only enable-carousel__alert"></output>
   </div>
+
+  <div id="announcements-carousel__indicators"></div>
 
 </div>
 
