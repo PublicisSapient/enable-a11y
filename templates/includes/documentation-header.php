@@ -498,6 +498,13 @@
                                           "url-slug": "screen-reader-only-text",
                                           "alt": ""
                                       }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
                                   }
 
                                 ]
