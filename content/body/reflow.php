@@ -23,11 +23,12 @@
 </ol>
 
 <p>
-  These numbers were used in the requirement because, at the time, 1280x1024 resolution displays were considered the
-  average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the
-  same as looking at the website at a 320x256 pixel resolution. While testing your work at such a display, reflow issues
-  at other resolutions are probably going to occur at this resolution as well.
+  Why were these numbers chosen?  At the time this WCAG requirement was written, 1280x1024 resolution displays were considered the average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the same as looking at the website at a 320x256 pixel resolution.  While some may think this viewport view is smaller than any user will actually use, it's how the guideline is written.  Besides, if you don't have any reflow issues at this viewport, its very likely you won't have any at any other viewport size larger than that.
 </p>
+
+<p>
+  Here are a list of common scenarios we have had to fix.  If you have any others you may want to add, please feel free to go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> to report one your would like to add.
+</p>    
 
 
 <h2>Common Reflow Problem #1: Horizontally Scrolling Navigation</h2>
