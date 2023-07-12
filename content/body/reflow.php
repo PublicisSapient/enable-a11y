@@ -80,6 +80,8 @@
   includeMobileIframe('reflow__example-of-issue.php', 'hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
 ?>
 
+<p>Note that we made put set <code>tabindex="-1"</code> on the arrow buttons, since they are not needed for keyboard users.</p>
+
 
 <h3 id="drawer-fix">Solution #3: Use a Drawer to Expose Content</h3>
 
@@ -160,7 +162,22 @@
 <h2>Common Reflow Problem #3: Using a Carousel</h2>
 
 <p>
-  While I would use any of the above solutions first, you could use a carousel to solve reflow issues, as long as your carousel is accessible (but I would read the <a href="carousel.php">Enable Carousel Page</a> first to understand why carousels are not the best UX choice).
+  Consider a list of items that take up the full width of the browser in the desktop view, such as the example below:
+</p>
+
+<figure>
+
+  <?php pictureWebpPng("images/reflow/product-tile-list--desktop", "")?>
+
+  <figcaption>Figure 4: Screenshot of a list of four product tiles that use up the full width of the browser viewport.</figcaption>
+</figure>
+
+<p>
+  Note that there we could shrink the product tiles to fit the width of the viewport, but there is a point where the text can become illegible.  We could stack the tiles, but some designers may not want to use that much vertical space on the page.
+</p> 
+
+<p>
+  While developers could use any of the above solutions to fix this issue, another possible way is to use a carousel to solve reflow issues, as long as your carousel is accessible <strong>(but please read the <a href="carousel.php">Enable Carousel Page</a> first to understand why carousels may not the best UX choice).</strong>
 </p>
 
 

@@ -34,6 +34,9 @@
   outline: solid 2px #3b99fc !important;
   outline-offset: 2px;
 }
+.glider-dot:only-child {
+  display: none;
+}
 .glider-dot:hover,
 .glider-dot:active {
   background: none;
@@ -197,6 +200,7 @@
   min-height: 100px;
   padding: 20px 10px 0 10px;
   width: 100%;
+  text-align: center;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 .product-tile-carousel__slide {

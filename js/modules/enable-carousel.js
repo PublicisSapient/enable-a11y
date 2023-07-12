@@ -149,6 +149,7 @@ const EnableCarousel = function (container, options, gliderOptions) {
 
   this.removeTabListRoleObserver = (mutationList) => {
     this.indicatorsRoot.removeAttribute('role');
+    this.indicatorsRoot.classList.add('enable-carousel__dots')
   }
 
   this.fixIndicatorsObserver = (mutationList) => {
@@ -162,7 +163,6 @@ const EnableCarousel = function (container, options, gliderOptions) {
           var i = Array.prototype.indexOf.call(parentNode.children, el);
 
           this.fixIndicator(el, i);
-          console.log('fixed', el.outerHTML);
         });
       }
       
