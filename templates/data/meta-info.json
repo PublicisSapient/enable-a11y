@@ -178,16 +178,19 @@
   },
   "reflow.php": {
     "title": "Reflow",
-    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues."
+    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
+    "hasIframes": true
   },
   "reflow__example-of-issue.php": {
     "bodyClass": "iframed-example",
     "title": "Reflow example",
+    "desc": "This is an example of horizontal nav that has reflow issues at smaller breakpoints.",
     "hideTitle": true
   },
   "reflow__example-of-product-tile-carousel.php": {
     "bodyClass": "iframed-example",
     "title": "Reflow example",
+    "desc": "This is an example of a carousel that would have reflow issues at smaller breakpoints if it was not for the page indicators at the bottom, which is an alternative navigation to scrolling horizontally.",
     "hideTitle": true
   },
   "search.php": {

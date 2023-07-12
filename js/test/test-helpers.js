@@ -107,7 +107,7 @@ const testHelpers = new function () {
     for (let name in pageListJSON) {
       const value = pageListJSON[name];
      
-      if (! value.wip ) {
+      if (! value.wip && !value.hasIframes) {
         r.push(name);
       }
     }

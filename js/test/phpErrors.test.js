@@ -60,6 +60,10 @@ describe('Test for PHP errors on all pages on Enable', () => {
 
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
+
+    // TODO: We are ignoring reflow.php here since it times out a lot.
+    // I think this is because of the iframes in the document,
+    // but I'm not sure.
     it(`Desktop Breakpoint: Test PHP errors on ${fileList[i]}`, async () => {
       await testPage(fileList[i], desktopPage);
     });

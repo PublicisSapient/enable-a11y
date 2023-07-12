@@ -71,10 +71,16 @@ describe('Test all pages on Enable to Ensure the information is written correctl
     });
 
     const { openGraphPosterURL, twitterGraphPosterURL, areTherePHPJestErrors } = domInfo;
+    const doesFileExist = fs.existsSync(`./${openGraphPosterURL}`);
+
+    if (!doesFileExist) {
+      console.error(`Missing file: ${openGraphPosterURL}.`);
+    }
 
     expect(openGraphPosterURL).toBe(twitterGraphPosterURL);
-    expect(fs.existsSync(`./${openGraphPosterURL}`)).toBe(true);
+    expect(doesFileExist).toBe(true);
     expect(areTherePHPJestErrors).toBe(false);
+
 
   }
 

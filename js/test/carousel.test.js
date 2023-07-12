@@ -53,9 +53,18 @@ describe('Carousel Tests', () => {
         
 
         return {
-          isActiveElementInCurrentSlide
+          isActiveElementInCurrentSlide,
+          $currentSlide: $currentSlide.outerHTML,
+          activeElement: activeElement.outerHTML
         }
+
       }, i);
+      if (!domInfo.isActiveElementInCurrentSlide) {
+        console.log(`Focus is wrong:
+          $currentSlide: ${domInfo.$currentSlide} 
+          activeElement: ${domInfo.activeElement}
+        `);
+      }
       expect(domInfo.isActiveElementInCurrentSlide).toBe(true);
 
       // We pause to ensure the animation to the next slide has time to
@@ -225,10 +234,18 @@ describe('Carousel Tests', () => {
         const $currentSlide = $slides[i];
 
         return {
-          isFocusInVisiblePanel: (activeElement === $currentSlide || activeElement.closest('.enable-carousel__slide') === $currentSlide)
+          isFocusInVisiblePanel: (activeElement === $currentSlide || activeElement.closest('.enable-carousel__slide') === $currentSlide),
+          $currentSlide: $currentSlide.outerHTML,
+          activeElement: activeElement.outerHTML
         }
 
-      }, i); 
+      }, i);
+      if (!domInfo.isFocusInVisiblePanel) {
+        console.log(`Focus is wrong:
+          $currentSlide: ${domInfo.$currentSlide} 
+          activeElement: ${domInfo.activeElement}
+        `);
+      }
       expect(domInfo.isFocusInVisiblePanel).toBe(true);
     }
 
@@ -282,10 +299,18 @@ describe('Carousel Tests', () => {
         const $currentSlide = $slides[i];
 
         return {
-          isFocusInVisiblePanel: (activeElement === $currentSlide || activeElement.closest('.enable-carousel__slide') === $currentSlide)
+          isFocusInVisiblePanel: (activeElement === $currentSlide || activeElement.closest('.enable-carousel__slide') === $currentSlide),
+          $currentSlide: $currentSlide.outerHTML,
+          activeElement: activeElement.outerHTML
         }
 
       }, i);
+      if (!domInfo.isFocusInVisiblePanel) {
+        console.log(`Focus is wrong:
+          $currentSlide: ${domInfo.$currentSlide} 
+          activeElement: ${domInfo.activeElement}
+        `);
+      }
       expect(domInfo.isFocusInVisiblePanel).toBe(true);
     }
 
