@@ -16,7 +16,7 @@ if ($heading == '') {
 
 <div class="product-tile-carousel__example">
   <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
-    <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
+    <a target="_parent" href="#end-of-component-1" id="beginning-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
       Skip to end of promotional links
     </a>
   </div>
@@ -32,7 +32,7 @@ if ($heading == '') {
       <div class="enable-carousel__slide product-tile-carousel__slide">
         <img class="product-tile-carousel__background"
           src="images/product-tile-example/the-man-who-saves-the-world.webp" alt="">
-        <a href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" class="product-tile-carousel__copy">
+        <a target="_parent" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" class="product-tile-carousel__copy">
           <div class="product-tile-carousel__title">The Man Who Saves The World</div>
           <div class="product-tile-carousel__features">
             Blu-ray · Turkey · $19.99
@@ -42,7 +42,7 @@ if ($heading == '') {
       <div class="enable-carousel__slide product-tile-carousel__slide">
 
         <img class="product-tile-carousel__background" src="images/product-tile-example/3-dev-adam.webp" alt="">
-        <a href="https://en.wikipedia.org/wiki/3_Dev_Adam" class="product-tile-carousel__copy">
+        <a target="_parent" href="https://en.wikipedia.org/wiki/3_Dev_Adam" class="product-tile-carousel__copy">
           <div class="product-tile-carousel__title">3 Dev Adam</div>
           <div class="product-tile-carousel__features">
             DVD · Turkey · $12.99
@@ -53,7 +53,7 @@ if ($heading == '') {
       <div class="enable-carousel__slide product-tile-carousel__slide">
 
         <img class="product-tile-carousel__background" src="images/product-tile-example/lady-battlecop.webp" alt="">
-        <a href="https://tokusatsu.fandom.com/wiki/Lady_Battle_Cop" class="product-tile-carousel__copy">
+        <a target="_parent" href="https://tokusatsu.fandom.com/wiki/Lady_Battle_Cop" class="product-tile-carousel__copy">
           <div class="product-tile-carousel__title">Lady Battlecop</div>
           <div class="product-tile-carousel__features">
             VHS · Japan · $9.99
@@ -64,7 +64,7 @@ if ($heading == '') {
       <div class="enable-carousel__slide product-tile-carousel__slide">
 
         <img class="product-tile-carousel__background" src="images/product-tile-example/mahakaal.webp" alt="">
-        <a href="https://en.wikipedia.org/wiki/Mahakaal" class="product-tile-carousel__copy">
+        <a target="_parent" href="https://en.wikipedia.org/wiki/Mahakaal" class="product-tile-carousel__copy">
           <div class="product-tile-carousel__title">Mahakaal</div>
           <div class="product-tile-carousel__features">
             DVD · India · $9.99
@@ -78,7 +78,7 @@ if ($heading == '') {
     </div>
   </div>
   <div class="enable-mobile-visible-on-focus__container  enable-skip-link--end">
-    <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
+    <a target="_parent" href="#beginning-of-component-1" id="end-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
       Skip to
       beginning of promotional links
     </a>
