@@ -87,5 +87,5 @@ if ($heading == '') {
 </div>
 
 <p class="center">
-  Resize the browser window to see how we ensure that we ensure the carousel only appears on smaller width breakpoints.
+  Resize the browser window to see how we ensure the carousel only appears on smaller width breakpoints.
 </p>
