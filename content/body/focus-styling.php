@@ -108,8 +108,9 @@
 </figure>
 
 <p>We increased the hit area to conform to <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html">WCAG
-    2.5.5: Target Size</a>. Even though this is a AAA requirement, it is so easiy to implement by increasing the padding
-  and componsating visually with an equivalent negative margin:</p>
+    2.5.5: Target Size</a> (we made it larger than 44 pixels x 44 pixels). Even though this is a AAA requirement, it is so easiy to implement by increasing the padding
+  and componsating visually with an equivalent negative margin, so why just conform to 
+  <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.5.8: Target Size (Minimum).</a> (which only asks 24 pixels x 24 pixels)?</p>
 
 <?php includeShowcode("css-focus-hitarea", "", "", "", false)?>
 <script type="application/json" id="css-focus-hitarea-props">
