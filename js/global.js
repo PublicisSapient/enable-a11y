@@ -77,7 +77,7 @@ function initEnable() {
             // 1) the heading doesn't have an ID
             // 2) it is not part of an example
             // 3) it has an ancestor with class no-permalink-headings.
-            if (el.closest('.enable-example') === null && el.closest('.no-permalink-headings') === null) {
+            if (el.closest('.enable-example') === null && el.closest('.enable-example--unstyled') === null && el.closest('.no-permalink-headings') === null) {
                 if (!el.id) {
                     const innerTextId = el.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + "--heading";
 

@@ -48,6 +48,13 @@
     padding: 0 20px;
   }
 }
+.play-pause-anim__checkbox-container .back-to-top-link {
+  color: white;
+  display: none;
+}
+.offscreen-observer__is-header-offscreen .play-pause-anim__checkbox-container .back-to-top-link {
+  display: inline;
+}
 .pause-anim-control__gif--animated,
 .pause-anim-control__gif--still {
   max-width: 100%;

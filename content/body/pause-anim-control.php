@@ -1,5 +1,5 @@
 <div id="css-anim-example">
-  <div class="play-pause-anim__full-bleed-image-demo">
+  <div class="play-pause-anim__full-bleed-image-demo enable-example--unstyled">
 
 
     <div class="play-pause-anim__full-bleed-image-demo--copy">

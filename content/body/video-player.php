@@ -1,10 +1,11 @@
-<p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
-  What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
+<p>In order for a video player accessible is widely misunderstood. Many web professionals know that a video player should be able to turn or off closed captions (unless the video has open captions burned into it).  What many don't know is that the player absolutely needs to be able to turn <a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-description-prerecorded.html">audio descriptions</a> on or off in order to be WCAG AA compliant (unless the video has everything visual of importance described in the existing audio track).</p>
+
+<p>Let's take a look at what video players features should have in order to play arbitrary videos in an accessible way.</p>
 
 <?php include("includes/wcag-video-table.php") ?>
 
 <p>
-  For a lot of companies and organizations, re-cutting a alternative cut of each video on their website is
+  For a lot of companies and organizations, creating a alternative cut of each video with an audio description on their website is
   cost prohibitive:
 </p>
 

@@ -110,10 +110,12 @@ figure figcaption.caption {
 
 table,
 [role="table"] {
-	width: 100%;
+	margin: 0 auto;
+    min-width: ~"min(400px, 100%)";
 	max-width: 1024px;
     border-collapse: collapse;
     display: table;
+
 
     figure & {
         margin-bottom: 0;
@@ -135,6 +137,16 @@ table,
         font-weight: bold;
         color: white;
         background-color: black;
+
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+
+    th[scope="row"],
+    [role="rowheader"] {
+        text-align: right;
     }
 
     tr, 
@@ -237,5 +249,14 @@ table,
 
     td {
         padding: 0;
+    }
+}
+
+.table {
+    &--equal-width-columns {
+
+        td {
+            min-width: 100px;
+        }
     }
 }

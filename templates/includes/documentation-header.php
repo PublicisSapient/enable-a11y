@@ -1,4 +1,4 @@
-<div role="banner">
+<div role="banner" id="#top" aria-label="Top of Page">
   <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
     <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
       Skip to Main Content

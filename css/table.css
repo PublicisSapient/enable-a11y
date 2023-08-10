@@ -103,7 +103,8 @@ figure figcaption.caption {
 }
 table,
 [role="table"] {
-  width: 100%;
+  margin: 0 auto;
+  min-width: min(400px, 100%);
   max-width: 1024px;
   border-collapse: collapse;
   display: table;
@@ -137,6 +138,21 @@ table [role="rowheader"],
   font-weight: bold;
   color: white;
   background-color: black;
+}
+table th a,
+[role="table"] th a,
+table [role="columnheader"] a,
+[role="table"] [role="columnheader"] a,
+table [role="rowheader"] a,
+[role="table"] [role="rowheader"] a {
+  color: white;
+  text-decoration: underline;
+}
+table th[scope="row"],
+[role="table"] th[scope="row"],
+table [role="rowheader"],
+[role="table"] [role="rowheader"] {
+  text-align: right;
 }
 table tr,
 [role="table"] tr,
@@ -242,4 +258,7 @@ table .rowspan2__bottom,
 }
 .screenshot-table td {
   padding: 0;
+}
+.table--equal-width-columns td {
+  min-width: 100px;
 }

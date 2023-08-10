@@ -16,10 +16,17 @@ showChromedriverError() {
 	echo "-----------------------------------------------------------------"
 	echo "It seems that you do not have the correct Chromedriver installed."
 	echo '
-If there is a problem with running Chromedriver, then you should
-ensure your chromedriver is installed with the right version 
-of Chrome (check the version number inside the "About Chrome"
-dialog in Chrome).  For example, if you are on MAC OS, you
+
+If you are not familar with how to do this, read the following carefully.
+
+** For Google Chrome 115 and higher **
+
+Chromedriver comes with "Google Chrome Chrome For Testing", which is available
+here:
+
+https://googlechromelabs.github.io/chrome-for-testing/
+
+If you are on MAC OS, you
 will need to download the mac64 version of the Chromedriver
 and install it like this (the filename may vary):
 
@@ -29,7 +36,25 @@ You can download the right zip file from here:
 
 https://googlechromelabs.github.io/chrome-for-testing/
 
-If you are using Google Chrome < 115, you can find the right zip here:
+Note that if you still see this message on OSX, it may be that there is still
+a bug with Chrome For Testing not supporting Selenium correctly (the issue
+is that the default directory for Chromedirver is different than it used to be):
+
+https://github.com/GoogleChromeLabs/chrome-for-testing/issues/30
+
+There is a workaround for this here:
+
+https://github.com/GoogleChromeLabs/chrome-for-testing/issues/30#issuecomment-1643741069
+
+
+** For Google Chrome less than 115 **
+
+If you are using Google Chrome < 115, and there is a
+problem with running Chromedriver, then you should
+ensure your chromedriver is installed with the right version 
+of Chrome (check the version number inside the "About Chrome"
+dialog in Chrome).  You can find the right zip for your version
+of Chrome here:
 
 https://chromedriver.storage.googleapis.com/index.html
 
@@ -37,7 +62,10 @@ https://chromedriver.storage.googleapis.com/index.html
 
 https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
 
-If that does not work, you may need to do a global update of axe-cli:
+
+** All versions of Chrome **
+
+If all of the above does not work, you may need to do a global update of axe-cli:
 
 sudo npm update -g axe-cli
 
