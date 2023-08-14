@@ -34,10 +34,12 @@
     "enable-node-libs/"
   ],
   "scripts": {
+    "build-entire-uswds": "npx gulp compile && npx gulp init",
+    "build-usdws-libs": "bin/promote-uswds-to-server.sh",
     "jest": "jest",
     "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
-    "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "server": "node bin/promote-node-modules-to-server.js && npm run build-usdws-libs && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh"
@@ -74,6 +76,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@uswds/compile": "^1.0.0",
     "accessibility-js-routines": "^3.3.4",
     "babel-preset-es2015": "^6.24.1",
     "concurrently": "^7.0.0",
@@ -85,9 +88,11 @@
     "got": "^11.5.5",
     "jest": "^28.1.3",
     "jest-puppeteer": "^6.1.1",
-    "jsdoc": "^3.6.6"
+    "jsdoc": "^3.6.6",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@uswds/uswds": "^3.5.0",
     "chromedriver": "^115.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
@@ -107,6 +112,7 @@
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
     "text-zoom-event": "^1.5.2",
+    "uswds": "^2.14.0",
     "vnu": "^20.6.30",
     "vnu-jar": "^21.10.12",
     "wget-improved": "^3.2.1",
