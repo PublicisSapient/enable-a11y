@@ -1,0 +1,6 @@
+{
+    "rules": [{
+	id: 'scrollable-region-focusable',
+	selector: '*:not(#announcements-carousel)'
+    }]
+}

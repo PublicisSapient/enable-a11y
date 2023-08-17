@@ -13,8 +13,7 @@ echo "PHP is $PHP"
 
 showChromedriverError() {
 	echo 
-	echo "-----------------------------------------------------------------"
-	echo "It seems that you do not have the correct Chromedriver installed."
+	echo "You may not have the correct Chromedriver installed."
 	echo '
 If there is a problem with running Chromedriver, then you should
 ensure your chromedriver is installed with the right version 
@@ -121,13 +120,18 @@ echo "$AXE_ERR" | egrep "[cC]annot find Chrome binary" > /dev/null
 if [ "$?" = "0" ]
 then
 	echo "$AXE_ERR" 1>&2
+
+
 	echo "
 	
 aXe can't find Chrome.  Please put it in your PATH and try again.
 Please read the following doc for more information:
 
 https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver/01fde32d0ed245141e24151f83b7c2db31d596a4#requirements
+
 " 1>&2
+
+	showChromedriverError
 	exit 3
 	fi
 
@@ -185,12 +189,12 @@ done
 echo	
 
 
-echo "Checking HTML..."
+echo "Checking HTML with vNu..."
 echo
 OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
 VNU_ERR_CODE="$?"
 
-echo "ERROR CODE: $VNU_ERR_CODE"
+echo "vNu finished testing with Error Code $VNU_ERR_CODE"
 
 # trim output
 OUTPUT="${OUTPUT##*( )}"

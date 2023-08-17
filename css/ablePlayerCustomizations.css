@@ -16,6 +16,9 @@
   height: 2.4em;
   min-height: 2.4em;
 }
+.enable-video-player .able-seekbar-head {
+  top: -0.25em;
+}
 .enable-video-player * {
   box-sizing: content-box;
 }
