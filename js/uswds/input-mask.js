@@ -1,78 +1,5853 @@
-/*! For license information please see input-mask.js.LICENSE.txt */
-var t={8450:(t,e,a)=>{const n=a(6158),r=a(22),{CLICK:s}=a(381),{prefix:o}=a(1824),i=`.${o}-show-password`;t.exports=n({[s]:{[i]:function(t){t.preventDefault(),r(this)}}})},5075:(t,e,a)=>{const n=a(4900),r=a(6158),s=a(8497),o=a(8882),{CLICK:i}=a(381),{prefix:l}=a(1824),c=`.${l}-accordion, .${l}-accordion--bordered`,d=`.${l}-accordion__button[aria-controls]`,u="aria-expanded",p=t=>n(d,t).filter((e=>e.closest(c)===t)),b=(t,e)=>{const a=t.closest(c);let n=e;if(!a)throw new Error(`${d} is missing outer ${c}`);n=s(t,e);const r=a.hasAttribute("data-allow-multiple");n&&!r&&p(a).forEach((e=>{e!==t&&s(e,!1)}))},f=r({[i]:{[d](){b(this),"true"===this.getAttribute(u)&&(o(this)||this.scrollIntoView())}}},{init(t){n(d,t).forEach((t=>{const e="true"===t.getAttribute(u);b(t,e)}))},ACCORDION:c,BUTTON:d,show:t=>b(t,!0),hide:t=>b(t,!1),toggle:b,getButtons:p});t.exports=f},5784:(t,e,a)=>{const n=a(6158),{CLICK:r}=a(381),{prefix:s}=a(1824),o=`.${s}-banner__header`,i=`${s}-banner__header--expanded`;t.exports=n({[r]:{[`${o} [aria-controls]`]:function(t){t.preventDefault(),this.closest(o).classList.toggle(i)}}})},6069:(t,e,a)=>{const n=a(9361),r=a(6158)({keydown:{'a[class*="usa-button"]':n({" ":t=>{t.preventDefault(),t.target.click()}})}});t.exports=r},976:(t,e,a)=>{const n=a(4900),r=a(6158),s=a(3774),{prefix:o}=a(1824),i=`${o}-character-count`,l=`.${i}`,c=`.${o}-character-count__field`,d=`.${o}-character-count__message`,u="The content is too long.",p=`${o}-character-count__status--invalid`,b=`${i}__status`,f=`${i}__sr-status`,h=`.${b}`,m=`.${f}`,g="characters allowed",$=t=>{const e=t.closest(l);if(!e)throw new Error(`${c} is missing outer ${l}`);const a=e.querySelector(d);if(!a)throw new Error(`${l} is missing inner ${d}`);return{characterCountEl:e,messageEl:a}},y=t=>{const e=document.createElement("div"),a=document.createElement("div"),n=`${t.dataset.maxlength} ${g}`;e.classList.add(`${b}`,"usa-hint"),a.classList.add(`${f}`,"usa-sr-only"),e.setAttribute("aria-hidden",!0),a.setAttribute("aria-live","polite"),e.textContent=n,a.textContent=n,t.append(e,a)},A=(t,e)=>{let a="";if(0===t)a=`${e} ${g}`;else{const n=Math.abs(e-t);a=`${n} ${"character"+(1===n?"":"s")} ${t>e?"over limit":"left"}`}return a},E=s(((t,e)=>{t.textContent=e}),1e3),v=t=>{const{characterCountEl:e}=$(t),a=t.value.length,n=parseInt(e.getAttribute("data-maxlength"),10),r=e.querySelector(h),s=e.querySelector(m),o=A(a,n);if(!n)return;const i=a&&a>n;r.textContent=o,E(s,o),i&&!t.validationMessage&&t.setCustomValidity(u),i||t.validationMessage!==u||t.setCustomValidity(""),r.classList.toggle(p,i)},x=r({input:{[c](){v(this)}}},{init(t){n(c,t).forEach((t=>(t=>{const{characterCountEl:e,messageEl:a}=$(t);a.classList.add("usa-sr-only"),a.removeAttribute("aria-live"),(t=>{const{characterCountEl:e}=$(t),a=t.getAttribute("maxlength");a&&(t.removeAttribute("maxlength"),e.setAttribute("data-maxlength",a))})(t),y(e)})(t)))},MESSAGE_INVALID_CLASS:p,VALIDATION_MESSAGE:u,STATUS_MESSAGE_CLASS:b,STATUS_MESSAGE_SR_ONLY_CLASS:f,DEFAULT_STATUS_LABEL:g,createStatusMessages:y,getCountMessage:A,updateCountMessage:v});t.exports=x},1513:(t,e,a)=>{const n=a(9361),r=a(7834),s=a(6158),o=a(5826),{prefix:i}=a(1824),{CLICK:l}=a(381),c=`${i}-combo-box`,d=`${c}--pristine`,u=`${c}__select`,p=`${c}__input`,b=`${c}__clear-input`,f=`${b}__wrapper`,h=`${c}__input-button-separator`,m=`${c}__toggle-list`,g=`${m}__wrapper`,$=`${c}__list`,y=`${c}__list-option`,A=`${y}--focused`,E=`${y}--selected`,v=`${c}__status`,x=`.${c}`,w=`.${u}`,L=`.${p}`,S=`.${b}`,_=`.${m}`,D=`.${$}`,C=`.${y}`,T=`.${A}`,M=`.${E}`,k=`.${v}`,q=(t,e="")=>{const a=t;a.value=e;const n=new CustomEvent("change",{bubbles:!0,cancelable:!0,detail:{value:e}});a.dispatchEvent(n)},I=t=>{const e=t.closest(x);if(!e)throw new Error(`Element is missing outer ${x}`);const a=e.querySelector(w),n=e.querySelector(L),r=e.querySelector(D),s=e.querySelector(k),o=e.querySelector(T),i=e.querySelector(M),l=e.querySelector(_),c=e.querySelector(S),u=e.classList.contains(d);return{comboBoxEl:e,selectEl:a,inputEl:n,listEl:r,statusEl:s,focusedOptionEl:o,selectedOptionEl:i,toggleListBtnEl:l,clearInputBtnEl:c,isPristine:u,disableFiltering:"true"===e.dataset.disableFiltering}},N=t=>{const{inputEl:e,toggleListBtnEl:a,clearInputBtnEl:n}=I(t);n.hidden=!0,n.disabled=!0,a.disabled=!0,e.disabled=!0},B=t=>{const e=t.closest(x);if(e.dataset.enhanced)return;const a=e.querySelector("select");if(!a)throw new Error(`${x} is missing inner select`);const n=a.id,r=document.querySelector(`label[for="${n}"]`),s=`${n}--list`,i=`${n}-label`,l=`${n}--assistiveHint`,c=[],{defaultValue:y}=e.dataset,{placeholder:A}=e.dataset;let E;if(A&&c.push({placeholder:A}),y)for(let t=0,e=a.options.length;t<e;t+=1){const e=a.options[t];if(e.value===y){E=e;break}}if(!r||!r.matches(`label[for="${n}"]`))throw new Error(`${x} for ${n} is either missing a label or a "for" attribute`);r.setAttribute("id",i),r.setAttribute("id",i),a.setAttribute("aria-hidden","true"),a.setAttribute("tabindex","-1"),a.classList.add("usa-sr-only",u),a.id="",a.value="",["required","aria-label","aria-labelledby"].forEach((t=>{if(a.hasAttribute(t)){const e=a.getAttribute(t);c.push({[t]:e}),a.removeAttribute(t)}}));const w=document.createElement("input");if(w.setAttribute("id",n),w.setAttribute("aria-owns",s),w.setAttribute("aria-controls",s),w.setAttribute("aria-autocomplete","list"),w.setAttribute("aria-describedby",l),w.setAttribute("aria-expanded","false"),w.setAttribute("autocapitalize","off"),w.setAttribute("autocomplete","off"),w.setAttribute("class",p),w.setAttribute("type","text"),w.setAttribute("role","combobox"),c.forEach((t=>Object.keys(t).forEach((e=>{const a=o.escapeHTML`${t[e]}`;w.setAttribute(e,a)})))),e.insertAdjacentElement("beforeend",w),e.insertAdjacentHTML("beforeend",o.escapeHTML`
-    <span class="${f}" tabindex="-1">
-        <button type="button" class="${b}" aria-label="Clear the select contents">&nbsp;</button>
+/******/ var __webpack_modules__ = ({
+
+/***/ 8450:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const toggleFormInput = __webpack_require__(22);
+
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const LINK = `.${PREFIX}-show-password`;
+
+function toggle(event) {
+  event.preventDefault();
+  toggleFormInput(this);
+}
+
+module.exports = behavior({
+  [CLICK]: {
+    [LINK]: toggle,
+  },
+});
+
+
+/***/ }),
+
+/***/ 5075:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const select = __webpack_require__(4900);
+const behavior = __webpack_require__(6158);
+const toggle = __webpack_require__(8497);
+const isElementInViewport = __webpack_require__(8882);
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const ACCORDION = `.${PREFIX}-accordion, .${PREFIX}-accordion--bordered`;
+const BUTTON = `.${PREFIX}-accordion__button[aria-controls]`;
+const EXPANDED = "aria-expanded";
+const MULTISELECTABLE = "data-allow-multiple";
+
+/**
+ * Get an Array of button elements belonging directly to the given
+ * accordion element.
+ * @param {HTMLElement} accordion
+ * @return {array<HTMLButtonElement>}
+ */
+const getAccordionButtons = (accordion) => {
+  const buttons = select(BUTTON, accordion);
+
+  return buttons.filter((button) => button.closest(ACCORDION) === accordion);
+};
+
+/**
+ * Toggle a button's "pressed" state, optionally providing a target
+ * state.
+ *
+ * @param {HTMLButtonElement} button
+ * @param {boolean?} expanded If no state is provided, the current
+ * state will be toggled (from false to true, and vice-versa).
+ * @return {boolean} the resulting state
+ */
+const toggleButton = (button, expanded) => {
+  const accordion = button.closest(ACCORDION);
+  let safeExpanded = expanded;
+
+  if (!accordion) {
+    throw new Error(`${BUTTON} is missing outer ${ACCORDION}`);
+  }
+
+  safeExpanded = toggle(button, expanded);
+
+  // XXX multiselectable is opt-in, to preserve legacy behavior
+  const multiselectable = accordion.hasAttribute(MULTISELECTABLE);
+
+  if (safeExpanded && !multiselectable) {
+    getAccordionButtons(accordion).forEach((other) => {
+      if (other !== button) {
+        toggle(other, false);
+      }
+    });
+  }
+};
+
+/**
+ * @param {HTMLButtonElement} button
+ * @return {boolean} true
+ */
+const showButton = (button) => toggleButton(button, true);
+
+/**
+ * @param {HTMLButtonElement} button
+ * @return {boolean} false
+ */
+const hideButton = (button) => toggleButton(button, false);
+
+const accordion = behavior(
+  {
+    [CLICK]: {
+      [BUTTON]() {
+        toggleButton(this);
+
+        if (this.getAttribute(EXPANDED) === "true") {
+          // We were just expanded, but if another accordion was also just
+          // collapsed, we may no longer be in the viewport. This ensures
+          // that we are still visible, so the user isn't confused.
+          if (!isElementInViewport(this)) this.scrollIntoView();
+        }
+      },
+    },
+  },
+  {
+    init(root) {
+      select(BUTTON, root).forEach((button) => {
+        const expanded = button.getAttribute(EXPANDED) === "true";
+        toggleButton(button, expanded);
+      });
+    },
+    ACCORDION,
+    BUTTON,
+    show: showButton,
+    hide: hideButton,
+    toggle: toggleButton,
+    getButtons: getAccordionButtons,
+  }
+);
+
+module.exports = accordion;
+
+
+/***/ }),
+
+/***/ 5784:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const HEADER = `.${PREFIX}-banner__header`;
+const EXPANDED_CLASS = `${PREFIX}-banner__header--expanded`;
+
+const toggleBanner = function toggleEl(event) {
+  event.preventDefault();
+  this.closest(HEADER).classList.toggle(EXPANDED_CLASS);
+};
+
+module.exports = behavior({
+  [CLICK]: {
+    [`${HEADER} [aria-controls]`]: toggleBanner,
+  },
+});
+
+
+/***/ }),
+
+/***/ 6069:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const keymap = __webpack_require__(9361);
+const behavior = __webpack_require__(6158);
+
+const ANCHOR_BUTTON = `a[class*="usa-button"]`;
+
+const toggleButton = (event) => {
+  event.preventDefault();
+  event.target.click();
+};
+
+const anchorButton = behavior({
+  keydown: {
+    [ANCHOR_BUTTON]: keymap({
+      " ": toggleButton,
+    }),
+  },
+});
+
+module.exports = anchorButton;
+
+
+/***/ }),
+
+/***/ 976:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const select = __webpack_require__(4900);
+const behavior = __webpack_require__(6158);
+const debounce = __webpack_require__(3774);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const CHARACTER_COUNT_CLASS = `${PREFIX}-character-count`;
+const CHARACTER_COUNT = `.${CHARACTER_COUNT_CLASS}`;
+const INPUT = `.${PREFIX}-character-count__field`;
+const MESSAGE = `.${PREFIX}-character-count__message`;
+const VALIDATION_MESSAGE = "The content is too long.";
+const MESSAGE_INVALID_CLASS = `${PREFIX}-character-count__status--invalid`;
+const STATUS_MESSAGE_CLASS = `${CHARACTER_COUNT_CLASS}__status`;
+const STATUS_MESSAGE_SR_ONLY_CLASS = `${CHARACTER_COUNT_CLASS}__sr-status`;
+const STATUS_MESSAGE = `.${STATUS_MESSAGE_CLASS}`;
+const STATUS_MESSAGE_SR_ONLY = `.${STATUS_MESSAGE_SR_ONLY_CLASS}`;
+const DEFAULT_STATUS_LABEL = `characters allowed`;
+
+/**
+ * Returns the root and message element for an character count input
+ *
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputEl The character count input element
+ * @returns {CharacterCountElements} elements The root and message element.
+ */
+const getCharacterCountElements = (inputEl) => {
+  const characterCountEl = inputEl.closest(CHARACTER_COUNT);
+
+  if (!characterCountEl) {
+    throw new Error(`${INPUT} is missing outer ${CHARACTER_COUNT}`);
+  }
+
+  const messageEl = characterCountEl.querySelector(MESSAGE);
+
+  if (!messageEl) {
+    throw new Error(`${CHARACTER_COUNT} is missing inner ${MESSAGE}`);
+  }
+
+  return { characterCountEl, messageEl };
+};
+
+/**
+ * Move maxlength attribute to a data attribute on usa-character-count
+ *
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputEl The character count input element
+ */
+const setDataLength = (inputEl) => {
+  const { characterCountEl } = getCharacterCountElements(inputEl);
+
+  const maxlength = inputEl.getAttribute("maxlength");
+
+  if (!maxlength) return;
+
+  inputEl.removeAttribute("maxlength");
+  characterCountEl.setAttribute("data-maxlength", maxlength);
+};
+
+/**
+ * Create and append status messages for visual and screen readers
+ *
+ * @param {HTMLDivElement} characterCountEl - Div with `.usa-character-count` class
+ * @description  Create two status messages for number of characters left;
+ * one visual status and another for screen readers
+ */
+const createStatusMessages = (characterCountEl) => {
+  const statusMessage = document.createElement("div");
+  const srStatusMessage = document.createElement("div");
+  const maxLength = characterCountEl.dataset.maxlength;
+  const defaultMessage = `${maxLength} ${DEFAULT_STATUS_LABEL}`;
+
+  statusMessage.classList.add(`${STATUS_MESSAGE_CLASS}`, "usa-hint");
+  srStatusMessage.classList.add(
+    `${STATUS_MESSAGE_SR_ONLY_CLASS}`,
+    "usa-sr-only"
+  );
+
+  statusMessage.setAttribute("aria-hidden", true);
+  srStatusMessage.setAttribute("aria-live", "polite");
+
+  statusMessage.textContent = defaultMessage;
+  srStatusMessage.textContent = defaultMessage;
+
+  characterCountEl.append(statusMessage, srStatusMessage);
+};
+
+/**
+ * Returns message with how many characters are left
+ *
+ * @param {number} currentLength - The number of characters used
+ * @param {number} maxLength - The total number of characters allowed
+ * @returns {string} A string description of how many characters are left
+ */
+const getCountMessage = (currentLength, maxLength) => {
+  let newMessage = "";
+
+  if (currentLength === 0) {
+    newMessage = `${maxLength} ${DEFAULT_STATUS_LABEL}`;
+  } else {
+    const difference = Math.abs(maxLength - currentLength);
+    const characters = `character${difference === 1 ? "" : "s"}`;
+    const guidance = currentLength > maxLength ? "over limit" : "left";
+
+    newMessage = `${difference} ${characters} ${guidance}`;
+  }
+
+  return newMessage;
+};
+
+/**
+ * Updates the character count status for screen readers after a 1000ms delay.
+ *
+ * @param {HTMLElement} msgEl - The screen reader status message element
+ * @param {string} statusMessage - A string of the current character status
+ */
+const srUpdateStatus = debounce((msgEl, statusMessage) => {
+  const srStatusMessage = msgEl;
+  srStatusMessage.textContent = statusMessage;
+}, 1000);
+
+/**
+ * Update the character count component
+ *
+ * @description On input, it will update visual status, screenreader
+ * status and update input validation (if over character length)
+ * @param {HTMLInputElement|HTMLTextAreaElement} inputEl The character count input element
+ */
+const updateCountMessage = (inputEl) => {
+  const { characterCountEl } = getCharacterCountElements(inputEl);
+  const currentLength = inputEl.value.length;
+  const maxLength = parseInt(
+    characterCountEl.getAttribute("data-maxlength"),
+    10
+  );
+  const statusMessage = characterCountEl.querySelector(STATUS_MESSAGE);
+  const srStatusMessage = characterCountEl.querySelector(
+    STATUS_MESSAGE_SR_ONLY
+  );
+  const currentStatusMessage = getCountMessage(currentLength, maxLength);
+
+  if (!maxLength) return;
+
+  const isOverLimit = currentLength && currentLength > maxLength;
+
+  statusMessage.textContent = currentStatusMessage;
+  srUpdateStatus(srStatusMessage, currentStatusMessage);
+
+  if (isOverLimit && !inputEl.validationMessage) {
+    inputEl.setCustomValidity(VALIDATION_MESSAGE);
+  }
+
+  if (!isOverLimit && inputEl.validationMessage === VALIDATION_MESSAGE) {
+    inputEl.setCustomValidity("");
+  }
+
+  statusMessage.classList.toggle(MESSAGE_INVALID_CLASS, isOverLimit);
+};
+
+/**
+ * Initialize component
+ *
+ * @description On init this function will create elements and update any
+ * attributes so it can tell the user how many characters are left.
+ * @param  {HTMLInputElement|HTMLTextAreaElement} inputEl the components input
+ */
+const enhanceCharacterCount = (inputEl) => {
+  const { characterCountEl, messageEl } = getCharacterCountElements(inputEl);
+
+  // Hide hint and remove aria-live for backwards compatibility
+  messageEl.classList.add("usa-sr-only");
+  messageEl.removeAttribute("aria-live");
+
+  setDataLength(inputEl);
+  createStatusMessages(characterCountEl);
+};
+
+const characterCount = behavior(
+  {
+    input: {
+      [INPUT]() {
+        updateCountMessage(this);
+      },
+    },
+  },
+  {
+    init(root) {
+      select(INPUT, root).forEach((input) => enhanceCharacterCount(input));
+    },
+    MESSAGE_INVALID_CLASS,
+    VALIDATION_MESSAGE,
+    STATUS_MESSAGE_CLASS,
+    STATUS_MESSAGE_SR_ONLY_CLASS,
+    DEFAULT_STATUS_LABEL,
+    createStatusMessages,
+    getCountMessage,
+    updateCountMessage,
+  }
+);
+
+module.exports = characterCount;
+
+
+/***/ }),
+
+/***/ 1513:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const keymap = __webpack_require__(9361);
+const selectOrMatches = __webpack_require__(7834);
+const behavior = __webpack_require__(6158);
+const Sanitizer = __webpack_require__(5826);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const { CLICK } = __webpack_require__(381);
+
+const COMBO_BOX_CLASS = `${PREFIX}-combo-box`;
+const COMBO_BOX_PRISTINE_CLASS = `${COMBO_BOX_CLASS}--pristine`;
+const SELECT_CLASS = `${COMBO_BOX_CLASS}__select`;
+const INPUT_CLASS = `${COMBO_BOX_CLASS}__input`;
+const CLEAR_INPUT_BUTTON_CLASS = `${COMBO_BOX_CLASS}__clear-input`;
+const CLEAR_INPUT_BUTTON_WRAPPER_CLASS = `${CLEAR_INPUT_BUTTON_CLASS}__wrapper`;
+const INPUT_BUTTON_SEPARATOR_CLASS = `${COMBO_BOX_CLASS}__input-button-separator`;
+const TOGGLE_LIST_BUTTON_CLASS = `${COMBO_BOX_CLASS}__toggle-list`;
+const TOGGLE_LIST_BUTTON_WRAPPER_CLASS = `${TOGGLE_LIST_BUTTON_CLASS}__wrapper`;
+const LIST_CLASS = `${COMBO_BOX_CLASS}__list`;
+const LIST_OPTION_CLASS = `${COMBO_BOX_CLASS}__list-option`;
+const LIST_OPTION_FOCUSED_CLASS = `${LIST_OPTION_CLASS}--focused`;
+const LIST_OPTION_SELECTED_CLASS = `${LIST_OPTION_CLASS}--selected`;
+const STATUS_CLASS = `${COMBO_BOX_CLASS}__status`;
+
+const COMBO_BOX = `.${COMBO_BOX_CLASS}`;
+const SELECT = `.${SELECT_CLASS}`;
+const INPUT = `.${INPUT_CLASS}`;
+const CLEAR_INPUT_BUTTON = `.${CLEAR_INPUT_BUTTON_CLASS}`;
+const TOGGLE_LIST_BUTTON = `.${TOGGLE_LIST_BUTTON_CLASS}`;
+const LIST = `.${LIST_CLASS}`;
+const LIST_OPTION = `.${LIST_OPTION_CLASS}`;
+const LIST_OPTION_FOCUSED = `.${LIST_OPTION_FOCUSED_CLASS}`;
+const LIST_OPTION_SELECTED = `.${LIST_OPTION_SELECTED_CLASS}`;
+const STATUS = `.${STATUS_CLASS}`;
+
+const DEFAULT_FILTER = ".*{{query}}.*";
+
+const noop = () => {};
+
+/**
+ * set the value of the element and dispatch a change event
+ *
+ * @param {HTMLInputElement|HTMLSelectElement} el The element to update
+ * @param {string} value The new value of the element
+ */
+const changeElementValue = (el, value = "") => {
+  const elementToChange = el;
+  elementToChange.value = value;
+
+  const event = new CustomEvent("change", {
+    bubbles: true,
+    cancelable: true,
+    detail: { value },
+  });
+  elementToChange.dispatchEvent(event);
+};
+
+/**
+ * The elements within the combo box.
+ * @typedef {Object} ComboBoxContext
+ * @property {HTMLElement} comboBoxEl
+ * @property {HTMLSelectElement} selectEl
+ * @property {HTMLInputElement} inputEl
+ * @property {HTMLUListElement} listEl
+ * @property {HTMLDivElement} statusEl
+ * @property {HTMLLIElement} focusedOptionEl
+ * @property {HTMLLIElement} selectedOptionEl
+ * @property {HTMLButtonElement} toggleListBtnEl
+ * @property {HTMLButtonElement} clearInputBtnEl
+ * @property {boolean} isPristine
+ * @property {boolean} disableFiltering
+ */
+
+/**
+ * Get an object of elements belonging directly to the given
+ * combo box component.
+ *
+ * @param {HTMLElement} el the element within the combo box
+ * @returns {ComboBoxContext} elements
+ */
+const getComboBoxContext = (el) => {
+  const comboBoxEl = el.closest(COMBO_BOX);
+
+  if (!comboBoxEl) {
+    throw new Error(`Element is missing outer ${COMBO_BOX}`);
+  }
+
+  const selectEl = comboBoxEl.querySelector(SELECT);
+  const inputEl = comboBoxEl.querySelector(INPUT);
+  const listEl = comboBoxEl.querySelector(LIST);
+  const statusEl = comboBoxEl.querySelector(STATUS);
+  const focusedOptionEl = comboBoxEl.querySelector(LIST_OPTION_FOCUSED);
+  const selectedOptionEl = comboBoxEl.querySelector(LIST_OPTION_SELECTED);
+  const toggleListBtnEl = comboBoxEl.querySelector(TOGGLE_LIST_BUTTON);
+  const clearInputBtnEl = comboBoxEl.querySelector(CLEAR_INPUT_BUTTON);
+
+  const isPristine = comboBoxEl.classList.contains(COMBO_BOX_PRISTINE_CLASS);
+  const disableFiltering = comboBoxEl.dataset.disableFiltering === "true";
+
+  return {
+    comboBoxEl,
+    selectEl,
+    inputEl,
+    listEl,
+    statusEl,
+    focusedOptionEl,
+    selectedOptionEl,
+    toggleListBtnEl,
+    clearInputBtnEl,
+    isPristine,
+    disableFiltering,
+  };
+};
+
+/**
+ * Disable the combo-box component
+ *
+ * @param {HTMLInputElement} el An element within the combo box component
+ */
+const disable = (el) => {
+  const { inputEl, toggleListBtnEl, clearInputBtnEl } = getComboBoxContext(el);
+
+  clearInputBtnEl.hidden = true;
+  clearInputBtnEl.disabled = true;
+  toggleListBtnEl.disabled = true;
+  inputEl.disabled = true;
+};
+
+/**
+ * Check for aria-disabled on initialization
+ *
+ * @param {HTMLInputElement} el An element within the combo box component
+ */
+const ariaDisable = (el) => {
+  const { inputEl, toggleListBtnEl, clearInputBtnEl } = getComboBoxContext(el);
+
+  clearInputBtnEl.hidden = true;
+  clearInputBtnEl.setAttribute("aria-disabled", true);
+  toggleListBtnEl.setAttribute("aria-disabled", true);
+  inputEl.setAttribute("aria-disabled", true);
+};
+
+/**
+ * Enable the combo-box component
+ *
+ * @param {HTMLInputElement} el An element within the combo box component
+ */
+const enable = (el) => {
+  const { inputEl, toggleListBtnEl, clearInputBtnEl } = getComboBoxContext(el);
+
+  clearInputBtnEl.hidden = false;
+  clearInputBtnEl.disabled = false;
+  toggleListBtnEl.disabled = false;
+  inputEl.disabled = false;
+};
+
+/**
+ * Enhance a select element into a combo box component.
+ *
+ * @param {HTMLElement} _comboBoxEl The initial element of the combo box component
+ */
+const enhanceComboBox = (_comboBoxEl) => {
+  const comboBoxEl = _comboBoxEl.closest(COMBO_BOX);
+
+  if (comboBoxEl.dataset.enhanced) return;
+
+  const selectEl = comboBoxEl.querySelector("select");
+
+  if (!selectEl) {
+    throw new Error(`${COMBO_BOX} is missing inner select`);
+  }
+
+  const selectId = selectEl.id;
+  const selectLabel = document.querySelector(`label[for="${selectId}"]`);
+  const listId = `${selectId}--list`;
+  const listIdLabel = `${selectId}-label`;
+  const assistiveHintID = `${selectId}--assistiveHint`;
+  const additionalAttributes = [];
+  const { defaultValue } = comboBoxEl.dataset;
+  const { placeholder } = comboBoxEl.dataset;
+  let selectedOption;
+
+  if (placeholder) {
+    additionalAttributes.push({ placeholder });
+  }
+
+  if (defaultValue) {
+    for (let i = 0, len = selectEl.options.length; i < len; i += 1) {
+      const optionEl = selectEl.options[i];
+
+      if (optionEl.value === defaultValue) {
+        selectedOption = optionEl;
+        break;
+      }
+    }
+  }
+
+  /**
+   * Throw error if combobox is missing a label or label is missing
+   * `for` attribute. Otherwise, set the ID to match the <ul> aria-labelledby
+   */
+  if (!selectLabel || !selectLabel.matches(`label[for="${selectId}"]`)) {
+    throw new Error(
+      `${COMBO_BOX} for ${selectId} is either missing a label or a "for" attribute`
+    );
+  } else {
+    selectLabel.setAttribute("id", listIdLabel);
+  }
+
+  selectLabel.setAttribute("id", listIdLabel);
+  selectEl.setAttribute("aria-hidden", "true");
+  selectEl.setAttribute("tabindex", "-1");
+  selectEl.classList.add("usa-sr-only", SELECT_CLASS);
+  selectEl.id = "";
+  selectEl.value = "";
+
+  ["required", "aria-label", "aria-labelledby"].forEach((name) => {
+    if (selectEl.hasAttribute(name)) {
+      const value = selectEl.getAttribute(name);
+      additionalAttributes.push({ [name]: value });
+      selectEl.removeAttribute(name);
+    }
+  });
+
+  // sanitize doesn't like functions in template literals
+  const input = document.createElement("input");
+  input.setAttribute("id", selectId);
+  input.setAttribute("aria-owns", listId);
+  input.setAttribute("aria-controls", listId);
+  input.setAttribute("aria-autocomplete", "list");
+  input.setAttribute("aria-describedby", assistiveHintID);
+  input.setAttribute("aria-expanded", "false");
+  input.setAttribute("autocapitalize", "off");
+  input.setAttribute("autocomplete", "off");
+  input.setAttribute("class", INPUT_CLASS);
+  input.setAttribute("type", "text");
+  input.setAttribute("role", "combobox");
+  additionalAttributes.forEach((attr) =>
+    Object.keys(attr).forEach((key) => {
+      const value = Sanitizer.escapeHTML`${attr[key]}`;
+      input.setAttribute(key, value);
+    })
+  );
+
+  comboBoxEl.insertAdjacentElement("beforeend", input);
+
+  comboBoxEl.insertAdjacentHTML(
+    "beforeend",
+    Sanitizer.escapeHTML`
+    <span class="${CLEAR_INPUT_BUTTON_WRAPPER_CLASS}" tabindex="-1">
+        <button type="button" class="${CLEAR_INPUT_BUTTON_CLASS}" aria-label="Clear the select contents">&nbsp;</button>
       </span>
-      <span class="${h}">&nbsp;</span>
-      <span class="${g}" tabindex="-1">
-        <button type="button" tabindex="-1" class="${m}" aria-label="Toggle the dropdown list">&nbsp;</button>
+      <span class="${INPUT_BUTTON_SEPARATOR_CLASS}">&nbsp;</span>
+      <span class="${TOGGLE_LIST_BUTTON_WRAPPER_CLASS}" tabindex="-1">
+        <button type="button" tabindex="-1" class="${TOGGLE_LIST_BUTTON_CLASS}" aria-label="Toggle the dropdown list">&nbsp;</button>
       </span>
       <ul
         tabindex="-1"
-        id="${s}"
-        class="${$}"
+        id="${listId}"
+        class="${LIST_CLASS}"
         role="listbox"
-        aria-labelledby="${i}"
+        aria-labelledby="${listIdLabel}"
         hidden>
       </ul>
-      <div class="${v} usa-sr-only" role="status"></div>
-      <span id="${l}" class="usa-sr-only">
+      <div class="${STATUS_CLASS} usa-sr-only" role="status"></div>
+      <span id="${assistiveHintID}" class="usa-sr-only">
         When autocomplete results are available use up and down arrows to review and enter to select.
         Touch device users, explore by touch or with swipe gestures.
-      </span>`),E){const{inputEl:t}=I(e);q(a,E.value),q(t,E.text),e.classList.add(d)}a.disabled&&(N(e),a.disabled=!1),a.hasAttribute("aria-disabled")&&((t=>{const{inputEl:e,toggleListBtnEl:a,clearInputBtnEl:n}=I(t);n.hidden=!0,n.setAttribute("aria-disabled",!0),a.setAttribute("aria-disabled",!0),e.setAttribute("aria-disabled",!0)})(e),a.removeAttribute("aria-disabled")),e.dataset.enhanced="true"},j=(t,e,{skipFocus:a,preventScroll:n}={})=>{const{inputEl:r,listEl:s,focusedOptionEl:o}=I(t);if(o&&(o.classList.remove(A),o.setAttribute("tabIndex","-1")),e){if(r.setAttribute("aria-activedescendant",e.id),e.setAttribute("tabIndex","0"),e.classList.add(A),!n){const t=e.offsetTop+e.offsetHeight;t>s.scrollTop+s.offsetHeight&&(s.scrollTop=t-s.offsetHeight),e.offsetTop<s.scrollTop&&(s.scrollTop=e.offsetTop)}a||e.focus({preventScroll:n})}else r.setAttribute("aria-activedescendant",""),r.focus()},O=(t,e="",a={})=>{const n=t=>t.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&");let r=t.replace(/{{(.*?)}}/g,((t,r)=>{const s=r.trim(),o=a[s];if("query"!==s&&o){const t=new RegExp(o,"i"),a=e.match(t);return a?n(a[1]):""}return n(e)}));return r=`^(?:${r})$`,new RegExp(r,"i")},H=t=>{const{comboBoxEl:e,selectEl:a,inputEl:n,listEl:r,statusEl:s,isPristine:o,disableFiltering:i}=I(t);let l,c;const d=`${r.id}--option-`,u=(n.value||"").toLowerCase(),p=e.dataset.filter||".*{{query}}.*",b=O(p,u,e.dataset),f=[];for(let t=0,e=a.options.length;t<e;t+=1){const e=a.options[t],n=`${d}${f.length}`;e.value&&(i||o||!u||b.test(e.text))&&(a.value&&e.value===a.value&&(l=n),i&&!c&&b.test(e.text)&&(c=n),f.push(e))}const h=f.length,m=f.map(((t,e)=>{const a=`${d}${e}`,n=[y];let r="-1",s="false";a===l&&(n.push(E,A),r="0",s="true"),l||0!==e||(n.push(A),r="0");const o=document.createElement("li");return o.setAttribute("aria-setsize",f.length),o.setAttribute("aria-posinset",e+1),o.setAttribute("aria-selected",s),o.setAttribute("id",a),o.setAttribute("class",n.join(" ")),o.setAttribute("tabindex",r),o.setAttribute("role","option"),o.setAttribute("data-value",t.value),o.textContent=t.text,o})),g=document.createElement("li");let $;g.setAttribute("class",`${y}--no-results`),g.textContent="No results found",r.hidden=!1,h?(r.innerHTML="",m.forEach((t=>r.insertAdjacentElement("beforeend",t)))):(r.innerHTML="",r.insertAdjacentElement("beforeend",g)),n.setAttribute("aria-expanded","true"),s.textContent=h?`${h} result${h>1?"s":""} available.`:"No results.",o&&l?$=r.querySelector(`#${l}`):i&&c&&($=r.querySelector(`#${c}`)),$&&j(r,$,{skipFocus:!0})},P=t=>{const{inputEl:e,listEl:a,statusEl:n,focusedOptionEl:r}=I(t);n.innerHTML="",e.setAttribute("aria-expanded","false"),e.setAttribute("aria-activedescendant",""),r&&r.classList.remove(A),a.scrollTop=0,a.hidden=!0},F=t=>{const{comboBoxEl:e,selectEl:a,inputEl:n}=I(t);q(a,t.dataset.value),q(n,t.textContent),e.classList.add(d),P(e),n.focus()},R=t=>{const{comboBoxEl:e,selectEl:a,inputEl:n}=I(t),r=a.value,s=(n.value||"").toLowerCase();if(r)for(let t=0,o=a.options.length;t<o;t+=1){const o=a.options[t];if(o.value===r)return s!==o.text&&q(n,o.text),void e.classList.add(d)}s&&q(n)},Y=t=>{const{comboBoxEl:e,listEl:a}=I(t.target);a.hidden&&H(e);const n=a.querySelector(T)||a.querySelector(C);n&&j(e,n),t.preventDefault()},U=t=>{const e=t.target,a=e.nextSibling;a&&j(e,a),t.preventDefault()},K=t=>{const{comboBoxEl:e,listEl:a,focusedOptionEl:n}=I(t.target),r=n&&n.previousSibling,s=!a.hidden;j(e,r),s&&t.preventDefault(),r||P(e)},V=s({[l]:{[L](){this.disabled||(t=>{const{comboBoxEl:e,listEl:a}=I(t);a.hidden&&H(e)})(this)},[_](){this.disabled||(t=>{const{comboBoxEl:e,listEl:a,inputEl:n}=I(t);a.hidden?H(e):P(e),n.focus()})(this)},[C](){this.disabled||F(this)},[S](){this.disabled||(t=>{const{comboBoxEl:e,listEl:a,selectEl:n,inputEl:r}=I(t),s=!a.hidden;n.value&&q(n),r.value&&q(r),e.classList.remove(d),s&&H(e),r.focus()})(this)}},focusout:{[x](t){this.contains(t.relatedTarget)||(R(this),P(this))}},keydown:{[x]:n({Escape:t=>{const{comboBoxEl:e,inputEl:a}=I(t.target);P(e),R(e),a.focus()}}),[L]:n({Enter:t=>{const{comboBoxEl:e,listEl:a}=I(t.target),n=!a.hidden;(t=>{const{comboBoxEl:e,selectEl:a,inputEl:n,statusEl:r}=I(t);r.textContent="";const s=(n.value||"").toLowerCase();if(s)for(let t=0,r=a.options.length;t<r;t+=1){const r=a.options[t];if(r.text.toLowerCase()===s)return q(a,r.value),q(n,r.text),void e.classList.add(d)}R(e)})(e),n&&P(e),t.preventDefault()},ArrowDown:Y,Down:Y}),[C]:n({ArrowUp:K,Up:K,ArrowDown:U,Down:U,Enter:t=>{F(t.target),t.preventDefault()}," ":t=>{F(t.target),t.preventDefault()},"Shift+Tab":()=>{}})},input:{[L](){this.closest(x).classList.remove(d),H(this)}},mouseover:{[C](){var t;(t=this).classList.contains(A)||j(t,t,{preventScroll:!0})}}},{init(t){r(x,t).forEach((t=>{B(t)}))},getComboBoxContext:I,enhanceComboBox:B,generateDynamicRegExp:O,disable:N,enable:t=>{const{inputEl:e,toggleListBtnEl:a,clearInputBtnEl:n}=I(t);n.hidden=!1,n.disabled=!1,a.disabled=!1,e.disabled=!1},displayList:H,hideList:P,COMBO_BOX_CLASS:c});t.exports=V},5587:(t,e,a)=>{const n=a(9361),r=a(6158),s=a(4900),o=a(7834),{prefix:i}=a(1824),{CLICK:l}=a(381),c=a(6905),d=a(269),u=a(5826),p=`${i}-date-picker`,b=`${p}__wrapper`,f=`${p}--initialized`,h=`${p}--active`,m=`${p}__internal-input`,g=`${p}__external-input`,$=`${p}__button`,y=`${p}__calendar`,A=`${p}__status`,E=`${y}__date`,v=`${E}--focused`,x=`${E}--selected`,w=`${E}--previous-month`,L=`${E}--current-month`,S=`${E}--next-month`,_=`${E}--range-date`,D=`${E}--today`,C=`${E}--range-date-start`,T=`${E}--range-date-end`,M=`${E}--within-range`,k=`${y}__previous-year`,q=`${y}__previous-month`,I=`${y}__next-year`,N=`${y}__next-month`,B=`${y}__month-selection`,j=`${y}__year-selection`,O=`${y}__month`,H=`${O}--focused`,P=`${O}--selected`,F=`${y}__year`,R=`${F}--focused`,Y=`${F}--selected`,U=`${y}__previous-year-chunk`,K=`${y}__next-year-chunk`,V=`${y}__date-picker`,W=`${y}__month-picker`,z=`${y}__year-picker`,Q=`${y}__table`,Z=`${y}__row`,G=`${y}__cell`,J=`${G}--center-items`,X=`${y}__month-label`,tt=`${y}__day-of-week`,et=`.${p}`,at=`.${$}`,nt=`.${m}`,rt=`.${g}`,st=`.${y}`,ot=`.${A}`,it=`.${E}`,lt=`.${v}`,ct=`.${L}`,dt=`.${k}`,ut=`.${q}`,pt=`.${I}`,bt=`.${N}`,ft=`.${j}`,ht=`.${B}`,mt=`.${O}`,gt=`.${F}`,$t=`.${U}`,yt=`.${K}`,At=`.${V}`,Et=`.${W}`,vt=`.${z}`,xt=`.${H}`,wt=`.${R}`,Lt="Please enter a valid date",St=["January","February","March","April","May","June","July","August","September","October","November","December"],_t=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],Dt=12,Ct="MM/DD/YYYY",Tt="YYYY-MM-DD",Mt=(...t)=>t.map((t=>t+":not([disabled])")).join(", "),kt=Mt(dt,ut,ft,ht,pt,bt,lt),qt=Mt(xt),It=Mt($t,yt,wt),Nt=(t,e)=>(e!==t.getMonth()&&t.setDate(0),t),Bt=(t,e,a)=>{const n=new Date(0);return n.setFullYear(t,e,a),n},jt=()=>{const t=new Date,e=t.getDate(),a=t.getMonth(),n=t.getFullYear();return Bt(n,a,e)},Ot=t=>{const e=new Date(0);return e.setFullYear(t.getFullYear(),t.getMonth(),1),e},Ht=t=>{const e=new Date(0);return e.setFullYear(t.getFullYear(),t.getMonth()+1,0),e},Pt=(t,e)=>{const a=new Date(t.getTime());return a.setDate(a.getDate()+e),a},Ft=(t,e)=>Pt(t,-e),Rt=(t,e)=>Pt(t,7*e),Yt=t=>{const e=t.getDay();return Ft(t,e)},Ut=(t,e)=>{const a=new Date(t.getTime()),n=(a.getMonth()+12+e)%12;return a.setMonth(a.getMonth()+e),Nt(a,n),a},Kt=(t,e)=>Ut(t,-e),Vt=(t,e)=>Ut(t,12*e),Wt=(t,e)=>Vt(t,-e),zt=(t,e)=>{const a=new Date(t.getTime());return a.setMonth(e),Nt(a,e),a},Qt=(t,e)=>{const a=new Date(t.getTime()),n=a.getMonth();return a.setFullYear(e),Nt(a,n),a},Zt=(t,e)=>t&&e&&t.getFullYear()===e.getFullYear(),Gt=(t,e)=>Zt(t,e)&&t.getMonth()===e.getMonth(),Jt=(t,e)=>Gt(t,e)&&t.getDate()===e.getDate(),Xt=(t,e,a)=>{let n=t;return t<e?n=e:a&&t>a&&(n=a),new Date(n.getTime())},te=(t,e,a)=>t>=e&&(!a||t<=a),ee=(t,e,a)=>Ht(zt(t,11))<e||a&&Ot(zt(t,0))>a,ae=(t,e=Tt,a=!1)=>{let n,r,s,o,i;if(t){let l,c,d;if(e===Ct?[l,c,d]=t.split("/"):[d,l,c]=t.split("-"),d&&(i=parseInt(d,10),!Number.isNaN(i)&&(o=i,a&&(o=Math.max(0,o),d.length<3)))){const t=jt().getFullYear();o=t-t%10**d.length+i}if(l&&(i=parseInt(l,10),Number.isNaN(i)||(r=i,a&&(r=Math.max(1,r),r=Math.min(12,r)))),r&&c&&null!=o&&(i=parseInt(c,10),!Number.isNaN(i)&&(s=i,a))){const t=Bt(o,r,0).getDate();s=Math.max(1,s),s=Math.min(t,s)}r&&s&&null!=o&&(n=Bt(o,r-1,s))}return n},ne=(t,e=Tt)=>{const a=(t,e)=>`0000${t}`.slice(-e),n=t.getMonth()+1,r=t.getDate(),s=t.getFullYear();return e===Ct?[a(n,2),a(r,2),a(s,4)].join("/"):[a(s,4),a(n,2),a(r,2)].join("-")},re=(t,e)=>{const a=[];let n=[],r=0;for(;r<t.length;){n=[];const s=document.createElement("tr");for(;r<t.length&&n.length<e;){const e=document.createElement("td");e.insertAdjacentElement("beforeend",t[r]),n.push(e),r+=1}n.forEach((t=>{s.insertAdjacentElement("beforeend",t)})),a.push(s)}return a},se=t=>{const e=document.createElement("tbody");return t.forEach((t=>{e.insertAdjacentElement("beforeend",t)})),e},oe=(t,e="")=>{const a=t;a.value=e;const n=new CustomEvent("change",{bubbles:!0,cancelable:!0,detail:{value:e}});a.dispatchEvent(n)},ie=t=>{const e=t.closest(et);if(!e)throw new Error(`Element is missing outer ${et}`);const a=e.querySelector(nt),n=e.querySelector(rt),r=e.querySelector(st),s=e.querySelector(at),o=e.querySelector(ot),i=e.querySelector(gt),l=ae(n.value,Ct,!0),c=ae(a.value),d=ae(r.dataset.value),u=ae(e.dataset.minDate),p=ae(e.dataset.maxDate),b=ae(e.dataset.rangeDate),f=ae(e.dataset.defaultDate);if(u&&p&&u>p)throw new Error("Minimum date cannot be after maximum date");return{calendarDate:d,minDate:u,toggleBtnEl:s,selectedDate:c,maxDate:p,firstYearChunkEl:i,datePickerEl:e,inputDate:l,internalInputEl:a,externalInputEl:n,calendarEl:r,rangeDate:b,defaultDate:f,statusEl:o}},le=t=>{const{externalInputEl:e,toggleBtnEl:a}=ie(t);a.disabled=!0,e.disabled=!0},ce=t=>{const{externalInputEl:e,toggleBtnEl:a}=ie(t);a.setAttribute("aria-disabled",!0),e.setAttribute("aria-disabled",!0)},de=t=>{const{externalInputEl:e,minDate:a,maxDate:n}=ie(t),r=e.value;let s=!1;if(r){s=!0;const t=r.split("/"),[e,o,i]=t.map((t=>{let e;const a=parseInt(t,10);return Number.isNaN(a)||(e=a),e}));if(e&&o&&null!=i){const r=Bt(i,e-1,o);r.getMonth()===e-1&&r.getDate()===o&&r.getFullYear()===i&&4===t[2].length&&te(r,a,n)&&(s=!1)}}return s},ue=t=>{const{externalInputEl:e}=ie(t),a=de(e);a&&!e.validationMessage&&e.setCustomValidity(Lt),a||e.validationMessage!==Lt||e.setCustomValidity("")},pe=(t,e)=>{const a=ae(e);if(a){const n=ne(a,Ct),{datePickerEl:r,internalInputEl:s,externalInputEl:o}=ie(t);oe(s,e),oe(o,n),ue(r)}},be=(t,e)=>{const{datePickerEl:a,calendarEl:n,statusEl:r,selectedDate:s,maxDate:o,minDate:i,rangeDate:l}=ie(t),c=jt();let d=e||c;const p=n.hidden,b=Pt(d,0),f=d.getMonth(),m=d.getFullYear(),g=Kt(d,1),$=Ut(d,1),y=ne(d),A=Ot(d),O=Gt(d,i),H=Gt(d,o),P=s||d,F=l&&((t,e)=>{let a=t;return e<t&&(a=e),new Date(a.getTime())})(P,l),R=l&&((t,e)=>{let a=t;return e>t&&(a=e),new Date(a.getTime())})(P,l),Y=l&&Pt(F,1),U=l&&Ft(R,1),K=St[f],W=t=>{const e=[E],a=t.getDate(),n=t.getMonth(),r=t.getFullYear(),d=t.getDay(),p=ne(t);let f="-1";const h=!te(t,i,o),m=Jt(t,s);Gt(t,g)&&e.push(w),Gt(t,b)&&e.push(L),Gt(t,$)&&e.push(S),m&&e.push(x),Jt(t,c)&&e.push(D),l&&(Jt(t,l)&&e.push(_),Jt(t,F)&&e.push(C),Jt(t,R)&&e.push(T),te(t,Y,U)&&e.push(M)),Jt(t,b)&&(f="0",e.push(v));const y=St[n],A=_t[d],k=document.createElement("button");return k.setAttribute("type","button"),k.setAttribute("tabindex",f),k.setAttribute("class",e.join(" ")),k.setAttribute("data-day",a),k.setAttribute("data-month",n+1),k.setAttribute("data-year",r),k.setAttribute("data-value",p),k.setAttribute("aria-label",u.escapeHTML`${a} ${y} ${r} ${A}`),k.setAttribute("aria-selected",m?"true":"false"),!0===h&&(k.disabled=!0),k.textContent=a,k};d=Yt(A);const z=[];for(;z.length<28||d.getMonth()===f||z.length%7!=0;)z.push(W(d)),d=Pt(d,1);const et=re(z,7),at=n.cloneNode();at.dataset.value=y,at.style.top=`${a.offsetHeight}px`,at.hidden=!1,at.innerHTML=u.escapeHTML`
-    <div tabindex="-1" class="${V}">
-      <div class="${Z}">
-        <div class="${G} ${J}">
+      </span>`
+  );
+
+  if (selectedOption) {
+    const { inputEl } = getComboBoxContext(comboBoxEl);
+    changeElementValue(selectEl, selectedOption.value);
+    changeElementValue(inputEl, selectedOption.text);
+    comboBoxEl.classList.add(COMBO_BOX_PRISTINE_CLASS);
+  }
+
+  if (selectEl.disabled) {
+    disable(comboBoxEl);
+    selectEl.disabled = false;
+  }
+
+  if (selectEl.hasAttribute("aria-disabled")) {
+    ariaDisable(comboBoxEl);
+    selectEl.removeAttribute("aria-disabled");
+  }
+
+  comboBoxEl.dataset.enhanced = "true";
+};
+
+/**
+ * Manage the focused element within the list options when
+ * navigating via keyboard.
+ *
+ * @param {HTMLElement} el An anchor element within the combo box component
+ * @param {HTMLElement} nextEl An element within the combo box component
+ * @param {Object} options options
+ * @param {boolean} options.skipFocus skip focus of highlighted item
+ * @param {boolean} options.preventScroll should skip procedure to scroll to element
+ */
+const highlightOption = (el, nextEl, { skipFocus, preventScroll } = {}) => {
+  const { inputEl, listEl, focusedOptionEl } = getComboBoxContext(el);
+
+  if (focusedOptionEl) {
+    focusedOptionEl.classList.remove(LIST_OPTION_FOCUSED_CLASS);
+    focusedOptionEl.setAttribute("tabIndex", "-1");
+  }
+
+  if (nextEl) {
+    inputEl.setAttribute("aria-activedescendant", nextEl.id);
+    nextEl.setAttribute("tabIndex", "0");
+    nextEl.classList.add(LIST_OPTION_FOCUSED_CLASS);
+
+    if (!preventScroll) {
+      const optionBottom = nextEl.offsetTop + nextEl.offsetHeight;
+      const currentBottom = listEl.scrollTop + listEl.offsetHeight;
+
+      if (optionBottom > currentBottom) {
+        listEl.scrollTop = optionBottom - listEl.offsetHeight;
+      }
+
+      if (nextEl.offsetTop < listEl.scrollTop) {
+        listEl.scrollTop = nextEl.offsetTop;
+      }
+    }
+
+    if (!skipFocus) {
+      nextEl.focus({ preventScroll });
+    }
+  } else {
+    inputEl.setAttribute("aria-activedescendant", "");
+    inputEl.focus();
+  }
+};
+
+/**
+ * Generate a dynamic regular expression based off of a replaceable and possibly filtered value.
+ *
+ * @param {string} el An element within the combo box component
+ * @param {string} query The value to use in the regular expression
+ * @param {object} extras An object of regular expressions to replace and filter the query
+ */
+const generateDynamicRegExp = (filter, query = "", extras = {}) => {
+  const escapeRegExp = (text) =>
+    text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+
+  let find = filter.replace(/{{(.*?)}}/g, (m, $1) => {
+    const key = $1.trim();
+    const queryFilter = extras[key];
+    if (key !== "query" && queryFilter) {
+      const matcher = new RegExp(queryFilter, "i");
+      const matches = query.match(matcher);
+
+      if (matches) {
+        return escapeRegExp(matches[1]);
+      }
+
+      return "";
+    }
+    return escapeRegExp(query);
+  });
+
+  find = `^(?:${find})$`;
+
+  return new RegExp(find, "i");
+};
+
+/**
+ * Display the option list of a combo box component.
+ *
+ * @param {HTMLElement} el An element within the combo box component
+ */
+const displayList = (el) => {
+  const {
+    comboBoxEl,
+    selectEl,
+    inputEl,
+    listEl,
+    statusEl,
+    isPristine,
+    disableFiltering,
+  } = getComboBoxContext(el);
+  let selectedItemId;
+  let firstFoundId;
+
+  const listOptionBaseId = `${listEl.id}--option-`;
+
+  const inputValue = (inputEl.value || "").toLowerCase();
+  const filter = comboBoxEl.dataset.filter || DEFAULT_FILTER;
+  const regex = generateDynamicRegExp(filter, inputValue, comboBoxEl.dataset);
+
+  const options = [];
+  for (let i = 0, len = selectEl.options.length; i < len; i += 1) {
+    const optionEl = selectEl.options[i];
+    const optionId = `${listOptionBaseId}${options.length}`;
+
+    if (
+      optionEl.value &&
+      (disableFiltering ||
+        isPristine ||
+        !inputValue ||
+        regex.test(optionEl.text))
+    ) {
+      if (selectEl.value && optionEl.value === selectEl.value) {
+        selectedItemId = optionId;
+      }
+
+      if (disableFiltering && !firstFoundId && regex.test(optionEl.text)) {
+        firstFoundId = optionId;
+      }
+      options.push(optionEl);
+    }
+  }
+
+  const numOptions = options.length;
+  const optionHtml = options.map((option, index) => {
+    const optionId = `${listOptionBaseId}${index}`;
+    const classes = [LIST_OPTION_CLASS];
+    let tabindex = "-1";
+    let ariaSelected = "false";
+
+    if (optionId === selectedItemId) {
+      classes.push(LIST_OPTION_SELECTED_CLASS, LIST_OPTION_FOCUSED_CLASS);
+      tabindex = "0";
+      ariaSelected = "true";
+    }
+
+    if (!selectedItemId && index === 0) {
+      classes.push(LIST_OPTION_FOCUSED_CLASS);
+      tabindex = "0";
+    }
+
+    const li = document.createElement("li");
+
+    li.setAttribute("aria-setsize", options.length);
+    li.setAttribute("aria-posinset", index + 1);
+    li.setAttribute("aria-selected", ariaSelected);
+    li.setAttribute("id", optionId);
+    li.setAttribute("class", classes.join(" "));
+    li.setAttribute("tabindex", tabindex);
+    li.setAttribute("role", "option");
+    li.setAttribute("data-value", option.value);
+    li.textContent = option.text;
+
+    return li;
+  });
+
+  const noResults = document.createElement("li");
+  noResults.setAttribute("class", `${LIST_OPTION_CLASS}--no-results`);
+  noResults.textContent = "No results found";
+
+  listEl.hidden = false;
+
+  if (numOptions) {
+    listEl.innerHTML = "";
+    optionHtml.forEach((item) =>
+      listEl.insertAdjacentElement("beforeend", item)
+    );
+  } else {
+    listEl.innerHTML = "";
+    listEl.insertAdjacentElement("beforeend", noResults);
+  }
+
+  inputEl.setAttribute("aria-expanded", "true");
+
+  statusEl.textContent = numOptions
+    ? `${numOptions} result${numOptions > 1 ? "s" : ""} available.`
+    : "No results.";
+
+  let itemToFocus;
+
+  if (isPristine && selectedItemId) {
+    itemToFocus = listEl.querySelector(`#${selectedItemId}`);
+  } else if (disableFiltering && firstFoundId) {
+    itemToFocus = listEl.querySelector(`#${firstFoundId}`);
+  }
+
+  if (itemToFocus) {
+    highlightOption(listEl, itemToFocus, {
+      skipFocus: true,
+    });
+  }
+};
+
+/**
+ * Hide the option list of a combo box component.
+ *
+ * @param {HTMLElement} el An element within the combo box component
+ */
+const hideList = (el) => {
+  const { inputEl, listEl, statusEl, focusedOptionEl } = getComboBoxContext(el);
+
+  statusEl.innerHTML = "";
+
+  inputEl.setAttribute("aria-expanded", "false");
+  inputEl.setAttribute("aria-activedescendant", "");
+
+  if (focusedOptionEl) {
+    focusedOptionEl.classList.remove(LIST_OPTION_FOCUSED_CLASS);
+  }
+
+  listEl.scrollTop = 0;
+  listEl.hidden = true;
+};
+
+/**
+ * Select an option list of the combo box component.
+ *
+ * @param {HTMLElement} listOptionEl The list option being selected
+ */
+const selectItem = (listOptionEl) => {
+  const { comboBoxEl, selectEl, inputEl } = getComboBoxContext(listOptionEl);
+
+  changeElementValue(selectEl, listOptionEl.dataset.value);
+  changeElementValue(inputEl, listOptionEl.textContent);
+  comboBoxEl.classList.add(COMBO_BOX_PRISTINE_CLASS);
+  hideList(comboBoxEl);
+  inputEl.focus();
+};
+
+/**
+ * Clear the input of the combo box
+ *
+ * @param {HTMLButtonElement} clearButtonEl The clear input button
+ */
+const clearInput = (clearButtonEl) => {
+  const { comboBoxEl, listEl, selectEl, inputEl } =
+    getComboBoxContext(clearButtonEl);
+  const listShown = !listEl.hidden;
+
+  if (selectEl.value) changeElementValue(selectEl);
+  if (inputEl.value) changeElementValue(inputEl);
+  comboBoxEl.classList.remove(COMBO_BOX_PRISTINE_CLASS);
+
+  if (listShown) displayList(comboBoxEl);
+  inputEl.focus();
+};
+
+/**
+ * Reset the select based off of currently set select value
+ *
+ * @param {HTMLElement} el An element within the combo box component
+ */
+const resetSelection = (el) => {
+  const { comboBoxEl, selectEl, inputEl } = getComboBoxContext(el);
+
+  const selectValue = selectEl.value;
+  const inputValue = (inputEl.value || "").toLowerCase();
+
+  if (selectValue) {
+    for (let i = 0, len = selectEl.options.length; i < len; i += 1) {
+      const optionEl = selectEl.options[i];
+      if (optionEl.value === selectValue) {
+        if (inputValue !== optionEl.text) {
+          changeElementValue(inputEl, optionEl.text);
+        }
+        comboBoxEl.classList.add(COMBO_BOX_PRISTINE_CLASS);
+        return;
+      }
+    }
+  }
+
+  if (inputValue) {
+    changeElementValue(inputEl);
+  }
+};
+
+/**
+ * Select an option list of the combo box component based off of
+ * having a current focused list option or
+ * having test that completely matches a list option.
+ * Otherwise it clears the input and select.
+ *
+ * @param {HTMLElement} el An element within the combo box component
+ */
+const completeSelection = (el) => {
+  const { comboBoxEl, selectEl, inputEl, statusEl } = getComboBoxContext(el);
+
+  statusEl.textContent = "";
+
+  const inputValue = (inputEl.value || "").toLowerCase();
+
+  if (inputValue) {
+    for (let i = 0, len = selectEl.options.length; i < len; i += 1) {
+      const optionEl = selectEl.options[i];
+      if (optionEl.text.toLowerCase() === inputValue) {
+        changeElementValue(selectEl, optionEl.value);
+        changeElementValue(inputEl, optionEl.text);
+        comboBoxEl.classList.add(COMBO_BOX_PRISTINE_CLASS);
+        return;
+      }
+    }
+  }
+
+  resetSelection(comboBoxEl);
+};
+
+/**
+ * Handle the escape event within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleEscape = (event) => {
+  const { comboBoxEl, inputEl } = getComboBoxContext(event.target);
+
+  hideList(comboBoxEl);
+  resetSelection(comboBoxEl);
+  inputEl.focus();
+};
+
+/**
+ * Handle the down event within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleDownFromInput = (event) => {
+  const { comboBoxEl, listEl } = getComboBoxContext(event.target);
+
+  if (listEl.hidden) {
+    displayList(comboBoxEl);
+  }
+
+  const nextOptionEl =
+    listEl.querySelector(LIST_OPTION_FOCUSED) ||
+    listEl.querySelector(LIST_OPTION);
+
+  if (nextOptionEl) {
+    highlightOption(comboBoxEl, nextOptionEl);
+  }
+
+  event.preventDefault();
+};
+
+/**
+ * Handle the enter event from an input element within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleEnterFromInput = (event) => {
+  const { comboBoxEl, listEl } = getComboBoxContext(event.target);
+  const listShown = !listEl.hidden;
+
+  completeSelection(comboBoxEl);
+
+  if (listShown) {
+    hideList(comboBoxEl);
+  }
+
+  event.preventDefault();
+};
+
+/**
+ * Handle the down event within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleDownFromListOption = (event) => {
+  const focusedOptionEl = event.target;
+  const nextOptionEl = focusedOptionEl.nextSibling;
+
+  if (nextOptionEl) {
+    highlightOption(focusedOptionEl, nextOptionEl);
+  }
+
+  event.preventDefault();
+};
+
+/**
+ * Handle the space event from an list option element within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleSpaceFromListOption = (event) => {
+  selectItem(event.target);
+  event.preventDefault();
+};
+
+/**
+ * Handle the enter event from list option within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleEnterFromListOption = (event) => {
+  selectItem(event.target);
+  event.preventDefault();
+};
+
+/**
+ * Handle the up event from list option within the combo box component.
+ *
+ * @param {KeyboardEvent} event An event within the combo box component
+ */
+const handleUpFromListOption = (event) => {
+  const { comboBoxEl, listEl, focusedOptionEl } = getComboBoxContext(
+    event.target
+  );
+  const nextOptionEl = focusedOptionEl && focusedOptionEl.previousSibling;
+  const listShown = !listEl.hidden;
+
+  highlightOption(comboBoxEl, nextOptionEl);
+
+  if (listShown) {
+    event.preventDefault();
+  }
+
+  if (!nextOptionEl) {
+    hideList(comboBoxEl);
+  }
+};
+
+/**
+ * Select list option on the mouseover event.
+ *
+ * @param {MouseEvent} event The mouseover event
+ * @param {HTMLLIElement} listOptionEl An element within the combo box component
+ */
+const handleMouseover = (listOptionEl) => {
+  const isCurrentlyFocused = listOptionEl.classList.contains(
+    LIST_OPTION_FOCUSED_CLASS
+  );
+
+  if (isCurrentlyFocused) return;
+
+  highlightOption(listOptionEl, listOptionEl, {
+    preventScroll: true,
+  });
+};
+
+/**
+ * Toggle the list when the button is clicked
+ *
+ * @param {HTMLElement} el An element within the combo box component
+ */
+const toggleList = (el) => {
+  const { comboBoxEl, listEl, inputEl } = getComboBoxContext(el);
+
+  if (listEl.hidden) {
+    displayList(comboBoxEl);
+  } else {
+    hideList(comboBoxEl);
+  }
+
+  inputEl.focus();
+};
+
+/**
+ * Handle click from input
+ *
+ * @param {HTMLInputElement} el An element within the combo box component
+ */
+const handleClickFromInput = (el) => {
+  const { comboBoxEl, listEl } = getComboBoxContext(el);
+
+  if (listEl.hidden) {
+    displayList(comboBoxEl);
+  }
+};
+
+const comboBox = behavior(
+  {
+    [CLICK]: {
+      [INPUT]() {
+        if (this.disabled) return;
+        handleClickFromInput(this);
+      },
+      [TOGGLE_LIST_BUTTON]() {
+        if (this.disabled) return;
+        toggleList(this);
+      },
+      [LIST_OPTION]() {
+        if (this.disabled) return;
+        selectItem(this);
+      },
+      [CLEAR_INPUT_BUTTON]() {
+        if (this.disabled) return;
+        clearInput(this);
+      },
+    },
+    focusout: {
+      [COMBO_BOX](event) {
+        if (!this.contains(event.relatedTarget)) {
+          resetSelection(this);
+          hideList(this);
+        }
+      },
+    },
+    keydown: {
+      [COMBO_BOX]: keymap({
+        Escape: handleEscape,
+      }),
+      [INPUT]: keymap({
+        Enter: handleEnterFromInput,
+        ArrowDown: handleDownFromInput,
+        Down: handleDownFromInput,
+      }),
+      [LIST_OPTION]: keymap({
+        ArrowUp: handleUpFromListOption,
+        Up: handleUpFromListOption,
+        ArrowDown: handleDownFromListOption,
+        Down: handleDownFromListOption,
+        Enter: handleEnterFromListOption,
+        " ": handleSpaceFromListOption,
+        "Shift+Tab": noop,
+      }),
+    },
+    input: {
+      [INPUT]() {
+        const comboBoxEl = this.closest(COMBO_BOX);
+        comboBoxEl.classList.remove(COMBO_BOX_PRISTINE_CLASS);
+        displayList(this);
+      },
+    },
+    mouseover: {
+      [LIST_OPTION]() {
+        handleMouseover(this);
+      },
+    },
+  },
+  {
+    init(root) {
+      selectOrMatches(COMBO_BOX, root).forEach((comboBoxEl) => {
+        enhanceComboBox(comboBoxEl);
+      });
+    },
+    getComboBoxContext,
+    enhanceComboBox,
+    generateDynamicRegExp,
+    disable,
+    enable,
+    displayList,
+    hideList,
+    COMBO_BOX_CLASS,
+  }
+);
+
+module.exports = comboBox;
+
+
+/***/ }),
+
+/***/ 5587:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const keymap = __webpack_require__(9361);
+const behavior = __webpack_require__(6158);
+const select = __webpack_require__(4900);
+const selectOrMatches = __webpack_require__(7834);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const { CLICK } = __webpack_require__(381);
+const activeElement = __webpack_require__(6905);
+const isIosDevice = __webpack_require__(269);
+const Sanitizer = __webpack_require__(5826);
+
+const DATE_PICKER_CLASS = `${PREFIX}-date-picker`;
+const DATE_PICKER_WRAPPER_CLASS = `${DATE_PICKER_CLASS}__wrapper`;
+const DATE_PICKER_INITIALIZED_CLASS = `${DATE_PICKER_CLASS}--initialized`;
+const DATE_PICKER_ACTIVE_CLASS = `${DATE_PICKER_CLASS}--active`;
+const DATE_PICKER_INTERNAL_INPUT_CLASS = `${DATE_PICKER_CLASS}__internal-input`;
+const DATE_PICKER_EXTERNAL_INPUT_CLASS = `${DATE_PICKER_CLASS}__external-input`;
+const DATE_PICKER_BUTTON_CLASS = `${DATE_PICKER_CLASS}__button`;
+const DATE_PICKER_CALENDAR_CLASS = `${DATE_PICKER_CLASS}__calendar`;
+const DATE_PICKER_STATUS_CLASS = `${DATE_PICKER_CLASS}__status`;
+const CALENDAR_DATE_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__date`;
+
+const CALENDAR_DATE_FOCUSED_CLASS = `${CALENDAR_DATE_CLASS}--focused`;
+const CALENDAR_DATE_SELECTED_CLASS = `${CALENDAR_DATE_CLASS}--selected`;
+const CALENDAR_DATE_PREVIOUS_MONTH_CLASS = `${CALENDAR_DATE_CLASS}--previous-month`;
+const CALENDAR_DATE_CURRENT_MONTH_CLASS = `${CALENDAR_DATE_CLASS}--current-month`;
+const CALENDAR_DATE_NEXT_MONTH_CLASS = `${CALENDAR_DATE_CLASS}--next-month`;
+const CALENDAR_DATE_RANGE_DATE_CLASS = `${CALENDAR_DATE_CLASS}--range-date`;
+const CALENDAR_DATE_TODAY_CLASS = `${CALENDAR_DATE_CLASS}--today`;
+const CALENDAR_DATE_RANGE_DATE_START_CLASS = `${CALENDAR_DATE_CLASS}--range-date-start`;
+const CALENDAR_DATE_RANGE_DATE_END_CLASS = `${CALENDAR_DATE_CLASS}--range-date-end`;
+const CALENDAR_DATE_WITHIN_RANGE_CLASS = `${CALENDAR_DATE_CLASS}--within-range`;
+const CALENDAR_PREVIOUS_YEAR_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__previous-year`;
+const CALENDAR_PREVIOUS_MONTH_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__previous-month`;
+const CALENDAR_NEXT_YEAR_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__next-year`;
+const CALENDAR_NEXT_MONTH_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__next-month`;
+const CALENDAR_MONTH_SELECTION_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__month-selection`;
+const CALENDAR_YEAR_SELECTION_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__year-selection`;
+const CALENDAR_MONTH_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__month`;
+const CALENDAR_MONTH_FOCUSED_CLASS = `${CALENDAR_MONTH_CLASS}--focused`;
+const CALENDAR_MONTH_SELECTED_CLASS = `${CALENDAR_MONTH_CLASS}--selected`;
+const CALENDAR_YEAR_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__year`;
+const CALENDAR_YEAR_FOCUSED_CLASS = `${CALENDAR_YEAR_CLASS}--focused`;
+const CALENDAR_YEAR_SELECTED_CLASS = `${CALENDAR_YEAR_CLASS}--selected`;
+const CALENDAR_PREVIOUS_YEAR_CHUNK_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__previous-year-chunk`;
+const CALENDAR_NEXT_YEAR_CHUNK_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__next-year-chunk`;
+const CALENDAR_DATE_PICKER_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__date-picker`;
+const CALENDAR_MONTH_PICKER_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__month-picker`;
+const CALENDAR_YEAR_PICKER_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__year-picker`;
+const CALENDAR_TABLE_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__table`;
+const CALENDAR_ROW_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__row`;
+const CALENDAR_CELL_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__cell`;
+const CALENDAR_CELL_CENTER_ITEMS_CLASS = `${CALENDAR_CELL_CLASS}--center-items`;
+const CALENDAR_MONTH_LABEL_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__month-label`;
+const CALENDAR_DAY_OF_WEEK_CLASS = `${DATE_PICKER_CALENDAR_CLASS}__day-of-week`;
+
+const DATE_PICKER = `.${DATE_PICKER_CLASS}`;
+const DATE_PICKER_BUTTON = `.${DATE_PICKER_BUTTON_CLASS}`;
+const DATE_PICKER_INTERNAL_INPUT = `.${DATE_PICKER_INTERNAL_INPUT_CLASS}`;
+const DATE_PICKER_EXTERNAL_INPUT = `.${DATE_PICKER_EXTERNAL_INPUT_CLASS}`;
+const DATE_PICKER_CALENDAR = `.${DATE_PICKER_CALENDAR_CLASS}`;
+const DATE_PICKER_STATUS = `.${DATE_PICKER_STATUS_CLASS}`;
+const CALENDAR_DATE = `.${CALENDAR_DATE_CLASS}`;
+const CALENDAR_DATE_FOCUSED = `.${CALENDAR_DATE_FOCUSED_CLASS}`;
+const CALENDAR_DATE_CURRENT_MONTH = `.${CALENDAR_DATE_CURRENT_MONTH_CLASS}`;
+const CALENDAR_PREVIOUS_YEAR = `.${CALENDAR_PREVIOUS_YEAR_CLASS}`;
+const CALENDAR_PREVIOUS_MONTH = `.${CALENDAR_PREVIOUS_MONTH_CLASS}`;
+const CALENDAR_NEXT_YEAR = `.${CALENDAR_NEXT_YEAR_CLASS}`;
+const CALENDAR_NEXT_MONTH = `.${CALENDAR_NEXT_MONTH_CLASS}`;
+const CALENDAR_YEAR_SELECTION = `.${CALENDAR_YEAR_SELECTION_CLASS}`;
+const CALENDAR_MONTH_SELECTION = `.${CALENDAR_MONTH_SELECTION_CLASS}`;
+const CALENDAR_MONTH = `.${CALENDAR_MONTH_CLASS}`;
+const CALENDAR_YEAR = `.${CALENDAR_YEAR_CLASS}`;
+const CALENDAR_PREVIOUS_YEAR_CHUNK = `.${CALENDAR_PREVIOUS_YEAR_CHUNK_CLASS}`;
+const CALENDAR_NEXT_YEAR_CHUNK = `.${CALENDAR_NEXT_YEAR_CHUNK_CLASS}`;
+const CALENDAR_DATE_PICKER = `.${CALENDAR_DATE_PICKER_CLASS}`;
+const CALENDAR_MONTH_PICKER = `.${CALENDAR_MONTH_PICKER_CLASS}`;
+const CALENDAR_YEAR_PICKER = `.${CALENDAR_YEAR_PICKER_CLASS}`;
+const CALENDAR_MONTH_FOCUSED = `.${CALENDAR_MONTH_FOCUSED_CLASS}`;
+const CALENDAR_YEAR_FOCUSED = `.${CALENDAR_YEAR_FOCUSED_CLASS}`;
+
+const VALIDATION_MESSAGE = "Please enter a valid date";
+
+const MONTH_LABELS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const DAY_OF_WEEK_LABELS = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const ENTER_KEYCODE = 13;
+
+const YEAR_CHUNK = 12;
+
+const DEFAULT_MIN_DATE = "0000-01-01";
+const DEFAULT_EXTERNAL_DATE_FORMAT = "MM/DD/YYYY";
+const INTERNAL_DATE_FORMAT = "YYYY-MM-DD";
+
+const NOT_DISABLED_SELECTOR = ":not([disabled])";
+
+const processFocusableSelectors = (...selectors) =>
+  selectors.map((query) => query + NOT_DISABLED_SELECTOR).join(", ");
+
+const DATE_PICKER_FOCUSABLE = processFocusableSelectors(
+  CALENDAR_PREVIOUS_YEAR,
+  CALENDAR_PREVIOUS_MONTH,
+  CALENDAR_YEAR_SELECTION,
+  CALENDAR_MONTH_SELECTION,
+  CALENDAR_NEXT_YEAR,
+  CALENDAR_NEXT_MONTH,
+  CALENDAR_DATE_FOCUSED
+);
+
+const MONTH_PICKER_FOCUSABLE = processFocusableSelectors(
+  CALENDAR_MONTH_FOCUSED
+);
+
+const YEAR_PICKER_FOCUSABLE = processFocusableSelectors(
+  CALENDAR_PREVIOUS_YEAR_CHUNK,
+  CALENDAR_NEXT_YEAR_CHUNK,
+  CALENDAR_YEAR_FOCUSED
+);
+
+// #region Date Manipulation Functions
+
+/**
+ * Keep date within month. Month would only be over by 1 to 3 days
+ *
+ * @param {Date} dateToCheck the date object to check
+ * @param {number} month the correct month
+ * @returns {Date} the date, corrected if needed
+ */
+const keepDateWithinMonth = (dateToCheck, month) => {
+  if (month !== dateToCheck.getMonth()) {
+    dateToCheck.setDate(0);
+  }
+
+  return dateToCheck;
+};
+
+/**
+ * Set date from month day year
+ *
+ * @param {number} year the year to set
+ * @param {number} month the month to set (zero-indexed)
+ * @param {number} date the date to set
+ * @returns {Date} the set date
+ */
+const setDate = (year, month, date) => {
+  const newDate = new Date(0);
+  newDate.setFullYear(year, month, date);
+  return newDate;
+};
+
+/**
+ * todays date
+ *
+ * @returns {Date} todays date
+ */
+const today = () => {
+  const newDate = new Date();
+  const day = newDate.getDate();
+  const month = newDate.getMonth();
+  const year = newDate.getFullYear();
+  return setDate(year, month, day);
+};
+
+/**
+ * Set date to first day of the month
+ *
+ * @param {number} date the date to adjust
+ * @returns {Date} the adjusted date
+ */
+const startOfMonth = (date) => {
+  const newDate = new Date(0);
+  newDate.setFullYear(date.getFullYear(), date.getMonth(), 1);
+  return newDate;
+};
+
+/**
+ * Set date to last day of the month
+ *
+ * @param {number} date the date to adjust
+ * @returns {Date} the adjusted date
+ */
+const lastDayOfMonth = (date) => {
+  const newDate = new Date(0);
+  newDate.setFullYear(date.getFullYear(), date.getMonth() + 1, 0);
+  return newDate;
+};
+
+/**
+ * Add days to date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numDays the difference in days
+ * @returns {Date} the adjusted date
+ */
+const addDays = (_date, numDays) => {
+  const newDate = new Date(_date.getTime());
+  newDate.setDate(newDate.getDate() + numDays);
+  return newDate;
+};
+
+/**
+ * Subtract days from date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numDays the difference in days
+ * @returns {Date} the adjusted date
+ */
+const subDays = (_date, numDays) => addDays(_date, -numDays);
+
+/**
+ * Add weeks to date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numWeeks the difference in weeks
+ * @returns {Date} the adjusted date
+ */
+const addWeeks = (_date, numWeeks) => addDays(_date, numWeeks * 7);
+
+/**
+ * Subtract weeks from date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numWeeks the difference in weeks
+ * @returns {Date} the adjusted date
+ */
+const subWeeks = (_date, numWeeks) => addWeeks(_date, -numWeeks);
+
+/**
+ * Set date to the start of the week (Sunday)
+ *
+ * @param {Date} _date the date to adjust
+ * @returns {Date} the adjusted date
+ */
+const startOfWeek = (_date) => {
+  const dayOfWeek = _date.getDay();
+  return subDays(_date, dayOfWeek);
+};
+
+/**
+ * Set date to the end of the week (Saturday)
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numWeeks the difference in weeks
+ * @returns {Date} the adjusted date
+ */
+const endOfWeek = (_date) => {
+  const dayOfWeek = _date.getDay();
+  return addDays(_date, 6 - dayOfWeek);
+};
+
+/**
+ * Add months to date and keep date within month
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numMonths the difference in months
+ * @returns {Date} the adjusted date
+ */
+const addMonths = (_date, numMonths) => {
+  const newDate = new Date(_date.getTime());
+
+  const dateMonth = (newDate.getMonth() + 12 + numMonths) % 12;
+  newDate.setMonth(newDate.getMonth() + numMonths);
+  keepDateWithinMonth(newDate, dateMonth);
+
+  return newDate;
+};
+
+/**
+ * Subtract months from date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numMonths the difference in months
+ * @returns {Date} the adjusted date
+ */
+const subMonths = (_date, numMonths) => addMonths(_date, -numMonths);
+
+/**
+ * Add years to date and keep date within month
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numYears the difference in years
+ * @returns {Date} the adjusted date
+ */
+const addYears = (_date, numYears) => addMonths(_date, numYears * 12);
+
+/**
+ * Subtract years from date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} numYears the difference in years
+ * @returns {Date} the adjusted date
+ */
+const subYears = (_date, numYears) => addYears(_date, -numYears);
+
+/**
+ * Set months of date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} month zero-indexed month to set
+ * @returns {Date} the adjusted date
+ */
+const setMonth = (_date, month) => {
+  const newDate = new Date(_date.getTime());
+
+  newDate.setMonth(month);
+  keepDateWithinMonth(newDate, month);
+
+  return newDate;
+};
+
+/**
+ * Set year of date
+ *
+ * @param {Date} _date the date to adjust
+ * @param {number} year the year to set
+ * @returns {Date} the adjusted date
+ */
+const setYear = (_date, year) => {
+  const newDate = new Date(_date.getTime());
+
+  const month = newDate.getMonth();
+  newDate.setFullYear(year);
+  keepDateWithinMonth(newDate, month);
+
+  return newDate;
+};
+
+/**
+ * Return the earliest date
+ *
+ * @param {Date} dateA date to compare
+ * @param {Date} dateB date to compare
+ * @returns {Date} the earliest date
+ */
+const min = (dateA, dateB) => {
+  let newDate = dateA;
+
+  if (dateB < dateA) {
+    newDate = dateB;
+  }
+
+  return new Date(newDate.getTime());
+};
+
+/**
+ * Return the latest date
+ *
+ * @param {Date} dateA date to compare
+ * @param {Date} dateB date to compare
+ * @returns {Date} the latest date
+ */
+const max = (dateA, dateB) => {
+  let newDate = dateA;
+
+  if (dateB > dateA) {
+    newDate = dateB;
+  }
+
+  return new Date(newDate.getTime());
+};
+
+/**
+ * Check if dates are the in the same year
+ *
+ * @param {Date} dateA date to compare
+ * @param {Date} dateB date to compare
+ * @returns {boolean} are dates in the same year
+ */
+const isSameYear = (dateA, dateB) =>
+  dateA && dateB && dateA.getFullYear() === dateB.getFullYear();
+
+/**
+ * Check if dates are the in the same month
+ *
+ * @param {Date} dateA date to compare
+ * @param {Date} dateB date to compare
+ * @returns {boolean} are dates in the same month
+ */
+const isSameMonth = (dateA, dateB) =>
+  isSameYear(dateA, dateB) && dateA.getMonth() === dateB.getMonth();
+
+/**
+ * Check if dates are the same date
+ *
+ * @param {Date} dateA the date to compare
+ * @param {Date} dateA the date to compare
+ * @returns {boolean} are dates the same date
+ */
+const isSameDay = (dateA, dateB) =>
+  isSameMonth(dateA, dateB) && dateA.getDate() === dateB.getDate();
+
+/**
+ * return a new date within minimum and maximum date
+ *
+ * @param {Date} date date to check
+ * @param {Date} minDate minimum date to allow
+ * @param {Date} maxDate maximum date to allow
+ * @returns {Date} the date between min and max
+ */
+const keepDateBetweenMinAndMax = (date, minDate, maxDate) => {
+  let newDate = date;
+
+  if (date < minDate) {
+    newDate = minDate;
+  } else if (maxDate && date > maxDate) {
+    newDate = maxDate;
+  }
+
+  return new Date(newDate.getTime());
+};
+
+/**
+ * Check if dates is valid.
+ *
+ * @param {Date} date date to check
+ * @param {Date} minDate minimum date to allow
+ * @param {Date} maxDate maximum date to allow
+ * @return {boolean} is there a day within the month within min and max dates
+ */
+const isDateWithinMinAndMax = (date, minDate, maxDate) =>
+  date >= minDate && (!maxDate || date <= maxDate);
+
+/**
+ * Check if dates month is invalid.
+ *
+ * @param {Date} date date to check
+ * @param {Date} minDate minimum date to allow
+ * @param {Date} maxDate maximum date to allow
+ * @return {boolean} is the month outside min or max dates
+ */
+const isDatesMonthOutsideMinOrMax = (date, minDate, maxDate) =>
+  lastDayOfMonth(date) < minDate || (maxDate && startOfMonth(date) > maxDate);
+
+/**
+ * Check if dates year is invalid.
+ *
+ * @param {Date} date date to check
+ * @param {Date} minDate minimum date to allow
+ * @param {Date} maxDate maximum date to allow
+ * @return {boolean} is the month outside min or max dates
+ */
+const isDatesYearOutsideMinOrMax = (date, minDate, maxDate) =>
+  lastDayOfMonth(setMonth(date, 11)) < minDate ||
+  (maxDate && startOfMonth(setMonth(date, 0)) > maxDate);
+
+/**
+ * Parse a date with format M-D-YY
+ *
+ * @param {string} dateString the date string to parse
+ * @param {string} dateFormat the format of the date string
+ * @param {boolean} adjustDate should the date be adjusted
+ * @returns {Date} the parsed date
+ */
+const parseDateString = (
+  dateString,
+  dateFormat = INTERNAL_DATE_FORMAT,
+  adjustDate = false
+) => {
+  let date;
+  let month;
+  let day;
+  let year;
+  let parsed;
+
+  if (dateString) {
+    let monthStr;
+    let dayStr;
+    let yearStr;
+
+    if (dateFormat === DEFAULT_EXTERNAL_DATE_FORMAT) {
+      [monthStr, dayStr, yearStr] = dateString.split("/");
+    } else {
+      [yearStr, monthStr, dayStr] = dateString.split("-");
+    }
+
+    if (yearStr) {
+      parsed = parseInt(yearStr, 10);
+      if (!Number.isNaN(parsed)) {
+        year = parsed;
+        if (adjustDate) {
+          year = Math.max(0, year);
+          if (yearStr.length < 3) {
+            const currentYear = today().getFullYear();
+            const currentYearStub =
+              currentYear - (currentYear % 10 ** yearStr.length);
+            year = currentYearStub + parsed;
+          }
+        }
+      }
+    }
+
+    if (monthStr) {
+      parsed = parseInt(monthStr, 10);
+      if (!Number.isNaN(parsed)) {
+        month = parsed;
+        if (adjustDate) {
+          month = Math.max(1, month);
+          month = Math.min(12, month);
+        }
+      }
+    }
+
+    if (month && dayStr && year != null) {
+      parsed = parseInt(dayStr, 10);
+      if (!Number.isNaN(parsed)) {
+        day = parsed;
+        if (adjustDate) {
+          const lastDayOfTheMonth = setDate(year, month, 0).getDate();
+          day = Math.max(1, day);
+          day = Math.min(lastDayOfTheMonth, day);
+        }
+      }
+    }
+
+    if (month && day && year != null) {
+      date = setDate(year, month - 1, day);
+    }
+  }
+
+  return date;
+};
+
+/**
+ * Format a date to format MM-DD-YYYY
+ *
+ * @param {Date} date the date to format
+ * @param {string} dateFormat the format of the date string
+ * @returns {string} the formatted date string
+ */
+const formatDate = (date, dateFormat = INTERNAL_DATE_FORMAT) => {
+  const padZeros = (value, length) => `0000${value}`.slice(-length);
+
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  if (dateFormat === DEFAULT_EXTERNAL_DATE_FORMAT) {
+    return [padZeros(month, 2), padZeros(day, 2), padZeros(year, 4)].join("/");
+  }
+
+  return [padZeros(year, 4), padZeros(month, 2), padZeros(day, 2)].join("-");
+};
+
+// #endregion Date Manipulation Functions
+
+/**
+ * Create a grid string from an array of html strings
+ *
+ * @param {string[]} htmlArray the array of html items
+ * @param {number} rowSize the length of a row
+ * @returns {string} the grid string
+ */
+const listToGridHtml = (htmlArray, rowSize) => {
+  const grid = [];
+  let row = [];
+
+  let i = 0;
+  while (i < htmlArray.length) {
+    row = [];
+
+    const tr = document.createElement("tr");
+    while (i < htmlArray.length && row.length < rowSize) {
+      const td = document.createElement("td");
+      td.insertAdjacentElement("beforeend", htmlArray[i]);
+      row.push(td);
+      i += 1;
+    }
+
+    row.forEach((element) => {
+      tr.insertAdjacentElement("beforeend", element);
+    });
+
+    grid.push(tr);
+  }
+
+  return grid;
+};
+
+const createTableBody = (grid) => {
+  const tableBody = document.createElement("tbody");
+  grid.forEach((element) => {
+    tableBody.insertAdjacentElement("beforeend", element);
+  });
+
+  return tableBody;
+};
+
+/**
+ * set the value of the element and dispatch a change event
+ *
+ * @param {HTMLInputElement} el The element to update
+ * @param {string} value The new value of the element
+ */
+const changeElementValue = (el, value = "") => {
+  const elementToChange = el;
+  elementToChange.value = value;
+
+  const event = new CustomEvent("change", {
+    bubbles: true,
+    cancelable: true,
+    detail: { value },
+  });
+  elementToChange.dispatchEvent(event);
+};
+
+/**
+ * The properties and elements within the date picker.
+ * @typedef {Object} DatePickerContext
+ * @property {HTMLDivElement} calendarEl
+ * @property {HTMLElement} datePickerEl
+ * @property {HTMLInputElement} internalInputEl
+ * @property {HTMLInputElement} externalInputEl
+ * @property {HTMLDivElement} statusEl
+ * @property {HTMLDivElement} firstYearChunkEl
+ * @property {Date} calendarDate
+ * @property {Date} minDate
+ * @property {Date} maxDate
+ * @property {Date} selectedDate
+ * @property {Date} rangeDate
+ * @property {Date} defaultDate
+ */
+
+/**
+ * Get an object of the properties and elements belonging directly to the given
+ * date picker component.
+ *
+ * @param {HTMLElement} el the element within the date picker
+ * @returns {DatePickerContext} elements
+ */
+const getDatePickerContext = (el) => {
+  const datePickerEl = el.closest(DATE_PICKER);
+
+  if (!datePickerEl) {
+    throw new Error(`Element is missing outer ${DATE_PICKER}`);
+  }
+
+  const internalInputEl = datePickerEl.querySelector(
+    DATE_PICKER_INTERNAL_INPUT
+  );
+  const externalInputEl = datePickerEl.querySelector(
+    DATE_PICKER_EXTERNAL_INPUT
+  );
+  const calendarEl = datePickerEl.querySelector(DATE_PICKER_CALENDAR);
+  const toggleBtnEl = datePickerEl.querySelector(DATE_PICKER_BUTTON);
+  const statusEl = datePickerEl.querySelector(DATE_PICKER_STATUS);
+  const firstYearChunkEl = datePickerEl.querySelector(CALENDAR_YEAR);
+
+  const inputDate = parseDateString(
+    externalInputEl.value,
+    DEFAULT_EXTERNAL_DATE_FORMAT,
+    true
+  );
+  const selectedDate = parseDateString(internalInputEl.value);
+
+  const calendarDate = parseDateString(calendarEl.dataset.value);
+  const minDate = parseDateString(datePickerEl.dataset.minDate);
+  const maxDate = parseDateString(datePickerEl.dataset.maxDate);
+  const rangeDate = parseDateString(datePickerEl.dataset.rangeDate);
+  const defaultDate = parseDateString(datePickerEl.dataset.defaultDate);
+
+  if (minDate && maxDate && minDate > maxDate) {
+    throw new Error("Minimum date cannot be after maximum date");
+  }
+
+  return {
+    calendarDate,
+    minDate,
+    toggleBtnEl,
+    selectedDate,
+    maxDate,
+    firstYearChunkEl,
+    datePickerEl,
+    inputDate,
+    internalInputEl,
+    externalInputEl,
+    calendarEl,
+    rangeDate,
+    defaultDate,
+    statusEl,
+  };
+};
+
+/**
+ * Disable the date picker component
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const disable = (el) => {
+  const { externalInputEl, toggleBtnEl } = getDatePickerContext(el);
+
+  toggleBtnEl.disabled = true;
+  externalInputEl.disabled = true;
+};
+
+/**
+ * Check for aria-disabled on initialization
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const ariaDisable = (el) => {
+  const { externalInputEl, toggleBtnEl } = getDatePickerContext(el);
+
+  toggleBtnEl.setAttribute("aria-disabled", true);
+  externalInputEl.setAttribute("aria-disabled", true);
+};
+
+/**
+ * Enable the date picker component
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const enable = (el) => {
+  const { externalInputEl, toggleBtnEl } = getDatePickerContext(el);
+
+  toggleBtnEl.disabled = false;
+  externalInputEl.disabled = false;
+};
+
+// #region Validation
+
+/**
+ * Validate the value in the input as a valid date of format M/D/YYYY
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const isDateInputInvalid = (el) => {
+  const { externalInputEl, minDate, maxDate } = getDatePickerContext(el);
+
+  const dateString = externalInputEl.value;
+  let isInvalid = false;
+
+  if (dateString) {
+    isInvalid = true;
+
+    const dateStringParts = dateString.split("/");
+    const [month, day, year] = dateStringParts.map((str) => {
+      let value;
+      const parsed = parseInt(str, 10);
+      if (!Number.isNaN(parsed)) value = parsed;
+      return value;
+    });
+
+    if (month && day && year != null) {
+      const checkDate = setDate(year, month - 1, day);
+
+      if (
+        checkDate.getMonth() === month - 1 &&
+        checkDate.getDate() === day &&
+        checkDate.getFullYear() === year &&
+        dateStringParts[2].length === 4 &&
+        isDateWithinMinAndMax(checkDate, minDate, maxDate)
+      ) {
+        isInvalid = false;
+      }
+    }
+  }
+
+  return isInvalid;
+};
+
+/**
+ * Validate the value in the input as a valid date of format M/D/YYYY
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const validateDateInput = (el) => {
+  const { externalInputEl } = getDatePickerContext(el);
+  const isInvalid = isDateInputInvalid(externalInputEl);
+
+  if (isInvalid && !externalInputEl.validationMessage) {
+    externalInputEl.setCustomValidity(VALIDATION_MESSAGE);
+  }
+
+  if (!isInvalid && externalInputEl.validationMessage === VALIDATION_MESSAGE) {
+    externalInputEl.setCustomValidity("");
+  }
+};
+
+// #endregion Validation
+
+/**
+ * Enable the date picker component
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const reconcileInputValues = (el) => {
+  const { internalInputEl, inputDate } = getDatePickerContext(el);
+  let newValue = "";
+
+  if (inputDate && !isDateInputInvalid(el)) {
+    newValue = formatDate(inputDate);
+  }
+
+  if (internalInputEl.value !== newValue) {
+    changeElementValue(internalInputEl, newValue);
+  }
+};
+
+/**
+ * Select the value of the date picker inputs.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ * @param {string} dateString The date string to update in YYYY-MM-DD format
+ */
+const setCalendarValue = (el, dateString) => {
+  const parsedDate = parseDateString(dateString);
+
+  if (parsedDate) {
+    const formattedDate = formatDate(parsedDate, DEFAULT_EXTERNAL_DATE_FORMAT);
+
+    const { datePickerEl, internalInputEl, externalInputEl } =
+      getDatePickerContext(el);
+
+    changeElementValue(internalInputEl, dateString);
+    changeElementValue(externalInputEl, formattedDate);
+
+    validateDateInput(datePickerEl);
+  }
+};
+
+/**
+ * Enhance an input with the date picker elements
+ *
+ * @param {HTMLElement} el The initial wrapping element of the date picker component
+ */
+const enhanceDatePicker = (el) => {
+  const datePickerEl = el.closest(DATE_PICKER);
+  const { defaultValue } = datePickerEl.dataset;
+
+  const internalInputEl = datePickerEl.querySelector(`input`);
+
+  if (!internalInputEl) {
+    throw new Error(`${DATE_PICKER} is missing inner input`);
+  }
+
+  if (internalInputEl.value) {
+    internalInputEl.value = "";
+  }
+
+  const minDate = parseDateString(
+    datePickerEl.dataset.minDate || internalInputEl.getAttribute("min")
+  );
+  datePickerEl.dataset.minDate = minDate
+    ? formatDate(minDate)
+    : DEFAULT_MIN_DATE;
+
+  const maxDate = parseDateString(
+    datePickerEl.dataset.maxDate || internalInputEl.getAttribute("max")
+  );
+  if (maxDate) {
+    datePickerEl.dataset.maxDate = formatDate(maxDate);
+  }
+
+  const calendarWrapper = document.createElement("div");
+  calendarWrapper.classList.add(DATE_PICKER_WRAPPER_CLASS);
+
+  const externalInputEl = internalInputEl.cloneNode();
+  externalInputEl.classList.add(DATE_PICKER_EXTERNAL_INPUT_CLASS);
+  externalInputEl.type = "text";
+
+  calendarWrapper.appendChild(externalInputEl);
+  calendarWrapper.insertAdjacentHTML(
+    "beforeend",
+    Sanitizer.escapeHTML`
+    <button type="button" class="${DATE_PICKER_BUTTON_CLASS}" aria-haspopup="true" aria-label="Toggle calendar"></button>
+    <div class="${DATE_PICKER_CALENDAR_CLASS}" role="dialog" aria-modal="true" hidden></div>
+    <div class="usa-sr-only ${DATE_PICKER_STATUS_CLASS}" role="status" aria-live="polite"></div>`
+  );
+
+  internalInputEl.setAttribute("aria-hidden", "true");
+  internalInputEl.setAttribute("tabindex", "-1");
+  internalInputEl.style.display = "none";
+  internalInputEl.classList.add(DATE_PICKER_INTERNAL_INPUT_CLASS);
+  internalInputEl.removeAttribute("id");
+  internalInputEl.removeAttribute("name");
+  internalInputEl.required = false;
+
+  datePickerEl.appendChild(calendarWrapper);
+  datePickerEl.classList.add(DATE_PICKER_INITIALIZED_CLASS);
+
+  if (defaultValue) {
+    setCalendarValue(datePickerEl, defaultValue);
+  }
+
+  if (internalInputEl.disabled) {
+    disable(datePickerEl);
+    internalInputEl.disabled = false;
+  }
+
+  if (internalInputEl.hasAttribute("aria-disabled")) {
+    ariaDisable(datePickerEl);
+    internalInputEl.removeAttribute("aria-disabled");
+  }
+};
+
+// #region Calendar - Date Selection View
+
+/**
+ * render the calendar.
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ * @param {Date} _dateToDisplay a date to render on the calendar
+ * @returns {HTMLElement} a reference to the new calendar element
+ */
+const renderCalendar = (el, _dateToDisplay) => {
+  const {
+    datePickerEl,
+    calendarEl,
+    statusEl,
+    selectedDate,
+    maxDate,
+    minDate,
+    rangeDate,
+  } = getDatePickerContext(el);
+  const todaysDate = today();
+  let dateToDisplay = _dateToDisplay || todaysDate;
+
+  const calendarWasHidden = calendarEl.hidden;
+
+  const focusedDate = addDays(dateToDisplay, 0);
+  const focusedMonth = dateToDisplay.getMonth();
+  const focusedYear = dateToDisplay.getFullYear();
+
+  const prevMonth = subMonths(dateToDisplay, 1);
+  const nextMonth = addMonths(dateToDisplay, 1);
+
+  const currentFormattedDate = formatDate(dateToDisplay);
+
+  const firstOfMonth = startOfMonth(dateToDisplay);
+  const prevButtonsDisabled = isSameMonth(dateToDisplay, minDate);
+  const nextButtonsDisabled = isSameMonth(dateToDisplay, maxDate);
+
+  const rangeConclusionDate = selectedDate || dateToDisplay;
+  const rangeStartDate = rangeDate && min(rangeConclusionDate, rangeDate);
+  const rangeEndDate = rangeDate && max(rangeConclusionDate, rangeDate);
+
+  const withinRangeStartDate = rangeDate && addDays(rangeStartDate, 1);
+  const withinRangeEndDate = rangeDate && subDays(rangeEndDate, 1);
+
+  const monthLabel = MONTH_LABELS[focusedMonth];
+
+  const generateDateHtml = (dateToRender) => {
+    const classes = [CALENDAR_DATE_CLASS];
+    const day = dateToRender.getDate();
+    const month = dateToRender.getMonth();
+    const year = dateToRender.getFullYear();
+    const dayOfWeek = dateToRender.getDay();
+
+    const formattedDate = formatDate(dateToRender);
+
+    let tabindex = "-1";
+
+    const isDisabled = !isDateWithinMinAndMax(dateToRender, minDate, maxDate);
+    const isSelected = isSameDay(dateToRender, selectedDate);
+
+    if (isSameMonth(dateToRender, prevMonth)) {
+      classes.push(CALENDAR_DATE_PREVIOUS_MONTH_CLASS);
+    }
+
+    if (isSameMonth(dateToRender, focusedDate)) {
+      classes.push(CALENDAR_DATE_CURRENT_MONTH_CLASS);
+    }
+
+    if (isSameMonth(dateToRender, nextMonth)) {
+      classes.push(CALENDAR_DATE_NEXT_MONTH_CLASS);
+    }
+
+    if (isSelected) {
+      classes.push(CALENDAR_DATE_SELECTED_CLASS);
+    }
+
+    if (isSameDay(dateToRender, todaysDate)) {
+      classes.push(CALENDAR_DATE_TODAY_CLASS);
+    }
+
+    if (rangeDate) {
+      if (isSameDay(dateToRender, rangeDate)) {
+        classes.push(CALENDAR_DATE_RANGE_DATE_CLASS);
+      }
+
+      if (isSameDay(dateToRender, rangeStartDate)) {
+        classes.push(CALENDAR_DATE_RANGE_DATE_START_CLASS);
+      }
+
+      if (isSameDay(dateToRender, rangeEndDate)) {
+        classes.push(CALENDAR_DATE_RANGE_DATE_END_CLASS);
+      }
+
+      if (
+        isDateWithinMinAndMax(
+          dateToRender,
+          withinRangeStartDate,
+          withinRangeEndDate
+        )
+      ) {
+        classes.push(CALENDAR_DATE_WITHIN_RANGE_CLASS);
+      }
+    }
+
+    if (isSameDay(dateToRender, focusedDate)) {
+      tabindex = "0";
+      classes.push(CALENDAR_DATE_FOCUSED_CLASS);
+    }
+
+    const monthStr = MONTH_LABELS[month];
+    const dayStr = DAY_OF_WEEK_LABELS[dayOfWeek];
+
+    const btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("tabindex", tabindex);
+    btn.setAttribute("class", classes.join(" "));
+    btn.setAttribute("data-day", day);
+    btn.setAttribute("data-month", month + 1);
+    btn.setAttribute("data-year", year);
+    btn.setAttribute("data-value", formattedDate);
+    btn.setAttribute(
+      "aria-label",
+      Sanitizer.escapeHTML`${day} ${monthStr} ${year} ${dayStr}`
+    );
+    btn.setAttribute("aria-selected", isSelected ? "true" : "false");
+    if (isDisabled === true) {
+      btn.disabled = true;
+    }
+    btn.textContent = day;
+
+    return btn;
+  };
+
+  // set date to first rendered day
+  dateToDisplay = startOfWeek(firstOfMonth);
+
+  const days = [];
+
+  while (
+    days.length < 28 ||
+    dateToDisplay.getMonth() === focusedMonth ||
+    days.length % 7 !== 0
+  ) {
+    days.push(generateDateHtml(dateToDisplay));
+    dateToDisplay = addDays(dateToDisplay, 1);
+  }
+
+  const datesGrid = listToGridHtml(days, 7);
+
+  const newCalendar = calendarEl.cloneNode();
+  newCalendar.dataset.value = currentFormattedDate;
+  newCalendar.style.top = `${datePickerEl.offsetHeight}px`;
+  newCalendar.hidden = false;
+  newCalendar.innerHTML = Sanitizer.escapeHTML`
+    <div tabindex="-1" class="${CALENDAR_DATE_PICKER_CLASS}">
+      <div class="${CALENDAR_ROW_CLASS}">
+        <div class="${CALENDAR_CELL_CLASS} ${CALENDAR_CELL_CENTER_ITEMS_CLASS}">
           <button
             type="button"
-            class="${k}"
+            class="${CALENDAR_PREVIOUS_YEAR_CLASS}"
             aria-label="Navigate back one year"
-            ${O?'disabled="disabled"':""}
+            ${prevButtonsDisabled ? `disabled="disabled"` : ""}
           ></button>
         </div>
-        <div class="${G} ${J}">
+        <div class="${CALENDAR_CELL_CLASS} ${CALENDAR_CELL_CENTER_ITEMS_CLASS}">
           <button
             type="button"
-            class="${q}"
+            class="${CALENDAR_PREVIOUS_MONTH_CLASS}"
             aria-label="Navigate back one month"
-            ${O?'disabled="disabled"':""}
+            ${prevButtonsDisabled ? `disabled="disabled"` : ""}
           ></button>
         </div>
-        <div class="${G} ${X}">
+        <div class="${CALENDAR_CELL_CLASS} ${CALENDAR_MONTH_LABEL_CLASS}">
           <button
             type="button"
-            class="${B}" aria-label="${K}. Click to select month"
-          >${K}</button>
+            class="${CALENDAR_MONTH_SELECTION_CLASS}" aria-label="${monthLabel}. Click to select month"
+          >${monthLabel}</button>
           <button
             type="button"
-            class="${j}" aria-label="${m}. Click to select year"
-          >${m}</button>
+            class="${CALENDAR_YEAR_SELECTION_CLASS}" aria-label="${focusedYear}. Click to select year"
+          >${focusedYear}</button>
         </div>
-        <div class="${G} ${J}">
+        <div class="${CALENDAR_CELL_CLASS} ${CALENDAR_CELL_CENTER_ITEMS_CLASS}">
           <button
             type="button"
-            class="${N}"
+            class="${CALENDAR_NEXT_MONTH_CLASS}"
             aria-label="Navigate forward one month"
-            ${H?'disabled="disabled"':""}
+            ${nextButtonsDisabled ? `disabled="disabled"` : ""}
           ></button>
         </div>
-        <div class="${G} ${J}">
+        <div class="${CALENDAR_CELL_CLASS} ${CALENDAR_CELL_CENTER_ITEMS_CLASS}">
           <button
             type="button"
-            class="${I}"
+            class="${CALENDAR_NEXT_YEAR_CLASS}"
             aria-label="Navigate forward one year"
-            ${H?'disabled="disabled"':""}
+            ${nextButtonsDisabled ? `disabled="disabled"` : ""}
           ></button>
         </div>
       </div>
     </div>
-    `;const nt=document.createElement("table");nt.setAttribute("class",Q),nt.setAttribute("role","presentation");const rt=document.createElement("thead");nt.insertAdjacentElement("beforeend",rt);const st=document.createElement("tr");rt.insertAdjacentElement("beforeend",st);const ot={Sunday:"S",Monday:"M",Tuesday:"T",Wednesday:"W",Thursday:"Th",Friday:"Fr",Saturday:"S"};Object.keys(ot).forEach((t=>{const e=document.createElement("th");e.setAttribute("class",tt),e.setAttribute("scope","presentation"),e.setAttribute("aria-label",t),e.textContent=ot[t],st.insertAdjacentElement("beforeend",e)}));const it=se(et);nt.insertAdjacentElement("beforeend",it),at.querySelector(At).insertAdjacentElement("beforeend",nt),n.parentNode.replaceChild(at,n),a.classList.add(h);const lt=[];return Jt(s,b)&&lt.push("Selected date"),p?(lt.push("You can navigate by day using left and right arrows","Weeks by using up and down arrows","Months by using page up and page down keys","Years by using shift plus page up and shift plus page down","Home and end keys navigate to the beginning and end of a week"),r.textContent=""):lt.push(`${K} ${m}`),r.textContent=lt.join(". "),at},fe=t=>{const{datePickerEl:e,calendarEl:a,statusEl:n}=ie(t);e.classList.remove(h),a.hidden=!0,n.textContent=""},he=t=>{const{calendarEl:e,inputDate:a,minDate:n,maxDate:r}=ie(t);if(!e.hidden&&a){const t=Xt(a,n,r);be(e,t)}},me=(t,e)=>{const{calendarEl:a,statusEl:n,calendarDate:r,minDate:s,maxDate:o}=ie(t),i=r.getMonth(),l=null==e?i:e,c=St.map(((t,e)=>{const a=((t,e,a)=>Ht(t)<e||a&&Ot(t)>a)(zt(r,e),s,o);let n="-1";const c=[O],d=e===i;e===l&&(n="0",c.push(H)),d&&c.push(P);const u=document.createElement("button");return u.setAttribute("type","button"),u.setAttribute("tabindex",n),u.setAttribute("class",c.join(" ")),u.setAttribute("data-value",e),u.setAttribute("data-label",t),u.setAttribute("aria-selected",d?"true":"false"),!0===a&&(u.disabled=!0),u.textContent=t,u})),d=document.createElement("div");d.setAttribute("tabindex","-1"),d.setAttribute("class",W);const u=document.createElement("table");u.setAttribute("class",Q),u.setAttribute("role","presentation");const p=re(c,3),b=se(p);u.insertAdjacentElement("beforeend",b),d.insertAdjacentElement("beforeend",u);const f=a.cloneNode();return f.insertAdjacentElement("beforeend",d),a.parentNode.replaceChild(f,a),n.textContent="Select a month.",f},ge=(t,e)=>{const{calendarEl:a,statusEl:n,calendarDate:r,minDate:s,maxDate:o}=ie(t),i=r.getFullYear(),l=null==e?i:e;let c=l;c-=c%Dt,c=Math.max(0,c);const d=ee(Qt(r,c-1),s,o),p=ee(Qt(r,c+Dt),s,o),b=[];let f=c;for(;b.length<Dt;){const t=ee(Qt(r,f),s,o);let e="-1";const a=[F],n=f===i;f===l&&(e="0",a.push(R)),n&&a.push(Y);const c=document.createElement("button");c.setAttribute("type","button"),c.setAttribute("tabindex",e),c.setAttribute("class",a.join(" ")),c.setAttribute("data-value",f),c.setAttribute("aria-selected",n?"true":"false"),!0===t&&(c.disabled=!0),c.textContent=f,b.push(c),f+=1}const h=a.cloneNode(),m=document.createElement("div");m.setAttribute("tabindex","-1"),m.setAttribute("class",z);const g=document.createElement("table");g.setAttribute("role","presentation"),g.setAttribute("class",Q);const $=document.createElement("tbody"),y=document.createElement("tr"),A=document.createElement("button");A.setAttribute("type","button"),A.setAttribute("class",U),A.setAttribute("aria-label","Navigate back 12 years"),!0===d&&(A.disabled=!0),A.innerHTML=u.escapeHTML`&nbsp`;const E=document.createElement("button");E.setAttribute("type","button"),E.setAttribute("class",K),E.setAttribute("aria-label","Navigate forward 12 years"),!0===p&&(E.disabled=!0),E.innerHTML=u.escapeHTML`&nbsp`;const v=document.createElement("table");v.setAttribute("class",Q),v.setAttribute("role","presentation");const x=re(b,3),w=se(x);v.insertAdjacentElement("beforeend",w);const L=document.createElement("td");L.insertAdjacentElement("beforeend",A);const S=document.createElement("td");S.setAttribute("colspan","3"),S.insertAdjacentElement("beforeend",v);const _=document.createElement("td");return _.insertAdjacentElement("beforeend",E),y.insertAdjacentElement("beforeend",L),y.insertAdjacentElement("beforeend",S),y.insertAdjacentElement("beforeend",_),$.insertAdjacentElement("beforeend",y),g.insertAdjacentElement("beforeend",$),m.insertAdjacentElement("beforeend",g),h.insertAdjacentElement("beforeend",m),a.parentNode.replaceChild(h,a),n.textContent=u.escapeHTML`Showing years ${c} to ${c+Dt-1}. Select a year.`,h},$e=t=>{const{datePickerEl:e,externalInputEl:a}=ie(t.target);fe(e),a.focus(),t.preventDefault()},ye=t=>e=>{const{calendarEl:a,calendarDate:n,minDate:r,maxDate:s}=ie(e.target),o=t(n),i=Xt(o,r,s);Jt(n,i)||be(a,i).querySelector(lt).focus(),e.preventDefault()},Ae=ye((t=>Rt(t,-1))),Ee=ye((t=>Rt(t,1))),ve=ye((t=>Ft(t,1))),xe=ye((t=>Pt(t,1))),we=ye((t=>Yt(t))),Le=ye((t=>(t=>{const e=t.getDay();return Pt(t,6-e)})(t))),Se=ye((t=>Ut(t,1))),_e=ye((t=>Kt(t,1))),De=ye((t=>Vt(t,1))),Ce=ye((t=>Wt(t,1))),Te=t=>e=>{const a=e.target,n=parseInt(a.dataset.value,10),{calendarEl:r,calendarDate:s,minDate:o,maxDate:i}=ie(a),l=zt(s,n);let c=t(n);c=Math.max(0,Math.min(11,c));const d=zt(s,c),u=Xt(d,o,i);Gt(l,u)||me(r,u.getMonth()).querySelector(xt).focus(),e.preventDefault()},Me=Te((t=>t-3)),ke=Te((t=>t+3)),qe=Te((t=>t-1)),Ie=Te((t=>t+1)),Ne=Te((t=>t-t%3)),Be=Te((t=>t+2-t%3)),je=Te((()=>11)),Oe=Te((()=>0)),He=t=>e=>{const a=e.target,n=parseInt(a.dataset.value,10),{calendarEl:r,calendarDate:s,minDate:o,maxDate:i}=ie(a),l=Qt(s,n);let c=t(n);c=Math.max(0,c);const d=Qt(s,c),u=Xt(d,o,i);Zt(l,u)||ge(r,u.getFullYear()).querySelector(wt).focus(),e.preventDefault()},Pe=He((t=>t-3)),Fe=He((t=>t+3)),Re=He((t=>t-1)),Ye=He((t=>t+1)),Ue=He((t=>t-t%3)),Ke=He((t=>t+2-t%3)),Ve=He((t=>t-Dt)),We=He((t=>t+Dt)),ze=t=>{const e=e=>{const{calendarEl:a}=ie(e),n=s(t,a),r=n.length-1,o=n[0],i=n[r],l=n.indexOf(c());return{focusableElements:n,isNotFound:-1===l,firstTabStop:o,isFirstTab:0===l,lastTabStop:i,isLastTab:l===r}};return{tabAhead(t){const{firstTabStop:a,isLastTab:n,isNotFound:r}=e(t.target);(n||r)&&(t.preventDefault(),a.focus())},tabBack(t){const{lastTabStop:a,isFirstTab:n,isNotFound:r}=e(t.target);(n||r)&&(t.preventDefault(),a.focus())}}},Qe=ze(kt),Ze=ze(qt),Ge=ze(It),Je={[l]:{[at](){(t=>{if(t.disabled)return;const{calendarEl:e,inputDate:a,minDate:n,maxDate:r,defaultDate:s}=ie(t);if(e.hidden){const t=Xt(a||s||jt(),n,r);be(e,t).querySelector(lt).focus()}else fe(t)})(this)},[it](){(t=>{if(t.disabled)return;const{datePickerEl:e,externalInputEl:a}=ie(t);pe(t,t.dataset.value),fe(e),a.focus()})(this)},[mt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t),s=parseInt(t.dataset.value,10);let o=zt(a,s);o=Xt(o,n,r),be(e,o).querySelector(lt).focus()})(this)},[gt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t),s=parseInt(t.innerHTML,10);let o=Qt(a,s);o=Xt(o,n,r),be(e,o).querySelector(lt).focus()})(this)},[ut](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t);let s=Kt(a,1);s=Xt(s,n,r);const o=be(e,s);let i=o.querySelector(ut);i.disabled&&(i=o.querySelector(At)),i.focus()})(this)},[bt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t);let s=Ut(a,1);s=Xt(s,n,r);const o=be(e,s);let i=o.querySelector(bt);i.disabled&&(i=o.querySelector(At)),i.focus()})(this)},[dt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t);let s=Wt(a,1);s=Xt(s,n,r);const o=be(e,s);let i=o.querySelector(dt);i.disabled&&(i=o.querySelector(At)),i.focus()})(this)},[pt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t);let s=Vt(a,1);s=Xt(s,n,r);const o=be(e,s);let i=o.querySelector(pt);i.disabled&&(i=o.querySelector(At)),i.focus()})(this)},[$t](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t),s=e.querySelector(wt);let o=parseInt(s.textContent,10)-Dt;o=Math.max(0,o);const i=Qt(a,o),l=Xt(i,n,r),c=ge(e,l.getFullYear());let d=c.querySelector($t);d.disabled&&(d=c.querySelector(vt)),d.focus()})(this)},[yt](){(t=>{if(t.disabled)return;const{calendarEl:e,calendarDate:a,minDate:n,maxDate:r}=ie(t),s=e.querySelector(wt);let o=parseInt(s.textContent,10)+Dt;o=Math.max(0,o);const i=Qt(a,o),l=Xt(i,n,r),c=ge(e,l.getFullYear());let d=c.querySelector(yt);d.disabled&&(d=c.querySelector(vt)),d.focus()})(this)},[ht](){me(this).querySelector(xt).focus()},[ft](){ge(this).querySelector(wt).focus()}},keyup:{[st](t){const e=this.dataset.keydownKeyCode;`${t.keyCode}`!==e&&t.preventDefault()}},keydown:{[rt](t){13===t.keyCode&&ue(this)},[it]:n({Up:Ae,ArrowUp:Ae,Down:Ee,ArrowDown:Ee,Left:ve,ArrowLeft:ve,Right:xe,ArrowRight:xe,Home:we,End:Le,PageDown:Se,PageUp:_e,"Shift+PageDown":De,"Shift+PageUp":Ce,Tab:Qe.tabAhead}),[At]:n({Tab:Qe.tabAhead,"Shift+Tab":Qe.tabBack}),[mt]:n({Up:Me,ArrowUp:Me,Down:ke,ArrowDown:ke,Left:qe,ArrowLeft:qe,Right:Ie,ArrowRight:Ie,Home:Ne,End:Be,PageDown:je,PageUp:Oe}),[Et]:n({Tab:Ze.tabAhead,"Shift+Tab":Ze.tabBack}),[gt]:n({Up:Pe,ArrowUp:Pe,Down:Fe,ArrowDown:Fe,Left:Re,ArrowLeft:Re,Right:Ye,ArrowRight:Ye,Home:Ue,End:Ke,PageDown:We,PageUp:Ve}),[vt]:n({Tab:Ge.tabAhead,"Shift+Tab":Ge.tabBack}),[st](t){this.dataset.keydownKeyCode=t.keyCode},[et](t){n({Escape:$e})(t)}},focusout:{[rt](){ue(this)},[et](t){this.contains(t.relatedTarget)||fe(this)}},input:{[rt](){(t=>{const{internalInputEl:e,inputDate:a}=ie(t);let n="";a&&!de(t)&&(n=ne(a)),e.value!==n&&oe(e,n)})(this),he(this)}}};d()||(Je.mouseover={[ct](){(t=>{if(t.disabled)return;const e=t.closest(st),a=e.dataset.value,n=t.dataset.value;if(n===a)return;const r=ae(n);be(e,r).querySelector(lt).focus()})(this)},[mt](){(t=>{if(t.disabled)return;if(t.classList.contains(H))return;const e=parseInt(t.dataset.value,10);me(t,e).querySelector(xt).focus()})(this)},[gt](){(t=>{if(t.disabled)return;if(t.classList.contains(R))return;const e=parseInt(t.dataset.value,10);ge(t,e).querySelector(wt).focus()})(this)}});const Xe=r(Je,{init(t){o(et,t).forEach((t=>{(t=>{const e=t.closest(et),{defaultValue:a}=e.dataset,n=e.querySelector("input");if(!n)throw new Error(`${et} is missing inner input`);n.value&&(n.value="");const r=ae(e.dataset.minDate||n.getAttribute("min"));e.dataset.minDate=r?ne(r):"0000-01-01";const s=ae(e.dataset.maxDate||n.getAttribute("max"));s&&(e.dataset.maxDate=ne(s));const o=document.createElement("div");o.classList.add(b);const i=n.cloneNode();i.classList.add(g),i.type="text",o.appendChild(i),o.insertAdjacentHTML("beforeend",u.escapeHTML`
-    <button type="button" class="${$}" aria-haspopup="true" aria-label="Toggle calendar"></button>
-    <div class="${y}" role="dialog" aria-modal="true" hidden></div>
-    <div class="usa-sr-only ${A}" role="status" aria-live="polite"></div>`),n.setAttribute("aria-hidden","true"),n.setAttribute("tabindex","-1"),n.style.display="none",n.classList.add(m),n.removeAttribute("id"),n.removeAttribute("name"),n.required=!1,e.appendChild(o),e.classList.add(f),a&&pe(e,a),n.disabled&&(le(e),n.disabled=!1),n.hasAttribute("aria-disabled")&&(ce(e),n.removeAttribute("aria-disabled"))})(t)}))},getDatePickerContext:ie,disable:le,ariaDisable:ce,enable:t=>{const{externalInputEl:e,toggleBtnEl:a}=ie(t);a.disabled=!1,e.disabled=!1},isDateInputInvalid:de,setCalendarValue:pe,validateDateInput:ue,renderCalendar:be,updateCalendarIfVisible:he});t.exports=Xe},1720:(t,e,a)=>{const n=a(6158),r=a(4900),s=a(7834),{prefix:o}=a(1824),{getDatePickerContext:i,isDateInputInvalid:l,updateCalendarIfVisible:c}=a(5587),d=`${o}-date-range-picker`,u=`${d}__range-start`,p=`${d}__range-end`,b=`.${o}-date-picker`,f=`.${d}`,h=`.${u}`,m=`.${p}`,g=t=>{const e=t.closest(f);if(!e)throw new Error(`Element is missing outer ${f}`);const a=e.querySelector(h),n=e.querySelector(m);return{dateRangePickerEl:e,rangeStartEl:a,rangeEndEl:n}},$=t=>{const{dateRangePickerEl:e,rangeStartEl:a,rangeEndEl:n}=g(t),{internalInputEl:r}=i(a),s=r.value;s&&!l(r)?(n.dataset.minDate=s,n.dataset.rangeDate=s,n.dataset.defaultDate=s):(n.dataset.minDate=e.dataset.minDate||"",n.dataset.rangeDate="",n.dataset.defaultDate=""),c(n)},y=t=>{const{dateRangePickerEl:e,rangeStartEl:a,rangeEndEl:n}=g(t),{internalInputEl:r}=i(n),s=r.value;s&&!l(r)?(a.dataset.maxDate=s,a.dataset.rangeDate=s,a.dataset.defaultDate=s):(a.dataset.maxDate=e.dataset.maxDate||"",a.dataset.rangeDate="",a.dataset.defaultDate=""),c(a)},A=n({"input change":{[h](){$(this)},[m](){y(this)}}},{init(t){s(f,t).forEach((t=>{(t=>{const e=t.closest(f),[a,n]=r(b,e);if(!a)throw new Error(`${f} is missing inner two '${b}' elements`);if(!n)throw new Error(`${f} is missing second '${b}' element`);a.classList.add(u),n.classList.add(p),e.dataset.minDate||(e.dataset.minDate="0000-01-01");const{minDate:s}=e.dataset;a.dataset.minDate=s,n.dataset.minDate=s;const{maxDate:o}=e.dataset;o&&(a.dataset.maxDate=o,n.dataset.maxDate=o),$(e),y(e)})(t)}))}});t.exports=A},309:(t,e,a)=>{const n=a(7834),r=a(6158),s=a(5826),{prefix:o}=a(1824),i=`${o}-file-input`,l=`.${i}`,c=`${o}-file-input__input`,d=`${o}-file-input__target`,u=`.${c}`,p=`${o}-file-input__box`,b=`${o}-file-input__instructions`,f=`${o}-file-input__preview`,h=`${o}-file-input__preview-heading`,m=`${o}-file-input--disabled`,g=`${o}-file-input__choose`,$=`${o}-file-input__accepted-files-message`,y=`${o}-file-input__drag-text`,A=`${o}-file-input--drag`,E="is-loading",v="has-invalid-file",x=`${o}-file-input__preview-image`,w=`${x}--generic`,L=`${x}--pdf`,S=`${x}--word`,_=`${x}--video`,D=`${x}--excel`,C=`${o}-sr-only`,T="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";let M=Boolean(!0),k="",q="";const I=t=>{const e=t.closest(l);if(!e)throw new Error(`Element is missing outer ${l}`);const a=e.querySelector(u);return{dropZoneEl:e,inputEl:a}},N=t=>{const e=t.charCodeAt(0);return 32===e?"-":e>=65&&e<=90?`img_${t.toLowerCase()}`:`__${e.toString(16).slice(-4)}`},B=t=>t.hasAttribute("multiple")?"files":"file",j=(t,e)=>{const a=t.querySelectorAll(`.${f}`),n=t.querySelector(`.${h}`),r=t.querySelector(`.${$}`);n&&(n.outerHTML=""),r&&(r.outerHTML="",t.classList.remove(v)),null!==a&&(e&&e.removeAttribute("hidden"),Array.prototype.forEach.call(a,(t=>{t.parentNode.removeChild(t)})))},O=(t,e,a,n)=>{((t,e,a,n)=>{const r=e.getAttribute("accept");n.classList.remove(v);const s=(t,e)=>{let a=!1;return t.indexOf(e)>=0&&(a=!0),a};if(r){const o=r.split(","),i=document.createElement("div");let l=!0;const c=t.target.files||t.dataTransfer.files;for(let t=0;t<c.length;t+=1){const e=c[t];if(!l)break;for(let t=0;t<o.length;t+=1){const a=o[t];if(l=e.name.indexOf(a)>0||s(e.type,a.replace(/\*/g,"")),l){M=!0;break}}}l||(j(n,a),e.value="",n.insertBefore(i,e),i.textContent=e.dataset.errormessage||"This is not a valid file type.",i.classList.add($),n.classList.add(v),M=!1,t.preventDefault(),t.stopPropagation())}})(t,e,a,n),!0===M&&((t,e,a,n)=>{const r=t.target.files,o=n.closest(`.${i}`).querySelector(`.${C}`),l=[];j(n,a);for(let t=0;t<r.length;t+=1){const e=new FileReader,n=r[t].name;let o;l.push(n),e.onloadstart=function(){var t;t=n.replace(/[^a-z0-9]/g,N),o=`${t}-${Math.floor(Date.now().toString()/1e3)}`,a.insertAdjacentHTML("afterend",s.escapeHTML`<div class="${f}" aria-hidden="true">
-          <img id="${o}" src="${T}" alt="" class="${x} ${E}"/>${n}
-        <div>`)},e.onloadend=function(){const t=document.getElementById(o);n.indexOf(".pdf")>0?t.setAttribute("onerror",`this.onerror=null;this.src="${T}"; this.classList.add("${L}")`):n.indexOf(".doc")>0||n.indexOf(".pages")>0?t.setAttribute("onerror",`this.onerror=null;this.src="${T}"; this.classList.add("${S}")`):n.indexOf(".xls")>0||n.indexOf(".numbers")>0?t.setAttribute("onerror",`this.onerror=null;this.src="${T}"; this.classList.add("${D}")`):n.indexOf(".mov")>0||n.indexOf(".mp4")>0?t.setAttribute("onerror",`this.onerror=null;this.src="${T}"; this.classList.add("${_}")`):t.setAttribute("onerror",`this.onerror=null;this.src="${T}"; this.classList.add("${w}")`),t.classList.remove(E),t.src=e.result},r[t]&&e.readAsDataURL(r[t])}0===r.length?e.setAttribute("aria-label",k):((t,e)=>{const a=document.createElement("div"),n=t.closest(`.${d}`),r=n.querySelector(`.${b}`);let o="Change file",i="";1===e.length?i=s.escapeHTML`Selected file <span class="usa-file-input__choose">${o}</span>`:e.length>1&&(o="Change files",i=s.escapeHTML`${e.length} files selected <span class="usa-file-input__choose">${o}</span>`),r.setAttribute("hidden","true"),a.classList.add(h),a.innerHTML=i,n.insertBefore(a,r),t.setAttribute("aria-label",o)})(e,r),((t,e,a)=>{const n=t;let r=q;1===e.length?r=`You have selected the file: ${a}`:e.length>1&&(r=`You have selected ${e.length} files: ${a.join(", ")}`),setTimeout((()=>{n.textContent=r}),1e3)})(o,r,l)})(t,e,a,n)},H=r({},{init(t){n(l,t).forEach((t=>{const{instructions:e,dropTarget:a}=(t=>{const e=t.hasAttribute("aria-disabled")||t.hasAttribute("disabled"),a=(t=>{const e=document.createElement("div"),a=document.createElement("div"),n=document.createElement("div");return t.classList.remove(i),t.classList.add(c),e.classList.add(i),n.classList.add(p),a.classList.add(d),a.prepend(n),t.parentNode.insertBefore(a,t),t.parentNode.insertBefore(e,a),a.appendChild(t),e.appendChild(a),a})(t),n=(t=>{const e=t.closest(l),a=B(t),n=document.createElement("div"),r=`Drag ${a} here or`,o="choose from folder";return k=`${r} ${o}`,n.classList.add(b),n.setAttribute("aria-hidden","true"),t.setAttribute("aria-label",k),n.innerHTML=s.escapeHTML`<span class="${y}">${r}</span> <span class="${g}">${o}</span>`,t.parentNode.insertBefore(n,t),(/rv:11.0/i.test(navigator.userAgent)||/Edge\/\d./i.test(navigator.userAgent))&&(e.querySelector(`.${y}`).outerHTML=""),n})(t),{dropZoneEl:r}=I(t);return e?r.classList.add(m):(t=>{const e=document.createElement("div"),a=B(t),n=t.closest(l),r=t.closest(`.${d}`);q=`No ${a} selected.`,e.classList.add(C),e.setAttribute("aria-live","polite"),e.textContent=q,n.insertBefore(e,r)})(t),{instructions:n,dropTarget:a}})(t);a.addEventListener("dragover",(function(){this.classList.add(A)}),!1),a.addEventListener("dragleave",(function(){this.classList.remove(A)}),!1),a.addEventListener("drop",(function(){this.classList.remove(A)}),!1),t.addEventListener("change",(n=>O(n,t,e,a)),!1)}))},teardown(t){n(u,t).forEach((t=>{const e=t.parentElement.parentElement;e.parentElement.replaceChild(t,e),t.className=i}))},getFileInputContext:I,disable:t=>{const{dropZoneEl:e,inputEl:a}=I(t);a.disabled=!0,e.classList.add(m)},ariaDisable:t=>{const{dropZoneEl:e}=I(t);e.classList.add(m)},enable:t=>{const{dropZoneEl:e,inputEl:a}=I(t);a.disabled=!1,e.classList.remove(m),e.removeAttribute("aria-disabled")}});t.exports=H},2731:(t,e,a)=>{const n=a(6158),{CLICK:r}=a(381),{prefix:s}=a(1824),o=`.${s}-footer--big`,i=`${o} nav .${s}-footer__primary-link`;function l(t){const e=document.querySelector(o);e&&e.querySelectorAll(i).forEach((e=>{const a=e.getAttribute("class"),n=e.getAttribute("data-tag")||e.tagName,r=t?"button":n,o=document.createElement(r);if(o.setAttribute("class",a),o.classList.toggle(`${s}-footer__primary-link--button`,t),o.textContent=e.textContent,t){o.setAttribute("data-tag",e.tagName);const t=`${s}-footer-menu-list-${Math.floor(1e5*Math.random())}`;o.setAttribute("aria-controls",t),o.setAttribute("aria-expanded","false"),e.nextElementSibling.setAttribute("id",t),o.setAttribute("type","button")}e.after(o),e.remove()}))}const c=t=>{l(t.matches)};t.exports=n({[r]:{[i]:function(){if(window.innerWidth<480){const t="true"===this.getAttribute("aria-expanded");this.closest(o).querySelectorAll(i).forEach((t=>{t.setAttribute("aria-expanded",!1)})),this.setAttribute("aria-expanded",!t)}}}},{HIDE_MAX_WIDTH:480,init(){l(window.innerWidth<480),this.mediaQueryList=window.matchMedia("(max-width: 479.9px)"),this.mediaQueryList.addListener(c)},teardown(){this.mediaQueryList.removeListener(c)}})},6177:(t,e,a)=>{const n=a(9361),r=a(6158),s=a(4900),o=a(8497),i=a(3596),l=a(5075),c=a(8009),{CLICK:d}=a(381),{prefix:u}=a(1824),p=`.${u}-header`,b=`.${u}-nav`,f=`.${u}-nav-container`,h=`.${u}-nav__primary`,m=`.${u}-nav__primary-item`,g=`button.${u}-nav__link`,$=`${b} a`,y="data-nav-hidden",A=`.${u}-menu-btn`,E=`.${u}-nav__close`,v=`${E}, .${u}-overlay`,x=[b,`.${u}-overlay`].join(", "),w=`body *:not(${p}, ${f}, ${b}, ${b} *):not([aria-hidden])`,L=`[${y}]`,S="usa-js-mobile-nav--active";let _,D,C;const T=()=>document.body.classList.contains(S),M=c(),k=window.getComputedStyle(document.body).getPropertyValue("padding-right"),q=`${parseInt(k.replace(/px/,""),10)+parseInt(M.replace(/px/,""),10)}px`,I=t=>{const{body:e}=document,a="boolean"==typeof t?t:!T();e.classList.toggle(S,a),s(x).forEach((t=>t.classList.toggle("is-visible",a))),_.focusTrap.update(a);const n=e.querySelector(E),r=document.querySelector(A);return e.style.paddingRight=e.style.paddingRight===q?k:q,(t=>{t?(()=>{const t=document.querySelector(`${p}`).parentNode;C=document.querySelectorAll(w),C.forEach((e=>{e!==t&&(e.setAttribute("aria-hidden",!0),e.setAttribute(y,""))}))})():(C=document.querySelectorAll(L),C&&C.forEach((t=>{t.removeAttribute("aria-hidden"),t.removeAttribute(y)})))})(a),a&&n?n.focus():!a&&r&&"none"!==getComputedStyle(r).display&&r.focus(),a},N=()=>{const t=document.body.querySelector(E);T()&&t&&0===t.getBoundingClientRect().width&&_.toggleNav.call(t,!1)},B=()=>_.toggleNav.call(_,!1),j=()=>{D&&(o(D,!1),D=null)};_=r({[d]:{[g](){return D!==this&&j(),D||(D=this,o(D,!0)),!1},body:j,[A]:I,[v]:I,[$](){const t=this.closest(l.ACCORDION);t&&l.getButtons(t).forEach((t=>l.hide(t))),T()&&_.toggleNav.call(_,!1)}},keydown:{[h]:n({Escape:t=>{j(),(t=>{const e=t.target.closest(m);if(!t.target.matches(g)){const t=e.querySelector(g);t&&t.focus()}})(t)}})},focusout:{[h](t){t.target.closest(h).contains(t.relatedTarget)||j()}}},{init(t){const e=t.matches(b)?t:t.querySelector(b);e&&(_.focusTrap=i(e,{Escape:B})),N(),window.addEventListener("resize",N,!1)},teardown(){window.removeEventListener("resize",N,!1),D=!1},focusTrap:null,toggleNav:I}),t.exports=_},3732:(t,e,a)=>{const n=a(5689),r=a(9361),s=a(7834),o=a(6158),{prefix:i}=a(1824),{CLICK:l}=a(381),c=a(5826),d=`${i}-current`,u=`${i}-in-page-nav`,p=`${i}-anchor`,b=`${u}__nav`,f=`${u}__list`,h=`${u}__item`,m=`${u}__link`,g=`${u}__heading`,$=`${h}--sub-item`,y="main",A=t=>{const e=document.querySelectorAll(`.${m}`);t.map((t=>!0===t.isIntersecting&&t.intersectionRatio>=1&&(e.forEach((t=>t.classList.remove(d))),document.querySelector(`a[href="#${t.target.id}"]`).classList.add(d),!0)))},E=t=>{const e=document.querySelector(`.${u}`).dataset.scrollOffset||0;window.scroll({behavior:"smooth",top:t.offsetTop-e,block:"start"}),window.location.hash.slice(1)!==t.id&&window.history.pushState(null,"",`#${t.id}`)},v=o({[l]:{[`.${m}`](t){t.preventDefault(),this.disabled||(t=>{const e=document.getElementById(t.hash.slice(1));E(e)})(this)}},keydown:{[`.${m}`]:r({Enter:t=>{const e=(t=>{let e;return e=t&&1===t.nodeType?t.getAttribute("href").replace("#",""):t.target.hash.replace("#",""),e})(t),a=document.getElementById(e),r=a.parentElement;r&&(r.setAttribute("tabindex",0),r.focus(),r.addEventListener("blur",n((()=>{r.setAttribute("tabindex",-1)})))),E(a)}})}},{init(t){s(`.${u}`,t).forEach((t=>{(t=>{const e=c.escapeHTML`${t.dataset.titleText||"On this page"}`,a=c.escapeHTML`${t.dataset.titleHeadingLevel||"h4"}`,n={root:null,rootMargin:c.escapeHTML`${t.dataset.rootMargin||"0px 0px 0px 0px"}`,threshold:[c.escapeHTML`${t.dataset.threshold||"1"}`]},r=document.querySelectorAll(`${y} h2, ${y} h3`),s=document.createElement("nav");s.setAttribute("aria-label",e),s.classList.add(b);const o=document.createElement(a);o.classList.add(g),o.setAttribute("tabindex","0"),o.textContent=e,s.appendChild(o);const i=document.createElement("ul");i.classList.add(f),s.appendChild(i),r.forEach((t=>{const e=document.createElement("li"),a=document.createElement("a"),n=document.createElement("a"),r=t.textContent,s=t.tagName.toLowerCase();e.classList.add(h),"h3"===s&&e.classList.add($);const o=(t=>{const e=t.textContent.toLowerCase().replace(/[^a-z\d]/g,"-").replace(/-{2,}/g,"-").replace(/^-|-$/g,"");let a,n=0;do{a=e,n+=1,n>1&&(a+=`-${n}`)}while(document.getElementById(a));return a})(t);a.setAttribute("href",`#${o}`),a.setAttribute("class",m),a.textContent=r,n.setAttribute("id",o),n.setAttribute("class",p),t.insertAdjacentElement("afterbegin",n),i.appendChild(e),e.appendChild(a)})),t.appendChild(s);const l=document.querySelectorAll(`.${p}`),d=new window.IntersectionObserver(A,n);l.forEach((t=>{d.observe(t)}))})(t),(()=>{const t=window.location.hash.slice(1);if(t){const e=document.getElementById(t);e&&E(e)}})()}))}});t.exports=v},1369:(t,e,a)=>{const n=a(7834),r=a(6158),{prefix:s}=a(1824),o=`.${s}-masked`,i=`${s}-input-mask`,l=`${i}--content`,c="placeholder",d=t=>!Number.isNaN(parseInt(t,10)),u=t=>!!t&&t.match(/[A-Z]/i),p=r({keyup:{[o](){(t=>{const e=t,a=e.getAttribute("id");e.value=(t=>{const e=t.dataset.charset,a=e||t.dataset.placeholder,{value:n}=t,r=a.length;let s,o,i="";const l=((t,e)=>t?e.replace(/\W/g,""):e.replace(/\D/g,""))(e,n);for(s=0,o=0;s<r;s+=1){const t=d(l[o]),n=u(l[o]),r="_#dDmMyY9".indexOf(a[s])>=0,c="A".indexOf(a[s])>=0;if(r&&t||e&&c&&n)i+=l[o],o+=1;else{if(!e&&!t&&r||e&&(c&&!n||r&&!t))return i;i+=a[s]}if(void 0===l[o])break}return i})(e);const n=(t=>{const{value:e}=t,a=`${t.dataset.placeholder.substr(e.length)}`,n=document.createElement("i");return n.textContent=e,[n,a]})(t),r=document.getElementById(`${a}Mask`);r.textContent="",r.replaceChildren(n[0],n[1])})(this)}}},{init(t){n(o,t).forEach((t=>{(t=>{const e=t.getAttribute(`${c}`);if(!e)return;t.setAttribute("maxlength",e.length),t.setAttribute("data-placeholder",e),t.removeAttribute(`${c}`);const a=document.createElement("span");a.classList.add(i),a.setAttribute("data-mask",e);const n=document.createElement("span");n.classList.add(l),n.setAttribute("aria-hidden","true"),n.id=`${t.id}Mask`,n.textContent=e,a.appendChild(n),t.closest("form").insertBefore(a,t),a.appendChild(t)})(t)}))}});t.exports=p},10:(t,e,a)=>{const n=a(9361),r=a(6158),s=a(8497),o=a(3596),i=a(5075),{CLICK:l}=a(381),{prefix:c}=a(1824),d=`.${c}-language__submenu`,u=`.${c}-language__primary`,p=`.${c}-language__primary-item`,b=`button.${c}-language__link`;let f,h;const m=()=>f.toggleLanguage.call(f,!1),g=()=>{h&&(s(h,!1),h=null)};f=r({[l]:{[b](){return h!==this&&g(),h===this?(g(),!1):(h||(h=this,s(h,!0)),!1)},body:g,[`.${c}-language a`](){const t=this.closest(i.ACCORDION);t&&i.getButtons(t).forEach((t=>i.hide(t)))}},keydown:{[u]:n({Escape:t=>{g(),(t=>{const e=t.target.closest(p);t.target.matches(b)||e.querySelector(b).focus()})(t)}})},focusout:{[u](t){t.target.closest(u).contains(t.relatedTarget)||g()}}},{init(t){const e=t.matches(d)?t:t.querySelector(d);e&&(f.focusTrap=o(e,{Escape:m}))},teardown(){h=!1},focusTrap:null}),t.exports=f},5878:(t,e,a)=>{const n=a(7834),r=a(3596),s=a(8009),{prefix:o}=a(1824),i=`${o}-modal`,l=`${i}-overlay`,c=`${i}-wrapper`,d="data-open-modal",u="data-close-modal",p="data-force-action",b="data-modal-hidden",f=`.${i}`,h=`.${c} *[data-focus]`,m=`${c} *[${u}]`,g=`*[${d}][aria-controls]`,$=`${m}, .${l}:not([${p}])`,y=`body > *:not(.${c}):not([aria-hidden])`,A=`[${b}]`,E="usa-js-modal--active",v="is-hidden";let x;const w=s(),L=window.getComputedStyle(document.body).getPropertyValue("padding-right"),S=`${parseInt(L.replace(/px/,""),10)+parseInt(w.replace(/px/,""),10)}px`,_=()=>{x.toggleModal.call(x,!1)};function D(t){let e,a=t.target;const{body:n}=document,s=!document.body.classList.contains(E),o=a?a.getAttribute("aria-controls"):document.querySelector(".usa-modal-wrapper.is-visible"),l=s?document.getElementById(o):document.querySelector(".usa-modal-wrapper.is-visible");if(!l)return!1;const c=l.querySelector(h)?l.querySelector(h):l.querySelector(".usa-modal"),f=document.getElementById(l.getAttribute("data-opener")),$=n.querySelector(g),w=l.getAttribute(p);return"keydown"===t.type&&null!==l&&(a=l.querySelector(m)),!(a&&(a.hasAttribute(d)&&(null===this.getAttribute("id")?(e=`modal-${Math.floor(9e5*Math.random())+1e5}`,this.setAttribute("id",e)):e=this.getAttribute("id"),l.setAttribute("data-opener",e)),a.closest(`.${i}`)&&!a.hasAttribute(u)&&!a.closest(`[${u}]`)))&&(n.classList.toggle(E,s),l.classList.toggle("is-visible",s),l.classList.toggle(v,!s),w&&n.classList.toggle("usa-js-no-click",s),n.style.paddingRight=n.style.paddingRight===S?L:S,s&&c?(x.focusTrap=w?r(l):r(l,{Escape:_}),x.focusTrap.update(s),c.focus(),document.querySelectorAll(y).forEach((t=>{t.setAttribute("aria-hidden","true"),t.setAttribute(b,"")}))):!s&&$&&f&&(document.querySelectorAll(A).forEach((t=>{t.removeAttribute("aria-hidden"),t.removeAttribute(b)})),f.focus(),x.focusTrap.update(s)),s)}x={init(t){n(f,t).forEach((t=>{const e=t.id;(t=>{const e=t,a=document.createElement("div"),n=document.createElement("div"),r=t.getAttribute("id"),s=t.getAttribute("aria-labelledby"),o=t.getAttribute("aria-describedby"),i=!!t.hasAttribute(p)&&t.hasAttribute(p),d=document.createElement("div");d.setAttribute("data-placeholder-for",r),d.style.display="none",d.setAttribute("aria-hidden","true");for(let t=0;t<e.attributes.length;t+=1){const a=e.attributes[t];d.setAttribute(`data-original-${a.name}`,a.value)}e.after(d),e.parentNode.insertBefore(a,e),a.appendChild(e),e.parentNode.insertBefore(n,e),n.appendChild(e),a.classList.add(v),a.classList.add(c),n.classList.add(l),a.setAttribute("role","dialog"),a.setAttribute("id",r),s&&a.setAttribute("aria-labelledby",s),o&&a.setAttribute("aria-describedby",o),i&&a.setAttribute(p,"true"),t.removeAttribute("id"),t.removeAttribute("aria-labelledby"),t.removeAttribute("aria-describedby"),t.setAttribute("tabindex","-1"),a.querySelectorAll($).forEach((t=>{t.setAttribute("aria-controls",r)})),document.body.appendChild(a)})(t),document.querySelectorAll(`[aria-controls="${e}"]`).forEach((t=>{"A"===t.nodeName&&(t.setAttribute("role","button"),t.addEventListener("click",(t=>t.preventDefault()))),t.addEventListener("click",D)}))}))},teardown(t){n(f,t).forEach((t=>{(t=>{const e=t,a=e.parentElement.parentElement,n=a.getAttribute("id"),r=document.querySelector(`[data-placeholder-for="${n}"]`);if(r){for(let t=0;t<r.attributes.length;t+=1){const a=r.attributes[t];a.name.startsWith("data-original-")&&e.setAttribute(a.name.substr(14),a.value)}r.after(e),r.parentElement.removeChild(r)}a.parentElement.removeChild(a)})(t);const e=t.id;document.querySelectorAll(`[aria-controls="${e}"]`).forEach((t=>t.removeEventListener("click",D)))}))},focusTrap:null,toggleModal:D,on(t){this.init(t)},off(t){this.teardown(t)}},t.exports=x},905:(t,e,a)=>{const n=a(9439),r=a(6158),s=a(4900),{CLICK:o}=a(381),i=".js-search-button",l=".js-search-form",c="header";let d;const u=(t,e)=>{const a=(t=>{const e=t.closest(c);return e?e.querySelector(l):document.querySelector(l)})(t);if(!a)throw new Error(`No ${l} found for search toggle in ${c}!`);if(t.hidden=e,a.hidden=!e,!e)return;const r=a.querySelector("[type=search]");r&&r.focus();const s=n(a,(()=>{d&&p.call(d),document.body.removeEventListener(o,s)}));setTimeout((()=>{document.body.addEventListener(o,s)}),0)};function p(){u(this,!1),d=void 0}const b=r({[o]:{[i]:function(){u(this,!0),d=this}}},{init(t){s(i,t).forEach((t=>{u(t,!1)}))},teardown(){d=void 0}});t.exports=b},9246:(t,e,a)=>{const n=a(5689),r=a(6158),{CLICK:s}=a(381),{prefix:o}=a(1824),i=`.${o}-skipnav[href^="#"], .${o}-footer__return-to-top [href^="#"]`;t.exports=r({[s]:{[i]:function(){const t=encodeURI(this.getAttribute("href")),e=document.getElementById("#"===t?"main-content":t.slice(1));e&&(e.style.outline="0",e.setAttribute("tabindex",0),e.focus(),e.addEventListener("blur",n((()=>{e.setAttribute("tabindex",-1)}))))}}})},3473:(t,e,a)=>{const n=a(4900),r=a(6158),{CLICK:s}=a(381),{prefix:o}=a(1824),i=a(5826),l=`.${o}-table`,c="aria-sort",d="ascending",u="descending",p=`${o}-table__header__button`,b=`.${p}`,f="th[data-sortable]",h=`.${o}-table__announcement-region[aria-live="polite"]`,m=(t,e)=>t.children[e].getAttribute("data-sort-value")||t.children[e].innerText||t.children[e].textContent,g=t=>{const e=t.innerText,a=t.getAttribute(c)===d,n=`${e}, sortable column, currently ${t.getAttribute(c)===d||t.getAttribute(c)===u?a?`sorted ${d}`:`sorted ${u}`:"unsorted"}`,r=`Click to sort by ${e} in ${a?u:d} order.`;t.setAttribute("aria-label",n),t.querySelector(b).setAttribute("title",r)},$=(t,e)=>{const a=t.closest(l);let r=e;if("boolean"!=typeof r&&(r=t.getAttribute(c)===d),!a)throw new Error(`${f} is missing outer ${l}`);r=((t,e)=>{t.setAttribute(c,!0===e?u:d),g(t);const a=t.closest(l).querySelector("tbody"),n=[].slice.call(a.querySelectorAll("tr")),r=[].slice.call(t.parentNode.children).indexOf(t);return n.sort(((t,e)=>(a,n)=>{const r=m(e?a:n,t),s=m(e?n:a,t);return r&&s&&!Number.isNaN(Number(r))&&!Number.isNaN(Number(s))?r-s:r.toString().localeCompare(s,navigator.language,{numeric:!0,ignorePunctuation:!0})})(r,!e)).forEach((t=>{[].slice.call(t.children).forEach((t=>t.removeAttribute("data-sort-active"))),t.children[r].setAttribute("data-sort-active",!0),a.appendChild(t)})),!0})(t,e),r&&((t=>n(f,t).filter((e=>e.closest(l)===t)))(a).forEach((e=>{e!==t&&(t=>{t.removeAttribute(c),g(t)})(e)})),((t,e)=>{const a=t.querySelector("caption").innerText,n=e.getAttribute(c)===d,r=e.innerText,s=t.nextElementSibling;if(!s||!s.matches(h))throw new Error("Table containing a sortable column header is not followed by an aria-live region.");{const t=`The table named "${a}" is now sorted by ${r} in ${n?d:u} order.`;s.innerText=t}})(a,t))},y=r({[s]:{[b](t){t.preventDefault(),$(t.target.closest(f),t.target.closest(f).getAttribute(c)===d)}}},{init(t){const e=n(f,t);e.forEach((t=>(t=>{const e=document.createElement("button");e.setAttribute("tabindex","0"),e.classList.add(p),e.innerHTML=i.escapeHTML`
-  <svg class="${o}-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    `;
+
+  const table = document.createElement("table");
+  table.setAttribute("class", CALENDAR_TABLE_CLASS);
+  table.setAttribute("role", "presentation");
+
+  const tableHead = document.createElement("thead");
+  table.insertAdjacentElement("beforeend", tableHead);
+  const tableHeadRow = document.createElement("tr");
+  tableHead.insertAdjacentElement("beforeend", tableHeadRow);
+
+  const daysOfWeek = {
+    Sunday: "S",
+    Monday: "M",
+    Tuesday: "T",
+    Wednesday: "W",
+    Thursday: "Th",
+    Friday: "Fr",
+    Saturday: "S",
+  };
+
+  Object.keys(daysOfWeek).forEach((key) => {
+    const th = document.createElement("th");
+    th.setAttribute("class", CALENDAR_DAY_OF_WEEK_CLASS);
+    th.setAttribute("scope", "presentation");
+    th.setAttribute("aria-label", key);
+    th.textContent = daysOfWeek[key];
+    tableHeadRow.insertAdjacentElement("beforeend", th);
+  });
+
+  const tableBody = createTableBody(datesGrid);
+  table.insertAdjacentElement("beforeend", tableBody);
+
+  // Container for Years, Months, and Days
+  const datePickerCalendarContainer =
+    newCalendar.querySelector(CALENDAR_DATE_PICKER);
+
+  datePickerCalendarContainer.insertAdjacentElement("beforeend", table);
+
+  calendarEl.parentNode.replaceChild(newCalendar, calendarEl);
+
+  datePickerEl.classList.add(DATE_PICKER_ACTIVE_CLASS);
+
+  const statuses = [];
+
+  if (isSameDay(selectedDate, focusedDate)) {
+    statuses.push("Selected date");
+  }
+
+  if (calendarWasHidden) {
+    statuses.push(
+      "You can navigate by day using left and right arrows",
+      "Weeks by using up and down arrows",
+      "Months by using page up and page down keys",
+      "Years by using shift plus page up and shift plus page down",
+      "Home and end keys navigate to the beginning and end of a week"
+    );
+    statusEl.textContent = "";
+  } else {
+    statuses.push(`${monthLabel} ${focusedYear}`);
+  }
+  statusEl.textContent = statuses.join(". ");
+
+  return newCalendar;
+};
+
+/**
+ * Navigate back one year and display the calendar.
+ *
+ * @param {HTMLButtonElement} _buttonEl An element within the date picker component
+ */
+const displayPreviousYear = (_buttonEl) => {
+  if (_buttonEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(_buttonEl);
+  let date = subYears(calendarDate, 1);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_PREVIOUS_YEAR);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_DATE_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Navigate back one month and display the calendar.
+ *
+ * @param {HTMLButtonElement} _buttonEl An element within the date picker component
+ */
+const displayPreviousMonth = (_buttonEl) => {
+  if (_buttonEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(_buttonEl);
+  let date = subMonths(calendarDate, 1);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_PREVIOUS_MONTH);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_DATE_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Navigate forward one month and display the calendar.
+ *
+ * @param {HTMLButtonElement} _buttonEl An element within the date picker component
+ */
+const displayNextMonth = (_buttonEl) => {
+  if (_buttonEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(_buttonEl);
+  let date = addMonths(calendarDate, 1);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_NEXT_MONTH);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_DATE_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Navigate forward one year and display the calendar.
+ *
+ * @param {HTMLButtonElement} _buttonEl An element within the date picker component
+ */
+const displayNextYear = (_buttonEl) => {
+  if (_buttonEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(_buttonEl);
+  let date = addYears(calendarDate, 1);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_NEXT_YEAR);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_DATE_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Hide the calendar of a date picker component.
+ *
+ * @param {HTMLElement} el An element within the date picker component
+ */
+const hideCalendar = (el) => {
+  const { datePickerEl, calendarEl, statusEl } = getDatePickerContext(el);
+
+  datePickerEl.classList.remove(DATE_PICKER_ACTIVE_CLASS);
+  calendarEl.hidden = true;
+  statusEl.textContent = "";
+};
+
+/**
+ * Select a date within the date picker component.
+ *
+ * @param {HTMLButtonElement} calendarDateEl A date element within the date picker component
+ */
+const selectDate = (calendarDateEl) => {
+  if (calendarDateEl.disabled) return;
+
+  const { datePickerEl, externalInputEl } =
+    getDatePickerContext(calendarDateEl);
+
+  setCalendarValue(calendarDateEl, calendarDateEl.dataset.value);
+  hideCalendar(datePickerEl);
+
+  externalInputEl.focus();
+};
+
+/**
+ * Toggle the calendar.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ */
+const toggleCalendar = (el) => {
+  if (el.disabled) return;
+  const { calendarEl, inputDate, minDate, maxDate, defaultDate } =
+    getDatePickerContext(el);
+
+  if (calendarEl.hidden) {
+    const dateToDisplay = keepDateBetweenMinAndMax(
+      inputDate || defaultDate || today(),
+      minDate,
+      maxDate
+    );
+    const newCalendar = renderCalendar(calendarEl, dateToDisplay);
+    newCalendar.querySelector(CALENDAR_DATE_FOCUSED).focus();
+  } else {
+    hideCalendar(el);
+  }
+};
+
+/**
+ * Update the calendar when visible.
+ *
+ * @param {HTMLElement} el an element within the date picker
+ */
+const updateCalendarIfVisible = (el) => {
+  const { calendarEl, inputDate, minDate, maxDate } = getDatePickerContext(el);
+  const calendarShown = !calendarEl.hidden;
+
+  if (calendarShown && inputDate) {
+    const dateToDisplay = keepDateBetweenMinAndMax(inputDate, minDate, maxDate);
+    renderCalendar(calendarEl, dateToDisplay);
+  }
+};
+
+// #endregion Calendar - Date Selection View
+
+// #region Calendar - Month Selection View
+/**
+ * Display the month selection screen in the date picker.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ * @returns {HTMLElement} a reference to the new calendar element
+ */
+const displayMonthSelection = (el, monthToDisplay) => {
+  const { calendarEl, statusEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(el);
+
+  const selectedMonth = calendarDate.getMonth();
+  const focusedMonth = monthToDisplay == null ? selectedMonth : monthToDisplay;
+
+  const months = MONTH_LABELS.map((month, index) => {
+    const monthToCheck = setMonth(calendarDate, index);
+
+    const isDisabled = isDatesMonthOutsideMinOrMax(
+      monthToCheck,
+      minDate,
+      maxDate
+    );
+
+    let tabindex = "-1";
+
+    const classes = [CALENDAR_MONTH_CLASS];
+    const isSelected = index === selectedMonth;
+
+    if (index === focusedMonth) {
+      tabindex = "0";
+      classes.push(CALENDAR_MONTH_FOCUSED_CLASS);
+    }
+
+    if (isSelected) {
+      classes.push(CALENDAR_MONTH_SELECTED_CLASS);
+    }
+
+    const btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("tabindex", tabindex);
+    btn.setAttribute("class", classes.join(" "));
+    btn.setAttribute("data-value", index);
+    btn.setAttribute("data-label", month);
+    btn.setAttribute("aria-selected", isSelected ? "true" : "false");
+    if (isDisabled === true) {
+      btn.disabled = true;
+    }
+    btn.textContent = month;
+
+    return btn;
+  });
+
+  const monthsHtml = document.createElement("div");
+  monthsHtml.setAttribute("tabindex", "-1");
+  monthsHtml.setAttribute("class", CALENDAR_MONTH_PICKER_CLASS);
+
+  const table = document.createElement("table");
+  table.setAttribute("class", CALENDAR_TABLE_CLASS);
+  table.setAttribute("role", "presentation");
+
+  const monthsGrid = listToGridHtml(months, 3);
+  const tableBody = createTableBody(monthsGrid);
+  table.insertAdjacentElement("beforeend", tableBody);
+  monthsHtml.insertAdjacentElement("beforeend", table);
+
+  const newCalendar = calendarEl.cloneNode();
+  newCalendar.insertAdjacentElement("beforeend", monthsHtml);
+  calendarEl.parentNode.replaceChild(newCalendar, calendarEl);
+
+  statusEl.textContent = "Select a month.";
+
+  return newCalendar;
+};
+
+/**
+ * Select a month in the date picker component.
+ *
+ * @param {HTMLButtonElement} monthEl An month element within the date picker component
+ */
+const selectMonth = (monthEl) => {
+  if (monthEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(monthEl);
+  const selectedMonth = parseInt(monthEl.dataset.value, 10);
+  let date = setMonth(calendarDate, selectedMonth);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+  newCalendar.querySelector(CALENDAR_DATE_FOCUSED).focus();
+};
+
+// #endregion Calendar - Month Selection View
+
+// #region Calendar - Year Selection View
+
+/**
+ * Display the year selection screen in the date picker.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ * @param {number} yearToDisplay year to display in year selection
+ * @returns {HTMLElement} a reference to the new calendar element
+ */
+const displayYearSelection = (el, yearToDisplay) => {
+  const { calendarEl, statusEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(el);
+
+  const selectedYear = calendarDate.getFullYear();
+  const focusedYear = yearToDisplay == null ? selectedYear : yearToDisplay;
+
+  let yearToChunk = focusedYear;
+  yearToChunk -= yearToChunk % YEAR_CHUNK;
+  yearToChunk = Math.max(0, yearToChunk);
+
+  const prevYearChunkDisabled = isDatesYearOutsideMinOrMax(
+    setYear(calendarDate, yearToChunk - 1),
+    minDate,
+    maxDate
+  );
+
+  const nextYearChunkDisabled = isDatesYearOutsideMinOrMax(
+    setYear(calendarDate, yearToChunk + YEAR_CHUNK),
+    minDate,
+    maxDate
+  );
+
+  const years = [];
+  let yearIndex = yearToChunk;
+  while (years.length < YEAR_CHUNK) {
+    const isDisabled = isDatesYearOutsideMinOrMax(
+      setYear(calendarDate, yearIndex),
+      minDate,
+      maxDate
+    );
+
+    let tabindex = "-1";
+
+    const classes = [CALENDAR_YEAR_CLASS];
+    const isSelected = yearIndex === selectedYear;
+
+    if (yearIndex === focusedYear) {
+      tabindex = "0";
+      classes.push(CALENDAR_YEAR_FOCUSED_CLASS);
+    }
+
+    if (isSelected) {
+      classes.push(CALENDAR_YEAR_SELECTED_CLASS);
+    }
+
+    const btn = document.createElement("button");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("tabindex", tabindex);
+    btn.setAttribute("class", classes.join(" "));
+    btn.setAttribute("data-value", yearIndex);
+    btn.setAttribute("aria-selected", isSelected ? "true" : "false");
+    if (isDisabled === true) {
+      btn.disabled = true;
+    }
+    btn.textContent = yearIndex;
+
+    years.push(btn);
+    yearIndex += 1;
+  }
+
+  const newCalendar = calendarEl.cloneNode();
+
+  // create the years calendar wrapper
+  const yearsCalendarWrapper = document.createElement("div");
+  yearsCalendarWrapper.setAttribute("tabindex", "-1");
+  yearsCalendarWrapper.setAttribute("class", CALENDAR_YEAR_PICKER_CLASS);
+
+  // create table parent
+  const yearsTableParent = document.createElement("table");
+  yearsTableParent.setAttribute("role", "presentation");
+  yearsTableParent.setAttribute("class", CALENDAR_TABLE_CLASS);
+
+  // create table body and table row
+  const yearsHTMLTableBody = document.createElement("tbody");
+  const yearsHTMLTableBodyRow = document.createElement("tr");
+
+  // create previous button
+  const previousYearsBtn = document.createElement("button");
+  previousYearsBtn.setAttribute("type", "button");
+  previousYearsBtn.setAttribute("class", CALENDAR_PREVIOUS_YEAR_CHUNK_CLASS);
+  previousYearsBtn.setAttribute(
+    "aria-label",
+    `Navigate back ${YEAR_CHUNK} years`
+  );
+  if (prevYearChunkDisabled === true) {
+    previousYearsBtn.disabled = true;
+  }
+  previousYearsBtn.innerHTML = Sanitizer.escapeHTML`&nbsp`;
+
+  // create next button
+  const nextYearsBtn = document.createElement("button");
+  nextYearsBtn.setAttribute("type", "button");
+  nextYearsBtn.setAttribute("class", CALENDAR_NEXT_YEAR_CHUNK_CLASS);
+  nextYearsBtn.setAttribute(
+    "aria-label",
+    `Navigate forward ${YEAR_CHUNK} years`
+  );
+  if (nextYearChunkDisabled === true) {
+    nextYearsBtn.disabled = true;
+  }
+  nextYearsBtn.innerHTML = Sanitizer.escapeHTML`&nbsp`;
+
+  // create the actual years table
+  const yearsTable = document.createElement("table");
+  yearsTable.setAttribute("class", CALENDAR_TABLE_CLASS);
+  yearsTable.setAttribute("role", "presentation");
+
+  // create the years child table
+  const yearsGrid = listToGridHtml(years, 3);
+  const yearsTableBody = createTableBody(yearsGrid);
+
+  // append the grid to the years child table
+  yearsTable.insertAdjacentElement("beforeend", yearsTableBody);
+
+  // create the prev button td and append the prev button
+  const yearsHTMLTableBodyDetailPrev = document.createElement("td");
+  yearsHTMLTableBodyDetailPrev.insertAdjacentElement(
+    "beforeend",
+    previousYearsBtn
+  );
+
+  // create the years td and append the years child table
+  const yearsHTMLTableBodyYearsDetail = document.createElement("td");
+  yearsHTMLTableBodyYearsDetail.setAttribute("colspan", "3");
+  yearsHTMLTableBodyYearsDetail.insertAdjacentElement("beforeend", yearsTable);
+
+  // create the next button td and append the next button
+  const yearsHTMLTableBodyDetailNext = document.createElement("td");
+  yearsHTMLTableBodyDetailNext.insertAdjacentElement("beforeend", nextYearsBtn);
+
+  // append the three td to the years child table row
+  yearsHTMLTableBodyRow.insertAdjacentElement(
+    "beforeend",
+    yearsHTMLTableBodyDetailPrev
+  );
+  yearsHTMLTableBodyRow.insertAdjacentElement(
+    "beforeend",
+    yearsHTMLTableBodyYearsDetail
+  );
+  yearsHTMLTableBodyRow.insertAdjacentElement(
+    "beforeend",
+    yearsHTMLTableBodyDetailNext
+  );
+
+  // append the table row to the years child table body
+  yearsHTMLTableBody.insertAdjacentElement("beforeend", yearsHTMLTableBodyRow);
+
+  // append the years table body to the years parent table
+  yearsTableParent.insertAdjacentElement("beforeend", yearsHTMLTableBody);
+
+  // append the parent table to the calendar wrapper
+  yearsCalendarWrapper.insertAdjacentElement("beforeend", yearsTableParent);
+
+  // append the years calender to the new calendar
+  newCalendar.insertAdjacentElement("beforeend", yearsCalendarWrapper);
+
+  // replace calendar
+  calendarEl.parentNode.replaceChild(newCalendar, calendarEl);
+
+  statusEl.textContent = Sanitizer.escapeHTML`Showing years ${yearToChunk} to ${
+    yearToChunk + YEAR_CHUNK - 1
+  }. Select a year.`;
+
+  return newCalendar;
+};
+
+/**
+ * Navigate back by years and display the year selection screen.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ */
+const displayPreviousYearChunk = (el) => {
+  if (el.disabled) return;
+
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(el);
+  const yearEl = calendarEl.querySelector(CALENDAR_YEAR_FOCUSED);
+  const selectedYear = parseInt(yearEl.textContent, 10);
+
+  let adjustedYear = selectedYear - YEAR_CHUNK;
+  adjustedYear = Math.max(0, adjustedYear);
+
+  const date = setYear(calendarDate, adjustedYear);
+  const cappedDate = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = displayYearSelection(
+    calendarEl,
+    cappedDate.getFullYear()
+  );
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_PREVIOUS_YEAR_CHUNK);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_YEAR_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Navigate forward by years and display the year selection screen.
+ *
+ * @param {HTMLButtonElement} el An element within the date picker component
+ */
+const displayNextYearChunk = (el) => {
+  if (el.disabled) return;
+
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(el);
+  const yearEl = calendarEl.querySelector(CALENDAR_YEAR_FOCUSED);
+  const selectedYear = parseInt(yearEl.textContent, 10);
+
+  let adjustedYear = selectedYear + YEAR_CHUNK;
+  adjustedYear = Math.max(0, adjustedYear);
+
+  const date = setYear(calendarDate, adjustedYear);
+  const cappedDate = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = displayYearSelection(
+    calendarEl,
+    cappedDate.getFullYear()
+  );
+
+  let nextToFocus = newCalendar.querySelector(CALENDAR_NEXT_YEAR_CHUNK);
+  if (nextToFocus.disabled) {
+    nextToFocus = newCalendar.querySelector(CALENDAR_YEAR_PICKER);
+  }
+  nextToFocus.focus();
+};
+
+/**
+ * Select a year in the date picker component.
+ *
+ * @param {HTMLButtonElement} yearEl A year element within the date picker component
+ */
+const selectYear = (yearEl) => {
+  if (yearEl.disabled) return;
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(yearEl);
+  const selectedYear = parseInt(yearEl.innerHTML, 10);
+  let date = setYear(calendarDate, selectedYear);
+  date = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  const newCalendar = renderCalendar(calendarEl, date);
+  newCalendar.querySelector(CALENDAR_DATE_FOCUSED).focus();
+};
+
+// #endregion Calendar - Year Selection View
+
+// #region Calendar Event Handling
+
+/**
+ * Hide the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleEscapeFromCalendar = (event) => {
+  const { datePickerEl, externalInputEl } = getDatePickerContext(event.target);
+
+  hideCalendar(datePickerEl);
+  externalInputEl.focus();
+
+  event.preventDefault();
+};
+
+// #endregion Calendar Event Handling
+
+// #region Calendar Date Event Handling
+
+/**
+ * Adjust the date and display the calendar if needed.
+ *
+ * @param {function} adjustDateFn function that returns the adjusted date
+ */
+const adjustCalendar = (adjustDateFn) => (event) => {
+  const { calendarEl, calendarDate, minDate, maxDate } = getDatePickerContext(
+    event.target
+  );
+
+  const date = adjustDateFn(calendarDate);
+
+  const cappedDate = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  if (!isSameDay(calendarDate, cappedDate)) {
+    const newCalendar = renderCalendar(calendarEl, cappedDate);
+    newCalendar.querySelector(CALENDAR_DATE_FOCUSED).focus();
+  }
+  event.preventDefault();
+};
+
+/**
+ * Navigate back one week and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleUpFromDate = adjustCalendar((date) => subWeeks(date, 1));
+
+/**
+ * Navigate forward one week and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleDownFromDate = adjustCalendar((date) => addWeeks(date, 1));
+
+/**
+ * Navigate back one day and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleLeftFromDate = adjustCalendar((date) => subDays(date, 1));
+
+/**
+ * Navigate forward one day and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleRightFromDate = adjustCalendar((date) => addDays(date, 1));
+
+/**
+ * Navigate to the start of the week and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleHomeFromDate = adjustCalendar((date) => startOfWeek(date));
+
+/**
+ * Navigate to the end of the week and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleEndFromDate = adjustCalendar((date) => endOfWeek(date));
+
+/**
+ * Navigate forward one month and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageDownFromDate = adjustCalendar((date) => addMonths(date, 1));
+
+/**
+ * Navigate back one month and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageUpFromDate = adjustCalendar((date) => subMonths(date, 1));
+
+/**
+ * Navigate forward one year and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleShiftPageDownFromDate = adjustCalendar((date) => addYears(date, 1));
+
+/**
+ * Navigate back one year and display the calendar.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleShiftPageUpFromDate = adjustCalendar((date) => subYears(date, 1));
+
+/**
+ * display the calendar for the mouseover date.
+ *
+ * @param {MouseEvent} event The mouseover event
+ * @param {HTMLButtonElement} dateEl A date element within the date picker component
+ */
+const handleMouseoverFromDate = (dateEl) => {
+  if (dateEl.disabled) return;
+
+  const calendarEl = dateEl.closest(DATE_PICKER_CALENDAR);
+
+  const currentCalendarDate = calendarEl.dataset.value;
+  const hoverDate = dateEl.dataset.value;
+
+  if (hoverDate === currentCalendarDate) return;
+
+  const dateToDisplay = parseDateString(hoverDate);
+  const newCalendar = renderCalendar(calendarEl, dateToDisplay);
+  newCalendar.querySelector(CALENDAR_DATE_FOCUSED).focus();
+};
+
+// #endregion Calendar Date Event Handling
+
+// #region Calendar Month Event Handling
+
+/**
+ * Adjust the month and display the month selection screen if needed.
+ *
+ * @param {function} adjustMonthFn function that returns the adjusted month
+ */
+const adjustMonthSelectionScreen = (adjustMonthFn) => (event) => {
+  const monthEl = event.target;
+  const selectedMonth = parseInt(monthEl.dataset.value, 10);
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(monthEl);
+  const currentDate = setMonth(calendarDate, selectedMonth);
+
+  let adjustedMonth = adjustMonthFn(selectedMonth);
+  adjustedMonth = Math.max(0, Math.min(11, adjustedMonth));
+
+  const date = setMonth(calendarDate, adjustedMonth);
+  const cappedDate = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  if (!isSameMonth(currentDate, cappedDate)) {
+    const newCalendar = displayMonthSelection(
+      calendarEl,
+      cappedDate.getMonth()
+    );
+    newCalendar.querySelector(CALENDAR_MONTH_FOCUSED).focus();
+  }
+  event.preventDefault();
+};
+
+/**
+ * Navigate back three months and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleUpFromMonth = adjustMonthSelectionScreen((month) => month - 3);
+
+/**
+ * Navigate forward three months and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleDownFromMonth = adjustMonthSelectionScreen((month) => month + 3);
+
+/**
+ * Navigate back one month and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleLeftFromMonth = adjustMonthSelectionScreen((month) => month - 1);
+
+/**
+ * Navigate forward one month and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleRightFromMonth = adjustMonthSelectionScreen((month) => month + 1);
+
+/**
+ * Navigate to the start of the row of months and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleHomeFromMonth = adjustMonthSelectionScreen(
+  (month) => month - (month % 3)
+);
+
+/**
+ * Navigate to the end of the row of months and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleEndFromMonth = adjustMonthSelectionScreen(
+  (month) => month + 2 - (month % 3)
+);
+
+/**
+ * Navigate to the last month (December) and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageDownFromMonth = adjustMonthSelectionScreen(() => 11);
+
+/**
+ * Navigate to the first month (January) and display the month selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageUpFromMonth = adjustMonthSelectionScreen(() => 0);
+
+/**
+ * update the focus on a month when the mouse moves.
+ *
+ * @param {MouseEvent} event The mouseover event
+ * @param {HTMLButtonElement} monthEl A month element within the date picker component
+ */
+const handleMouseoverFromMonth = (monthEl) => {
+  if (monthEl.disabled) return;
+  if (monthEl.classList.contains(CALENDAR_MONTH_FOCUSED_CLASS)) return;
+
+  const focusMonth = parseInt(monthEl.dataset.value, 10);
+
+  const newCalendar = displayMonthSelection(monthEl, focusMonth);
+  newCalendar.querySelector(CALENDAR_MONTH_FOCUSED).focus();
+};
+
+// #endregion Calendar Month Event Handling
+
+// #region Calendar Year Event Handling
+
+/**
+ * Adjust the year and display the year selection screen if needed.
+ *
+ * @param {function} adjustYearFn function that returns the adjusted year
+ */
+const adjustYearSelectionScreen = (adjustYearFn) => (event) => {
+  const yearEl = event.target;
+  const selectedYear = parseInt(yearEl.dataset.value, 10);
+  const { calendarEl, calendarDate, minDate, maxDate } =
+    getDatePickerContext(yearEl);
+  const currentDate = setYear(calendarDate, selectedYear);
+
+  let adjustedYear = adjustYearFn(selectedYear);
+  adjustedYear = Math.max(0, adjustedYear);
+
+  const date = setYear(calendarDate, adjustedYear);
+  const cappedDate = keepDateBetweenMinAndMax(date, minDate, maxDate);
+  if (!isSameYear(currentDate, cappedDate)) {
+    const newCalendar = displayYearSelection(
+      calendarEl,
+      cappedDate.getFullYear()
+    );
+    newCalendar.querySelector(CALENDAR_YEAR_FOCUSED).focus();
+  }
+  event.preventDefault();
+};
+
+/**
+ * Navigate back three years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleUpFromYear = adjustYearSelectionScreen((year) => year - 3);
+
+/**
+ * Navigate forward three years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleDownFromYear = adjustYearSelectionScreen((year) => year + 3);
+
+/**
+ * Navigate back one year and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleLeftFromYear = adjustYearSelectionScreen((year) => year - 1);
+
+/**
+ * Navigate forward one year and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleRightFromYear = adjustYearSelectionScreen((year) => year + 1);
+
+/**
+ * Navigate to the start of the row of years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleHomeFromYear = adjustYearSelectionScreen(
+  (year) => year - (year % 3)
+);
+
+/**
+ * Navigate to the end of the row of years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handleEndFromYear = adjustYearSelectionScreen(
+  (year) => year + 2 - (year % 3)
+);
+
+/**
+ * Navigate to back 12 years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageUpFromYear = adjustYearSelectionScreen(
+  (year) => year - YEAR_CHUNK
+);
+
+/**
+ * Navigate forward 12 years and display the year selection screen.
+ *
+ * @param {KeyboardEvent} event the keydown event
+ */
+const handlePageDownFromYear = adjustYearSelectionScreen(
+  (year) => year + YEAR_CHUNK
+);
+
+/**
+ * update the focus on a year when the mouse moves.
+ *
+ * @param {MouseEvent} event The mouseover event
+ * @param {HTMLButtonElement} dateEl A year element within the date picker component
+ */
+const handleMouseoverFromYear = (yearEl) => {
+  if (yearEl.disabled) return;
+  if (yearEl.classList.contains(CALENDAR_YEAR_FOCUSED_CLASS)) return;
+
+  const focusYear = parseInt(yearEl.dataset.value, 10);
+
+  const newCalendar = displayYearSelection(yearEl, focusYear);
+  newCalendar.querySelector(CALENDAR_YEAR_FOCUSED).focus();
+};
+
+// #endregion Calendar Year Event Handling
+
+// #region Focus Handling Event Handling
+
+const tabHandler = (focusable) => {
+  const getFocusableContext = (el) => {
+    const { calendarEl } = getDatePickerContext(el);
+    const focusableElements = select(focusable, calendarEl);
+
+    const firstTabIndex = 0;
+    const lastTabIndex = focusableElements.length - 1;
+    const firstTabStop = focusableElements[firstTabIndex];
+    const lastTabStop = focusableElements[lastTabIndex];
+    const focusIndex = focusableElements.indexOf(activeElement());
+
+    const isLastTab = focusIndex === lastTabIndex;
+    const isFirstTab = focusIndex === firstTabIndex;
+    const isNotFound = focusIndex === -1;
+
+    return {
+      focusableElements,
+      isNotFound,
+      firstTabStop,
+      isFirstTab,
+      lastTabStop,
+      isLastTab,
+    };
+  };
+
+  return {
+    tabAhead(event) {
+      const { firstTabStop, isLastTab, isNotFound } = getFocusableContext(
+        event.target
+      );
+
+      if (isLastTab || isNotFound) {
+        event.preventDefault();
+        firstTabStop.focus();
+      }
+    },
+    tabBack(event) {
+      const { lastTabStop, isFirstTab, isNotFound } = getFocusableContext(
+        event.target
+      );
+
+      if (isFirstTab || isNotFound) {
+        event.preventDefault();
+        lastTabStop.focus();
+      }
+    },
+  };
+};
+
+const datePickerTabEventHandler = tabHandler(DATE_PICKER_FOCUSABLE);
+const monthPickerTabEventHandler = tabHandler(MONTH_PICKER_FOCUSABLE);
+const yearPickerTabEventHandler = tabHandler(YEAR_PICKER_FOCUSABLE);
+
+// #endregion Focus Handling Event Handling
+
+// #region Date Picker Event Delegation Registration / Component
+
+const datePickerEvents = {
+  [CLICK]: {
+    [DATE_PICKER_BUTTON]() {
+      toggleCalendar(this);
+    },
+    [CALENDAR_DATE]() {
+      selectDate(this);
+    },
+    [CALENDAR_MONTH]() {
+      selectMonth(this);
+    },
+    [CALENDAR_YEAR]() {
+      selectYear(this);
+    },
+    [CALENDAR_PREVIOUS_MONTH]() {
+      displayPreviousMonth(this);
+    },
+    [CALENDAR_NEXT_MONTH]() {
+      displayNextMonth(this);
+    },
+    [CALENDAR_PREVIOUS_YEAR]() {
+      displayPreviousYear(this);
+    },
+    [CALENDAR_NEXT_YEAR]() {
+      displayNextYear(this);
+    },
+    [CALENDAR_PREVIOUS_YEAR_CHUNK]() {
+      displayPreviousYearChunk(this);
+    },
+    [CALENDAR_NEXT_YEAR_CHUNK]() {
+      displayNextYearChunk(this);
+    },
+    [CALENDAR_MONTH_SELECTION]() {
+      const newCalendar = displayMonthSelection(this);
+      newCalendar.querySelector(CALENDAR_MONTH_FOCUSED).focus();
+    },
+    [CALENDAR_YEAR_SELECTION]() {
+      const newCalendar = displayYearSelection(this);
+      newCalendar.querySelector(CALENDAR_YEAR_FOCUSED).focus();
+    },
+  },
+  keyup: {
+    [DATE_PICKER_CALENDAR](event) {
+      const keydown = this.dataset.keydownKeyCode;
+      if (`${event.keyCode}` !== keydown) {
+        event.preventDefault();
+      }
+    },
+  },
+  keydown: {
+    [DATE_PICKER_EXTERNAL_INPUT](event) {
+      if (event.keyCode === ENTER_KEYCODE) {
+        validateDateInput(this);
+      }
+    },
+    [CALENDAR_DATE]: keymap({
+      Up: handleUpFromDate,
+      ArrowUp: handleUpFromDate,
+      Down: handleDownFromDate,
+      ArrowDown: handleDownFromDate,
+      Left: handleLeftFromDate,
+      ArrowLeft: handleLeftFromDate,
+      Right: handleRightFromDate,
+      ArrowRight: handleRightFromDate,
+      Home: handleHomeFromDate,
+      End: handleEndFromDate,
+      PageDown: handlePageDownFromDate,
+      PageUp: handlePageUpFromDate,
+      "Shift+PageDown": handleShiftPageDownFromDate,
+      "Shift+PageUp": handleShiftPageUpFromDate,
+      Tab: datePickerTabEventHandler.tabAhead,
+    }),
+    [CALENDAR_DATE_PICKER]: keymap({
+      Tab: datePickerTabEventHandler.tabAhead,
+      "Shift+Tab": datePickerTabEventHandler.tabBack,
+    }),
+    [CALENDAR_MONTH]: keymap({
+      Up: handleUpFromMonth,
+      ArrowUp: handleUpFromMonth,
+      Down: handleDownFromMonth,
+      ArrowDown: handleDownFromMonth,
+      Left: handleLeftFromMonth,
+      ArrowLeft: handleLeftFromMonth,
+      Right: handleRightFromMonth,
+      ArrowRight: handleRightFromMonth,
+      Home: handleHomeFromMonth,
+      End: handleEndFromMonth,
+      PageDown: handlePageDownFromMonth,
+      PageUp: handlePageUpFromMonth,
+    }),
+    [CALENDAR_MONTH_PICKER]: keymap({
+      Tab: monthPickerTabEventHandler.tabAhead,
+      "Shift+Tab": monthPickerTabEventHandler.tabBack,
+    }),
+    [CALENDAR_YEAR]: keymap({
+      Up: handleUpFromYear,
+      ArrowUp: handleUpFromYear,
+      Down: handleDownFromYear,
+      ArrowDown: handleDownFromYear,
+      Left: handleLeftFromYear,
+      ArrowLeft: handleLeftFromYear,
+      Right: handleRightFromYear,
+      ArrowRight: handleRightFromYear,
+      Home: handleHomeFromYear,
+      End: handleEndFromYear,
+      PageDown: handlePageDownFromYear,
+      PageUp: handlePageUpFromYear,
+    }),
+    [CALENDAR_YEAR_PICKER]: keymap({
+      Tab: yearPickerTabEventHandler.tabAhead,
+      "Shift+Tab": yearPickerTabEventHandler.tabBack,
+    }),
+    [DATE_PICKER_CALENDAR](event) {
+      this.dataset.keydownKeyCode = event.keyCode;
+    },
+    [DATE_PICKER](event) {
+      const keyMap = keymap({
+        Escape: handleEscapeFromCalendar,
+      });
+
+      keyMap(event);
+    },
+  },
+  focusout: {
+    [DATE_PICKER_EXTERNAL_INPUT]() {
+      validateDateInput(this);
+    },
+    [DATE_PICKER](event) {
+      if (!this.contains(event.relatedTarget)) {
+        hideCalendar(this);
+      }
+    },
+  },
+  input: {
+    [DATE_PICKER_EXTERNAL_INPUT]() {
+      reconcileInputValues(this);
+      updateCalendarIfVisible(this);
+    },
+  },
+};
+
+if (!isIosDevice()) {
+  datePickerEvents.mouseover = {
+    [CALENDAR_DATE_CURRENT_MONTH]() {
+      handleMouseoverFromDate(this);
+    },
+    [CALENDAR_MONTH]() {
+      handleMouseoverFromMonth(this);
+    },
+    [CALENDAR_YEAR]() {
+      handleMouseoverFromYear(this);
+    },
+  };
+}
+
+const datePicker = behavior(datePickerEvents, {
+  init(root) {
+    selectOrMatches(DATE_PICKER, root).forEach((datePickerEl) => {
+      enhanceDatePicker(datePickerEl);
+    });
+  },
+  getDatePickerContext,
+  disable,
+  ariaDisable,
+  enable,
+  isDateInputInvalid,
+  setCalendarValue,
+  validateDateInput,
+  renderCalendar,
+  updateCalendarIfVisible,
+});
+
+// #endregion Date Picker Event Delegation Registration / Component
+
+module.exports = datePicker;
+
+
+/***/ }),
+
+/***/ 1720:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const select = __webpack_require__(4900);
+const selectOrMatches = __webpack_require__(7834);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const {
+  getDatePickerContext,
+  isDateInputInvalid,
+  updateCalendarIfVisible,
+} = __webpack_require__(5587);
+
+const DATE_PICKER_CLASS = `${PREFIX}-date-picker`;
+const DATE_RANGE_PICKER_CLASS = `${PREFIX}-date-range-picker`;
+const DATE_RANGE_PICKER_RANGE_START_CLASS = `${DATE_RANGE_PICKER_CLASS}__range-start`;
+const DATE_RANGE_PICKER_RANGE_END_CLASS = `${DATE_RANGE_PICKER_CLASS}__range-end`;
+
+const DATE_PICKER = `.${DATE_PICKER_CLASS}`;
+const DATE_RANGE_PICKER = `.${DATE_RANGE_PICKER_CLASS}`;
+const DATE_RANGE_PICKER_RANGE_START = `.${DATE_RANGE_PICKER_RANGE_START_CLASS}`;
+const DATE_RANGE_PICKER_RANGE_END = `.${DATE_RANGE_PICKER_RANGE_END_CLASS}`;
+
+const DEFAULT_MIN_DATE = "0000-01-01";
+
+/**
+ * The properties and elements within the date range picker.
+ * @typedef {Object} DateRangePickerContext
+ * @property {HTMLElement} dateRangePickerEl
+ * @property {HTMLElement} rangeStartEl
+ * @property {HTMLElement} rangeEndEl
+ */
+
+/**
+ * Get an object of the properties and elements belonging directly to the given
+ * date picker component.
+ *
+ * @param {HTMLElement} el the element within the date picker
+ * @returns {DateRangePickerContext} elements
+ */
+const getDateRangePickerContext = (el) => {
+  const dateRangePickerEl = el.closest(DATE_RANGE_PICKER);
+
+  if (!dateRangePickerEl) {
+    throw new Error(`Element is missing outer ${DATE_RANGE_PICKER}`);
+  }
+
+  const rangeStartEl = dateRangePickerEl.querySelector(
+    DATE_RANGE_PICKER_RANGE_START
+  );
+  const rangeEndEl = dateRangePickerEl.querySelector(
+    DATE_RANGE_PICKER_RANGE_END
+  );
+
+  return {
+    dateRangePickerEl,
+    rangeStartEl,
+    rangeEndEl,
+  };
+};
+
+/**
+ * handle update from range start date picker
+ *
+ * @param {HTMLElement} el an element within the date range picker
+ */
+const handleRangeStartUpdate = (el) => {
+  const { dateRangePickerEl, rangeStartEl, rangeEndEl } =
+    getDateRangePickerContext(el);
+  const { internalInputEl } = getDatePickerContext(rangeStartEl);
+  const updatedDate = internalInputEl.value;
+
+  if (updatedDate && !isDateInputInvalid(internalInputEl)) {
+    rangeEndEl.dataset.minDate = updatedDate;
+    rangeEndEl.dataset.rangeDate = updatedDate;
+    rangeEndEl.dataset.defaultDate = updatedDate;
+  } else {
+    rangeEndEl.dataset.minDate = dateRangePickerEl.dataset.minDate || "";
+    rangeEndEl.dataset.rangeDate = "";
+    rangeEndEl.dataset.defaultDate = "";
+  }
+
+  updateCalendarIfVisible(rangeEndEl);
+};
+
+/**
+ * handle update from range start date picker
+ *
+ * @param {HTMLElement} el an element within the date range picker
+ */
+const handleRangeEndUpdate = (el) => {
+  const { dateRangePickerEl, rangeStartEl, rangeEndEl } =
+    getDateRangePickerContext(el);
+  const { internalInputEl } = getDatePickerContext(rangeEndEl);
+  const updatedDate = internalInputEl.value;
+
+  if (updatedDate && !isDateInputInvalid(internalInputEl)) {
+    rangeStartEl.dataset.maxDate = updatedDate;
+    rangeStartEl.dataset.rangeDate = updatedDate;
+    rangeStartEl.dataset.defaultDate = updatedDate;
+  } else {
+    rangeStartEl.dataset.maxDate = dateRangePickerEl.dataset.maxDate || "";
+    rangeStartEl.dataset.rangeDate = "";
+    rangeStartEl.dataset.defaultDate = "";
+  }
+
+  updateCalendarIfVisible(rangeStartEl);
+};
+
+/**
+ * Enhance an input with the date picker elements
+ *
+ * @param {HTMLElement} el The initial wrapping element of the date range picker component
+ */
+const enhanceDateRangePicker = (el) => {
+  const dateRangePickerEl = el.closest(DATE_RANGE_PICKER);
+
+  const [rangeStart, rangeEnd] = select(DATE_PICKER, dateRangePickerEl);
+
+  if (!rangeStart) {
+    throw new Error(
+      `${DATE_RANGE_PICKER} is missing inner two '${DATE_PICKER}' elements`
+    );
+  }
+
+  if (!rangeEnd) {
+    throw new Error(
+      `${DATE_RANGE_PICKER} is missing second '${DATE_PICKER}' element`
+    );
+  }
+
+  rangeStart.classList.add(DATE_RANGE_PICKER_RANGE_START_CLASS);
+  rangeEnd.classList.add(DATE_RANGE_PICKER_RANGE_END_CLASS);
+
+  if (!dateRangePickerEl.dataset.minDate) {
+    dateRangePickerEl.dataset.minDate = DEFAULT_MIN_DATE;
+  }
+
+  const { minDate } = dateRangePickerEl.dataset;
+  rangeStart.dataset.minDate = minDate;
+  rangeEnd.dataset.minDate = minDate;
+
+  const { maxDate } = dateRangePickerEl.dataset;
+  if (maxDate) {
+    rangeStart.dataset.maxDate = maxDate;
+    rangeEnd.dataset.maxDate = maxDate;
+  }
+
+  handleRangeStartUpdate(dateRangePickerEl);
+  handleRangeEndUpdate(dateRangePickerEl);
+};
+
+const dateRangePicker = behavior(
+  {
+    "input change": {
+      [DATE_RANGE_PICKER_RANGE_START]() {
+        handleRangeStartUpdate(this);
+      },
+      [DATE_RANGE_PICKER_RANGE_END]() {
+        handleRangeEndUpdate(this);
+      },
+    },
+  },
+  {
+    init(root) {
+      selectOrMatches(DATE_RANGE_PICKER, root).forEach((dateRangePickerEl) => {
+        enhanceDateRangePicker(dateRangePickerEl);
+      });
+    },
+  }
+);
+
+module.exports = dateRangePicker;
+
+
+/***/ }),
+
+/***/ 309:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const selectOrMatches = __webpack_require__(7834);
+const behavior = __webpack_require__(6158);
+const Sanitizer = __webpack_require__(5826);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const DROPZONE_CLASS = `${PREFIX}-file-input`;
+const DROPZONE = `.${DROPZONE_CLASS}`;
+const INPUT_CLASS = `${PREFIX}-file-input__input`;
+const TARGET_CLASS = `${PREFIX}-file-input__target`;
+const INPUT = `.${INPUT_CLASS}`;
+const BOX_CLASS = `${PREFIX}-file-input__box`;
+const INSTRUCTIONS_CLASS = `${PREFIX}-file-input__instructions`;
+const PREVIEW_CLASS = `${PREFIX}-file-input__preview`;
+const PREVIEW_HEADING_CLASS = `${PREFIX}-file-input__preview-heading`;
+const DISABLED_CLASS = `${PREFIX}-file-input--disabled`;
+const CHOOSE_CLASS = `${PREFIX}-file-input__choose`;
+const ACCEPTED_FILE_MESSAGE_CLASS = `${PREFIX}-file-input__accepted-files-message`;
+const DRAG_TEXT_CLASS = `${PREFIX}-file-input__drag-text`;
+const DRAG_CLASS = `${PREFIX}-file-input--drag`;
+const LOADING_CLASS = "is-loading";
+const INVALID_FILE_CLASS = "has-invalid-file";
+const GENERIC_PREVIEW_CLASS_NAME = `${PREFIX}-file-input__preview-image`;
+const GENERIC_PREVIEW_CLASS = `${GENERIC_PREVIEW_CLASS_NAME}--generic`;
+const PDF_PREVIEW_CLASS = `${GENERIC_PREVIEW_CLASS_NAME}--pdf`;
+const WORD_PREVIEW_CLASS = `${GENERIC_PREVIEW_CLASS_NAME}--word`;
+const VIDEO_PREVIEW_CLASS = `${GENERIC_PREVIEW_CLASS_NAME}--video`;
+const EXCEL_PREVIEW_CLASS = `${GENERIC_PREVIEW_CLASS_NAME}--excel`;
+const SR_ONLY_CLASS = `${PREFIX}-sr-only`;
+const SPACER_GIF =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+let TYPE_IS_VALID = Boolean(true); // logic gate for change listener
+let DEFAULT_ARIA_LABEL_TEXT = "";
+let DEFAULT_FILE_STATUS_TEXT = "";
+
+/**
+ * The properties and elements within the file input.
+ * @typedef {Object} FileInputContext
+ * @property {HTMLDivElement} dropZoneEl
+ * @property {HTMLInputElement} inputEl
+ */
+
+/**
+ * Get an object of the properties and elements belonging directly to the given
+ * file input component.
+ *
+ * @param {HTMLElement} el the element within the file input
+ * @returns {FileInputContext} elements
+ */
+const getFileInputContext = (el) => {
+  const dropZoneEl = el.closest(DROPZONE);
+
+  if (!dropZoneEl) {
+    throw new Error(`Element is missing outer ${DROPZONE}`);
+  }
+
+  const inputEl = dropZoneEl.querySelector(INPUT);
+
+  return {
+    dropZoneEl,
+    inputEl,
+  };
+};
+
+/**
+ * Disable the file input component
+ *
+ * @param {HTMLElement} el An element within the file input component
+ */
+const disable = (el) => {
+  const { dropZoneEl, inputEl } = getFileInputContext(el);
+
+  inputEl.disabled = true;
+  dropZoneEl.classList.add(DISABLED_CLASS);
+};
+
+/**
+ * Set aria-disabled attribute to file input component
+ *
+ * @param {HTMLElement} el An element within the file input component
+ */
+const ariaDisable = (el) => {
+  const { dropZoneEl } = getFileInputContext(el);
+
+  dropZoneEl.classList.add(DISABLED_CLASS);
+};
+
+/**
+ * Enable the file input component
+ *
+ * @param {HTMLElement} el An element within the file input component
+ */
+const enable = (el) => {
+  const { dropZoneEl, inputEl } = getFileInputContext(el);
+
+  inputEl.disabled = false;
+  dropZoneEl.classList.remove(DISABLED_CLASS);
+  dropZoneEl.removeAttribute("aria-disabled");
+};
+
+/**
+ *
+ * @param {String} s special characters
+ * @returns {String} replaces specified values
+ */
+const replaceName = (s) => {
+  const c = s.charCodeAt(0);
+  if (c === 32) return "-";
+  if (c >= 65 && c <= 90) return `img_${s.toLowerCase()}`;
+  return `__${("000", c.toString(16)).slice(-4)}`;
+};
+
+/**
+ * Creates an ID name for each file that strips all invalid characters.
+ * @param {String} name - name of the file added to file input (searchvalue)
+ * @returns {String} same characters as the name with invalid chars removed (newvalue)
+ */
+const makeSafeForID = (name) => name.replace(/[^a-z0-9]/g, replaceName);
+
+// Takes a generated safe ID and creates a unique ID.
+const createUniqueID = (name) =>
+  `${name}-${Math.floor(Date.now().toString() / 1000)}`;
+
+/**
+ * Determines if the singular or plural item label should be used
+ * Determination is based on the presence of the `multiple` attribute
+ *
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @returns {HTMLDivElement} The singular or plural version of "item"
+ */
+const getItemsLabel = (fileInputEl) => {
+  const acceptsMultiple = fileInputEl.hasAttribute("multiple");
+  const itemsLabel = acceptsMultiple ? "files" : "file";
+
+  return itemsLabel;
+};
+
+/**
+ * Scaffold the file input component with a parent wrapper and
+ * Create a target area overlay for drag and drop functionality
+ *
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @returns {HTMLDivElement} The drag and drop target area.
+ */
+const createTargetArea = (fileInputEl) => {
+  const fileInputParent = document.createElement("div");
+  const dropTarget = document.createElement("div");
+  const box = document.createElement("div");
+
+  // Adds class names and other attributes
+  fileInputEl.classList.remove(DROPZONE_CLASS);
+  fileInputEl.classList.add(INPUT_CLASS);
+  fileInputParent.classList.add(DROPZONE_CLASS);
+  box.classList.add(BOX_CLASS);
+  dropTarget.classList.add(TARGET_CLASS);
+
+  // Adds child elements to the DOM
+  dropTarget.prepend(box);
+  fileInputEl.parentNode.insertBefore(dropTarget, fileInputEl);
+  fileInputEl.parentNode.insertBefore(fileInputParent, dropTarget);
+  dropTarget.appendChild(fileInputEl);
+  fileInputParent.appendChild(dropTarget);
+
+  return dropTarget;
+};
+
+/**
+ * Build the visible element with default interaction instructions.
+ *
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @returns {HTMLDivElement} The container for visible interaction instructions.
+ */
+const createVisibleInstructions = (fileInputEl) => {
+  const fileInputParent = fileInputEl.closest(DROPZONE);
+  const itemsLabel = getItemsLabel(fileInputEl);
+  const instructions = document.createElement("div");
+  const dragText = `Drag ${itemsLabel} here or`;
+  const chooseText = "choose from folder";
+
+  // Create instructions text for aria-label
+  DEFAULT_ARIA_LABEL_TEXT = `${dragText} ${chooseText}`;
+
+  // Adds class names and other attributes
+  instructions.classList.add(INSTRUCTIONS_CLASS);
+  instructions.setAttribute("aria-hidden", "true");
+
+  // Add initial instructions for input usage
+  fileInputEl.setAttribute("aria-label", DEFAULT_ARIA_LABEL_TEXT);
+  instructions.innerHTML = Sanitizer.escapeHTML`<span class="${DRAG_TEXT_CLASS}">${dragText}</span> <span class="${CHOOSE_CLASS}">${chooseText}</span>`;
+
+  // Add the instructions element to the DOM
+  fileInputEl.parentNode.insertBefore(instructions, fileInputEl);
+
+  // IE11 and Edge do not support drop files on file inputs, so we've removed text that indicates that
+  if (
+    /rv:11.0/i.test(navigator.userAgent) ||
+    /Edge\/\d./i.test(navigator.userAgent)
+  ) {
+    fileInputParent.querySelector(`.${DRAG_TEXT_CLASS}`).outerHTML = "";
+  }
+
+  return instructions;
+};
+
+/**
+ * Build a screen reader-only message element that contains file status updates and
+ * Create and set the default file status message
+ *
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ */
+const createSROnlyStatus = (fileInputEl) => {
+  const statusEl = document.createElement("div");
+  const itemsLabel = getItemsLabel(fileInputEl);
+  const fileInputParent = fileInputEl.closest(DROPZONE);
+  const fileInputTarget = fileInputEl.closest(`.${TARGET_CLASS}`);
+
+  DEFAULT_FILE_STATUS_TEXT = `No ${itemsLabel} selected.`;
+
+  // Adds class names and other attributes
+  statusEl.classList.add(SR_ONLY_CLASS);
+  statusEl.setAttribute("aria-live", "polite");
+
+  // Add initial file status message
+  statusEl.textContent = DEFAULT_FILE_STATUS_TEXT;
+
+  // Add the status element to the DOM
+  fileInputParent.insertBefore(statusEl, fileInputTarget);
+};
+
+/**
+ * Scaffold the component with all required elements
+ *
+ * @param {HTMLInputElement} fileInputEl - The original input element.
+ */
+const enhanceFileInput = (fileInputEl) => {
+  const isInputDisabled =
+    fileInputEl.hasAttribute("aria-disabled") ||
+    fileInputEl.hasAttribute("disabled");
+  const dropTarget = createTargetArea(fileInputEl);
+  const instructions = createVisibleInstructions(fileInputEl);
+  const { dropZoneEl } = getFileInputContext(fileInputEl);
+
+  if (isInputDisabled) {
+    dropZoneEl.classList.add(DISABLED_CLASS);
+  } else {
+    createSROnlyStatus(fileInputEl);
+  }
+
+  return { instructions, dropTarget };
+};
+
+/**
+ * Removes image previews
+ * We want to start with a clean list every time files are added to the file input
+ *
+ * @param {HTMLDivElement} dropTarget - The drag and drop target area.
+ * @param {HTMLDivElement} instructions - The container for visible interaction instructions.
+ */
+const removeOldPreviews = (dropTarget, instructions) => {
+  const filePreviews = dropTarget.querySelectorAll(`.${PREVIEW_CLASS}`);
+  const currentPreviewHeading = dropTarget.querySelector(
+    `.${PREVIEW_HEADING_CLASS}`
+  );
+  const currentErrorMessage = dropTarget.querySelector(
+    `.${ACCEPTED_FILE_MESSAGE_CLASS}`
+  );
+
+  /**
+   * finds the parent of the passed node and removes the child
+   * @param {HTMLElement} node
+   */
+  const removeImages = (node) => {
+    node.parentNode.removeChild(node);
+  };
+
+  // Remove the heading above the previews
+  if (currentPreviewHeading) {
+    currentPreviewHeading.outerHTML = "";
+  }
+
+  // Remove existing error messages
+  if (currentErrorMessage) {
+    currentErrorMessage.outerHTML = "";
+    dropTarget.classList.remove(INVALID_FILE_CLASS);
+  }
+
+  // Get rid of existing previews if they exist, show instructions
+  if (filePreviews !== null) {
+    if (instructions) {
+      instructions.removeAttribute("hidden");
+    }
+    Array.prototype.forEach.call(filePreviews, removeImages);
+  }
+};
+
+/**
+ * Update the screen reader-only status message after interaction
+ *
+ * @param {HTMLDivElement} statusElement - The screen reader-only container for file status updates.
+ * @param {Object} fileNames - The selected files found in the fileList object.
+ * @param {Array} fileStore - The array of uploaded file names created from the fileNames object.
+ */
+const updateStatusMessage = (statusElement, fileNames, fileStore) => {
+  const statusEl = statusElement;
+  let statusMessage = DEFAULT_FILE_STATUS_TEXT;
+
+  // If files added, update the status message with file name(s)
+  if (fileNames.length === 1) {
+    statusMessage = `You have selected the file: ${fileStore}`;
+  } else if (fileNames.length > 1) {
+    statusMessage = `You have selected ${
+      fileNames.length
+    } files: ${fileStore.join(", ")}`;
+  }
+
+  // Add delay to encourage screen reader readout
+  setTimeout(() => {
+    statusEl.textContent = statusMessage;
+  }, 1000);
+};
+
+/**
+ * Show the preview heading, hide the initial instructions and
+ * Update the aria-label with new instructions text
+ *
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @param {Object} fileNames - The selected files found in the fileList object.
+ */
+const addPreviewHeading = (fileInputEl, fileNames) => {
+  const filePreviewsHeading = document.createElement("div");
+  const dropTarget = fileInputEl.closest(`.${TARGET_CLASS}`);
+  const instructions = dropTarget.querySelector(`.${INSTRUCTIONS_CLASS}`);
+  let changeItemText = "Change file";
+  let previewHeadingText = "";
+
+  if (fileNames.length === 1) {
+    previewHeadingText = Sanitizer.escapeHTML`Selected file <span class="usa-file-input__choose">${changeItemText}</span>`;
+  } else if (fileNames.length > 1) {
+    changeItemText = "Change files";
+    previewHeadingText = Sanitizer.escapeHTML`${fileNames.length} files selected <span class="usa-file-input__choose">${changeItemText}</span>`;
+  }
+
+  // Hides null state content and sets preview heading
+  instructions.setAttribute("hidden", "true");
+  filePreviewsHeading.classList.add(PREVIEW_HEADING_CLASS);
+  filePreviewsHeading.innerHTML = previewHeadingText;
+  dropTarget.insertBefore(filePreviewsHeading, instructions);
+
+  // Update aria label to match the visible action text
+  fileInputEl.setAttribute("aria-label", changeItemText);
+};
+
+/**
+ * When new files are applied to file input, this function generates previews
+ * and removes old ones.
+ *
+ * @param {event} e
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @param {HTMLDivElement} instructions - The container for visible interaction instructions.
+ * @param {HTMLDivElement} dropTarget - The drag and drop target area.
+ */
+
+const handleChange = (e, fileInputEl, instructions, dropTarget) => {
+  const fileNames = e.target.files;
+  const inputParent = dropTarget.closest(`.${DROPZONE_CLASS}`);
+  const statusElement = inputParent.querySelector(`.${SR_ONLY_CLASS}`);
+  const fileStore = [];
+
+  // First, get rid of existing previews
+  removeOldPreviews(dropTarget, instructions);
+
+  // Then, iterate through files list and create previews
+  for (let i = 0; i < fileNames.length; i += 1) {
+    const reader = new FileReader();
+    const fileName = fileNames[i].name;
+    let imageId;
+
+    // Push updated file names into the store array
+    fileStore.push(fileName);
+
+    // Starts with a loading image while preview is created
+    reader.onloadstart = function createLoadingImage() {
+      imageId = createUniqueID(makeSafeForID(fileName));
+
+      instructions.insertAdjacentHTML(
+        "afterend",
+        Sanitizer.escapeHTML`<div class="${PREVIEW_CLASS}" aria-hidden="true">
+          <img id="${imageId}" src="${SPACER_GIF}" alt="" class="${GENERIC_PREVIEW_CLASS_NAME} ${LOADING_CLASS}"/>${fileName}
+        <div>`
+      );
+    };
+
+    // Not all files will be able to generate previews. In case this happens, we provide several types "generic previews" based on the file extension.
+    reader.onloadend = function createFilePreview() {
+      const previewImage = document.getElementById(imageId);
+      if (fileName.indexOf(".pdf") > 0) {
+        previewImage.setAttribute(
+          "onerror",
+          `this.onerror=null;this.src="${SPACER_GIF}"; this.classList.add("${PDF_PREVIEW_CLASS}")`
+        );
+      } else if (
+        fileName.indexOf(".doc") > 0 ||
+        fileName.indexOf(".pages") > 0
+      ) {
+        previewImage.setAttribute(
+          "onerror",
+          `this.onerror=null;this.src="${SPACER_GIF}"; this.classList.add("${WORD_PREVIEW_CLASS}")`
+        );
+      } else if (
+        fileName.indexOf(".xls") > 0 ||
+        fileName.indexOf(".numbers") > 0
+      ) {
+        previewImage.setAttribute(
+          "onerror",
+          `this.onerror=null;this.src="${SPACER_GIF}"; this.classList.add("${EXCEL_PREVIEW_CLASS}")`
+        );
+      } else if (fileName.indexOf(".mov") > 0 || fileName.indexOf(".mp4") > 0) {
+        previewImage.setAttribute(
+          "onerror",
+          `this.onerror=null;this.src="${SPACER_GIF}"; this.classList.add("${VIDEO_PREVIEW_CLASS}")`
+        );
+      } else {
+        previewImage.setAttribute(
+          "onerror",
+          `this.onerror=null;this.src="${SPACER_GIF}"; this.classList.add("${GENERIC_PREVIEW_CLASS}")`
+        );
+      }
+
+      // Removes loader and displays preview
+      previewImage.classList.remove(LOADING_CLASS);
+      previewImage.src = reader.result;
+    };
+
+    if (fileNames[i]) {
+      reader.readAsDataURL(fileNames[i]);
+    }
+  }
+
+  if (fileNames.length === 0) {
+    // Reset input aria-label with default message
+    fileInputEl.setAttribute("aria-label", DEFAULT_ARIA_LABEL_TEXT);
+  } else {
+    addPreviewHeading(fileInputEl, fileNames);
+  }
+
+  updateStatusMessage(statusElement, fileNames, fileStore);
+};
+
+/**
+ * When using an Accept attribute, invalid files will be hidden from
+ * file browser, but they can still be dragged to the input. This
+ * function prevents them from being dragged and removes error states
+ * when correct files are added.
+ *
+ * @param {event} e
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @param {HTMLDivElement} instructions - The container for visible interaction instructions.
+ * @param {HTMLDivElement} dropTarget - The drag and drop target area.
+ */
+const preventInvalidFiles = (e, fileInputEl, instructions, dropTarget) => {
+  const acceptedFilesAttr = fileInputEl.getAttribute("accept");
+  dropTarget.classList.remove(INVALID_FILE_CLASS);
+
+  /**
+   * We can probably move away from this once IE11 support stops, and replace
+   * with a simple es `.includes`
+   * check if element is in array
+   * check if 1 or more alphabets are in string
+   * if element is present return the position value and -1 otherwise
+   * @param {Object} file
+   * @param {String} value
+   * @returns {Boolean}
+   */
+  const isIncluded = (file, value) => {
+    let returnValue = false;
+    const pos = file.indexOf(value);
+    if (pos >= 0) {
+      returnValue = true;
+    }
+    return returnValue;
+  };
+
+  // Runs if only specific files are accepted
+  if (acceptedFilesAttr) {
+    const acceptedFiles = acceptedFilesAttr.split(",");
+    const errorMessage = document.createElement("div");
+
+    // If multiple files are dragged, this iterates through them and look for any files that are not accepted.
+    let allFilesAllowed = true;
+    const scannedFiles = e.target.files || e.dataTransfer.files;
+    for (let i = 0; i < scannedFiles.length; i += 1) {
+      const file = scannedFiles[i];
+      if (allFilesAllowed) {
+        for (let j = 0; j < acceptedFiles.length; j += 1) {
+          const fileType = acceptedFiles[j];
+          allFilesAllowed =
+            file.name.indexOf(fileType) > 0 ||
+            isIncluded(file.type, fileType.replace(/\*/g, ""));
+          if (allFilesAllowed) {
+            TYPE_IS_VALID = true;
+            break;
+          }
+        }
+      } else break;
+    }
+
+    // If dragged files are not accepted, this removes them from the value of the input and creates and error state
+    if (!allFilesAllowed) {
+      removeOldPreviews(dropTarget, instructions);
+      fileInputEl.value = ""; // eslint-disable-line no-param-reassign
+      dropTarget.insertBefore(errorMessage, fileInputEl);
+      errorMessage.textContent =
+        fileInputEl.dataset.errormessage || `This is not a valid file type.`;
+      errorMessage.classList.add(ACCEPTED_FILE_MESSAGE_CLASS);
+      dropTarget.classList.add(INVALID_FILE_CLASS);
+      TYPE_IS_VALID = false;
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+};
+
+/**
+ * 1. passes through gate for preventing invalid files
+ * 2. handles updates if file is valid
+ *
+ * @param {event} event
+ * @param {HTMLInputElement} fileInputEl - The input element.
+ * @param {HTMLDivElement} instructions - The container for visible interaction instructions.
+ * @param {HTMLDivElement} dropTarget - The drag and drop target area.
+ */
+const handleUpload = (event, fileInputEl, instructions, dropTarget) => {
+  preventInvalidFiles(event, fileInputEl, instructions, dropTarget);
+  if (TYPE_IS_VALID === true) {
+    handleChange(event, fileInputEl, instructions, dropTarget);
+  }
+};
+
+const fileInput = behavior(
+  {},
+  {
+    init(root) {
+      selectOrMatches(DROPZONE, root).forEach((fileInputEl) => {
+        const { instructions, dropTarget } = enhanceFileInput(fileInputEl);
+
+        dropTarget.addEventListener(
+          "dragover",
+          function handleDragOver() {
+            this.classList.add(DRAG_CLASS);
+          },
+          false
+        );
+
+        dropTarget.addEventListener(
+          "dragleave",
+          function handleDragLeave() {
+            this.classList.remove(DRAG_CLASS);
+          },
+          false
+        );
+
+        dropTarget.addEventListener(
+          "drop",
+          function handleDrop() {
+            this.classList.remove(DRAG_CLASS);
+          },
+          false
+        );
+
+        fileInputEl.addEventListener(
+          "change",
+          (e) => handleUpload(e, fileInputEl, instructions, dropTarget),
+          false
+        );
+      });
+    },
+    teardown(root) {
+      selectOrMatches(INPUT, root).forEach((fileInputEl) => {
+        const fileInputTopElement = fileInputEl.parentElement.parentElement;
+        fileInputTopElement.parentElement.replaceChild(
+          fileInputEl,
+          fileInputTopElement
+        );
+        // eslint-disable-next-line no-param-reassign
+        fileInputEl.className = DROPZONE_CLASS;
+      });
+    },
+    getFileInputContext,
+    disable,
+    ariaDisable,
+    enable,
+  }
+);
+
+module.exports = fileInput;
+
+
+/***/ }),
+
+/***/ 2731:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const SCOPE = `.${PREFIX}-footer--big`;
+const NAV = `${SCOPE} nav`;
+const BUTTON = `${NAV} .${PREFIX}-footer__primary-link`;
+const HIDE_MAX_WIDTH = 480;
+
+/**
+ * Expands selected footer menu panel, while collapsing others
+ */
+function showPanel() {
+  if (window.innerWidth < HIDE_MAX_WIDTH) {
+    const isOpen = this.getAttribute("aria-expanded") === "true";
+    const thisFooter = this.closest(SCOPE);
+
+    // Close all other menus
+    thisFooter.querySelectorAll(BUTTON).forEach((button) => {
+      button.setAttribute("aria-expanded", false);
+    });
+
+    this.setAttribute("aria-expanded", !isOpen);
+  }
+}
+
+/**
+ * Swaps the <h4> element for a <button> element (and vice-versa) and sets id
+ * of menu list
+ *
+ * @param {Boolean} isMobile - If the footer is in mobile configuration
+ */
+function toggleHtmlTag(isMobile) {
+  const bigFooter = document.querySelector(SCOPE);
+
+  if (!bigFooter) {
+    return;
+  }
+
+  const primaryLinks = bigFooter.querySelectorAll(BUTTON);
+
+  primaryLinks.forEach((currentElement) => {
+    const currentElementClasses = currentElement.getAttribute("class");
+    const preservedHtmlTag =
+      currentElement.getAttribute("data-tag") || currentElement.tagName;
+
+    const newElementType = isMobile ? "button" : preservedHtmlTag;
+
+    // Create the new element
+    const newElement = document.createElement(newElementType);
+    newElement.setAttribute("class", currentElementClasses);
+    newElement.classList.toggle(
+      `${PREFIX}-footer__primary-link--button`,
+      isMobile
+    );
+    newElement.textContent = currentElement.textContent;
+
+    if (isMobile) {
+      newElement.setAttribute("data-tag", currentElement.tagName);
+      const menuId = `${PREFIX}-footer-menu-list-${Math.floor(
+        Math.random() * 100000
+      )}`;
+
+      newElement.setAttribute("aria-controls", menuId);
+      newElement.setAttribute("aria-expanded", "false");
+      currentElement.nextElementSibling.setAttribute("id", menuId);
+      newElement.setAttribute("type", "button");
+    }
+
+    // Insert the new element and delete the old
+    currentElement.after(newElement);
+    currentElement.remove();
+  });
+}
+
+const resize = (event) => {
+  toggleHtmlTag(event.matches);
+};
+
+module.exports = behavior(
+  {
+    [CLICK]: {
+      [BUTTON]: showPanel,
+    },
+  },
+  {
+    // export for use elsewhere
+    HIDE_MAX_WIDTH,
+
+    init() {
+      toggleHtmlTag(window.innerWidth < HIDE_MAX_WIDTH);
+      this.mediaQueryList = window.matchMedia(
+        `(max-width: ${HIDE_MAX_WIDTH - 0.1}px)`
+      );
+      this.mediaQueryList.addListener(resize);
+    },
+
+    teardown() {
+      this.mediaQueryList.removeListener(resize);
+    },
+  }
+);
+
+
+/***/ }),
+
+/***/ 6177:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const keymap = __webpack_require__(9361);
+const behavior = __webpack_require__(6158);
+const select = __webpack_require__(4900);
+const toggle = __webpack_require__(8497);
+const FocusTrap = __webpack_require__(3596);
+const accordion = __webpack_require__(5075);
+const ScrollBarWidth = __webpack_require__(8009);
+
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const BODY = "body";
+const HEADER = `.${PREFIX}-header`;
+const NAV = `.${PREFIX}-nav`;
+const NAV_CONTAINER = `.${PREFIX}-nav-container`;
+const NAV_PRIMARY = `.${PREFIX}-nav__primary`;
+const NAV_PRIMARY_ITEM = `.${PREFIX}-nav__primary-item`;
+const NAV_CONTROL = `button.${PREFIX}-nav__link`;
+const NAV_LINKS = `${NAV} a`;
+const NON_NAV_HIDDEN_ATTRIBUTE = `data-nav-hidden`;
+const OPENERS = `.${PREFIX}-menu-btn`;
+const CLOSE_BUTTON = `.${PREFIX}-nav__close`;
+const OVERLAY = `.${PREFIX}-overlay`;
+const CLOSERS = `${CLOSE_BUTTON}, .${PREFIX}-overlay`;
+const TOGGLES = [NAV, OVERLAY].join(", ");
+const NON_NAV_ELEMENTS = `body *:not(${HEADER}, ${NAV_CONTAINER}, ${NAV}, ${NAV} *):not([aria-hidden])`;
+const NON_NAV_HIDDEN = `[${NON_NAV_HIDDEN_ATTRIBUTE}]`;
+
+const ACTIVE_CLASS = "usa-js-mobile-nav--active";
+const VISIBLE_CLASS = "is-visible";
+
+let navigation;
+let navActive;
+let nonNavElements;
+
+const isActive = () => document.body.classList.contains(ACTIVE_CLASS);
+const SCROLLBAR_WIDTH = ScrollBarWidth();
+const INITIAL_PADDING = window
+  .getComputedStyle(document.body)
+  .getPropertyValue("padding-right");
+const TEMPORARY_PADDING = `${
+  parseInt(INITIAL_PADDING.replace(/px/, ""), 10) +
+  parseInt(SCROLLBAR_WIDTH.replace(/px/, ""), 10)
+}px`;
+
+const hideNonNavItems = () => {
+  const headerParent = document.querySelector(`${HEADER}`).parentNode;
+  nonNavElements = document.querySelectorAll(NON_NAV_ELEMENTS);
+
+  nonNavElements.forEach((nonNavElement) => {
+    if (nonNavElement !== headerParent) {
+      nonNavElement.setAttribute("aria-hidden", true);
+      nonNavElement.setAttribute(NON_NAV_HIDDEN_ATTRIBUTE, "");
+    }
+  });
+};
+
+const showNonNavItems = () => {
+  nonNavElements = document.querySelectorAll(NON_NAV_HIDDEN);
+
+  if (!nonNavElements) {
+    return;
+  }
+
+  // Remove aria-hidden from non-header elements
+  nonNavElements.forEach((nonNavElement) => {
+    nonNavElement.removeAttribute("aria-hidden");
+    nonNavElement.removeAttribute(NON_NAV_HIDDEN_ATTRIBUTE);
+  });
+};
+
+// Toggle all non-header elements #3527.
+const toggleNonNavItems = (active) => {
+  if (active) {
+    hideNonNavItems();
+  } else {
+    showNonNavItems();
+  }
+};
+
+const toggleNav = (active) => {
+  const { body } = document;
+  const safeActive = typeof active === "boolean" ? active : !isActive();
+
+  body.classList.toggle(ACTIVE_CLASS, safeActive);
+
+  select(TOGGLES).forEach((el) =>
+    el.classList.toggle(VISIBLE_CLASS, safeActive)
+  );
+
+  navigation.focusTrap.update(safeActive);
+
+  const closeButton = body.querySelector(CLOSE_BUTTON);
+  const menuButton = document.querySelector(OPENERS);
+
+  body.style.paddingRight =
+    body.style.paddingRight === TEMPORARY_PADDING
+      ? INITIAL_PADDING
+      : TEMPORARY_PADDING;
+
+  toggleNonNavItems(safeActive);
+
+  if (safeActive && closeButton) {
+    // The mobile nav was just activated. Focus on the close button, which is
+    // just before all the nav elements in the tab order.
+    closeButton.focus();
+  } else if (
+    !safeActive &&
+    menuButton &&
+    getComputedStyle(menuButton).display !== "none"
+  ) {
+    // The mobile nav was just deactivated. We don't want the focus to
+    // disappear into the void, so focus on the menu button if it's
+    // visible (this may have been what the user was just focused on,
+    // if they triggered the mobile nav by mistake).
+    menuButton.focus();
+  }
+
+  return safeActive;
+};
+
+const resize = () => {
+  const closer = document.body.querySelector(CLOSE_BUTTON);
+
+  if (isActive() && closer && closer.getBoundingClientRect().width === 0) {
+    // When the mobile nav is active, and the close box isn't visible,
+    // we know the user's viewport has been resized to be larger.
+    // Let's make the page state consistent by deactivating the mobile nav.
+    navigation.toggleNav.call(closer, false);
+  }
+};
+
+const onMenuClose = () => navigation.toggleNav.call(navigation, false);
+
+const hideActiveNavDropdown = () => {
+  if (!navActive) {
+    return;
+  }
+
+  toggle(navActive, false);
+  navActive = null;
+};
+
+const focusNavButton = (event) => {
+  const parentNavItem = event.target.closest(NAV_PRIMARY_ITEM);
+
+  // Only shift focus if within dropdown
+  if (!event.target.matches(NAV_CONTROL)) {
+    const navControl = parentNavItem.querySelector(NAV_CONTROL);
+    if (navControl) {
+      navControl.focus();
+    }
+  }
+};
+
+const handleEscape = (event) => {
+  hideActiveNavDropdown();
+  focusNavButton(event);
+};
+
+navigation = behavior(
+  {
+    [CLICK]: {
+      [NAV_CONTROL]() {
+        // If another nav is open, close it
+        if (navActive !== this) {
+          hideActiveNavDropdown();
+        }
+        // store a reference to the last clicked nav link element, so we
+        // can hide the dropdown if another element on the page is clicked
+        if (!navActive) {
+          navActive = this;
+          toggle(navActive, true);
+        }
+
+        // Do this so the event handler on the body doesn't fire
+        return false;
+      },
+      [BODY]: hideActiveNavDropdown,
+      [OPENERS]: toggleNav,
+      [CLOSERS]: toggleNav,
+      [NAV_LINKS]() {
+        // A navigation link has been clicked! We want to collapse any
+        // hierarchical navigation UI it's a part of, so that the user
+        // can focus on whatever they've just selected.
+
+        // Some navigation links are inside accordions; when they're
+        // clicked, we want to collapse those accordions.
+        const acc = this.closest(accordion.ACCORDION);
+
+        if (acc) {
+          accordion.getButtons(acc).forEach((btn) => accordion.hide(btn));
+        }
+
+        // If the mobile navigation menu is active, we want to hide it.
+        if (isActive()) {
+          navigation.toggleNav.call(navigation, false);
+        }
+      },
+    },
+    keydown: {
+      [NAV_PRIMARY]: keymap({ Escape: handleEscape }),
+    },
+    focusout: {
+      [NAV_PRIMARY](event) {
+        const nav = event.target.closest(NAV_PRIMARY);
+
+        if (!nav.contains(event.relatedTarget)) {
+          hideActiveNavDropdown();
+        }
+      },
+    },
+  },
+  {
+    init(root) {
+      const trapContainer = root.matches(NAV) ? root : root.querySelector(NAV);
+
+      if (trapContainer) {
+        navigation.focusTrap = FocusTrap(trapContainer, {
+          Escape: onMenuClose,
+        });
+      }
+
+      resize();
+      window.addEventListener("resize", resize, false);
+    },
+    teardown() {
+      window.removeEventListener("resize", resize, false);
+      navActive = false;
+    },
+    focusTrap: null,
+    toggleNav,
+  }
+);
+
+module.exports = navigation;
+
+
+/***/ }),
+
+/***/ 3732:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const once = __webpack_require__(5689);
+const keymap = __webpack_require__(9361);
+const selectOrMatches = __webpack_require__(7834);
+const behavior = __webpack_require__(6158);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const { CLICK } = __webpack_require__(381);
+const Sanitizer = __webpack_require__(5826);
+
+const CURRENT_CLASS = `${PREFIX}-current`;
+const IN_PAGE_NAV_TITLE_TEXT = "On this page";
+const IN_PAGE_NAV_TITLE_HEADING_LEVEL = "h4";
+const IN_PAGE_NAV_SCROLL_OFFSET = 0;
+const IN_PAGE_NAV_ROOT_MARGIN = "0px 0px 0px 0px";
+const IN_PAGE_NAV_THRESHOLD = "1";
+const IN_PAGE_NAV_CLASS = `${PREFIX}-in-page-nav`;
+const IN_PAGE_NAV_ANCHOR_CLASS = `${PREFIX}-anchor`;
+const IN_PAGE_NAV_NAV_CLASS = `${IN_PAGE_NAV_CLASS}__nav`;
+const IN_PAGE_NAV_LIST_CLASS = `${IN_PAGE_NAV_CLASS}__list`;
+const IN_PAGE_NAV_ITEM_CLASS = `${IN_PAGE_NAV_CLASS}__item`;
+const IN_PAGE_NAV_LINK_CLASS = `${IN_PAGE_NAV_CLASS}__link`;
+const IN_PAGE_NAV_TITLE_CLASS = `${IN_PAGE_NAV_CLASS}__heading`;
+const SUB_ITEM_CLASS = `${IN_PAGE_NAV_ITEM_CLASS}--sub-item`;
+const MAIN_ELEMENT = "main";
+
+/**
+ * Set the active link state for the currently observed section
+ *
+ * @param {HTMLElement} el An element within the in-page nav component
+ */
+const setActive = (el) => {
+  const allLinks = document.querySelectorAll(`.${IN_PAGE_NAV_LINK_CLASS}`);
+  el.map((i) => {
+    if (i.isIntersecting === true && i.intersectionRatio >= 1) {
+      allLinks.forEach((link) => link.classList.remove(CURRENT_CLASS));
+      document
+        .querySelector(`a[href="#${i.target.id}"]`)
+        .classList.add(CURRENT_CLASS);
+      return true;
+    }
+    return false;
+  });
+};
+
+/**
+ * Return a node list of section headings
+ *
+ * @return {HTMLElement[]} - An array of DOM nodes
+ */
+const getSectionHeadings = () => {
+  const sectionHeadings = document.querySelectorAll(
+    `${MAIN_ELEMENT} h2, ${MAIN_ELEMENT} h3`
+  );
+  return sectionHeadings;
+};
+
+/**
+ * Return a node list of section anchor tags
+ *
+ * @return {HTMLElement[]} - An array of DOM nodes
+ */
+const getSectionAnchors = () => {
+  const sectionAnchors = document.querySelectorAll(
+    `.${IN_PAGE_NAV_ANCHOR_CLASS}`
+  );
+  return sectionAnchors;
+};
+
+/**
+ * Generates a unique ID for the given heading element.
+ *
+ * @param {HTMLHeadingElement} heading
+ *
+ * @return {string} - Unique ID
+ */
+const getHeadingId = (heading) => {
+  const baseId = heading.textContent
+    .toLowerCase()
+    // Replace non-alphanumeric characters with dashes
+    .replace(/[^a-z\d]/g, "-")
+    // Replace a sequence of two or more dashes with a single dash
+    .replace(/-{2,}/g, "-")
+    // Trim leading or trailing dash (there should only ever be one)
+    .replace(/^-|-$/g, "");
+
+  let id;
+  let suffix = 0;
+  do {
+    id = baseId;
+
+    // To avoid conflicts with existing IDs on the page, loop and append an
+    // incremented suffix until a unique ID is found.
+    suffix += 1;
+    if (suffix > 1) {
+      id += `-${suffix}`;
+    }
+  } while (document.getElementById(id));
+
+  return id;
+};
+
+/**
+ * Return a section id/anchor hash without the number sign
+ *
+ * @return {String} - Id value with the number sign removed
+ */
+const getSectionId = (value) => {
+  let id;
+
+  // Check if value is an event or element and get the cleaned up id
+  if (value && value.nodeType === 1) {
+    id = value.getAttribute("href").replace("#", "");
+  } else {
+    id = value.target.hash.replace("#", "");
+  }
+
+  return id;
+};
+
+/**
+ * Scroll smoothly to a section based on the passed in element
+ *
+ * @param {HTMLElement} - Id value with the number sign removed
+ */
+const handleScrollToSection = (el) => {
+  const inPageNavEl = document.querySelector(`.${IN_PAGE_NAV_CLASS}`);
+  const inPageNavScrollOffset =
+    inPageNavEl.dataset.scrollOffset || IN_PAGE_NAV_SCROLL_OFFSET;
+
+  window.scroll({
+    behavior: "smooth",
+    top: el.offsetTop - inPageNavScrollOffset,
+    block: "start",
+  });
+
+  if (window.location.hash.slice(1) !== el.id) {
+    window.history.pushState(null, "", `#${el.id}`);
+  }
+};
+
+/**
+ * Scrolls the page to the section corresponding to the current hash fragment, if one exists.
+ */
+const scrollToCurrentSection = () => {
+  const hashFragment = window.location.hash.slice(1);
+  if (hashFragment) {
+    const anchorTag = document.getElementById(hashFragment);
+    if (anchorTag) {
+      handleScrollToSection(anchorTag);
+    }
+  }
+};
+
+/**
+ * Create the in-page navigation component
+ *
+ * @param {HTMLElement} inPageNavEl The in-page nav element
+ */
+const createInPageNav = (inPageNavEl) => {
+  const inPageNavTitleText = Sanitizer.escapeHTML`${
+    inPageNavEl.dataset.titleText || IN_PAGE_NAV_TITLE_TEXT
+  }`;
+  const inPageNavTitleHeadingLevel = Sanitizer.escapeHTML`${
+    inPageNavEl.dataset.titleHeadingLevel || IN_PAGE_NAV_TITLE_HEADING_LEVEL
+  }`;
+  const inPageNavRootMargin = Sanitizer.escapeHTML`${
+    inPageNavEl.dataset.rootMargin || IN_PAGE_NAV_ROOT_MARGIN
+  }`;
+  const inPageNavThreshold = Sanitizer.escapeHTML`${
+    inPageNavEl.dataset.threshold || IN_PAGE_NAV_THRESHOLD
+  }`;
+
+  const options = {
+    root: null,
+    rootMargin: inPageNavRootMargin,
+    threshold: [inPageNavThreshold],
+  };
+
+  const sectionHeadings = getSectionHeadings();
+  const inPageNav = document.createElement("nav");
+  inPageNav.setAttribute("aria-label", inPageNavTitleText);
+  inPageNav.classList.add(IN_PAGE_NAV_NAV_CLASS);
+
+  const inPageNavTitle = document.createElement(inPageNavTitleHeadingLevel);
+  inPageNavTitle.classList.add(IN_PAGE_NAV_TITLE_CLASS);
+  inPageNavTitle.setAttribute("tabindex", "0");
+  inPageNavTitle.textContent = inPageNavTitleText;
+  inPageNav.appendChild(inPageNavTitle);
+
+  const inPageNavList = document.createElement("ul");
+  inPageNavList.classList.add(IN_PAGE_NAV_LIST_CLASS);
+  inPageNav.appendChild(inPageNavList);
+
+  sectionHeadings.forEach((el) => {
+    const listItem = document.createElement("li");
+    const navLinks = document.createElement("a");
+    const anchorTag = document.createElement("a");
+    const textContentOfLink = el.textContent;
+    const tag = el.tagName.toLowerCase();
+
+    listItem.classList.add(IN_PAGE_NAV_ITEM_CLASS);
+    if (tag === "h3") {
+      listItem.classList.add(SUB_ITEM_CLASS);
+    }
+
+    const headingId = getHeadingId(el);
+
+    navLinks.setAttribute("href", `#${headingId}`);
+    navLinks.setAttribute("class", IN_PAGE_NAV_LINK_CLASS);
+    navLinks.textContent = textContentOfLink;
+
+    anchorTag.setAttribute("id", headingId);
+    anchorTag.setAttribute("class", IN_PAGE_NAV_ANCHOR_CLASS);
+    el.insertAdjacentElement("afterbegin", anchorTag);
+
+    inPageNavList.appendChild(listItem);
+    listItem.appendChild(navLinks);
+  });
+
+  inPageNavEl.appendChild(inPageNav);
+
+  const anchorTags = getSectionAnchors();
+  const observeSections = new window.IntersectionObserver(setActive, options);
+
+  anchorTags.forEach((tag) => {
+    observeSections.observe(tag);
+  });
+};
+
+/**
+ * Handle click from link
+ *
+ * @param {HTMLElement} el An element within the in-page nav component
+ */
+const handleClickFromLink = (el) => {
+  const elementToScrollTo = document.getElementById(el.hash.slice(1));
+  handleScrollToSection(elementToScrollTo);
+};
+
+/**
+ * Handle the enter event from a link within the in-page nav component
+ *
+ * @param {KeyboardEvent} event An event within the in-page nav component
+ */
+const handleEnterFromLink = (event) => {
+  const id = getSectionId(event);
+  const targetAnchor = document.getElementById(id);
+  const target = targetAnchor.parentElement;
+
+  if (target) {
+    target.setAttribute("tabindex", 0);
+    target.focus();
+    target.addEventListener(
+      "blur",
+      once(() => {
+        target.setAttribute("tabindex", -1);
+      })
+    );
+  } else {
+    // throw an error?
+  }
+  handleScrollToSection(targetAnchor);
+};
+
+const inPageNavigation = behavior(
+  {
+    [CLICK]: {
+      [`.${IN_PAGE_NAV_LINK_CLASS}`](event) {
+        event.preventDefault();
+        if (this.disabled) return;
+        handleClickFromLink(this);
+      },
+    },
+    keydown: {
+      [`.${IN_PAGE_NAV_LINK_CLASS}`]: keymap({
+        Enter: handleEnterFromLink,
+      }),
+    },
+  },
+  {
+    init(root) {
+      selectOrMatches(`.${IN_PAGE_NAV_CLASS}`, root).forEach((inPageNavEl) => {
+        createInPageNav(inPageNavEl);
+        scrollToCurrentSection();
+      });
+    },
+  }
+);
+
+module.exports = inPageNavigation;
+
+
+/***/ }),
+
+/***/ 1369:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const selectOrMatches = __webpack_require__(7834);
+const behavior = __webpack_require__(6158);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const MASKED_CLASS = `${PREFIX}-masked`;
+const MASKED = `.${MASKED_CLASS}`;
+const MASK = `${PREFIX}-input-mask`;
+const MASK_CONTENT = `${MASK}--content`;
+const PLACEHOLDER = "placeholder";
+const CONTEXT = "form";
+
+// User defined Values
+const maskedNumber = "_#dDmMyY9";
+const maskedLetter = "A";
+
+// replaces each masked input with a shell containing the input and it's mask.
+const createMaskedInputShell = (input) => {
+  const placeholder = input.getAttribute(`${PLACEHOLDER}`);
+  if (placeholder) {
+    input.setAttribute("maxlength", placeholder.length);
+    input.setAttribute("data-placeholder", placeholder);
+    input.removeAttribute(`${PLACEHOLDER}`);
+  } else {
+    return;
+  }
+
+  const shell = document.createElement("span");
+  shell.classList.add(MASK);
+  shell.setAttribute("data-mask", placeholder);
+
+  const content = document.createElement("span");
+  content.classList.add(MASK_CONTENT);
+  content.setAttribute("aria-hidden", "true");
+  content.id = `${input.id}Mask`;
+  content.textContent = placeholder;
+
+  shell.appendChild(content);
+  input.closest(CONTEXT).insertBefore(shell, input);
+  shell.appendChild(input);
+};
+
+const setValueOfMask = (el) => {
+  const { value } = el;
+  const placeholderVal = `${el.dataset.placeholder.substr(value.length)}`;
+
+  const theIEl = document.createElement("i");
+  theIEl.textContent = value;
+  return [theIEl, placeholderVal];
+};
+
+const strippedValue = (isCharsetPresent, value) =>
+  isCharsetPresent ? value.replace(/\W/g, "") : value.replace(/\D/g, "");
+
+const isInteger = (value) => !Number.isNaN(parseInt(value, 10));
+
+const isLetter = (value) => (value ? value.match(/[A-Z]/i) : false);
+
+const handleCurrentValue = (el) => {
+  const isCharsetPresent = el.dataset.charset;
+  const placeholder = isCharsetPresent || el.dataset.placeholder;
+  const { value } = el;
+  const len = placeholder.length;
+  let newValue = "";
+  let i;
+  let charIndex;
+
+  const strippedVal = strippedValue(isCharsetPresent, value);
+
+  for (i = 0, charIndex = 0; i < len; i += 1) {
+    const isInt = isInteger(strippedVal[charIndex]);
+    const isLet = isLetter(strippedVal[charIndex]);
+    const matchesNumber = maskedNumber.indexOf(placeholder[i]) >= 0;
+    const matchesLetter = maskedLetter.indexOf(placeholder[i]) >= 0;
+
+    if (
+      (matchesNumber && isInt) ||
+      (isCharsetPresent && matchesLetter && isLet)
+    ) {
+      newValue += strippedVal[charIndex];
+      charIndex += 1;
+    } else if (
+      (!isCharsetPresent && !isInt && matchesNumber) ||
+      (isCharsetPresent &&
+        ((matchesLetter && !isLet) || (matchesNumber && !isInt)))
+    ) {
+      return newValue;
+    } else {
+      newValue += placeholder[i];
+    }
+    // break if no characters left and the pattern is non-special character
+    if (strippedVal[charIndex] === undefined) {
+      break;
+    }
+  }
+
+  return newValue;
+};
+
+const handleValueChange = (el) => {
+  const inputEl = el;
+  const id = inputEl.getAttribute("id");
+  inputEl.value = handleCurrentValue(inputEl);
+
+  const maskVal = setValueOfMask(el);
+  const maskEl = document.getElementById(`${id}Mask`);
+  maskEl.textContent = "";
+  maskEl.replaceChildren(maskVal[0], maskVal[1]);
+};
+
+const inputMaskEvents = {
+  keyup: {
+    [MASKED]() {
+      handleValueChange(this);
+    },
+  },
+};
+
+const inputMask = behavior(inputMaskEvents, {
+  init(root) {
+    selectOrMatches(MASKED, root).forEach((maskedInput) => {
+      createMaskedInputShell(maskedInput);
+    });
+  },
+});
+
+module.exports = inputMask;
+
+
+/***/ }),
+
+/***/ 10:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const keymap = __webpack_require__(9361);
+const behavior = __webpack_require__(6158);
+const toggle = __webpack_require__(8497);
+const FocusTrap = __webpack_require__(3596);
+const accordion = __webpack_require__(5075);
+
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const BODY = "body";
+const LANGUAGE = `.${PREFIX}-language`;
+const LANGUAGE_SUB = `.${PREFIX}-language__submenu`;
+const LANGUAGE_PRIMARY = `.${PREFIX}-language__primary`;
+const LANGUAGE_PRIMARY_ITEM = `.${PREFIX}-language__primary-item`;
+const LANGUAGE_CONTROL = `button.${PREFIX}-language__link`;
+const LANGUAGE_LINKS = `${LANGUAGE} a`;
+
+let languageSelector;
+let languageActive;
+
+const onLanguageClose = () =>
+  languageSelector.toggleLanguage.call(languageSelector, false);
+
+const hideActiveLanguageDropdown = () => {
+  if (!languageActive) {
+    return;
+  }
+
+  toggle(languageActive, false);
+  languageActive = null;
+};
+
+const focusLanguageButton = (event) => {
+  const parentLanguageItem = event.target.closest(LANGUAGE_PRIMARY_ITEM);
+
+  if (!event.target.matches(LANGUAGE_CONTROL)) {
+    parentLanguageItem.querySelector(LANGUAGE_CONTROL).focus();
+  }
+};
+
+const handleEscape = (event) => {
+  hideActiveLanguageDropdown();
+  focusLanguageButton(event);
+};
+
+languageSelector = behavior(
+  {
+    [CLICK]: {
+      [LANGUAGE_CONTROL]() {
+        if (languageActive !== this) {
+          hideActiveLanguageDropdown();
+        }
+        if (languageActive === this) {
+          hideActiveLanguageDropdown();
+          return false;
+        }
+        if (!languageActive) {
+          languageActive = this;
+          toggle(languageActive, true);
+        }
+
+        return false;
+      },
+      [BODY]: hideActiveLanguageDropdown,
+      [LANGUAGE_LINKS]() {
+        const acc = this.closest(accordion.ACCORDION);
+
+        if (acc) {
+          accordion.getButtons(acc).forEach((btn) => accordion.hide(btn));
+        }
+      },
+    },
+    keydown: {
+      [LANGUAGE_PRIMARY]: keymap({ Escape: handleEscape }),
+    },
+    focusout: {
+      [LANGUAGE_PRIMARY](event) {
+        const language = event.target.closest(LANGUAGE_PRIMARY);
+
+        if (!language.contains(event.relatedTarget)) {
+          hideActiveLanguageDropdown();
+        }
+      },
+    },
+  },
+  {
+    init(root) {
+      const trapContainer = root.matches(LANGUAGE_SUB)
+        ? root
+        : root.querySelector(LANGUAGE_SUB);
+
+      if (trapContainer) {
+        languageSelector.focusTrap = FocusTrap(trapContainer, {
+          Escape: onLanguageClose,
+        });
+      }
+    },
+    teardown() {
+      languageActive = false;
+    },
+    focusTrap: null,
+  }
+);
+
+module.exports = languageSelector;
+
+
+/***/ }),
+
+/***/ 5878:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const selectOrMatches = __webpack_require__(7834);
+const FocusTrap = __webpack_require__(3596);
+const ScrollBarWidth = __webpack_require__(8009);
+
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const MODAL_CLASSNAME = `${PREFIX}-modal`;
+const OVERLAY_CLASSNAME = `${MODAL_CLASSNAME}-overlay`;
+const WRAPPER_CLASSNAME = `${MODAL_CLASSNAME}-wrapper`;
+const OPENER_ATTRIBUTE = "data-open-modal";
+const CLOSER_ATTRIBUTE = "data-close-modal";
+const FORCE_ACTION_ATTRIBUTE = "data-force-action";
+const NON_MODAL_HIDDEN_ATTRIBUTE = `data-modal-hidden`;
+const MODAL = `.${MODAL_CLASSNAME}`;
+const INITIAL_FOCUS = `.${WRAPPER_CLASSNAME} *[data-focus]`;
+const CLOSE_BUTTON = `${WRAPPER_CLASSNAME} *[${CLOSER_ATTRIBUTE}]`;
+const OPENERS = `*[${OPENER_ATTRIBUTE}][aria-controls]`;
+const CLOSERS = `${CLOSE_BUTTON}, .${OVERLAY_CLASSNAME}:not([${FORCE_ACTION_ATTRIBUTE}])`;
+const NON_MODALS = `body > *:not(.${WRAPPER_CLASSNAME}):not([aria-hidden])`;
+const NON_MODALS_HIDDEN = `[${NON_MODAL_HIDDEN_ATTRIBUTE}]`;
+
+const ACTIVE_CLASS = "usa-js-modal--active";
+const PREVENT_CLICK_CLASS = "usa-js-no-click";
+const VISIBLE_CLASS = "is-visible";
+const HIDDEN_CLASS = "is-hidden";
+
+let modal;
+
+const isActive = () => document.body.classList.contains(ACTIVE_CLASS);
+const SCROLLBAR_WIDTH = ScrollBarWidth();
+const INITIAL_PADDING = window
+  .getComputedStyle(document.body)
+  .getPropertyValue("padding-right");
+const TEMPORARY_PADDING = `${
+  parseInt(INITIAL_PADDING.replace(/px/, ""), 10) +
+  parseInt(SCROLLBAR_WIDTH.replace(/px/, ""), 10)
+}px`;
+
+/**
+ *  Is bound to escape key, closes modal when
+ */
+const onMenuClose = () => {
+  modal.toggleModal.call(modal, false);
+};
+
+/**
+ *  Toggle the visibility of a modal window
+ *
+ * @param {KeyboardEvent} event the keydown event
+ * @returns {boolean} safeActive if mobile is open
+ */
+function toggleModal(event) {
+  let originalOpener;
+  let clickedElement = event.target;
+  const { body } = document;
+  const safeActive = !isActive();
+  const modalId = clickedElement
+    ? clickedElement.getAttribute("aria-controls")
+    : document.querySelector(".usa-modal-wrapper.is-visible");
+  const targetModal = safeActive
+    ? document.getElementById(modalId)
+    : document.querySelector(".usa-modal-wrapper.is-visible");
+
+  // if there is no modal we return early
+  if (!targetModal) {
+    return false;
+  }
+
+  const openFocusEl = targetModal.querySelector(INITIAL_FOCUS)
+    ? targetModal.querySelector(INITIAL_FOCUS)
+    : targetModal.querySelector(".usa-modal");
+  const returnFocus = document.getElementById(
+    targetModal.getAttribute("data-opener")
+  );
+  const menuButton = body.querySelector(OPENERS);
+  const forceUserAction = targetModal.getAttribute(FORCE_ACTION_ATTRIBUTE);
+
+  // Sets the clicked element to the close button
+  // so esc key always closes modal
+  if (event.type === "keydown" && targetModal !== null) {
+    clickedElement = targetModal.querySelector(CLOSE_BUTTON);
+  }
+
+  // When we're not hitting the escape key…
+  if (clickedElement) {
+    // Make sure we click the opener
+    // If it doesn't have an ID, make one
+    // Store id as data attribute on modal
+    if (clickedElement.hasAttribute(OPENER_ATTRIBUTE)) {
+      if (this.getAttribute("id") === null) {
+        originalOpener = `modal-${Math.floor(Math.random() * 900000) + 100000}`;
+        this.setAttribute("id", originalOpener);
+      } else {
+        originalOpener = this.getAttribute("id");
+      }
+      targetModal.setAttribute("data-opener", originalOpener);
+    }
+
+    // This basically stops the propagation if the element
+    // is inside the modal and not a close button or
+    // element inside a close button
+    if (clickedElement.closest(`.${MODAL_CLASSNAME}`)) {
+      if (
+        clickedElement.hasAttribute(CLOSER_ATTRIBUTE) ||
+        clickedElement.closest(`[${CLOSER_ATTRIBUTE}]`)
+      ) {
+        // do nothing. move on.
+      } else {
+        return false;
+      }
+    }
+  }
+
+  body.classList.toggle(ACTIVE_CLASS, safeActive);
+  targetModal.classList.toggle(VISIBLE_CLASS, safeActive);
+  targetModal.classList.toggle(HIDDEN_CLASS, !safeActive);
+
+  // If user is forced to take an action, adding
+  // a class to the body that prevents clicking underneath
+  // overlay
+  if (forceUserAction) {
+    body.classList.toggle(PREVENT_CLICK_CLASS, safeActive);
+  }
+
+  // Account for content shifting from body overflow: hidden
+  // We only check paddingRight in case apps are adding other properties
+  // to the body element
+  body.style.paddingRight =
+    body.style.paddingRight === TEMPORARY_PADDING
+      ? INITIAL_PADDING
+      : TEMPORARY_PADDING;
+
+  // Handle the focus actions
+  if (safeActive && openFocusEl) {
+    // The modal window is opened. Focus is set to close button.
+
+    // Binds escape key if we're not forcing
+    // the user to take an action
+    if (forceUserAction) {
+      modal.focusTrap = FocusTrap(targetModal);
+    } else {
+      modal.focusTrap = FocusTrap(targetModal, {
+        Escape: onMenuClose,
+      });
+    }
+
+    // Handles focus setting and interactions
+    modal.focusTrap.update(safeActive);
+    openFocusEl.focus();
+
+    // Hides everything that is not the modal from screen readers
+    document.querySelectorAll(NON_MODALS).forEach((nonModal) => {
+      nonModal.setAttribute("aria-hidden", "true");
+      nonModal.setAttribute(NON_MODAL_HIDDEN_ATTRIBUTE, "");
+    });
+  } else if (!safeActive && menuButton && returnFocus) {
+    // The modal window is closed.
+    // Non-modals now accesible to screen reader
+    document.querySelectorAll(NON_MODALS_HIDDEN).forEach((nonModal) => {
+      nonModal.removeAttribute("aria-hidden");
+      nonModal.removeAttribute(NON_MODAL_HIDDEN_ATTRIBUTE);
+    });
+
+    // Focus is returned to the opener
+    returnFocus.focus();
+    modal.focusTrap.update(safeActive);
+  }
+
+  return safeActive;
+}
+
+/**
+ *  Builds modal window from base HTML
+ *
+ * @param {HTMLElement} baseComponent the modal html in the DOM
+ */
+const setUpModal = (baseComponent) => {
+  const modalContent = baseComponent;
+  const modalWrapper = document.createElement("div");
+  const overlayDiv = document.createElement("div");
+  const modalID = baseComponent.getAttribute("id");
+  const ariaLabelledBy = baseComponent.getAttribute("aria-labelledby");
+  const ariaDescribedBy = baseComponent.getAttribute("aria-describedby");
+  const forceUserAction = baseComponent.hasAttribute(FORCE_ACTION_ATTRIBUTE)
+    ? baseComponent.hasAttribute(FORCE_ACTION_ATTRIBUTE)
+    : false;
+  // Create placeholder where modal is for cleanup
+  const originalLocationPlaceHolder = document.createElement("div");
+  originalLocationPlaceHolder.setAttribute(`data-placeholder-for`, modalID);
+  originalLocationPlaceHolder.style.display = "none";
+  originalLocationPlaceHolder.setAttribute("aria-hidden", "true");
+  for (
+    let attributeIndex = 0;
+    attributeIndex < modalContent.attributes.length;
+    attributeIndex += 1
+  ) {
+    const attribute = modalContent.attributes[attributeIndex];
+    originalLocationPlaceHolder.setAttribute(
+      `data-original-${attribute.name}`,
+      attribute.value
+    );
+  }
+
+  modalContent.after(originalLocationPlaceHolder);
+
+  // Rebuild the modal element
+  modalContent.parentNode.insertBefore(modalWrapper, modalContent);
+  modalWrapper.appendChild(modalContent);
+  modalContent.parentNode.insertBefore(overlayDiv, modalContent);
+  overlayDiv.appendChild(modalContent);
+
+  // Add classes and attributes
+  modalWrapper.classList.add(HIDDEN_CLASS);
+  modalWrapper.classList.add(WRAPPER_CLASSNAME);
+  overlayDiv.classList.add(OVERLAY_CLASSNAME);
+
+  // Set attributes
+  modalWrapper.setAttribute("role", "dialog");
+  modalWrapper.setAttribute("id", modalID);
+
+  if (ariaLabelledBy) {
+    modalWrapper.setAttribute("aria-labelledby", ariaLabelledBy);
+  }
+
+  if (ariaDescribedBy) {
+    modalWrapper.setAttribute("aria-describedby", ariaDescribedBy);
+  }
+
+  if (forceUserAction) {
+    modalWrapper.setAttribute(FORCE_ACTION_ATTRIBUTE, "true");
+  }
+
+  // Update the base element HTML
+  baseComponent.removeAttribute("id");
+  baseComponent.removeAttribute("aria-labelledby");
+  baseComponent.removeAttribute("aria-describedby");
+  baseComponent.setAttribute("tabindex", "-1");
+
+  // Add aria-controls
+  const modalClosers = modalWrapper.querySelectorAll(CLOSERS);
+  modalClosers.forEach((el) => {
+    el.setAttribute("aria-controls", modalID);
+  });
+
+  // Move all modals to the end of the DOM. Doing this allows us to
+  // more easily find the elements to hide from screen readers
+  // when the modal is open.
+  document.body.appendChild(modalWrapper);
+};
+
+const cleanUpModal = (baseComponent) => {
+  const modalContent = baseComponent;
+  const modalWrapper = modalContent.parentElement.parentElement;
+  const modalID = modalWrapper.getAttribute("id");
+
+  const originalLocationPlaceHolder = document.querySelector(
+    `[data-placeholder-for="${modalID}"]`
+  );
+  if (originalLocationPlaceHolder) {
+    for (
+      let attributeIndex = 0;
+      attributeIndex < originalLocationPlaceHolder.attributes.length;
+      attributeIndex += 1
+    ) {
+      const attribute = originalLocationPlaceHolder.attributes[attributeIndex];
+      if (attribute.name.startsWith("data-original-")) {
+        // data-original- is 14 long
+        modalContent.setAttribute(attribute.name.substr(14), attribute.value);
+      }
+    }
+
+    originalLocationPlaceHolder.after(modalContent);
+    originalLocationPlaceHolder.parentElement.removeChild(
+      originalLocationPlaceHolder
+    );
+  }
+
+  modalWrapper.parentElement.removeChild(modalWrapper);
+};
+
+modal = {
+  init(root) {
+    selectOrMatches(MODAL, root).forEach((modalWindow) => {
+      const modalId = modalWindow.id;
+      setUpModal(modalWindow);
+
+      // this will query all openers and closers including the overlay
+      document
+        .querySelectorAll(`[aria-controls="${modalId}"]`)
+        .forEach((item) => {
+          // Turn anchor links into buttons because of
+          // VoiceOver on Safari
+          if (item.nodeName === "A") {
+            item.setAttribute("role", "button");
+            item.addEventListener("click", (e) => e.preventDefault());
+          }
+
+          // Can uncomment when aria-haspopup="dialog" is supported
+          // https://a11ysupport.io/tech/aria/aria-haspopup_attribute
+          // Most screen readers support aria-haspopup, but might announce
+          // as opening a menu if "dialog" is not supported.
+          // item.setAttribute("aria-haspopup", "dialog");
+
+          item.addEventListener("click", toggleModal);
+        });
+    });
+  },
+  teardown(root) {
+    selectOrMatches(MODAL, root).forEach((modalWindow) => {
+      cleanUpModal(modalWindow);
+      const modalId = modalWindow.id;
+
+      document
+        .querySelectorAll(`[aria-controls="${modalId}"]`)
+        .forEach((item) => item.removeEventListener("click", toggleModal));
+    });
+  },
+  focusTrap: null,
+  toggleModal,
+  on(root) {
+    this.init(root);
+  },
+  off(root) {
+    this.teardown(root);
+  },
+};
+
+module.exports = modal;
+
+
+/***/ }),
+
+/***/ 905:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const ignore = __webpack_require__(9439);
+const behavior = __webpack_require__(6158);
+const select = __webpack_require__(4900);
+
+const { CLICK } = __webpack_require__(381);
+
+const BUTTON = ".js-search-button";
+const FORM = ".js-search-form";
+const INPUT = "[type=search]";
+const CONTEXT = "header"; // XXX
+
+let lastButton;
+
+const getForm = (button) => {
+  const context = button.closest(CONTEXT);
+  return context ? context.querySelector(FORM) : document.querySelector(FORM);
+};
+
+const toggleSearch = (button, active) => {
+  const form = getForm(button);
+
+  if (!form) {
+    throw new Error(`No ${FORM} found for search toggle in ${CONTEXT}!`);
+  }
+
+  /* eslint-disable no-param-reassign */
+  button.hidden = active;
+  form.hidden = !active;
+  /* eslint-enable */
+
+  if (!active) {
+    return;
+  }
+
+  const input = form.querySelector(INPUT);
+
+  if (input) {
+    input.focus();
+  }
+  // when the user clicks _outside_ of the form w/ignore(): hide the
+  // search, then remove the listener
+  const listener = ignore(form, () => {
+    if (lastButton) {
+      hideSearch.call(lastButton); // eslint-disable-line no-use-before-define
+    }
+
+    document.body.removeEventListener(CLICK, listener);
+  });
+
+  // Normally we would just run this code without a timeout, but
+  // IE11 and Edge will actually call the listener *immediately* because
+  // they are currently handling this exact type of event, so we'll
+  // make sure the browser is done handling the current click event,
+  // if any, before we attach the listener.
+  setTimeout(() => {
+    document.body.addEventListener(CLICK, listener);
+  }, 0);
+};
+
+function showSearch() {
+  toggleSearch(this, true);
+  lastButton = this;
+}
+
+function hideSearch() {
+  toggleSearch(this, false);
+  lastButton = undefined;
+}
+
+const search = behavior(
+  {
+    [CLICK]: {
+      [BUTTON]: showSearch,
+    },
+  },
+  {
+    init(target) {
+      select(BUTTON, target).forEach((button) => {
+        toggleSearch(button, false);
+      });
+    },
+    teardown() {
+      // forget the last button clicked
+      lastButton = undefined;
+    },
+  }
+);
+
+module.exports = search;
+
+
+/***/ }),
+
+/***/ 9246:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const once = __webpack_require__(5689);
+const behavior = __webpack_require__(6158);
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const LINK = `.${PREFIX}-skipnav[href^="#"], .${PREFIX}-footer__return-to-top [href^="#"]`;
+const MAINCONTENT = "main-content";
+
+function setTabindex() {
+  // NB: we know because of the selector we're delegating to below that the
+  // href already begins with '#'
+  const id = encodeURI(this.getAttribute("href"));
+  const target = document.getElementById(
+    id === "#" ? MAINCONTENT : id.slice(1)
+  );
+
+  if (target) {
+    target.style.outline = "0";
+    target.setAttribute("tabindex", 0);
+    target.focus();
+    target.addEventListener(
+      "blur",
+      once(() => {
+        target.setAttribute("tabindex", -1);
+      })
+    );
+  } else {
+    // throw an error?
+  }
+}
+
+module.exports = behavior({
+  [CLICK]: {
+    [LINK]: setTabindex,
+  },
+});
+
+
+/***/ }),
+
+/***/ 3473:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const select = __webpack_require__(4900);
+const behavior = __webpack_require__(6158);
+const { CLICK } = __webpack_require__(381);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const Sanitizer = __webpack_require__(5826);
+
+const TABLE = `.${PREFIX}-table`;
+const SORTED = "aria-sort";
+const ASCENDING = "ascending";
+const DESCENDING = "descending";
+const SORT_OVERRIDE = "data-sort-value";
+const SORT_BUTTON_CLASS = `${PREFIX}-table__header__button`;
+const SORT_BUTTON = `.${SORT_BUTTON_CLASS}`;
+const SORTABLE_HEADER = `th[data-sortable]`;
+const ANNOUNCEMENT_REGION = `.${PREFIX}-table__announcement-region[aria-live="polite"]`;
+
+/** Gets the data-sort-value attribute value, if provided — otherwise, gets
+ * the innerText or textContent — of the child element (HTMLTableCellElement)
+ * at the specified index of the given table row
+ *
+ * @param {number} index
+ * @param {array<HTMLTableRowElement>} tr
+ * @return {boolean}
+ */
+const getCellValue = (tr, index) =>
+  tr.children[index].getAttribute(SORT_OVERRIDE) ||
+  tr.children[index].innerText ||
+  tr.children[index].textContent;
+
+/**
+ * Compares the values of two row array items at the given index, then sorts by the given direction
+ * @param {number} index
+ * @param {string} direction
+ * @return {boolean}
+ */
+const compareFunction = (index, isAscending) => (thisRow, nextRow) => {
+  // get values to compare from data attribute or cell content
+  const value1 = getCellValue(isAscending ? thisRow : nextRow, index);
+  const value2 = getCellValue(isAscending ? nextRow : thisRow, index);
+
+  // if neither value is empty, and if both values are already numbers, compare numerically
+  if (
+    value1 &&
+    value2 &&
+    !Number.isNaN(Number(value1)) &&
+    !Number.isNaN(Number(value2))
+  ) {
+    return value1 - value2;
+  }
+  // Otherwise, compare alphabetically based on current user locale
+  return value1.toString().localeCompare(value2, navigator.language, {
+    numeric: true,
+    ignorePunctuation: true,
+  });
+};
+
+/**
+ * Get an Array of column headers elements belonging directly to the given
+ * table element.
+ * @param {HTMLTableElement} table
+ * @return {array<HTMLTableHeaderCellElement>}
+ */
+const getColumnHeaders = (table) => {
+  const headers = select(SORTABLE_HEADER, table);
+  return headers.filter((header) => header.closest(TABLE) === table);
+};
+
+/**
+ * Update the button label within the given header element, resetting it
+ * to the default state (ready to sort ascending) if it's no longer sorted
+ * @param {HTMLTableHeaderCellElement} header
+ */
+const updateSortLabel = (header) => {
+  const headerName = header.innerText;
+  const sortedAscending = header.getAttribute(SORTED) === ASCENDING;
+  const isSorted =
+    header.getAttribute(SORTED) === ASCENDING ||
+    header.getAttribute(SORTED) === DESCENDING ||
+    false;
+  const headerLabel = `${headerName}, sortable column, currently ${
+    isSorted
+      ? `${sortedAscending ? `sorted ${ASCENDING}` : `sorted ${DESCENDING}`}`
+      : "unsorted"
+  }`;
+  const headerButtonLabel = `Click to sort by ${headerName} in ${
+    sortedAscending ? DESCENDING : ASCENDING
+  } order.`;
+  header.setAttribute("aria-label", headerLabel);
+  header.querySelector(SORT_BUTTON).setAttribute("title", headerButtonLabel);
+};
+
+/**
+ * Remove the aria-sort attribute on the given header element, and reset the label and button icon
+ * @param {HTMLTableHeaderCellElement} header
+ */
+const unsetSort = (header) => {
+  header.removeAttribute(SORTED);
+  updateSortLabel(header);
+};
+
+/**
+ * Sort rows either ascending or descending, based on a given header's aria-sort attribute
+ * @param {HTMLTableHeaderCellElement} header
+ * @param {boolean} isAscending
+ * @return {boolean} true
+ */
+const sortRows = (header, isAscending) => {
+  header.setAttribute(SORTED, isAscending === true ? DESCENDING : ASCENDING);
+  updateSortLabel(header);
+
+  const tbody = header.closest(TABLE).querySelector("tbody");
+
+  // We can use Array.from() and Array.sort() instead once we drop IE11 support, likely in the summer of 2021
+  //
+  // Array.from(tbody.querySelectorAll('tr').sort(
+  //   compareFunction(
+  //     Array.from(header.parentNode.children).indexOf(header),
+  //     !isAscending)
+  //   )
+  // .forEach(tr => tbody.appendChild(tr) );
+
+  // [].slice.call() turns array-like sets into true arrays so that we can sort them
+  const allRows = [].slice.call(tbody.querySelectorAll("tr"));
+  const allHeaders = [].slice.call(header.parentNode.children);
+  const thisHeaderIndex = allHeaders.indexOf(header);
+  allRows.sort(compareFunction(thisHeaderIndex, !isAscending)).forEach((tr) => {
+    [].slice
+      .call(tr.children)
+      .forEach((td) => td.removeAttribute("data-sort-active"));
+    tr.children[thisHeaderIndex].setAttribute("data-sort-active", true);
+    tbody.appendChild(tr);
+  });
+
+  return true;
+};
+
+/**
+ * Update the live region immediately following the table whenever sort changes.
+ * @param {HTMLTableElement} table
+ * @param {HTMLTableHeaderCellElement} sortedHeader
+ */
+
+const updateLiveRegion = (table, sortedHeader) => {
+  const caption = table.querySelector("caption").innerText;
+  const sortedAscending = sortedHeader.getAttribute(SORTED) === ASCENDING;
+  const headerLabel = sortedHeader.innerText;
+  const liveRegion = table.nextElementSibling;
+  if (liveRegion && liveRegion.matches(ANNOUNCEMENT_REGION)) {
+    const sortAnnouncement = `The table named "${caption}" is now sorted by ${headerLabel} in ${
+      sortedAscending ? ASCENDING : DESCENDING
+    } order.`;
+    liveRegion.innerText = sortAnnouncement;
+  } else {
+    throw new Error(
+      `Table containing a sortable column header is not followed by an aria-live region.`
+    );
+  }
+};
+
+/**
+ * Toggle a header's sort state, optionally providing a target
+ * state.
+ *
+ * @param {HTMLTableHeaderCellElement} header
+ * @param {boolean?} isAscending If no state is provided, the current
+ * state will be toggled (from false to true, and vice-versa).
+ */
+const toggleSort = (header, isAscending) => {
+  const table = header.closest(TABLE);
+  let safeAscending = isAscending;
+  if (typeof safeAscending !== "boolean") {
+    safeAscending = header.getAttribute(SORTED) === ASCENDING;
+  }
+
+  if (!table) {
+    throw new Error(`${SORTABLE_HEADER} is missing outer ${TABLE}`);
+  }
+
+  safeAscending = sortRows(header, isAscending);
+
+  if (safeAscending) {
+    getColumnHeaders(table).forEach((otherHeader) => {
+      if (otherHeader !== header) {
+        unsetSort(otherHeader);
+      }
+    });
+    updateLiveRegion(table, header);
+  }
+};
+
+/**
+ ** Inserts a button with icon inside a sortable header
+ * @param {HTMLTableHeaderCellElement} header
+ */
+
+const createHeaderButton = (header) => {
+  const buttonEl = document.createElement("button");
+  buttonEl.setAttribute("tabindex", "0");
+  buttonEl.classList.add(SORT_BUTTON_CLASS);
+  // ICON_SOURCE
+  buttonEl.innerHTML = Sanitizer.escapeHTML`
+  <svg class="${PREFIX}-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g class="descending" fill="transparent">
       <path d="M17 17L15.59 15.59L12.9999 18.17V2H10.9999V18.17L8.41 15.58L7 17L11.9999 22L17 17Z" />
     </g>
@@ -83,4 +5858,1991 @@ var t={8450:(t,e,a)=>{const n=a(6158),r=a(22),{CLICK:s}=a(381),{prefix:o}=a(1824
       <polygon points="15.17 15 13 17.17 13 6.83 15.17 9 16.58 7.59 12 3 7.41 7.59 8.83 9 11 6.83 11 17.17 8.83 15 7.42 16.41 12 21 16.59 16.41 15.17 15"/>
     </g>
   </svg>
-  `,t.appendChild(e),g(t)})(t)));const a=e.filter((t=>t.getAttribute(c)===d||t.getAttribute(c)===u))[0];if(void 0===a)return;const r=a.getAttribute(c);r===d?$(a,!0):r===u&&$(a,!1)},TABLE:l,SORTABLE_HEADER:f,SORT_BUTTON:b});t.exports=y},6811:(t,e,a)=>{const n=a(6158),r=a(7834),{prefix:s}=a(1824),{COMBO_BOX_CLASS:o,enhanceComboBox:i}=a(1513),l=`.${s}-time-picker`,c={filter:"0?{{ hourQueryFilter }}:{{minuteQueryFilter}}.*{{ apQueryFilter }}m?",apQueryFilter:"([ap])",hourQueryFilter:"([1-9][0-2]?)",minuteQueryFilter:"[\\d]+:([0-9]{0,2})"},d=t=>{let e;if(t){const[a,n]=t.split(":").map((t=>{let e;const a=parseInt(t,10);return Number.isNaN(a)||(e=a),e}));null!=a&&null!=n&&(e=60*a+n)}return e},u=n({},{init(t){r(l,t).forEach((t=>{(t=>{const e=t.closest(l),a=e.querySelector("input");if(!a)throw new Error(`${l} is missing inner input`);const n=document.createElement("select");["id","name","required","aria-label","aria-labelledby","disabled","aria-disabled"].forEach((t=>{if(a.hasAttribute(t)){const e=a.getAttribute(t);n.setAttribute(t,e),a.removeAttribute(t)}}));const r=(t,e)=>`0000${t}`.slice(-e),s=t=>{const e=t%60,a=Math.floor(t/60);return{minute:e,hour24:a,hour12:a%12||12,ampm:a<12?"am":"pm"}},i=Math.max(0,d(e.dataset.minTime)||0),u=Math.min(1439,d(e.dataset.maxTime)||1439),p=Math.floor(Math.max(1,e.dataset.step||30));let b;for(let t=i;t<=u;t+=p){const{minute:e,hour24:o,hour12:i,ampm:l}=s(t),c=document.createElement("option");c.value=`${r(o,2)}:${r(e,2)}`,c.text=`${i}:${r(e,2)}${l}`,c.text===a.value&&(b=c.value),n.appendChild(c)}e.classList.add(o),Object.keys(c).forEach((t=>{e.dataset[t]=c[t]})),e.dataset.disableFiltering="true",e.dataset.defaultValue=b,e.appendChild(n),a.remove()})(t),i(t)}))},FILTER_DATASET:c});t.exports=u},6207:(t,e,a)=>{const n=a(7834),r=a(6158),{prefix:s}=a(1824),o=a(8882),i=`.${s}-tooltip`,l=`.${s}-tooltip__trigger`,c=`${s}-tooltip__trigger`,d=`${s}-tooltip`,u=`${s}-tooltip__body`,p="is-set",b="is-visible",f=`${s}-tooltip__body--wrap`,h=t=>{const e=t.parentNode,a=e.querySelector(`.${u}`);return{trigger:t,wrapper:e,body:a}},m=(t,e,a)=>{t.setAttribute("aria-hidden","false"),t.classList.add(p);const n=e=>{t.classList.remove(`${u}--top`),t.classList.remove(`${u}--bottom`),t.classList.remove(`${u}--right`),t.classList.remove(`${u}--left`),t.classList.add(`${u}--${e}`)},r=t=>{t.style.top=null,t.style.bottom=null,t.style.right=null,t.style.left=null,t.style.margin=null},s=(t,e)=>parseInt(window.getComputedStyle(t).getPropertyValue(e),10),i=(t,e,a)=>s(a,`margin-${t}`)>0?e-s(a,`margin-${t}`):e,l=t=>{r(t);const a=i("top",t.offsetHeight,e),s=i("left",t.offsetWidth,e);n("top"),t.style.left="50%",t.style.top="-5px",t.style.margin=`-${a}px 0 0 -${s/2}px`},c=t=>{r(t);const a=i("left",t.offsetWidth,e);n("bottom"),t.style.left="50%",t.style.margin=`5px 0 0 -${a/2}px`},d=t=>{r(t);const a=i("top",t.offsetHeight,e);n("right"),t.style.top="50%",t.style.left=`${e.offsetLeft+e.offsetWidth+5}px`,t.style.margin=`-${a/2}px 0 0 0`},h=t=>{r(t);const a=i("top",t.offsetHeight,e),s=i("left",e.offsetLeft>t.offsetWidth?e.offsetLeft-t.offsetWidth:t.offsetWidth,e);n("left"),t.style.top="50%",t.style.left="-5px",t.style.margin=`-${a/2}px 0 0 ${e.offsetLeft>t.offsetWidth?s:-s}px`};function m(t,e=1){const a=[l,c,d,h];let n=!1;!function e(r){r<a.length&&((0,a[r])(t),o(t)?n=!0:e(r+=1))}(0),n||(t.classList.add(f),e<=2&&m(t,e+=1))}switch(a){case"top":l(t),o(t)||m(t);break;case"bottom":c(t),o(t)||m(t);break;case"right":d(t),o(t)||m(t);break;case"left":h(t),o(t)||m(t)}setTimeout((()=>{t.classList.add(b)}),20)},g=t=>{t.classList.remove(b),t.classList.remove(p),t.classList.remove(f),t.setAttribute("aria-hidden","true")},$=t=>{const e=`tooltip-${Math.floor(9e5*Math.random())+1e5}`,a=t.getAttribute("title"),n=document.createElement("span"),r=document.createElement("span"),s=t.getAttribute("data-classes");let o=t.getAttribute("data-position");return o||(o="top",t.setAttribute("data-position",o)),t.setAttribute("aria-describedby",e),t.setAttribute("tabindex","0"),t.removeAttribute("title"),t.classList.remove(d),t.classList.add(c),t.parentNode.insertBefore(n,t),n.appendChild(t),n.classList.add(d),n.appendChild(r),s&&s.split(" ").forEach((t=>n.classList.add(t))),r.classList.add(u),r.setAttribute("id",e),r.setAttribute("role","tooltip"),r.setAttribute("aria-hidden","true"),r.textContent=a,{tooltipBody:r,position:o,tooltipContent:a,wrapper:n}},y=r({"mouseover focusin":{[i](t){const e=t.target;"BUTTON"===e.nodeName&&e.hasAttribute("title")&&$(e)},[l](t){const{trigger:e,body:a}=h(t.target);m(a,e,e.dataset.position)}},"mouseout focusout":{[l](t){const{body:e}=h(t.target);g(e)}}},{init(t){n(i,t).forEach((t=>{$(t)}))},setup:$,getTooltipElements:h,show:m,hide:g});t.exports=y},8378:(t,e,a)=>{const n=a(6158),r=a(1709),{prefix:s}=a(1824),o=a(7834),i="input[data-validation-element]",l=`.${s}-checklist__item`,c=n({"input change":{[i](t){var e;e=t.target,r(e)}}},{init(t){o(i,t).forEach((t=>(t=>{(t=>{const e=t.parentNode,a=`${t.getAttribute("id")}-sr-summary`;t.setAttribute("aria-describedby",a);const n=document.createElement("span");n.setAttribute("data-validation-status",""),n.classList.add("usa-sr-only"),n.setAttribute("aria-live","polite"),n.setAttribute("aria-atomic",!0),n.setAttribute("id",a),e.append(n)})(t),(t=>{const e=t.parentNode.querySelectorAll(l),a=t.getAttribute("data-validation-element");t.setAttribute("aria-controls",a),e.forEach((e=>{let a="status incomplete";t.hasAttribute("data-validation-incomplete")&&(a=t.getAttribute("data-validation-incomplete"));const n=`${e.textContent} ${a} `;e.setAttribute("tabindex","0"),e.setAttribute("aria-label",n)}))})(t)})(t)))}});t.exports=c},1824:t=>{t.exports={prefix:"usa"}},381:t=>{t.exports={CLICK:"click"}},4389:(t,e,a)=>{const n=a(5075),r=a(5784),s=a(6069),o=a(976),i=a(1513),l=a(5587),c=a(1720),d=a(309),u=a(2731),p=a(3732),b=a(1369),f=a(10),h=a(5878),m=a(6177),g=a(8450),$=a(905),y=a(9246),A=a(3473),E=a(6811),v=a(6207),x=a(8378);t.exports={accordion:n,banner:r,button:s,characterCount:o,comboBox:i,datePicker:l,dateRangePicker:c,fileInput:d,footer:u,inPageNavigation:p,inputMask:b,languageSelector:f,modal:h,navigation:m,password:g,search:$,skipnav:y,table:A,timePicker:E,tooltip:v,validator:x}},6905:t=>{t.exports=(t=document)=>t.activeElement},6158:(t,e,a)=>{const n=a(7418),r=a(4674),s=(...t)=>function(e=document.body){t.forEach((t=>{"function"==typeof this[t]&&this[t].call(this,e)}))};t.exports=(t,e)=>r(t,n({on:s("init","add"),off:s("teardown","remove")},e))},3774:t=>{t.exports=function(t,e=500){let a=null;return(...n)=>{window.clearTimeout(a),a=window.setTimeout((()=>{t.apply(this,n)}),e)}}},3596:(t,e,a)=>{const n=a(7418),{keymap:r}=a(8351),s=a(6158),o=a(4900),i=a(6905);t.exports=(t,e={})=>{const a=(t=>{const e=o('a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]',t),a=e[0],n=e[e.length-1];return{firstTabStop:a,lastTabStop:n,tabAhead:function(t){i()===n&&(t.preventDefault(),a.focus())},tabBack:function(t){i()===a?(t.preventDefault(),n.focus()):e.includes(i())||(t.preventDefault(),a.focus())}}})(t),l=e,{Esc:c,Escape:d}=l;d&&!c&&(l.Esc=d);const u=r(n({Tab:a.tabAhead,"Shift+Tab":a.tabBack},e));return s({keydown:u},{init(){a.firstTabStop&&a.firstTabStop.focus()},update(t){t?this.on():this.off()}})}},8882:t=>{t.exports=function(t,e=window,a=document.documentElement){const n=t.getBoundingClientRect();return n.top>=0&&n.left>=0&&n.bottom<=(e.innerHeight||a.clientHeight)&&n.right<=(e.innerWidth||a.clientWidth)}},269:t=>{t.exports=function(){return"undefined"!=typeof navigator&&(navigator.userAgent.match(/(iPod|iPhone|iPad)/g)||"MacIntel"===navigator.platform&&navigator.maxTouchPoints>1)&&!window.MSStream}},5826:t=>{var e;t.exports=e={_entity:/[&<>"'/]/g,_entities:{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;","/":"&#x2F;"},getEntity:function(t){return e._entities[t]},escapeHTML:function(t){for(var a="",n=0;n<t.length;n++)a+=t[n],n+1<arguments.length&&(a+=String(arguments[n+1]||"").replace(e._entity,e.getEntity));return a},createSafeHTML:function(t){for(var a=arguments.length,n=new Array(a>1?a-1:0),r=1;r<a;r++)n[r-1]=arguments[r];return{__html:e.escapeHTML.apply(e,[t].concat(n)),toString:function(){return"[object WrappedHTMLObject]"},info:"This is a wrapped HTML object. See https://developer.mozilla.org/en-US/Firefox_OS/Security/Security_Automation for more."}},unwrapSafeHTML:function(){for(var t=arguments.length,e=new Array(t),a=0;a<t;a++)e[a]=arguments[a];return e.map((function(t){return t.__html})).join("")}}},8009:t=>{t.exports=function(){const t=document.createElement("div");t.style.visibility="hidden",t.style.overflow="scroll",t.style.msOverflowStyle="scrollbar",document.body.appendChild(t);const e=document.createElement("div");t.appendChild(e);const a=t.offsetWidth-e.offsetWidth+"px";return t.parentNode.removeChild(t),a}},7834:(t,e,a)=>{const n=a(4900);t.exports=(t,e)=>{const a=n(t,e);return"string"!=typeof t||(r=e)&&"object"==typeof r&&1===r.nodeType&&e.matches(t)&&a.push(e),a;var r}},4900:t=>{t.exports=(t,e)=>{if("string"!=typeof t)return[];var a;e&&(a=e)&&"object"==typeof a&&1===a.nodeType||(e=window.document);const n=e.querySelectorAll(t);return Array.prototype.slice.call(n)}},5455:t=>{t.exports=(t,e)=>{t.setAttribute("autocapitalize","off"),t.setAttribute("autocorrect","off"),t.setAttribute("type",e?"password":"text")}},22:(t,e,a)=>{const n=a(3521),r=a(5455),s="aria-pressed",o="data-show-text";t.exports=t=>{const e=t.hasAttribute(s)&&"true"!==t.getAttribute(s);n(t.getAttribute("aria-controls")).forEach((t=>r(t,e))),t.hasAttribute(o)||t.setAttribute(o,t.textContent);const a=t.getAttribute(o),i=t.getAttribute("data-hide-text")||(t=>t.replace(/\bShow\b/i,(t=>("S"===t[0]?"H":"h")+"ide")))(a);return t.textContent=e?a:i,t.setAttribute(s,e),e}},8497:t=>{const e="aria-expanded",a="hidden";t.exports=(t,n)=>{let r=n;"boolean"!=typeof r&&(r="false"===t.getAttribute(e)),t.setAttribute(e,r);const s=t.getAttribute("aria-controls"),o=document.getElementById(s);if(!o)throw new Error(`No toggle target found with id: "${s}"`);return r?o.removeAttribute(a):o.setAttribute(a,""),r}},1709:(t,e,a)=>{const n=a(3774),{prefix:r}=a(1824),s=`${r}-checklist__item--checked`;t.exports=function(t){const e=t.dataset.validationElement,a="#"===e.charAt(0)?document.querySelector(e):document.getElementById(e);if(!a)throw new Error(`No validation element found with id: "${e}"`);let r="";Object.entries(t.dataset).forEach((([e,o])=>{if(e.startsWith("validate")){const i=e.substr(8).toLowerCase(),l=new RegExp(o),c=`[data-validator="${i}"]`,d=a.querySelector(c),u=t.parentNode.querySelector("[data-validation-status]"),p=l.test(t.value);if(d.classList.toggle(s,p),!d)throw new Error(`No validator checkbox found for: "${i}"`);const b=t.dataset.validationComplete||"status complete",f=t.dataset.validationIncomplete||"status incomplete";let h=`${d.textContent} `;d.classList.contains(s)?h+=b:h+=f,d.setAttribute("aria-label",h),r+=`${h}. `,n((()=>{u.textContent=r}),1e3)()}}))}},2924:()=>{var t;"function"!=typeof(t=window.Element.prototype).matches&&(t.matches=t.msMatchesSelector||t.mozMatchesSelector||t.webkitMatchesSelector||function(t){for(var e=this,a=(e.document||e.ownerDocument).querySelectorAll(t),n=0;a[n]&&a[n]!==e;)++n;return Boolean(a[n])}),"function"!=typeof t.closest&&(t.closest=function(t){for(var e=this;e&&1===e.nodeType;){if(e.matches(t))return e;e=e.parentNode}return null})},1764:(t,e,a)=>{var n,r;!function(){var s,o={polyfill:function(){if(!("KeyboardEvent"in window)||"key"in KeyboardEvent.prototype)return!1;var t={get:function(t){var e=o.keys[this.which||this.keyCode];return Array.isArray(e)&&(e=e[+this.shiftKey]),e}};return Object.defineProperty(KeyboardEvent.prototype,"key",t),t},keys:{3:"Cancel",6:"Help",8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",28:"Convert",29:"NonConvert",30:"Accept",31:"ModeChange",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",41:"Select",42:"Print",43:"Execute",44:"PrintScreen",45:"Insert",46:"Delete",48:["0",")"],49:["1","!"],50:["2","@"],51:["3","#"],52:["4","$"],53:["5","%"],54:["6","^"],55:["7","&"],56:["8","*"],57:["9","("],91:"OS",93:"ContextMenu",144:"NumLock",145:"ScrollLock",181:"VolumeMute",182:"VolumeDown",183:"VolumeUp",186:[";",":"],187:["=","+"],188:[",","<"],189:["-","_"],190:[".",">"],191:["/","?"],192:["`","~"],219:["[","{"],220:["\\","|"],221:["]","}"],222:["'",'"'],224:"Meta",225:"AltGraph",246:"Attn",247:"CrSel",248:"ExSel",249:"EraseEof",250:"Play",251:"ZoomOut"}};for(s=1;s<25;s++)o.keys[111+s]="F"+s;var i="";for(s=65;s<91;s++)i=String.fromCharCode(s),o.keys[s]=[i.toLowerCase(),i.toUpperCase()];void 0===(r="function"==typeof(n=o)?n.call(e,a,e,t):n)||(t.exports=r)}()},7418:t=>{var e=Object.getOwnPropertySymbols,a=Object.prototype.hasOwnProperty,n=Object.prototype.propertyIsEnumerable;t.exports=function(){try{if(!Object.assign)return!1;var t=new String("abc");if(t[5]="de","5"===Object.getOwnPropertyNames(t)[0])return!1;for(var e={},a=0;a<10;a++)e["_"+String.fromCharCode(a)]=a;if("0123456789"!==Object.getOwnPropertyNames(e).map((function(t){return e[t]})).join(""))return!1;var n={};return"abcdefghijklmnopqrst".split("").forEach((function(t){n[t]=t})),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},n)).join("")}catch(t){return!1}}()?Object.assign:function(t,r){for(var s,o,i=function(t){if(null==t)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(t)}(t),l=1;l<arguments.length;l++){for(var c in s=Object(arguments[l]))a.call(s,c)&&(i[c]=s[c]);if(e){o=e(s);for(var d=0;d<o.length;d++)n.call(s,o[d])&&(i[o[d]]=s[o[d]])}}return i}},4674:(t,e,a)=>{const n=a(7418),r=a(7451),s=a(1456),o=/^(.+):delegate\((.+)\)$/;var i=function(t,e){var a=t[e];return delete t[e],a};t.exports=function(t,e){const a=Object.keys(t).reduce((function(e,a){var l=function(t,e){var a,l,c=t.match(o);c&&(t=c[1],a=c[2]),"object"==typeof e&&(l={capture:i(e,"capture"),passive:i(e,"passive")});var d={selector:a,delegate:"object"==typeof e?s(e):a?r(a,e):e,options:l};return t.indexOf(" ")>-1?t.split(" ").map((function(t){return n({type:t},d)})):(d.type=t,[d])}(a,t[a]);return e.concat(l)}),[]);return n({add:function(t){a.forEach((function(e){t.addEventListener(e.type,e.delegate,e.options)}))},remove:function(t){a.forEach((function(e){t.removeEventListener(e.type,e.delegate,e.options)}))}},e)}},4001:t=>{t.exports=function(t){return function(e){return t.some((function(t){return!1===t.call(this,e)}),this)}}},7451:(t,e,a)=>{a(2924),t.exports=function(t,e){return function(a){var n=a.target.closest(t);if(n)return e.call(n,a)}}},1456:(t,e,a)=>{const n=a(7451),r=a(4001);t.exports=function(t){const e=Object.keys(t);if(1===e.length&&"*"===e[0])return t["*"];const a=e.reduce((function(e,a){return e.push(n(a,t[a])),e}),[]);return r(a)}},9439:t=>{t.exports=function(t,e){return function(a){if(t!==a.target&&!t.contains(a.target))return e.call(this,a)}}},8351:(t,e,a)=>{t.exports={behavior:a(4674),delegate:a(7451),delegateAll:a(1456),ignore:a(9439),keymap:a(9361)}},9361:(t,e,a)=>{a(1764);const n={Alt:"altKey",Control:"ctrlKey",Ctrl:"ctrlKey",Shift:"shiftKey"};t.exports=function(t){const e=Object.keys(t).some((function(t){return t.indexOf("+")>-1}));return function(a){var r=function(t,e){var a=t.key;if(e)for(var r in n)!0===t[n[r]]&&(a=[r,a].join("+"));return a}(a,e);return[r,r.toLowerCase()].reduce((function(e,n){return n in t&&(e=t[r].call(this,a)),e}),void 0)}},t.exports.MODIFIERS=n},5689:t=>{t.exports=function(t,e){var a=function(n){return n.currentTarget.removeEventListener(n.type,a,e),t.call(this,n)};return a}},3521:t=>{var e=/(^\s+)|(\s+$)/g,a=/\s+/,n=String.prototype.trim?function(t){return t.trim()}:function(t){return t.replace(e,"")},r=function(t){return this.querySelector('[id="'+t.replace(/"/g,'\\"')+'"]')};t.exports=function(t,e){if("string"!=typeof t)throw new Error("Expected a string but got "+typeof t);e||(e=window.document);var s=e.getElementById?e.getElementById.bind(e):r.bind(e);return 1===(t=n(t).split(a)).length&&""===t[0]?[]:t.map((function(t){var e=s(t);if(!e)throw new Error('no element with id: "'+t+'"');return e}))}}},e={};function a(n){var r=e[n];if(void 0!==r)return r.exports;var s=e[n]={exports:{}};return t[n](s,s.exports,a),s.exports}a.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return a.d(e,{a:e}),e},a.d=(t,e)=>{for(var n in e)a.o(e,n)&&!a.o(t,n)&&Object.defineProperty(t,n,{enumerable:!0,get:e[n]})},a.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),(()=>{var t=a(4389),e=a.n(t);const{inputMask:n}=e();n.on()})();
+  `;
+  header.appendChild(buttonEl);
+  updateSortLabel(header);
+};
+
+const table = behavior(
+  {
+    [CLICK]: {
+      [SORT_BUTTON](event) {
+        event.preventDefault();
+        toggleSort(
+          event.target.closest(SORTABLE_HEADER),
+          event.target.closest(SORTABLE_HEADER).getAttribute(SORTED) ===
+            ASCENDING
+        );
+      },
+    },
+  },
+  {
+    init(root) {
+      const sortableHeaders = select(SORTABLE_HEADER, root);
+      sortableHeaders.forEach((header) => createHeaderButton(header));
+
+      const firstSorted = sortableHeaders.filter(
+        (header) =>
+          header.getAttribute(SORTED) === ASCENDING ||
+          header.getAttribute(SORTED) === DESCENDING
+      )[0];
+      if (typeof firstSorted === "undefined") {
+        // no sortable headers found
+        return;
+      }
+      const sortDir = firstSorted.getAttribute(SORTED);
+      if (sortDir === ASCENDING) {
+        toggleSort(firstSorted, true);
+      } else if (sortDir === DESCENDING) {
+        toggleSort(firstSorted, false);
+      }
+    },
+    TABLE,
+    SORTABLE_HEADER,
+    SORT_BUTTON,
+  }
+);
+
+module.exports = table;
+
+
+/***/ }),
+
+/***/ 6811:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const selectOrMatches = __webpack_require__(7834);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const {
+  COMBO_BOX_CLASS,
+  enhanceComboBox,
+} = __webpack_require__(1513);
+
+const TIME_PICKER_CLASS = `${PREFIX}-time-picker`;
+const TIME_PICKER = `.${TIME_PICKER_CLASS}`;
+const MAX_TIME = 60 * 24 - 1;
+const MIN_TIME = 0;
+const DEFAULT_STEP = 30;
+const MIN_STEP = 1;
+
+const FILTER_DATASET = {
+  filter:
+    "0?{{ hourQueryFilter }}:{{minuteQueryFilter}}.*{{ apQueryFilter }}m?",
+  apQueryFilter: "([ap])",
+  hourQueryFilter: "([1-9][0-2]?)",
+  minuteQueryFilter: "[\\d]+:([0-9]{0,2})",
+};
+
+/**
+ * Parse a string of hh:mm into minutes
+ *
+ * @param {string} timeStr the time string to parse
+ * @returns {number} the number of minutes
+ */
+const parseTimeString = (timeStr) => {
+  let minutes;
+
+  if (timeStr) {
+    const [hours, mins] = timeStr.split(":").map((str) => {
+      let value;
+      const parsed = parseInt(str, 10);
+      if (!Number.isNaN(parsed)) value = parsed;
+      return value;
+    });
+
+    if (hours != null && mins != null) {
+      minutes = hours * 60 + mins;
+    }
+  }
+
+  return minutes;
+};
+
+/**
+ * Enhance an input with the date picker elements
+ *
+ * @param {HTMLElement} el The initial wrapping element of the date picker component
+ */
+const transformTimePicker = (el) => {
+  const timePickerEl = el.closest(TIME_PICKER);
+
+  const initialInputEl = timePickerEl.querySelector(`input`);
+
+  if (!initialInputEl) {
+    throw new Error(`${TIME_PICKER} is missing inner input`);
+  }
+
+  const selectEl = document.createElement("select");
+
+  [
+    "id",
+    "name",
+    "required",
+    "aria-label",
+    "aria-labelledby",
+    "disabled",
+    "aria-disabled",
+  ].forEach((name) => {
+    if (initialInputEl.hasAttribute(name)) {
+      const value = initialInputEl.getAttribute(name);
+      selectEl.setAttribute(name, value);
+      initialInputEl.removeAttribute(name);
+    }
+  });
+
+  const padZeros = (value, length) => `0000${value}`.slice(-length);
+
+  const getTimeContext = (minutes) => {
+    const minute = minutes % 60;
+    const hour24 = Math.floor(minutes / 60);
+    const hour12 = hour24 % 12 || 12;
+    const ampm = hour24 < 12 ? "am" : "pm";
+
+    return {
+      minute,
+      hour24,
+      hour12,
+      ampm,
+    };
+  };
+
+  const minTime = Math.max(
+    MIN_TIME,
+    parseTimeString(timePickerEl.dataset.minTime) || MIN_TIME
+  );
+  const maxTime = Math.min(
+    MAX_TIME,
+    parseTimeString(timePickerEl.dataset.maxTime) || MAX_TIME
+  );
+  const step = Math.floor(
+    Math.max(MIN_STEP, timePickerEl.dataset.step || DEFAULT_STEP)
+  );
+
+  let defaultValue;
+  for (let time = minTime; time <= maxTime; time += step) {
+    const { minute, hour24, hour12, ampm } = getTimeContext(time);
+
+    const option = document.createElement("option");
+    option.value = `${padZeros(hour24, 2)}:${padZeros(minute, 2)}`;
+    option.text = `${hour12}:${padZeros(minute, 2)}${ampm}`;
+    if (option.text === initialInputEl.value) {
+      defaultValue = option.value;
+    }
+    selectEl.appendChild(option);
+  }
+
+  timePickerEl.classList.add(COMBO_BOX_CLASS);
+
+  // combo box properties
+  Object.keys(FILTER_DATASET).forEach((key) => {
+    timePickerEl.dataset[key] = FILTER_DATASET[key];
+  });
+  timePickerEl.dataset.disableFiltering = "true";
+  timePickerEl.dataset.defaultValue = defaultValue;
+
+  timePickerEl.appendChild(selectEl);
+  initialInputEl.remove();
+};
+
+const timePicker = behavior(
+  {},
+  {
+    init(root) {
+      selectOrMatches(TIME_PICKER, root).forEach((timePickerEl) => {
+        transformTimePicker(timePickerEl);
+        enhanceComboBox(timePickerEl);
+      });
+    },
+    FILTER_DATASET,
+  }
+);
+
+module.exports = timePicker;
+
+
+/***/ }),
+
+/***/ 6207:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// Tooltips
+const selectOrMatches = __webpack_require__(7834);
+const behavior = __webpack_require__(6158);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const isElementInViewport = __webpack_require__(8882);
+
+const TOOLTIP = `.${PREFIX}-tooltip`;
+const TOOLTIP_TRIGGER = `.${PREFIX}-tooltip__trigger`;
+const TOOLTIP_TRIGGER_CLASS = `${PREFIX}-tooltip__trigger`;
+const TOOLTIP_CLASS = `${PREFIX}-tooltip`;
+const TOOLTIP_BODY_CLASS = `${PREFIX}-tooltip__body`;
+const SET_CLASS = "is-set";
+const VISIBLE_CLASS = "is-visible";
+const TRIANGLE_SIZE = 5;
+const ADJUST_WIDTH_CLASS = `${PREFIX}-tooltip__body--wrap`;
+
+/**
+ *
+ * @param {DOMElement} trigger - The tooltip trigger
+ * @returns {object} Elements for initialized tooltip; includes trigger, wrapper, and body
+ */
+const getTooltipElements = (trigger) => {
+  const wrapper = trigger.parentNode;
+  const body = wrapper.querySelector(`.${TOOLTIP_BODY_CLASS}`);
+
+  return { trigger, wrapper, body };
+};
+
+/**
+ * Shows the tooltip
+ * @param {HTMLElement} tooltipTrigger - the element that initializes the tooltip
+ */
+const showToolTip = (tooltipBody, tooltipTrigger, position) => {
+  tooltipBody.setAttribute("aria-hidden", "false");
+
+  // This sets up the tooltip body. The opacity is 0, but
+  // we can begin running the calculations below.
+  tooltipBody.classList.add(SET_CLASS);
+
+  /**
+   * Position the tooltip body when the trigger is hovered
+   * Removes old positioning classnames and reapplies. This allows
+   * positioning to change in case the user resizes browser or DOM manipulation
+   * causes tooltip to get clipped from viewport
+   *
+   * @param {string} setPos - can be "top", "bottom", "right", "left"
+   */
+  const setPositionClass = (setPos) => {
+    tooltipBody.classList.remove(`${TOOLTIP_BODY_CLASS}--top`);
+    tooltipBody.classList.remove(`${TOOLTIP_BODY_CLASS}--bottom`);
+    tooltipBody.classList.remove(`${TOOLTIP_BODY_CLASS}--right`);
+    tooltipBody.classList.remove(`${TOOLTIP_BODY_CLASS}--left`);
+    tooltipBody.classList.add(`${TOOLTIP_BODY_CLASS}--${setPos}`);
+  };
+
+  /**
+   * Removes old positioning styles. This allows
+   * re-positioning to change without inheriting other
+   * dynamic styles
+   *
+   * @param {HTMLElement} e - this is the tooltip body
+   */
+  const resetPositionStyles = (e) => {
+    // we don't override anything in the stylesheet when finding alt positions
+    e.style.top = null;
+    e.style.bottom = null;
+    e.style.right = null;
+    e.style.left = null;
+    e.style.margin = null;
+  };
+
+  /**
+   * get margin offset calculations
+   *
+   * @param {HTMLElement} target - this is the tooltip body
+   * @param {String} propertyValue - this is the tooltip body
+   */
+
+  const offsetMargin = (target, propertyValue) =>
+    parseInt(
+      window.getComputedStyle(target).getPropertyValue(propertyValue),
+      10
+    );
+
+  // offsetLeft = the left position, and margin of the element, the left
+  // padding, scrollbar and border of the offsetParent element
+  // offsetWidth = The offsetWidth property returns the viewable width of an
+  // element in pixels, including padding, border and scrollbar, but not
+  // the margin.
+
+  /**
+   * Calculate margin offset
+   * tooltip trigger margin(position) offset + tooltipBody offsetWidth
+   * @param {String} marginPosition
+   * @param {Number} tooltipBodyOffset
+   * @param {HTMLElement} trigger
+   */
+  const calculateMarginOffset = (
+    marginPosition,
+    tooltipBodyOffset,
+    trigger
+  ) => {
+    const offset =
+      offsetMargin(trigger, `margin-${marginPosition}`) > 0
+        ? tooltipBodyOffset - offsetMargin(trigger, `margin-${marginPosition}`)
+        : tooltipBodyOffset;
+
+    return offset;
+  };
+
+  /**
+   * Positions tooltip at the top
+   * @param {HTMLElement} e - this is the tooltip body
+   */
+  const positionTop = (e) => {
+    resetPositionStyles(e); // ensures we start from the same point
+    // get details on the elements object with
+
+    const topMargin = calculateMarginOffset(
+      "top",
+      e.offsetHeight,
+      tooltipTrigger
+    );
+
+    const leftMargin = calculateMarginOffset(
+      "left",
+      e.offsetWidth,
+      tooltipTrigger
+    );
+
+    setPositionClass("top");
+    e.style.left = `50%`; // center the element
+    e.style.top = `-${TRIANGLE_SIZE}px`; // consider the pseudo element
+    // apply our margins based on the offset
+    e.style.margin = `-${topMargin}px 0 0 -${leftMargin / 2}px`;
+  };
+
+  /**
+   * Positions tooltip at the bottom
+   * @param {HTMLElement} e - this is the tooltip body
+   */
+  const positionBottom = (e) => {
+    resetPositionStyles(e);
+
+    const leftMargin = calculateMarginOffset(
+      "left",
+      e.offsetWidth,
+      tooltipTrigger
+    );
+
+    setPositionClass("bottom");
+    e.style.left = `50%`;
+    e.style.margin = `${TRIANGLE_SIZE}px 0 0 -${leftMargin / 2}px`;
+  };
+
+  /**
+   * Positions tooltip at the right
+   * @param {HTMLElement} e - this is the tooltip body
+   */
+  const positionRight = (e) => {
+    resetPositionStyles(e);
+
+    const topMargin = calculateMarginOffset(
+      "top",
+      e.offsetHeight,
+      tooltipTrigger
+    );
+
+    setPositionClass("right");
+    e.style.top = `50%`;
+    e.style.left = `${
+      tooltipTrigger.offsetLeft + tooltipTrigger.offsetWidth + TRIANGLE_SIZE
+    }px`;
+    e.style.margin = `-${topMargin / 2}px 0 0 0`;
+  };
+
+  /**
+   * Positions tooltip at the right
+   * @param {HTMLElement} e - this is the tooltip body
+   */
+  const positionLeft = (e) => {
+    resetPositionStyles(e);
+
+    const topMargin = calculateMarginOffset(
+      "top",
+      e.offsetHeight,
+      tooltipTrigger
+    );
+
+    // we have to check for some utility margins
+    const leftMargin = calculateMarginOffset(
+      "left",
+      tooltipTrigger.offsetLeft > e.offsetWidth
+        ? tooltipTrigger.offsetLeft - e.offsetWidth
+        : e.offsetWidth,
+      tooltipTrigger
+    );
+
+    setPositionClass("left");
+    e.style.top = `50%`;
+    e.style.left = `-${TRIANGLE_SIZE}px`;
+    e.style.margin = `-${topMargin / 2}px 0 0 ${
+      tooltipTrigger.offsetLeft > e.offsetWidth ? leftMargin : -leftMargin
+    }px`; // adjust the margin
+  };
+
+  /**
+   * We try to set the position based on the
+   * original intention, but make adjustments
+   * if the element is clipped out of the viewport
+   * we constrain the width only as a last resort
+   * @param {HTMLElement} element(alias tooltipBody)
+   * @param {Number} attempt (--flag)
+   */
+
+  const maxAttempts = 2;
+
+  function findBestPosition(element, attempt = 1) {
+    // create array of optional positions
+    const positions = [
+      positionTop,
+      positionBottom,
+      positionRight,
+      positionLeft,
+    ];
+
+    let hasVisiblePosition = false;
+
+    // we take a recursive approach
+    function tryPositions(i) {
+      if (i < positions.length) {
+        const pos = positions[i];
+        pos(element);
+
+        if (!isElementInViewport(element)) {
+          // eslint-disable-next-line no-param-reassign
+          tryPositions((i += 1));
+        } else {
+          hasVisiblePosition = true;
+        }
+      }
+    }
+
+    tryPositions(0);
+    // if we can't find a position we compress it and try again
+    if (!hasVisiblePosition) {
+      element.classList.add(ADJUST_WIDTH_CLASS);
+      if (attempt <= maxAttempts) {
+        // eslint-disable-next-line no-param-reassign
+        findBestPosition(element, (attempt += 1));
+      }
+    }
+  }
+
+  switch (position) {
+    case "top":
+      positionTop(tooltipBody);
+      if (!isElementInViewport(tooltipBody)) {
+        findBestPosition(tooltipBody);
+      }
+      break;
+    case "bottom":
+      positionBottom(tooltipBody);
+      if (!isElementInViewport(tooltipBody)) {
+        findBestPosition(tooltipBody);
+      }
+      break;
+    case "right":
+      positionRight(tooltipBody);
+      if (!isElementInViewport(tooltipBody)) {
+        findBestPosition(tooltipBody);
+      }
+      break;
+    case "left":
+      positionLeft(tooltipBody);
+      if (!isElementInViewport(tooltipBody)) {
+        findBestPosition(tooltipBody);
+      }
+      break;
+
+    default:
+      // skip default case
+      break;
+  }
+
+  /**
+   * Actually show the tooltip. The VISIBLE_CLASS
+   * will change the opacity to 1
+   */
+  setTimeout(() => {
+    tooltipBody.classList.add(VISIBLE_CLASS);
+  }, 20);
+};
+
+/**
+ * Removes all the properties to show and position the tooltip,
+ * and resets the tooltip position to the original intention
+ * in case the window is resized or the element is moved through
+ * DOM manipulation.
+ * @param {HTMLElement} tooltipBody - The body of the tooltip
+ */
+const hideToolTip = (tooltipBody) => {
+  tooltipBody.classList.remove(VISIBLE_CLASS);
+  tooltipBody.classList.remove(SET_CLASS);
+  tooltipBody.classList.remove(ADJUST_WIDTH_CLASS);
+  tooltipBody.setAttribute("aria-hidden", "true");
+};
+
+/**
+ * Setup the tooltip component
+ * @param {HTMLElement} tooltipTrigger The element that creates the tooltip
+ */
+const setUpAttributes = (tooltipTrigger) => {
+  const tooltipID = `tooltip-${Math.floor(Math.random() * 900000) + 100000}`;
+  const tooltipContent = tooltipTrigger.getAttribute("title");
+  const wrapper = document.createElement("span");
+  const tooltipBody = document.createElement("span");
+  const additionalClasses = tooltipTrigger.getAttribute("data-classes");
+  let position = tooltipTrigger.getAttribute("data-position");
+
+  // Apply default position if not set as attribute
+  if (!position) {
+    position = "top";
+    tooltipTrigger.setAttribute("data-position", position);
+  }
+
+  // Set up tooltip attributes
+  tooltipTrigger.setAttribute("aria-describedby", tooltipID);
+  tooltipTrigger.setAttribute("tabindex", "0");
+  tooltipTrigger.removeAttribute("title");
+  tooltipTrigger.classList.remove(TOOLTIP_CLASS);
+  tooltipTrigger.classList.add(TOOLTIP_TRIGGER_CLASS);
+
+  // insert wrapper before el in the DOM tree
+  tooltipTrigger.parentNode.insertBefore(wrapper, tooltipTrigger);
+
+  // set up the wrapper
+  wrapper.appendChild(tooltipTrigger);
+  wrapper.classList.add(TOOLTIP_CLASS);
+  wrapper.appendChild(tooltipBody);
+
+  // Apply additional class names to wrapper element
+  if (additionalClasses) {
+    const classesArray = additionalClasses.split(" ");
+    classesArray.forEach((classname) => wrapper.classList.add(classname));
+  }
+
+  // set up the tooltip body
+  tooltipBody.classList.add(TOOLTIP_BODY_CLASS);
+  tooltipBody.setAttribute("id", tooltipID);
+  tooltipBody.setAttribute("role", "tooltip");
+  tooltipBody.setAttribute("aria-hidden", "true");
+
+  // place the text in the tooltip
+  tooltipBody.textContent = tooltipContent;
+
+  return { tooltipBody, position, tooltipContent, wrapper };
+};
+
+// Setup our function to run on various events
+const tooltip = behavior(
+  {
+    "mouseover focusin": {
+      [TOOLTIP](e) {
+        const trigger = e.target;
+        const elementType = trigger.nodeName;
+
+        // Initialize tooltip if it hasn't already
+        if (elementType === "BUTTON" && trigger.hasAttribute("title")) {
+          setUpAttributes(trigger);
+        }
+      },
+      [TOOLTIP_TRIGGER](e) {
+        const { trigger, body } = getTooltipElements(e.target);
+
+        showToolTip(body, trigger, trigger.dataset.position);
+      },
+    },
+    "mouseout focusout": {
+      [TOOLTIP_TRIGGER](e) {
+        const { body } = getTooltipElements(e.target);
+
+        hideToolTip(body);
+      },
+    },
+  },
+  {
+    init(root) {
+      selectOrMatches(TOOLTIP, root).forEach((tooltipTrigger) => {
+        setUpAttributes(tooltipTrigger);
+      });
+    },
+    setup: setUpAttributes,
+    getTooltipElements,
+    show: showToolTip,
+    hide: hideToolTip,
+  }
+);
+
+module.exports = tooltip;
+
+
+/***/ }),
+
+/***/ 8378:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const behavior = __webpack_require__(6158);
+const validate = __webpack_require__(1709);
+const { prefix: PREFIX } = __webpack_require__(1824);
+const selectOrMatches = __webpack_require__(7834);
+
+const VALIDATE_INPUT = "input[data-validation-element]";
+const CHECKLIST_ITEM = `.${PREFIX}-checklist__item`;
+
+// Trigger validation on input change
+const handleChange = (el) => validate(el);
+
+// Create container to hold aria readout
+const createStatusElement = (input) => {
+  const validationContainer = input.parentNode;
+  const inputID = input.getAttribute("id");
+  const statusSummaryID = `${inputID}-sr-summary`;
+  input.setAttribute("aria-describedby", statusSummaryID);
+
+  const statusSummaryContainer = document.createElement("span");
+
+  statusSummaryContainer.setAttribute("data-validation-status", "");
+  statusSummaryContainer.classList.add("usa-sr-only");
+  statusSummaryContainer.setAttribute("aria-live", "polite");
+  statusSummaryContainer.setAttribute("aria-atomic", true);
+  statusSummaryContainer.setAttribute("id", statusSummaryID);
+  validationContainer.append(statusSummaryContainer);
+};
+
+// Set up checklist items with initial aria-label (incomplete) values
+const createInitialStatus = (input) => {
+  const validationContainer = input.parentNode;
+  const checklistItems = validationContainer.querySelectorAll(CHECKLIST_ITEM);
+  const validationElement = input.getAttribute("data-validation-element");
+
+  input.setAttribute("aria-controls", validationElement);
+
+  checklistItems.forEach((listItem) => {
+    let currentStatus = "status incomplete";
+    if (input.hasAttribute("data-validation-incomplete")) {
+      currentStatus = input.getAttribute("data-validation-incomplete");
+    }
+    const itemStatus = `${listItem.textContent} ${currentStatus} `;
+    listItem.setAttribute("tabindex", "0");
+    listItem.setAttribute("aria-label", itemStatus);
+  });
+};
+
+const enhanceValidation = (input) => {
+  createStatusElement(input);
+  createInitialStatus(input);
+};
+
+const validator = behavior(
+  {
+    "input change": {
+      [VALIDATE_INPUT](event) {
+        handleChange(event.target);
+      },
+    },
+  },
+  {
+    init(root) {
+      selectOrMatches(VALIDATE_INPUT, root).forEach((input) =>
+        enhanceValidation(input)
+      );
+    },
+  }
+);
+
+module.exports = validator;
+
+
+/***/ }),
+
+/***/ 1824:
+/***/ ((module) => {
+
+module.exports = {
+  prefix: "usa",
+};
+
+
+/***/ }),
+
+/***/ 381:
+/***/ ((module) => {
+
+module.exports = {
+  // This used to be conditionally dependent on whether the
+  // browser supported touch events; if it did, `CLICK` was set to
+  // `touchstart`.  However, this had downsides:
+  //
+  // * It pre-empted mobile browsers' default behavior of detecting
+  //   whether a touch turned into a scroll, thereby preventing
+  //   users from using some of our components as scroll surfaces.
+  //
+  // * Some devices, such as the Microsoft Surface Pro, support *both*
+  //   touch and clicks. This meant the conditional effectively dropped
+  //   support for the user's mouse, frustrating users who preferred
+  //   it on those systems.
+  CLICK: "click",
+};
+
+
+/***/ }),
+
+/***/ 4389:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const accordion = __webpack_require__(5075);
+const banner = __webpack_require__(5784);
+const button = __webpack_require__(6069);
+const characterCount = __webpack_require__(976);
+const comboBox = __webpack_require__(1513);
+const datePicker = __webpack_require__(5587);
+const dateRangePicker = __webpack_require__(1720);
+const fileInput = __webpack_require__(309);
+const footer = __webpack_require__(2731);
+const inPageNavigation = __webpack_require__(3732);
+const inputMask = __webpack_require__(1369);
+const languageSelector = __webpack_require__(10);
+const modal = __webpack_require__(5878);
+const navigation = __webpack_require__(6177);
+const password = __webpack_require__(8450);
+const search = __webpack_require__(905);
+const skipnav = __webpack_require__(9246);
+const table = __webpack_require__(3473);
+const timePicker = __webpack_require__(6811);
+const tooltip = __webpack_require__(6207);
+const validator = __webpack_require__(8378);
+
+module.exports = {
+  accordion,
+  banner,
+  button,
+  characterCount,
+  comboBox,
+  datePicker,
+  dateRangePicker,
+  fileInput,
+  footer,
+  inPageNavigation,
+  inputMask,
+  languageSelector,
+  modal,
+  navigation,
+  password,
+  search,
+  skipnav,
+  table,
+  timePicker,
+  tooltip,
+  validator,
+};
+
+
+/***/ }),
+
+/***/ 6905:
+/***/ ((module) => {
+
+module.exports = (htmlDocument = document) => htmlDocument.activeElement;
+
+
+/***/ }),
+
+/***/ 6158:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const assign = __webpack_require__(7418);
+const Behavior = __webpack_require__(4674);
+
+/**
+ * @name sequence
+ * @param {...Function} seq an array of functions
+ * @return { closure } callHooks
+ */
+// We use a named function here because we want it to inherit its lexical scope
+// from the behavior props object, not from the module
+const sequence = (...seq) =>
+  function callHooks(target = document.body) {
+    seq.forEach((method) => {
+      if (typeof this[method] === "function") {
+        this[method].call(this, target);
+      }
+    });
+  };
+
+/**
+ * @name behavior
+ * @param {object} events
+ * @param {object?} props
+ * @return {receptor.behavior}
+ */
+module.exports = (events, props) =>
+  Behavior(
+    events,
+    assign(
+      {
+        on: sequence("init", "add"),
+        off: sequence("teardown", "remove"),
+      },
+      props
+    )
+  );
+
+
+/***/ }),
+
+/***/ 3774:
+/***/ ((module) => {
+
+/**
+ * Call a function every X amount of milliseconds.
+ *
+ * @param  {Function} callback - A callback function to be debounced
+ * @param  {number} delay - Milliseconds to wait before calling function
+ * @returns {Function} A debounced function
+ * @example const updateStatus = debounce((string) => console.log(string), 2000)
+ */
+
+module.exports = function debounce(callback, delay = 500) {
+  let timer = null;
+  return (...args) => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      callback.apply(this, args);
+    }, delay);
+  };
+};
+
+
+/***/ }),
+
+/***/ 3596:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const assign = __webpack_require__(7418);
+const { keymap } = __webpack_require__(8351);
+const behavior = __webpack_require__(6158);
+const select = __webpack_require__(4900);
+const activeElement = __webpack_require__(6905);
+
+const FOCUSABLE =
+  'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+
+const tabHandler = (context) => {
+  const focusableElements = select(FOCUSABLE, context);
+  const firstTabStop = focusableElements[0];
+  const lastTabStop = focusableElements[focusableElements.length - 1];
+
+  // Special rules for when the user is tabbing forward from the last focusable element,
+  // or when tabbing backwards from the first focusable element
+  function tabAhead(event) {
+    if (activeElement() === lastTabStop) {
+      event.preventDefault();
+      firstTabStop.focus();
+    }
+  }
+
+  function tabBack(event) {
+    if (activeElement() === firstTabStop) {
+      event.preventDefault();
+      lastTabStop.focus();
+    }
+    // This checks if you want to set the initial focus to a container
+    // instead of an element within, and the user tabs back.
+    // Then we set the focus to the first
+    else if (!focusableElements.includes(activeElement())) {
+      event.preventDefault();
+      firstTabStop.focus();
+    }
+  }
+
+  return {
+    firstTabStop,
+    lastTabStop,
+    tabAhead,
+    tabBack,
+  };
+};
+
+module.exports = (context, additionalKeyBindings = {}) => {
+  const tabEventHandler = tabHandler(context);
+  const bindings = additionalKeyBindings;
+  const { Esc, Escape } = bindings;
+
+  if (Escape && !Esc) bindings.Esc = Escape;
+
+  //  TODO: In the future, loop over additional keybindings and pass an array
+  // of functions, if necessary, to the map keys. Then people implementing
+  // the focus trap could pass callbacks to fire when tabbing
+  const keyMappings = keymap(
+    assign(
+      {
+        Tab: tabEventHandler.tabAhead,
+        "Shift+Tab": tabEventHandler.tabBack,
+      },
+      additionalKeyBindings
+    )
+  );
+
+  const focusTrap = behavior(
+    {
+      keydown: keyMappings,
+    },
+    {
+      init() {
+        // TODO: is this desireable behavior? Should the trap always do this by default or should
+        // the component getting decorated handle this?
+        if (tabEventHandler.firstTabStop) {
+          tabEventHandler.firstTabStop.focus();
+        }
+      },
+      update(isActive) {
+        if (isActive) {
+          this.on();
+        } else {
+          this.off();
+        }
+      },
+    }
+  );
+
+  return focusTrap;
+};
+
+
+/***/ }),
+
+/***/ 8882:
+/***/ ((module) => {
+
+// https://stackoverflow.com/a/7557433
+function isElementInViewport(
+  el,
+  win = window,
+  docEl = document.documentElement
+) {
+  const rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (win.innerHeight || docEl.clientHeight) &&
+    rect.right <= (win.innerWidth || docEl.clientWidth)
+  );
+}
+
+module.exports = isElementInViewport;
+
+
+/***/ }),
+
+/***/ 269:
+/***/ ((module) => {
+
+// iOS detection from: http://stackoverflow.com/a/9039885/177710
+function isIosDevice() {
+  return (
+    typeof navigator !== "undefined" &&
+    (navigator.userAgent.match(/(iPod|iPhone|iPad)/g) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) &&
+    !window.MSStream
+  );
+}
+
+module.exports = isIosDevice;
+
+
+/***/ }),
+
+/***/ 5826:
+/***/ ((module) => {
+
+/* eslint-disable */
+/* globals define, module */
+
+/**
+ * A simple library to help you escape HTML using template strings.
+ *
+ * It's the counterpart to our eslint "no-unsafe-innerhtml" plugin that helps us
+ * avoid unsafe coding practices.
+ * A full write-up of the Hows and Whys are documented
+ * for developers at
+ *  https://developer.mozilla.org/en-US/Firefox_OS/Security/Security_Automation
+ * with additional background information and design docs at
+ *  https://wiki.mozilla.org/User:Fbraun/Gaia/SafeinnerHTMLRoadmap
+ *
+ */
+
+!(function (factory) {
+  module.exports = factory();
+})(function () {
+  "use strict";
+
+  var Sanitizer = {
+    _entity: /[&<>"'/]/g,
+
+    _entities: {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&apos;",
+      "/": "&#x2F;",
+    },
+
+    getEntity: function (s) {
+      return Sanitizer._entities[s];
+    },
+
+    /**
+     * Escapes HTML for all values in a tagged template string.
+     */
+    escapeHTML: function (strings) {
+      var result = "";
+
+      for (var i = 0; i < strings.length; i++) {
+        result += strings[i];
+        if (i + 1 < arguments.length) {
+          var value = arguments[i + 1] || "";
+          result += String(value).replace(
+            Sanitizer._entity,
+            Sanitizer.getEntity
+          );
+        }
+      }
+
+      return result;
+    },
+    /**
+     * Escapes HTML and returns a wrapped object to be used during DOM insertion
+     */
+    createSafeHTML: function (strings) {
+      var _len = arguments.length;
+      var values = new Array(_len > 1 ? _len - 1 : 0);
+      for (var _key = 1; _key < _len; _key++) {
+        values[_key - 1] = arguments[_key];
+      }
+
+      var escaped = Sanitizer.escapeHTML.apply(
+        Sanitizer,
+        [strings].concat(values)
+      );
+      return {
+        __html: escaped,
+        toString: function () {
+          return "[object WrappedHTMLObject]";
+        },
+        info:
+          "This is a wrapped HTML object. See https://developer.mozilla.or" +
+          "g/en-US/Firefox_OS/Security/Security_Automation for more.",
+      };
+    },
+    /**
+     * Unwrap safe HTML created by createSafeHTML or a custom replacement that
+     * underwent security review.
+     */
+    unwrapSafeHTML: function () {
+      var _len = arguments.length;
+      var htmlObjects = new Array(_len);
+      for (var _key = 0; _key < _len; _key++) {
+        htmlObjects[_key] = arguments[_key];
+      }
+
+      var markupList = htmlObjects.map(function (obj) {
+        return obj.__html;
+      });
+      return markupList.join("");
+    },
+  };
+
+  return Sanitizer;
+});
+
+
+/***/ }),
+
+/***/ 8009:
+/***/ ((module) => {
+
+module.exports = function getScrollbarWidth() {
+  // Creating invisible container
+  const outer = document.createElement("div");
+  outer.style.visibility = "hidden";
+  outer.style.overflow = "scroll"; // forcing scrollbar to appear
+  outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+  document.body.appendChild(outer);
+
+  // Creating inner element and placing it in the container
+  const inner = document.createElement("div");
+  outer.appendChild(inner);
+
+  // Calculating difference between container's full width and the child width
+  const scrollbarWidth = `${outer.offsetWidth - inner.offsetWidth}px`;
+
+  // Removing temporary elements from the DOM
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+};
+
+
+/***/ }),
+
+/***/ 7834:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const select = __webpack_require__(4900);
+/**
+ * @name isElement
+ * @desc returns whether or not the given argument is a DOM element.
+ * @param {any} value
+ * @return {boolean}
+ */
+const isElement = (value) =>
+  value && typeof value === "object" && value.nodeType === 1;
+
+/**
+ * @name selectOrMatches
+ * @desc selects elements from the DOM by class selector or ID selector.
+ * @param {string} selector - The selector to traverse the DOM with.
+ * @param {Document|HTMLElement?} context - The context to traverse the DOM
+ *   in. If not provided, it defaults to the document.
+ * @return {HTMLElement[]} - An array of DOM nodes or an empty array.
+ */
+module.exports = (selector, context) => {
+  const selection = select(selector, context);
+  if (typeof selector !== "string") {
+    return selection;
+  }
+
+  if (isElement(context) && context.matches(selector)) {
+    selection.push(context);
+  }
+
+  return selection;
+};
+
+
+/***/ }),
+
+/***/ 4900:
+/***/ ((module) => {
+
+/**
+ * @name isElement
+ * @desc returns whether or not the given argument is a DOM element.
+ * @param {any} value
+ * @return {boolean}
+ */
+const isElement = (value) =>
+  value && typeof value === "object" && value.nodeType === 1;
+
+/**
+ * @name select
+ * @desc selects elements from the DOM by class selector or ID selector.
+ * @param {string} selector - The selector to traverse the DOM with.
+ * @param {Document|HTMLElement?} context - The context to traverse the DOM
+ *   in. If not provided, it defaults to the document.
+ * @return {HTMLElement[]} - An array of DOM nodes or an empty array.
+ */
+module.exports = (selector, context) => {
+  if (typeof selector !== "string") {
+    return [];
+  }
+
+  if (!context || !isElement(context)) {
+    context = window.document; // eslint-disable-line no-param-reassign
+  }
+
+  const selection = context.querySelectorAll(selector);
+  return Array.prototype.slice.call(selection);
+};
+
+
+/***/ }),
+
+/***/ 5455:
+/***/ ((module) => {
+
+/**
+ * Flips given INPUT elements between masked (hiding the field value) and unmasked
+ * @param {Array.HTMLElement} fields - An array of INPUT elements
+ * @param {Boolean} mask - Whether the mask should be applied, hiding the field value
+ */
+module.exports = (field, mask) => {
+  field.setAttribute("autocapitalize", "off");
+  field.setAttribute("autocorrect", "off");
+  field.setAttribute("type", mask ? "password" : "text");
+};
+
+
+/***/ }),
+
+/***/ 22:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const resolveIdRefs = __webpack_require__(3521);
+const toggleFieldMask = __webpack_require__(5455);
+
+const CONTROLS = "aria-controls";
+const PRESSED = "aria-pressed";
+const SHOW_ATTR = "data-show-text";
+const HIDE_ATTR = "data-hide-text";
+
+/**
+ * Replace the word "Show" (or "show") with "Hide" (or "hide") in a string.
+ * @param {string} showText
+ * @return {strong} hideText
+ */
+const getHideText = (showText) =>
+  showText.replace(/\bShow\b/i, (show) => `${show[0] === "S" ? "H" : "h"}ide`);
+
+/**
+ * Component that decorates an HTML element with the ability to toggle the
+ * masked state of an input field (like a password) when clicked.
+ * The ids of the fields to be masked will be pulled directly from the button's
+ * `aria-controls` attribute.
+ *
+ * @param  {HTMLElement} el    Parent element containing the fields to be masked
+ * @return {boolean}
+ */
+module.exports = (el) => {
+  // this is the *target* state:
+  // * if the element has the attr and it's !== "true", pressed is true
+  // * otherwise, pressed is false
+  const pressed =
+    el.hasAttribute(PRESSED) && el.getAttribute(PRESSED) !== "true";
+
+  const fields = resolveIdRefs(el.getAttribute(CONTROLS));
+  fields.forEach((field) => toggleFieldMask(field, pressed));
+
+  if (!el.hasAttribute(SHOW_ATTR)) {
+    el.setAttribute(SHOW_ATTR, el.textContent);
+  }
+
+  const showText = el.getAttribute(SHOW_ATTR);
+  const hideText = el.getAttribute(HIDE_ATTR) || getHideText(showText);
+
+  el.textContent = pressed ? showText : hideText; // eslint-disable-line no-param-reassign
+  el.setAttribute(PRESSED, pressed);
+  return pressed;
+};
+
+
+/***/ }),
+
+/***/ 8497:
+/***/ ((module) => {
+
+const EXPANDED = "aria-expanded";
+const CONTROLS = "aria-controls";
+const HIDDEN = "hidden";
+
+module.exports = (button, expanded) => {
+  let safeExpanded = expanded;
+
+  if (typeof safeExpanded !== "boolean") {
+    safeExpanded = button.getAttribute(EXPANDED) === "false";
+  }
+
+  button.setAttribute(EXPANDED, safeExpanded);
+
+  const id = button.getAttribute(CONTROLS);
+  const controls = document.getElementById(id);
+  if (!controls) {
+    throw new Error(`No toggle target found with id: "${id}"`);
+  }
+
+  if (safeExpanded) {
+    controls.removeAttribute(HIDDEN);
+  } else {
+    controls.setAttribute(HIDDEN, "");
+  }
+
+  return safeExpanded;
+};
+
+
+/***/ }),
+
+/***/ 1709:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const debounce = __webpack_require__(3774);
+const { prefix: PREFIX } = __webpack_require__(1824);
+
+const CHECKED_CLASS = `${PREFIX}-checklist__item--checked`;
+
+module.exports = function validate(el) {
+  const id = el.dataset.validationElement;
+  const checkList =
+    id.charAt(0) === "#"
+      ? document.querySelector(id)
+      : document.getElementById(id);
+
+  if (!checkList) {
+    throw new Error(`No validation element found with id: "${id}"`);
+  }
+
+  let statusSummary = "";
+  Object.entries(el.dataset).forEach(([key, value]) => {
+    if (key.startsWith("validate")) {
+      const validatorName = key.substr("validate".length).toLowerCase();
+      const validatorPattern = new RegExp(value);
+      const validatorSelector = `[data-validator="${validatorName}"]`;
+      const validatorCheckbox = checkList.querySelector(validatorSelector);
+      const validatorParent = el.parentNode;
+      const statusSummaryContainer = validatorParent.querySelector(
+        `[data-validation-status]`
+      );
+
+      const checked = validatorPattern.test(el.value);
+      validatorCheckbox.classList.toggle(CHECKED_CLASS, checked);
+
+      if (!validatorCheckbox) {
+        throw new Error(`No validator checkbox found for: "${validatorName}"`);
+      }
+
+      // Create status reports for checklist items
+      const statusComplete = el.dataset.validationComplete || "status complete";
+      const statusIncomplete =
+        el.dataset.validationIncomplete || "status incomplete";
+      let checkboxContent = `${validatorCheckbox.textContent} `;
+
+      if (validatorCheckbox.classList.contains(CHECKED_CLASS)) {
+        checkboxContent += statusComplete;
+      } else {
+        checkboxContent += statusIncomplete;
+      }
+
+      // move status updates to aria-label on checklist item
+      validatorCheckbox.setAttribute("aria-label", checkboxContent);
+
+      // Create a summary of status for all checklist items
+      statusSummary += `${checkboxContent}. `;
+
+      // Add summary to screen reader summary container, after a delay
+      const srUpdateStatus = debounce(() => {
+        statusSummaryContainer.textContent = statusSummary;
+      }, 1000);
+
+      srUpdateStatus();
+    }
+  });
+};
+
+
+/***/ }),
+
+/***/ 2924:
+/***/ (() => {
+
+// element-closest | CC0-1.0 | github.com/jonathantneal/closest
+
+(function (ElementProto) {
+	if (typeof ElementProto.matches !== 'function') {
+		ElementProto.matches = ElementProto.msMatchesSelector || ElementProto.mozMatchesSelector || ElementProto.webkitMatchesSelector || function matches(selector) {
+			var element = this;
+			var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+			var index = 0;
+
+			while (elements[index] && elements[index] !== element) {
+				++index;
+			}
+
+			return Boolean(elements[index]);
+		};
+	}
+
+	if (typeof ElementProto.closest !== 'function') {
+		ElementProto.closest = function closest(selector) {
+			var element = this;
+
+			while (element && element.nodeType === 1) {
+				if (element.matches(selector)) {
+					return element;
+				}
+
+				element = element.parentNode;
+			}
+
+			return null;
+		};
+	}
+})(window.Element.prototype);
+
+
+/***/ }),
+
+/***/ 1764:
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* global define, KeyboardEvent, module */
+
+(function () {
+
+  var keyboardeventKeyPolyfill = {
+    polyfill: polyfill,
+    keys: {
+      3: 'Cancel',
+      6: 'Help',
+      8: 'Backspace',
+      9: 'Tab',
+      12: 'Clear',
+      13: 'Enter',
+      16: 'Shift',
+      17: 'Control',
+      18: 'Alt',
+      19: 'Pause',
+      20: 'CapsLock',
+      27: 'Escape',
+      28: 'Convert',
+      29: 'NonConvert',
+      30: 'Accept',
+      31: 'ModeChange',
+      32: ' ',
+      33: 'PageUp',
+      34: 'PageDown',
+      35: 'End',
+      36: 'Home',
+      37: 'ArrowLeft',
+      38: 'ArrowUp',
+      39: 'ArrowRight',
+      40: 'ArrowDown',
+      41: 'Select',
+      42: 'Print',
+      43: 'Execute',
+      44: 'PrintScreen',
+      45: 'Insert',
+      46: 'Delete',
+      48: ['0', ')'],
+      49: ['1', '!'],
+      50: ['2', '@'],
+      51: ['3', '#'],
+      52: ['4', '$'],
+      53: ['5', '%'],
+      54: ['6', '^'],
+      55: ['7', '&'],
+      56: ['8', '*'],
+      57: ['9', '('],
+      91: 'OS',
+      93: 'ContextMenu',
+      144: 'NumLock',
+      145: 'ScrollLock',
+      181: 'VolumeMute',
+      182: 'VolumeDown',
+      183: 'VolumeUp',
+      186: [';', ':'],
+      187: ['=', '+'],
+      188: [',', '<'],
+      189: ['-', '_'],
+      190: ['.', '>'],
+      191: ['/', '?'],
+      192: ['`', '~'],
+      219: ['[', '{'],
+      220: ['\\', '|'],
+      221: [']', '}'],
+      222: ["'", '"'],
+      224: 'Meta',
+      225: 'AltGraph',
+      246: 'Attn',
+      247: 'CrSel',
+      248: 'ExSel',
+      249: 'EraseEof',
+      250: 'Play',
+      251: 'ZoomOut'
+    }
+  };
+
+  // Function keys (F1-24).
+  var i;
+  for (i = 1; i < 25; i++) {
+    keyboardeventKeyPolyfill.keys[111 + i] = 'F' + i;
+  }
+
+  // Printable ASCII characters.
+  var letter = '';
+  for (i = 65; i < 91; i++) {
+    letter = String.fromCharCode(i);
+    keyboardeventKeyPolyfill.keys[i] = [letter.toLowerCase(), letter.toUpperCase()];
+  }
+
+  function polyfill () {
+    if (!('KeyboardEvent' in window) ||
+        'key' in KeyboardEvent.prototype) {
+      return false;
+    }
+
+    // Polyfill `key` on `KeyboardEvent`.
+    var proto = {
+      get: function (x) {
+        var key = keyboardeventKeyPolyfill.keys[this.which || this.keyCode];
+
+        if (Array.isArray(key)) {
+          key = key[+this.shiftKey];
+        }
+
+        return key;
+      }
+    };
+    Object.defineProperty(KeyboardEvent.prototype, 'key', proto);
+    return proto;
+  }
+
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_FACTORY__ = (keyboardeventKeyPolyfill),
+		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+		(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+		__WEBPACK_AMD_DEFINE_FACTORY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+
+})();
+
+
+/***/ }),
+
+/***/ 7418:
+/***/ ((module) => {
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ 4674:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const assign = __webpack_require__(7418);
+const delegate = __webpack_require__(7451);
+const delegateAll = __webpack_require__(1456);
+
+const DELEGATE_PATTERN = /^(.+):delegate\((.+)\)$/;
+const SPACE = ' ';
+
+const getListeners = function(type, handler) {
+  var match = type.match(DELEGATE_PATTERN);
+  var selector;
+  if (match) {
+    type = match[1];
+    selector = match[2];
+  }
+
+  var options;
+  if (typeof handler === 'object') {
+    options = {
+      capture: popKey(handler, 'capture'),
+      passive: popKey(handler, 'passive')
+    };
+  }
+
+  var listener = {
+    selector: selector,
+    delegate: (typeof handler === 'object')
+      ? delegateAll(handler)
+      : selector
+        ? delegate(selector, handler)
+        : handler,
+    options: options
+  };
+
+  if (type.indexOf(SPACE) > -1) {
+    return type.split(SPACE).map(function(_type) {
+      return assign({type: _type}, listener);
+    });
+  } else {
+    listener.type = type;
+    return [listener];
+  }
+};
+
+var popKey = function(obj, key) {
+  var value = obj[key];
+  delete obj[key];
+  return value;
+};
+
+module.exports = function behavior(events, props) {
+  const listeners = Object.keys(events)
+    .reduce(function(memo, type) {
+      var listeners = getListeners(type, events[type]);
+      return memo.concat(listeners);
+    }, []);
+
+  return assign({
+    add: function addBehavior(element) {
+      listeners.forEach(function(listener) {
+        element.addEventListener(
+          listener.type,
+          listener.delegate,
+          listener.options
+        );
+      });
+    },
+    remove: function removeBehavior(element) {
+      listeners.forEach(function(listener) {
+        element.removeEventListener(
+          listener.type,
+          listener.delegate,
+          listener.options
+        );
+      });
+    }
+  }, props);
+};
+
+
+/***/ }),
+
+/***/ 4001:
+/***/ ((module) => {
+
+module.exports = function compose(functions) {
+  return function(e) {
+    return functions.some(function(fn) {
+      return fn.call(this, e) === false;
+    }, this);
+  };
+};
+
+
+/***/ }),
+
+/***/ 7451:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// polyfill Element.prototype.closest
+__webpack_require__(2924);
+
+module.exports = function delegate(selector, fn) {
+  return function delegation(event) {
+    var target = event.target.closest(selector);
+    if (target) {
+      return fn.call(target, event);
+    }
+  }
+};
+
+
+/***/ }),
+
+/***/ 1456:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const delegate = __webpack_require__(7451);
+const compose = __webpack_require__(4001);
+
+const SPLAT = '*';
+
+module.exports = function delegateAll(selectors) {
+  const keys = Object.keys(selectors)
+
+  // XXX optimization: if there is only one handler and it applies to
+  // all elements (the "*" CSS selector), then just return that
+  // handler
+  if (keys.length === 1 && keys[0] === SPLAT) {
+    return selectors[SPLAT];
+  }
+
+  const delegates = keys.reduce(function(memo, selector) {
+    memo.push(delegate(selector, selectors[selector]));
+    return memo;
+  }, []);
+  return compose(delegates);
+};
+
+
+/***/ }),
+
+/***/ 9439:
+/***/ ((module) => {
+
+module.exports = function ignore(element, fn) {
+  return function ignorance(e) {
+    if (element !== e.target && !element.contains(e.target)) {
+      return fn.call(this, e);
+    }
+  };
+};
+
+
+/***/ }),
+
+/***/ 8351:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = {
+  behavior:     __webpack_require__(4674),
+  delegate:     __webpack_require__(7451),
+  delegateAll:  __webpack_require__(1456),
+  ignore:       __webpack_require__(9439),
+  keymap:       __webpack_require__(9361),
+};
+
+
+/***/ }),
+
+/***/ 9361:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+__webpack_require__(1764);
+
+// these are the only relevant modifiers supported on all platforms,
+// according to MDN:
+// <https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/getModifierState>
+const MODIFIERS = {
+  'Alt':      'altKey',
+  'Control':  'ctrlKey',
+  'Ctrl':     'ctrlKey',
+  'Shift':    'shiftKey'
+};
+
+const MODIFIER_SEPARATOR = '+';
+
+const getEventKey = function(event, hasModifiers) {
+  var key = event.key;
+  if (hasModifiers) {
+    for (var modifier in MODIFIERS) {
+      if (event[MODIFIERS[modifier]] === true) {
+        key = [modifier, key].join(MODIFIER_SEPARATOR);
+      }
+    }
+  }
+  return key;
+};
+
+module.exports = function keymap(keys) {
+  const hasModifiers = Object.keys(keys).some(function(key) {
+    return key.indexOf(MODIFIER_SEPARATOR) > -1;
+  });
+  return function(event) {
+    var key = getEventKey(event, hasModifiers);
+    return [key, key.toLowerCase()]
+      .reduce(function(result, _key) {
+        if (_key in keys) {
+          result = keys[key].call(this, event);
+        }
+        return result;
+      }, undefined);
+  };
+};
+
+module.exports.MODIFIERS = MODIFIERS;
+
+
+/***/ }),
+
+/***/ 5689:
+/***/ ((module) => {
+
+module.exports = function once(listener, options) {
+  var wrapped = function wrappedOnce(e) {
+    e.currentTarget.removeEventListener(e.type, wrapped, options);
+    return listener.call(this, e);
+  };
+  return wrapped;
+};
+
+
+
+/***/ }),
+
+/***/ 3521:
+/***/ ((module) => {
+
+
+
+var RE_TRIM = /(^\s+)|(\s+$)/g;
+var RE_SPLIT = /\s+/;
+
+var trim = String.prototype.trim
+  ? function(str) { return str.trim(); }
+  : function(str) { return str.replace(RE_TRIM, ''); };
+
+var queryById = function(id) {
+  return this.querySelector('[id="' + id.replace(/"/g, '\\"') + '"]');
+};
+
+module.exports = function resolveIds(ids, doc) {
+  if (typeof ids !== 'string') {
+    throw new Error('Expected a string but got ' + (typeof ids));
+  }
+
+  if (!doc) {
+    doc = window.document;
+  }
+
+  var getElementById = doc.getElementById
+    ? doc.getElementById.bind(doc)
+    : queryById.bind(doc);
+
+  ids = trim(ids).split(RE_SPLIT);
+
+  // XXX we can short-circuit here because trimming and splitting a
+  // string of just whitespace produces an array containing a single,
+  // empty string
+  if (ids.length === 1 && ids[0] === '') {
+    return [];
+  }
+
+  return ids
+    .map(function(id) {
+      var el = getElementById(id);
+      if (!el) {
+        throw new Error('no element with id: "' + id + '"');
+      }
+      return el;
+    });
+};
+
+
+/***/ })
+
+/******/ });
+/************************************************************************/
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __webpack_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
+/******/ 	}
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
+/************************************************************************/
+/******/ /* webpack/runtime/compat get default export */
+/******/ (() => {
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/define property getters */
+/******/ (() => {
+/******/ 	// define getter functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			}
+/******/ 		}
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/hasOwnProperty shorthand */
+/******/ (() => {
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ })();
+/******/ 
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/* harmony import */ var _uswds_uswds_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4389);
+/* harmony import */ var _uswds_uswds_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_uswds_uswds_js__WEBPACK_IMPORTED_MODULE_0__);
+
+const { inputMask } = (_uswds_uswds_js__WEBPACK_IMPORTED_MODULE_0___default()); // deconstruct your components here
+
+inputMask.on();
+})();
+

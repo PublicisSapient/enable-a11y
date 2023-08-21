@@ -67,25 +67,24 @@
 
 </p>
 
-<div class="enable-example">
+<div class="enable-example input-mask-example">
     <form class="usa-form">
+
         <label class="usa-label" for="tel">Canadian Telephone Number</label>
-        <input id="tel" type="tel" inputmode="numeric" name="tel" placeholder="___-___-____" pattern="\d{3}-\d{3}-\d{4}"
-            class="usa-input usa-masked" aria-describedby="telHint" />
+        <input id="tel" type="tel" inputmode="numeric" name="tel" data-charset="___-___-____" placeholder="___-___-____" pattern="\d{3}-\d{3}-\d{4}"
+            class="usa-input masked" aria-describedby="telHint" />
         <div class="usa-hint" id="telHint">For example, 123-456-7890</div>
 
         <label class="usa-label" for="postalCode">Canadian Postal Code</label>
-
-        <input id="postalCode" type="text" name="postalCode" placeholder="___ ___"
-            pattern="([A-Za-z]\d[A-Za-z])\ {0,1}(\d[A-Za-z]\d)" data-charset="A#A #A#" class="usa-input usa-masked"
+        <input id="postalCode" type="text" name="postalCode" placeholder="___ ___" data-charset="___ ___"
+            pattern="([A-Za-z]\d[A-Za-z])\ {0,1}(\d[A-Za-z]\d)" data-charset="A#A #A#" class="usa-input masked"
             aria-describedby="postalCodeHint" />
         <div class="usa-hint" id="postalCodeHint">For example, M6P 2S4</div>
 
 
         <label class="usa-label" for="cc">Credit Card Number</label>
-
         <input id="cc" type="text" name="cc" inputmode="numeric" pattern="(\b3[47]\d{2} \d{6} \d{5}\b)"
-            class="usa-input usa-masked" aria-describedby="ccHint" />
-        <div class="usa-hint" id="ccHint">For example, M6P 2S4</div>
+            class="usa-input masked" aria-describedby="ccHint" />
+        <div class="usa-hint" id="ccHint">A credit card usually has sixteen digits in it.</div>
     </form>
 </div>

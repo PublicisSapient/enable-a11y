@@ -1,7 +1,10 @@
 
 
+<script src="js/enable-libs/input-masking/js/masking-input.js"></script>
+
+
 <script>
-    const amexPlaceholder = "__ ______ _____";
+    const amexPlaceholder = "____ ______ _____";
     const otherPlaceholder = "____ ____ ____ ____";
     const ccEl = document.getElementById('cc');
     const ccTypeContainerEl =  document.getElementById('cc-type-container');
@@ -24,8 +27,10 @@
     }
 
     function setHintText(val) {
-        ccEl.placeholder = val;
-        ccEl.dataset.placeholder = val;
+        if (ccEl.placeholder !== val) {
+            ccEl.placeholder = val;
+            ccEl.dataset.placeholder = val;
+        }
     }
 
     function setCardType(type) {
@@ -38,12 +43,14 @@
     function changeEvent(e) {
         const { target } = e;
         const { value } = target;
+        
         if (isAmex(value)) {
             setHintText(amexPlaceholder);
         } else {
             setHintText(otherPlaceholder);
         }
 
+        /*
         if (isAmex(value)) {
             setCardType('AMEX');
         } else if (isMasterCard(value)) {
@@ -54,8 +61,12 @@
             setCardType('Discover');
         } else {
             setCardType('');
-        }
-    }
-</script>
-<script src="./js/uswds/input-mask.js"></script>
+        }*/
 
+    }
+
+    new InputMask({
+        mNum: '_',
+        mChar: '`'
+    });
+</script>

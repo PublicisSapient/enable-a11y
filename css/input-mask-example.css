@@ -10,6 +10,8 @@
 }
 .input-mask-example .usa-label {
   font-weight: bold;
+  margin-top: 1.25rem;
+  display: inline-block;
 }
 .input-mask-example .usa-input {
   margin-top: 0;
