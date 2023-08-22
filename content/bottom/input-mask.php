@@ -1,9 +1,9 @@
 
 
-<script src="js/enable-libs/input-masking/js/masking-input.js"></script>
+<script src="js/modules/input-mask.js" type="module"></script>
 
 
-<script>
+<ascript>
     const amexPlaceholder = "____ ______ _____";
     const otherPlaceholder = "____ ____ ____ ____";
     const ccEl = document.getElementById('cc');
@@ -69,4 +69,4 @@
         mNum: '_',
         mChar: '`'
     });
-</script>
+</ascript>
