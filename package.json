@@ -111,7 +111,6 @@
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
     "text-zoom-event": "^1.5.2",
-    "uswds": "^2.14.0",
     "vnu": "^20.6.30",
     "vnu-jar": "^21.10.12",
     "wget-improved": "^3.2.1",
