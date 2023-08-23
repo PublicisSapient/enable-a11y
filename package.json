@@ -37,7 +37,7 @@
     "jest": "jest",
     "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
-    "server": "node bin/promote-node-modules-to-server.js && npm run build-usdws-libs && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh"
