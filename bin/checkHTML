@@ -128,6 +128,8 @@ Please read the following doc for more information:
 
 https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver/01fde32d0ed245141e24151f83b7c2db31d596a4#requirements
 " 1>&2
+
+showChromedriverError
 	exit 3
 	fi
 

@@ -43,7 +43,7 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeMobileIframe('reflow__example-of-issue.php', 'x=y', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
+  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
 ?>
 
 <p>This is obviously a Reflow violation.  But how do we fix this?</p>
@@ -60,7 +60,7 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeMobileIframe('reflow__example-of-issue.php', 'className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
+  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
 ?>
 
 <h3>Solution #2: Use Arrow Buttons to Access Offscreen Content</h3>
@@ -78,7 +78,7 @@
 -->
 
 <?php
-  includeMobileIframe('reflow__example-of-issue.php', 'hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
+  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
 ?>
 
 <p>Note that we made put set <code>tabindex="-1"</code> on the arrow buttons, since they are not needed for keyboard users.</p>
@@ -96,7 +96,7 @@
 -->
 <?php
   includeMobileIframe('reflow__example-of-issue.php', 
-    'hasDropdown=true&className=reflow-examples__remove-overflow', 
+    'isIframe=yes&hasDropdown=true&className=reflow-examples__remove-overflow', 
     $copy,'Example of a Reflow Issue fixed by using a dropdown to display the navigation bar',
     'Solution 3: Use a Drawer');
 ?>
@@ -188,5 +188,5 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php
-  includeMobileIframe('reflow__example-of-product-tile-carousel.php', 'x=y', $copy, 'Example of using Indicators in a carousel to resolve reflow issues', 'Using a Carousel');
+  includeMobileIframe('reflow__example-of-product-tile-carousel.php', 'isIframe=yes', $copy, 'Example of using Indicators in a carousel to resolve reflow issues', 'Using a Carousel');
 ?>

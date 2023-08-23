@@ -1,7 +1,8 @@
 const fs = require('fs');
-const fsExtra = require('fs-extra')
+const fsExtra = require('fs-extra');
+const { exec } = require("child_process");
 
-console.log('echo "Running promote-node-modules-to-server.js')
+console.log('Running promote-node-modules-to-server.js')
 console.log('clearing lib directory');
 fsExtra.emptyDirSync('enable-node-libs');
 
@@ -41,5 +42,5 @@ nodeFiles.forEach((fullPath) => {
     } else {
       console.log(`${fullPath} was copied to ${newPath}`);
     }
-  })
+  });
 });

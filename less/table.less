@@ -156,6 +156,7 @@ table,
     @table-column-width: @table-width / 7; 
     @table-body-height: 80vh;
 
+
     &.fixed-headers {
         border-collapse: collapse;
         
@@ -225,6 +226,36 @@ table,
 
     }
 }
+
+
+.enable-table {
+    &--centered-data {
+        th, td {
+            text-align: center;
+        }
+    }
+
+    &--with-borders {
+        th {
+            border-left: solid 1px white;
+            border-right: solid 1px white;
+
+            &:first-child {
+                border-left: solid 1px black;
+            }
+
+            &:last-child {
+                border-right: solid 1px black;
+            }
+        }
+
+        td {
+            border: solid 1px black;
+        }
+    }
+}
+
+&.enable-tabl
 
 .screenshot-table {
     margin: 0 auto;
