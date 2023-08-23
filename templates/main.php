@@ -1,8 +1,15 @@
 <?php 
   include "includes/functions.php";
   ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1); 
+  ini_set('display_startup_errors', 1);
+
+  $isIframe = $_GET['isIframe'] ?? '';
   
+  if ($isIframe == 'yes') {
+    $mainContentTag = 'div';
+  } else {
+    $mainContentTag = 'main';
+  }
 
   give404IfNotValid();
 ?>
@@ -19,7 +26,7 @@
   <?php include "includes/documentation-header.php";?>
   <?php include "includes/pause-anim-control.php" ?>
   <?php getAsideContent() ?>
-  <main id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
+  <<?= $mainContentTag ?> id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
     <?php
       if ( property_exists($fileProps, 'mainClass') && $fileProps->mainClass != 'with-full-bleed-hero' && isset($fileProps->title) && !isset($fileProps->hideTitle)) {
@@ -32,7 +39,7 @@
         getContent('');
       }
     ?>
-  </main>
+  </<?= $mainContentTag ?>>
 
     <?php getPreBottomBodyTags() ?>
 

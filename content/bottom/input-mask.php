@@ -2,7 +2,7 @@
 
 <script src="js/modules/input-mask.js" type="module"></script>
 
-
+<!--
 <ascript>
     const amexPlaceholder = "____ ______ _____";
     const otherPlaceholder = "____ ____ ____ ____";
@@ -70,3 +70,4 @@
         mChar: '`'
     });
 </ascript>
+-->
