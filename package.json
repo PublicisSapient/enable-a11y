@@ -91,7 +91,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@uswds/uswds": "^3.5.0",
     "chromedriver": "^115.0.1",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
