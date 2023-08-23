@@ -34,8 +34,6 @@
     "enable-node-libs/"
   ],
   "scripts": {
-    "build-entire-uswds": "npx gulp compile && npx gulp init",
-    "build-usdws-libs": "bin/promote-uswds-to-server.sh",
     "jest": "jest",
     "test": "bin/checkHTML && jest",
     "lint": "bin/checkHTML",
