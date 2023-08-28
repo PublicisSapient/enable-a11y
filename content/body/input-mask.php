@@ -85,42 +85,41 @@
                 <label class="example__label" for="tel">Canadian Telephone Number: </label>
                 <div class="enable-input-mask">
                     <input id="tel" type="tel" inputmode="numeric" name="tel" data-mask="999-999-9999"
-                        pattern="\d{3}-\d{3}-\d{4}" class="enable-input-mask__input" aria-describedby="telHint"
+                        pattern="\d{3}-\d{3}-\d{4}" class="enable-input-mask__input" aria-describedby="tel__hint tel__formatted-value"
                         maxlength="10" />
-                    <div class="enable-input-mask__mask"></div>
-                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div id="tel__formatted-value" aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                 </div>
-                <div class="desc" id="telHint">For example, 123-456-7890</div>
+                <div class="desc" id="tel__hint">For example, 123-456-7890</div>
+            </div>
+
+            <div class="field-block">
+                <label class="example__label" for="postal-code">Canadian Postal Code: </label>
+                <div class="enable-input-mask">
+                    <input id="postal-code" type="text" name="postal-code" data-mask="X9X 9X9"
+                        pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]" class="enable-input-mask__input" aria-describedby="postal-code__hint postal-code__formatted-value"
+                        maxlength="6" />
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div id="post-code__formatted-value" aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <div class="desc" id="postal-code__hint">For example, M6P 2V2</div>
+            </div>
+
+            
+            <div class="field-block">
+                <label class="example__label" for="credit-card">Credit Card: </label>
+                <div class="enable-input-mask">
+                    <input id="credit-card" inputmode="numeric" name="credit-card" data-mask="9999 9999 9999 9999"
+                        class="enable-input-mask__input" aria-describedby="credit-card__hint credit-card__formatted-value"
+                         />
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div id="post-code__formatted-value" aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <div class="desc" id="credit-card__hint">Usually a set of 17 to 19 digits</div>
             </div>
 
 
-              <div class="field-block">
-                <label class="required" for="name_html5">Full Name:</label>
-                <input id="name_html5" size="25" type="text" required  autocomplete="name" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="email_html5">E-mail address:</label>
-                <input id="email_html5" size="25" type="email" required autocomplete="email" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="phone_html5">Phone Number:</label>
-                <input                   id="phone_html5"
-                  size="25"
-                  type="text"
-                  required
-                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                  aria-describedby="phone-desc"
-                  autocomplete="tel"
-                >
-                <div id="phone-desc" class="desc">
-                  Format is xxx-xxx-xxxx<br>
-                  (where x is a digit)
-                </div>
-              </div>
-
-              <input value="Add Contact" type="submit" >
+              <input value="Submit" type="submit" >
             </div>
           </fieldset>
 

@@ -112,6 +112,7 @@ const inputMask = new function () {
     }
 
     function beep() {
+        beepAudio.currentTime = 0;
         beepAudio.play();
     }
 
@@ -230,7 +231,12 @@ const inputMask = new function () {
 
         announcementTimeout = setTimeout(() => {
             const alertEl = inputEl.parentNode.querySelector(`.${alertClass}`);
-            alertEl.innerHTML = `Formatted input: ${html}`;
+
+            if (inputEl.value.trim() === '') {
+                alertEl.innerHTML = '';
+            } else {
+                alertEl.innerHTML = `Current formatted input: ${html}`;
+            }
         }, 1000);
     }
 
@@ -294,6 +300,7 @@ const inputMask = new function () {
 
     this.init = () => {
         document.addEventListener('select', selectEvent, true);
+        document.addEventListener('focus', selectEvent, true);
         document.addEventListener('mouseup', mouseupEvent, true);
         document.addEventListener('mousedown', mousedownEvent, true);
         document.addEventListener('mousemove', mousemoveEvent)

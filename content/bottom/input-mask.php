@@ -2,13 +2,13 @@
 
 <script src="js/modules/input-mask.js" type="module"></script>
 
-<!--
-<ascript>
-    const amexPlaceholder = "____ ______ _____";
-    const otherPlaceholder = "____ ____ ____ ____";
-    const ccEl = document.getElementById('cc');
+<script>
+    const amexMaskText = "9999 999999 99999";
+    const otherMaskText = "9999 9999 9999 9999";
+    console.log(amexMaskText.length, otherMaskText.length);
+    const ccEl = document.getElementById('credit-card');
     const ccTypeContainerEl =  document.getElementById('cc-type-container');
-    setHintText(otherPlaceholder);
+    setHintText(otherMaskText);
 
     function isAmex(val) {
         return (val.indexOf('34') === 0);
@@ -27,9 +27,8 @@
     }
 
     function setHintText(val) {
-        if (ccEl.placeholder !== val) {
-            ccEl.placeholder = val;
-            ccEl.dataset.placeholder = val;
+        if (ccEl.dataset.mask !== val) {
+            ccEl.dataset.mask = val;
         }
     }
 
@@ -45,9 +44,9 @@
         const { value } = target;
         
         if (isAmex(value)) {
-            setHintText(amexPlaceholder);
+            setHintText(amexMaskText);
         } else {
-            setHintText(otherPlaceholder);
+            setHintText(otherMaskText);
         }
 
         /*
@@ -64,10 +63,4 @@
         }*/
 
     }
-
-    new InputMask({
-        mNum: '_',
-        mChar: '`'
-    });
-</ascript>
--->
+</script>
