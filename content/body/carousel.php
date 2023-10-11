@@ -63,7 +63,7 @@
       for the dot indicators at the bottom
       of the carousel (mockbuster-carousel__indicators)
     -->
-    <div id="mockbuster-carousel" class="glider enable-carousel enable-carousel--focus-all-panels">
+    <div id="mockbuster-carousel" class="glider enable-carousel enable-carousel--focus-all-panels" role="group" aria-label="B Film Carousel" tabindex="-1">
       <div class="enable-carousel__slide">
         <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg"
           alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
