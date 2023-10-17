@@ -124,7 +124,7 @@ import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
   if (!($other["noCSS"] ?? false)) {
 ?>
 
-// import the CSS for the module
+// import the CSS for the module 
 import '~enable-a11y/css/<?= $moduleName ?>';
 <?php
   }
@@ -207,8 +207,13 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 <?= $moduleVar ?>.init();
 <?php includeShowcodeStaticEnd() ?>
     </li>
+<?php
+  if (!($other["noCSS"] ?? false)) {
+?>
     <li>You will have to include the CSS as well in your project's CSS using:
-
+<?php
+  }
+?>
 <?php includeShowcodeStaticBegin() ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
 <?php includeShowcodeStaticEnd() ?>
@@ -247,6 +252,9 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
     from the repo and put them
     in the appropriate directories in your project (all JS files must be in the same directory).
   </li>
+  <?php
+    if (!($other["noCSS"] ?? false)) {
+  ?>
   <li>
     Load the CSS in the head of you document:
 
@@ -266,7 +274,10 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   &lt;/body&gt;
 &lt;/html&gt;
 
-  <?php includeShowcodeStaticEnd() ?>
+  <?php 
+    includeShowcodeStaticEnd();
+  } 
+  ?>
   <li>
     Load your scripts using:
 

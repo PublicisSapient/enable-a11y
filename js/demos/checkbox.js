@@ -1,5 +1,4 @@
 import showcode from '../enable-libs/showcode.js';
-import checkbox from '../modules/checkbox.js';
 
 const $form = document.getElementById('group-example__form');
 const $checkboxes = $form.querySelectorAll('input[type="checkbox"]');
