@@ -1,5 +1,4 @@
 import showcode from '../enable-libs/showcode.js';
-import checkbox from '../modules/checkbox.js';
 
 const $form = document.getElementById('group-example__form');
 const $checkboxes = $form.querySelectorAll('input[type="checkbox"]');
@@ -18,11 +17,13 @@ $form.addEventListener('submit', (e) => {
     if (isFormValid) {
         $error.classList.remove('visible');
         alert('The lord of the underworld has been informed. He respects your wishes.');
+        e.stopPropagation();
     } else {
         $error.classList.add('visible');
         $error.focus();
     }
-})
+});
+
 
 
 showcode.addJsObj('checkbox', checkbox);

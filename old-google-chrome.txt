@@ -1,0 +1,19 @@
+If you can only run Google Chrome < 115 on your system, you have to install your 
+Chromedriver a different way than outlined in the checkHTML script. 
+
+You can find the right zip here:
+
+https://chromedriver.storage.googleapis.com/index.html
+
+(you may need to change the $PATH variable)
+
+You will need to run this command in order to set up the chromedriver:
+
+sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
+
+If you have any other problems, you may need to check out this Stack Overflow article.
+
+https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
+
+This documentation is for informational purposes only.  The Enable Project does not officially support any chromedriver
+for Google Chrome < 118.

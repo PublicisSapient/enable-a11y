@@ -2,7 +2,7 @@
 global $fileProps;
 
 if ($fileProps->title != '') {
-  printf("%s | The Enable Project", $fileProps->title);
+  printf("%s - The Enable Project", $fileProps->title);
 } ?></title>
 
 <meta property="og:title" content="<?= $fileProps->title ?>" />

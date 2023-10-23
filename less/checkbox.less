@@ -69,6 +69,11 @@
       background-color: CanvasText;
     }
 
+    &:indeterminate::before {
+      clip-path: polygon(0% 40%, 100% 40%, 100% 60%, 0% 60%);
+      transform: scale(1);
+    }
+
     &:checked::before {
       transform: scale(1);
     }
@@ -97,7 +102,7 @@
 }
 
 
-#group-example { 
+#group-example, #indeterminate-example { 
 
   legend {
     width: 100%;
@@ -110,6 +115,7 @@
     width: fit-content;
     margin: 0 auto;
     position: relative;
+
 
     input {
       position: absolute;
@@ -136,3 +142,16 @@
     display: block;
   }
 } 
+
+#aria-indeterminate-example {
+  label {
+    display: inline;
+  }
+
+  .checkbox-container {
+    min-width: 190px;
+    list-style-type: none;
+  }
+
+
+}

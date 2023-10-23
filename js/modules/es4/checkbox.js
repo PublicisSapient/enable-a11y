@@ -46,6 +46,12 @@ const checkbox = new function () {
             {
               'bubbles': true
             }
+          ));
+          ref.dispatchEvent(new CustomEvent(
+            'enable-change',
+            {
+              'bubbles': true
+            }
           ))
         }
       }

@@ -40,7 +40,7 @@
   },
   "checkbox.php": {
     "title": "Accessible Checkboxes",
-    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way."
+    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes."
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
