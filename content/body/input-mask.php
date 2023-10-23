@@ -85,43 +85,38 @@
                 <label class="example__label" for="tel">Canadian Telephone Number: </label>
                 <div class="enable-input-mask">
                     <input id="tel" type="tel" inputmode="numeric" name="tel" data-mask="999-999-9999"
-                        pattern="\d{3}-\d{3}-\d{4}" class="enable-input-mask__input" aria-describedby="telHint"
+                        pattern="[0-9]*" class="enable-input-mask__input" aria-describedby="tel__desc"
                         maxlength="10" />
                     <div class="enable-input-mask__mask"></div>
                     <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                 </div>
-                <div class="desc" id="telHint">For example, 123-456-7890</div>
+                <div class="desc" id="tel__desc">For example, 123-456-7890</div>
             </div>
 
-
-              <div class="field-block">
-                <label class="required" for="name_html5">Full Name:</label>
-                <input id="name_html5" size="25" type="text" required  autocomplete="name" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="email_html5">E-mail address:</label>
-                <input id="email_html5" size="25" type="email" required autocomplete="email" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="phone_html5">Phone Number:</label>
-                <input                   id="phone_html5"
-                  size="25"
-                  type="text"
-                  required
-                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                  aria-describedby="phone-desc"
-                  autocomplete="tel"
-                >
-                <div id="phone-desc" class="desc">
-                  Format is xxx-xxx-xxxx<br>
-                  (where x is a digit)
+            <div class="field-block">
+                <label class="example__label" for="ccl">Credit Card Number: </label>
+                <div class="enable-input-mask">
+                    <input id="cc" type="text" inputmode="numeric" name="cc"
+                        pattern="[0-9]*" class="enable-input-mask__input" aria-describedby="" />
+                    <div class="enable-input-mask__mask"></div>
+                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                 </div>
-              </div>
-
-              <input value="Add Contact" type="submit" >
+                <div> Type: <div id="cc-type-container"></div></div>
             </div>
+
+            <div class="field-block">
+                <label class="example__label" for="winkey">Windows Product Key: </label>
+                <div class="enable-input-mask">
+                    <input id="winkey" type="text" name="cc" data-mask="CCCCC-CCCCC-CCCCC-CCCCC-CCCCC"
+                        pattern="[a-zA-Z0-9]{25}" class="enable-input-mask__input" aria-describedby="winkey__desc" maxlength="25" />
+                    <div class="enable-input-mask__mask"></div>
+                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <div class="desc" id="winkey__desc">This key should have been included with either your computer or on the media used to install Windows.  <a href="https://softwarekeep.com/help-center/how-to-find-your-windows-10-product-key">More information about Windows Product Keys</a></div>
+            </div>
+
+
+            <input value="Add Contact" type="submit" >
           </fieldset>
 
 
@@ -129,3 +124,6 @@
         <button type="submit">Submit</button>
     </form>
 </div>
+
+
+<?= includeNPMInstructions('input-mask', array(''), '', false , array()) ?>

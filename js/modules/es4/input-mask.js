@@ -19,6 +19,7 @@ const inputMask = new function () {
     const maskClass = `${this.bemPrefix}__mask`;
     const alertClass = `${this.bemPrefix}__alert`;
     const isLetterRe = new RegExp(/^\p{L}/, 'u');
+    const formatCharacterRe = /[ \-\(\)]/g;
     const beepAudio = new Audio("data:audio/mp3;base64,//MkxAAHAAL1uUAAAv0inbbAIgBAMNLh+IAfqOKDEuD+D4f+D5/wfB/cauxXeK9C//MkxAcI+JbcAZg4AJRI0LVZ3HZdPWsbXiMNhWtOE5aokvip8nX9bN3WgL4OSQUW//MkxAYIeHrNmdAQAtZiTJMgmCjlZ0WRSSROP6T4V3880GP4iET9n9Ew+CC3bDqW//MkxAcJGRrFuIAFAmFjYZ4Fo+VTZrd/2OHzpLfy3r+/UqPQyjGfG1uyyv+7u3GH//MkxAUIoIJkAMbQRFzQEIqDVc5uAGAF6pLWmH9f/2YsFIV61f/////+2r9yheJn//MkxAUHOH5YAAbEDODhUwx1PgFRodbaKzwxmTp/CuNK/R+/O+UMw7+FroGRJPtX//MkxAsHCDpEAB6SJF8DagsfjzsGVkt+lq/I/+z0qkSRoo8x6V4CwRj1H7kUPNRk//MkxBEGwEosADZMKFOjkaCqyLrLv+oAwPiQeFJEVUTGSj59EQYSBkE1MGqhquqr//MkxBkGwF2wAEmCaVXcTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//MkxCEAAANIAAAAAKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");  
        
     let isMouseDown = false;
@@ -165,6 +166,10 @@ const inputMask = new function () {
             selectionEnd: maskSelectionEnd
         }
     }
+    
+    const isNumber = (valueChar) => {
+        return !isNaN(parseInt(valueChar))
+    }
 
     const getMaskedValue = (inputEl) => {
         const { dataset, value } = inputEl;
@@ -173,12 +178,14 @@ const inputMask = new function () {
         const maskArr = mask.split('');
         const maskedValArr = [];
         let isValid = true;
+        
 
         for (let maskIndex = 0, valueIndex = 0; maskIndex < maskArr.length && valueIndex < valueArr.length; maskIndex++) {
             const maskChar = maskArr[maskIndex];
             const valueChar = valueArr[valueIndex]
 
             switch (maskChar) {
+                // any non-space character
                 case '_':
                     if (valueChar !== ' ') {
                         maskedValArr.push(valueChar)
@@ -187,14 +194,34 @@ const inputMask = new function () {
                         isValid = false;
                     }
                     break;
+                // any non-numeric character that we want to change to uppercase, if possible.
+                case 'U':
+                    if (valueChar !== ' ' && !isNumber(valueChar) && !valueChar.match(formatCharacterRe)) {
+                        maskedValArr.push(valueChar.toUpperCase())
+                        valueIndex++;
+                    } else {
+                        isValid = false;
+                    }
+                    break;
+                // any character that we want to change to uppercase, if possible.
+                case 'C':
+                    if (valueChar !== ' ' && !valueChar.match(formatCharacterRe)) {
+                        maskedValArr.push(valueChar.toUpperCase())
+                        valueIndex++;
+                    } else {
+                        isValid = false;
+                    }
+                    break;
+                // any number
                 case '9':
-                    if (!isNaN(parseInt(valueChar))) {
+                    if (isNumber(valueChar)) {
                         maskedValArr.push(valueChar);
                         valueIndex++;
                     } else {
                         isValid = false;
                     }
                     break;
+                // any letter
                 case 'X':
                     if (isLetterRe.test(valueChar)) {
                         maskedValArr.push(valueChar);
@@ -203,6 +230,7 @@ const inputMask = new function () {
                         isValid = false;
                     }
                     break;
+                // any format character supported by this library
                 case ' ':
                 case '-':
                 case '(':
@@ -223,14 +251,15 @@ const inputMask = new function () {
         }
     }
 
-    const announceValue = (inputEl, html) => {
+    const announceValue = (inputEl, formattedValue) => {
+        const srValue = formattedValue.replace(formatCharacterRe, ' ');
         if (announcementTimeout) {
             clearTimeout(announcementTimeout);
         }
 
         announcementTimeout = setTimeout(() => {
             const alertEl = inputEl.parentNode.querySelector(`.${alertClass}`);
-            alertEl.innerHTML = `Formatted input: ${html}`;
+            alertEl.innerHTML = `Formatted input: ${srValue}`;
         }, 1000);
     }
 

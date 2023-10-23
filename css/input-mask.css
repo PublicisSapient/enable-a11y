@@ -12,6 +12,9 @@
 .enable-input-mask__input {
   color: transparent;
 }
+.enable-input-mask__input::selection {
+  color: transparent;
+}
 .enable-input-mask__input,
 .enable-input-mask__mask {
   font-family: "Helvetica", "Arial", sans-serif;
