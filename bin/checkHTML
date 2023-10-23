@@ -1,5 +1,26 @@
 #!/bin/bash
 
+#######################################################################
+# checkHTML: runs automated testing on generated HTML in Enable
+#
+# Possible error codes returned by this script:
+#
+# Tool installation errors:
+# 1 - chromedriver error
+# 2 - axe not installed
+# 3 - pa11y not installed
+# 4 - PHP not installed
+# 5 - OS based tool not installed (e.g. java or lynx)
+# 6 - Java not installed
+# 7 - VNU not installed
+# 8 - need to run `npm run server` before running this script
+#
+# Runtime errors:
+# 100 - VNU checks returns errors
+# 101 - aXe returned errors
+# 102 - pa11y returned errors
+#######################################################################
+
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
 MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
@@ -25,17 +46,15 @@ and install it like this (the filename may vary):
 
 sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
 
-You can download the right zip file from here:
+You will need to download the latest version of Google Chrome For Testing 
+in order for the Chromedriver to work:
 
 https://googlechromelabs.github.io/chrome-for-testing/
 
-If you are using Google Chrome < 115, you can find the right zip here:
 
-https://chromedriver.storage.googleapis.com/index.html
-
-(you may need to change the $PATH variable)
-
-https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
+If (and only if) your computer can only run Google Chrome < 115, please read 
+the file old-google-chrome.txt for instructions on how to install chromedriver
+for your version of Chrome.
 
 If that does not work, you may need to do a global update of axe-cli:
 
@@ -59,12 +78,12 @@ do
 		then
 			echo "Install axe using:" 1>&2
 			echo "  npm install axe-cli -g" 1>&2
-			exit 1
+			exit 2
 		elif [ "$i" = "pa11y-ci" ]
 		then
 			echo "Install pa11y using:" 1>&2
 			echo "  npm install pa11y-ci -g"
-			exit 1
+			exit 3
 		elif [ "$i" = "$PHP" ]
 		then
 			echo "PHP 8.1 is not installed.  Trying PHP ..."
@@ -73,13 +92,13 @@ do
 			if [ "$?" != "0" ]
 			then
 				echo "PHP is not installed.  Bailing"
-				exit 1
+				exit 4
 			else
 				echo "A lower version of PHP than 8.1 is being used.  This may have unexpected results."
 			fi
 		else
-			echo "Please install this software using your operating systems package management" 1>&2
-			exit 1
+			echo "Please install this software using your operating system's package management" 1>&2
+			exit 5
 		fi 
 		
 	fi
@@ -97,7 +116,7 @@ do
 			echo 1>&2
 			echo "$OUT" 1>&2
 			echo 1>&2
-			exit 1
+			exit 6
 		fi
 	fi
 
@@ -130,7 +149,6 @@ https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver/01fde32d0ed245141e24151
 " 1>&2
 
 showChromedriverError
-	exit 3
 	fi
 
 
@@ -138,15 +156,15 @@ showChromedriverError
 if [ ! -f "$VNU_JAR" ]
 then
 	echo "Need to install VNU.  Please run 'npm install'." 1>&2
-	exit 2
+	exit 7
 fi
 
 
 A=`lynx -dump $PROJECT_URL`
 if [ "$?" != "0" ]
 then
-	echo "You need to do a `npm run server` in anothe shell before you run this target."
-	exit 3
+	echo "You need to do a `npm run server` in another shell before you run this target."
+	exit 8
 fi
 
 
@@ -155,6 +173,15 @@ fi
 URLS=`bin/getPages.js $MYIP`;
 DOWNLOADED_URLS=""
 TEMP_FILES=""
+
+
+
+#First, test non-existant file
+echo "Testing aXe set up to see if Chromedriver installed correctly in node_modules"
+if [ ! -x "node_modules/chromedriver/bin/chromedriver" ]
+then
+	showChromedriverError
+fi
 
 echo "Generating sitemap..."
 bin/generateSiteMap.sh
@@ -248,8 +275,9 @@ then
 	# rm $TEMP_FILES
 	echo "The generated html from the PHP files are in tmp/" 1>&2
 	echo "Please use them to debug in order to fix the above issues." 1>&2
-	exit 1
+	exit 100
 fi
+
 
 
 echo "Running aXe tests..."
@@ -277,7 +305,7 @@ echo "Result: $AXE_UNDELAY_RETURN"
 if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
 then
 	echo "aXe failed. See information above."
-	exit 1
+	exit 101
 fi
 
 
@@ -315,7 +343,7 @@ DID_PALLY_SUCCEED="$?"
 if [ $DID_PALLY_SUCCEED != "0" ]
 then
 	echo "Pa11y failed.  See information above."
-	exit 2;
+	exit 102;
 fi
 
 

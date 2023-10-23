@@ -211,13 +211,14 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   if (!($other["noCSS"] ?? false)) {
 ?>
     <li>You will have to include the CSS as well in your project's CSS using:
-<?php
-  }
-?>
+
 <?php includeShowcodeStaticBegin() ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
 <?php includeShowcodeStaticEnd() ?>
     </li>
+<?php
+  }
+?>
     </ol>
 
 <h4>Using ES6 modules natively.</h4>
@@ -288,6 +289,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
     <?= $moduleVar ?>.init();
 &lt;/script&gt;
     <?php includeShowcodeStaticEnd() ?>
+  </li>
 </ol>
 
 <?php

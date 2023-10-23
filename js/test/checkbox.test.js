@@ -3,9 +3,6 @@
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-
-
-
 describe('ARIA Checkbox Tests', () => {
   beforeAll(async () => {
   });
@@ -28,7 +25,7 @@ describe('ARIA Checkbox Tests', () => {
 
     await page.goto(`${config.BASE_URL}/checkbox.php`);
 
-    
+    console.log(`${config.BASE_URL}/checkbox.php`)
     // wait until all content loads
     await page.waitForSelector('#example-role-checkbox');
 
@@ -65,7 +62,7 @@ describe('ARIA Checkbox Tests', () => {
           ariaChecked
         }
       }, i);
-      
+
       expect(domInfo.isTabbable).toBe(true);
       expect(domInfo.isFocused).toBe(true);
       expect(domInfo.hasLabel).toBe(true);
@@ -129,7 +126,7 @@ describe('ARIA Checkbox Tests', () => {
 
       expect(domInfo.ariaLabel).not.toBe('');
     }
-
+    return true;
   });
 
   // Test #3
@@ -166,17 +163,6 @@ describe('Indeterminate Checkbox Tests', () => {
   beforeAll(async () => {
   });
 
-  // This is a function used by the tests brlow to grab the aria-checked value
-  // of the nth ARIA checkbox on the page
-  async function getCheckboxValue(n) {
-    return await page.evaluate((n) => {
-      const checkboxEls = document.querySelectorAll('[role="checkbox"]');
-      const checkboxEl = checkboxEls[n];
-      let r;
-
-      return checkboxEl.getAttribute('aria-checked');
-    }, n);
-  }
 
   // Test #1
   it('Test HTML5 Indeterminate Checkboxes ', async () => {

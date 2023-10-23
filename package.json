@@ -89,7 +89,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "chromedriver": "^115.0.1",
+    "chromedriver": "^118.0.1",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",

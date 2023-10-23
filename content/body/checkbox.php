@@ -227,7 +227,7 @@ checkboxEl.checked = false;
 <p>Now that we got the basics out of the way, let's see an example of this in action:</p>
 
 <div id="indeterminate-example" class="enable-example">
-    <form>
+    <form  onsubmit="alert('Your desert choice has been submitted.'); return false;">
         <fieldset>
             <legend>What toppings would you like on your ice-cream cone?</legend>
             <div>
@@ -257,7 +257,9 @@ checkboxEl.checked = false;
                     </li>
                 </ul>
             </div>
+            <button type="submit">Submit</button>
         </fieldset>
+        
     </form>
 </div>
 
@@ -299,9 +301,9 @@ checkboxEl.checked = false;
 </figure>
 
 <template id="aria-indeterminate-js" data-showcode-is-js="true">
-// Let's assume <div role="checkbox" id="my-checkbox" type="checkbox">...</div>
+// Let's assume <div role="checkbox" id="my-aria-checkbox" type="checkbox">...</div>
 // is in the page.
-const checkboxEl = document.getElementById("my-checkbox");
+const checkboxEl = document.getElementById("my-aria-checkbox");
 
 // Setting the aria-checked attribute to mixed.
 checkboxEl.setAttribute('aria-checked', 'mixed');
@@ -309,45 +311,46 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 </template>
 
 <div id="aria-indeterminate-example" class="enable-example">
-    <form>
+    <form  onsubmit="alert('Your desert choice has been submitted.'); return false;">
         <fieldset>
             <legend>What toppings would you like on your ice-cream cone?</legend>
             <div>
                 <div class="checkbox-container enable-checkbox">
 
-                    <div role="checkbox" tabindex="0" aria-labelledby="aria-select-all__label"
+                    <div role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-select-all__label"
                         data-select-all-for="aria-option-1 aria-option-2 aria-option-3"
                         aria-describedby="aria-select-all__desc"></div>
                     <label id="aria-select-all__label" class="form-control">Select All
                     </label>
                     <span id="aria-select-all__desc" class="sr-only">Checking this will automatically check the
                         ingredient checkboxes below.</span>
-                    </label>
                 </div>
                 <ul>
                     <li class="checkbox-container enable-checkbox">
 
-                        <div id="aria-option-1" role="checkbox" tabindex="0" aria-labelledby="aria-option-1__label">
+                        <div id="aria-option-1" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-1__label">
                         </div>
                         <label id="aria-option-1__label" class="form-control">Chocolate Syrup
                         </label>
                     </li>
                     <li class="checkbox-container enable-checkbox">
 
-                        <div id="aria-option-2" role="checkbox" tabindex="0" aria-labelledby="aria-option-2__label">
+                        <div id="aria-option-2" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-2__label">
                         </div>
                         <label id="aria-option-2__label" class="form-control">Strawberry Sauce
                         </label>
                     </li>
                     <li class="checkbox-container enable-checkbox">
 
-                        <div id="aria-option-3" role="checkbox" tabindex="0" aria-labelledby="aria-option-3__label">
+                        <div id="aria-option-3" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-3__label">
                         </div>
                         <label id="aria-option-3__label" class="form-control">Bran Flakes
                         </label>
                     </li>
                 </ul>
             </div>
+
+            <button type="submit">Submit</button>
         </fieldset>
     </form>
 </div>
