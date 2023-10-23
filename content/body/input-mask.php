@@ -12,21 +12,26 @@
 
 
 
-    <figure>
-        <table aria-labelledby="phone-number-table" class="enable-table enable-table--centered-data enable-table--with-borders">
-          <thead>
-            <th scope="col">Area Code</th>
-            <th scope="col">Central Office Code</th>
-            <th scope="col">Line Number</th>
-          </thead>
-          <tbody>
-            <td>416</td>
-            <td>555</td>
-            <td>1212</td>
-          </tbody>
-        </table>
-        <figcaption id="phone-number-table">The breakdown of the phone number 416-555-1212</figcaption>
-    </figure>
+<figure>
+    <table aria-labelledby="phone-number-table"
+        class="enable-table enable-table--centered-data enable-table--with-borders">
+        <thead>
+            <tr>
+                <th scope="col">Area Code</th>
+                <th scope="col">Central Office Code</th>
+                <th scope="col">Line Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>416</td>
+                <td>555</td>
+                <td>1212</td>
+            </tr>
+        </tbody>
+    </table>
+    <figcaption id="phone-number-table">The breakdown of the phone number 416-555-1212</figcaption>
+</figure>
 
 
 <p>
@@ -41,7 +46,7 @@
         alt="A picture of a Microsoft Proof of License Certificate of Authenticity.  It has a barcode on top and text on bottom that reads 'Product Key: GTP8H-HBD8D-DDTKD-MT8W6-', followed by five more letters that are blurred out.">
 
     <figcaption>An example of a Windows Product Key. Note how it is divided into groups of five characters with dashes
-        in between to make it easier for the user to type in.</figcatpion>
+        in between to make it easier for the user to type in.</figcaption>
 </figure>
 
 <p>
@@ -67,24 +72,60 @@
 
 </p>
 
-<div class="enable-example input-mask-example">
-    <form class="usa-form">
+<div class="enable-example" id="input-mask-example">
+    <form class="enable-form-example" onSubmit="alert('form submitted'); return false;">
+    <fieldset>
+            <legend>Contact Information</legend>
 
-        <label class="usa-label" for="tel">Canadian Telephone Number</label>
-        <input id="tel" type="tel" inputmode="numeric" name="tel" data-charset="___-___-____" placeholder="___-___-____" pattern="\d{3}-\d{3}-\d{4}"
-            class="usa-input masked" aria-describedby="telHint" />
-        <div class="usa-hint" id="telHint">For example, 123-456-7890</div>
+            <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
-        <label class="usa-label" for="postalCode">Canadian Postal Code</label>
-        <input id="postalCode" type="text" name="postalCode" placeholder="___ ___" data-charset="___ ___"
-            pattern="([A-Za-z]\d[A-Za-z])\ {0,1}(\d[A-Za-z]\d)" data-charset="A#A #A#" class="usa-input masked"
-            aria-describedby="postalCodeHint" />
-        <div class="usa-hint" id="postalCodeHint">For example, M6P 2S4</div>
+            <div class="enable-form-example__fieldset-inner-container">
+
+            <div class="field-block">
+                <label class="example__label" for="tel">Canadian Telephone Number: </label>
+                <div class="enable-input-mask">
+                    <input id="tel" type="tel" inputmode="numeric" name="tel" data-mask="999-999-9999"
+                        pattern="\d{3}-\d{3}-\d{4}" class="enable-input-mask__input" aria-describedby="telHint"
+                        maxlength="10" />
+                    <div class="enable-input-mask__mask"></div>
+                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <div class="desc" id="telHint">For example, 123-456-7890</div>
+            </div>
 
 
-        <label class="usa-label" for="cc">Credit Card Number</label>
-        <input id="cc" type="text" name="cc" inputmode="numeric" pattern="(\b3[47]\d{2} \d{6} \d{5}\b)"
-            class="usa-input masked" aria-describedby="ccHint" />
-        <div class="usa-hint" id="ccHint">A credit card usually has sixteen digits in it.</div>
+              <div class="field-block">
+                <label class="required" for="name_html5">Full Name:</label>
+                <input id="name_html5" size="25" type="text" required  autocomplete="name" >
+              </div>
+
+              <div class="field-block">
+                <label class="required" for="email_html5">E-mail address:</label>
+                <input id="email_html5" size="25" type="email" required autocomplete="email" >
+              </div>
+
+              <div class="field-block">
+                <label class="required" for="phone_html5">Phone Number:</label>
+                <input                   id="phone_html5"
+                  size="25"
+                  type="text"
+                  required
+                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
+                  aria-describedby="phone-desc"
+                  autocomplete="tel"
+                >
+                <div id="phone-desc" class="desc">
+                  Format is xxx-xxx-xxxx<br>
+                  (where x is a digit)
+                </div>
+              </div>
+
+              <input value="Add Contact" type="submit" >
+            </div>
+          </fieldset>
+
+
+
+        <button type="submit">Submit</button>
     </form>
 </div>

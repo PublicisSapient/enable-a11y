@@ -5,17 +5,17 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
-.input-mask-example__field-seperator {
+.example__field-seperator {
   margin-bottom: 1.875rem;
 }
-.input-mask-example .usa-label {
+.example .label {
   font-weight: bold;
   margin-top: 1.25rem;
   display: inline-block;
 }
-.input-mask-example .usa-input {
-  margin-top: 0;
+.example input {
+  font-size: 1.25rem;
 }
-.input-mask-example #cc {
+.example #cc {
   max-width: calc(30rem - 200px);
 }

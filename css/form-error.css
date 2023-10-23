@@ -41,7 +41,8 @@
 .enable-form-example input,
 .enable-form-example .desc,
 .enable-form-example label.error,
-.enable-form-example [role="textbox"] {
+.enable-form-example [role="textbox"],
+.enable-form-example .enable-input-mask {
   width: 200px;
   font-weight: normal;
 }
@@ -49,10 +50,14 @@
   .enable-form-example input,
   .enable-form-example .desc,
   .enable-form-example label.error,
-  .enable-form-example [role="textbox"] {
+  .enable-form-example [role="textbox"],
+  .enable-form-example .enable-input-mask {
     width: 45%;
     max-width: 20rem;
   }
+}
+.enable-form-example .enable-input-mask input {
+  width: 100%;
 }
 .enable-form-example .form-instructions {
   text-align: center;

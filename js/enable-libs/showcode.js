@@ -59,7 +59,8 @@ const showcode = new function () {
     'aria-setsize',
     'for',
     'href',
-    'xlink:href'
+    'xlink:href',
+    'data-select-all-for'
   ]
 
 
