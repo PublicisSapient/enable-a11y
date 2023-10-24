@@ -23,18 +23,103 @@ const inputMask = new function () {
     const beepAudio = new Audio("data:audio/mp3;base64,//MkxAAHAAL1uUAAAv0inbbAIgBAMNLh+IAfqOKDEuD+D4f+D5/wfB/cauxXeK9C//MkxAcI+JbcAZg4AJRI0LVZ3HZdPWsbXiMNhWtOE5aokvip8nX9bN3WgL4OSQUW//MkxAYIeHrNmdAQAtZiTJMgmCjlZ0WRSSROP6T4V3880GP4iET9n9Ew+CC3bDqW//MkxAcJGRrFuIAFAmFjYZ4Fo+VTZrd/2OHzpLfy3r+/UqPQyjGfG1uyyv+7u3GH//MkxAUIoIJkAMbQRFzQEIqDVc5uAGAF6pLWmH9f/2YsFIV61f/////+2r9yheJn//MkxAUHOH5YAAbEDODhUwx1PgFRodbaKzwxmTp/CuNK/R+/O+UMw7+FroGRJPtX//MkxAsHCDpEAB6SJF8DagsfjzsGVkt+lq/I/+z0qkSRoo8x6V4CwRj1H7kUPNRk//MkxBEGwEosADZMKFOjkaCqyLrLv+oAwPiQeFJEVUTGSj59EQYSBkE1MGqhquqr//MkxBkGwF2wAEmCaVXcTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//MkxCEAAANIAAAAAKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");  
        
     let isMouseDown = false;
+    let mouseDownX = -1;
     let announcementTimeout = null;
 
-    const clickEvent = (e) => {
-        const { target } = e;
+    /*
+     * Find the index of the character clicked in a text node.
+     * From https://stackoverflow.com/a/55430151
+     */
+    const hitCharBinSearch = function (mClientX, inmostHitEl) {
+        const originalInmost = inmostHitEl;
+        const bareText = inmostHitEl.firstChild.textContent;
+        let textNode = inmostHitEl.firstChild;
+        let textLengthBeforeHit = 0;
+        do {
+            let textNodeR = textNode.splitText(textNode.length / 2);
+            let textNodeL = textNode;
+    
+            let spanL = document.createElement('span');
+            spanL.appendChild(textNodeL);
+            let spanR = document.createElement('span');
+            spanR.appendChild(textNodeR);
 
+    
+            inmostHitEl.appendChild(spanL);
+            inmostHitEl.appendChild(spanR);
+    
+            if (mClientX >= spanR.getBoundingClientRect().left) {
+                textNode = textNodeR;
+                inmostHitEl = spanR;
+                textLengthBeforeHit += textNodeL.length;
+            }
+            else {
+                textNode = textNodeL;
+                inmostHitEl = spanL;
+            }
+        } while (textNode.length > 1);
+    
+        /* This is for proper caret simulation. Can be omitted */
+        var rect = inmostHitEl.getBoundingClientRect()
+        if (mClientX >= (rect.left + rect.width / 2)) {
+            textLengthBeforeHit++;
+        }
+        /*******************************************************/
+    
+        originalInmost.innerHTML = bareText;
+        return textLengthBeforeHit;
+    }
+
+    const clickEvent = (e) => {
+        const { target, clientX } = e;
+        // Where did the click event happen?
+        // Click happened in the input field.  Not sure if we need this anymore.
         if (isMaskedInput(target)) {
             const { selectionStart, selectionEnd } = target;
+
             const maskedValue = getMaskedValue(target);
             const maskedValueHTML = getFormattedMaskedValue(maskedValue, target);
             const maskEl = getMaskForInput(target);
             maskEl.innerHTML = maskedValueHTML;
+        // Click happened in the mask element.
+        } else if (isInMask(target)) {
+            /* console.log('mask')
+            const maskEl = target.closest(`.${maskClass}`);
+            if (!maskEl.selectionStart) {
+                passMaskSelectionToInput(maskEl, clientX, clientX, true);
+            } */
         }
+    }
+
+    const passMaskSelectionToInput = (maskEl, startX, endX, isClick) => {
+        const minX = Math.min(startX, endX);
+        const maxX = Math.max(startX, endX);
+
+        maskEl.innerHTML = getNormalizedMaskedValue(maskEl);
+        const inputEl = getInputForMask(maskEl);
+        const startCharClickIndex = hitCharBinSearch(minX, maskEl);
+        const endCharClickIndex = hitCharBinSearch(maxX, maskEl);
+        const startInputCharClickIndex = maskIndexToInputIndex(startCharClickIndex, maskEl.innerText);
+        const endInputCharClickIndex = maskIndexToInputIndex(endCharClickIndex, maskEl.innerText);
+        console.log('sel', startCharClickIndex, endCharClickIndex, startInputCharClickIndex, endInputCharClickIndex, isClick);
+
+        if (startCharClickIndex === endCharClickIndex && !isClick) {
+            //return;
+        }
+        
+        inputEl.focus();
+        inputEl.selectionStart = startInputCharClickIndex;
+        inputEl.selectionEnd = endInputCharClickIndex;
+        selectTarget(getInputForMask(maskEl));
+    }
+
+    const maskIndexToInputIndex = (maskIndex, maskValue) => {
+        const maskValBeforeIndex = maskValue.substring(0, maskIndex);
+        const matches = maskValBeforeIndex.match(formatCharacterRe)
+        const numberOfFormatChars = matches ? matches.length : 0 ;
+        const inputIndex = maskIndex - numberOfFormatChars;
+        return inputIndex;
+
     }
     
     const inputEvent = (e) => {
@@ -56,12 +141,21 @@ const inputMask = new function () {
 
     const selectEvent = (e) => {
         const { target } = e;
+        if (isMaskedInput(target)) {
+            selectTarget(target);
+        } else if (isInMask(target)) {
+            const maskEl = target.closest(`.${maskClass}`);
+        }
+    }
 
+    const selectTarget = (target) => {
         if (isMaskedInput(target)) {
             const { selectionStart, selectionEnd } = target;
             target.dataset[getDatasetAttr('SelectionStart')] = selectionStart;
             target.dataset[getDatasetAttr('SelectionEnd')] = selectionEnd;
-            clickEvent(e);
+            clickEvent({
+                target
+            });
         }
     }
 
@@ -90,16 +184,15 @@ const inputMask = new function () {
 
     const mousedownEvent = (e) => {
         const { target } = e;
-
-        if (isMaskedInput(target)) {
+        if (isInMask(target)) {
             isMouseDown=true;
+            mouseDownX=e.clientX;
         }
     }
 
     const mousemoveEvent = (e) => {
         const { target } = e;
-
-        if (isMaskedInput(target) && isMouseDown) {
+        if (isInMask(target) && isMouseDown) {
             selectEvent(e);
         }
     }
@@ -107,8 +200,12 @@ const inputMask = new function () {
     const mouseupEvent = (e) => {
         const { target } = e;
 
-        if (isMaskedInput(target)) {
+        if (isInMask(target)) {
+            const maskEl = target.closest(`.${maskClass}`);
+            console.log('range', mouseDownX, e.clientX);
+            passMaskSelectionToInput(maskEl, mouseDownX, e.clientX);
             isMouseDown = false;
+            mouseDownX = -1;
         }
     }
 
@@ -123,6 +220,10 @@ const inputMask = new function () {
 
     const isMaskedInput = (target) => {
         return target.classList.contains(inputClass)
+    }
+
+    const isInMask = (target) => {
+        return target.classList.contains(maskClass) || target.parentNode.classList.contains(maskClass);
     }
 
     const getMaskedSelectionStartEnd = (inputEl) => {
@@ -264,7 +365,11 @@ const inputMask = new function () {
     }
 
     const getMaskForInput = (inputEl) => {
-        return inputEl.parentNode.querySelector(`.${this.bemPrefix}__mask`);
+        return inputEl.parentNode.querySelector(`.${maskClass}`);
+    }
+
+    const getInputForMask = (maskEl) => {
+        return maskEl.closest(`.${this.bemPrefix}`).querySelector(`.${inputClass}`);
     }
 
     const getFormattedMaskedValue = (maskedValue, inputEl) => {
@@ -276,6 +381,10 @@ const inputMask = new function () {
         const { bemPrefix } = this;
 
         return `<span class="${bemPrefix}__mask-pre-val">${preVal}</span><span class="${bemPrefix}__mask-mid-val">${midVal}</span><span class="${bemPrefix}__mask-post-val">${postVal}</span>`
+    }
+
+    const getNormalizedMaskedValue = (maskEl) => {
+        return maskEl.innerText;
     }
 
     const setMaskValue = (inputEl) => {
