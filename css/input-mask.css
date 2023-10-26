@@ -8,6 +8,7 @@
 .enable-input-mask {
   position: relative;
   display: inline-flex;
+  white-space: break-spaces;
 }
 .enable-input-mask__input {
   color: transparent;
@@ -51,7 +52,7 @@
   background: transparent;
   animation: none;
 }
-.enable-input-mask__mask-mid-val:not(:empty) {
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-mid-val:not(:empty) {
   background: #B4D5FE;
 }
 @keyframes blink {

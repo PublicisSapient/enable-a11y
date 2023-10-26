@@ -25,6 +25,7 @@ const inputMask = new function () {
     let isMouseDown = false;
     let mouseDownX = -1;
     let announcementTimeout = null;
+    let hasPastedValue = false;
 
     /*
      * Find the index of the character clicked in a text node.
@@ -32,8 +33,14 @@ const inputMask = new function () {
      */
     const hitCharBinSearch = function (mClientX, inmostHitEl) {
         const originalInmost = inmostHitEl;
-        const bareText = inmostHitEl.firstChild.textContent;
         let textNode = inmostHitEl.firstChild;
+
+        if (!textNode) {
+            return 0;
+        }
+
+        const bareText = textNode.textContent;
+        
         let textLengthBeforeHit = 0;
         do {
             let textNodeR = textNode.splitText(textNode.length / 2);
@@ -101,7 +108,6 @@ const inputMask = new function () {
         const endCharClickIndex = hitCharBinSearch(maxX, maskEl);
         const startInputCharClickIndex = maskIndexToInputIndex(startCharClickIndex, maskEl.innerText);
         const endInputCharClickIndex = maskIndexToInputIndex(endCharClickIndex, maskEl.innerText);
-        console.log('sel', startCharClickIndex, endCharClickIndex, startInputCharClickIndex, endInputCharClickIndex, isClick);
 
         if (startCharClickIndex === endCharClickIndex && !isClick) {
             //return;
@@ -125,9 +131,13 @@ const inputMask = new function () {
     const inputEvent = (e) => {
         const { target } = e;
 
+        if (hasPastedValue) {
+            hasPastedValue = false;
+            return;
+        }
+
         if (isMaskedInput(target)) {
             const maskEl = getMaskForInput(target);
-            const { value } = target;
 
             if (maskEl === null) {
                 throw `Missing mask for target: ${target.outerHTML}`
@@ -157,6 +167,36 @@ const inputMask = new function () {
                 target
             });
         }
+    }
+
+    const pasteEvent = (e) => {
+        const { target } = e;
+
+        if (isMaskedInput(target)) {
+            e.preventDefault();
+            const { selectionStart, selectionEnd, value, maxLength } = target;
+            console.log('target', target, selectionStart, selectionEnd, value);
+            let pastedText = (e.clipboardData || window.clipboardData).getData("text");
+            pastedText = pastedText.replace(formatCharacterRe, '');
+
+            const pre = value.substring(0, selectionStart);
+            const post = value.substring(selectionEnd);
+            const newValue = `${pre}${pastedText}${post}`;
+
+            if (maxLength === -1) {
+                target.value = newValue;
+                target.selectionStart = selectionStart + newValue.length;
+                target.selectionEnd = selectionStart + newValue.length;
+            } else {
+                target.value = newValue.substring(0, maxLength);
+                target.selectionStart = Math.min(selectionStart + pastedText.length, maxLength);
+                target.selectionEnd = Math.min(selectionStart + pastedText.length, maxLength);
+            }
+            setMaskValue(target);
+            console.log('end', target.value, target.selectionStart, target.selectionEnd, pastedText.length);
+        }
+        
+        
     }
 
     const keydownEvent = (e) => {
@@ -202,15 +242,16 @@ const inputMask = new function () {
 
         if (isInMask(target)) {
             const maskEl = target.closest(`.${maskClass}`);
-            console.log('range', mouseDownX, e.clientX);
             passMaskSelectionToInput(maskEl, mouseDownX, e.clientX);
             isMouseDown = false;
             mouseDownX = -1;
         }
     }
 
-    function beep() {
+    function beep(inputEl) {
+        const maskedValue = getMaskedValue(inputEl);
         beepAudio.play();
+        //announceValue(inputEl, maskedValue);
     }
 
 
@@ -223,7 +264,7 @@ const inputMask = new function () {
     }
 
     const isInMask = (target) => {
-        return target.classList.contains(maskClass) || target.parentNode.classList.contains(maskClass);
+        return target.classList.contains(maskClass) || (target?.parentNode?.classList && target.parentNode.classList.contains(maskClass));
     }
 
     const getMaskedSelectionStartEnd = (inputEl) => {
@@ -254,12 +295,13 @@ const inputMask = new function () {
             
             if (valueIndex === selectionEnd) {
                 maskSelectionEnd = maskIndex;
-                break;
             }
         }
 
         if (maskSelectionStart === -1 || maskSelectionEnd === -1) {
-            throw `Invalid mask selection: ${maskSelectionStart}, ${maskSelectionEnd}`;
+            maskSelectionStart = valueArr.length;
+            maskSelectionEnd = valueArr.length;
+            //throw `Invalid mask selection: ${maskSelectionStart}, ${maskSelectionEnd}`;
         }
 
         return {
@@ -347,20 +389,25 @@ const inputMask = new function () {
             const r = maskedValArr.join('');
             return r;
         } else {
-            beep();
             return null;
         }
     }
 
     const announceValue = (inputEl, formattedValue) => {
-        const srValue = formattedValue.replace(formatCharacterRe, ' ');
+        //const srValue = formattedValue.replace(formatCharacterRe, '&nbsp;');
+        const srValue = formattedValue.split('').join(' ').replace(formatCharacterRe, '&nbsp;');
         if (announcementTimeout) {
             clearTimeout(announcementTimeout);
         }
 
         announcementTimeout = setTimeout(() => {
             const alertEl = inputEl.parentNode.querySelector(`.${alertClass}`);
-            alertEl.innerHTML = `Formatted input: ${srValue}`;
+            let alertMsg = `Formatted input: ${srValue}`;
+            if (alertMsg === alertEl.innerHTML) {
+                alertMsg += '.';
+            }
+
+            alertEl.innerHTML = alertMsg;
         }, 1000);
     }
 
@@ -402,6 +449,7 @@ const inputMask = new function () {
             inputEl.value = getPreviousValue(inputEl);
             selectionStart = inputEl.dataset[getDatasetAttr('SelectionStart')];
             selectionEnd = inputEl.dataset[getDatasetAttr('SelectionEnd')];
+            beep(inputEl);
         }
 
         inputEl.setSelectionRange(selectionStart, selectionEnd);
@@ -437,6 +485,7 @@ const inputMask = new function () {
         document.addEventListener('mousemove', mousemoveEvent)
         document.addEventListener('input', inputEvent, true);
         document.addEventListener('click', clickEvent, true);
+        document.addEventListener('paste', pasteEvent, true);
         document.addEventListener('keydown', keydownEvent, true);
         populateMasks();
     }

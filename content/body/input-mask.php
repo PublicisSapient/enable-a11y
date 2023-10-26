@@ -85,10 +85,10 @@
                 <label class="example__label" for="tel">Canadian Telephone Number: </label>
                 <div class="enable-input-mask">
                     <input id="tel" type="tel" inputmode="numeric" name="tel" data-mask="999-999-9999"
-                        pattern="[0-9]*" class="enable-input-mask__input" aria-describedby="tel__desc"
+                        pattern="[0-9]{10}" class="enable-input-mask__input" aria-describedby="tel__desc"
                         maxlength="10" />
-                    <div class="enable-input-mask__mask"></div>
-                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div aria-live="polite" class="enable-input-mask__alert sr-only"></div>
                 </div>
                 <div class="desc" id="tel__desc">For example, 123-456-7890</div>
             </div>
@@ -97,9 +97,9 @@
                 <label class="example__label" for="ccl">Credit Card Number: </label>
                 <div class="enable-input-mask">
                     <input id="cc" type="text" inputmode="numeric" name="cc"
-                        pattern="[0-9]*" class="enable-input-mask__input" aria-describedby="" />
-                    <div class="enable-input-mask__mask"></div>
-                    <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
+                        pattern="[0-9]{15,16}" class="enable-input-mask__input" aria-describedby="" />
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div aria-live="polite" class="enable-input-mask__alert sr-only"></div>
                 </div>
                 <div> Type: <div id="cc-type-container"></div></div>
             </div>
@@ -109,19 +109,18 @@
                 <div class="enable-input-mask">
                     <input id="winkey" type="text" name="cc" data-mask="CCCCC-CCCCC-CCCCC-CCCCC-CCCCC"
                         pattern="[a-zA-Z0-9]{25}" class="enable-input-mask__input" aria-describedby="winkey__desc" maxlength="25" />
-                    <div class="enable-input-mask__mask"></div>
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
                     <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                 </div>
                 <div class="desc" id="winkey__desc">This key should have been included with either your computer or on the media used to install Windows.  <a href="https://softwarekeep.com/help-center/how-to-find-your-windows-10-product-key">More information about Windows Product Keys</a></div>
             </div>
 
 
-            <input value="Add Contact" type="submit" >
+            <input value="Submit" type="submit" >
           </fieldset>
 
 
 
-        <button type="submit">Submit</button>
     </form>
 </div>
 

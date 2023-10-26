@@ -3,6 +3,7 @@
 .enable-input-mask {
     position: relative;
     display: inline-flex;
+    white-space: break-spaces;
     
     &__input {
         color: transparent;
@@ -59,7 +60,7 @@
     }
     
 
-    &__mask-mid-val:not(:empty) {
+    &__input:focus + &__mask  &__mask-mid-val:not(:empty) {
         background: #B4D5FE;
     }
 }
