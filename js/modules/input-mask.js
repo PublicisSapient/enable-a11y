@@ -79,8 +79,12 @@ const inputMask = new function () {
 
     const clickEvent = (e) => {
         const { target, clientX } = e;
-        // Where did the click event happen?
-        // Click happened in the input field.  Not sure if we need this anymore.
+        
+        // Ensure the click happened in the input field.  
+        // The script should never be able to click
+        // in the mask since the 
+        // `pointer-events: none` CSS rule is set on it, so 
+        // clicks go through it to the input field.
         if (isMaskedInput(target)) {
             const { selectionStart, selectionEnd } = target;
 
@@ -88,13 +92,6 @@ const inputMask = new function () {
             const maskedValueHTML = getFormattedMaskedValue(maskedValue, target);
             const maskEl = getMaskForInput(target);
             maskEl.innerHTML = maskedValueHTML;
-        // Click happened in the mask element.
-        } else if (isInMask(target)) {
-            /* console.log('mask')
-            const maskEl = target.closest(`.${maskClass}`);
-            if (!maskEl.selectionStart) {
-                passMaskSelectionToInput(maskEl, clientX, clientX, true);
-            } */
         }
     }
 
@@ -108,10 +105,6 @@ const inputMask = new function () {
         const endCharClickIndex = hitCharBinSearch(maxX, maskEl);
         const startInputCharClickIndex = maskIndexToInputIndex(startCharClickIndex, maskEl.innerText);
         const endInputCharClickIndex = maskIndexToInputIndex(endCharClickIndex, maskEl.innerText);
-
-        if (startCharClickIndex === endCharClickIndex && !isClick) {
-            //return;
-        }
         
         inputEl.focus();
         inputEl.selectionStart = startInputCharClickIndex;
@@ -153,8 +146,6 @@ const inputMask = new function () {
         const { target } = e;
         if (isMaskedInput(target)) {
             selectTarget(target);
-        } else if (isInMask(target)) {
-            const maskEl = target.closest(`.${maskClass}`);
         }
     }
 
@@ -175,7 +166,6 @@ const inputMask = new function () {
         if (isMaskedInput(target)) {
             e.preventDefault();
             const { selectionStart, selectionEnd, value, maxLength } = target;
-            console.log('target', target, selectionStart, selectionEnd, value);
             let pastedText = (e.clipboardData || window.clipboardData).getData("text");
             pastedText = pastedText.replace(formatCharacterRe, '');
 
@@ -193,7 +183,6 @@ const inputMask = new function () {
                 target.selectionEnd = Math.min(selectionStart + pastedText.length, maxLength);
             }
             setMaskValue(target);
-            console.log('end', target.value, target.selectionStart, target.selectionEnd, pastedText.length);
         }
         
         
@@ -249,9 +238,7 @@ const inputMask = new function () {
     }
 
     function beep(inputEl) {
-        const maskedValue = getMaskedValue(inputEl);
         beepAudio.play();
-        //announceValue(inputEl, maskedValue);
     }
 
 
@@ -268,7 +255,7 @@ const inputMask = new function () {
     }
 
     const getMaskedSelectionStartEnd = (inputEl) => {
-        const { dataset, value, selectionStart, selectionEnd, selectionValue } = inputEl;
+        const { dataset, value, selectionStart, selectionEnd } = inputEl;
         const { mask } = dataset;
         const valueArr = value.split('');
         const maskArr = mask.split('');
@@ -276,7 +263,6 @@ const inputMask = new function () {
 
         for (let maskIndex = -1, valueIndex = 0; maskIndex < maskArr.length && valueIndex <= valueArr.length; valueIndex++) {
             const maskChar = maskArr[maskIndex];
-            const valueChar = valueArr[valueIndex]
 
             switch (maskChar) {
                 case ' ':
@@ -301,7 +287,6 @@ const inputMask = new function () {
         if (maskSelectionStart === -1 || maskSelectionEnd === -1) {
             maskSelectionStart = valueArr.length;
             maskSelectionEnd = valueArr.length;
-            //throw `Invalid mask selection: ${maskSelectionStart}, ${maskSelectionEnd}`;
         }
 
         return {
@@ -394,7 +379,13 @@ const inputMask = new function () {
     }
 
     const announceValue = (inputEl, formattedValue) => {
-        //const srValue = formattedValue.replace(formatCharacterRe, '&nbsp;');
+        // Originally, this was
+        //    const srValue = formattedValue.replace(formatCharacterRe, '&nbsp;');
+        // We changed this so that the script would announce all elements letter
+        // by letter.  This is because of the assumption that anyone who is using
+        // this on an input field would want the input value to be read out one
+        // character at a time.  If there is a use case not to do this, we may make
+        // this feature configurable.
         const srValue = formattedValue.split('').join(' ').replace(formatCharacterRe, '&nbsp;');
         if (announcementTimeout) {
             clearTimeout(announcementTimeout);
@@ -403,11 +394,18 @@ const inputMask = new function () {
         announcementTimeout = setTimeout(() => {
             const alertEl = inputEl.parentNode.querySelector(`.${alertClass}`);
             let alertMsg = `Formatted input: ${srValue}`;
+
+            // This will force screen readers to reannounce the value
+            // in aria-live region if the new alert message is the same
+            // text as the old.
             if (alertMsg === alertEl.innerHTML) {
                 alertMsg += '.';
             }
 
             alertEl.innerHTML = alertMsg;
+
+        // We use a timeout of 1000 so that it will speak over the
+        // input's unformatted value (necessary for Voiceover OSX)
         }, 1000);
     }
 

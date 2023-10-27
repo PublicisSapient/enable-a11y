@@ -58,7 +58,6 @@ const enableDialog = new function() {
       // native implementations, like Chrome's will have a focus
       // loop and not go into the browser chrome.
       var mo = new MutationObserver(function() {
-        console.log('opened!')
         if (dialog.hasAttribute('open')) {
           accessibility.setKeepFocusInside(dialog, true);
         } else {
