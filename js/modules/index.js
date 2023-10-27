@@ -9,6 +9,7 @@ import enableListbox from "enable-listbox.js";
 import enableVisibleOnFocus from "enable-visible-on-focus.js";
 import EnableFlyoutHamburger from "enable-hamburger.js";
 import { interpolate, htmlToDomNode } from "interpolate.js";
+import inputMask from "input-mask.js";
 import offscreenObserver from "offscreen-observer.js";
 import paginationTable from "paginate.js";
 import { pauseAnimControl, PauseAnimControlDef } from "pause-anim-control.js";

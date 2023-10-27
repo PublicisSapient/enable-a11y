@@ -388,6 +388,14 @@ const showcode = new function () {
                 highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?/${highlightString}&gt;`
                 break;
               }
+            case '%BEGINENDCOMMENTTAG%':
+              {
+                highlightString = highlightString.trim();
+                console.log(`foo! -${highlightString}-`);
+                highlightString = `\\s*&lt;!--[^-]*BEGIN-${highlightString}[^-]*--&gt;[\\s\\S]*?&lt;!--[^-]*END-${highlightString}[^-]*--&gt;`;
+                console.log(highlightString);
+                break;
+              }
             case '%FILE%':
               {
                 console.log('command is FILE');
