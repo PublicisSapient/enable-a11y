@@ -15,6 +15,7 @@
     "./enable-visible-on-focus": "./js/modules/enable-visible-on-focus.js",
     "./hamburger": "./js/modules/hamburger.js",
     "./interpolate": "./js/modules/interpolate.js",
+    "./input-mask.js": "./js/modules/input-mask.js",
     "./paginate": "./js/modules/paginate.js",
     "./pause-anim-control": "./js/modules/pause-anim-control.js",
     "./checkbox": "./js/modules/checkbox.js",

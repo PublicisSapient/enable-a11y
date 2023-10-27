@@ -83,49 +83,92 @@
 
             <div class="field-block">
                 <label class="example__label" for="tel">Canadian Telephone Number: </label>
+
+                <!-- BEGIN-INPUT-MASK -->
                 <div class="enable-input-mask">
                     <input id="tel" type="tel" inputmode="numeric" name="tel" data-mask="999-999-9999"
-                        pattern="\d{3}-\d{3}-\d{4}" class="enable-input-mask__input" aria-describedby="telHint"
+                        pattern="[0-9]{10}" class="enable-input-mask__input" aria-describedby="tel__desc"
                         maxlength="10" />
-                    <div class="enable-input-mask__mask"></div>
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div aria-live="polite" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <!-- END-INPUT-MASK -->
+
+                <div class="desc" id="tel__desc">For example, 123-456-7890</div>
+            </div>
+
+            <div class="field-block">
+                
+                <label class="example__label" for="ccl">Credit Card Number: </label>
+
+                <!-- BEGIN-INPUT-MASK -->
+                <div class="enable-input-mask">
+                    <input id="cc" type="text" inputmode="numeric" name="cc"
+                        pattern="[0-9]{15,16}" class="enable-input-mask__input" aria-describedby="" />
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
+                    <div aria-live="polite" class="enable-input-mask__alert sr-only"></div>
+                </div>
+                <!-- END-INPUT-MASK -->
+
+                <div class="desc" id="tel__desc">Input just the numbers on your credit card number. Spaces will be added automatically to match the spacing on your card</div>
+                <div> Type: <div id="cc-type-container"></div></div>
+            </div>
+
+            <div class="field-block">
+                <label class="example__label" for="winkey">Windows Product Key: </label>
+
+                <!-- BEGIN-INPUT-MASK -->
+                <div class="enable-input-mask">
+                    <input id="winkey" type="text" name="cc" data-mask="CCCCC-CCCCC-CCCCC-CCCCC-CCCCC"
+                        pattern="[a-zA-Z0-9]{25}" class="enable-input-mask__input" aria-describedby="winkey__desc" maxlength="25" />
+                    <div class="enable-input-mask__mask" aria-hidden="true"></div>
                     <div aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                 </div>
-                <div class="desc" id="telHint">For example, 123-456-7890</div>
+                <!-- END-INPUT-MASK -->
+
+                <div class="desc" id="winkey__desc">This key should have been included with either your computer or on the media used to install Windows.  <a href="https://softwarekeep.com/help-center/how-to-find-your-windows-10-product-key">More information about Windows Product Keys</a></div>
             </div>
 
 
-              <div class="field-block">
-                <label class="required" for="name_html5">Full Name:</label>
-                <input id="name_html5" size="25" type="text" required  autocomplete="name" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="email_html5">E-mail address:</label>
-                <input id="email_html5" size="25" type="email" required autocomplete="email" >
-              </div>
-
-              <div class="field-block">
-                <label class="required" for="phone_html5">Phone Number:</label>
-                <input                   id="phone_html5"
-                  size="25"
-                  type="text"
-                  required
-                  pattern="[0-9]{3}-{0,1}[0-9]{3}-{0,1}[0-9]{4}"
-                  aria-describedby="phone-desc"
-                  autocomplete="tel"
-                >
-                <div id="phone-desc" class="desc">
-                  Format is xxx-xxx-xxxx<br>
-                  (where x is a digit)
-                </div>
-              </div>
-
-              <input value="Add Contact" type="submit" >
-            </div>
+            <input value="Submit" type="submit" >
           </fieldset>
 
 
 
-        <button type="submit">Submit</button>
     </form>
 </div>
+
+<?php includeShowcode("input-mask-example")?>
+<script type="application/json" id="input-mask-example-props">
+{
+    "replaceHtmlRules": {
+    },
+    "steps": [
+    {
+        "label": "Ensure each input field's HTML has this specific format",
+        "highlight": "%BEGINENDCOMMENTTAG% INPUT-MASK",
+        "notes": "This DOM structure must be maintained.  The container class must be <code>enable-input-mask</code>."
+    },
+    {
+        "label": "Mark up the input field's data-mask",
+        "highlight": "data-mask",
+        "notes": [
+            "<p>The <code>data-mask</code> attribute must match the format that you want the data to appear visually in the input field. More information in the <a href=\"#data-mask-format\">How to set the data-mask attribute</a> part of this page"
+        ]
+    }
+]}
+</script>
+
+<h2 id="data-mask-format" tabindex="-1">How to Set the data-mask Attribute</h2>
+
+<p>For the phone number field, you will note it is <code>999-999-9999</code>.  The <code>9</code> characters are what we call <strong>input characters</strong> and represent where inputted data (in this case digits) should appear.  The dash characters are what we call <strong>format characters</strong> and will be automatically put in the visual field as the user types the numbers in. Users don't need to add them manually.</p>
+            <p>Note that spaces, dashes and round brackets (i.e. <code>" "</code>, <code>"-"</code>, <code>"("</code> and <code>")"</code>)can be used as format characters.  Possible input characters are:
+            <dl>
+                <dt><code>"_"</code> (underscore)</dt><dd>Represents any character that isn't a format character</dd>
+                <dt><code>"U"</code><dt><dd>Any non-numeric character that we want to change to uppercase, if possible.</dd>
+                <dt><code>"C"</code><dt><dd>Any character that we want to change to uppercase, if possible.</dd>
+                <dt><code>"X"</code><dt><dd>Any letter</dd>
+                <dt><code>"9"</code><dt><dd>Any number</dd>
+            </dl>
+
+<?= includeNPMInstructions('input-mask', array(''), '', false , array()) ?>

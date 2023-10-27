@@ -2,13 +2,13 @@
 
 <script src="js/modules/input-mask.js" type="module"></script>
 
-<!--
-<ascript>
-    const amexPlaceholder = "____ ______ _____";
-    const otherPlaceholder = "____ ____ ____ ____";
+
+<script>
+    const amexMask = "9999 999999 99999";
+    const otherMask = "9999 9999 9999 9999";
     const ccEl = document.getElementById('cc');
     const ccTypeContainerEl =  document.getElementById('cc-type-container');
-    setHintText(otherPlaceholder);
+    setHintText(otherMask);
 
     function isAmex(val) {
         return (val.indexOf('34') === 0);
@@ -27,9 +27,9 @@
     }
 
     function setHintText(val) {
-        if (ccEl.placeholder !== val) {
-            ccEl.placeholder = val;
-            ccEl.dataset.placeholder = val;
+        if (ccEl.dataset.mask !== val) {
+            ccEl.dataset.mask = val;
+            ccEl.maxLength = val.replace(/\s/g, '').length;
         }
     }
 
@@ -45,29 +45,11 @@
         const { value } = target;
         
         if (isAmex(value)) {
-            setHintText(amexPlaceholder);
+            setHintText(amexMask);
         } else {
-            setHintText(otherPlaceholder);
+            setHintText(otherMask);
         }
 
-        /*
-        if (isAmex(value)) {
-            setCardType('AMEX');
-        } else if (isMasterCard(value)) {
-            setCardType('Master Card');
-        } else if (isVisa(value)) {
-            setCardType('Visa');
-        } else if (isDiscover(value)) {
-            setCardType('Discover');
-        } else {
-            setCardType('');
-        }*/
-
     }
-
-    new InputMask({
-        mNum: '_',
-        mChar: '`'
-    });
-</ascript>
+</script>
 -->

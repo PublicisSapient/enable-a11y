@@ -14,8 +14,6 @@
  ******************************************************************************/
 
 
-
-
 const enableDialog = new function() {
   /**
    * Updates the passed dialog to retain focus and restore it when the dialog is closed. Won't

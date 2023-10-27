@@ -8,8 +8,12 @@
 .enable-input-mask {
   position: relative;
   display: inline-flex;
+  white-space: break-spaces;
 }
 .enable-input-mask__input {
+  color: transparent;
+}
+.enable-input-mask__input::selection {
   color: transparent;
 }
 .enable-input-mask__input,
@@ -17,7 +21,6 @@
   font-family: "Helvetica", "Arial", sans-serif;
 }
 .enable-input-mask__mask {
-  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -49,7 +52,7 @@
   background: transparent;
   animation: none;
 }
-.enable-input-mask__mask-mid-val:not(:empty) {
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-mid-val:not(:empty) {
   background: #B4D5FE;
 }
 @keyframes blink {

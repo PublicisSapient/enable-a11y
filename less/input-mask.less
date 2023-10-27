@@ -3,9 +3,14 @@
 .enable-input-mask {
     position: relative;
     display: inline-flex;
+    white-space: break-spaces;
     
     &__input {
         color: transparent;
+
+        &::selection {
+            color: transparent;
+        }
     }
 
     &__input, &__mask {
@@ -13,7 +18,6 @@
     }
 
     &__mask {
-        pointer-events: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -55,7 +59,7 @@
     }
     
 
-    &__mask-mid-val:not(:empty) {
+    &__input:focus + &__mask  &__mask-mid-val:not(:empty) {
         background: #B4D5FE;
     }
 }
