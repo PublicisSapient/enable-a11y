@@ -78,16 +78,16 @@ const inputMask = new function () {
     }
 
     const clickEvent = (e) => {
-        const { target, clientX } = e;
+        const { target } = e;
         
-        // Ensure the click happened in the input field.  
         // The script should never be able to click
-        // in the mask since the 
-        // `pointer-events: none` CSS rule is set on it, so 
-        // clicks go through it to the input field.
+        // in the input field under the mask, since the 
+        // mask should be directly on top of it and have
+        // a higher z-index.  It should be a able to see
+        // what letter was clicked on the masked input
+        // and put the cursor for the real input in the
+        // appropriate place.
         if (isMaskedInput(target)) {
-            const { selectionStart, selectionEnd } = target;
-
             const maskedValue = getMaskedValue(target);
             const maskedValueHTML = getFormattedMaskedValue(maskedValue, target);
             const maskEl = getMaskForInput(target);
@@ -95,7 +95,7 @@ const inputMask = new function () {
         }
     }
 
-    const passMaskSelectionToInput = (maskEl, startX, endX, isClick) => {
+    const passMaskSelectionToInput = (maskEl, startX, endX) => {
         const minX = Math.min(startX, endX);
         const maxX = Math.max(startX, endX);
 
@@ -237,10 +237,9 @@ const inputMask = new function () {
         }
     }
 
-    function beep(inputEl) {
+    function beep() {
         beepAudio.play();
     }
-
 
     const toCamelCase = (myString) => {
         return myString.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
@@ -447,7 +446,7 @@ const inputMask = new function () {
             inputEl.value = getPreviousValue(inputEl);
             selectionStart = inputEl.dataset[getDatasetAttr('SelectionStart')];
             selectionEnd = inputEl.dataset[getDatasetAttr('SelectionEnd')];
-            beep(inputEl);
+            beep();
         }
 
         inputEl.setSelectionRange(selectionStart, selectionEnd);
