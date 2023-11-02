@@ -246,11 +246,14 @@ const inputMask = new function () {
     }
 
     const isMaskedInput = (target) => {
-        return target.classList.contains(inputClass)
+        return target.nodeType === Node.ELEMENT_NODE && target.classList.contains(inputClass)
     }
 
     const isInMask = (target) => {
-        return target.classList.contains(maskClass) || (target?.parentNode?.classList && target.parentNode.classList.contains(maskClass));
+        return target.nodeType === Node.ELEMENT_NODE && (
+            target.classList.contains(maskClass) || 
+            (target?.parentNode?.classList && target.parentNode.classList.contains(maskClass)
+        ));
     }
 
     const getMaskedSelectionStartEnd = (inputEl) => {

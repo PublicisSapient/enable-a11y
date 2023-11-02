@@ -321,6 +321,38 @@ code {
   margin-bottom: 40px;
 }
 
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+}
+
+.compliance-table, .comparison-table {
+  margin: 1em auto 3em auto;
+
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  th {
+    a {
+      color: #ccccff;
+    }
+  }
+
+  tr {
+    background: none !important;
+  }
+
+  td {
+    border: solid 1px black;
+  }
+
+  &__icon {
+    width: 20px;
+  }
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   body {

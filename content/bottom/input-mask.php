@@ -3,7 +3,7 @@
 <script src="js/modules/input-mask.js" type="module"></script>
 
 
-<script>
+<script id="credit-card-example-script">
     const amexMask = "9999 999999 99999";
     const otherMask = "9999 9999 9999 9999";
     const ccEl = document.getElementById('cc');

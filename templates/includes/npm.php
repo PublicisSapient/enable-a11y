@@ -280,7 +280,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   } 
   ?>
   <li>
-    Load your scripts using:
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
 
     <?php includeShowcodeStaticBegin() ?>
 &lt;script type="module"&gt;
