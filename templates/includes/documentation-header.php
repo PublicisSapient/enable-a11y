@@ -326,6 +326,14 @@
                                             "url-slug": "search",
                                             "alt": ""
                                         }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Mask",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
                                       }
                                        
                                     ]
