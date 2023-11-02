@@ -66,13 +66,16 @@
         multiple characters that can be replaced or erased. <em>It should be the same behavior as an unmaked input
             field.</em></li>
     <li><strong>Keyboard friendly:</strong> Keyboard users should be able to access the masked field with the TAB key,
-        <em>just like an unmaked input field.</em></li>
+        <em>just like an unmaked input field.</em>
+    </li>
     <li><strong>Screen reader friendly:</strong> Screen reader users should be able to use the masked input field
-        <em>just like an unmasked input field.</em></li>
+        <em>just like an unmasked input field.</em>
+    </li>
     <li><strong>Screen reader alerts:</strong> If the user pauses while typing the data, screen readers will announce
         <strong>all</strong> the characters in the input field individually instead of reading the data as a word. This
         is because the data used in masking (e.g. phone numbers, credit cards, product keys, etc) are not words, and it
-        is better UX to have the data read out character by character.</li>
+        is better UX to have the data read out character by character.
+    </li>
 </ol>
 
 <p>
@@ -88,14 +91,14 @@
     <caption>Comparison of input masking libraries</caption>
     <thead>
         <tr>
-            <th scope="col"></th>
+            <th scope="col"><span class="sr-only">Library</span></th>
             <th scope="col">Can access with keyboard</th>
             <th scope="col">Screen reader friendly</th>
             <th scope="col">Visually only masking</th>
             <th scope="col">Flexible Input of data</th>
 
             <th scope="col">Screen reader alerts</th>
-        <tr>
+        </tr>
     </thead>
     <tbody>
         <tr>
@@ -131,6 +134,7 @@
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible) I
     created Enable's Input Making library. You can test it out with a screen reader and keyboard youself.</p>
 
+<h2>Example 1: Static Input Masking</h2>
 
 <div class="enable-example" id="input-mask-example">
     <form class="enable-form-example" onSubmit="alert('form submitted'); return false;">
@@ -177,9 +181,9 @@
                             href="https://softwarekeep.com/help-center/how-to-find-your-windows-10-product-key">More
                             information about Windows Product Keys</a></div>
                 </div>
+            </div>
 
-
-                <input value="Submit" type="submit">
+            <input value="Submit" type="submit">
         </fieldset>
 
 
@@ -235,41 +239,67 @@
 <h2>How Does the Library Work?</h2>
 
 <p>
-    If you just want to implement input masking and don't care how it works, just skip this section.  If you are interested in the technical details of how this all works, click the button below.
+    If you just want to implement input masking and don't care how it works, just skip this section. If you are
+    interested in the technical details of how this all works, click the button below.
 </p>
 
 <details class="enable-drawer">
     <summary class="enable-drawer__button">
-      I want to read the gory technical details.
+        I want to read the gory technical details.
     </summary>
     <div class="content">
 
-      <h3>How the DOM and CSS is Set Up.</h3>
+        <h3>How the DOM and CSS is Set Up.</h3>
 
-      <p>We don't change the data inside the input field. Instead, we create an absolutely positioned HTML block (which we call a facade) that, using a higher z-index than the input field, sits on top of it.  This contains the formatted input field data and covers the input field so it is no longer visible to the user (We also make the input field's text transparent and ensure the facade and the input field are the same pixel-size).</p>
+        <p>We don't change the data inside the input field. Instead, we create an absolutely positioned HTML block
+            (which we call a facade) that, using a higher z-index than the input field, sits on top of it. This contains
+            the formatted input field data and covers the input field so it is no longer visible to the user (We also
+            make the input field's text transparent and ensure the facade and the input field are the same pixel-size).
+        </p>
     </div>
 
     <figure>
-    <img src="images/input-mask/input-mask-dom.webp"
-        alt="A digram of the input mask's DOM, which is described fully below.">
+        <img src="images/input-mask/input-mask-dom.webp"
+            alt="A digram of the input mask's DOM, which is described fully below.">
 
-    <figcaption>A 3D representation of the DOM of the input mask component.</figcaption>
+        <figcaption>A 3D representation of the DOM of the input mask component.</figcaption>
     </figure>
 
-    <p>The diagram above shows that the input field is stacked underneath a facade that contains the visually formatted input with the data mask applied.  The input field contains the phone number 212-312-1231, without dashes, in it and the numbers 3121, which is in the middle of the phone number, is selected (presumably because the user wants to cut, copy or erase it).  The facade has the same phone number as the input field, but is formatted with dashes in the standard places for a North American phone number. The mask's visual data is divided into the three areas: the text before the selected area (212), the selected text (-3121) and the text after the selected area (231).  This was done so we can mimic the input field's blinking cursor as well as show what data has been selected by a mouse (more on this below).</p>
+    <p>The diagram above shows that the input field is stacked underneath a facade that contains the visually formatted
+        input with the data mask applied. The input field contains the phone number 212-312-1231, without dashes, in it
+        and the numbers 3121, which is in the middle of the phone number, is selected (presumably because the user wants
+        to cut, copy or erase it). The facade has the same phone number as the input field, but is formatted with dashes
+        in the standard places for a North American phone number. The mask's visual data is divided into the three
+        areas: the text before the selected area (212), the selected text (-3121) and the text after the selected area
+        (231). This was done so we can mimic the input field's blinking cursor as well as show what data has been
+        selected by a mouse (more on this below).</p>
 
     <h3>Keyboard UX</h3>
-    <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would.   Keyboard focus, when applied to the input field, is visible since the input field and the facade are the same size.  When the user types into the input field, javascript updates the facade with the same data, except it has format information. The user can even select text (via the usual SHIFT+arrow keys) and the equivalent text is selected in the input field underneath.  Data can also be cut, copied and pasted from the input field, and the facade will be appropriately updated.</p>
-    
+    <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would. Keyboard
+        focus, when applied to the input field, is visible since the input field and the facade are the same size. When
+        the user types into the input field, javascript updates the facade with the same data, except it has format
+        information. The user can even select text (via the usual SHIFT+arrow keys) and the equivalent text is selected
+        in the input field underneath. Data can also be cut, copied and pasted from the input field, and the facade will
+        be appropriately updated.</p>
+
     <h3>Mouse UX</h3>
-    <p>For mouse users, when the click on what they think is the input field, they are actually clicking on the facade stacked on top.  Javascript figures out where in the input data they are clicking and ensure the cursor in the input field stacked underneath is placed in the right area. Because all mouse events are basically passed on to the input field underneath, the user can select text with a mouse and the appropriate text is selected in the input field so that is updated correctly. </p>
+    <p>For mouse users, when the click on what they think is the input field, they are actually clicking on the facade
+        stacked on top. Javascript figures out where in the input data they are clicking and ensure the cursor in the
+        input field stacked underneath is placed in the right area. Because all mouse events are basically passed on to
+        the input field underneath, the user can select text with a mouse and the appropriate text is selected in the
+        input field so that is updated correctly. </p>
 
     <h3>Screen-reader UX</h3>
-    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input field's value announced character by character).  This is done via an ARIA live region which is described in the code walkthrough above.  So, instead of the screen reader reading the input field as a large integer (in this case "two billion one hundred twenty three million one hundred twenty one thousand two hundred thirty one"), it will read it as the phone number one digit at a time (i.e. two one two three one two one two three one).  This makes it easy for screen reader users to know what they just typed in.</p>
-  </details>
+    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input
+        field's value announced character by character). This is done via an ARIA live region which is described in the
+        code walkthrough above. So, instead of the screen reader reading the input field as a large integer (in this
+        case "two billion one hundred twenty three million one hundred twenty one thousand two hundred thirty one"), it
+        will read it as the phone number one digit at a time (i.e. two one two three one two one two three one). This
+        makes it easy for screen reader users to know what they just typed in.</p>
+</details>
 
 
-<h2>Credit Card Fields</h2>
+<h2>Example 2: Dynamic Masking of Credit Card Fields</h2>
 
 
 <p>
@@ -316,7 +346,7 @@
 
                 <div class="field-block">
 
-                    <label class="example__label" for="ccl">Credit Card Number: </label>
+                    <label class="example__label" for="cc">Credit Card Number: </label>
 
                     <!-- BEGIN-INPUT-MASK -->
                     <div class="enable-input-mask">
@@ -329,14 +359,14 @@
 
                     <div class="desc" id="cc__desc">Input just the numbers on your credit card number. Spaces will be
                         added automatically to match the spacing on your card</div>
-                    <div> Type: <div id="cc-type-container"></div>
-                    </div>
+                    
                 </div>
 
 
 
 
                 <input value="Submit" type="submit">
+            </div>
         </fieldset>
 
 
@@ -347,10 +377,8 @@
 <?php includeShowcode("credit-card-example")?>
 <script type="application/json" id="credit-card-example-props">
 {
-    "replaceHtmlRules": {
-    },
-    "steps": [
-        {
+    "replaceHtmlRules": {},
+    "steps": [{
             "label": "Ensure each input field's HTML has this specific format",
             "highlight": "%BEGINENDCOMMENTTAG% INPUT-MASK",
             "notes": "This DOM structure must be maintained.  The container class must be <code>enable-input-mask</code>."
