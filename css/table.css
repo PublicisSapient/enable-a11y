@@ -95,6 +95,7 @@ table + figcaption {
   .caption:after,
   table + figcaption:after {
     transform: scaleX(-1);
+    right: -110px;
   }
 }
 figure figcaption.caption {

@@ -330,7 +330,7 @@
                                       {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Input Mask",
+                                            "label": "Input Masking",
                                             "url-slug": "input-mask",
                                             "alt": ""
                                         }
