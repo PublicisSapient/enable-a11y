@@ -8,7 +8,6 @@
 textarea,
 [role="textbox"] {
   display: inline-block;
-  width: 200px;
   font-size: 1rem;
   line-height: 1.375;
   border: solid 1px black;
@@ -25,8 +24,13 @@ textarea,
   -moz-appearance: textarea;
   appearance: textarea;
   resize: both;
-  min-width: 20rem;
-  max-width: none !important;
+}
+@media only screen and (min-width: 720px) {
+  textarea,
+  [aria-multiline="true"] {
+    min-width: 19.625rem;
+    max-width: none !important;
+  }
 }
 .textarea-label {
   vertical-align: top;
@@ -37,10 +41,14 @@ fieldset div {
 }
 #charcount-example .enable-character-count {
   display: block;
-  width: 20rem;
   margin-left: 45%;
   text-align: right;
   margin-top: 5px;
+}
+@media only screen and (min-width: 720px) {
+  #charcount-example .enable-character-count {
+    width: 19.625rem;
+  }
 }
 #charcount-example label.desc {
   width: 15rem;

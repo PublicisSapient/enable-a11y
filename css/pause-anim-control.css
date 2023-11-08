@@ -16,7 +16,7 @@
  */
 .play-pause-anim__checkbox-container {
   position: relative;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
   top: 0;
   left: 0;
   color: white;

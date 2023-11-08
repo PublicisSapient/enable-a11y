@@ -14,7 +14,7 @@
 
 
 html {
-  width: calc(100vw - (100vw - 100%));
+  width: @100width;
   overflow-x: hidden;
 }
 
@@ -76,7 +76,7 @@ code {
   &__container {
     position: relative;
     z-index: 1;
-
+    overflow-x: hidden;
   }
 
   &__heading {
@@ -341,6 +341,10 @@ code {
 
   &__has-wrapped-text-in-code &--no-js {
     white-space: break-spaces;
+  }
+
+  &__has-wrapped-text-in-code &__highlight {
+    word-wrap : anywhere;
   }
 
   &--no-js-container {

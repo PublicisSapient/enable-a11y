@@ -68,15 +68,38 @@
 
 }
 
+
 caption,
 .caption,
 table + figcaption {
     display: table-caption;
+    margin: 1em auto;
+}
+
+.comparison-table {
+    &__caption {
+        margin: 40/@px auto 0 auto;
+    }
+
+    &__footnotes {
+        margin-top: 0;
+        margin-left: 0;
+        font-style: italic;
+        border: solid 1px #666;
+        padding: 10/@px 30/@px;
+        font-size: smaller;
+        margin-bottom: 40/@px;
+    }
+}
+
+caption,
+.caption,
+table + figcaption,
+.comparison-table__caption {
     text-align: center;
     font-style: italic;
     font-family: "Times New Roman", serif;
     .width-fit-content();
-    margin: 1em auto;
     position: relative;
 
     /* 
@@ -256,7 +279,6 @@ table,
     }
 }
 
-&.enable-tabl
 
 .screenshot-table {
     margin: 0 auto;

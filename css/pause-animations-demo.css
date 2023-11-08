@@ -69,12 +69,12 @@ main:not(.with-full-bleed-hero) .play-pause-anim {
 }
 .play-pause-anim__full-bleed-image-demo--image {
   background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
-  background-size: 100vw auto;
+  background-size: calc(100vw - (100vw - 100%)) auto;
   background-position: 0px 0px;
   background-repeat: repeat-x;
   background-size: auto;
   animation: animatedBackground 60s linear infinite;
-  width: 100vw;
+  width: calc(100vw - (100vw - 100%));
 }
 .play-pause-anim__full-bleed-image-demo--copy {
   position: absolute;

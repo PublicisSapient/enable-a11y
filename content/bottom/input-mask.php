@@ -1,4 +1,8 @@
 
+<!-- This is just used for the documentation on the page. -->
+<!-- It is not needed for input-mask.js.                  -->
+<script src="js/modules/footnote.js" type="module"></script>
+
 
 <script src="js/modules/input-mask.js" type="module"></script>
 

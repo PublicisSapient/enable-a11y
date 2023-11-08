@@ -87,49 +87,61 @@
     $check = '<img class="compliance-table__icon" src="images/checkmark.svg" alt=""> Yes.';
     $uncheck = '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
-<table class="comparison-table">
-    <caption>Comparison of input masking libraries</caption>
-    <thead>
-        <tr>
-            <th scope="col"><span class="sr-only">Library</span></th>
-            <th scope="col">Can access with keyboard</th>
-            <th scope="col">Screen reader friendly</th>
-            <th scope="col">Visually only masking</th>
-            <th scope="col">Flexible Input of data</th>
 
-            <th scope="col">Screen reader alerts</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
-            <td><?= $check ?>
-            <td><?= $check ?>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
-            </th>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
-            <td><?= $check ?></td>
-            <td><?= $check ?> (although the demo page doesn't use proper labels).</td>
-            <td>No</td>
-            <td>No, typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one
-                character.</td>
-            <td>No</td>
-        </tr>
+<div class="comparison-table__caption" id="comparison-table-caption">Comparison of input masking libraries</div>
+<div class="sticky-table__container" tabindex="0">
+    <table class="comparison-table" aria-labelledby="comparison-table__caption">
+        
+        <thead>
+            <tr>
+                <th scope="col"><span class="sr-only">Library</span></th>
+                <th scope="col">Can access with keyboard</th>
+                <th scope="col">Screen reader friendly</th>
+                <th scope="col">Visually only masking</th>
+                <th scope="col">Flexible Input of data</th>
 
-    </tbody>
-</table>
+                <th scope="col">Screen reader alerts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
+                <td><?= $check ?>
+                <td><?= $check ?>
+                <td><?= $check ?></td>
+                <td>No <sup><button class="footnote__button">1</button></sup></td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
+                </th>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td>No <sup><button class="footnote__button">1</button></sup></td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
+                <td><?= $check ?></td>
+                <td><?= $check ?><sup><button class="footnote__button">3</button></td>
+                <td>No</td>
+                <td>No <sup><button class="footnote__button">2</button></sup></td>
+                <td>No</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+   
+</div>
+
+<ol class="footnote__list comparison-table__footnote-list">
+        <li id="comparison-table__note-1">Typing in the middle of data results in cursor being moved to end of string.</li>
+        <li id="comparison-table__note-2">Typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one character.</li>
+        <li id="comparison-table__note-3">Note that the demo page doesn't use proper labels.</li>
+    </ol>
+
 
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible) I
     created Enable's Input Making library. You can test it out with a screen reader and keyboard youself.</p>

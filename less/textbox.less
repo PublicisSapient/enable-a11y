@@ -1,13 +1,13 @@
 @import "shared/mixins-and-vars";
 
 @line-height: 22;
+@desktop-textarea-width: 314/@px;  
 
 textarea,
 [role="textbox"] {
     @font-size: 16;
 
     display: inline-block;
-    width: 200px;
     font-size: (@font-size/@px);
     line-height: (@line-height/@font-size);
     border: solid 1px black;
@@ -22,8 +22,11 @@ textarea,
     overflow: auto;
     .vendor(appearance, textarea);
     resize: both;
-    min-width: 20rem;
+
+    @media @tablet-up {
+    min-width: @desktop-textarea-width;
     max-width: none !important;
+    }
 }
 
 
@@ -42,10 +45,13 @@ fieldset {
 
     .enable-character-count {
         display: block;
-        width: 20rem;
         margin-left: 45%;
         text-align: right;
         margin-top: 5px;
+
+        @media @tablet-up {
+            width: @desktop-textarea-width;
+        }
     
     }
 

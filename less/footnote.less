@@ -1,0 +1,42 @@
+@import "shared/mixins-and-vars";
+
+.footnote {
+    &__button {
+        .appearance(none);
+        border: none;
+        background: none;
+        padding: 15px;
+        margin: -15px;
+        text-decoration: underline;
+        color: #009;
+        cursor: pointer;
+    }
+}
+
+.comparison-table {
+  &__footnote-list {
+    border: solid 1px #333;
+    padding: 10px 10px 10px 40px;
+    font-style: italic;
+    width: @100width;
+    margin: 0 0 40px 0;
+    counter-reset: item;
+    list-style:none;
+    
+    li:before{
+    	content: counter(item);
+        counter-increment: item;
+    	position: absolute;	
+    	vertical-align: super;
+    	font-size: xx-small;
+    	left: 1em;
+    }
+    
+    li{
+    	position: relative;
+    	display: block;
+    	padding: 0 0 0 20/@px;
+    }
+    
+  }
+}

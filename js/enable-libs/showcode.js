@@ -243,7 +243,15 @@ const showcode = new function () {
   const changeCodeFormattingEvent = (e) => {
 
     const { currentTarget } = e;
+    
     changeCodeFormatting(currentTarget, true);
+
+    // let's ensure the element is in the viewport.
+    currentTarget.scrollIntoView({
+      behavior: 'instant',
+      block: 'center'
+    });
+    sc
   }
 
   const changeCodeFormatting = (checkboxEl, changeAllCheckboxes) => {

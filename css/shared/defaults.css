@@ -248,6 +248,10 @@ code {
   padding: 3px;
   word-wrap: break-word;
 }
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
 .center {
   text-align: center;
 }

@@ -47,6 +47,9 @@
 
 @page-padding: (16/@px);
 
+// 100vw - the width of the scrollbar
+@100width: calc(100vw - (100vw - 100%));
+
 
 .font-copy() {
   font-family: @font-default-copy;
@@ -312,4 +315,9 @@
   // For web standards 
   scrollbar-color: @foreground-color @background-color;
   scrollbar-width: thin;
+}
+
+.sup() {
+  vertical-align: super;
+  font-size: smaller;
 }

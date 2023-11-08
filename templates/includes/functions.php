@@ -276,6 +276,10 @@ function getURIPrefix() {
   }
 }
 
+function noHorizScroll($s) {
+  return str_replace('/', '/<wbr>', $s);
+}
+
 getMetadata();
 
 

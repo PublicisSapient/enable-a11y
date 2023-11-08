@@ -49,6 +49,7 @@ h4.showcode__heading {
 .showcode__container {
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 }
 .showcode__heading {
   font-weight: bold;
@@ -241,6 +242,9 @@ h4.showcode__heading {
 }
 .showcode__has-wrapped-text-in-code .showcode--no-js {
   white-space: break-spaces;
+}
+.showcode__has-wrapped-text-in-code .showcode__highlight {
+  word-wrap: anywhere;
 }
 .showcode--no-js-container {
   margin-top: 20px;

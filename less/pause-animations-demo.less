@@ -79,15 +79,14 @@
   &__full-bleed-image-demo {
     position: relative;
 
-
     &--image {
       background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
-      background-size: 100vw auto;
+      background-size: @100width auto;
       background-position: 0px 0px;
       background-repeat: repeat-x;
       background-size: auto;
       animation: animatedBackground 60s linear infinite;
-      width: 100vw;
+      width: @100width;
     }
 
     &--copy {

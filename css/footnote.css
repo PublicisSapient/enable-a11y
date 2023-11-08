@@ -1,0 +1,40 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.footnote__button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 15px;
+  margin: -15px;
+  text-decoration: underline;
+  color: #009;
+  cursor: pointer;
+}
+.comparison-table__footnote-list {
+  border: solid 1px #333;
+  padding: 10px 10px 10px 40px;
+  font-style: italic;
+  width: calc(100vw - (100vw - 100%));
+  margin: 0 0 40px 0;
+  counter-reset: item;
+  list-style: none;
+}
+.comparison-table__footnote-list li:before {
+  content: counter(item);
+  counter-increment: item;
+  position: absolute;
+  vertical-align: super;
+  font-size: xx-small;
+  left: 1em;
+}
+.comparison-table__footnote-list li {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1.25rem;
+}

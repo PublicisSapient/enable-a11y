@@ -60,12 +60,29 @@ caption,
 .caption,
 table + figcaption {
   display: table-caption;
+  margin: 1em auto;
+}
+.comparison-table__caption {
+  margin: 2.5rem auto 0 auto;
+}
+.comparison-table__footnotes {
+  margin-top: 0;
+  margin-left: 0;
+  font-style: italic;
+  border: solid 1px #666;
+  padding: 0.625rem 1.875rem;
+  font-size: smaller;
+  margin-bottom: 2.5rem;
+}
+caption,
+.caption,
+table + figcaption,
+.comparison-table__caption {
   text-align: center;
   font-style: italic;
   font-family: "Times New Roman", serif;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 1em auto;
   position: relative;
   /* 
         * The decorations around the captions are for tablet and up,
@@ -76,9 +93,11 @@ table + figcaption {
   caption:before,
   .caption:before,
   table + figcaption:before,
+  .comparison-table__caption:before,
   caption:after,
   .caption:after,
-  table + figcaption:after {
+  table + figcaption:after,
+  .comparison-table__caption:after {
     /* This is the squiggly line PNG used to decorate the caption */
     content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAQCAYAAAC4LkmaAAACLElEQVR42uzXAwhdcRTH8dm2bdu2bdtptm3b3sLsLc1WnG3bZ9/qVM/2e6c+1/r/rqOISIQLPLmxSHBUA0xAnFBqLBVV+xnQHRtxDS/xFndwCM2dDo6ai3+4gBdIFAKB5Uc3bMMHiLqH49iMVdiEE/iibW/mUHBUAXxGGh2fh0FeblQqtMUwjEMnZPXQtjviJj5C1CG0QlokQSyTdWLpMY2AYKojwXXCaoPxLFjg4aASIh/G4DHExD/tX0NlRHNi23GRFxPwB4JXOIX2LhxrfXxHTXvB9cIMg/GCaOGhwApgvgYi6jV2YyxaoApKoyyaYjbGIY6dbafHKJyGqANojWxuHndn3LYXXF1cMxiv5O7DGFVxCYK/eIYJyGiybGpEtXKFZjXZZnTE0LCvGFypXzALST1w3Cm0nxgPUd5WcEnwGfXc3HE5Dec+BHexEJVtrJMb49EDhTTIZEiHfKiH/liEUxD1EOvQyIOPk0KGGVA7MdPeW3UAPiCjkzuLicHakJ8QnEVpJHBwG4kwC4LPeIf3OvzL5Dm4GSWREFE9/BxegVIG49uxyJHvuB24i+KIbaOROdESeyDqETYhnxsHngLjcASXcBlHMR3VfPD5shL9dDgpnqCiI8HFxFyIHvQC9MdQLMR+3MQPCP5gDeogbQh89+XDZyzHDRx26peLyo7j+IZf+Inv+KrBzcb/mQ/HLhW0Rv4ASSSYnQBSyi8ZIJYeiJ7EaCd/NOBGMQAC8O/gL/6CHwAAAABJRU5ErkJggg==);
     display: inline-block;
@@ -88,13 +107,16 @@ table + figcaption {
   }
   caption:before,
   .caption:before,
-  table + figcaption:before {
+  table + figcaption:before,
+  .comparison-table__caption:before {
     left: -110px;
   }
   caption:after,
   .caption:after,
-  table + figcaption:after {
+  table + figcaption:after,
+  .comparison-table__caption:after {
     transform: scaleX(-1);
+    right: -110px;
   }
 }
 figure figcaption.caption {
@@ -249,15 +271,15 @@ table .rowspan2__bottom,
 .enable-table--with-borders td {
   border: solid 1px black;
 }
-.enable-tabl .screenshot-table {
+.screenshot-table {
   margin: 0 auto;
   width: initial;
   max-width: initial;
 }
-.enable-tabl .screenshot-table th[scope="row"] {
+.screenshot-table th[scope="row"] {
   vertical-align: middle;
 }
-.enable-tabl .screenshot-table td {
+.screenshot-table td {
   padding: 0;
 }
 table td:first-child,
