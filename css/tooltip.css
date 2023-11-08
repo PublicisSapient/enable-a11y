@@ -52,3 +52,13 @@
   width: 1px;
   margin: -1px;
 }
+.tooltip__close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+}
+.tooltip__close-button::before {
+  content: "x";
+}

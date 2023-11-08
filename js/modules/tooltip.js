@@ -17,10 +17,17 @@ const tooltip = new function () {
     // global constants
     const { body } = document;
     const tooltipEl = document.createElement('div');
+    let tooltipContentEl;
     const tooltipStyle = tooltipEl.style;
     const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
     let timeout;
     let tooltipTarget = null;
+
+    // We made this public so that the user can change the text if they want
+    // to meet localization/internationalization concerns.  However, since 
+    // this is not really read by screen readers (since the close button is
+    // for mouse users only), I don't think it's necessary to override.
+    this.closeText = 'close tooptip';
 
 
     let isTooltipVisible;
@@ -64,9 +71,14 @@ const tooltip = new function () {
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
-        tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
+        tooltipEl.innerHTML = `
+            <button class="tooltip__close-button" aria-hidden="true" tabindex="-1">
+                <span class="sr-only">${this.closeText}</span>
+            </button>
+            <span class="tooltip__content">Loading ...</span>`;
         tooltipEl.setAttribute('aria-hidden', 'true');
         body.appendChild(tooltipEl);
+        tooltipContentEl = tooltipEl.querySelector('.tooltip__content');
     }
 
     this.onKeyup = (e) => {
@@ -101,7 +113,7 @@ const tooltip = new function () {
             tooltipTarget.setAttribute('aria-describedby', 'tooltip');
 
             // show the tool tip
-            tooltipEl.innerHTML = text;
+            tooltipContentEl.innerHTML = text;
             tooltipEl.setAttribute('aria-hidden', "false");
             tooltipEl.classList.remove('tooltip--hidden');
 

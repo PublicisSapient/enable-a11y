@@ -44,4 +44,16 @@
     &--hidden { 
         .enable__visually-hidden()
     }
+
+    &__close-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+
+        &::before {
+            content: "x";
+        }
+    }
 }
