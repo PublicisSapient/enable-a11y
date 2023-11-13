@@ -1,5 +1,9 @@
 @import "mixins-and-vars";
 
+html {
+  scroll-padding-top: 4rem;
+}
+
 body {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -354,6 +358,10 @@ sup {
 
   &__icon {
     width: 20px;
+  }
+
+  [tabindex="-1"] {
+    scroll-padding-top: 20rem;
   }
 
 }

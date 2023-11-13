@@ -16,11 +16,16 @@ const footnote = new function () {
     const rootClass = 'footnote'
     const buttonClass = `${rootClass}__button`;
     const listClass = `${rootClass}__list`;
+    const instructionsId = `${rootClass}__instructions`;
+    let instructionsEl;
 
+    // We make this public so it can be internationalized.
+    this.instructionsText = 'Click to go back to footnoted item.'
+    this.readAriaLabel = 'Read footnote ';
 
     const init = () => {
         if (!this.method) {
-            this.method = showAlert;
+            this.method = announce;
         }
 
         this.setAriaLabels();
@@ -34,7 +39,7 @@ const footnote = new function () {
         Array.prototype.forEach.call(buttons, (el) => {
             const { innerText } = el;
             console.log(el);
-            el.setAttribute('aria-label', `Read footnote ${innerText}.`)
+            el.setAttribute('aria-label', `${this.readAriaLabel} ${innerText}.`)
         });
     }
 
@@ -56,9 +61,21 @@ const footnote = new function () {
         }
     }
 
-
     const showAlert = (target, listItem) => {
         const message = listItem.innerText;
+
+        if (!instructionsEl) {
+            instructionsEl = document.createElement('div');
+            instructionsEl.className = 'sr-only';
+            instructionsEl.id = instructionsId;
+            instructionsEl.innerHTML = this.instructions;
+            document.body.appendChild(instructionsEl);
+        }
+
+        listItem.tabIndex = "-1";
+        listItem.role = 'note';
+        listItem.setAttribute('aria-describedby', instructionsId);
+
         window.alert(message);    
     }
 

@@ -160,6 +160,9 @@ body:not(:-moz-handler-blocked) fieldset {
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+html {
+  scroll-padding-top: 4rem;
+}
 body {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -443,6 +446,10 @@ sup {
 .compliance-table__icon,
 .comparison-table__icon {
   width: 20px;
+}
+.compliance-table [tabindex="-1"],
+.comparison-table [tabindex="-1"] {
+  scroll-padding-top: 20rem;
 }
 /*
 @media (prefers-color-scheme: dark) {

@@ -88,8 +88,9 @@
     $uncheck = '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
 
+<div class="footnote__content">
 <div class="comparison-table__caption" id="comparison-table-caption">Comparison of input masking libraries</div>
-<div class="sticky-table__container" tabindex="0">
+<div class="sticky-table__container " tabindex="0">
     <table class="comparison-table" aria-labelledby="comparison-table__caption">
         
         <thead>
@@ -109,7 +110,7 @@
                 <td><?= $check ?>
                 <td><?= $check ?>
                 <td><?= $check ?></td>
-                <td>No <sup><button class="footnote__button">1</button></sup></td>
+                <td rowspan="2">No <sup><a id="reference-1" class="footnote__button" href="#comparison-table__note-1" aria-label="Read footnote 1">1</a></sup></td>
                 <td>No</td>
             </tr>
             <tr>
@@ -118,15 +119,14 @@
                 <td><?= $check ?></td>
                 <td><?= $check ?></td>
                 <td><?= $check ?></td>
-                <td>No <sup><button class="footnote__button">1</button></sup></td>
                 <td>No</td>
             </tr>
             <tr>
                 <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
                 <td><?= $check ?></td>
-                <td><?= $check ?><sup><button class="footnote__button">3</button></td>
+                <td><?= $check ?><sup><a id="reference-2" class="footnote__button" href="#comparison-table__note-3" aria-label="Read footnote 3">3</a></td>
                 <td>No</td>
-                <td>No <sup><button class="footnote__button">2</button></sup></td>
+                <td>No <sup><a id="reference-3" class="footnote__button" href="#comparison-table__note-2" aria-label="Read footnote 2">2</a></sup></td>
                 <td>No</td>
             </tr>
 
@@ -137,11 +137,11 @@
 </div>
 
 <ol class="footnote__list comparison-table__footnote-list">
-        <li id="comparison-table__note-1">Typing in the middle of data results in cursor being moved to end of string.</li>
-        <li id="comparison-table__note-2">Typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one character.</li>
-        <li id="comparison-table__note-3">Note that the demo page doesn't use proper labels.</li>
+        <li tabindex="-1" id="comparison-table__note-1">Typing in the middle of data results in cursor being moved to end of string. <a class="footnote__link-to-ref" href="#reference-1" aria-label="Back to content">↩</a></li>
+        <li tabindex="-1" id="comparison-table__note-2">Typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one character. <a class="footnote__link-to-ref" href="#reference-2" aria-label="Back to content">↩</a></li>
+        <li tabindex="-1" id="comparison-table__note-3">Note that the demo page doesn't use proper labels. <a class="footnote__link-to-ref" href="#reference-3" aria-label="Back to content">↩</a></li>
     </ol>
-
+    </div>
 
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible) I
     created Enable's Input Making library. You can test it out with a screen reader and keyboard youself.</p>
