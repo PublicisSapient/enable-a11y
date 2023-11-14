@@ -38,6 +38,8 @@
 var AblePlayerInstances = [];
 
 (function ($) {
+	
+
 	$(document).ready(function () {
 
 		$('video, audio').each(function (index, element) {
@@ -7468,6 +7470,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (window.speechSynthesis) {
 			this.synth = window.speechSynthesis;
 			voices = this.synth.getVoices();
+			console.log('voices', voices);
 			descLangs = this.getDescriptionLangs();
 			if (voices.length > 0) {
 				this.descVoices = [];
@@ -7737,6 +7740,25 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		}
 	};
 
+	AblePlayer.prototype.getGoodDefaultVoice = function () {
+		let voice;
+		const filteredVoices = this.descVoices.filter(function(el) {
+			return (el.voiceURI.indexOf('com.apple.voice.compact') > -1)
+		});
+
+		if (filteredVoices.length > 0) {
+			voice = filteredVoices[0];
+		} else {
+			voice = this.descVoices[0];
+		}
+
+		console.log('THE VOICE', voice);
+		return voice;
+	}
+
+	
+	let utterance;
+
 	AblePlayer.prototype.announceDescriptionText = function(context, text) {
 
 		// this function announces description text using speech synthesis
@@ -7745,7 +7767,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		// 'description' - actual description text extracted from WebVTT file
 		// 'sample' - called when user changes a setting in Description Prefs dialog
 
-		var thisObj, speechTimeout, voiceName, i, voice, pitch, rate, volume, utterance;
+		var thisObj, speechTimeout, voiceName, i, voice, pitch, rate, volume;
 
 		thisObj = this;
 
@@ -7792,7 +7814,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (this.descVoices) {
 			if (this.descVoices.length > 0) {
 				if (useFirstVoice) {
-					voice = this.descVoices[0];
+					voice = this.getGoodDefaultVoice();
 				}
 				else if (voiceName) {
 					// get the voice that matches user's preferred voiceName
@@ -7806,7 +7828,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				if (typeof voice === 'undefined') {
 					// no matching voice was found
 					// use the first voice in the array
-					voice = this.descVoices[0];
+					voice = this.getGoodDefaultVoice();
 				}
 
 				utterance = new SpeechSynthesisUtterance();
@@ -7833,12 +7855,16 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 							}
 						}
 					}
+					utterance = null;
 				};
 				utterance.onerror = function(e) {
 					// handle error
 					console.log('Web Speech API error',e);
+					console.log(e);
 				}
+				console.log('working')
 				this.synth.speak(utterance);
+				console.log('no');
 			}
 		}
 	};
@@ -8392,6 +8418,17 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.hidingControls = true;
 			this.invokeHideControlsTimeout();
 		}
+
+		// Stop the speech synthesis if playing
+		console.log('foo');
+
+		/* setTimeout(() => {
+			if (!this.synth.paused) {
+				this.synth.pause();
+				console.log('bar');
+			}
+		}, 500); */
+		
 	};
 
 	AblePlayer.prototype.fadeControls = function(direction) {
