@@ -59,7 +59,8 @@ const showcode = new function () {
     'aria-setsize',
     'for',
     'href',
-    'xlink:href'
+    'xlink:href',
+    'data-select-all-for'
   ]
 
 
@@ -385,6 +386,14 @@ const showcode = new function () {
             case '%OPENCLOSECONTENTTAG%':
               {
                 highlightString = `\\s*&lt;${highlightString}${attribute}[\\s\\S]*?/${highlightString}&gt;`
+                break;
+              }
+            case '%BEGINENDCOMMENTTAG%':
+              {
+                highlightString = highlightString.trim();
+                console.log(`foo! -${highlightString}-`);
+                highlightString = `\\s*&lt;!--[^-]*BEGIN-${highlightString}[^-]*--&gt;[\\s\\S]*?&lt;!--[^-]*END-${highlightString}[^-]*--&gt;`;
+                console.log(highlightString);
                 break;
               }
             case '%FILE%':

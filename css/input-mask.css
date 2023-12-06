@@ -1,0 +1,68 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.enable-input-mask {
+  position: relative;
+  display: inline-flex;
+  white-space: break-spaces;
+}
+.enable-input-mask__input {
+  color: transparent;
+}
+.enable-input-mask__input::selection {
+  color: transparent;
+}
+.enable-input-mask__input,
+.enable-input-mask__mask {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+.enable-input-mask__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 3px;
+  z-index: 1;
+}
+.enable-input-mask__mask-pre-val,
+.enable-input-mask__mask-mid-val,
+.enable-input-mask__mask-post-val {
+  display: inline-block;
+}
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-post-val::before {
+  content: "\00a0";
+  display: inline-block;
+  height: calc(100% - 6px);
+  width: 1px;
+  overflow: hidden;
+  margin: 2px 0;
+  background-color: #000;
+  animation: blink 1.1s infinite steps(1, start);
+  position: absolute;
+}
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-post-val:empty::after {
+  content: "\00a0";
+}
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-mid-val:not(:empty) + .enable-input-mask__mask-post-val::before {
+  background: transparent;
+  animation: none;
+}
+.enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-mid-val:not(:empty) {
+  background: #B4D5FE;
+}
+@keyframes blink {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: black;
+  }
+  100% {
+    background-color: transparent;
+  }
+}

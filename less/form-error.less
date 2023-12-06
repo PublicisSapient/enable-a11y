@@ -37,7 +37,8 @@
   input,
   .desc,
   label.error,
-  [role="textbox"] {
+  [role="textbox"],
+  .enable-input-mask {
     width: 200px;
     font-weight: normal;
 
@@ -45,6 +46,10 @@
       width: 45%;
       max-width: 20rem;
     }
+  }
+
+  .enable-input-mask input {
+    width: 100%;
   }
 
   .form-instructions {

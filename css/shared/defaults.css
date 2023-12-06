@@ -254,6 +254,37 @@ code {
 .margin-bottom {
   margin-bottom: 40px;
 }
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+}
+.compliance-table,
+.comparison-table {
+  margin: 1em auto 3em auto;
+}
+.compliance-table th,
+.comparison-table th,
+.compliance-table td,
+.comparison-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.compliance-table th a,
+.comparison-table th a {
+  color: #ccccff;
+}
+.compliance-table tr,
+.comparison-table tr {
+  background: none !important;
+}
+.compliance-table td,
+.comparison-table td {
+  border: solid 1px black;
+}
+.compliance-table__icon,
+.comparison-table__icon {
+  width: 20px;
+}
 /*
 @media (prefers-color-scheme: dark) {
   body {

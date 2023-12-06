@@ -1,6 +1,6 @@
 {
   "name": "enable-a11y",
-  "version": "1.1.0",
+  "version": "1.3.1",
   "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
   "main": "js/modules/index.js",
   "exports": {
@@ -15,6 +15,7 @@
     "./enable-visible-on-focus": "./js/modules/enable-visible-on-focus.js",
     "./hamburger": "./js/modules/hamburger.js",
     "./interpolate": "./js/modules/interpolate.js",
+    "./input-mask.js": "./js/modules/input-mask.js",
     "./paginate": "./js/modules/paginate.js",
     "./pause-anim-control": "./js/modules/pause-anim-control.js",
     "./checkbox": "./js/modules/checkbox.js",
@@ -85,10 +86,11 @@
     "got": "^11.5.5",
     "jest": "^28.1.3",
     "jest-puppeteer": "^6.1.1",
-    "jsdoc": "^3.6.6"
+    "jsdoc": "^3.6.6",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "chromedriver": "^115.0.0",
+    "chromedriver": "^119.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",

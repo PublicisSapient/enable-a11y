@@ -10,6 +10,8 @@ vnu: https://www.npmjs.com/package/vnu-jar
 lynx: https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/  
 php: https://www.php.net/downloads.php  
 less: `npm install -g less-watch-compiler`  
+
+### Optional (since `npm run sever` will run an express server)
 MAMP (OSX) or Apache: https://www.mamp.info/en/mac/  
 LAMP (Linux): https://www.linux.com/training-tutorials/easy-lamp-server-installation/
 

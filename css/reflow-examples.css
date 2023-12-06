@@ -31,7 +31,7 @@ body ::-webkit-scrollbar-thumb {
 body ::-webkit-scrollbar-track {
   background: #000;
 }
-main {
+#main {
   max-width: 100% !important;
 }
 .reflow-examples__index {

@@ -17,8 +17,10 @@
 </ol>
 
 <p>
-  Because of this, I have recommended using <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>
-  and have the browser insert the audio descriptions. It requires a separate caption file (in WebVTT format)
+  Because of this, I have recommended using our custom build of <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>
+  and have the browser insert the audio descriptions. We have added some extra code to our build to ensure that Able Player 
+  plays the audio descriptions correctly on all devices (the official build has some issues in iOS &mdash; we will be submitting 
+  a PR to the official AblePlayer code so they can be incorporated in the official build).   Able Player requires a separate caption file (in WebVTT format)
   so the player knows at what time the captions should be read out. In many instances, I also set the player
   to pause the video when the audio descriptions are recited, so the browser doesn't talk over the existing
   audio in the video.

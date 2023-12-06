@@ -15,6 +15,7 @@
 
 /* global AblePlayer, jQuery */
 
+let hasClicked = false;
 
 function ablePlayerCustomizations($, extraCustomizations) {
 
@@ -26,6 +27,11 @@ function ablePlayerCustomizations($, extraCustomizations) {
 
   // Add event listener for when fullscreen functionality is activated on AblePlayer
   document.addEventListener('fullscreenchange', fullScreenChangeHandler, true);
+
+  // Add event listener to trigger the SpeechSynthsis API when clicking on the play
+  // button.  This is to work around an iOS issue which won't allow the SpeechSynthesis API
+  // to work unless there is some user interaction that triggers is.
+  document.addEventListener('click', clickEvent, true);
 
 
   // Ensure cookies that pause the video while audio descriptions are read are
@@ -74,6 +80,13 @@ function ablePlayerCustomizations($, extraCustomizations) {
     } else {
       document.querySelector('.is-fullscreen').classList.remove('is-fullscreen');
     }
+  }
+
+  function clickEvent() {
+    if (!hasClicked && window.speechSynthesis) {
+      AblePlayerInstances[0].announceDescriptionText('description', ' ');
+    }
+    hasClicked = true;
   }
 
   if (extraCustomizations && typeof(extraCustomizations) === 'function') {

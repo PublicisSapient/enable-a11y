@@ -40,7 +40,7 @@
   },
   "checkbox.php": {
     "title": "Accessible Checkboxes",
-    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way."
+    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes."
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
@@ -97,6 +97,10 @@
   "img.php": {
     "title": "Accessible Images",
     "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
+  },
+  "input-mask.php": {
+    "title": "Accessible Input Masking",
+    "desc": "How to code masking of keyboard input in form fields so they are accessible."
   },
   "link.php": {
     "title": "Accessible Links",
