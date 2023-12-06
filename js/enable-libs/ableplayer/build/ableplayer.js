@@ -7744,6 +7744,8 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		}
 	};
 
+	// This attempts to get a good default voice for all browsers.
+	// This should be improved over time.
 	AblePlayer.prototype.getGoodDefaultVoice = function () {
 		let voice;
 		const filteredVoices = this.descVoices.filter(function(el) {
@@ -7836,6 +7838,11 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					voice = this.getGoodDefaultVoice();
 				}
 
+				// The utterance variable used to be local to this 
+				// function.  This was causing problems with iOS Safari
+				// which was not reciting the audio descriptions correctly,
+				// so we changed it to a property of the AblePlayer
+				// object. 
 				this.utterance = new SpeechSynthesisUtterance();
 				this.utterance.voice = voice;
 				this.utterance.voiceURI = 'native';
@@ -8482,18 +8489,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		this.hideControlsTimeoutStatus = 'active';
 	};
 
-	AblePlayer.prototype.isSpeechPaused = function () {
-		let r = false;
-
-		if (window.speechSynthesis && this.synth) {
-			if (this.synth.speaking) {
-				r = this.synth.paused;
-			}
-		}
-
-		return r;
-	}
-
 	AblePlayer.prototype.refreshControls = function(context, duration, elapsed) {
 
 		// context is one of the following:
@@ -8911,7 +8906,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 							// This pause button is set to the play icon if the video is not playing and the 
 							// SpeechSynth API is not speaking.
-							const isSpeechPaused = thisObj.synth.speaking && thisObj.synth.paused; //thisObj.isSpeechPaused();
+							const isSpeechPaused = window.speechSynthesis && thisObj.synth && thisObj.synth.speaking && thisObj.synth.paused;
 							const isVideoPaused = (currentState === 'paused' || currentState === 'stopped' || currentState === 'ended') && !thisObj.synth.speaking;
 							
 							if (isSpeechPaused || isVideoPaused) {
@@ -9004,7 +8999,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 	AblePlayer.prototype.handlePlay = function(e) {
 
 		// Let's check to see if the SpeechSynthesis audio
-		// descriptions are playing.  If so, turn them off.'
+		// descriptions are playing.  If so, pause them.'
 		if (window.speechSynthesis && this.synth.speaking) {
 			if (this.synth.paused) {
 				this.synth.resume();
@@ -9014,7 +9009,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			return;
 		}
 
-
+		// This handles the logic for the video play/pause
 		if (this.paused) {
 			this.playMedia();
 		}

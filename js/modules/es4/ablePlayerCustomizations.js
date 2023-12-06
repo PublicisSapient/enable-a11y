@@ -83,9 +83,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   }
 
   function clickEvent() {
-    console.log('touchstart');
     if (!hasClicked && window.speechSynthesis) {
-      console.log('speaking');
       AblePlayerInstances[0].announceDescriptionText('description', ' ');
     }
     hasClicked = true;
