@@ -25,7 +25,6 @@ describe('ARIA Checkbox Tests', () => {
 
     await page.goto(`${config.BASE_URL}/checkbox.php`);
 
-    console.log(`${config.BASE_URL}/checkbox.php`)
     // wait until all content loads
     await page.waitForSelector('#example-role-checkbox');
 

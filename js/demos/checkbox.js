@@ -26,4 +26,4 @@ $form.addEventListener('submit', (e) => {
 
 
 
-showcode.addJsObj('checkbox', checkbox);
+//showcode.addJsObj('checkbox', checkbox);
