@@ -6957,11 +6957,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		this.lastVolume = volume;
 
 		if (this.utterance) {
-			console.log('a');
-			console.log(this.utterance);
-			console.log(volume);
-			console.log(this.volume);
-			console.log(this);
 			this.utterance.volume = volume * (this.volume/10);
 		}
 	};
@@ -7480,7 +7475,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		if (window.speechSynthesis) {
 			this.synth = window.speechSynthesis;
 			voices = this.synth.getVoices();
-			console.log('voices', voices);
 			descLangs = this.getDescriptionLangs();
 			if (voices.length > 0) {
 				this.descVoices = [];
@@ -7762,7 +7756,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			voice = this.descVoices[0];
 		}
 
-		console.log('THE VOICE', voice);
 		return voice;
 	}
 
@@ -7817,8 +7810,8 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			pitch = this.prefDescPitch;
 			rate = this.prefDescRate;
 
-			// TODO: Change this to be relative to the players volumne
-			console.log('volume', this.prefDescVolume, this.volume);
+			// This ensures the speech synthesized voice's volume is 
+			// relative to the video players volume control value.
 			volume = this.prefDescVolume * (this.volume/10);
 		}
 
@@ -7874,9 +7867,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 					console.log('Web Speech API error',e);
 					console.log(e);
 				}
-				console.log('working')
 				this.synth.speak(this.utterance);
-				console.log('no');
 			}
 		}
 	};
@@ -8431,16 +8422,6 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.invokeHideControlsTimeout();
 		}
 
-		// Stop the speech synthesis if playing
-		console.log('foo');
-
-		/* setTimeout(() => {
-			if (!this.synth.paused) {
-				this.synth.pause();
-				console.log('bar');
-			}
-		}, 500); */
-		
 	};
 
 	AblePlayer.prototype.fadeControls = function(direction) {
