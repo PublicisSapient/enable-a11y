@@ -38,6 +38,8 @@
 var AblePlayerInstances = [];
 
 (function ($) {
+	
+
 	$(document).ready(function () {
 
 		$('video, audio').each(function (index, element) {
@@ -597,6 +599,7 @@ var AblePlayerInstances = [];
 		this.cueingPlaylistItems = false; // will change to true temporarily while cueing next playlist item
 		this.okToPlay = false; // will change to true if conditions are acceptible for automatic playback after media loads
 		this.buttonWithFocus = null; // will change to 'previous' or 'next' if user clicks either of those buttons
+		this.utterance = null; // used for storing utterances with computer generated audio descriptions
 
 		this.getUserAgent();
 		this.setIconColor();
@@ -6952,6 +6955,10 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.jwPlayer.setVolume(volume * 10);
 		}
 		this.lastVolume = volume;
+
+		if (this.utterance) {
+			this.utterance.volume = volume * (this.volume/10);
+		}
 	};
 
 	AblePlayer.prototype.getVolume = function (volume) {
@@ -7737,6 +7744,25 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		}
 	};
 
+	// This attempts to get a good default voice for all browsers.
+	// This should be improved over time.
+	AblePlayer.prototype.getGoodDefaultVoice = function () {
+		let voice;
+		const filteredVoices = this.descVoices.filter(function(el) {
+			return (el.voiceURI.indexOf('com.apple.voice.compact') > -1)
+		});
+
+		if (filteredVoices.length > 0) {
+			voice = filteredVoices[0];
+		} else {
+			voice = this.descVoices[0];
+		}
+
+		return voice;
+	}
+
+	
+
 	AblePlayer.prototype.announceDescriptionText = function(context, text) {
 
 		// this function announces description text using speech synthesis
@@ -7745,7 +7771,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 		// 'description' - actual description text extracted from WebVTT file
 		// 'sample' - called when user changes a setting in Description Prefs dialog
 
-		var thisObj, speechTimeout, voiceName, i, voice, pitch, rate, volume, utterance;
+		var thisObj, speechTimeout, voiceName, i, voice, pitch, rate, volume;
 
 		thisObj = this;
 
@@ -7785,14 +7811,17 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			voiceName = this.prefDescVoice;
 			pitch = this.prefDescPitch;
 			rate = this.prefDescRate;
-			volume = this.prefDescVolume;
+
+			// This ensures the speech synthesized voice's volume is 
+			// relative to the video players volume control value.
+			volume = this.prefDescVolume * (this.volume/10);
 		}
 
 		// get the voice associated with the user's chosen voice name
 		if (this.descVoices) {
 			if (this.descVoices.length > 0) {
 				if (useFirstVoice) {
-					voice = this.descVoices[0];
+					voice = this.getGoodDefaultVoice();
 				}
 				else if (voiceName) {
 					// get the voice that matches user's preferred voiceName
@@ -7806,23 +7835,28 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 				if (typeof voice === 'undefined') {
 					// no matching voice was found
 					// use the first voice in the array
-					voice = this.descVoices[0];
+					voice = this.getGoodDefaultVoice();
 				}
 
-				utterance = new SpeechSynthesisUtterance();
-				utterance.voice = voice;
-				utterance.voiceURI = 'native';
-				utterance.volume = volume;
-				utterance.rate = rate;
-				utterance.pitch = pitch;
-				utterance.text = text;
+				// The utterance variable used to be local to this 
+				// function.  This was causing problems with iOS Safari
+				// which was not reciting the audio descriptions correctly,
+				// so we changed it to a property of the AblePlayer
+				// object. 
+				this.utterance = new SpeechSynthesisUtterance();
+				this.utterance.voice = voice;
+				this.utterance.voiceURI = 'native';
+				this.utterance.volume = volume;
+				this.utterance.rate = rate;
+				this.utterance.pitch = pitch;
+				this.utterance.text = text;
 				// TODO: Consider the best language for the utterance:
 				// language of the web page? (this.lang)
 				// language of the WebVTT description track?
 				// language of the user's chosen voice?
 				// If there's a mismatch between any of these, the description will likely be unintelligible
-				utterance.lang = this.lang;
-				utterance.onend = function(e) {
+				this.utterance.lang = this.lang;
+				this.utterance.onend = function(e) {
 					// do something after speaking
 					console.log('Finished speaking. That took ' + (e.elapsedTime/1000).toFixed(2) + ' seconds.');
 					if (context === 'description') {
@@ -7833,12 +7867,14 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 							}
 						}
 					}
+					this.utterance = null;
 				};
-				utterance.onerror = function(e) {
+				this.utterance.onerror = function(e) {
 					// handle error
 					console.log('Web Speech API error',e);
+					console.log(e);
 				}
-				this.synth.speak(utterance);
+				this.synth.speak(this.utterance);
 			}
 		}
 	};
@@ -8392,6 +8428,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 			this.hidingControls = true;
 			this.invokeHideControlsTimeout();
 		}
+
 	};
 
 	AblePlayer.prototype.fadeControls = function(direction) {
@@ -8865,8 +8902,14 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 							thisObj.statusTimeout = null;
 						}
 						// Don't change play/pause button display while using the seek bar (or if YouTube stopped)
-						if (!thisObj.seekBar.tracking && !thisObj.stoppingYouTube) {
-							if (currentState === 'paused' || currentState === 'stopped' || currentState === 'ended') {
+						if (!thisObj.seekBar.tracking && !thisObj.stoppingYouTube ) {
+
+							// This pause button is set to the play icon if the video is not playing and the 
+							// SpeechSynth API is not speaking.
+							const isSpeechPaused = window.speechSynthesis && thisObj.synth && thisObj.synth.speaking && thisObj.synth.paused;
+							const isVideoPaused = (currentState === 'paused' || currentState === 'stopped' || currentState === 'ended') && !thisObj.synth.speaking;
+							
+							if (isSpeechPaused || isVideoPaused) {
 								thisObj.$playpauseButton.attr('aria-label',thisObj.tt.play);
 
 								if (thisObj.iconType === 'font') {
@@ -8882,8 +8925,7 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 								else {
 									thisObj.$playpauseButton.find('img').attr('src',thisObj.playButtonImg);
 								}
-							}
-							else {
+							} else if (!isVideoPaused || !isSpeechPaused) {
 								thisObj.$playpauseButton.attr('aria-label',thisObj.tt.pause);
 
 								if (thisObj.iconType === 'font') {
@@ -8956,6 +8998,18 @@ if (thisObj.useTtml && (trackSrc.endsWith('.xml') || trackText.startsWith('<?xml
 
 	AblePlayer.prototype.handlePlay = function(e) {
 
+		// Let's check to see if the SpeechSynthesis audio
+		// descriptions are playing.  If so, pause them.'
+		if (window.speechSynthesis && this.synth.speaking) {
+			if (this.synth.paused) {
+				this.synth.resume();
+			} else {
+				this.synth.pause();
+			}
+			return;
+		}
+
+		// This handles the logic for the video play/pause
 		if (this.paused) {
 			this.playMedia();
 		}
