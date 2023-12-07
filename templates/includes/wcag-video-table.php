@@ -26,8 +26,7 @@
     <tr>
       <th scope="row"><a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-description-prerecorded.html">Audio Descriptions</a></th>
       <td class="rowspan2__top">
-        <span aria-hidden="true">One or the other</span>
-        <span class="sr-only">Use either audio descriptions or transcripts to be single A compliant.</span>
+        <span>Use either audio descriptions or transcripts to be single A compliant.</span>
       </td>
       <?= $checked ?>
       <?= $checked ?>
@@ -35,7 +34,7 @@
     <tr>
       <th scope="row"><a href="https://www.w3.org/WAI/media/av/transcripts/">Transcripts</th>
       <td class="rowspan2__bottom">
-        <span class="sr-only">Use either audio descriptions or transcripts to be single A compliant.</span>
+        <span aria-hidden="true" class="sr-only">Use either audio descriptions or transcripts to be single A compliant.</span>
       </td>
       <?= $unchecked ?>
       <?= $checked ?>

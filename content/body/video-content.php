@@ -3,6 +3,15 @@
 
 <h2>What are Captions, Audio Descriptions and Transcripts (and Why Should I Care)?</h2>
 
+
+<p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
+  What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.  There are also other
+  requirements that are often forgotten.  Here is a summary:</p>
+
+  <?php include("includes/wcag-video-table.php") ?>
+
+
+
 <p>Let's start by defining them:</p>
 
 <div class="enable-example">
@@ -45,10 +54,7 @@
     excellent article on Captions, Transcripts, and Audio Descriptions</a>.
 </p>
 
-<p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
-  What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
 
-  <?php include("includes/wcag-video-table.php") ?>
 
 <p>
   To find one of the most cost-effective way of implementing all three, I would suggest looking into the <a href="video-player.php">Enable Video Player</a> page, which shows how do so using <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>.
