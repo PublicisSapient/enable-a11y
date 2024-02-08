@@ -108,6 +108,7 @@
     "php-express": "^0.0.3",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "4.3.0",
+    "swiper": "^11.0.5",
     "text-zoom-event": "^1.5.2",
     "vnu": "^20.6.30",
     "vnu-jar": "^21.10.12",
