@@ -31,9 +31,10 @@ The `@px` variable is set to 16rem, which is also the base font size
 
 ## Tests
 
+Install the following *global* NPM modules:
+
 ```bash
-sudo npm install axe-cli -g
-sudo npm install -g chromedriver
+sudo npm install -g axe-cli@3.2.1 chromedriver@121.x jest@28.1.3 less-watch-compiler@1.16.3 pa11y-ci@3.1.0 puppeteer@19.6.3
 ```
 
 If there is a problem with running Chromedriver, because you have an error like "SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version XXX", then you should ensure your chromedriver is installed with the right version.
