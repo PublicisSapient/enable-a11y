@@ -45,7 +45,8 @@
   },
   "jest": {
     "verbose": true,
-    "preset": "jest-puppeteer"
+    "preset": "jest-puppeteer",
+    "maxConcurrency": 1
   },
   "watch": {
     "convert-modules-to-libs": {
