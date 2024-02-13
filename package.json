@@ -35,8 +35,8 @@
     "enable-node-libs/"
   ],
   "scripts": {
-    "jest": "jest",
-    "test": "bin/checkHTML && jest",
+    "jest": "jest --runInBand",
+    "test": "bin/checkHTML && jest --runInBand",
     "lint": "bin/checkHTML",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
