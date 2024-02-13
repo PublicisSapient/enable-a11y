@@ -74,10 +74,10 @@
   },
   "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
   "devDependencies": {
+    "@axe-core/cli": "^4.8.5",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "accessibility-js-routines": "^3.3.4",
-    "axe-cli": "^3.2.1",
     "babel-preset-es2015": "^6.24.1",
     "chromedriver": "^121.0.0",
     "concurrently": "^7.0.0",
