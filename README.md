@@ -9,7 +9,6 @@ npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 vnu: https://www.npmjs.com/package/vnu-jar  
 lynx: https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/  
 php: https://www.php.net/downloads.php  
-less: `npm install -g less-watch-compiler`  
 
 ### Optional (since `npm run sever` will run an express server)
 MAMP (OSX) or Apache: https://www.mamp.info/en/mac/  
@@ -30,12 +29,6 @@ The `@px` variable is set to 16rem, which is also the base font size
 2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read Inclusively Hiding & Styling Checkboxes and Radio Buttons by Sara Soueidan. https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/
 
 ## Tests
-
-Install the following *global* NPM modules:
-
-```bash
-sudo npm install -g axe-cli@3.2.1 chromedriver@121.x jest@28.1.3 less-watch-compiler@1.16.3 pa11y-ci@3.1.0 puppeteer@19.6.3
-```
 
 If there is a problem with running Chromedriver, because you have an error like "SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version XXX", then you should ensure your chromedriver is installed with the right version.
 
