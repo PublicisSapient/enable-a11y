@@ -42,7 +42,7 @@ dialog in Chrome).  For example, if you are on MAC OS, you
 will need to download the mac64 version of the Chromedriver
 and install it like this (the filename may vary):
 
-sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
+npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
 
 You will need to download the latest version of Google Chrome For Testing 
 in order for the Chromedriver to work:
