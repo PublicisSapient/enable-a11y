@@ -91,7 +91,7 @@
     "jest-puppeteer": "^6.2.0",
     "jsdoc": "^3.6.6",
     "pa11y-ci": "^3.1.0",
-    "puppeteer": "^19.11.1",
+    "puppeteer": "19.6.3",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "^4.3.0",
     "vnu": "^20.6.30",
