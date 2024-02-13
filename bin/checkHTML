@@ -54,9 +54,9 @@ If (and only if) your computer can only run Google Chrome < 115, please read
 the file old-google-chrome.txt for instructions on how to install chromedriver
 for your version of Chrome.
 
-If that does not work, you may need to do a global update of axe-cli:
+If that does not work, you may need to do a global update of @axe-core/cli:
 
-sudo npm update -g axe-cli
+sudo npm update -g @axe-core/cli
 
 
 ' 1>&2
