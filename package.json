@@ -36,8 +36,8 @@
   ],
   "scripts": {
     "jest": "jest --runInBand",
-    "test": "bin/checkHTML && jest --runInBand",
-    "lint": "bin/checkHTML",
+    "test": "bin/checkHTML.sh && jest --runInBand",
+    "lint": "bin/checkHTML.sh",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
