@@ -229,6 +229,15 @@ downloadHTML() {
 
 
 runVNUTests() {
+	#. Download the HTML files if they have not already been downloaded
+	if ! [ -f tmp/temp-files.txt ]
+	then
+		checkDependencies
+		downloadHTML
+	else
+		: "${TEMP_FILES:=`cat tmp/temp-files.txt`}"
+	fi
+
 	echo "Checking HTML..."
 	echo
 	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
@@ -297,6 +306,16 @@ runVNUTests() {
 
 
 runAXETests() {
+	#. Download the HTML files if they have not already been downloaded
+	if ! [ -f tmp/downloaded-urls.txt ] || ! [ -f tmp/axe-delayed-files.txt ]
+	then
+		checkDependencies
+		downloadHTML
+	else
+		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
+		: "${AXE_DELAYED_FILES:=`cat tmp/axe-delayed-files.txt`}"
+	fi
+
 	echo "Running aXe tests..."
 
 	#.. Make a list of the delayed URLS
@@ -329,6 +348,15 @@ runAXETests() {
 
 
 function runPa11yTests() {
+	#. Download the HTML files if they have not already been downloaded
+	if ! [ -f tmp/downloaded-urls.txt ]
+	then
+		checkDependencies
+		downloadHTML
+	else
+		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
+	fi
+
 	echo "Running pa11y-ci tests ..."
 
 	DID_PALLY_SUCCEED="0"
