@@ -221,6 +221,10 @@ downloadHTML() {
 		TEMP_FILES="$TEMP_FILES $TEMP_FILE"
 	done
 	echo
+
+	printf "%s\n" $DOWNLOADED_URLS > tmp/downloaded-urls.txt
+	echo -n $TEMP_FILES > tmp/temp-files.txt
+	echo -n $AXE_DELAYED_FILES > tmp/axe-delayed-files.txt
 }
 
 
