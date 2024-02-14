@@ -1,48 +1,109 @@
 # enable-a11y
 
-A list of demos to show how aria roles function with screen readers.
+A place to learn and share with developers what makes web work accessible. This includes a list of demos to show how aria roles function with screen readers.
 
-## Set up
+## Getting Started
 
-nvm: https://github.com/nvm-sh/nvm#usage  
-npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm  
-vnu: https://www.npmjs.com/package/vnu-jar  
-lynx: https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/  
-php: https://www.php.net/downloads.php  
+### Prerequisite Installations
 
-### Optional (since `npm run sever` will run an express server)
-MAMP (OSX) or Apache: https://www.mamp.info/en/mac/  
-LAMP (Linux): https://www.linux.com/training-tutorials/easy-lamp-server-installation/
+- nvm: A Node version manager
+  - Install by using the following instruction: <https://github.com/nvm-sh/nvm#usage>
+  - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
+- npm: a Node Package Manager, usually installed alongside Node
+  - More info: <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>
+- Lynx: A text-only browser used for testing for how a website will work without graphics turned on.
+  - Install options:
+    - Download from browser: <https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/>
+    - Install using homebrew: `brew install lynx`
+    - Install using MacPorts: `sudo port install lynx`
+- PHP (version > 8.1)
+  - Install options:
+    - Install from browser: <https://www.php.net/downloads.php>
+    - Install using homebrew: `brew install php`
+    - Install using MacPorts: `sudo port install php`
+  - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
+- Java: required in order to use the v.Nu checker during automation and unit testing
 
-## Style Notes
+#### Optional installations (since `npm run server` will run an express server)
 
-1. All font-sizes are converted to rems. This is done via less.  If you want a font-size of 20px, then you would do the following:
+- MAMP (OSX) or Apache: <https://www.mamp.info/en/mac/>
+- LAMP (Linux): <https://www.linux.com/training-tutorials/easy-lamp-server-installation/>
 
-```css
-div {
-    font-size: (20/@px);
-}
-```
+### Setup
 
-The `@px` variable is set to 16rem, which is also the base font size
+1. Run the following commands in your Terminal or Terminal equivalent program:
 
-2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read Inclusively Hiding & Styling Checkboxes and Radio Buttons by Sara Soueidan. https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/
+    ```sh
+    git clone git@github.com:PublicisSapient/enable-a11y.git
+    cd enable-a11y
+    npm clean-install
+    ```
+
+    > Note: Using `clean-install` instead of just `install` installs the exact package versions listed in the package-lock.json, and therefore has guaranteed compatibility.
+
+2. Start the local server using:
+
+    ```sh
+    npm run start
+    ```
+
+3. Open <http://localhost:8888> in your browser to see the local version of the site.
+
+4. Make sure everything is installed correctly by running the automated tests using `npm run test`.
+
+   > See the [Chromedriver issues](#chromedriver-issues) section if you encounter an error related to Chromedriver.
 
 ## Tests
 
+### Tools used
+
+- v.Nu: The Nu HTML Checker is used to catch unintended mistakes in the HTML, CSS, and SVG.
+- Axe CLI: Uses a browser webdriver to open pages and run accessibility tests on it.
+- pa11y CLI: Uses Puppeteer to run its own headless Chrome browser to run accessibility tests.
+- Jest + Puppeteer: Used to run and validate code in unit tests.
+
+Read the article at <https://www.useragentman.com/enable/code-quality.php> for the full details behind the testing tools being used and how.
+
+### Commands
+
+- Run all tests: `npm run test`
+- Run only Puppeteer unit tests: `npm run jest`
+
+> Hint: Make sure the local server is running first using the `npm run start` command.
+
+#### Chromedriver issues
+
+Your version of Chrome needs to match the `chromedriver` package version. You can find your version of Chrome (ie. 121.x.xxxx.xxx) by checking the version number inside the "About Chrome" dialog in Chrome.
+
 If there is a problem with running Chromedriver, because you have an error like "SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version XXX", then you should ensure your chromedriver is installed with the right version.
 
+You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (ie. `npm install -D chromedriver@121`).
+
+Links at <https://googlechromelabs.github.io/chrome-for-testing/> allow you to download a separate "Chrome for Testing" application, and/or the associated chromedriver files.
+
+You can also download a chromedriver version zip file from here: <https://chromedriver.storage.googleapis.com/index.html> and then install it using:
+
 ```bash
-sudo npm install chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
+npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
 ```
 
-You can install the right zip file from here:
+(you may need to change the `PATH` variable)
 
-https://chromedriver.storage.googleapis.com/index.html
+<https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9>
 
-(you may need to change the `path` variable)
+## Style Notes
 
-https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9
+1. All font-sizes are converted to rems. This is done via LESS.  If you want a font-size of 20px, then you would do the following:
+
+    ```css
+      div {
+        font-size: (20/@px);
+      }
+    ```
+
+    The `@px` variable is set to 16rem, which is also the base font size
+
+2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read Inclusively Hiding & Styling Checkboxes and Radio Buttons by Sara Soueidan. <https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/>
 
 ## Adding An External NPM Module To The Front-End Code
 
@@ -66,8 +127,7 @@ const nodeFiles = [
 
 When you start the project with `npm run server`, the files in the `nodeFiles` array will be placed in the `enable-node-libs` directory in the project root.  Use this directory to load the files in your scripts, css, or HTML files.
 
-
 ## References
 
-https://www.nvaccess.org/files/nvda/documentation/userGuide.html  
-https://dequeuniversity.com/screenreaders/survival-guide
+<https://www.nvaccess.org/files/nvda/documentation/userGuide.html>
+<https://dequeuniversity.com/screenreaders/survival-guide>

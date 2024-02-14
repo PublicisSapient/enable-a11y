@@ -38,13 +38,20 @@ showChromedriverError() {
 If there is a problem with running Chromedriver, then you should
 ensure your chromedriver is installed with the right version 
 of Chrome (check the version number inside the "About Chrome"
-dialog in Chrome).  For example, if you are on MAC OS, you
-will need to download the mac64 version of the Chromedriver
+dialog in Chrome).  
+
+You can change the Chromedriver version installed with this project by using 
+`npm install -D chromedriver@XXX`, and replacing XXX with the same major 
+version as your current Chrome browser.
+
+Alternatively, you can download a version of the Chromedriver from
+https://chromedriver.storage.googleapis.com/index.html
+(if you are using MAC OS, you can download the mac64 version)
 and install it like this (the filename may vary):
 
 npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.zip
 
-You will need to download the latest version of Google Chrome For Testing 
+You can also download a version of Google Chrome For Testing 
 in order for the Chromedriver to work:
 
 https://googlechromelabs.github.io/chrome-for-testing/
