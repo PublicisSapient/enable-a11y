@@ -237,6 +237,7 @@ runVNUTests() {
 	else
 		: "${TEMP_FILES:=`cat tmp/temp-files.txt`}"
 	fi
+	numTempFiles=$(echo "${TEMP_FILES}" | awk -F" " '{print NF}')
 
 	echo "Checking HTML..."
 	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
@@ -246,7 +247,7 @@ runVNUTests() {
 	then
 		echo "ERROR CODE: $VNU_ERR_CODE"
 	else
-		echo "HTML is valid"
+		echo "HTML is valid for $numTempFiles files"
 	fi
 	echo
 
