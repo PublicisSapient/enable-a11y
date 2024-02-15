@@ -244,7 +244,7 @@ runVNUTests() {
 
 	if [ $VNU_ERR_CODE != "0" ]
 	then
-	echo "ERROR CODE: $VNU_ERR_CODE"
+		echo "ERROR CODE: $VNU_ERR_CODE"
 	else
 		echo "HTML is valid"
 	fi
@@ -401,14 +401,27 @@ function runPa11yTests() {
 	fi
 }
 
-#.. Run checks and preparation for tests
-checkDependencies
-downloadHTML
 
-#.. Run tests
-runVNUTests
-runAXETests
-runPa11yTests
+#.. Run specific tests based on the argument passed in when running this script
+if [ "$1" = "vnu" ]
+then
+	runVNUTests
+elif [ "$1" = "axe" ]
+then
+	runAXETests
+elif [ "$1" = "pa11y" ]
+then
+	runPa11yTests
+else
+	#.. Run checks and preparation for tests
+	checkDependencies
+	downloadHTML
 
-#.. Remove temporary files on success
-rm tmp/* 2> /dev/null
+	#.. Run all tests
+	runVNUTests
+	runAXETests
+	runPa11yTests
+
+	#.. Remove temporary files on success
+	rm tmp/* 2> /dev/null
+fi
