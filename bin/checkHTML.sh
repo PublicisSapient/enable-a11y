@@ -239,11 +239,16 @@ runVNUTests() {
 	fi
 
 	echo "Checking HTML..."
-	echo
 	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
 	VNU_ERR_CODE="$?"
 
+	if [ $VNU_ERR_CODE != "0" ]
+	then
 	echo "ERROR CODE: $VNU_ERR_CODE"
+	else
+		echo "HTML is valid"
+	fi
+	echo
 
 	# trim output
 	OUTPUT="${OUTPUT##*( )}"
@@ -331,17 +336,19 @@ runAXETests() {
 	echo "Running delayed tests"
 	$AXE --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS
 	AXE_DELAY_RETURN="$?"
-	echo "Result: $AXE_DELAY_RETURN"
+	echo "Result: $AXE_DELAY_RETURN errors"
 
 	echo "Running immediate tests"
 	$AXE --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS 
 	AXE_UNDELAY_RETURN="$?"
-	echo "Result: $AXE_UNDELAY_RETURN"
+	echo "Result: $AXE_UNDELAY_RETURN errors"
 
 	if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
 	then
 		echo "aXe failed. See information above."
 		exit 101
+	else
+		echo "aXe passed"
 	fi
 }
 
