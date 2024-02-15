@@ -55,7 +55,7 @@ A place to learn and share with developers what makes web work accessible. This 
 
 ## Tests
 
-### Tools used
+### Tools used for testing
 
 - v.Nu: The Nu HTML Checker is used to catch unintended mistakes in the HTML, CSS, and SVG.
 - Axe CLI: Uses a browser webdriver to open pages and run accessibility tests on it.
@@ -67,7 +67,11 @@ Read the article at <https://www.useragentman.com/enable/code-quality.php> for t
 ### Commands
 
 - Run all tests: `npm run test`
-- Run only Puppeteer unit tests: `npm run jest`
+- Run only the Jest + Puppeteer unit tests: `npm run jest`
+- Run only the v.Nu, Axe, and Pa11y tests: `npm run lint`
+- Run only the v.Nu tests: `npm run test-vnu`
+- Run only the Axe tests: `npm run test-axe`
+- Run only the Pa11y tests: `npm run test-pa11y`
 
 > Hint: Make sure the local server is running first using the `npm run start` command.
 
