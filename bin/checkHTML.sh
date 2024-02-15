@@ -380,11 +380,11 @@ function runPa11yTests() {
 		'
 		
 		echo ']}'
-	) > tmp/pa11y-config 
+	) > tmp/pa11y-config.txt 
 
 	# comment
 
-	pa11y-ci --config tmp/pa11y-config 
+	pa11y-ci --config tmp/pa11y-config.txt 
 	DID_PALLY_SUCCEED="$?"
 
 	if [ $DID_PALLY_SUCCEED != "0" ]
