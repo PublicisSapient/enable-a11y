@@ -423,7 +423,7 @@
                                 {
                                     "id": "flyout__link",
                                     "props": {
-                                        "label": "Model Dialog",
+                                        "label": "Modal Dialog",
                                         "url-slug": "dialog",
                                         "alt": ""
                                     }
