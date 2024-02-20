@@ -61,6 +61,7 @@
         your projects today. We also encourage developers to consider contributing their own code to us for the benefit
         of
         the developer community at large.
+      </p>
     </div>
   </div>
 </div>
@@ -120,5 +121,5 @@
     you have never done this before, read the <a
         href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
         Github article about creating a pull request from a fork</a>).
-
+  </p>
 </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-import config from './test-config.js';
+import config from './test-config.mjs';
 import puppeteer from 'puppeteer';
 import fs from 'fs';
 

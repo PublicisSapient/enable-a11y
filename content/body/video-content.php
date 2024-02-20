@@ -62,9 +62,13 @@
 
 
 
+<h2>Captions</h2>
 
+<h3>How to make captions for the web</h3>
 
-<h2>Should I Use Auto Generated Captions For My Videos?</h2>
+<p>Captions on the web are written in VTT format.  There are many tools that can create captions; I personally use <a href="">Subtitle Edit</a>, but it 
+
+<h3>Should I Use Auto Generated Captions For My Videos?</h3>
 
 <p>
   Some video services like YouTube will generate captions automatically using AI that converts audio to text. While this

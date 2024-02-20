@@ -7,7 +7,9 @@ const filenameWithoutPath = argv[argv.length - 1];
 
 // Was 10000, but reflow.php takes a long time to process.
 // We may need to revisit this.
-jest.setTimeout(20000);  
+if (typeof jest != "undefined") {
+  jest.setTimeout(20000);
+}
 const config = {
   "BASE_URL": `http://localhost:8888`,
   "KEYPRESS_TIMEOUT": 250,

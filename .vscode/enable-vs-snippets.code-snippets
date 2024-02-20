@@ -340,8 +340,8 @@
 		"body": [
 			"'use strict'",
 			"",
-			"import config from './test-config.js';",
-			"import testHelpers from './test-helpers.js';",
+			"import config from './test-config.mjs';",
+			"import testHelpers from './test-helpers.mjs';",
 			"",
 			"describe('$1', () => {",
 			"  beforeAll(async () => {",

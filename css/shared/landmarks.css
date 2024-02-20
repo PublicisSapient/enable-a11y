@@ -153,6 +153,9 @@ fieldset {
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
+template {
+  display: none;
+}
 .font-heading-3 {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
   font-weight: bold;
@@ -297,7 +300,7 @@ select {
 .enable-example {
   padding: 1em;
   border: solid 1px black;
-  margin: 3em 0;
+  margin: 0;
   border-left: solid 5px black;
   font-family: "Helvetica", "Arial", sans-serif;
 }

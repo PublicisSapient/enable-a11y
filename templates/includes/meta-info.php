@@ -14,7 +14,7 @@ if ($fileProps->title != '') {
 <meta property="article:author" content="Zoltan Hawryluk" />
 
 
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="<?= $fileProps->desc ?>" />
 <meta name="twitter:title" content="<?= $fileProps->title ?>" />
 <meta name="twitter:image" content="<?= $fileProps->posterImg ?>" />
