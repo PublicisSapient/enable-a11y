@@ -40,6 +40,10 @@ describe('Carousel Tests', () => {
     for (let i=0; i <numSlidesInCarousel; i++) {
 
       page.keyboard.press('Tab');
+      // We pause to ensure any action due to the keypress has started
+      await testHelpers.fastPause();
+      // We wait for the carousel animations to have completed
+      await page.waitForSelector('.glider-slide.active.visible');
 
       // This test checks to ensure that we have tabbed into a new slide. 
       domInfo = await page.evaluate((i) => {
@@ -69,7 +73,6 @@ describe('Carousel Tests', () => {
 
       // We pause to ensure the animation to the next slide has time to
       // stop (if there is one)
-      await testHelpers.pauseFor(600);
 
       // We now check to see if the newly shown slide is fully in view.
       // We check this to ensure the slide is not cut off by the carousel
@@ -143,6 +146,10 @@ describe('Carousel Tests', () => {
 
     // Now let's ensure the last skip link is last Tab stop.
     page.keyboard.press('Tab');
+    // We pause to ensure any action due to the keypress has started
+    await testHelpers.fastPause();
+    // We wait for the carousel animations to have completed
+    await page.waitForSelector('.glider-slide.active.visible');
     domInfo = await page.evaluate(() => {
       const lastSkipLink = document.querySelector('#end-of-component-1');
       return {

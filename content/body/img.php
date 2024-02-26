@@ -190,11 +190,11 @@
   <p >Read more about the history of your operating system.</p>
 
   <ul class="svg-sprite-example__list list--inline">
-    <li><a href="https://en.wikipedia.org/wiki/IOS" class="svg-sprite-example__scaled-icon"><? includeSvgSprite('ios', 'iOS'); ?></a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Android_(operating_system)"><? includeSvgSprite('android', 'Android'); ?></a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Microsoft_Windows"><? includeSvgSprite('windows', 'Windows'); ?></a></li>
-    <li><a href="https://en.wikipedia.org/wiki/MacOS"><? includeSvgSprite('osx', 'OSX'); ?></a></li>
-    <li><a href=""><? includeSvgSprite('linux', 'Linux'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/IOS" class="svg-sprite-example__scaled-icon"><?php includeSvgSprite('ios', 'iOS'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Android_(operating_system)"><?php includeSvgSprite('android', 'Android'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Microsoft_Windows"><?php includeSvgSprite('windows', 'Windows'); ?></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/MacOS"><?php includeSvgSprite('osx', 'OSX'); ?></a></li>
+    <li><a href=""><?php includeSvgSprite('linux', 'Linux'); ?></a></li>
   </ul>
   
 </div>

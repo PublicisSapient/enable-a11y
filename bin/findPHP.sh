@@ -6,7 +6,7 @@ X="80"
 PHP=`which php`
 if [ "$?" = "0" ]
 then
-    echo "$PHP xxx"
+    echo "$PHP"
     exit 0
 fi
 

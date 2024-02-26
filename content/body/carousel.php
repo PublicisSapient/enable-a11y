@@ -306,8 +306,8 @@
       "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
       "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
 
-      'needsGlider' => true,
-      'customInit' => '/Users/zolhawry/git/enable-a11y/content/code-fragments/carousel-init.js'
+      "needsGlider" => true,
+      "customInit" => "../content/code-fragments/carousel-init.js"
     )
   ) 
 ?>

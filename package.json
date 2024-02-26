@@ -35,9 +35,12 @@
     "enable-node-libs/"
   ],
   "scripts": {
-    "jest": "jest",
-    "test": "bin/checkHTML && jest",
-    "lint": "bin/checkHTML",
+    "jest": "jest --runInBand",
+    "test": "bin/checkHTML.sh && jest --runInBand",
+    "test-vnu": "bin/checkHTML.sh vnu",
+    "test-axe": "bin/checkHTML.sh axe",
+    "test-pa11y": "bin/checkHTML.sh pa11y",
+    "lint": "bin/checkHTML.sh",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
@@ -45,7 +48,8 @@
   },
   "jest": {
     "verbose": true,
-    "preset": "jest-puppeteer"
+    "preset": "jest-puppeteer",
+    "maxConcurrency": 1
   },
   "watch": {
     "convert-modules-to-libs": {
@@ -73,10 +77,12 @@
   },
   "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
   "devDependencies": {
+    "@axe-core/cli": "^4.8.5",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "accessibility-js-routines": "^3.3.4",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "chromedriver": "^121.0.0",
     "concurrently": "^7.0.0",
     "eslint": "^8.25.0",
     "eslint-config-standard": "^17.0.0",
@@ -85,12 +91,18 @@
     "eslint-plugin-promise": "^6.1.0",
     "got": "^11.5.5",
     "jest": "^28.1.3",
-    "jest-puppeteer": "^6.1.1",
-    "jsdoc": "^3.6.6",
-    "webpack-cli": "^5.1.4"
+    "jest-puppeteer": "^10.0.0",
+    "jsdoc": "^4.0.2",
+    "pa11y-ci": "^3.1.0",
+    "puppeteer": "19.6.3",
+    "puppeteer-keyboard": "^0.2.0",
+    "selenium-webdriver": "^4.3.0",
+    "vnu": "^20.6.30",
+    "vnu-jar": "^21.10.12",
+    "webpack-cli": "^5.1.4",
+    "wget-improved": "^3.2.1"
   },
   "dependencies": {
-    "chromedriver": "^119.0.0",
     "d3": "^7.3.0",
     "dialog-polyfill": "^0.5.6",
     "express": "^4.17.2",
@@ -100,18 +112,15 @@
     "indent.js": "^0.3.5",
     "jquery": "^3.6.0",
     "jquery-validation": "^1.19.3",
+    "less-watch-compiler": "^1.16.3",
     "lessc": "^1.0.2",
     "node-html-parser": "^5.2.0",
-    "node-jq": "^2.3.4",
-    "np": "^7.6.2",
+    "node-jq": "^4.3.0",
+    "np": "^9.2.0",
     "npm-watch": "^0.11.0",
     "php-express": "^0.0.3",
-    "puppeteer-keyboard": "^0.2.0",
-    "selenium-webdriver": "4.3.0",
+    "swiper": "^11.0.5",
     "text-zoom-event": "^1.5.2",
-    "vnu": "^20.6.30",
-    "vnu-jar": "^21.10.12",
-    "wget-improved": "^3.2.1",
     "wicg-inert": "^3.1.2"
   },
   "bin": {
