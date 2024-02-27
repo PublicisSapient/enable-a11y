@@ -6,8 +6,8 @@ A place to learn and share with developers what makes web work accessible. This 
 
 ### Prerequisite Installations
 
-- nvm: A Node version manager
-  - Install by using the following instruction: <https://github.com/nvm-sh/nvm#usage>
+- nvm: A Node version manager.  It allows you to install several versions of node on the same machine and change versions easily.
+  - [Here are instructions in how to install nvm](https://github.com/nvm-sh/nvm#usage)
   - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
 - npm: a Node Package Manager, usually installed alongside Node
   - More info: [Downloading and installing Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
