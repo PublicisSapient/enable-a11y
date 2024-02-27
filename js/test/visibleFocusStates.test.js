@@ -14,13 +14,11 @@ describe('Test Focus States on all pages on Enable', () => {
     mobilePage = await mobileBrowser.newPage();
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
-    console.log('begin');
   });
 
   afterAll(async () => {
     await mobileBrowser.close();
     await desktopBrowser.close();
-    console.log('end');
   });
 
   async function testPage(filename, page) {
@@ -96,7 +94,7 @@ describe('Test Focus States on all pages on Enable', () => {
       } 
     } while (!domInfo.isBody);
 
-    console.log(`checked, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}: ${tabStops}`)
+    // console.log(`checked, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}: ${tabStops}`)
   }
 
   

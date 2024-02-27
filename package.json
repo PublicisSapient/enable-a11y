@@ -35,8 +35,10 @@
     "enable-node-libs/"
   ],
   "scripts": {
-    "jest": "jest ",
-    "test": "bin/checkHTML.sh && jest ",
+    "jest": "jest --runInBand",
+    "test": "bin/checkHTML.sh && jest  --runInBand",
+    "jest-local": "jest --detectOpenHandles",
+    "test-local": "bin/checkHTML.sh && jest  --detectOpenHandles",
     "test-vnu": "bin/checkHTML.sh vnu",
     "test-axe": "bin/checkHTML.sh axe",
     "test-pa11y": "bin/checkHTML.sh pa11y",
