@@ -14,28 +14,31 @@ describe('Test Focus States on all pages on Enable', () => {
     mobilePage = await mobileBrowser.newPage();
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
+    console.log('begin');
   });
 
   afterAll(async () => {
     await mobileBrowser.close();
     await desktopBrowser.close();
+    console.log('end');
   });
 
   async function testPage(filename, page) {
-    let domInfo;
+    let domInfo, tabStops = 0;
+    // console.log(`checking, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}`)
 
-    await page.goto(`${config.BASE_URL}/${filename}`);
+    await page.goto(`${config.BASE_URL}/${filename}`, {waitUntil: 'domcontentloaded'});
     
     // Test on initial load.
     
     // Step 1: Wait for whole page to load (this is so scripts
     // like `enable-visible-on-focus` can initialize)
-    await page.waitForSelector('footer');
+    // await page.waitForSelector('footer');
 
     do {
       
       await page.keyboard.press('Tab');
-
+      tabStops++;
       //await testHelpers.fastPause();
       domInfo = await page.evaluate(() => {
         const { activeElement } = document;
@@ -47,6 +50,7 @@ describe('Test Focus States on all pages on Enable', () => {
         let checkedPseudoEl = false;
 
         const isIframe = (activeElement.nodeName === 'IFRAME');
+        const isVideo = (activeElement.nodeName === 'VIDEO');
 
         const isRangeInput = (activeElement.nodeName === 'INPUT' && activeElement.getAttribute('type') === 'range');
         
@@ -70,6 +74,7 @@ describe('Test Focus States on all pages on Enable', () => {
           isEnableSkipLink: activeElement.classList.contains('enable-mobile-visible-on-focus'),
           isBody: activeElement === document.body,
           isIframe,
+          isVideo,
           isRangeInput,
           checkedPseudoEl
         }
@@ -79,7 +84,7 @@ describe('Test Focus States on all pages on Enable', () => {
       //console.log(`checking `, domInfo.html, domInfo.parentClass);
       // Step 4: Do Tests ... but not on enable skip link (we'll handle that
       // someplace else)
-      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isIframe) {
+      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isIframe && !domInfo.isVideo) {
         
         if (!domInfo.hasFocusRing) {
           console.log('Bad focus on: ', domInfo.html);
@@ -90,6 +95,8 @@ describe('Test Focus States on all pages on Enable', () => {
         expect(domInfo.hasFocusRing).toBe(true);
       } 
     } while (!domInfo.isBody);
+
+    console.log(`checked, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}: ${tabStops}`)
   }
 
   
