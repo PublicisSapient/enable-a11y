@@ -37,8 +37,9 @@
   "scripts": {
     "jest": "jest --runInBand",
     "test": "bin/checkHTML.sh && jest  --runInBand",
-    "jest-local": "jest --detectOpenHandles",
-    "test-local": "bin/checkHTML.sh && jest  --detectOpenHandles",
+    "jest-local": "jest --maxWorkers=75%",
+    "test-local": "bin/checkHTML.sh && jest  --maxWorkers=75%",
+    "jest-debug-memory-leak": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage",
     "test-vnu": "bin/checkHTML.sh vnu",
     "test-axe": "bin/checkHTML.sh axe",
     "test-pa11y": "bin/checkHTML.sh pa11y",

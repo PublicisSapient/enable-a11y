@@ -10,15 +10,15 @@ A place to learn and share with developers what makes web work accessible. This 
   - Install by using the following instruction: <https://github.com/nvm-sh/nvm#usage>
   - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
 - npm: a Node Package Manager, usually installed alongside Node
-  - More info: <https://docs.npmjs.com/downloading-and-installing-node-js-and-npm>
+  - More info: [Downloading and installing Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - Lynx: A text-only browser used for testing for how a website will work without graphics turned on.
   - Install options:
-    - Download from browser: <https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/>
+    - [Download from browser](https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/)
     - Install using homebrew: `brew install lynx`
     - Install using MacPorts: `sudo port install lynx`
 - PHP (version > 8.1)
   - Install options:
-    - Install from browser: <https://www.php.net/downloads.php>
+    - [Install from browser](https://www.php.net/downloads.php)
     - Install using homebrew: `brew install php`
     - Install using MacPorts: `sudo port install php`
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
@@ -62,7 +62,7 @@ A place to learn and share with developers what makes web work accessible. This 
 - pa11y CLI: Uses Puppeteer to run its own headless Chrome browser to run accessibility tests.
 - Jest + Puppeteer: Used to run and validate code in unit tests.
 
-Read the article at <https://www.useragentman.com/enable/code-quality.php> for the full details behind the testing tools being used and how.
+Read [the Enable Code Quality article](https://www.useragentman.com/enable/code-quality.php) for the full details behind the testing tools being used and how.
 
 ### Commands
 
@@ -72,6 +72,8 @@ Read the article at <https://www.useragentman.com/enable/code-quality.php> for t
 - Run only the v.Nu tests: `npm run test-vnu`
 - Run only the Axe tests: `npm run test-axe`
 - Run only the Pa11y tests: `npm run test-pa11y`
+
+If you are noticing that the jest tests are taking a long time, you might want to run `npm run jest-debug-memory-leak`.  If the heap size for each test group increases a lot, there is a memory leak in the tests. More information about that can be found at in the article [Your Jest Tests are Leaking Memory](https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html) by [David Chanin](https://chanind.github.io/about/)
 
 > Hint: Make sure the local server is running first using the `npm run start` command.
 
@@ -83,7 +85,7 @@ If there is a problem with running Chromedriver, because you have an error like 
 
 You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (ie. `npm install -D chromedriver@121`).
 
-Links at <https://googlechromelabs.github.io/chrome-for-testing/> allow you to download a separate "Chrome for Testing" application, and/or the associated chromedriver files.
+Links at the [Chrome for Testing availability webpage](https://googlechromelabs.github.io/chrome-for-testing/) allow you to download a separate "Chrome for Testing" application, and/or the associated chromedriver files.
 
 You can also download a chromedriver version zip file from here: <https://chromedriver.storage.googleapis.com/index.html> and then install it using:
 
@@ -93,7 +95,7 @@ npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.
 
 (you may need to change the `PATH` variable)
 
-<https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9>
+If you still have problems with Chromedriver, you may want to read the Stack Overflow article [Session Not Created: This version of ChromeDriver only supports Chrome version 98](https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9).
 
 ## Style Notes
 
@@ -107,7 +109,7 @@ npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.
 
     The `@px` variable is set to 16rem, which is also the base font size
 
-2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read Inclusively Hiding & Styling Checkboxes and Radio Buttons by Sara Soueidan. <https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/>
+2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read [Inclusively Hiding & Styling Checkboxes and Radio Buttons](https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/) by [Sara Soueidan](https://www.sarasoueidan.com). 
 
 ## Adding An External NPM Module To The Front-End Code
 
@@ -133,5 +135,7 @@ When you start the project with `npm run server`, the files in the `nodeFiles` a
 
 ## References
 
-<https://www.nvaccess.org/files/nvda/documentation/userGuide.html>
-<https://dequeuniversity.com/screenreaders/survival-guide>
+When testing using screen readers, these resources may be of help to you:
+
+* [Desktop Screen Readers Survival Guide - Basic Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/survival-guide)
+* [NVDA Users Guide](https://www.nvaccess.org/files/nvda/documentation/userGuide.html)
