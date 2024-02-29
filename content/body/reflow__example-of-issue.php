@@ -51,9 +51,6 @@ if ($heading == '') {
         <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#S">S</a></li>
         <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#T">T</a></li>
         <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#U">U</a></li>
-        <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#V">V</a></li>
-        <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#W" tabindex="-1" aria-disabled="true">W</a></li>
-        <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#X" tabindex="-1" aria-disabled="true">X</a></li>
         <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#Y">Y</a></li>
         <li class="reflow-examples__list-item"><a class="reflow-examples__link" href="#Z">Z</a></li>
       </ul>

@@ -10,17 +10,23 @@
     <picture>
       <source
         srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320.jxr 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600.jxr 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640.jxr 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024.jxr 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200.jxr 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016.jxr 2016w"
+        sizes="100vw"
+
         type="image/vnd.ms-photo">
       <source
         srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320.jp2 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600.jp2 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640.jp2 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024.jp2 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200.jp2 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016.jp2 2016w"
-        type="image/jp2">
+        type="image/jp2"
+        sizes="100vw"
+      >
       <source
         srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320.webp 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600.webp 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640.webp 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024.webp 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200.webp 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016.webp 2016w"
+        sizes="100vw"
         type="image/webp">
       <img class="play-pause-anim__full-bleed-image-demo--image"
         alt="The planet saturn in front of an animated starfield"
         src="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320-quant.png"
-        srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320-quant.png 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600-quant.png 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640-quant.png 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024-quant.png 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200-quant.png 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016-quant.png 2016w">
+        srcset="https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-320-quant.png 320w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-600-quant.png 600w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-640-quant.png 640w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1024-quant.png 1024w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-1200-quant.png 1200w, https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/saturn-2016-quant.png 2016w"
+        sizes="100vw">
     </picture>
   </div>
 </div>

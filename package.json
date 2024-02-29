@@ -100,7 +100,6 @@
     "puppeteer": "22.3.0",
     "puppeteer-keyboard": "^0.2.0",
     "selenium-webdriver": "^4.18.1",
-    "vnu": "^20.6.30",
     "vnu-jar": "^23.4.11",
     "webpack-cli": "^5.1.4",
     "wget-improved": "^3.4.0"

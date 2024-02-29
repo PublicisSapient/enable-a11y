@@ -178,7 +178,7 @@ checkDependencies() {
 
 
 downloadHTML() {
-	#URLS=`lynx -dump $PROJECT_URL | awk '/http/{print $2}' | grep -v '#' | grep $MYIP | sort -u`
+
 	URLS=`bin/getPages.js $MYIP`;
 	DOWNLOADED_URLS=""
 	TEMP_FILES=""
@@ -192,9 +192,6 @@ downloadHTML() {
 		showChromedriverError
 	fi
 
-	echo "Generating sitemap..."
-	bin/generateSiteMap.sh
-
 
 	#.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
 	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
@@ -206,7 +203,6 @@ downloadHTML() {
 	then
 		mkdir tmp
 	fi
-
 
 	for i in $URLS
 	do
@@ -232,7 +228,8 @@ runVNUTests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/temp-files.txt ]
 	then
-		checkDependencies
+		checkDependencies	
+		bin/generateSiteMap.sh
 		downloadHTML
 	else
 		: "${TEMP_FILES:=`cat tmp/temp-files.txt`}"
@@ -315,7 +312,8 @@ runAXETests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/downloaded-urls.txt ] || ! [ -f tmp/axe-delayed-files.txt ]
 	then
-		checkDependencies
+		checkDependencies	
+		bin/generateSiteMap.sh
 		downloadHTML
 	else
 		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
@@ -359,7 +357,8 @@ function runPa11yTests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/downloaded-urls.txt ]
 	then
-		checkDependencies
+		checkDependencies	
+		bin/generateSiteMap.sh
 		downloadHTML
 	else
 		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
@@ -418,6 +417,7 @@ then
 else
 	#.. Run checks and preparation for tests
 	checkDependencies
+	bin/generateSiteMap.sh
 	downloadHTML
 
 	#.. Run all tests
