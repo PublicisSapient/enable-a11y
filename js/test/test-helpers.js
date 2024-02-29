@@ -9,16 +9,16 @@ const testHelpers = new function () {
     return (el.offsetParent === null)
   }
 
-  this.getDesktopBrowser = async function () {
+  this.getDesktopBrowser = async function (isBrowserVisible) {
     try {
       const browser = await puppeteer.launch({
-        //headless: false, // The browser is visible
+        headless: !isBrowserVisible, // The browser is visible
         ignoreHTTPSErrors: true,
         args: [`--window-size=${config.DESKTOP_WIDTH},${config.DESKTOP_HEIGHT}`],
         defaultViewport: {
           width: config.DESKTOP_WIDTH,
           height: config.DESKTOP_HEIGHT 
-        }
+        }, 
       });
 
       return browser;
@@ -29,10 +29,10 @@ const testHelpers = new function () {
   }
 
 
-  this.getMobileBrowser = async function () {
+  this.getMobileBrowser = async function (isBrowserVisible) {
     try {
       const browser = await puppeteer.launch({
-        //headless: false, // The browser is visible
+        headless: !isBrowserVisible,// The browser is visible 
         ignoreHTTPSErrors: true,
         args: [`--window-size=${config.MOBILE_WIDTH},${config.MOBILE_HEIGHT}`],
         defaultViewport: {

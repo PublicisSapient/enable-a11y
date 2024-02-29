@@ -389,6 +389,7 @@ EnableFlyoutHamburger = new function() {
 
     document.addEventListener('keyup', this.keyPressEvent);
 
+    $root.classList.add('enable-flyout--initialized');
   }
 }
 

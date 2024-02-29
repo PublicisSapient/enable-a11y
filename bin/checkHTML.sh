@@ -402,6 +402,8 @@ function runPa11yTests() {
 	fi
 }
 
+#.. let's wipe the tmp directory
+rm tmp/*
 
 #.. Run specific tests based on the argument passed in when running this script
 if [ "$1" = "vnu" ]

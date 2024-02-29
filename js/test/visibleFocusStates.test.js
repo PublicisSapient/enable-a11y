@@ -5,15 +5,14 @@ import testHelpers from './test-helpers.js';
 import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
-let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
+let mobileBrowser,desktopBrowser;
 
 describe('Test Focus States on all pages on Enable', () => {
   beforeAll(async () => {
     // Put code here that should execute before starting tests.
-    mobileBrowser = await testHelpers.getMobileBrowser();
-    mobilePage = await mobileBrowser.newPage();
+    
     desktopBrowser = await testHelpers.getDesktopBrowser();
-    desktopPage = await desktopBrowser.newPage();
+    mobileBrowser = await testHelpers.getMobileBrowser();
   });
 
   afterAll(async () => {
@@ -21,10 +20,15 @@ describe('Test Focus States on all pages on Enable', () => {
     await desktopBrowser.close();
   });
 
-  async function testPage(filename, page) {
-    let domInfo, tabStops = 0;
+  async function testPage(filename, isDesktop) {
+    let domInfo, tabStops = 0, page;
     // console.log(`checking, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}`)
 
+    if (isDesktop) {
+      page = await desktopBrowser.newPage();
+    } else {
+      page = await mobileBrowser.newPage();
+    }
     await page.goto(`${config.BASE_URL}/${filename}`, {waitUntil: 'domcontentloaded'});
     
     // Test on initial load.
@@ -94,6 +98,8 @@ describe('Test Focus States on all pages on Enable', () => {
       } 
     } while (!domInfo.isBody);
 
+    page.close();
+
     // console.log(`checked, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}: ${tabStops}`)
   }
 
@@ -102,10 +108,10 @@ describe('Test Focus States on all pages on Enable', () => {
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
     it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-      await testPage(fileList[i], desktopPage);
+      await testPage(fileList[i], true);
     });
     it(`Mobile Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-      await testPage(fileList[i], mobilePage);
+      await testPage(fileList[i], false);
     });
   }
 

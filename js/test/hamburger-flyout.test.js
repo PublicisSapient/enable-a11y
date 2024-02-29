@@ -4,98 +4,42 @@ import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 import puppeteer from 'puppeteer';
 
+let mobileBrowser, desktopBrowser; 
+
 describe('Hamburger Menu Tests', () => {
   beforeAll(async () => {
+    mobileBrowser = await testHelpers.getMobileBrowser();
+    desktopBrowser = await testHelpers.getDesktopBrowser();
   });
 
 
-  async function loadPage(isDesktop) {
-    try {
-      let domInfo;
+  afterAll(async() => {
+    await testHelpers.pause();
 
-
-      const browser = isDesktop ? await testHelpers.getDesktopBrowser() : await testHelpers.getMobileBrowser();
-      const page = await browser.newPage();
-      await page.goto(`${config.BASE_URL}/multi-level-hamburger-menu.php`);
-
-      // Test on initial load.
-
-      // Step 1: Wait for element to load on page.
-      await page.waitForSelector('footer');
-
-      // Step 2: Focus on appropriate element
-      await page.focus('.enable-flyout__open-menu-button');
-
-      // Step 3: Check the DOM
-      domInfo = await page.evaluate(() => {
-        const mobileMenuButton = document.querySelector('.enable-flyout__open-menu-button');
-        const { activeElement } = document;
-
-        const buttonStyle = window.getComputedStyle(mobileMenuButton, null);
-
-        return {
-          isMobileMenuButtonHidden: ( buttonStyle.display === 'none'),
-          width: window.innerWidth
-        };
-      });
-
-
-      await browser.close();
-      return domInfo;
-
-    } catch (ex) {
-      console.log('ex', ex);
-      return ex;
-    }
-  }
-
-  // Put code here that should execute before starting tests.
-
-  it('Desktop - ensure hamburger menu icon is not visisble', async () => {
-    let domInfo;
-    
-    domInfo = await loadPage(true);
-    // Step 4: Do Tests
-    expect(domInfo.isMobileMenuButtonHidden).toBe(true)
-    expect(domInfo.width).toBe(config.DESKTOP_WIDTH);
-
+    mobileBrowser.close();
+    desktopBrowser.close();
   });
-
-  it('Mobile - ensure hamburger menu icon is visisble', async () => {
-    let domInfo;
-    
-    domInfo = await loadPage(false);
-    // Step 4: Do Tests
-    expect(domInfo.isMobileMenuButtonHidden).toBe(false);
-    expect(domInfo.width).toBe(config.MOBILE_WIDTH);
-  });
-
-
 
   it('Desktop - ensure menu closes when focus goes outside submenus', async () => {
     let domInfo;
-
-    const browser = await testHelpers.getDesktopBrowser();
     
-    const page = await browser.newPage();
+    const page = await desktopBrowser.newPage();
 
 
     await page.goto(`${config.BASE_URL}/multi-level-hamburger-menu.php`);
-
+    
     // Test on initial load.
-
     // Step 1: Wait for element to load on page.
-    await page.waitForSelector('footer');
+    await page.waitForSelector('.enable-flyout--initialized');
 
     // This is one component where DOM structure is necessary: we need to find
     // all the dropdowns on the top level only.
-    const ariaControlsSelector = '[aria-controls]'
-
+    const ariaControlsSelector = '[aria-controls]';
+    
     // find how many aria-controls elements there are
     const ariaControlsEls = Array.from(page.$$(ariaControlsSelector));
-
+    
     for (let i=0; i<ariaControlsEls.length; i++) {
-
       domInfo = await page.evaluate((i) => {
       // Check to make sure the item has focus
         const ariaControlsEls = document.querySelectorAll(ariaControlsSelector)[i];
@@ -115,7 +59,6 @@ describe('Hamburger Menu Tests', () => {
       expect(domInfo.wasFocusAppliedCorrectly).toBe(true);
       expect(domInfo.isExpanded).toBe(false);
 
-
       await page.keyboard.press('Space');
       await testHelpers.fastPause();
 
@@ -130,8 +73,6 @@ describe('Hamburger Menu Tests', () => {
           ariaControls
         };
       });
-
-    
 
       expect(domInfo.ariaControls).not.toBe(null);
       expect(domInfo.ariaControls).not.toBe('');
@@ -163,14 +104,74 @@ describe('Hamburger Menu Tests', () => {
 
       } while (domInfo.isFocusedInsideMenu);
 
-    // We are now focused outside of the Controls flyout menu.  The menu
-    // should be closed now, so let's check.
-    expect(domInfo.isMenuExpanded).toBe(false);
+      // We are now focused outside of the Controls flyout menu.  The menu
+      // should be closed now, so let's check.
+      expect(domInfo.isMenuExpanded).toBe(false);
     }
-
+    
     await page.focus('[aria-controls="controls-section"]');
+   
+  });
 
-    await browser.close();
+  async function loadPage(isDesktop) {
+    try {
+      let domInfo;
+
+      browser = isDesktop ? desktopBrowser : mobileBrowser;
+      const page = await browser.newPage();
+      await page.goto(`${config.BASE_URL}/multi-level-hamburger-menu.php`);
+
+      // Test on initial load.
+
+      // Step 1: Wait for element to load on page.
+      await page.waitForSelector('.enable-flyout--initialized');
+
+      // Step 2: Focus on appropriate element
+      await page.focus('.enable-flyout__open-menu-button');
+      // Step 3: Check the DOM
+      
+      domInfo = await page.evaluate(() => {
+        const mobileMenuButton = document.querySelector('.enable-flyout__open-menu-button');
+        const { activeElement } = document;
+
+        const buttonStyle = window.getComputedStyle(mobileMenuButton, null);
+
+        return {
+          isMobileMenuButtonHidden: ( buttonStyle.display === 'none'),
+          width: window.innerWidth
+        };
+      });
+      
+      //await browser.close();
+      return domInfo;
+
+    } catch (ex) {
+      console.log('ex!', isDesktop);
+      return ex;
+    }
+  }
+
+  // Put code here that should execute before starting tests.
+  it('Desktop - ensure hamburger menu icon is not visible', async () => {
+    let domInfo;
+    
+    domInfo = await loadPage(true);
+    // Step 4: Do Tests
+    expect(domInfo.isMobileMenuButtonHidden).toBe(true)
+    expect(domInfo.width).toBe(config.DESKTOP_WIDTH);
 
   });
+
+
+  it('Mobile - ensure hamburger menu icon is visible', async () => {
+    let domInfo;
+    
+    domInfo = await loadPage(false);
+
+    
+    // Step 4: Do Tests
+    expect(domInfo.isMobileMenuButtonHidden).toBe(false);
+    expect(domInfo.width).toBe(config.MOBILE_WIDTH);
+  }); 
+
 });

@@ -84,8 +84,8 @@ const formValidator = new(function() {
             formField.removeAttribute("aria-invalid");
           }
         }
-
-        accessibility.applyFormFocus(form.target);
+        console.log('foo');
+        accessibility.applyFormFocus(form);
       }
     });
 
