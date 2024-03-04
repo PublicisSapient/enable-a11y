@@ -161,7 +161,6 @@ describe('Carousel Tests', () => {
     
   });
 
-  /*
   it('Test carousel type #2 (list of content)', async () => {
     let domInfo;
 
@@ -296,6 +295,7 @@ describe('Carousel Tests', () => {
       // Test to see if we tab backwards into the "Previous" button.
       await page.keyboard.down('Shift');
       await page.keyboard.press('Tab');
+      await page.keyboard.press('Tab');
       await page.keyboard.up('Shift');
 
       domInfo = await page.evaluate((i) => {
@@ -341,6 +341,7 @@ describe('Carousel Tests', () => {
     // Test to see if we tab once more the "Previous" button.
     await page.keyboard.down('Shift');
     await page.keyboard.press('Tab');
+    await page.keyboard.press('Tab');
     await page.keyboard.up('Shift');
 
 
@@ -358,5 +359,4 @@ describe('Carousel Tests', () => {
     expect(domInfo.isFocusOnPrevButton).toBe(true);
     expect(domInfo.isDisabled).toBe(true);
   });
-  */
 });

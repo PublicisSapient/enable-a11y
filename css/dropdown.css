@@ -77,7 +77,7 @@
   background-color: #ccffcc;
 }
 .enable-multiselect__checkbox:focus + .enable-multiselect__label {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097EFB;
 }
 .enable-multiselect__button {
   -webkit-appearance: none;

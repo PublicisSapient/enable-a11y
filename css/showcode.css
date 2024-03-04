@@ -32,7 +32,7 @@ h4.showcode__heading {
   margin-bottom: -5px;
 }
 .showcode__example--code:focus {
-  outline: solid 2px #3b99fc !important;
+  outline: solid 2px #097EFB !important;
   outline-offset: -4px;
 }
 .showcode__example--code:focus:not(:focus-visible) {
@@ -40,7 +40,7 @@ h4.showcode__heading {
   outline-offset: 0;
 }
 .showcode__example--code:focus-visible {
-  outline: solid 2px #3b99fc !important;
+  outline: solid 2px #097EFB !important;
   outline-offset: -4px;
 }
 .showcode--no-js-container {
@@ -71,7 +71,7 @@ h4.showcode__heading {
   color: #8F8FFF;
 }
 .showcode__example:focus-within {
-  box-shadow: 4px 0 0 #3b99fc inset, -4px 0 0 #3b99fc inset, 0 4px 0 #3b99fc inset, 0 -49px 0 #3b99fc inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
+  box-shadow: 4px 0 0 #097EFB inset, -4px 0 0 #097EFB inset, 0 4px 0 #097EFB inset, 0 -49px 0 #097EFB inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
 }
 .showcode__example:focus-within code {
   outline: transparent 2px solid;

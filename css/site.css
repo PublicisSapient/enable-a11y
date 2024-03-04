@@ -68,7 +68,7 @@
     z-index: 2;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
-    outline: solid 2px #3b99fc;
+    outline: solid 2px #097EFB;
   }
   .enable-flyout__level .enable-flyout__menu-item--close {
     display: none;

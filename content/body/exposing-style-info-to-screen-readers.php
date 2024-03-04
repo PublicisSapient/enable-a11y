@@ -37,17 +37,18 @@
 
 <p>So how can we fix this so screen readers announce the text as deleted or as strike-through text?</p>
 
-<h2>Solution 1: Use Visually Hidden Text</h2>
+<h2>Solution: Use Visually Hidden Text</h2>
 
 <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best way to implement style information to screen readers.')) ?>
 
 <p>
-  The most bulletproof way to fix this today that I know of is using visually hidden text inside to the <code>del</code>
-  tag to ensure that screen readers know it is old information.  When the user tabs into the product tile below, screen
+  The most bulletproof way to fix this today that I know of is using visually hidden text inside <code>mark</code>
+  tags to ensure that screen readers know it is old information. <strong>Notice that I am not using <code>del</code>
+  or <code>ins</code> tags here: this is because some screenreaders, like Voicover of OSX, do not read text inside <code>del</code>
+  and <code>ins</code> reliably.</strong> When the user tabs into the product tile below, screen
   readers will announce something like "Link, Clearance Sale. Internet Explorer T-Shirt
   <strong>Old Price:</strong> $30.00 <strong>New Price:</strong> $10.00"
 </p>
-
 
 <div id="sr-only-text-example" class="enable-example">
   <a class="product-tile product-tile--good-example"
@@ -68,7 +69,7 @@
     </div>
 
     <div class="product-tile__price">
-      <del><span class="sr-only">Old Price: </span>$30.00</del> <ins><span class="sr-only">New Price: </span>$10.00</ins>
+      <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark> <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
     </div>
   </a>
 </div>
@@ -81,9 +82,9 @@
 {
   "replaceHtmlRules": {},
   "steps": [{
-      "label": "Use the del and ins tags to markup the old and new prices.",
-      "highlight": "%OPENCLOSECONTENTTAG%ins ||| %OPENCLOSECONTENTTAG%del",
-      "notes": "Note that we use <code>&lt;del&gt;</code> instead of <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code>.  This is because <code>&lt;del&gt;</code> are semantic tags, and <code>&lt;s&gt;</code> is not, in the same way <a href=\"https://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em\">developers should use  strong tags instead of the b tag in HTML</a>"
+      "label": "Use the mark tags to markup the old and new prices.",
+      "highlight": "%OPENCLOSECONTENTTAG%mark",
+      "notes": "Note that we use <code>.del</code> and <code>.ins</code> classes to denote deleted and inserted content respectively. We also don't use <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code>.  This is because <code>&lt;mark&gt;</code> is a semantic tag, and <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code> are not, in the same way <a href=\"https://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em\">developers should use strong tags instead of the b tag in HTML</a>"
     },
     {
       "label": "Use the sr-only class to generate screen-reader only text",
@@ -131,7 +132,7 @@
 </script>
 
 
-
+<!--
 <h2>Solution 2: Using CSS Generated Content</h2>
 
 <?php includeStats(array('doNot' => true, 'comment' => 'Although this works with the majority of screen readers out there, <strong>we do not recommend using this solution in production.</strong> While this seems to be a common way to fix this issue (since it does not require changing the HTML markup), this violates <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">Failure of Success Criterion 1.3.1 due to inserting non-decorative content by using ::before and ::after pseudo-elements and the "content" property in CSS</a>.  The main issue with using this is that if a user uses a custom stylesheet to navigate the web, the code in this solution may be removed.   While some may say this is an edge case, it is still technically a violation, which is why we warn against using it.  We do, however, present this solution for informational purposes, and point to some blog posts arguing to using it below.' )) ?>
@@ -195,6 +196,8 @@ While <a href="https://www.w3.org/TR/WCAG20-TECHS/F87.html">using CSS generated 
   ]
 }
 </script>
+
+-->
 
 
 

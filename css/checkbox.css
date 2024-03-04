@@ -47,7 +47,7 @@
   place-content: center;
 }
 .enable-checkbox input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid #3b99fc;
+  outline: max(2px, 0.15em) solid #097EFB;
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) {
@@ -55,7 +55,7 @@
   outline-offset: 0;
 }
 .enable-checkbox input[type="checkbox"]:focus-visible {
-  outline: max(2px, 0.15em) solid #3b99fc;
+  outline: max(2px, 0.15em) solid #097EFB;
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]::before {

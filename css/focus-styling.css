@@ -15,7 +15,7 @@
   display: inline-block;
 }
 #double-focus-ring-example *:focus {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097EFB;
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
 #double-focus-ring-example *:focus:not(:focus-visible) {
@@ -23,6 +23,6 @@
   box-shadow: none;
 }
 #double-focus-ring-example *:focus-visible {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097EFB;
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
