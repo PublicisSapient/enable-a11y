@@ -137,7 +137,7 @@
 </div>
 
 
-<!-- <?php includeShowcode("example1a")?> -->
+<?php includeShowcode("example1a")?> 
 
 <script type="application/json" id="example1a-props">
 {

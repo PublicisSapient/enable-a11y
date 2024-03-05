@@ -581,6 +581,7 @@ const showcode = new function () {
     }
 
     
+    setReadMoreCSSVar(notesEl);
   }
 
   const highlightCode = (command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep) => {
@@ -673,12 +674,31 @@ const showcode = new function () {
 
   }
 
+  this.getStickyContainersOffset = (el) => {
+    const stickyEls = document.querySelectorAll('[data-is-sticky="top"] div');
+    console.log('length', stickyEls.length);
+    let offset = 0;
+    
+    stickyEls.forEach((stickyEl) => {
+      //if (el.contains(stickyEl)) {
+        offset += stickyEl.offsetHeight;
+        console.log('counted', stickyEl.outerHTML);
+      //}
+    });
+
+    return offset
+  }
+
   this.scrollToHighlightedText = (codeEl) => {
     // now ... let's see if we can scroll the page to the first highlighted part
-    const firstHighlightdElement = codeEl.querySelector('.showcode__highlight');
+    const firstHighlightedElement = codeEl.querySelector('.showcode__highlight');
+    const containerEl = codeEl.closest('.showcode__container');
+    const uiEl = containerEl.querySelector('.showcode__ui');
+    const stickyContainersOffset = uiEl.offsetHeight + this.getStickyContainersOffset(codeEl) + 10;
+    console.log('hmmm ', this.getStickyContainersOffset(codeEl))
 
 
-    if (firstHighlightdElement) {
+    if (firstHighlightedElement) {
       const { body } = document;
 
       // If the pause animations checkbox is checked, 
@@ -687,7 +707,8 @@ const showcode = new function () {
       const behavior = body.classList.contains('pause-anim-control__prefers-reduced-motion') ? 'auto' : 'smooth';
 
       // set the value correctly in the .scrollIntoView() method.
-      firstHighlightdElement.scrollIntoView({ behavior: behavior, block: 'center', left: 0 });
+      firstHighlightedElement.style.scrollMarginTop = stickyContainersOffset + 'px';
+      firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
     }
   }
 

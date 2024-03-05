@@ -5,7 +5,7 @@ import testHelpers from './test-helpers.js';
 import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
-let mobileBrowser,desktopBrowser;
+let mobileBrowser, desktopBrowser;
 
 describe('Test Focus States on all pages on Enable', () => {
   beforeAll(async () => {
@@ -22,38 +22,38 @@ describe('Test Focus States on all pages on Enable', () => {
 
   async function testPage(filename, isDesktop) {
     let domInfo, tabStops = 0, page;
-    // console.log(`checking, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}`)
 
     if (isDesktop) {
       page = await desktopBrowser.newPage();
     } else {
       page = await mobileBrowser.newPage();
     }
+
+    // Wait until the DOM is fully loaded.
     await page.goto(`${config.BASE_URL}/${filename}`, {waitUntil: 'domcontentloaded'});
     
-    // Test on initial load.
-    
-    // Step 1: Wait for whole page to load (this is so scripts
-    // like `enable-visible-on-focus` can initialize)
-    // await page.waitForSelector('footer');
-
+    // Let's loop through all the tabstops on the page.
     do {
-      
+
+      // Let's simulate a tab press
       await page.keyboard.press('Tab');
       tabStops++;
-      //await testHelpers.fastPause();
+
+      // Now let's see if there is a focus ring around the
+      // focused element.
       domInfo = await page.evaluate(() => {
         const { activeElement } = document;
 
         // grab outline CSS style property
         const style = window.getComputedStyle(activeElement, null);
         let { outline, outlineColor, outlineWidth, outlineStyle } = style;
-        let hasFocusRing = (outlineStyle !== 'none' && parseInt(outlineWidth) !== 0);
+        let hasFocusRing = (outlineStyle !== 'none' && parseInt(outlineWidth) !== 0 && outlineColor !== 'transparent');
         let checkedPseudoEl = false;
 
         const isIframe = (activeElement.nodeName === 'IFRAME');
         const isVideo = (activeElement.nodeName === 'VIDEO');
 
+        // Special tests for range element
         const isRangeInput = (activeElement.nodeName === 'INPUT' && activeElement.getAttribute('type') === 'range');
         
         if (isRangeInput && !hasFocusRing) {
@@ -65,6 +65,7 @@ describe('Test Focus States on all pages on Enable', () => {
           outlineStyle = rangeThumbSlideStyle.outlineStyle;
           hasFocusRing = (outlineStyle !== 'none' && parseInt(outlineWidth) !== 0);
         }
+        // end of special tests.
 
         return {
           html: activeElement.outerHTML,
@@ -83,36 +84,38 @@ describe('Test Focus States on all pages on Enable', () => {
 
       });
 
-      //console.log(`checking `, domInfo.html, domInfo.parentClass);
-      // Step 4: Do Tests ... but not on enable skip link (we'll handle that
-      // someplace else)
-      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isIframe && !domInfo.isVideo) {
-        
+      // If this is not a skip link (which has its own test suite),
+      // and not a body, video or iframe tag (which don't report their
+      // valid focus states in puppeteer for some reason).
+      if (!domInfo.isEnableSkipLink && !domInfo.isBody && !domInfo.isVideo && !domInfo.isIframe) {
+
+        // If the focused element doesn't have a focus ring, output why.
         if (!domInfo.hasFocusRing) {
           console.log('Bad focus on: ', domInfo.html);
           console.log('Checked Pseudo element', domInfo.checkedPseudoEl);
           console.log(`outlineColor: ${domInfo.outlineColor}\noutline: ${domInfo.outline}\noutlineWidth: ${domInfo.outlineWidth}\noutlineStyle: ${domInfo.outlineStyle}`);
         }
 
+        // The expect test so jest logs it as an error.
         expect(domInfo.hasFocusRing).toBe(true);
       } 
     } while (!domInfo.isBody);
 
     page.close();
-
-    // console.log(`checked, ${filename}, ${page === desktopPage ? 'desktop': 'mobile'}: ${tabStops}`)
   }
+  // end testPage()
 
   
-
+  // This goes through all the URLs in the site and
+  // runs testPage() on it twice, one in the desktop
+  // browser and one in the mobile.
   for (let i=0; i<fileList.length; i++) {
     const file = fileList[i];
-    it(`Desktop Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-      await testPage(fileList[i], true);
+    it(`Desktop Breakpoint: Test focus states on ${file}`, async () => {
+      await testPage(file, true);
     });
-    it(`Mobile Breakpoint: Test focus states on ${fileList[i]}`, async () => {
-      await testPage(fileList[i], false);
+    it(`Mobile Breakpoint: Test focus states on ${file}`, async () => {
+      await testPage(file, false);
     });
   }
-
 });

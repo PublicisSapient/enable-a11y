@@ -190,7 +190,7 @@
       {
         "label": "Query the DOM using puppeteer's page.evaluate method.",
         "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
-        "notes": "Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>."
+        "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
       },
       {
         "label": "Use jest's expect method to find if the code is doing things right.",
@@ -201,6 +201,86 @@
   }
   </script>
 
+  <h3>A More Complex Example: Testing Multiple Pages</h3>
+
+  <template id="test-code-walkthrough2" data-showcode-is-js="true">
+    <!--
+<?php include("../js/test/visibleFocusStates.test.js"); ?>
+-->
+  </template>
+
+  <?php includeShowcode("test-code-walkthrough2", "", "", "", true, 4)?>
+  <script type="application/json" id="test-code-walkthrough2-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [{
+        "label": "Import Test Config",
+        "highlight": "import\\sconfig[^;]*;",
+        "notes": "This imports the configuration settings all the tests use.  Note that in order for jest to support ES Modules to import JavaScript libraries, you "
+      },
+      {
+        "label": "Create a describe for the set of tests you are creating.",
+        "highlight": "describe[\\s\\S]*\\}\\);",
+        "notes": ""
+      },
+      {
+        "label": "Open up two browser instances when starting this test suite.",
+        "highlight": "\\s\\sbeforeAll[^\\}]*\\}\\);",
+        "notes": ""
+      },
+      {
+        "label": "Close the two browsers when finishing this test suite.",
+        "highlight": "\\s\\safterAll[^\\}]*\\}\\);",
+        "notes": ""
+      },
+      {
+        "label": "Define testPage() function.",
+        "highlight": "\\s\\sasync\\sfunction\\stestPage[\\s\\S]*end\\stestPage\\(\\)",
+        "notes": ""
+      },
+      {
+        "label": "Have the appropriate browser window open the page to test",
+        "highlight": "\\s\\s\\s\\sif\\s\\(isDesktop\\)([^\\}]*\\}){2}",
+        "notes": ""
+      },
+      {
+        "label": "Each test must load the page",
+        "highlight": "\\s{4}await\\spage.goto[^;]*;",
+        "notes": "Note that we want this test to run as soon as the browser is ready, so we tell page.goto to <code>waitUntil</code> the <code>domcontentloaded</code> event occurs on the page (i.e. when the browsers loads the HTML in the DOM)"
+      },
+      {
+        "label": "Query the DOM using puppeteer's page.evaluate method.",
+        "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
+        "notes": "This <code>page.evaluate()</code> call test to see if the currently focused element has a focus ring. It also detects if it is a video or an iframe"
+      },
+      {
+        "label": "Find the focused element",
+        "highlight": "const\\s\\{\\sactiveElement\\s\\}\\s=\\sdocument;",
+        "notes": ""
+      },
+      {
+        "label": "Find the style of the focused element",
+        "highlight": "\\s*const\\sstyle[\\s\\S]*=\\sstyle;",
+        "notes": ""
+      },
+      {
+        "label": "We have a special case for the input range element",
+        "highlight": "\\s*\\/\\/\\sSpecial\\stests\\sfor\\srange\\selement[\\s\\S]*\\/\\/\\send\\sof\\sspecial\\stests.",
+        "notes": ""
+      },
+      {
+        "label": "We test to see if the focused element has a focus ring.",
+        "highlight": "\\s*\\/\\/\\sIf\\sthis\\sis\\snot\\sa\\sskip\\slink[\\s\\S]*\\s{6}\\}",
+        "notes": "Note we only log an issue if it is not a <code>body</code>, <code>iframe</code> or <code>video</code> tag, since these report false negatives."
+      },
+      {
+        "label": "Run testPage() on all the pages on the site.",
+        "highlight": "\\s\\s\\/\\/\\sThis\\sgoes\\sthrough[\\s\\S]*\\s\\s\\}",
+        "notes": "Note that it is running testPage() twice &mdash; once for desktop and once for mobile."
+      }
+    ]
+  }
+  </script>
 
 <p>
   If you want to do some further reading, we recommend <a

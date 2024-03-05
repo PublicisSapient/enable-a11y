@@ -353,6 +353,15 @@ code {
   }
 }
 
+iframe {
+  .enable-focus({
+    outline: solid 2px @focus-color !important;
+    outline-offset: -2px;
+  }, {
+    outline: none !important;
+  })
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   body {

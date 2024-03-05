@@ -8,6 +8,7 @@
 @clip-bottom: 45px;
 @code-focus-outline-width: 4px;
 @code-focus-outline-gap: 4px;
+@notes-bottom-margin: 20px;
 
 @gap-shadow-width: @code-focus-outline-gap + @code-focus-outline-width;
 @gap-color: white;
@@ -250,19 +251,26 @@ code {
     background-color: rgb(245, 222, 179);
     padding: 0.01em;
     border: solid 1px #666;
+    
+    &:has(.showcode__notes--is-overflowed.is-expanded) {
+      position: relative;
+    }
+  }
 
+  &__notes-container {
+    position: relative;
   }
 
   &__notes {
 
     &+&-view-toggle {
       display: none;
-
+ 
       border: none;
       background: transparent;
       text-decoration: underline;
       position: absolute;
-      bottom: (81/@px);
+      bottom: @notes-bottom-margin;
       right: 0;
       text-align: center;
       width: 100%;
@@ -280,16 +288,20 @@ code {
     &:not(:empty) {
       border: dashed #705029 3px;
       padding: 1em 1em 1em 1em;
-      margin: 0 10px 1em 10px;
+      margin: 0 10px @notes-bottom-margin 10px;
       background-color: #ffffee;
 
-      >div {
+      > div {
         overflow: hidden;
-        -webkit-line-clamp: 4;
+
+        // This must be -webkit prefixed.
+        // Works even in non-webkit browsers.
+        -webkit-line-clamp: 2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
 
-        @media @tablet {
+        // Why is this here?
+        @media @tablet-up {
           display: block;
         }
       }

@@ -172,13 +172,19 @@ h4.showcode__heading {
   padding: 0.01em;
   border: solid 1px #666;
 }
+.showcode__ui:has(.showcode__notes--is-overflowed.is-expanded) {
+  position: relative;
+}
+.showcode__notes-container {
+  position: relative;
+}
 .showcode__notes + .showcode__notes-view-toggle {
   display: none;
   border: none;
   background: transparent;
   text-decoration: underline;
   position: absolute;
-  bottom: 5.0625rem;
+  bottom: 20px;
   right: 0;
   text-align: center;
   width: 100%;
@@ -193,16 +199,16 @@ h4.showcode__heading {
 .showcode__notes:not(:empty) {
   border: dashed #705029 3px;
   padding: 1em 1em 1em 1em;
-  margin: 0 10px 1em 10px;
+  margin: 0 10px 20px 10px;
   background-color: #ffffee;
 }
 .showcode__notes:not(:empty) > div {
   overflow: hidden;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-@media only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 720px) {
   .showcode__notes:not(:empty) > div {
     display: block;
   }

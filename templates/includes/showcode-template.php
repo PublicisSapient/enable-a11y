@@ -29,13 +29,18 @@
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
             <?php endif ?>
               <div id="<?= $id ?>__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
-              <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
-              <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
+              <div class="showcode__notes-container " >
+                <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="<?= $id ?>__notes-view-toggle" class="showcode__notes-view-toggle"
                 ><span class="showcode__notes-view-toggle--more">View
                   More</span><span class="showcode__notes-view-toggle--less">View Less</span>
                   <span class="sr-only">(This control is not needed for screen reader
                 users.)</span>
               </button>
+              </div>
+              
               
 
               <div id="<?= $id ?>__example-desc" class="showcode__example--desc">
