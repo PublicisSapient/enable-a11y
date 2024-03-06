@@ -143,68 +143,12 @@
 }
 </template>
 
-<h3>A Simple Example: Switches</h3>
-
-<template id="switch-test-code-walkthrough" data-showcode-is-js="true">
-    <!--
-<?php include("../js/test/switch.test.js"); ?>
--->
-  </template>
-
-  <?php includeShowcode("switch-test-code-walkthrough", "", "", "", true, 4)?>
-  <script type="application/json" id="switch-test-code-walkthrough-props">
-  {
-    "replaceHtmlRules": {},
-    "steps": [{
-        "label": "Import Test Config",
-        "highlight": "import\\sconfig[^;]*;",
-        "notes": "This imports the configuration settings all the tests use.  Note that in order for jest to support ES Modules to import JavaScript libraries, you "
-      },
-      {
-        "label": "Create a describe for the set of tests you are creating.",
-        "highlight": "describe[\\s\\S]*\\}\\);",
-        "notes": ""
-      },
-      {
-        "label": "Create a test use the it() function",
-        "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
-        "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
-      },
-      {
-        "label": "Each test must load the page",
-        "highlight": "\\s*await\\spage.goto[^;]*;",
-        "notes": "Note that the <code>BASE_URL</code> is grabbed from the <code>config</code> from step 1"
-      },
-      {
-        "label": "Each test should wait until a partical part of the page is available to test",
-        "highlight": "\\s*await\\spage.waitForSelector[^;]*;",
-        "notes": "Note that the selector used should be unique enough so your know you are hitting the right area of the page."
-      },
-      {
-        "label": "Query the DOM using puppeteer's page.evaluate method.",
-        "highlight": "\\s*domInfo\\s=[\\s\\S]*\\},\\si\\);",
-        "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
-      },
-      {
-        "label": "Use jest's expect method to find if the code is doing things right.",
-        "highlight": "expect\\([^;]*;",
-        "notes": "We take the information given to <code>domInfo</code> in the previous step and run tests on it using jest's <code>expect()</code> method."
-      },
-      {
-        "label": "Note the helper function to get the checked value of a switch",
-        "highlight": "\\s*async\\sfunction\\sgetSwitchValue[\\s\\S]*end\\sgetSwitchValue\\(\\)"
-      }
-    ]
-  }
-  </script>
-
-
 <h3>A Simple Example: Having Screenreaders Read Strikethrough Text</h3>
 
 <p>Let's look at a simple example that just involves just steps 1 through 3. If you look at the page for <a
     href="exposing-style-info-to-screen-readers.php">Exposing Style Information To Screen Readers</a>, we use
-  visually-hidden CSS generated content on the <code>ins</code>, <code>del</code> and <code>mark</code> tags. We want to
-  ensure that a new developer that contributes code to Enable never removes this CSS by accident, so we create a jest
+  visually-hidden content inside of <code>mark</code> tags. We want to
+  ensure that a new developer that contributes code to Enable never removes this <a href="screen-reader-only-text.php">screen reader only text</a> by accident, so we create a jest
   test file, <code>exposing-style-info-to-screen-readers.test.js</code>, to ensure we can test that this CSS is in these
   example. Let's walk through this file to show how it works.
 
@@ -239,7 +183,7 @@
         "notes": "Note that the <code>BASE_URL</code> is grabbed from the <code>config</code> from step 1"
       },
       {
-        "label": "Each test should wait until a partical part of the page is available to test",
+        "label": "Each test should wait until the part of the page you need is available to test",
         "highlight": "\\s*await\\spage.waitForSelector[^;]*;",
         "notes": "Note that the selector used should be unique enough so your know you are hitting the right area of the page."
       },
@@ -257,7 +201,67 @@
   }
   </script>
 
+  <h3>A Simple Interactive Example: Switches</h3>
+
+  <p>This example is used to test <a href="switch.php">Enable's switch component</a> to ensure that it is keyboard accessible and that the HTML structure includes all the necessary accessibility features (e.g. the <code>role="switch"</code>, a valid <code>aria-checked</code> attribute set, a proper label, etc.).  Please go through the code walkthrough below for more details.
+
+<template id="switch-test-code-walkthrough" data-showcode-is-js="true">
+    <!--
+<?php include("../js/test/switch.test.js"); ?>
+-->
+  </template>
+
+  <?php includeShowcode("switch-test-code-walkthrough", "", "", "", true, 4)?>
+  <script type="application/json" id="switch-test-code-walkthrough-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [{
+        "label": "Import Test Config",
+        "highlight": "import\\sconfig[^;]*;",
+        "notes": "This imports the configuration settings all the tests use.  Note that in order for jest to support ES Modules to import JavaScript libraries, you "
+      },
+      {
+        "label": "Create a describe for the set of tests you are creating.",
+        "highlight": "describe[\\s\\S]*\\}\\);",
+        "notes": ""
+      },
+      {
+        "label": "Create a test use the it() function",
+        "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
+        "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
+      },
+      {
+        "label": "Each test must load the page",
+        "highlight": "\\s*await\\spage.goto[^;]*;",
+        "notes": "Note that the <code>BASE_URL</code> is grabbed from the <code>config</code> from step 1"
+      },
+      {
+        "label": "Each test should wait until the part of the page you need is available to test",
+        "highlight": "\\s*await\\spage.waitForSelector[^;]*;",
+        "notes": "Note that the selector used should be unique enough so your know you are hitting the right area of the page."
+      },
+      {
+        "label": "Query the DOM using puppeteer's page.evaluate method.",
+        "highlight": "\\s*domInfo\\s=[\\s\\S]*\\},\\si\\);",
+        "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
+      },
+      {
+        "label": "Use jest's expect method to find if the code is doing things right.",
+        "highlight": "expect\\([^;]*;",
+        "notes": "We take the information given to <code>domInfo</code> in the previous step and run tests on it using jest's <code>expect()</code> method."
+      },
+      {
+        "label": "Note the helper function to get the checked value of a switch",
+        "highlight": "\\s*async\\sfunction\\sgetSwitchValue[\\s\\S]*end\\sgetSwitchValue\\(\\)"
+      }
+    ]
+  }
+  </script>
+
   <h3>A More Complex Example: Testing Focus States on Multiple Pages</h3>
+
+  <p>This is an example of a test that ensures all interactive elements on all the pages within Enable have a focus state (in our case, using a CSS `outline`).
+Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code> tags in this test because of the tests giving false negatives (which are actively looking into to fix)</p>
 
   <template id="test-code-walkthrough2" data-showcode-is-js="true">
     <!--
