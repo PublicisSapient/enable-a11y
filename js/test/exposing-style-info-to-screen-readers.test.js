@@ -11,7 +11,7 @@ describe('Styled Elements Tests', () => {
     // The area of the page that has the product tile
     await page.waitForSelector('#sr-only-text-example');
 
-   // check the DOM to see if the visually hidden CSS generated content is there.    
+      // check the DOM to see if the visually hidden CSS generated content is there.    
     domInfo = await page.evaluate(() => {
       const markEls = document.querySelectorAll('#sr-only-text-example mark');
       let hasMissingMarkContent = false;
@@ -25,13 +25,6 @@ describe('Styled Elements Tests', () => {
         }
       }
 
-      for (let i=0; i<markEls.length; i++) {
-        const firstElementChild = markEls[i].firstElementChild;
-
-        if (!firstElementChild.classList.contains('sr-only')) {
-          hasMissingDelContent = true;
-        }
-      }
       return {
         numMarkTests: markEls.length,
         hasMissingMarkContent
@@ -41,8 +34,6 @@ describe('Styled Elements Tests', () => {
     expect(domInfo.numMarkTests).toBeGreaterThan(0);
     expect(domInfo.hasMissingMarkContent).toBe(false);
   });
-  
-  
 
   it('Detect if there are sr-only content on mark tags in the highlight example', async () => {
     let domInfo;

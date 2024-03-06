@@ -172,6 +172,7 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
+  margin: 10px 0;
 }
 .enable-logo__text {
   display: block;
