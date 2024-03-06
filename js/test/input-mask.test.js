@@ -2,6 +2,7 @@
 
 import config from "./test-config.js";
 import testHelpers from "./test-helpers.js";
+import puppeteer from "puppeteer";
 let mobileBrowser, desktopBrowser;
 
 describe("Input mask test suite", () => {
@@ -14,7 +15,7 @@ describe("Input mask test suite", () => {
     mobileBrowser.close();
     desktopBrowser.close();
   });
-
+  // Masking functionality tests
   it("Testing the masking functionality", async () => {
     const page = await desktopBrowser.newPage();
     await page.goto(`${config.BASE_URL}/input-mask.php`);
@@ -54,5 +55,25 @@ describe("Input mask test suite", () => {
       (spans) => spans[2].textContent
     );
     expect(maskedWinKey).toBe("3455 555555 55555");
+  });
+  //Simulate keyboard interaction
+
+  it("should render formatted value correctly post keyboard interaction", async () => {
+    const page = await desktopBrowser.newPage();
+    await page.goto(`${config.BASE_URL}/input-mask.php`, {
+      waitUntil: "domcontentloaded",
+    });
+
+    const telInput = "#tel";
+    await page.focus(telInput);
+    await page.keyboard.type("1234567890");
+    await page.keyboard.press("Backspace");
+    await page.keyboard.press("ArrowLeft");
+    await page.keyboard.type("1");
+    const maskedTelephone = await page.$eval(
+      "span.enable-input-mask__mask-pre-val",
+      (span) => span.textContent
+    );
+    expect(maskedTelephone).toBe("123-456-781");
   });
 });
