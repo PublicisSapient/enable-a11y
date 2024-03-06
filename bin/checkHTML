@@ -5,7 +5,7 @@ VNU_CMD="java -jar $VNU_JAR"
 MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
 PROJECT_URL="http://$MYIP:8888/index.php"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
+CHROMEDRIVER_ARG="--chromedriver-path=./bin/chromedriver/chromedriver"
 
 echo "Checking if dependencies are installed ..."
 
@@ -65,7 +65,7 @@ done
 
 #.. let's ensure axe has the right chromedriver installed
 echo "Checking aXe"
-axe $PROJECT_URL 2>&1 | grep "This version of ChromeDriver only supports"
+axe $PROJECT_URL $CHROMEDRIVER_ARG 2>&1 | grep "This version of ChromeDriver only supports"
 
 if [ "$?" = "0" ]
 then
@@ -216,12 +216,12 @@ do
 done
 
 echo "Running delayed tests"
-axe --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS
+axe --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS $CHROMEDRIVER_ARG
 AXE_DELAY_RETURN="$?"
 echo "Result: $AXE_DELAY_RETURN"
 
 echo "Running immediate tests"
-axe --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS 
+axe --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS  $CHROMEDRIVER_ARG
 AXE_UNDELAY_RETURN="$?"
 echo "Result: $AXE_UNDELAY_RETURN"
 

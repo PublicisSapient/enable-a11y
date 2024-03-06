@@ -2,6 +2,7 @@ node_modules
 .DS_Store
 api-cache
 tmp
+chromedriver/*
 
 # auto-gen PHP files/logs
 php_errors.log
