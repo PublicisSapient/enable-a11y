@@ -4,9 +4,9 @@
 
             <ul>
                 <li>It is always better to use a real HTML <code>button</code> tag than a <code>div</code> or
-                    <code>a</code> tag with a <code>role="button"</code>. This is especially noticable when using
+                    <code>a</code> tag with a <code>role="button"</code>. This is especially noticeable when using
                     a <code>label</code> with the <code>button</code>, which reads differently in some screen readers
-                    then when using an <code>aria-describedby</code> to give it suplimentary information.
+                    then when using an <code>aria-describedby</code> to give it supplementary information.
                 </li>
                 <li>
                     Links can look like buttons, and buttons can look like links. Adam Silver

@@ -39,7 +39,7 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guideline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 <?php

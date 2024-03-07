@@ -6,7 +6,7 @@
         There are two ways to make accessible forms: the native HTML5 way, or using JavaScript.  You would think 
         it would be a no-brainer to just code things the HTML5 way and call it a day instead of creating custom 
         code.  However, many designers don't like the design of native HTML5 error message "bubbles", and want/demand 
-        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have laballed
+        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have labelled
         both of the solution below good for new and existing work: the HTML5 one is good if you want to implement 
         validation quickly, and the custom JavaScript implementation is good if you want design flexibility.</p>
 
@@ -85,7 +85,7 @@
           {
             "label": "All form fields need labels",
             "highlight": "for",
-            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>.  <strong>Note that label tags should never have <code>div</code> tags inside of them</strong> since it is invalid HTML and some screenreader/browser pairs (JAWS with Edge, Voiceover with Safari) may have problems with them."
+            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>.  <strong>Note that label tags should never have <code>div</code> tags inside of them</strong> since it is invalid HTML and some screen reader/browser pairs (JAWS with Edge, Voiceover with Safari) may have problems with them."
           },
           {
             "label": "All form fields that are required need the required attribute",
@@ -216,7 +216,7 @@
           {
             "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
             "highlight": "js-form-validation",
-            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/demos/custom-form-example.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
+            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/demos/custom-form-example.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implementation."
           },
           {
             "label": "Put in fieldsets and legends",

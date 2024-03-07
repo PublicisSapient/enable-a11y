@@ -11,7 +11,7 @@
   <dd>A text version of speech and other important audio content in a video, allowing it to be accessible to people who
     can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video’s
         language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
-    Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambiant sound, music,
+    Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
     etc).</dd>
 
   <dt>Audio Descriptions:</dt>

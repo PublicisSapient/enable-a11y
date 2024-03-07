@@ -14,7 +14,7 @@
         <li>The element will not submit its data to the server like a real form field.</li>
         <li>Coding
           <code>&lt;input type="number" role="textbox" /></code> doesn't do anything useful in any
-          screenreader.
+          screen reader.
         </li>
       </ul>
 

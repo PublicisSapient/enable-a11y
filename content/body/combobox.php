@@ -105,7 +105,7 @@
       <option id="Olive" value="Olive">Olive</option>
       <option id="Onion" value="Onion">Onion</option>
       <option id="Orange" value="Orange">Orange</option>
-      <option id="Parship" value="Parship">Parship</option>
+      <option id="Parsnip" value="Parsnip">Parsnip</option>
       <option id="Pea" value="Pea">Pea</option>
       <option id="Pear" value="Pear">Pear</option>
       <option id="Pineapple" value="Pineapple">Pineapple</option>
@@ -128,7 +128,7 @@
       <option id="Watercress" value="Watercress">Watercress</option>
       <option id="Watermelon" value="Watermelon">Watermelon</option>
       <option id="Yam" value="Yam">Yam</option>
-      <option id="Zucchi" value="Zucchi">Zucchi</option>
+      <option id="Zucchini" value="Zucchini">Zucchini</option>
     </datalist>
 
     <button type="submit" class="combobox-example__button">Submit</button>
@@ -243,7 +243,7 @@
             <li tabindex="-1" role="option">Olive</li>
             <li tabindex="-1" role="option">Onion</li>
             <li tabindex="-1" role="option">Orange</li>
-            <li tabindex="-1" role="option">Parship</li>
+            <li tabindex="-1" role="option">Parsnip</li>
             <li tabindex="-1" role="option">Pea</li>
             <li tabindex="-1" role="option">Pear</li>
             <li tabindex="-1" role="option">Pineapple</li>
@@ -264,7 +264,7 @@
             <li tabindex="-1" role="option">Watercress</li>
             <li tabindex="-1" role="option">Watermelon</li>
             <li tabindex="-1" role="option">Yam</li>
-            <li tabindex="-1" role="option">Zucchi</li>
+            <li tabindex="-1" role="option">Zucchini</li>
           </ul>
 
           <div class="sr-only" id="aria-fruit__desc">
@@ -294,7 +294,7 @@
     {
       "label": "Code label to be associated with input",
       "highlight": "for",
-      "notes": "Ensure the label is properly lababelled"
+      "notes": "Ensure the label is properly labelled"
     },
     {
       "label": "Component instructions for the component using aria-describedby",

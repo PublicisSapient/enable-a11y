@@ -111,7 +111,7 @@
 </ul>
 
 <p>
-  While I would still endevour to advise to code forms correctly, the following code should reduce the amount of coding
+  While I would still endeavour to advise to code forms correctly, the following code should reduce the amount of coding
   time on existing work to fix accessibility issues for screen reader users.</p>
 
 <div id="example2" class="enable-example">
@@ -153,7 +153,7 @@
       "notes": ""
     },
     {
-      "label": "Insert group role to minic native HTML fieldset",
+      "label": "Insert group role to mimic native HTML fieldset",
       "highlight": "role=\"group\"",
       "notes": ""
     },

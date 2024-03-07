@@ -33,7 +33,7 @@
 <p>
   In most browsers users who use their browser functionality to resize text will not be able to resize text measured in
   pixels,
-  since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, becuase the browsers' text resize
+  since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, because the browsers' text resize
   functionality
   <strong>should</strong> change the base font of the document (please see the note on Chrome for Android below).
 </p>
@@ -92,7 +92,7 @@ body {
 </template>
 
 
-<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programatically).</p>
+<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programmatically).</p>
 
 
 <h2>Use Unitless Line Heights</h2>
@@ -102,7 +102,7 @@ body {
 
   <ul>
     <li>Using absolute units in <code>line-height</code> mean they don't grow when text-zoom is activated in most browsers.</li>
-    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decices to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
+    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decides to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
     <code>line-height</code> will be automatically adjusted, since it represents the <code>font-size</code> multiplied by that value.
   </ul>
 

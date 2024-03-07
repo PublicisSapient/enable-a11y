@@ -11,7 +11,7 @@
 <ol>
   <li>It requires a voice-actor to recite the audio descriptions.</li>
   <li>It requires a video editor to re-edit the video.</li>
-  <li>Sometimes, other footage needs to be shot to accomodate the amount of time needed to insert the audio
+  <li>Sometimes, other footage needs to be shot to accommodate the amount of time needed to insert the audio
     descriptions into the video.</li>
 </ol>
 
@@ -91,7 +91,7 @@
     {
       "label": "Write the captions track",
       "highlight": "%FILE%vtt/dialog-document__html5.vtt",
-      "notes": "WebVTT is the web standard format that all videos should use for video captions.  <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> was the tool used to create all the WebVTT files on this page.  Althought it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
+      "notes": "WebVTT is the web standard format that all videos should use for video captions.  <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> was the tool used to create all the WebVTT files on this page.  Although it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
     },
     {
       "label": "Write the audio descriptions captions track",

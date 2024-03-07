@@ -41,7 +41,7 @@
         <figure>
 
           <figcaption id="bar-chart__fig-caption--table" class="caption">
-            Latest Accessibility Indicator Data (AID) scores for select acconts last year.
+            Latest Accessibility Indicator Data (AID) scores for select accounts last year.
           </figcaption>
           <div id="raw-data__content">
 

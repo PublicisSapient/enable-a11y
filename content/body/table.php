@@ -12,7 +12,7 @@
   <li><code>th</code> tags <strong>must have a <code>scope</code> attribute</strong> set to <code>row</code> if it is a heading for a
     table row, or <code>col</code> if it is a column row</li>
   <li>All tables <strong>must have a text <code>summary</code></strong> describing the data in the table. This can be coded using a
-    <code>summary</code> tag (see the first exmaple), or
+    <code>summary</code> tag (see the first example), or
     a <code>aria-labelledby</code> on the table element (see the <a href="#table-with-figcaption">figcaption example</a>)
   </li>
 
@@ -254,7 +254,7 @@
     {
       "label": "Mark up column groups with scope=\"colgroup\"",
       "highlight": "scope=\"colgroup\"",
-      "notes": "Note that column groups here help catagorize the column headers underneath"
+      "notes": "Note that column groups here help categorize the column headers underneath"
     },
     {
       "label": "Mark up the columns underneath the normal way",
@@ -376,7 +376,7 @@
     {
       "label": "Separate the table head and body with separate rowgroups",
       "highlight": "role=\"rowgroup\"",
-      "notes": "This replaces the <code>thead</code> and <code>tbody</code> tagss in the native HTML table markup"
+      "notes": "This replaces the <code>thead</code> and <code>tbody</code> tags in the native HTML table markup"
     },
     {
       "label": "Mark up the table rows with <code>row=\"row\"</code>",
@@ -386,7 +386,7 @@
     {
       "label": "Mark up the table column headers",
       "highlight": "role=\"columnheader\"",
-      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
+      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers because the existing design didn't have them, you could do so using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
     },
     {
       "label": "Mark up the table row headers",
@@ -472,7 +472,7 @@
   "steps": [{
       "label": "Use <code>aria-colspan</code> and <code>aria-rowspan</code> when you have a cell that spans multiple columns and rows",
       "highlight": "aria-colspan ||| aria-rowspan",
-      "notes": "This is equivalient to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables."
+      "notes": "This is equivalent to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables."
     }
 
   ]
@@ -485,7 +485,7 @@
 <?php includeStats(array('isStyle' => false, 'comment' => 'This is a great way to style a table when there is a lot of data inside of it.')) ?>
 
 <p>
-    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it respresents.
+    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
 </p>
 
 <p>

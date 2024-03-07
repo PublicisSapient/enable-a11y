@@ -81,7 +81,7 @@
     {
       "label": "Mark up the button that opens the dialog correctly",
       "highlight": "aria-haspopup",
-      "notes": "This will ensure that screenreader users know that this button will open a modal dialog before they press it."
+      "notes": "This will ensure that screen reader users know that this button will open a modal dialog before they press it."
     },
     {
       "label": "Mark up your dialog with the dialog tag",
@@ -116,7 +116,7 @@
     {
       "label": "Ensure the dialog's form has the right method set",
       "highlight": "method=\"dialog\"",
-      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successul submission of this form."
+      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successful submission of this form."
     },
     {
       "label": "Ensure the CTA that opens the dialog, as well as the one that closes it, are buttons",

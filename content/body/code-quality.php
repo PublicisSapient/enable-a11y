@@ -175,7 +175,7 @@
       {
         "label": "Create a test for each tag to be tested (ins, del and mark)",
         "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
-        "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
+        "notes": "Note the second parameter of the <code>it()</code> function is an <strong>asynchronous</code> function"
       },
       {
         "label": "Each test must load the page",

@@ -26,7 +26,7 @@
 
       <h2 class="homepage__intro--header homepage__intro--header--code">Learn How To Create Accessible Code</h2>
       <p>
-        Whether you are new to accessibility or are a seasoned veteran, Enable's aim to <strong>teach devlopers how to
+        Whether you are new to accessibility or are a seasoned veteran, Enable's aim to <strong>teach developers how to
           make
           something accessible</strong> and to <strong>show why it is.</strong> Developers can walk through the code
         step
@@ -44,7 +44,7 @@
           ARIA</a> when recommending code and encourages the use of native HTML5 functionality whenever possible (as
         long
         as browser accessibility support is there). However, since we know there are a lot of developers looking to make
-        their existing custom widgets accessibile quickly due to time constraints, we also show custom code examples and
+        their existing custom widgets accessible quickly due to time constraints, we also show custom code examples and
         what code features make them work with assistive technology.
       </p>
 

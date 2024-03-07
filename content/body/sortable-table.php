@@ -7,7 +7,7 @@
         <?php includeStats(array('isForNewBuilds' => false)) ?>
         <?php includeStats(array('isNPM' => true)) ?>
 
-        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensure partially-sighted and blind users know that a sort has been successul.</p>
+        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensure partially-sighted and blind users know that a sort has been successful.</p>
 
 
 
@@ -124,7 +124,7 @@
                     "notes": ""
                 },
                 {
-                    "label": "Add aria-descibedby to sort buttons",
+                    "label": "Add aria-describedby to sort buttons",
                     "highlight": "aria-describedby",
                     "notes": "This lets screen reader users know what happens on screen when the press the buttons.  Note that these instructions can be hidden visually so screen reader users only experience it, but I like to keep it in since it's useful to all users."
                 },

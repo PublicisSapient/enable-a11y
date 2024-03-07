@@ -14,7 +14,7 @@
 <?php includeStats(array('isNPM' => true)) ?>
 
 <p>
-  This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistant with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
 
 <div id="example1" class="enable-example">
@@ -44,7 +44,7 @@
     {
       "label": "Create the show and hide methods for the tooltip",
       "highlight": "%JS% tooltip.show; tooltip.hide",
-      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screenreaders announce the tooltip on focus."
+      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
     },
     {
       "label": "Ensure tooltip disappears when Escape key is pressed",
@@ -89,7 +89,7 @@
 
 <ul>
   <li>For <a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H28">providing definitions to abbreviations</a> using the <code>&lt;abbr&gt;</code> tag (However, <a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> suggests <a href="https://www.tpgi.com/short-note-the-abbreviation-appreciation-society/">other methods for expanding abbreviations in a more user friendly way</a>.</li>
-  <li>For <a href="https://dequeuniversity.com/tips/provide-iframe-titles">providing titles to iframes</a> (which has nothing to do with its tooltip functionality).</li>
+  <li>For <a href="https://dequeuniversity.com/tips/provide-iframe-titles">providing titles to iFrames</a> (which has nothing to do with its tooltip functionality).</li>
 </ul> 
 
 <p>
