@@ -96,7 +96,7 @@
   A really good round up of how the <code>title</code> attribute works, its history, and where it is appropriate to
   use it is in
   <a href="https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/">The Trials and
-    Tribulations of the Title Attribute</a> by <a href="https://www.scottohara.me/">Scott O’Hara</a>
+    Tribulations of the Title Attribute</a> by <a href="https://www.scottohara.me/">Scott O'Hara</a>
 </p>
 
 <p>All of that said, here is a demo on how to make tooltips using <code>title</code>.  It is not advised to use it.</p>

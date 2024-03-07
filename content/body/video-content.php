@@ -9,7 +9,7 @@
 <dl>
   <dt>Captions: </dt>
   <dd>A text version of speech and other important audio content in a video, allowing it to be accessible to people who
-    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video’s
+    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video's
         language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
     Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
     etc).</dd>
@@ -73,7 +73,7 @@
   in the subtitles) that can be integral to understanding content or videos for deaf and hard of hearing users. This
   could lead to missing key context in the video, such as why a monster might be in the room in a horror movie
   (skittering, door creaking open, and other faint soft sounds), a buzzer indicating a wrong answer or end of the round
-  that isn’t announced by the host in a game show, etc. These are overt examples, but it is a huge reason auto captions
+  that isn't announced by the host in a game show, etc. These are overt examples, but it is a huge reason auto captions
   should not be a replacement but rather a starting point for providing accessible captioning (and transcripts).
 </p>
 
@@ -82,10 +82,10 @@
   them to YouTube (or to whatever video provider you are using), will save time in the subtitling of the video.
 </p>
 
-YouTube auto captions (and others) do not often capture sound (other than just “[music]”) that can be integral to
+YouTube auto captions (and others) do not often capture sound (other than just "[music]") that can be integral to
 understanding content or videos for deaf and hard of hearing users.
 It could lead to missing key context such as why a monster might be in the room in a horror movie (e.g.: a door creaking
-open, eerie music being player), a buzzer indicating a wrong answer or end of the round that isn’t announced by the host
+open, eerie music being player), a buzzer indicating a wrong answer or end of the round that isn't announced by the host
 in a game show, etc. These are overt examples, but it is a huge reason auto captions should not be a replacement but
 rather a starting point for providing accessible captioning (and transcripts).
 
@@ -93,7 +93,7 @@ rather a starting point for providing accessible captioning (and transcripts).
 
 <p>
   Note that YouTube does have a "transcript" functionality, but what it basically does is just show all the captions
-  with timing information in a section of the page.  Here is a screenshot of where it appears in the video component on
+  with timing information in a section of the page. Here is a screenshot of where it appears in the video component on
   YouTube (next to the save button is a menu button with three dots, with a screen reader label of "More actions", that
   has "Show transcript" as a menu item):
 </p>

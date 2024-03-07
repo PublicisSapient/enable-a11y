@@ -137,8 +137,8 @@
     href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
     browser CSS demo</a> that you can download via
   NPM.
-  Instead of putting my usual notes as an explantion, visit their blog post <a
-    href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It’s 2019</a>.
+  Instead of putting my usual notes as an explanation, visit their blog post <a
+    href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It's 2019</a>.
 
 </p>
 
