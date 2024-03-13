@@ -24,6 +24,11 @@
     "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
     "isNPM": "true"
   },
+  "animated-hide-show.php": {
+    "title": "Animated Hide Show",
+    "desc": "",
+    "wip": true
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
