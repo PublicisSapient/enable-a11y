@@ -58,7 +58,7 @@
 
 
 <p>
-  Like radio button, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
+  Like radio buttons, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
   buttons are great for a small amount of choices, select boxes are better for a large set of choices.
 </p>
 

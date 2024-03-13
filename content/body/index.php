@@ -54,11 +54,11 @@
       <h2 class="homepage__intro--header homepage__intro--header--npm">Use Pre-built Accessible Components</h2>
 
       <p>
-        Enable also includes components that can be included into your own projects via NPM, with instructions how to
+        Enable also includes components that can be included into your own projects via NPM, with instructions on how to
         integrate them as Webpack modules, native ES6 Modules or as old school ES4 JavaScript libraries. Accessible
         hamburger menus, carousels and mobile friendly skip links, are only a few examples of prebuilt code you can use
         in
-        your projects today. We also encourage developers to consider contributing their own code to us for the benefit
+        your projects today. We also encourage developers to consider contributing their own code for the benefit
         of
         the developer community at large.
     </div>
