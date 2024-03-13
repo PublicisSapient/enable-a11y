@@ -773,3 +773,37 @@ footer a,
 [role="contentinfo"] a {
   color: #ccccff;
 }
+#toc {
+  padding: 1em;
+  background: #f0f8ff;
+}
+@media only screen and (min-width: 720px) {
+  #toc {
+    float: right;
+    max-width: 50%;
+    margin-left: 2em;
+  }
+}
+#toc h2 {
+  font-weight: normal;
+}
+#toc h2::before {
+  content: none;
+}
+#toc ol,
+#toc ul {
+  margin-left: 0.5em;
+}
+#toc ~ h2 {
+  clear: right;
+}
+@media only screen and (min-width: 720px) {
+  #toc:has(+ h2) {
+    float: left;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+#toc:has(+ h2) ~ h2 {
+  clear: left;
+}
