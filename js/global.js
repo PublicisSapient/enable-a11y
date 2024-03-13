@@ -112,8 +112,7 @@ function initEnable() {
                 /**
                  * Generates a table of contents for your document based on the headings
                  *  present. Anchors are injected into the document and the
-                 *  entries in the table of contents are linked to them. The table of
-                 *  contents will be generated inside of the first element with the id `toc`.
+                 *  entries in the table of contents are linked to them.
                  */
                 const headingLevel = Number(el.nodeName?.toLowerCase()?.split('h')?.[1] || 0);
                 if (headingLevel === 1) {
@@ -144,7 +143,7 @@ function initEnable() {
         })
     }
 
-    // Add the Table of Contents to the top of pages
+    // Add the generated Table of Contents to the top of pages
     if (location.href.indexOf('index.php') === -1 && location.href.indexOf('faq.php') === -1) {
         toc.appendChild(tocHeading);
         toc.appendChild(tocList);
