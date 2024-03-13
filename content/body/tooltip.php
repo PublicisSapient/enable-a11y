@@ -132,7 +132,7 @@
 </script>
 
 
-
+<!-- Should this be for the first example, instead of being under the second one? -->
 <?= includeNPMInstructions(
   'tooltip',
   array(),

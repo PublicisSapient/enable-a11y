@@ -20,6 +20,7 @@
 </p>
 
 <div class="enable-example">
+  <!-- TODO: replace the placeholder content -->
   Insert video here
 </div>
 

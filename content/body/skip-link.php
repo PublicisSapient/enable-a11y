@@ -304,6 +304,7 @@
     the skip links will remain visible unless they are clicked.</strong>
   This seems like a reasonable tradeoff (and can arguably be better for accessibility).
 </p>
+<!-- I don't see the skip links remaining visible like mentioned as an issue. Are there only certain scenarios when this occurs? -->
 
 <div id="mobile-example" class="enable-example">
   <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">

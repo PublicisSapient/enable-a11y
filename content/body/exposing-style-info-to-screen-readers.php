@@ -112,6 +112,7 @@
   </code></pre>
 </div>
 
+<!-- It's unclear what this code walkthrough is of -->
 <?php includeShowcode("highlight-example", "", "", "", true, 2)?>
 <script type="application/json" id="highlight-example-props">
 {
