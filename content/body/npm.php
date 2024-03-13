@@ -1,3 +1,5 @@
+<!-- File not linked in the menu -->
+
 <p>
   The following pages have modules that can be imported in your own projects via NPM:
 </p>
