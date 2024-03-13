@@ -22,8 +22,6 @@
   valuable lesson: developers shouldn't be dishonest to users to make things easier for themselves.
 </p>
 
-<p>
-
 
 <h2>A simple switch coded with ARIA.</h2>
 

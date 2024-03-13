@@ -1,6 +1,7 @@
 <p>
   Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are
   usually styled with
+</p>
 
 <h2>Focus Styling For Keyboard Users Only</h2>
 

@@ -8,7 +8,8 @@
         code.  However, many designers don't like the design of native HTML5 error message "bubbles", and want/demand 
         that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have laballed
         both of the solution below good for new and existing work: the HTML5 one is good if you want to implement 
-        validation quickly, and the custom JavaScript implementation is good if you want design flexibility.</p>
+        validation quickly, and the custom JavaScript implementation is good if you want design flexibility.
+      </p>
 
 
       
