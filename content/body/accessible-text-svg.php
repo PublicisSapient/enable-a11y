@@ -51,6 +51,7 @@
     This text complies with text spacing and text resizing requirements. If you use the
     text-spacing bookmarklet above, the text spaces out and doesn't get cut off.
   </p>
+  <!-- There is no bookmarklet above, even though it's mentioned in the previous paragraph -->
 
   <figure>
     <img src="images/accessible-text-svg/rollercoaster-screenshot__text-spacing.jpg"
