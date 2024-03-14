@@ -128,6 +128,16 @@ const testHelpers = new function () {
     }); */
   }
 
+  this.testPageSnapshot = async (page) => {
+    // Waiting for network activity to be idle for at least 500 milliseconds
+    await page.waitForNetworkIdle();
+
+    // Getting the page source HTML
+    const pageSourceHTML = await page.content();
+
+    // Checking page source HTML matches previous saved snapshot
+    expect(pageSourceHTML).toMatchSnapshot();
+  }
 }
 
 export default testHelpers;
