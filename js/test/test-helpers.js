@@ -58,7 +58,7 @@ const testHelpers = new function () {
   }
 
   this.pauseFor = async function(n) {
-    return await new Promise(res => setTimeout(res, config.KEYPRESS_TIMEOUT));
+    return await new Promise(res => setTimeout(res, n));
   }
 
   this.keyDownAndUp = function (page, key) {
