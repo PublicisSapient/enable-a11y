@@ -220,3 +220,44 @@ footer,
     color: #ccccff;
   }
 }
+
+#toc {
+  padding: 1em;
+  background: #f0f8ff;
+
+  @media @tablet-up {
+    float: right;
+    max-width: 50%;
+    margin-left: 2em;
+  }
+
+  h2 {
+    font-weight: normal;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  ol,
+  ul {
+    margin-left: 0.5em;
+  }
+
+  & ~ h2 {
+    clear: right;
+  }
+
+  // If the first element after the TOC is an h2, have the TOC be the full width
+  &:has(+ h2) {
+    @media @tablet-up {
+      float: left;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    & ~ h2 {
+      clear: left;
+    }
+  }
+}
