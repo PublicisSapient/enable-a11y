@@ -229,13 +229,13 @@
   background-color: #ffffcc;
 }
 .enable-stats__desc--do-not {
-  background-color: #ccccff;
+  background-color: #ffcccc;
 }
 .enable-stats__desc--style {
   background-color: #ccccff;
 }
 .enable-stats__desc--npm {
-  background-color: #ffcccc;
+  background-color: #ccfffc;
 }
 .enable-stats__center {
   display: flex;
