@@ -56,7 +56,7 @@
       <p>
         Enable also includes components that can be included into your own projects via NPM, with instructions on how to
         integrate them as Webpack modules, native ES6 Modules or as old school ES4 JavaScript libraries. Accessible
-        hamburger menus, carousels and mobile friendly skip links, are only a few examples of prebuilt code you can use
+        hamburger menus, carousels and mobile-friendly skip links, are only a few examples of prebuilt code you can use
         in
         your projects today. We also encourage developers to consider contributing their own code for the benefit
         of
@@ -116,7 +116,7 @@
   <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--bug">Found a bug?</h2>
 
   <p>
-    Feel free to log a bug on our Github project page!  If are a developer and know how to fix, please create a PR (if
+    Feel free to log a bug on our Github project page! If are a developer and know how to fix it, please create a PR (if
     you have never done this before, read the <a
         href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
         Github article about creating a pull request from a fork</a>).
