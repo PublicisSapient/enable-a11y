@@ -20,17 +20,17 @@
   </ul>
 
 <p>
-  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarentee</a>.
+  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarantee</a>.
   Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
   the
-  code walkthrough below will contain information developers need to implement accessible carosuels regardless of the
+  code walkthrough below will contain information developers need to implement accessible carousels regardless of the
   carousel frameworks being used. If the developer is making a carousel from scratch, they can use the NPM module that
   makes Glider.js accessible (see below).
 </p>
 
 <h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarentee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
+<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarantee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
 <?php includeStats(array('isForNewBuilds' => false)) ?>
 <?php includeStats(array('isNPM' => true)) ?>
 
@@ -94,8 +94,8 @@
           alt="A man with a mullet and a maniacal face holding a sword in the middle of a field.">
         <div class="enable-carousel__slide-copy">
           <h2 id="slide03-title" class="enable-carousel__slide-heading">Samurai Cop</h2>
-          <p>The story of a cop with an epic mullet and a samuari sword who, along with his cool
-            parner, take on a gang of cocaine smugglers in early '90's Los Angeles.
+          <p>The story of a cop with an epic mullet and a samurai sword who, along with his cool
+            partner, take on a gang of cocaine smugglers in early '90's Los Angeles.
           </p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Samurai_Cop"
             aria-describedby="slide03-title">Learn More</a>
@@ -164,7 +164,7 @@
     {
       "label": "Ensure the previous and next buttons are hidden to mobile screen readers",
       "highlight": "aria-hidden",
-      "notes": "Since mobile screenreaders don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
+      "notes": "Since mobile screen readers don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
     },
     {
       "label": "Initialize the carousel via JavaScript",

@@ -50,7 +50,7 @@
             {
               "label": "Create the show and hide methods for the tooltip",
               "highlight": "%JS% tooltip.show; tooltip.hide",
-              "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screenreaders announce the tooltip on focus."
+              "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
             },
             {
               "label": "Ensure tooltip disappears when Escape key is pressed",

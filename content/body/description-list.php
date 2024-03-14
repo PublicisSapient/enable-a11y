@@ -36,7 +36,7 @@
             "steps": [{
                 "label": "Use <code>dl</code> tag to encapsulate the whole list",
                 "highlight": "%OPENCLOSETAG%dl",
-                "notes": "The <code>dl</code> stands for <strong>description list</strong>.  It was changed from <a href=\"http://html5doctor.com/the-dl-element/\">its previous name of definiton list in HTML4</a>"
+                "notes": "The <code>dl</code> stands for <strong>description list</strong>.  It was changed from <a href=\"http://html5doctor.com/the-dl-element/\">its previous name of definition list in HTML4</a>"
             },
             {
                 "label": "Each description term is encapsulated in a <code>dt</code> ",

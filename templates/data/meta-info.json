@@ -54,7 +54,7 @@
   },
   "date.php": {
     "title": "Accessible Date Widget",
-    "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web develper to do?  ",
+    "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web developer to do?  ",
     "wip": true
   },
   "description-list.php": {
@@ -68,7 +68,7 @@
   },
   "dropdown.php": {
     "title": "Accessible Dropdowns/Drawers/Expando",
-    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accesible with just a little bit of markup.",
+    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accessible with just a little bit of markup.",
     "isNPM": "true"
   },
   "figure.php": {
@@ -111,7 +111,7 @@
   },
   "listbox.php": {
     "title": "Accessible Select Boxes (a.k.a. Listboxes)",
-    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what devs must do if they have to use a custom one.",
+    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what developers must do if they have to use a custom one.",
     "isNPM": "true"
   },
   "log.php": {
@@ -124,7 +124,7 @@
   },
   "math.php": {
     "title": "Accessible Math Equations",
-    "desc": "Math equations can be made accesible to math students and scholars with MathML.",
+    "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
   },
   "multi-level-hamburger-menu.php": {
@@ -153,7 +153,7 @@
   },
   "slider.php": {
     "title": "Accessible Sliders",
-    "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relavant, especially for mobile screen reader users."
+    "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users."
   },
   "spinner.php": {
     "title": "Accessible Numeric Fields",
@@ -200,7 +200,7 @@
   },
   "search.php": {
     "title": "Search Form",
-    "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reeder users, but also have the right landmark applied to it."
+    "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it."
   },
   "sortable-pagination-table.php": {
     "title": "Accessible Sortable Paginated Tables",
@@ -209,7 +209,7 @@
   },
   "tabs.php": {
     "title": "Accessible Tabs",
-    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessble.  We've got your back.",
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible.  We've got your back.",
     "isNPM": "true"
   },
   "textbox.php": {
@@ -227,7 +227,7 @@
   },
   "text-spacing.php": {
     "title": "Space-Adjusting Typography",
-    "desc": "How you can ensure that your website's typography is legable for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
+    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
   },
   "timer.php": {
     "title": "ARIA Timer",
@@ -245,7 +245,7 @@
   },
   "video-content.php": {
     "title": "Accessible Video Content",
-    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficent? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
   },
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",

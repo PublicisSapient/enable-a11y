@@ -36,7 +36,7 @@
 
                         <li>For the ARIA
                             <code>progressbar</code> role (but not the HTML5
-                            <code>progress</code> tag) NVDA will intepret the value of
+                            <code>progress</code> tag) NVDA will interpret the value of
                             <code>aria-valuenow</code> as a percentage value, regardless of the value of
                             <code>aria-valuemax</code>. It will also not read out the values correctly "live" when
                             incrementing.

@@ -1,7 +1,7 @@
 <p>
   Status messages allow screen readers and other assistive technology to tell users that content has changed on the page 
   without interrupting what the user is doing by changing element has focused.  A perfect example of this 
-  usecase is in a search component like in the example below.
+  use-case is in a search component like in the example below.
 </p>
 
 

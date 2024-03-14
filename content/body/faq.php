@@ -2,7 +2,7 @@
   <dt>What is Enable?</dt>
   <dd>Enable is a place where developers can learn how to make accessible code. We show examples of different components
     that are accessible, and have code walkthroughs to show what makes them that way. If the component is sufficiently
-    complex, we create an NPM modules of it so that developers can incorportate them in their own projects.</dd>
+    complex, we create an NPM modules of it so that developers can incorporate them in their own projects.</dd>
 
   <dt>Which components have NPM modules?</dt>
   <dd>If a component does have an NPM module in it, we mention it on the component's description page. Full instructions

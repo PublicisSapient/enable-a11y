@@ -43,7 +43,7 @@
     This paragraph has a few native
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">HTML5 links</a>
     in it. It is best to use native, non-ARIA links because they are
-    guarenteed to be used in
+    guaranteed to be used in
     <a href="https://en.wikipedia.org/wiki/Netscape_Navigator">older browsers</a>
     and <a href="https://en.wikipedia.org/wiki/Wget">other user agents</a>.
   </p>
@@ -88,7 +88,7 @@
     {
       "label": "Use an aria-label to give context to screen reader users",
       "highlight": "aria-label",
-      "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Austrailia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
+      "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Australia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
     },
     {
       "label": "Add chevron via CSS",
@@ -103,7 +103,7 @@
 <h2>Breadcrumbs</h2>
 
 <p>
-  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the heirarchy that
+  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the hierarchy that
   the current page resides.
 </p>
 
@@ -137,7 +137,7 @@
   {
     "label": "Add an aria label to the nav",
     "highlight": "aria-label",
-    "notes": "This will make it easy for screen reader users to differentiate the breadcrumb navigation from other bits of navigation on the page, espeecially if they would like to jump to it using NVDA's Element List, VoiceOver's rotor, or anything similar in any other screen reader being used."
+    "notes": "This will make it easy for screen reader users to differentiate the breadcrumb navigation from other bits of navigation on the page, especially if they would like to jump to it using NVDA's Element List, VoiceOver's rotor, or anything similar in any other screen reader being used."
   },
   {
     "label": "Use aria-current for self referring links",

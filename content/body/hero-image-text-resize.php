@@ -11,10 +11,10 @@
       href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">WCAG 1.4.3 - Contrast
       (Minimum)</a>
   </li>
-  <li>They must accomodate the adjustable text-spacing guidelines of <a
+  <li>They must accommodate the adjustable text-spacing guidelines of <a
       href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html">WCAG 1.4.12 - Text Spacing</a>.
   </li>
-  <li>They must be resizeable via a browser's text zooming feature to conform to <a
+  <li>They must be resizable via a browser's text zooming feature to conform to <a
       href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">WCAG 1.4.4 - Text Resize</a>.</li>
 </ol>
 
@@ -44,7 +44,7 @@
   </figcaption>
 </figure>
 
-<p>It is easy to render this text via HTML. The design even accomodates text spacing requirements: when I apply
+<p>It is easy to render this text via HTML. The design even accommodates text spacing requirements: when I apply
   <a href="http://www.html5accessibility.com/tests/tsbookmarklet.html">Steve Faulkner's text spacing
     bookmarklet</a>, the text fills the hero image.
 </p>
@@ -52,7 +52,7 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-spacing", "Screenshot of the above hero image with text-spacing stylesheet applied.  The text on the left of the hero image is still contained by the image container and is still legable")?>
+  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-spacing", "Screenshot of the above hero image with text-spacing stylesheet applied.  The text on the left of the hero image is still contained by the image container and is still legible")?>
 
   <figcaption>
     Figure 2. Hero image with text-spacing stylesheet applied.
@@ -69,14 +69,14 @@
   <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-resize", "Screenshot of the above hero image with the browser's text-zoom set to 150%.  Note that the text bleeds outside of the hero image, and Cüneyt Arkın's first name is cut off by the text's container element.")?>
 
   <figcaption>
-    Figure 3. Hero image with text zoom set to 150%. Not all the text is legable.
+    Figure 3. Hero image with text zoom set to 150%. Not all the text is legible.
   </figcaption>
 </figure>
 
 <p>
   This is typical of a lot of hero images on the web. It's so common, I created a JavaScript library to work
   around this issue. When the text is resized using the
-  browser's text zooming feature, the layout changes to accomodate the larger text:
+  browser's text zooming feature, the layout changes to accommodate the larger text:
 </p>
 
 <figure>

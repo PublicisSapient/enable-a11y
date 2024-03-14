@@ -89,7 +89,7 @@
 </script>
 
 
-<h2>HTML5 radio butons that have custom styling</h2>
+<h2>HTML5 radio buttons that have custom styling</h2>
 
 <?php includeStats(array('isStyle' => true, 'comment' => 'Read this to style native radio buttons like a Jedi Master')) ?>
 
@@ -282,7 +282,7 @@
 
 <p>
     When it comes to styling fieldsets, they can sometimes be as stubborn as my Mom when I tell her it's time for a medical
-    checkup.  Unlike my Mom, who is absolutely irreplacable to me, I can replace fieldsets with an ARIA <code>radiogroup</code> role.
+    checkup.  Unlike my Mom, who is absolutely irreplaceable to me, I can replace fieldsets with an ARIA <code>radiogroup</code> role.
 </p>
 
 

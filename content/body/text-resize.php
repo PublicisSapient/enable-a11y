@@ -33,7 +33,7 @@
 <p>
   In most browsers users who use their browser functionality to resize text will not be able to resize text measured in
   pixels,
-  since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, becuase the browsers' text resize
+  since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, because the browsers' text resize
   functionality
   <strong>should</strong> change the base font of the document (please see the note on Chrome for Android below).
 </p>
@@ -92,7 +92,7 @@ body {
 </template>
 
 
-<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programatically).</p>
+<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programmatically).</p>
 
 
 <h2>Use Unitless Line Heights</h2>
@@ -102,7 +102,7 @@ body {
 
   <ul>
     <li>Using absolute units in <code>line-height</code> mean they don't grow when text-zoom is activated in most browsers.</li>
-    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decices to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
+    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decides to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
     <code>line-height</code> will be automatically adjusted, since it represents the <code>font-size</code> multiplied by that value.
   </ul>
 
@@ -170,7 +170,7 @@ body {
     actually resize text in iOS Safari natively. The only way to resize text is at the operating system
     level (by opening the iOS <strong>Settings</strong> app and under <strong>Accessibility</strong>
     choosing <strong>Larger Text</strong> and using the slider). By default, however, most web pages
-    don’t
+    don't
     respect the size that is set. However, after doing a lot of research for this article, I found that
     if
     you put the following CSS into your page, you can get Safari to resize the text according to the
@@ -212,7 +212,7 @@ body {
     <p> I encourage everyone to put these styles in their base styles. It will make visually impaired
       iOS
       users happy. The only caveat here is that the font resize will not happen until after the user
-      refreshes the browser. Thanks to the user “clshortf…@gmail.com” in <a
+      refreshes the browser. Thanks to the user "clshortf…@gmail.com" in <a
         href="https://bugs.chromium.org/p/chromium/issues/detail?id=779409">this Chromium bug
         report</a>
       for sharing this info.
@@ -225,20 +225,20 @@ body {
   <li><strong>Desktop:</strong>
     <ul>
       <li>At the top right, click More <span aria-hidden="true">⋮</span> and then Settings.</li>
-      <li>Under “Appearance,” next to “Font size,” click the Down arrow <span aria-hidden="true">▾</span>.
+      <li>Under "Appearance," nex" to "Font size," click the Down arrow <span aria-hidden="true">▾</span>.
         Then select the font size you want (you have a choice
         of
         very small, small, medium, large and very large). You can have a little bit more
         granular
-        control by clicking “Customize fonts” and moving the “Font Size” range widget.</li>
+        control by clicking "Customize fonts" and moving the "Font Size" range widget.</li>
     </ul>
     <p><em>Note that Chrome will <strong>not</strong> resize text that is sized in <code>px</code>
         units.</em></p>
   </li>
   <li><strong>Mobile (Android):</strong>
     <ul>
-      <li>Go to Settings, and then Accessibility. You can change the font-size by using the “Text
-        Scaling” slider.</li>
+      <li>Go to Settings, and then Accessibility. You can change the font-size by using the "Text
+        Scaling" slider.</li>
     </ul>
     <p><strong><em>Please note that Chrome for Android has some serious differences than all other
           browsers. Text is only resized inside HTML element has more than 217 characters in
@@ -267,7 +267,7 @@ body {
   <li><strong>Desktop:</strong>
     <ol>
       <li>On the menu at the top of your browser, click View, then go to Zoom (if you are using
-        Windows or Linux, you may have to press the “Alt” key in order to make this menu
+        Windows or Linux, you may have to press the "Alt" key in order to make this menu
         visible).
       </li>
       <li>Select Zoom Text Only (This makes the controls only change the size of text; not
@@ -275,8 +275,8 @@ body {
       </li>
       <li>Click on the hamburger menu <span aria-hidden="true">☰</span> in the upper top-right
         corner
-        of the browser’s chrome.</li>
-      <li>Click on the plus and minus icons in the “Zoom” option.</li>
+        of the browser's chrome.</li>
+      <li>Click on the plus and minus icons in the "Zoom" option.</li>
     </ol>
   </li>
   <li><strong>Mobile (Android):</strong>
@@ -285,11 +285,11 @@ body {
         this,
         click on the More menu, denoted by three vertical dots ⋮, and then Settings. Then go to
         the
-        Accessibility Menu. Make sure the “Use System font size” slider is on. Also make sure
+        Accessibility Menu. Make sure the "Use System font size" slider is on. Also make sure
         the
-        “Always enable zoom” slider is on as well.</li>
-      <li>Now, that you have set up Firefox right, you can now zoom the font. Launch Android’s
-        “Settings” app and choose “Display”. Then click on “Font size”. Use the slider to change
+        "Always enable zoom" slider is on as well.</li>
+      <li>Now, that you have set up Firefox right, you can now zoom the font. Launch Android's
+        "Settings" app and choose "Display". Then click on "Font size". Use the slider to change
         the
         text zoom font size value. Click OK and then go back to Firefox (Note: You may need to
         reload the web page in order for the text zoom to take effect).</li>
@@ -302,7 +302,7 @@ body {
 </ul>
 
 <h3>Internet Explorer:</h3>
-<p> Go to the menu bar, click “View” and choose the “Text Size” menu
+<p> Go to the menu bar, click "View" and choose the "Text Size" menu
   item.
   <em>Note that like Chrome, Internet Explorer will <strong>not</strong> resize text that is sized in
     <code>px</code> units.</em>
@@ -312,16 +312,16 @@ body {
   <li><strong>For Edge &lt;= 18 (which is based on the EdgeHTML rendering engine):</strong> the only
     information I found about text zooming is outlined in this <a
       href="https://mcmw.abilitynet.org.uk/microsoft-edge-making-text-larger/">article</a>, but I
-    couldn’t get it to work (I think Microsoft may have removed this feature).</li>
+    couldn't get it to work (I think Microsoft may have removed this feature).</li>
   <li><strong>For Edge &gt; 18 (which is based on the Blink rendering engine):</strong> go to
     Settings,
-    and choose the “Appearance” tab. You can change the “Font size” select box value, or have more
+    and choose the "Appearance" tab. You can change the "Font size" select box value, or have more
     fine
-    grained control by clicking “Custom fonts” and moving the “Font size” slider.</li>
+    grained control by clicking "Custom fonts" and moving the "Font size" slider.</li>
 </ul>
 
 <p>(This list was partially lifted from <a href="https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text">Zoom
     &amp; Resizing
-    Text</a> from <a href="https://usability.yale.edu/">Yale University’s Usability &amp; Web
+    Text</a> from <a href="https://usability.yale.edu/">Yale University's Usability &amp; Web
     Accessibility
     site</a>). Some of the content has been updated using our own research (most notably, the Mobile Chrome issues stated above).</p>

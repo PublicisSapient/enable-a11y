@@ -33,7 +33,7 @@
       </figcaption>
       <div class="sticky-table__container" tabindex="0">
         <table class="pagination__table" data-pagecount="7"
-          data-pagination-alert-template="Now dislaying rows ${n} through ${m}" data-pagination-button-spread="5"
+          data-pagination-alert-template="Now displaying rows ${n} through ${m}" data-pagination-button-spread="5"
           data-pagination-mobile-button-spread="4" aria-labelledby="pagination-table-example__caption">
           <thead>
             <tr>
@@ -1787,7 +1787,7 @@
     {
       "label": "Use <code>interpolate()</code> to place dynamic content inside the templates.",
       "highlight": "%JS%paginationTables.renderTable ||| interpolate",
-      "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>, with a few <a href=\"https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/\">XSS sanatizing logic included</a>"
+      "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>, with a few <a href=\"https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/\">XSS sanitizing logic included</a>"
     },
     {
       "label": "Mark up the pagination widget correctly",

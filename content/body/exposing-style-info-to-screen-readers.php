@@ -1,5 +1,5 @@
 <p>On many websites, I have come across situations were text has been crossed out using the <code>&lt;del&gt;</code> or
-  <code>&lt;strike&gt;</code> tags. Unforunately, most browsers don't expose the role of these tags to screen readers,
+  <code>&lt;strike&gt;</code> tags. Unfortunately, most browsers don't expose the role of these tags to screen readers,
   so text coded with these tags can be confusing. Take for example, the product tile below.
 
 <div id="example1" class="enable-example">

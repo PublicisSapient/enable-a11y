@@ -225,7 +225,7 @@
     SMIL being deprecated in Chrome, this
     <a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/5o0yiO440LM/m/YGEJBsjUAwAJ?pli=1">deprecation
       was suspended</a>
-    (i.e. it is still a web standard and will continue to be in the forseeable future, due to pushback from the
+    (i.e. it is still a web standard and will continue to be in the forseeable future, due to push back from the
     web development community).
   </p>
 
@@ -317,7 +317,7 @@
     "steps": [{
         "label": "Add SMIL animation tags in the original SVG",
         "highlight": "%OPENCLOSECONTENTTAG%animateTransform ||| %OPENCLOSECONTENTTAG%animate ||| %OPENCLOSECONTENTTAG%animateMotion",
-        "notes": "The <code>animate</code>, <code>animateTransform</code> and <code>animationTransform</code> tags are responsible for the animation in the SVG. More infomation is available at <a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL\">the MDN SVG Animation With SMIL reference page</a>."
+        "notes": "The <code>animate</code>, <code>animateTransform</code> and <code>animationTransform</code> tags are responsible for the animation in the SVG. More information is available at <a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL\">the MDN SVG Animation With SMIL reference page</a>."
       },
       {
         "label": "Use the SVG <code>pauseAnimations</code> and <code>playAnimations</code> methods",

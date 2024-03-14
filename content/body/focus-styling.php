@@ -105,12 +105,12 @@
 
   <?php pictureWebpPng("images/focus/clickable-hit-state", "Screenshot of the Enable website's main navigation, with keyboard focus applied to the 'controls' navigation drawer.")?>
 
-  <figcaption>Figure 3. The focus state of the "Contols" navigation button. Note the large hit area.</figcaption>
+  <figcaption>Figure 3. The focus state of the "Controls" navigation button. Note the large hit area.</figcaption>
 </figure>
 
 <p>We increased the hit area to conform to <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html">WCAG
-    2.5.5: Target Size</a> (we made it larger than 44 pixels x 44 pixels). Even though this is a AAA requirement, it is so easiy to implement by increasing the padding
-  and componsating visually with an equivalent negative margin, so why just conform to 
+    2.5.5: Target Size</a> (we made it larger than 44 pixels x 44 pixels). Even though this is a AAA requirement, it is so easy to implement by increasing the padding
+  and compensating visually with an equivalent negative margin, so why just conform to 
   <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.5.8: Target Size (Minimum).</a> (which only asks 24 pixels x 24 pixels)?</p>
 
 <?php includeShowcode("css-focus-hitarea", "", "", "", false)?>
@@ -206,7 +206,7 @@
 
 
 <p>
-  Note that <strong>it is much better to remove the <code>all</code> keyword and just transtition what you need
+  Note that <strong>it is much better to remove the <code>all</code> keyword and just transition what you need
     instead.</strong> This solution should only be a band-aid solution until you can fix the issue properly.
 </p>
 

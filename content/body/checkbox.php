@@ -5,7 +5,7 @@
 
 <?php includeStats(array('isForNewBuilds' => true)) ?>
 
-You can style an HTML5 checkbox using CSS easily. You don't need to make faux chekcboxe
+You can style an HTML5 checkbox using CSS easily. You don't need to make faux checkbox
 using <code>&lt;div&gt;</code> tags.
 
 <div id="example2" class="enable-example">
@@ -177,7 +177,7 @@ using <code>&lt;div&gt;</code> tags.
 
 <h2>Indeterminate Checkboxes Using Native HTML</h2>
 
-<?php includeStats(array('isNPM' => true, 'comment' => 'The parent/child heirarchy of this example has been done via an NPM module.')) ?>
+<?php includeStats(array('isNPM' => true, 'comment' => 'The parent/child hierarchy of this example has been done via an NPM module.')) ?>
 
 
 <p>
@@ -263,7 +263,7 @@ checkboxEl.checked = false;
     </form>
 </div>
 
-<p>This example uses a library we developed to set up the heirarchical structure for the select all button to work.
+<p>This example uses a library we developed to set up the hierarchical structure for the select all button to work.
     Below are the developer notes on how the library does it. If you are interested in using the library, please <a
         href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p>
 
@@ -275,7 +275,7 @@ checkboxEl.checked = false;
     "steps": [{
             "label": "Use aria-describedby on the select all checkbox to give instructions to screen reader users.",
             "highlight": "aria-describedby",
-            "notes": "Screenreader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\"http://localhost:8888/screen-reader-only-text.php\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
+            "notes": "Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\"http://localhost:8888/screen-reader-only-text.php\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
         },
         {
             "label": "Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over",
@@ -356,7 +356,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 </div>
 
 
-<p>This example uses the same library we used in the native HTML5 example to set up the heirarchical structure for the select all button to work. As you compare the developer notes below to that of the HTML5 example, you will see the way to implement is similar.  Please <a
+<p>This example uses the same library we used in the native HTML5 example to set up the hierarchical structure for the select all button to work. As you compare the developer notes below to that of the HTML5 example, you will see the way to implement is similar.  Please <a
         href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p> 
 
 <?php includeShowcode("aria-indeterminate-example")?>
@@ -367,7 +367,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
     "steps": [{
             "label": "Use aria-describedby on the select all checkbox to give instructions to screen reader users.",
             "highlight": "aria-describedby",
-            "notes": "Screenreader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\"http://localhost:8888/screen-reader-only-text.php\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
+            "notes": "Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\"http://localhost:8888/screen-reader-only-text.php\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
         },
         {
             "label": "Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over",
@@ -378,7 +378,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 }
 </script>
 
-<h2>How to Install the Heirarchical Checkbox library Into Your Projects</h2>
+<h2>How to Install the Hierarchical Checkbox library Into Your Projects</h2>
 
 <?= includeNPMInstructions('hierarchical-checkboxes', array(''), '', false , array(
     'noCSS' => true

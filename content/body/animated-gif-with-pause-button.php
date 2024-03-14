@@ -29,7 +29,7 @@
 <h2>Animation off by default</h2>
 
 
-<p>This is the prefered and simplest way of embedding animated GIFs: only have them animate if the user explicitly wants to see them.</p>
+<p>This is the preferred and simplest way of embedding animated GIFs: only have them animate if the user explicitly wants to see them.</p>
 
 <div id="example1" class="enable-example">
 

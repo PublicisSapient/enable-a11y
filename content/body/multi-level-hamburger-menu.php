@@ -1,7 +1,7 @@
 <!-- <aside class="notes">
             <p>
                 This is a heavily modified version of <a href="https://codepen.io/hayleyt/pen/ZyqBYW">
-                    this hamburger menu</a>. I removed jQuery as a dependancy,
+                    this hamburger menu</a>. I removed jQuery as a dependency,
                 made the markup accessible and added focus management rules, as well as turning
                 it into a mega menu at the desktop breakpoint. I
                 also made the styles follow the BEM design pattern.
@@ -28,7 +28,7 @@
 
 <p>
   I created this menu system to address all of the above issues. I have tested with both mobile and desktop devices with
-  and without screen readers. The visual layout of the mobiel breakpoint is inspired by <a
+  and without screen readers. The visual layout of the mobile breakpoint is inspired by <a
     href="https://codepen.io/hayleyt/pen/ZyqBYW">
     this hamburger menu</a> by the talented <a href="https://www.instagram.com/hayleytea/">Hayley Tong</a>, the code
   running it is original work.
@@ -73,8 +73,8 @@
   The user can choose any item inside that menu with either
   a mouse or keyboard. Menu subcategories are visually indicated
   by a right pointing chevron, and to assistive technologies as
-  collapsabe/expandable buttons. Clicking on these subcategory
-  buttons will show the subcatagory menu appearing, with keyboard
+  collapsible/expandable buttons. Clicking on these subcategory
+  buttons will show the subcategory menu appearing, with keyboard
   focus being applied to the back button that will take users back
   to the previous menu.
 </p>
@@ -110,9 +110,9 @@
   Users can either click the CTAs in the menu with either a mouse or keyboard.
   Menu subcategories are visually indicated
   by a downwards pointing chevron, and to assistive technologies as
-  collapsabe/expandable buttons. Clicking on these subcategory
-  buttons will show the subcatagory menu appearing below the button.
-  Keyboard users can then tab immediately into the subcatagory menu with
+  collapsible/expandable buttons. Clicking on these subcategory
+  buttons will show the subcategory menu appearing below the button.
+  Keyboard users can then tab immediately into the subcategory menu with
   a keyboard, while mouse users can click on any of the submenu items inside.
 </p>
 
@@ -129,10 +129,10 @@
 
 <p>
   Keyboard users will note that when they apply focus
-  to an interactive element outside of the subcatagory menu,
+  to an interactive element outside of the subcategory menu,
   the menu will close automatically. Mouse users will notice
-  this happening if they click anywhere outside the subcatagory
-  menu as well. Mobile screenreader users will experience a focus loop
+  this happening if they click anywhere outside the subcategory
+  menu as well. Mobile screen reader users will experience a focus loop
   inside the menu until they close the menu with the CTA that opened it.
 </p>
 
@@ -144,7 +144,7 @@
   <li>Follow the instructions below in order to <a href="#npm-instructions">learn how to download the hamburger menu
       library</a>.</li>
   <li>You can either code the HTML for the menu by hand, but since the code can be rather redundant and repetitive, it
-    may be easier to use a JSON to structure your menu and have the libary do it for you.</li>
+    may be easier to use a JSON to structure your menu and have the library do it for you.</li>
 </ol>
 
 <h3 id="enable-hamburger-menu__heading" tabindex="-1">Coding HTML by Hand</h3>
@@ -191,7 +191,7 @@
 <h3>Using JavaScript (recommended)</h3>
 
 <p>
-  If you look at the four steps given above, they are basically HTML tempalates.  You could then take those HTML templates
+  If you look at the four steps given above, they are basically HTML templates.  You could then take those HTML templates
   and modify them to work with favourite HTML templating system (e.g. Handlebars, Moustache, React, etc).
 </p>
 
@@ -220,7 +220,7 @@
     {
       "label": "Container Template: Give the hamburger icon a role of image.",
       "highlight": "%INNERHTML%flyout__container ||| role=\"img\"",
-      "notes": "Since we used <a href=\"https://codepen.io/designcouch/pen/Atyop\">the third CSS animation example in this codepen</a> to create the hamburger icon, we want to ensure screenreaders interpret this as an image by adding the role of image to it"
+      "notes": "Since we used <a href=\"https://codepen.io/designcouch/pen/Atyop\">the third CSS animation example in this Codepen</a> to create the hamburger icon, we want to ensure screen readers interpret this as an image by adding the role of image to it"
     },
     {
       "label": "Container Template: Set aria-label for hamburger menu icon",
@@ -288,7 +288,7 @@
       "notes": "We have a transparent <code>border</code> on the <code>div</code> elements that make up the hamburger menu icon by default. Even though this is normally invisible, <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">transparent borders show up in Windows High Contrast Mode</a>. If we didn't have this included, the icon would be invisible."
     },
     {
-      "label": "Container Template: Markup hamburger mainmenu panels",
+      "label": "Container Template: Markup hamburger main menu panels",
       "highlight": "class=\"enable-flyout__list[^\"]*\"",
       "notes": "If you look at the code, you will notice that all the panels are marked up as unordered lists (using <strong>ul</strong> tags).  This is so screen readers can announce how many items are in the menu panel that is currently shown on-screen."
     }

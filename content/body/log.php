@@ -15,7 +15,7 @@ The <code>log</code> role is an ARIA-live region where new information is added 
             <h2>Notes:</h2>
 
             <ul>
-                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screenreaders will
+                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screen readers will
                     read the whole log like an alert.
                 </li>
                 <li>

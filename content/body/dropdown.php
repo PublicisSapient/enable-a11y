@@ -153,7 +153,7 @@
     {
       "label": "Create a fieldset with a legend so the checkboxes can be treated as a group.",
       "highlight": "\\s*&lt;legend[^;]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset[^;]*&gt; ||| \\s*&lt;\/fieldset&gt;",
-      "notes": "Note the legend is visally-hidden with the `sr-only` class."
+      "notes": "Note the legend is visually-hidden with the `sr-only` class."
     },
     {
       "label": "Create the checkboxes",

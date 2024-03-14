@@ -17,7 +17,7 @@
 <p>
   This page shows two examples of a slider: an HTML5 one implemented with <code>&lt;input type="range"&gt;</code> and
   an ARIA one using the <code>slider</code> role and fair amount of JavaScript. While the latter solution
-  is accessible on both desktop and mobile, it works so diffently than the native one in mobile devices due
+  is accessible on both desktop and mobile, it works so differently than the native one in mobile devices due
   to JavaScript limitations, and is a great example of "just because you <em>can</em> so something, it doesn't
   mean you should".
 </p>
@@ -98,7 +98,7 @@
     {
       "label": "Set the slider's label",
       "highlight": "for",
-      "notes": "Just like any inteactive component, it needs a label"
+      "notes": "Just like any interactive component, it needs a label"
     },
     {
       "label": "Set an onchange event to display current value.",
@@ -111,7 +111,7 @@
     {
       "label": "Set the output tag's role to presentation",
       "highlight": "role=\"presentation\"",
-      "notes": "Since this is the value of the range element and it is already announced when screen reader users inteact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
     },
     {
       "label": "Style the slider's track",
@@ -124,7 +124,7 @@
       "notes": "Again, different selectors for WebKit and Blink based browsers vs. Firefox"
     },
     {
-      "label": "Style specfic browser implementations",
+      "label": "Style specific browser implementations",
       "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\"range\"]::-moz-range-thumb)",
       "notes": "There are certain layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
 
@@ -232,7 +232,7 @@
     {
       "label": "Set the output tag's role to presentation",
       "highlight": "role=\"presentation\"",
-      "notes": "Since this is the value of the range element and it is already announced when screen reader users inteact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
     },
     {
       "label": "Style the slider's control",
@@ -270,7 +270,7 @@
       "notes": "This CSS ensures that the container's <code>::after</code> pseudo-element acts as the area of the track that is in between the two slider controls.  For a detailed explanation as to why, see <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/#the-tricky-part\">The Tricky Part</a> of Ana Tudor's article <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/\">Multi-Thumb Sliders: Particular Two-Thumb Case</a>."
     },
     {
-      "label": "Style specfic browser implementations",
+      "label": "Style specific browser implementations",
       "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\"range\"]::-moz-range-thumb)",
       "notes": "There are small layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
 
@@ -327,7 +327,7 @@
   "steps": [{
       "label": "Insert dynamic values placeholders in the template",
       "highlight": "\\$\\{[^}]+\\}",
-      "notes": "These are the dymamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
+      "notes": "These are the dynamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
     },
     {
       "label": "Create an interpolation function",
@@ -335,7 +335,7 @@
       "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
     },
     {
-      "label": "Insert dymanic values into the template using the interpolation function.",
+      "label": "Insert dynamic values into the template using the interpolation function.",
       "highlight": "%FILE% js/modules/enable-slider.js ~ const handle =[^;]*;",
       "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
     }

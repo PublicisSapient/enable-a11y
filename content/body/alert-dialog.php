@@ -9,7 +9,7 @@
                         <ul>
                             <li>
                                 Focus should go to the first element in the modal (usually the close button). If the modal is marked up like in this example,
-                                the screen reader will anounce that the user is inside a modal.
+                                the screen reader will announce that the user is inside a modal.
                             </li>
                             <li>Focus can never be tabbed into anything outside the modal</li>
                         </ul>

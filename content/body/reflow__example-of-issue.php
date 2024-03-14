@@ -223,7 +223,7 @@ if ($heading == '') {
         </li>
         <li>
           <a href="https://en.wikipedia.org/wiki/Cote-dIvoire">Côte
-            d’Ivoire</a>
+            d'Ivoire</a>
         </li>
         <li>
           <a href="https://en.wikipedia.org/wiki/Croatia">Croatia</a>

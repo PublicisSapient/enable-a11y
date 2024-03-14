@@ -25,7 +25,7 @@
       </figcaption>
       <div class="sticky-table__container" tabindex="0">
         <table role="grid" aria-readonly="true" class="pagination__table deque-table-sortable" data-pagecount="7"
-          data-pagination-alert-template="Now dislaying rows ${n} through ${m}" data-pagination-button-spread="5"
+          data-pagination-alert-template="Now displaying rows ${n} through ${m}" data-pagination-button-spread="5"
           data-pagination-mobile-button-spread="4" aria-labelledby="sortable-paginated-table-example__caption"
           data-aria-live-update="The table ${caption} is now ${sortedBy}"
           data-ascending-label="Sorted in ascending order" data-descending-label="Sorted in descending order">
