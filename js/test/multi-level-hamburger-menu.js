@@ -2,7 +2,6 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-import puppeteer from 'puppeteer';
 
 let mobileBrowser, desktopBrowser; 
 
