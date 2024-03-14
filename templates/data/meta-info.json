@@ -24,6 +24,11 @@
     "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
     "isNPM": "true"
   },
+  "animated-hide-show.php": {
+    "title": "Animated Hide Show",
+    "desc": "",
+    "wip": true
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
@@ -72,8 +77,7 @@
   },
   "focus-styling.php": {
     "title": "Focus Styling",
-    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them.",
-    "wip": true
+    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
   },
   "form-error-checking.php": {
     "title": "Accessible Form Error Checking",
@@ -82,8 +86,7 @@
   "form.php": {
     "title": "Accessible Form Structure",
     "desc": "Learn about proper HTML form structure.  You'd be surprised how often this is not done correctly.",
-    "toRefactor": false,
-    "wip": false
+    "toRefactor": false
   },
   "heading.php": {
     "title": "Accessible Headings",
@@ -104,8 +107,7 @@
   },
   "link.php": {
     "title": "Accessible Links",
-    "desc": "Links are easy to code accessibly, but it's nice to give more context",
-    "wip": true
+    "desc": "Links are easy to code accessibly, but it's nice to give more context"
   },
   "listbox.php": {
     "title": "Accessible Select Boxes (a.k.a. Listboxes)",
@@ -118,8 +120,7 @@
   },
   "marquee.php": {
     "title": "The Marquee Role",
-    "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them.",
-    "wip": true
+    "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
     "title": "Accessible Math Equations",
@@ -218,7 +219,7 @@
   "text-contrast.php": {
     "title": "Accessible Text Contrast",
     "desc": "How can you check your design for text contrast issues? How about for text on top of photographic or gradient backgrounds? Read on.",
-    "wip": "true"
+    "wip": true
   },
   "text-resize.php": {
     "title": "Resizable Typography",
@@ -249,7 +250,7 @@
   "zoomable-viewport-units.php": {
     "title": "Accessible Viewport Units",
     "desc": "Text measured in viewport units usually don't resize with a web browser's native text resizing capability.  Learn how to work around this.",
-    "wip": "true"
+    "wip": true
   },
   "chart.php": {
     "title": "Accessible Charts",

@@ -23,6 +23,7 @@
     Faulkner</a>.
   The pause first example was from <a href="https://css-tricks.com/pause-gif-details-summary/">Chris
     Coyier</a>.
+</p>
 
 
 <h2>Animation off by default</h2>
