@@ -8,13 +8,18 @@ describe('Carousel Tests', () => {
   beforeAll(async () => {
   });
 
+  // TODO: Fix inconsistent results
+  it.skip('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/carousel.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
+
 
   // Test #1
   it('Test carousel type #1 (list of links)', async () => {
     let domInfo;
 
     await page.goto(`${config.BASE_URL}/carousel.php`);
-
     
     // wait until all content loads
     await page.waitForSelector('#example1');

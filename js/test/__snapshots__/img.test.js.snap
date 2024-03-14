@@ -1,0 +1,2818 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Img Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Images - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Images">
+<meta property="og:description" content="How to code both <img> tags and background images so they are understandable by screen reader users.">
+<meta property="og:image" content="/images/posters/img.jpg?1">
+<meta property="og:url" content="/img.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="How to code both <img> tags and background images so they are understandable by screen reader users.">
+<meta name="twitter:title" content="Accessible Images">
+<meta name="twitter:image" content="/images/posters/img.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link rel="stylesheet" type="text/css" href="css/img.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-images--heading" tabindex="-1">Accessible Images</h1><!-- <aside class="notes">
+
+            <h2>Notes</h2>
+
+            <ul>
+                <li>Both HTML and ARIA role work that same in NVDA and Voiceover.</li>
+            </ul>
+        </aside> -->
+
+
+<p>
+  When the HTML <code>&lt;img&gt;</code> tag was first supported the NCSA Mosaic web browser by Marc Andreeson in 1993,
+  it changed the World Wide Web from a text-only to a multimedia platform. Other browsers that couldn't render images
+  (like the terminal based Lynx web browser) needed a fallback so that users of their browsers could show something
+  meaningful instead of images. Tony Johnson, the creator of the Midas web browser, requested a text alternative that
+  could be used, and eventually that became the <code>alt</code> attribute.
+</p>
+
+<p>
+  "Alt text" not only is great for accessibility, it's also good to make your images come up in search engines. Good
+  "alt text" handles both use cases well.
+</p>
+
+<p>
+  Creating accessible alternative text is a discussion on itself. <a href="https://webaim.org">WebAIM</a> has a great
+  introductory article about <a href="https://webaim.org/techniques/alttext/">Alternative Text</a> that is highly
+  recommended. I also recommend <a href="https://www.scottohara.me/">Scott O'Hara's</a> in depth article <a href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html">Contextually Marking up
+    accessible images and SVGs</a>.
+</p>
+
+
+<h2 id="html5-img-tag--heading" tabindex="-1"><a class="heading__deeplink" href="#html5-img-tag--heading" title="Permalink to HTML5 img tag" aria-label="Permalink to HTML5 img tag">HTML5 img tag</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  The easiest way to add images to a web page.
+</p>
+
+<div id="html5-example" class="enable-example">
+  <img src="images/card_icons.png" width="100" height="94" alt="Debit, Visa, MasterCard, American Express, Discover Network">
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="html5-example__steps" class="showcode__steps"><label for="html5-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="html5-example__steps--select" data-showcode-for="html5-example" data-replace-html-rules="{}"><option value=""></option><option value="alt" data-showcode-notes="You must <strong>always</strong> have an alt attribute that is meaningful. If your image is decorative, see the next example.">Step #1: Add an alt attribute</option></select></div>
+                          <div id="html5-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="html5-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="html5-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="html5-example__example-desc" class="showcode__example--desc">
+                <label for="html5-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="html5-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="html5-example" data-showcode-props="html5-example-props" tabindex="0" aria-describedby="html5-example__example-desc">&lt;img<br>  src="images/card_icons.png"<br>  width="100"<br>  height="94"<br>  alt="Debit, Visa, MasterCard, American Express, Discover Network"<br>&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="html5-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Add an alt attribute",
+    "highlight": "alt",
+    "notes": "You must <strong>always</strong> have an alt attribute that is meaningful. If your image is decorative, see the next example."
+  }]
+}
+</script>
+
+<h2 id="decorative-image--heading" tabindex="-1"><a class="heading__deeplink" href="#decorative-image--heading" title="Permalink to Decorative Image" aria-label="Permalink to Decorative Image">Decorative Image</a></h2>
+
+<div class="enable-stats">
+                    <div class="enable-stats__desc enable-stats__desc--style">
+                    <div class="enable-stats__center">
+                        <img class="enable-stats__icon" src="images/icons/style.svg" alt="" role="presentation">
+                        <span class="enable-stats__label">Important if the image has the same information available in the surrounding text.</span>
+            </div>
+                </div>
+                    
+</div>
+<p>
+  A decorative image is an image that is used to enhance an idea presented in text,
+  but is not necessary to understand it. Icons around navigation items and error icons,
+  around error text are perfect examples.
+</p>
+
+<div id="decorative-example" class="enable-example decorative-example">
+  <img class="decorative-example__icon" src="images/bomb.png" alt="">
+  <p><strong>You made an error.</strong></p>
+  <p>Please back away from the keyboard to avoid any further damage.</p>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="decorative-example__steps" class="showcode__steps"><label for="decorative-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="decorative-example__steps--select" data-showcode-for="decorative-example" data-replace-html-rules="{}"><option value=""></option><option value="alt" data-showcode-notes="Note that not including an alt attribute is not an alternative to a blank alt attribute. The alt attribute must always be included.">Step #1: Use a blank alt attribute</option></select></div>
+                          <div id="decorative-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="decorative-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="decorative-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="decorative-example__example-desc" class="showcode__example--desc">
+                <label for="decorative-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="decorative-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="decorative-example" data-showcode-props="decorative-example-props" tabindex="0" aria-describedby="decorative-example__example-desc">&lt;img<br>  class="decorative-example__icon"<br>  src="images/bomb.png"<br>  alt=""<br>&gt;<br>&lt;p&gt;<br>  &lt;strong&gt;<br>    You made an error.<br>  &lt;/strong&gt;<br>&lt;/p&gt;<br>&lt;p&gt;<br>  Please back away from the keyboard to avoid any further damage.<br>&lt;/p&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="decorative-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Use a blank alt attribute",
+    "highlight": "alt",
+    "notes": "Note that not including an alt attribute is not an alternative to a blank alt attribute. The alt attribute must always be included."
+  }]
+}
+</script>
+
+
+<h2 id="aria-example--heading" tabindex="-1"><a class="heading__deeplink" href="#aria-example--heading" title="Permalink to ARIA Example" aria-label="Permalink to ARIA Example">ARIA Example</a></h2>
+
+<p>There are many sites that include images using the CSS <code>background-image</code> or <code>background</code>
+  properties. Unless these images are decorative, we need to include alternative text as a fallback for these images as
+  well. This can be done using <code>aria-label</code> with the <code>img</code> role.
+</p>
+
+<p>Note that developers should use <code>&lt;img&gt;</code> tags wherever possible instead of this method. Not only is
+  it better for SEO, but also for text based browsers as well.</p>
+
+<p>The code in this example is based on that from
+  <a href="http://pauljadam.com/demos/img.html">Paul J Adam's img role demo</a>.
+</p>
+
+
+
+
+<div id="aria-example" class="enable-example clearfix">
+  <div class="sprite card_icons amex" role="img" aria-label="American Express"></div>
+  <div class="sprite card_icons discover" role="img" aria-label="Discover Network"></div>
+  <div class="sprite card_icons visa" role="img" aria-label="Visa"></div>
+  <div class="sprite card_icons master" role="img" aria-label="MasterCard"></div>
+</div>
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-3" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-3" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example__steps" class="showcode__steps"><label for="aria-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example__steps--select" data-showcode-for="aria-example" data-replace-html-rules="{}"><option value=""></option><option value="role" data-showcode-notes="This is perfect when you are using background images and image sprites.">Step #1: Use role of img</option><option value="aria-label" data-showcode-notes="Does the same thing as <code>alt</code> in the HTML5 version.  If decorative, use <code>aria-label=&quot;&quot;</code>">Step #2: Put alt text inside the aria-label of the img element</option></select></div>
+                          <div id="aria-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example__example-desc" class="showcode__example--desc">
+                <label for="aria-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example" data-showcode-props="aria-example-props" tabindex="0" aria-describedby="aria-example__example-desc">&lt;div<br>  class="sprite card_icons amex"<br>  role="img"<br>  aria-label="American Express"<br>&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="sprite card_icons discover"<br>  role="img"<br>  aria-label="Discover Network"<br>&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="sprite card_icons visa"<br>  role="img"<br>  aria-label="Visa"<br>&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="sprite card_icons master"<br>  role="img"<br>  aria-label="MasterCard"<br>&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="aria-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use role of img",
+      "highlight": "role",
+      "notes": "This is perfect when you are using background images and image sprites."
+    },
+    {
+      "label": "Put alt text inside the aria-label of the img element",
+      "highlight": "aria-label",
+      "notes": "Does the same thing as <code>alt</code> in the HTML5 version.  If decorative, use <code>aria-label=\\"\\"</code>"
+    }
+  ]
+}
+</script>
+
+
+
+<h2 id="inline-svg-example-with-text-markup--heading" tabindex="-1"><a class="heading__deeplink" href="#inline-svg-example-with-text-markup--heading" title="Permalink to Inline SVG example with text markup" aria-label="Permalink to Inline SVG example with text markup">Inline SVG example with text markup</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">These rules should always be applied to all inline SVG images.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Although using the <code>&lt;img&gt;</code> tag is the best way to include an SVG into your web page (it's cachable,
+  the markup is less heavy, etc.), it is sometimes desirable to include the image inline (especially if you are making
+  it interactive via JavaScript). Follow the instructions below if you want your inline SVGs to be accessible.
+</p>
+
+<div id="inline-svg-example" class="enable-example">
+  <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text" focusable="false">
+    <title id="circle-alt">A dark blue circle with text inside</title>
+
+    <rect x="0" y="0" width="200" height="163" fill="#ffffff" fill-opacity="1"></rect>
+    <circle cx="81" cy="85" r="75" fill="#00a" stroke="#000" stroke-width="1"></circle>
+    <text id="svg-text" x="81" y="85" font-size="14px" text-anchor="middle" fill="#fff">
+      I am text in a circle
+    </text>
+  </svg>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-4" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-4" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="inline-svg-example__steps" class="showcode__steps"><label for="inline-svg-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="inline-svg-example__steps--select" data-showcode-for="inline-svg-example" data-replace-html-rules="{}"><option value=""></option><option value="role" data-showcode-notes="Just like the previous example">Step #1: Add a role of img</option><option value="focusable" data-showcode-notes="This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document.">Step #2: Add focusable="false" to the SVG tag</option><option value="aria-labelledby" data-showcode-notes="Note that aria-labelledby points to both the <code>title</code> and <code>text</code> tags. Screen readers will read both.">Step #3: Add aria-labelledby</option></select></div>
+                          <div id="inline-svg-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="inline-svg-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="inline-svg-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="inline-svg-example__example-desc" class="showcode__example--desc">
+                <label for="inline-svg-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="inline-svg-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="inline-svg-example" data-showcode-props="inline-svg-example-props" tabindex="0" aria-describedby="inline-svg-example__example-desc">&lt;svg<br>  width="200"<br>  height="163"<br>  role="img"<br>  aria-labelledby="circle-alt svg-text"<br>  focusable="false"<br>&gt;<br>  &lt;title id="circle-alt"&gt;<br>    A dark blue circle with text inside<br>  &lt;/title&gt;<br>  &lt;rect<br>    x="0"<br>    y="0"<br>    width="200"<br>    height="163"<br>    fill="#ffffff"<br>    fill-opacity="1"<br>  &gt;<br>  &lt;/rect&gt;<br>  &lt;circle<br>    cx="81"<br>    cy="85"<br>    r="75"<br>    fill="#00a"<br>    stroke="#000"<br>    stroke-width="1"<br>  &gt;<br>  &lt;/circle&gt;<br>  &lt;text<br>    id="svg-text"<br>    x="81"<br>    y="85"<br>    font-size="14px"<br>    text-anchor="middle"<br>    fill="#fff"<br>  &gt;<br>    I am text in a circle<br>  &lt;/text&gt;<br>&lt;/svg&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="inline-svg-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Add a role of img",
+      "highlight": "role",
+      "notes": "Just like the previous example"
+    },
+    {
+      "label": "Add focusable=\\"false\\" to the SVG tag",
+      "highlight": "focusable",
+      "notes": "This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document."
+    },
+    {
+      "label": "Add aria-labelledby",
+      "highlight": "aria-labelledby",
+      "notes": "Note that aria-labelledby points to both the <code>title</code> and <code>text</code> tags. Screen readers will read both."
+    }
+  ]
+}
+</script>
+
+<h2 id="using-svg-sprites--heading" tabindex="-1"><a class="heading__deeplink" href="#using-svg-sprites--heading" title="Permalink to Using SVG Sprites" aria-label="Permalink to Using SVG Sprites">Using SVG Sprites</a></h2>
+
+<p>
+  Many developers use SVG Sprites so they can put all their SVG icons in one place and have their <code>svg</code> tags point to a shape in the sprite inside their HTML code.  This can make your webpage more efficient when there are a lot of icons on a page, as described in the article <a href="https://cloudfour.com/thinks/svg-icon-stress-test/">Which SVG technique performs best for way too many icons?</a> by <a href="https://tylersticka.com/">Tyler Sticka</a>.  Here, we should you how to embedded them in an accessible ways like the other SVG examples on this page.
+</p>
+
+<p>
+  For more information about SVG Sprites, I would suggest <a href="https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/">Accessible SVG Icons with Inline Sprites</a> by <a href="https://home.social/@nice2meatu">Marco Hengstenberg</a>.
+</p>
+
+<div id="svg-sprite-example" class="enable-example">
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="visibility: hidden" class="sr-only">
+  <symbol id="android" viewBox="-147 -70 294 345">
+    <g fill="#a4c639">
+      <use stroke="#FFF" stroke-width="14.4" xlink:href="#a"></use>
+      <use transform="scale(-1 1)" xlink:href="#b"></use>
+      <g id="b" stroke="#FFF" stroke-width="7.2">
+        <rect width="13" height="86" x="14" y="-86" rx="6.5" transform="rotate(29)"></rect>
+        <rect id="c" width="48" height="133" x="-143" y="41" rx="24"></rect>
+        <use x="85" y="97" xlink:href="#c"></use>
+      </g>
+      <g id="a">
+        <ellipse cy="41" rx="91" ry="84"></ellipse>
+        <rect width="182" height="182" x="-91" y="20" rx="22"></rect>
+      </g>
+    </g>
+    <g fill="#FFF" stroke="#FFF" stroke-width="7.2">
+      <path d="M-95 44.5H95"></path>
+      <circle cx="-42" r="4"></circle>
+      <circle cx="42" r="4"></circle>
+    </g>
+  </symbol>
+  <symbol id="ios" viewBox="0 0 500 500">
+    <style>.st0{fill:url(#base_x27_s_outline_1_)}.st1{fill:url(#base_1_)}.st2{filter:url(#Adobe_OpacityMaskFilter)}.st3{fill:url(#XMLID_49_)}.st4{fill:url(#XMLID_50_)}.st5{fill:url(#SVGID_1_)}.st6{opacity:.8;mask:url(#SHINING_3_);fill:#fff;enable-background:new}.st7{fill:url(#XMLID_51_)}.st8{fill:url(#SVGID_2_)}.st9{filter:url(#Adobe_OpacityMaskFilter_1_)}.st10{filter:url(#Adobe_OpacityMaskFilter_2_)}.st11{mask:url(#XMLID_52_);fill:url(#XMLID_53_)}.st12{opacity:.8;fill:url(#XMLID_54_);enable-background:new}.st13{fill:url(#XMLID_55_)}</style>
+    <g id="_x3C_Grupo_x3E___x2F__BODY">
+      <linearGradient id="base_x27_s_outline_1_" x1="336.82" x2="336.82" y1="284.47" y2="186.63" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#666"></stop>
+        <stop offset=".5" stop-color="#ccc"></stop>
+        <stop offset=".59" stop-color="silver"></stop>
+        <stop offset=".75" stop-color="#a2a2a2"></stop>
+        <stop offset=".96" stop-color="#707070"></stop>
+        <stop offset="1" stop-color="#666"></stop>
+      </linearGradient>
+      <path id="base_x27_s_outline" d="M396 315.4c-9.3 0-19.8-2.5-25.5-6l-.8-.5.2-.9 3.8-13.9.4-1.5 1.4.8c4.7 2.8 12.8 5.7 21.6 5.7 9.6 0 15.4-4.2 15.4-11.3 0-6.2-4.2-10-15.4-14.1-17.3-6.2-25.7-15.3-25.7-27.8 0-16.3 13.9-27.6 33.7-27.6 10.9 0 18.2 2.6 22.5 4.8l.9.5-.3 1-3.9 13.5-.4 1.4-1.3-.7c-3.7-1.9-9.8-4.2-17.8-4.2-10.3 0-13.9 5.3-13.9 9.8 0 6.4 5 9.4 16.8 14 16.8 6.3 24.3 15.1 24.3 28.3-.1 13.1-9.5 28.7-36 28.7zm-79.1 0c-25.6 0-43.5-19.7-43.5-47.9 0-29.1 18.5-49.4 44.9-49.4 26.1 0 43.7 19.2 43.7 47.8 0 30-17.7 49.5-45.1 49.5zm.9-81.4c-14.7 0-24.2 13-24.2 33.1 0 19.4 9.7 32.4 24.2 32.4 14.4 0 24.1-13.3 24.1-33.1 0-15.6-7.6-32.4-24.1-32.4zm-56 79.9h-19.1v-68.7h19.1v68.7zm-9.6-75.8c-6 0-10.5-4.4-10.5-10.2 0-6 4.5-10.3 10.6-10.3s10.4 4.2 10.6 10.3c0 5.9-4.5 10.2-10.7 10.2z" class="st0"></path>
+      <linearGradient id="base_1_" x1="336.82" x2="336.82" y1="187.84" y2="283.26" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+        <stop offset=".05" stop-color="#ccc"></stop>
+        <stop offset=".06" stop-color="#c4c4c4"></stop>
+        <stop offset=".13" stop-color="#9c9c9c"></stop>
+        <stop offset=".2" stop-color="#797979"></stop>
+        <stop offset=".28" stop-color="#5d5d5d"></stop>
+        <stop offset=".36" stop-color="#474747"></stop>
+        <stop offset=".45" stop-color="#373737"></stop>
+        <stop offset=".55" stop-color="#2e2e2e"></stop>
+        <stop offset=".69" stop-color="#2b2b2b"></stop>
+      </linearGradient>
+      <path id="base" d="M252.3 218.7c-5.6 0-9.4 3.9-9.4 9.1 0 4.9 3.7 9 9.3 9 5.9 0 9.5-4.1 9.5-9-.2-5.1-3.7-9.1-9.4-9.1zm-8.4 94h16.7v-66.3h-16.7v66.3zm74.4-93.4c-25.9 0-43.7 19.9-43.7 48.2 0 26.8 16.3 46.7 42.3 46.7 25.2 0 43.8-17.6 43.8-48.3.1-26.3-15.7-46.6-42.4-46.6zm-.5 81.4c-16.1 0-25.5-14.8-25.5-33.6 0-18.9 8.8-34.3 25.5-34.3s25.3 16.3 25.3 33.6c0 19.2-9.1 34.3-25.3 34.3zm89.4-41.4c-12.2-4.8-17.6-8-17.6-15.1 0-5.4 4.5-11 15.1-11 8.6 0 15 2.6 18.4 4.4l3.9-13.5c-4.8-2.4-12-4.6-21.9-4.6-20 0-32.5 11.3-32.5 26.4 0 13.2 9.7 21.2 24.9 26.7 11.6 4.2 16.2 8.3 16.2 15.2 0 7.5-6 12.5-16.6 12.5-8.6 0-16.9-2.7-22.2-5.9l-3.8 13.9c5 3.1 15.1 5.9 24.9 5.9 23.5 0 34.7-12.8 34.7-27.6 0-13.3-7.6-21.3-23.5-27.3z" class="st1"></path>
+    </g>
+    <defs>
+      <filter id="Adobe_OpacityMaskFilter" width="184.2" height="71.3" x="242.9" y="218.7" filterUnits="userSpaceOnUse">
+        <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"></feColorMatrix>
+      </filter>
+    </defs>
+    <mask id="SHINING_3_" width="184.2" height="71.3" x="242.9" y="218.7" maskUnits="userSpaceOnUse">
+      <g id="XMLID_5_" class="st2">
+        <linearGradient id="XMLID_49_" x1="399.84" x2="399.84" y1="242.17" y2="282.58" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+          <stop offset=".2" stop-color="#fff"></stop>
+          <stop offset="1"></stop>
+        </linearGradient>
+        <path id="XMLID_9_" d="M405.1 219.4c-20 0-32.5 11.3-32.5 26.4 0 5.5 1.7 10.1 4.8 14 8.3-.9 16.7-1.7 25.2-2.4-9-3.9-13-7.1-13-13.2 0-5.4 4.5-11 15.1-11 8.6 0 15 2.6 18.4 4.4l3.9-13.5c-4.7-2.5-11.9-4.7-21.9-4.7z" class="st3"></path>
+        <linearGradient id="XMLID_50_" x1="317.63" x2="317.63" y1="222.55" y2="282.72" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+          <stop offset=".2" stop-color="#fff"></stop>
+          <stop offset="1"></stop>
+        </linearGradient>
+        <path id="XMLID_8_" d="M318.3 219.3c-25.9 0-43.7 19.9-43.7 48.2 0 4.2.4 8.2 1.2 12 5.6-1.6 11.3-3.2 17.1-4.6-.4-2.5-.6-5.1-.6-7.8 0-18.9 8.8-34.3 25.5-34.3 16.1 0 24.7 15.2 25.3 31.8 5.8-.9 11.7-1.8 17.6-2.6-1.6-24.4-17.1-42.7-42.4-42.7z" class="st4"></path>
+        <g id="XMLID_6_">
+          <g id="XMLID_7_">
+            <linearGradient id="SVGID_1_" x1="242.29" x2="242.29" y1="221.93" y2="293.26" gradientTransform="matrix(1 0 0 -1 10 512)" gradientUnits="userSpaceOnUse">
+              <stop offset=".2" stop-color="#fff"></stop>
+              <stop offset="1"></stop>
+            </linearGradient>
+            <path d="M243.9 290.1c5.4-2 11-4 16.7-5.9v-37.8h-16.7v43.7zm8.3-53.3c5.9 0 9.5-4.1 9.5-9-.1-5.2-3.7-9.1-9.4-9.1-5.6 0-9.4 3.9-9.4 9.1 0 5 3.7 9 9.3 9z" class="st5"></path>
+          </g>
+        </g>
+      </g>
+    </mask>
+    <path id="SHINING" d="M243.9 290.1c5.4-2 11-4 16.7-5.9v-37.8h-16.7v43.7zm161.2-70.7c-20 0-32.5 11.3-32.5 26.4 0 5.5 1.7 10.1 4.8 14 8.3-.9 16.7-1.7 25.2-2.4-9-3.9-13-7.1-13-13.2 0-5.4 4.5-11 15.1-11 8.6 0 15 2.6 18.4 4.4l3.9-13.5c-4.7-2.5-11.9-4.7-21.9-4.7zm-86.8-.1c-25.9 0-43.7 19.9-43.7 48.2 0 4.2.4 8.2 1.2 12 5.6-1.6 11.3-3.2 17.1-4.6-.4-2.5-.6-5.1-.6-7.8 0-18.9 8.8-34.3 25.5-34.3 16.1 0 24.7 15.2 25.3 31.8 5.8-.9 11.7-1.8 17.6-2.6-1.6-24.4-17.1-42.7-42.4-42.7zm-66-.6c-5.6 0-9.4 3.9-9.4 9.1 0 4.9 3.7 9 9.3 9 5.9 0 9.5-4.1 9.5-9-.2-5.1-3.7-9.1-9.4-9.1z" class="st6"></path>
+    <linearGradient id="XMLID_51_" x1="146.29" x2="146.29" y1="323.94" y2="-80.78" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#666"></stop>
+      <stop offset=".5" stop-color="#ccc"></stop>
+      <stop offset=".59" stop-color="silver"></stop>
+      <stop offset=".75" stop-color="#a2a2a2"></stop>
+      <stop offset=".96" stop-color="#707070"></stop>
+      <stop offset="1" stop-color="#666"></stop>
+    </linearGradient>
+    <path id="XMLID_1_" d="M118.6 344.6c-12.2 0-23.7-9.7-35.2-29.7-10.9-19.4-16.5-38.4-16.5-56.5 0-17.2 4.4-31.5 12.9-42.6C88.6 204.6 99.7 199 113 199c5.6 0 12.1 1.1 20.1 3.4 3.8 1.1 6.7 1.9 8.9 2.3v-1.1c.2-11.4 3.3-21.3 9-29.6 5.8-8.3 15.5-14.1 28.9-17.3l2.4-.5.5 2.4c.1.4.2.7.2 1 .1.5.3 1 .3 1.5v1.3c0 .4.1.8.1 1.3 0 4.8-1.1 10.1-3.4 15.8-2.3 5.8-5.9 11.2-10.8 16-3.5 3.5-7 6-10.6 7.6 1.1-.4 2.4-.8 3.7-1.2 7.8-2.6 14.3-3.9 19.8-3.9 9.2 0 17.5 2.5 24.8 7.6 4 2.7 8 6.6 11.9 11.5l1.5 1.8-1.8 1.5c-5.7 4.8-9.6 8.9-12.1 12.5-4.5 6.4-6.7 13.7-6.7 21.4 0 8.6 2.4 16.4 7.2 23.2 4.7 6.8 10.1 11.1 16.1 12.9l2.3.7-.7 2.3c-2.9 9.3-7.6 18.8-13.8 28.1-9.9 15-20 22.6-30.3 22.6-3.9 0-9.1-1.2-16.2-3.7-6-2.2-11.4-3.4-15.8-3.4-4.1 0-9.1 1.2-14.7 3.5-5.9 2.8-11.1 4.1-15.2 4.1z" class="st7"></path>
+    <linearGradient id="SVGID_2_" x1="145.98" x2="145.98" y1="158.55" y2="380.99" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+      <stop offset=".05" stop-color="#ccc"></stop>
+      <stop offset=".06" stop-color="#c4c4c4"></stop>
+      <stop offset=".13" stop-color="#9c9c9c"></stop>
+      <stop offset=".2" stop-color="#797979"></stop>
+      <stop offset=".28" stop-color="#5d5d5d"></stop>
+      <stop offset=".36" stop-color="#474747"></stop>
+      <stop offset=".45" stop-color="#373737"></stop>
+      <stop offset=".55" stop-color="#2e2e2e"></stop>
+      <stop offset=".69" stop-color="#2b2b2b"></stop>
+    </linearGradient>
+    <path d="M209.1 320.3c-9.5 14.4-18.9 21.6-28.3 21.6-3.7 0-8.8-1.2-15.4-3.5-6.5-2.4-12.1-3.5-16.6-3.5-4.4 0-9.7 1.2-15.6 3.6-6.1 2.5-10.9 3.7-14.5 3.7-11.3 0-22.2-9.6-33.1-28.5-10.7-18.9-16.2-37.3-16.2-55.3 0-16.8 4.2-30.5 12.4-41.2 8.3-10.6 18.6-15.8 31.2-15.8 5.4 0 11.8 1.1 19.5 3.3 7.6 2.2 12.7 3.3 15.2 3.3 3.2 0 8.5-1.2 15.7-3.7 7.3-2.4 13.6-3.7 19-3.7 8.8 0 16.6 2.4 23.4 7.2 3.9 2.6 7.7 6.4 11.4 11-5.7 4.8-9.9 9.1-12.5 13-4.7 6.8-7.2 14.4-7.2 22.8 0 9 2.5 17.3 7.6 24.5 5.1 7.3 10.9 11.9 17.4 13.9-2.6 8.5-7 17.8-13.4 27.3zm-31-141.6c-2.2 5.5-5.6 10.6-10.2 15.2-4 4-7.9 6.6-11.9 7.9-2.5.8-6.3 1.4-11.4 1.9.2-10.9 3.1-20.4 8.6-28.3 5.5-7.9 14.7-13.3 27.5-16.3.2 1 .4 1.8.6 2.4 0 .8.1 1.4.1 2.2-.2 4.6-1.3 9.6-3.3 15z" class="st8"></path>
+    <defs>
+      <filter id="Adobe_OpacityMaskFilter_1_" width="148" height="107.8" x="69.3" y="200.5" filterUnits="userSpaceOnUse">
+        <feFlood flood-color="#fff" flood-opacity="1" result="back"></feFlood>
+        <feBlend in="SourceGraphic" in2="back"></feBlend>
+      </filter>
+    </defs>
+    <mask id="XMLID_52_" width="148" height="107.8" x="69.3" y="200.5" maskUnits="userSpaceOnUse">
+      <g id="XMLID_29_" class="st9">
+        <defs>
+          <filter id="Adobe_OpacityMaskFilter_2_" width="148" height="107.8" x="69.3" y="200.5" filterUnits="userSpaceOnUse">
+            <feFlood flood-color="#fff" flood-opacity="1" result="back"></feFlood>
+            <feBlend in="SourceGraphic" in2="back"></feBlend>
+          </filter>
+        </defs>
+        <linearGradient id="XMLID_53_" x1="157.99" x2="73.14" y1="223.93" y2="378.1" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+          <stop offset=".23" stop-color="#fff"></stop>
+          <stop offset=".24" stop-color="#fcfcfc"></stop>
+          <stop offset=".39" stop-color="#cbcbcb"></stop>
+          <stop offset=".55" stop-color="#959595"></stop>
+          <stop offset=".74" stop-color="#585858"></stop>
+          <stop offset="1"></stop>
+        </linearGradient>
+        <path id="XMLID_30_" d="M199.9 224.1c3.7 0 7.3.2 10.9.5 1.9-1.9 4.1-3.9 6.6-6-3.7-4.6-7.6-8.4-11.4-11-6.8-4.7-14.6-7.2-23.4-7.2-5.4 0-11.8 1.3-19 3.7-7.3 2.5-12.5 3.7-15.7 3.7-2.5 0-7.6-1.1-15.2-3.3-7.7-2.2-14.1-3.3-19.5-3.3-12.7 0-23 5.3-31.2 15.8-8.3 10.7-12.4 24.3-12.4 41.2 0 16.3 4.5 32.9 13.3 49.9 16.2-48.7 62.5-84 117-84z" class="st11"></path>
+      </g>
+    </mask>
+    <linearGradient id="XMLID_54_" x1="157.99" x2="73.14" y1="223.93" y2="378.1" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+      <stop offset=".23" stop-color="#ccc"></stop>
+      <stop offset=".24" stop-color="#cecece"></stop>
+      <stop offset=".39" stop-color="#e4e4e4"></stop>
+      <stop offset=".55" stop-color="#f3f3f3"></stop>
+      <stop offset=".74" stop-color="#fcfcfc"></stop>
+      <stop offset="1" stop-color="#fff"></stop>
+    </linearGradient>
+    <path id="XMLID_2_" d="M199.9 224.1c3.7 0 7.3.2 10.9.5 1.9-1.9 4.1-3.9 6.6-6-3.7-4.6-7.6-8.4-11.4-11-6.8-4.7-14.6-7.2-23.4-7.2-5.4 0-11.8 1.3-19 3.7-7.3 2.5-12.5 3.7-15.7 3.7-2.5 0-7.6-1.1-15.2-3.3-7.7-2.2-14.1-3.3-19.5-3.3-12.7 0-23 5.3-31.2 15.8-8.3 10.7-12.4 24.3-12.4 41.2 0 16.3 4.5 32.9 13.3 49.9 16.2-48.7 62.5-84 117-84z" class="st12"></path>
+    <linearGradient id="XMLID_55_" x1="152.6" x2="152.6" y1="158.55" y2="380.99" gradientTransform="matrix(1 0 0 -1 0 502)" gradientUnits="userSpaceOnUse">
+      <stop offset=".05" stop-color="#ccc"></stop>
+      <stop offset=".06" stop-color="#c4c4c4"></stop>
+      <stop offset=".13" stop-color="#9c9c9c"></stop>
+      <stop offset=".2" stop-color="#797979"></stop>
+      <stop offset=".28" stop-color="#5d5d5d"></stop>
+      <stop offset=".36" stop-color="#474747"></stop>
+      <stop offset=".45" stop-color="#373737"></stop>
+      <stop offset=".55" stop-color="#2e2e2e"></stop>
+      <stop offset=".69" stop-color="#2b2b2b"></stop>
+    </linearGradient>
+    <path id="XMLID_27_" d="M118.6 342.2c3.6 0 8.5-1.2 14.5-3.7 5.9-2.4 11.2-3.6 15.6-3.6 4.5 0 10.1 1.1 16.6 3.5 6.6 2.3 11.7 3.5 15.4 3.5 9.4 0 18.8-7.2 28.3-21.6 6.4-9.6 10.8-18.8 13.5-27.5-6.5-2-12.3-6.6-17.4-13.9-5.1-7.3-7.6-15.5-7.6-24.5 0-8.4 2.4-16 7.2-22.8 1.5-2.2 3.5-4.5 6-7-3.6-.3-7.2-.5-10.9-.5-54.5 0-100.8 35.2-117.3 84.2.9 1.8 1.9 3.6 2.9 5.4 11 19 21.9 28.5 33.2 28.5z" class="st13"></path>
+  </symbol>
+  <symbol id="osx" viewBox="0 0 34 34">
+    <path id="path2" fill="#1d1d1f" d="M15.8 20.64c0 2.86-1.49 4.66-3.87 4.66s-3.87-1.81-3.87-4.66c0-2.87 1.49-4.67 3.87-4.67s3.87 1.8 3.87 4.67zm3.32-10.09l-1.04.07c-.59.04-.85.25-.85.63 0 .4.33.62.79.62.63 0 1.1-.41 1.1-.96zM34 17c0 9.49-7.51 17-17 17S0 26.49 0 17 7.51 0 17 0s17 7.51 17 17zm-13.06-6.66c0 1.38.76 2.22 2 2.22 1.05 0 1.71-.59 1.82-1.43h-.82c-.11.46-.47.71-1 .71-.7 0-1.13-.57-1.13-1.5 0-.92.43-1.47 1.13-1.47.56 0 .91.32 1 .73h.82c-.11-.82-.75-1.44-1.82-1.44-1.24-.01-2 .83-2 2.18zM9.51 8.24v4.24h.84v-2.6c0-.55.39-.99.9-.99.5 0 .82.3.82.78v2.81h.82V9.8c0-.51.35-.91.9-.91s.82.28.82.87v2.72h.84V9.55c0-.88-.5-1.4-1.36-1.4-.59 0-1.08.3-1.29.76h-.07c-.19-.46-.59-.76-1.17-.76-.57 0-1 .28-1.18.76h-.06v-.68zm7.78 12.4c0-3.69-2.06-6.01-5.36-6.01-3.3 0-5.36 2.32-5.36 6.01s2.06 6 5.36 6c3.3 0 5.36-2.32 5.36-6zm.52-8.09c.56 0 1.02-.24 1.28-.67h.07v.6h.81v-2.9c0-.89-.6-1.42-1.67-1.42-.97 0-1.65.47-1.74 1.18h.81c.09-.31.42-.48.89-.48.57 0 .87.26.87.73v.37l-1.15.07c-1.01.06-1.58.5-1.58 1.27-.01.76.59 1.25 1.41 1.25zm9.17 10.59c0-1.65-.96-2.61-3.38-3.14l-1.29-.28c-1.59-.35-2.21-.98-2.21-1.89 0-1.18 1.12-1.89 2.57-1.89 1.52 0 2.52.78 2.65 2.06h1.45c-.07-1.97-1.74-3.36-4.06-3.36-2.41 0-4.1 1.35-4.1 3.26 0 1.65 1.01 2.71 3.34 3.22l1.29.28c1.61.35 2.26 1 2.26 1.97 0 1.14-1.15 1.97-2.72 1.97-1.67 0-2.83-.76-3-2.01h-1.45c.14 2.01 1.83 3.31 4.37 3.31 2.59 0 4.28-1.35 4.28-3.5z"></path>
+  </symbol>
+  <symbol id="linux" viewBox="0 0 216 256">
+    <defs id="tux_fx">
+      <linearGradient id="gradient_belly_shadow">
+        <stop offset="0"></stop>
+        <stop offset="1" stop-opacity=".25"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_wing_tip_right_shadow">
+        <stop offset="0" stop-color="#110800"></stop>
+        <stop offset=".59" stop-color="#a65a00" stop-opacity=".8"></stop>
+        <stop offset="1" stop-color="#ff921e" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_wing_tip_right_glare_1">
+        <stop offset="0" stop-color="#7c7c7c"></stop>
+        <stop offset="1" stop-color="#7c7c7c" stop-opacity=".33"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_wing_tip_right_glare_2">
+        <stop offset="0" stop-color="#7c7c7c"></stop>
+        <stop offset="1" stop-color="#7c7c7c" stop-opacity=".33"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_foot_left_layer_1">
+        <stop offset="0" stop-color="#b98309"></stop>
+        <stop offset="1" stop-color="#382605"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_foot_left_glare">
+        <stop offset="0" stop-color="#ebc40c"></stop>
+        <stop offset="1" stop-color="#ebc40c" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_foot_right_shadow">
+        <stop offset="0"></stop>
+        <stop offset="1" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_foot_right_layer_1">
+        <stop offset="0" stop-color="#3e2a06"></stop>
+        <stop offset="1" stop-color="#ad780a"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_foot_right_glare">
+        <stop offset="0" stop-color="#f3cd0c"></stop>
+        <stop offset="1" stop-color="#f3cd0c" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_eyeball">
+        <stop offset="0" stop-color="#fefefc"></stop>
+        <stop offset=".75" stop-color="#fefefc"></stop>
+        <stop offset="1" stop-color="#d4d4d4"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_pupil_left_glare">
+        <stop offset="0" stop-color="#757574" stop-opacity="0"></stop>
+        <stop offset=".25" stop-color="#757574"></stop>
+        <stop offset=".5" stop-color="#757574"></stop>
+        <stop offset="1" stop-color="#757574" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_pupil_right_glare_2">
+        <stop offset="0" stop-color="#949494" stop-opacity=".39"></stop>
+        <stop offset=".5" stop-color="#949494"></stop>
+        <stop offset="1" stop-color="#949494" stop-opacity=".39"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_eyelid_left">
+        <stop offset="0" stop-color="#c8c8c8"></stop>
+        <stop offset="1" stop-color="#797978"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_eyelid_right">
+        <stop offset="0" stop-color="#747474"></stop>
+        <stop offset=".13" stop-color="#8c8c8c"></stop>
+        <stop offset=".25" stop-color="#a4a4a4"></stop>
+        <stop offset=".5" stop-color="#d4d4d4"></stop>
+        <stop offset=".62" stop-color="#d4d4d4"></stop>
+        <stop offset="1" stop-color="#7c7c7c"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_eyebrow">
+        <stop offset="0" stop-color="#646464" stop-opacity="0"></stop>
+        <stop offset=".31" stop-color="#646464" stop-opacity=".58"></stop>
+        <stop offset=".47" stop-color="#646464"></stop>
+        <stop offset=".73" stop-color="#646464" stop-opacity=".26"></stop>
+        <stop offset="1" stop-color="#646464" stop-opacity="0"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_beak_base">
+        <stop offset="0" stop-color="#020204"></stop>
+        <stop offset=".73" stop-color="#020204"></stop>
+        <stop offset="1" stop-color="#5c5c5c"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_mandible_lower">
+        <stop offset="0" stop-color="#d2940a"></stop>
+        <stop offset=".75" stop-color="#d89c08"></stop>
+        <stop offset=".87" stop-color="#b67e07"></stop>
+        <stop offset="1" stop-color="#946106"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_mandible_upper">
+        <stop offset="0" stop-color="#ad780a"></stop>
+        <stop offset=".12" stop-color="#d89e08"></stop>
+        <stop offset=".25" stop-color="#edb80b"></stop>
+        <stop offset=".39" stop-color="#ebc80d"></stop>
+        <stop offset=".53" stop-color="#f5d838"></stop>
+        <stop offset=".77" stop-color="#f6d811"></stop>
+        <stop offset="1" stop-color="#f5cd31"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_nares">
+        <stop offset="0" stop-color="#3a2903"></stop>
+        <stop offset=".55" stop-color="#735208"></stop>
+        <stop offset="1" stop-color="#ac8c04"></stop>
+      </linearGradient>
+      <linearGradient id="gradient_beak_corner">
+        <stop offset="0" stop-color="#f5ce2d"></stop>
+        <stop offset="1" stop-color="#d79b08"></stop>
+      </linearGradient>
+      <radialGradient id="fill_belly_shadow_left" cx="0" cy="0" r="1" gradientTransform="matrix(19 0 0 18 61.18 121.19)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_belly_shadow"></radialGradient>
+      <radialGradient id="fill_belly_shadow_right" cx="0" cy="0" r="1" gradientTransform="matrix(23.6 0 0 18 125.74 131.6)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_belly_shadow"></radialGradient>
+      <radialGradient id="fill_belly_shadow_middle" cx="0" cy="0" r="1" gradientTransform="matrix(9.35 0 0 10 94.21 127.47)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_belly_shadow"></radialGradient>
+      <linearGradient id="fill_foot_left_base" x1="23.18" x2="64.31" y1="193.01" y2="262.02" gradientUnits="userSpaceOnUse" xlink:href="#gradient_foot_left_layer_1"></linearGradient>
+      <linearGradient id="fill_foot_left_glare" x1="64.47" x2="77.41" y1="210.83" y2="235.21" gradientUnits="userSpaceOnUse" xlink:href="#gradient_foot_left_glare"></linearGradient>
+      <linearGradient id="fill_foot_right_shadow" x1="146.93" x2="150.2" y1="211.96" y2="235.73" gradientUnits="userSpaceOnUse" xlink:href="#gradient_foot_right_shadow"></linearGradient>
+      <linearGradient id="fill_foot_right_base" x1="151.5" x2="192.94" y1="253.02" y2="185.84" gradientUnits="userSpaceOnUse" xlink:href="#gradient_foot_right_layer_1"></linearGradient>
+      <linearGradient id="fill_foot_right_glare" x1="162.81" x2="161.59" y1="180.67" y2="191.64" gradientUnits="userSpaceOnUse" xlink:href="#gradient_foot_right_glare"></linearGradient>
+      <radialGradient id="fill_wing_tip_right_shadow_lower" cx="0" cy="0" r="1" gradientTransform="matrix(18.9901 5.08838 -5.34203 19.9367 169.71 194.53)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_wing_tip_right_shadow"></radialGradient>
+      <radialGradient id="fill_wing_tip_right_shadow_upper" cx="0" cy="0" r="1" gradientTransform="matrix(19.7224 -.83351 .62745 14.84675 169.71 189.89)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_wing_tip_right_shadow"></radialGradient>
+      <radialGradient id="fill_wing_tip_right_glare_1" cx="0" cy="0" r="1" gradientTransform="rotate(23.5 -332.242 532.18) scale(6.95 3.21)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_wing_tip_right_glare_1"></radialGradient>
+      <linearGradient id="fill_wing_tip_right_glare_2" x1="165.69" x2="168.27" y1="173.58" y2="173.47" gradientUnits="userSpaceOnUse" xlink:href="#gradient_wing_tip_right_glare_2"></linearGradient>
+      <radialGradient id="fill_eyeball_left" cx="0" cy="0" r="1" gradientTransform="matrix(10.23944 -.10723 .1642 15.67914 86.49 51.41)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyeball"></radialGradient>
+      <linearGradient id="fill_pupil_left_glare" x1="84.29" x2="89.32" y1="46.64" y2="55.63" gradientUnits="userSpaceOnUse" xlink:href="#gradient_pupil_left_glare"></linearGradient>
+      <radialGradient id="fill_eyelid_left" cx="0" cy="0" r="1" gradientTransform="rotate(-9.35 309.884 -497.172) scale(6.25 5.77)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyelid_left"></radialGradient>
+      <linearGradient id="fill_eyebrow_left" x1="83.59" x2="94.48" y1="32.51" y2="43.63" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyebrow"></linearGradient>
+      <radialGradient id="fill_eyeball_right" cx="0" cy="0" r="1" gradientTransform="rotate(-1.8 1695.327 -3731.952) scale(13.64 15.68)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyeball"></radialGradient>
+      <linearGradient id="fill_pupil_right_glare" x1="117.87" x2="123.66" y1="47.25" y2="54.11" gradientUnits="userSpaceOnUse" xlink:href="#gradient_pupil_right_glare_2"></linearGradient>
+      <linearGradient id="fill_eyelid_right" x1="112.9" x2="131.32" y1="36.23" y2="47.01" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyelid_right"></linearGradient>
+      <linearGradient id="fill_eyebrow_right" x1="119.16" x2="131.42" y1="31.56" y2="43.14" gradientUnits="userSpaceOnUse" xlink:href="#gradient_eyebrow"></linearGradient>
+      <radialGradient id="fill_beak_base" cx="0" cy="0" r="1" gradientTransform="rotate(-36 141.335 -120.193) scale(11.44 10.38)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_beak_base"></radialGradient>
+      <radialGradient id="fill_mandible_lower_base" cx="0" cy="0" r="1" gradientTransform="matrix(25.10142 -10.34606 7.26701 17.6311 109.77 70.61)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_mandible_lower"></radialGradient>
+      <linearGradient id="fill_mandible_upper_base" x1="78.09" x2="126.77" y1="69.26" y2="68.88" gradientUnits="userSpaceOnUse" xlink:href="#gradient_mandible_upper"></linearGradient>
+      <radialGradient id="fill_naris_left" cx="0" cy="0" r="1" gradientTransform="matrix(1.32 0 0 1.42 92.11 59.88)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_nares"></radialGradient>
+      <radialGradient id="fill_naris_right" cx="0" cy="0" r="1" gradientTransform="matrix(2.78 0 0 1.62 104.65 59.7)" gradientUnits="userSpaceOnUse" xlink:href="#gradient_nares"></radialGradient>
+      <linearGradient id="fill_beak_corner" x1="126.74" x2="126.74" y1="67.49" y2="71.09" gradientUnits="userSpaceOnUse" xlink:href="#gradient_beak_corner"></linearGradient>
+      <filter id="blur_belly_shadow_left">
+        <feGaussianBlur stdDeviation="0.64 0.55"></feGaussianBlur>
+      </filter>
+      <filter id="blur_belly_shadow_right">
+        <feGaussianBlur stdDeviation=".98"></feGaussianBlur>
+      </filter>
+      <filter id="blur_belly_shadow_middle">
+        <feGaussianBlur stdDeviation=".68"></feGaussianBlur>
+      </filter>
+      <filter id="blur_belly_shadow_lower" width="2.6" height="1.4" x="-.8" y="-.2">
+        <feGaussianBlur stdDeviation="1.25"></feGaussianBlur>
+      </filter>
+      <filter id="blur_belly_glare" width="2.6" height="2" x="-.8" y="-.5">
+        <feGaussianBlur stdDeviation="1.78 2.19"></feGaussianBlur>
+      </filter>
+      <filter id="blur_head_glare" width="1.6" height="1.6" x="-.3" y="-.3">
+        <feGaussianBlur stdDeviation="1.73"></feGaussianBlur>
+      </filter>
+      <filter id="blur_neck_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".78"></feGaussianBlur>
+      </filter>
+      <filter id="blur_wing_left_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".98"></feGaussianBlur>
+      </filter>
+      <filter id="blur_wing_right_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="1.19 1.17"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_left_layer_1" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="3.38"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_left_layer_2">
+        <feGaussianBlur stdDeviation="2.1 2.06"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_left_glare">
+        <feGaussianBlur stdDeviation=".32"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_right_shadow">
+        <feGaussianBlur stdDeviation="1.95 1.9"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_right_layer_1" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="4.12"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_right_layer_2" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="3.12 3.37"></feGaussianBlur>
+      </filter>
+      <filter id="blur_foot_right_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".41"></feGaussianBlur>
+      </filter>
+      <filter id="blur_wing_tip_right_shadow_lower" width="1.6" height="1.6" x="-.3" y="-.3">
+        <feGaussianBlur stdDeviation="2.45"></feGaussianBlur>
+      </filter>
+      <filter id="blur_wing_tip_right_shadow_upper" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="1.12 0.81"></feGaussianBlur>
+      </filter>
+      <filter id="blur_wing_tip_right_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".88"></feGaussianBlur>
+      </filter>
+      <filter id="blur_pupil_left_glare" width="1.6" height="1.6" x="-.3" y="-.3">
+        <feGaussianBlur stdDeviation=".44"></feGaussianBlur>
+      </filter>
+      <filter id="blur_eyebrow_left">
+        <feGaussianBlur stdDeviation=".12"></feGaussianBlur>
+      </filter>
+      <filter id="blur_pupil_right_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".45"></feGaussianBlur>
+      </filter>
+      <filter id="blur_eyebrow_right">
+        <feGaussianBlur stdDeviation=".13"></feGaussianBlur>
+      </filter>
+      <filter id="blur_beak_shadow_lower" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation="1.75"></feGaussianBlur>
+      </filter>
+      <filter id="blur_beak_shadow_upper">
+        <feGaussianBlur stdDeviation="0.8 0.74"></feGaussianBlur>
+      </filter>
+      <filter id="blur_mandible_lower_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".77"></feGaussianBlur>
+      </filter>
+      <filter id="blur_mandible_upper_shadow">
+        <feGaussianBlur stdDeviation=".65"></feGaussianBlur>
+      </filter>
+      <filter id="blur_mandible_upper_glare" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".73"></feGaussianBlur>
+      </filter>
+      <filter id="blur_naris_left" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".1"></feGaussianBlur>
+      </filter>
+      <filter id="blur_naris_right">
+        <feGaussianBlur stdDeviation=".1"></feGaussianBlur>
+      </filter>
+      <filter id="blur_beak_corner" width="1.4" height="1.4" x="-.2" y="-.2">
+        <feGaussianBlur stdDeviation=".23"></feGaussianBlur>
+      </filter>
+      <clipPath id="clip_body">
+        <use xlink:href="#body_base"></use>
+      </clipPath>
+      <clipPath id="clip_wing_left">
+        <use xlink:href="#wing_left_base"></use>
+      </clipPath>
+      <clipPath id="clip_wing_right">
+        <use xlink:href="#wing_right_base"></use>
+      </clipPath>
+      <clipPath id="clip_foot_left">
+        <use xlink:href="#foot_left_base"></use>
+      </clipPath>
+      <clipPath id="clip_foot_right">
+        <use xlink:href="#foot_right_base"></use>
+      </clipPath>
+      <clipPath id="clip_wing_tip_right">
+        <use xlink:href="#wing_tip_right_base"></use>
+      </clipPath>
+      <clipPath id="clip_eye_left">
+        <use xlink:href="#eyeball_left"></use>
+      </clipPath>
+      <clipPath id="clip_pupil_left">
+        <use xlink:href="#pupil_left_base"></use>
+      </clipPath>
+      <clipPath id="clip_eye_right">
+        <use xlink:href="#eyeball_right"></use>
+      </clipPath>
+      <clipPath id="clip_pupil_right">
+        <use xlink:href="#pupil_right_base"></use>
+      </clipPath>
+      <clipPath id="clip_mandible_lower">
+        <use xlink:href="#mandible_lower_base"></use>
+      </clipPath>
+      <clipPath id="clip_mandible_upper">
+        <use xlink:href="#mandible_upper_base"></use>
+      </clipPath>
+      <clipPath id="clip_beak">
+        <use xlink:href="#mandible_lower_base"></use>
+        <use xlink:href="#mandible_upper_base"></use>
+      </clipPath>
+    </defs>
+    <g id="tux">
+      <g id="body">
+        <path id="body_base" fill="#020204" d="M106.95 0c-6 0-12.02 1.18-17.46 4.12-5.78 3.11-10.52 8.09-13.43 13.97-2.92 5.88-4.06 12.16-4.24 19.08-.33 13.14.3 26.92 1.29 39.41.26 3.8.74 6.02.25 9.93-1.62 8.3-8.88 13.88-12.76 21.17-4.27 8.04-6.07 17.13-9.29 25.65-2.95 7.79-7.09 15.1-9.88 22.95-3.91 10.97-5.08 23.03-2.5 34.39 1.97 8.66 6.08 16.78 11.62 23.73-.8 1.44-1.58 2.91-2.4 4.34-2.57 4.43-5.71 8.64-7.17 13.55-.73 2.45-1.02 5.07-.55 7.59.47 2.52 1.75 4.93 3.75 6.53 1.31 1.04 2.9 1.72 4.53 2.1 1.63.37 3.32.46 5 .43 6.37-.14 12.55-2.07 18.71-3.69 3.66-.96 7.34-1.81 11.03-2.58 13.14-2.69 27.8-1.61 39.99.15 4.13.63 8.23 1.44 12.29 2.43 6.36 1.54 12.69 3.5 19.23 3.69 1.72.05 3.46-.03 5.14-.4 1.68-.38 3.31-1.06 4.65-2.13 2.01-1.6 3.29-4.02 3.76-6.54.47-2.52.18-5.15-.56-7.61-1.48-4.92-4.65-9.11-7.27-13.52-1.04-1.75-2-3.53-3.03-5.28 7.9-8.87 14.26-19.13 17.94-30.4 4.01-12.3 4.75-25.55 3.06-38.38-1.69-12.83-5.76-25.27-11.11-37.05-6.72-14.76-12.37-20.1-16.47-33.07-4.42-14.02-.77-30.61-4.06-43.32-1.17-4.32-3.04-8.45-5.45-12.23-2.82-4.43-6.4-8.39-10.65-11.47C124.13 2.62 115.61 0 106.95 0z"></path>
+        <path id="belly" fill="#fdfdfb" d="M83.13 74c-.9 1.13-1.48 2.49-1.84 3.89-.35 1.4-.48 2.85-.54 4.3-.11 2.89.07 5.83-.7 8.62-.82 2.98-2.65 5.57-4.44 8.08-3.11 4.36-6.25 8.84-7.78 13.97a24.81 24.81 0 0 0-.91 9.62c-3.47 5.1-6.48 10.53-8.98 16.18-3.78 8.57-6.37 17.69-7.28 27.01-1.12 11.41.34 23.15 4.85 33.69 3.25 7.63 8.11 14.6 14.38 20.04a49.15 49.15 0 0 0 10.5 6.97c13.11 6.45 29.31 6.46 42.2-.41 6.74-3.59 12.43-8.84 17.91-14.15 3.3-3.2 6.59-6.48 9.11-10.32 4.85-7.41 6.54-16.41 7.59-25.2 1.83-15.36 1.89-31.6-4.85-45.53-2.32-4.8-5.41-9.22-9.12-13.05-.98-6.7-2.93-13.27-5.76-19.42-2.05-4.45-4.54-8.68-6.44-13.18-.78-1.85-1.46-3.75-2.32-5.56-.87-1.81-1.93-3.55-3.39-4.94-1.48-1.42-3.33-2.43-5.28-3.07-1.95-.65-4.01-.94-6.06-1.04-4.11-.21-8.22.33-12.33.16-3.27-.13-6.53-.7-9.8-.51-1.63.1-3.26.39-4.78 1.01-1.52.61-2.92 1.56-3.94 2.84z"></path>
+        <g id="body_self_shadows">
+          <path id="belly_shadow_left" fill="url(#fill_belly_shadow_left)" d="M68.67 115.18c.87 1.31-.55 5.84 19.86 2.94 0 0-3.59.39-7.12 1.21-5.49 1.84-10.27 3.89-13.97 6.61-3.65 2.7-6.33 6.21-9.68 9.22 0 0 5.43-9.92 6.78-12.91 1.36-2.99-.22-2.85.85-7.25s3.69-8.63 3.69-8.63-2.14 6.22-.41 8.81z" clip-path="url(#clip_body)" filter="url(#blur_belly_shadow_left)" opacity=".25"></path>
+          <path id="belly_shadow_right" fill="url(#fill_belly_shadow_right)" d="M134.28 113.99c-4.16 2.9-6.6 2.56-11.64 3.12-5.05.57-18.7.36-18.7.36s1.97-.03 6.36.78c4.38.82 13.31 1.6 18.34 3.51 5.04 1.92 6.87 2.47 9.93 4.4 4.35 2.75 7.55 7.06 11.71 10.08 0 0 .2-4-1.48-6.99s-6.2-7.7-7.53-12.1c-1.32-4.4-1.96-13.04-1.96-13.04s-.88 6.99-5.03 9.88z" clip-path="url(#clip_body)" filter="url(#blur_belly_shadow_right)" opacity=".42"></path>
+          <path id="belly_shadow_middle" fill="url(#fill_belly_shadow_middle)" d="M95.17 107.81c-.16 1.25-.36 2.5-.6 3.74-.12.61-.26 1.22-.48 1.8-.23.58-.56 1.14-1.02 1.55-.41.37-.9.62-1.4.85-1.94.88-4.01 1.47-6.12 1.74.84.06 1.68.14 2.53.23.53.06 1.06.12 1.57.25.52.14 1.03.34 1.46.65.47.35.84.82 1.12 1.34.55 1.02.73 2.2.83 3.37.13 1.48.14 2.98.03 4.46.1-.99.31-1.98.62-2.92.57-1.72 1.47-3.32 2.69-4.65.49-.52 1.02-1.01 1.6-1.42a8.858 8.858 0 0 1 6.24-1.51c-2.21.09-4.44-.6-6.2-1.93-.9-.68-1.68-1.52-2.22-2.5a6.991 6.991 0 0 1-.65-5.05z" clip-path="url(#clip_body)" filter="url(#blur_belly_shadow_middle)" opacity=".2"></path>
+          <path id="belly_shadow_lower" d="M89.85 137.14a75.366 75.366 0 0 0-2.17 12.31c-.55 5.87-.42 11.78-.74 17.67-.26 4.99-.85 10.04.02 14.97a25.27 25.27 0 0 0 2.2 6.78c.16-.82.29-1.64.36-2.47.37-4-.3-8.01-.53-12.01-.4-7.02.57-14.04.97-21.06.3-5.39.27-10.8-.11-16.19z" clip-path="url(#clip_body)" filter="url(#blur_belly_shadow_lower)" opacity=".11"></path>
+        </g>
+        <g id="body_glare">
+          <path id="belly_glare" fill="#7c7c7c" d="M160.08 131.23c1.03-.16 7.34 5.21 6.48 7.21-.86 1.99-2.49.79-3.65.8-1.16.02-4.33 1.46-4.86.55-.54-.91 1.4-3.03 2.41-4.81.82-1.43-1.4-3.59-.38-3.75z" clip-path="url(#clip_body)" filter="url(#blur_belly_glare)" opacity=".75"></path>
+          <path id="head_glare" fill="#7c7c7c" d="M121.52 11.12c-2.21 1.56-1.25 3.51-.3 5.46.95 1.96-2.09 7.59-2.12 7.83-.03.24 5.98-2.85 7.62-4.87 1.94-2.37 6.83 3.22 6.56 2.37.01-1.52-9.55-12.34-11.76-10.79z" clip-path="url(#clip_body)" filter="url(#blur_head_glare)"></path>
+          <path id="neck_glare" fill="#838384" d="M138.27 76.63c-1.86 1.7.88 4.25 2.17 7.24.81 1.86 3.04 4.49 5.2 4.07 1.63-.32 2.63-2.66 2.48-4.3-.3-3.18-2.98-3.93-4.93-5.02-1.54-.86-3.61-3.18-4.92-1.99z" clip-path="url(#clip_body)" filter="url(#blur_neck_glare)"></path>
+        </g>
+      </g>
+      <g id="wings">
+        <g id="wing_left">
+          <path id="wing_left_base" fill="#020204" d="M63.98 100.91c-6.1 6.92-12.37 13.63-15.81 21.12-1.71 3.8-2.51 7.93-3.68 11.93-1.32 4.54-3.12 8.94-5.14 13.22-1.87 3.95-3.93 7.81-5.98 11.66-1.5 2.81-3.02 5.67-3.54 8.81-.41 2.48-.18 5.04.46 7.47.63 2.43 1.64 4.75 2.79 6.98 4.88 9.55 12.21 17.77 20.89 24.07 3.94 2.85 8.15 5.32 12.58 7.35 2.4 1.09 4.92 2.07 7.56 2.11 1.32.03 2.65-.19 3.86-.72 1.2-.53 2.28-1.38 3-2.49.88-1.36 1.18-3.05 1-4.66-.18-1.61-.81-3.15-1.65-4.53-2.06-3.38-5.31-5.83-8.44-8.25a283.364 283.364 0 0 1-19.55-16.58c-1.76-1.65-3.53-3.34-4.76-5.42-1.2-2.02-1.85-4.32-2.29-6.63-1.21-6.33-.9-12.99 1.25-19.07.85-2.38 1.96-4.65 3.04-6.93 1.86-3.95 3.62-7.98 6.07-11.6 3.05-4.51 7.13-8.33 9.61-13.17 2.1-4.09 2.95-8.68 3.76-13.2.64-3.54 1.85-7 2.47-10.54-1.21 2.3-5.11 6.07-7.5 9.07z"></path>
+          <path id="wing_left_glare" fill="#7c7c7c" d="M56.96 126.1c-2 1.84-3.73 3.97-5.13 6.31-2.3 3.84-3.65 8.16-5.33 12.31-1.24 3.09-2.69 6.2-2.86 9.53-.09 1.71.16 3.42.22 5.13s-.1 3.49-.94 4.98a6.048 6.048 0 0 1-3.22 2.71c1.83.61 3.45 1.79 4.6 3.33.96 1.3 1.58 2.81 2.41 4.18.68 1.12 1.51 2.16 2.54 2.97 1.02.82 2.25 1.4 3.54 1.56 1.79.23 3.65-.36 4.97-1.58-1.66-15.55-.14-31.42 4.44-46.37.29-.94.59-1.89.67-2.87.07-.99-.12-2.03-.72-2.81a2.989 2.989 0 0 0-2.77-1.17c-.52.06-1.03.26-1.45.57-.42.32-.76.74-.97 1.22z" clip-path="url(#clip_wing_left)" filter="url(#blur_wing_left_glare)" opacity=".95"></path>
+        </g>
+        <g id="wing_right">
+          <path id="wing_right_base" fill="#020204" d="M162.76 127.12c5.24 4.22 8.57 10.59 9.6 17.24.8 5.18.28 10.51-.89 15.62-1.17 5.12-2.97 10.06-4.77 15-.71 1.96-1.43 3.95-1.71 6.02-.29 2.08-.11 4.27.89 6.11 1.15 2.11 3.29 3.56 5.59 4.24 2.27.68 4.72.66 7.02.09 2.3-.57 6.17-1.31 8.04-2.77 4.75-3.69 5.88-10.1 7.01-15.72 1.17-5.87.6-12.02-.43-17.95-1.41-8.09-3.78-15.99-6.79-23.62a82.272 82.272 0 0 0-8.44-15.96c-3.32-4.89-8.02-8.7-11.5-13.48-1.21-1.66-2.66-3.38-3.84-5.06-2.56-3.62-1.98-2.94-3.57-5.29-1.15-1.7-2.97-2.28-4.88-3.02-1.92-.74-4.06-.96-6.04-.41-2.6.73-4.73 2.79-5.86 5.24-1.13 2.46-1.33 5.28-.89 7.95.57 3.44 2.14 6.64 3.92 9.64 2 3.39 4.32 6.66 7.35 9.18 3.16 2.63 6.98 4.37 10.19 6.95z"></path>
+          <path id="wing_right_glare" fill="#838384" d="M150.42 118.99c.42.4.86.81 1.31 1.19 3.22 2.63 4.93 5.58 8.2 8.16 5.34 4.22 10.75 11.5 11.8 18.15.82 5.19-.26 8.01-1.58 14.12-1.32 6.12-5.06 14.78-7.09 20.68-.8 2.35 1.64 1.38 1.32 3.86-.16 1.22-.18 2.45-.03 3.67.02-.23.03-.48.06-.71.39-3.38 1.42-6.63 2.55-9.82 2.17-6.13 4.66-12.15 6.38-18.45 1.72-6.29 1.53-10.82.63-16.23-1.13-6.81-5.09-13.09-10.69-17.24-3.97-2.93-8.64-4.81-12.86-7.38z" clip-path="url(#clip_wing_right)" filter="url(#blur_wing_right_glare)"></path>
+        </g>
+      </g>
+      <g id="feet">
+        <g id="foot_left">
+          <path id="foot_left_base" fill="url(#fill_foot_left_base)" d="M34.98 175.33c1.38-.57 2.93-.68 4.39-.41 1.47.27 2.86.91 4.09 1.74 2.47 1.68 4.3 4.12 6.05 6.54 4.03 5.54 7.9 11.2 11.42 17.08 2.85 4.78 5.46 9.71 8.76 14.18 2.15 2.93 4.57 5.64 6.73 8.55 2.16 2.92 4.07 6.08 5.03 9.58 1.25 4.55.76 9.56-1.4 13.75-1.52 2.95-3.86 5.48-6.7 7.19-2.84 1.71-5.83 2.47-9.15 2.47-5.27 0-10.42-2.83-15.32-4.78-9.98-3.98-20.82-5.22-31.11-8.32-3.16-.95-6.27-2.08-9.45-2.95-1.42-.39-2.85-.73-4.19-1.34-1.34-.6-2.59-1.51-3.33-2.77-.57-.98-.8-2.13-.8-3.26 0-1.14.28-2.26.67-3.32.77-2.13 2.02-4.06 2.86-6.17 1.37-3.44 1.62-7.23 1.43-10.93-.18-3.69-.78-7.36-1.03-11.05-.12-1.65-.16-3.32.16-4.95.31-1.62 1.01-3.21 2.2-4.35 1.1-1.06 2.55-1.69 4.05-2 1.49-.31 3.03-.32 4.55-.29 1.52.03 3.05.12 4.57-.01 1.52-.12 3.05-.46 4.37-1.22 1.26-.72 2.29-1.79 3.14-2.96.85-1.17 1.54-2.45 2.25-3.72.7-1.26 1.43-2.52 2.36-3.64.92-1.12 2.06-2.09 3.4-2.64z"></path>
+          <path id="foot_left_layer_1" fill="#d99a03" d="M37.16 177.7c1.25-.5 2.67-.56 3.98-.26 1.32.3 2.55.94 3.61 1.77 2.14 1.65 3.62 3.97 5.05 6.26 3.42 5.54 6.76 11.15 9.92 16.86 2.4 4.31 4.68 8.7 7.62 12.65 1.95 2.62 4.18 5.03 6.17 7.62 1.99 2.59 3.76 5.41 4.64 8.56 1.14 4.05.68 8.54-1.28 12.26-1.42 2.68-3.58 4.96-6.2 6.48a15.935 15.935 0 0 1-8.69 2.14c-4.82-.22-9.23-2.63-13.77-4.26-8.71-3.16-18.14-3.59-27.08-6.05-3.2-.87-6.32-2.03-9.53-2.84-1.43-.36-2.88-.66-4.23-1.23-1.35-.57-2.62-1.45-3.36-2.72-.54-.95-.76-2.06-.73-3.15.04-1.09.31-2.17.7-3.19.78-2.04 2-3.88 2.78-5.92 1.19-3.08 1.34-6.47 1.12-9.76-.22-3.29-.8-6.56-1-9.85-.08-1.48-.1-2.97.2-4.41.3-1.45.93-2.85 1.98-3.89 1.14-1.13 2.7-1.74 4.29-1.99 1.58-.24 3.19-.13 4.78.01 1.6.14 3.2.32 4.8.23 1.6-.1 3.22-.49 4.54-1.39 1.2-.81 2.1-2 2.79-3.27s1.18-2.64 1.71-3.98c.52-1.35 1.09-2.69 1.91-3.89.82-1.19 1.93-2.24 3.28-2.79z" clip-path="url(#clip_foot_left)" filter="url(#blur_foot_left_layer_1)"></path>
+          <path id="foot_left_layer_2" fill="#f5bd0c" d="M35.99 174.57c1.22-.6 2.65-.72 3.98-.45 1.33.27 2.57.92 3.62 1.77 2.09 1.7 3.43 4.13 4.67 6.51 2.84 5.46 5.5 11.04 8.9 16.19 2.48 3.73 5.33 7.2 7.83 10.92 3.39 5.03 6.15 10.57 7.29 16.5.76 4 .74 8.31-1.18 11.9-1.27 2.37-3.32 4.31-5.75 5.52-2.42 1.22-5.21 1.71-7.92 1.47-4.27-.37-8.14-2.47-12.16-3.94-7.13-2.59-14.84-3.22-22.18-5.18-3.09-.82-6.13-1.89-9.26-2.54-1.39-.29-2.8-.5-4.12-1-1.32-.5-2.57-1.33-3.25-2.55-.47-.86-.63-1.86-.56-2.84.07-.97.36-1.92.74-2.83.77-1.8 1.9-3.46 2.49-5.32.88-2.75.52-5.72-.14-8.53-.65-2.8-1.6-5.55-1.89-8.41-.13-1.27-.13-2.57.17-3.82.29-1.25.88-2.45 1.81-3.34 1.2-1.15 2.88-1.73 4.56-1.89 1.67-.16 3.35.06 5.01.3 1.66.24 3.34.5 5.01.42 1.68-.07 3.39-.51 4.7-1.54 1.3-1.02 2.12-2.53 2.59-4.09.47-1.57.62-3.2.81-4.82.19-1.62.43-3.26 1.06-4.77.63-1.51 1.69-2.9 3.17-3.64z" clip-path="url(#clip_foot_left)" filter="url(#blur_foot_left_layer_2)"></path>
+          <path id="foot_left_glare" fill="url(#fill_foot_left_glare)" d="M51.2 188.21c2.25 4.06 3.62 8.72 5.85 12.82 2.05 3.77 4.38 7.65 6.46 11.12.93 1.55 3.09 3.93 5.27 7.62 1.98 3.34 3.98 8.01 5.1 9.58-.64-1.84-1.96-6.77-3.54-10.28-1.47-3.28-3.19-5.15-4.24-6.92-2.08-3.47-4.33-6.6-6.47-9.91-2.95-4.57-5.2-9.68-8.43-14.03z" clip-path="url(#clip_foot_left)" filter="url(#blur_foot_left_glare)"></path>
+        </g>
+        <g id="foot_right">
+          <path id="foot_right_shadow" fill="url(#fill_foot_right_shadow)" d="M198.7 215.61c-.4 1.33-1.02 2.62-1.81 3.8-1.75 2.59-4.3 4.55-6.84 6.35-4.33 3.07-8.85 5.89-12.89 9.38-2.7 2.34-5.17 4.97-7.45 7.73-1.95 2.36-3.79 4.84-6.02 6.94-2.25 2.12-4.89 3.84-7.74 4.77-3.47 1.13-7.13 1.08-10.47.22-2.34-.6-4.63-1.64-6.08-3.53-1.45-1.89-1.92-4.44-2.09-6.94-.3-4.42.23-8.93.71-13.42.4-3.73.77-7.46.92-11.18.27-6.77-.18-13.47-1.09-20.05-.16-1.11-.32-2.22-.23-3.35.09-1.14.47-2.32 1.27-3.2.74-.81 1.77-1.29 2.79-1.52 1.02-.24 2.06-.25 3.09-.28 2.43-.06 4.86-.21 7.25.01 1.51.13 2.99.41 4.49.55 2.51.24 5.12.12 7.64-.62 2.71-.8 5.29-2.29 8.05-2.7 1.13-.17 2.26-.15 3.36.01 1.12.15 2.24.46 3.1 1.15.66.52 1.14 1.23 1.51 1.99.56 1.14.9 2.39 1.1 3.68.17 1.14.24 2.31.53 3.41.48 1.81 1.58 3.35 2.89 4.6 1.32 1.25 2.85 2.24 4.39 3.22 1.53.97 3.07 1.93 4.7 2.73.77.38 1.56.72 2.29 1.15.74.44 1.42.97 1.91 1.67.66.95.92 2.2.72 3.43z" clip-path="url(#clip_body)" filter="url(#blur_foot_right_shadow)" opacity=".2"></path>
+          <path id="foot_right_base" fill="url(#fill_foot_right_base)" d="M213.47 222.92c-2.26 2.68-5.4 4.45-8.53 6.05-5.33 2.71-10.86 5.1-15.87 8.37-3.36 2.19-6.46 4.76-9.36 7.53-2.48 2.37-4.83 4.9-7.61 6.91-2.81 2.03-6.05 3.5-9.48 4.01-.95.14-1.9.21-2.86.21-3.24 0-6.48-.78-9.46-2.08-2.7-1.17-5.3-2.86-6.86-5.36-1.56-2.52-1.92-5.59-1.92-8.56-.01-5.23.96-10.41 1.87-15.57.76-4.29 1.48-8.58 1.95-12.91.85-7.86.84-15.81.28-23.71-.1-1.32-.21-2.65-.01-3.96.2-1.31.74-2.62 1.74-3.48.93-.8 2.17-1.16 3.4-1.22 1.22-.07 2.44.12 3.65.3 2.85.42 5.73.74 8.52 1.48 1.76.46 3.48 1.08 5.23 1.56 2.94.79 6.01 1.17 9.02.82 3.25-.38 6.41-1.6 9.68-1.52 1.34.03 2.67.28 3.95.69 1.3.41 2.59 1 3.55 1.98.73.74 1.24 1.67 1.62 2.64.57 1.44.88 2.98 1.01 4.52.11 1.37.09 2.76.35 4.11.43 2.21 1.6 4.24 3.04 5.97 1.45 1.74 3.18 3.21 4.91 4.66 1.73 1.45 3.46 2.89 5.32 4.16.87.6 1.77 1.16 2.6 1.81.83.66 1.59 1.42 2.11 2.34.45.81.69 1.72.69 2.65 0 .52-.07 1.04-.23 1.56-.45 1.43-1.28 2.82-2.3 4.04z"></path>
+          <path id="foot_right_layer_1" fill="#cd8907" d="M213.21 216.12c-.53 1.33-1.28 2.58-2.22 3.67-2.07 2.42-4.93 4.01-7.78 5.44-4.88 2.44-9.92 4.58-14.5 7.52-3.06 1.97-5.9 4.28-8.55 6.78-2.26 2.13-4.41 4.41-6.95 6.21-2.57 1.83-5.53 3.14-8.65 3.6-3.8.56-7.72-.16-11.25-1.67-2.46-1.06-4.84-2.56-6.27-4.83-1.42-2.26-1.75-5.02-1.75-7.69-.02-4.71.87-9.37 1.71-14 .7-3.85 1.36-7.71 1.78-11.6.76-7.08.73-14.22.25-21.32-.08-1.19-.17-2.39.01-3.57.18-1.18.67-2.35 1.57-3.13.85-.73 1.99-1.05 3.11-1.1 1.11-.06 2.22.12 3.33.28 2.61.38 5.23.67 7.78 1.33 1.61.42 3.18.98 4.78 1.4 2.68.72 5.49 1.06 8.24.74 2.97-.34 5.85-1.44 8.83-1.37 1.23.03 2.44.26 3.61.62 1.19.37 2.37.9 3.25 1.78.66.67 1.11 1.51 1.48 2.38.53 1.29.89 2.67.91 4.07.03 1.46-.28 2.92-.09 4.37.16 1.17.66 2.28 1.3 3.28.63 1 1.4 1.91 2.17 2.81 1.48 1.75 2.96 3.53 4.82 4.87 2.11 1.53 4.62 2.43 6.8 3.85.65.43 1.28.91 1.74 1.54.78 1.06.98 2.5.54 3.74z" clip-path="url(#clip_foot_right)" filter="url(#blur_foot_right_layer_1)"></path>
+          <path id="foot_right_layer_2" fill="#f5c021" d="M212.91 214.61c-.6 1.35-1.37 2.6-2.28 3.71-2.12 2.58-4.99 4.35-8 5.49-4.97 1.88-10.39 2.13-15.26 4.27-2.97 1.3-5.65 3.26-8.36 5.12-2.18 1.49-4.42 2.94-6.82 3.98-2.72 1.19-5.6 1.85-8.5 2.32-1.84.29-3.71.51-5.57.41-1.86-.1-3.72-.54-5.37-1.49-1.24-.72-2.36-1.75-3.03-3.1-.73-1.49-.86-3.24-.85-4.94.05-4.5 1.02-8.96.99-13.47-.03-3.93-.81-7.8-1.03-11.72-.43-7.54 1.19-15.2-.24-22.59-.22-1.19-.53-2.37-.52-3.58.01-.6.1-1.21.31-1.77.22-.55.56-1.06 1.01-1.42.39-.29.84-.47 1.31-.56.46-.08.94-.06 1.41.01.93.15 1.82.51 2.73.78 2.6.78 5.35.76 8 1.35 1.66.36 3.26.97 4.91 1.41 2.75.76 5.63 1.08 8.46.75 3.04-.36 6.01-1.46 9.07-1.38 1.26.03 2.5.26 3.71.62s2.42.87 3.34 1.8c.65.67 1.13 1.52 1.51 2.4.57 1.29.96 2.69.95 4.11-.01.74-.12 1.47-.19 2.21-.06.74-.08 1.49.09 2.2.18.72.55 1.37.97 1.96.42.59.9 1.12 1.34 1.7 1.22 1.61 2.1 3.49 3.05 5.3.95 1.81 2.02 3.6 3.53 4.91 2.05 1.77 4.7 2.48 6.99 3.89.67.41 1.31.89 1.78 1.55.38.52.63 1.15.73 1.81.09.65.03 1.34-.17 1.96z" clip-path="url(#clip_foot_right)" filter="url(#blur_foot_right_layer_2)"></path>
+          <path id="foot_right_glare" fill="url(#fill_foot_right_glare)" d="M148.08 181.58c2.82-.76 5.22 1.38 7.27 2.99 1.32 1.13 3.24.85 4.86.9 2.69-.09 5.36.45 8.05.12 5.3-.45 10.49-1.75 15.81-1.97 2.54-.16 5.4-.31 7.59 1.17.89.62 2.2 3.23 3.07 2.25-.36-2.74-2.39-5.39-5.11-6.12-2.14-.34-4.3.25-6.46.06-6.39-.15-12.75-1.34-19.16-1-4.46.04-8.91-.17-13.37-.34-1.75-.36-2.37 1.19-3.32 1.79.25.19.34.25.77.15z" clip-path="url(#clip_foot_right)" filter="url(#blur_foot_right_glare)"></path>
+        </g>
+      </g>
+      <g id="wing_tip_right">
+        <g id="wing_tip_right_shadow">
+          <path id="wing_tip_right_shadow_lower" fill="url(#fill_wing_tip_right_shadow_lower)" d="M185.49 187.61c-.48-.95-1.36-1.66-2.35-2.07-.98-.41-2.06-.55-3.13-.54-2.13.02-4.25.57-6.38.39-1.79-.16-3.49-.83-5.24-1.26-1.81-.44-3.73-.61-5.52-.12-1.92.52-3.61 1.81-4.67 3.49-.94 1.48-1.38 3.23-1.52 4.98-.14 1.75.01 3.5.19 5.25.12 1.26.27 2.52.57 3.75.31 1.23.78 2.43 1.52 3.46 1.07 1.48 2.66 2.54 4.37 3.17 2.8 1.03 5.98.98 8.73-.15 4.88-2.12 9.01-5.92 11.52-10.6.91-1.68 1.61-3.47 2.06-5.31.18-.74.32-1.49.32-2.25.01-.75-.12-1.52-.47-2.19z" clip-path="url(#clip_foot_right)" filter="url(#blur_wing_tip_right_shadow_lower)" opacity=".35"></path>
+          <path id="wing_tip_right_shadow_upper" fill="url(#fill_wing_tip_right_shadow_upper)" d="M185.49 184.89c-.48-.69-1.36-1.2-2.35-1.5-.98-.3-2.06-.39-3.13-.39-2.13.02-4.25.42-6.38.28-1.79-.11-3.49-.6-5.24-.9-1.81-.32-3.73-.45-5.52-.09-1.92.37-3.61 1.3-4.67 2.52-.94 1.07-1.38 2.34-1.52 3.6-.14 1.26.01 2.53.19 3.79.12.91.27 1.83.57 2.72.31.89.78 1.76 1.52 2.5 1.07 1.07 2.66 1.83 4.37 2.29 2.8.75 5.98.71 8.73-.11 4.88-1.53 9.01-4.28 11.52-7.66.91-1.22 1.61-2.51 2.06-3.84.18-.54.32-1.08.32-1.62.01-.55-.12-1.11-.47-1.59z" clip-path="url(#clip_foot_right)" filter="url(#blur_wing_tip_right_shadow_upper)" opacity=".35"></path>
+        </g>
+        <path id="wing_tip_right_base" fill="#020204" d="M189.55 178.72c-.35-.95-.97-1.79-1.72-2.47-.75-.68-1.64-1.2-2.57-1.6-1.86-.79-3.89-1.09-5.89-1.46-1.87-.35-3.74-.78-5.62-1.1-1.96-.33-3.98-.55-5.92-.11-1.69.38-3.26 1.26-4.54 2.43-1.28 1.17-2.28 2.63-3 4.21-1.27 2.79-1.67 5.92-1.43 8.97.18 2.27.76 4.61 2.25 6.32 1.21 1.39 2.92 2.26 4.68 2.78 3.04.9 6.35.85 9.36-.13a24.7 24.7 0 0 0 12.35-9.29c.98-1.43 1.82-2.98 2.2-4.66.29-1.28.3-2.66-.15-3.89z"></path>
+        <g id="wing_tip_right_glare">
+          <defs>
+            <path id="path_wing_tip_right_glare" d="M168.89 171.07c-.47.03-.93.08-1.4.17-2.99.53-5.73 2.42-7.27 5.03-1.09 1.85-1.58 4.03-1.43 6.17.07-1.5.46-2.97 1.19-4.28 1.23-2.23 3.47-3.91 5.98-4.37 1.54-.28 3.13-.11 4.68.08 1.5.19 3 .39 4.47.7 2.28.5 4.53 1.26 6.44 2.59.44.31.86.66 1.21 1.08.35.41.62.89.73 1.42.15.78-.07 1.6-.46 2.29-.39.7-.92 1.3-1.48 1.86-.46.46-.94.89-1.43 1.32 2.21-.43 4.44-1.03 6.28-2.31.77-.55 1.48-1.2 1.94-2.02.46-.83.65-1.83.43-2.75-.16-.62-.5-1.19-.92-1.67-.42-.48-.93-.87-1.45-1.24a17.266 17.266 0 0 0-7.81-2.99c-1.8-.33-3.61-.61-5.42-.83-1.41-.18-2.86-.33-4.28-.25z"></path>
+          </defs>
+          <use id="wing_tip_right_glare_1" fill="url(#fill_wing_tip_right_glare_1)" clip-path="url(#clip_wing_tip_right)" filter="url(#blur_wing_tip_right_glare)" xlink:href="#path_wing_tip_right_glare"></use>
+          <use id="wing_tip_right_glare_2" fill="url(#fill_wing_tip_right_glare_2)" clip-path="url(#clip_wing_tip_right)" filter="url(#blur_wing_tip_right_glare)" xlink:href="#path_wing_tip_right_glare"></use>
+        </g>
+      </g>
+      <g id="face">
+        <g id="eyes">
+          <g id="eye_left">
+            <path id="eyeball_left" fill="url(#fill_eyeball_left)" d="M84.45 38.28c-1.53.08-3 .79-4.12 1.84-1.13 1.05-1.92 2.43-2.41 3.88-.97 2.92-.75 6.08-.53 9.15.2 2.77.41 5.6 1.45 8.18.52 1.3 1.25 2.51 2.22 3.51.97.99 2.2 1.76 3.55 2.09 1.26.32 2.62.26 3.86-.13 1.25-.4 2.38-1.11 3.32-2.02 1.36-1.33 2.27-3.07 2.8-4.9.53-1.83.68-3.75.65-5.66-.04-2.38-.35-4.77-1.09-7.03-.75-2.26-1.94-4.4-3.6-6.11-.8-.83-1.72-1.55-2.75-2.06-1.04-.51-2.2-.8-3.35-.74z"></path>
+            <g id="pupil_left">
+              <path id="pupil_left_base" fill="#020204" d="M80.75 50.99c-.32 1.94-.33 3.97.33 5.81.44 1.22 1.17 2.33 2.05 3.28.57.62 1.23 1.18 1.99 1.55.77.37 1.65.52 2.48.32.76-.19 1.42-.68 1.91-1.29s.82-1.34 1.05-2.09c.69-2.21.58-4.62-.11-6.83-.49-1.61-1.32-3.16-2.6-4.24-.62-.52-1.34-.93-2.12-1.11-.78-.19-1.63-.14-2.36.19-.81.37-1.44 1.07-1.85 1.86-.41.79-.62 1.67-.77 2.55z"></path>
+              <path id="pupil_left_glare" fill="url(#fill_pupil_left_glare)" d="M84.84 49.59c.21.55.91.75 1.3 1.19.37.42.76.87.97 1.4.39 1.01-.39 2.51.43 3.23.25.22.77.23 1.02 0 .99-.9.77-2.71.38-3.99-.36-1.15-1.23-2.25-2.31-2.8-.5-.26-1.25-.47-1.68-.11-.27.24-.24.74-.11 1.08z" clip-path="url(#clip_pupil_left)" filter="url(#blur_pupil_left_glare)"></path>
+            </g>
+            <path id="eyelid_left" fill="url(#fill_eyelid_left)" d="M81.14 44.46c2.32-1.38 5.13-1.7 7.82-1.45 2.68.26 5.27 1.04 7.87 1.75 1.91.52 3.84 1 5.63 1.84 1.78.84 3.44 2.08 4.43 3.8.16.27.29.56.46.83.17.27.37.52.62.71.25.19.57.32.88.3.16-.01.32-.05.45-.13.14-.08.26-.2.33-.34.08-.16.11-.35.1-.53-.01-.18-.05-.36-.1-.54-.65-2.37-2.19-4.38-3.35-6.55-.7-1.3-1.28-2.66-1.98-3.96-2.43-4.45-6.42-7.94-10.95-10.21-4.53-2.27-9.59-3.36-14.65-3.65-5.86-.35-11.73.35-17.51 1.37-2.51.44-5.06.96-7.27 2.21-1.11.62-2.13 1.42-2.92 2.42-.8.99-1.36 2.18-1.55 3.44-.17 1.22.01 2.47.44 3.62.42 1.15 1.08 2.2 1.86 3.15 1.54 1.91 3.53 3.39 5.36 5.03 1.83 1.63 3.52 3.44 5.57 4.79 1.02.68 2.13 1.24 3.31 1.57 1.18.33 2.44.42 3.64.17 1.24-.25 2.4-.86 3.41-1.64 1.01-.77 1.88-1.7 2.71-2.66 1.66-1.93 3.21-4.04 5.39-5.34z" clip-path="url(#clip_eye_left)"></path>
+            <path id="eyebrow_left" fill="url(#fill_eyebrow_left)" d="M90.77 36.57c2.16 2.02 3.76 4.52 4.85 7.16-.48-2.91-1.23-5.26-3.13-7.16-1.16-1.09-2.49-2.05-3.98-2.72-1.32-.59-2.77-.96-3.61-.97-.83-.02-1.03 0-1.2.01-.18.01-.31.01.23.08.54.06 1.75.39 3.05.97 1.3.58 2.62 1.54 3.79 2.63z" filter="url(#blur_eyebrow_left)"></path>
+          </g>
+          <g id="eye_right">
+            <path id="eyeball_right" fill="url(#fill_eyeball_right)" d="M111.61 38.28c-2.39 1.65-4.4 3.94-5.38 6.68-1.24 3.45-.77 7.31.43 10.77 1.22 3.55 3.27 6.93 6.36 9.06 1.54 1.07 3.33 1.8 5.19 2.02 1.87.22 3.8-.09 5.47-.95 2.02-1.06 3.57-2.91 4.53-4.98.96-2.08 1.37-4.37 1.5-6.66.16-2.9-.12-5.86-1.08-8.61-1.04-2.99-2.92-5.75-5.58-7.47-1.32-.86-2.83-1.45-4.4-1.67a9.405 9.405 0 0 0-4.67.52c-.84.33-1.62.78-2.37 1.29z"></path>
+            <g id="pupil_right">
+              <path id="pupil_right_base" fill="#020204" d="M117.14 45.52c-.9.06-1.78.37-2.55.85-.76.48-1.41 1.13-1.92 1.88-1.03 1.49-1.48 3.31-1.55 5.12-.05 1.35.1 2.72.55 4 .45 1.28 1.2 2.47 2.25 3.33 1.07.89 2.42 1.42 3.81 1.49 1.39.06 2.79-.34 3.93-1.13.91-.63 1.64-1.5 2.16-2.48.52-.97.84-2.05.98-3.15.25-1.93-.03-3.95-.93-5.69-.89-1.74-2.41-3.17-4.24-3.84-.8-.29-1.65-.44-2.49-.38z"></path>
+              <path id="pupil_right_glare" fill="url(#fill_pupil_right_glare)" d="M122.71 53.36c1-1-.71-3.65-2.05-4.74-.97-.78-3.78-1.61-3.66-.75.12.85 1.39 1.95 2.23 2.79 1.05 1.03 3 3.18 3.48 2.7z" clip-path="url(#clip_pupil_right)" filter="url(#blur_pupil_right_glare)"></path>
+            </g>
+            <path id="eyelid_right" fill="url(#fill_eyelid_right)" d="M102.56 47.01c2.06-1.71 4.45-3.01 7-3.8 5.25-1.62 11.2-.98 15.84 1.97 1.6 1.01 3.03 2.27 4.52 3.45 1.48 1.17 3.06 2.27 4.85 2.9.97.34 2 .54 3.02.43.92-.09 1.81-.44 2.57-.96.76-.53 1.4-1.23 1.88-2.02.96-1.58 1.27-3.5 1.1-5.34-.33-3.69-2.41-6.94-4.15-10.21-.55-1.02-1.07-2.06-1.73-3.01-2.01-2.93-5.23-4.86-8.6-5.99-3.37-1.13-6.93-1.54-10.46-1.98-1.58-.2-3.17-.41-4.74-.22-1.81.22-3.51.95-5.28 1.4-.84.22-1.69.37-2.52.61-.83.24-1.65.57-2.33 1.11-.98.79-1.6 1.98-1.87 3.21-.27 1.24-.21 2.52-.01 3.77.39 2.5 1.33 4.93 1.24 7.46-.06 1.73-.61 3.44-.54 5.17.02.51.12 1.55.21 2.05z" clip-path="url(#clip_eye_right)"></path>
+            <path id="eyebrow_right" fill="url(#fill_eyebrow_right)" d="M119.93 31.18c-.41.52-.78 1.08-1.07 1.7 1.85.4 3.61 1.16 5.19 2.21 3.06 2.03 5.38 4.99 7.01 8.29.38-.42.72-.87 1.02-1.37-1.64-3.44-4-6.55-7.16-8.65-1.52-1-3.21-1.77-4.99-2.18z" filter="url(#blur_eyebrow_right)"></path>
+          </g>
+        </g>
+        <g id="beak">
+          <g id="beak_shadow">
+            <path id="beak_shadow_lower" fill-opacity=".26" d="M81.12 89.33c1.47 4.26 4.42 7.89 7.92 10.72 1.16.95 2.39 1.82 3.76 2.43 1.36.62 2.87.97 4.36.84 1.46-.12 2.85-.7 4.13-1.42 1.28-.72 2.46-1.59 3.7-2.37 2.12-1.35 4.39-2.44 6.6-3.64 2.65-1.45 5.23-3.1 7.46-5.14 1.03-.93 1.98-1.95 3.11-2.75 1.13-.81 2.49-1.39 3.87-1.29 1.04.07 2.01.51 3.03.73.51.11 1.03.16 1.55.08.51-.08 1.01-.29 1.37-.67.44-.46.64-1.12.61-1.76-.02-.63-.24-1.25-.54-1.81-.59-1.13-1.49-2.1-1.89-3.31-.36-1.08-.29-2.24-.26-3.37.03-1.14.01-2.32-.51-3.33-.4-.76-1.07-1.37-1.83-1.77-.76-.41-1.62-.62-2.48-.7-1.72-.16-3.44.18-5.17.27-2.28.13-4.58-.15-6.87-.02-2.85.18-5.65 1-8.51 1.01-3.26.01-6.52-1.06-9.74-.55-1.39.22-2.71.72-4.03 1.16-1.33.45-2.7.84-4.1.82-1.59-.03-3.13-.58-4.72-.69-.79-.06-1.6 0-2.35.28-.74.28-1.41.79-1.78 1.5-.21.4-.31.86-.33 1.31-.02.46.04.91.15 1.36.22.88.63 1.71.96 2.55 1.2 3.07 1.46 6.42 2.53 9.53z" clip-path="url(#clip_body)" filter="url(#blur_beak_shadow_lower)"></path>
+            <path id="beak_shadow_upper" d="M77.03 77.2c2.85 1.76 5.41 3.93 7.56 6.39 1.99 2.29 3.68 4.89 6.29 6.58 1.83 1.2 4.04 1.87 6.28 2.08 2.63.24 5.29-.15 7.83-.84 2.35-.63 4.62-1.53 6.7-2.71 3.97-2.25 7.28-5.55 11.65-7.03.95-.33 1.94-.56 2.86-.96.92-.39 1.79-.99 2.23-1.83.42-.82.4-1.75.54-2.64.15-.96.48-1.88.66-2.83.18-.95.2-1.96-.24-2.83-.37-.72-1.04-1.29-1.81-1.66-.77-.36-1.64-.52-2.51-.56-1.72-.08-3.43.33-5.16.47-2.28.19-4.58-.08-6.87-.01-2.85.08-5.66.67-8.51.8-3.25.14-6.49-.34-9.74-.44-1.41-.05-2.83-.03-4.21.2-1.39.22-2.75.65-3.92 1.37-1.14.69-2.07 1.64-3.11 2.45-.52.41-1.08.78-1.68 1.07-.61.28-1.28.48-1.96.51-.35.01-.71-.01-1.05.04-.59.08-1.13.39-1.47.83-.34.45-.47 1.02-.36 1.55z" clip-path="url(#clip_body)" filter="url(#blur_beak_shadow_upper)" opacity=".3"></path>
+          </g>
+          <path id="beak_base" fill="url(#fill_beak_base)" d="M91.66 58.53c1.53-1.71 2.57-3.8 4.03-5.56.73-.88 1.58-1.69 2.57-2.26.99-.57 2.15-.89 3.29-.79 1.27.11 2.46.74 3.39 1.61.93.87 1.62 1.97 2.17 3.12.53 1.11.95 2.28 1.71 3.24.81 1.02 1.94 1.71 2.97 2.52.51.4 1.01.83 1.41 1.34.41.51.72 1.1.86 1.74.13.65.06 1.33-.16 1.95-.23.62-.61 1.18-1.09 1.64-.95.92-2.25 1.42-3.56 1.6-2.62.37-5.27-.41-7.92-.34-2.67.08-5.29 1.02-7.97.93-1.33-.05-2.69-.38-3.79-1.14-.55-.39-1.03-.88-1.38-1.45a4.1 4.1 0 0 1-.58-1.9c-.02-.64.13-1.28.39-1.86.25-.59.61-1.12 1.01-1.62.81-.99 1.8-1.81 2.65-2.77z"></path>
+          <g id="mandible_lower">
+            <path id="mandible_lower_base" fill="url(#fill_mandible_lower_base)" d="M77.14 75.05c.06.26.15.5.28.73.23.38.57.69.93.95.36.27.75.49 1.13.72 2.01 1.27 3.65 3.04 5.11 4.92 1.95 2.52 3.68 5.31 6.29 7.14 1.84 1.3 4.04 2.03 6.28 2.26 2.63.26 5.29-.16 7.83-.91 2.35-.69 4.62-1.66 6.7-2.95 3.97-2.44 7.28-6.02 11.65-7.63.95-.35 1.94-.6 2.86-1.03.92-.44 1.79-1.08 2.23-2 .42-.88.4-1.9.54-2.87.15-1.03.48-2.03.66-3.06.18-1.03.2-2.13-.24-3.08-.37-.78-1.04-1.4-1.81-1.79-.77-.4-1.64-.58-2.51-.62-1.72-.08-3.43.36-5.16.52-2.28.21-4.58-.09-6.87-.02-2.85.09-5.66.73-8.51.87-3.25.15-6.49-.35-9.74-.48-1.41-.06-2.83-.04-4.22.2-1.39.23-2.75.71-3.91 1.51-1.13.78-2.03 1.84-3.07 2.74-.52.45-1.08.86-1.7 1.16-.61.3-1.29.49-1.98.47-.35-.01-.72-.06-1.05.04-.21.07-.4.2-.56.35-.16.16-.29.34-.41.52-.29.42-.54.87-.75 1.34z"></path>
+            <path id="mandible_lower_glare" fill="#d9b30d" d="M89.9 78.56a5.77 5.77 0 0 0 .56 4.11c.68 1.24 1.84 2.2 3.19 2.65 1.7.57 3.62.29 5.21-.54.93-.48 1.77-1.16 2.3-2.06.27-.44.46-.94.53-1.46.06-.51.02-1.05-.16-1.54-.2-.53-.56-1-.99-1.37a4.48 4.48 0 0 0-1.5-.82c-1.08-.36-2.77-.66-3.91-.68-2.02-.04-4.9.34-5.23 1.71z" clip-path="url(#clip_mandible_lower)" filter="url(#blur_mandible_lower_glare)"></path>
+          </g>
+          <g id="mandible_upper">
+            <path id="mandible_upper_shadow" fill="#604405" d="M84.31 67.86c-1.16.68-2.27 1.43-3.36 2.2-.57.41-1.15.84-1.45 1.47-.21.44-.26.94-.27 1.43 0 .5.03.99-.04 1.48-.04.33-.13.66-.14.99-.01.17 0 .34.04.5.05.16.13.32.24.44.15.16.35.26.56.32.21.06.42.09.64.14 1.01.24 1.89.86 2.66 1.56.77.69 1.47 1.48 2.28 2.13 2.18 1.78 5.07 2.52 7.89 2.56 2.82.05 5.61-.54 8.36-1.16 2.16-.49 4.32-.99 6.39-1.76 3.2-1.18 6.16-2.96 8.72-5.19 1.17-1.01 2.26-2.12 3.57-2.94 1.15-.73 2.44-1.21 3.62-1.9.11-.06.21-.13.3-.2.1-.08.18-.18.24-.28.09-.19.09-.42.03-.62s-.18-.38-.31-.55c-.15-.18-.31-.34-.49-.5-1.23-1.05-2.89-1.43-4.51-1.56-1.61-.12-3.24-.03-4.83-.3-1.5-.25-2.92-.81-4.37-1.27-1.52-.49-3.07-.87-4.64-1.13-3.71-.61-7.52-.49-11.19.27-3.49.73-6.87 2.05-9.94 3.87z" clip-path="url(#clip_mandible_lower)" filter="url(#blur_mandible_upper_shadow)"></path>
+            <path id="mandible_upper_base" fill="url(#fill_mandible_upper_base)" d="M83.94 63.95a20.75 20.75 0 0 0-4.43 4.04c-.72.89-1.38 1.86-1.74 2.94-.29.86-.39 1.76-.57 2.65-.07.33-.15.66-.14 1 0 .16.02.33.07.5.05.16.14.31.25.43.2.2.47.31.74.37.28.05.56.06.84.09 1.25.15 2.4.75 3.44 1.47 1.04.71 2 1.55 3.07 2.22 2.35 1.49 5.16 2.15 7.95 2.26 2.78.11 5.56-.31 8.3-.86 2.17-.43 4.33-.95 6.39-1.76 3.16-1.25 6.01-3.16 8.72-5.19 1.24-.92 2.46-1.87 3.57-2.94.37-.37.74-.74 1.14-1.08.4-.33.85-.62 1.35-.78.76-.24 1.58-.17 2.37-.04.59.1 1.18.23 1.78.21.3-.02.6-.07.88-.18.28-.11.54-.28.73-.52.25-.3.38-.7.38-1.09 0-.4-.12-.79-.32-1.13-.4-.68-1.09-1.14-1.81-1.46-.99-.44-2.06-.65-3.11-.91-3.23-.78-6.37-1.93-9.34-3.41-1.48-.73-2.92-1.54-4.37-2.32-1.5-.8-3.02-1.57-4.64-2.07-3.64-1.1-7.6-.74-11.19.51a23.88 23.88 0 0 0-10.31 7.05z"></path>
+            <path id="mandible_upper_glare" fill="#f6da4a" d="M109.45 64.75c-.2-.24-.48-.42-.78-.51-.3-.09-.62-.09-.93-.04-.62.11-1.18.44-1.7.8-1.47 1.01-2.77 2.26-3.91 3.64-1.5 1.83-2.74 3.94-3.16 6.27-.07.39-.11.8-.07 1.19.05.4.2.79.49 1.07.24.25.58.4.92.45.35.05.71 0 1.04-.11.66-.22 1.21-.69 1.74-1.15 2.87-2.58 5.47-5.66 6.51-9.38.1-.37.19-.75.19-1.14 0-.39-.1-.78-.34-1.09z" clip-path="url(#clip_mandible_upper)" filter="url(#blur_mandible_upper_glare)"></path>
+            <path id="naris_left" fill="url(#fill_naris_left)" d="M92.72 59.06c-.77-.25-2.03 1.1-1.62 1.79.11.19.46.43.7.3.35-.19.64-.89 1.02-1.16.25-.18.2-.84-.1-.93z" filter="url(#blur_naris_left)" opacity=".8"></path>
+            <path id="naris_right" fill="url(#fill_naris_right)" d="M102.56 59.42c.2.64 1.23.53 1.83.84.52.27.94.86 1.53.88.56.01 1.44-.2 1.51-.76.09-.73-.98-1.2-1.67-1.47-.89-.34-2.03-.52-2.86-.06-.19.11-.4.36-.34.57z" filter="url(#blur_naris_right)" opacity=".8"></path>
+          </g>
+          <path id="beak_corner" fill="url(#fill_beak_corner)" d="M129.27 69.15a2.42 3.1 16.94 0 1-2.81 3.04 2.42 3.1 16.94 0 1-2.12-3.04 2.42 3.1 16.94 0 1 2.81-3.05 2.42 3.1 16.94 0 1 2.12 3.05z" clip-path="url(#clip_beak)" filter="url(#blur_beak_corner)"></path>
+        </g>
+      </g>
+    </g>
+  </symbol>
+  <symbol id="windows" viewBox="0 0 4875 4875">
+    <path fill="#0078d4" d="M0 0h2311v2310H0zm2564 0h2311v2310H2564zM0 2564h2311v2311H0zm2564 0h2311v2311H2564"></path>
+  </symbol>
+</svg>
+  <p>Read more about the history of your operating system.</p>
+
+  <ul class="svg-sprite-example__list list--inline">
+    <li><a href="https://en.wikipedia.org/wiki/IOS" class="svg-sprite-example__scaled-icon"><svg role="img" class="svg-icon svg-icon--ios" aria-labelledby="ios-title" focusable="false">
+  <title id="ios-title">iOS</title>
+  <use xlink:href="#ios"></use>
+</svg></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Android_(operating_system)"><svg role="img" class="svg-icon svg-icon--android" aria-labelledby="android-title" focusable="false">
+  <title id="android-title">Android</title>
+  <use xlink:href="#android"></use>
+</svg></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Microsoft_Windows"><svg role="img" class="svg-icon svg-icon--windows" aria-labelledby="windows-title" focusable="false">
+  <title id="windows-title">Windows</title>
+  <use xlink:href="#windows"></use>
+</svg></a></li>
+    <li><a href="https://en.wikipedia.org/wiki/MacOS"><svg role="img" class="svg-icon svg-icon--osx" aria-labelledby="osx-title" focusable="false">
+  <title id="osx-title">OSX</title>
+  <use xlink:href="#osx"></use>
+</svg></a></li>
+    <li><a href=""><svg role="img" class="svg-icon svg-icon--linux" aria-labelledby="linux-title" focusable="false">
+  <title id="linux-title">Linux</title>
+  <use xlink:href="#linux"></use>
+</svg></a></li>
+  </ul>
+  
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-5" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-5" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="svg-sprite-example__steps" class="showcode__steps"><label for="svg-sprite-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="svg-sprite-example__steps--select" data-showcode-for="svg-sprite-example" data-replace-html-rules="{&quot;svg symbol&quot;:&quot;&amp;lt;!-- insert svg render code here --&amp;gt;&quot;}"><option value=""></option><option value="%OPENCLOSECONTENTTAG%svg xmlns" data-showcode-notes="Inside the <code>symbol</code> tags are the svg code for each individual SVG image inside the sprite.">Step #1: Add sprite sheet</option><option value="class=&quot;sr-only&quot; ||| style" data-showcode-notes="The tutorials linked above tell developer to hide the sprite sheet with <code>display: none</code> via CSS.  This works most of the time, but I have found that when inserting code to display the sprites in the spritesheet on some versions of Safari on OSX (e.g. 16.1), some of the sprites, such as the OSX and Linux icons, are only displayed in black and white:<br /><img src=&quot;images/bad-safari-svg-sprites.png&quot; class=&quot;centered-block&quot; alt=&quot;A screenshot of the icon fonts in the example below rendered by Safari 16.1 with the sprite sheet SVG hidden on the page using CSS display: none.  The iOS and Linux logos are rendered in black and white and are missing color information.&quot; />   Therefore, I use CSS <code>visibility: hidden</code> along with the <a href=&quot;http://localhost:8888/screen-reader-only-text.php#show-me-the-css-that-i-can-use-to-make-screen-reader-only-text--heading&quot;>sr-only class to generate screen reader only text</a> to hide the image.">Step #2: Hide the spritesheet</option><option value="xlink:href" data-showcode-notes="Note that the <code>id</code> attributes for each symbol in the sprite sheet matches the <code>xlink:href</code> attributes inside the <code>use</code> tag of the SVG where the image appears on the page.">Step #3: Embed SVG sprites into the HTML</option><option value="role" data-showcode-notes="Just like the previous example">Step #4: Add a role of img</option><option value="focusable" data-showcode-notes="This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document.">Step #5: Add focusable="false" to the SVG tag</option><option value="aria-labelledby" data-showcode-notes="Note that aria-labelledby points to the <code>title</code> tag. Usually the <code>title</code> tag is sufficient on its own, but we put the <code>aria-labelledby</code> in for older browser/screen reader pairs.">Step #6: Add aria-labelledby to the SVG tags</option></select></div>
+                          <div id="svg-sprite-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="svg-sprite-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="svg-sprite-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="svg-sprite-example__example-desc" class="showcode__example--desc">
+                <label for="svg-sprite-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="svg-sprite-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="svg-sprite-example" data-showcode-props="svg-sprite-example-props" tabindex="0" aria-describedby="svg-sprite-example__example-desc">&lt;svg<br>  xmlns="http://www.w3.org/2000/svg"<br>  xmlns:xlink="http://www.w3.org/1999/xlink"<br>  style="visibility: hidden"<br>  class="sr-only"<br>&gt;<br>  &lt;symbol<br>    id="android"<br>    viewBox="-147 -70 294 345"<br>  &gt;<br><br>    &lt;!-- insert svg render code here --&gt;<br><br>  &lt;/symbol&gt;<br>  &lt;symbol<br>    id="ios"<br>    viewBox="0 0 500 500"<br>  &gt;<br><br>    &lt;!-- insert svg render code here --&gt;<br><br>  &lt;/symbol&gt;<br>  &lt;symbol<br>    id="osx"<br>    viewBox="0 0 34 34"<br>  &gt;<br><br>    &lt;!-- insert svg render code here --&gt;<br><br>  &lt;/symbol&gt;<br>  &lt;symbol<br>    id="linux"<br>    viewBox="0 0 216 256"<br>  &gt;<br><br>    &lt;!-- insert svg render code here --&gt;<br><br>  &lt;/symbol&gt;<br>  &lt;symbol<br>    id="windows"<br>    viewBox="0 0 4875 4875"<br>  &gt;<br><br>    &lt;!-- insert svg render code here --&gt;<br><br>  &lt;/symbol&gt;<br>&lt;/svg&gt;<br>&lt;p&gt;<br>  Read more about the history of your operating system.<br>&lt;/p&gt;<br>&lt;ul<br>  class="svg-sprite-example__list list--inline"<br>&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="https://en.wikipedia.org/wiki/IOS"<br>      class="svg-sprite-example__scaled-icon"<br>    &gt;<br>      &lt;svg<br>        role="img"<br>        class="svg-icon svg-icon--ios"<br>        aria-labelledby="ios-title"<br>        focusable="false"<br>      &gt;<br>        &lt;title<br>          id="ios-title"<br>        &gt;<br>          iOS<br>        &lt;/title&gt;<br>        &lt;use<br>          xlink:href="#ios"<br>        &gt;<br>        &lt;/use&gt;<br>      &lt;/svg&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="https://en.wikipedia.org/wiki/Android_(operating_system)"<br>    &gt;<br>      &lt;svg<br>        role="img"<br>        class="svg-icon svg-icon--android"<br>        aria-labelledby="android-title"<br>        focusable="false"<br>      &gt;<br>        &lt;title<br>          id="android-title"<br>        &gt;<br>          Android<br>        &lt;/title&gt;<br>        &lt;use<br>          xlink:href="#android"<br>        &gt;<br>        &lt;/use&gt;<br>      &lt;/svg&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="https://en.wikipedia.org/wiki/Microsoft_Windows"<br>    &gt;<br>      &lt;svg<br>        role="img"<br>        class="svg-icon svg-icon--windows"<br>        aria-labelledby="windows-title"<br>        focusable="false"<br>      &gt;<br>        &lt;title<br>          id="windows-title"<br>        &gt;<br>          Windows<br>        &lt;/title&gt;<br>        &lt;use<br>          xlink:href="#windows"<br>        &gt;<br>        &lt;/use&gt;<br>      &lt;/svg&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="https://en.wikipedia.org/wiki/MacOS"<br>    &gt;<br>      &lt;svg<br>        role="img"<br>        class="svg-icon svg-icon--osx"<br>        aria-labelledby="osx-title"<br>        focusable="false"<br>      &gt;<br>        &lt;title<br>          id="osx-title"<br>        &gt;<br>          OSX<br>        &lt;/title&gt;<br>        &lt;use<br>          xlink:href="#osx"<br>        &gt;<br>        &lt;/use&gt;<br>      &lt;/svg&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>  &lt;li&gt;<br>    &lt;a href=""&gt;<br>      &lt;svg<br>        role="img"<br>        class="svg-icon svg-icon--linux"<br>        aria-labelledby="linux-title"<br>        focusable="false"<br>      &gt;<br>        &lt;title<br>          id="linux-title"<br>        &gt;<br>          Linux<br>        &lt;/title&gt;<br>        &lt;use<br>          xlink:href="#linux"<br>        &gt;<br>        &lt;/use&gt;<br>      &lt;/svg&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>&lt;/ul&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="svg-sprite-example-props">
+{
+  "replaceHtmlRules": {
+    "svg symbol": "<!-- insert svg render code here -->"
+  },
+  "steps": [
+    {
+      "label": "Add sprite sheet",
+      "highlight": "%OPENCLOSECONTENTTAG%svg xmlns",
+      "notes": "Inside the <code>symbol</code> tags are the svg code for each individual SVG image inside the sprite."
+    },
+    {
+      "label": "Hide the spritesheet",
+      "highlight": "class=\\"sr-only\\" ||| style",
+      "notes": "The tutorials linked above tell developer to hide the sprite sheet with <code>display: none</code> via CSS.  This works most of the time, but I have found that when inserting code to display the sprites in the spritesheet on some versions of Safari on OSX (e.g. 16.1), some of the sprites, such as the OSX and Linux icons, are only displayed in black and white:<br /><img src=\\"images/bad-safari-svg-sprites.png\\" class=\\"centered-block\\" alt=\\"A screenshot of the icon fonts in the example below rendered by Safari 16.1 with the sprite sheet SVG hidden on the page using CSS display: none.  The iOS and Linux logos are rendered in black and white and are missing color information.\\" />   Therefore, I use CSS <code>visibility: hidden</code> along with the <a href=\\"http://localhost:8888/screen-reader-only-text.php#show-me-the-css-that-i-can-use-to-make-screen-reader-only-text--heading\\">sr-only class to generate screen reader only text</a> to hide the image."
+    },
+    {
+      "label": "Embed SVG sprites into the HTML",
+      "highlight": "xlink:href",
+      "notes": "Note that the <code>id</code> attributes for each symbol in the sprite sheet matches the <code>xlink:href</code> attributes inside the <code>use</code> tag of the SVG where the image appears on the page."
+    },
+    {
+      "label": "Add a role of img",
+      "highlight": "role",
+      "notes": "Just like the previous example"
+    },
+    {
+      "label": "Add focusable=\\"false\\" to the SVG tag",
+      "highlight": "focusable",
+      "notes": "This is so some browsers (e.g. Internet Explorer) don't add the image to the focus order of the document."
+    },
+    {
+      "label": "Add aria-labelledby to the SVG tags",
+      "highlight": "aria-labelledby",
+      "notes": "Note that aria-labelledby points to the <code>title</code> tag. Usually the <code>title</code> tag is sufficient on its own, but we put the <code>aria-labelledby</code> in for older browser/screen reader pairs."
+    }
+  ]
+}
+</script>
+
+<h2 id="using-icon-fonts--heading" tabindex="-1"><a class="heading__deeplink" href="#using-icon-fonts--heading" title="Permalink to Using Icon Fonts" aria-label="Permalink to Using Icon Fonts">Using Icon Fonts</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-6">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Font icons are a popular way to embed simple mono-coloured fonts into a webpage using a custom font
+  to contain the icon shapes. I don't like using font-icons to embed icons into a webpage for a number of reasons:
+</p>
+
+<ol>
+  <li>Font icons don't have any semantic information. When you embed an SVG
+    (either inline or using the &lt;img&gt; tag), then the accessibility API and
+    the browser knows they are images, and report that correctly to screen readers. You can
+    use <code>role="img"</code> but
+    it is better to use native HTML5 markup and not ARIA (which the <code>role</code>&nbsp;attribute is),
+    because of <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>.</li>
+
+  <li>From a rendering standpoint, fonts use a different rendering engine that
+    vector images, and that engine varies from operating system to operating
+    system. Windows uses ClearType (which emphasizes detail) while OSX renders
+    fonts as close to the printed page as possible (a great explanation about this is in the Hacker News thread for
+    <a href="https://news.ycombinator.com/item?id=28028781">MacType: Better Font Rendering for Windows</a>). Also, these
+    technologies can
+    (and are) tweaked by users to ensure they are legible to them. Unfortunately,
+    what makes text legible don't result in good icon rendering (because what makes
+    typography readable doesn't make vector graphics necessarily look good). It
+    also results in cross browser (and cross OS) rendering issues sometimes.
+  </li>
+
+  <li>If you need to use CSS transforms on font icons, the rendering suffers
+    because of #2, and is really apparent in the Windows OS. I have written about
+    this a while ago, but it looks like it is still is an issue. My blog post, <a href="https://www.useragentman.com/blog/2014/05/04/fixing-typography-inside-of-2-d-css-transforms/">
+      Fixing Typography Inside of 2D Transforms</a> has a work around for this, but it does affect performance.
+    If you are using HTML5 Canvas in Windows, then there are other issues (although
+    I admittedly haven't tested this in awhile); you can read my other blog post, <a href="https://www.useragentman.com/blog/2016/05/10/how-to-fix-small-transformed-text-in-html5-canvas-in-firefox-for-windows/">How
+      to Fix Small Transformed Text in HTML5 Canvas in Firefox for Windows</a> for more information about that.
+  </li>
+
+  <li>You are (sort of) stuck with solid colours. Yes, there is tech for multicolour
+    fonts, but I am not sure that is critical mass and should be used yet.</li>
+
+  <li>You do a lot of cooler things with SVG (animation, CSS styling, etc)
+    that you can't do with font icons.</li>
+
+  <li>As illustrated in <a href="https://www.lambdatest.com/blog/its-2019-lets-end-the-debate-on-icon-fonts-vs-svg-icons/">Icon Fonts vs SVG – Clash of the Icons</a> by <a href="https://www.linkedin.com/in/nikhil-tyagi-735374179/">Nihil Tyagi</a>, SVG are more performant and can be positioned more easily.</li>
+</ol>
+
+<p>Font icons come from the time when IE6 was still a thing, which didn't support
+  SVG. It was a hack that suited a purpose, but we should move on, since SVG is
+  everywhere now.</p>
+
+<p>(<a href="https://www.instagram.com/p/B-m0rnagYwn/">I am also a calligrapher</a>
+  and love typography, so the idea of using font technology to render images just
+  seems wrong to me ... the above just emphasizes that point-of-view.</p>
+
+<p>That said, there are plenty of legacy code out there that use icon fonts.  
+    Here is how you code font icons in an accessible way. This code is refactored from <a href="https://codepen.io/SitePoint/pen/xxyQMP">a Codepen demo by George Martsoukos</a> (modified to add the
+  accessibility features in it).</p>
+
+
+<div class="enable-example" id="icon-font-example">
+  <section>
+    <div class="container">
+      <p class="center">Feel free to connect with Killer B Cinema on Social Media!</p>
+      <ul class="list--inline">
+        <li>
+          <a href="https://www.facebook.com/killerbcinema/">
+            <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+            <span class="sr-only">The Killer B Cinema Facebook page</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/killerbcinema/?hl=en">
+            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            <small>Killer B's Instagram Page</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-6" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-6" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="icon-font-example__steps" class="showcode__steps"><label for="icon-font-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="icon-font-example__steps--select" data-showcode-for="icon-font-example" data-replace-html-rules="{}"><option value=""></option><option value="%OPENCLOSECONTENTTAG%i" data-showcode-notes="This is the usual way to embed fonts using Font Awesome.  More information can be read in the article <a href=&quot;https://www.sitepoint.com/introduction-icon-fonts-font-awesome-icomoon/&quot;>An Introduction to Icon Fonts with Font Awesome and IcoMoon</a>.">Step #1: Embed the font using the &lt;i&gt; tag.</option><option value="%OPENCLOSECONTENTTAG%span" data-showcode-notes="As mentioned in on <a href=&quot;/screen-reader-only-text.php&quot;>Enable's screen reader only text page</a>, this text will be read out by screen readers, but will be hidden from sighted users.  This acts as the alt text for the first icon font example.">Step #2: Code screen reader text near the icon font</option><option value="aria-hidden" data-showcode-notes="Note the <code>aria-hidden=&quot;true&quot;</code> ensures the icon will not read out by screen readers.  The second example doesn't need any alt text, since it is decorative due to the supporting text near the icon.">Step #3: Make the decorative icons hidden from screen readers</option></select></div>
+                          <div id="icon-font-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="icon-font-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="icon-font-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="icon-font-example__example-desc" class="showcode__example--desc">
+                <label for="icon-font-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="icon-font-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="icon-font-example" data-showcode-props="icon-font-example-props" tabindex="0" aria-describedby="icon-font-example__example-desc">&lt;section&gt;<br>  &lt;div class="container"&gt;<br>    &lt;p class="center"&gt;<br>      Feel free to connect with Killer B Cinema on Social Media!<br>    &lt;/p&gt;<br>    &lt;ul class="list--inline"&gt;<br>      &lt;li&gt;<br>        &lt;a<br>          href="https://www.facebook.com/killerbcinema/"<br>        &gt;<br>          &lt;i<br>            class="fa fa-facebook fa-2x"<br>            aria-hidden="true"<br>          &gt;<br>          &lt;/i&gt;<br>          &lt;span<br>            class="sr-only"<br>          &gt;<br>            The Killer B Cinema Facebook page<br>          &lt;/span&gt;<br>        &lt;/a&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;a<br>          href="https://www.instagram.com/killerbcinema/?hl=en"<br>        &gt;<br>          &lt;i<br>            class="fa fa-instagram fa-2x"<br>            aria-hidden="true"<br>          &gt;<br>          &lt;/i&gt;<br>          &lt;small&gt;<br>            Killer B's Instagram Page<br>          &lt;/small&gt;<br>        &lt;/a&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>&lt;/section&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="icon-font-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Embed the font using the &lt;i&gt; tag.",
+      "highlight": "%OPENCLOSECONTENTTAG%i",
+      "notes": "This is the usual way to embed fonts using Font Awesome.  More information can be read in the article <a href=\\"https://www.sitepoint.com/introduction-icon-fonts-font-awesome-icomoon/\\">An Introduction to Icon Fonts with Font Awesome and IcoMoon</a>."
+    },
+    {
+      "label": "Code screen reader text near the icon font",
+      "highlight": "%OPENCLOSECONTENTTAG%span",
+      "notes": "As mentioned in on <a href=\\"/screen-reader-only-text.php\\">Enable's screen reader only text page</a>, this text will be read out by screen readers, but will be hidden from sighted users.  This acts as the alt text for the first icon font example."
+    },
+    {
+      "label": "Make the decorative icons hidden from screen readers",
+      "highlight": "aria-hidden",
+      "notes": "Note the <code>aria-hidden=\\"true\\"</code> ensures the icon will not read out by screen readers.  The second example doesn't need any alt text, since it is decorative due to the supporting text near the icon."
+    }
+  ]
+}
+</script>  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    
+
+</body></html>"
+`;

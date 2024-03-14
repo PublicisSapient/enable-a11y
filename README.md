@@ -79,6 +79,8 @@ If you are noticing that the jest tests are taking a long time, you might want t
 
 > Hint: Make sure the local server is running first using the `npm run start` command.
 
+In order to update all of the failing unit test snapshots, run `npm run jest-update-snapshots`. If you only want to update the snapshots for a specific unit test file, run `npm run jest-update-snapshots -- -u`
+
 #### Chromedriver issues
 
 Your version of Chrome needs to match the `chromedriver` package version. You can find your version of Chrome (ie. 121.x.xxxx.xxx) by checking the version number inside the "About Chrome" dialog in Chrome.

@@ -1,0 +1,2392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Carousels - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Carousels">
+<meta property="og:description" content="If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.">
+<meta property="og:image" content="/images/posters/carousel.jpg?1">
+<meta property="og:url" content="/carousel.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.">
+<meta name="twitter:title" content="Accessible Carousels">
+<meta name="twitter:image" content="/images/posters/carousel.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link href="~glider-js/glider.css" rel="stylesheet">
+<link href="css/enable-visible-on-focus.css" rel="stylesheet">
+<link href="css/enable-carousel.css" rel="stylesheet"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-carousels--heading" tabindex="-1">Accessible Carousels</h1><p>
+  Carousels are a list of content panels that mouse user can cycle through using arrow controls and panel indicator.
+  Usually carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
+  They exist to cram as
+  much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
+    Fold</a>" real estate on websites. Although <a href="https://vwo.com/blog/is-above-the-fold-really-dead/">it is
+    debatable whether "Above The Fold" is as important as people think it is</a>, it is still a solid requirement for a
+  lot of website owners.
+</p>
+
+
+<p>
+  <strong>In our opinion, carousels are a hack designed to cram a huge amount of content within a small amount of space.</strong>  There are better alternatives to carousels out there, and these articles are a good place to start if you are looking for them:
+  </p>
+
+<ul>
+  <li><a href="https://www.mightybytes.com/blog/5-alternatives-using-carousel-on-homepage/">5 Alternatives to Using a Carousel on Your Website Homepage</a></li>
+  <li><a href="https://www.mightybytes.com/blog/more-alternatives-to-carousels-on-website/">More Alternatives to Using a Carousel on Your Website</a></li>
+  <li><a href="https://www.boia.org/blog/effective-and-accessible-alternatives-to-website-carousels">Alternatives to carousels in web design</a>
+  </li></ul>
+
+<p>
+  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarantee</a>.
+  Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the
+  code walkthrough below will contain information developers need to implement accessible carousels regardless of the
+  carousel frameworks being used. If the developer is making a carousel from scratch, they can use the NPM module that
+  makes Glider.js accessible (see below).
+</p>
+
+<h2 id="solution-1-treat-the-carousel-like-a-list-of-controls---heading" tabindex="-1"><a class="heading__deeplink" href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading" title="Permalink to Solution 1: Treat The Carousel Like A List of Controls." aria-label="Permalink to Solution 1: Treat The Carousel Like A List of Controls.">Solution 1: Treat The Carousel Like A List of Controls.</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution is the best solution when you can guarantee there will be one interactive/keyboard focusable element in every carousel panel.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-1">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution described below is available as an NPM module. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+
+<p>
+  Note that this solution assumes that each carousel panel has at least one CTA (i.e., call to action, or control) in
+  it. Keyboard users simply tab into each CTA as they would any other links on the page. When keyboard users tab into a
+  panel that is offscreen, our JavaScript library ensures that the panel comes into focus. As a result, keyboard access
+  to the previous and next buttons are considered unnecessary, so we have intentionally removed them from the document
+  tabbing order. <strong>
+    If you are dealing with a carousel that can have no CTA in one or more panels, you should look at <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the second carousel example on this page</a>.</strong></p>
+
+<p>The implementation presented here is based on <a href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">this
+    excellent article by Alison Walden</a>.
+</p>
+
+<div id="example1" class="enable-example enable-carousel__example">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#end-of-component-1" id="beginning-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to end of promotional links
+    </a>
+  </div>
+
+  <div class="glider-contain">
+
+    <!-- 
+      The ID of the carousel is used as a prefix
+      for the dot indicators at the bottom
+      of the carousel (mockbuster-carousel__indicators)
+    -->
+    <div id="mockbuster-carousel" class="glider enable-carousel enable-carousel--focus-all-panels draggable">
+      
+      
+      
+      
+    <div class="glider-track" style="width: 3192px;"><div class="enable-carousel__slide glider-slide active center visible" data-gslide="0" style="height: auto; width: 798px;">
+        <img class="enable-carousel__background" src="images/carousel-example/00-turkish-spider-man.jpg" alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting.">
+        <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
+          <h2 id="slide01-title" class="enable-carousel__slide-heading" lang="tr">3 Dev Adam</h2>
+          <p>Also known as <em>Turkish Spider-Man</em>, this 1973 film is the story of crime boss
+            Spider-Man's battle with law enforcement heros Captain America and El Santo.</p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/3_Dev_Adam" aria-describedby="slide01-title">Learn More</a>
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-1" data-gslide="1" style="height: auto; width: 798px;">
+        <img class="enable-carousel__background" src="images/carousel-example/02-turkish-star-wars.jpg" alt="Cüneyt Arkın kicking and fighting two beasts that look like they are in low budget furry costumes, while a woman being held by one of them looks on in awe.">
+        <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
+          <h2 id="slide02-title" class="enable-carousel__slide-heading">Turkish Star Wars
+          </h2>
+          <p>Originally called <em lang="tr">Dünyayı Kurtaran
+              Adam</em>, two space fighters crash into a desert planet and fights a mysterious Wizard who is
+            enslaving
+            the local population.</p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/D%C3%BCnyay%C4%B1_Kurtaran_Adam" aria-describedby="slide02-title">Learn More</a>
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-2" data-gslide="2" style="height: auto; width: 798px;">
+        <img class="enable-carousel__background" src="images/carousel-example/01-samurai-cop.jpg" alt="A man with a mullet and a maniacal face holding a sword in the middle of a field.">
+        <div class="enable-carousel__slide-copy">
+          <h2 id="slide03-title" class="enable-carousel__slide-heading">Samurai Cop</h2>
+          <p>The story of a cop with an epic mullet and a samurai sword who, along with his cool
+            partner, take on a gang of cocaine smugglers in early '90's Los Angeles.
+          </p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Samurai_Cop" aria-describedby="slide03-title">Learn More</a>
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-3" data-gslide="3" style="height: auto; width: 798px;">
+        <img class="enable-carousel__background" src="images/carousel-example/03-lady-terminator.jpg" alt="An angry woman looking straight at the viewer with a gun blasting rounds in the same direction.">
+        <div class="enable-carousel__slide-copy">
+          <h2 id="slide04-title" class="enable-carousel__slide-heading">Lady Terminator</h2>
+          <p>
+            A woman is possessed by the legendary South Sea Queen to have revenge on the daughter of
+            a man who stole her snake a hundred years before.
+          </p>
+          <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Lady_Terminator" aria-describedby="slide04-title">Learn More</a>
+        </div>
+      </div></div></div>
+
+    <button class="glider-prev disabled" tabindex="-1" aria-label="Display Previous Slide" aria-hidden="true" aria-disabled="true">«</button>
+    <button class="glider-next" tabindex="-1" aria-label="Display Next Slide" aria-hidden="true" aria-disabled="false">»</button>
+    <div id="mockbuster-carousel__indicators" class="dots glider-dots"><button data-index="0" aria-label="Display Slide 1." class="glider-dot active" tabindex="-1" aria-hidden="true"></button><button data-index="1" aria-label="Display Slide 2." class="glider-dot " tabindex="-1" aria-hidden="true"></button><button data-index="2" aria-label="Display Slide 3." class="glider-dot " tabindex="-1" aria-hidden="true"></button><button data-index="3" aria-label="Display Slide 4." class="glider-dot " tabindex="-1" aria-hidden="true"></button></div>
+  </div>
+
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--end">
+    <a href="#beginning-of-component-1" id="end-of-component-1" class="enable-mobile-visible-on-focus enable-skip-link">Skip to
+      beginning of promotional links</a>
+  </div>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example1__steps" class="showcode__steps"><label for="example1__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example1__steps--select" data-showcode-for="example1" data-replace-html-rules="{&quot;.glider .enable-carousel__slide:not(:first-child)&quot;:&quot;&amp;lt;!-- Has similar structure as first slide --&amp;gt;&quot;,&quot;.glider .enable-carousel__slide p&quot;:&quot;&amp;lt;!-- Copy here --&amp;gt;&quot;}"><option value=""></option><option value="class=&quot;enable-mobile-visible-on-focus\\s[^&quot;]*&quot;" data-showcode-notes="In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information.">Step #1: Put skip links around the carousel</option><option value="alt" data-showcode-notes="The content of all the carousel panels must follow accessibility guidelines as well as the carousel itself">Step #2: Ensure all images have alt attributes</option><option value="%OPENCLOSECONTENTTAG%a" data-showcode-notes="More often than not, the CTAs inside a carousel will redirect users to another web page, which would make the CTA a link, <strong>even if the CTA looks like a button.</strong>  This is a very common mistake.">Step #3: Ensure CTAs are marked up correctly</option><option value="aria-describedby" data-showcode-notes="When the user tabs into the <strong>Learn more</strong> CTA, we want to give the user more context about what they will be <strong>learning more about</strong> if they follow the link.  The aria-describedby will give screen reader users that context">Step #4: Link the CTA with the general description of the slide</option><option value="tabindex" data-showcode-notes="Since keyboard users will be able to cycle through the slides without using these buttons, let's remove them from the tabbing order.  Keyboard users won't need them, and screen reader users will probably not know what they are meant for.">Step #5: Ensure the previous and next buttons are not keyboard accessible</option><option value="aria-hidden" data-showcode-notes="Since mobile screen readers don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API.">Step #6: Ensure the previous and next buttons are hidden to mobile screen readers</option><option value="%FILE% ./js/modules/enable-carousel.js ~ this.setTabthroughEvents = ([\\s\\S]*\\s\\s\\})?" data-showcode-notes="After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed.">Step #7: Initialize the carousel via JavaScript</option><option value="%FILE% ./js/modules/enable-carousel.js ~ this.slideToTarget =" data-showcode-notes="When a CTA in a slide gains focus, we tell the carousel to display the slide that contains that CTA">Step #8: Carousel slide focus event</option><option value="%FILE% ./js/modules/enable-carousel.js ~ this.clickHandler =" data-showcode-notes="When the user clicks the CTA, we assume they are a mouse user so we allow the carousel to animate between slides.">Step #9: Carousel mouse event</option><option value="%FILE% ./js/modules/enable-carousel.js ~ this.keyUpHandler =" data-showcode-notes="When the user hits the TAB key, we assume they are a keyboard user and tell the carousel to turn animations off.">Step #10: Carousel key up event</option></select></div>
+                          <div id="example1__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example1__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example1__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example1__example-desc" class="showcode__example--desc">
+                <label for="example1__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example1__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example1" data-showcode-props="example1-props" tabindex="0" aria-describedby="example1__example-desc">&lt;div<br>  class="enable-mobile-visible-on-focus__container enable-skip-link--begin"<br>&gt;<br>  &lt;a<br>    href="#end-of-component-1"<br>    id="beginning-of-component-1"<br>    class="enable-mobile-visible-on-focus enable-skip-link"<br>  &gt;<br>    Skip to end of promotional links<br>  &lt;/a&gt;<br>&lt;/div&gt;<br>&lt;div class="glider-contain"&gt;<br><br>  &lt;!--<br><br>      The ID of the carousel is used as a prefix<br>      for the dot indicators at the bottom<br>      of the carousel (mockbuster-carousel__indicators)<br>  --&gt;<br>  &lt;div<br>    id="mockbuster-carousel"<br>    class="glider enable-carousel enable-carousel--focus-all-panels"<br>  &gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>    &gt;<br>      &lt;img<br>        class="enable-carousel__background"<br>        src="images/carousel-example/00-turkish-spider-man.jpg"<br>        alt="Bootleg versions of Spider-Man, Captain America and El Santo fighting."<br>      &gt;<br>      &lt;div<br>        class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1"<br>      &gt;<br>        &lt;h2<br>          id="slide01-title"<br>          class="enable-carousel__slide-heading"<br>          lang="tr"<br>        &gt;<br>          3 Dev Adam<br>        &lt;/h2&gt;<br>        &lt;p&gt;<br><br>          &lt;!-- Copy here --&gt;<br><br>        &lt;/p&gt;<br>        &lt;a<br>          class="enable-carousel__slide-cta"<br>          href="https://en.wikipedia.org/wiki/3_Dev_Adam"<br>          aria-describedby="slide01-title"<br>        &gt;<br>          Learn More<br>        &lt;/a&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;button<br>    class="glider-prev"<br>    tabindex="-1"<br>    aria-label="Display Previous Slide"<br>    aria-hidden="true"<br>  &gt;<br>    «<br>  &lt;/button&gt;<br>  &lt;button<br>    class="glider-next"<br>    tabindex="-1"<br>    aria-label="Display Next Slide"<br>    aria-hidden="true"<br>  &gt;<br>    »<br>  &lt;/button&gt;<br>  &lt;div<br>    id="mockbuster-carousel__indicators"<br>    class="dots"<br>  &gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="enable-mobile-visible-on-focus__container  enable-skip-link--end"<br>&gt;<br>  &lt;a<br>    href="#beginning-of-component-1"<br>    id="end-of-component-1"<br>    class="enable-mobile-visible-on-focus enable-skip-link"<br>  &gt;<br>    Skip to<br>    beginning of promotional links<br>  &lt;/a&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example1-props">
+{
+  "replaceHtmlRules": {
+    ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
+    ".glider .enable-carousel__slide p": "<!-- Copy here -->"
+  },
+  "steps": [{
+      "label": "Put skip links around the carousel",
+      "highlight": "class=\\"enable-mobile-visible-on-focus\\\\s[^\\"]*\\"",
+      "notes": "In order for these to work on mobile screen readers, we have created our own. See <a href='38-skip-link.php'>our skip link page</a> for more information."
+    },
+    {
+      "label": "Ensure all images have alt attributes",
+      "highlight": "alt",
+      "notes": "The content of all the carousel panels must follow accessibility guidelines as well as the carousel itself"
+    },
+    {
+      "label": "Ensure CTAs are marked up correctly",
+      "highlight": "%OPENCLOSECONTENTTAG%a",
+      "notes": "More often than not, the CTAs inside a carousel will redirect users to another web page, which would make the CTA a link, <strong>even if the CTA looks like a button.</strong>  This is a very common mistake."
+    },
+    {
+      "label": "Link the CTA with the general description of the slide",
+      "highlight": "aria-describedby",
+      "notes": "When the user tabs into the <strong>Learn more</strong> CTA, we want to give the user more context about what they will be <strong>learning more about</strong> if they follow the link.  The aria-describedby will give screen reader users that context"
+    },
+    {
+      "label": "Ensure the previous and next buttons are not keyboard accessible",
+      "highlight": "tabindex",
+      "notes": "Since keyboard users will be able to cycle through the slides without using these buttons, let's remove them from the tabbing order.  Keyboard users won't need them, and screen reader users will probably not know what they are meant for."
+    },
+    {
+      "label": "Ensure the previous and next buttons are hidden to mobile screen readers",
+      "highlight": "aria-hidden",
+      "notes": "Since mobile screen readers don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
+    },
+    {
+      "label": "Initialize the carousel via JavaScript",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.setTabthroughEvents = ([\\\\s\\\\S]*\\\\s\\\\s\\\\})?",
+      "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
+    },
+    {
+      "label": "Carousel slide focus event",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.slideToTarget =",
+      "notes": "When a CTA in a slide gains focus, we tell the carousel to display the slide that contains that CTA"
+    },
+    {
+      "label": "Carousel mouse event",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.clickHandler =",
+      "notes": "When the user clicks the CTA, we assume they are a mouse user so we allow the carousel to animate between slides."
+    },
+    {
+      "label": "Carousel key up event",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ this.keyUpHandler =",
+      "notes": "When the user hits the TAB key, we assume they are a keyboard user and tell the carousel to turn animations off."
+    }
+  ]
+}
+</script>
+
+
+<h2 id="solution-2-treat-the-carousel-like-a-list-of-content--heading" tabindex="-1"><a class="heading__deeplink" href="#solution-2-treat-the-carousel-like-a-list-of-content--heading" title="Permalink to Solution 2: Treat The Carousel Like A List of Content" aria-label="Permalink to Solution 2: Treat The Carousel Like A List of Content">Solution 2: Treat The Carousel Like A List of Content</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution is best to use when you don't if each panel will have an interactive/keyboard focusable control in every panel.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-2">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution described below is available as an NPM module. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+
+<p>
+  Like the first example, this carousel example also uses <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
+  the previous and next buttons are keyboard accessible; clicking on them applies focus to the carousel panel that slides into view <em>or</em> the first interactive element within the slide if one is available.
+  This is great if you have carousel panels that don't have any interactive elements.
+</p>
+
+<div id="example2" class="enable-example enable-carousel__example">
+
+  <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
+
+  <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
+
+    <button class="glider-prev disabled" aria-describedby="carousel-instructions" aria-label="Display Previous Slide" aria-disabled="true">«</button>
+    <div id="announcements-carousel" tabindex="0" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons draggable" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
+      
+      
+      
+      
+    <div class="glider-track" style="width: 3192px;"><div class="enable-carousel__slide glider-slide active center visible" aria-labelledby="example2__slide01-title example2__slide-01-desc" data-gslide="0" style="height: auto; width: 798px;" tabindex="-1">
+        <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
+          <h2 id="example2__slide01-title" class="enable-carousel__slide-heading">Hours of Operation Change</h2>
+          <p id="example2__slide-01-desc">Please note that our office hours have changed. We are now open from Monday to Friday from 8:30AM to 8:45AM. We do not apologize for any inconvenience this may cause.</p>
+          
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-1" aria-labelledby="example2__slide02-title example2__slide-02-desc" data-gslide="1" style="height: auto; width: 798px;" inert="" tabindex="-1">
+       
+        <div class="enable-carousel__slide-copy enable-carousel__slide-copy--variation2">
+          <h2 id="example2__slide02-title" class="enable-carousel__slide-heading">
+            Up to 50% off all items.
+          </h2>
+          <p id="example2__slide-02-desc">
+            Starting Tuesday, all of our summer items will be sold for 50% off the sticker price.
+            (Note: offer not available in Newfoundland). 
+          </p>
+          
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-2" aria-labelledby="example2__slide03-title example2__slide-03-desc" data-gslide="2" style="height: auto; width: 798px;" inert="" tabindex="-1">
+        
+        <div class="enable-carousel__slide-copy">
+          <h2 id="example2__slide03-title" class="enable-carousel__slide-heading">Recall Notice:</h2>
+          <p id="example2__slide-03-desc">Please note that if you bought our <em>Pika-homer™</em> brand towels, you should return them to your nearest store for a full refund due to toxicity concerns with the dye used in their manufacture.
+          </p>
+
+          <a class="enable-carousel__slide-cta" href="https://www.reddit.com/r/crappyoffbrands/comments/8v114v/pikadoh/" aria-describedby="example2__slide03-title">Learn More</a>
+          
+        </div>
+      </div><div class="enable-carousel__slide glider-slide right-3" aria-labelledby="example2__slide04-title example2__slide-04-desc" data-gslide="3" style="height: auto; width: 798px;" inert="" tabindex="-1">
+       
+        <div class="enable-carousel__slide-copy">
+          <h2 id="example2__slide04-title" class="enable-carousel__slide-heading">Black Friday Event</h2>
+          <p id="example2__slide-04-desc">
+            Note that we will not be having a Black Friday Event this year due to the huge riot that happened last December.    
+          </p>
+          
+        </div>
+      </div></div></div>
+
+    <button class="glider-next" aria-describedby="carousel-instructions" aria-label="Display Next Slide" aria-disabled="false">»</button>
+    <output class="sr-only enable-carousel__alert"></output>
+  </div>
+
+  <div id="announcements-carousel__indicators" class="glider-dots"><button data-index="0" aria-label="Display Slide 1." class="glider-dot active" tabindex="-1" aria-hidden="true"></button><button data-index="1" aria-label="Display Slide 2." class="glider-dot " tabindex="-1" aria-hidden="true"></button><button data-index="2" aria-label="Display Slide 3." class="glider-dot " tabindex="-1" aria-hidden="true"></button><button data-index="3" aria-label="Display Slide 4." class="glider-dot " tabindex="-1" aria-hidden="true"></button></div>
+
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example2__steps" class="showcode__steps"><label for="example2__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example2__steps--select" data-showcode-for="example2" data-replace-html-rules="{&quot;.glider .enable-carousel__slide:not(:first-child)&quot;:&quot;&amp;lt;!-- Has similar structure as first slide --&amp;gt;&quot;,&quot;.glider .enable-carousel__slide p&quot;:&quot;&amp;lt;!-- Copy here --&amp;gt;&quot;}"><option value=""></option><option value="enable-carousel--has-focusable-arrow-buttons" data-showcode-notes="For this specific implementation, setting this class on the DOM element that contains the carousel panels will ensure that when the previous and next buttons are pressed, focus goes to the newly visible slide">Step #1: Ensure you set configure the carousel correctly</option><option value="%FILE% ./js/modules/enable-carousel.js ~ \\s*// If useArrowButtons is set as an option.+?(?=\\s*// If userArrowButtons)" data-showcode-notes="After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed.">Step #2: Initialize the carousel via JavaScript</option><option value="%FILE% ./js/modules/enable-carousel.js ~ \\s*// Sets events for the &quot;List of Content&quot; ([\\s\\S]*?\\};)" data-showcode-notes="<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.  We load the <a href=&quot;https://github.com/WICG/inert&quot;>WICG Inert polyfill</a> only if the browser doesn't support it natively.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>">Step #3: Set up events the manage focus when a new slide comes into view.</option></select></div>
+                          <div id="example2__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example2__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example2__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example2__example-desc" class="showcode__example--desc">
+                <label for="example2__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example2__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example2" data-showcode-props="example2-props" tabindex="0" aria-describedby="example2__example-desc">&lt;p<br>  id="carousel-instructions"<br>  class="sr-only"<br>&gt;<br>  Tab into the previous and next buttons below to cycle the slides in the carousel.<br>&lt;/p&gt;<br>&lt;div<br>  class="glider-contain"<br>  role="region"<br>  aria-label="Store Announcements Carousel"<br>  id="announcements-carousel__container"<br>&gt;<br>  &lt;button<br>    class="glider-prev"<br>    aria-describedby="carousel-instructions"<br>    aria-label="Display Previous Slide"<br>  &gt;<br>    «<br>  &lt;/button&gt;<br>  &lt;div<br>    id="announcements-carousel"<br>    tabindex="0"<br>    class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons"<br>    aria-labelledby="announcements-carousel__container"<br>    aria-describedby="carousel-instructions"<br>  &gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>      aria-labelledby="example2__slide01-title example2__slide-01-desc"<br>    &gt;<br>      &lt;div<br>        class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1"<br>      &gt;<br>        &lt;h2<br>          id="example2__slide01-title"<br>          class="enable-carousel__slide-heading"<br>        &gt;<br>          Hours of Operation Change<br>        &lt;/h2&gt;<br>        &lt;p<br>          id="example2__slide-01-desc"<br>        &gt;<br><br>          &lt;!-- Copy here --&gt;<br><br>        &lt;/p&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>      aria-labelledby="example2__slide02-title example2__slide-02-desc"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>      aria-labelledby="example2__slide03-title example2__slide-03-desc"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>    &lt;div<br>      class="enable-carousel__slide"<br>      aria-labelledby="example2__slide04-title example2__slide-04-desc"<br>    &gt;<br><br>      &lt;!-- Has similar structure as first slide --&gt;<br><br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;button<br>    class="glider-next"<br>    aria-describedby="carousel-instructions"<br>    aria-label="Display Next Slide"<br>  &gt;<br>    »<br>  &lt;/button&gt;<br>  &lt;output<br>    class="sr-only enable-carousel__alert"<br>  &gt;<br>  &lt;/output&gt;<br>&lt;/div&gt;<br>&lt;div<br>  id="announcements-carousel__indicators"<br>&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example2-props">
+{
+  "replaceHtmlRules": {
+    ".glider .enable-carousel__slide:not(:first-child)": "<!-- Has similar structure as first slide -->",
+    ".glider .enable-carousel__slide p": "<!-- Copy here -->"
+  },
+  "steps": [
+    
+    {
+      "label": "Ensure you set configure the carousel correctly",
+      "highlight": "enable-carousel--has-focusable-arrow-buttons",
+      "notes": "For this specific implementation, setting this class on the DOM element that contains the carousel panels will ensure that when the previous and next buttons are pressed, focus goes to the newly visible slide"
+    },
+    {
+      "label": "Initialize the carousel via JavaScript",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\\\s*// If useArrowButtons is set as an option.+?(?=\\\\s*// If userArrowButtons)",
+      "notes": "After we create the carousel, we add three events: a focus event to capture when a CTA in a slide gains focus, a mouse event to detect when the mouse is used, and a key event to detect when the TAB key is pressed."
+    },
+    {
+      "label": "Set up events the manage focus when a new slide comes into view.",
+      "highlight": "%FILE% ./js/modules/enable-carousel.js ~ \\\\s*// Sets events for the \\"List of Content\\" ([\\\\s\\\\S]*?\\\\};)",
+      "notes": "<p>When a slide comes into view, focus is applied to it (or to the first keyboard accessible control inside of it).  When a slide is hidden, it is marked as <code>inert</code> so keyboard focus is never applied to it or its children.  We load the <a href=\\"https://github.com/WICG/inert\\">WICG Inert polyfill</a> only if the browser doesn't support it natively.</p><p>Note as well that we ensure that when the previous and next buttons are pressed with the Enter key, it prevents page scrolling.  Just preventing a small annoyance that some keyboard users have had in the past.</p>"
+    }
+    
+  ]
+}
+</script>
+
+
+<h3 id="npm-instructions" tabindex="-1"><a class="heading__deeplink" href="#npm-instructions" title="Permalink to Installation Instructions" aria-label="Permalink to Installation Instructions">Installation Instructions</a></h3>
+
+<p>You can load this JavaScript library into your application in serveral ways:
+
+</p><ul>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
+  <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
+      browser</a>.</li>
+    <li>as an old-school ES4/JavaScript library.</li>
+  </ul>
+
+
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
+
+
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  </li><li>Stack Overflow has a really good thread about <a href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
+
+
+<h4 id="important-note-on-the-css-classes-used-in-this-module---heading" tabindex="-1"><a class="heading__deeplink" href="#important-note-on-the-css-classes-used-in-this-module---heading" title="Permalink to Important Note On The CSS Classes Used In This Module:" aria-label="Permalink to Important Note On The CSS Classes Used In This Module:">Important Note On The CSS Classes Used In This Module:</a></h4>
+
+<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+These CSS classes begin with <code>enable-carousel__</code>.  Please see the documentation above to see where these CSS classes are inserted.
+
+
+</p><h4 id="using-npm-webpack-to-load-es6-modules---heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-es6-modules---heading" title="Permalink to Using NPM/Webpack to load ES6 Modules:" aria-label="Permalink to Using NPM/Webpack to load ES6 Modules:">Using NPM/Webpack to load ES6 Modules:</a></h4>
+
+<ol>
+  <li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__3__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__3__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__3__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__3">module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+      ,'~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
+      '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider')
+ 
+    },
+
+    ...
+  },
+
+  ...
+
+}
+    </code>
+  </div>
+</div>  </li>
+  <li>
+    You can use the module like this:
+
+    <div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__4__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__4__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__4__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__4">// import the JS module
+import enableCarousel from '~enable-a11y/js/modules/enable-carousel';
+
+// import the CSS for the module 
+import '~enable-a11y/css/enable-carousel';
+
+
+
+
+/* 
+ * How to initialize your carousel to be like a 
+ * list of links (i.e. the first example)
+ */
+
+// First, run Enable Carousel constructor.  Note that
+// \`domContainer\` is the root DOM node that has the
+// \`enable-carousel\` class assigned to it.
+const focusAllPanelsCarousel = new EnableCarousel(domContainer);
+
+// Next, check if it is set correctly, then initialize
+focusAllPanelsCarousel &amp;&amp; focusAllPanelsCarousel.init();
+
+
+
+
+/* 
+ * How to initialize your carousel to be like the second
+ * carousel example, where keyboard focus is applied to
+ * the newly visible panel when the arrow keys are pressed.
+ */
+
+// First, run Enable Carousel constructor.  Note that
+// \`domContainer\` is the root DOM node that has the
+// \`enable-carousel\` class assigned to it.
+const focusArrowButtonsCarousel = new EnableCarousel(domContainer), {
+    useArrowButtons: true,
+
+    // Note that for browsers that don't support the \`inert\` propery,
+    // you will need to include the <a href="https://github.com/WICG/inert">WICG inert polyfill</a> to support it
+    // (As of 2023, this is basically Firefox).  Note this polyfill
+    // won't load if it isn't needed, and is relative to the 
+    // root page's URL.
+    inertURL: 'enable-node-libs/wicg-inert/dist/inert.min.js'
+});
+
+// Next, check if it is set correctly, then initialize
+focusArrowButtonsCarousel &amp;&amp; focusArrowButtonsCarousel.init();  
+
+
+// Note that this component doesn't currently work when<br>// new components are added after page load.        </code>
+  </div>
+</div>    <p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href="skip-link.php#npm-instructions">NPM module for skip links as well</a>.</em></p>  </li>
+
+  <li>
+    Alternatively, if you are using LESS you can include the styles in your project's CSS using:
+
+    <div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__5__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__5__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__5__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__5">@import '~enable-a11y/css/enable-carousel';
+        </code>
+  </div>
+</div>
+    (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
+  </li>
+</ol>
+
+<h4 id="using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" title="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax" aria-label="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax">Using NPM/Webpack to Load Modules Using CommonJS Syntax</a></h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__6__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__6__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__6__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__6">var enableCarousel = require('enable-a11y/enable-carousel').default; 
+
+...
+
+enableCarousel.init();
+    </code>
+  </div>
+</div>    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__7__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__7__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__7__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__7">@import '~enable-a11y/css/enable-carousel';
+    </code>
+  </div>
+</div>    </li>
+    </ol>
+
+<h4 id="using-es6-modules-natively---heading" tabindex="-1"><a class="heading__deeplink" href="#using-es6-modules-natively---heading" title="Permalink to Using ES6 modules natively." aria-label="Permalink to Using ES6 modules natively.">Using ES6 modules natively.</a></h4>
+
+<p>
+  This is the method that this page you are reading now loads the scripts.
+</p>
+
+<ol>
+  <li>
+    Grab the source by either <a href="npm.php">using NPM</a>, <a href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+  </li>
+  <li>
+    If you want to load the module as a native ES6 module, copy <code>js/modules/enable-carousel.js</code>
+    ,      and <code>css/enable-carousel.css</code>
+        from the repo and put them
+    in the appropriate directories in your project (all JS files must be in the same directory).
+  </li>
+    <li>
+    Load the CSS in the head of you document:
+
+    <div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__8__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__8__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__8__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__8">&lt;html&gt;
+  &lt;head&gt;
+
+    ...
+
+    &lt;link rel="stylesheet" href="path-to/css/enable-carousel.css" &gt;
+
+    ...
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+
+      </code>
+  </div>
+</div>  </li><li>
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+
+    <div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__9__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__9__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__9__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__9">&lt;script type="module"&gt;
+    import enableCarousel from "path-to/enable-carousel.js" 
+
+    enableCarousel.init();
+&lt;/script&gt;
+        </code>
+  </div>
+</div>  </li>
+</ol>
+
+<h4 id="using-es4--heading" tabindex="-1"><a class="heading__deeplink" href="#using-es4--heading" title="Permalink to Using ES4" aria-label="Permalink to Using ES4">Using ES4</a></h4>
+
+Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
+directory instead of the <code>js/modules/</code>:
+
+<div class="showcode showcode--no-js-container">
+  <div class="showcode__ui">
+    <div id="showcode-static__10__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__10__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__10__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__10">&lt;script src="path-to/es4/enable-carousel.js"&gt;&lt;/script&gt;
+    </code>
+  </div>
+</div>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    <script type="module">
+    import EnableCarousel from "./js/modules/enable-carousel.js";
+
+    /* This is the first carousel example, which acts like a list of links */
+    const focusAllPanelsCarousel = new EnableCarousel(document.querySelector(".enable-carousel--focus-all-panels"));
+
+
+    /* 
+     * This is the second carousel example, while focuses on the first newly visible
+     * panel when the arrow keys are pressed.
+     */
+    const focusArrowButtonsCarousel = new EnableCarousel(document.querySelector(".enable-carousel--has-focusable-arrow-buttons"), {
+        useArrowButtons: true,
+        polyfillURL: 'enable-node-libs/wicg-inert/dist/inert.min.js'
+    });
+
+    focusAllPanelsCarousel && focusAllPanelsCarousel.init();
+    focusArrowButtonsCarousel && focusArrowButtonsCarousel.init();  
+</script>
+
+</body></html>"
+`;

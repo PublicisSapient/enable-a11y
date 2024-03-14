@@ -1,0 +1,2946 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Autocomplete (a.k.a Combobox) - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Autocomplete (a.k.a Combobox)">
+<meta property="og:description" content="One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role">
+<meta property="og:image" content="/images/posters/combobox.jpg?1">
+<meta property="og:url" content="/combobox.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role">
+<meta name="twitter:title" content="Accessible Autocomplete (a.k.a Combobox)">
+<meta name="twitter:image" content="/images/posters/combobox.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link rel="stylesheet" type="text/css" href="css/combobox.css">
+<link rel="stylesheet" type="text/css" href="css/form.css">
+
+<style>
+  .combobox-example {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  .enable-combobox__inner-container {
+    margin: 0 auto;
+  }
+</style></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-autocomplete-a-k-a-combobox---heading" tabindex="-1">Accessible Autocomplete (a.k.a Combobox)</h1><p>
+  Comboboxes are text input fields with autocomplete. In HTML5, they can be implemented using the
+  <code>&lt;datalist&gt;</code> tag. In ARIA, they can be implemented with the <code>combobox</code> role and a bit of
+  JavaScript.
+</p>
+
+<p>
+  This is one of the rare cases where the native HTML5 version is not accessible in the majority of the web browsers out
+  there. Because of this, I have spent a lot of time working on Enable's combobox implementation.
+</p>
+
+
+<h2 id="example-3-using-html5-datalist--heading" tabindex="-1"><a class="heading__deeplink" href="#example-3-using-html5-datalist--heading" title="Permalink to Example 3: Using HTML5 datalist" aria-label="Permalink to Example 3: Using HTML5 datalist">Example 3: Using HTML5 datalist</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--do-not">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/do-not.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This does not work with assistive technologies in most web browsers.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Ironically, this seems to be inaccessible compared to the ARIA version:
+</p>
+
+<ul>
+  <li>
+    The autocomplete features are not available to mobile screen reader users.
+    I was not able to figure out how to gain access to the datalist values
+    using either Talkback/Chrome on Android or VoiceOver/Safari for iOS.
+  </li>
+  <li>
+    When a user types in values, the screen reader doesn't report that
+    is a suggestion list visible in some browsers (e.g. Firefox 86 with NVDA).
+  </li>
+  <li>
+    If the user uses the up and down arrow keys, some browsers doesn't read
+    these values out (e.g. older versions of Safari with VoiceOver).
+  </li>
+  <li>
+    The autocomplete features do not appear at all in Firefox for Android (at the time of this writing, it was
+    version 96).
+  </li>
+  <li>
+    Because of the above reasons, it is one of the cases where ARIA works
+    better.
+  </li>
+</ul>
+
+<div id="dataset-example" class="enable-example">
+  <form class="combobox-example">
+    <label id="html5-fruit__label" for="html5-fruit" class="combobox-label">
+      Enter a Fruit or Vegetable
+    </label>
+    <input id="html5-fruit" name="fruit" type="text" list="languages" aria-describedby="html5-fruit__desc">
+    <div class="sr-only" id="html5-fruit__desc">
+      As you type, use the up and down arrow keys to choose the autocomplete
+      items.
+    </div>
+    <div id="html5-fruit__statys" role="alert" aria-atomic="true" aria-live="polite">
+
+    </div>
+    <datalist id="languages">
+      <option id="Apple" value="Apple">Apple</option>
+      <option id="Artichoke" value="Artichoke">Artichoke</option>
+      <option id="Asparagus" value="Asparagus">Asparagus</option>
+      <option id="Banana" value="Banana">Banana</option>
+      <option id="Beets" value="Beets">Beets</option>
+      <option id="Bell-pepper" value="Bell pepper">Bell pepper</option>
+      <option id="Broccoli" value="Broccoli">Broccoli</option>
+      <option id="Brussels-sprout" value="Brussels sprout">
+        Brussels sprout
+      </option>
+      <option id="Cabbage" value="Cabbage">Cabbage</option>
+      <option id="Carrot" value="Carrot">Carrot</option>
+      <option id="Cauliflower" value="Cauliflower">Cauliflower</option>
+      <option id="Celery" value="Celery">Celery</option>
+      <option id="Chard" value="Chard">Chard</option>
+      <option id="Chicory" value="Chicory">Chicory</option>
+      <option id="Corn" value="Corn">Corn</option>
+      <option id="Cucumber" value="Cucumber">Cucumber</option>
+      <option id="Daikon" value="Daikon">Daikon</option>
+      <option id="Date" value="Date">Date</option>
+      <option id="Edamame" value="Edamame">Edamame</option>
+      <option id="Eggplant" value="Eggplant">Eggplant</option>
+      <option id="Elderberry" value="Elderberry">Elderberry</option>
+      <option id="Fennel" value="Fennel">Fennel</option>
+      <option id="Fig" value="Fig">Fig</option>
+      <option id="Garlic" value="Garlic">Garlic</option>
+      <option id="Grape" value="Grape">Grape</option>
+      <option id="Honeydew-melon" value="Honeydew melon">
+        Honeydew melon
+      </option>
+      <option id="Iceberg-lettuce" value="Iceberg lettuce">
+        Iceberg lettuce
+      </option>
+      <option id="Jerusalem-artichoke" value="Jerusalem artichoke">
+        Jerusalem artichoke
+      </option>
+      <option id="Kale" value="Kale">Kale</option>
+      <option id="Kiwi" value="Kiwi">Kiwi</option>
+      <option id="Leek" value="Leek">Leek</option>
+      <option id="Lemon" value="Lemon">Lemon</option>
+      <option id="Mango" value="Mango">Mango</option>
+      <option id="Mangosteen" value="Mangosteen">Mangosteen</option>
+      <option id="Melon" value="Melon">Melon</option>
+      <option id="Mushroom" value="Mushroom">Mushroom</option>
+      <option id="Nectarine" value="Nectarine">Nectarine</option>
+      <option id="Okra" value="Okra">Okra</option>
+      <option id="Olive" value="Olive">Olive</option>
+      <option id="Onion" value="Onion">Onion</option>
+      <option id="Orange" value="Orange">Orange</option>
+      <option id="Parsnip" value="Parsnip">Parsnip</option>
+      <option id="Pea" value="Pea">Pea</option>
+      <option id="Pear" value="Pear">Pear</option>
+      <option id="Pineapple" value="Pineapple">Pineapple</option>
+      <option id="Potato" value="Potato">Potato</option>
+      <option id="Pumpkin" value="Pumpkin">Pumpkin</option>
+      <option id="Quince" value="Quince">Quince</option>
+      <option id="Radish" value="Radish">Radish</option>
+      <option id="Rhubarb" value="Rhubarb">Rhubarb</option>
+      <option id="Shallot" value="Shallot">Shallot</option>
+      <option id="Spinach" value="Spinach">Spinach</option>
+      <option id="Squash" value="Squash">Squash</option>
+      <option id="Strawberry" value="Strawberry">Strawberry</option>
+      <option id="Sweet-potato" value="Sweet potato">Sweet potato</option>
+      <option id="Tomato" value="Tomato">Tomato</option>
+      <option id="Turnip" value="Turnip">Turnip</option>
+      <option id="Ugli-fruit" value="Ugli fruit">Ugli fruit</option>
+      <option id="Victoria-plum" value="Victoria plum">
+        Victoria plum
+      </option>
+      <option id="Watercress" value="Watercress">Watercress</option>
+      <option id="Watermelon" value="Watermelon">Watermelon</option>
+      <option id="Yam" value="Yam">Yam</option>
+      <option id="Zucchini" value="Zucchini">Zucchini</option>
+    </datalist>
+
+    <button type="submit" class="combobox-example__button">Submit</button>
+  </form>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="dataset-example__steps" class="showcode__steps"><label for="dataset-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="dataset-example__steps--select" data-showcode-for="dataset-example" data-replace-html-rules="{&quot;datalist&quot;:[&quot;&amp;lt;option id=\\&quot;Apple\\&quot; value=\\&quot;Apple\\&quot;&amp;gt;Apple&amp;lt;/option&amp;gt;&quot;,&quot;&amp;lt;option id=\\&quot;Artichoke\\&quot; value=\\&quot;Artichoke\\&quot;&amp;gt;Artichoke&amp;lt;/option&amp;gt;&quot;,&quot;&quot;,&quot;...&quot;,&quot;&quot;]}"><option value=""></option><option value="for" data-showcode-notes="Just like any other form element, this needs a proper label.">Step #1: Create label for input tag.</option><option value="aria-describedby" data-showcode-notes="Since accessibility API support is a little sketchy right now, these instructions may help some screen reader users use this component properly.">Step #2: Give keyboard instructions using aria-describedby.</option><option value="%OPENCLOSECONTENTTAG%datalist" data-showcode-notes="Note that the content of this is similar to the <code>select</code> tag.  It's basically a list of options.">Step #3: Set up the datalist options</option></select></div>
+                          <div id="dataset-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="dataset-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="dataset-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="dataset-example__example-desc" class="showcode__example--desc">
+                <label for="dataset-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="dataset-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="dataset-example" data-showcode-props="dataset-example-props" tabindex="0" aria-describedby="dataset-example__example-desc">&lt;form<br>  class="combobox-example"<br>&gt;<br>  &lt;label<br>    id="html5-fruit__label"<br>    for="html5-fruit"<br>    class="combobox-label"<br>  &gt;<br>    Enter a Fruit or Vegetable<br>  &lt;/label&gt;<br>  &lt;input<br>    id="html5-fruit"<br>    name="fruit"<br>    type="text"<br>    list="languages"<br>    aria-describedby="html5-fruit__desc"<br>  &gt;<br>  &lt;div<br>    class="sr-only"<br>    id="html5-fruit__desc"<br>  &gt;<br>    As you type, use the up and down arrow keys to choose the autocomplete<br>    items.<br>  &lt;/div&gt;<br>  &lt;div<br>    id="html5-fruit__statys"<br>    role="alert"<br>    aria-atomic="true"<br>    aria-live="polite"<br>  &gt;<br>  &lt;/div&gt;<br>  &lt;datalist id="languages"&gt;<br>    &lt;option<br>      id="Apple"<br>      value="Apple"<br>    &gt;<br>      Apple<br>    &lt;/option&gt;<br>    &lt;option<br>      id="Artichoke"<br>      value="Artichoke"<br>    &gt;<br>      Artichoke<br>    &lt;/option&gt;<br><br><br>    ...<br><br><br>  &lt;/datalist&gt;<br>  &lt;button<br>    type="submit"<br>    class="combobox-example__button"<br>  &gt;<br>    Submit<br>  &lt;/button&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="dataset-example-props">
+{
+  "replaceHtmlRules": {
+    "datalist": [
+      "<option id=\\"Apple\\" value=\\"Apple\\">Apple</option>",
+      "<option id=\\"Artichoke\\" value=\\"Artichoke\\">Artichoke</option>",
+      "",
+      "...",
+      ""
+    ]
+  },
+  "steps": [{
+      "label": "Create label for input tag.",
+      "highlight": "for",
+      "notes": "Just like any other form element, this needs a proper label."
+    },
+    {
+      "label": "Give keyboard instructions using aria-describedby.",
+      "highlight": "aria-describedby",
+      "notes": "Since accessibility API support is a little sketchy right now, these instructions may help some screen reader users use this component properly."
+    },
+    {
+      "label": "Set up the datalist options",
+      "highlight": "%OPENCLOSECONTENTTAG%datalist",
+      "notes": "Note that the content of this is similar to the <code>select</code> tag.  It's basically a list of options."
+    }
+  ]
+}
+</script>
+
+
+<h2 id="aria-combobox" tabindex="-1"><a class="heading__deeplink" href="#aria-combobox" title="Permalink to Enable's ARIA combobox." aria-label="Permalink to Enable's ARIA combobox.">Enable's ARIA combobox.</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This combobox works better with screen readers than the native HTML5 version</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution described below is available as an NPM module. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  This is a heavily refactored version of
+  <a href="https://webkit.org/blog-files/aria1.0/combobox_with_live_region_status.html">the combobox example at
+    webkit.org</a>. Added was a few extra instructions and UX features for screen reader users so
+  they could use and understand the autocomplete features in this widget. If you start typing into the combobox, screen
+  readers will tell users when autocomplete items appear and how many there are.
+</p>
+
+
+
+<div class="enable-example">
+  <div id="example1" class="enable-combobox">
+    <form class="combobox-example">
+      <label id="aria-fruit__label" for="aria-fruit"> Enter a fruit or vegetable </label>
+      <div class="enable-combobox__inner-container">
+        <div class="enable-combobox__controls-container">
+          <input type="text" id="aria-fruit" aria-describedby="aria-fruit__desc" role="combobox" aria-autocomplete="list" aria-owns="aria-fruit__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off" required="">
+          <div role="alert" aria-atomic="true" aria-live="assertive"></div>
+          <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset" aria-describedby="aria-fruit__label">
+            <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear">
+          </button>
+
+
+          <ul role="listbox" id="aria-fruit__list" tabindex="-1" hidden="">
+            <li tabindex="-1" role="option" id="aria-fruit__field-1" aria-describedby="aria-fruit__label">Apple</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-2" aria-describedby="aria-fruit__label">Artichoke</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-3" aria-describedby="aria-fruit__label">Asparagus</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-4" aria-describedby="aria-fruit__label">Banana</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-5" aria-describedby="aria-fruit__label">Beets</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-6" aria-describedby="aria-fruit__label">Bell pepper</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-7" aria-describedby="aria-fruit__label">Broccoli</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-8" aria-describedby="aria-fruit__label">Brussels sprout</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-9" aria-describedby="aria-fruit__label">Cabbage</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-10" aria-describedby="aria-fruit__label">Carrot</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-11" aria-describedby="aria-fruit__label">Cauliflower</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-12" aria-describedby="aria-fruit__label">Celery</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-13" aria-describedby="aria-fruit__label">Chard</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-14" aria-describedby="aria-fruit__label">Chicory</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-15" aria-describedby="aria-fruit__label">Corn</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-16" aria-describedby="aria-fruit__label">Cucumber</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-17" aria-describedby="aria-fruit__label">Daikon</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-18" aria-describedby="aria-fruit__label">Date</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-19" aria-describedby="aria-fruit__label">Edamame</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-20" aria-describedby="aria-fruit__label">Eggplant</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-21" aria-describedby="aria-fruit__label">Elderberry</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-22" aria-describedby="aria-fruit__label">Fennel</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-23" aria-describedby="aria-fruit__label">Fig</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-24" aria-describedby="aria-fruit__label">Garlic</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-25" aria-describedby="aria-fruit__label">Grape</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-26" aria-describedby="aria-fruit__label">Honeydew melon</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-27" aria-describedby="aria-fruit__label">Iceberg lettuce</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-28" aria-describedby="aria-fruit__label">
+              Jerusalem artichoke
+            </li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-29" aria-describedby="aria-fruit__label">Kale</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-30" aria-describedby="aria-fruit__label">Kiwi</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-31" aria-describedby="aria-fruit__label">Leek</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-32" aria-describedby="aria-fruit__label">Lemon</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-33" aria-describedby="aria-fruit__label">Mango</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-34" aria-describedby="aria-fruit__label">Mangosteen</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-35" aria-describedby="aria-fruit__label">Melon</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-36" aria-describedby="aria-fruit__label">Mushroom</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-37" aria-describedby="aria-fruit__label">Nectarine</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-38" aria-describedby="aria-fruit__label">Okra</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-39" aria-describedby="aria-fruit__label">Olive</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-40" aria-describedby="aria-fruit__label">Onion</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-41" aria-describedby="aria-fruit__label">Orange</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-42" aria-describedby="aria-fruit__label">Parsnip</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-43" aria-describedby="aria-fruit__label">Pea</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-44" aria-describedby="aria-fruit__label">Pear</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-45" aria-describedby="aria-fruit__label">Pineapple</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-46" aria-describedby="aria-fruit__label">Potato</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-47" aria-describedby="aria-fruit__label">Pumpkin</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-48" aria-describedby="aria-fruit__label">Quince</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-49" aria-describedby="aria-fruit__label">Radish</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-50" aria-describedby="aria-fruit__label">Rhubarb</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-51" aria-describedby="aria-fruit__label">Shallot</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-52" aria-describedby="aria-fruit__label">Spinach</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-53" aria-describedby="aria-fruit__label">Squash</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-54" aria-describedby="aria-fruit__label">Strawberry</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-55" aria-describedby="aria-fruit__label">Sweet potato</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-56" aria-describedby="aria-fruit__label">Tomato</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-57" aria-describedby="aria-fruit__label">Turnip</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-58" aria-describedby="aria-fruit__label">Ugli fruit</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-59" aria-describedby="aria-fruit__label">Victoria plum</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-60" aria-describedby="aria-fruit__label">Watercress</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-61" aria-describedby="aria-fruit__label">Watermelon</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-62" aria-describedby="aria-fruit__label">Yam</li>
+            <li tabindex="-1" role="option" id="aria-fruit__field-63" aria-describedby="aria-fruit__label">Zucchini</li>
+          </ul>
+
+          <div class="sr-only" id="aria-fruit__desc">
+            As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="combobox-example__button">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example1__steps" class="showcode__steps"><label for="example1__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example1__steps--select" data-showcode-for="example1" data-replace-html-rules="{&quot;[role=\\&quot;listbox\\&quot;]&quot;:&quot;&amp;lt;li role=\\&quot;option\\&quot; value=\\&quot;Apple\\&quot;&amp;gt;Apple&amp;lt;/li&amp;gt;&amp;lt;li role=\\&quot;option\\&quot; value=\\&quot;Artichoke\\&quot;&amp;gt;Artichoke&amp;lt;/li&amp;gt; ...&quot;}"><option value=""></option><option value="role=&quot;combobox&quot;" data-showcode-notes="The input field must have a role of combobox in order for it to be announced correctly by the screen reader.">Step #1: Place ARIA roles in document</option><option value="for" data-showcode-notes="Ensure the label is properly labelled">Step #2: Code label to be associated with input</option><option value="aria-describedby" data-showcode-notes="These instructions are visibly hidden, since they are only for screen reader users.">Step #3: Component instructions for the component using aria-describedby</option><option value="aria-owns" data-showcode-notes="This ensures the two elements are linked">Step #4: Associate the dropdown data with the input field</option><option value="aria-autocomplete" data-showcode-notes="This tells the screen reader the type of autocompletion that is being done.  Possible values are <code>list</code> and <code>inline</code>.">Step #5: Set aria-autocomplete attribute</option><option value="aria-expanded" data-showcode-notes="<p>When the menu is expanded, this should be set to <code>&quot;true&quot;</code>. Otherwise, it is set to <code>&quot;false&quot;</code>.</p><p>Note that when the dropdown is expanded, focus should go to the first element in the dropdown. The user should be able to cycle through the elements in the dropdown using the arrow keys.</p><p>When the user picks an element with the ENTER key, the dropdown should close and the element should be selected.">Step #6: Expose state of the dropdown</option><option value="autocomplete=&quot;off&quot; ||| autocorrect ||| autocapitalize=&quot;off&quot;" data-showcode-notes="If we want to ensure the user can only pick the items in the dropdown, we have to make sure these items are shut off.">Step #7: Turn off autocorrect and autocomplete</option><option value="role=&quot;listbox&quot; ||| role=&quot;option&quot;" data-showcode-notes="Options must be direct children of listbox">Step #8: Insert roles for autocomplete list</option></select></div>
+                          <div id="example1__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example1__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example1__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example1__example-desc" class="showcode__example--desc">
+                <label for="example1__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example1__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example1" data-showcode-props="example1-props" tabindex="0" aria-describedby="example1__example-desc">&lt;form<br>  class="combobox-example"<br>&gt;<br>  &lt;label<br>    id="aria-fruit__label"<br>    for="aria-fruit"<br>  &gt;<br>    Enter a fruit or vegetable<br>  &lt;/label&gt;<br>  &lt;div<br>    class="enable-combobox__inner-container"<br>  &gt;<br>    &lt;div<br>      class="enable-combobox__controls-container"<br>    &gt;<br>      &lt;input<br>        type="text"<br>        id="aria-fruit"<br>        aria-describedby="aria-fruit__desc"<br>        role="combobox"<br>        aria-autocomplete="list"<br>        aria-owns="aria-fruit__list"<br>        aria-expanded="false"<br>        autocomplete="off"<br>        autocorrect="off"<br>        autocapitalize="off"<br>        required<br>      &gt;<br>      &lt;div<br>        role="alert"<br>        aria-atomic="true"<br>        aria-live="assertive"<br>      &gt;<br>      &lt;/div&gt;<br>      &lt;button<br>        class="enable-combobox__reset-button"<br>        aria-controls="aria-fruit"<br>        type="reset"<br>        aria-describedby="aria-fruit__label"<br>      &gt;<br>        &lt;img<br>          class="enable-combobox__reset-button-image"<br>          src="images/close-window.svg"<br>          alt="Clear"<br>        &gt;<br>      &lt;/button&gt;<br>      &lt;ul<br>        role="listbox"<br>        id="aria-fruit__list"<br>        tabindex="-1"<br>        hidden=""<br>      &gt;<br>        &lt;li<br>          role="option"<br>          value="Apple"<br>        &gt;<br>          Apple<br>        &lt;/li&gt;<br>        &lt;li<br>          role="option"<br>          value="Artichoke"<br>        &gt;<br>          Artichoke<br>        &lt;/li&gt;<br><br><br>        ...<br><br><br>      &lt;/ul&gt;<br>      &lt;div<br>        class="sr-only"<br>        id="aria-fruit__desc"<br>      &gt;<br>        As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;button<br>    type="submit"<br>    class="combobox-example__button"<br>  &gt;<br>    Submit<br>  &lt;/button&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="example1-props">
+{
+  "replaceHtmlRules": {
+    "[role=\\"listbox\\"]": "<li role=\\"option\\" value=\\"Apple\\">Apple</li><li role=\\"option\\" value=\\"Artichoke\\">Artichoke</li> ..."
+  },
+  "steps": [{
+      "label": "Place ARIA roles in document",
+      "highlight": "role=\\"combobox\\"",
+      "notes": "The input field must have a role of combobox in order for it to be announced correctly by the screen reader."
+    },
+    {
+      "label": "Code label to be associated with input",
+      "highlight": "for",
+      "notes": "Ensure the label is properly labelled"
+    },
+    {
+      "label": "Component instructions for the component using aria-describedby",
+      "highlight": "aria-describedby",
+      "notes": "These instructions are visibly hidden, since they are only for screen reader users."
+    },
+    {
+      "label": "Associate the dropdown data with the input field",
+      "highlight": "aria-owns",
+      "notes": "This ensures the two elements are linked"
+    },
+    {
+      "label": "Set aria-autocomplete attribute",
+      "highlight": "aria-autocomplete",
+      "notes": "This tells the screen reader the type of autocompletion that is being done.  Possible values are <code>list</code> and <code>inline</code>."
+    },
+    {
+      "label": "Expose state of the dropdown",
+      "highlight": "aria-expanded",
+      "notes": "<p>When the menu is expanded, this should be set to <code>\\"true\\"</code>. Otherwise, it is set to <code>\\"false\\"</code>.</p><p>Note that when the dropdown is expanded, focus should go to the first element in the dropdown. The user should be able to cycle through the elements in the dropdown using the arrow keys.</p><p>When the user picks an element with the ENTER key, the dropdown should close and the element should be selected."
+    },
+    {
+      "label": "Turn off autocorrect and autocomplete",
+      "highlight": "autocomplete=\\"off\\" ||| autocorrect ||| autocapitalize=\\"off\\"",
+      "notes": "If we want to ensure the user can only pick the items in the dropdown, we have to make sure these items are shut off."
+    },
+    {
+      "label": "Insert roles for autocomplete list",
+      "highlight": "role=\\"listbox\\" ||| role=\\"option\\"",
+      "notes": "Options must be direct children of listbox"
+    }
+  ]
+}
+</script>
+
+
+<h2 id="autosubmit-using-an-aria-combobox--heading" tabindex="-1"><a class="heading__deeplink" href="#autosubmit-using-an-aria-combobox--heading" title="Permalink to Autosubmit Using an ARIA Combobox" aria-label="Permalink to Autosubmit Using an ARIA Combobox">Autosubmit Using an ARIA Combobox</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is a feature of the NPM module described in the <a href="#aria-combobox">previous section</a>. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+    There are many e-commerce sites that have a search form with a combobox that submits when the user chooses one of the options.
+    This section shows an accessible proof-of-concept.
+</p>
+
+<div id="submit-on-select-example" class="enable-example">
+  <form role="search" aria-label="1980s video game search" tabindex="-1" class="combobox-example">
+    <div class="enable-combobox">
+      <label id="video-games__label" for="video-games">Search for your favourite 1980s Video Game:</label>
+      <div class="enable-combobox__inner-container">
+        <div id="video-games__close-desc" class="sr-only">
+          Please choose a value using the arrow keys or clear the combobox by either pressing the escape key or activating the
+          clear button.  Pressing enter will search for the item on Google.
+        </div>
+
+        <div class="enable-combobox__controls-container">
+
+          <div class="sr-only" id="video-games__desc">
+            As you type, use the up and down arrow keys or press ENTER and swipe to choose the autocomplete
+            items.
+          </div>
+
+
+          <div role="alert" aria-atomic="true" aria-live="polite">
+
+          </div>
+
+
+          <input type="text" tabindex="0" id="video-games" role="combobox" aria-autocomplete="list" aria-owns="video-games__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off" aria-describedby="video-games__desc">
+
+          <button class="enable-combobox__reset-button" aria-controls="video-games__list" type="reset" aria-describedby="video-games__label">
+            <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear" aria-describedby="video-games__label">
+          </button>
+
+          <ul role="listbox" id="video-games__list" tabindex="-1" hidden="">
+            <li tabindex="-1" role="option" id="video-games__field-1" aria-describedby="video-games__label">1942</li>
+            <li tabindex="-1" role="option" id="video-games__field-2" aria-describedby="video-games__label">Asteroids</li>
+            <li tabindex="-1" role="option" id="video-games__field-3" aria-describedby="video-games__label">Battlezone</li>
+            <li tabindex="-1" role="option" id="video-games__field-4" aria-describedby="video-games__label">Berzerk</li>
+            <li tabindex="-1" role="option" id="video-games__field-5" aria-describedby="video-games__label">BurgerTime</li>
+            <li tabindex="-1" role="option" id="video-games__field-6" aria-describedby="video-games__label">Centipede</li>
+            <li tabindex="-1" role="option" id="video-games__field-7" aria-describedby="video-games__label">Champion Baseball</li>
+            <li tabindex="-1" role="option" id="video-games__field-8" aria-describedby="video-games__label">Crystal Castles</li>
+            <li tabindex="-1" role="option" id="video-games__field-9" aria-describedby="video-games__label">Defender</li>
+            <li tabindex="-1" role="option" id="video-games__field-10" aria-describedby="video-games__label">Dig Dug</li>
+            <li tabindex="-1" role="option" id="video-games__field-11" aria-describedby="video-games__label">Donkey Kong</li>
+            <li tabindex="-1" role="option" id="video-games__field-12" aria-describedby="video-games__label">Donkey Kong Jr.</li>
+            <li tabindex="-1" role="option" id="video-games__field-13" aria-describedby="video-games__label">Dragon's Lair</li>
+            <li tabindex="-1" role="option" id="video-games__field-14" aria-describedby="video-games__label">Elevator Action</li>
+            <li tabindex="-1" role="option" id="video-games__field-15" aria-describedby="video-games__label">Frogger</li>
+            <li tabindex="-1" role="option" id="video-games__field-16" aria-describedby="video-games__label">Front Line</li>
+            <li tabindex="-1" role="option" id="video-games__field-17" aria-describedby="video-games__label">Galaga</li>
+            <li tabindex="-1" role="option" id="video-games__field-18" aria-describedby="video-games__label">Galaxian</li>
+            <li tabindex="-1" role="option" id="video-games__field-19" aria-describedby="video-games__label">Gorf</li>
+            <li tabindex="-1" role="option" id="video-games__field-20" aria-describedby="video-games__label">Gravitar</li>
+            <li tabindex="-1" role="option" id="video-games__field-21" aria-describedby="video-games__label">Gyruss</li>
+            <li tabindex="-1" role="option" id="video-games__field-22" aria-describedby="video-games__label">Joust</li>
+            <li tabindex="-1" role="option" id="video-games__field-23" aria-describedby="video-games__label">Jungle King</li>
+            <li tabindex="-1" role="option" id="video-games__field-24" aria-describedby="video-games__label">Kangaroo</li>
+            <li tabindex="-1" role="option" id="video-games__field-25" aria-describedby="video-games__label">Karate Champ</li>
+            <li tabindex="-1" role="option" id="video-games__field-26" aria-describedby="video-games__label">Kung-Fu Master</li>
+            <li tabindex="-1" role="option" id="video-games__field-27" aria-describedby="video-games__label">Lunar Lander</li>
+            <li tabindex="-1" role="option" id="video-games__field-28" aria-describedby="video-games__label">Mappy</li>
+            <li tabindex="-1" role="option" id="video-games__field-29" aria-describedby="video-games__label">Mario Bros.</li>
+            <li tabindex="-1" role="option" id="video-games__field-30" aria-describedby="video-games__label">Missile Command</li>
+            <li tabindex="-1" role="option" id="video-games__field-31" aria-describedby="video-games__label">Moon Patrol</li>
+            <li tabindex="-1" role="option" id="video-games__field-32" aria-describedby="video-games__label">Ms. Pac-Man</li>
+            <li tabindex="-1" role="option" id="video-games__field-33" aria-describedby="video-games__label">Pac-Man</li>
+            <li tabindex="-1" role="option" id="video-games__field-34" aria-describedby="video-games__label">Paperboy</li>
+            <li tabindex="-1" role="option" id="video-games__field-35" aria-describedby="video-games__label">Pengo</li>
+            <li tabindex="-1" role="option" id="video-games__field-36" aria-describedby="video-games__label">Phoenix</li>
+            <li tabindex="-1" role="option" id="video-games__field-37" aria-describedby="video-games__label">Pole Position</li>
+            <li tabindex="-1" role="option" id="video-games__field-38" aria-describedby="video-games__label">Popeye</li>
+            <li tabindex="-1" role="option" id="video-games__field-39" aria-describedby="video-games__label">Punch-Out!!</li>
+            <li tabindex="-1" role="option" id="video-games__field-40" aria-describedby="video-games__label">Q*bert</li>
+            <li tabindex="-1" role="option" id="video-games__field-41" aria-describedby="video-games__label">Qix</li>
+            <li tabindex="-1" role="option" id="video-games__field-42" aria-describedby="video-games__label">Rally-X</li>
+            <li tabindex="-1" role="option" id="video-games__field-43" aria-describedby="video-games__label">Robotron 2084</li>
+            <li tabindex="-1" role="option" id="video-games__field-44" aria-describedby="video-games__label">Scramble</li>
+            <li tabindex="-1" role="option" id="video-games__field-45" aria-describedby="video-games__label">Sinistar</li>
+            <li tabindex="-1" role="option" id="video-games__field-46" aria-describedby="video-games__label">Space Invaders</li>
+            <li tabindex="-1" role="option" id="video-games__field-47" aria-describedby="video-games__label">Spy Hunter</li>
+            <li tabindex="-1" role="option" id="video-games__field-48" aria-describedby="video-games__label">Star Castle</li>
+            <li tabindex="-1" role="option" id="video-games__field-49" aria-describedby="video-games__label">Star Trek: Strategic Operations Simulator</li>
+            <li tabindex="-1" role="option" id="video-games__field-50" aria-describedby="video-games__label">Star Wars</li>
+            <li tabindex="-1" role="option" id="video-games__field-51" aria-describedby="video-games__label">Tapper</li>
+            <li tabindex="-1" role="option" id="video-games__field-52" aria-describedby="video-games__label">Tempest</li>
+            <li tabindex="-1" role="option" id="video-games__field-53" aria-describedby="video-games__label">Time Pilot</li>
+            <li tabindex="-1" role="option" id="video-games__field-54" aria-describedby="video-games__label">Track &amp; Field</li>
+            <li tabindex="-1" role="option" id="video-games__field-55" aria-describedby="video-games__label">Tron</li>
+            <li tabindex="-1" role="option" id="video-games__field-56" aria-describedby="video-games__label">Vanguard</li>
+            <li tabindex="-1" role="option" id="video-games__field-57" aria-describedby="video-games__label">Wizard of Wor</li>
+            <li tabindex="-1" role="option" id="video-games__field-58" aria-describedby="video-games__label">Xevious</li>
+            <li tabindex="-1" role="option" id="video-games__field-59" aria-describedby="video-games__label">Zaxxon</li>
+          </ul>
+
+
+        </div>
+      </div>
+
+      <button type="submit" class="combobox-example__button">Submit</button>
+    </div>
+  </form>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-3" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-3" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                    
+            <p><strong>Note: since it is very similar, please follow all the steps in the two previous examples first before
+            implementing the following steps.</strong></p>
+                  
+                        <div class="showcode__ui">
+                                      <div id="submit-on-select-example__steps" class="showcode__steps"><label for="submit-on-select-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="submit-on-select-example__steps--select" data-showcode-for="submit-on-select-example" data-replace-html-rules="{&quot;[role=\\&quot;listbox\\&quot;]&quot;:[&quot;&amp;lt;div class=\\&quot;enable-combobox__group\\&quot; role=\\&quot;presentation\\&quot;&amp;gt;&quot;,&quot;&amp;lt;h2 class=\\&quot;enable-combobox__group-header\\&quot;&amp;gt;Communist States&amp;lt;/h2&amp;gt;&quot;,&quot;&quot;,&quot;&amp;lt;div role=\\&quot;option\\&quot; &amp;gt;People's Republic of China&amp;lt;/div&amp;gt;&quot;,&quot;&quot;,&quot;...&quot;,&quot;&quot;,&quot;&amp;lt;/div&amp;gt;&quot;,&quot;&amp;lt;div class=\\&quot;enable-combobox__group\\&quot; role=\\&quot;presentation\\&quot;&amp;gt;&quot;,&quot;&amp;lt;h2 class=\\&quot;enable-combobox__group-header\\&quot;&amp;gt;Other States&amp;lt;/h2&amp;gt;&quot;,&quot;&amp;lt;div role=\\&quot;option\\&quot; &amp;gt;Afghanistan&amp;lt;/div&amp;gt;&quot;,&quot;&quot;,&quot;...&quot;,&quot;&amp;lt;/div&amp;gt;&quot;]}"><option value=""></option><option value="%INLINE% autocomplete-submit" data-showcode-notes="Note that custom event <code>combobox-change</code> that this event handler uses. This fires when an option is chosen from the list.  It takes the value chosen and puts it inside a Google Search URL, using URLSearchParams and a template string.">Step #1: Create JS code to submit query when clicking the option elements.</option></select></div>
+                          <div id="submit-on-select-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="submit-on-select-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="submit-on-select-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="submit-on-select-example__example-desc" class="showcode__example--desc">
+                <label for="submit-on-select-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="submit-on-select-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="submit-on-select-example" data-showcode-props="submit-on-select-example-props" tabindex="0" aria-describedby="submit-on-select-example__example-desc">&lt;form<br>  role="search"<br>  aria-label="1980s video game search"<br>  tabindex="-1"<br>  class="combobox-example"<br>&gt;<br>  &lt;div<br>    class="enable-combobox"<br>  &gt;<br>    &lt;label<br>      id="video-games__label"<br>      for="video-games"<br>    &gt;<br>      Search for your favourite 1980s Video Game:<br>    &lt;/label&gt;<br>    &lt;div<br>      class="enable-combobox__inner-container"<br>    &gt;<br>      &lt;div<br>        id="video-games__close-desc"<br>        class="sr-only"<br>      &gt;<br>        Please choose a value using the arrow keys or clear the combobox by either pressing the escape key or activating the<br>        clear button.  Pressing enter will search for the item on Google.<br>      &lt;/div&gt;<br>      &lt;div<br>        class="enable-combobox__controls-container"<br>      &gt;<br>        &lt;div<br>          class="sr-only"<br>          id="video-games__desc"<br>        &gt;<br>          As you type, use the up and down arrow keys or press ENTER and swipe to choose the autocomplete<br>          items.<br>        &lt;/div&gt;<br>        &lt;div<br>          role="alert"<br>          aria-atomic="true"<br>          aria-live="polite"<br>        &gt;<br>        &lt;/div&gt;<br>        &lt;input<br>          type="text"<br>          tabindex="0"<br>          id="video-games"<br>          role="combobox"<br>          aria-autocomplete="list"<br>          aria-owns="video-games__list"<br>          aria-expanded="false"<br>          autocomplete="off"<br>          autocorrect="off"<br>          autocapitalize="off"<br>          aria-describedby="video-games__desc"<br>        &gt;<br>        &lt;button<br>          class="enable-combobox__reset-button"<br>          aria-controls="video-games__list"<br>          type="reset"<br>          aria-describedby="video-games__label"<br>        &gt;<br>          &lt;img<br>            class="enable-combobox__reset-button-image"<br>            src="images/close-window.svg"<br>            alt="Clear"<br>            aria-describedby="video-games__label"<br>          &gt;<br>        &lt;/button&gt;<br>        &lt;ul<br>          role="listbox"<br>          id="video-games__list"<br>          tabindex="-1"<br>          hidden=""<br>        &gt;<br>          &lt;div<br>            class="enable-combobox__group"<br>            role="presentation"<br>          &gt;<br>            &lt;h2<br>              class="enable-combobox__group-header"<br>            &gt;<br>              Communist States<br>            &lt;/h2&gt;<br>            &lt;div<br>              role="option"<br>            &gt;<br>              People's Republic of China<br>            &lt;/div&gt;<br><br><br>            ...<br><br><br>          &lt;/div&gt;<br>          &lt;div<br>            class="enable-combobox__group"<br>            role="presentation"<br>          &gt;<br>            &lt;h2<br>              class="enable-combobox__group-header"<br>            &gt;<br>              Other States<br>            &lt;/h2&gt;<br>            &lt;div<br>              role="option"<br>            &gt;<br>              Afghanistan<br>            &lt;/div&gt;<br><br><br>            ...<br><br><br>          &lt;/div&gt;<br>        &lt;/ul&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;button<br>      type="submit"<br>      class="combobox-example__button"<br>    &gt;<br>      Submit<br>    &lt;/button&gt;<br>  &lt;/div&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="submit-on-select-example-props">
+{
+  "replaceHtmlRules": {
+    "[role=\\"listbox\\"]": [
+      "<div class=\\"enable-combobox__group\\" role=\\"presentation\\">",
+      "<h2 class=\\"enable-combobox__group-header\\">Communist States</h2>",
+      "",
+      "<div role=\\"option\\" >People's Republic of China</div>",
+      "",
+      "...",
+      "",
+      "</div>",
+      "<div class=\\"enable-combobox__group\\" role=\\"presentation\\">",
+      "<h2 class=\\"enable-combobox__group-header\\">Other States</h2>",
+      "<div role=\\"option\\" >Afghanistan</div>",
+      "",
+      "...",
+      "</div>"
+    ]
+  },
+  "steps": [{
+    "label": "Create JS code to submit query when clicking the option elements.",
+    "highlight": "%INLINE% autocomplete-submit",
+    "notes": "Note that custom event <code>combobox-change</code> that this event handler uses. This fires when an option is chosen from the list.  It takes the value chosen and puts it inside a Google Search URL, using URLSearchParams and a template string."
+  }]
+}
+</script>
+
+
+<h2 id="aria-combobox-with-categories--heading" tabindex="-1"><a class="heading__deeplink" href="#aria-combobox-with-categories--heading" title="Permalink to ARIA Combobox With Categories" aria-label="Permalink to ARIA Combobox With Categories">ARIA Combobox With Categories</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is an experimental feature of the NPM library described in the <a href="#aria-combobox">previous section</a> (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+<p>Another ARIA combobox example, this time with the options grouped into categories.
+  Note the special formatting in the dropdown. This is common
+  in a lot of modern searchboxes in the headings of a lot of e-commerce sites.</p>
+
+<div id="example2" class="enable-example">
+  <form class="combobox-example">
+    <div class="enable-combobox">
+      <label id="aria-example-2__label" for="aria-example-2"> Enter a name of a country or de jure sovereign state</label>
+      <div class="enable-combobox__inner-container">
+        <div class="enable-combobox__controls-container">
+
+          <div class="sr-only" id="aria-example-2__desc">
+            As you type, use the up and down arrow keys (or swipe left and
+            right) to choose the autocomplete items.
+          </div>
+
+          <output role="alert" aria-atomic="true" aria-live="polite">
+          </output>
+
+          <output role="alert" class="enable-combobox__category-alert sr-only" aria-atomic="true" aria-live="assertive">
+          </output>
+
+          <input type="text" tabindex="0" id="aria-example-2" role="combobox" aria-autocomplete="list" aria-owns="aria-example-2__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off" aria-describedby="aria-example-2__desc">
+          <button class="enable-combobox__reset-button" aria-controls="aria-fruit" type="reset">
+            <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear" aria-describedby="aria-example-2__label">
+          </button>
+
+          <div role="listbox" id="aria-example-2__list" hidden="">
+            <div class="enable-combobox__group" role="group" aria-describedby="cat-1">
+              <h2 class="enable-combobox__group-header" role="presentation" id="cat-1">Communist States</h2>
+
+              <div role="option" id="aria-example-2__field-1">People's Republic of China</div>
+              <div role="option" id="aria-example-2__field-2">
+                Democratic
+                People's Republic of Korea (North Korea)</div>
+              <div role="option" id="aria-example-2__field-3">Socialist Republic of Vietnam
+              </div>
+              <div role="option" id="aria-example-2__field-4">Lao People's
+                Democratic
+                Republic (Laos)</div>
+              <div role="option" id="aria-example-2__field-5">Republic of Cuba</div>
+            </div>
+
+            <div class="enable-combobox__group" role="group" aria-describedby="cat-2">
+              <h2 class="enable-combobox__group-header" role="presentation" id="cat-2">Other States</h2>
+              <div role="option" id="aria-example-2__field-6">Afghanistan</div>
+              <div role="option" id="aria-example-2__field-7">Albania</div>
+              <div role="option" id="aria-example-2__field-8">Algeria</div>
+              <div role="option" id="aria-example-2__field-9">Andorra</div>
+              <div role="option" id="aria-example-2__field-10">Angola</div>
+              <div role="option" id="aria-example-2__field-11">Antigua and Barbuda</div>
+              <div role="option" id="aria-example-2__field-12">Argentina</div>
+              <div role="option" id="aria-example-2__field-13">Armenia</div>
+              <div role="option" id="aria-example-2__field-14">Australia</div>
+              <div role="option" id="aria-example-2__field-15">Austria</div>
+              <div role="option" id="aria-example-2__field-16">Azerbaijan</div>
+              <div role="option" id="aria-example-2__field-17">Bahamas</div>
+              <div role="option" id="aria-example-2__field-18">Bahrain</div>
+              <div role="option" id="aria-example-2__field-19">Bangladesh</div>
+              <div role="option" id="aria-example-2__field-20">Barbados</div>
+              <div role="option" id="aria-example-2__field-21">Belarus</div>
+              <div role="option" id="aria-example-2__field-22">Belgium</div>
+              <div role="option" id="aria-example-2__field-23">Belize</div>
+              <div role="option" id="aria-example-2__field-24">Benin</div>
+              <div role="option" id="aria-example-2__field-25">Bhutan</div>
+              <div role="option" id="aria-example-2__field-26">Bolivia</div>
+              <div role="option" id="aria-example-2__field-27">Bosnia and Herzegovina</div>
+              <div role="option" id="aria-example-2__field-28">Botswana</div>
+              <div role="option" id="aria-example-2__field-29">Brazil</div>
+              <div role="option" id="aria-example-2__field-30">Brunei </div>
+              <div role="option" id="aria-example-2__field-31">Bulgaria</div>
+              <div role="option" id="aria-example-2__field-32">Burkina Faso</div>
+              <div role="option" id="aria-example-2__field-33">Burundi</div>
+              <div role="option" id="aria-example-2__field-34">Cabo Verde</div>
+              <div role="option" id="aria-example-2__field-35">Cambodia</div>
+              <div role="option" id="aria-example-2__field-36">Cameroon</div>
+              <div role="option" id="aria-example-2__field-37">Canada</div>
+              <div role="option" id="aria-example-2__field-38">Central African Republic</div>
+              <div role="option" id="aria-example-2__field-39">Chad</div>
+              <div role="option" id="aria-example-2__field-40">Chile</div>
+              <div role="option" id="aria-example-2__field-41">Colombia</div>
+              <div role="option" id="aria-example-2__field-42">Comoros</div>
+              <div role="option" id="aria-example-2__field-43">Congo</div>
+              <div role="option" id="aria-example-2__field-44">Costa Rica</div>
+              <div role="option" id="aria-example-2__field-45">Croatia</div>
+              <div role="option" id="aria-example-2__field-46">Cyprus</div>
+              <div role="option" id="aria-example-2__field-47">Czech Republic (Czechia)</div>
+              <div role="option" id="aria-example-2__field-48">Côte d'Ivoire</div>
+              <div role="option" id="aria-example-2__field-49">DR Congo</div>
+              <div role="option" id="aria-example-2__field-50">Denmark</div>
+              <div role="option" id="aria-example-2__field-51">Djibouti</div>
+              <div role="option" id="aria-example-2__field-52">Dominica</div>
+              <div role="option" id="aria-example-2__field-53">Dominican Republic</div>
+              <div role="option" id="aria-example-2__field-54">Ecuador</div>
+              <div role="option" id="aria-example-2__field-55">Egypt</div>
+              <div role="option" id="aria-example-2__field-56">El Salvador</div>
+              <div role="option" id="aria-example-2__field-57">Equatorial Guinea</div>
+              <div role="option" id="aria-example-2__field-58">Eritrea</div>
+              <div role="option" id="aria-example-2__field-59">Estonia</div>
+              <div role="option" id="aria-example-2__field-60">Eswatini</div>
+              <div role="option" id="aria-example-2__field-61">Ethiopia</div>
+              <div role="option" id="aria-example-2__field-62">Fiji</div>
+              <div role="option" id="aria-example-2__field-63">Finland</div>
+              <div role="option" id="aria-example-2__field-64">France</div>
+              <div role="option" id="aria-example-2__field-65">Gabon</div>
+              <div role="option" id="aria-example-2__field-66">Gambia</div>
+              <div role="option" id="aria-example-2__field-67">Georgia</div>
+              <div role="option" id="aria-example-2__field-68">Germany</div>
+              <div role="option" id="aria-example-2__field-69">Ghana</div>
+              <div role="option" id="aria-example-2__field-70">Greece</div>
+              <div role="option" id="aria-example-2__field-71">Grenada</div>
+              <div role="option" id="aria-example-2__field-72">Guatemala</div>
+              <div role="option" id="aria-example-2__field-73">Guinea</div>
+              <div role="option" id="aria-example-2__field-74">Guinea-Bissau</div>
+              <div role="option" id="aria-example-2__field-75">Guyana</div>
+              <div role="option" id="aria-example-2__field-76">Haiti</div>
+              <div role="option" id="aria-example-2__field-77">Holy See</div>
+              <div role="option" id="aria-example-2__field-78">Honduras</div>
+              <div role="option" id="aria-example-2__field-79">Hungary</div>
+              <div role="option" id="aria-example-2__field-80">Iceland</div>
+              <div role="option" id="aria-example-2__field-81">India</div>
+              <div role="option" id="aria-example-2__field-82">Indonesia</div>
+              <div role="option" id="aria-example-2__field-83">Iran</div>
+              <div role="option" id="aria-example-2__field-84">Iraq</div>
+              <div role="option" id="aria-example-2__field-85">Ireland</div>
+              <div role="option" id="aria-example-2__field-86">Israel</div>
+              <div role="option" id="aria-example-2__field-87">Italy</div>
+              <div role="option" id="aria-example-2__field-88">Jamaica</div>
+              <div role="option" id="aria-example-2__field-89">Japan</div>
+              <div role="option" id="aria-example-2__field-90">Jordan</div>
+              <div role="option" id="aria-example-2__field-91">Kazakhstan</div>
+              <div role="option" id="aria-example-2__field-92">Kenya</div>
+              <div role="option" id="aria-example-2__field-93">Kiribati</div>
+              <div role="option" id="aria-example-2__field-94">Kuwait</div>
+              <div role="option" id="aria-example-2__field-95">Kyrgyzstan</div>
+              <div role="option" id="aria-example-2__field-96">Latvia</div>
+              <div role="option" id="aria-example-2__field-97">Lebanon</div>
+              <div role="option" id="aria-example-2__field-98">Lesotho</div>
+              <div role="option" id="aria-example-2__field-99">Liberia</div>
+              <div role="option" id="aria-example-2__field-100">Libya</div>
+              <div role="option" id="aria-example-2__field-101">Liechtenstein</div>
+              <div role="option" id="aria-example-2__field-102">Lithuania</div>
+              <div role="option" id="aria-example-2__field-103">Luxembourg</div>
+              <div role="option" id="aria-example-2__field-104">Madagascar</div>
+              <div role="option" id="aria-example-2__field-105">Malawi</div>
+              <div role="option" id="aria-example-2__field-106">Malaysia</div>
+              <div role="option" id="aria-example-2__field-107">Maldives</div>
+              <div role="option" id="aria-example-2__field-108">Mali</div>
+              <div role="option" id="aria-example-2__field-109">Malta</div>
+              <div role="option" id="aria-example-2__field-110">Marshall Islands</div>
+              <div role="option" id="aria-example-2__field-111">Mauritania</div>
+              <div role="option" id="aria-example-2__field-112">Mauritius</div>
+              <div role="option" id="aria-example-2__field-113">Mexico</div>
+              <div role="option" id="aria-example-2__field-114">Micronesia</div>
+              <div role="option" id="aria-example-2__field-115">Moldova</div>
+              <div role="option" id="aria-example-2__field-116">Monaco</div>
+              <div role="option" id="aria-example-2__field-117">Mongolia</div>
+              <div role="option" id="aria-example-2__field-118">Montenegro</div>
+              <div role="option" id="aria-example-2__field-119">Morocco</div>
+              <div role="option" id="aria-example-2__field-120">Mozambique</div>
+              <div role="option" id="aria-example-2__field-121">Myanmar</div>
+              <div role="option" id="aria-example-2__field-122">Namibia</div>
+              <div role="option" id="aria-example-2__field-123">Nauru</div>
+              <div role="option" id="aria-example-2__field-124">Nepal</div>
+              <div role="option" id="aria-example-2__field-125">Netherlands</div>
+              <div role="option" id="aria-example-2__field-126">New Zealand</div>
+              <div role="option" id="aria-example-2__field-127">Nicaragua</div>
+              <div role="option" id="aria-example-2__field-128">Niger</div>
+              <div role="option" id="aria-example-2__field-129">Nigeria</div>
+              <div role="option" id="aria-example-2__field-130">North Macedonia</div>
+              <div role="option" id="aria-example-2__field-131">Norway</div>
+              <div role="option" id="aria-example-2__field-132">Oman</div>
+              <div role="option" id="aria-example-2__field-133">Pakistan</div>
+              <div role="option" id="aria-example-2__field-134">Palau</div>
+              <div role="option" id="aria-example-2__field-135">Panama</div>
+              <div role="option" id="aria-example-2__field-136">Papua New Guinea</div>
+              <div role="option" id="aria-example-2__field-137">Paraguay</div>
+              <div role="option" id="aria-example-2__field-138">Peru</div>
+              <div role="option" id="aria-example-2__field-139">Philippines</div>
+              <div role="option" id="aria-example-2__field-140">Poland</div>
+              <div role="option" id="aria-example-2__field-141">Portugal</div>
+              <div role="option" id="aria-example-2__field-142">Qatar</div>
+              <div role="option" id="aria-example-2__field-143">Romania</div>
+              <div role="option" id="aria-example-2__field-144">Russia</div>
+              <div role="option" id="aria-example-2__field-145">Rwanda</div>
+              <div role="option" id="aria-example-2__field-146">Saint Kitts &amp; Nevis</div>
+              <div role="option" id="aria-example-2__field-147">Saint Lucia</div>
+              <div role="option" id="aria-example-2__field-148">Samoa</div>
+              <div role="option" id="aria-example-2__field-149">San Marino</div>
+              <div role="option" id="aria-example-2__field-150">Sao Tome &amp; Principe</div>
+              <div role="option" id="aria-example-2__field-151">Saudi Arabia</div>
+              <div role="option" id="aria-example-2__field-152">Senegal</div>
+              <div role="option" id="aria-example-2__field-153">Serbia</div>
+              <div role="option" id="aria-example-2__field-154">Seychelles</div>
+              <div role="option" id="aria-example-2__field-155">Sierra Leone</div>
+              <div role="option" id="aria-example-2__field-156">Singapore</div>
+              <div role="option" id="aria-example-2__field-157">Slovakia</div>
+              <div role="option" id="aria-example-2__field-158">Slovenia</div>
+              <div role="option" id="aria-example-2__field-159">Solomon Islands</div>
+              <div role="option" id="aria-example-2__field-160">Somalia</div>
+              <div role="option" id="aria-example-2__field-161">South Africa</div>
+              <div role="option" id="aria-example-2__field-162">South Korea</div>
+              <div role="option" id="aria-example-2__field-163">South Sudan</div>
+              <div role="option" id="aria-example-2__field-164">Spain</div>
+              <div role="option" id="aria-example-2__field-165">Sri Lanka</div>
+              <div role="option" id="aria-example-2__field-166">St. Vincent &amp; Grenadines
+              </div>
+              <div role="option" id="aria-example-2__field-167">State of Palestine</div>
+              <div role="option" id="aria-example-2__field-168">Sudan</div>
+              <div role="option" id="aria-example-2__field-169">Suriname</div>
+              <div role="option" id="aria-example-2__field-170">Sweden</div>
+              <div role="option" id="aria-example-2__field-171">Switzerland</div>
+              <div role="option" id="aria-example-2__field-172">Syria</div>
+              <div role="option" id="aria-example-2__field-173">Tajikistan</div>
+              <div role="option" id="aria-example-2__field-174">Tanzania</div>
+              <div role="option" id="aria-example-2__field-175">Thailand</div>
+              <div role="option" id="aria-example-2__field-176">Timor-Leste</div>
+              <div role="option" id="aria-example-2__field-177">Togo</div>
+              <div role="option" id="aria-example-2__field-178">Tonga</div>
+              <div role="option" id="aria-example-2__field-179">Trinidad and Tobago</div>
+              <div role="option" id="aria-example-2__field-180">Tunisia</div>
+              <div role="option" id="aria-example-2__field-181">Turkey</div>
+              <div role="option" id="aria-example-2__field-182">Turkmenistan</div>
+              <div role="option" id="aria-example-2__field-183">Tuvalu</div>
+              <div role="option" id="aria-example-2__field-184">Uganda</div>
+              <div role="option" id="aria-example-2__field-185">Ukraine</div>
+              <div role="option" id="aria-example-2__field-186">United Arab Emirates</div>
+              <div role="option" id="aria-example-2__field-187">United Kingdom</div>
+              <div role="option" id="aria-example-2__field-188">United States</div>
+              <div role="option" id="aria-example-2__field-189">Uruguay</div>
+              <div role="option" id="aria-example-2__field-190">Uzbekistan</div>
+              <div role="option" id="aria-example-2__field-191">Vanuatu</div>
+              <div role="option" id="aria-example-2__field-192">Venezuela</div>
+              <div role="option" id="aria-example-2__field-193">Yemen</div>
+              <div role="option" id="aria-example-2__field-194">Zambia</div>
+              <div role="option" id="aria-example-2__field-195">Zimbabwe</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="combobox-example__button">Submit</button> 
+  </form>
+
+  <template id="enable_combobox__group-select-alert-template">
+    \${value}, \${desc} group, \${label}, selected, item \${index} of \${length};
+  </template>
+</div>
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-4" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-4" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                    
+            <p><strong>Note: since it is very similar, please follow all the steps in the previous example first before
+            implementing the following steps.</strong></p>
+                  
+                        <div class="showcode__ui">
+                                      <div id="example2__steps" class="showcode__steps"><label for="example2__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example2__steps--select" data-showcode-for="example2" data-replace-html-rules="{&quot;[role=\\&quot;listbox\\&quot;]&quot;:[&quot;&amp;lt;div class=\\&quot;enable-combobox__group\\&quot; role=\\&quot;group\\&quot; aria-describedby=\\&quot;cat-1\\&quot;&amp;gt;&quot;,&quot;&amp;lt;h2 class=\\&quot;enable-combobox__group-header\\&quot; role=\\&quot;presentation\\&quot; id=\\&quot;cat-1\\&quot;&amp;gt;Communist States&amp;lt;/h2&amp;gt;&quot;,&quot;&quot;,&quot;&amp;lt;div role=\\&quot;option\\&quot; &amp;gt;People's Republic of China&amp;lt;/div&amp;gt;&quot;,&quot;&quot;,&quot;...&quot;,&quot;&quot;,&quot;&amp;lt;/div&amp;gt;&quot;,&quot;&amp;lt;div class=\\&quot;enable-combobox__group\\&quot; role=\\&quot;group\\&quot; aria-describedby=\\&quot;cat-2\\&quot;&amp;gt;&quot;,&quot;&amp;lt;h2 class=\\&quot;enable-combobox__group-header\\&quot; role=\\&quot;presentation\\&quot; id=\\&quot;cat-2\\&quot;&amp;gt;Other States&amp;lt;/h2&amp;gt;&quot;,&quot;&amp;lt;div role=\\&quot;option\\&quot; &amp;gt;Afghanistan&amp;lt;/div&amp;gt;&quot;,&quot;&quot;,&quot;...&quot;,&quot;&amp;lt;/div&amp;gt;&quot;]}"><option value=""></option><option value="role=&quot;group&quot;" data-showcode-notes="Options that need to be grouped into categories with this markup">Step #1: Set up group roles</option><option value="role=&quot;presentation&quot;" data-showcode-notes="The presentation role <em>should</em> prevent the category label from being included in the final count of options given to the user (we will be using a workaround for combinations like Voiceover/Safari that don't support this).">Step #2: Set up presentation roles on the category headings</option><option value="aria-describedby=&quot;cat-1&quot; ||| id=&quot;cat-1&quot; ||| aria-describedby=&quot;cat-2&quot; ||| id=&quot;cat-2&quot;" data-showcode-notes="This is to ensure compliant screen readers know what the label is for each of the option groups.  (We will be using a workaround for combinations like Voiceover/Safari that don't support this).">Step #3: Mark up the category headings </option><option value="%OPENCLOSECONTENTTAG%output" data-showcode-notes="<ul><li>The first aria region will contain the number of items in the filtered list as the user types characters into the <code>&amp;lt;input&amp;gt;</code> field.</li><li>(Optional, for cross-browser/cross-screen reader support) The second one is used when screen reader users use the arrow keys to select an item in the combobox's list.  Note that what is announced will be in English by default, or in the format given in the template in the next step.<br /><br />If this last ARIA-live region isn't defined, screen readers may not read the proper group label and item index of the value the user selects.</li></ul>">Step #4: Set up ARIA live regions</option><option value="%OPENCLOSECONTENTTAG%template" data-showcode-notes="This is used to override the screen reader output that is given when the user uses the arrow keys to select an item in the list.  We do this to override output in some combinations, like Voiceover/Safari, that don't give out the category information correctly.  If this isn't given, the library will use a default format in English.">Step #5: (Optional) Template for grouped output for non-compliant screen readers</option></select></div>
+                          <div id="example2__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example2__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example2__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example2__example-desc" class="showcode__example--desc">
+                <label for="example2__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example2__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example2" data-showcode-props="example2-props" tabindex="0" aria-describedby="example2__example-desc">&lt;form<br>  class="combobox-example"<br>&gt;<br>  &lt;div<br>    class="enable-combobox"<br>  &gt;<br>    &lt;label<br>      id="aria-example-2__label"<br>      for="aria-example-2"<br>    &gt;<br>      Enter a name of a country or de jure sovereign state<br>    &lt;/label&gt;<br>    &lt;div<br>      class="enable-combobox__inner-container"<br>    &gt;<br>      &lt;div<br>        class="enable-combobox__controls-container"<br>      &gt;<br>        &lt;div<br>          class="sr-only"<br>          id="aria-example-2__desc"<br>        &gt;<br>          As you type, use the up and down arrow keys (or swipe left and<br>          right) to choose the autocomplete items.<br>        &lt;/div&gt;<br>        &lt;output<br>          role="alert"<br>          aria-atomic="true"<br>          aria-live="polite"<br>        &gt;<br>        &lt;/output&gt;<br>        &lt;output<br>          role="alert"<br>          class="enable-combobox__category-alert sr-only"<br>          aria-atomic="true"<br>          aria-live="assertive"<br>        &gt;<br>        &lt;/output&gt;<br>        &lt;input<br>          type="text"<br>          tabindex="0"<br>          id="aria-example-2"<br>          role="combobox"<br>          aria-autocomplete="list"<br>          aria-owns="aria-example-2__list"<br>          aria-expanded="false"<br>          autocomplete="off"<br>          autocorrect="off"<br>          autocapitalize="off"<br>          aria-describedby="aria-example-2__desc"<br>        &gt;<br>        &lt;button<br>          class="enable-combobox__reset-button"<br>          aria-controls="aria-fruit"<br>          type="reset"<br>        &gt;<br>          &lt;img<br>            class="enable-combobox__reset-button-image"<br>            src="images/close-window.svg"<br>            alt="Clear"<br>            aria-describedby="aria-example-2__label"<br>          &gt;<br>        &lt;/button&gt;<br>        &lt;div<br>          role="listbox"<br>          id="aria-example-2__list"<br>          hidden=""<br>        &gt;<br>          &lt;div<br>            class="enable-combobox__group"<br>            role="group"<br>            aria-describedby="cat-1"<br>          &gt;<br>            &lt;h2<br>              class="enable-combobox__group-header"<br>              role="presentation"<br>              id="cat-1"<br>            &gt;<br>              Communist States<br>            &lt;/h2&gt;<br>            &lt;div<br>              role="option"<br>            &gt;<br>              People's Republic of China<br>            &lt;/div&gt;<br><br><br>            ...<br><br><br>          &lt;/div&gt;<br>          &lt;div<br>            class="enable-combobox__group"<br>            role="group"<br>            aria-describedby="cat-2"<br>          &gt;<br>            &lt;h2<br>              class="enable-combobox__group-header"<br>              role="presentation"<br>              id="cat-2"<br>            &gt;<br>              Other States<br>            &lt;/h2&gt;<br>            &lt;div<br>              role="option"<br>            &gt;<br>              Afghanistan<br>            &lt;/div&gt;<br><br><br>            ...<br><br><br>          &lt;/div&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;button<br>    type="submit"<br>    class="combobox-example__button"<br>  &gt;<br>    Submit<br>  &lt;/button&gt;<br>&lt;/form&gt;<br>&lt;template<br>  id="enable_combobox__group-select-alert-template"<br>&gt;<br>  \${value}, \${desc} group, \${label}, selected, item \${index} of \${length};<br>&lt;/template&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example2-props">
+{
+  "replaceHtmlRules": {
+    "[role=\\"listbox\\"]": [
+      "<div class=\\"enable-combobox__group\\" role=\\"group\\" aria-describedby=\\"cat-1\\">",
+      "<h2 class=\\"enable-combobox__group-header\\" role=\\"presentation\\" id=\\"cat-1\\">Communist States</h2>",
+      "",
+      "<div role=\\"option\\" >People's Republic of China</div>",
+      "",
+      "...",
+      "",
+      "</div>",
+      "<div class=\\"enable-combobox__group\\" role=\\"group\\" aria-describedby=\\"cat-2\\">",
+      "<h2 class=\\"enable-combobox__group-header\\" role=\\"presentation\\" id=\\"cat-2\\">Other States</h2>",
+      "<div role=\\"option\\" >Afghanistan</div>",
+      "",
+      "...",
+      "</div>"
+    ]
+  },
+  "steps": [{
+      "label": "Set up group roles",
+      "highlight": "role=\\"group\\"",
+      "notes": "Options that need to be grouped into categories with this markup"
+    },
+    {
+      "label": "Set up presentation roles on the category headings",
+      "highlight": "role=\\"presentation\\"",
+      "notes": "The presentation role <em>should</em> prevent the category label from being included in the final count of options given to the user (we will be using a workaround for combinations like Voiceover/Safari that don't support this)."
+    },
+    {
+      "label": "Mark up the category headings ",
+      "highlight": "aria-describedby=\\"cat-1\\" ||| id=\\"cat-1\\" ||| aria-describedby=\\"cat-2\\" ||| id=\\"cat-2\\"",
+      "notes": "This is to ensure compliant screen readers know what the label is for each of the option groups.  (We will be using a workaround for combinations like Voiceover/Safari that don't support this)."
+    },
+    {
+      "label": "Set up ARIA live regions",
+      "highlight": "%OPENCLOSECONTENTTAG%output",
+      "notes": "<ul><li>The first aria region will contain the number of items in the filtered list as the user types characters into the <code>&lt;input&gt;</code> field.</li><li>(Optional, for cross-browser/cross-screen reader support) The second one is used when screen reader users use the arrow keys to select an item in the combobox's list.  Note that what is announced will be in English by default, or in the format given in the template in the next step.<br /><br />If this last ARIA-live region isn't defined, screen readers may not read the proper group label and item index of the value the user selects.</li></ul>"
+    },
+    {
+      "label": "(Optional) Template for grouped output for non-compliant screen readers",
+      "highlight": "%OPENCLOSECONTENTTAG%template",
+      "notes": "This is used to override the screen reader output that is given when the user uses the arrow keys to select an item in the list.  We do this to override output in some combinations, like Voiceover/Safari, that don't give out the category information correctly.  If this isn't given, the library will use a default format in English."
+    }
+  ]
+}
+</script>
+
+
+<h3 id="npm-instructions" tabindex="-1"><a class="heading__deeplink" href="#npm-instructions" title="Permalink to Installation Instructions" aria-label="Permalink to Installation Instructions">Installation Instructions</a></h3>
+
+<p>You can load this JavaScript library into your application in serveral ways:
+
+</p><ul>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
+  <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
+      browser</a>.</li>
+    <li>as an old-school ES4/JavaScript library.</li>
+  </ul>
+
+
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
+
+
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  </li><li>Stack Overflow has a really good thread about <a href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
+
+
+<h4 id="important-note-on-the-css-classes-used-in-this-module---heading" tabindex="-1"><a class="heading__deeplink" href="#important-note-on-the-css-classes-used-in-this-module---heading" title="Permalink to Important Note On The CSS Classes Used In This Module:" aria-label="Permalink to Important Note On The CSS Classes Used In This Module:">Important Note On The CSS Classes Used In This Module:</a></h4>
+
+<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+These CSS classes begin with <code>enable-combobox__</code>.  Please see the documentation above to see where these CSS classes are inserted.
+
+
+</p><h4 id="using-npm-webpack-to-load-es6-modules---heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-es6-modules---heading" title="Permalink to Using NPM/Webpack to load ES6 Modules:" aria-label="Permalink to Using NPM/Webpack to load ES6 Modules:">Using NPM/Webpack to load ES6 Modules:</a></h4>
+
+<ol>
+  <li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__5__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__5__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__5__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__5">module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+ 
+    },
+
+    ...
+  },
+
+  ...
+
+}
+    </code>
+  </div>
+</div>  </li>
+  <li>
+    You can use the module like this:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__6__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__6__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__6__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__6">// import the JS module
+import combobox from '~enable-a11y/js/modules/combobox';
+
+// import the CSS for the module 
+import '~enable-a11y/css/combobox';
+ 
+// How to initialize the combobox library
+combobox.init();
+
+// If you are adding a new instance of this component after page load, 
+// then do the following (where el is the DOM node of the newly created 
+// element, which contains the CSS class .enable-combobox):
+el.add();
+
+
+        </code>
+  </div>
+</div>      </li>
+
+  <li>
+    Alternatively, if you are using LESS you can include the styles in your project's CSS using:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__7__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__7__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__7__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__7">@import '~enable-a11y/css/combobox';
+        </code>
+  </div>
+</div>
+    (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
+  </li>
+</ol>
+
+<h4 id="using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" title="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax" aria-label="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax">Using NPM/Webpack to Load Modules Using CommonJS Syntax</a></h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__8__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__8__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__8__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__8">var combobox = require('enable-a11y/combobox').default; 
+
+...
+
+combobox.init();
+    </code>
+  </div>
+</div>    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__9__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__9__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__9__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__9">@import '~enable-a11y/css/combobox';
+    </code>
+  </div>
+</div>    </li>
+    </ol>
+
+<h4 id="using-es6-modules-natively---heading" tabindex="-1"><a class="heading__deeplink" href="#using-es6-modules-natively---heading" title="Permalink to Using ES6 modules natively." aria-label="Permalink to Using ES6 modules natively.">Using ES6 modules natively.</a></h4>
+
+<p>
+  This is the method that this page you are reading now loads the scripts.
+</p>
+
+<ol>
+  <li>
+    Grab the source by either <a href="npm.php">using NPM</a>, <a href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+  </li>
+  <li>
+    If you want to load the module as a native ES6 module, copy <code>js/modules/combobox.js</code>
+    ,      and <code>css/combobox.css</code>
+        from the repo and put them
+    in the appropriate directories in your project (all JS files must be in the same directory).
+  </li>
+    <li>
+    Load the CSS in the head of you document:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__10__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__10__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__10__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__10">&lt;html&gt;
+  &lt;head&gt;
+
+    ...
+
+    &lt;link rel="stylesheet" href="path-to/css/combobox.css" &gt;
+
+    ...
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+
+      </code>
+  </div>
+</div>  </li><li>
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__11__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__11__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__11__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__11">&lt;script type="module"&gt;
+    import combobox from "path-to/combobox.js" 
+
+    combobox.init();
+&lt;/script&gt;
+        </code>
+  </div>
+</div>  </li>
+</ol>
+
+<h4 id="using-es4--heading" tabindex="-1"><a class="heading__deeplink" href="#using-es4--heading" title="Permalink to Using ES4" aria-label="Permalink to Using ES4">Using ES4</a></h4>
+
+Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
+directory instead of the <code>js/modules/</code>:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__12__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__12__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__12__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__12">&lt;script src="path-to/es4/combobox.js"&gt;&lt;/script&gt;
+    </code>
+  </div>
+</div>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    <script type="module">
+import comboboxes from "./js/modules/combobox.js";
+
+comboboxes.init();
+</script>
+<script id="autocomplete-submit">
+const autocompleteSubmit = new function() {
+  this.init = () => {
+    document.getElementById('video-games').addEventListener('enable-combobox-change', (e) => {
+      const {
+        currentTarget
+      } = e;
+      const {
+        value
+      } = currentTarget;
+      const q = \`https://www.google.com/search?\${new URLSearchParams(\`q=\${value}\`).toString()}\`
+      location.href = q;
+    });
+  }
+  this.init();
+}
+</script>
+
+</body></html>"
+`;
