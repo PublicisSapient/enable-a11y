@@ -129,6 +129,25 @@ checkDependencies() {
 
 	done
 
+	#.. checking connection to remote
+	if ping -c1 -W1 $MYIP &> /dev/null
+	then
+		echo "Server at $MYIP is up"
+	else 
+		echo "Unable to connect to $MYIP, likely due to a firewall somewhere in between."
+		echo "Retrying with localhost"
+		MYIP="localhost"
+		PROJECT_URL="http://$MYIP:8888/index.php"
+
+		if ping -c1 -W1 $MYIP &> /dev/null
+		then
+			echo "Server at $MYIP is up."
+		else
+			echo "Unable to connect to $MYIP"
+			exit 1
+		fi
+	fi
+
 	#.. let's ensure axe has the right chromedriver installed
 	echo "Verifying if aXe is installed correctly..."
 	AXE_ERR=`$AXE $PROJECT_URL 2>&1`
@@ -136,8 +155,8 @@ checkDependencies() {
 	echo "$AXE_ERR" | egrep "(This version of ChromeDriver only supports|The specified executable path does not exist: node_modules/chromedriver/bin/chromedriver)" 1>&2
 	if [ "$?" = "0" ]
 	then
-	echo "$AXE_ERR" 1>&2
-	showChromedriverError
+		echo "$AXE_ERR" 1>&2
+		showChromedriverError
 	fi
 
 
@@ -149,14 +168,14 @@ checkDependencies() {
 		echo "$AXE_ERR" 1>&2
 		echo "
 		
-	aXe can't find Chrome.  Please put it in your PATH and try again.
-	Please read the following doc for more information:
+		aXe can't find Chrome.  Please put it in your PATH and try again.
+		Please read the following doc for more information:
 
-	https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver/01fde32d0ed245141e24151f83b7c2db31d596a4#requirements
-	" 1>&2
+		https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver/01fde32d0ed245141e24151f83b7c2db31d596a4#requirements
+		" 1>&2
 
-	showChromedriverError
-		fi
+		showChromedriverError
+	fi
 
 
 
@@ -178,6 +197,7 @@ checkDependencies() {
 
 
 downloadHTML() {
+	checkDependencies
 
 	URLS=`bin/getPages.js $MYIP`;
 	DOWNLOADED_URLS=""
@@ -228,7 +248,6 @@ runVNUTests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/temp-files.txt ]
 	then
-		checkDependencies	
 		bin/generateSiteMap.sh
 		downloadHTML
 	else
@@ -312,7 +331,6 @@ runAXETests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/downloaded-urls.txt ] || ! [ -f tmp/axe-delayed-files.txt ]
 	then
-		checkDependencies	
 		bin/generateSiteMap.sh
 		downloadHTML
 	else
@@ -357,7 +375,6 @@ function runPa11yTests() {
 	#. Download the HTML files if they have not already been downloaded
 	if ! [ -f tmp/downloaded-urls.txt ]
 	then
-		checkDependencies	
 		bin/generateSiteMap.sh
 		downloadHTML
 	else
@@ -401,8 +418,11 @@ function runPa11yTests() {
 	fi
 }
 
-#.. let's wipe the tmp directory
-rm tmp/*
+#.. let's wipe the tmp directory if it exists
+if [ -z "$(ls -A tmp)" ]
+then
+	rm tmp/*
+fi
 
 #.. Run specific tests based on the argument passed in when running this script
 if [ "$1" = "vnu" ]
@@ -416,7 +436,6 @@ then
 	runPa11yTests
 else
 	#.. Run checks and preparation for tests
-	checkDependencies
 	bin/generateSiteMap.sh
 	downloadHTML
 
