@@ -1,0 +1,4268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Tables - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Tables">
+<meta property="og:description" content="Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone.">
+<meta property="og:image" content="/images/posters/table.jpg?1">
+<meta property="og:url" content="/table.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone.">
+<meta name="twitter:title" content="Accessible Tables">
+<meta name="twitter:image" content="/images/posters/table.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link id="table-css" rel="stylesheet" type="text/css" href="css/table.css">
+<link id="deque-table-sortable-css" rel="stylesheet" type="text/css" href="css/deque-table-sortable.css">
+<link id="pageinate-css" rel="stylesheet" type="text/css" href="css/paginate.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>  
+<aside class="notes">
+    <h2 id="notes---heading" tabindex="-1"><a class="heading__deeplink" href="#notes---heading" title="Permalink to Notes:" aria-label="Permalink to Notes:">Notes:</a></h2>
+    <ul>
+        <li>Even if you have decades of experience and you think you know how to code tables, read this page.  You may be surprised.</li>
+        <li>This page only discusses non-interactive tables.  We have other pages dedicated to 
+    <a href="pagination-table.php">paginated tables</a> and <a href="sortable-table">sortable tables</a>.</li>
+    </ul>
+</aside>  <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-tables--heading" tabindex="-1">Accessible Tables</h1>
+
+<p>
+    <strong>When coding tabular data on a webpage, you should use the <code>&lt;table&gt;</code> tag.</strong>  Some developers, surprisingly don't do this .  Some also don't realize <a href="https://adrianroselli.com/2017/11/a-responsive-accessible-table.html#Update01">it's a bad idea to use flexbox to style tabular data</a>.  I think the aversion to using <code>&lt;table&gt;</code> markup comes from <a href="https://codepen.io/johneemac/pen/dyMwNoO">the bad old-school way developers, who couldn't use CSS back in the 90s, used to use table for layout</a> (which you should never do now with <a href="https://blog.hubspot.com/website/html-email-table">a small exception for those who have to code HTML emails</a>).
+</p>
+
+
+
+<p><strong>Many web developers who use <code>&lt;table&gt;</code> markup, however, don't know there are some additional code they need to make them accessible</strong> (even <a href="https://css-tricks.com/complete-guide-table-element/">the CSS tricks so called "Complete" Guide to the Table Element</a> doesn't really cover these items adequately, in my opinion):</p>
+
+<ul>
+  <li><code>th</code> tags <strong>must have a <code>scope</code> attribute</strong> set to <code>row</code> if it is a heading for a
+    table row, or <code>col</code> if it is a column row</li>
+  <li>All tables <strong>must have a text <code>summary</code></strong> describing the data in the table. This can be coded using a
+    <code>summary</code> tag (see the first example), or
+    a <code>aria-labelledby</code> on the table element (see the <a href="#table-with-figcaption">figcaption example</a>)
+  </li>
+
+</ul>
+
+<h2 id="how-screen-reader-users-navigate-tables--heading" tabindex="-1"><a class="heading__deeplink" href="#how-screen-reader-users-navigate-tables--heading" title="Permalink to How Screen Reader Users Navigate Tables" aria-label="Permalink to How Screen Reader Users Navigate Tables">How Screen Reader Users Navigate Tables</a></h2>
+
+<p>Screen-reader users should be able to navigate the table using their screen-reader's built in navigation:
+</p>
+
+<ul>
+  <li>In voiceover, go to the rotor, choose the table and navigate around with the CAPS-LOCK + arrow-keys.
+  </li>
+  <li>
+    In NVDA, press the T key to go to the next table (SHIFT+T to go to the previous one), use the arrow
+    keys to get out of the
+    caption and CTRL+ALT+arrow-keys to move around the table. To ensure you understand how the tables
+    are being
+    read, you may want to install the
+    <a href="https://addons.nvda-project.org/addons/focusHighlight.en.html">
+      Focus Highlight NVDA plugin</a>.
+  </li>
+</ul>
+
+
+
+<h2 id="a-simple-table--heading" tabindex="-1"><a class="heading__deeplink" href="#a-simple-table--heading" title="Permalink to A Simple Table" aria-label="Permalink to A Simple Table">A Simple Table</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">Go through the <a href="#developer-walkthrough-1">the walkthrough below</a> to ensure you are adding all the markup needed.</span>
+            </div>
+        </div>
+            
+</div>
+<p>Just a simple table.  Walkthrough the HTML code below and make sure you are adding all the things that make tables accessible in your work.</p>
+
+<div class="enable-example" id="table-example1">
+  <table>
+    <caption>Family Birthdays</caption>
+    <thead>
+      <tr>
+        <th scope="col">
+          <div class="sr-only">Name</div>
+        </th>
+        <th scope="col">Age</th>
+        <th scope="col">Birthday</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <th scope="row">Jackie</th>
+        <td>5</td>
+        <td>January 1</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Beth</th>
+        <td>8</td>
+        <td>March 1</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">Birthday Delta</th>
+        <td colspan="2">59 days.</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="table-example1__steps" class="showcode__steps"><label for="table-example1__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="table-example1__steps--select" data-showcode-for="table-example1" data-replace-html-rules="{}"><option value=""></option><option value="&amp;lt;caption&amp;gt;[\\s\\S]*&amp;lt;/caption&amp;gt;" data-showcode-notes="All tables must have captions.">Step #1: Give table a label using the <strong>caption</strong> element</option><option value="\\s*&amp;lt;thead&amp;gt;[\\s\\S]*&amp;lt;/thead&amp;gt;" data-showcode-notes="The <strong>thead</strong> tag must contain the heading of the table, including column headings">Step #2: The <strong>thead</strong> section</option><option value="\\s*&amp;lt;tbody&amp;gt;[\\s\\S]*&amp;lt;/tbody&amp;gt;" data-showcode-notes="The <strong>tbody</strong> tag contains the main data of the table, as well as row headings">Step #3: The <strong>tbody</strong> section</option><option value="\\s*&amp;lt;tfoot&amp;gt;[\\s\\S]*&amp;lt;/tfoot&amp;gt;" data-showcode-notes="<strong>Optional.</strong>  The <strong>tfoot</strong> contains summary information of the table">Step #4: The <strong>tfoot</strong> section</option><option value="scope=&quot;col&quot;" data-showcode-notes="All column headings must be tagged with <strong>scope=&quot;col&quot;</strong>">Step #5: Column headings</option><option value="scope=&quot;row&quot;" data-showcode-notes="All row headings must be tagged with <strong>scope=&quot;row&quot;</strong>">Step #6: Row headings</option></select></div>
+                          <div id="table-example1__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="table-example1__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="table-example1__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="table-example1__example-desc" class="showcode__example--desc">
+                <label for="table-example1__wrap-text">Wrap text</label>
+                <input type="checkbox" id="table-example1__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="table-example1" data-showcode-props="table-example1-props" tabindex="0" aria-describedby="table-example1__example-desc">&lt;table&gt;<br>  &lt;caption&gt;<br>    Family Birthdays<br>  &lt;/caption&gt;<br>  &lt;thead&gt;<br>    &lt;tr&gt;<br>      &lt;th scope="col"&gt;<br>        &lt;div class="sr-only"&gt;<br>          Name<br>        &lt;/div&gt;<br>      &lt;/th&gt;<br>      &lt;th scope="col"&gt;<br>        Age<br>      &lt;/th&gt;<br>      &lt;th scope="col"&gt;<br>        Birthday<br>      &lt;/th&gt;<br>    &lt;/tr&gt;<br>  &lt;/thead&gt;<br>  &lt;tbody&gt;<br>    &lt;tr&gt;<br>      &lt;th scope="row"&gt;<br>        Jackie<br>      &lt;/th&gt;<br>      &lt;td&gt;<br>        5<br>      &lt;/td&gt;<br>      &lt;td&gt;<br>        January 1<br>      &lt;/td&gt;<br>    &lt;/tr&gt;<br>    &lt;tr&gt;<br>      &lt;th scope="row"&gt;<br>        Beth<br>      &lt;/th&gt;<br>      &lt;td&gt;<br>        8<br>      &lt;/td&gt;<br>      &lt;td&gt;<br>        March 1<br>      &lt;/td&gt;<br>    &lt;/tr&gt;<br>  &lt;/tbody&gt;<br>  &lt;tfoot&gt;<br>    &lt;tr&gt;<br>      &lt;th scope="row"&gt;<br>        Birthday Delta<br>      &lt;/th&gt;<br>      &lt;td colspan="2"&gt;<br>        59 days.<br>      &lt;/td&gt;<br>    &lt;/tr&gt;<br>  &lt;/tfoot&gt;<br>&lt;/table&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="table-example1-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Give table a label using the <strong>caption</strong> element",
+      "highlight": "&lt;caption&gt;[\\\\s\\\\S]*&lt;/caption&gt;",
+      "notes": "All tables must have captions."
+    },
+    {
+      "label": "The <strong>thead</strong> section",
+      "highlight": "\\\\s*&lt;thead&gt;[\\\\s\\\\S]*&lt;/thead&gt;",
+      "notes": "The <strong>thead</strong> tag must contain the heading of the table, including column headings"
+    },
+    {
+      "label": "The <strong>tbody</strong> section",
+      "highlight": "\\\\s*&lt;tbody&gt;[\\\\s\\\\S]*&lt;/tbody&gt;",
+      "notes": "The <strong>tbody</strong> tag contains the main data of the table, as well as row headings"
+    },
+    {
+      "label": "The <strong>tfoot</strong> section",
+      "highlight": "\\\\s*&lt;tfoot&gt;[\\\\s\\\\S]*&lt;/tfoot&gt;",
+      "notes": "<strong>Optional.</strong>  The <strong>tfoot</strong> contains summary information of the table"
+    },
+    {
+      "label": "Column headings",
+      "highlight": "scope=\\"col\\"",
+      "notes": "All column headings must be tagged with <strong>scope=\\"col\\"</strong>"
+    },
+    {
+      "label": "Row headings",
+      "highlight": "scope=\\"row\\"",
+      "notes": "All row headings must be tagged with <strong>scope=\\"row\\"</strong>"
+    }
+  ]
+}
+</script>
+
+
+<h2 id="table-with-figcaption" tabindex="-1"><a class="heading__deeplink" href="#table-with-figcaption" title="Permalink to A Simple Table with the caption placed inside a figcaption tag" aria-label="Permalink to A Simple Table with the caption placed inside a figcaption tag">A Simple Table with the caption placed inside a <code>figcaption</code> tag</a></h2>
+
+<div class="enable-stats">
+                    <div class="enable-stats__desc enable-stats__desc--style">
+                    <div class="enable-stats__center">
+                        <img class="enable-stats__icon" src="images/icons/style.svg" alt="" role="presentation">
+                        <span class="enable-stats__label">This is a great solution to make CSS styling easier for developers.</span>
+            </div>
+                </div>
+                    
+</div>
+<p>Note that the caption is on the bottom, instead of the top of the table.</p>
+
+<div class="enable-example" id="example3">
+  <figure>
+    <table aria-labelledby="fig-caption">
+
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Birthday</th>
+        </tr>
+      </thead>
+
+
+
+      <tbody>
+        <tr>
+          <th scope="row">Jackie</th>
+          <td>5</td>
+          <td>April 5</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Beth</th>
+          <td>8</td>
+          <td>January 14</td>
+        </tr>
+      </tbody>
+    </table>
+    <figcaption id="fig-caption" class="caption">
+      Family Birthdays (Table Coded Using Figcaption)
+    </figcaption>
+  </figure>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example3__steps" class="showcode__steps"><label for="example3__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example3__steps--select" data-showcode-for="example3" data-replace-html-rules="{}"><option value=""></option><option value="\\s*&amp;lt;figcaption[\\s\\S]*&amp;lt;/figcaption&amp;gt ||| aria-labelledby=&quot;fig-caption&quot;" data-showcode-notes="The <strong>figcaption</strong> tag may be used instead of the <strong>caption</strong> if you use <strong>aria-labelledby</strong> on the <strong>table</strong> to point to it.">Step #1: Give table a label using the <strong>caption</strong> element</option></select></div>
+                          <div id="example3__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example3__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example3__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example3__example-desc" class="showcode__example--desc">
+                <label for="example3__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example3__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example3" data-showcode-props="example3-props" tabindex="0" aria-describedby="example3__example-desc">&lt;figure&gt;<br>  &lt;table<br>    aria-labelledby="fig-caption"<br>  &gt;<br>    &lt;thead&gt;<br>      &lt;tr&gt;<br>        &lt;th scope="col"&gt;<br>          Name<br>        &lt;/th&gt;<br>        &lt;th scope="col"&gt;<br>          Age<br>        &lt;/th&gt;<br>        &lt;th scope="col"&gt;<br>          Birthday<br>        &lt;/th&gt;<br>      &lt;/tr&gt;<br>    &lt;/thead&gt;<br>    &lt;tbody&gt;<br>      &lt;tr&gt;<br>        &lt;th scope="row"&gt;<br>          Jackie<br>        &lt;/th&gt;<br>        &lt;td&gt;<br>          5<br>        &lt;/td&gt;<br>        &lt;td&gt;<br>          April 5<br>        &lt;/td&gt;<br>      &lt;/tr&gt;<br>      &lt;tr&gt;<br>        &lt;th scope="row"&gt;<br>          Beth<br>        &lt;/th&gt;<br>        &lt;td&gt;<br>          8<br>        &lt;/td&gt;<br>        &lt;td&gt;<br>          January 14<br>        &lt;/td&gt;<br>      &lt;/tr&gt;<br>    &lt;/tbody&gt;<br>  &lt;/table&gt;<br>  &lt;figcaption<br>    id="fig-caption"<br>    class="caption"<br>  &gt;<br>    Family Birthdays (Table Coded Using Figcaption)<br>  &lt;/figcaption&gt;<br>&lt;/figure&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example3-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Give table a label using the <strong>caption</strong> element",
+    "highlight": "\\\\s*&lt;figcaption[\\\\s\\\\S]*&lt;/figcaption&gt ||| aria-labelledby=\\"fig-caption\\"",
+    "notes": "The <strong>figcaption</strong> tag may be used instead of the <strong>caption</strong> if you use <strong>aria-labelledby</strong> on the <strong>table</strong> to point to it."
+  }]
+}
+</script>
+
+
+<h2 id="a-complex-table-made-using-html5--heading" tabindex="-1"><a class="heading__deeplink" href="#a-complex-table-made-using-html5--heading" title="Permalink to A Complex Table Made Using HTML5" aria-label="Permalink to A Complex Table Made Using HTML5">A Complex Table Made Using HTML5</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-3">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Complex tables may have headings for column groups as well as individual columns.
+  In these circumstances, use <code>scope="colgroup"</code> to them up.  They should also use <a href="https://www.w3.org/TR/WCAG20-TECHS/H43.html">the <code>headers</code> attribute</a> to ensure the relationships between table headers and table cells are correct.
+</p>
+
+<div class="enable-example" id="complex-table">
+  <figure>
+    <figcaption id="complex-table__caption" class="caption">
+      Complex Table Example: Racing Times
+    </figcaption>
+    <div class="sticky-table__container" tabindex="0">
+      <table class="data complex" aria-labelledby="complex-table__caption">
+
+        <thead>
+          <tr>
+            <th id="distances-header" rowspan="2" scope="col" class="sticky-table__sticky-horiz-heading"><span class="sr-only">Distances</span></th>
+            <th id="females-header" colspan="3" scope="colgroup">Females</th>
+            <th id="males-header" colspan="3" scope="colgroup">Males</th>
+          </tr>
+          <tr>
+            <th id="u1" headers="females-header" scope="col">Mary</th>
+            <th id="u2" headers="females-header" scope="col">Betsy</th>
+            <th id="u3" headers="females-header" scope="col">Joanne</th>
+            <th id="u4" headers="males-header" scope="col">Matt</th>
+            <th id="u5" headers="males-header" scope="col">Todd</th>
+            <th id="u6" headers="males-header" scope="col">Jake</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th id="r1" headers="distances-header" scope="row">1 mile</th>
+            <td headers="females-header r1 u1">8:32</td>
+            <td headers="females-header r1 u2">7:43</td>
+            <td headers="females-header r1 u3">9:51</td>
+            <td headers="males-header r1 u4">7:55</td>
+            <td headers="males-header r1 u5">7:01</td>
+            <td headers="males-header r1 u6">7:51</td>
+          </tr>
+          <tr>
+            <th id="r2" headers="distances-header" scope="row">5 km</th>
+            <td headers="females-header r2 u1">28:04</td>
+            <td headers="females-header r2 u2">26:47</td>
+            <td headers="females-header r2 u3">38:15</td>
+            <td headers="males-header r2 u4">27:27</td>
+            <td headers="males-header r2 u5">24:21</td>
+            <td headers="males-header r2 u6">24:31</td>
+          </tr>
+          <tr>
+            <th id="r3" headers="distances-header" scope="row">10 km</th>
+            <td headers="females-header r3 u1">1:01:16</td>
+            <td headers="females-header r3 u2">55:38</td>
+            <td headers="females-header r3 u3">1:56:01</td>
+            <td headers="males-header r3 u4">57:04</td>
+            <td headers="males-header r3 u5">50:35</td>
+            <td headers="males-header r3 u6">50:45</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </figure>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-3" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-3" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="complex-table__steps" class="showcode__steps"><label for="complex-table__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="complex-table__steps--select" data-showcode-for="complex-table" data-replace-html-rules="{}"><option value=""></option><option value="\\s*&amp;lt;figcaption[\\s\\S]*&amp;lt;/figcaption&amp;gt ||| \\s*&amp;lt;[/]{0,1}figure[^&amp;]*&amp;gt; ||| aria-labelledby=&quot;complex-table__caption&quot;" data-showcode-notes="We use <code>figcaption</code> here instead of <code>caption</code> because we want the caption to not scroll horizontally with the table at smaller breakpoints that can't fit the whole table within the viewport.">Step #1: Use <code>figure</code> and <code>figcaption</code> to caption the table</option><option value="scope=&quot;colgroup&quot;" data-showcode-notes="Note that column groups here help categorize the column headers underneath">Step #2: Mark up column groups with scope="colgroup"</option><option value="scope=&quot;col&quot;" data-showcode-notes="This is just like the previous examples">Step #3: Mark up the columns underneath the normal way</option><option value="id" data-showcode-notes="These ids will be used in the next step.">Step #4: All table headings must have an id</option><option value="headers" data-showcode-notes="Screen readers sometimes have problems parsing complex tables.  In order to clarify how the table should be parsed, developers should put <code>headers</code> attributes.  I have found that using <a href=&quot;https: //github.com/pa11y/pa11y-ci&quot;>the pa11y command line tool</a> is a great way to work through the occasional confusion that can happen with this, as it not only tells you what is wrong, but the recommended way of fixing it.">Step #5: All table cells should have headers attributes</option><option value="%CSS%table-css ~ .sticky-table__container |||  position: sticky;" data-showcode-notes="This effect is only seen in lower breakpoints where the width of the table is larger than the viewport width.">Step #6: Use CSS sticky to help maintain cell context when the user scrolls through the data</option></select></div>
+                          <div id="complex-table__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="complex-table__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="complex-table__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="complex-table__example-desc" class="showcode__example--desc">
+                <label for="complex-table__wrap-text">Wrap text</label>
+                <input type="checkbox" id="complex-table__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="complex-table" data-showcode-props="complex-table-props" tabindex="0" aria-describedby="complex-table__example-desc">&lt;figure&gt;<br>  &lt;figcaption<br>    id="complex-table__caption"<br>    class="caption"<br>  &gt;<br>    Complex Table Example: Racing Times<br>  &lt;/figcaption&gt;<br>  &lt;div<br>    class="sticky-table__container"<br>    tabindex="0"<br>  &gt;<br>    &lt;table<br>      class="data complex"<br>      aria-labelledby="complex-table__caption"<br>    &gt;<br>      &lt;thead&gt;<br>        &lt;tr&gt;<br>          &lt;th<br>            id="distances-header"<br>            rowspan="2"<br>            scope="col"<br>            class="sticky-table__sticky-horiz-heading"<br>          &gt;<br>            &lt;span<br>              class="sr-only"<br>            &gt;<br>              Distances<br>            &lt;/span&gt;<br>          &lt;/th&gt;<br>          &lt;th<br>            id="females-header"<br>            colspan="3"<br>            scope="colgroup"<br>          &gt;<br>            Females<br>          &lt;/th&gt;<br>          &lt;th<br>            id="males-header"<br>            colspan="3"<br>            scope="colgroup"<br>          &gt;<br>            Males<br>          &lt;/th&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>          &lt;th<br>            id="u1"<br>            headers="females-header"<br>            scope="col"<br>          &gt;<br>            Mary<br>          &lt;/th&gt;<br>          &lt;th<br>            id="u2"<br>            headers="females-header"<br>            scope="col"<br>          &gt;<br>            Betsy<br>          &lt;/th&gt;<br>          &lt;th<br>            id="u3"<br>            headers="females-header"<br>            scope="col"<br>          &gt;<br>            Joanne<br>          &lt;/th&gt;<br>          &lt;th<br>            id="u4"<br>            headers="males-header"<br>            scope="col"<br>          &gt;<br>            Matt<br>          &lt;/th&gt;<br>          &lt;th<br>            id="u5"<br>            headers="males-header"<br>            scope="col"<br>          &gt;<br>            Todd<br>          &lt;/th&gt;<br>          &lt;th<br>            id="u6"<br>            headers="males-header"<br>            scope="col"<br>          &gt;<br>            Jake<br>          &lt;/th&gt;<br>        &lt;/tr&gt;<br>      &lt;/thead&gt;<br>      &lt;tbody&gt;<br>        &lt;tr&gt;<br>          &lt;th<br>            id="r1"<br>            headers="distances-header"<br>            scope="row"<br>          &gt;<br>            1 mile<br>          &lt;/th&gt;<br>          &lt;td<br>            headers="females-header r1 u1"<br>          &gt;<br>            8:32<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r1 u2"<br>          &gt;<br>            7:43<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r1 u3"<br>          &gt;<br>            9:51<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r1 u4"<br>          &gt;<br>            7:55<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r1 u5"<br>          &gt;<br>            7:01<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r1 u6"<br>          &gt;<br>            7:51<br>          &lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>          &lt;th<br>            id="r2"<br>            headers="distances-header"<br>            scope="row"<br>          &gt;<br>            5 km<br>          &lt;/th&gt;<br>          &lt;td<br>            headers="females-header r2 u1"<br>          &gt;<br>            28:04<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r2 u2"<br>          &gt;<br>            26:47<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r2 u3"<br>          &gt;<br>            38:15<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r2 u4"<br>          &gt;<br>            27:27<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r2 u5"<br>          &gt;<br>            24:21<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r2 u6"<br>          &gt;<br>            24:31<br>          &lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>          &lt;th<br>            id="r3"<br>            headers="distances-header"<br>            scope="row"<br>          &gt;<br>            10 km<br>          &lt;/th&gt;<br>          &lt;td<br>            headers="females-header r3 u1"<br>          &gt;<br>            1:01:16<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r3 u2"<br>          &gt;<br>            55:38<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="females-header r3 u3"<br>          &gt;<br>            1:56:01<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r3 u4"<br>          &gt;<br>            57:04<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r3 u5"<br>          &gt;<br>            50:35<br>          &lt;/td&gt;<br>          &lt;td<br>            headers="males-header r3 u6"<br>          &gt;<br>            50:45<br>          &lt;/td&gt;<br>        &lt;/tr&gt;<br>      &lt;/tbody&gt;<br>    &lt;/table&gt;<br>  &lt;/div&gt;<br>&lt;/figure&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="complex-table-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use <code>figure</code> and <code>figcaption</code> to caption the table",
+      "highlight": "\\\\s*&lt;figcaption[\\\\s\\\\S]*&lt;/figcaption&gt ||| \\\\s*&lt;[/]{0,1}figure[^&]*&gt; ||| aria-labelledby=\\"complex-table__caption\\"",
+      "notes": "We use <code>figcaption</code> here instead of <code>caption</code> because we want the caption to not scroll horizontally with the table at smaller breakpoints that can't fit the whole table within the viewport."
+    },
+    {
+      "label": "Mark up column groups with scope=\\"colgroup\\"",
+      "highlight": "scope=\\"colgroup\\"",
+      "notes": "Note that column groups here help categorize the column headers underneath"
+    },
+    {
+      "label": "Mark up the columns underneath the normal way",
+      "highlight": "scope=\\"col\\"",
+      "notes": "This is just like the previous examples"
+    },
+    {
+      "label": "All table headings must have an id",
+      "highlight": "id",
+      "notes": "These ids will be used in the next step."
+    },
+    {
+      "label": "All table cells should have headers attributes",
+      "highlight": "headers",
+      "notes": "Screen readers sometimes have problems parsing complex tables.  In order to clarify how the table should be parsed, developers should put <code>headers</code> attributes.  I have found that using <a href=\\"https: //github.com/pa11y/pa11y-ci\\">the pa11y command line tool</a> is a great way to work through the occasional confusion that can happen with this, as it not only tells you what is wrong, but the recommended way of fixing it."
+    },
+    {
+      "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
+      "highlight": "%CSS%table-css ~ .sticky-table__container |||  position: sticky;",
+      "notes": "This effect is only seen in lower breakpoints where the width of the table is larger than the viewport width."
+    }
+
+  ]
+}
+</script>
+
+
+<h2 id="table-aria" tabindex="-1"><a class="heading__deeplink" href="#table-aria" title="Permalink to A Simple Table Made Using Aria Roles" aria-label="Permalink to A Simple Table Made Using Aria Roles">A Simple Table Made Using Aria Roles</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.</span>
+            </div>
+        </div>
+            
+</div>
+<p>This is relatively new to ARIA and may not be implemented by all assistive technologies. It should only
+  be used when there is existing code that is not marked up as an HTML table, but looks and
+  semantically contains tabular data.
+</p>
+
+<p><strong>Note:</strong> The structure your markup should be structured similar to <a href="#developer-walkthrough-5">the HTML structure used in the code walkthrough below</a>,
+  but if not, don't fret.
+  If your existing markup has extra tags that are between what should be direct ancestors,
+  you can tell the screen reader to pretend they are not
+  there by marking them up as <code>role="presentation"</code> For example, here is how we would
+  deal with an extra <code>div</code> descendant between a <code>row</code> and a
+  list of <code>cell</code>s:
+</p>
+
+
+
+<template id="role-presentation-code">
+  <div role="row">
+    <div role="presentation">
+      <span role="rowheader">Jackie</span>
+      <span role="cell">5</span>
+      <span role="cell">April 5</span>
+    </div>
+  </div>
+</template>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                      </div>
+
+          
+                                    <div id="role-presentation-code__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="role-presentation-code__notes" class="showcode__notes"></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="role-presentation-code__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="role-presentation-code__example-desc" class="showcode__example--desc">
+                <label for="role-presentation-code__wrap-text">Wrap text</label>
+                <input type="checkbox" id="role-presentation-code__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+              
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="role-presentation-code" data-showcode-props="role-presentation-code-props" tabindex="0" aria-describedby="role-presentation-code__example-desc">&lt;div role="row"&gt;<br>  &lt;div <mark class="showcode__highlight" tabindex="-1"><span class="sr-only">Start of highlighted code. </span>role="presentation"<span class="sr-only">End of highlighted code. </span></mark>&gt;<br>    &lt;span role="rowheader"&gt;<br>      Jackie<br>    &lt;/span&gt;<br>    &lt;span role="cell"&gt;<br>      5<br>    &lt;/span&gt;<br>    &lt;span role="cell"&gt;<br>      April 5<br>    &lt;/span&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;
+</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="role-presentation-code-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "",
+    "highlight": "role=\\"presentation\\"",
+    "notes": ""
+  }]
+}
+</script>
+
+
+<div class="enable-example" id="aria-example-1">
+
+  <div id="table1" role="table" aria-labelledby="table1-caption">
+    <div id="table1-caption" class="caption">Family Birthdays (coded using ARIA)</div>
+
+    <div class="thead" role="rowgroup">
+      <div role="row">
+
+
+        <span role="columnheader">Name</span>
+        <span role="columnheader">Age</span>
+        <span role="columnheader">Birthday</span>
+      </div>
+    </div>
+
+    <div class="tbody" role="rowgroup">
+      <div role="row">
+        <span role="rowheader">Jackie</span>
+        <span role="cell">5</span>
+        <span role="cell">April 5</span>
+      </div>
+
+      <div role="row">
+        <span role="rowheader">Beth</span>
+        <span role="cell">8</span>
+        <span role="cell">January 14</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-5" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-5" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example-1__steps" class="showcode__steps"><label for="aria-example-1__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example-1__steps--select" data-showcode-for="aria-example-1" data-replace-html-rules="{}"><option value=""></option><option value="role=&quot;table&quot;" data-showcode-notes="This replaces the <code>table</code> tag in the native HTML markup.">Step #1: Mark the root with a role of table</option><option value="aria-labelledby" data-showcode-notes="All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <a href=&quot;screen-reader-only-text.php&quot;><code>sr-only</code> class</a> to do so.">Step #2: Give table a label using the <code>aria-labelledby</code> attribute.</option><option value="role=&quot;rowgroup&quot;" data-showcode-notes="This replaces the <code>thead</code> and <code>tbody</code> tags in the native HTML table markup">Step #3: Separate the table head and body with separate rowgroups</option><option value="role=&quot;row&quot;" data-showcode-notes="This replaces the <code>tr</code> tags in the native HTML table markup">Step #4: Mark up the table rows with <code>row="row"</code></option><option value="role=&quot;columnheader&quot;" data-showcode-notes="This replaces the <code>&amp;lt;th scope=&quot;col&quot;&amp;gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers because the existing design didn't have them, you could do so using the <a href=&quot;screen-reader-only-text.php&quot;><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users.">Step #5: Mark up the table column headers</option><option value="role=&quot;rowheader&quot;" data-showcode-notes="This replaces the <code>&amp;lt;th scope=&quot;row&quot;&amp;gt;</code> in the native HTML markup.">Step #6: Mark up the table row headers</option><option value="role=&quot;cell&quot;" data-showcode-notes="This replaces the <code>td</code> tags in the native HTML markup">Step #7: Mark up the table cells</option></select></div>
+                          <div id="aria-example-1__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example-1__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example-1__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example-1__example-desc" class="showcode__example--desc">
+                <label for="aria-example-1__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example-1__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example-1" data-showcode-props="aria-example-1-props" tabindex="0" aria-describedby="aria-example-1__example-desc">&lt;div<br>  id="table1"<br>  role="table"<br>  aria-labelledby="table1-caption"<br>&gt;<br>  &lt;div<br>    id="table1-caption"<br>    class="caption"<br>  &gt;<br>    Family Birthdays (coded using ARIA)<br>  &lt;/div&gt;<br>  &lt;div<br>    class="thead"<br>    role="rowgroup"<br>  &gt;<br>    &lt;div role="row"&gt;<br>      &lt;span<br>        role="columnheader"<br>      &gt;<br>        Name<br>      &lt;/span&gt;<br>      &lt;span<br>        role="columnheader"<br>      &gt;<br>        Age<br>      &lt;/span&gt;<br>      &lt;span<br>        role="columnheader"<br>      &gt;<br>        Birthday<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;div<br>    class="tbody"<br>    role="rowgroup"<br>  &gt;<br>    &lt;div role="row"&gt;<br>      &lt;span role="rowheader"&gt;<br>        Jackie<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        5<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        April 5<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;div role="row"&gt;<br>      &lt;span role="rowheader"&gt;<br>        Beth<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        8<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        January 14<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="aria-example-1-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Mark the root with a role of table",
+      "highlight": "role=\\"table\\"",
+      "notes": "This replaces the <code>table</code> tag in the native HTML markup."
+    },
+    {
+      "label": "Give table a label using the <code>aria-labelledby</code> attribute.",
+      "highlight": "aria-labelledby",
+      "notes": "All tables must have captions. With native HTML tables, a developer would use the <caption> tag. This mimics that with ARIA tables.  If you want to hide the caption visually, use the <a href=\\"screen-reader-only-text.php\\"><code>sr-only</code> class</a> to do so."
+    },
+    {
+      "label": "Separate the table head and body with separate rowgroups",
+      "highlight": "role=\\"rowgroup\\"",
+      "notes": "This replaces the <code>thead</code> and <code>tbody</code> tags in the native HTML table markup"
+    },
+    {
+      "label": "Mark up the table rows with <code>row=\\"row\\"</code>",
+      "highlight": "role=\\"row\\"",
+      "notes": "This replaces the <code>tr</code> tags in the native HTML table markup"
+    },
+    {
+      "label": "Mark up the table column headers",
+      "highlight": "role=\\"columnheader\\"",
+      "notes": "This replaces the <code>&lt;th scope=\\"col\\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers because the existing design didn't have them, you could do so using the <a href=\\"screen-reader-only-text.php\\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
+    },
+    {
+      "label": "Mark up the table row headers",
+      "highlight": "role=\\"rowheader\\"",
+      "notes": "This replaces the <code>&lt;th scope=\\"row\\"&gt;</code> in the native HTML markup."
+    },
+    {
+      "label": "Mark up the table cells",
+      "highlight": "role=\\"cell\\"",
+      "notes": "This replaces the <code>td</code> tags in the native HTML markup"
+    }
+  ]
+}
+</script>
+
+
+
+
+<h2 id="a-complex-table-made-using-aria-roles--heading" tabindex="-1"><a class="heading__deeplink" href="#a-complex-table-made-using-aria-roles--heading" title="Permalink to A Complex Table Made Using Aria Roles" aria-label="Permalink to A Complex Table Made Using Aria Roles">A Complex Table Made Using Aria Roles</a></h2>
+
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+    It takes real talent to code tables this way: It's wrong and it takes a lot of time.  You really should reconsider recoding your tables with <code>&lt;table&gt;</code> tags instead.  Your colleagues will thank you, I will thank you, and you know that you did a good deed.
+</p>
+
+<p>
+    To be honest, I felt really dirty coding this example.  I hope you realize I took one for the team here.  Please take my sacrifice seriously.  Don't do this unless you are really in a bind.
+</p>
+
+
+<div class="enable-example" id="complex-aria-example">
+
+  <div id="table2" role="table" aria-labelledby="table2-caption">
+
+    <div class="thead" role="rowgroup">
+      <div role="row">
+
+        <span role="columnheader" class="sr-only">Comparison Criteria</span>
+        <span role="columnheader">ACME Widgets</span>
+        <span role="columnheader">Our Competitor's Widgets</span>
+      </div>
+    </div>
+
+    <div id="table2-caption" class="caption">ACME Widgets compared to the competition</div>
+
+
+    <div class="tbody" role="rowgroup">
+      <div role="row">
+        <span role="rowheader">Power Usage (in kilowatt hours)</span>
+        <span role="cell">5 kWh</span>
+        <span role="cell">20 kWh</span>
+      </div>
+
+      <div role="row">
+        <span role="rowheader">Costs for fuel per hour</span>
+        <div role="cell">
+          <div>
+            $20
+            <div>(Note: this is an estimate given current market value)</div>
+          </div>
+        </div>
+        <span role="cell">$100</span>
+      </div>
+    </div>
+
+    <div class="tfoot" role="rowgroup">
+      <div role="row">
+        <span role="rowheader">Total Savings in one day</span>
+        <span role="cell" aria-colspan="2">$45600</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-6" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-6" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="complex-aria-example__steps" class="showcode__steps"><label for="complex-aria-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="complex-aria-example__steps--select" data-showcode-for="complex-aria-example" data-replace-html-rules="{}"><option value=""></option><option value="aria-colspan ||| aria-rowspan" data-showcode-notes="This is equivalent to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables.">Step #1: Use <code>aria-colspan</code> and <code>aria-rowspan</code> when you have a cell that spans multiple columns and rows</option></select></div>
+                          <div id="complex-aria-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="complex-aria-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="complex-aria-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="complex-aria-example__example-desc" class="showcode__example--desc">
+                <label for="complex-aria-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="complex-aria-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="complex-aria-example" data-showcode-props="complex-aria-example-props" tabindex="0" aria-describedby="complex-aria-example__example-desc">&lt;div<br>  id="table2"<br>  role="table"<br>  aria-labelledby="table2-caption"<br>&gt;<br>  &lt;div<br>    class="thead"<br>    role="rowgroup"<br>  &gt;<br>    &lt;div role="row"&gt;<br>      &lt;span<br>        role="columnheader"<br>        class="sr-only"<br>      &gt;<br>        Comparison Criteria<br>      &lt;/span&gt;<br>      &lt;span<br>        role="columnheader"<br>      &gt;<br>        ACME Widgets<br>      &lt;/span&gt;<br>      &lt;span<br>        role="columnheader"<br>      &gt;<br>        Our Competitor's Widgets<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;div<br>    id="table2-caption"<br>    class="caption"<br>  &gt;<br>    ACME Widgets compared to the competition<br>  &lt;/div&gt;<br>  &lt;div<br>    class="tbody"<br>    role="rowgroup"<br>  &gt;<br>    &lt;div role="row"&gt;<br>      &lt;span role="rowheader"&gt;<br>        Power Usage (in kilowatt hours)<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        5 kWh<br>      &lt;/span&gt;<br>      &lt;span role="cell"&gt;<br>        20 kWh<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;div role="row"&gt;<br>      &lt;span role="rowheader"&gt;<br>        Costs for fuel per hour<br>      &lt;/span&gt;<br>      &lt;div role="cell"&gt;<br>        &lt;div&gt;<br>          $20<br>          &lt;div&gt;<br>            (Note: this is an estimate given current market value)<br>          &lt;/div&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>      &lt;span role="cell"&gt;<br>        $100<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>  &lt;div<br>    class="tfoot"<br>    role="rowgroup"<br>  &gt;<br>    &lt;div role="row"&gt;<br>      &lt;span role="rowheader"&gt;<br>        Total Savings in one day<br>      &lt;/span&gt;<br>      &lt;span<br>        role="cell"<br>        aria-colspan="2"<br>      &gt;<br>        $45600<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="complex-aria-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use <code>aria-colspan</code> and <code>aria-rowspan</code> when you have a cell that spans multiple columns and rows",
+      "highlight": "aria-colspan ||| aria-rowspan",
+      "notes": "This is equivalent to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables."
+    }
+
+  ]
+}
+</script>
+
+
+<h2 id="sticky-table-header" tabindex="-1"><a class="heading__deeplink" href="#sticky-table-header" title="Permalink to Sticky Table Header" aria-label="Permalink to Sticky Table Header">Sticky Table Header</a></h2>
+
+<div class="enable-stats">
+                    <div class="enable-stats__desc enable-stats__desc--style">
+                    <div class="enable-stats__center">
+                        <img class="enable-stats__icon" src="images/icons/style.svg" alt="" role="presentation">
+                        <span class="enable-stats__label">This is a great way to style a table when there is a lot of data inside of it.</span>
+            </div>
+                </div>
+                    
+</div>
+<p>
+    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
+</p>
+
+<p>
+    Another way of preserving this visual connection to the table headings and the table data is by using <a href="pagination-table.php">pagination tables</a>.  While they are effective, they are more complex and require JavaScript, while the "sticky table header" has quite a few advantages:
+</p>
+
+<ol>
+    <li>It is CSS only.</li>
+    <li>It is easily searchable within the browser ... no extra coding required!</li>
+    <li>The UI is easy to understand and really straightforward.</li>
+    <li>If there are links inside the table, and you are concerned about the amount of tabstops there are inside the table for keyboard users, you could use <a href="skip-link.php">skip links</a> around the table    so they can skip this table entirely.</li>
+</ol>
+
+<p>
+    If you are not worried about large hits to a backend database for generating
+    the data or a ridiculously huge HTTP payload, I would
+    suggest considering the use of a table with a fixed table header.  It has a
+    way less complicated UI, and if marked up correctly, is totally
+    accessible via screen readers and keyboard.
+</p>
+
+<p><em>(Note: Data from this table was taken from <a href="https://worldpopulationreview.com/countries/countries-by-gdp#worldCountries">World Population Review</a>).</em></p>
+
+<div class="enable-example" id="sticky-header-table-example">
+    <figure>
+        <figcaption id="sticky-table__caption" class="caption">
+            Sticky Header Example: GDP of the World Nations 
+        </figcaption>
+
+        <div id="sticky-table__instructions" class="sr-only">
+            Sighted users can use the arrow keys to scroll through the table.
+        </div>
+        <div class="sticky-table__container" tabindex="0">
+            <table aria-labelledby="sticky-table__caption" aria-describedby="sticky-table__instructions">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">GDP (IMF '19)</th>
+                    <th scope="col">GDP (UN '16)</th>
+                    <th scope="col">GDP Per Capita</th>
+                    <th scope="col">Population</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>United States</td>
+                    <td>22.20 trillion</td>
+                    <td>18.62 trillion</td>
+                    <td>$66,678</td>
+                    <td>332,915,073</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>China</td>
+                    <td>15.47 trillion</td>
+                    <td>11.22 trillion</td>
+                    <td>$10,710</td>
+                    <td>1,444,216,107</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Japan</td>
+                    <td>5.50 trillion</td>
+                    <td>4.94 trillion</td>
+                    <td>$43,597</td>
+                    <td>126,050,804</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Germany</td>
+                    <td>4.16 trillion</td>
+                    <td>3.48 trillion</td>
+                    <td>$49,548</td>
+                    <td>83,900,473</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>India</td>
+                    <td>3.26 trillion</td>
+                    <td>2.26 trillion</td>
+                    <td>$2,338</td>
+                    <td>1,393,409,038</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>United Kingdom</td>
+                    <td>2.93 trillion</td>
+                    <td>2.65 trillion</td>
+                    <td>$42,915</td>
+                    <td>68,207,116</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>France</td>
+                    <td>2.88 trillion</td>
+                    <td>2.47 trillion</td>
+                    <td>$43,959</td>
+                    <td>65,426,179</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Italy</td>
+                    <td>2.09 trillion</td>
+                    <td>1.86 trillion</td>
+                    <td>$34,629</td>
+                    <td>60,367,477</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Brazil</td>
+                    <td>2.06 trillion</td>
+                    <td>1.80 trillion</td>
+                    <td>$9,638</td>
+                    <td>213,993,437</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Canada</td>
+                    <td>1.83 trillion</td>
+                    <td>1.53 trillion</td>
+                    <td>$48,137</td>
+                    <td>38,067,903</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>South Korea</td>
+                    <td>1.74 trillion</td>
+                    <td>1.41 trillion</td>
+                    <td>$34,000</td>
+                    <td>51,305,186</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Russia</td>
+                    <td>1.67 trillion</td>
+                    <td>1.25 trillion</td>
+                    <td>$11,428</td>
+                    <td>145,912,025</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Spain</td>
+                    <td>1.50 trillion</td>
+                    <td>1.24 trillion</td>
+                    <td>$32,026</td>
+                    <td>46,745,216</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Australia</td>
+                    <td>1.48 trillion</td>
+                    <td>1.30 trillion</td>
+                    <td>$57,447</td>
+                    <td>25,788,215</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Mexico</td>
+                    <td>1.30 trillion</td>
+                    <td>1.08 trillion</td>
+                    <td>$9,963</td>
+                    <td>130,262,216</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Indonesia</td>
+                    <td>1.21 trillion</td>
+                    <td>932.26 billion</td>
+                    <td>$4,374</td>
+                    <td>276,361,783</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Netherlands</td>
+                    <td>954.93 billion</td>
+                    <td>777.23 billion</td>
+                    <td>$55,606</td>
+                    <td>17,173,099</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Turkey</td>
+                    <td>809.55 billion</td>
+                    <td>863.71 billion</td>
+                    <td>$9,519</td>
+                    <td>85,042,738</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>Saudi Arabia</td>
+                    <td>790.06 billion</td>
+                    <td>639.62 billion</td>
+                    <td>$22,356</td>
+                    <td>35,340,683</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>Switzerland</td>
+                    <td>740.70 billion</td>
+                    <td>668.85 billion</td>
+                    <td>$84,987</td>
+                    <td>8,715,494</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>Poland</td>
+                    <td>643.27 billion</td>
+                    <td>471.40 billion</td>
+                    <td>$17,019</td>
+                    <td>37,797,005</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Taiwan</td>
+                    <td>633.70 billion</td>
+                    <td></td>
+                    <td>$26,564</td>
+                    <td>23,855,010</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>Sweden</td>
+                    <td>576.72 billion</td>
+                    <td>514.48 billion</td>
+                    <td>$56,763</td>
+                    <td>10,160,169</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>Belgium</td>
+                    <td>553.78 billion</td>
+                    <td>467.96 billion</td>
+                    <td>$47,607</td>
+                    <td>11,632,326</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>Thailand</td>
+                    <td>547.43 billion</td>
+                    <td>407.03 billion</td>
+                    <td>$7,826</td>
+                    <td>69,950,850</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>Argentina</td>
+                    <td>515.35 billion</td>
+                    <td>545.87 billion</td>
+                    <td>$11,300</td>
+                    <td>45,605,826</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>Nigeria</td>
+                    <td>496.12 billion</td>
+                    <td>404.65 billion</td>
+                    <td>$2,347</td>
+                    <td>211,400,708</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>Iran</td>
+                    <td>495.69 billion</td>
+                    <td>425.40 billion</td>
+                    <td>$5,830</td>
+                    <td>85,028,759</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>Austria</td>
+                    <td>481.68 billion</td>
+                    <td>390.80 billion</td>
+                    <td>$53,265</td>
+                    <td>9,043,070</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>United Arab Emirates</td>
+                    <td>449.13 billion</td>
+                    <td>348.74 billion</td>
+                    <td>$44,953</td>
+                    <td>9,991,089</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>Norway</td>
+                    <td>438.62 billion</td>
+                    <td>371.07 billion</td>
+                    <td>$80,251</td>
+                    <td>5,465,630</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>Ireland</td>
+                    <td>405.19 billion</td>
+                    <td>304.82 billion</td>
+                    <td>$81,315</td>
+                    <td>4,982,907</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>Israel</td>
+                    <td>403.96 billion</td>
+                    <td>317.75 billion</td>
+                    <td>$45,958</td>
+                    <td>8,789,774</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>Hong Kong</td>
+                    <td>402.03 billion</td>
+                    <td>320.91 billion</td>
+                    <td>$53,230</td>
+                    <td>7,552,810</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>Malaysia</td>
+                    <td>401.99 billion</td>
+                    <td>296.53 billion</td>
+                    <td>$12,265</td>
+                    <td>32,776,194</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>Singapore</td>
+                    <td>391.88 billion</td>
+                    <td>296.95 billion</td>
+                    <td>$66,457</td>
+                    <td>5,896,686</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>Philippines</td>
+                    <td>389.05 billion</td>
+                    <td>304.91 billion</td>
+                    <td>$3,503</td>
+                    <td>111,046,913</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>South Africa</td>
+                    <td>386.73 billion</td>
+                    <td>295.44 billion</td>
+                    <td>$6,441</td>
+                    <td>60,041,994</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>Denmark</td>
+                    <td>364.55 billion</td>
+                    <td>306.90 billion</td>
+                    <td>$62,709</td>
+                    <td>5,813,298</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>Colombia</td>
+                    <td>352.81 billion</td>
+                    <td>282.46 billion</td>
+                    <td>$6,882</td>
+                    <td>51,265,844</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>Bangladesh</td>
+                    <td>343.28 billion</td>
+                    <td>220.84 billion</td>
+                    <td>$2,064</td>
+                    <td>166,303,498</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>Egypt</td>
+                    <td>331.36 billion</td>
+                    <td>270.14 billion</td>
+                    <td>$3,178</td>
+                    <td>104,258,327</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>Chile</td>
+                    <td>313.56 billion</td>
+                    <td>247.05 billion</td>
+                    <td>$16,321</td>
+                    <td>19,212,361</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>Finland</td>
+                    <td>289.24 billion</td>
+                    <td>238.50 billion</td>
+                    <td>$52,131</td>
+                    <td>5,548,360</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>Vietnam</td>
+                    <td>282.37 billion</td>
+                    <td>205.28 billion</td>
+                    <td>$2,876</td>
+                    <td>98,168,833</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>Romania</td>
+                    <td>263.13 billion</td>
+                    <td>186.69 billion</td>
+                    <td>$13,757</td>
+                    <td>19,127,774</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>Czech Republic</td>
+                    <td>259.74 billion</td>
+                    <td>195.31 billion</td>
+                    <td>$24,219</td>
+                    <td>10,724,555</td>
+                </tr>
+                <tr>
+                    <td>48</td>
+                    <td>Portugal</td>
+                    <td>249.91 billion</td>
+                    <td>204.84 billion</td>
+                    <td>$24,578</td>
+                    <td>10,167,925</td>
+                </tr>
+                <tr>
+                    <td>49</td>
+                    <td>Iraq</td>
+                    <td>246.93 billion</td>
+                    <td>160.02 billion</td>
+                    <td>$5,997</td>
+                    <td>41,179,350</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>Peru</td>
+                    <td>244.16 billion</td>
+                    <td>192.21 billion</td>
+                    <td>$7,319</td>
+                    <td>33,359,418</td>
+                </tr>
+                <tr>
+                    <td>51</td>
+                    <td>Greece</td>
+                    <td>230.50 billion</td>
+                    <td>192.69 billion</td>
+                    <td>$22,226</td>
+                    <td>10,370,744</td>
+                </tr>
+                <tr>
+                    <td>52</td>
+                    <td>New Zealand</td>
+                    <td>224.94 billion</td>
+                    <td>187.52 billion</td>
+                    <td>$46,278</td>
+                    <td>4,860,643</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>Qatar</td>
+                    <td>204.01 billion</td>
+                    <td>152.45 billion</td>
+                    <td>$69,615</td>
+                    <td>2,930,528</td>
+                </tr>
+                <tr>
+                    <td>54</td>
+                    <td>Algeria</td>
+                    <td>193.06 billion</td>
+                    <td>159.05 billion</td>
+                    <td>$4,327</td>
+                    <td>44,616,624</td>
+                </tr>
+                <tr>
+                    <td>55</td>
+                    <td>Hungary</td>
+                    <td>177.73 billion</td>
+                    <td>125.82 billion</td>
+                    <td>$18,448</td>
+                    <td>9,634,164</td>
+                </tr>
+                <tr>
+                    <td>56</td>
+                    <td>Kazakhstan</td>
+                    <td>177.32 billion</td>
+                    <td>135.01 billion</td>
+                    <td>$9,335</td>
+                    <td>18,994,962</td>
+                </tr>
+                <tr>
+                    <td>57</td>
+                    <td>Ukraine</td>
+                    <td>147.17 billion</td>
+                    <td>93.27 billion</td>
+                    <td>$3,386</td>
+                    <td>43,466,819</td>
+                </tr>
+                <tr>
+                    <td>58</td>
+                    <td>Kuwait</td>
+                    <td>143.00 billion</td>
+                    <td>110.35 billion</td>
+                    <td>$33,036</td>
+                    <td>4,328,550</td>
+                </tr>
+                <tr>
+                    <td>59</td>
+                    <td>Morocco</td>
+                    <td>129.06 billion</td>
+                    <td>103.61 billion</td>
+                    <td>$3,456</td>
+                    <td>37,344,795</td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td>Slovakia</td>
+                    <td>117.40 billion</td>
+                    <td>89.77 billion</td>
+                    <td>$21,499</td>
+                    <td>5,460,721</td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Kenya</td>
+                    <td>109.12 billion</td>
+                    <td>70.53 billion</td>
+                    <td>$1,984</td>
+                    <td>54,985,698</td>
+                </tr>
+                <tr>
+                    <td>62</td>
+                    <td>Ecuador</td>
+                    <td>107.73 billion</td>
+                    <td>98.01 billion</td>
+                    <td>$6,022</td>
+                    <td>17,888,475</td>
+                </tr>
+                <tr>
+                    <td>63</td>
+                    <td>Puerto Rico</td>
+                    <td>104.12 billion</td>
+                    <td>105.03 billion</td>
+                    <td>$36,813</td>
+                    <td>2,828,255</td>
+                </tr>
+                <tr>
+                    <td>64</td>
+                    <td>Ethiopia</td>
+                    <td>99.37 billion</td>
+                    <td>70.31 billion</td>
+                    <td>$843</td>
+                    <td>117,876,227</td>
+                </tr>
+                <tr>
+                    <td>65</td>
+                    <td>Angola</td>
+                    <td>96.43 billion</td>
+                    <td>106.92 billion</td>
+                    <td>$2,842</td>
+                    <td>33,933,610</td>
+                </tr>
+                <tr>
+                    <td>66</td>
+                    <td>Dominican Republic</td>
+                    <td>90.46 billion</td>
+                    <td>71.58 billion</td>
+                    <td>$8,258</td>
+                    <td>10,953,703</td>
+                </tr>
+                <tr>
+                    <td>67</td>
+                    <td>Sri Lanka</td>
+                    <td>89.94 billion</td>
+                    <td>81.32 billion</td>
+                    <td>$4,184</td>
+                    <td>21,497,310</td>
+                </tr>
+                <tr>
+                    <td>68</td>
+                    <td>Guatemala</td>
+                    <td>87.63 billion</td>
+                    <td>68.76 billion</td>
+                    <td>$4,802</td>
+                    <td>18,249,860</td>
+                </tr>
+                <tr>
+                    <td>69</td>
+                    <td>Oman</td>
+                    <td>84.16 billion</td>
+                    <td>63.17 billion</td>
+                    <td>$16,112</td>
+                    <td>5,223,375</td>
+                </tr>
+                <tr>
+                    <td>70</td>
+                    <td>Panama</td>
+                    <td>75.49 billion</td>
+                    <td>55.19 billion</td>
+                    <td>$17,230</td>
+                    <td>4,381,579</td>
+                </tr>
+                <tr>
+                    <td>71</td>
+                    <td>Luxembourg</td>
+                    <td>73.69 billion</td>
+                    <td>58.63 billion</td>
+                    <td>$116,086</td>
+                    <td>634,814</td>
+                </tr>
+                <tr>
+                    <td>72</td>
+                    <td>Ghana</td>
+                    <td>72.26 billion</td>
+                    <td>42.79 billion</td>
+                    <td>$2,277</td>
+                    <td>31,732,129</td>
+                </tr>
+                <tr>
+                    <td>73</td>
+                    <td>Bulgaria</td>
+                    <td>71.75 billion</td>
+                    <td>53.24 billion</td>
+                    <td>$10,403</td>
+                    <td>6,896,663</td>
+                </tr>
+                <tr>
+                    <td>74</td>
+                    <td>Myanmar</td>
+                    <td>71.40 billion</td>
+                    <td>65.70 billion</td>
+                    <td>$1,303</td>
+                    <td>54,806,012</td>
+                </tr>
+                <tr>
+                    <td>75</td>
+                    <td>Venezuela</td>
+                    <td>70.11 billion</td>
+                    <td>291.38 billion</td>
+                    <td>$2,442</td>
+                    <td>28,704,954</td>
+                </tr>
+                <tr>
+                    <td>76</td>
+                    <td>Tanzania</td>
+                    <td>64.89 billion</td>
+                    <td></td>
+                    <td>$1,055</td>
+                    <td>61,498,437</td>
+                </tr>
+                <tr>
+                    <td>77</td>
+                    <td>Croatia</td>
+                    <td>64.59 billion</td>
+                    <td>51.23 billion</td>
+                    <td>$15,824</td>
+                    <td>4,081,651</td>
+                </tr>
+                <tr>
+                    <td>78</td>
+                    <td>Belarus</td>
+                    <td>63.66 billion</td>
+                    <td>47.41 billion</td>
+                    <td>$6,742</td>
+                    <td>9,442,862</td>
+                </tr>
+                <tr>
+                    <td>79</td>
+                    <td>Costa Rica</td>
+                    <td>63.46 billion</td>
+                    <td>57.44 billion</td>
+                    <td>$12,349</td>
+                    <td>5,139,052</td>
+                </tr>
+                <tr>
+                    <td>80</td>
+                    <td>Uruguay</td>
+                    <td>63.42 billion</td>
+                    <td>52.42 billion</td>
+                    <td>$18,197</td>
+                    <td>3,485,151</td>
+                </tr>
+                <tr>
+                    <td>81</td>
+                    <td>Macau</td>
+                    <td>62.16 billion</td>
+                    <td>45.31 billion</td>
+                    <td>$94,409</td>
+                    <td>658,394</td>
+                </tr>
+                <tr>
+                    <td>82</td>
+                    <td>Lebanon</td>
+                    <td>60.62 billion</td>
+                    <td>50.46 billion</td>
+                    <td>$8,955</td>
+                    <td>6,769,146</td>
+                </tr>
+                <tr>
+                    <td>83</td>
+                    <td>Slovenia</td>
+                    <td>58.21 billion</td>
+                    <td>44.71 billion</td>
+                    <td>$28,004</td>
+                    <td>2,078,724</td>
+                </tr>
+                <tr>
+                    <td>84</td>
+                    <td>Lithuania</td>
+                    <td>57.60 billion</td>
+                    <td>42.77 billion</td>
+                    <td>$21,414</td>
+                    <td>2,689,862</td>
+                </tr>
+                <tr>
+                    <td>85</td>
+                    <td>Turkmenistan</td>
+                    <td>57.06 billion</td>
+                    <td>36.18 billion</td>
+                    <td>$9,327</td>
+                    <td>6,117,924</td>
+                </tr>
+                <tr>
+                    <td>86</td>
+                    <td>Serbia</td>
+                    <td>56.89 billion</td>
+                    <td>38.30 billion</td>
+                    <td>$6,540</td>
+                    <td>8,697,550</td>
+                </tr>
+                <tr>
+                    <td>87</td>
+                    <td>Uzbekistan</td>
+                    <td>55.48 billion</td>
+                    <td>67.78 billion</td>
+                    <td>$1,635</td>
+                    <td>33,935,763</td>
+                </tr>
+                <tr>
+                    <td>88</td>
+                    <td>Dr Congo</td>
+                    <td>52.48 billion</td>
+                    <td>40.34 billion</td>
+                    <td>$568</td>
+                    <td>92,377,993</td>
+                </tr>
+                <tr>
+                    <td>89</td>
+                    <td>Libya</td>
+                    <td>50.42 billion</td>
+                    <td>42.96 billion</td>
+                    <td>$7,246</td>
+                    <td>6,958,532</td>
+                </tr>
+                <tr>
+                    <td>90</td>
+                    <td>Ivory Coast</td>
+                    <td>49.88 billion</td>
+                    <td>36.77 billion</td>
+                    <td>$1,844</td>
+                    <td>27,053,629</td>
+                </tr>
+                <tr>
+                    <td>91</td>
+                    <td>Azerbaijan</td>
+                    <td>47.43 billion</td>
+                    <td>37.85 billion</td>
+                    <td>$4,639</td>
+                    <td>10,223,342</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>Bolivia</td>
+                    <td>47.05 billion</td>
+                    <td>33.81 billion</td>
+                    <td>$3,976</td>
+                    <td>11,832,940</td>
+                </tr>
+                <tr>
+                    <td>93</td>
+                    <td>Jordan</td>
+                    <td>46.45 billion</td>
+                    <td>38.65 billion</td>
+                    <td>$4,523</td>
+                    <td>10,269,021</td>
+                </tr>
+                <tr>
+                    <td>94</td>
+                    <td>Paraguay</td>
+                    <td>45.38 billion</td>
+                    <td>27.17 billion</td>
+                    <td>$6,285</td>
+                    <td>7,219,638</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>Cameroon</td>
+                    <td>42.05 billion</td>
+                    <td>32.22 billion</td>
+                    <td>$1,544</td>
+                    <td>27,224,265</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>Bahrain</td>
+                    <td>40.71 billion</td>
+                    <td>32.18 billion</td>
+                    <td>$23,284</td>
+                    <td>1,748,296</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>Latvia</td>
+                    <td>38.10 billion</td>
+                    <td>27.57 billion</td>
+                    <td>$20,409</td>
+                    <td>1,866,942</td>
+                </tr>
+                <tr>
+                    <td>98</td>
+                    <td>Tunisia</td>
+                    <td>35.15 billion</td>
+                    <td>41.70 billion</td>
+                    <td>$2,945</td>
+                    <td>11,935,766</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>Uganda</td>
+                    <td>33.62 billion</td>
+                    <td>25.31 billion</td>
+                    <td>$713</td>
+                    <td>47,123,531</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>Estonia</td>
+                    <td>33.23 billion</td>
+                    <td>23.34 billion</td>
+                    <td>$25,080</td>
+                    <td>1,325,185</td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Nepal</td>
+                    <td>33.03 billion</td>
+                    <td>20.91 billion</td>
+                    <td>$1,113</td>
+                    <td>29,674,920</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Yemen</td>
+                    <td>31.39 billion</td>
+                    <td>25.37 billion</td>
+                    <td>$1,029</td>
+                    <td>30,490,640</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Cambodia</td>
+                    <td>29.31 billion</td>
+                    <td>20.02 billion</td>
+                    <td>$1,730</td>
+                    <td>16,946,438</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>El Salvador</td>
+                    <td>28.20 billion</td>
+                    <td>26.80 billion</td>
+                    <td>$4,326</td>
+                    <td>6,518,499</td>
+                </tr>
+                <tr>
+                    <td>105</td>
+                    <td>Senegal</td>
+                    <td>28.06 billion</td>
+                    <td>14.60 billion</td>
+                    <td>$1,632</td>
+                    <td>17,196,301</td>
+                </tr>
+                <tr>
+                    <td>106</td>
+                    <td>Iceland</td>
+                    <td>26.82 billion</td>
+                    <td>20.27 billion</td>
+                    <td>$78,115</td>
+                    <td>343,353</td>
+                </tr>
+                <tr>
+                    <td>107</td>
+                    <td>Cyprus</td>
+                    <td>26.35 billion</td>
+                    <td>20.05 billion</td>
+                    <td>$21,675</td>
+                    <td>1,215,584</td>
+                </tr>
+                <tr>
+                    <td>108</td>
+                    <td>Zimbabwe</td>
+                    <td>25.81 billion</td>
+                    <td>16.12 billion</td>
+                    <td>$1,710</td>
+                    <td>15,092,171</td>
+                </tr>
+                <tr>
+                    <td>109</td>
+                    <td>Honduras</td>
+                    <td>25.56 billion</td>
+                    <td>21.52 billion</td>
+                    <td>$2,540</td>
+                    <td>10,062,991</td>
+                </tr>
+                <tr>
+                    <td>110</td>
+                    <td>Zambia</td>
+                    <td>25.27 billion</td>
+                    <td>21.06 billion</td>
+                    <td>$1,336</td>
+                    <td>18,920,651</td>
+                </tr>
+                <tr>
+                    <td>111</td>
+                    <td>Trinidad And Tobago</td>
+                    <td>23.23 billion</td>
+                    <td>24.09 billion</td>
+                    <td>$16,557</td>
+                    <td>1,403,375</td>
+                </tr>
+                <tr>
+                    <td>112</td>
+                    <td>Papua New Guinea</td>
+                    <td>22.11 billion</td>
+                    <td>19.69 billion</td>
+                    <td>$2,425</td>
+                    <td>9,119,010</td>
+                </tr>
+                <tr>
+                    <td>113</td>
+                    <td>Laos</td>
+                    <td>22.01 billion</td>
+                    <td>15.81 billion</td>
+                    <td>$2,983</td>
+                    <td>7,379,358</td>
+                </tr>
+                <tr>
+                    <td>114</td>
+                    <td>Bosnia And Herzegovina</td>
+                    <td>21.34 billion</td>
+                    <td>16.91 billion</td>
+                    <td>$6,540</td>
+                    <td>3,263,466</td>
+                </tr>
+                <tr>
+                    <td>115</td>
+                    <td>Botswana</td>
+                    <td>20.87 billion</td>
+                    <td>15.57 billion</td>
+                    <td>$8,707</td>
+                    <td>2,397,241</td>
+                </tr>
+                <tr>
+                    <td>116</td>
+                    <td>Afghanistan</td>
+                    <td>20.68 billion</td>
+                    <td>20.24 billion</td>
+                    <td>$519</td>
+                    <td>39,835,428</td>
+                </tr>
+                <tr>
+                    <td>117</td>
+                    <td>Mali</td>
+                    <td>19.33 billion</td>
+                    <td>14.00 billion</td>
+                    <td>$927</td>
+                    <td>20,855,735</td>
+                </tr>
+                <tr>
+                    <td>118</td>
+                    <td>Georgia</td>
+                    <td>18.89 billion</td>
+                    <td>14.33 billion</td>
+                    <td>$4,746</td>
+                    <td>3,979,765</td>
+                </tr>
+                <tr>
+                    <td>119</td>
+                    <td>Gabon</td>
+                    <td>17.89 billion</td>
+                    <td>13.86 billion</td>
+                    <td>$7,852</td>
+                    <td>2,278,825</td>
+                </tr>
+                <tr>
+                    <td>120</td>
+                    <td>Albania</td>
+                    <td>17.21 billion</td>
+                    <td>11.86 billion</td>
+                    <td>$5,990</td>
+                    <td>2,872,933</td>
+                </tr>
+                <tr>
+                    <td>121</td>
+                    <td>Jamaica</td>
+                    <td>16.72 billion</td>
+                    <td>14.06 billion</td>
+                    <td>$5,622</td>
+                    <td>2,973,463</td>
+                </tr>
+                <tr>
+                    <td>122</td>
+                    <td>Malta</td>
+                    <td>16.34 billion</td>
+                    <td>11.00 billion</td>
+                    <td>$36,898</td>
+                    <td>442,784</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>Mozambique</td>
+                    <td>16.29 billion</td>
+                    <td>10.93 billion</td>
+                    <td>$507</td>
+                    <td>32,163,047</td>
+                </tr>
+                <tr>
+                    <td>124</td>
+                    <td>Burkina Faso</td>
+                    <td>16.27 billion</td>
+                    <td>11.70 billion</td>
+                    <td>$757</td>
+                    <td>21,497,096</td>
+                </tr>
+                <tr>
+                    <td>125</td>
+                    <td>Mauritius</td>
+                    <td>15.76 billion</td>
+                    <td>12.22 billion</td>
+                    <td>$12,374</td>
+                    <td>1,273,433</td>
+                </tr>
+                <tr>
+                    <td>126</td>
+                    <td>Mongolia</td>
+                    <td>14.96 billion</td>
+                    <td>11.16 billion</td>
+                    <td>$4,493</td>
+                    <td>3,329,289</td>
+                </tr>
+                <tr>
+                    <td>127</td>
+                    <td>Namibia</td>
+                    <td>14.63 billion</td>
+                    <td>10.95 billion</td>
+                    <td>$5,653</td>
+                    <td>2,587,344</td>
+                </tr>
+                <tr>
+                    <td>128</td>
+                    <td>Brunei</td>
+                    <td>14.28 billion</td>
+                    <td>11.40 billion</td>
+                    <td>$32,344</td>
+                    <td>441,532</td>
+                </tr>
+                <tr>
+                    <td>129</td>
+                    <td>Armenia</td>
+                    <td>13.87 billion</td>
+                    <td>10.57 billion</td>
+                    <td>$4,672</td>
+                    <td>2,968,127</td>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>Bahamas</td>
+                    <td>13.71 billion</td>
+                    <td>11.26 billion</td>
+                    <td>$34,542</td>
+                    <td>396,913</td>
+                </tr>
+                <tr>
+                    <td>131</td>
+                    <td>North Macedonia</td>
+                    <td>13.70 billion</td>
+                    <td>10.75 billion</td>
+                    <td>$6,578</td>
+                    <td>2,082,658</td>
+                </tr>
+                <tr>
+                    <td>132</td>
+                    <td>Guinea</td>
+                    <td>13.60 billion</td>
+                    <td>8.48 billion</td>
+                    <td>$1,008</td>
+                    <td>13,497,244</td>
+                </tr>
+                <tr>
+                    <td>133</td>
+                    <td>Madagascar</td>
+                    <td>13.54 billion</td>
+                    <td>11.22 billion</td>
+                    <td>$476</td>
+                    <td>28,427,328</td>
+                </tr>
+                <tr>
+                    <td>134</td>
+                    <td>Moldova</td>
+                    <td>12.79 billion</td>
+                    <td>6.77 billion</td>
+                    <td>$3,179</td>
+                    <td>4,024,019</td>
+                </tr>
+                <tr>
+                    <td>135</td>
+                    <td>Chad</td>
+                    <td>12.55 billion</td>
+                    <td>11.27 billion</td>
+                    <td>$742</td>
+                    <td>16,914,985</td>
+                </tr>
+                <tr>
+                    <td>136</td>
+                    <td>Nicaragua</td>
+                    <td>12.46 billion</td>
+                    <td>13.23 billion</td>
+                    <td>$1,859</td>
+                    <td>6,702,385</td>
+                </tr>
+                <tr>
+                    <td>137</td>
+                    <td>Equatorial Guinea</td>
+                    <td>12.26 billion</td>
+                    <td>10.68 billion</td>
+                    <td>$8,458</td>
+                    <td>1,449,896</td>
+                </tr>
+                <tr>
+                    <td>138</td>
+                    <td>Benin</td>
+                    <td>12.13 billion</td>
+                    <td>8.89 billion</td>
+                    <td>$974</td>
+                    <td>12,451,040</td>
+                </tr>
+                <tr>
+                    <td>139</td>
+                    <td>Republic Of The Congo</td>
+                    <td>11.37 billion</td>
+                    <td>7.78 billion</td>
+                    <td>$2,009</td>
+                    <td>5,657,013</td>
+                </tr>
+                <tr>
+                    <td>140</td>
+                    <td>Rwanda</td>
+                    <td>11.06 billion</td>
+                    <td>8.47 billion</td>
+                    <td>$833</td>
+                    <td>13,276,513</td>
+                </tr>
+                <tr>
+                    <td>141</td>
+                    <td>Niger</td>
+                    <td>10.63 billion</td>
+                    <td>7.53 billion</td>
+                    <td>$423</td>
+                    <td>25,130,817</td>
+                </tr>
+                <tr>
+                    <td>142</td>
+                    <td>Haiti</td>
+                    <td>9.65 billion</td>
+                    <td>7.65 billion</td>
+                    <td>$836</td>
+                    <td>11,541,685</td>
+                </tr>
+                <tr>
+                    <td>143</td>
+                    <td>Kyrgyzstan</td>
+                    <td>8.78 billion</td>
+                    <td>6.55 billion</td>
+                    <td>$1,325</td>
+                    <td>6,628,356</td>
+                </tr>
+                <tr>
+                    <td>144</td>
+                    <td>Somalia</td>
+                    <td>8.34 billion</td>
+                    <td>1.32 billion</td>
+                    <td>$510</td>
+                    <td>16,359,504</td>
+                </tr>
+                <tr>
+                    <td>145</td>
+                    <td>Eritrea</td>
+                    <td>8.12 billion</td>
+                    <td>5.41 billion</td>
+                    <td>$2,254</td>
+                    <td>3,601,467</td>
+                </tr>
+                <tr>
+                    <td>146</td>
+                    <td>Malawi</td>
+                    <td>7.86 billion</td>
+                    <td>5.32 billion</td>
+                    <td>$400</td>
+                    <td>19,647,684</td>
+                </tr>
+                <tr>
+                    <td>147</td>
+                    <td>Tajikistan</td>
+                    <td>7.84 billion</td>
+                    <td>6.95 billion</td>
+                    <td>$804</td>
+                    <td>9,749,627</td>
+                </tr>
+                <tr>
+                    <td>148</td>
+                    <td>Maldives</td>
+                    <td>6.21 billion</td>
+                    <td>4.22 billion</td>
+                    <td>$11,429</td>
+                    <td>543,617</td>
+                </tr>
+                <tr>
+                    <td>149</td>
+                    <td>Togo</td>
+                    <td>6.13 billion</td>
+                    <td>4.45 billion</td>
+                    <td>$723</td>
+                    <td>8,478,250</td>
+                </tr>
+                <tr>
+                    <td>150</td>
+                    <td>Montenegro</td>
+                    <td>5.74 billion</td>
+                    <td>4.37 billion</td>
+                    <td>$9,139</td>
+                    <td>628,053</td>
+                </tr>
+                <tr>
+                    <td>151</td>
+                    <td>Mauritania</td>
+                    <td>5.70 billion</td>
+                    <td>4.67 billion</td>
+                    <td>$1,193</td>
+                    <td>4,775,119</td>
+                </tr>
+                <tr>
+                    <td>152</td>
+                    <td>Fiji</td>
+                    <td>5.67 billion</td>
+                    <td>4.67 billion</td>
+                    <td>$6,281</td>
+                    <td>902,906</td>
+                </tr>
+                <tr>
+                    <td>153</td>
+                    <td>Barbados</td>
+                    <td>5.34 billion</td>
+                    <td>4.55 billion</td>
+                    <td>$18,557</td>
+                    <td>287,711</td>
+                </tr>
+                <tr>
+                    <td>154</td>
+                    <td>Eswatini</td>
+                    <td>4.81 billion</td>
+                    <td>4.01 billion</td>
+                    <td>$4,105</td>
+                    <td>1,172,362</td>
+                </tr>
+                <tr>
+                    <td>155</td>
+                    <td>Guyana</td>
+                    <td>4.61 billion</td>
+                    <td>3.44 billion</td>
+                    <td>$5,832</td>
+                    <td>790,326</td>
+                </tr>
+                <tr>
+                    <td>156</td>
+                    <td>Sierra Leone</td>
+                    <td>4.22 billion</td>
+                    <td>3.67 billion</td>
+                    <td>$518</td>
+                    <td>8,141,343</td>
+                </tr>
+                <tr>
+                    <td>157</td>
+                    <td>Suriname</td>
+                    <td>3.92 billion</td>
+                    <td>3.28 billion</td>
+                    <td>$6,622</td>
+                    <td>591,800</td>
+                </tr>
+                <tr>
+                    <td>158</td>
+                    <td>Burundi</td>
+                    <td>3.71 billion</td>
+                    <td>2.87 billion</td>
+                    <td>$303</td>
+                    <td>12,255,433</td>
+                </tr>
+                <tr>
+                    <td>159</td>
+                    <td>Timor Leste</td>
+                    <td>3.41 billion</td>
+                    <td>2.70 billion</td>
+                    <td>$2,540</td>
+                    <td>1,343,873</td>
+                </tr>
+                <tr>
+                    <td>160</td>
+                    <td>Liberia</td>
+                    <td>3.22 billion</td>
+                    <td>2.76 billion</td>
+                    <td>$621</td>
+                    <td>5,180,203</td>
+                </tr>
+                <tr>
+                    <td>161</td>
+                    <td>Aruba</td>
+                    <td>2.95 billion</td>
+                    <td>2.67 billion</td>
+                    <td>$27,536</td>
+                    <td>107,204</td>
+                </tr>
+                <tr>
+                    <td>162</td>
+                    <td>Bhutan</td>
+                    <td>2.94 billion</td>
+                    <td>2.21 billion</td>
+                    <td>$3,768</td>
+                    <td>779,898</td>
+                </tr>
+                <tr>
+                    <td>163</td>
+                    <td>Lesotho</td>
+                    <td>2.89 billion</td>
+                    <td>2.24 billion</td>
+                    <td>$1,339</td>
+                    <td>2,159,079</td>
+                </tr>
+                <tr>
+                    <td>164</td>
+                    <td>South Sudan</td>
+                    <td>2.80 billion</td>
+                    <td>6.53 billion</td>
+                    <td>$246</td>
+                    <td>11,381,378</td>
+                </tr>
+                <tr>
+                    <td>165</td>
+                    <td>Djibouti</td>
+                    <td>2.60 billion</td>
+                    <td>1.89 billion</td>
+                    <td>$2,593</td>
+                    <td>1,002,187</td>
+                </tr>
+                <tr>
+                    <td>166</td>
+                    <td>Central African Republic</td>
+                    <td>2.48 billion</td>
+                    <td>1.81 billion</td>
+                    <td>$505</td>
+                    <td>4,919,981</td>
+                </tr>
+                <tr>
+                    <td>167</td>
+                    <td>Cape Verde</td>
+                    <td>2.21 billion</td>
+                    <td>1.64 billion</td>
+                    <td>$3,930</td>
+                    <td>561,898</td>
+                </tr>
+                <tr>
+                    <td>168</td>
+                    <td>Belize</td>
+                    <td>2.07 billion</td>
+                    <td>1.74 billion</td>
+                    <td>$5,115</td>
+                    <td>404,914</td>
+                </tr>
+                <tr>
+                    <td>169</td>
+                    <td>Saint Lucia</td>
+                    <td>2.07 billion</td>
+                    <td>1.40 billion</td>
+                    <td>$11,220</td>
+                    <td>184,400</td>
+                </tr>
+                <tr>
+                    <td>170</td>
+                    <td>Gambia</td>
+                    <td>1.87 billion</td>
+                    <td>985.83 Mn</td>
+                    <td>$752</td>
+                    <td>2,486,945</td>
+                </tr>
+                <tr>
+                    <td>171</td>
+                    <td>Antigua And Barbuda</td>
+                    <td>1.81 billion</td>
+                    <td>1.46 billion</td>
+                    <td>$18,323</td>
+                    <td>98,731</td>
+                </tr>
+                <tr>
+                    <td>172</td>
+                    <td>Seychelles</td>
+                    <td>1.74 billion</td>
+                    <td>1.43 billion</td>
+                    <td>$17,582</td>
+                    <td>98,908</td>
+                </tr>
+                <tr>
+                    <td>173</td>
+                    <td>San Marino</td>
+                    <td>1.67 billion</td>
+                    <td>1.59 billion</td>
+                    <td>$49,152</td>
+                    <td>34,017</td>
+                </tr>
+                <tr>
+                    <td>174</td>
+                    <td>Guinea Bissau</td>
+                    <td>1.67 billion</td>
+                    <td>1.12 billion</td>
+                    <td>$828</td>
+                    <td>2,015,494</td>
+                </tr>
+                <tr>
+                    <td>175</td>
+                    <td>Solomon Islands</td>
+                    <td>1.61 billion</td>
+                    <td>1.13 billion</td>
+                    <td>$2,283</td>
+                    <td>703,996</td>
+                </tr>
+                <tr>
+                    <td>176</td>
+                    <td>Grenada</td>
+                    <td>1.33 billion</td>
+                    <td>1.02 billion</td>
+                    <td>$11,768</td>
+                    <td>113,021</td>
+                </tr>
+                <tr>
+                    <td>177</td>
+                    <td>Saint Kitts And Nevis</td>
+                    <td>1.12 billion</td>
+                    <td>909.85 Mn</td>
+                    <td>$20,880</td>
+                    <td>53,544</td>
+                </tr>
+                <tr>
+                    <td>178</td>
+                    <td>Vanuatu</td>
+                    <td>994.00 Mn</td>
+                    <td>837.52 Mn</td>
+                    <td>$3,161</td>
+                    <td>314,464</td>
+                </tr>
+                <tr>
+                    <td>179</td>
+                    <td>Samoa</td>
+                    <td>960.00 Mn</td>
+                    <td>822.23 Mn</td>
+                    <td>$4,796</td>
+                    <td>200,149</td>
+                </tr>
+                <tr>
+                    <td>180</td>
+                    <td>Saint Vincent And The Grenadines</td>
+                    <td>903.00 Mn</td>
+                    <td>765.32 Mn</td>
+                    <td>$8,116</td>
+                    <td>111,263</td>
+                </tr>
+                <tr>
+                    <td>181</td>
+                    <td>Comoros</td>
+                    <td>773.00 Mn</td>
+                    <td>1.15 billion</td>
+                    <td>$870</td>
+                    <td>888,451</td>
+                </tr>
+                <tr>
+                    <td>182</td>
+                    <td>Dominica</td>
+                    <td>590.00 Mn</td>
+                    <td>581.48 Mn</td>
+                    <td>$8,175</td>
+                    <td>72,167</td>
+                </tr>
+                <tr>
+                    <td>183</td>
+                    <td>Sao Tome And Principe</td>
+                    <td>527.00 Mn</td>
+                    <td>342.78 Mn</td>
+                    <td>$2,359</td>
+                    <td>223,368</td>
+                </tr>
+                <tr>
+                    <td>184</td>
+                    <td>Tonga</td>
+                    <td>512.00 Mn</td>
+                    <td>401.46 Mn</td>
+                    <td>$4,796</td>
+                    <td>106,760</td>
+                </tr>
+                <tr>
+                    <td>185</td>
+                    <td>Micronesia</td>
+                    <td>389.00 Mn</td>
+                    <td>329.90 Mn</td>
+                    <td>$3,346</td>
+                    <td>116,254</td>
+                </tr>
+                <tr>
+                    <td>186</td>
+                    <td>Palau</td>
+                    <td>324.00 Mn</td>
+                    <td>310.25 Mn</td>
+                    <td>$17,833</td>
+                    <td>18,169</td>
+                </tr>
+                <tr>
+                    <td>187</td>
+                    <td>Marshall Islands</td>
+                    <td>228.00 Mn</td>
+                    <td>183.00 Mn</td>
+                    <td>$3,825</td>
+                    <td>59,610</td>
+                </tr>
+                <tr>
+                    <td>188</td>
+                    <td>Kiribati</td>
+                    <td>196.00 Mn</td>
+                    <td>173.66 Mn</td>
+                    <td>$1,615</td>
+                    <td>121,392</td>
+                </tr>
+                <tr>
+                    <td>189</td>
+                    <td>Nauru</td>
+                    <td>117.00 Mn</td>
+                    <td>103.47 Mn</td>
+                    <td>$10,758</td>
+                    <td>10,876</td>
+                </tr>
+                <tr>
+                    <td>190</td>
+                    <td>Tuvalu</td>
+                    <td>53.00 Mn</td>
+                    <td>36.70 Mn</td>
+                    <td>$4,442</td>
+                    <td>11,931</td>
+                </tr>
+                <tr>
+                    <td>191</td>
+                    <td>Andorra</td>
+                    <td></td>
+                    <td>2.86 billion</td>
+                    <td>$36,952</td>
+                    <td>77,355</td>
+                </tr>
+                <tr>
+                    <td>192</td>
+                    <td>Bermuda</td>
+                    <td></td>
+                    <td>6.13 billion</td>
+                    <td>$98,685</td>
+                    <td>62,090</td>
+                </tr>
+                <tr>
+                    <td>193</td>
+                    <td>British Virgin Islands</td>
+                    <td></td>
+                    <td>971.24 Mn</td>
+                    <td>$31,927</td>
+                    <td>30,421</td>
+                </tr>
+                <tr>
+                    <td>194</td>
+                    <td>Cayman Islands</td>
+                    <td></td>
+                    <td>3.84 billion</td>
+                    <td>$57,808</td>
+                    <td>66,497</td>
+                </tr>
+                <tr>
+                    <td>195</td>
+                    <td>Cook Islands</td>
+                    <td></td>
+                    <td>290.19 Mn</td>
+                    <td>$16,521</td>
+                    <td>17,565</td>
+                </tr>
+                <tr>
+                    <td>196</td>
+                    <td>Cuba</td>
+                    <td></td>
+                    <td>89.69 billion</td>
+                    <td>$7,925</td>
+                    <td>11,317,505</td>
+                </tr>
+                <tr>
+                    <td>197</td>
+                    <td>French Polynesia</td>
+                    <td></td>
+                    <td>5.42 billion</td>
+                    <td>$19,176</td>
+                    <td>282,530</td>
+                </tr>
+                <tr>
+                    <td>198</td>
+                    <td>Palestine</td>
+                    <td></td>
+                    <td>13.40 billion</td>
+                    <td>$2,565</td>
+                    <td>5,222,748</td>
+                </tr>
+                <tr>
+                    <td>199</td>
+                    <td>Greenland</td>
+                    <td></td>
+                    <td>2.28 billion</td>
+                    <td>$40,138</td>
+                    <td>56,877</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>North Korea</td>
+                    <td></td>
+                    <td>16.79 billion</td>
+                    <td>$649</td>
+                    <td>25,887,041</td>
+                </tr>
+                <tr>
+                    <td>201</td>
+                    <td>Liechtenstein</td>
+                    <td></td>
+                    <td>6.19 billion</td>
+                    <td>$161,926</td>
+                    <td>38,250</td>
+                </tr>
+                <tr>
+                    <td>202</td>
+                    <td>Monaco</td>
+                    <td></td>
+                    <td>6.47 billion</td>
+                    <td>$163,701</td>
+                    <td>39,511</td>
+                </tr>
+                <tr>
+                    <td>203</td>
+                    <td>Montserrat</td>
+                    <td></td>
+                    <td>62.05 Mn</td>
+                    <td>$12,468</td>
+                    <td>4,977</td>
+                </tr>
+                <tr>
+                    <td>204</td>
+                    <td>Curacao</td>
+                    <td></td>
+                    <td>3.12 billion</td>
+                    <td>$18,941</td>
+                    <td>164,798</td>
+                </tr>
+                <tr>
+                    <td>205</td>
+                    <td>Sint Maarten</td>
+                    <td></td>
+                    <td>1.07 billion</td>
+                    <td>$24,695</td>
+                    <td>43,412</td>
+                </tr>
+                <tr>
+                    <td>206</td>
+                    <td>New Caledonia</td>
+                    <td></td>
+                    <td>9.45 billion</td>
+                    <td>$32,773</td>
+                    <td>288,218</td>
+                </tr>
+                <tr>
+                    <td>207</td>
+                    <td>Pakistan</td>
+                    <td></td>
+                    <td>282.51 billion</td>
+                    <td>$1,254</td>
+                    <td>225,199,937</td>
+                </tr>
+                <tr>
+                    <td>208</td>
+                    <td>Anguilla</td>
+                    <td></td>
+                    <td>337.52 Mn</td>
+                    <td>$22,327</td>
+                    <td>15,117</td>
+                </tr>
+                <tr>
+                    <td>209</td>
+                    <td>Sudan</td>
+                    <td></td>
+                    <td>82.89 billion</td>
+                    <td>$1,846</td>
+                    <td>44,909,353</td>
+                </tr>
+                <tr>
+                    <td>210</td>
+                    <td>Syria</td>
+                    <td></td>
+                    <td>22.16 billion</td>
+                    <td>$1,213</td>
+                    <td>18,275,702</td>
+                </tr>
+                <tr>
+                    <td>211</td>
+                    <td>Turks And Caicos Islands</td>
+                    <td></td>
+                    <td>917.55 Mn</td>
+                    <td>$23,388</td>
+                    <td>39,231</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</figure>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-7" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-7" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="sticky-header-table-example__steps" class="showcode__steps"><label for="sticky-header-table-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="sticky-header-table-example__steps--select" data-showcode-for="sticky-header-table-example" data-replace-html-rules="{&quot;tbody&quot;:&quot;&amp;lt;!-- Insert table data here --&amp;gt;&quot;}"><option value=""></option><option value="tabindex=&quot;0&quot;" data-showcode-notes="This is the element that will scroll.  Notice the <code>tabindex=&quot;0&quot;</code>.  This is so keyboard users are able to focus on it and use the keyboard to scroll the data up and down. ">Step #1: Ensure the table has a container element which you want the heading to stick to</option><option value="%CSS%table-css ~ .sticky-table__container th[scope=&quot;col&quot;]" data-showcode-notes="This CSS ensures the table column headers stick to the top of the viewport as the user scrolls vertically through the data in the table. <strong>Note: that it is important to remember that <a href=&quot;https://css-tricks.com/dealing-with-overflow-and-position-sticky/&quot;>CSS sticky only works if there is no overflow property on any of the parent elements</a>.</strong> If you want more information about how this works, please read the excellent article <a href=&quot;https://css-tricks.com/position-sticky-and-table-headers/&quot;>Position Sticky and Table Headers</a>.   The <code>top</code> property is set to the height of the &quot;Pause animation&quot; control that is on the top of the Enable page so that it appears below it (measured in rems, so it works even if you resize the text on the page.">Step #2: Use CSS sticky to help maintain cell context when the user scrolls through the data</option><option value="tabindex=&quot;0&quot;" data-showcode-notes="This is to ensure that keyboard users can scroll through the data without the use of a mouse.">Step #3: Set tabindex="0" on the table's container element</option></select></div>
+                          <div id="sticky-header-table-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="sticky-header-table-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="sticky-header-table-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="sticky-header-table-example__example-desc" class="showcode__example--desc">
+                <label for="sticky-header-table-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="sticky-header-table-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="sticky-header-table-example" data-showcode-props="sticky-header-table-example-props" tabindex="0" aria-describedby="sticky-header-table-example__example-desc">&lt;figure&gt;<br>  &lt;figcaption<br>    id="sticky-table__caption"<br>    class="caption"<br>  &gt;<br>    Sticky Header Example: GDP of the World Nations<br>  &lt;/figcaption&gt;<br>  &lt;div<br>    id="sticky-table__instructions"<br>    class="sr-only"<br>  &gt;<br>    Sighted users can use the arrow keys to scroll through the table.<br>  &lt;/div&gt;<br>  &lt;div<br>    class="sticky-table__container"<br>    tabindex="0"<br>  &gt;<br>    &lt;table<br>      aria-labelledby="sticky-table__caption"<br>      aria-describedby="sticky-table__instructions"<br>    &gt;<br>      &lt;thead&gt;<br>        &lt;tr&gt;<br>          &lt;th scope="col"&gt;<br>            Rank<br>          &lt;/th&gt;<br>          &lt;th scope="col"&gt;<br>            Name<br>          &lt;/th&gt;<br>          &lt;th scope="col"&gt;<br>            GDP (IMF '19)<br>          &lt;/th&gt;<br>          &lt;th scope="col"&gt;<br>            GDP (UN '16)<br>          &lt;/th&gt;<br>          &lt;th scope="col"&gt;<br>            GDP Per Capita<br>          &lt;/th&gt;<br>          &lt;th scope="col"&gt;<br>            Population<br>          &lt;/th&gt;<br>        &lt;/tr&gt;<br>      &lt;/thead&gt;<br>      &lt;tbody&gt;<br><br>        &lt;!-- Insert table data here --&gt;<br><br>      &lt;/tbody&gt;<br>    &lt;/table&gt;<br>  &lt;/div&gt;<br>&lt;/figure&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="sticky-header-table-example-props">
+{
+    "replaceHtmlRules": {
+        "tbody": "<!-- Insert table data here -->"
+    },
+    "steps": [
+        {
+            "label": "Ensure the table has a container element which you want the heading to stick to",
+            "highlight": "tabindex=\\"0\\"",
+            "notes": "This is the element that will scroll.  Notice the <code>tabindex=\\"0\\"</code>.  This is so keyboard users are able to focus on it and use the keyboard to scroll the data up and down. "
+        },
+        {
+            "label": "Use CSS sticky to help maintain cell context when the user scrolls through the data",
+            "highlight": "%CSS%table-css ~ .sticky-table__container th[scope=\\"col\\"]",
+            "notes": [
+                "This CSS ensures the table column headers stick to the top of the viewport as the user scrolls vertically through the data in the table.",
+                "<strong>Note: that it is important to remember that <a href=\\"https://css-tricks.com/dealing-with-overflow-and-position-sticky/\\">CSS sticky only works if there is no overflow property on any of the parent elements</a>.</strong>",
+                "If you want more information about how this works, please read the excellent article",
+                "<a href=\\"https://css-tricks.com/position-sticky-and-table-headers/\\">Position Sticky and Table Headers</a>.   The <code>top</code> property is set to the height of the \\"Pause animation\\" control that is on the top of the Enable page so that it appears below it (measured in rems, so it works even if you resize the text on the page."
+            ]
+        },
+        {
+            "label": "Set tabindex=\\"0\\" on the table's container element",
+            "highlight": "tabindex=\\"0\\"",
+            "notes": "This is to ensure that keyboard users can scroll through the data without the use of a mouse."
+        }
+
+    ]
+}
+</script>  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    
+
+</body></html>"
+`;

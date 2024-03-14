@@ -1,0 +1,1887 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Charts - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Charts">
+<meta property="og:description" content="Demos of accessible charts using d3.js">
+<meta property="og:image" content="/images/posters/chart.jpg?1">
+<meta property="og:url" content="/chart.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Demos of accessible charts using d3.js">
+<meta name="twitter:title" content="Accessible Charts">
+<meta name="twitter:image" content="/images/posters/chart.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <!-- for line charts -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+<link class="example-stylesheet" rel="stylesheet" type="text/css" href="css/tabs.css">
+<link id="table-css" rel="stylesheet" type="text/css" href="css/table.css">
+<link id="chart-css" rel="stylesheet" type="text/css" href="css/chart.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-charts--heading" tabindex="-1">Accessible Charts</h1><!-- File WIP -->
+
+<h2 id="bar-chart--heading" tabindex="-1"><a class="heading__deeplink" href="#bar-chart--heading" title="Permalink to Bar Chart" aria-label="Permalink to Bar Chart">Bar Chart</a></h2>
+
+
+
+
+<div id="bar-chart-example" class="enable-example chart-example tabs--has-js">
+  <div class="sr-only tabs__instructions" id="bar-chart__tabs--keyboard-only-instructions">
+    Use arrow keys to choose tabs. Content for the chosen tab will be revealed below.
+  </div>
+
+  <ul class="enable-tablist" data-keyboard-only-instructions="bar-chart__tabs--keyboard-only-instructions" role="tablist">
+    <li role="presentation">
+      <a href="#bar-chart__heading--visual-chart" class="enable-tab" data-owns="bar-chart__tabpanel--visual-chart" role="tab" aria-controls="bar-chart__tabpanel--visual-chart" aria-describedby="bar-chart__tabs--keyboard-only-instructions" aria-selected="true" tabindex="0">
+        Visual Chart
+      </a>
+    </li>
+    <li role="presentation">
+      <a href="#bar-chart__heading--raw-data" class="enable-tab" data-owns="bar-chart__tabpanel--raw-data" role="tab" aria-controls="bar-chart__tabpanel--raw-data" aria-describedby="bar-chart__tabs--keyboard-only-instructions" aria-selected="false" tabindex="-1">
+        Raw Data
+      </a>
+    </li>
+
+  </ul>
+  <div class="enable-tabpanel visible" id="bar-chart__tabpanel--visual-chart" role="tabpanel">
+    <h2 tabindex="-1" class="sr-only" id="bar-chart__heading--visual-chart">Visual Chart</h2>
+
+    <a href="#bar-chart__heading--raw-data" class="bar-chart__link-to-data">
+      
+
+        <!-- This is the DOM node that will contain the chart. -->
+        <div id="bar-chart" aria-label="A chart showing the AID scores for select accounts last year.  An accessible table containing this data is available in the raw data tab on this page." class="bar-chart--initialized"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;" aria-hidden="true"><g class="ct-grids"><line x1="50" x2="50" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="75.68181818181819" x2="75.68181818181819" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="101.36363636363637" x2="101.36363636363637" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="127.04545454545455" x2="127.04545454545455" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="152.72727272727275" x2="152.72727272727275" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="178.4090909090909" x2="178.4090909090909" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="204.0909090909091" x2="204.0909090909091" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="229.77272727272728" x2="229.77272727272728" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="255.45454545454547" x2="255.45454545454547" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="281.1363636363636" x2="281.1363636363636" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="306.8181818181818" x2="306.8181818181818" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="332.5" x2="332.5" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="358.1818181818182" x2="358.1818181818182" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="383.8636363636364" x2="383.8636363636364" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="409.54545454545456" x2="409.54545454545456" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="435.22727272727275" x2="435.22727272727275" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="460.90909090909093" x2="460.90909090909093" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="486.5909090909091" x2="486.5909090909091" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="512.2727272727273" x2="512.2727272727273" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="537.9545454545455" x2="537.9545454545455" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="563.6363636363636" x2="563.6363636363636" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line x1="589.3181818181819" x2="589.3181818181819" y1="15" y2="365" class="ct-grid ct-horizontal"></line><line y1="365" y2="365" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="330" y2="330" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="295" y2="295" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="260" y2="260" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="225" y2="225" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="190" y2="190" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="155" y2="155" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="120" y2="120" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="85" y2="85" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="50" y2="50" x1="50" x2="615" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="615" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="62.84090909090909" x2="62.84090909090909" y1="365" y2="221.5" class="ct-bar" ct:value="41"></line><line x1="88.52272727272728" x2="88.52272727272728" y1="365" y2="204" class="ct-bar" ct:value="46"></line><line x1="114.20454545454547" x2="114.20454545454547" y1="365" y2="165.5" class="ct-bar" ct:value="57"></line><line x1="139.88636363636363" x2="139.88636363636363" y1="365" y2="162" class="ct-bar" ct:value="58"></line><line x1="165.56818181818184" x2="165.56818181818184" y1="365" y2="155" class="ct-bar" ct:value="60"></line><line x1="191.25" x2="191.25" y1="365" y2="151.5" class="ct-bar" ct:value="61"></line><line x1="216.9318181818182" x2="216.9318181818182" y1="365" y2="151.5" class="ct-bar" ct:value="61"></line><line x1="242.61363636363637" x2="242.61363636363637" y1="365" y2="148" class="ct-bar" ct:value="62"></line><line x1="268.29545454545456" x2="268.29545454545456" y1="365" y2="131.2" class="ct-bar" ct:value="66.8"></line><line x1="293.9772727272727" x2="293.9772727272727" y1="365" y2="120" class="ct-bar" ct:value="70"></line><line x1="319.6590909090909" x2="319.6590909090909" y1="365" y2="113" class="ct-bar" ct:value="72"></line><line x1="345.34090909090907" x2="345.34090909090907" y1="365" y2="88.5" class="ct-bar" ct:value="79"></line><line x1="371.02272727272725" x2="371.02272727272725" y1="365" y2="74.5" class="ct-bar" ct:value="83"></line><line x1="396.70454545454544" x2="396.70454545454544" y1="365" y2="67.5" class="ct-bar" ct:value="85"></line><line x1="422.3863636363636" x2="422.3863636363636" y1="365" y2="60.5" class="ct-bar" ct:value="87"></line><line x1="448.0681818181818" x2="448.0681818181818" y1="365" y2="43" class="ct-bar" ct:value="92"></line><line x1="473.75" x2="473.75" y1="365" y2="186.5" class="ct-bar" ct:value="51"></line><line x1="499.4318181818182" x2="499.4318181818182" y1="365" y2="165.5" class="ct-bar" ct:value="57"></line><line x1="525.1136363636364" x2="525.1136363636364" y1="365" y2="148" class="ct-bar" ct:value="62"></line><line x1="550.7954545454546" x2="550.7954545454546" y1="365" y2="130.5" class="ct-bar" ct:value="67"></line><line x1="576.4772727272727" x2="576.4772727272727" y1="365" y2="116.5" class="ct-bar" ct:value="71"></line><line x1="602.159090909091" x2="602.159090909091" y1="365" y2="78" class="ct-bar" ct:value="82"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="370" width="25.681818181818183" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Scoville Medic</span></foreignObject><foreignObject style="overflow: visible;" x="75.68181818181819" y="370" width="25.681818181818183" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Mary's Boat Service</span></foreignObject><foreignObject style="overflow: visible;" x="101.36363636363637" y="370" width="25.68181818181818" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Twenty Three Auto</span></foreignObject><foreignObject style="overflow: visible;" x="127.04545454545455" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Sticks and Sons</span></foreignObject><foreignObject style="overflow: visible;" x="152.72727272727275" y="370" width="25.681818181818173" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Oscar Games</span></foreignObject><foreignObject style="overflow: visible;" x="178.4090909090909" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Ewe Plumbing</span></foreignObject><foreignObject style="overflow: visible;" x="204.0909090909091" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">All Three A's</span></foreignObject><foreignObject style="overflow: visible;" x="229.77272727272728" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Electrical Medicine</span></foreignObject><foreignObject style="overflow: visible;" x="255.45454545454547" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Mary's Yacht Service</span></foreignObject><foreignObject style="overflow: visible;" x="281.1363636363636" y="370" width="25.68181818181816" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Starpunch Leasing</span></foreignObject><foreignObject style="overflow: visible;" x="306.8181818181818" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Fatal Disease School</span></foreignObject><foreignObject style="overflow: visible;" x="332.5" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">West-end Markets</span></foreignObject><foreignObject style="overflow: visible;" x="358.1818181818182" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">View X</span></foreignObject><foreignObject style="overflow: visible;" x="383.8636363636364" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Cross Country Productions</span></foreignObject><foreignObject style="overflow: visible;" x="409.54545454545456" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Rebranding International</span></foreignObject><foreignObject style="overflow: visible;" x="435.22727272727275" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Food Not Food</span></foreignObject><foreignObject style="overflow: visible;" x="460.90909090909093" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Drunken Hunters Limited</span></foreignObject><foreignObject style="overflow: visible;" x="486.5909090909091" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Fatal Box Inc.</span></foreignObject><foreignObject style="overflow: visible;" x="512.2727272727273" y="370" width="25.681818181818187" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Boring Nomenclature Enterprises</span></foreignObject><foreignObject style="overflow: visible;" x="537.9545454545455" y="370" width="25.68181818181813" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">Think Man Clothing</span></foreignObject><foreignObject style="overflow: visible;" x="563.6363636363636" y="370" width="25.681818181818244" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 26px; height: 20px;">The Contest Company</span></foreignObject><foreignObject style="overflow: visible;" x="589.3181818181819" y="370" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">Acronyms Anonymous</span></foreignObject><foreignObject style="overflow: visible;" y="330" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="295" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="260" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="225" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">30</span></foreignObject><foreignObject style="overflow: visible;" y="190" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">40</span></foreignObject><foreignObject style="overflow: visible;" y="155" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">50</span></foreignObject><foreignObject style="overflow: visible;" y="120" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">60</span></foreignObject><foreignObject style="overflow: visible;" y="85" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">70</span></foreignObject><foreignObject style="overflow: visible;" y="50" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">80</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="35" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 35px; width: 30px;">90</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">100</span></foreignObject></g></svg></div>
+    </a>
+
+  </div>
+  <div class="enable-tabpanel" id="bar-chart__tabpanel--raw-data" role="tabpanel">
+    <h2 tabindex="-1" class="sr-only" id="bar-chart__heading--raw-data">Raw Data</h2>
+    <div class="tab__content">
+
+      <!-- This is the sticky table container described in table.php -->
+      <div class="sticky-table__container" tabindex="0">
+        <figure>
+
+          <figcaption id="bar-chart__fig-caption--table" class="caption">
+            Latest Accessibility Indicator Data (AID) scores for select accounts last year.
+          </figcaption>
+          <div id="raw-data__content">
+
+
+            <table id="bar-chart__data" aria-labelledby="bar-chart__fig-caption--table">
+              <thead>
+                <tr>
+                  <th scope="col">Client Name</th>
+                  <th scope="col">Score</th>
+                </tr>
+              </thead><tbody>
+                <tr>
+                  <th scope="row">Scoville Medic</th>
+                  <td>41</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mary's Boat Service</th>
+                  <td>46</td>
+                </tr>
+                <tr>
+                  <th scope="row">Twenty Three Auto</th>
+                  <td>57</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sticks and Sons</th>
+                  <td>58</td>
+                </tr>
+                <tr>
+                  <th scope="row">Oscar Games</th>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ewe Plumbing</th>
+                  <td>61</td>
+                </tr>
+                <tr>
+                  <th scope="row">All Three A's</th>
+                  <td>61</td>
+                </tr>
+                <tr>
+                  <th scope="row">Electrical Medicine</th>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mary's Yacht Service</th>
+                  <td>66.8</td>
+                </tr>
+                <tr>
+                  <th scope="row">Starpunch Leasing</th>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fatal Disease School</th>
+                  <td>72</td>
+                </tr>
+                <tr>
+                  <th scope="row">West-end Markets</th>
+                  <td>79</td>
+                </tr>
+                <tr>
+                  <th scope="row">View X</th>
+                  <td>83</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cross Country Productions</th>
+                  <td>85</td>
+                </tr>
+                <tr>
+                  <th scope="row">Rebranding International</th>
+                  <td>87</td>
+                </tr>
+                <tr>
+                  <th scope="row">Food Not Food</th>
+                  <td>92</td>
+                </tr>
+                <tr>
+                  <th scope="row">Drunken Hunters Limited</th>
+                  <td>51</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fatal Box Inc.</th>
+                  <td>57</td>
+                </tr>
+                <tr>
+                  <th scope="row">Boring Nomenclature Enterprises</th>
+                  <td>62</td>
+                </tr>
+                <tr>
+                  <th scope="row">Think Man Clothing</th>
+                  <td>67</td>
+                </tr>
+                <tr>
+                  <th scope="row">The Contest Company</th>
+                  <td>71</td>
+                </tr>
+                <tr>
+                  <th scope="row">Acronyms Anonymous</th>
+                  <td>82</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="bar-chart-example__steps" class="showcode__steps"><label for="bar-chart-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="bar-chart-example__steps--select" data-showcode-for="bar-chart-example" data-replace-html-rules="{}"><option value=""></option><option value="enable-tablist" data-showcode-notes="Please follow the instructions on <a href=&quot;tabs.php&quot;>Enable tabs page</a> in order to set up the two panelled tab interface correctly.">Step #1: Make a tabbed interface</option></select></div>
+                          <div id="bar-chart-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="bar-chart-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="bar-chart-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="bar-chart-example__example-desc" class="showcode__example--desc">
+                <label for="bar-chart-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="bar-chart-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="bar-chart-example" data-showcode-props="bar-chart-example-props" tabindex="0" aria-describedby="bar-chart-example__example-desc">&lt;div<br>  class="sr-only tabs__instructions"<br>  id="bar-chart__tabs--keyboard-only-instructions"<br>&gt;<br>  Use arrow keys to choose tabs. Content for the chosen tab will be revealed below.<br>&lt;/div&gt;<br>&lt;ul<br>  class="enable-tablist"<br>  data-keyboard-only-instructions="bar-chart__tabs--keyboard-only-instructions"<br>&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="#bar-chart__heading--visual-chart"<br>      class="enable-tab"<br>      data-owns="bar-chart__tabpanel--visual-chart"<br>    &gt;<br>      Visual Chart<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>  &lt;li&gt;<br>    &lt;a<br>      href="#bar-chart__heading--raw-data"<br>      class="enable-tab"<br>      data-owns="bar-chart__tabpanel--raw-data"<br>    &gt;<br>      Raw Data<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;div<br>  class="enable-tabpanel"<br>  id="bar-chart__tabpanel--visual-chart"<br>&gt;<br>  &lt;h2<br>    tabindex="-1"<br>    class="sr-only"<br>    id="bar-chart__heading--visual-chart"<br>  &gt;<br>    Visual Chart<br>  &lt;/h2&gt;<br>  &lt;a<br>    href="#bar-chart__heading--raw-data"<br>    class="bar-chart__link-to-data"<br>  &gt;<br><br>    &lt;!-- This is the DOM node that will contain the chart. --&gt;<br><br>    &lt;div<br>      id="bar-chart"<br>      aria-label="A chart showing the AID scores for select accounts last year.  An accessible table containing this data is available in the raw data tab on this page."<br>    &gt;<br>    &lt;/div&gt;<br>  &lt;/a&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="enable-tabpanel"<br>  id="bar-chart__tabpanel--raw-data"<br>&gt;<br>  &lt;h2<br>    tabindex="-1"<br>    class="sr-only"<br>    id="bar-chart__heading--raw-data"<br>  &gt;<br>    Raw Data<br>  &lt;/h2&gt;<br>  &lt;div class="tab__content"&gt;<br><br>    &lt;!-- This is the sticky table container described in table.php --&gt;<br><br>    &lt;div<br>      class="sticky-table__container"<br>      tabindex="0"<br>    &gt;<br>      &lt;figure&gt;<br>        &lt;figcaption<br>          id="bar-chart__fig-caption--table"<br>          class="caption"<br>        &gt;<br>          Latest Accessibility Indicator Data (AID) scores for select accounts last year.<br>        &lt;/figcaption&gt;<br>        &lt;div<br>          id="raw-data__content"<br>        &gt;<br>          &lt;table<br>            id="bar-chart__data"<br>            aria-labelledby="bar-chart__fig-caption--table"<br>          &gt;<br>            &lt;thead&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="col"<br>                &gt;<br>                  Client Name<br>                &lt;/th&gt;<br>                &lt;th<br>                  scope="col"<br>                &gt;<br>                  Score<br>                &lt;/th&gt;<br>              &lt;/tr&gt;<br>            &lt;/thead&gt;<br>            &lt;tbody&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Scoville Medic<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  41<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Mary's Boat Service<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  46<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Twenty Three Auto<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  57<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Sticks and Sons<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  58<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Oscar Games<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  60<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Ewe Plumbing<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  61<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  All Three A's<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  61<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Electrical Medicine<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  62<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Mary's Yacht Service<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  66.8<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Starpunch Leasing<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  70<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Fatal Disease School<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  72<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  West-end Markets<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  79<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  View X<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  83<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Cross Country Productions<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  85<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Rebranding International<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  87<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Food Not Food<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  92<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Drunken Hunters Limited<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  51<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Fatal Box Inc.<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  57<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Boring Nomenclature Enterprises<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  62<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Think Man Clothing<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  67<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  The Contest Company<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  71<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>              &lt;tr&gt;<br>                &lt;th<br>                  scope="row"<br>                &gt;<br>                  Acronyms Anonymous<br>                &lt;/th&gt;<br>                &lt;td&gt;<br>                  82<br>                &lt;/td&gt;<br>              &lt;/tr&gt;<br>            &lt;/tbody&gt;<br>          &lt;/table&gt;<br>        &lt;/div&gt;<br>      &lt;/figure&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="bar-chart-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Make a tabbed interface",
+    "highlight": "enable-tablist",
+    "notes": "Please follow the instructions on <a href=\\"tabs.php\\">Enable tabs page</a> in order to set up the two panelled tab interface correctly."
+  }]
+}
+</script>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    
+<!-- <script src="js/demos/line-chart.js" type="module"></script> -->
+
+
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="js/demos/bar-chart.js" type="module"></script>
+
+</body></html>"
+`;
