@@ -19,6 +19,11 @@ describe('Hamburger Menu Tests', () => {
     desktopBrowser.close();
   });
 
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/multi-level-hamburger-menu.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
+
   it('Desktop - ensure menu closes when focus goes outside submenus', async () => {
     let domInfo;
     

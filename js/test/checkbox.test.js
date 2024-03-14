@@ -19,6 +19,11 @@ describe('ARIA Checkbox Tests', () => {
     }, n);
   }
 
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/checkbox.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
+
   // Test #1
   it('See if all ARIA checkboxes on page are keyboard accessible', async () => {
     let ariaChecked, domInfo;

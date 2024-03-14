@@ -1,8 +1,14 @@
 'use strict'
 
 import config from './test-config.js';
+import testHelpers from './test-helpers.js';
 
 describe('Styled Elements Tests', () => {
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/exposing-style-info-to-screen-readers.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
+
   it('Detect if there are sr-only content on mark tags for visually hidden text example', async () => {
     let domInfo;
 
