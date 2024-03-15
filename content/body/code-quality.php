@@ -87,7 +87,7 @@
   accessibility feature
   you have just implemented stays within the project. For example, if you create a custom <a
     href="listbox.php#aria-listbox-example--heading">accessible listbox dropdown</a>, you want to make sure that when
-  keyboard users tab into the component and use the arrow keys, that they can change the selected listbox value.
+  keyboard users tab into the component and use the arrow keys, then they can change the selected listbox value.
 </p>
 
 <p>
