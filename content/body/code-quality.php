@@ -64,7 +64,7 @@
 <p>
   The problem with using axe-core compared to Pa11y-CI is that axe-core requires <a
     href="https://chromedriver.chromium.org/">Chromedriver</a> in order to work (axe-core will run pages in a headless
-  version of Chrome to do ensure the accessibility markup works, including any JavaScript generated markup). I have
+  version of Chrome to ensure the accessibility markup works, including any JavaScript generated markup). I have
   personally had problems with Chromedriver updates (<a href="https://github.com/dequelabs/axe-cli/issues/103">here is
     one of the issues I had in the past</a>). Pa11y, on the other hand, uses Puppeteer to launch Chrome and do its
   tests. You can read
@@ -87,7 +87,7 @@
   accessibility feature
   you have just implemented stays within the project. For example, if you create a custom <a
     href="listbox.php#aria-listbox-example--heading">accessible listbox dropdown</a>, you want to make sure that when
-  keyboard users tab into the component and use the arrow keys that they can change the selected listbox value.
+  keyboard users tab into the component and use the arrow keys, then they can change the selected listbox value.
 </p>
 
 <p>
@@ -143,7 +143,7 @@
 }
 </template>
 
-<h3>A Simple Example: Having Screenreaders Read Strikethrough Text</h3>
+<h3>A Simple Example: Having Screen Readers Read Strikethrough Text</h3>
 
 <p>Let's look at a simple example that just involves just steps 1 through 3. If you look at the page for <a
     href="exposing-style-info-to-screen-readers.php">Exposing Style Information To Screen Readers</a>, we use
@@ -185,12 +185,12 @@
       {
         "label": "Each test should wait until the part of the page you need is available to test",
         "highlight": "\\s*await\\spage.waitForSelector[^;]*;",
-        "notes": "Note that the selector used should be unique enough so your know you are hitting the right area of the page."
+        "notes": "Note that the selector used should be unique enough so you know you are hitting the right area of the page."
       },
       {
         "label": "Query the DOM using puppeteer's page.evaluate method.",
         "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
-        "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that to use these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
+        "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that we are using these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
       },
       {
         "label": "Use jest's expect method to find if the code is doing things right.",
@@ -226,9 +226,9 @@
         "notes": ""
       },
       {
-        "label": "Create a test use the it() function",
+        "label": "Create a test by using the it() function",
         "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
-        "notes": "Note the second paramater of the <code>it()</code> function is an <strong>asyncronous</code> function"
+        "notes": "Note the second parameter of the <code>it()</code> function is an <strong>asynchronous</code> function"
       },
       {
         "label": "Each test must load the page",
@@ -261,7 +261,7 @@
   <h3>A More Complex Example: Testing Focus States on Multiple Pages</h3>
 
   <p>This is an example of a test that ensures all interactive elements on all the pages within Enable have a focus state (in our case, using a CSS `outline`).
-Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code> tags in this test because of the tests giving false negatives (which are actively looking into to fix)</p>
+Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code> tags in this test because of the tests giving false negatives (which we are actively looking into to fix)</p>
 
   <template id="test-code-walkthrough2" data-showcode-is-js="true">
     <!--
@@ -294,7 +294,7 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
         "notes": ""
       },
       {
-        "label": "Define testPage() function.",
+        "label": "Define the testPage() function.",
         "highlight": "\\s\\sasync\\sfunction\\stestPage[\\s\\S]*end\\stestPage\\(\\)",
         "notes": ""
       },
@@ -311,7 +311,7 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
       {
         "label": "Query the DOM using puppeteer's page.evaluate method.",
         "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
-        "notes": "This <code>page.evaluate()</code> call test to see if the currently focused element has a focus ring. It also detects if it is a video or an iframe"
+        "notes": "This <code>page.evaluate()</code> call tests to see if the currently focused element has a focus ring. It also detects if it is a video or an iframe."
       },
       {
         "label": "Find the focused element",
@@ -331,7 +331,7 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
       {
         "label": "We test to see if the focused element has a focus ring.",
         "highlight": "\\s*\\/\\/\\sIf\\sthis\\sis\\snot\\sa\\sskip\\slink[\\s\\S]*\\s{6}\\}",
-        "notes": "Note we only log an issue if it is not a <code>body</code>, <code>iframe</code> or <code>video</code> tag, since these report false negatives."
+        "notes": "Note: we only log an issue if it is not a <code>body</code>, <code>iframe</code> or <code>video</code> tag, since these report false negatives."
       },
       {
         "label": "Run testPage() on all the pages on the site.",
@@ -347,5 +347,5 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
     href="https://www.24a11y.com/2017/writing-automated-tests-accessibility/">Writing Automated Tests for
     Accessibility</a> by <a href="https://www.deque.com/blog/author/marcy-sutton/">Marcie Sutton</a> and <a
     href="https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032">Web Accessibility Testing</a> by
-  <a href="https://www.kfirzuberi.com/">Kfir Zuberi</a> are great places to start (it's where we started).
+  <a href="https://www.kfirzuberi.com/">Kfir Zuberi</a>. They are great places to start (it's where we started).
 </p>

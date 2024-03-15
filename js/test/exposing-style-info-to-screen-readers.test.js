@@ -72,7 +72,4 @@ describe('Styled Elements Tests', () => {
     expect(domInfo.hasMissingBeginningContent).toBe(false);
     expect(domInfo.hasMissingEndContent).toBe(false);
   });
-
-  
-
 });

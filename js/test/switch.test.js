@@ -3,16 +3,12 @@
 import config from './test-config.js';
 
 describe('ARIA Switch Tests', () => {
-  beforeAll(async () => {
-  });
-
-  // This is a function used by the tests brlow to grab the aria-checked value
+  // This is a function used by the tests below to grab the aria-checked value
   // of the nth ARIA switch on the page
   async function getSwitchValue(n) {
     return await page.evaluate((n) => {
       const switchEls = document.querySelectorAll('[role="switch"]');
       const switchEl = switchEls[n];
-      let r;
 
       return switchEl.getAttribute('aria-checked');
     }, n);
@@ -42,7 +38,6 @@ describe('ARIA Switch Tests', () => {
         const { id } = switchEl;
         let label = null;
         const labelTag = document.querySelector(`label[for="${id}"`);
-        const isTabbable = false;
 
         if (ariaLabelledby !== null) {
           const ariaLabelledbyEl = document.getElementById(ariaLabelledby);
@@ -86,13 +81,5 @@ describe('ARIA Switch Tests', () => {
       ariaChecked = await getSwitchValue(i);
       expect(ariaChecked).toBe(origAriaChecked);
     }
-    
-    
   });
-
-
-  
-
-
-
 });
