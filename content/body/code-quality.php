@@ -106,6 +106,7 @@
 </ol>
 
 <h3>Before we start</h3>
+<!-- Are these Babel changes actually needed? I don't see them being used in this project. -->
 
 <p>
   Our unit testing examples use ES6 modules. In order to support ES6 Modules in Jest, you need to do the following
@@ -159,6 +160,8 @@
   </template>
 
   <?php includeShowcode("test-code-walkthrough", "", "", "", true, 4)?>
+  <!-- TODO: The step 1 note ends in an incomplete sentence -->
+  <!-- Should step 2 and 3 only highlight the 'describe' or 'it' lines, instead of almost the whole file? -->
   <script type="application/json" id="test-code-walkthrough-props">
   {
     "replaceHtmlRules": {},
@@ -212,6 +215,8 @@
   </template>
 
   <?php includeShowcode("switch-test-code-walkthrough", "", "", "", true, 4)?>
+  <!-- TODO: The step 1 note ends in an incomplete sentence -->
+  <!-- Should step 2 and 3 only highlight the 'describe' or 'it' lines, instead of almost the whole file? -->
   <script type="application/json" id="switch-test-code-walkthrough-props">
   {
     "replaceHtmlRules": {},
@@ -270,6 +275,9 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
   </template>
 
   <?php includeShowcode("test-code-walkthrough2", "", "", "", true, 4)?>
+  <!-- TODO: The step 1 note ends in an incomplete sentence -->
+  <!-- Should step 2 and 3 only highlight the 'describe' or 'it' lines, instead of almost the whole file? -->
+  <!-- Step #8 seems to highlight a lot more than the page.evaluate function. Should the RegEx be modified? -->
   <script type="application/json" id="test-code-walkthrough2-props">
   {
     "replaceHtmlRules": {},
