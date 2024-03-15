@@ -2,7 +2,6 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
 let mobileBrowser, desktopBrowser;
@@ -10,7 +9,6 @@ let mobileBrowser, desktopBrowser;
 describe('Test Focus States on all pages on Enable', () => {
   beforeAll(async () => {
     // Put code here that should execute before starting tests.
-    
     desktopBrowser = await testHelpers.getDesktopBrowser();
     mobileBrowser = await testHelpers.getMobileBrowser();
   });
@@ -37,7 +35,6 @@ describe('Test Focus States on all pages on Enable', () => {
 
       // Let's simulate a tab press
       await page.keyboard.press('Tab');
-      tabStops++;
 
       // Now let's see if there is a focus ring around the
       // focused element.
