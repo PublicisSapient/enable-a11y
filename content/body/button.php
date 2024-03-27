@@ -209,9 +209,9 @@
         <p>There are two ways of making a button disabled.</p>
 
         <ol>
-            <li>Use the <code>disabled</code> attribute. This removes the button
-                from the keyboard tabbing order. It also doesn't prevents click events
-                from being fired.
+            <li>Use the <code>disabled</code> attribute. This prevents click events
+                from being fired. It also removes the button
+                from the keyboard tabbing order, which makes it harder for screen reader users to know that the disabled button even exists. 
             </li>
             <li>
                 Use <code>aria-disabled="true"</code> attribute. This doesn't remove the button
@@ -220,6 +220,8 @@
                 Tibbles for pointing this out).
             </li>
         </ol>
+
+        <p>The ideal solution would be to use the <code>aria-disabled="true"</code> attribute, while using JavaScript to prevent the click event from performing an action. This allows the button to be accessible by screen reader users, while still notifying them that it is disabled.</p>
 
         <div class="enable-example">
             <p>The following is disabled with the <code>disabled</code> attribute
