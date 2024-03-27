@@ -119,10 +119,10 @@
                 {
                     "label": "Make sure you make a dummy href on the link",
                     "highlight": "href",
-                    "notes": "This is to ensure they are keyboard accessible and you don't need Javascript to trigger them."
+                    "notes": "This is to ensure they are keyboard accessible and you don't need JavaScript to trigger them."
                 },
                 {
-                    "label": "Create JS that should be triggered when pressed",
+                    "label": "Create JavaScript that should be triggered when pressed",
                     "highlight": "%FILE% js/demos/aria-button-example.js ~  (ariaButtonExample|document.addEventListener\\('click[^;]*;)",
                     "notes": "When you change an <code>a</code> tag to a <code>button</code>, you don't need the <code>keyup</code> event.  This is because the <code>click</code> event will fire when the Enter key is pressed.  You only need to use the <code>keyup</code> event in the scenario given in the next example on this page."
                 },
@@ -183,7 +183,7 @@
                     "notes": "This is to ensure they are keyboard accessible."
                 },
                 {
-                    "label": "Create JS that should be triggered when pressed",
+                    "label": "Create JavaScript that should be triggered when pressed",
                     "highlight": "%FILE% js/demos/aria-button-example.js ~ document.addEventListener[^;]*;",
                     "notes": "You must ensure that you include the keyup event as well as click, since click doesn't fire on keyboard events on DOM elements that aren't natively keyboard accessible by default."
                 },

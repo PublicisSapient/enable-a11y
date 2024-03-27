@@ -148,7 +148,7 @@
                     ]
                 },
                 {
-                    "label": "Add JS",
+                    "label": "Add JavaScript",
                     "highlight": "%FILE% js/modules/sortable-tables.js",
                     "notes": "This is the code that sorts the table.  When the user sorts a table column, it changes the column's header visually and semantically with <code>aria-sort</code> to ensure screen readers know the column is sorted in a specific direction.  It also updates the aria live region with the new sorting information."
                 }
