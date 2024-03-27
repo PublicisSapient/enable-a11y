@@ -115,7 +115,7 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 
 ## Adding An External NPM Module To The Front-End Code
 
-If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JS library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
+If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JavaScript library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
 
 For example, when I added the `glider-js` library to Enable so I can use it in the Carousel demos, I added the files I needed for the front-end to `nodeFiles` with these two lines:
 

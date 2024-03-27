@@ -577,7 +577,7 @@
       "notes": ""
     },
     {
-      "label": "Initialize the Javascript",
+      "label": "Initialize the JavaScript",
       "highlight": "%JS% enableVisibleOnFocus.init",
       "notes": "This sets up all the events needed for the links"
     },

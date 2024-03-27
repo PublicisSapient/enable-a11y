@@ -129,7 +129,7 @@
                     "notes": "This allows the progress bar to be focusable via JavaScript only"
                 },
                 {
-                    "label": "Focus element using Javascript when progress starts progressing",
+                    "label": "Focus element using JavaScript when progress starts progressing",
                     "highlight": "%JS% progressTest.progressTestClickEvent ||| el.focus\\(\\);",
                     "notes": ""
                 }

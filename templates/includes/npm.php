@@ -20,8 +20,8 @@
   if ($isPolyfill) {
 ?>
 <p>
-  <strong>Note: Unlike most of the other Enable Javascript modules, you cannot load this one as an old-school ES4
-    Javascript library.</strong>
+  <strong>Note: Unlike most of the other Enable JavaScript modules, you cannot load this one as an old-school ES4
+  JavaScript library.</strong>
   This is because it tests for browser features (in this case, the <code>&lt;dialog&gt;</code> tag) and if the browser
   doesn't support it, load the polyfill using<a
     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import"> the ES6

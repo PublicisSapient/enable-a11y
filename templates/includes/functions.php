@@ -112,7 +112,7 @@ function includeStats($props) {
       if ($isForNewBuilds == true) {
         $comment = 'This is the best solution to use, especially when building from scratch.';
       } else if ($isForNewBuilds == false) {
-        $comment = 'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' . $walkthroughIndex . '">developer walkthrough</a> of this section to see we made our implementation accessible.';
+        $comment = 'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' . $walkthroughIndex . '">developer walkthrough</a> of this section to see how we made our implementation accessible.';
       }
     } else if (isSet($doNot)) {
       $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
