@@ -245,5 +245,16 @@
                 </button>
             </div>
 
+            <p>
+                The following button is disabled with aria-disabled="true" and JavaScript</p>
+
+            <div id="aria-js-disabled" class="button-container">
+                <label for="aria-js-disabled-button">If you are sure you want to give Facebook your data, push
+                    this:</label>
+                <button aria-disabled="true" id="aria-js-disabled-button">
+                    Submit
+                </button>
+            </div>
+
         </div>
     
