@@ -1,19 +1,11 @@
-name: Automated Tests
-# run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Automated Tests on Git Push
 on:
   push
 
 jobs:
   eslint:
-    name: Run ESLint scanning
+    name: Run ESLint scan
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: read
-    #   security-events: write
-    #   actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
-    # strategy:
-    #   matrix:
-    #     python-version: ["pypy3.9", "pypy3.10", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
       - name: Checkout code
@@ -27,20 +19,11 @@ jobs:
         run: npm ci
       - name: Run ESLint
         run: npm run eslint
-    #   - name: Upload analysis results to GitHub
-    #     uses: github/codeql-action/upload-sarif@v2
-    #     with:
-    #       sarif_file: eslint-results.sarif
-    #       wait-for-processing: true
 
 
   tests:
     name: Run Automated tests
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: read
-    #   security-events: write
-    #   actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -55,11 +38,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           architecture: x64
-    #   - name: Set up Python ${{ matrix.python-version }}
-    #     uses: actions/setup-python@v4
-    #     with:
-    #       python-version: ${{ matrix.python-version }}
-    #     # You can test your matrix by printing the current Python version
       - name: Install Lynx dependency
         run: sudo apt install lynx
       - name: Install PHP8.1
@@ -69,7 +47,7 @@ jobs:
           wget -q -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_122.0.6261.128-1_amd64.deb \
           && sudo apt install -y /tmp/chrome.deb --allow-downgrades \
           && rm /tmp/chrome.deb
-      - name: Show system details
+      - name: Log system details
         run:  |
           uname &&
           echo $OSTYPE &&
@@ -84,15 +62,3 @@ jobs:
           curl http://localhost:8888
       - name: Run automation tests
         run: npm run test
-    #   - name: Archive production artifacts
-    #     uses: actions/upload-artifact@v4
-    #     with:
-    #       name: dist-without-markdown
-    #       path: |
-    #         dist
-    #         !dist/**/*.md
-    #   - name: Archive code coverage results
-    #     uses: actions/upload-artifact@v4
-    #     with:
-    #       name: code-coverage-report
-    #       path: output/test/code-coverage.html
