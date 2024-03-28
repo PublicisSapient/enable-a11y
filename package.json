@@ -44,6 +44,7 @@
     "test-axe": "bin/checkHTML.sh axe",
     "test-pa11y": "bin/checkHTML.sh pa11y",
     "lint": "bin/checkHTML.sh",
+    "eslint": "eslint \"content/**\" \"js/**\" \"bin/**\"",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
