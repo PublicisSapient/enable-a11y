@@ -27,7 +27,6 @@ jobs:
         run: npm ci
       - name: Run ESLint
         run: npm run eslint
-        continue-on-error: true
     #   - name: Upload analysis results to GitHub
     #     uses: github/codeql-action/upload-sarif@v2
     #     with:
@@ -67,10 +66,13 @@ jobs:
         run: sudo apt install php8.1
       - name: Install npm dependencies
         run: npm ci
-      - name: Start server
-        run: npm run start
-      - name: Run tests
-        run: npm run test
+      - name: Start server and run tests
+        run: |
+          npm run start &
+          sleep 10 &&
+          curl http://localhost:8888 &&
+          npm run test
+
     #   - name: Archive production artifacts
     #     uses: actions/upload-artifact@v4
     #     with:
