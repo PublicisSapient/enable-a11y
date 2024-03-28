@@ -64,25 +64,26 @@ jobs:
         run: sudo apt install lynx
       - name: Install PHP8.1
         run: sudo apt install php8.1
-      - name: Install Chrome ver.122
+      - name: Install Chrome ver.122 to match chromedriver package version
         run: |
           wget -q -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_122.0.6261.128-1_amd64.deb \
           && sudo apt install -y /tmp/chrome.deb --allow-downgrades \
           && rm /tmp/chrome.deb
       - name: Show system details
         run:  |
-          google-chrome --version &&
+          uname &&
+          echo $OSTYPE &&
           which google-chrome &&
-          uname
+          google-chrome --version
       - name: Install npm dependencies
         run: npm ci
-      - name: Start server and run tests
+      - name: Start server and wait for localhost to be available
         run: |
           npm run start &
           sleep 10 &&
-          curl http://localhost:8888 &&
-          npm run test
-
+          curl http://localhost:8888
+      - name: Run automation tests
+        run: npm run test
     #   - name: Archive production artifacts
     #     uses: actions/upload-artifact@v4
     #     with:
