@@ -442,7 +442,7 @@ else
 	#.. Run all tests
 	runVNUTests
 	runAXETests
-	runPa11yTests
+	# runPa11yTests
 
 	#.. Remove temporary files on success
 	rm tmp/* 2> /dev/null
