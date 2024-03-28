@@ -389,7 +389,7 @@ function runPa11yTests() {
     CHROME_PATH='"": "",'
     if [ $(uname) == "Linux" ]
     then
-        CHROME_PATH='"executablePath": "/usr/bin/google-chrome"'
+        CHROME_PATH='"executablePath": "/usr/bin/google-chrome",'
     fi
 
 	# <<comment
