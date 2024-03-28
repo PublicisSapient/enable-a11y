@@ -1,8 +1,11 @@
+# GitHub Actions for CI/CD
+
 name: Automated Tests on Git Push
 on:
   push
 
 jobs:
+  # An automated check that runs the ESLint scan
   eslint:
     name: Run ESLint scan
     runs-on: ubuntu-latest
@@ -21,9 +24,11 @@ jobs:
         run: npm run eslint
 
 
+  # An automated check that runs all of the accessibility and unit tests
   tests:
     name: Run Automated tests
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
