@@ -23,7 +23,8 @@
 
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
-MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+# MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+MYIP="localhost"
 PROJECT_URL="http://$MYIP:8888/index.php"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PHP=`bin/findPHP.sh`
@@ -403,7 +404,15 @@ function runPa11yTests() {
 			}
 		'
 		
-		echo ']}'
+		echo '],
+            "chromeLaunchConfig": {
+                "args": [
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage"
+                ]
+            }
+        }'
 	) > tmp/pa11y-config.txt 
 
 	# comment
@@ -442,7 +451,7 @@ else
 	#.. Run all tests
 	runVNUTests
 	runAXETests
-	# runPa11yTests
+	runPa11yTests
 
 	#.. Remove temporary files on success
 	rm tmp/* 2> /dev/null
