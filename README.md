@@ -18,11 +18,13 @@ A place to learn and share with developers what makes web work accessible. This 
     - [Download from browser](https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/)
     - Install using homebrew: `brew install lynx`
     - Install using MacPorts: `sudo port install lynx`
+    - Install on Ubuntu: `sudo apt install lynx`
 - PHP (version > 8.1)
   - Install options:
     - [Install from browser](https://www.php.net/downloads.php)
     - Install using homebrew: `brew install php`
     - Install using MacPorts: `sudo port install php`
+    - Install on Ubuntu: `sudo apt install php8.1`
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
