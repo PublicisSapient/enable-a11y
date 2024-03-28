@@ -28,6 +28,8 @@ A place to learn and share with developers what makes web work accessible. This 
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
+> Note: Any changes to these prerequisites will need to be reflected in the GitHub Actions in order to run the CI/CD checks.
+
 #### Optional installations (since `npm run server` will run an express server)
 
 - MAMP (OSX) or Apache: <https://www.mamp.info/en/mac/>
