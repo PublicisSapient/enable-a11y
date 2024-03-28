@@ -1,0 +1,21 @@
+name: Automated Tests on Git Push
+on:
+  push
+
+jobs:
+  eslint:
+    name: Run ESLint scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.0'
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npm run eslint
