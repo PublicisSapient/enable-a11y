@@ -23,8 +23,7 @@
 
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
-# MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
-MYIP="localhost"
+MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
 PROJECT_URL="http://$MYIP:8888/index.php"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PHP=`bin/findPHP.sh`
@@ -406,6 +405,7 @@ function runPa11yTests() {
 		
 		echo '],
             "chromeLaunchConfig": {
+                "executablePath": "/usr/bin/",
                 "args": [
                     "--no-sandbox",
                     "--disable-setuid-sandbox",

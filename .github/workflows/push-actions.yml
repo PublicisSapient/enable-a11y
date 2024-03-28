@@ -70,7 +70,9 @@ jobs:
           && sudo apt install -y /tmp/chrome.deb --allow-downgrades \
           && rm /tmp/chrome.deb
       - name: Debug
-        run:  google-chrome --version
+        run:  |
+          google-chrome --version &&
+          which google-chrome
       - name: Install npm dependencies
         run: npm ci
       - name: Start server and run tests
