@@ -404,13 +404,15 @@ function runPa11yTests() {
 		'
 		
 		echo '],
-            "chromeLaunchConfig": {
-                "executablePath": "/usr/bin/",
-                "args": [
-                    "--no-sandbox",
-                    "--disable-setuid-sandbox",
-                    "--disable-dev-shm-usage"
-                ]
+            "defaults": {
+                "chromeLaunchConfig": {
+                    "executablePath": "/usr/bin/google-chrome",
+                    "args": [
+                        "--no-sandbox",
+                        "--disable-setuid-sandbox",
+                        "--disable-dev-shm-usage"
+                    ]
+                }
             }
         }'
 	) > tmp/pa11y-config.txt 
