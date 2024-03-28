@@ -385,6 +385,13 @@ function runPa11yTests() {
 
 	DID_PALLY_SUCCEED="0"
 
+    #. Set a key-value pair, only populated with the Chrome application path for Linux systems
+    CHROME_PATH='"": "",'
+    if [ $(uname) == "Linux" ]
+    then
+        CHROME_PATH='"executablePath": "/usr/bin/google-chrome"'
+    fi
+
 	# <<comment
 	( 
 		echo '{
@@ -403,18 +410,18 @@ function runPa11yTests() {
 			}
 		'
 		
-		echo '],
-            "defaults": {
-                "chromeLaunchConfig": {
-                    "executablePath": "/usr/bin/google-chrome",
-                    "args": [
-                        "--no-sandbox",
-                        "--disable-setuid-sandbox",
-                        "--disable-dev-shm-usage"
+		echo "],
+            \"defaults\": {
+                \"chromeLaunchConfig\": {
+                    $CHROME_PATH
+                    \"args\": [
+                        \"--no-sandbox\",
+                        \"--disable-setuid-sandbox\",
+                        \"--disable-dev-shm-usage\"
                     ]
                 }
             }
-        }'
+        }"
 	) > tmp/pa11y-config.txt 
 
 	# comment

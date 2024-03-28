@@ -69,10 +69,11 @@ jobs:
           wget -q -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_122.0.6261.128-1_amd64.deb \
           && sudo apt install -y /tmp/chrome.deb --allow-downgrades \
           && rm /tmp/chrome.deb
-      - name: Debug
+      - name: Show system details
         run:  |
           google-chrome --version &&
-          which google-chrome
+          which google-chrome &&
+          uname
       - name: Install npm dependencies
         run: npm ci
       - name: Start server and run tests
