@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Run the Prettier formatter on all staged parts of files
+# Source: https://prettier.io/docs/en/precommit.html#option-4-git-format-stagedhttpsgithubcomhallettjgit-format-staged
+npx git-format-staged -f 'prettier --ignore-unknown --stdin --stdin-filepath \"{}\"' .
