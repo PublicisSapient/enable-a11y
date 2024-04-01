@@ -9,7 +9,7 @@ describe('Styled Elements Tests', () => {
     await testHelpers.testPageSnapshot(page);
   });
 
-  it('Detect if there are sr-only content on mark tags for visually hidden text example', async () => {
+  it('Detect if there is sr-only content in the mark tags in the visually hidden text example', async () => {
     let domInfo;
 
     await page.goto(`${config.BASE_URL}/exposing-style-info-to-screen-readers.php`);
@@ -41,7 +41,7 @@ describe('Styled Elements Tests', () => {
     expect(domInfo.hasMissingMarkContent).toBe(false);
   });
 
-  it('Detect if there are sr-only content on mark tags in the highlight example', async () => {
+  it('Detect if there are sr-only content inside the highlighted text of the Enable code walkthroughs', async () => {
     let domInfo;
 
     await page.goto(`${config.BASE_URL}/exposing-style-info-to-screen-readers.php`);
@@ -78,7 +78,4 @@ describe('Styled Elements Tests', () => {
     expect(domInfo.hasMissingBeginningContent).toBe(false);
     expect(domInfo.hasMissingEndContent).toBe(false);
   });
-
-  
-
 });
