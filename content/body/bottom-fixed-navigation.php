@@ -21,7 +21,7 @@
             
 
 
-            <?php includeShowcode("example1")?>
+            <?php includeShowcode("example1"); ?>
 
             <script type="application/json" id="example1-props">
             {

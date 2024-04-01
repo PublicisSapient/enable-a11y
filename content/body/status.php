@@ -39,7 +39,7 @@
 </div>
 
 
-<?php includeShowcode("visually-hidden-example")?>
+<?php includeShowcode("visually-hidden-example"); ?>
 
 <script type="application/json" id="visually-hidden-example-props">
 {

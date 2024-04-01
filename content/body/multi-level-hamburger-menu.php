@@ -7,9 +7,13 @@
                 also made the styles follow the BEM design pattern.
             </p>
         </aside> -->
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'If you are trying to fix an existing menu system, please go through the <a href="#enable-hamburger-menu__heading">the code walkthrough of how this was implemented</a>. ')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'If you are trying to fix an existing menu system, please go through the <a href="#enable-hamburger-menu__heading">the code walkthrough of how this was implemented</a>. ',
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   This is the component that the most development and testing time was spent on. On many sites I have done accessibility
@@ -45,7 +49,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-icon-screenshot", "Screenshot of the banner on the top of this page in the mobile breakpoint")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/hamburger-menu-icon-screenshot",
+      "Screenshot of the banner on the top of this page in the mobile breakpoint",
+  ); ?>
 
   <figcaption>Figure 1. The hamburger menu icon appears on the upper right hand side of the page. It is
     denoted by three horizontal lines that has become the standard.</figcaption>
@@ -61,7 +68,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-opened", "Screenshot of the hamburger menu when opened.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/hamburger-menu-opened",
+      "Screenshot of the hamburger menu when opened.",
+  ); ?>
 
   <figcaption>
     Figure 2. When the hamburger menu icon is clicked, the black menu above appears.
@@ -98,7 +108,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-onload", "Screenshot of the mega menu when the page is first loaded.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/mega-menu-onload",
+      "Screenshot of the mega menu when the page is first loaded.",
+  ); ?>
 
   <figcaption>
     Figure 3. The mega menu is a horizontal bar with the
@@ -118,7 +131,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-open", "Screenshot of the mega menu when one of the submenus opened.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/mega-menu-open",
+      "Screenshot of the mega menu when one of the submenus opened.",
+  ); ?>
 
   <figcaption>
     Figure 3. When a submenu category is clicked with either,
@@ -151,7 +167,7 @@
 
 <p>If you wanted to code this menu's HTML by hand, you can use the following guide.  Just keep in mind that each level is basically a list of buttons and links.  The links will go to new pages; the buttons will open up a new section.</p>
 
-<?php includeShowcode("flyout__container", "", "", "", true, 0)?>
+<?php includeShowcode("flyout__container", "", "", "", true, 0); ?>
 <script type="application/json" id="flyout__container-props">
 {
     "replaceHtmlRules": {
@@ -202,7 +218,7 @@
   Let's walk through the front-end code of the Hamburger Flyout Menu on the Enable site to show the code that makes this accessible.  
 </p>
 
-<?php includeShowcode("enable-hamburger-menu")?>
+<?php includeShowcode("enable-hamburger-menu"); ?>
 
 <script type="application/json" id="enable-hamburger-menu-props">
 {
@@ -297,4 +313,4 @@
 </script>
 
 
-<?= includeNPMInstructions('enable-hamburger', array(), 'enable-flyout') ?>
+<?= includeNPMInstructions("enable-hamburger", [], "enable-flyout") ?>

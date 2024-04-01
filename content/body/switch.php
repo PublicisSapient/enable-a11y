@@ -25,9 +25,11 @@
 
 <h2>A simple switch coded with ARIA.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>This code is based on information from the
@@ -47,7 +49,7 @@
 </div>
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -81,12 +83,4 @@
 }
 </script>
 
-<?= includeNPMInstructions(
-  'switch',
-  array(),
-  '',
-  false,
-  array(),
-  null,
-  true
-) ?>
+<?= includeNPMInstructions("switch", [], "", false, [], null, true) ?>

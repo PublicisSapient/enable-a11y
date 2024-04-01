@@ -25,7 +25,7 @@
 
 <h2>Radio Buttons grouped with fieldsets</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>This is the recommended way of grouping radio buttons. If you need them to be styled a different way, please
   look at the next few examples.</p>
@@ -64,7 +64,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -91,7 +91,10 @@
 
 <h2>HTML5 radio buttons that have custom styling</h2>
 
-<?php includeStats(array('isStyle' => true, 'comment' => 'Read this to style native radio buttons like a Jedi Master')) ?>
+<?php includeStats([
+    "isStyle" => true,
+    "comment" => "Read this to style native radio buttons like a Jedi Master",
+]); ?>
 
 <p>
     Radio buttons can be styled using a bit of careful CSS-fu.  I styled these ones by refactoring
@@ -136,7 +139,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1-styled")?>
+<?php includeShowcode("example1-styled"); ?>
 
 <script type="application/json" id="example1-styled-props">
 {
@@ -178,7 +181,7 @@
 
 
 <h2>Custom radio buttons using ARIA</h2>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
     Use when some developer before you decided making <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time.
@@ -220,7 +223,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -278,7 +281,11 @@
 
 
 <h2>HTML5 version that uses radiogroup roles.</h2>
-<?php includeStats(array('isStyle' => false, 'comment' => 'Since fieldsets are a CSS nightmare to fix sometimes, this is nice alternative.')) ?>
+<?php includeStats([
+    "isStyle" => false,
+    "comment" =>
+        "Since fieldsets are a CSS nightmare to fix sometimes, this is nice alternative.",
+]); ?>
 
 <p>
     When it comes to styling fieldsets, they can sometimes be as stubborn as my Mom when I tell her it's time for a medical
@@ -315,7 +322,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example4")?>
+<?php includeShowcode("example4"); ?>
 
 <script type="application/json" id="example4-props">
 {

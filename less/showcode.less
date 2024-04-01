@@ -13,51 +13,50 @@
 @gap-shadow-width: @code-focus-outline-gap + @code-focus-outline-width;
 @gap-color: white;
 
-
 html {
-  width: calc(100vw - (100vw - 100%));
-  overflow-x: hidden;
+    width: calc(100vw - (100vw - 100%));
+    overflow-x: hidden;
 }
 
 code {
-  font-family: @code-font-stack;
-  font-style: normal;
+    font-family: @code-font-stack;
+    font-style: normal;
 }
 
 .static-code {
-  display: block;
-  position: relative;
-  font-family: @code-font-stack;
-  background: @color-background-term-code;
-  color: @color-term-code;
-  box-shadow:
-    @gap-shadow-width 0 0 black inset,
-    -@gap-shadow-width 0 0 black inset,
-    0 @gap-shadow-width 0 black inset,
-    0 (-@gap-shadow-width - @clip-bottom) 0 black inset;
+    display: block;
+    position: relative;
+    font-family: @code-font-stack;
+    background: @color-background-term-code;
+    color: @color-term-code;
+    box-shadow:
+        @gap-shadow-width 0 0 black inset,
+        -@gap-shadow-width 0 0 black inset,
+        0 @gap-shadow-width 0 black inset,
+        0 (-@gap-shadow-width - @clip-bottom) 0 black inset;
 }
 
 .showcode {
+    background-color: rgb(245, 222, 179);
 
-  background-color: rgb(245, 222, 179);
+    clip-path: polygon(
+        0 0,
+        100% 0%,
+        100% calc(100% - @clip-bottom),
+        0 calc(100% - @clip-bottom)
+    );
 
-  clip-path: polygon(0 0,
-      100% 0%,
-      100% calc(100% - @clip-bottom),
-      0 calc(100% - @clip-bottom));
+    h4&__heading {
+        border-bottom: none;
+        padding: 15px 0 0 0;
+        font-size: (18 / @px);
+        margin-bottom: -5px;
+    }
 
-  h4&__heading {
-    border-bottom: none;
-    padding: 15px 0 0 0;
-    font-size: (18/@px);
-    margin-bottom: -5px;
-  }
-
-  &__example--code {
-
-    // We use a negative focus outline-offset since the 
-    // this is clipped.
-    .enable-focus( {
+    &__example--code {
+        // We use a negative focus outline-offset since the
+        // this is clipped.
+        .enable-focus( {
         outline: solid 2px @focus-color  !important;
         outline-offset: -4px;
       }
@@ -67,299 +66,296 @@ code {
         outline-offset: 0;
       }
 
-    )
-  }
-
-  &--no-js-container {
-    clip-path: none;
-  }
-
-  &__container {
-    position: relative;
-    z-index: 1;
-
-  }
-
-  &__heading {
-    font-weight: bold;
-    padding-top: 20px;
-    font-size: 1.25rem;
-    border-bottom: double 3px #000;
-
-  }
-
-  &__example {
-
-
-    display: block;
-    position: relative;
-    font-family: @code-font-stack;
-    background: @color-background-term-code;
-    color: @color-term-code;
-    box-shadow:
-      @gap-shadow-width 0 0 black inset,
-      -@gap-shadow-width 0 0 black inset,
-      0 @gap-shadow-width 0 black inset,
-      0 (-@gap-shadow-width - @clip-bottom) 0 black inset;
-
-    a {
-      color: #8F8FFF;
+    );
     }
 
-    &:focus-within {
-
-      box-shadow:
-        @code-focus-outline-width 0 0 @focus-color inset,
-        -@code-focus-outline-width 0 0 @focus-color inset,
-        0 @code-focus-outline-width 0 @focus-color inset,
-        0 (-@code-focus-outline-width - @clip-bottom) 0 @focus-color inset,
-        @gap-shadow-width 0 0 @gap-color inset,
-        -@gap-shadow-width 0 0 @gap-color inset,
-        0 @gap-shadow-width 0 @gap-color inset,
-        0 (-@gap-shadow-width - @clip-bottom) 0 @gap-color inset;
-
-      code {
-        outline: transparent 2px solid;
-      }
+    &--no-js-container {
+        clip-path: none;
     }
 
-    /* @media @mobile {
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__heading {
+        font-weight: bold;
+        padding-top: 20px;
+        font-size: 1.25rem;
+        border-bottom: double 3px #000;
+    }
+
+    &__example {
+        display: block;
+        position: relative;
+        font-family: @code-font-stack;
+        background: @color-background-term-code;
+        color: @color-term-code;
+        box-shadow:
+            @gap-shadow-width 0 0 black inset,
+            -@gap-shadow-width 0 0 black inset,
+            0 @gap-shadow-width 0 black inset,
+            0 (-@gap-shadow-width - @clip-bottom) 0 black inset;
+
+        a {
+            color: #8f8fff;
+        }
+
+        &:focus-within {
+            box-shadow:
+                @code-focus-outline-width 0 0 @focus-color inset,
+                -@code-focus-outline-width 0 0 @focus-color inset,
+                0 @code-focus-outline-width 0 @focus-color inset,
+                0 (-@code-focus-outline-width - @clip-bottom) 0 @focus-color
+                    inset,
+                @gap-shadow-width 0 0 @gap-color inset,
+                -@gap-shadow-width 0 0 @gap-color inset,
+                0 @gap-shadow-width 0 @gap-color inset,
+                0 (-@gap-shadow-width - @clip-bottom) 0 @gap-color inset;
+
+            code {
+                outline: transparent 2px solid;
+            }
+        }
+
+        /* @media @mobile {
             margin: 0 -2em -25px -1em;
         } */
 
-    code {
-      display: block;
-      padding: 10px;
-      max-width: calc(100vw - 20px);
-      overflow-x: auto;
-      background: #000;
-
-    }
-
-    &--desc {
-      display: none;
-    }
-
-    @media @mobile {
-      &--desc {
-        display: block;
-        font-family: "Arial", "Helvetica", sans-serif;
-        background: white;
-        color: black;
-        font-size: 1em;
-        display: block;
-        text-align: center;
-        display: block;
-      }
-
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 0;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        background-image: linear-gradient(-270deg,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0) 80%,
-            @fade-color );
-        width: 100%;
-        height: 100%;
-      }
-
-      &:focus-within::after {
-        top: @code-focus-outline-width;
-        left: @code-focus-outline-width;
-        width: calc(100% - 2 * @code-focus-outline-width);
-        height: calc(100% - 2 * @code-focus-outline-width);
-      }
-
-      /* Fade CSS */
-
-      &.fade-both::after {
-        background-image: linear-gradient(-270deg,
-            @fade-color,
-            rgba(0, 0, 0, 0) 20%,
-            rgba(0, 0, 0, 0) 80%,
-            @fade-color );
-      }
-
-      &.fade-left::after {
-        background-image: linear-gradient(-270deg,
-            @fade-color,
-            rgba(0, 0, 0, 0) 20%,
-            rgba(0, 0, 0, 0));
-      }
-    }
-  }
-
-
-
-  &--no-js {
-    white-space: pre;
-    margin: 0 0 20px 0;
-    padding: 10px;
-    overflow: auto;
-  }
-
-  &__highlight {
-    display: inline-block;
-    color: white;
-    border: solid 2px white;
-    font-family: @code-font-stack;
-    font-style: normal;
-    background: black;
-
-
-
-    & & {
-      border: none;
-    }
-  }
-
-  &__select-label {
-    padding: 5px 10px;
-    display: inline-block;
-    width: initial;
-    width: @select-width;
-    white-space: nowrap;
-  }
-
-  &__steps {
-    border-bottom: none;
-    padding: 10px 0;
-    background-color: rgb(245, 222, 179);
-
-    select {
-      display: block;
-      width: calc(100% - 20px);
-      margin: 0 auto;
-
-      @media @tablet-up {
-        width: calc(100% - 10rem - 10px);
-        float: right;
-        margin: 3px 10px 0 0;
-      }
-    }
-  }
-
-  &__ui {
-    position: sticky;
-    top: (40/@px);
-    z-index: 1;
-    background-color: rgb(245, 222, 179);
-    padding: 0.01em;
-    border: solid 1px #666;
-    
-    &:has(.showcode__notes--is-overflowed.is-expanded) {
-      position: relative;
-    }
-  }
-
-  &__notes-container {
-    position: relative;
-  }
-
-  &__notes {
-
-    &+&-view-toggle {
-      display: none;
- 
-      border: none;
-      background: transparent;
-      text-decoration: underline;
-      position: absolute;
-      bottom: @notes-bottom-margin;
-      right: 0;
-      text-align: center;
-      width: 100%;
-
-      .showcode__has-wrapped-text-in-code & {
-        bottom: (58/@px);
-      }
-    }
-
-    code {
-      font-family: @code-font-stack;
-      font-style: normal;
-    }
-
-    &:not(:empty) {
-      border: dashed #705029 3px;
-      padding: 1em 1em 1em 1em;
-      margin: 0 10px @notes-bottom-margin 10px;
-      background-color: #ffffee;
-
-      > div {
-        overflow: hidden;
-
-        // This must be -webkit prefixed.
-        // Works even in non-webkit browsers.
-        -webkit-line-clamp: 2;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-
-        // Why is this here?
-        @media @tablet-up {
-          display: block;
+        code {
+            display: block;
+            padding: 10px;
+            max-width: calc(100vw - 20px);
+            overflow-x: auto;
+            background: #000;
         }
-      }
 
-      &.is-expanded>div {
-        display: block;
-
-        @media @tablet {
-          display: none !important;
+        &--desc {
+            display: none;
         }
-      }
 
+        @media @mobile {
+            &--desc {
+                display: block;
+                font-family: "Arial", "Helvetica", sans-serif;
+                background: white;
+                color: black;
+                font-size: 1em;
+                display: block;
+                text-align: center;
+                display: block;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 0;
+                pointer-events: none;
+                top: 0;
+                left: 0;
+                background-image: linear-gradient(
+                    -270deg,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0) 80%,
+                    @fade-color
+                );
+                width: 100%;
+                height: 100%;
+            }
+
+            &:focus-within::after {
+                top: @code-focus-outline-width;
+                left: @code-focus-outline-width;
+                width: calc(100% - 2 * @code-focus-outline-width);
+                height: calc(100% - 2 * @code-focus-outline-width);
+            }
+
+            /* Fade CSS */
+
+            &.fade-both::after {
+                background-image: linear-gradient(
+                    -270deg,
+                    @fade-color,
+                    rgba(0, 0, 0, 0) 20%,
+                    rgba(0, 0, 0, 0) 80%,
+                    @fade-color
+                );
+            }
+
+            &.fade-left::after {
+                background-image: linear-gradient(
+                    -270deg,
+                    @fade-color,
+                    rgba(0, 0, 0, 0) 20%,
+                    rgba(0, 0, 0, 0)
+                );
+            }
+        }
     }
 
-
-
-    &&--is-overflowed.is-expanded:not(:empty)+.showcode__notes-view-toggle .showcode__notes-view-toggle--more {
-      display: none;
+    &--no-js {
+        white-space: pre;
+        margin: 0 0 20px 0;
+        padding: 10px;
+        overflow: auto;
     }
 
-    &&--is-overflowed.is-expanded:not(:empty)+.showcode__notes-view-toggle .showcode__notes-view-toggle--less {
-      display: block;
+    &__highlight {
+        display: inline-block;
+        color: white;
+        border: solid 2px white;
+        font-family: @code-font-stack;
+        font-style: normal;
+        background: black;
+
+        & & {
+            border: none;
+        }
     }
 
-    &&--is-overflowed:not(:empty) {
-      padding-bottom: 3em;
+    &__select-label {
+        padding: 5px 10px;
+        display: inline-block;
+        width: initial;
+        width: @select-width;
+        white-space: nowrap;
     }
 
-    &&--is-overflowed:not(:empty)+&-view-toggle {
-      display: inherit;
+    &__steps {
+        border-bottom: none;
+        padding: 10px 0;
+        background-color: rgb(245, 222, 179);
 
-      & .showcode__notes-view-toggle--less {
+        select {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 0 auto;
+
+            @media @tablet-up {
+                width: calc(100% - 10rem - 10px);
+                float: right;
+                margin: 3px 10px 0 0;
+            }
+        }
+    }
+
+    &__ui {
+        position: sticky;
+        top: (40 / @px);
+        z-index: 1;
+        background-color: rgb(245, 222, 179);
+        padding: 0.01em;
+        border: solid 1px #666;
+
+        &:has(.showcode__notes--is-overflowed.is-expanded) {
+            position: relative;
+        }
+    }
+
+    &__notes-container {
+        position: relative;
+    }
+
+    &__notes {
+        & + &-view-toggle {
+            display: none;
+
+            border: none;
+            background: transparent;
+            text-decoration: underline;
+            position: absolute;
+            bottom: @notes-bottom-margin;
+            right: 0;
+            text-align: center;
+            width: 100%;
+
+            .showcode__has-wrapped-text-in-code & {
+                bottom: (58 / @px);
+            }
+        }
+
+        code {
+            font-family: @code-font-stack;
+            font-style: normal;
+        }
+
+        &:not(:empty) {
+            border: dashed #705029 3px;
+            padding: 1em 1em 1em 1em;
+            margin: 0 10px @notes-bottom-margin 10px;
+            background-color: #ffffee;
+
+            > div {
+                overflow: hidden;
+
+                // This must be -webkit prefixed.
+                // Works even in non-webkit browsers.
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+
+                // Why is this here?
+                @media @tablet-up {
+                    display: block;
+                }
+            }
+
+            &.is-expanded > div {
+                display: block;
+
+                @media @tablet {
+                    display: none !important;
+                }
+            }
+        }
+
+        &&--is-overflowed.is-expanded:not(:empty)
+            + .showcode__notes-view-toggle
+            .showcode__notes-view-toggle--more {
+            display: none;
+        }
+
+        &&--is-overflowed.is-expanded:not(:empty)
+            + .showcode__notes-view-toggle
+            .showcode__notes-view-toggle--less {
+            display: block;
+        }
+
+        &&--is-overflowed:not(:empty) {
+            padding-bottom: 3em;
+        }
+
+        &&--is-overflowed:not(:empty) + &-view-toggle {
+            display: inherit;
+
+            & .showcode__notes-view-toggle--less {
+                display: none;
+            }
+        }
+    }
+
+    &__has-wrapped-text-in-code:not(&--no-js-container) &__example {
+        white-space: pre-wrap;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &__has-wrapped-text-in-code &__scroll-message {
         display: none;
-      }
     }
-  }
 
-  &__has-wrapped-text-in-code:not(&--no-js-container) &__example {
-    white-space: pre-wrap;
-
-    &::after {
-      display: none;
+    &__has-wrapped-text-in-code &--no-js {
+        white-space: break-spaces;
     }
-  }
 
-  &__has-wrapped-text-in-code &__scroll-message {
-    display: none;
-  }
+    &--no-js-container {
+        margin-top: 20px;
+    }
 
-  &__has-wrapped-text-in-code &--no-js {
-    white-space: break-spaces;
-  }
-
-  &--no-js-container {
-    margin-top: 20px;
-  }
-
-  figure.wide &__example {
-    margin-bottom: -2.5rem;
-  }
+    figure.wide &__example {
+        margin-bottom: -2.5rem;
+    }
 }

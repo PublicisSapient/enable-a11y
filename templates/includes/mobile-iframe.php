@@ -1,6 +1,12 @@
 <?php
-  $fullURL = $url . '?' . $queryString . '&copy=' . $copy . '&heading=' . urlencode($heading);
-?>
+$fullURL =
+    $url .
+    "?" .
+    $queryString .
+    "&copy=" .
+    $copy .
+    "&heading=" .
+    urlencode($heading); ?>
 <iframe class="reflow-example__frame"
   src="<?= $fullURL ?>"
   title="<?= urlencode($title) ?>"

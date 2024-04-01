@@ -1,6 +1,9 @@
 <!-- File WIP -->
 
-<?php includeStats(array('doNot' => true, 'comment' => 'The accessibility of this page is questionable.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" => "The accessibility of this page is questionable.",
+]); ?>
 
 <p>This page uses MathJax to implement
   <a href="https://www.mathjax.org/">MathML</a> in browsers that don't support it. There are browser compatibility
@@ -72,7 +75,7 @@
 
 <p>The code below is the source for the equation above. To understand how MathML works, please visit the <a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MDN MathML page</a> for more information.</p>
 
-<?php includeShowcode("equation", "", "", "", false)?>
+<?php includeShowcode("equation", "", "", "", false); ?>
 <script type="application/json" id="equation-props">
 {
   "replaceHtmlRules": {},

@@ -1,82 +1,98 @@
 <?php
 $walkthroughIndex = 1;
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
 
+function getCgiVar($name)
+{
+    $isVarSet = isset($_GET[$name]);
+    if ($isVarSet) {
+        $r = $_GET[$name];
+    } else {
+        $r = "";
+    }
 
-function getCgiVar($name) {
-  $isVarSet = isset($_GET[$name]);
-  if ($isVarSet) {
-    $r = $_GET[$name];
-  } else {
-    $r = '';
-  }
-
-  return $r;
+    return $r;
 }
 
-
-function includeFileWithVariables($fileName, $variables = array())
+function includeFileWithVariables($fileName, $variables = [])
 {
     extract($variables);
-    include($fileName);
+    include $fileName;
 }
 
-function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteractive = true, $headingLevel = 3, $prologue = '')
-{
-    includeFileWithVariables('includes/showcode-template.php', array(
-        'id' => $id,
-        'cssId' => $cssId,
-        'jsId' => $jsId,
-        'extra' => $extra,
-        'isInteractive' => $isInteractive,
-        'headingLevel' => $headingLevel,
-        'prologue' => $prologue
-    ));
+function includeShowcode(
+    $id,
+    $cssId = "",
+    $jsId = "",
+    $extra = "",
+    $isInteractive = true,
+    $headingLevel = 3,
+    $prologue = "",
+) {
+    includeFileWithVariables("includes/showcode-template.php", [
+        "id" => $id,
+        "cssId" => $cssId,
+        "jsId" => $jsId,
+        "extra" => $extra,
+        "isInteractive" => $isInteractive,
+        "headingLevel" => $headingLevel,
+        "prologue" => $prologue,
+    ]);
 }
 
-function includeMobileIframe($url, $queryString = "", $copy = "", $title = "Reflow Example", $heading = '') {
-  includeFileWithVariables('includes/mobile-iframe.php', array(
-    'url' => $url,
-    'queryString' => $queryString,
-    'copy' => $copy,
-    'title' => $title,
-    'heading' => $heading
-  ));
+function includeMobileIframe(
+    $url,
+    $queryString = "",
+    $copy = "",
+    $title = "Reflow Example",
+    $heading = "",
+) {
+    includeFileWithVariables("includes/mobile-iframe.php", [
+        "url" => $url,
+        "queryString" => $queryString,
+        "copy" => $copy,
+        "title" => $title,
+        "heading" => $heading,
+    ]);
 }
 
 function pictureWebpPng($src, $alt = "", $otherAttrs = "")
 {
-    includeFileWithVariables('includes/picture-webp-png.php', array(
-        'src' => $src,
-        'alt' => $alt,
-        'otherAttrs' => $otherAttrs
-    ));
+    includeFileWithVariables("includes/picture-webp-png.php", [
+        "src" => $src,
+        "alt" => $alt,
+        "otherAttrs" => $otherAttrs,
+    ]);
 }
 
-function includeSvgSprite($id, $alt) {
-  includeFileWithVariables('includes/svg-sprite.php', array(
-    'id' => $id,
-    'alt' => $alt
-));
-}
-
-function includeMetaInfo($title = 'ERROR', $desc = 'ERROR', $posterImg = 'ERROR', $mainClass = '')
+function includeSvgSprite($id, $alt)
 {
-    includeFileWithVariables('includes/meta-info.php', array(
-        'title' => $title,
-        'desc' => $desc,
-        'posterImg' => $posterImg,
-        'mainClass' => $mainClass
-    ));
+    includeFileWithVariables("includes/svg-sprite.php", [
+        "id" => $id,
+        "alt" => $alt,
+    ]);
+}
+
+function includeMetaInfo(
+    $title = "ERROR",
+    $desc = "ERROR",
+    $posterImg = "ERROR",
+    $mainClass = "",
+) {
+    includeFileWithVariables("includes/meta-info.php", [
+        "title" => $title,
+        "desc" => $desc,
+        "posterImg" => $posterImg,
+        "mainClass" => $mainClass,
+    ]);
 }
 
 // From https://stackoverflow.com/questions/2791998/convert-string-with-dashes-to-camelcase
-function dashesToCamelCase($string, $capitalizeFirstCharacter = false) 
+function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
 {
-
-    $str = str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+    $str = str_replace(" ", "", ucwords(str_replace("-", " ", $string)));
 
     if (!$capitalizeFirstCharacter) {
         $str[0] = strtolower($str[0]);
@@ -85,132 +101,154 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
     return $str;
 }
 
-
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $bemPrefix = null, $isPolyfill = false, $other = array(), $doesHaveAddMethod = null, $willWorkAfterPageLoad = false, $noInit = false) {
-  includeFileWithVariables('includes/npm.php', array(
-    'moduleName' => $moduleName,
-    'moduleVar' => dashesToCamelCase($moduleName),
-    'supportingModuleNames' => $supportingModuleNames,
-    'isPolyfill' => $isPolyfill,
-    'other' => $other,
-    'doesHaveAddMethod' => $doesHaveAddMethod,
-    'willWorkAfterPageLoad' => $willWorkAfterPageLoad,
-    'noInit' => $noInit,
-    'bemPrefix' => $bemPrefix
-  ));
+function includeNPMInstructions(
+    $moduleName,
+    $supportingModuleNames = ["js/modules/accessibility.module.js"],
+    $bemPrefix = null,
+    $isPolyfill = false,
+    $other = [],
+    $doesHaveAddMethod = null,
+    $willWorkAfterPageLoad = false,
+    $noInit = false,
+) {
+    includeFileWithVariables("includes/npm.php", [
+        "moduleName" => $moduleName,
+        "moduleVar" => dashesToCamelCase($moduleName),
+        "supportingModuleNames" => $supportingModuleNames,
+        "isPolyfill" => $isPolyfill,
+        "other" => $other,
+        "doesHaveAddMethod" => $doesHaveAddMethod,
+        "willWorkAfterPageLoad" => $willWorkAfterPageLoad,
+        "noInit" => $noInit,
+        "bemPrefix" => $bemPrefix,
+    ]);
 }
 
-function includeStats($props) {
-  unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $isExperimental, $comment);
-  extract($props);
-  global $walkthroughIndex;
+function includeStats($props)
+{
+    unset($isForNewBuilds, $doNot, $isNPM, $isStyle, $isExperimental, $comment);
+    extract($props);
+    global $walkthroughIndex;
 
-  $npmLink = '(<a href="#npm-instructions">Module installation instructions</a>)';
+    $npmLink =
+        '(<a href="#npm-instructions">Module installation instructions</a>)';
 
-  if (!isset($comment)) {
-    if (isset($isForNewBuilds)) {
-      if ($isForNewBuilds == true) {
-        $comment = 'This is the best solution to use, especially when building from scratch.';
-      } else if ($isForNewBuilds == false) {
-        $comment = 'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' . $walkthroughIndex . '">developer walkthrough</a> of this section to see we made our implementation accessible.';
-      }
-    } else if (isSet($doNot)) {
-      $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
-    } else if (isSet($isNPM)) {
-      $comment = 'This solution described below is available as an NPM module. ' . $npmLink;
-    } else if (isSet($isStyle)) {
-      $comment = 'This is a great solution to make CSS styling easier for developers.';
+    if (!isset($comment)) {
+        if (isset($isForNewBuilds)) {
+            if ($isForNewBuilds == true) {
+                $comment =
+                    "This is the best solution to use, especially when building from scratch.";
+            } elseif ($isForNewBuilds == false) {
+                $comment =
+                    'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' .
+                    $walkthroughIndex .
+                    '">developer walkthrough</a> of this section to see we made our implementation accessible.';
+            }
+        } elseif (isset($doNot)) {
+            $comment =
+                'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
+        } elseif (isset($isNPM)) {
+            $comment =
+                "This solution described below is available as an NPM module. " .
+                $npmLink;
+        } elseif (isset($isStyle)) {
+            $comment =
+                "This is a great solution to make CSS styling easier for developers.";
+        }
+    } else {
+        if (isset($isNPM)) {
+            $comment = $comment . " " . $npmLink;
+        }
     }
-  } else {
-    if (isSet($isNPM)) {
-      $comment = $comment . ' ' . $npmLink;
+
+    includeFileWithVariables("includes/stats.php", [
+        "isForNewBuilds" => isset($isForNewBuilds) ? $isForNewBuilds : null,
+        "doNot" => isset($doNot),
+        "isNPM" => isset($isNPM),
+        "isStyle" => isset($isStyle),
+        "comment" => $comment,
+    ]);
+}
+
+function includeShowcodeStaticBegin()
+{
+    global $walkthroughIndex;
+
+    includeFileWithVariables("includes/showcode-static-begin.php", [
+        "id" => "showcode-static__" . $walkthroughIndex,
+    ]);
+
+    $walkthroughIndex++;
+}
+
+function includeShowcodeStaticEnd()
+{
+    includeFileWithVariables("includes/showcode-static-end.php");
+}
+
+function getURIFilename()
+{
+    $uri = $_SERVER["REQUEST_URI"];
+
+    $uriFile = explode("/", $uri);
+
+    $lastIndex = count($uriFile) - 1;
+    $dirSlug = $uriFile[$lastIndex - 1];
+    $endSlug = $uriFile[$lastIndex];
+    $fileSlug = explode("?", $endSlug)[0];
+
+    if ($dirSlug === "info") {
+        return $dirSlug . "/" . $fileSlug;
+    } else {
+        return $fileSlug;
     }
-  }
-
-
-  includeFileWithVariables('includes/stats.php', array(
-    'isForNewBuilds' => isSet($isForNewBuilds) ? $isForNewBuilds : NULL,
-    'doNot' => isset($doNot),
-    'isNPM' => isset($isNPM),
-    'isStyle' => isSet($isStyle),
-    'comment' => $comment
-  ));
 }
 
-function includeShowcodeStaticBegin() {
-  global $walkthroughIndex;
-
-  includeFileWithVariables('includes/showcode-static-begin.php', array(
-    'id' => 'showcode-static__' . $walkthroughIndex
-  ));
-
-  $walkthroughIndex ++;
-}
-
-function includeShowcodeStaticEnd() {
-  includeFileWithVariables('includes/showcode-static-end.php');
-}
-
-function getURIFilename() {
-  $uri =  $_SERVER['REQUEST_URI'];
-
-  $uriFile = explode('/', $uri);
-
-  $lastIndex = count($uriFile) - 1;
-  $dirSlug = $uriFile[$lastIndex - 1];
-  $endSlug =  $uriFile[$lastIndex];
-  $fileSlug = explode('?', $endSlug)[0];
-
-
-  if ($dirSlug === 'info') {
-    return $dirSlug . '/' . $fileSlug;
-  } else {
-    return $fileSlug;
-  }
-}
-
-function getMetadata() {
+function getMetadata()
+{
     global $fileProps;
     $uriFile = getURIFilename();
     $uriPrefix = getURIPrefix();
-    $tokenToFind = trim(preg_replace('/^\//', '', $uriFile));
-    $metaFile = './data/meta-info.json';
+    $tokenToFind = trim(preg_replace("/^\//", "", $uriFile));
+    $metaFile = "./data/meta-info.json";
 
     if (file_exists($metaFile)) {
-        $myFile  = fopen($metaFile, "r");
+        $myFile = fopen($metaFile, "r");
         $content = json_decode(fread($myFile, filesize($metaFile)));
         fclose($myFile);
 
-        foreach( $content as $file => $fileProps ) {
+        foreach ($content as $file => $fileProps) {
             $title = "";
             $desc = "";
 
-            if ( !property_exists($fileProps, 'mainClass')) {
-              $fileProps->mainClass = '';
+            if (!property_exists($fileProps, "mainClass")) {
+                $fileProps->mainClass = "";
             }
 
-            //This loop allows me to work around with the keys 
+            //This loop allows me to work around with the keys
             if (strcmp($tokenToFind, $file) == 0) {
-
-                $fileProps->posterImg = $uriPrefix . '/images/posters/' . preg_replace('/\.php$/', '.jpg', $tokenToFind);
-                $fileProps->uri = $uriPrefix . '/' . $file;
-                if (strcmp($file, 'index.php') == 0) {
-                  $fileProps->type = 'website';
+                $fileProps->posterImg =
+                    $uriPrefix .
+                    "/images/posters/" .
+                    preg_replace('/\.php$/', ".jpg", $tokenToFind);
+                $fileProps->uri = $uriPrefix . "/" . $file;
+                if (strcmp($file, "index.php") == 0) {
+                    $fileProps->type = "website";
                 } else {
-                  $fileProps->type = 'article';
+                    $fileProps->type = "article";
                 }
-                
+
                 $fileProps->cacheBuster = 1;
 
                 // Let's ensure these properties are entified.
-                foreach($fileProps as $prop => $propValue) {
-                  $fileProps->{$prop} = htmlentities($propValue);
+                foreach ($fileProps as $prop => $propValue) {
+                    $fileProps->{$prop} = htmlentities($propValue);
                 }
                 return;
-            } 
+            }
         }
     } else {
-      die("Unable to open the file !");
+        die("Unable to open the file !");
     }
 
     // if we get here, the lookup failed, so set $fileProps to
@@ -218,66 +256,72 @@ function getMetadata() {
     $fileProps = new stdClass();
 }
 
-function give404IfNotValid() {
-  $file = '../content/body/' . getURIFilename();
-  if (!file_exists($file)) {
-    http_response_code(404);
+function give404IfNotValid()
+{
+    $file = "../content/body/" . getURIFilename();
+    if (!file_exists($file)) {
+        http_response_code(404);
 
-    echo "";
-    echo "<html><h1>404 Not Found</h1><!--" . $file . "--> </html>";
-    exit;
- }
+        echo "";
+        echo "<html><h1>404 Not Found</h1><!--" . $file . "--> </html>";
+        exit();
+    }
 }
 
-function getContent($title = '') {
-  includeFileWithVariables('../content/body/' . getURIFilename(), array(
-    'title' => $title
-  ));
+function getContent($title = "")
+{
+    includeFileWithVariables("../content/body/" . getURIFilename(), [
+        "title" => $title,
+    ]);
 }
 
-function getHeadTags() {
-  $headFile = '../content/head/' . getURIFilename();
-  if (file_exists($headFile)) {
-    includeFileWithVariables($headFile, array());
-  }
+function getHeadTags()
+{
+    $headFile = "../content/head/" . getURIFilename();
+    if (file_exists($headFile)) {
+        includeFileWithVariables($headFile, []);
+    }
 }
 
-function getBottomBodyTags() {
-  $file = '../content/bottom/' . getURIFilename();
-  if (file_exists($file)) {
-    includeFileWithVariables($file, array());
-  }
+function getBottomBodyTags()
+{
+    $file = "../content/bottom/" . getURIFilename();
+    if (file_exists($file)) {
+        includeFileWithVariables($file, []);
+    }
 }
 
-function getPreBottomBodyTags() {
-  $file = '../content/pre-bottom/' . getURIFilename();
-  if (file_exists($file)) {
-    includeFileWithVariables($file, array());
-  }
+function getPreBottomBodyTags()
+{
+    $file = "../content/pre-bottom/" . getURIFilename();
+    if (file_exists($file)) {
+        includeFileWithVariables($file, []);
+    }
 }
 
-function getAsideContent() {
-  $file = '../content/aside/' . getURIFilename();
-  if (file_exists($file)) {
-    includeFileWithVariables($file, array());
-  }
+function getAsideContent()
+{
+    $file = "../content/aside/" . getURIFilename();
+    if (file_exists($file)) {
+        includeFileWithVariables($file, []);
+    }
 }
 
-function startsWith( $haystack, $needle ) {
-  $length = strlen( $needle );
-  return substr( $haystack, 0, $length ) === $needle;
+function startsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    return substr($haystack, 0, $length) === $needle;
 }
 
-function getURIPrefix() {
-  if (startsWith($_SERVER['REQUEST_URI'], '/enable/')) {
-    return 'https://www.useragentman.com/enable';
-  } else {
-    return '';
-  }
+function getURIPrefix()
+{
+    if (startsWith($_SERVER["REQUEST_URI"], "/enable/")) {
+        return "https://www.useragentman.com/enable";
+    } else {
+        return "";
+    }
 }
 
 getMetadata();
-
-
 
 ?>

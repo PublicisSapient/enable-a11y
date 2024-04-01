@@ -10,8 +10,13 @@
 
 <h2>JavaScript tooltips</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'Recommended for new and existing work.')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" => "Recommended for new and existing work.",
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
@@ -26,7 +31,7 @@
 </div>
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -64,7 +69,11 @@
 
 <h2>Native HTML Tooltips</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'Although this is a common method to make tooltips, I would advise using the JavaScript method instead.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "Although this is a common method to make tooltips, I would advise using the JavaScript method instead.",
+]); ?>
 
 
 <p>
@@ -117,7 +126,7 @@
 
 </div>
 
-<?php includeShowcode("native-example")?>
+<?php includeShowcode("native-example"); ?>
 <script type="application/json" id="native-example-props">
 {
   "replaceHtmlRules": {
@@ -133,14 +142,6 @@
 
 
 
-<?= includeNPMInstructions(
-  'tooltip',
-  array(),
-  'tooltip',
-  false,
-  array(),
-  null,
-  true
-) ?>
+<?= includeNPMInstructions("tooltip", [], "tooltip", false, [], null, true) ?>
 
 

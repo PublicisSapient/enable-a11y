@@ -16,7 +16,11 @@
 
       <h2>Using native HTML5 validation</h2>
 
-      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is great if you want to implement validation quickly and don\'t care about the styling restrictions of native HTML5 validation.' )) ?>
+      <?php includeStats([
+          "isForNewBuilds" => true,
+          "comment" =>
+              'This is great if you want to implement validation quickly and don\'t care about the styling restrictions of native HTML5 validation.',
+      ]); ?>
 
       <p>
         You can use just <code>required</code> and
@@ -71,7 +75,7 @@
 
       
 
-      <?php includeShowcode("example1")?>
+      <?php includeShowcode("example1"); ?>
 
       <script type="application/json" id="example1-props">
       {
@@ -122,8 +126,16 @@
 
       <h2>Using custom validation</h2>
 
-      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is good if you want custom styling of the error messages')); ?>
-      <?php includeStats(array('isNPM' => true, 'comment' => 'The solution below involves using Enable\'s accessibility.js library to make it easier to code.')) ?>
+      <?php includeStats([
+          "isForNewBuilds" => true,
+          "comment" =>
+              "This solution is good if you want custom styling of the error messages",
+      ]); ?>
+      <?php includeStats([
+          "isNPM" => true,
+          "comment" =>
+              'The solution below involves using Enable\'s accessibility.js library to make it easier to code.',
+      ]); ?>
 
       <p>
         You can do the custom validation as well, but you have to ensure that
@@ -202,7 +214,7 @@
 
       
 
-      <?php includeShowcode("example2")?>
+      <?php includeShowcode("example2"); ?>
 
       <script type="application/json" id="example2-props">
       {
@@ -272,12 +284,8 @@
       </script>
 
       
-<?= includeNPMInstructions('accessibility', array(
-    ),
-    null,
-    false, 
-    array(
-      'needsAccessibilityLib' => true
-    )) ?>
+<?= includeNPMInstructions("accessibility", [], null, false, [
+    "needsAccessibilityLib" => true,
+]) ?>
 
     

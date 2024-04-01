@@ -22,7 +22,11 @@
 
 <h2>Traditional Skip Link</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'Please review our mobile friendly solution before you decide to choose this one.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "Please review our mobile friendly solution before you decide to choose this one.",
+]); ?>
 
 <p>This is an variation of a traditional skip link seen on many websites today. They appear only when keyboard focus is applied to them. Note that while it works well on desktop, <strong>it fails on mobile, due to screen readers not passing
     focus events to the mobile browser.</strong>  Screen reader users can focus into them, but partially sighted users may be initially confused when they cannot see what they are focusing into.</p>
@@ -258,7 +262,7 @@
   </div>
 </div>
 
-<?php includeShowcode("desktop-example")?>
+<?php includeShowcode("desktop-example"); ?>
 
 <script type="application/json" id="desktop-example-props">
 {
@@ -294,9 +298,15 @@
 
 <h2>Mobile Friendly Skip Links</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is suggested for both new and existing websites.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This solution is suggested for both new and existing websites.",
+]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>These skip links work on a different principle than the ones above. They use a little bit of JavaScript to
   work,
@@ -534,7 +544,7 @@
   </div>
 </div>
 
-<?php includeShowcode("mobile-example")?>
+<?php includeShowcode("mobile-example"); ?>
 
 <script type="application/json" id="mobile-example-props">
 {
@@ -605,4 +615,8 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-visible-on-focus', array(), 'enable-mobile-visible-on-focus') ?>
+<?= includeNPMInstructions(
+    "enable-visible-on-focus",
+    [],
+    "enable-mobile-visible-on-focus",
+) ?>

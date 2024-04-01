@@ -46,7 +46,7 @@
 
 
         <h2>An HTML Button.</h2>
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("example1")?>
+        <?php includeShowcode("example1"); ?>
 
         <script type="application/json" id="example1-props">
         {
@@ -87,9 +87,9 @@
 
 
         <h2>A link with the role of button</h2>
-        <?php includeStats(array(
-            'isForNewBuilds' => false
-        )) ?>
+        <?php includeStats([
+            "isForNewBuilds" => false,
+        ]); ?>
         <p>
             I can't tell you how many times I have seen buttons marked up as links on a project.
             When the project is an older one, and it would take a long time to refactor the existing
@@ -107,7 +107,7 @@
             </a>
         </div>
 
-        <?php includeShowcode("example3")?>
+        <?php includeShowcode("example3"); ?>
         <script type="application/json" id="example3-props">
         {
             "replaceHtmlRules": {},
@@ -141,9 +141,9 @@
         </script>
 
         <h2>A DIV with a role of button</h2>
-        <?php includeStats(array(
-            'doNot' => true
-        )) ?>
+        <?php includeStats([
+            "doNot" => true,
+        ]); ?>
         <p>
             There have been a few projects (usually, in my experience, in ones done in React and Angular for some
             reason) where I have seen
@@ -167,7 +167,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("example2")?>
+        <?php includeShowcode("example2"); ?>
 
         <script type="application/json" id="example2-props">
         {
