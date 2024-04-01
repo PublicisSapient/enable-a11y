@@ -1,11 +1,21 @@
 {
+    "phpVersion": "8.1",
+    "plugins": ["@prettier/plugin-php"],
     "tabWidth": 4,
+    "bracketSameLine": true,
+    "printWidth": 80,
+    "singleQuote": false,
     "overrides": [
         {
-            "files": "*.php",
+            "files": ["*.js"],
             "options": {
-                "parser": "php",
-                "plugins": ["@prettier/plugin-php"]
+                "singleQuote": true
+            }
+        },
+        {
+            "files": ["*.md", "package.json", "package-lock.json"],
+            "options": {
+                "tabWidth": 2
             }
         }
     ]
