@@ -16,7 +16,7 @@ describe('ARIA Switch Tests', () => {
    
 
   // Test #1
-  it('See if all ARIA switches on page are keyboard accessible', async () => {
+  it('Check if all ARIA switches on page are keyboard and screen reader accessible', async () => {
     let ariaChecked, domInfo;
 
     await page.goto(`${config.BASE_URL}/switch.php`);

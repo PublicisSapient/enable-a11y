@@ -14,25 +14,25 @@ describe('Styled Elements Tests', () => {
       // check the DOM to see if the visually hidden CSS generated content is there.    
     domInfo = await page.evaluate(() => {
       const markEls = document.querySelectorAll('#sr-only-text-example mark');
-      let hasMissingMarkContent = false;
+      let hasScreenReaderContent = true;
       
 
       for (let i=0; i<markEls.length; i++) {
         const firstElementChild = markEls[i].firstElementChild;
 
         if (!firstElementChild.classList.contains('sr-only')) {
-          hasMissingMarkContent = true;
+          hasScreenReaderContent = false;
         }
       }
 
       return {
         numMarkTests: markEls.length,
-        hasMissingMarkContent
+        hasScreenReaderContent
       };
     });
 
     expect(domInfo.numMarkTests).toBeGreaterThan(0);
-    expect(domInfo.hasMissingMarkContent).toBe(false);
+    expect(domInfo.hasScreenReaderContent).toBe(true);
   });
 
   it('Detect if there are sr-only content inside the highlighted text of the Enable code walkthroughs', async () => {
