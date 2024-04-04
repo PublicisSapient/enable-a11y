@@ -133,32 +133,19 @@ function includeStats($props)
     $npmLink =
         '(<a href="#npm-instructions">Module installation instructions</a>)';
 
-    if (!isset($comment)) {
-        if (isset($isForNewBuilds)) {
-            if ($isForNewBuilds == true) {
-                $comment =
-                    "This is the best solution to use, especially when building from scratch.";
-            } elseif ($isForNewBuilds == false) {
-                $comment =
-                    'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' .
-                    $walkthroughIndex .
-                    '">developer walkthrough</a> of this section to see we made our implementation accessible.';
-            }
-        } elseif (isset($doNot)) {
-            $comment =
-                'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
-        } elseif (isset($isNPM)) {
-            $comment =
-                "This solution described below is available as an NPM module. " .
-                $npmLink;
-        } elseif (isset($isStyle)) {
-            $comment =
-                "This is a great solution to make CSS styling easier for developers.";
-        }
-    } else {
-        if (isset($isNPM)) {
-            $comment = $comment . " " . $npmLink;
-        }
+  if (!isset($comment)) {
+    if (isset($isForNewBuilds)) {
+      if ($isForNewBuilds == true) {
+        $comment = 'This is the best solution to use, especially when building from scratch.';
+      } else if ($isForNewBuilds == false) {
+        $comment = 'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' . $walkthroughIndex . '">developer walkthrough</a> of this section to see how we made our implementation accessible.';
+      }
+    } else if (isSet($doNot)) {
+      $comment = 'This works, but <em>For the Love of God and All That is Holy, don\'t do this.</em>';
+    } else if (isSet($isNPM)) {
+      $comment = 'This solution described below is available as an NPM module. ' . $npmLink;
+    } else if (isSet($isStyle)) {
+      $comment = 'This is a great solution to make CSS styling easier for developers.';
     }
 
     includeFileWithVariables("includes/stats.php", [

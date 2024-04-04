@@ -341,6 +341,14 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
     ]
   }
   </script>
+<!--
+  <h3>Using GitHub Actions to Run the Tests in the CI/CD Pipeline<h3>
+
+  - in the github project, go to settings
+  - go to actions
+  - ensure "Allow all actions and reusable workflows " is checked
+  - follow documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Calmcode page: "github actions: prevent merge"</a>.
+--> 
 
 <p>
   If you want to do some further reading, we recommend <a

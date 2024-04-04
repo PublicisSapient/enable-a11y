@@ -228,7 +228,7 @@
       "notes": "This makes the fake links accessible."
     },
     {
-      "label": "Create Javascript events",
+      "label": "Create JavaScript events",
       "highlight": "%JS% ariaLinkShim",
       "notes": "This code will activate the links using mouse clicks or hitting the ENTER key"
     },

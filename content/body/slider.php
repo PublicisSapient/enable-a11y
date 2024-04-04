@@ -7,7 +7,7 @@
                     heavily modified
                     by the Enable project to be accessible, for both desktop and mobile users.</li>
                 <li>Since both of the method changing the native <code>&lt;input type="range"&gt;</code> slider values
-                    cannot be implemented via JS for both Voiceover and Talkback, an alternative UI was made using
+                    cannot be implemented via JavaScript for both Voiceover and Talkback, an alternative UI was made using
                     <a href="38-visible-on-focus.php">visible on focus</a> components. <strong>This alternative UI is
                         only visible when using a mobile screen reader.</strong>
                 </li>
@@ -96,7 +96,7 @@
   "steps": [{
       "label": "Use an input of type range",
       "highlight": "type=\"range\"",
-      "notes": "This can receive keyboard focus for free, since its a form element.  No JS required."
+      "notes": "This can receive keyboard focus for free, since its a form element.  No JavaScript required."
     },
     {
       "label": "Add the min, max, step, and default value of the slider",
@@ -148,7 +148,7 @@
 <p>
   Sometimes, the need comes up to have a slider with minimum and maximum values. Even though one single HTML5 range
   element
-  can't do this, it is possible to combine two of them, with a little bit of CSS and surprisingly tiny amount of JS, to
+  can't do this, it is possible to combine two of them, with a little bit of CSS and surprisingly tiny amount of JavaScript, to
   achieve
   this effect.
 </p>
@@ -348,7 +348,7 @@
     {
       "label": "Create an interpolation function",
       "highlight": "%FILE% js/modules/interpolate.js",
-      "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
+      "notes": "This code will make a regular JavaScript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
     },
     {
       "label": "Insert dynamic values into the template using the interpolation function.",
@@ -378,7 +378,7 @@
   "steps": [{
       "label": "Place ARIA slider roles in document",
       "highlight": "%INLINE% aria-example1 ||| role=\"slider\"",
-      "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\"0\"</strong> and some JS routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
+      "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\"0\"</strong> and some JavaScript routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
     },
     {
       "label": "Add the min, max and current values that the slider can be set to, as well as the current value",

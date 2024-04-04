@@ -489,7 +489,7 @@
     ]
   },
   "steps": [{
-    "label": "Create JS code to submit query when clicking the option elements.",
+    "label": "Create JavaScript code to submit query when clicking the option elements.",
     "highlight": "%INLINE% autocomplete-submit",
     "notes": "Note that custom event <code>combobox-change</code> that this event handler uses. This fires when an option is chosen from the list.  It takes the value chosen and puts it inside a Google Search URL, using URLSearchParams and a template string."
   }]
