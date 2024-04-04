@@ -180,7 +180,7 @@
       "notes": "This sets the CSS variable <strong>--prefers-reduced-motion</strong> to 1 if the user has asked the OS to reduce animations, and 0 otherwise."
     },
     {
-      "label": "Use JS to find out if it should show the animation ot not",
+      "label": "Use JavaScript to find out if it should show the animation or not",
       "highlight": "%FILE% js/modules/enable-animatedGif.js ~ this.respectReduceMotionSettings",
       "notes": "This function, if run at load time, will initially show the animation if the OS prefers-reduced-motion setting is not on."
     }

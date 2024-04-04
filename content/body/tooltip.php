@@ -37,7 +37,7 @@
       "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
     },
     {
-      "label": "Create javascript events for tooltip script",
+      "label": "Create JavaScript events for tooltip script",
       "highlight": "%JS% tooltip.create; tooltip.init",
       "notes": "When the page is loaded, create the tooltip DOM object and initialize the mouse and keyboard events that will display the tooltips. <strong>Note the role of tooltip being added to the tooltip DOM object</strong>."
     },

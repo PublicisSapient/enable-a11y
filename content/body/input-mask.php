@@ -277,14 +277,14 @@
     <h3>Keyboard UX</h3>
     <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would. Keyboard
         focus, when applied to the input field, is visible since the input field and the facade are the same size. When
-        the user types into the input field, javascript updates the facade with the same data, except it has format
+        the user types into the input field, JavaScript updates the facade with the same data, except it has format
         information. The user can even select text (via the usual SHIFT+arrow keys) and the equivalent text is selected
         in the input field underneath. Data can also be cut, copied and pasted from the input field, and the facade will
         be appropriately updated.</p>
 
     <h3>Mouse UX</h3>
     <p>For mouse users, when the click on what they think is the input field, they are actually clicking on the facade
-        stacked on top. Javascript figures out where in the input data they are clicking and ensure the cursor in the
+        stacked on top. JavaScript figures out where in the input data they are clicking and ensure the cursor in the
         input field stacked underneath is placed in the right area. Because all mouse events are basically passed on to
         the input field underneath, the user can select text with a mouse and the appropriate text is selected in the
         input field so that is updated correctly. </p>
