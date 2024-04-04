@@ -178,12 +178,12 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
   "steps": [{
       "label": "Create basic DOM for users without JavaScript",
       "highlight": "href ",
-      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
+      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the JavaScript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
     },
     {
       "label": "Ensure classes are set up so roles will be assigned for JavaScript users",
       "highlight": "%INLINE%originalHTMLExample1 ||| class=\"enable-tablist\" ||| class=\"enable-tab\" ||| class=\"enable-tabpanel\"",
-      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
+      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the JavaScript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
     },
     {
       "label": "Use data-owns to connect tabs with their tabpanel",
