@@ -1,5 +1,5 @@
 <script type="module">
-    import Switch from "./js/modules/Switch.js";
+    import Switch from "./js/modules/switch.js";
 
     Switch.init();
 </script>
