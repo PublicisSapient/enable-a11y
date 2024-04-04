@@ -23,7 +23,7 @@ const getNPMModules = function () {
               )
             )
           }
-        };
+        }
 
         $npmList.innerHTML = listItemsHTML.join('');
 

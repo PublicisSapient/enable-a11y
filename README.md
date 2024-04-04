@@ -18,13 +18,17 @@ A place to learn and share with developers what makes web work accessible. This 
     - [Download from browser](https://etc.usf.edu/techease/4all/web-accessibility/the-lynx-text-web-browser/)
     - Install using homebrew: `brew install lynx`
     - Install using MacPorts: `sudo port install lynx`
+    - Install on Ubuntu: `sudo apt install lynx`
 - PHP (version > 8.1)
   - Install options:
     - [Install from browser](https://www.php.net/downloads.php)
     - Install using homebrew: `brew install php`
     - Install using MacPorts: `sudo port install php`
+    - Install on Ubuntu: `sudo apt install php8.1`
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
+
+> Note: Any changes to these prerequisites will need to be reflected in the GitHub Actions in order to run the CI/CD checks.
 
 #### Optional installations (since `npm run server` will run an express server)
 
@@ -117,7 +121,7 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 
 ## Adding An External NPM Module To The Front-End Code
 
-If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JS library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
+If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JavaScript library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
 
 For example, when I added the `glider-js` library to Enable so I can use it in the Carousel demos, I added the files I needed for the front-end to `nodeFiles` with these two lines:
 

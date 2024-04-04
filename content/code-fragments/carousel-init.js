@@ -27,7 +27,7 @@ focusAllPanelsCarousel && focusAllPanelsCarousel.init();
 // First, run Enable Carousel constructor.  Note that
 // `domContainer` is the root DOM node that has the
 // `enable-carousel` class assigned to it.
-const focusArrowButtonsCarousel = new EnableCarousel(domContainer), {
+const focusArrowButtonsCarousel = new EnableCarousel(domContainer, {
     useArrowButtons: true,
 
     // Note that for browsers that don't support the `inert` propery,
