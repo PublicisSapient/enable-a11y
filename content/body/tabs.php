@@ -74,7 +74,7 @@
         </a>
       </li>
       <li>
-        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone">
+        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone"  aria-selected="true">
           2 Tone
         </a>
       </li>
