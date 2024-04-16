@@ -117,7 +117,7 @@ const tabgroup = new function() {
     if (tabgroupEl.getAttribute("role") !== "tablist") {
       console.info('Roles do not exist. Adding');
       const tabEls = tabgroupEl.querySelectorAll(".enable-tab");
-      const tabElSelectedOnInit = tabgroupEl.querySelector(".enable-tab[data-tab-selected");
+      const tabElSelectedOnInit = tabgroupEl.querySelector(".enable-tab[data-tab-selected-on-load");
       tabgroupEl.setAttribute("role", "tablist");
       tabEls.forEach((tabEl) => {
         this.addTabRole(tabEl);
