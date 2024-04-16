@@ -74,12 +74,12 @@
         </a>
       </li>
       <li>
-        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone"  aria-selected="true">
+        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone"  >
           2 Tone
         </a>
       </li>
       <li>
-        <a href="#heading__third-wave" class="enable-tab" data-owns="tabpanel__third-wave">
+        <a href="#heading__third-wave" class="enable-tab" data-owns="tabpanel__third-wave" data-tab-selected>
           Third Wave
         </a>
       </li>
