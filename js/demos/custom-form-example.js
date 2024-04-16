@@ -32,6 +32,9 @@ const formValidator = new(function() {
         phone_js: {
           required: true,
           phoneNumber: true
+        },
+        "example-date_js": {
+          required: true
         }
       },
       // Specify validation error messages
