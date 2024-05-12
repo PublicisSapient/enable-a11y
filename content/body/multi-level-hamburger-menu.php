@@ -8,7 +8,7 @@
             </p>
         </aside> -->
 <?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'If you are trying to fix an existing menu system, please go through the <a href="#enable-hamburger-menu__heading">the code walkthrough of how this was implemented</a>. ')) ?>
+<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'If you are trying to fix an existing menu system, please go through the <a href="#so-what-makes-this-accessible--heading">the code walkthrough of how this was implemented</a>. ')) ?>
 <?php includeStats(array('isNPM' => true)) ?>
 
 <p>
@@ -143,57 +143,50 @@
 <ol>
   <li>Follow the instructions below in order to <a href="#npm-instructions">learn how to download the hamburger menu
       library</a>.</li>
-  <li>You can either code the HTML for the menu by hand, but since the code can be rather redundant and repetitive, it
-    may be easier to use a JSON to structure your menu and have the library do it for you.</li>
+  <li>Use the following code walkthrough below to create your own menu navigation.</li>
 </ol>
 
-<h3 id="enable-hamburger-menu__heading" tabindex="-1">Coding HTML by Hand</h3>
-
-<p>If you wanted to code this menu's HTML by hand, you can use the following guide.  Just keep in mind that each level is basically a list of buttons and links.  The links will go to new pages; the buttons will open up a new section.</p>
-
-<?php includeShowcode("flyout__container", "", "", "", true, 0)?>
-<script type="application/json" id="flyout__container-props">
+<?php includeShowcode("website-banner", "", "", "", true, 0, "", true); ?>
+<script type="application/json" id="website-banner-props">
 {
     "replaceHtmlRules": {
+      "#non-hamburger-ctas": "<!-- HTML for skip link and logo link -->"
     },
     "steps": [
       {
-        "label": "Container Template: Create the room of the hamburger menu component",
-        "highlight": "\\${html:content}",
-        "notes": "Copy the all the HTML in this section and paste it in where your document should be. The <code>${html:content}</code> will be replaced in the next step."
+        "label": "Create a container where the flyout menu will be in the DOM",
+        "highlight": "%OPENCLOSECONTENTTAG%div id=\"enable-flyout-menu\"",
+        "notes": "It should be empty.  We will fill this container with HTML via JavaScript"
       },
       {
-        "label": "Submenu Template: Create the first submenu item for the menu",
-        "highlight": "%INNERHTML%flyout__submenu ||| \\${html:content}",
-        "notes": "Copy and paste the HTML in this section and paste it in where the <code>${html:content}</code> was in the previous step.  The <code>${html:content}</code> in this step will be replaced in the next step.  "
+        "label": "Create HTML Templates for all the sections of the flyout menu",
+        "highlight": "%OPENCLOSECONTENTTAG%template",
+        "notes": "Every component in the flyout menu should be represented by a template with a unique ID. We will use these IDs in a later step"
       },
       {
-        "label": "Link Template: For each link in the submenu in the previous step, use this HTML.",
-        "highlight": "%INNERHTML%flyout__link ||| %OPENCLOSECONTENTTAG%picture",
-        "notes": "Note that I put a picture here. This is not needed.  It was an aesthetic choice."
-      },
-      {
-        "label": "Submenu Button Template: For each button in the submenu created in Step #2, use this HTML.",
-        "highlight": "%INNERHTML%flyout__button ||| \\${[^}]*}",
+        "label": "Create the JSON structure of the Flyout Menu",
+        "highlight": "%OPENCLOSECONTENTTAG%script id=\"flyout-props\"",
         "notes": [
-          "Note the variables used below:",
-          "<ul>",
-          "  <li><code>${sectionName}</code> will contain the label for the button.</li>",
-          "  <li><code>${id}</code> will be a unique ID for the section.</li>",
-          "  <li><code>${html:content}</code> will be replaced by a list of links and buttons for this subsection.  Just go back to steps #3 and #4 to find the markup for these areas.</li>",
-          "</ul>"
+          "<p>This JSON contains a recursive list of what we will call \"content objects\".  These content objects will take the HTML templates in the previous steps and convert them to HTML. Each content object can have the following properties:<p>",
+          "<dl>",
+            "<dt>id:</dt>",
+            "<dd>The ID of the template of the HTML we want to insert here. <em>(required)</em></dd>",
+            "<dt>props:</dt>",
+            "<dd>A JS object that contains that values for the variables used in the template.</dd>",
+            "<dt>content:</dt>",
+            "<dd>A list of content objects that additional HTML.  The script will replace the <code>${html:content}</code> of the template and replace it with the HTML returned by the content objects.</dd>",
+          "</dl>"
         ]
+      },
+      {
+        "label": "Use JavaScript to convert the JSON Object above to HTML",
+        "highlight": "%JS% buildFlyoutMenuHTML ||| const buildFlyoutMenuHTML",
+        "notes": "The <code>Templify</code> library is used to do this part.  Instruction on loading it are in the installation notes at the bottom"
       }
     ]
 }
 </script>
 
-<h3>Using JavaScript (recommended)</h3>
-
-<p>
-  If you look at the four steps given above, they are basically HTML templates.  You could then take those HTML templates
-  and modify them to work with favourite HTML templating system (e.g. Handlebars, Moustache, React, etc).
-</p>
 
 
 <h2>So ... What Makes This Accessible</h2>
@@ -202,84 +195,76 @@
   Let's walk through the front-end code of the Hamburger Flyout Menu on the Enable site to show the code that makes this accessible.  
 </p>
 
-<?php includeShowcode("enable-hamburger-menu")?>
 
-<script type="application/json" id="enable-hamburger-menu-props">
+
+<?php includeShowcode("enable-flyout-menu", "", "", "", true, 0, "", true); ?>
+
+<script type="application/json" id="enable-flyout-menu-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Container Template: Use the nav HTML5 tag",
-      "highlight": "%INNERHTML%flyout__container ||| %OPENTAG%nav",
+      "highlight": "%OUTERHTML%flyout__container ||| %OPENTAG%nav",
       "notes": "This whole component should be wrapped up in a <code>nav</code> tag, since it is a navigation widget. Screen reader users can use tools like the Rotor (Voiceover) or The Elements List (NVDA) to jump to the main navigation no matter what item has focused on the page.  The ARIA label is useful to distinguish this bit of navigation with other pieces of navigation that may appear on the page."
     },
     {
       "label": "Container Template: Mark up the hamburger menu icon as expandable",
-      "highlight": "%INNERHTML%flyout__container ||| aria-expanded ||| aria-controls ",
+      "highlight": "%OUTERHTML%flyout__container ||| aria-expanded ||| aria-controls ",
       "notes": "This should be set to false when the hamburger menu is hidden, true when it is visible.  Note the aria-controls is pointing to the element that it is opening."
     },
     {
-      "label": "Container Template: Give the hamburger icon a role of image.",
-      "highlight": "%INNERHTML%flyout__container ||| role=\"img\"",
-      "notes": "Since we used <a href=\"https://codepen.io/designcouch/pen/Atyop\">the third CSS animation example in this Codepen</a> to create the hamburger icon, we want to ensure screen readers interpret this as an image by adding the role of image to it"
-    },
-    {
       "label": "Container Template: Set aria-label for hamburger menu icon",
-      "highlight": "%INNERHTML%flyout__container ||| aria-label=\"main[^m]*menu\"",
+      "highlight": "%OUTERHTML%flyout__container ||| aria-label=\"main[^m]*menu\"",
       "notes": "When focus is applied to this button, screen reader users will be told the button's label is \"main menu\"."
     },
     {
       "label": "Container Template: Set screen reader text close button icon",
-      "highlight": "%INNERHTML%flyout__container ||| %OPENCLOSECONTENTTAG%span sr-only",
+      "highlight": "%OUTERHTML%flyout__container ||| %OPENCLOSECONTENTTAG%span sr-only",
       "notes": "We use screen reader only text instead of an aria-label because buttons should not be empty."
     },
     {
       "label": "Container Template: Markup hamburger main panel",
-      "highlight": "%INNERHTML%flyout__container ||| class=\"enable-flyout__list[^\"]*\"",
+      "highlight": "%OUTERHTML%flyout__root ||| class=\"enable-flyout__list[^\"]*\"",
       "notes": "The first level in the hamburger flyout navigation is contained in this <code>&lt;ul&gt;</code> element.  This is so screen readers can announce how many nav items are in the top level."
     },
     {
       "label": "Submenu Button Template: Mark up the buttons that open up submenus as expandable",
-      "highlight": "%INNERHTML%flyout__button ||| aria-expanded=\"false\"",
+      "highlight": "%OUTERHTML%flyout__button ||| aria-expanded=\"false\"",
       "notes": "This should be set to false when the hamburger menu is hidden, true when it is visible.  Note the aria-controls is pointing to the element that it is opening."
     },
     {
       "label": "Submenu Button Template: Mark up the buttons that open up submenus as expandable",
-      "highlight": "%INNERHTML%flyout__button ||| aria-controls ||| id",
+      "highlight": "%OUTERHTML%flyout__button ||| aria-controls ||| id=\"[^\"]*\"",
       "notes": "The button that opens a panel should have an <code>aria-controls</code> set to the ID of that panel."
     },
     {
       "label": "Submenu Button Template: Mark up the panel as a group",
-      "highlight": "%INNERHTML%flyout__button ||| role=\"group\" ||| aria-label",
+      "highlight": "%OUTERHTML%flyout__button ||| role=\"group\" ||| aria-label",
       "notes": "When a screen reader tabs into the panel, it will read the aria-label as the groups label."
     },
     {
       "label": "Submenu Button Template: Mark up the menu subsection panels with aria-labels",
-      "highlight": "%INNERHTML%flyout__button ||| aria-label",
+      "highlight": "%OUTERHTML%flyout__button ||| aria-label",
       "notes": ""
     },
     {
       "label": "Submenu Button Template: Having close buttons at the beginning of each menu subsection",
-      "highlight": "%INNERHTML%flyout__button ||| \\s*&lt;button[^c]*class=\"enable-flyout__hamburger-icon-facade\"[^;]*;",
+      "highlight": "%OUTERHTML%flyout__button ||| \\s*&lt;button[^c]*class=\"enable-flyout__hamburger-icon-facade\"[\\s\\S]*?&lt;\/button&gt;",
       "notes": ""
     },
     {
       "label": "Submenu Button Template: Set aria-controls attributes",
-      "highlight":  "%INNERHTML%flyout__button ||| aria-controls ||| id ",
+      "highlight":  "%OUTERHTML%flyout__button ||| aria-controls ||| id=\"[^\"]*\"",
       "notes": "Any button that opens up a menu subsection should have an aria-controls pointing to the id of that subsection DOM element."
     },
     {
-      "label": "Submenu Button Template: Set image alt attributes (or make them decorative if applicable)",
-      "highlight": "%INNERHTML%flyout__button ||| alt |",
-      "notes": "The images in the desktop mega menu are decorative, so we set the attributes <code>alt=\"\"</code>.  If they actually gave extra information to sighted users, we would have to set the attribute to describe the image.  Since they are just screenshots of the components that are given in the link labels, we have decided to make them decorative."
-    },
-    {
       "label": "Submenu Button Template: Ensure focus stays within hamburger menu when the user clicks on the hamburger menu icon",
-      "highlight": "%JS% EnableFlyoutHamburger.onHamburgerIconClick ; EnableFlyoutHamburger.openFlyout; EnableFlyoutHamburger.openMenuAnimationEnd ||| [ ]*forEach[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, true\\)\\;  ||| requestAnimationFrame\\([^}]*\\}\\)\\;",
+      "highlight": "%JS% EnableFlyout.onHamburgerIconClick ; EnableFlyout.openFlyout; EnableFlyout.openMenuAnimationEnd ||| [ ]*forEach[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, true\\)\\;  ||| requestAnimationFrame\\([^}]*\\}\\)\\;",
       "notes": "Note that when the user click on the hamburger menu, we call <code>accessibility.setKeepFocusInside($container, true);</code>. This ensures keyboard focus (and mobile accessibility focus) stays inside the open menu, and not on the content outside of it.  We also make the button that opened it inaccessible to screen readers and keyboards, since focus will be applied to the close button, as seen in the openMenuAnimationEnd method at the bottom."
     },
     {
       "label": "JavaScript: Ensure focus restrictions are removed when hamburger menu is closed",
-      "highlight": "%JS% EnableFlyoutHamburger.closeAllFlyouts ; EnableFlyoutHamburger.openMenuAnimationEnd ||| [ ]*forEach\\.call\\(\\$mainMenuButton[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, false\\)\\; ||| \\$menuEl\\.focus\\(\\)\\;",
+      "highlight": "%JS% EnableFlyout.closeAllFlyouts ; EnableFlyout.openMenuAnimationEnd ||| [ ]*forEach\\.call\\(\\$mainMenuButton[^}]*\\}\\)\\; ||| this\\.openFlyout(\\(\\)\\;){0,1} ||| [ ]*accessibility\\.setKeepFocusInside\\(\\$container\\, false\\)\\; ||| \\$menuEl\\.focus\\(\\)\\;",
       "notes": "When the close button is clicked, all cancel the focus loop by calling <code>accessibility.setKeepFocusInside($container, false);</code>.  We also ensure that keyboard focus can be applied to the hamburger menu icon before we apply focus to it in the openMenuAnimationEnd method at the bottom."
     },
     {
@@ -289,7 +274,7 @@
     },
     {
       "label": "Container Template: Markup hamburger main menu panels",
-      "highlight": "class=\"enable-flyout__list[^\"]*\"",
+      "highlight": "%OUTERHTML%flyout__root ||| class=\"enable-flyout__list[^\"]*\"",
       "notes": "If you look at the code, you will notice that all the panels are marked up as unordered lists (using <strong>ul</strong> tags).  This is so screen readers can announce how many items are in the menu panel that is currently shown on-screen."
     }
   ]
@@ -297,4 +282,24 @@
 </script>
 
 
-<?= includeNPMInstructions('enable-hamburger', array(), 'enable-flyout') ?>
+<?= includeNPMInstructions(
+  'enable-flyout',
+  array('js/modules/templify.js'),
+  'enable-flyout',
+  false,
+  array(
+    'otherImports' => '<br />// import the library that converts JSON to HTML<br />import Templify from "~enable-a11y/js/modules/templify.js"<br />',
+    'otherSampleCode' => "<br />// This is the DOM element where the hamburger menu will be inserted into.<br />" .
+                         "const hamburgerMenuEl = document.getElementById('enable-flyout-menu');<br />".
+                         "<br />".
+                         "// This is where the structure of the hamburger menu is stored (in JSON format).<br />".
+                         "const hamburgerMenuJSONEl = document.getElementById('flyout-props');<br />".
+                         "const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);<br />".
+                         "<br />".
+                         "// Now, let's use Templify to convert the JSON into HTML.<br />".
+                         "const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);<br />".
+                         "<br />".
+                         "// Initialize the hamburger menu.<br />".
+                         "EnableFlyout.init();'"
+  )
+) ?>

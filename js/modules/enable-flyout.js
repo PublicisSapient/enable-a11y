@@ -13,6 +13,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
+import accessibility from "../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js"
 
 let EnableFlyout;
 
@@ -394,3 +395,4 @@ EnableFlyout = new function() {
 
 // EnableFlyout.init();
 
+export default EnableFlyout;
