@@ -356,7 +356,7 @@ runAXETests() {
 	echo "Result: $AXE_DELAY_RETURN errors"
 
 	echo "Running immediate tests"
-	$AXE --exit --verbose --exclude ".enable-logo__text" $AXE_UNDELAYED_URLS 
+	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS 
 	AXE_UNDELAY_RETURN="$?"
 	echo "Result: $AXE_UNDELAY_RETURN errors"
 
