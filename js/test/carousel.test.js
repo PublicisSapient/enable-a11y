@@ -312,7 +312,7 @@ describe('Carousel Tests', () => {
       // Now, let's press the space key and see if focus goes to the newly visible panel
       // Test to see if we tab into the "Next" button.
       await page.keyboard.press('Space');
-      await testHelpers.pauseFor(100);
+      await testHelpers.pauseFor(200);
 
 
       domInfo = await page.evaluate((i) => {
