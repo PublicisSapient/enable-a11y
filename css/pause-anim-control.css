@@ -51,6 +51,10 @@
     padding: 0 20px;
   }
 }
+.play-pause-anim__checkbox-container a {
+  color: #ccccff;
+  margin-right: 1.25rem;
+}
 .pause-anim-control__gif--animated,
 .pause-anim-control__gif--still {
   max-width: 100%;
