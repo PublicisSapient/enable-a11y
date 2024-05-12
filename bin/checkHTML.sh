@@ -355,6 +355,8 @@ runAXETests() {
 	AXE_DELAY_RETURN="$?"
 	echo "Result: $AXE_DELAY_RETURN errors"
 
+	# Note that the exception here is for the second carousel variation.  We don't care about the
+	# scrollabe area being focusable, because the scrollable UI is missing for all users.
 	echo "Running immediate tests"
 	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS 
 	AXE_UNDELAY_RETURN="$?"
