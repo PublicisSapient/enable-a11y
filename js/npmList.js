@@ -10,7 +10,6 @@ const getNPMModules = function () {
 
     result.then(response => response.json()).then(function (response) {
         const listItemsHTML = [];
-        console.log(response);
         for (let url in response) {
           const item = response[url];
           item.url = url;

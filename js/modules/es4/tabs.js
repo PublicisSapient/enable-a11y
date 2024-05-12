@@ -31,8 +31,6 @@ const tabgroup = new function() {
     this.addRoles(tabgroupEl);
     const tabElSelectedOnInit = tabgroupEl.querySelector('[role="tab"][aria-selected="true"]');
 
-    console.log('tab selected', tabElSelectedOnInit);
-
     if (keyboardOnlyInstructions) {
       const tabEls = tabgroupEl.querySelectorAll('[role="tab"]');
       tabEls.forEach((el) =>

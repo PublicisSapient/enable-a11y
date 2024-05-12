@@ -212,7 +212,7 @@
   <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
-    <div id="announcements-carousel" tabindex="0" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
+    <div id="announcements-carousel" tabindex="-1" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
       <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
