@@ -155,13 +155,15 @@ const enableSlider = function(
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
     const $incrementor = $handle.querySelector(".enable-slider__increase .enable-slider__button-label");
+    const $incButton = $handle.querySelector(".enable-slider__increase");
     const $decrementor = $handle.querySelector(".enable-slider__decrease .enable-slider__button-label");
+    const $decButton = $handle.querySelector(".enable-slider__decrease");
 
     // position handle
     this.positionHandle($handle, $handleButton, val);
 
     // bind handlers
-    this.bindHandlers($handle, $decrementor, $incrementor);
+    this.bindHandlers($handle, $decrementor, $incrementor, $incButton, $decButton);
 
     return $handle;
   }; // end createHandle()
@@ -374,13 +376,13 @@ const enableSlider = function(
    *
    * @param {object} $handle - the object pointer of the handle to bind handlers to
    */
-  this.bindHandlers = ($handle, $decrementor, $incrementor) => {
-
-    $decrementor.addEventListener("click", e => {
+  this.bindHandlers = ($handle, $decrementor, $incrementor, $incButton, $decButton) => {
+    console.log('bind', $decrementor);
+    $decButton.addEventListener("click", e => {
       return this.handleDecrementorClick($handle, e);
     });
 
-    $incrementor.addEventListener("click", e => {
+    $incButton.addEventListener("click", e => {
       return this.handleIncrementorClick($handle, e);
     });
 
@@ -680,6 +682,7 @@ const enableSlider = function(
    * @param { Event } evt - the click event object
    */
   this.handleDecrementorClick = function($handle, evt) {
+    console.log('affss');
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
     const newVal = $handleButton.getAttribute("aria-valuenow") - this.inc;

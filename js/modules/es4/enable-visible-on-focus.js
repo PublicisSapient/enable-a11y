@@ -75,7 +75,7 @@ const enableVisibleOnFocus = new (function () {
         skipLinkContainer.classList.add(
           "enable-mobile-visible-on-focus__container--visible"
         );
-        const link = skipLinkContainer.querySelector('a');
+        const link = skipLinkContainer.querySelector('a, button');
         const destinationLink = skipLinkContainer.querySelector(
           ".enable-mobile-visible-on-focus"
         );
@@ -114,7 +114,7 @@ const enableVisibleOnFocus = new (function () {
     const containers = document.querySelectorAll(containerSelector);
     for (let i = 0; i < containers.length; i++) {
       const container = containers[i];
-      const link = container.querySelector('a');
+      const link = container.querySelector('a, button');
       this.hide(container);
       link.dispatchEvent(
         hideEvent,
