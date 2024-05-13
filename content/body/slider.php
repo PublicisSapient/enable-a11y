@@ -491,7 +491,7 @@
           class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--decrease">
           <div id="${id}__decrease-label" class="${classNameRoot}__hidden-label">Decrease Value</div>
           <button aria-labelledby="${arialabelledby} ${id}_val ${id}__decrease-label"
-            class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button" >
+            class="enable-mobile-visible-on-focus ${classNameRoot}__decrease ${classNameRoot}__button" tabindex="-1">
             <span class="${classNameRoot}__button-label">‹</span>
           </button>
         </span>
@@ -499,7 +499,7 @@
           class="enable-mobile-visible-on-focus__container ${classNameRoot}__button-container ${classNameRoot}__button-container--increase">
           <div id="${id}__increase-label" class="${classNameRoot}__hidden-label">Increase Value</div>
           <button aria-labelledby="${arialabelledby} ${id}_val ${id}__increase-label"
-            class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button" >
+            class="enable-mobile-visible-on-focus ${classNameRoot}__increase ${classNameRoot}__button" tabindex="-1">
             <span class="${classNameRoot}__button-label">›</span>
           </button>
         </span>
