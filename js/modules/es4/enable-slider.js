@@ -377,7 +377,6 @@ const enableSlider = function(
    * @param {object} $handle - the object pointer of the handle to bind handlers to
    */
   this.bindHandlers = ($handle, $decrementor, $incrementor, $incButton, $decButton) => {
-    console.log('bind', $decrementor);
     $decButton.addEventListener("click", e => {
       return this.handleDecrementorClick($handle, e);
     });
@@ -682,7 +681,6 @@ const enableSlider = function(
    * @param { Event } evt - the click event object
    */
   this.handleDecrementorClick = function($handle, evt) {
-    console.log('affss');
     const $handleButton = $handle.querySelector('.enable-slider__handle-button');
 
     const newVal = $handleButton.getAttribute("aria-valuenow") - this.inc;
