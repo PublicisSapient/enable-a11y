@@ -21,6 +21,7 @@
   overflow: hidden;
   position: relative;
   border-radius: 2.125rem;
+  outline-offset: 2px;
   /* Checked */
 }
 [role="switch"] span,

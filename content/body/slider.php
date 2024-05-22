@@ -33,9 +33,9 @@
 </p>
 
 <ul>
-  <li>Under iOS/Voiceover: when the slider is focused, users must do a small swipe up and down to
+  <li>Under iOS/Voiceover and new Android/Talkback: when the slider is focused, users must do a small swipe up and down to
     increase and decrease the slider values.</li>
-  <li>Under Android/Talkback: when the slider is focused, users must use the device's
+  <li>Under old Android/Talkback: when the slider is focused, users must use the device's
     <strong>volume keys</strong> to manipulate the slider.
   </li>
 </ul>
@@ -158,7 +158,7 @@
   <form class="html-slider__multi--form" oninput="" autocomplete="off">
     <fieldset>
       <legend class="enable-slider__label">
-        Amount you are willing to bid on an Atari 2600
+        Price range you are willing to bid on an Atari 2600
       </legend>
       <div>
         <div role="group" class="html-slider__container html-slider__multi--container"

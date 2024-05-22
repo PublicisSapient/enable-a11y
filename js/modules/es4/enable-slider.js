@@ -376,7 +376,7 @@ const enableSlider = function(
    *
    * @param {object} $handle - the object pointer of the handle to bind handlers to
    */
-  this.bindHandlers = ($handle, $decrementor, $incrementor, $incButton, $decButton) => {
+  this.bindHandlers = ($handle, $decrementor, $incrementor, $incButton, $decButton) => {  
     $decButton.addEventListener("click", e => {
       return this.handleDecrementorClick($handle, e);
     });
