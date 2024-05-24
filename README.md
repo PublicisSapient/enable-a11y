@@ -103,7 +103,9 @@ npm install -D chromedriver --chromedriver_filepath=/path/to/chromedriver_mac64.
 
 If you still have problems with Chromedriver, you may want to read the Stack Overflow article [Session Not Created: This version of ChromeDriver only supports Chrome version 98](https://stackoverflow.com/questions/71859550/session-not-created-this-version-of-chromedriver-only-supports-chrome-version-9).
 
-## Style Notes
+## Development
+
+### Style Notes
 
 1. All font-sizes are converted to rems. This is done via LESS.  If you want a font-size of 20px, then you would do the following:
 
@@ -115,9 +117,9 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 
     The `@px` variable is set to 16rem, which is also the base font size
 
-2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read [Inclusively Hiding & Styling Checkboxes and Radio Buttons](https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/) by [Sara Soueidan](https://www.sarasoueidan.com). 
+2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read [Inclusively Hiding & Styling Checkboxes and Radio Buttons](https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/) by [Sara Soueidan](https://www.sarasoueidan.com).
 
-## Adding An External NPM Module To The Front-End Code
+### Adding An External NPM Module To The Front-End Code
 
 If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JavaScript library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
 
@@ -139,9 +141,13 @@ const nodeFiles = [
 
 When you start the project with `npm run server`, the files in the `nodeFiles` array will be placed in the `enable-node-libs` directory in the project root.  Use this directory to load the files in your scripts, css, or HTML files.
 
+### Pre-commit hook error - "npx: command  not found"
+
+If you encounter an error when trying to commit some code from within an IDE (like VS Code, IntelliJ, GitHub Desktop, etc.), and the error is about the `npx` command not being found, you should try running the command in the terminal instead. This issue is due to the PATH values not being set as expected in the IDE in order for npx to be recognized. See <https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found> for more information.
+
 ## References
 
 When testing using screen readers, these resources may be of help to you:
 
-* [Desktop Screen Readers Survival Guide - Basic Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/survival-guide)
-* [NVDA Users Guide](https://www.nvaccess.org/files/nvda/documentation/userGuide.html)
+- [Desktop Screen Readers Survival Guide - Basic Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/survival-guide)
+- [NVDA Users Guide](https://www.nvaccess.org/files/nvda/documentation/userGuide.html)
