@@ -26,9 +26,11 @@
 
 <h2>ARIA Tablist Example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   In order to make a tablist accessible, there are a few complications:
@@ -167,7 +169,7 @@
 const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 </script>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -228,11 +230,4 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 }
 </script>
 
-<?= includeNPMInstructions(
-  'tabs',
-  array(),
-  '',
-  false,
-  array(),
-  '.enable-tablist'
-) ?>
+<?= includeNPMInstructions("tabs", [], "", false, [], ".enable-tablist") ?>

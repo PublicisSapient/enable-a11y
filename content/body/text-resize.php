@@ -16,7 +16,11 @@
 
 <h2>Replace Pixels With Rems</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is easy to use for new and existing work if you are using a CSS pre-compiler like <a href="https://lesscss.org/">Less</a> or <a href="https://sass-lang.com/">Sass</a>.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'This is easy to use for new and existing work if you are using a CSS pre-compiler like <a href="https://lesscss.org/">Less</a> or <a href="https://sass-lang.com/">Sass</a>.',
+]); ?>
 
 <p>
   Developers should use relative units like rems for the majority of their text:
@@ -46,7 +50,7 @@
 
 </div>
 
-<?php includeShowcode("less-px-to-rem", "", "", "", false)?>
+<?php includeShowcode("less-px-to-rem", "", "", "", false); ?>
 <script type="application/json" id="less-px-to-rem-props">
 {
   "replaceHtmlRules": {},
@@ -112,7 +116,7 @@ body {
 
 <div id="unitless-line-height"></div>
 
-<?php includeShowcode("unitless-line-height", "", "", "", false)?>
+<?php includeShowcode("unitless-line-height", "", "", "", false); ?>
 <script type="application/json" id="unitless-line-height-props">
 {
   "replaceHtmlRules": {},
@@ -180,7 +184,7 @@ body {
     <div id="apple-css">
     </div>
 
-    <?php includeShowcode("apple-css", "", "", "", false)?>
+    <?php includeShowcode("apple-css", "", "", "", false); ?>
     <script type="application/json" id="apple-css-props">
     {
       "replaceHtmlRules": {},

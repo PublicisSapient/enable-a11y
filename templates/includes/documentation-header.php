@@ -10,7 +10,7 @@
       </div>
 
       <!-- Enable Logo (link to homepage) -->
-      <?php include("includes/logo-link.php"); ?>
+      <?php include "includes/logo-link.php"; ?>
     </div>
 
 

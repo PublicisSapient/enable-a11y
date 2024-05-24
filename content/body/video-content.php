@@ -1,4 +1,8 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This page discusses what is needed to make the content of the video accessible.  If you are looking for an accessible video player, you should check out <a href="video-player.php">the Enable Video Player</a> page.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'This page discusses what is needed to make the content of the video accessible.  If you are looking for an accessible video player, you should check out <a href="video-player.php">the Enable Video Player</a> page.',
+]); ?>
 
 
 <h2>What are Captions, Audio Descriptions and Transcripts (and Why Should I Care)?</h2>
@@ -48,7 +52,7 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
   What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
 
-  <?php include("includes/wcag-video-table.php") ?>
+  <?php include "includes/wcag-video-table.php"; ?>
 
 <p>
   To find one of the most cost-effective way of implementing all three, I would suggest looking into the <a href="video-player.php">Enable Video Player</a> page, which shows how do so using <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>.
@@ -105,7 +109,9 @@ rather a starting point for providing accessible captioning (and transcripts).
 
 <figure>
 
-  <?php pictureWebpPng("images/pages/video-player/youtube-captions-example", "A screenshot of the YouTube transcript component for the video linked above.  The text reads:
+  <?php pictureWebpPng(
+      "images/pages/video-player/youtube-captions-example",
+      "A screenshot of the YouTube transcript component for the video linked above.  The text reads:
 
 
 
@@ -132,7 +138,8 @@ The only hope.
 1:04
 The Turkish Exorcist.
 1:09
-(A very rough version of Tubular Bells from the movie's soundtrack plays in the background)")?>
+(A very rough version of Tubular Bells from the movie's soundtrack plays in the background)",
+  ); ?>
 
   <figcaption>Figure 1. A screenshot of the YouTube transcript of <a
       href="https://www.youtube.com/watch?v=dceIpnMw6CE">the trailer for The Turkish Exorcist</a>. Note that the
@@ -146,11 +153,14 @@ The Turkish Exorcist.
 </p>
 
 <figure>
-  <?php pictureWebpPng("images/pages/video-player/ableplayer-captions-example", "A screenshot of the AblePlayer transcript component for the Accessible Video Player example above.  The transcript reads:
+  <?php pictureWebpPng(
+      "images/pages/video-player/ableplayer-captions-example",
+      "A screenshot of the AblePlayer transcript component for the Accessible Video Player example above.  The transcript reads:
     
     (Scene is a title screen, which reads 'Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile. Zoltan Hawryluk - useragentman.com')
 In this video, I will be demonstrating how to create an accessible modal dialog using the HTML5 dialog tag. It uses a polyfill for browsers that don't support it yet natively. For details on the polyfill and more information on how this demo was built, please checkout the video's accompanying blog post on useragentman.com. 
-    "); ?>
+    ",
+  ); ?>
   <figcaption>
     Figure 2. A screenshot of the AblePlayer example transcript at the bottom of this page. To sighted users, the visual
     action in the video not covered by the closed captions appear in the red blocks inside the transcript.

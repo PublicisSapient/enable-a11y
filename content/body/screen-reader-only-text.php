@@ -57,7 +57,7 @@
   class="enable-example"
   hidden></div>
 
-<?php includeShowcode("sr-only-code", "", "", "", false)?>
+<?php includeShowcode("sr-only-code", "", "", "", false); ?>
 <script type="application/json"
   id="sr-only-code-props">
 {

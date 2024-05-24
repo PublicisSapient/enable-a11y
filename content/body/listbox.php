@@ -76,7 +76,7 @@
 
 <h2>HTML5 native select element example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Although native HTML5 select boxes were difficult to style in the past, <strong>it is possible to style the default
@@ -231,7 +231,7 @@
   </select>
 </div>
 
-<?php includeShowcode("html5-example")?>
+<?php includeShowcode("html5-example"); ?>
 
 <script type="application/json" id="html5-example-props">
 {
@@ -259,8 +259,10 @@
 
 <h2>ARIA listbox example</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   This listbox I made is accessible, and I have used in a few projects in the past. It works well, a developer can
@@ -387,7 +389,7 @@
 </p>
 
 
-<?php includeShowcode("aria-example")?>
+<?php includeShowcode("aria-example"); ?>
 
 <script type="application/json" id="aria-example-props">
 {
@@ -445,11 +447,11 @@
 </script>
 
 <?= includeNPMInstructions(
-  'enable-listbox',
-  array(),
-  'enable-listbox',
-  false,
-  array(),
-  null,
-  true
+    "enable-listbox",
+    [],
+    "enable-listbox",
+    false,
+    [],
+    null,
+    true,
 ) ?>

@@ -1,6 +1,12 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'If you are going to use this in a new webpage, please review our <a href="table.php#sticky-header-example">Sticky Table Header Example</a> and decide which solution is better for your use-case.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'If you are going to use this in a new webpage, please review our <a href="table.php#sticky-header-example">Sticky Table Header Example</a> and decide which solution is better for your use-case.',
+]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   If you have a lot of data in a table that you want to present the user in small, bite-sized chunks, you may want to
@@ -1772,7 +1778,7 @@
   </div>
 </div>
 
-<?php includeShowcode("paginated-table-example")?>
+<?php includeShowcode("paginated-table-example"); ?>
 
 <script type="application/json" id="paginated-table-example-props">
 {
@@ -1815,11 +1821,11 @@
 </script>
 
 <?= includeNPMInstructions(
-  'paginate',
-  array(),
-  'pagination',
-  false, 
-  array(),
-  '.pagination__table'
+    "paginate",
+    [],
+    "pagination",
+    false,
+    [],
+    ".pagination__table",
 ) ?>
 

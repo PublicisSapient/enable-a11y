@@ -40,7 +40,7 @@
 <div class="with-full-bleed-hero__content">
   <h1><?= $title ?></h1>
 
-  <?php includeStats(array('isForNewBuilds' => true)) ?>
+  <?php includeStats(["isForNewBuilds" => true]); ?>
   <p>
     Consider the text that is overlaying the image below. You will notice that
     clicking the "Animate Text" button moves the text along the path of the roller
@@ -86,7 +86,7 @@
     </figcaption>
   </figure>
 
-  <?php includeShowcode("accessible-text-svg-demo", "", "", "", true, 2)?>
+  <?php includeShowcode("accessible-text-svg-demo", "", "", "", true, 2); ?>
   <script type="application/json" id="accessible-text-svg-demo-props">
   {
     "replaceHtmlRules": {},

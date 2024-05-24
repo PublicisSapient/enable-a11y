@@ -6,7 +6,11 @@
 <h2>Focus Styling For Keyboard Users Only</h2>
 
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is recommended for use in both new and existing projects.  It ')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is recommended for use in both new and existing projects.  It ",
+]); ?>
 
 
 <p>
@@ -17,7 +21,7 @@
 <figure class="wide">
 
 
-  <?php includeShowcode("focus-remove", "", "", "", false)?>
+  <?php includeShowcode("focus-remove", "", "", "", false); ?>
 
   <figcaption>Figure 1. Horrible code a lot of developers use to turn off focus states. Never do this.</figcaption>
 
@@ -54,7 +58,7 @@
 </p>
 
 <figure class="wide">
-  <?php includeShowcode("css-focus-visible", "", "", "", false)?>
+  <?php includeShowcode("css-focus-visible", "", "", "", false); ?>
 
   <figcaption>Figure 2. Much better code that styles focus states for keyboard users, while minimizing its visibility
     for mouse users.</figcaption>
@@ -103,7 +107,10 @@
 
 <figure class="wide centered-image">
 
-  <?php pictureWebpPng("images/focus/clickable-hit-state", "Screenshot of the Enable website's main navigation, with keyboard focus applied to the 'controls' navigation drawer.")?>
+  <?php pictureWebpPng(
+      "images/focus/clickable-hit-state",
+      "Screenshot of the Enable website's main navigation, with keyboard focus applied to the 'controls' navigation drawer.",
+  ); ?>
 
   <figcaption>Figure 3. The focus state of the "Controls" navigation button. Note the large hit area.</figcaption>
 </figure>
@@ -113,7 +120,7 @@
   and compensating visually with an equivalent negative margin, so why just conform to 
   <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.5.8: Target Size (Minimum).</a> (which only asks 24 pixels x 24 pixels)?</p>
 
-<?php includeShowcode("css-focus-hitarea", "", "", "", false)?>
+<?php includeShowcode("css-focus-hitarea", "", "", "", false); ?>
 <script type="application/json" id="css-focus-hitarea-props">
 {
   "replaceHtmlRules": {},
@@ -141,7 +148,7 @@
 </p>
 
 <figure class="wide">
-  <?php includeShowcode("transition-all-code", "", "", "", false)?>
+  <?php includeShowcode("transition-all-code", "", "", "", false); ?>
 
   <figcaption>Figure 4. CSS <strong>transition: all</strong> code that should be avoided.</figcaption>
 </figure>
@@ -179,7 +186,7 @@
 </p>
 
 <figure class="wide">
-  <?php includeShowcode("fix-transition-all-code", "", "", "", false)?>
+  <?php includeShowcode("fix-transition-all-code", "", "", "", false); ?>
 
   <figcaption>Figure 5. Fix for Safari to work around <strong>transition: all</strong> code issue.</figcaption>
 </figure>
@@ -219,7 +226,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
 
 
 <figure class="wide">
-  <?php includeShowcode("transparent-outline-code", "", "", "", false)?>
+  <?php includeShowcode("transparent-outline-code", "", "", "", false); ?>
 
   <figcaption>Figure 6. Adding a transparent outline along with your custom focus state that doesn't have an outline
   </figcaption>
@@ -285,19 +292,31 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
       <tr>
         <th scope="row">No Element is Focused</th>
         <td>
-          <?php pictureWebpPng("images/focus/double-focus-ring__initial-state", "Two yellow blocky interactive elements on a gradient background. The gradient is starts on a light yellow on the left and ends with a darker red on the right.", ""); ?>
+          <?php pictureWebpPng(
+              "images/focus/double-focus-ring__initial-state",
+              "Two yellow blocky interactive elements on a gradient background. The gradient is starts on a light yellow on the left and ends with a darker red on the right.",
+              "",
+          ); ?>
         </td>
       </tr>
       <tr>
         <th scope="row">Focus on Lighter Area of Gradient</th>
         <td>
-          <?php pictureWebpPng("images/focus/double-focus-ring__light-bg", "The same interactive elements on the same gradient background.  The interactive element on the left is focused, and the blue focus outline around it is easily seen in contrast with the light background.", ""); ?>
+          <?php pictureWebpPng(
+              "images/focus/double-focus-ring__light-bg",
+              "The same interactive elements on the same gradient background.  The interactive element on the left is focused, and the blue focus outline around it is easily seen in contrast with the light background.",
+              "",
+          ); ?>
         </td>
       </tr>
       <tr>
         <th scope="row">Focus on Darker Area of Gradient</th>
         <td>
-          <?php pictureWebpPng("images/focus/double-focus-ring__darker-bg", "The same interactive elements on the same gradient background.  The interactive element on the right is now focused, and the white box shadow that appears outside the darker blue focus outline ensures the focus ring has enough contrast with the dark background.", ""); ?>
+          <?php pictureWebpPng(
+              "images/focus/double-focus-ring__darker-bg",
+              "The same interactive elements on the same gradient background.  The interactive element on the right is now focused, and the white box shadow that appears outside the darker blue focus outline ensures the focus ring has enough contrast with the dark background.",
+              "",
+          ); ?>
         </td>
 
       </tr>
@@ -309,7 +328,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
 
 <p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>
 
-<?php includeShowcode("double-focus-ring-example", "", "", "", false)?>
+<?php includeShowcode("double-focus-ring-example", "", "", "", false); ?>
 <script type="application/json" id="double-focus-ring-example-props">
 {
   "replaceHtmlRules": {

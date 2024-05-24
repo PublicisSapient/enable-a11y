@@ -84,8 +84,10 @@
 </p>
 
 <?php
-    $check = '<img class="compliance-table__icon" src="images/checkmark.svg" alt=""> Yes.';
-    $uncheck = '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
+$check =
+    '<img class="compliance-table__icon" src="images/checkmark.svg" alt=""> Yes.';
+$uncheck =
+    '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
 <table class="comparison-table">
     <caption>Comparison of input masking libraries</caption>
@@ -191,7 +193,7 @@
     </form>
 </div>
 
-<?php includeShowcode("input-mask-example")?>
+<?php includeShowcode("input-mask-example"); ?>
 <script type="application/json" id="input-mask-example-props">
 {
     "replaceHtmlRules": {},
@@ -374,7 +376,7 @@
     </form>
 </div>
 
-<?php includeShowcode("credit-card-example")?>
+<?php includeShowcode("credit-card-example"); ?>
 <script type="application/json" id="credit-card-example-props">
 {
     "replaceHtmlRules": {},
@@ -399,4 +401,4 @@
 }
 </script>
 
-<?= includeNPMInstructions('input-mask', array(''), '', false , array()) ?>
+<?= includeNPMInstructions("input-mask", [""], "", false, []) ?>
