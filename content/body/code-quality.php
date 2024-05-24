@@ -341,14 +341,42 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
     ]
   }
   </script>
-<!--
-  <h3>Using GitHub Actions to Run the Tests in the CI/CD Pipeline<h3>
 
-  - in the github project, go to settings
-  - go to actions
-  - ensure "Allow all actions and reusable workflows " is checked
-  - follow documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Calmcode page: "github actions: prevent merge"</a>.
---> 
+  <h2>Using GitHub Actions to Run the Tests in the CI/CD Pipeline</h2>
+
+  <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Github Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of Github actions on your project, the page describes writing a .yml file that contains the GitHub actions steps that you'd like to enforce.The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
+
+  <template id="github-actions-walkthrough" data-showcode-is-js="true">
+  <!--<?php include("../.github/workflows/push-actions.yml"); ?>-->
+  </template>
+
+  <?php includeShowcode("github-actions-walkthrough", "", "", "", false)?>
+  <script type="application/json" id="github-actions-walkthrough-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [{
+        "label": "Unit Testing configuration",
+        "highlight": "#\\sAn\\sautomated\\scheck\\sthat\\sruns\\sall\\sof\\sthe\\saccessibility\\sand\\sunit\\stests[\\s\\S]*npm\\srun\\stest",
+        "notes": ""
+      }
+    ]
+  }
+  </script>
+
+  <p>After you have set up your project with your own rules, do the last few steps to ensure your project is set up correctly:</p>
+
+  <ol> 
+    <li>In your github project, go to settings, located as the last item in the main navigation of your github project
+      (note that it may be under the ellipsis button named "Additional Navigation Items")
+      <br />
+      <img src="images/code-quality/github-actions-1.webp" alt="" /></li>
+    <li>Expand the "Actions" collapsable button in the menu of the left hand side of the settings page and click the "General" link.  Inside the Actions permissions radio group, choose the "Allow all actions and reusable workflows" radio button and save.<br />
+      <img src="images/code-quality/github-actions-2.webp" alt="" /></li>
+</ol>
+
+<p>Thanks to Alison Hall for her work in setting up Enable with Github Actions.</p>
+
+<h2>Further Reading</h2>
 
 <p>
   If you want to do some further reading, we recommend <a

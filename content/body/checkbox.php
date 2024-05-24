@@ -380,6 +380,12 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 
 <h2>How to Install the Hierarchical Checkbox library Into Your Projects</h2>
 
-<?= includeNPMInstructions('hierarchical-checkboxes', array(''), '', false , array(
-    'noCSS' => true
-)) ?>
+<?= includeNPMInstructions(
+    'hierarchical-checkboxes',
+    array(''),
+    '',
+    false,
+    array(
+        'noCSS' => true
+    )) 
+?>

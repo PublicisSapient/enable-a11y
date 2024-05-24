@@ -23,7 +23,7 @@ function includeFileWithVariables($fileName, $variables = array())
     include($fileName);
 }
 
-function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteractive = true, $headingLevel = 3, $prologue = '')
+function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteractive = true, $headingLevel = 3, $prologue = '', $displayOuterHTML = false)
 {
     includeFileWithVariables('includes/showcode-template.php', array(
         'id' => $id,
@@ -32,7 +32,8 @@ function includeShowcode($id, $cssId = "", $jsId = "", $extra = "", $isInteracti
         'extra' => $extra,
         'isInteractive' => $isInteractive,
         'headingLevel' => $headingLevel,
-        'prologue' => $prologue
+        'prologue' => $prologue,
+        'displayOuterHTML' => $displayOuterHTML
     ));
 }
 
@@ -85,8 +86,44 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
     return $str;
 }
 
-
-function includeNPMInstructions($moduleName, $supportingModuleNames = array('js/modules/accessibility.module.js'), $bemPrefix = null, $isPolyfill = false, $other = array(), $doesHaveAddMethod = null, $willWorkAfterPageLoad = false, $noInit = false) {
+/*
+ *  $moduleName:           (string) The name of JS module, without the .js suffix (e.g. 'enable-flyout')
+ *  $supportingModule:     (array) contains the paths to other Enable JS modules 
+ *                         (outside modules don't belong here)
+ *  $bemPrefix:            (string) The BEM prefix used for CSS classes in this library. For example
+ *                         the Enable Hamburger menu uses `enable-flyout` for it's CSS classes
+ *                         (enable-flyout__container, enable-flyout__secondary-navigation, etc)
+ *  $isPolyfill:           (boolean) Set to true or false, depending if this is a polyfill or not.  Right now,
+ *                         it is exclusively used for the HTML dialog polyfill
+ *  $other:                (array) contains other properties. Current ones are:
+ *                             - needsAccessibilityLib: (boolean) if we need accessibility.js
+ *                             - needsGlider: (boolean) if we need the Glider.js carousel library
+ *                             - needsAblePlayerLibs: (boolean) if we need the AblePlayer library
+ *                             - otherImports: (string) JS code used to import 3rd party libraries
+ *                             - noCSS: (boolean) true if the module doesn't have any CSS included in Enable
+ *                             - customInit: (string) relative path to an initialization JS file (e.g. 
+ *                               "../content/code-fragments/carousel-init.js")
+ *                             - es6Notes: Any special notes you may need for es6 projects.
+ *                             - otherSampleCode: What other same code is needed to make the component
+ *                               initialized.
+ *                            
+ *  $doesHaveAddMethod     (boolean) Set to true if there is a method for this module, like .add(),
+ *                         that is needed to initialize other instances of the component after page
+ *                         load.  This is needed for the Enable Tabs component.
+ *  $willWorkAfterPageLoad (boolean) Doesn't need an .add() method.  I think we should check to see 
+ *                         if we really need this.
+ *  $noInit                (boolean) True if this library doesn't have an .init() method. 
+ */
+function includeNPMInstructions(
+  $moduleName,
+  $supportingModuleNames = array('js/modules/accessibility.module.js'),
+  $bemPrefix = null,
+  $isPolyfill = false,
+  $other = array(),
+  $doesHaveAddMethod = null,
+  $willWorkAfterPageLoad = false,
+  $noInit = false
+) {
   includeFileWithVariables('includes/npm.php', array(
     'moduleName' => $moduleName,
     'moduleVar' => dashesToCamelCase($moduleName),

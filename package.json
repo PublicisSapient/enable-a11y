@@ -90,7 +90,7 @@
     "@prettier/plugin-php": "^0.22.2",
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
-    "chromedriver": "^122.0.3",
+    "chromedriver": "124.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",

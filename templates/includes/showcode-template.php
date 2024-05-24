@@ -1,5 +1,11 @@
         <?php
           global $walkthroughIndex;
+
+          if ($displayOuterHTML) {
+            $showcodeExampleAttribs = 'data-showcode-display-outerhtml="true"';
+          } else {
+            $showcodeExampleAttribs = '';
+          }
         ?>
 
         <div class="showcode__container">
@@ -60,6 +66,7 @@
                         data-showcode-props="<?= $id ?>-props"
                         tabindex="0"
                         aria-describedby="<?= $id ?>__example-desc"
+                        <?= $showcodeExampleAttribs ?>
                     >
                     </code>
                 </pre>
