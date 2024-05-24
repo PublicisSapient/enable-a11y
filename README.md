@@ -105,6 +105,10 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 
 ## Development
 
+### Contributing code
+
+If you would like to contribute to this project, please feel free to raise a Pull Request! See the documentation at [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for instructions.
+
 ### Style Notes
 
 1. All font-sizes are converted to rems. This is done via LESS.  If you want a font-size of 20px, then you would do the following:
@@ -144,6 +148,12 @@ When you start the project with `npm run server`, the files in the `nodeFiles` a
 ### Pre-commit hook error - "npx: command  not found"
 
 If you encounter an error when trying to commit some code from within an IDE (like VS Code, IntelliJ, GitHub Desktop, etc.), and the error is about the `npx` command not being found, you should try running the command in the terminal instead. This issue is due to the PATH values not being set as expected in the IDE in order for npx to be recognized. See <https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found> for more information.
+
+### Pull Request from fork not completing CI/CD tests
+
+If you are trying to contribute to the Enable site from a forked version of this repository, and the automatic tests in your Pull Request only ever show "Some checks haven't completed yet" and "Expected - Waiting for status to be reported" (see an example in the image below), then you may need to update the settings in your forked repository. The "Allow all actions and reusable workflows" option within the Actions section of the settings should be selected. Please go to the [Using GitHub Actions to Run the Tests in the CI/CD Pipeline](https://www.useragentman.com/enable/code-quality.php#using-github-actions-to-run-the-tests-in-the-ci-cd-pipeline--heading) section on this site for more details on how to find this option. After changing the setting, you will need to retrigger the actions by making another commit.
+
+![View of a GitHub PR with the "Some checks haven't completed yet" message](images/automated-tests-pending.png)
 
 ## References
 
