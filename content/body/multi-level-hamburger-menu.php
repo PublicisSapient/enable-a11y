@@ -7,9 +7,13 @@
                 also made the styles follow the BEM design pattern.
             </p>
         </aside> -->
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'If you are trying to fix an existing menu system, please go through the <a href="#so-what-makes-this-accessible--heading">the code walkthrough of how this was implemented</a>. ')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'If you are trying to fix an existing menu system, please go through the <a href="#so-what-makes-this-accessible--heading">the code walkthrough of how this was implemented</a>. ',
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   This is the component that the most development and testing time was spent on. On many sites I have done accessibility
@@ -45,7 +49,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-icon-screenshot", "Screenshot of the banner on the top of this page in the mobile breakpoint")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/hamburger-menu-icon-screenshot",
+      "Screenshot of the banner on the top of this page in the mobile breakpoint",
+  ); ?>
 
   <figcaption>Figure 1. The hamburger menu icon appears on the upper right hand side of the page. It is
     denoted by three horizontal lines that has become the standard.</figcaption>
@@ -61,7 +68,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/hamburger-menu-opened", "Screenshot of the hamburger menu when opened.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/hamburger-menu-opened",
+      "Screenshot of the hamburger menu when opened.",
+  ); ?>
 
   <figcaption>
     Figure 2. When the hamburger menu icon is clicked, the black menu above appears.
@@ -98,7 +108,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-onload", "Screenshot of the mega menu when the page is first loaded.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/mega-menu-onload",
+      "Screenshot of the mega menu when the page is first loaded.",
+  ); ?>
 
   <figcaption>
     Figure 3. The mega menu is a horizontal bar with the
@@ -118,7 +131,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hamburger-menu-copy/mega-menu-open", "Screenshot of the mega menu when one of the submenus opened.")?>
+  <?php pictureWebpPng(
+      "images/hamburger-menu-copy/mega-menu-open",
+      "Screenshot of the mega menu when one of the submenus opened.",
+  ); ?>
 
   <figcaption>
     Figure 3. When a submenu category is clicked with either,
@@ -283,23 +299,25 @@
 
 
 <?= includeNPMInstructions(
-  'enable-flyout',
-  array('js/modules/templify.js'),
-  'enable-flyout',
-  false,
-  array(
-    'otherImports' => '<br />// import the library that converts JSON to HTML<br />import Templify from "~enable-a11y/js/modules/templify.js"<br />',
-    'otherSampleCode' => "<br />// This is the DOM element where the hamburger menu will be inserted into.<br />" .
-                         "const hamburgerMenuEl = document.getElementById('enable-flyout-menu');<br />".
-                         "<br />".
-                         "// This is where the structure of the hamburger menu is stored (in JSON format).<br />".
-                         "const hamburgerMenuJSONEl = document.getElementById('flyout-props');<br />".
-                         "const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);<br />".
-                         "<br />".
-                         "// Now, let's use Templify to convert the JSON into HTML.<br />".
-                         "const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);<br />".
-                         "<br />".
-                         "// Initialize the hamburger menu.<br />".
-                         "EnableFlyout.init();'"
-  )
+    "enable-flyout",
+    ["js/modules/templify.js"],
+    "enable-flyout",
+    false,
+    [
+        "otherImports" =>
+            '<br />// import the library that converts JSON to HTML<br />import Templify from "~enable-a11y/js/modules/templify.js"<br />',
+        "otherSampleCode" =>
+            "<br />// This is the DOM element where the hamburger menu will be inserted into.<br />" .
+            "const hamburgerMenuEl = document.getElementById('enable-flyout-menu');<br />" .
+            "<br />" .
+            "// This is where the structure of the hamburger menu is stored (in JSON format).<br />" .
+            "const hamburgerMenuJSONEl = document.getElementById('flyout-props');<br />" .
+            "const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);<br />" .
+            "<br />" .
+            "// Now, let's use Templify to convert the JSON into HTML.<br />" .
+            "const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);<br />" .
+            "<br />" .
+            "// Initialize the hamburger menu.<br />" .
+            "EnableFlyout.init();'",
+    ],
 ) ?>

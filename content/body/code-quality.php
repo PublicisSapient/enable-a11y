@@ -113,7 +113,7 @@
 </p>
 
 <figure class="wide">
-  <?php includeShowcode("npm-info", "", "", "", false)?>
+  <?php includeShowcode("npm-info", "", "", "", false); ?>
 
   <figcaption>Figure 1. NPM commands to install in order to use ES6 Modules in Jest.</figcaption>
 </figure>
@@ -129,7 +129,7 @@
 </p>
 
 <figure class="wide">
-  <?php includeShowcode("babelrc-info", "", "", "", false)?>
+  <?php includeShowcode("babelrc-info", "", "", "", false); ?>
 
   <figcaption>Figure 2. What to put in .babelrc in order for Jest to transform the ES6 modules with babel.</figcaption>
 </figure>
@@ -154,11 +154,11 @@
 
   <template id="test-code-walkthrough" data-showcode-is-js="true">
     <!--
-<?php include("../js/test/exposing-style-info-to-screen-readers.test.js"); ?>
+<?php include "../js/test/exposing-style-info-to-screen-readers.test.js"; ?>
 -->
   </template>
 
-  <?php includeShowcode("test-code-walkthrough", "", "", "", true, 4)?>
+  <?php includeShowcode("test-code-walkthrough", "", "", "", true, 4); ?>
   <script type="application/json" id="test-code-walkthrough-props">
   {
     "replaceHtmlRules": {},
@@ -207,11 +207,11 @@
 
 <template id="switch-test-code-walkthrough" data-showcode-is-js="true">
     <!--
-<?php include("../js/test/switch.test.js"); ?>
+<?php include "../js/test/switch.test.js"; ?>
 -->
   </template>
 
-  <?php includeShowcode("switch-test-code-walkthrough", "", "", "", true, 4)?>
+  <?php includeShowcode("switch-test-code-walkthrough", "", "", "", true, 4); ?>
   <script type="application/json" id="switch-test-code-walkthrough-props">
   {
     "replaceHtmlRules": {},
@@ -265,11 +265,11 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
 
   <template id="test-code-walkthrough2" data-showcode-is-js="true">
     <!--
-<?php include("../js/test/visibleFocusStates.test.js"); ?>
+<?php include "../js/test/visibleFocusStates.test.js"; ?>
 -->
   </template>
 
-  <?php includeShowcode("test-code-walkthrough2", "", "", "", true, 4)?>
+  <?php includeShowcode("test-code-walkthrough2", "", "", "", true, 4); ?>
   <script type="application/json" id="test-code-walkthrough2-props">
   {
     "replaceHtmlRules": {},
@@ -347,10 +347,10 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
   <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Github Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of Github actions on your project, the page describes writing a .yml file that contains the GitHub actions steps that you'd like to enforce.The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
 
   <template id="github-actions-walkthrough" data-showcode-is-js="true">
-  <!--<?php include("../.github/workflows/push-actions.yml"); ?>-->
+  <!--<?php include "../.github/workflows/push-actions.yml"; ?>-->
   </template>
 
-  <?php includeShowcode("github-actions-walkthrough", "", "", "", false)?>
+  <?php includeShowcode("github-actions-walkthrough", "", "", "", false); ?>
   <script type="application/json" id="github-actions-walkthrough-props">
   {
     "replaceHtmlRules": {},

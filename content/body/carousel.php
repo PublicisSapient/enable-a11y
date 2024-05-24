@@ -30,9 +30,15 @@
 
 <h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarantee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This solution is the best solution when you can guarantee there will be one interactive/keyboard focusable element in every carousel panel.",
+]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>
@@ -128,7 +134,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -193,9 +199,13 @@
 
 <h2>Solution 2: Treat The Carousel Like A List of Content</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.',
+]); ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>
@@ -265,7 +275,7 @@
 
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -296,18 +306,11 @@
 </script>
 
 
-<?= includeNPMInstructions(
-    'enable-carousel', 
-    array(
-    ),
-    'enable-carousel',
-    false, 
-    array(
-      "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
-      "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
-
-      "needsGlider" => true,
-      "customInit" => "../content/code-fragments/carousel-init.js"
-    )
-  ) 
-?>
+<?= includeNPMInstructions("enable-carousel", [], "enable-carousel", false, [
+    "es6Notes" =>
+        "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
+    "otherSampleCode" =>
+        "// Note that this component doesn't currently work when<br />// new components are added after page load.",
+    "needsGlider" => true,
+    "customInit" => "../content/code-fragments/carousel-init.js",
+]) ?>

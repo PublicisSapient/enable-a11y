@@ -1,9 +1,10 @@
 <title><?php
 global $fileProps;
 
-if ($fileProps->title != '') {
-  printf("%s - The Enable Project", $fileProps->title);
-} ?></title>
+if ($fileProps->title != "") {
+    printf("%s - The Enable Project", $fileProps->title);
+}
+?></title>
 
 <meta property="og:title" content="<?= $fileProps->title ?>" />
 <meta property="og:description" content="<?= $fileProps->desc ?>" />

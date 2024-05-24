@@ -1,104 +1,102 @@
 @import "shared/mixins-and-vars";
 @import "form";
 
-.annotate{
-	font-style: italic;
-	color: #366ED4;
+.annotate {
+    font-style: italic;
+    color: #366ed4;
 }
 
 .enable-example fieldset {
-	margin-top: -0.5em;
+    margin-top: -0.5em;
 }
 
 .enable-listbox {
-	padding: 20px;
-	background: #eee;
-	border: 1px solid #aaa;
+    padding: 20px;
+    background: #eee;
+    border: 1px solid #aaa;
 
-	&__left-area,
-	&__right-area {
-		box-sizing: border-box;
-		display: inline-block;
-		font-size: 14px;
-		vertical-align: top;
-		width: 50%;
-	}
+    &__left-area,
+    &__right-area {
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 14px;
+        vertical-align: top;
+        width: 50%;
+    }
 
-	&__left-area {
-		padding-right: 10px;
-	}
+    &__left-area {
+        padding-right: 10px;
+    }
 
-	&__right-area {
-		padding-left: 10px;
-	}
+    &__right-area {
+        padding-left: 10px;
+    }
 
-	[role="listbox"] {
-		min-height: 18em;
-		padding: 0px;
-		background: white;
-		border: 1px solid #aaa;
-		border-top: 0;
-		max-height: 10em;
-		overflow-y: auto;
-		position: absolute;
-		margin: 0;
-		min-width: (148/@px);
-		z-index: 2;
-	}
+    [role="listbox"] {
+        min-height: 18em;
+        padding: 0px;
+        background: white;
+        border: 1px solid #aaa;
+        border-top: 0;
+        max-height: 10em;
+        overflow-y: auto;
+        position: absolute;
+        margin: 0;
+        min-width: (148 / @px);
+        z-index: 2;
+    }
 
-	[role="option"] {
-		display: block;
-		padding: 0 1em;
-		position: relative;
-		line-height: 1.8em;
-	}
+    [role="option"] {
+        display: block;
+        padding: 0 1em;
+        position: relative;
+        line-height: 1.8em;
+    }
 
-	[role="option"]:focus {
-		background: #bde4ff;
-	}
+    [role="option"]:focus {
+        background: #bde4ff;
+    }
 
-	[role="option"][aria-selected] {
-		padding-left: 1.5em;
-	}
+    [role="option"][aria-selected] {
+        padding-left: 1.5em;
+    }
 
-	[role="option"][aria-selected="true"]::before {
-		.content-with-alt-text("✓"; ""); 
-		position: absolute;
-		left: 0.5em;
-	}
+    [role="option"][aria-selected="true"]::before {
+        .content-with-alt-text("✓"; "");
+        position: absolute;
+        left: 0.5em;
+    }
 
-	button {
-		font-size: 16px;
-		border-radius: 0;
-		font-size: 16px;
-		text-align: left;
-		padding: 5px 10px;
-		width: (150/@px);
-		position: relative;
-		
-		&[aria-disabled="true"] {
-			opacity: 0.5;
-		}
+    button {
+        font-size: 16px;
+        border-radius: 0;
+        font-size: 16px;
+        text-align: left;
+        padding: 5px 10px;
+        width: (150 / @px);
+        position: relative;
 
+        &[aria-disabled="true"] {
+            opacity: 0.5;
+        }
 
-		&::after {
-			content: url('data:image/svg+xml;utf8,<svg width="15.277" height="10" viewBox="0 0 4.042 2.646" xmlns="http://www.w3.org/2000/svg"><path d="M5.41 1.007a.151.151 0 0 0-.135-.085h-3.74a.151.151 0 0 0-.118.245l1.87 2.344a.15.15 0 0 0 .235 0l1.87-2.344a.15.15 0 0 0 .019-.16z" style="stroke-width:.0138559;" transform="translate(-1.384 -.922)"/></svg>');
-			color: #333;
-			position: absolute;
-			right: (5/@px);
-			top: (3/@px);
-			font-size: (16/@px);
-			transform: scale(0.7);
-		}
+        &::after {
+            content: url('data:image/svg+xml;utf8,<svg width="15.277" height="10" viewBox="0 0 4.042 2.646" xmlns="http://www.w3.org/2000/svg"><path d="M5.41 1.007a.151.151 0 0 0-.135-.085h-3.74a.151.151 0 0 0-.118.245l1.87 2.344a.15.15 0 0 0 .235 0l1.87-2.344a.15.15 0 0 0 .019-.16z" style="stroke-width:.0138559;" transform="translate(-1.384 -.922)"/></svg>');
+            color: #333;
+            position: absolute;
+            right: (5 / @px);
+            top: (3 / @px);
+            font-size: (16 / @px);
+            transform: scale(0.7);
+        }
 
-		&[aria-expanded="true"]::after {
-			transform: scaleX(0.7) scaleY(-0.7);
-			top: (5/@px);
-		}
+        &[aria-expanded="true"]::after {
+            transform: scaleX(0.7) scaleY(-0.7);
+            top: (5 / @px);
+        }
+    }
 
-	}
-
-	.hidden {
-		display: none;
-	}
+    .hidden {
+        display: none;
+    }
 }

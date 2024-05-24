@@ -1,7 +1,14 @@
 <!-- File WIP -->
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'You may want to read inform')) ?>
-<?php includeStats(array('isNPM' => true, 'comment' => 'There are NPM modules for both the <a href="sortable-table.php#npm-instructions">Sortable Table</a> and the <a href="pagination-table.php#npm-instructions">Pagination Table</a> Enable Scripts used in this demo.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" => "You may want to read inform",
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        'There are NPM modules for both the <a href="sortable-table.php#npm-instructions">Sortable Table</a> and the <a href="pagination-table.php#npm-instructions">Pagination Table</a> Enable Scripts used in this demo.',
+]); ?>
 
 
 

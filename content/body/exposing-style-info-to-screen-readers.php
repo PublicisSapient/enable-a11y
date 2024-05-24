@@ -39,7 +39,11 @@
 
 <h2>Solution: Use Visually Hidden Text</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best way to implement style information to screen readers.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is the best way to implement style information to screen readers.",
+]); ?>
 
 <p>
   The most bulletproof way to fix this today that I know of is using visually hidden text to ensure that screen readers know it is old information. <strong>Notice that I am not using <code>del</code>
@@ -76,7 +80,7 @@
 <p>Let's walk through how we ensure this stricken text is read correctly by screen readers and other assistive
   technologies.</p>
 
-<?php includeShowcode("sr-only-text-example")?>
+<?php includeShowcode("sr-only-text-example"); ?>
 <script type="application/json" id="sr-only-text-example-props">
 {
   "replaceHtmlRules": {},
@@ -112,7 +116,7 @@
   </code></pre>
 </div>
 
-<?php includeShowcode("highlight-example", "", "", "", true, 2)?>
+<?php includeShowcode("highlight-example", "", "", "", true, 2); ?>
 <script type="application/json" id="highlight-example-props">
 {
   "replaceHtmlRules": {},

@@ -11,150 +11,141 @@
 @checkbox-height: (40 / @px);
 
 .showcode_ui {
-  top: @checkbox-height;
+    top: @checkbox-height;
 
-  @media @tablet-up {
-    top: 0;
-  }
+    @media @tablet-up {
+        top: 0;
+    }
 }
 
 #enable-pause-control {
-  position: sticky;
-  top: 0;
-  z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 
-  @media @desktop {
-    position: static;
-    top: auto;
-    z-index: inherit;
+    @media @desktop {
+        position: static;
+        top: auto;
+        z-index: inherit;
 
-    .offscreen-observer__is-header-offscreen & .play-pause-anim__checkbox-container {
-       top: 0;
-       left: 0;
-       right: initial;
-       width: 100%;
-       border: none;
-       border-radius: 0;
+        .offscreen-observer__is-header-offscreen
+            &
+            .play-pause-anim__checkbox-container {
+            top: 0;
+            left: 0;
+            right: initial;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+        }
     }
-  }
 }
 
 #svg-smil-demo svg,
 #html5-video-example video {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 #anim-gif-demo .pause-anim-control__gif {
-  text-align: center;
+    text-align: center;
 }
 
 .play-pause-anim {
-  .offscreen-observer__is-header-offscreen & {
-    position: fixed;
-    top: (0/@px);
-  }
-
-  main:not(.with-full-bleed-hero) & {
-    margin: (-16/@px) (-16/@px) (10/@px) (-16/@px);
-  }
-
-
-  @media @desktop {
-
-
     .offscreen-observer__is-header-offscreen & {
-      top: (10/@px);
+        position: fixed;
+        top: (0 / @px);
     }
 
     main:not(.with-full-bleed-hero) & {
-      margin: 0;
-    }
-  }
-
-
-
-
-  &__full-bleed-image-demo {
-    position: relative;
-
-
-    &--image {
-      background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
-      background-size: 100vw auto;
-      background-position: 0px 0px;
-      background-repeat: repeat-x;
-      background-size: auto;
-      animation: animatedBackground 60s linear infinite;
-      width: 100vw;
+        margin: (-16 / @px) (-16 / @px) (10 / @px) (-16 / @px);
     }
 
-    &--copy {
-      @rightMargin: 80px;
-      position: absolute;
-      top: 3vw;
-      right: @rightMargin;
-      max-width: initial;
-      width: calc(50% - @rightMargin * 2);
-      transform: none;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 10px;
-      text-align: center;
-      color: white;
-
-      .text-zoom & {
-        position: static;
-        width: 100%;
-        background: #000;
-      }
-
-
-      h2 {
-        border-bottom: none;
-        font-size: (60/@px);
-      };
-
-      p {
-        font-size: (30/@px);
-      }
-
-      strong {
-        color: white;
-      }
-
-
-
-      @media @mobile-and-tablet {
-        position: static;
-        width: 100%;
-        background: #000;
-
-        h2 {
-          font-size: (24/@px);
-          display: inline;
+    @media @desktop {
+        .offscreen-observer__is-header-offscreen & {
+            top: (10 / @px);
         }
 
-        p {
-          font-size: (24/@px);
-          display: inline;
+        main:not(.with-full-bleed-hero) & {
+            margin: 0;
         }
-      }
     }
-  }
 
+    &__full-bleed-image-demo {
+        position: relative;
+
+        &--image {
+            background-image: url(https://www.useragentman.com/tests/html5ImageConverter/examples/saturn-alpha/space.jpg);
+            background-size: 100vw auto;
+            background-position: 0px 0px;
+            background-repeat: repeat-x;
+            background-size: auto;
+            animation: animatedBackground 60s linear infinite;
+            width: 100vw;
+        }
+
+        &--copy {
+            @rightMargin: 80px;
+            position: absolute;
+            top: 3vw;
+            right: @rightMargin;
+            max-width: initial;
+            width: calc(50% - @rightMargin * 2);
+            transform: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            text-align: center;
+            color: white;
+
+            .text-zoom & {
+                position: static;
+                width: 100%;
+                background: #000;
+            }
+
+            h2 {
+                border-bottom: none;
+                font-size: (60 / @px);
+            }
+
+            p {
+                font-size: (30 / @px);
+            }
+
+            strong {
+                color: white;
+            }
+
+            @media @mobile-and-tablet {
+                position: static;
+                width: 100%;
+                background: #000;
+
+                h2 {
+                    font-size: (24 / @px);
+                    display: inline;
+                }
+
+                p {
+                    font-size: (24 / @px);
+                    display: inline;
+                }
+            }
+        }
+    }
 }
 
 main {
-  min-height: 54vw;
+    min-height: 54vw;
 }
 
 @keyframes animatedBackground {
-  from {
-    background-position: 0 0;
-  }
+    from {
+        background-position: 0 0;
+    }
 
-  to {
-    background-position: -1920px 0;
-  }
+    to {
+        background-position: -1920px 0;
+    }
 }

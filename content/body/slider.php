@@ -24,7 +24,7 @@
 
 <h2>A Dead-Simple HTML5 Slider</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   <strong>This is by the preferred method of implementing a slider.</strong>
@@ -61,7 +61,14 @@
 
 
 
-<?php includeShowcode("html-example", "", "", "", true, 3, '
+<?php includeShowcode(
+    "html-example",
+    "",
+    "",
+    "",
+    true,
+    3,
+    '
             
             <p>
                 Although we give basic information cover how to style HTML5 Sliders, we do gloss over some minor 
@@ -81,7 +88,8 @@
                     Microsoft Edge now relies on the same rendering engine Google Chrome uses). Recommended if you are
                     trying to work out the cross-browser quirks between the two implementations.</li>
             </ul>
-        ')?>
+        ',
+); ?>
 <script type="application/json" id="html-example-props">
 {
   "replaceHtmlRules": {},
@@ -135,7 +143,7 @@
 
 <h2>An HTML5 Slider With Min and Max Values</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Sometimes, the need comes up to have a slider with minimum and maximum values. Even though one single HTML5 range
@@ -189,7 +197,7 @@
 
 
 
-<?php includeShowcode("html-multi-example")?>
+<?php includeShowcode("html-multi-example"); ?>
 <script type="application/json" id="html-multi-example-props">
 {
   "replaceHtmlRules": {},
@@ -281,8 +289,16 @@
 
 <h2>ARIA Sliders</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'I wouldn\'t use this solution in production. The HTML5 range input is a much better solution.')) ?>
-<?php includeStats(array('isNPM' => true, 'comment' => 'Despite this, I have implemented it as an NPM module in case it is useful for anyone.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        'I wouldn\'t use this solution in production. The HTML5 range input is a much better solution.',
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        "Despite this, I have implemented it as an NPM module in case it is useful for anyone.",
+]); ?>
 
 <p>
   This NPM module is easily the one that took the longest to do.
@@ -320,7 +336,7 @@
   JavaScript library will use to create the DOM elements:
 </p>
 
-<?php includeShowcode("template-code")?>
+<?php includeShowcode("template-code"); ?>
 <script type="application/json" id="template-code-props">
 {
   "replaceHtmlRules": {},
@@ -355,7 +371,7 @@
 
 
 
-<?php includeShowcode("aria-example1")?>
+<?php includeShowcode("aria-example1"); ?>
 <script type="application/json" id="aria-example1-props">
 {
   "replaceHtmlRules": {},
@@ -423,7 +439,7 @@
 
 
 
-<?php includeShowcode("aria-example2")?>
+<?php includeShowcode("aria-example2"); ?>
 <script type="application/json" id="aria-example2-props">
 {
   "replaceHtmlRules": {},
@@ -511,4 +527,8 @@
   </template>
 </div>
 
-<?= includeNPMInstructions('enable-slider', array('js/modules/interpolate.js'), 'enable-slider') ?>
+<?= includeNPMInstructions(
+    "enable-slider",
+    ["js/modules/interpolate.js"],
+    "enable-slider",
+) ?>

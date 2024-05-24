@@ -10,9 +10,11 @@
 
 <h2>HTML5 Modal Dialog</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   This example uses the HTML5 <code>&lt;dialog&gt;</code> tag. For
@@ -72,7 +74,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1", "", "", "", true, 2)?>
+<?php includeShowcode("example1", "", "", "", true, 2); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -137,6 +139,6 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-dialog', array(), '', true, array(
-  'needsAccessibilityLib' => true
-)) ?>
+<?= includeNPMInstructions("enable-dialog", [], "", true, [
+    "needsAccessibilityLib" => true,
+]) ?>

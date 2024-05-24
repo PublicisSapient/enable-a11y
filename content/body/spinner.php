@@ -53,7 +53,11 @@
 
 <h2>HTML input type="number" example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.",
+]); ?>
 
 <div id="html-example" class="enable-example">
   <form>
@@ -64,7 +68,7 @@
 </div>
 
 
-<?php includeShowcode("html-example")?>
+<?php includeShowcode("html-example"); ?>
 <script type="application/json" id="html-example-props">
 {
   "replaceHtmlRules": {},
@@ -110,7 +114,7 @@
   <input id="non-quantity" type="text" inputmode="numeric" pattern="[0-9]*">
 </div>
 
-<?php includeShowcode("non-quantity-example")?>
+<?php includeShowcode("non-quantity-example"); ?>
 <script type="application/json" id="non-quantity-example-props">
 {
   "replaceHtmlRules": {},
@@ -137,8 +141,14 @@
 
 <h2>ARIA example</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may really want to question some of your other life choices)')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may really want to question some of your other life choices)',
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   The ARIA spinner examples were originally in the article
@@ -180,7 +190,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -225,11 +235,4 @@
 }
 </script>
 
-<?= includeNPMInstructions(
-  'spinbutton',
-  array(),
-  '',
-  false,
-  array(),
-  '.spinbutton'
-) ?>
+<?= includeNPMInstructions("spinbutton", [], "", false, [], ".spinbutton") ?>

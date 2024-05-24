@@ -26,18 +26,23 @@
 
 <h2>Text Zooming Issues</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'The styling advice given here is recommended for both new and existing work.')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "The styling advice given here is recommended for both new and existing work.",
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>Consider this screenshot of a typical desktop-sized hero image:</p>
 
-<?php
-            include 'includes/hero-example.php';
-        ?>
+<?php include "includes/hero-example.php"; ?>
 
 <figure>
 
-  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example", "Screenshot of a black and white hero image. Turkish actor Cüneyt Arkın is on the right with text describing who he is on the left.")?>
+  <?php pictureWebpPng(
+      "images/hero-image-text-resize/hero-image-example",
+      "Screenshot of a black and white hero image. Turkish actor Cüneyt Arkın is on the right with text describing who he is on the left.",
+  ); ?>
 
   <figcaption>
     Figure 1. A typical desktop hero image.
@@ -52,7 +57,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-spacing", "Screenshot of the above hero image with text-spacing stylesheet applied.  The text on the left of the hero image is still contained by the image container and is still legible")?>
+  <?php pictureWebpPng(
+      "images/hero-image-text-resize/hero-image-example__text-spacing",
+      "Screenshot of the above hero image with text-spacing stylesheet applied.  The text on the left of the hero image is still contained by the image container and is still legible",
+  ); ?>
 
   <figcaption>
     Figure 2. Hero image with text-spacing stylesheet applied.
@@ -66,7 +74,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-resize", "Screenshot of the above hero image with the browser's text-zoom set to 150%.  Note that the text bleeds outside of the hero image, and Cüneyt Arkın's first name is cut off by the text's container element.")?>
+  <?php pictureWebpPng(
+      "images/hero-image-text-resize/hero-image-example__text-resize",
+      "Screenshot of the above hero image with the browser's text-zoom set to 150%.  Note that the text bleeds outside of the hero image, and Cüneyt Arkın's first name is cut off by the text's container element.",
+  ); ?>
 
   <figcaption>
     Figure 3. Hero image with text zoom set to 150%. Not all the text is legible.
@@ -81,7 +92,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/hero-image-text-resize/hero-image-example__text-resize--fixed", "Screenshot of the above hero image with the browser's text-zoom set to 150% with JavaScript solution applied.  The layout has been altered so now the text is above the hero image instead of inside of it.")?>
+  <?php pictureWebpPng(
+      "images/hero-image-text-resize/hero-image-example__text-resize--fixed",
+      "Screenshot of the above hero image with the browser's text-zoom set to 150% with JavaScript solution applied.  The layout has been altered so now the text is above the hero image instead of inside of it.",
+  ); ?>
 
   <figcaption>
     Figure 3. Hero image with text zoom set to 150% and JavaScript solution applied.
@@ -94,7 +108,7 @@
   were created to adjust the layout of the hero.
 </p>
 
-<?php includeShowcode("hero-example")?>
+<?php includeShowcode("hero-example"); ?>
 <script type="application/json" id="hero-example-props">
 {
   "replaceHtmlRules": {},
@@ -135,4 +149,4 @@
 }
 </script>
 
-<?= includeNPMInstructions('textZoomEvent', array()) ?>
+<?= includeNPMInstructions("textZoomEvent", []) ?>

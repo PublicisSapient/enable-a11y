@@ -8,7 +8,7 @@ A place to learn and share with developers what makes web work accessible. This 
 
 ### Prerequisite Installations
 
-- nvm: A Node version manager.  It allows you to install several versions of node on the same machine and change versions easily.
+- nvm: A Node version manager. It allows you to install several versions of node on the same machine and change versions easily.
   - [Here are instructions in how to install nvm](https://github.com/nvm-sh/nvm#usage)
   - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
 - npm: a Node Package Manager, usually installed alongside Node
@@ -39,19 +39,19 @@ A place to learn and share with developers what makes web work accessible. This 
 
 1. Run the following commands in your Terminal or Terminal equivalent program:
 
-    ```sh
-    git clone git@github.com:PublicisSapient/enable-a11y.git
-    cd enable-a11y
-    npm clean-install
-    ```
+   ```sh
+   git clone git@github.com:PublicisSapient/enable-a11y.git
+   cd enable-a11y
+   npm clean-install
+   ```
 
-    > Note: Using `clean-install` instead of just `install` installs the exact package versions listed in the package-lock.json, and therefore has guaranteed compatibility.
+   > Note: Using `clean-install` instead of just `install` installs the exact package versions listed in the package-lock.json, and therefore has guaranteed compatibility.
 
 2. Start the local server using:
 
-    ```sh
-    npm run start
-    ```
+   ```sh
+   npm run start
+   ```
 
 3. Open <http://localhost:8888> in your browser to see the local version of the site.
 
@@ -79,7 +79,7 @@ Read [the Enable Code Quality article](https://www.useragentman.com/enable/code-
 - Run only the Axe tests: `npm run test-axe`
 - Run only the Pa11y tests: `npm run test-pa11y`
 
-If you are noticing that the jest tests are taking a long time, you might want to run `npm run jest-debug-memory-leak`.  If the heap size for each test group increases a lot, there is a memory leak in the tests. More information about that can be found at in the article [Your Jest Tests are Leaking Memory](https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html) by [David Chanin](https://chanind.github.io/about/)
+If you are noticing that the jest tests are taking a long time, you might want to run `npm run jest-debug-memory-leak`. If the heap size for each test group increases a lot, there is a memory leak in the tests. More information about that can be found at in the article [Your Jest Tests are Leaking Memory](https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html) by [David Chanin](https://chanind.github.io/about/)
 
 > Hint: Make sure the local server is running first using the `npm run start` command.
 
@@ -107,21 +107,21 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 
 ### Style Notes
 
-1. All font-sizes are converted to rems. This is done via LESS.  If you want a font-size of 20px, then you would do the following:
+1. All font-sizes are converted to rems. This is done via LESS. If you want a font-size of 20px, then you would do the following:
 
-    ```css
-      div {
-        font-size: (20/@px);
-      }
-    ```
+   ```css
+   div {
+     font-size: (20 / @px);
+   }
+   ```
 
-    The `@px` variable is set to 16rem, which is also the base font size
+   The `@px` variable is set to 16rem, which is also the base font size
 
 2. If we hide custom components and use CSS to create custom facades for them, we must ensure that these facades will be discoverable to users navigating by touch. For more information about being inclusive of users navigating by touch, please read [Inclusively Hiding & Styling Checkboxes and Radio Buttons](https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/) by [Sara Soueidan](https://www.sarasoueidan.com).
 
 ### Adding An External NPM Module To The Front-End Code
 
-If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JavaScript library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.  
+If you are adding examples to this repository and need support of an external NPM module for the front-end (like a JavaScript library), then you should add the library to the `nodeFiles` array in the file `promote-node-modules-to-server.js`.
 
 For example, when I added the `glider-js` library to Enable so I can use it in the Carousel demos, I added the files I needed for the front-end to `nodeFiles` with these two lines:
 
@@ -139,9 +139,9 @@ const nodeFiles = [
 ]
 </pre>
 
-When you start the project with `npm run server`, the files in the `nodeFiles` array will be placed in the `enable-node-libs` directory in the project root.  Use this directory to load the files in your scripts, css, or HTML files.
+When you start the project with `npm run server`, the files in the `nodeFiles` array will be placed in the `enable-node-libs` directory in the project root. Use this directory to load the files in your scripts, css, or HTML files.
 
-### Pre-commit hook error - "npx: command  not found"
+### Pre-commit hook error - "npx: command not found"
 
 If you encounter an error when trying to commit some code from within an IDE (like VS Code, IntelliJ, GitHub Desktop, etc.), and the error is about the `npx` command not being found, you should try running the command in the terminal instead. This issue is due to the PATH values not being set as expected in the IDE in order for npx to be recognized. See <https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found> for more information.
 

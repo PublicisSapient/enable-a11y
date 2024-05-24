@@ -1,11 +1,11 @@
         <?php
-          global $walkthroughIndex;
+        global $walkthroughIndex;
 
-          if ($displayOuterHTML) {
+        if ($displayOuterHTML) {
             $showcodeExampleAttribs = 'data-showcode-display-outerhtml="true"';
-          } else {
-            $showcodeExampleAttribs = '';
-          }
+        } else {
+            $showcodeExampleAttribs = "";
+        }
         ?>
 
         <div class="showcode__container">
@@ -21,19 +21,19 @@
             </p>
 
             <?= $prologue ?>
-            <?php endif ?>
+            <?php endif; ?>
           </div>
 
           <?php if ($isInteractive): ?>
           <?= $extra ?>
-          <?php endif ?>
+          <?php endif; ?>
 
           <?php if ($isInteractive): ?>
               <div class="showcode__ui">
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($isInteractive): ?>
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
-            <?php endif ?>
+            <?php endif; ?>
               <div id="<?= $id ?>__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
               <div class="showcode__notes-container " >
                 <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
@@ -55,7 +55,7 @@
                 <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
               </div>
               <?php if ($isInteractive): ?>
-              </div><?php endif ?>
+              </div><?php endif; ?>
 
 
           <div class="showcode">
@@ -73,6 +73,5 @@
           </div>
         </div>
 
-        <?php
-        $walkthroughIndex = $walkthroughIndex + 1;
-        ?>
+        <?php $walkthroughIndex = $walkthroughIndex + 1;
+?>

@@ -44,7 +44,7 @@
 
 
         <h2>An HTML Button.</h2>
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("example1")?>
+        <?php includeShowcode("example1"); ?>
 
         <script type="application/json" id="example1-props">
         {
@@ -85,9 +85,9 @@
 
 
         <h2>A link with the role of button</h2>
-        <?php includeStats(array(
-            'isForNewBuilds' => false
-        )) ?>
+        <?php includeStats([
+            "isForNewBuilds" => false,
+        ]); ?>
         <p>
             I can't tell you how many times I have seen buttons incorrectly marked up as links on a project.
             When dealing with older projects where it would be time-consuming to refactor the existing functionality and convert these "pseudo-buttons" into proper <code>&lt;button&gt;</code> tags, it might be more practical to add the ARIA <code>role="button"</code> to the existing <code>&lt;a&gt;</code> tags. If you decide to do this, you should first review all the steps below
@@ -102,7 +102,7 @@
             </a>
         </div>
 
-        <?php includeShowcode("example3")?>
+        <?php includeShowcode("example3"); ?>
         <script type="application/json" id="example3-props">
         {
             "replaceHtmlRules": {},
@@ -136,9 +136,9 @@
         </script>
 
         <h2>A DIV with a role of button</h2>
-        <?php includeStats(array(
-            'doNot' => true
-        )) ?>
+        <?php includeStats([
+            "doNot" => true,
+        ]); ?>
         <p>
             There have been a few projects, particularly ones developed using React and Angular for some reason, where I have observed developers creating buttons using <code>&lt;div&gt;</code> tags.    
         </p>
@@ -160,7 +160,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("example2")?>
+        <?php includeShowcode("example2"); ?>
 
         <script type="application/json" id="example2-props">
         {

@@ -1,7 +1,15 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'All the examples here are useful for new and existing work where you want to pause animated GIFs in the most straightforward way.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "All the examples here are useful for new and existing work where you want to pause animated GIFs in the most straightforward way.",
+]); ?>
 
 <div class="pausable-animated-gif__warning-message">
-  <?php includeStats(array('isForNewBuilds' => false, 'comment' => 'Warning: All animations are currently paused because of the <a href="pause-anim-control.php">Pause Animations Control</a> at the top of the page being checked.')) ?>
+  <?php includeStats([
+      "isForNewBuilds" => false,
+      "comment" =>
+          'Warning: All animations are currently paused because of the <a href="pause-anim-control.php">Pause Animations Control</a> at the top of the page being checked.',
+  ]); ?>
 </div>
 
 <p>If you are going to have animated Gifs that are longer than 5 seconds on your page, you really should have a pause
@@ -49,7 +57,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -120,7 +128,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -164,7 +172,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example3")?>
+<?php includeShowcode("example3"); ?>
 
 <script type="application/json" id="example3-props">
 {
