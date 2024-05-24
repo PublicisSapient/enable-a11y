@@ -12,7 +12,7 @@
 import showcode from "./enable-libs/showcode.js";
 import pauseAnimControl from "./modules/pause-anim-control.js";
 import Templify from "./modules/templify.js";
-import EnableFlyoutHamburger from "./modules/enable-hamburger.js";
+import EnableFlyout from "./modules/enable-flyout.js";
 import enableVisibleOnFocus from "./modules/enable-visible-on-focus.js";
 import offscreenObserver from "./modules/offscreen-observer.js";
 import textZoom from './demos/hero-image-text-resize.js';
@@ -47,15 +47,26 @@ function focusDeepLink() {
     }
 }
 
-function initEnable() {
-    const hamburgerMenuEl = document.getElementById('enable-hamburger-menu');
+function buildFlyoutMenuHTML() {
+    // This is the DOM element where the hamburger menu will be inserted into.
+    const hamburgerMenuEl = document.getElementById('enable-flyout-menu');
+
+    // This is where the structure of the hamburger menu is stored (in JSON format).
     const hamburgerMenuJSONEl = document.getElementById('flyout-props');
     const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);
+
+    // Now, let's use Templify to convert the JSON into HTML.
+    const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
+
+    // Initialize the hamburger menu.
+    EnableFlyout.init();
+}
+
+function initEnable() {
     offscreenObserver.init(document.querySelector('[role="banner"]'));
 
     enableVisibleOnFocus.init();
-    const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
-    EnableFlyoutHamburger.init();
+    buildFlyoutMenuHTML();
 
     // This is so we can use the breakpoint widths inside the documentation.
     const breakpointWidth = window.getComputedStyle(document.querySelector('.enable-flyout')).getPropertyValue(
@@ -109,9 +120,11 @@ function initEnable() {
 initEnable();
 
 
+// This is so our code walkthroughs can display the code in this file.
 showcode.addJsObj('enableVisibleOnFocus', enableVisibleOnFocus);
-showcode.addJsObj('EnableFlyoutHamburger', EnableFlyoutHamburger);
+showcode.addJsObj('EnableFlyout', EnableFlyout);
 showcode.addJsObj('initEnable', initEnable);
+showcode.addJsObj('buildFlyoutMenuHTML', buildFlyoutMenuHTML);
 
 
 if (document.location.hash === '#debug') {

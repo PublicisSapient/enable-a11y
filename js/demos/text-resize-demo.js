@@ -3,7 +3,7 @@ import textZoomEvent from "../../enable-node-libs/text-zoom-event/dist/textZoomE
 const body = document.body;
 
 function setCssTextZoomFactor() {
-  console.log(textZoomEvent.resizeFactor());
+  console.info(textZoomEvent.resizeFactor());
   if (textZoomEvent.resizeFactor() > 1) {
     body.classList.add('text-zoom');
   } else {

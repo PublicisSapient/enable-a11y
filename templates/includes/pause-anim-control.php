@@ -5,5 +5,8 @@
             <input type="checkbox" id="pause-anim-control"
                 class="pause-anim-control__checkbox" />
         </label>
+
+
+        <a href="#enable-logo">Back to top</a>
     </div>
 </div>

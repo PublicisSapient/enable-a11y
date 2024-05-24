@@ -12,6 +12,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
     // Put code here that should execute before starting tests.
     desktopBrowser = await testHelpers.getDesktopBrowser();
     desktopPage = await desktopBrowser.newPage();
+    
 
     // This tests that there are no browser or js errors.
     desktopPage.on('console', async e => {
@@ -27,6 +28,10 @@ describe('Test all pages on Enable to Ensure the information is written correctl
         location: ${JSON.stringify(e.location())}
           
         stack trace: ${JSON.stringify(e.stackTrace())}`;
+      } else if (type === 'log' || type === 'debug') {
+        const location = e.location();
+        throw `Console log: ${e.text()}
+        type: ${type}, file: ${location.url}, line: ${location.lineNumber}`
       }
     });
   });

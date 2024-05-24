@@ -193,7 +193,6 @@ describe('Carousel Tests', () => {
     // and check if it is disabled and that there are instructions.
     await page.keyboard.down('Shift');
     await page.keyboard.press('Tab');
-    await page.keyboard.press('Tab');
     await page.keyboard.up('Shift');
 
     domInfo = await page.evaluate(() => {
@@ -226,12 +225,7 @@ describe('Carousel Tests', () => {
 
       // Test to see if we tab into the "Next" button.
       await page.keyboard.press('Tab');
-
-      // put in an extra tab press if the first slide
-      if ( i === 1 ) {
-        await testHelpers.pauseFor(100);
-        await page.keyboard.press('Tab');
-      }
+      await testHelpers.pauseFor(500);
 
       domInfo = await page.evaluate((i) => {
         const { activeElement } = document;
@@ -248,10 +242,9 @@ describe('Carousel Tests', () => {
       }
       expect(domInfo.isFocusOnNextButton).toBe(true);
       
-      // Now, let's press the space key and see if focus goes to the newly visible panel
-      // Test to see if we tab into the "Next" button.
+      // Now, let's press the space key and see if focus goes to the newly visible panel  
       await page.keyboard.press('Space');
-      await testHelpers.pauseFor(100);
+      await testHelpers.pauseFor(500);
 
 
       domInfo = await page.evaluate((i) => {
@@ -300,8 +293,8 @@ describe('Carousel Tests', () => {
       // Test to see if we tab backwards into the "Previous" button.
       await page.keyboard.down('Shift');
       await page.keyboard.press('Tab');
-      await page.keyboard.press('Tab');
       await page.keyboard.up('Shift');
+      await testHelpers.pauseFor(500);
 
       domInfo = await page.evaluate((i) => {
         const { activeElement } = document;
@@ -317,7 +310,7 @@ describe('Carousel Tests', () => {
       // Now, let's press the space key and see if focus goes to the newly visible panel
       // Test to see if we tab into the "Next" button.
       await page.keyboard.press('Space');
-      await testHelpers.pauseFor(100);
+      await testHelpers.pauseFor(500);
 
 
       domInfo = await page.evaluate((i) => {
@@ -345,7 +338,6 @@ describe('Carousel Tests', () => {
 
     // Test to see if we tab once more the "Previous" button.
     await page.keyboard.down('Shift');
-    await page.keyboard.press('Tab');
     await page.keyboard.press('Tab');
     await page.keyboard.up('Shift');
 
