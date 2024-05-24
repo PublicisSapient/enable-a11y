@@ -1,5 +1,5 @@
-@focus-color: #097EFB;
-@focus-color-dark-bg: rgb(59, 153, 252); 
+@focus-color: #097efb;
+@focus-color-dark-bg: rgb(59, 153, 252);
 
 // From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
 // pixels to rems.
@@ -17,14 +17,12 @@
 @tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
 @mobile: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
 
-
 @tablet-up: ~"only screen and (min-width: @{tablet-min})";
 @mobile-up: ~"only screen and (min-width: @{mobile-min})";
-@mobile-and-tablet:  ~"only screen and (min-width: @{mobile-min}) and (max-width: @{tablet-max})";
+@mobile-and-tablet: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{tablet-max})";
 
 @max-zindex: 2147483647;
 @able-player-max-z-index: 10000;
-
 
 // font stacks
 @font-default-copy: "OpenSans", "Helvetica", "Arial", sans-serif;
@@ -46,203 +44,200 @@
 @color-term-code: #090;
 @color-background-term-code: #000;
 
-@page-padding: (16/@px);
-
+@page-padding: (16 / @px);
 
 .font-copy() {
-  font-family: @font-default-copy;
-  font-size: (16/@px);
+    font-family: @font-default-copy;
+    font-size: (16 / @px);
 }
 
 .font-heading-1() {
-  font-family: @font-default-heading;
-  font-weight: bold;
-  font-size: (35/@px);
+    font-family: @font-default-heading;
+    font-weight: bold;
+    font-size: (35 / @px);
 }
 
 .font-heading-2() {
-  font-family: @font-default-heading;
-  font-size: (20/@px);
+    font-family: @font-default-heading;
+    font-size: (20 / @px);
 }
 
 .font-heading-3 {
-  font-family: @font-default-copy;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: (20/@px);
-  border-bottom: double 3px #000;
+    font-family: @font-default-copy;
+    font-weight: bold;
+    padding-top: 20px;
+    font-size: (20 / @px);
+    border-bottom: double 3px #000;
 }
-
 
 //
 // Gradient mixin from https://webdesign.tutsplus.com/tutorials/making-gradients-easier-with-less-mixins--cms-24072
 //
 .gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes))
-  when
-  (@index > 0) {
-  .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+    when
+    (@index > 0) {
+    .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
 
-  @prefix: extract(@prefixes, @index);
-  @dir-old: 90 - (@dir);
+    @prefix: extract(@prefixes, @index);
+    @dir-old: 90 - (@dir);
 
-  // We don't need this anymore, but I don't want to refactor all the code yet to not use the mixin.
-  // background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
-  & when ( @index = length(@prefixes) ) {
-    background-image: ~"@{type}-gradient(@{dir}, @{colors})";
-  }
+    // We don't need this anymore, but I don't want to refactor all the code yet to not use the mixin.
+    // background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+    & when ( @index = length(@prefixes) ) {
+        background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+    }
 }
 
-.icon-mixin(@img, @width: 20, @height: 20) { 
-  content: "";
-  display: inline-block;
-  width: (@width/@px);
-  height: (@height/@px);
-  background: data-uri(@img);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: (@width/@px) (@height/@px);
-  filter: invert();
-  position: relative;
-} 
+.icon-mixin(@img, @width: 20, @height: 20) {
+    content: "";
+    display: inline-block;
+    width: (@width / @px);
+    height: (@height / @px);
+    background: data-uri(@img);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: (@width / @px) (@height / @px);
+    filter: invert();
+    position: relative;
+}
 
 .no-scrollbars() {
-  /* IE and edge */
-  -ms-overflow-style: none;
-  
-  /* Firefox */
-  scrollbar-width: none;
+    /* IE and edge */
+    -ms-overflow-style: none;
 
-  /* Safari & Chrome */
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* Safari & Chrome */
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .button-reset() {
-  border: none;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  overflow: visible;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
 
-  background: transparent;
+    background: transparent;
 
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
 
-  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-  line-height: normal;
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
 
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
 
-  /* Corrects inability to style clickable `input` types in iOS */
-  -webkit-appearance: none;
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
 }
 
 .vendor(@property, @value) {
-  -webkit-@{property}: @value;
-  -khtml-@{property}: @value;
-  -ms-@{property}: @value;
-  -moz-@{property}: @value;
-  @{property}: @value;
+    -webkit-@{property}: @value;
+    -khtml-@{property}: @value;
+    -ms-@{property}: @value;
+    -moz-@{property}: @value;
+    @{property}: @value;
 }
 
 .appearance(@value) {
-  -webkit-appearance: @value;
-  appearance: @value;
+    -webkit-appearance: @value;
+    appearance: @value;
 }
 
 .sticky() {
-  position: -webkit-sticky;
-  position: sticky;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 .width-fit-content() {
-  width: -moz-fit-content;
-  width: fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .border-image(@url, @top, @right, @bottom, @left) {
-  padding: @top @right @bottom @left;
-  border-image-slice: unit(@top) unit(@right) unit(@bottom) unit(@left);
-  border-image-width: @top @right @bottom @left;
-  border-image-outset: 0px 0px 0px 0px;
-  border-image-repeat: stretch stretch;
-  border-image-source: @url;
-  border-style: solid;
+    padding: @top @right @bottom @left;
+    border-image-slice: unit(@top) unit(@right) unit(@bottom) unit(@left);
+    border-image-width: @top @right @bottom @left;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: @url;
+    border-style: solid;
 }
 
- // Class for elements that are only visible to the screen reader. From
- // https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
+// Class for elements that are only visible to the screen reader. From
+// https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
 
- .enable__visually-hidden() { 
-	clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-	margin: -1px;
- }
+.enable__visually-hidden() {
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    margin: -1px;
+}
 
- .enable__visually-hidden--reverse() {
-	clip: auto;
-  -webkit-clip-path: none;
-	clip-path: none;
-	height: auto;
-	overflow: visible;
-	position: static;
-	white-space: normal;
-	width: auto;
-	margin: auto;
+.enable__visually-hidden--reverse() {
+    clip: auto;
+    -webkit-clip-path: none;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+    margin: auto;
 }
 
 .not-selectable() {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 // This is experimental and not recommended to be
 // used in a production environment.
 .content-with-alt-text(@content: ""; @alt: "") {
-	@supports (content: "x" / "y") {
-		& {
-			content: @content ~"/" @alt;
-		}
-	}
+    @supports (content: "x" / "y") {
+        & {
+            content: @content ~"/" @alt;
+        }
+    }
 
-	// Safari only
-	@supports not (content: "x" / "y") {
-		& {
-			content: @content;
-			alt: @alt;
-		}
-	}
+    // Safari only
+    @supports not (content: "x" / "y") {
+        & {
+            content: @content;
+            alt: @alt;
+        }
+    }
 }
 
 .box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
-  -webkit-box-shadow: @arguments;
-     -moz-box-shadow: @arguments;
-          box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
 }
 
 .viewport-scale() {
 }
 
-
 // This mixin allows focus rules for (mostly) keyboard only.
-// It is based on this great blog post above :focus-visible 
+// It is based on this great blog post above :focus-visible
 //
 // https://www.tpgi.com/focus-visible-and-backwards-compatibility/
 //
 // Usage:
-// 
+//
 // .interactive-element {
 //   	.enable-focus(
 //      // Focus styles
@@ -256,61 +251,58 @@
 //  		}
 //  	);
 // }
-// 
-
+//
 
 .enable-focus(@focus-rules, @unfocus-rules) {
+    // Outline focus state for all browsers
+    &:focus {
+        @focus-rules();
+    }
 
-  // Outline focus state for all browsers
-  &:focus {
-    @focus-rules();
-  }
+    // Undo all the above focused button styles
+    // if the element has focus but the browser wouldn't normally
+    // show default focus styles
+    &:focus:not(:focus-visible) {
+        @unfocus-rules();
+    }
 
-  // Undo all the above focused button styles
-  // if the element has focus but the browser wouldn't normally
-  // show default focus styles
-  &:focus:not(:focus-visible) {
-    @unfocus-rules();
-  }
-
-  // Put the focus CSS back in if the browser would normally show default focus style
-  &:focus-visible {
-    @focus-rules();
-  }
-  
+    // Put the focus CSS back in if the browser would normally show default focus style
+    &:focus-visible {
+        @focus-rules();
+    }
 }
 
 .remove-default-details-styles() {
-  &::-webkit-details-marker {
-    display: none;
-  }
+    &::-webkit-details-marker {
+        display: none;
+    }
 
-  &::marker {
-    content: "";
-    display: none;
-  }
+    &::marker {
+        content: "";
+        display: none;
+    }
 }
 
 // Scrollbar mixin from https://css-tricks.com/snippets/sass/custom-scrollbars-mixin/
 .scrollbars(@size; @foreground-color; @background-color) {
-  // For Google Chrome
-  ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width:  @size;
-    height: @size;
-  }
+    // For Google Chrome
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: @size;
+        height: @size;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: @foreground-color;
-    border-radius: 4px;
-    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-  }
+    ::-webkit-scrollbar-thumb {
+        background: @foreground-color;
+        border-radius: 4px;
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    }
 
-  ::-webkit-scrollbar-track {
-    background: @background-color;
-  }
+    ::-webkit-scrollbar-track {
+        background: @background-color;
+    }
 
-  // For web standards 
-  scrollbar-color: @foreground-color @background-color;
-  scrollbar-width: thin;
+    // For web standards
+    scrollbar-color: @foreground-color @background-color;
+    scrollbar-width: thin;
 }

@@ -41,7 +41,11 @@
 
 <h2>A Simple Table</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'Go through the <a href="#developer-walkthrough-1">the walkthrough below</a> to ensure you are adding all the markup needed.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'Go through the <a href="#developer-walkthrough-1">the walkthrough below</a> to ensure you are adding all the markup needed.',
+]); ?>
 
 <p>Just a simple table.  Walkthrough the HTML code below and make sure you are adding all the things that make tables accessible in your work.</p>
 
@@ -80,7 +84,7 @@
   </table>
 </div>
 
-<?php includeShowcode("table-example1")?>
+<?php includeShowcode("table-example1"); ?>
 
 <script type="application/json" id="table-example1-props">
 {
@@ -122,7 +126,10 @@
 
 <h2 id="table-with-figcaption">A Simple Table with the caption placed inside a <code>figcaption</code> tag</h2>
 
-<?php includeStats(array('isStyle' => false, 'This is more flexible than using the <code>&lt;caption&gt;</code> tag, since it allows for table captioning outside of the <code>&lt;table&gt;</code> markup')) ?>
+<?php includeStats([
+    "isStyle" => false,
+    "This is more flexible than using the <code>&lt;caption&gt;</code> tag, since it allows for table captioning outside of the <code>&lt;table&gt;</code> markup",
+]); ?>
 
 <p>Note that the caption is on the bottom, instead of the top of the table.</p>
 
@@ -160,7 +167,7 @@
   </figure>
 </div>
 
-<?php includeShowcode("example3")?>
+<?php includeShowcode("example3"); ?>
 
 <script type="application/json" id="example3-props">
 {
@@ -176,7 +183,7 @@
 
 <h2>A Complex Table Made Using HTML5</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
   Complex tables may have headings for column groups as well as individual columns.
@@ -241,7 +248,7 @@
   </figure>
 </div>
 
-<?php includeShowcode("complex-table")?>
+<?php includeShowcode("complex-table"); ?>
 
 <script type="application/json" id="complex-table-props">
 {
@@ -284,7 +291,11 @@
 
 <h2 id="table-aria">A Simple Table Made Using Aria Roles</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.",
+]); ?>
 
 <p>This is relatively new to ARIA and may not be implemented by all assistive technologies. It should only
   be used when there is existing code that is not marked up as an HTML table, but looks and
@@ -312,7 +323,7 @@
   </div>
 </template>
 
-<?php includeShowcode("role-presentation-code", "", "", "", false)?>
+<?php includeShowcode("role-presentation-code", "", "", "", false); ?>
 <script type="application/json" id="role-presentation-code-props">
 {
   "replaceHtmlRules": {},
@@ -358,7 +369,7 @@
 
 </div>
 
-<?php includeShowcode("aria-example-1")?>
+<?php includeShowcode("aria-example-1"); ?>
 
 <script type="application/json" id="aria-example-1-props">
 {
@@ -408,7 +419,11 @@
 <h2>A Complex Table Made Using Aria Roles</h2>
 
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.",
+]); ?>
 
 <p>
     It takes real talent to code tables this way: It's wrong and it takes a lot of time.  You really should reconsider recoding your tables with <code>&lt;table&gt;</code> tags instead.  Your colleagues will thank you, I will thank you, and you know that you did a good deed.
@@ -464,7 +479,7 @@
 
 </div>
 
-<?php includeShowcode("complex-aria-example")?>
+<?php includeShowcode("complex-aria-example"); ?>
 
 <script type="application/json" id="complex-aria-example-props">
 {
@@ -482,7 +497,11 @@
 
 <h2 id="sticky-table-header" tabindex="-1">Sticky Table Header</h2>
 
-<?php includeStats(array('isStyle' => false, 'comment' => 'This is a great way to style a table when there is a lot of data inside of it.')) ?>
+<?php includeStats([
+    "isStyle" => false,
+    "comment" =>
+        "This is a great way to style a table when there is a lot of data inside of it.",
+]); ?>
 
 <p>
     When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
@@ -2229,7 +2248,7 @@
 </figure>
 </div>
 
-<?php includeShowcode("sticky-header-table-example")?>
+<?php includeShowcode("sticky-header-table-example"); ?>
 
 <script type="application/json" id="sticky-header-table-example-props">
 {

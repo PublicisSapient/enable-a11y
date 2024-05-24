@@ -7,18 +7,12 @@
   <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
   <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
       browser</a>.</li>
-  <?php
-    if (!$isPolyfill) {
-  ?>
+  <?php if (!$isPolyfill) { ?>
   <li>as an old-school ES4/JavaScript library.</li>
-  <?php
-    }
-  ?>
+  <?php } ?>
 </ul>
 
-<?php
-  if ($isPolyfill) {
-?>
+<?php if ($isPolyfill) { ?>
 <p>
   <strong>Note: Unlike most of the other Enable JavaScript modules, you cannot load this one as an old-school ES4
   JavaScript library.</strong>
@@ -27,9 +21,7 @@
     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_import"> the ES6
     <code>import()</code> function</a>.
 </p>
-<?php
-  } else {
-?>
+<?php } else { ?>
 
 <p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
   Here are a few articles that will help you decide:
@@ -48,27 +40,19 @@
   </li>
 </ul>
 
-<?php
-  }
-?>
+<?php } ?>
 
-<?php 
-  if ($bemPrefix != '') {
-?>
+<?php if ($bemPrefix != "") { ?>
 <h4>Important Note On The CSS Classes Used In This Module:</h4>
 
 <p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
 These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the documentation above to see where these CSS classes are inserted.
 
-<?php
-  } else if ($bemPrefix === true || $bemPrefix === false) {
-?>
+<?php } elseif ($bemPrefix === true || $bemPrefix === false) { ?>
 
 <div class="jest-error">We forgot to add the $bemPrefix variable on the function call to includeNPMInstructions()</div>
 
-<?php
-  }
-?>
+<?php } ?>
 
 <h4>Using NPM/Webpack to load ES6 Modules:</h4>
 
@@ -79,7 +63,7 @@ These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the d
   <li>
     Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 module.exports = {
 
   ... 
@@ -92,14 +76,14 @@ module.exports = {
     ],
     alias: {
       '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
-<?php if (array_key_exists('needsGlider', $other)) { ?>
+<?php if (array_key_exists("needsGlider", $other)) { ?>
       ,'~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
       '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider')
 <?php } ?> 
-<?php if (array_key_exists('needsAccessibilityLib', $other)) { ?>
+<?php if (array_key_exists("needsAccessibilityLib", $other)) { ?>
       ,'../enable-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module')
 <?php } ?>
-<?php if (array_key_exists('needsAblePlayerLibs', $other)) { ?>
+<?php if (array_key_exists("needsAblePlayerLibs", $other)) { ?>
       ,'../../libs/jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
       '../libs/ableplayer/thirdparty/js.cookie.js': path.resolve(__dirname, 'node_modules/js-cookie/dist/js.cookie')
 <?php } ?>
@@ -111,84 +95,63 @@ module.exports = {
   ...
 
 }
-<?php includeShowcodeStaticEnd() ?>
+<?php includeShowcodeStaticEnd(); ?>
   </li>
   <li>
     You can use the module like this:
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 // import the JS module
 import <?= $moduleVar ?> from '~enable-a11y/js/modules/<?= $moduleName ?>';
-<?= $other["otherImports"] ?? '' ?>
+<?= $other["otherImports"] ?? "" ?>
 <?php
-  if (!($other["noCSS"] ?? false)) {
-?>
+if (!($other["noCSS"] ?? false)) { ?>
 
 // import the CSS for the module 
 import '~enable-a11y/css/<?= $moduleName ?>';
-<?php
-  }
-  if (!$noInit && ($other["customInit"] ?? '') == '') {
-?> 
+<?php }
+if (!$noInit && ($other["customInit"] ?? "") == "") { ?> 
 // How to initialize the <?= $moduleVar ?> library
 <?= $moduleVar ?>.init();
-<?php
-  }
-
-  if (($other["customInit"] ?? '') != '') {
+<?php }
+if (($other["customInit"] ?? "") != "") {
     include $other["customInit"];
-  }
-  
-  if ($noInit)
-  {
-?>
+}
+if ($noInit) { ?>
 // There is no .init() function to call.
-<?php
-  }
+<?php }
 ?>
 
-<?php
-  if (isset($doesHaveAddMethod)) {
-?>
+<?php if (isset($doesHaveAddMethod)) { ?>
 // If you are adding a new instance of this component after page load, 
 // then do the following (where el is the DOM node of the newly created 
 // element, which contains the CSS class <?= $doesHaveAddMethod ?>):
 el.add();
-<?php
-  }
-?>
+<?php } ?>
 
-<?php 
-  if ($willWorkAfterPageLoad) {
-?>
+<?php if ($willWorkAfterPageLoad) { ?>
 // Note that this component will work with DOM elements coded like
 // the examples above added after page load.  There is no need to call
 // an .add() method, like we do with the Enable combobox component.
-<?php
-  }
-?>
+<?php } ?>
 
 
-<?= $other["otherSampleCode"] ?? '' ?>
-    <?php includeShowcodeStaticEnd() ?>
-    <?= $other["es6Notes"] ?? '' ?>
+<?= $other["otherSampleCode"] ?? "" ?>
+    <?php includeShowcodeStaticEnd(); ?>
+    <?= $other["es6Notes"] ?? "" ?>
   </li>
 
-<?php
-  if (!($other["noCSS"] ?? false)) {
-?>
+<?php if (!($other["noCSS"] ?? false)) { ?>
   <li>
     Alternatively, if you are using LESS you can include the styles in your project's CSS using:
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
-    <?php includeShowcodeStaticEnd() ?>
+    <?php includeShowcodeStaticEnd(); ?>
 
     (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
   </li>
-<?php
-  }
-?>
+<?php } ?>
 </ol>
 
 <h4>Using NPM/Webpack to Load Modules Using CommonJS Syntax</h4>
@@ -200,26 +163,22 @@ el.add();
   <li>
     You can import the module using require like this:
 
-<?php includeShowcodeStaticBegin() ?>
+<?php includeShowcodeStaticBegin(); ?>
 var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default; 
 
 ...
 
 <?= $moduleVar ?>.init();
-<?php includeShowcodeStaticEnd() ?>
+<?php includeShowcodeStaticEnd(); ?>
     </li>
-<?php
-  if (!($other["noCSS"] ?? false)) {
-?>
+<?php if (!($other["noCSS"] ?? false)) { ?>
     <li>You will have to include the CSS as well in your project's CSS using:
 
-<?php includeShowcodeStaticBegin() ?>
+<?php includeShowcodeStaticBegin(); ?>
 @import '~enable-a11y/css/<?= $moduleName ?>';
-<?php includeShowcodeStaticEnd() ?>
+<?php includeShowcodeStaticEnd(); ?>
     </li>
-<?php
-  }
-?>
+<?php } ?>
     </ol>
 
 <h4>Using ES6 modules natively.</h4>
@@ -237,30 +196,24 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   <li>
     If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>
     <?php
-       if (!($other["noCSS"] ?? false)) {
-         echo ",";
-       }
-
-       foreach ($supportingModuleNames as $name) {
-         echo '<code>' . $name . '</code>';
-       }
-
-       if (!($other["noCSS"] ?? false)) {
-    ?>
+    if (!($other["noCSS"] ?? false)) {
+        echo ",";
+    }
+    foreach ($supportingModuleNames as $name) {
+        echo "<code>" . $name . "</code>";
+    }
+    if (!($other["noCSS"] ?? false)) { ?>
       and <code>css/<?= $moduleName ?>.css</code>
-    <?php
-       }
+    <?php }
     ?>
     from the repo and put them
     in the appropriate directories in your project (all JS files must be in the same directory).
   </li>
-  <?php
-    if (!($other["noCSS"] ?? false)) {
-  ?>
+  <?php if (!($other["noCSS"] ?? false)) { ?>
   <li>
     Load the CSS in the head of you document:
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 &lt;html&gt;
   &lt;head&gt;
 
@@ -276,36 +229,29 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   &lt;/body&gt;
 &lt;/html&gt;
 
-  <?php 
-    includeShowcodeStaticEnd();
-  } 
-  ?>
+  <?php includeShowcodeStaticEnd();} ?>
   <li>
     Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 &lt;script type="module"&gt;
     import <?= $moduleVar ?> from "path-to/<?= $moduleName ?>.js" 
 
     <?= $moduleVar ?>.init();
 &lt;/script&gt;
-    <?php includeShowcodeStaticEnd() ?>
+    <?php includeShowcodeStaticEnd(); ?>
   </li>
 </ol>
 
-<?php
-  if (!$isPolyfill) {
-?>
+<?php if (!$isPolyfill) { ?>
 <h4>Using ES4</h4>
 
 Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
 directory instead of the <code>js/modules/</code>:
 
-<?php includeShowcodeStaticBegin() ?>
+<?php includeShowcodeStaticBegin(); ?>
 &lt;script src="path-to/es4/<?= $moduleName ?>.js"&gt;&lt;/script&gt;
-<?php includeShowcodeStaticEnd() ?>
+<?php includeShowcodeStaticEnd(); ?>
 
-<?php
-  }
-?>
+<?php } ?>
 

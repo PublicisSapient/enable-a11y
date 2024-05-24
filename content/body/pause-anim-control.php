@@ -34,8 +34,12 @@
 
   <h1><?= $title ?></h1>
 
-  <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This can be used for new builds or existing work with animations.  You should always test the animations you are using to see if it works with this component.  If not, please look at the detailed notes below on how to have your animations support this component.')) ?>
-  <?php includeStats(array('isNPM' => true)) ?>
+  <?php includeStats([
+      "isForNewBuilds" => true,
+      "comment" =>
+          "This can be used for new builds or existing work with animations.  You should always test the animations you are using to see if it works with this component.  If not, please look at the detailed notes below on how to have your animations support this component.",
+  ]); ?>
+  <?php includeStats(["isNPM" => true]); ?>
   <p>
     Pause all the CSS, Canvas, Video, SVG SMIL and GIF
     animations on this page with the checkbox at the top of this page.
@@ -56,7 +60,7 @@
     <code>body</code>:
   </p>
 
-  <?php includeShowcode("document", "", "", "", "", false)?>
+  <?php includeShowcode("document", "", "", "", "", false); ?>
   <script type="application/json" id="document-props">
   {
     "replaceHtmlRules": {
@@ -76,7 +80,7 @@
     The control to pause the animations must be structured the following way:
   </p>
 
-  <?php includeShowcode("enable-pause-control", "", "", "", "", false)?>
+  <?php includeShowcode("enable-pause-control", "", "", "", "", false); ?>
   <script type="application/json" id="enable-pause-control-props">
   {
     "replaceHtmlRules": {},
@@ -123,7 +127,7 @@
 
 
 
-  <?php includeShowcode("css-anim-example", "", "", "", true, 4)?>
+  <?php includeShowcode("css-anim-example", "", "", "", true, 4); ?>
   <script type="application/json" id="css-anim-example-props">
   {
     "replaceHtmlRules": {
@@ -182,7 +186,7 @@
     <canvas id="elastic-collision-demo__canvas"></canvas>
   </div>
 
-  <?php includeShowcode("elastic-collision-demo", "", "", "", true, 4)?>
+  <?php includeShowcode("elastic-collision-demo", "", "", "", true, 4); ?>
   <script type="application/json" id="elastic-collision-demo-props">
   {
     "replaceHtmlRules": {},
@@ -310,7 +314,7 @@
     </svg>
   </div>
 
-  <?php includeShowcode("svg-smil-demo", "", "", "", true, 4)?>
+  <?php includeShowcode("svg-smil-demo", "", "", "", true, 4); ?>
   <script type="application/json" id="svg-smil-demo-props">
   {
     "replaceHtmlRules": {},
@@ -350,7 +354,7 @@
     </div>
   </div>
 
-  <?php includeShowcode("anim-gif-demo", "", "", "", true, 4)?>
+  <?php includeShowcode("anim-gif-demo", "", "", "", true, 4); ?>
   <script type="application/json" id="anim-gif-demo-props">
   {
     "replaceHtmlRules": {},
@@ -391,7 +395,7 @@
     </div>
   </div>
 
-  <?php includeShowcode("html5-video-example")?>
+  <?php includeShowcode("html5-video-example"); ?>
   <script type="application/json" id="html5-video-example-props">
   {
     "replaceHtmlRules": {},
@@ -436,7 +440,7 @@
     </div>
   </div>
 
-  <?php includeShowcode("ableplayer-example")?>
+  <?php includeShowcode("ableplayer-example"); ?>
   <script type="application/json" id="ableplayer-example-props">
   {
     "replaceHtmlRules": {},
@@ -469,7 +473,7 @@
 
   <div id="empty-example"></div>
 
-  <?php includeShowcode("empty-example", "", "", "", false)?>
+  <?php includeShowcode("empty-example", "", "", "", false); ?>
   <script type="application/json" id="empty-example-props">
   {
     "replaceHtmlRules": {},
@@ -482,12 +486,7 @@
   </script>
 
 
-<?= includeNPMInstructions(
-    'pause-anim-control',
-    array(),
-    'pause-anim-control',
-  ) 
-?>
+<?= includeNPMInstructions("pause-anim-control", [], "pause-anim-control") ?>
 
 </div>
 

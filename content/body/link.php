@@ -25,7 +25,7 @@
 
 <h2>Native HTML5</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Everyone who took basic HTML knows how to code these, but there are a few things below that you may have never known
@@ -50,7 +50,7 @@
 
 </div>
 
-<?php includeShowcode("html5-examples")?>
+<?php includeShowcode("html5-examples"); ?>
 
 <script type="application/json" id="html5-examples-props">
 {
@@ -72,11 +72,9 @@
   should make a small change to it, like adding a right pointing chevron to the CTA like the example below:
 </p>
 
-<?php
-    include 'includes/hero-example.php';
-?>
+<?php include "includes/hero-example.php"; ?>
 
-<?php includeShowcode("hero-example")?>
+<?php includeShowcode("hero-example"); ?>
 <script type="application/json" id="hero-example-props">
 {
   "replaceHtmlRules": {},
@@ -124,7 +122,7 @@
   </nav>
 </div>
 
-<?php includeShowcode("breadcrumb-example")?>
+<?php includeShowcode("breadcrumb-example"); ?>
 
 <script type="application/json" id="breadcrumb-example-props">
 {
@@ -161,7 +159,7 @@
   </p>
 </div>
 
-<?php includeShowcode("open-new-window-example")?>
+<?php includeShowcode("open-new-window-example"); ?>
 
 <script type="application/json" id="open-new-window-example-props">
 {
@@ -176,7 +174,7 @@
 
 <h2>Using ARIA</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
   I am not sure why anyone would code a link with anything but an <code>&lt;a&gt;</code> tag, but
@@ -214,7 +212,7 @@
   </p>
 </div>
 
-<?php includeShowcode("aria-examples")?>
+<?php includeShowcode("aria-examples"); ?>
 
 <script type="application/json" id="aria-examples-props">
 {

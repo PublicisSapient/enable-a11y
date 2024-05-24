@@ -25,7 +25,11 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         </aside> -->
         <h2>Example 1: </h2>
 
-        <?php includeStats(array('doNot' => true, 'comment' => 'This doesn\'t seem to work as intended in many browser/screen reader combinations, so I advise not using it.')) ?>
+        <?php includeStats([
+            "doNot" => true,
+            "comment" =>
+                'This doesn\'t seem to work as intended in many browser/screen reader combinations, so I advise not using it.',
+        ]); ?>
 
         <p>
             The following example is a log that will announce the CPU usage of the webserver every five seconds.
@@ -36,7 +40,7 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         </pre>
 </div>
 
-        <?php includeShowcode("log-example")?>
+        <?php includeShowcode("log-example"); ?>
         <script type="application/json" id="log-example-props">
         {
             "replaceHtmlRules": {

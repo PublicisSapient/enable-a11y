@@ -11,109 +11,101 @@
  */
 
 .pause-anim-control {
-
-  &__checkbox {
-    outline-offset: 3px;
-  }
-
+    &__checkbox {
+        outline-offset: 3px;
+    }
 }
 
 .play-pause-anim {
+    &__checkbox-container {
+        position: relative;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        color: white;
+        padding: 0;
+        background-color: #000;
+        white-space: nowrap;
+        text-align: center;
+        height: 2.4;
 
-  &__checkbox-container {
-    position: relative;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    color: white;
-    padding: 0;
-    background-color: #000;
-    white-space: nowrap;
-    text-align: center;
-    height: 2.4;
+        @media @desktop {
+            position: fixed;
+            top: (5 / @px);
+            left: initial;
+            right: 20px;
+            border-radius: 50px;
+            border: solid 2px white;
+            width: min-content;
+            line-height: 2.4;
+        }
 
-    @media @desktop { 
+        label {
+            padding: 10px 20px;
+            display: inline-block;
+            cursor: pointer;
 
-      position: fixed;
-      top: (5/@px);
-      left: initial;
-      right: 20px;
-      border-radius: 50px;
-      border: solid 2px white;
-      width: min-content;
-      line-height: 2.4;
+            @media @desktop {
+                padding: 0 20px;
+            }
+        }
 
+        a {
+            color: #ccccff;
+            margin-right: 20 / @px;
+        }
     }
-
-    label {
-      padding: 10px 20px;
-      display: inline-block;
-      cursor: pointer;
-
-      @media @desktop {
-        padding: 0 20px;
-      }
-    }
-
-    a {
-      color: #ccccff;
-      margin-right: 20/@px;
-    }
-  }
 }
 
 .pause-anim-control__gif {
+    &--animated,
+    &--still {
+        max-width: 100%;
+    }
 
-  &--animated,
-  &--still {
-    max-width: 100%;
-  }
-
-  &--animated {
-    display: initial;
-  }
-
-  &--still {
-    display: none;
-  }
-}
-
-.prefers-reduced-motion() {
-
-  *,
-  ::before,
-  ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
-  }
-
-  .pause-anim-control__gif {
     &--animated {
-      display: none;
+        display: initial;
     }
 
     &--still {
-      display: initial;
+        display: none;
     }
-  }
 }
 
+.prefers-reduced-motion() {
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+
+    .pause-anim-control__gif {
+        &--animated {
+            display: none;
+        }
+
+        &--still {
+            display: initial;
+        }
+    }
+}
 
 /*
  * From Bruce Lawson's awesome blog post
  * https://brucelawson.co.uk/2021/prefers-reduced-motion-and-browser-defaults/
  */
 @media (prefers-reduced-motion: reduce) {
-  body:not(.pause-anim-control__prefers-motion) {
-    .prefers-reduced-motion();
-  }
+    body:not(.pause-anim-control__prefers-motion) {
+        .prefers-reduced-motion();
+    }
 }
 
 body.pause-anim-control__prefers-reduced-motion {
-  .prefers-reduced-motion();
+    .prefers-reduced-motion();
 }

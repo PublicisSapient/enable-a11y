@@ -16,7 +16,7 @@
   <li>
     <p>You will notice that the examples ask you to include the npm modules like this:</p>
 
-  <?php includeShowcodeStaticBegin() ?>
+  <?php includeShowcodeStaticBegin(); ?>
 // import the js module
 import enableCarousel from '~enable-a11y/js/modules/enable-carousel';
 
@@ -30,11 +30,11 @@ enableCarousel.init();
 
 ...
 
-    <?php includeShowcodeStaticEnd() ?>
+    <?php includeShowcodeStaticEnd(); ?>
 
     <p>The <code>~</code> is resolved by putting the following in your <code>webpack.config.js</code>:</p>
 
-    <?php includeShowcodeStaticBegin() ?>
+    <?php includeShowcodeStaticBegin(); ?>
 module.exports = {
   
   ...
@@ -57,7 +57,7 @@ module.exports = {
     ...
   }
 }
-      <?php includeShowcodeStaticEnd() ?>
+      <?php includeShowcodeStaticEnd(); ?>
 
       <p>Note the <code>../enable-node-libs/</code> and <code>~</code> path aliases.  This is due to the production Enable having fixed versions of some third party JavaScript libraries. In your code, these libraries will point to the production NPM versions inside your code (i.e. <code>glider-js</code>, <code>accessibility-js-routines</code>, <code>js-cookie</code>and <code>jquery</code> (jQuery is needed for AblePlayer only).</p>
       

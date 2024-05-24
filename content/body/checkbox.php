@@ -3,7 +3,7 @@
 
 <h2>A real styled HTML5 checkbox</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 You can style an HTML5 checkbox using CSS easily. You don't need to make faux checkbox
 using <code>&lt;div&gt;</code> tags.
@@ -17,7 +17,7 @@ using <code>&lt;div&gt;</code> tags.
     </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -39,7 +39,7 @@ using <code>&lt;div&gt;</code> tags.
 
 <h2>A DIV with a role of checkbox</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
     If you come across a <code>&lt;div&gt;</code> in existing code that is marked up like a checkbox,
@@ -61,7 +61,7 @@ using <code>&lt;div&gt;</code> tags.
     </div>
 </div>
 
-<?php includeShowcode("example-role-checkbox")?>
+<?php includeShowcode("example-role-checkbox"); ?>
 
 <script type="application/json" id="example-role-checkbox-props">
 {
@@ -94,7 +94,7 @@ using <code>&lt;div&gt;</code> tags.
 
 <h2>HTML checkbox group</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
     If you have a group of checkboxes, this is the proper way to style them. Instead of fieldsets,
@@ -146,7 +146,7 @@ using <code>&lt;div&gt;</code> tags.
         </fieldset>
     </form>
 </div>
-<?php includeShowcode("group-example")?>
+<?php includeShowcode("group-example"); ?>
 
 <script type="application/json" id="group-example-props">
 {
@@ -177,7 +177,11 @@ using <code>&lt;div&gt;</code> tags.
 
 <h2>Indeterminate Checkboxes Using Native HTML</h2>
 
-<?php includeStats(array('isNPM' => true, 'comment' => 'The parent/child hierarchy of this example has been done via an NPM module.')) ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        "The parent/child hierarchy of this example has been done via an NPM module.",
+]); ?>
 
 
 <p>
@@ -196,7 +200,7 @@ using <code>&lt;div&gt;</code> tags.
     HTML attribute. It is set like this:</p>
 
 <figure class="wide">
-    <?php includeShowcode("indeterminate-js", "", "", "", false)?>
+    <?php includeShowcode("indeterminate-js", "", "", "", false); ?>
 
     <figcaption>How to use the indeterminate property in JavaScript</figcaption>
 </figure>
@@ -267,7 +271,7 @@ checkboxEl.checked = false;
     Below are the developer notes on how the library does it. If you are interested in using the library, please <a
         href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p>
 
-<?php includeShowcode("indeterminate-example")?>
+<?php includeShowcode("indeterminate-example"); ?>
 
 <script type="application/json" id="indeterminate-example-props">
 {
@@ -295,7 +299,7 @@ checkboxEl.checked = false;
 
 
 <figure class="wide">
-    <?php includeShowcode("aria-indeterminate-js", "", "", "", false)?>
+    <?php includeShowcode("aria-indeterminate-js", "", "", "", false); ?>
 
     <figcaption>How to use the indeterminate property in JavaScript</figcaption>
 </figure>
@@ -359,7 +363,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 <p>This example uses the same library we used in the native HTML5 example to set up the hierarchical structure for the select all button to work. As you compare the developer notes below to that of the HTML5 example, you will see the way to implement is similar.  Please <a
         href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p> 
 
-<?php includeShowcode("aria-indeterminate-example")?>
+<?php includeShowcode("aria-indeterminate-example"); ?>
 
 <script type="application/json" id="aria-indeterminate-example-props">
 {
@@ -380,12 +384,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 
 <h2>How to Install the Hierarchical Checkbox library Into Your Projects</h2>
 
-<?= includeNPMInstructions(
-    'hierarchical-checkboxes',
-    array(''),
-    '',
-    false,
-    array(
-        'noCSS' => true
-    )) 
+<?= includeNPMInstructions("hierarchical-checkboxes", [""], "", false, [
+    "noCSS" => true,
+])
 ?>

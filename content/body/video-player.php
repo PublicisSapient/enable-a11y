@@ -1,7 +1,7 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
   What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
 
-<?php include("includes/wcag-video-table.php") ?>
+<?php include "includes/wcag-video-table.php"; ?>
 
 <p>
   For a lot of companies and organizations, re-cutting a alternative cut of each video on their website is
@@ -38,8 +38,8 @@
 <h2>Video Player With Text-To-Speech Audio Descriptions</h2>
 
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <div id="example1">
@@ -53,7 +53,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 <script type="application/json" id="example1-props">
 {
   "replaceHtmlRules": {},
@@ -109,16 +109,16 @@
 
 
 <?= includeNPMInstructions(
-        'ablePlayerCustomizations',
-        array(),
-        '',
-        false,
-        array(
-            "otherImports" => "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';"
-        ),
-        null,
-        false,
-        true
-    )
-    ?>
+    "ablePlayerCustomizations",
+    [],
+    "",
+    false,
+    [
+        "otherImports" =>
+            "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';",
+    ],
+    null,
+    false,
+    true,
+) ?>
 
