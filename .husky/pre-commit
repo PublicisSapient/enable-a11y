@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
-# Run the Prettier formatter on all staged parts of files
+# This is the code that automatically runs the Prettier formatter on all staged parts of files that are to be committed. It is run after a commit has been triggered, but before the commit is actually made. This ensures that all code that is committed is formatted correctly.
+
 # Source: https://prettier.io/docs/en/precommit.html#option-4-git-format-stagedhttpsgithubcomhallettjgit-format-staged
+
 npx git-format-staged -f 'prettier --ignore-unknown --stdin --stdin-filepath \"{}\"' .
+
+# If you have issues when running the npx command in an IDE, you should try running the command in the terminal instead. This issue is due to the PATH values not being set as expected in the IDE in order for npx to be recognized. See https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found for more information.
