@@ -39,6 +39,11 @@ describe('Dialog Tests', () => {
     return r;
 
   }
+
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/dialog.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
   
   it('Focus on open and close tests', async () => {
     let domInfo;

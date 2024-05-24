@@ -114,6 +114,11 @@ describe('ARIA Listbox', () => {
 
     return listboxValues;
   }
+
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/listbox.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
   
 
   it('Try keyboard tabbing and picking 2nd value with the Enter key', async () => {

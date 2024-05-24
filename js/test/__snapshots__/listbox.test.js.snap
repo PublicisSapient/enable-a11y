@@ -1,0 +1,2475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ARIA Listbox Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Select Boxes (a.k.a. Listboxes) - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Select Boxes (a.k.a. Listboxes)">
+<meta property="og:description" content="Why it's preferable to use native HTML5 <select> controls vs custom controls, and what developers must do if they have to use a custom one.">
+<meta property="og:image" content="/images/posters/listbox.jpg?1">
+<meta property="og:url" content="/listbox.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Why it's preferable to use native HTML5 <select> controls vs custom controls, and what developers must do if they have to use a custom one.">
+<meta name="twitter:title" content="Accessible Select Boxes (a.k.a. Listboxes)">
+<meta name="twitter:image" content="/images/posters/listbox.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link rel="stylesheet" type="text/css" href="css/table.css">
+<link rel="stylesheet" type="text/css" href="css/enable-listbox.css">
+<link rel="stylesheet" type="text/css" href="css/select-css.css">
+<link rel="stylesheet" type="text/css" href="css/horizontalScrollUI.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-select-boxes-a-k-a-listboxes---heading" tabindex="-1">Accessible Select Boxes (a.k.a. Listboxes)</h1><!-- <aside class="notes">
+            <h2>Notes</h2>
+            <ul>
+                <li>tl;dr: Both versions are accessible, with slight differences in how they are reported to users.</li>
+
+                <li>Screen reader interactions are as follows:
+
+                    <ol>
+                        <li>Tabbing into the widget:
+                            <ul>
+                                <li>
+                                    <strong>Voiceover:</strong> The ARIA and native HTML versions state that they are
+                                    "popup buttons"
+                                    as well as the selected value.
+                                </li>
+                                <li>
+                                    <strong>NVDA:</strong> The ARIA version is a "button" with "submenu", while the HTML
+                                    version
+                                    is a "combo box, collapsed"
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Opening the widget:
+                    <ul>
+                        <li>
+                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how
+                            many
+                            other
+                            options there are (e.g. menu 26 items)
+                        </li>
+                        <li>
+                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the
+                            selected
+                            value.
+                            The ARIA version is described as a list and the HTML version is a "combo box, expanded".
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Selecting a value:
+                </li><li>
+                    <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the
+                    list
+                    (e.g.
+                    Californium, text, 2 of 26). Native version just reads the just the value
+                    <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the
+                        list.</strong>
+
+                </li>
+            </ul>
+        </aside> -->
+
+
+
+
+
+<p>
+  Like radio buttons, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
+  buttons are great for a small amount of choices, select boxes are better for a large set of choices.
+</p>
+
+<p>
+  The TL;DR here is that you can use native <code>&lt;select&gt;</code> tags to create listboxes that are accessible and
+  give a UI that is best for the device they are being displayed on (which is the recommended variation). If you want to
+  control every aspect of the design, however, you can do this using ARIA <code>listbox</code> controls to do that.
+</p>
+
+<p>
+  Please read this entire page before deciding. You don't want to make a decision that you regret as much as the one I
+  made when I didn't invest in the Google IPO back in 2004.
+</p>
+
+
+<h2 id="html5-native-select-element-example--heading" tabindex="-1"><a class="heading__deeplink" href="#html5-native-select-element-example--heading" title="Permalink to HTML5 native select element example" aria-label="Permalink to HTML5 native select element example">HTML5 native select element example</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Although native HTML5 select boxes were difficult to style in the past, <strong>it is possible to style the default
+    (i.e. closed) state completely using CSS</strong>. We have used <a href="https://twitter.com/scottjehl">Scott
+    Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
+    browser CSS demo</a> to style our demo below.</p>
+
+<p>
+  <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
+  The gut reaction from a lot of designers is to change their appearance, since they understandably want to control
+  ever aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
+  manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.
+  Take a look at how the options are displayed when the activates the control:
+</p>
+
+<figure>
+  <figcaption id="screenshot-table__caption" class="caption">
+    Screenshots of the HTML5 select box by platform
+  </figcaption>
+
+  <div class="can-horizontally-scroll__parent">
+    <div class="sticky-table__container sticky-table__container--horizontal-scroll can-horizontally-scroll">
+      <table class="screenshot-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Firefox Desktop</th>
+            <th scope="col">Chrome Android</th>
+            <th scope="col">Safari iOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="images/pages/listbox/desktop-select-options.png" alt="Like all desktop web browsers, Firefox on OSX displays the select box options are in a scrollable list positioned directly below the button that opens it.">
+            </td>
+            <td><img src="images/pages/listbox/android-select-options.png" alt="The options of the select box in Chrome for Android appear in a scrollable modal overlaid on top of the page. The options text takes up most of the width of the viewport.">
+            </td>
+            <td><img src="images/pages/listbox/ios-select-options.png" alt="Safari for iOS displays the select box options in a 3-D scroll wheel on the bottom of the viewport. It also takes up the full width of the screen.">
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</figure>
+
+<p>
+  Designers can style the closed version of HTML5 select boxes, but not that of the optimized UI. I urge designers to
+  embrace this <strong>feature, not a bug</strong> mantra for select boxes. You will make your users happier.
+</p>
+
+
+
+<p>What follows is an excellent customly styled native HTML5 select box. It uses code from <a href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
+    browser CSS demo</a> that you can download via
+  NPM.
+  Instead of putting my usual notes as an explanation, visit their blog post <a href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It's 2019</a>.
+
+</p>
+
+<div id="html5-example" class="enable-example">
+  <label class="select-css__label" for="fave-fruit">
+    Favourite fruit:
+  </label>
+  <select id="fave-fruit" class="select-css">
+    <option value="">Choose one…</option>
+
+    <option value="Np">
+      Neptunium
+    </option>
+    <option value="Pu">
+      Plutonium
+    </option>
+    <option value="Am">
+      Americium
+    </option>
+    <option value="Cm">
+      Curium
+    </option>
+    <option value="Bk">
+      Berkelium
+    </option>
+    <option value="Cf">
+      Californium
+    </option>
+    <option value="Es">
+      Einsteinium
+    </option>
+    <option value="Fm">
+      Fermium
+    </option>
+    <option value="Md">
+      Mendelevium
+    </option>
+    <option value="No">
+      Nobelium
+    </option>
+    <option value="Lr">
+      Lawrencium
+    </option>
+    <option value="Rf">
+      Rutherfordium
+    </option>
+    <option value="Db">
+      Dubnium
+    </option>
+    <option value="Sg">
+      Seaborgium
+    </option>
+    <option value="Bh">
+      Bohrium
+    </option>
+    <option value="Hs">
+      Hassium
+    </option>
+    <option value="Mt">
+      Meitnerium
+    </option>
+    <option value="Ds">
+      Darmstadtium
+    </option>
+    <option value="Rg">
+      Roentgenium
+    </option>
+    <option value="Cn">
+      Copernicium
+    </option>
+    <option value="Nh">
+      Nihonium
+    </option>
+    <option value="Fl">
+      Flerovium
+    </option>
+    <option value="Mc">
+      Moscovium
+    </option>
+    <option value="Lv">
+      Livermorium
+    </option>
+    <option value="Ts">
+      Tennessine
+    </option>
+    <option value="Og">
+      Oganesson
+    </option>
+
+  </select>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="html5-example__steps" class="showcode__steps"><label for="html5-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="html5-example__steps--select" data-showcode-for="html5-example" data-replace-html-rules="{&quot;select&quot;:&quot;&amp;lt;option value=\\&quot;\\&quot;&amp;gt;Choose an element ...&amp;lt;/option&amp;gt;&amp;lt;option value=\\&quot;Np\\&quot;&amp;gt;  Neptunium&amp;lt;/option&amp;gt; ...&quot;}"><option value=""></option><option value="%OPENCLOSETAG%select" data-showcode-notes="">Step #1: Mark up the component with a select tag</option><option value="%OPENCLOSECONTENTTAG%option" data-showcode-notes="">Step #2: Mark up all the options with the option tag</option><option value="for" data-showcode-notes="">Step #3: Ensure the label is associated with the select tag</option></select></div>
+                          <div id="html5-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="html5-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="html5-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="html5-example__example-desc" class="showcode__example--desc">
+                <label for="html5-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="html5-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="html5-example" data-showcode-props="html5-example-props" tabindex="0" aria-describedby="html5-example__example-desc">&lt;label<br>  class="select-css__label"<br>  for="fave-fruit"<br>&gt;<br>  Favourite fruit:<br>&lt;/label&gt;<br>&lt;select<br>  id="fave-fruit"<br>  class="select-css"<br>&gt;<br>  &lt;option value=""&gt;<br>    Choose an element<br><br> ...<br><br><br>  &lt;/option&gt;<br>  &lt;option value="Np"&gt;<br>    Neptunium<br>  &lt;/option&gt;<br><br><br>  ...<br><br><br>&lt;/select&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="html5-example-props">
+{
+  "replaceHtmlRules": {
+    "select": "<option value=\\"\\">Choose an element ...</option><option value=\\"Np\\">  Neptunium</option> ..."
+  },
+  "steps": [{
+      "label": "Mark up the component with a select tag",
+      "highlight": "%OPENCLOSETAG%select",
+      "notes": ""
+    }, {
+      "label": "Mark up all the options with the option tag",
+      "highlight": "%OPENCLOSECONTENTTAG%option",
+      "notes": ""
+    },
+    {
+      "label": "Ensure the label is associated with the select tag",
+      "highlight": "for",
+      "notes": ""
+    }
+  ]
+}
+</script>
+
+
+<h2 id="aria-listbox-example--heading" tabindex="-1"><a class="heading__deeplink" href="#aria-listbox-example--heading" title="Permalink to ARIA listbox example" aria-label="Permalink to ARIA listbox example">ARIA listbox example</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-2">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This solution described below is available as an NPM module. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  This listbox I made is accessible, and I have used in a few projects in the past. It works well, a developer can
+  ensure it looks the same in all browsers, and I am happy with the accessibility features in it. However, I strongly
+  recommend you use the <code>&lt;select&gt;</code> box example instead. Using this library means that:
+</p>
+
+<ol>
+  <li>You are adding more JavaScript to your application.</li>
+  <li>You are not taking advantage of the optimized <code>&lt;select&gt;</code> box styling for the device using the
+    control.</li>
+  <li>You are going to spend more development time to get this to work.</li>
+</ol>
+
+<p>
+  If after reading the warning on the label, you decide that still want to use this product, read the code walkthrough
+  and the installation instructions after the demo.
+</p>
+
+<div id="aria-example">
+  <div class="enable-listbox listbox-area">
+    <div class="left-area">
+      <span id="exp_elem" class="enable-listbox__exp_elem">
+        Choose an element:
+      </span>
+      
+      <div id="exp_wrapper" class="enable-listbox__wrapper">
+        <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="exp_elem exp_button" id="exp_button" class="enable-listbox__button">&nbsp;</button>
+        <ul id="exp_elem_list" class="hidden" tabindex="-1" role="listbox" aria-labelledby="exp_elem">
+          <li id="exp_elem_Su" role="option">
+            Supercalifragilisticexpialidociousium
+          </li>
+          
+          <li id="exp_elem_Pu" role="option">
+            Plutonium
+          </li>
+          <li id="exp_elem_Am" role="option">
+            Americium
+          </li>
+          <li id="exp_elem_Cm" role="option">
+            Curium
+          </li>
+          <li id="exp_elem_Bk" role="option">
+            Berkelium
+          </li>
+          <li id="exp_elem_Cf" role="option">
+            Californium
+          </li>
+          <li id="exp_elem_Es" role="option">
+            Einsteinium
+          </li>
+          <li id="exp_elem_Fm" role="option">
+            Fermium
+          </li>
+          <li id="exp_elem_Md" role="option">
+            Mendelevium
+          </li>
+          <li id="exp_elem_No" role="option">
+            Nobelium
+          </li>
+          <li id="exp_elem_Lr" role="option">
+            Lawrencium
+          </li>
+          <li id="exp_elem_Rf" role="option">
+            Rutherfordium
+          </li>
+          <li id="exp_elem_Db" role="option">
+            Dubnium
+          </li>
+          <li id="exp_elem_Sg" role="option">
+            Seaborgium
+          </li>
+          <li id="exp_elem_Bh" role="option">
+            Bohrium
+          </li>
+          <li id="exp_elem_Hs" role="option">
+            Hassium
+          </li>
+          <li id="exp_elem_Mt" role="option">
+            Meitnerium
+          </li>
+          <li id="exp_elem_Ds" role="option">
+            Darmstadtium
+          </li>
+          <li id="exp_elem_Rg" role="option">
+            Roentgenium
+          </li>
+          <li id="exp_elem_Cn" role="option">
+            Copernicium
+          </li>
+          <li id="exp_elem_Nh" role="option">
+            Nihonium
+          </li>
+          <li id="exp_elem_Fl" role="option">
+            Flerovium
+          </li>
+          <li id="exp_elem_Mc" role="option">
+            Moscovium
+          </li>
+          <li id="exp_elem_Lv" role="option">
+            Livermorium
+          </li>
+          <li id="exp_elem_Ts" role="option">
+            Tennessine
+          </li>
+          <li id="exp_elem_Og" role="option">
+            Oganesson
+          </li>
+          <li id="exp_elem_Np" role="option">
+            Neptunium
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>
+  (<em><strong>Note:</strong> The styling of this component is taken from <a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html">The W3C's
+      Collapsible Dropdown Listbox Example</a> — the script, however, has been replaced with custom
+    code.</em>)
+</p>
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example__steps" class="showcode__steps"><label for="aria-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example__steps--select" data-showcode-for="aria-example" data-replace-html-rules="{&quot;[role=\\&quot;listbox\\&quot;]&quot;:&quot;&amp;lt;!-- This is a the selected item in the dropdown --&amp;gt;&amp;lt;li id=\\&quot;exp_elem_Np\\&quot; role=\\&quot;option\\&quot; aria-selected=\\&quot;true\\&quot;&amp;gt;Neptunium&amp;lt;/li&amp;gt;&amp;lt;!-- This is an unselected item --&amp;gt;&amp;lt;li id=\\&quot;exp_elem_Pu\\&quot; role=\\&quot;option\\&quot; aria-selected=\\&quot;false\\&quot;&amp;gt;Plutonium&amp;lt;/li&amp;gt;...&quot;}"><option value=""></option><option value="role" data-showcode-notes="The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements. If not, you must use the <code>presentation</code> role for the nodes in between the <code>listbox</code> and the <code>option</code>, in a similar way described in <a href=&quot;table.php#table-aria&quot;>we describe using presentation roles in our ARIA tables demo</a>.">Step #1: Place ARIA roles in document</option><option value="aria-haspopup" data-showcode-notes="">Step #2: Place <strong>aria-haspopup</strong> attribute on button that activates dropdown functionality.</option><option value="aria-labelledby ||| id=&quot;exp_button&quot;" data-showcode-notes="Please ensure these ids are unique in your document.  If you have multiple dropdowns, the id from them must be unique.">Step #3: Markup labels of listbox using aria-labelledby</option><option value="class=&quot;hidden&quot;" data-showcode-notes="This prevents the screen reader from reading the contents of the hidden information in reading mode.">Step #4: When listbox is closed, hide listbox list with CSS <code>display: none.</code></option><option value="aria-selected" data-showcode-notes="<strong>aria-selected=&quot;true&quot;</strong> for the selected option, <strong>aria-selected=&quot;false&quot;</strong> otherwise.">Step #5: Place aria-selected attributes on options</option><option value="aria-expanded" data-showcode-notes="<ul>   <li>This is set to <strong>false</strong> when the options are hidden, <strong>true</strong> when the are visible.</li>   <li>When expanded, focus goes to the selected element of the list. The user can change the value with the arrow keys   <li>     When expanded, mobile users should not be able to access elements outside of the list.  This is done by setting <strong>aria-hidden=&quot;true&quot;</strong> to all siblings, as well as the siblings of the list's parents.     This can be done efficiently using the <strong>setMobileFocusLoop()</strong> of Enable's accessibility library.</li>   </li>   <li>     When not closed, focus should go back to the button that opened it.     Mobile users should be able to access elements outside of the list again.     This can be done using <strong>accessibility.removeFocusLoop()</strong>   </li>   <li>When the keyboard focus is removed from the list, the listbox closes and <strong>aria-expanded</strong> is set to <strong>false</strong>.</li> </ul>">Step #6: Place aria-expanded attribute on button element</option></select></div>
+                          <div id="aria-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example__example-desc" class="showcode__example--desc">
+                <label for="aria-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example" data-showcode-props="aria-example-props" tabindex="0" aria-describedby="aria-example__example-desc">&lt;div<br>  class="enable-listbox listbox-area"<br>&gt;<br>  &lt;div class="left-area"&gt;<br>    &lt;span<br>      id="exp_elem"<br>      class="enable-listbox__exp_elem"<br>    &gt;<br>      Choose an element:<br>    &lt;/span&gt;<br>    &lt;div<br>      id="exp_wrapper"<br>      class="enable-listbox__wrapper"<br>    &gt;<br>      &lt;button<br>        aria-haspopup="listbox"<br>        aria-expanded="false"<br>        aria-labelledby="exp_elem exp_button"<br>        id="exp_button"<br>        class="enable-listbox__button"<br>      &gt;<br>        &amp;nbsp;<br>      &lt;/button&gt;<br>      &lt;ul<br>        id="exp_elem_list"<br>        class="hidden"<br>        tabindex="-1"<br>        role="listbox"<br>        aria-labelledby="exp_elem"<br>      &gt;<br><br>        &lt;!-- This is a the selected item in the dropdown --&gt;<br><br>        &lt;li<br>          id="exp_elem_Np"<br>          role="option"<br>          aria-selected="true"<br>        &gt;<br>          Neptunium<br>        &lt;/li&gt;<br><br>        &lt;!-- This is an unselected item --&gt;<br><br>        &lt;li<br>          id="exp_elem_Pu"<br>          role="option"<br>          aria-selected="false"<br>        &gt;<br>          Plutonium<br>        &lt;/li&gt;<br><br><br>        ...<br><br><br>      &lt;/ul&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="aria-example-props">
+{
+  "replaceHtmlRules": {
+    "[role=\\"listbox\\"]": "<!-- This is a the selected item in the dropdown --><li id=\\"exp_elem_Np\\" role=\\"option\\" aria-selected=\\"true\\">Neptunium</li><!-- This is an unselected item --><li id=\\"exp_elem_Pu\\" role=\\"option\\" aria-selected=\\"false\\">Plutonium</li>..."
+  },
+  "steps": [{
+      "label": "Place ARIA roles in document",
+      "highlight": "role",
+      "notes": "The <strong>option</strong> elements must be direct children of the <strong>listbox</strong> elements. If not, you must use the <code>presentation</code> role for the nodes in between the <code>listbox</code> and the <code>option</code>, in a similar way described in <a href=\\"table.php#table-aria\\">we describe using presentation roles in our ARIA tables demo</a>."
+    },
+    {
+      "label": "Place <strong>aria-haspopup</strong> attribute on button that activates dropdown functionality.",
+      "highlight": "aria-haspopup",
+      "notes": ""
+    },
+    {
+      "label": "Markup labels of listbox using aria-labelledby",
+      "highlight": "aria-labelledby ||| id=\\"exp_button\\"",
+      "notes": "Please ensure these ids are unique in your document.  If you have multiple dropdowns, the id from them must be unique."
+    },
+    {
+      "label": "When listbox is closed, hide listbox list with CSS <code>display: none</strong>.",
+      "highlight": "class=\\"hidden\\"",
+      "notes": "This prevents the screen reader from reading the contents of the hidden information in reading mode."
+    },
+    {
+      "label": "Place aria-selected attributes on options",
+      "highlight": "aria-selected",
+      "notes": "<strong>aria-selected=\\"true\\"</strong> for the selected option, <strong>aria-selected=\\"false\\"</strong> otherwise."
+    },
+    {
+      "label": "Place aria-expanded attribute on button element",
+      "highlight": "aria-expanded",
+      "notes": [
+        "<ul>",
+        "  <li>This is set to <strong>false</strong> when the options are hidden, <strong>true</strong> when the are visible.</li>",
+        "  <li>When expanded, focus goes to the selected element of the list. The user can change the value with the arrow keys",
+        "  <li>",
+        "    When expanded, mobile users should not be able to access elements outside of the list.  This is done by setting <strong>aria-hidden=\\"true\\"</strong> to all siblings, as well as the siblings of the list's parents.",
+        "    This can be done efficiently using the <strong>setMobileFocusLoop()</strong> of Enable's accessibility library.</li>",
+        "  </li>",
+        "  <li>",
+        "    When not closed, focus should go back to the button that opened it.",
+        "    Mobile users should be able to access elements outside of the list again.",
+        "    This can be done using <strong>accessibility.removeFocusLoop()</strong>",
+        "  </li>",
+        "  <li>When the keyboard focus is removed from the list, the listbox closes and <strong>aria-expanded</strong> is set to <strong>false</strong>.</li>",
+        "</ul>"
+      ]
+    }
+
+  ]
+}
+</script>
+
+<h3 id="npm-instructions" tabindex="-1"><a class="heading__deeplink" href="#npm-instructions" title="Permalink to Installation Instructions" aria-label="Permalink to Installation Instructions">Installation Instructions</a></h3>
+
+<p>You can load this JavaScript library into your application in serveral ways:
+
+</p><ul>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
+  <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
+      browser</a>.</li>
+    <li>as an old-school ES4/JavaScript library.</li>
+  </ul>
+
+
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
+
+
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  </li><li>Stack Overflow has a really good thread about <a href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
+
+
+<h4 id="important-note-on-the-css-classes-used-in-this-module---heading" tabindex="-1"><a class="heading__deeplink" href="#important-note-on-the-css-classes-used-in-this-module---heading" title="Permalink to Important Note On The CSS Classes Used In This Module:" aria-label="Permalink to Important Note On The CSS Classes Used In This Module:">Important Note On The CSS Classes Used In This Module:</a></h4>
+
+<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+These CSS classes begin with <code>enable-listbox__</code>.  Please see the documentation above to see where these CSS classes are inserted.
+
+
+</p><h4 id="using-npm-webpack-to-load-es6-modules---heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-es6-modules---heading" title="Permalink to Using NPM/Webpack to load ES6 Modules:" aria-label="Permalink to Using NPM/Webpack to load ES6 Modules:">Using NPM/Webpack to load ES6 Modules:</a></h4>
+
+<ol>
+  <li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__3__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__3__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__3__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__3">module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+ 
+    },
+
+    ...
+  },
+
+  ...
+
+}
+    </code>
+  </div>
+</div>  </li>
+  <li>
+    You can use the module like this:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__4__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__4__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__4__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__4">// import the JS module
+import enableListbox from '~enable-a11y/js/modules/enable-listbox';
+
+// import the CSS for the module 
+import '~enable-a11y/css/enable-listbox';
+ 
+// How to initialize the enableListbox library
+enableListbox.init();
+
+
+// Note that this component will work with DOM elements coded like
+// the examples above added after page load.  There is no need to call
+// an .add() method, like we do with the Enable combobox component.
+
+        </code>
+  </div>
+</div>      </li>
+
+  <li>
+    Alternatively, if you are using LESS you can include the styles in your project's CSS using:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__5__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__5__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__5__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__5">@import '~enable-a11y/css/enable-listbox';
+        </code>
+  </div>
+</div>
+    (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
+  </li>
+</ol>
+
+<h4 id="using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" title="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax" aria-label="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax">Using NPM/Webpack to Load Modules Using CommonJS Syntax</a></h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__6__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__6__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__6__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__6">var enableListbox = require('enable-a11y/enable-listbox').default; 
+
+...
+
+enableListbox.init();
+    </code>
+  </div>
+</div>    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__7__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__7__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__7__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__7">@import '~enable-a11y/css/enable-listbox';
+    </code>
+  </div>
+</div>    </li>
+    </ol>
+
+<h4 id="using-es6-modules-natively---heading" tabindex="-1"><a class="heading__deeplink" href="#using-es6-modules-natively---heading" title="Permalink to Using ES6 modules natively." aria-label="Permalink to Using ES6 modules natively.">Using ES6 modules natively.</a></h4>
+
+<p>
+  This is the method that this page you are reading now loads the scripts.
+</p>
+
+<ol>
+  <li>
+    Grab the source by either <a href="npm.php">using NPM</a>, <a href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+  </li>
+  <li>
+    If you want to load the module as a native ES6 module, copy <code>js/modules/enable-listbox.js</code>
+    ,      and <code>css/enable-listbox.css</code>
+        from the repo and put them
+    in the appropriate directories in your project (all JS files must be in the same directory).
+  </li>
+    <li>
+    Load the CSS in the head of you document:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__8__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__8__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__8__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__8">&lt;html&gt;
+  &lt;head&gt;
+
+    ...
+
+    &lt;link rel="stylesheet" href="path-to/css/enable-listbox.css" &gt;
+
+    ...
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+
+      </code>
+  </div>
+</div>  </li><li>
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__9__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__9__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__9__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__9">&lt;script type="module"&gt;
+    import enableListbox from "path-to/enable-listbox.js" 
+
+    enableListbox.init();
+&lt;/script&gt;
+        </code>
+  </div>
+</div>  </li>
+</ol>
+
+<h4 id="using-es4--heading" tabindex="-1"><a class="heading__deeplink" href="#using-es4--heading" title="Permalink to Using ES4" aria-label="Permalink to Using ES4">Using ES4</a></h4>
+
+Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
+directory instead of the <code>js/modules/</code>:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__10__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__10__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__10__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__10">&lt;script src="path-to/es4/enable-listbox.js"&gt;&lt;/script&gt;
+    </code>
+  </div>
+</div>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    <script type="module">
+    import enableListbox from "./js/modules/enable-listbox.js" 
+    import horizontalScrollUI from "./js/modules/horizontalScrollUI.js";
+    enableListbox.init();
+</script>
+
+</body></html>"
+`;

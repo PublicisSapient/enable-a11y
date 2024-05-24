@@ -1,0 +1,2772 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Sliders - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Sliders">
+<meta property="og:description" content="This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users.">
+<meta property="og:image" content="/images/posters/slider.jpg?1">
+<meta property="og:url" content="/slider.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users.">
+<meta name="twitter:title" content="Accessible Sliders">
+<meta name="twitter:image" content="/images/posters/slider.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link id="enable-slider-style" rel="stylesheet" type="text/css" href="css/enable-slider.css">
+<link rel="stylesheet" type="text/css" href="css/form.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-sliders--heading" tabindex="-1">Accessible Sliders</h1><!-- <aside class="notes">
+            <h2>Notes:</h2>
+
+            <ul>
+                <li>The ARIA example is based off of code from Open Ajax Alliance's <a                         href="https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/">Slider
+                        Example</a> (link goes to a Way Back Machine link, since the original site is long gone). It was
+                    heavily modified
+                    by the Enable project to be accessible, for both desktop and mobile users.</li>
+                <li>Since both of the method changing the native <code>&lt;input type="range"&gt;</code> slider values
+                    cannot be implemented via JS for both Voiceover and Talkback, an alternative UI was made using
+                    <a href="38-visible-on-focus.php">visible on focus</a> components. <strong>This alternative UI is
+                        only visible when using a mobile screen reader.</strong>
+                </li>
+            </ul>
+        </aside> -->
+
+<p>
+  This page shows two examples of a slider: an HTML5 one implemented with <code>&lt;input type="range"&gt;</code> and
+  an ARIA one using the <code>slider</code> role and fair amount of JavaScript. While the latter solution
+  is accessible on both desktop and mobile, it works so differently than the native one in mobile devices due
+  to JavaScript limitations, and is a great example of "just because you <em>can</em> so something, it doesn't
+  mean you should".
+</p>
+
+<h2 id="a-dead-simple-html5-slider--heading" tabindex="-1"><a class="heading__deeplink" href="#a-dead-simple-html5-slider--heading" title="Permalink to A Dead-Simple HTML5 Slider" aria-label="Permalink to A Dead-Simple HTML5 Slider">A Dead-Simple HTML5 Slider</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  <strong>This is by the preferred method of implementing a slider.</strong>
+  It "just works". Note that the UI for mobile screen reader users is very different
+  between the two major operating systems:
+</p>
+
+<ul>
+  <li>Under iOS/Voiceover: when the slider is focused, users must do a small swipe up and down to
+    increase and decrease the slider values.</li>
+  <li>Under Android/Talkback: when the slider is focused, users must use the device's
+    <strong>volume keys</strong> to manipulate the slider.
+  </li>
+</ul>
+
+
+
+<div id="html-example" class="enable-example">
+  <form>
+    <label for="horizontal-slider" class="html-slider__label enable-slider__label">Amount you want
+      to donate to the Zoltan Hawryluk Developer Fund: </label>
+    <div>
+      <div class="html-slider__container">
+        <input type="range" id="horizontal-slider" name="donationAmount" value="500" min="0" max="1000" step="50" onchange="this.form.elements.myOutput.innerHTML = parseFloat(this.value);">
+      </div>
+      <output class="html-slider__output" name="myOutput" role="presentation">500</output>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+            
+            
+            <p>
+                Although we give basic information cover how to style HTML5 Sliders, we do gloss over some minor 
+                cross-browser styling issues. More information on making them
+                look super pretty can be found here:
+            </p>
+
+            <ul>
+                <li><a href="https://www.cssportal.com/style-input-range/">Style Input Range</a> on-line generator tool can
+                    get you up and running quickly.</li>
+                <li><a href="https://css-tricks.com/sliding-nightmare-understanding-range-input/">A Sliding Nightmare:
+                        Understanding the Range Input</a>
+                    by <a href="https://twitter.com/anatudor?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Ana
+                        Tudor</a> is probably the most
+                    complete deep-dive I have seen on how to style HTML5 sliders (the old Microsoft Edge code is something
+                    we didn't implement here, since
+                    Microsoft Edge now relies on the same rendering engine Google Chrome uses). Recommended if you are
+                    trying to work out the cross-browser quirks between the two implementations.</li>
+            </ul>
+                              </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="html-example__steps" class="showcode__steps"><label for="html-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="html-example__steps--select" data-showcode-for="html-example" data-replace-html-rules="{}"><option value=""></option><option value="type=&quot;range&quot;" data-showcode-notes="This can receive keyboard focus for free, since its a form element.  No JS required.">Step #1: Use an input of type range</option><option value="min ||| max ||| value=&quot;500&quot; ||| step" data-showcode-notes="The min, max and current values are represented by the <strong>min</strong>, <strong>max</strong> and <strong>now</strong> attributes, respectively">Step #2: Add the min, max, step, and default value of the slider</option><option value="for" data-showcode-notes="Just like any interactive component, it needs a label">Step #3: Set the slider's label</option><option value="onchange=&quot;[^&quot;]*&quot; ||| id=&quot;myOutput&quot;" data-showcode-notes="<p>This is so sighted users can see the value of the slider.  Although I implemented this inline, you should use <code>.addEventListener</code> instead.</p> <p><strong>Note:</strong> Originally, I used an <code>oninput</code> event on the form element to do this, but this wasn't being captured by iOS with VoiceOver on, so I changed it to this.  Keep that in mind when you implement this yourself.</p>">Step #4: Set an onchange event to display current value.</option><option value="role=&quot;presentation&quot;" data-showcode-notes="Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  ">Step #5: Set the output tag's role to presentation</option><option value="%CSS% enable-slider-style~ input[type=&quot;range&quot;]::-webkit-slider-runnable-track ||| %CSS% enable-slider-style~ input[type=&quot;range&quot;]::-moz-range-track " data-showcode-notes="Note that there are two selectors that have the same CSS properties (you may see certain syntax differences in WebKit and Blink based browsers due to the way it parses CSS for the <code>-webkit-*</code> based code).  The first is for WebKit and Blink based browsers (i.e. Chrome, Safari, Opera, Edge), while the second is for Firefox.  <a href=&quot;https://stackoverflow.com/questions/16982449/why-isnt-it-possible-to-combine-vendor-specific-pseudo-elements-classes-into-on&quot;>We cannot merge these two CSS rules into one, due to the way CSS works.">Step #6: Style the slider's track</option><option value="%CSS% enable-slider-style~ input[type=&quot;range&quot;]::-webkit-slider-thumb ||| %CSS% enable-slider-style~ input[type=&quot;range&quot;]::-moz-range-thumb" data-showcode-notes="Again, different selectors for WebKit and Blink based browsers vs. Firefox">Step #7: Style the slider's control</option><option value="%CSS% enable-slider-style~ @supports selector(input[type=&quot;range&quot;]::-moz-range-thumb)" data-showcode-notes="There are certain layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector&quot;>@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles.">Step #8: Style specific browser implementations</option></select></div>
+                          <div id="html-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="html-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="html-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="html-example__example-desc" class="showcode__example--desc">
+                <label for="html-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="html-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="html-example" data-showcode-props="html-example-props" tabindex="0" aria-describedby="html-example__example-desc">&lt;form&gt;<br>  &lt;label<br>    for="horizontal-slider"<br>    class="html-slider__label enable-slider__label"<br>  &gt;<br>    Amount you want<br>    to donate to the Zoltan Hawryluk Developer Fund:<br>  &lt;/label&gt;<br>  &lt;div&gt;<br>    &lt;div<br>      class="html-slider__container"<br>    &gt;<br>      &lt;input<br>        type="range"<br>        id="horizontal-slider"<br>        name="donationAmount"<br>        value="500"<br>        min="0"<br>        max="1000"<br>        step="50"<br>        onchange="this.form.elements.myOutput.innerHTML = parseFloat(this.value);"<br>      &gt;<br>    &lt;/div&gt;<br>    &lt;output<br>      class="html-slider__output"<br>      name="myOutput"<br>      role="presentation"<br>    &gt;<br>      500<br>    &lt;/output&gt;<br>  &lt;/div&gt;<br>  &lt;button type="submit"&gt;<br>    Submit<br>  &lt;/button&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="html-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use an input of type range",
+      "highlight": "type=\\"range\\"",
+      "notes": "This can receive keyboard focus for free, since its a form element.  No JS required."
+    },
+    {
+      "label": "Add the min, max, step, and default value of the slider",
+      "highlight": "min ||| max ||| value=\\"500\\" ||| step",
+      "notes": "The min, max and current values are represented by the <strong>min</strong>, <strong>max</strong> and <strong>now</strong> attributes, respectively"
+    },
+    {
+      "label": "Set the slider's label",
+      "highlight": "for",
+      "notes": "Just like any interactive component, it needs a label"
+    },
+    {
+      "label": "Set an onchange event to display current value.",
+      "highlight": "onchange=\\"[^\\"]*\\" ||| id=\\"myOutput\\"",
+      "notes": [
+        "<p>This is so sighted users can see the value of the slider.  Although I implemented this inline, you should use <code>.addEventListener</code> instead.</p>",
+        "<p><strong>Note:</strong> Originally, I used an <code>oninput</code> event on the form element to do this, but this wasn't being captured by iOS with VoiceOver on, so I changed it to this.  Keep that in mind when you implement this yourself.</p>"
+      ]
+    },
+    {
+      "label": "Set the output tag's role to presentation",
+      "highlight": "role=\\"presentation\\"",
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+    },
+    {
+      "label": "Style the slider's track",
+      "highlight": "%CSS% enable-slider-style~ input[type=\\"range\\"]::-webkit-slider-runnable-track ||| %CSS% enable-slider-style~ input[type=\\"range\\"]::-moz-range-track ",
+      "notes": "Note that there are two selectors that have the same CSS properties (you may see certain syntax differences in WebKit and Blink based browsers due to the way it parses CSS for the <code>-webkit-*</code> based code).  The first is for WebKit and Blink based browsers (i.e. Chrome, Safari, Opera, Edge), while the second is for Firefox.  <a href=\\"https://stackoverflow.com/questions/16982449/why-isnt-it-possible-to-combine-vendor-specific-pseudo-elements-classes-into-on\\">We cannot merge these two CSS rules into one, due to the way CSS works."
+    },
+    {
+      "label": "Style the slider's control",
+      "highlight": "%CSS% enable-slider-style~ input[type=\\"range\\"]::-webkit-slider-thumb ||| %CSS% enable-slider-style~ input[type=\\"range\\"]::-moz-range-thumb",
+      "notes": "Again, different selectors for WebKit and Blink based browsers vs. Firefox"
+    },
+    {
+      "label": "Style specific browser implementations",
+      "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\\"range\\"]::-moz-range-thumb)",
+      "notes": "There are certain layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
+
+    }
+  ]
+}
+</script>
+
+<h2 id="an-html5-slider-with-min-and-max-values--heading" tabindex="-1"><a class="heading__deeplink" href="#an-html5-slider-with-min-and-max-values--heading" title="Permalink to An HTML5 Slider With Min and Max Values" aria-label="Permalink to An HTML5 Slider With Min and Max Values">An HTML5 Slider With Min and Max Values</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Sometimes, the need comes up to have a slider with minimum and maximum values. Even though one single HTML5 range
+  element
+  can't do this, it is possible to combine two of them, with a little bit of CSS and surprisingly tiny amount of JS, to
+  achieve
+  this effect.
+</p>
+
+<p>
+  I cannot claim credit for this solution -- it's the work of the
+  hugely talented <a href="https://css-tricks.com/author/thebabydino/">Ana Tudor</a>. Anyone interested
+  in bleeding edge CSS and animation work should definitely check out <a href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask">Ana's Codepen</a>
+  and/or <a href="https://www.patreon.com/anatudor">donating to help fund her research and mad scientist
+    inclinations</a>.
+</p>
+
+<div id="html-multi-example" class="enable-example">
+  <form class="html-slider__multi--form" oninput="" autocomplete="off">
+    <fieldset>
+      <legend class="enable-slider__label">
+        Amount you are willing to bid on an Atari 2600
+      </legend>
+      <div>
+        <div role="group" class="html-slider__container html-slider__multi--container" style="--a: 200; --b: 800; --min: 0; --max: 1000">
+
+          <label class="sr-only" for="a">
+            Amount A
+          </label>
+          <input id="a" type="range" name="multiSlider1" value="200" min="0" max="1000" step="50">
+          <output class="html-slider__multi--output" id="output_a" for="a" role="presentation" style="--val: var(--a)">
+            $200
+          </output>
+
+          <label class="sr-only" for="b">
+            Amount B
+          </label>
+          <input id="b" type="range" name="multiSlider2" value="800" min="0" max="1000" step="50">
+          <output class="html-slider__multi--output" id="output_b" for="b" role="presentation" style="--val: var(--b)">
+            $800
+          </output>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="html-multi-example__steps" class="showcode__steps"><label for="html-multi-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="html-multi-example__steps--select" data-showcode-for="html-multi-example" data-replace-html-rules="{}"><option value=""></option><option value="%OPENTAG%input" data-showcode-notes="These will be stacked on top of each other via CSS.">Step #1: Use two range inputs</option><option value="min=&quot;0&quot; ||| max=&quot;1000&quot; ||| value ||| step" data-showcode-notes="The min, max and current values are represented by the <strong>min</strong>, <strong>max</strong> and <strong>now</strong> attributes, respectively">Step #2: Add the min, max, step, and default value of the slider</option><option value="min=&quot;0&quot; ||| max=&quot;1000&quot; |||  --min: 0 ||| --max: 1000 " data-showcode-notes="">Step #3: Set CSS variables up that match the min, max of the sliders</option><option value="value=&quot;200&quot; ||| value=&quot;800&quot; ||| --a: 200 ||| --b: 800 " data-showcode-notes="">Step #4: Set CSS variables that match the slider values</option><option value="%OPENCLOSETAG%fieldset ||| %OPENCLOSECONTENTTAG%legend" data-showcode-notes="This acts as a label to all the sliders in the group.  Screen reader users will be told what the purpose of all the sliders in this section are for &quot;choosing the amount they are willing to bid on an Atari 2600&quot;">Step #5: Wrap the sliders inside a fieldset with a legend</option><option value="for" data-showcode-notes="Labels for each individual slider. Note that Amount A can be smaller or larger than B, so we can't call any of the slider elements &quot;the minimum&quot; or &quot;the maximum&quot; value here.">Step #6: Link each slider with its label and output tag using the for attribute</option><option value="autocomplete=&quot;off&quot;" data-showcode-notes="We do this to ensure onload, the values are reset to the default values we set in the two previous steps.  If we didn't do this, <a href=&quot;https://stackoverflow.com/questions/2486474/preventing-firefox-from-remembering-the-input-value-on-refresh-with-a-meta-tag&quot;>Firefox will remember the values of the sliders when refreshing the page</a>, no matter what the <code>value</code> attributes from the previous step are set to.  ">Step #7: Set the form's autocomplete attribute to off</option><option value="role=&quot;presentation&quot;" data-showcode-notes="Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  ">Step #8: Set the output tag's role to presentation</option><option value="%CSS% enable-slider-style~ input[type=&quot;range&quot;]::-webkit-slider-thumb ||| %CSS% enable-slider-style~ input[type=&quot;range&quot;]::-moz-range-thumb" data-showcode-notes="This is the same as in the previous example.">Step #9: Style the slider's control</option><option value="%CSS% enable-slider-style~ .html-slider__multi--container input[type=&quot;range&quot;]::-webkit-slider-runnable-track ||| visibility: hidden ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=&quot;range&quot;]::-moz-range-track ||| visibility: hidden" data-showcode-notes="">Step #10: Hide the tracks of both sliders</option><option value="%CSS% enable-slider-style~ .html-slider__multi--container input[type=&quot;range&quot;] ||| pointer-events: none; ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=&quot;range&quot;]::-webkit-slider-thumb ||| pointer-events: auto; ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=&quot;range&quot;]::-moz-range-thumb ||| pointer-events: auto; " data-showcode-notes="The <code>pointer-events: none</code> on each of the slider tracks will ensure mouse clicks go through the hidden track.  The <code>pointer-events: auto</code> ensures that pointer events can be captured by the slider control.">Step #11: Set pointer-events CSS properties on the slider and the slider thumb</option><option value="%CSS% enable-slider-style~ .html-slider__multi--container::before" data-showcode-notes="We use a lot of the same styles that we used to style the real track in the first example.">Step #12: Replace the tracks of both of the sliders with the container's ::before pseudo-element.</option><option value="%INLINE% range-input-event ||| [\\S]*\\.innerHTML[^;]*;" data-showcode-notes="These values will be used the CSS code shown in the next step.">Step #13: Ensure each of the output elements display their respective slider values.</option><option value="%INLINE% range-input-event |||   [\\S]*.setProperty[^;]*;" data-showcode-notes="These values will be used the CSS code shown in the next step.">Step #14: Ensure CSS variables containing the slider values are set when the sliders are used.</option><option value="%CSS% enable-slider-style~ .html-slider__multi--container { ||| --minValue ||| --maxValue ||| --dif ||| %CSS% enable-slider-style~ .html-slider__multi--container::after { ||| --minValue:[^;]*; ||| --maxValue:[^;]*; ||| --dif:[^;]*; ||| --a:[^;]*; ||| --b:[^;]*;" data-showcode-notes="This CSS ensures that the container's <code>::after</code> pseudo-element acts as the area of the track that is in between the two slider controls.  For a detailed explanation as to why, see <a href=&quot;https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/#the-tricky-part&quot;>The Tricky Part</a> of Ana Tudor's article <a href=&quot;https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/&quot;>Multi-Thumb Sliders: Particular Two-Thumb Case</a>.">Step #15: Style area on track between the two slider controls using the container's ::after pseudo-element</option><option value="%CSS% enable-slider-style~ @supports selector(input[type=&quot;range&quot;]::-moz-range-thumb)" data-showcode-notes="There are small layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector&quot;>@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles.">Step #16: Style specific browser implementations</option></select></div>
+                          <div id="html-multi-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="html-multi-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="html-multi-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="html-multi-example__example-desc" class="showcode__example--desc">
+                <label for="html-multi-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="html-multi-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="html-multi-example" data-showcode-props="html-multi-example-props" tabindex="0" aria-describedby="html-multi-example__example-desc">&lt;form<br>  class="html-slider__multi--form"<br>  oninput=""<br>  autocomplete="off"<br>&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend<br>      class="enable-slider__label"<br>    &gt;<br>      Amount you are willing to bid on an Atari 2600<br>    &lt;/legend&gt;<br>    &lt;div&gt;<br>      &lt;div<br>        role="group"<br>        class="html-slider__container html-slider__multi--container"<br>        style="--a: 200; --b: 800; --min: 0; --max: 1000"<br>      &gt;<br>        &lt;label<br>          class="sr-only"<br>          for="a"<br>        &gt;<br>          Amount A<br>        &lt;/label&gt;<br>        &lt;input<br>          id="a"<br>          type="range"<br>          name="multiSlider1"<br>          value="200"<br>          min="0"<br>          max="1000"<br>          step="50"<br>        &gt;<br>        &lt;output<br>          class="html-slider__multi--output"<br>          id="output_a"<br>          for="a"<br>          role="presentation"<br>          style="--val: var(--a)"<br>        &gt;<br>          $200<br>        &lt;/output&gt;<br>        &lt;label<br>          class="sr-only"<br>          for="b"<br>        &gt;<br>          Amount B<br>        &lt;/label&gt;<br>        &lt;input<br>          id="b"<br>          type="range"<br>          name="multiSlider2"<br>          value="800"<br>          min="0"<br>          max="1000"<br>          step="50"<br>        &gt;<br>        &lt;output<br>          class="html-slider__multi--output"<br>          id="output_b"<br>          for="b"<br>          role="presentation"<br>          style="--val: var(--b)"<br>        &gt;<br>          $800<br>        &lt;/output&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/fieldset&gt;<br>  &lt;button type="submit"&gt;<br>    Submit<br>  &lt;/button&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="html-multi-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Use two range inputs",
+      "highlight": "%OPENTAG%input",
+      "notes": "These will be stacked on top of each other via CSS."
+    },
+    {
+      "label": "Add the min, max, step, and default value of the slider",
+      "highlight": "min=\\"0\\" ||| max=\\"1000\\" ||| value ||| step",
+      "notes": "The min, max and current values are represented by the <strong>min</strong>, <strong>max</strong> and <strong>now</strong> attributes, respectively"
+    },
+    {
+      "label": "Set CSS variables up that match the min, max of the sliders",
+      "highlight": "min=\\"0\\" ||| max=\\"1000\\" |||  --min: 0 ||| --max: 1000 ",
+      "notes": ""
+    },
+    {
+      "label": "Set CSS variables that match the slider values",
+      "highlight": "value=\\"200\\" ||| value=\\"800\\" ||| --a: 200 ||| --b: 800 ",
+      "notes": ""
+    },
+    {
+      "label": "Wrap the sliders inside a fieldset with a legend",
+      "highlight": "%OPENCLOSETAG%fieldset ||| %OPENCLOSECONTENTTAG%legend",
+      "notes": "This acts as a label to all the sliders in the group.  Screen reader users will be told what the purpose of all the sliders in this section are for \\"choosing the amount they are willing to bid on an Atari 2600\\""
+    },
+
+    {
+      "label": "Link each slider with its label and output tag using the for attribute",
+      "highlight": "for",
+      "notes": "Labels for each individual slider. Note that Amount A can be smaller or larger than B, so we can't call any of the slider elements \\"the minimum\\" or \\"the maximum\\" value here."
+    },
+    {
+      "label": "Set the form's autocomplete attribute to off",
+      "highlight": "autocomplete=\\"off\\"",
+      "notes": "We do this to ensure onload, the values are reset to the default values we set in the two previous steps.  If we didn't do this, <a href=\\"https://stackoverflow.com/questions/2486474/preventing-firefox-from-remembering-the-input-value-on-refresh-with-a-meta-tag\\">Firefox will remember the values of the sliders when refreshing the page</a>, no matter what the <code>value</code> attributes from the previous step are set to.  "
+    },
+    {
+      "label": "Set the output tag's role to presentation",
+      "highlight": "role=\\"presentation\\"",
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+    },
+    {
+      "label": "Style the slider's control",
+      "highlight": "%CSS% enable-slider-style~ input[type=\\"range\\"]::-webkit-slider-thumb ||| %CSS% enable-slider-style~ input[type=\\"range\\"]::-moz-range-thumb",
+      "notes": "This is the same as in the previous example."
+    },
+    {
+      "label": "Hide the tracks of both sliders",
+      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container input[type=\\"range\\"]::-webkit-slider-runnable-track ||| visibility: hidden ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=\\"range\\"]::-moz-range-track ||| visibility: hidden",
+      "notes": ""
+    },
+    {
+      "label": "Set pointer-events CSS properties on the slider and the slider thumb",
+      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container input[type=\\"range\\"] ||| pointer-events: none; ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=\\"range\\"]::-webkit-slider-thumb ||| pointer-events: auto; ||| %CSS% enable-slider-style~ .html-slider__multi--container input[type=\\"range\\"]::-moz-range-thumb ||| pointer-events: auto; ",
+      "notes": "The <code>pointer-events: none</code> on each of the slider tracks will ensure mouse clicks go through the hidden track.  The <code>pointer-events: auto</code> ensures that pointer events can be captured by the slider control."
+    },
+    {
+      "label": "Replace the tracks of both of the sliders with the container's ::before pseudo-element.",
+      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container::before",
+      "notes": "We use a lot of the same styles that we used to style the real track in the first example."
+    },
+    {
+      "label": "Ensure each of the output elements display their respective slider values.",
+      "highlight": "%INLINE% range-input-event ||| [\\\\S]*\\\\.innerHTML[^;]*;",
+      "notes": "These values will be used the CSS code shown in the next step."
+    },
+    {
+      "label": "Ensure CSS variables containing the slider values are set when the sliders are used.",
+      "highlight": "%INLINE% range-input-event |||   [\\\\S]*.setProperty[^;]*;",
+      "notes": "These values will be used the CSS code shown in the next step."
+    },
+    {
+      "label": "Style area on track between the two slider controls using the container's ::after pseudo-element",
+      "highlight": "%CSS% enable-slider-style~ .html-slider__multi--container { ||| --minValue ||| --maxValue ||| --dif ||| %CSS% enable-slider-style~ .html-slider__multi--container::after { ||| --minValue:[^;]*; ||| --maxValue:[^;]*; ||| --dif:[^;]*; ||| --a:[^;]*; ||| --b:[^;]*;",
+      "notes": "This CSS ensures that the container's <code>::after</code> pseudo-element acts as the area of the track that is in between the two slider controls.  For a detailed explanation as to why, see <a href=\\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/#the-tricky-part\\">The Tricky Part</a> of Ana Tudor's article <a href=\\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/\\">Multi-Thumb Sliders: Particular Two-Thumb Case</a>."
+    },
+    {
+      "label": "Style specific browser implementations",
+      "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\\"range\\"]::-moz-range-thumb)",
+      "notes": "There are small layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
+
+    }
+  ]
+}
+</script>
+
+<h2 id="aria-sliders--heading" tabindex="-1"><a class="heading__deeplink" href="#aria-sliders--heading" title="Permalink to ARIA Sliders" aria-label="Permalink to ARIA Sliders">ARIA Sliders</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--do-not">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/do-not.svg" alt="" role="presentation">
+                <span class="enable-stats__label">I wouldn't use this solution in production. The HTML5 range input is a much better solution.</span>
+            </div>
+        </div>
+            
+</div><div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">Despite this, I have implemented it as an NPM module in case it is useful for anyone. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  This NPM module is easily the one that took the longest to do.
+  It is also the one that I would highly recommend to not use:
+</p>
+
+<ul>
+  <li>It is quite a large module (based on code from Open Ajax Alliance's
+    <a href="https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/">Slider
+      Example</a> with quite a few modifications to remove jQuery as a dependency.
+  </li>
+  <li>
+    I also refactored it to work with mobile. I couldn't use the same UI as the native
+    <code>&lt;input type="range"&gt;</code>,
+    since using either iOS's vertical swiping and Android's hardware volume buttons to control the slider is impossible
+    today.
+  </li>
+  <li>
+    HTML5 range inputs are so much easier to implement.
+  </li>
+</ul>
+
+<p>
+  I honestly struggled as to whether it was a Good Idea to share this component to the outside world. In the end, I am
+  posting this here as a great example of <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>.
+  I do think, however, that it shows an interesting use case for the <a href="skip-link.php">mobile skip links</a> as
+  mobile
+  only buttons, which could be used in something else in the future.
+</p>
+
+<h3 id="a-note-on-all-aria-sliders-on-this-page---heading" tabindex="-1"><a class="heading__deeplink" href="#a-note-on-all-aria-sliders-on-this-page---heading" title="Permalink to A note on all ARIA sliders on this page:" aria-label="Permalink to A note on all ARIA sliders on this page:">A note on all ARIA sliders on this page:</a></h3>
+
+<p>
+  Note that all the ARIA sliders use the <code>&lt;template&gt;</code> tag that the
+  JavaScript library will use to create the DOM elements:
+</p>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-3" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-3" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="template-code__steps" class="showcode__steps"><label for="template-code__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="template-code__steps--select" data-showcode-for="template-code" data-replace-html-rules="{}"><option value=""></option><option value="\\$\\{[^}]+\\}" data-showcode-notes="These are the dynamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals&quot;>JavaScript template strings</a>">Step #1: Insert dynamic values placeholders in the template</option><option value="%FILE% js/modules/interpolate.js" data-showcode-notes="This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=&quot;interpolate.php&quot;>More information about the Enable interpolate module</a>">Step #2: Create an interpolation function</option><option value="%FILE% js/modules/enable-slider.js ~ const handle =[^;]*;" data-showcode-notes="This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page.">Step #3: Insert dynamic values into the template using the interpolation function.</option></select></div>
+                          <div id="template-code__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="template-code__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="template-code__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="template-code__example-desc" class="showcode__example--desc">
+                <label for="template-code__wrap-text">Wrap text</label>
+                <input type="checkbox" id="template-code__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="template-code" data-showcode-props="template-code-props" tabindex="0" aria-describedby="template-code__example-desc">&lt;template<br>  id="enable-slider__handle--template"<br>&gt;<br>  &lt;div&gt;<br>    &lt;div<br>      id="\${id}"<br>      class="\${classNameRoot}__handle"<br>    &gt;<br>      &lt;div<br>        role="slider"<br>        tabindex="0"<br>        class="\${classNameRoot}__handle-button"<br>        aria-valuemin="\${valuemin}"<br>        aria-valuemax="\${valuemax}"<br>        aria-valuenow="\${valuenow}"<br>        aria-labelledby="\${arialabelledby} \${id}_val"<br>        aria-describedby="\${ariadescribedby}"<br>      &gt;<br>      &lt;/div&gt;<br>      &lt;div<br>        id="\${ariadescribedby}"<br>        class="\${classNameRoot}__hidden-label"<br>      &gt;<br>        Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust<br>        the slider value.<br>      &lt;/div&gt;<br>      &lt;span<br>        class="enable-mobile-visible-on-focus__container \${classNameRoot}__button-container \${classNameRoot}__button-container--decrease"<br>      &gt;<br>        &lt;div<br>          id="\${id}__decrease-label"<br>          class="\${classNameRoot}__hidden-label"<br>        &gt;<br>          Decrease Value<br>        &lt;/div&gt;<br>        &lt;button<br>          aria-labelledby="\${arialabelledby} \${id}_val \${id}__decrease-label"<br>          class="enable-mobile-visible-on-focus \${classNameRoot}__decrease \${classNameRoot}__button"<br>          tabindex="-1"<br>        &gt;<br>          &lt;span<br>            class="\${classNameRoot}__button-label"<br>          &gt;<br>            ‹<br>          &lt;/span&gt;<br>        &lt;/button&gt;<br>      &lt;/span&gt;<br>      &lt;span<br>        class="enable-mobile-visible-on-focus__container \${classNameRoot}__button-container \${classNameRoot}__button-container--increase"<br>      &gt;<br>        &lt;div<br>          id="\${id}__increase-label"<br>          class="\${classNameRoot}__hidden-label"<br>        &gt;<br>          Increase Value<br>        &lt;/div&gt;<br>        &lt;button<br>          aria-labelledby="\${arialabelledby} \${id}_val \${id}__increase-label"<br>          class="enable-mobile-visible-on-focus \${classNameRoot}__increase \${classNameRoot}__button"<br>          tabindex="-1"<br>        &gt;<br>          &lt;span<br>            class="\${classNameRoot}__button-label"<br>          &gt;<br>            ›<br>          &lt;/span&gt;<br>        &lt;/button&gt;<br>      &lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      id="\${id}_val"<br>      class="\${classNameRoot}__value"<br>      role="alert"<br>      aria-live="assertive"<br>    &gt;<br>      \${valuenow}<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="template-code-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Insert dynamic values placeholders in the template",
+      "highlight": "\\\\$\\\\{[^}]+\\\\}",
+      "notes": "These are the dynamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\\">JavaScript template strings</a>"
+    },
+    {
+      "label": "Create an interpolation function",
+      "highlight": "%FILE% js/modules/interpolate.js",
+      "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=\\"interpolate.php\\">More information about the Enable interpolate module</a>"
+    },
+    {
+      "label": "Insert dynamic values into the template using the interpolation function.",
+      "highlight": "%FILE% js/modules/enable-slider.js ~ const handle =[^;]*;",
+      "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
+    }
+  ]
+}
+</script>
+
+<h3 id="a-simple-aria-slider--heading" tabindex="-1"><a class="heading__deeplink" href="#a-simple-aria-slider--heading" title="Permalink to A Simple ARIA Slider" aria-label="Permalink to A Simple ARIA Slider">A Simple ARIA Slider</a></h3>
+
+<div id="aria-example1" class="enable-example">
+  <div id="sr1_label" class="enable-slider__label">JPEG compression factor:</div>
+
+  <div class="enable-slider enable-slider--horizontal" id="sr1" data-min="0" data-max="100" data-inc="5" data-jump="10" data-show-vals="true" data-range="false" data-val1="30">
+  <div>
+      <div id="sr1_handle" class="enable-slider__handle" style="top: -3px; left: 204px;">
+        <div role="slider" tabindex="0" class="enable-slider__handle-button" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" aria-labelledby="sr1_label sr1_handle_val" aria-describedby="sr1_desc"></div>
+
+        <div id="sr1_desc" class="enable-slider__hidden-label">
+          Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+          the slider value.
+        </div>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--decrease">
+          <div id="sr1_handle__decrease-label" class="enable-slider__hidden-label">Decrease Value</div>
+          <button aria-labelledby="sr1_label sr1_handle_val sr1_handle__decrease-label" class="enable-mobile-visible-on-focus enable-slider__decrease enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">‹</span>
+          </button>
+        </span>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--increase">
+          <div id="sr1_handle__increase-label" class="enable-slider__hidden-label">Increase Value</div>
+          <button aria-labelledby="sr1_label sr1_handle_val sr1_handle__increase-label" class="enable-mobile-visible-on-focus enable-slider__increase enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">›</span>
+          </button>
+        </span>
+      </div>
+      <div id="sr1_handle_val" class="enable-slider__value" role="alert" aria-live="assertive" style="top: -3px; left: 201px;">30</div>
+    </div></div>
+</div>
+
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-4" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-4" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example1__steps" class="showcode__steps"><label for="aria-example1__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example1__steps--select" data-showcode-for="aria-example1" data-replace-html-rules="{}"><option value=""></option><option value="%INLINE% aria-example1 ||| role=&quot;slider&quot;" data-showcode-notes="We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=&quot;0&quot;</strong> and some JS routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead.">Step #1: Place ARIA slider roles in document</option><option value="%INLINE% aria-example1 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow" data-showcode-notes="The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively">Step #2: Add the min, max and current values that the slider can be set to, as well as the current value</option><option value="%INLINE% aria-example1 ||| aria-labelledby=&quot;sr1_label sr1_handle_val&quot; ||| id=&quot;sr1_label&quot; ||| id=&quot;sr1_handle_val&quot;" data-showcode-notes="The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component.">Step #3: Set the slider's label</option><option value="%INLINE% aria-example1 ||| aria-describedby=&quot;sr1_desc&quot; ||| id=&quot;sr1_desc&quot;" data-showcode-notes="Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers.">Step #4: Set the slider instructions</option><option value="%INLINE% aria-example1 ||| role=&quot;alert&quot; ||| aria-live=&quot;assertive&quot;" data-showcode-notes="">Step #5: Surround the visual numeric value of the slider with an aria-live region</option><option value="%INLINE% aria-example1 ||| %OPENCLOSECONTENTTAG%span" data-showcode-notes="Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=&quot;-1&quot;</strong>, mobile screen readers are the only devices that can make them visible.">Step #6: Create alternative UI for mobile screen readers</option><option value="%INLINE% aria-example1 ||| tabindex=&quot;-1&quot;" data-showcode-notes="See previous step for details.">Step #7: Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.</option><option value="%INLINE% aria-example1 ||| aria-labelledby=&quot;sr1_label sr1_handle_val sr1_handle__decrease-label&quot; ||| id=&quot;sr1_label&quot; ||| id=&quot;sr1_handle_val&quot; ||| id=&quot;sr1_handle__decrease-label&quot; ||| aria-labelledby=&quot;sr1_label sr1_handle_val sr1_handle__increase-label&quot; ||| id=&quot;sr1_handle__increase-label&quot;" data-showcode-notes="The &quot;decrementor&quot; will have a label of &quot;JPEG compression factor: 30, decrease value&quot;. The &quot;incrementor&quot; will have a similar label, except for the &quot;increase value&quot; at the end.">Step #8: Create labels for mobile screen reader UI buttons</option></select></div>
+                          <div id="aria-example1__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example1__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example1__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example1__example-desc" class="showcode__example--desc">
+                <label for="aria-example1__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example1__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example1" data-showcode-props="aria-example1-props" tabindex="0" aria-describedby="aria-example1__example-desc">&lt;div<br>  id="sr1_label"<br>  class="enable-slider__label"<br>&gt;<br>  JPEG compression factor:<br>&lt;/div&gt;<br>&lt;div<br>  class="enable-slider enable-slider--horizontal"<br>  id="sr1"<br>  data-min="0"<br>  data-max="100"<br>  data-inc="5"<br>  data-jump="10"<br>  data-show-vals="true"<br>  data-range="false"<br>  data-val1="30"<br>&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="aria-example1-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Place ARIA slider roles in document",
+      "highlight": "%INLINE% aria-example1 ||| role=\\"slider\\"",
+      "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\\"0\\"</strong> and some JS routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
+    },
+    {
+      "label": "Add the min, max and current values that the slider can be set to, as well as the current value",
+      "highlight": "%INLINE% aria-example1 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow",
+      "notes": "The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively"
+    },
+    {
+      "label": "Set the slider's label",
+      "highlight": "%INLINE% aria-example1 ||| aria-labelledby=\\"sr1_label sr1_handle_val\\" ||| id=\\"sr1_label\\" ||| id=\\"sr1_handle_val\\"",
+      "notes": "The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component."
+    },
+    {
+      "label": "Set the slider instructions",
+      "highlight": "%INLINE% aria-example1 ||| aria-describedby=\\"sr1_desc\\" ||| id=\\"sr1_desc\\"",
+      "notes": "Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers."
+    },
+    {
+      "label": "Surround the visual numeric value of the slider with an aria-live region",
+      "highlight": "%INLINE% aria-example1 ||| role=\\"alert\\" ||| aria-live=\\"assertive\\"",
+      "notes": ""
+    },
+    {
+      "label": "Create alternative UI for mobile screen readers",
+      "highlight": "%INLINE% aria-example1 ||| %OPENCLOSECONTENTTAG%span",
+      "notes": "Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=\\"-1\\"</strong>, mobile screen readers are the only devices that can make them visible."
+    },
+    {
+      "label": "Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.",
+      "highlight": "%INLINE% aria-example1 ||| tabindex=\\"-1\\"",
+      "notes": "See previous step for details."
+    },
+    {
+      "label": "Create labels for mobile screen reader UI buttons",
+      "highlight": "%INLINE% aria-example1 ||| aria-labelledby=\\"sr1_label sr1_handle_val sr1_handle__decrease-label\\" ||| id=\\"sr1_label\\" ||| id=\\"sr1_handle_val\\" ||| id=\\"sr1_handle__decrease-label\\" ||| aria-labelledby=\\"sr1_label sr1_handle_val sr1_handle__increase-label\\" ||| id=\\"sr1_handle__increase-label\\"",
+      "notes": "The \\"decrementor\\" will have a label of \\"JPEG compression factor: 30, decrease value\\". The \\"incrementor\\" will have a similar label, except for the \\"increase value\\" at the end."
+    }
+  ]
+}
+</script>
+
+
+
+
+<h2 id="an-aria-slider-with-min-and-max-values--heading" tabindex="-1"><a class="heading__deeplink" href="#an-aria-slider-with-min-and-max-values--heading" title="Permalink to An ARIA Slider With Min and Max Values" aria-label="Permalink to An ARIA Slider With Min and Max Values">An ARIA Slider With Min and Max Values</a></h2>
+
+
+<div id="aria-example2" class="enable-example">
+  <div id="sr2_global_label" class="enable-slider__label">Approximately how much money would you be willing to
+    invest in your RRSPs in the next
+    years</div>
+
+  <div id="sr2_label1" class="enable-slider__hidden-label">Minimum investment amount</div>
+  <div id="sr2_label2" class="enable-slider__hidden-label">Maximum investment amount</div>
+  <div class="enable-slider enable-slider--horizontal" id="sr2" data-min="1900" data-max="2008" data-inc="1" data-jump="10" data-show-vals="true" data-range="true" data-val1="1950" data-val2="2000">
+  <div id="sr2_range" class="enable-slider__slider-range" style="top: 0px; height: 10px; left: 333px; width: 334px;"></div><div>
+      <div id="sr2_handle1" class="enable-slider__handle" style="top: -3px; left: 321px;">
+        <div role="slider" tabindex="0" class="enable-slider__handle-button" aria-valuemin="1900" aria-valuemax="2008" aria-valuenow="1950" aria-labelledby="sr2_label1 sr2_handle1_val" aria-describedby="sr2_desc1"></div>
+
+        <div id="sr2_desc1" class="enable-slider__hidden-label">
+          Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+          the slider value.
+        </div>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--decrease">
+          <div id="sr2_handle1__decrease-label" class="enable-slider__hidden-label">Decrease Value</div>
+          <button aria-labelledby="sr2_label1 sr2_handle1_val sr2_handle1__decrease-label" class="enable-mobile-visible-on-focus enable-slider__decrease enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">‹</span>
+          </button>
+        </span>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--increase">
+          <div id="sr2_handle1__increase-label" class="enable-slider__hidden-label">Increase Value</div>
+          <button aria-labelledby="sr2_label1 sr2_handle1_val sr2_handle1__increase-label" class="enable-mobile-visible-on-focus enable-slider__increase enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">›</span>
+          </button>
+        </span>
+      </div>
+      <div id="sr2_handle1_val" class="enable-slider__value" role="alert" aria-live="assertive" style="top: -3px; left: 318px;">1950</div>
+    </div><div>
+      <div id="sr2_handle2" class="enable-slider__handle" style="top: -3px; left: 655px;">
+        <div role="slider" tabindex="0" class="enable-slider__handle-button" aria-valuemin="1900" aria-valuemax="2008" aria-valuenow="2000" aria-labelledby="sr2_label2 sr2_handle2_val" aria-describedby="sr2_desc2"></div>
+
+        <div id="sr2_desc2" class="enable-slider__hidden-label">
+          Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+          the slider value.
+        </div>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--decrease">
+          <div id="sr2_handle2__decrease-label" class="enable-slider__hidden-label">Decrease Value</div>
+          <button aria-labelledby="sr2_label2 sr2_handle2_val sr2_handle2__decrease-label" class="enable-mobile-visible-on-focus enable-slider__decrease enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">‹</span>
+          </button>
+        </span>
+        <span class="enable-mobile-visible-on-focus__container enable-slider__button-container enable-slider__button-container--increase">
+          <div id="sr2_handle2__increase-label" class="enable-slider__hidden-label">Increase Value</div>
+          <button aria-labelledby="sr2_label2 sr2_handle2_val sr2_handle2__increase-label" class="enable-mobile-visible-on-focus enable-slider__increase enable-slider__button" tabindex="-1">
+            <span class="enable-slider__button-label">›</span>
+          </button>
+        </span>
+      </div>
+      <div id="sr2_handle2_val" class="enable-slider__value" role="alert" aria-live="assertive" style="top: -3px; left: 652px;">2000</div>
+    </div></div>
+</div>
+
+
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-5" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-5" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example2__steps" class="showcode__steps"><label for="aria-example2__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example2__steps--select" data-showcode-for="aria-example2" data-replace-html-rules="{}"><option value=""></option><option value="%INLINE% aria-example2 ||| role=&quot;slider&quot;" data-showcode-notes="Note, unlike the previous example, there are two of these now.">Step #1: Place ARIA slider roles in document</option><option value="%INLINE% aria-example2 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow" data-showcode-notes="The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively">Step #2: Add the min, max and current values that the slider can be set to, as well as the current value</option><option value="%INLINE% aria-example2 ||| aria-labelledby=&quot;sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val&quot; ||| id=&quot;sr[0-9]_label[0-9]&quot; ||| id=&quot;sr[0-9]_handle[0-9]_val&quot;" data-showcode-notes="The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component.">Step #3: Set the labels for both slider handles</option><option value="%INLINE% aria-example2 ||| aria-describedby=&quot;sr[0-9]_desc[0-9]&quot; ||| id=&quot;sr[0-9]_desc[0-9]&quot;" data-showcode-notes="Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers.">Step #4: Set the instructions for both sliders</option><option value="%INLINE% aria-example2 ||| role=&quot;alert&quot; ||| aria-live=&quot;assertive&quot;" data-showcode-notes="">Step #5: Surround the visual numeric value of the slider with an aria-live region</option><option value="%INLINE% aria-example2 ||| %OPENCLOSECONTENTTAG%span" data-showcode-notes="Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=&quot;-1&quot;</strong>, mobile screen readers are the only devices that can make them visible.">Step #6: Create alternative UI for mobile screen readers</option><option value="%INLINE% aria-example2 ||| tabindex=&quot;-1&quot;" data-showcode-notes="See previous step for details.">Step #7: Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.</option><option value="%INLINE% aria-example2 ||| aria-labelledby=&quot;sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__decrease-label&quot; ||| id=&quot;sr[0-9]_label[0-9]&quot; ||| id=&quot;sr[0-9]_handle[0-9]_val&quot; ||| id=&quot;sr[0-9]_handle[0-9]__decrease-label&quot; ||| aria-labelledby=&quot;sr[0-9]_label sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__increase-label&quot; ||| id=&quot;sr[0-9]_handle[0-9]__increase-label&quot;" data-showcode-notes="The &quot;decrementor&quot; will have a label of &quot;JPEG compression factor: 30, decrease value&quot;. The &quot;incrementor&quot; will have a similar label, except for the &quot;increase value&quot; at the end.">Step #8: Create labels for mobile screen reader UI buttons</option></select></div>
+                          <div id="aria-example2__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example2__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example2__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example2__example-desc" class="showcode__example--desc">
+                <label for="aria-example2__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example2__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example2" data-showcode-props="aria-example2-props" tabindex="0" aria-describedby="aria-example2__example-desc">&lt;div<br>  id="sr2_global_label"<br>  class="enable-slider__label"<br>&gt;<br>  Approximately how much money would you be willing to<br>  invest in your RRSPs in the next<br>  years<br>&lt;/div&gt;<br>&lt;div<br>  id="sr2_label1"<br>  class="enable-slider__hidden-label"<br>&gt;<br>  Minimum investment amount<br>&lt;/div&gt;<br>&lt;div<br>  id="sr2_label2"<br>  class="enable-slider__hidden-label"<br>&gt;<br>  Maximum investment amount<br>&lt;/div&gt;<br>&lt;div<br>  class="enable-slider enable-slider--horizontal"<br>  id="sr2"<br>  data-min="1900"<br>  data-max="2008"<br>  data-inc="1"<br>  data-jump="10"<br>  data-show-vals="true"<br>  data-range="true"<br>  data-val1="1950"<br>  data-val2="2000"<br>&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="aria-example2-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Place ARIA slider roles in document",
+      "highlight": "%INLINE% aria-example2 ||| role=\\"slider\\"",
+      "notes": "Note, unlike the previous example, there are two of these now."
+    },
+    {
+      "label": "Add the min, max and current values that the slider can be set to, as well as the current value",
+      "highlight": "%INLINE% aria-example2 ||| aria-valuemin ||| aria-valuemax ||| aria-valuenow",
+      "notes": "The min, max and current values are represented by the <strong>aria-valuemin</strong>, <strong>aria-valuemax</strong> and <strong>aria-valuenow</strong> attributes, respectively"
+    },
+    {
+      "label": "Set the labels for both slider handles",
+      "highlight": "%INLINE% aria-example2 ||| aria-labelledby=\\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val\\" ||| id=\\"sr[0-9]_label[0-9]\\" ||| id=\\"sr[0-9]_handle[0-9]_val\\"",
+      "notes": "The label is the visual label of slider along with its visual value.  The value is needed since some screen readers report the value as a percentage, as opposed to the actual numeric value visible on the component."
+    },
+    {
+      "label": "Set the instructions for both sliders",
+      "highlight": "%INLINE% aria-example2 ||| aria-describedby=\\"sr[0-9]_desc[0-9]\\" ||| id=\\"sr[0-9]_desc[0-9]\\"",
+      "notes": "Note that the instructions are not just for keyboard users, but also for those who use mobile screen readers."
+    },
+    {
+      "label": "Surround the visual numeric value of the slider with an aria-live region",
+      "highlight": "%INLINE% aria-example2 ||| role=\\"alert\\" ||| aria-live=\\"assertive\\"",
+      "notes": ""
+    },
+    {
+      "label": "Create alternative UI for mobile screen readers",
+      "highlight": "%INLINE% aria-example2 ||| %OPENCLOSECONTENTTAG%span",
+      "notes": "Since the slider elements can be only change values when swiping them, mobile screen reader users will not be able to manipulate them, since swiping is (roughly) equivalent to tabbing through the elements on the page (the difference being it an theoretically go all the elements on the page, not just the interactive ones).  To work around this limitation, we create an alternative UI with elements that are only visible when the button inside gains focus.  Because the button has <strong>tabindex=\\"-1\\"</strong>, mobile screen readers are the only devices that can make them visible."
+    },
+    {
+      "label": "Ensure the mobile screen reader UI buttons only appear for mobile screen reader users.",
+      "highlight": "%INLINE% aria-example2 ||| tabindex=\\"-1\\"",
+      "notes": "See previous step for details."
+    },
+    {
+      "label": "Create labels for mobile screen reader UI buttons",
+      "highlight": "%INLINE% aria-example2 ||| aria-labelledby=\\"sr[0-9]_label[0-9] sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__decrease-label\\" ||| id=\\"sr[0-9]_label[0-9]\\" ||| id=\\"sr[0-9]_handle[0-9]_val\\" ||| id=\\"sr[0-9]_handle[0-9]__decrease-label\\" ||| aria-labelledby=\\"sr[0-9]_label sr[0-9]_handle[0-9]_val sr[0-9]_handle[0-9]__increase-label\\" ||| id=\\"sr[0-9]_handle[0-9]__increase-label\\"",
+      "notes": "The \\"decrementor\\" will have a label of \\"JPEG compression factor: 30, decrease value\\". The \\"incrementor\\" will have a similar label, except for the \\"increase value\\" at the end."
+    }
+  ]
+}
+</script>
+
+
+
+
+
+<div id="template-code">
+  <template id="enable-slider__handle--template">
+    <div>
+      <div id="\${id}" class="\${classNameRoot}__handle">
+        <div role="slider" tabindex="0" class="\${classNameRoot}__handle-button" aria-valuemin="\${valuemin}" aria-valuemax="\${valuemax}" aria-valuenow="\${valuenow}" aria-labelledby="\${arialabelledby} \${id}_val" aria-describedby="\${ariadescribedby}"></div>
+
+        <div id="\${ariadescribedby}" class="\${classNameRoot}__hidden-label">
+          Use arrow keys to adjust the slider value. Touch devices will need to swipe right to access controls to adjust
+          the slider value.
+        </div>
+        <span class="enable-mobile-visible-on-focus__container \${classNameRoot}__button-container \${classNameRoot}__button-container--decrease">
+          <div id="\${id}__decrease-label" class="\${classNameRoot}__hidden-label">Decrease Value</div>
+          <button aria-labelledby="\${arialabelledby} \${id}_val \${id}__decrease-label" class="enable-mobile-visible-on-focus \${classNameRoot}__decrease \${classNameRoot}__button" tabindex="-1">
+            <span class="\${classNameRoot}__button-label">‹</span>
+          </button>
+        </span>
+        <span class="enable-mobile-visible-on-focus__container \${classNameRoot}__button-container \${classNameRoot}__button-container--increase">
+          <div id="\${id}__increase-label" class="\${classNameRoot}__hidden-label">Increase Value</div>
+          <button aria-labelledby="\${arialabelledby} \${id}_val \${id}__increase-label" class="enable-mobile-visible-on-focus \${classNameRoot}__increase \${classNameRoot}__button" tabindex="-1">
+            <span class="\${classNameRoot}__button-label">›</span>
+          </button>
+        </span>
+      </div>
+      <div id="\${id}_val" class="\${classNameRoot}__value" role="alert" aria-live="assertive">
+        \${valuenow}
+      </div>
+    </div>
+  </template>
+</div>
+
+<h3 id="npm-instructions" tabindex="-1"><a class="heading__deeplink" href="#npm-instructions" title="Permalink to Installation Instructions" aria-label="Permalink to Installation Instructions">Installation Instructions</a></h3>
+
+<p>You can load this JavaScript library into your application in serveral ways:
+
+</p><ul>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
+  <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
+      browser</a>.</li>
+    <li>as an old-school ES4/JavaScript library.</li>
+  </ul>
+
+
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
+
+
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  </li><li>Stack Overflow has a really good thread about <a href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
+
+
+<h4 id="important-note-on-the-css-classes-used-in-this-module---heading" tabindex="-1"><a class="heading__deeplink" href="#important-note-on-the-css-classes-used-in-this-module---heading" title="Permalink to Important Note On The CSS Classes Used In This Module:" aria-label="Permalink to Important Note On The CSS Classes Used In This Module:">Important Note On The CSS Classes Used In This Module:</a></h4>
+
+<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+These CSS classes begin with <code>enable-slider__</code>.  Please see the documentation above to see where these CSS classes are inserted.
+
+
+</p><h4 id="using-npm-webpack-to-load-es6-modules---heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-es6-modules---heading" title="Permalink to Using NPM/Webpack to load ES6 Modules:" aria-label="Permalink to Using NPM/Webpack to load ES6 Modules:">Using NPM/Webpack to load ES6 Modules:</a></h4>
+
+<ol>
+  <li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__6__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__6__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__6__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__6">module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+ 
+    },
+
+    ...
+  },
+
+  ...
+
+}
+    </code>
+  </div>
+</div>  </li>
+  <li>
+    You can use the module like this:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__7__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__7__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__7__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__7">// import the JS module
+import enableSlider from '~enable-a11y/js/modules/enable-slider';
+
+// import the CSS for the module 
+import '~enable-a11y/css/enable-slider';
+ 
+// How to initialize the enableSlider library
+enableSlider.init();
+
+
+
+        </code>
+  </div>
+</div>      </li>
+
+  <li>
+    Alternatively, if you are using LESS you can include the styles in your project's CSS using:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__8__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__8__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__8__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__8">@import '~enable-a11y/css/enable-slider';
+        </code>
+  </div>
+</div>
+    (If you are using it in your CSS, you will have to add the <code>.css</code> suffix)
+  </li>
+</ol>
+
+<h4 id="using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" title="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax" aria-label="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax">Using NPM/Webpack to Load Modules Using CommonJS Syntax</a></h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__9__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__9__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__9__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__9">var enableSlider = require('enable-a11y/enable-slider').default; 
+
+...
+
+enableSlider.init();
+    </code>
+  </div>
+</div>    </li>
+    <li>You will have to include the CSS as well in your project's CSS using:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__10__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__10__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__10__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__10">@import '~enable-a11y/css/enable-slider';
+    </code>
+  </div>
+</div>    </li>
+    </ol>
+
+<h4 id="using-es6-modules-natively---heading" tabindex="-1"><a class="heading__deeplink" href="#using-es6-modules-natively---heading" title="Permalink to Using ES6 modules natively." aria-label="Permalink to Using ES6 modules natively.">Using ES6 modules natively.</a></h4>
+
+<p>
+  This is the method that this page you are reading now loads the scripts.
+</p>
+
+<ol>
+  <li>
+    Grab the source by either <a href="npm.php">using NPM</a>, <a href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+  </li>
+  <li>
+    If you want to load the module as a native ES6 module, copy <code>js/modules/enable-slider.js</code>
+    ,<code>js/modules/interpolate.js</code>      and <code>css/enable-slider.css</code>
+        from the repo and put them
+    in the appropriate directories in your project (all JS files must be in the same directory).
+  </li>
+    <li>
+    Load the CSS in the head of you document:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__11__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__11__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__11__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__11">&lt;html&gt;
+  &lt;head&gt;
+
+    ...
+
+    &lt;link rel="stylesheet" href="path-to/css/enable-slider.css" &gt;
+
+    ...
+    
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+
+      </code>
+  </div>
+</div>  </li><li>
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__12__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__12__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__12__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__12">&lt;script type="module"&gt;
+    import enableSlider from "path-to/enable-slider.js" 
+
+    enableSlider.init();
+&lt;/script&gt;
+        </code>
+  </div>
+</div>  </li>
+</ol>
+
+<h4 id="using-es4--heading" tabindex="-1"><a class="heading__deeplink" href="#using-es4--heading" title="Permalink to Using ES4" aria-label="Permalink to Using ES4">Using ES4</a></h4>
+
+Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
+directory instead of the <code>js/modules/</code>:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__13__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__13__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__13__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__13">&lt;script src="path-to/es4/enable-slider.js"&gt;&lt;/script&gt;
+    </code>
+  </div>
+</div>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    <script id="range-input-event">
+    var rangeInputEvent = new function() {
+        this.init = () => {
+            document.addEventListener('input', e => { 
+                const {
+                    target
+                } = e;
+                const {
+                    form,
+                    parentNode
+                } = target
+                const {
+                    type,
+                    nodeName
+                } = target;
+                const isMultiContainer = parentNode.classList.contains('html-slider__multi--container');
+
+                if (isMultiContainer && nodeName === 'INPUT' && type === 'range') {
+                    const {
+                        elements
+                    } = form;
+
+                    // This sets the variables for --a amd --b to their
+                    // respective slider's value
+                    parentNode.style.setProperty('--a', elements.a.value);
+                    parentNode.style.setProperty('--b', elements.b.value);
+
+                    // This sets each of the output elements innerHTML to display
+                    // the slider value (prefixed with a dollar sign).
+                    elements.output_a.innerHTML = \`$\${elements.a.value}\`;
+                    elements.output_b.innerHTML = \`$\${elements.b.value}\`;
+                }
+            }, false);
+        }
+    }
+
+    rangeInputEvent.init();
+</script>
+
+<script type="module">
+    import enableSliders from "./js/modules/enable-slider.js"; 
+    enableSliders.init();
+</script>
+
+</body></html>"
+`;

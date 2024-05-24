@@ -1,0 +1,1878 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading Page Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Headings - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Headings">
+<meta property="og:description" content="How headings are used by screen reader users, and how to code them in an existing document without a lot of rework.">
+<meta property="og:image" content="/images/posters/heading.jpg?1">
+<meta property="og:url" content="/heading.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="How headings are used by screen reader users, and how to code them in an existing document without a lot of rework.">
+<meta name="twitter:title" content="Accessible Headings">
+<meta name="twitter:image" content="/images/posters/heading.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Ultra%7COrienta" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/heading.css">
+<link rel="stylesheet" type="text/css" href="css/figure.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-headings--heading" tabindex="-1">Accessible Headings</h1><p>
+  Many users use headings to visually skim through a web page.  They usually give (and should give) a brief summary of the more detailed content below them.  If you are sighted, you can find the headings in the image of the newspaper below quite easily:
+</p>
+
+
+<div class="enable-example">
+<figure>
+                
+  <img src="images/newspaper-headings.jpg" alt="">
+ 
+    <figcaption>The front page of the Toronto Star Newspaper. Note that the headings are significantly bigger and have a different typographic treatment than the body copy underneath it.  Because of these features, sighted users can skim through these headings very quickly.</figcaption>
+
+
+</figure>
+</div>
+
+
+<p>
+  Screen reader users also use headings to skim through a web page quickly, and are used by screen-reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
+</p>
+
+<div class="enable-example">
+  Insert video here
+</div>
+
+<h2 id="html5-headings--heading" tabindex="-1"><a class="heading__deeplink" href="#html5-headings--heading" title="Permalink to HTML5 Headings" aria-label="Permalink to HTML5 Headings">HTML5 Headings</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+  Most developers are familiar HTML5 heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>)
+  Note that lower heading levels (e.g. h1) don't necessarily have to be visually larger than higher ones (e.g. H4), bit it is a common convention. The following are HTML headings. The styling was originally derived from
+      <a href="https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/">Heading
+        Set Styling
+        with CSS </a>
+      by
+      <a href="https://kittygiraudel.com">Kitty Giraudel</a>
+</p>
+
+
+<div id="html-example" class="heading-example enable-example">
+    <h1>This is an h1</h1>
+    <h2>This is an h2</h2>
+    <h3>This is an h3</h3>
+    <h4>This is an h4</h4>
+    <h5>This is an h5</h5>
+    <h6>This is an h6</h6>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="html-example__steps" class="showcode__steps"><label for="html-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="html-example__steps--select" data-showcode-for="html-example" data-replace-html-rules="{}"><option value=""></option><option value="%OPENCLOSETAG%h1 ||| %OPENCLOSETAG% h2 ||| %OPENCLOSETAG% h3 ||| %OPENCLOSETAG% h4 ||| %OPENCLOSETAG% h5 ||| %OPENCLOSETAG% h6" data-showcode-notes="">Step #1: Add heading HTML tags</option><option value="%JS% initEnable ||| document.querySelectorAll[\\s\\S]*\\}\\)" data-showcode-notes="This makes it easier for users of screen readers like Voiceover to skip over headings.">Step #2: Optional: Add tabindex="-1" to all headings</option></select></div>
+                          <div id="html-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="html-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="html-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="html-example__example-desc" class="showcode__example--desc">
+                <label for="html-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="html-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="html-example" data-showcode-props="html-example-props" tabindex="0" aria-describedby="html-example__example-desc">&lt;h1&gt;<br>  This is an h1<br>&lt;/h1&gt;<br>&lt;h2&gt;<br>  This is an h2<br>&lt;/h2&gt;<br>&lt;h3&gt;<br>  This is an h3<br>&lt;/h3&gt;<br>&lt;h4&gt;<br>  This is an h4<br>&lt;/h4&gt;<br>&lt;h5&gt;<br>  This is an h5<br>&lt;/h5&gt;<br>&lt;h6&gt;<br>  This is an h6<br>&lt;/h6&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="html-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "Add heading HTML tags",
+    "highlight": "%OPENCLOSETAG%h1 ||| %OPENCLOSETAG% h2 ||| %OPENCLOSETAG% h3 ||| %OPENCLOSETAG% h4 ||| %OPENCLOSETAG% h5 ||| %OPENCLOSETAG% h6",
+    "notes": ""
+  },
+  {
+    "label": "Optional: Add tabindex=\\"-1\\" to all headings",
+    "highlight": "%JS% initEnable ||| document.querySelectorAll[\\\\s\\\\S]*\\\\}\\\\)",
+    "notes": "This makes it easier for users of screen readers like Voiceover to skip over headings."
+  }]
+}
+</script>
+
+<h2 id="aria-headings--heading" tabindex="-1"><a class="heading__deeplink" href="#aria-headings--heading" title="Permalink to ARIA Headings" aria-label="Permalink to ARIA Headings">ARIA Headings</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">You can fix existing markup this way, but really, why not just change the markup to the HTML5 ones?</span>
+            </div>
+        </div>
+            
+</div>
+<p>The following are ARIA headings. Note that ARIA supports
+  heading levels 1-10.
+</p>
+
+<p>
+  Besides <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>, you should use real HTML5 headings since they affect how a web pages is indexed by search engines.
+</p>
+
+<div id="aria-example" class="heading-example enable-example">
+  <div role="heading" aria-level="1">This in an ARIA heading level 1</div>
+  <div role="heading" aria-level="2">This in an ARIA heading level 2</div>
+  <div role="heading" aria-level="3">This in an ARIA heading level 3</div>
+  <div role="heading" aria-level="4">This in an ARIA heading level 4</div>
+  <div role="heading" aria-level="5">This in an ARIA heading level 5</div>
+  <div role="heading" aria-level="6">This in an ARIA heading level 6</div>
+  <div role="heading" aria-level="7">This in an ARIA heading level 7 (there is no HTML5
+    equivalent)</div>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-example__steps" class="showcode__steps"><label for="aria-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-example__steps--select" data-showcode-for="aria-example" data-replace-html-rules="{}"><option value=""></option><option value="role" data-showcode-notes="">Step #1: Add heading roles</option><option value="aria-level" data-showcode-notes="Note with aria-level, you can have heading levels greater than 6.">Step #2: Add aria-level</option><option value="%JS% initEnable ||| \\s\\sdocument\\.querySelectorAll[\\s\\S]*\\}\\)" data-showcode-notes="Just like for HTML headings, This makes it easier for users of screen readers like Voiceover to skip over headings.">Step #3: Optional: Add tabindex="-1" to all headings</option></select></div>
+                          <div id="aria-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-example__example-desc" class="showcode__example--desc">
+                <label for="aria-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-example" data-showcode-props="aria-example-props" tabindex="0" aria-describedby="aria-example__example-desc">&lt;div<br>  role="heading"<br>  aria-level="1"<br>&gt;<br>  This in an ARIA heading level 1<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="2"<br>&gt;<br>  This in an ARIA heading level 2<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="3"<br>&gt;<br>  This in an ARIA heading level 3<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="4"<br>&gt;<br>  This in an ARIA heading level 4<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="5"<br>&gt;<br>  This in an ARIA heading level 5<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="6"<br>&gt;<br>  This in an ARIA heading level 6<br>&lt;/div&gt;<br>&lt;div<br>  role="heading"<br>  aria-level="7"<br>&gt;<br>  This in an ARIA heading level 7 (there is no HTML5<br>  equivalent)<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        <script type="application/json" id="aria-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Add heading roles",
+      "highlight": "role",
+      "notes": ""
+    },
+    {
+      "label": "Add aria-level",
+      "highlight": "aria-level",
+      "notes": "Note with aria-level, you can have heading levels greater than 6."
+    },
+    {
+      "label": "Optional: Add tabindex=\\"-1\\" to all headings",
+      "highlight": "%JS% initEnable ||| \\\\s\\\\sdocument\\\\.querySelectorAll[\\\\s\\\\S]*\\\\}\\\\)",
+      "notes": "Just like for HTML headings, This makes it easier for users of screen readers like Voiceover to skip over headings."
+    }
+  ]
+}
+</script>  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    
+
+</body></html>"
+`;

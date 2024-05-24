@@ -1,6 +1,7 @@
 'use strict'
 
 import config from './test-config.js';
+import testHelpers from './test-helpers.js';
 
 describe('ARIA Switch Tests', () => {
   // This is a function used by the tests below to grab the aria-checked value
@@ -13,7 +14,12 @@ describe('ARIA Switch Tests', () => {
       return switchEl.getAttribute('aria-checked');
     }, n);
   } // end getSwitchValue()
-   
+
+
+  it('Initial page load HTML matches snapshot', async () => {
+    await page.goto(`${config.BASE_URL}/switch.php`);
+    await testHelpers.testPageSnapshot(page);
+  });
 
   // Test #1
   it('See if all ARIA switches on page are keyboard accessible', async () => {

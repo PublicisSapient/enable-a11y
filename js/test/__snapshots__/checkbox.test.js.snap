@@ -1,0 +1,2538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ARIA Checkbox Tests Initial page load HTML matches snapshot 1`] = `
+"<!DOCTYPE html><html lang="en"><head>
+    
+<meta charset="utf-8">
+<title>Accessible Checkboxes - The Enable Project</title>
+
+<meta property="og:title" content="Accessible Checkboxes">
+<meta property="og:description" content="This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes.">
+<meta property="og:image" content="/images/posters/checkbox.jpg?1">
+<meta property="og:url" content="/checkbox.php">
+<meta property="og:type" content="article">
+<meta property="og:alt" content="">
+<meta property="article:author" content="Zoltan Hawryluk">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes.">
+<meta name="twitter:title" content="Accessible Checkboxes">
+<meta name="twitter:image" content="/images/posters/checkbox.jpg">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<!-- These two stylesheets are for the code walkthroughs -->
+<link id="showcode-css" rel="stylesheet" type="text/css" href="css/showcode.css">
+
+<!-- This is the global stylesheet -->
+<link id="all-css" rel="stylesheet" href="css/shared/all.css">
+<link id="read-all-css" rel="stylesheet" href="css/shared/read-more.css">
+
+<!-- hamburger menu -->
+<link id="hamburger-style" rel="stylesheet" type="text/css" href="css/enable-hamburger.css">
+
+<!-- Skip links styles -->
+<link id="enable-skip-link-style" href="css/enable-visible-on-focus.css" rel="stylesheet">
+
+<link id="site-css" rel="stylesheet" href="css/site.css">
+
+
+<link id="pause-anim-css-demo" rel="stylesheet" href="css/pause-animations-demo.css">
+
+  <link id="pause-anim-css" rel="stylesheet" href="css/pause-anim-control.css">
+
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+<link rel="stylesheet" type="text/css" href="css/figure.css">
+
+<link id="checkbox-css" rel="stylesheet" type="text/css" href="css/checkbox.css">
+<link id="checkbox-aria-css" rel="stylesheet" type="text/css" href="css/checkbox__aria.css"></head>
+
+<body class="pause-anim-control__prefers-motion"><iframe aria-hidden="true" tabindex="-1" title="Text Zoom Event Iframe" style="width: 1em; height: 1px; border-width: 0px; position: absolute; overflow: hidden; white-space: nowrap; margin: -1px;"></iframe>
+  
+  <div role="banner">
+  <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
+    <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
+      Skip to Main Content
+    </a>
+  </div>
+
+  <div class="enable-logo__container">
+    <a class="enable-logo__link" href="index.php">
+        <img class="enable-logo" src="images/ENABLE.svg" alt="" role="presentation">
+        <span class="enable-logo__text">Enable</span>
+    </a>
+</div>
+
+
+
+  <!-- Here is the main menu -->
+  <div id="enable-hamburger-menu" data-component="EnableFlyoutHamburger" data-props-id="flyout-props">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level enable-flyout--initialized">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            
+        <ul class="enable-flyout__list">
+          
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="faq.php" class="enable-flyout__link">
+            FAQ
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="code-quality.php" class="enable-flyout__link">
+            Accessible Code Quality
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item ">
+          <a href="acknowledgements.php" class="enable-flyout__link">
+            Credits
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item enable-flyout__last-top-level-link">
+          <a href="bookmarklets.php" class="enable-flyout__link">
+            Bookmarklets
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Forms -->
+          <button aria-expanded="false" aria-controls="forms-section" class="enable-flyout__open-level-button">
+            Forms
+          </button>
+          <div id="forms-section" aria-label="Forms" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Forms -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form Elements -->
+          <button aria-expanded="false" aria-controls="form-controls-subsection" class="enable-flyout__open-level-button">
+            Form Elements
+          </button>
+          <div class="enable-flyout__level-heading">Form Elements</div>
+            <div id="form-controls-subsection" aria-label="Form Elements" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form Elements -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/button.webp" type="image/webp">
+              <img src="button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Button
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="checkbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/checkbox.webp" type="image/webp">
+              <img src="checkbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Checkboxes
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="radiogroup.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/radiogroup.webp" type="image/webp">
+              <img src="radiogroup.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Radio Button Group
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="listbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/listbox.webp" type="image/webp">
+              <img src="listbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Select Box / Listbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="textbox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/textbox.webp" type="image/webp">
+              <img src="textbox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Textbox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="combobox.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/combobox.webp" type="image/webp">
+              <img src="combobox.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Autocomplete Combobox
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="slider.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/slider.webp" type="image/webp">
+              <img src="slider.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Slider / Range Input
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="spinner.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/spinner.webp" type="image/webp">
+              <img src="spinner.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Number Input Spinner
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Form UX Patterns -->
+          <button aria-expanded="false" aria-controls="form-ux-patterns-subsection" class="enable-flyout__open-level-button">
+            Form UX Patterns
+          </button>
+          <div class="enable-flyout__level-heading">Form UX Patterns</div>
+            <div id="form-ux-patterns-subsection" aria-label="Form UX Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Form UX Patterns -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form.webp" type="image/webp">
+              <img src="form.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Form Structure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="search.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/search.webp" type="image/webp">
+              <img src="search.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Search Forms
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="input-mask.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/input-mask.webp" type="image/webp">
+              <img src="input-mask.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Input Masking
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Controls -->
+          <button aria-expanded="false" aria-controls="controls-section" class="enable-flyout__open-level-button">
+            Controls
+          </button>
+          <div id="controls-section" aria-label="Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Controls -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Simple Controls -->
+          <button aria-expanded="false" aria-controls="simple-controls-subsection" class="enable-flyout__open-level-button">
+            Simple Controls
+          </button>
+          <div class="enable-flyout__level-heading">Simple Controls</div>
+            <div id="simple-controls-subsection" aria-label="Simple Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Simple Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/link.webp" type="image/webp">
+              <img src="link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Link
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dropdown.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dropdown.webp" type="image/webp">
+              <img src="dropdown.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Dropdown / Drawer / Expando
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tooltip.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tooltip.webp" type="image/webp">
+              <img src="tooltip.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tooltip
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="switch.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/switch.webp" type="image/webp">
+              <img src="switch.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Switch
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="skip-link.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/skip-link.webp" type="image/webp">
+              <img src="skip-link.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Skip Links
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Complex Controls -->
+          <button aria-expanded="false" aria-controls="complex-controls-subsection" class="enable-flyout__open-level-button">
+            Complex Controls
+          </button>
+          <div class="enable-flyout__level-heading">Complex Controls</div>
+            <div id="complex-controls-subsection" aria-label="Complex Controls" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Complex Controls -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="carousel.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/carousel.webp" type="image/webp">
+              <img src="carousel.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Carousel
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="multi-level-hamburger-menu.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/multi-level-hamburger-menu.webp" type="image/webp">
+              <img src="multi-level-hamburger-menu.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Flyout Hamburger Menu
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="dialog.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/dialog.webp" type="image/webp">
+              <img src="dialog.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Modal Dialog
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="tabs.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/tabs.webp" type="image/webp">
+              <img src="tabs.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Tablist
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-player.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-player.webp" type="image/webp">
+              <img src="video-player.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Player
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Content -->
+          <button aria-expanded="false" aria-controls="content-section" class="enable-flyout__open-level-button">
+            Content
+          </button>
+          <div id="content-section" aria-label="Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Content -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Static Content -->
+          <button aria-expanded="false" aria-controls="static-content-subsection" class="enable-flyout__open-level-button">
+            Static Content
+          </button>
+          <div class="enable-flyout__level-heading">Static Content</div>
+            <div id="static-content-subsection" aria-label="Static Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Static Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="description-list.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/description-list.webp" type="image/webp">
+              <img src="description-list.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Description List
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="progress.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/progress.webp" type="image/webp">
+              <img src="progress.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Progress Bar
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="img.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/img.webp" type="image/webp">
+              <img src="img.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Image
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="figure.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/figure.webp" type="image/webp">
+              <img src="figure.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Figure
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="heading.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/heading.webp" type="image/webp">
+              <img src="heading.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Headings
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="screen-reader-only-text.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/screen-reader-only-text.webp" type="image/webp">
+              <img src="screen-reader-only-text.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Screen Reader Only Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="reflow.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/reflow.webp" type="image/webp">
+              <img src="reflow.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Reflow
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Animated Content -->
+          <button aria-expanded="false" aria-controls="animated-content-subsection" class="enable-flyout__open-level-button">
+            Animated Content
+          </button>
+          <div class="enable-flyout__level-heading">Animated Content</div>
+            <div id="animated-content-subsection" aria-label="Animated Content" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Animated Content -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="animated-gif-with-pause-button.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/animated-gif-with-pause-button.webp" type="image/webp">
+              <img src="animated-gif-with-pause-button.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Animated GIF/WEBP
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pause-anim-control.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pause-anim-control.webp" type="image/webp">
+              <img src="pause-anim-control.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pause All Animations Control
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="video-content.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/video-content.webp" type="image/webp">
+              <img src="video-content.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Video Content
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Tables -->
+          <button aria-expanded="false" aria-controls="tables-subsection" class="enable-flyout__open-level-button">
+            Tables
+          </button>
+          <div class="enable-flyout__level-heading">Tables</div>
+            <div id="tables-subsection" aria-label="Tables" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Tables -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/table.webp" type="image/webp">
+              <img src="table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Simple Table Examples
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="sortable-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/sortable-table.webp" type="image/webp">
+              <img src="sortable-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Sortable Table
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="pagination-table.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/pagination-table.webp" type="image/webp">
+              <img src="pagination-table.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Pagination Table
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Code Patterns -->
+          <button aria-expanded="false" aria-controls="code-patterns-section" class="enable-flyout__open-level-button">
+            Code Patterns
+          </button>
+          <div id="code-patterns-section" aria-label="Code Patterns" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout ">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section Code Patterns -->
+               
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Focus Management -->
+          <button aria-expanded="false" aria-controls="focus-management-subsection" class="enable-flyout__open-level-button">
+            Focus Management
+          </button>
+          <div class="enable-flyout__level-heading">Focus Management</div>
+            <div id="focus-management-subsection" aria-label="Focus Management" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Focus Management -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="form-error-checking.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/form-error-checking.webp" type="image/webp">
+              <img src="form-error-checking.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Form Error Checking
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="focus-styling.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/focus-styling.webp" type="image/webp">
+              <img src="focus-styling.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Focus Styling Tips
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section Typography -->
+          <button aria-expanded="false" aria-controls="typography-subsection" class="enable-flyout__open-level-button">
+            Typography
+          </button>
+          <div class="enable-flyout__level-heading">Typography</div>
+            <div id="typography-subsection" aria-label="Typography" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section Typography -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-resize.webp" type="image/webp">
+              <img src="text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Basic Resizable Text
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="text-spacing.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/text-spacing.webp" type="image/webp">
+              <img src="text-spacing.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text Spacing
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="hero-image-text-resize.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/hero-image-text-resize.webp" type="image/webp">
+              <img src="hero-image-text-resize.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Resizing Text in Hero Images
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="accessible-text-svg.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/accessible-text-svg.webp" type="image/webp">
+              <img src="accessible-text-svg.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Accessible Text in SVGs
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="exposing-style-info-to-screen-readers.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/exposing-style-info-to-screen-readers.webp" type="image/webp">
+              <img src="exposing-style-info-to-screen-readers.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Exposing Style Information To Screen Readers
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section ARIA Live Regions -->
+          <button aria-expanded="false" aria-controls="aria-live-regions-subsection" class="enable-flyout__open-level-button">
+            ARIA Live Regions
+          </button>
+          <div class="enable-flyout__level-heading">ARIA Live Regions</div>
+            <div id="aria-live-regions-subsection" aria-label="ARIA Live Regions" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section ARIA Live Regions -->
+              
+        <li class="enable-flyout__menu-item">
+          <a href="alert.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/alert.webp" type="image/webp">
+              <img src="alert.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Alert
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="log.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/log.webp" type="image/webp">
+              <img src="log.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Log
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="timer.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/timer.webp" type="image/webp">
+              <img src="timer.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Timer
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="marquee.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/marquee.webp" type="image/webp">
+              <img src="marquee.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Marquee
+          </a>
+        </li>
+      
+        <li class="enable-flyout__menu-item">
+          <a href="status.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/status.webp" type="image/webp">
+              <img src="status.png" alt="" class="enable-flyout__link-image">
+            </picture>
+            Status
+          </a>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+            </ul>
+          </div>
+        </li>
+      
+        </ul>
+      
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </div>
+
+  <!-- MAIN MENU TEMPLATES -->
+  <template id="flyout__root">
+        <ul class="enable-flyout__list">
+          \${html:content}
+        </ul>
+      </template>
+
+      <template id="flyout__submenu">
+        <ul class="enable-flyout__list  enable-flyout__list--photo-layout">
+          <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+            <button class="enable-flyout__close-level-button">
+              Go Back
+            </button>
+          </li>
+          
+          \${html:content}
+          </ul>
+      </template>
+
+      <template id="flyout__button">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-section" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div id="\${id}-section" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list my-custom-list__layout \${classes}">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+               <button class="enable-flyout__close-level-button">
+                Go Back 
+               </button>
+              </li>
+            
+               <!-- Start menu items for section \${sectionName} -->
+               \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__home">
+        <li class="enable-flyout__menu-item">
+          <a href="index.php" class="enable-flyout__link enable-flyout__with-home-icon mobile-and-tablet">
+              Home
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url-slug}.php" class="enable-flyout__link">
+            <picture>
+              <source srcset="images/main-menu/\${url-slug}.webp" type="image/webp">
+              <img src="\${url-slug}.png" alt="\${alt}" class="enable-flyout__link-image">
+            </picture>
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--no-image">
+        <li class="enable-flyout__menu-item \${listItemClasses}">
+          <a href="\${url}" class="enable-flyout__link">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__link--with-icon">
+        <li class="enable-flyout__menu-item">
+          <a href="\${url}" class="enable-flyout__link">
+            <img alt="\${alt}" src="\${src}">
+            \${label}
+          </a>
+        </li>
+      </template>
+
+      <template id="flyout__heading">
+        <div class="enable-flyout__level-heading">\${label}</div>
+      </template>
+
+      <template id="flyout__subsection">
+        <li class="enable-flyout__menu-item">
+          <!-- Begin section \${sectionName} -->
+          <button aria-expanded="false" aria-controls="\${id}-subsection" class="enable-flyout__open-level-button">
+            \${sectionName}
+          </button>
+          <div class="enable-flyout__level-heading">\${sectionName}</div>
+            <div id="\${id}-subsection" aria-label="\${sectionName}" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+            <button class="enable-flyout__hamburger-icon-facade">
+              <span class="sr-only">
+                close mobile flyout
+              </span>
+            </button>
+            <ul class="enable-flyout__list enable-flyout__list--photo-layout">
+              <li class="enable-flyout__menu-item enable-flyout__menu-item--close">
+                <button class="enable-flyout__close-level-button">
+                  Go Back
+                </button>
+              </li>
+              
+              <!-- Start menu items for section \${sectionName} -->
+              \${html:content}
+            </ul>
+          </div>
+        </li>
+      </template>
+
+      <template id="flyout__container">
+        <nav class="site__nav enable-flyout__container" aria-label="main">
+          <button aria-label="main menu" class="enable-flyout__open-menu-button" aria-expanded="false" aria-controls="mobile-menu">
+
+                  <!-- This is the hamburger menu icon -->
+
+                  <span class="enable-flyout__hamburger-icon">
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                      <span>
+                      </span>
+                  </span>
+              </button>
+          <div id="mobile-menu" class="enable-flyout enable-flyout__top-level enable-flyout__level">
+            <button class="enable-flyout__hamburger-icon-facade">
+                    <span class="sr-only">
+                        close mobile flyout
+                    </span>
+                </button>
+
+            <!-- Here is where the content is placed -->
+            \${html:content}
+
+          </div>
+        </nav>
+        <span class="enable-flyout__overlay-screen">
+        </span>
+      </template>
+
+      <!-- MAIN MENU ROOT -->
+
+      <!-- Here is the main menu -->
+      <div data-component="FlyoutMenu" data-props-id="flyout-props">
+
+      </div>
+
+      <!-- id, props, content -->
+      <script id="flyout-props" type="application/json">
+      {
+    "content": [
+        {
+            "id": "flyout__container",
+            "content": [
+                {
+                    "id": "flyout__root",
+                    "content": [
+                        {
+                            "id": "flyout__home"
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "FAQ",
+                                "url": "faq.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Accessible Code Quality",
+                                "url": "code-quality.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Credits",
+                                "url": "acknowledgements.php"
+                            }
+                        },
+                        {
+                            "id": "flyout__link--no-image",
+                            "props": {
+                                "label": "Bookmarklets",
+                                "url": "bookmarklets.php",
+                                "listItemClasses": "enable-flyout__last-top-level-link"
+                            }
+                        },
+
+                        {
+                            "id": "flyout__button",
+                            "props": {
+                                "id": "forms",
+                                "sectionName": "Forms"
+                            },
+                            "content": [
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-controls",
+                                        "sectionName": "Form Elements"
+                                    },
+                                    "content": [
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Button",
+                                                "url-slug": "button",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Checkboxes",
+                                                "url-slug": "checkbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Radio Button Group",
+                                                "url-slug": "radiogroup",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Select Box / Listbox",
+                                                "url-slug": "listbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Textbox",
+                                                "url-slug": "textbox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Autocomplete Combobox",
+                                                "url-slug": "combobox",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Slider / Range Input",
+                                                "url-slug": "slider",
+                                                "alt": ""
+                                            }
+                                        },
+                                        {
+                                            "id": "flyout__link",
+                                            "props": {
+                                                "label": "Number Input Spinner",
+                                                "url-slug": "spinner",
+                                                "alt": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "flyout__subsection",
+                                    "props": {
+                                        "id": "form-ux-patterns",
+                                        "sectionName": "Form UX Patterns"
+                                    },
+                                    "content": [
+                                      {
+                                          "id": "flyout__link",
+                                          "props": {
+                                              "label": "Accessible Form Structure",
+                                              "url-slug": "form",
+                                              "alt": ""
+                                          }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Form Error Checking",
+                                            "url-slug": "form-error-checking",
+                                            "alt": ""
+                                        }
+                                      }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Search Forms",
+                                            "url-slug": "search",
+                                            "alt": ""
+                                        }
+                                      },
+                                      {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Input Masking",
+                                            "url-slug": "input-mask",
+                                            "alt": ""
+                                        }
+                                      }
+                                       
+                                    ]
+
+                                }
+                            ]
+                        }, {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "controls",
+                              "sectionName": "Controls"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "simple-controls",
+                                  "sectionName": "Simple Controls"
+                              },
+                              "content": [
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Link",
+                                      "url-slug": "link",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Dropdown / Drawer / Expando",
+                                      "url-slug": "dropdown",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Tooltip",
+                                      "url-slug": "tooltip",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Switch",
+                                      "url-slug": "switch",
+                                      "alt": ""
+                                  }
+                              },
+                              {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Skip Links",
+                                      "url-slug": "skip-link",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            },
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "complex-controls",
+                                  "sectionName": "Complex Controls"
+                              },
+                              "content": [
+
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Carousel",
+                                      "url-slug": "carousel",
+                                      "alt": ""
+                                  }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Flyout Hamburger Menu",
+                                        "url-slug": "multi-level-hamburger-menu",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Modal Dialog",
+                                        "url-slug": "dialog",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Tablist",
+                                        "url-slug": "tabs",
+                                        "alt": ""
+                                    }
+                                },  {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Player",
+                                      "url-slug": "video-player",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }, 
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "content",
+                              "sectionName": "Content",
+                              "classes": "enable-flyout__list--photo-layout"
+                          },
+                          "content": [
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "static-content",
+                                    "sectionName": "Static Content"
+                                },
+                                "content": [
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Description List",
+                                          "url-slug": "description-list",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Progress Bar",
+                                          "url-slug": "progress",
+                                          "alt": ""
+                                      }
+                                  },
+                                  {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Image",
+                                          "url-slug": "img",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Figure",
+                                          "url-slug": "figure",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Headings",
+                                          "url-slug": "heading",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Screen Reader Only Text",
+                                          "url-slug": "screen-reader-only-text",
+                                          "alt": ""
+                                      }
+                                  }, {
+                                      "id": "flyout__link",
+                                      "props": {
+                                          "label": "Reflow",
+                                          "url-slug": "reflow",
+                                          "alt": ""
+                                      }
+                                  }
+
+                                ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "animated-content",
+                                  "sectionName": "Animated Content"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Animated GIF/WEBP",
+                                      "url-slug": "animated-gif-with-pause-button",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pause All Animations Control",
+                                      "url-slug": "pause-anim-control",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Video Content",
+                                      "url-slug": "video-content",
+                                      "alt": ""
+                                  }
+                              }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "tables",
+                                  "sectionName": "Tables"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Simple Table Examples",
+                                      "url-slug": "table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Sortable Table",
+                                      "url-slug": "sortable-table",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Pagination Table",
+                                      "url-slug": "pagination-table",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "flyout__button",
+                          "props": {
+                              "id": "code-patterns",
+                              "sectionName": "Code Patterns"
+                          },
+                          "content": [
+                            {
+                              "id": "flyout__subsection",
+                              "props": {
+                                  "id": "focus-management",
+                                  "sectionName": "Focus Management"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Form Error Checking",
+                                      "url-slug": "form-error-checking",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Focus Styling Tips",
+                                      "url-slug": "focus-styling",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Basic Resizable Text",
+                                      "url-slug": "text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text Spacing",
+                                      "url-slug": "text-spacing",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Resizing Text in Hero Images",
+                                      "url-slug": "hero-image-text-resize",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Accessible Text in SVGs",
+                                      "url-slug": "accessible-text-svg",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Exposing Style Information To Screen Readers",
+                                      "url-slug": "exposing-style-info-to-screen-readers",
+                                      "alt": ""
+                                  }
+                                }
+                                
+                              ]
+                            }, {
+                              "id": "flyout__subsection",
+                              "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                              },
+                              "content": [
+                                {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Alert",
+                                      "url-slug": "alert",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Log",
+                                      "url-slug": "log",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Timer",
+                                      "url-slug": "timer",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Marquee",
+                                      "url-slug": "marquee",
+                                      "alt": ""
+                                  }
+                                }, {
+                                  "id": "flyout__link",
+                                  "props": {
+                                      "label": "Status",
+                                      "url-slug": "status",
+                                      "alt": ""
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+      </script>
+
+
+</div>  <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+    <div class="play-pause-anim__checkbox-container">
+        <label for="pause-anim-control">
+            Pause animations
+            <input type="checkbox" id="pause-anim-control" class="pause-anim-control__checkbox">
+        </label>
+    </div>
+</div>    <main id="main" class="" tabindex="-1">
+
+    <h1 id="accessible-checkboxes--heading" tabindex="-1">Accessible Checkboxes</h1><p>This page shows different ways a checkbox can be marked up to see how screen readers will describe them to
+    users.</p>
+
+<h2 id="a-real-styled-html5-checkbox--heading" tabindex="-1"><a class="heading__deeplink" href="#a-real-styled-html5-checkbox--heading" title="Permalink to A real styled HTML5 checkbox" aria-label="Permalink to A real styled HTML5 checkbox">A real styled HTML5 checkbox</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+You can style an HTML5 checkbox using CSS easily. You don't need to make faux checkbox
+using <code>&lt;div&gt;</code> tags.
+
+<div id="example2" class="enable-example">
+    <div class="enable-checkbox">
+        <label class="form-control">
+            <input type="checkbox" checked="" id="checkbox_1">
+            I agree to sell my soul to Zoltan
+        </label>
+    </div>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-1" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-1" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example2__steps" class="showcode__steps"><label for="example2__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example2__steps--select" data-showcode-for="example2" data-replace-html-rules="{}"><option value=""></option><option value="%OPENCLOSECONTENTTAG%label" data-showcode-notes="Like any other form element, it needs a label.  Unlike some of the other examples in Enable, we are using an implicit label (i.e. a <code>label</code> tag that is wrapped around the <code>input</code>).">Step #1: Use label tags to label form element</option><option value="%CSS%checkbox-css~ .enable-checkbox" data-showcode-notes="There are many tutorials to do this that you can find on the web.  The CSS used below is based on <a href=&quot;https://twitter.com/5t3ph/&quot;>Stephanie Eckles'</a> excellent article <a href=&quot;https://moderncss.dev/pure-css-custom-checkbox-style/&quot;>Pure CSS Custom Checkbox Style</a>.">Step #2: Add custom styles</option></select></div>
+                          <div id="example2__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example2__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example2__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example2__example-desc" class="showcode__example--desc">
+                <label for="example2__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example2__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example2" data-showcode-props="example2-props" tabindex="0" aria-describedby="example2__example-desc">&lt;div class="enable-checkbox"&gt;<br>  &lt;label<br>    class="form-control"<br>  &gt;<br>    &lt;input<br>      type="checkbox"<br>      checked=""<br>      id="checkbox_1"<br>    &gt;<br>    I agree to sell my soul to Zoltan<br>  &lt;/label&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example2-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use label tags to label form element",
+            "highlight": "%OPENCLOSECONTENTTAG%label",
+            "notes": "Like any other form element, it needs a label.  Unlike some of the other examples in Enable, we are using an implicit label (i.e. a <code>label</code> tag that is wrapped around the <code>input</code>)."
+        },
+        {
+            "label": "Add custom styles",
+            "highlight": "%CSS%checkbox-css~ .enable-checkbox",
+            "notes": "There are many tutorials to do this that you can find on the web.  The CSS used below is based on <a href=\\"https://twitter.com/5t3ph/\\">Stephanie Eckles'</a> excellent article <a href=\\"https://moderncss.dev/pure-css-custom-checkbox-style/\\">Pure CSS Custom Checkbox Style</a>."
+        }
+    ]
+}
+</script>
+
+
+<h2 id="a-div-with-a-role-of-checkbox--heading" tabindex="-1"><a class="heading__deeplink" href="#a-div-with-a-role-of-checkbox--heading" title="Permalink to A DIV with a role of checkbox" aria-label="Permalink to A DIV with a role of checkbox">A DIV with a role of checkbox</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--integrate">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/integrate.svg" alt="" role="presentation">
+                <span class="enable-stats__label">If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-2">developer walkthrough</a> of this section to see we made our implementation accessible.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+    If you come across a <code>&lt;div&gt;</code> in existing code that is marked up like a checkbox,
+    you can fix it this way. It is preferable to use the HTML5 version instead, if you can implement
+    it quickly.
+</p>
+
+<div id="example-role-checkbox" class="enable-example">
+    <div class="checkbox-container">
+        <label id="div-checkbox-label-1">I agree to sell my soul to Zoltan:</label>
+        <div aria-labelledby="div-checkbox-label-1" role="checkbox" tabindex="0" aria-checked="true">
+        </div>
+    </div>
+
+    <div class="checkbox-container">
+        <label id="div-checkbox-label-2">I will not fight Zoltan in a lawsuit about this matter:</label>
+        <div aria-labelledby="div-checkbox-label-2" role="checkbox" tabindex="0" aria-checked="false">
+        </div>
+    </div>
+</div>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-2" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-2" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="example-role-checkbox__steps" class="showcode__steps"><label for="example-role-checkbox__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="example-role-checkbox__steps--select" data-showcode-for="example-role-checkbox" data-replace-html-rules="{}"><option value=""></option><option value="id" data-showcode-notes="Like a real form element, it needs a label. Unlike a real form element, it doesn't use for to connect with the faux checkbox.  We'll cover what it does need in the next step.">Step #1: Use label tags with id</option><option value="aria-labelledby" data-showcode-notes="This is how the faux checkbox gets its label.">Step #2: Create faux checkbox connect to label with aria-labelledby</option><option value="%CSS%checkbox-css~ [role=&quot;checkbox&quot;] ; [role=&quot;checkbox&quot;][aria-checked=&quot;true&quot;]::after" data-showcode-notes="Note that the checked state is styled with the <code>::after</code> pseudo-element.">Step #3: Add custom styles</option><option value="%FILE% js/modules/checkbox.js" data-showcode-notes="">Step #4: Add JavaScript to make the checkbox functional</option></select></div>
+                          <div id="example-role-checkbox__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="example-role-checkbox__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="example-role-checkbox__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="example-role-checkbox__example-desc" class="showcode__example--desc">
+                <label for="example-role-checkbox__wrap-text">Wrap text</label>
+                <input type="checkbox" id="example-role-checkbox__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="example-role-checkbox" data-showcode-props="example-role-checkbox-props" tabindex="0" aria-describedby="example-role-checkbox__example-desc">&lt;div<br>  class="checkbox-container"<br>&gt;<br>  &lt;label<br>    id="div-checkbox-label-1"<br>  &gt;<br>    I agree to sell my soul to Zoltan:<br>  &lt;/label&gt;<br>  &lt;div<br>    aria-labelledby="div-checkbox-label-1"<br>    role="checkbox"<br>    tabindex="0"<br>    aria-checked="true"<br>  &gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;<br>&lt;div<br>  class="checkbox-container"<br>&gt;<br>  &lt;label<br>    id="div-checkbox-label-2"<br>  &gt;<br>    I will not fight Zoltan in a lawsuit about this matter:<br>  &lt;/label&gt;<br>  &lt;div<br>    aria-labelledby="div-checkbox-label-2"<br>    role="checkbox"<br>    tabindex="0"<br>    aria-checked="false"<br>  &gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="example-role-checkbox-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use label tags with id",
+            "highlight": "id",
+            "notes": "Like a real form element, it needs a label. Unlike a real form element, it doesn't use for to connect with the faux checkbox.  We'll cover what it does need in the next step."
+        },
+        {
+            "label": "Create faux checkbox connect to label with aria-labelledby",
+            "highlight": "aria-labelledby",
+            "notes": "This is how the faux checkbox gets its label."
+        },
+        {
+            "label": "Add custom styles",
+            "highlight": "%CSS%checkbox-css~ [role=\\"checkbox\\"] ; [role=\\"checkbox\\"][aria-checked=\\"true\\"]::after",
+            "notes": "Note that the checked state is styled with the <code>::after</code> pseudo-element."
+        },
+        {
+            "label": "Add JavaScript to make the checkbox functional",
+            "highlight": "%FILE% js/modules/checkbox.js"
+        }
+    ]
+}
+</script>
+
+
+
+
+<h2 id="html-checkbox-group--heading" tabindex="-1"><a class="heading__deeplink" href="#html-checkbox-group--heading" title="Permalink to HTML checkbox group" aria-label="Permalink to HTML checkbox group">HTML checkbox group</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--scratch">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/recommend.svg" alt="" role="presentation">
+                <span class="enable-stats__label">This is the best solution to use, especially when building from scratch.</span>
+            </div>
+        </div>
+            
+</div>
+<p>
+    If you have a group of checkboxes, this is the proper way to style them. Instead of fieldsets,
+    you could use <code>&lt;role="group"&gt;</code>, which is described in the
+    <a href="form.php#aria">ARIA form role example</a>.
+</p>
+
+<div id="group-example" class="enable-example">
+    <form id="group-example__form">
+        <fieldset>
+            <legend>
+                The following people will have my soul when I die:
+            </legend>
+
+            <div id="html-checkbox__error" class="error" tabindex="-1">You must choose at least one of the following.
+            </div>
+
+            <div class="checkbox-container enable-checkbox">
+                <label class="form-control">
+                    <input id="html-checkbox-multi1" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error">
+
+                    Zoltan</label>
+            </div>
+            <div class="checkbox-container enable-checkbox">
+                <label class="form-control">
+                    <input id="html-checkbox-multi2" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error">
+
+                    Noel</label>
+            </div>
+            <div class="checkbox-container enable-checkbox">
+                <label class="form-control">
+
+                    <input id="html-checkbox-multi3" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error">
+                    Alison</label>
+            </div>
+            <div class="checkbox-container enable-checkbox">
+
+                <label class="form-control">
+                    <input id="html-checkbox-multi4" type="checkbox" aria-invalid="true" aria-describedby="html-checkbox__error">
+                    That guy who looks like Gandalf who smokes in the alleyway at the office</label>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </fieldset>
+    </form>
+</div>
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-3" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-3" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="group-example__steps" class="showcode__steps"><label for="group-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="group-example__steps--select" data-showcode-for="group-example" data-replace-html-rules="{}"><option value=""></option><option value="%OPENCLOSECONTENTTAG%label" data-showcode-notes="Note we are using <a href=&quot;https://discourse.wicg.io/t/implicit-labels/1542&quot;>implicit labels</a> here.  We don't need to use <code>for</code> to associate the form element with a label as long as the label surrounds the form field and the label text together.">Step #1: Use label tags to label form element</option><option value="%OPENCLOSETAG%fieldset ||| %OPENCLOSECONTENTTAG%legend" data-showcode-notes="This will let the browser know these checkboxes are related. The legend is used as the group's label">Step #2: Surround the whole checkbox with a fieldset</option><option value="aria-describedby" data-showcode-notes="You must always ensure what the aria-describedby is pointing to exists in the DOM.">Step #3: Errors must be marked up with aria-describedby</option><option value="aria-invalid" data-showcode-notes="Just like any other form, aria-invalid must be set on the form elements that are invalid.">Step #4: Make sure you have aria-invalid set on the checkboxes if necessary</option></select></div>
+                          <div id="group-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="group-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="group-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="group-example__example-desc" class="showcode__example--desc">
+                <label for="group-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="group-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="group-example" data-showcode-props="group-example-props" tabindex="0" aria-describedby="group-example__example-desc">&lt;form<br>  id="group-example__form"<br>&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend&gt;<br>      The following people will have my soul when I die:<br>    &lt;/legend&gt;<br>    &lt;div<br>      id="html-checkbox__error"<br>      class="error"<br>      tabindex="-1"<br>    &gt;<br>      You must choose at least one of the following.<br>    &lt;/div&gt;<br>    &lt;div<br>      class="checkbox-container enable-checkbox"<br>    &gt;<br>      &lt;label<br>        class="form-control"<br>      &gt;<br>        &lt;input<br>          id="html-checkbox-multi1"<br>          type="checkbox"<br>          aria-invalid="true"<br>          aria-describedby="html-checkbox__error"<br>        &gt;<br>        Zoltan<br>      &lt;/label&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      class="checkbox-container enable-checkbox"<br>    &gt;<br>      &lt;label<br>        class="form-control"<br>      &gt;<br>        &lt;input<br>          id="html-checkbox-multi2"<br>          type="checkbox"<br>          aria-invalid="true"<br>          aria-describedby="html-checkbox__error"<br>        &gt;<br>        Noel<br>      &lt;/label&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      class="checkbox-container enable-checkbox"<br>    &gt;<br>      &lt;label<br>        class="form-control"<br>      &gt;<br>        &lt;input<br>          id="html-checkbox-multi3"<br>          type="checkbox"<br>          aria-invalid="true"<br>          aria-describedby="html-checkbox__error"<br>        &gt;<br>        Alison<br>      &lt;/label&gt;<br>    &lt;/div&gt;<br>    &lt;div<br>      class="checkbox-container enable-checkbox"<br>    &gt;<br>      &lt;label<br>        class="form-control"<br>      &gt;<br>        &lt;input<br>          id="html-checkbox-multi4"<br>          type="checkbox"<br>          aria-invalid="true"<br>          aria-describedby="html-checkbox__error"<br>        &gt;<br>        That guy who looks like Gandalf who smokes in the alleyway at the office<br>      &lt;/label&gt;<br>    &lt;/div&gt;<br>    &lt;button type="submit"&gt;<br>      Submit<br>    &lt;/button&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="group-example-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use label tags to label form element",
+            "highlight": "%OPENCLOSECONTENTTAG%label",
+            "notes": "Note we are using <a href=\\"https://discourse.wicg.io/t/implicit-labels/1542\\">implicit labels</a> here.  We don't need to use <code>for</code> to associate the form element with a label as long as the label surrounds the form field and the label text together."
+        },
+        {
+            "label": "Surround the whole checkbox with a fieldset",
+            "highlight": "%OPENCLOSETAG%fieldset ||| %OPENCLOSECONTENTTAG%legend",
+            "notes": "This will let the browser know these checkboxes are related. The legend is used as the group's label"
+        },
+        {
+            "label": "Errors must be marked up with aria-describedby",
+            "highlight": "aria-describedby",
+            "notes": "You must always ensure what the aria-describedby is pointing to exists in the DOM."
+        },
+        {
+            "label": "Make sure you have aria-invalid set on the checkboxes if necessary",
+            "highlight": "aria-invalid",
+            "notes": "Just like any other form, aria-invalid must be set on the form elements that are invalid."
+        }
+    ]
+}
+</script>
+
+<h2 id="indeterminate-checkboxes-using-native-html--heading" tabindex="-1"><a class="heading__deeplink" href="#indeterminate-checkboxes-using-native-html--heading" title="Permalink to Indeterminate Checkboxes Using Native HTML" aria-label="Permalink to Indeterminate Checkboxes Using Native HTML">Indeterminate Checkboxes Using Native HTML</a></h2>
+
+<div class="enable-stats">
+            <div class="enable-stats__desc enable-stats__desc--npm">
+            <div class="enable-stats__center">
+                <img class="enable-stats__icon" src="images/icons/npm-n.svg" alt="" role="presentation">
+                <span class="enable-stats__label">The parent/child hierarchy of this example has been done via an NPM module. (<a href="#npm-instructions">Module installation instructions</a>)</span>
+            </div>
+        </div>
+            
+</div>
+
+<p>
+    We usually think of checkboxes being either <strong>checked</strong> or <strong>unchecked</strong>. There is a third
+    possible state: <strong>indeterminate</strong>. The most common use-case for this, as outlined in <a href="https://css-tricks.com/indeterminate-checkboxes/">the CSS Tricks article about Indeterminate
+        Checkboxes</a>, is for nested checkboxes. Consider you have a group of related attributes, like toppings in an
+    ice-cream cone, that you can select with a group of checkboxes. It would be great to be able to have a "select all"
+    checkbox that can choose all of them — because who doesn't want all the things on their ice-cream cone?!?! The
+    problem is, what is this "select all" checkbox set to when some of the ingredients are checked but not all of them?
+    While I have seen select all checkboxes not checked in this case, it can be argued that we give the indeterminate
+    state for the checkbox.
+</p>
+
+<p><strong>Note that this indeterminate state can be set via JavaScript.</strong> There is no <code>indeterminate</code>
+    HTML attribute. It is set like this:</p>
+
+<figure class="wide">
+            
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                      </div>
+
+          
+                                    <div id="indeterminate-js__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="indeterminate-js__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="indeterminate-js__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="indeterminate-js__example-desc" class="showcode__example--desc">
+                <label for="indeterminate-js__wrap-text">Wrap text</label>
+                <input type="checkbox" id="indeterminate-js__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+              
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="indeterminate-js" data-showcode-props="indeterminate-js-props" tabindex="0" aria-describedby="indeterminate-js__example-desc"><br>// Let's assume &lt;input id="my-checkbox" type="checkbox"&gt;<br>// is in the page.<br>const checkboxEl = document.getElementById("my-checkbox");<br><br>// Setting the indeterminate attribute<br>checkboxEl.indeterminate = true;<br><br>// We should also set the checked value to false.<br>// This is for progressive enhancement.<br>checkboxEl.checked = false;<br><br></code>
+                </pre>
+          </div>
+        </div>
+
+        
+    <figcaption>How to use the indeterminate property in JavaScript</figcaption>
+</figure>
+
+<template id="indeterminate-js" data-showcode-is-js="true">
+// Let's assume <input id="my-checkbox" type="checkbox">
+// is in the page.
+const checkboxEl = document.getElementById("my-checkbox");
+
+// Setting the indeterminate attribute
+checkboxEl.indeterminate = true;
+
+// We should also set the checked value to false.
+// This is for progressive enhancement.
+checkboxEl.checked = false;
+
+</template>
+
+<p>Note the last bit in the code above where we set the <code>.checked</code> property to <code>false</code>.  This is done for progressive enhancement. While <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate#browser_compatibility">MDN reports that
+        indeterminate is supported in all major browsers</a>, <strong>we should still consider that not all
+        browser/screen reader pairs (e.g. Firefox/NVDA, Firefox/Voiceover at the time of this writing) will announce the indeterminate
+        state</strong>. For this reason, we should set the checked attribute to something that makes sense for screen reader users who
+    use those browser/screen-reader pairs. Setting the checkbox to unchecked does make the most sense in this "Select
+    All" scenario.
+</p>
+
+<p>Now that we got the basics out of the way, let's see an example of this in action:</p>
+
+<div id="indeterminate-example" class="enable-example">
+    <form onsubmit="alert('Your desert choice has been submitted.'); return false;">
+        <fieldset>
+            <legend>What toppings would you like on your ice-cream cone?</legend>
+            <div>
+                <div class="checkbox-container enable-checkbox">
+                    <label for="select-all" class="form-control">
+                        <input type="checkbox" id="select-all" name="select-all" aria-describedby="select-all__desc" data-select-all-for="option-1 option-2 option-3">
+                        Select All</label>
+                    <span id="select-all__desc" class="sr-only">Checking this will automatically check the ingredient
+                        checkboxes below.</span>
+                </div>
+                <ul>
+                    <li class="checkbox-container enable-checkbox">
+                        <label for="option-1" class="form-control">
+                            <input type="checkbox" id="option-1" name="ingredient" value="option-1">
+                            Chocolate Syrup</label>
+                    </li>
+                    <li class="checkbox-container enable-checkbox">
+                        <label for="option-2" class="form-control">
+                            <input type="checkbox" id="option-2" name="ingredient" value="option-2">
+                            Strawberry Sauce</label>
+                    </li>
+                    <li class="checkbox-container enable-checkbox">
+                        <label for="option-3" class="form-control">
+                            <input type="checkbox" id="option-3" name="ingredient" value="option-3">
+                            Bran Flakes</label>
+                    </li>
+                </ul>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+        
+    </form>
+</div>
+
+<p>This example uses a library we developed to set up the hierarchical structure for the select all button to work.
+    Below are the developer notes on how the library does it. If you are interested in using the library, please <a href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p>
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-5" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-5" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="indeterminate-example__steps" class="showcode__steps"><label for="indeterminate-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="indeterminate-example__steps--select" data-showcode-for="indeterminate-example" data-replace-html-rules="{}"><option value=""></option><option value="aria-describedby" data-showcode-notes="Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=&quot;http://localhost:8888/screen-reader-only-text.php&quot;>screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions.">Step #1: Use aria-describedby on the select all checkbox to give instructions to screen reader users.</option><option value="data-select-all-for" data-showcode-notes="This is used by the library. The data-select-all-for attribute is set on the &quot;select-all&quot; checkbox with list of space delimited IDs of checkboxes it controls.  Also, if one of the checkboxes it controls is checked and the others aren't, the library will set the &quot;select-all&quot; checkbox to the indeterminate state.">Step #2: Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over</option></select></div>
+                          <div id="indeterminate-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="indeterminate-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="indeterminate-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="indeterminate-example__example-desc" class="showcode__example--desc">
+                <label for="indeterminate-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="indeterminate-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="indeterminate-example" data-showcode-props="indeterminate-example-props" tabindex="0" aria-describedby="indeterminate-example__example-desc">&lt;form<br>  onsubmit="alert('Your desert choice has been submitted.'); return false;"<br>&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend&gt;<br>      What toppings would you like on your ice-cream cone?<br>    &lt;/legend&gt;<br>    &lt;div&gt;<br>      &lt;div<br>        class="checkbox-container enable-checkbox"<br>      &gt;<br>        &lt;label<br>          for="select-all"<br>          class="form-control"<br>        &gt;<br>          &lt;input<br>            type="checkbox"<br>            id="select-all"<br>            name="select-all"<br>            aria-describedby="select-all__desc"<br>            data-select-all-for="option-1 option-2 option-3"<br>          &gt;<br>          Select All<br>        &lt;/label&gt;<br>        &lt;span<br>          id="select-all__desc"<br>          class="sr-only"<br>        &gt;<br>          Checking this will automatically check the ingredient<br>          checkboxes below.<br>        &lt;/span&gt;<br>      &lt;/div&gt;<br>      &lt;ul&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;label<br>            for="option-1"<br>            class="form-control"<br>          &gt;<br>            &lt;input<br>              type="checkbox"<br>              id="option-1"<br>              name="ingredient"<br>              value="option-1"<br>            &gt;<br>            Chocolate Syrup<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;label<br>            for="option-2"<br>            class="form-control"<br>          &gt;<br>            &lt;input<br>              type="checkbox"<br>              id="option-2"<br>              name="ingredient"<br>              value="option-2"<br>            &gt;<br>            Strawberry Sauce<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;label<br>            for="option-3"<br>            class="form-control"<br>          &gt;<br>            &lt;input<br>              type="checkbox"<br>              id="option-3"<br>              name="ingredient"<br>              value="option-3"<br>            &gt;<br>            Bran Flakes<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>      &lt;/ul&gt;<br>    &lt;/div&gt;<br>    &lt;button type="submit"&gt;<br>      Submit<br>    &lt;/button&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="indeterminate-example-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use aria-describedby on the select all checkbox to give instructions to screen reader users.",
+            "highlight": "aria-describedby",
+            "notes": "Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\\"http://localhost:8888/screen-reader-only-text.php\\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
+        },
+        {
+            "label": "Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over",
+            "highlight": "data-select-all-for",
+            "notes": "This is used by the library. The data-select-all-for attribute is set on the \\"select-all\\" checkbox with list of space delimited IDs of checkboxes it controls.  Also, if one of the checkboxes it controls is checked and the others aren't, the library will set the \\"select-all\\" checkbox to the indeterminate state."
+        }
+    ]
+}
+</script>
+
+
+<h2 id="indeterminate-checkboxes-using-aria--heading" tabindex="-1"><a class="heading__deeplink" href="#indeterminate-checkboxes-using-aria--heading" title="Permalink to Indeterminate Checkboxes Using ARIA" aria-label="Permalink to Indeterminate Checkboxes Using ARIA">Indeterminate Checkboxes Using ARIA</a></h2>
+
+<p>
+    Just like two-state checkboxes, we can use ARIA to create faux-checkboxes.  At the time of this writing, there is one advantage of doing so: Firefox using Voiceover and NVDA will report an indeterminate checkbox's state as mixed using ARIA.
+</p>
+
+
+<figure class="wide">
+            
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                      </div>
+
+          
+                                    <div id="aria-indeterminate-js__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-indeterminate-js__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-indeterminate-js__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-indeterminate-js__example-desc" class="showcode__example--desc">
+                <label for="aria-indeterminate-js__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-indeterminate-js__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+              
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-indeterminate-js" data-showcode-props="aria-indeterminate-js-props" tabindex="0" aria-describedby="aria-indeterminate-js__example-desc"><br>// Let's assume &lt;div role="checkbox" id="my-aria-checkbox" type="checkbox"&gt;...&lt;/div&gt;<br>// is in the page.<br>const checkboxEl = document.getElementById("my-aria-checkbox");<br><br>// Setting the aria-checked attribute to mixed.<br>checkboxEl.setAttribute('aria-checked', 'mixed');<br><br></code>
+                </pre>
+          </div>
+        </div>
+
+        
+    <figcaption>How to use the indeterminate property in JavaScript</figcaption>
+</figure>
+
+<template id="aria-indeterminate-js" data-showcode-is-js="true">
+// Let's assume <div role="checkbox" id="my-aria-checkbox" type="checkbox">...</div>
+// is in the page.
+const checkboxEl = document.getElementById("my-aria-checkbox");
+
+// Setting the aria-checked attribute to mixed.
+checkboxEl.setAttribute('aria-checked', 'mixed');
+
+</template>
+
+<div id="aria-indeterminate-example" class="enable-example">
+    <form onsubmit="alert('Your desert choice has been submitted.'); return false;">
+        <fieldset>
+            <legend>What toppings would you like on your ice-cream cone?</legend>
+            <div>
+                <div class="checkbox-container enable-checkbox">
+
+                    <div role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-select-all__label" data-select-all-for="aria-option-1 aria-option-2 aria-option-3" aria-describedby="aria-select-all__desc"></div>
+                    <label id="aria-select-all__label" class="form-control">Select All
+                    </label>
+                    <span id="aria-select-all__desc" class="sr-only">Checking this will automatically check the
+                        ingredient checkboxes below.</span>
+                </div>
+                <ul>
+                    <li class="checkbox-container enable-checkbox">
+
+                        <div id="aria-option-1" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-1__label">
+                        </div>
+                        <label id="aria-option-1__label" class="form-control">Chocolate Syrup
+                        </label>
+                    </li>
+                    <li class="checkbox-container enable-checkbox">
+
+                        <div id="aria-option-2" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-2__label">
+                        </div>
+                        <label id="aria-option-2__label" class="form-control">Strawberry Sauce
+                        </label>
+                    </li>
+                    <li class="checkbox-container enable-checkbox">
+
+                        <div id="aria-option-3" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="aria-option-3__label">
+                        </div>
+                        <label id="aria-option-3__label" class="form-control">Bran Flakes
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</div>
+
+
+<p>This example uses the same library we used in the native HTML5 example to set up the hierarchical structure for the select all button to work. As you compare the developer notes below to that of the HTML5 example, you will see the way to implement is similar.  Please <a href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p> 
+
+        
+        <div class="showcode__container">
+          <div class="showcode__copy">
+                        <h3 id="developer-walkthrough-7" tabindex="-1" class="showcode__heading"><a class="heading__deeplink" href="#developer-walkthrough-7" title="Permalink to Code Walkthrough of the Above Example" aria-label="Permalink to Code Walkthrough of the Above Example">Code Walkthrough of the Above Example</a></h3>
+
+            <p>
+              Below is the HTML of the above example. Use the dropdown
+              to highlight each of the individual steps that makes the
+              example accessible.
+            </p>
+
+                                  </div>
+
+                              
+                        <div class="showcode__ui">
+                                      <div id="aria-indeterminate-example__steps" class="showcode__steps"><label for="aria-indeterminate-example__steps--select" class="showcode__select-label">Code to highlight:</label><select class="showcode__select" id="aria-indeterminate-example__steps--select" data-showcode-for="aria-indeterminate-example" data-replace-html-rules="{}"><option value=""></option><option value="aria-describedby" data-showcode-notes="Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=&quot;http://localhost:8888/screen-reader-only-text.php&quot;>screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions.">Step #1: Use aria-describedby on the select all checkbox to give instructions to screen reader users.</option><option value="data-select-all-for" data-showcode-notes="This is used by the library. The data-select-all-for attribute is set on the &quot;select-all&quot; checkbox with list of space delimited IDs of checkboxes it controls.  Also, if one of the checkboxes it controls is checked and the others aren't, the library will set the &quot;select-all&quot; checkbox to the indeterminate state.">Step #2: Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over</option></select></div>
+                          <div id="aria-indeterminate-example__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
+              <div class="showcode__notes-container ">
+                <div id="aria-indeterminate-example__notes" class="showcode__notes "></div>
+
+                <!-- Show/hide button to be used for small breakpoints -->
+                <button id="aria-indeterminate-example__notes-view-toggle" class="showcode__notes-view-toggle"><span class="showcode__notes-view-toggle--more">View
+                  More</span><span class="showcode__notes-view-toggle--less">View Less</span>
+                  <span class="sr-only">(This control is not needed for screen reader
+                users.)</span>
+              </button>
+              </div>
+              
+              
+
+              <div id="aria-indeterminate-example__example-desc" class="showcode__example--desc">
+                <label for="aria-indeterminate-example__wrap-text">Wrap text</label>
+                <input type="checkbox" id="aria-indeterminate-example__wrap-text" class="showcode__wrap-text">
+                <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+              </div>
+                            </div>
+
+          <div class="showcode showcode__has-wrapped-text-in-code">
+            
+            <pre class="showcode__example"><code class="showcode__example--code" data-showcode-id="aria-indeterminate-example" data-showcode-props="aria-indeterminate-example-props" tabindex="0" aria-describedby="aria-indeterminate-example__example-desc">&lt;form<br>  onsubmit="alert('Your desert choice has been submitted.'); return false;"<br>&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend&gt;<br>      What toppings would you like on your ice-cream cone?<br>    &lt;/legend&gt;<br>    &lt;div&gt;<br>      &lt;div<br>        class="checkbox-container enable-checkbox"<br>      &gt;<br>        &lt;div<br>          role="checkbox"<br>          aria-checked="false"<br>          tabindex="0"<br>          aria-labelledby="aria-select-all__label"<br>          data-select-all-for="aria-option-1 aria-option-2 aria-option-3"<br>          aria-describedby="aria-select-all__desc"<br>        &gt;<br>        &lt;/div&gt;<br>        &lt;label<br>          id="aria-select-all__label"<br>          class="form-control"<br>        &gt;<br>          Select All<br>        &lt;/label&gt;<br>        &lt;span<br>          id="aria-select-all__desc"<br>          class="sr-only"<br>        &gt;<br>          Checking this will automatically check the<br>          ingredient checkboxes below.<br>        &lt;/span&gt;<br>      &lt;/div&gt;<br>      &lt;ul&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;div<br>            id="aria-option-1"<br>            role="checkbox"<br>            aria-checked="false"<br>            tabindex="0"<br>            aria-labelledby="aria-option-1__label"<br>          &gt;<br>          &lt;/div&gt;<br>          &lt;label<br>            id="aria-option-1__label"<br>            class="form-control"<br>          &gt;<br>            Chocolate Syrup<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;div<br>            id="aria-option-2"<br>            role="checkbox"<br>            aria-checked="false"<br>            tabindex="0"<br>            aria-labelledby="aria-option-2__label"<br>          &gt;<br>          &lt;/div&gt;<br>          &lt;label<br>            id="aria-option-2__label"<br>            class="form-control"<br>          &gt;<br>            Strawberry Sauce<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>        &lt;li<br>          class="checkbox-container enable-checkbox"<br>        &gt;<br>          &lt;div<br>            id="aria-option-3"<br>            role="checkbox"<br>            aria-checked="false"<br>            tabindex="0"<br>            aria-labelledby="aria-option-3__label"<br>          &gt;<br>          &lt;/div&gt;<br>          &lt;label<br>            id="aria-option-3__label"<br>            class="form-control"<br>          &gt;<br>            Bran Flakes<br>          &lt;/label&gt;<br>        &lt;/li&gt;<br>      &lt;/ul&gt;<br>    &lt;/div&gt;<br>    &lt;button type="submit"&gt;<br>      Submit<br>    &lt;/button&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;</code>
+                </pre>
+          </div>
+        </div>
+
+        
+<script type="application/json" id="aria-indeterminate-example-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use aria-describedby on the select all checkbox to give instructions to screen reader users.",
+            "highlight": "aria-describedby",
+            "notes": "Screen reader users are warned that when this is checked, it will affect the other checkboxes below.  Note that it points to <a href=\\"http://localhost:8888/screen-reader-only-text.php\\">screen reader only text</a>. You may want to consider having this text visible to all users, but sighted users will easily discover that it affects the other checkboxes a lot more easily than screen reader users without the instructions."
+        },
+        {
+            "label": "Use data-select-all-for attribute to connect the select all checkbox with the ones it should have control over",
+            "highlight": "data-select-all-for",
+            "notes": "This is used by the library. The data-select-all-for attribute is set on the \\"select-all\\" checkbox with list of space delimited IDs of checkboxes it controls.  Also, if one of the checkboxes it controls is checked and the others aren't, the library will set the \\"select-all\\" checkbox to the indeterminate state."
+        }
+    ]
+}
+</script>
+
+<h2 id="how-to-install-the-hierarchical-checkbox-library-into-your-projects--heading" tabindex="-1"><a class="heading__deeplink" href="#how-to-install-the-hierarchical-checkbox-library-into-your-projects--heading" title="Permalink to How to Install the Hierarchical Checkbox library Into Your Projects" aria-label="Permalink to How to Install the Hierarchical Checkbox library Into Your Projects">How to Install the Hierarchical Checkbox library Into Your Projects</a></h2>
+
+<h3 id="npm-instructions" tabindex="-1"><a class="heading__deeplink" href="#npm-instructions" title="Permalink to Installation Instructions" aria-label="Permalink to Installation Instructions">Installation Instructions</a></h3>
+
+<p>You can load this JavaScript library into your application in serveral ways:
+
+</p><ul>
+  <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
+  <li>as a <a href="https://webpack.js.org/api/module-methods/#commonjs">CommonJS module using <code>require()</code> and Webpack</a>.</li>
+  <li>as a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES6 module within the
+      browser</a>.</li>
+    <li>as an old-school ES4/JavaScript library.</li>
+  </ul>
+
+
+<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+  Here are a few articles that will help you decide:
+</p>
+
+
+<ul>
+  <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+  </li>
+  <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      HTTP/2 You May Not Need Webpack Anymore</a>
+  </li><li>Stack Overflow has a really good thread about <a href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+  </li>
+</ul>
+
+
+
+<h4 id="using-npm-webpack-to-load-es6-modules---heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-es6-modules---heading" title="Permalink to Using NPM/Webpack to load ES6 Modules:" aria-label="Permalink to Using NPM/Webpack to load ES6 Modules:">Using NPM/Webpack to load ES6 Modules:</a></h4>
+
+<ol>
+  <li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.</li>
+    
+  <li>
+    Edit your webpack.config.json file to resolve the <code>~</code> modifier by adding the following:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__8__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__8__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__8__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__8">module.exports = {
+
+  ... 
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css', '*.html'],
+    modules: [
+      path.resolve('./src/js'),
+      path.resolve('./node_modules')
+    ],
+    alias: {
+      '~enable-a11y': path.resolve(__dirname, 'node_modules/enable-a11y')
+ 
+    },
+
+    ...
+  },
+
+  ...
+
+}
+    </code>
+  </div>
+</div>  </li>
+  <li>
+    You can use the module like this:
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__9__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__9__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__9__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__9">// import the JS module
+import hierarchicalCheckboxes from '~enable-a11y/js/modules/hierarchical-checkboxes';
+ 
+// How to initialize the hierarchicalCheckboxes library
+hierarchicalCheckboxes.init();
+
+
+
+        </code>
+  </div>
+</div>      </li>
+
+</ol>
+
+<h4 id="using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" tabindex="-1"><a class="heading__deeplink" href="#using-npm-webpack-to-load-modules-using-commonjs-syntax--heading" title="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax" aria-label="Permalink to Using NPM/Webpack to Load Modules Using CommonJS Syntax">Using NPM/Webpack to Load Modules Using CommonJS Syntax</a></h4>
+
+<ol>
+<li>
+    <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
+  </li>
+  <li>
+    You can import the module using require like this:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__10__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__10__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__10__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__10">var hierarchicalCheckboxes = require('enable-a11y/hierarchical-checkboxes').default; 
+
+...
+
+hierarchicalCheckboxes.init();
+    </code>
+  </div>
+</div>    </li>
+    </ol>
+
+<h4 id="using-es6-modules-natively---heading" tabindex="-1"><a class="heading__deeplink" href="#using-es6-modules-natively---heading" title="Permalink to Using ES6 modules natively." aria-label="Permalink to Using ES6 modules natively.">Using ES6 modules natively.</a></h4>
+
+<p>
+  This is the method that this page you are reading now loads the scripts.
+</p>
+
+<ol>
+  <li>
+    Grab the source by either <a href="npm.php">using NPM</a>, <a href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+  </li>
+  <li>
+    If you want to load the module as a native ES6 module, copy <code>js/modules/hierarchical-checkboxes.js</code>
+    <code></code>    from the repo and put them
+    in the appropriate directories in your project (all JS files must be in the same directory).
+  </li>
+    <li>
+    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+
+    <div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__11__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__11__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__11__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__11">&lt;script type="module"&gt;
+    import hierarchicalCheckboxes from "path-to/hierarchical-checkboxes.js" 
+
+    hierarchicalCheckboxes.init();
+&lt;/script&gt;
+        </code>
+  </div>
+</div>  </li>
+</ol>
+
+<h4 id="using-es4--heading" tabindex="-1"><a class="heading__deeplink" href="#using-es4--heading" title="Permalink to Using ES4" aria-label="Permalink to Using ES4">Using ES4</a></h4>
+
+Just do the same as the ES6 method, except you should get the JavaScript files from the <code>js/modules/es4</code>
+directory instead of the <code>js/modules/</code>:
+
+<div class="showcode showcode--no-js-container showcode__has-wrapped-text-in-code">
+  <div class="showcode__ui">
+    <div id="showcode-static__12__example-desc" class="showcode__example--desc">
+      <label for="showcode-static__12__wrap-text">Wrap text</label>
+      <input type="checkbox" id="showcode-static__12__wrap-text" class="showcode__wrap-text">
+      <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
+    </div>
+  </div>
+  <div class="showcode__example">
+    <code tabindex="0" class="showcode--no-js" data-showcode-id="showcode-static__12">&lt;script src="path-to/es4/hierarchical-checkboxes.js"&gt;&lt;/script&gt;
+    </code>
+  </div>
+</div>
+
+  </main>
+
+    
+        <footer aria-label="Copyright Information">
+            
+        Enable is a labour of love created by
+        <a href="https://useragentman.com">Zoltan Hawryluk</a>.  It has been released as open
+        source so hopefully others can learn from it.  This content is covered by the the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.
+
+    </footer> 
+        
+
+    <!-- indent won't load as a module, even though the docs say it can -->
+    <script src="js/enable-libs/indent.min.js"></script>
+    <script src="js/global.js" type="module"></script>
+    <script src="js/modules/checkbox.js" type="module"></script>
+<script src="js/demos/checkbox.js" type="module"></script>
+<script type="module">
+    import hierarchicalCheckboxes from "./js/modules/hierarchical-checkboxes.js" 
+
+    hierarchicalCheckboxes.init();
+</script>
+
+</body></html>"
+`;
