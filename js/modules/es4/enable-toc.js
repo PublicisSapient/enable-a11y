@@ -39,7 +39,7 @@ const tableOfContents = new function() {
                  *  entries in the table of contents are linked to them.
                  */
                 const headingLevel = Number(el.nodeName?.toLowerCase()?.split('h')?.[1] || 0);
-                if (headingLevel === 1) {
+                if (headingLevel === 1 || prevHeadingLevel === 0) {
                     prevHeadingLevel = headingLevel;
                     return;
                 } else if (headingLevel > prevHeadingLevel && prevHeadingLevel !== 1) {
