@@ -1,71 +1,67 @@
 @import "shared/mixins-and-vars";
 
 @inputHeightPx: 20;
-@inputHeight: (@inputHeightPx/@px);
-@inputWidth: (70/@px);
+@inputHeight: (@inputHeightPx / @px);
+@inputWidth: (70 / @px);
 @spinButtonHeight: (@inputHeight / 2);
 @fontSize: (@inputHeightPx - 4) * 1px;
 
-
 .enable-spinner,
 input[type="number"] {
-  width: @inputWidth;
-  height: @inputHeight;
-  border: 1px solid black;
+    width: @inputWidth;
+    height: @inputHeight;
+    border: 1px solid black;
 }
 
 input[type="number"] {
-  font-size: @fontSize;
-  text-align: right;
+    font-size: @fontSize;
+    text-align: right;
 }
 
 .enable-spinner {
-  position: relative;
-  margin: (20/@px);
-  padding: 0 5px;
+    position: relative;
+    margin: (20 / @px);
+    padding: 0 5px;
 
-  &__button {
-    display: block;
-    text-align: right;
-    font-size: @fontSize;
-    //width: @inputWidth - @spinButtonHeight - (7/@px);
+    &__button {
+        display: block;
+        text-align: right;
+        font-size: @fontSize;
+        //width: @inputWidth - @spinButtonHeight - (7/@px);
 
-    position: absolute;
-    right: 0;
-    height: @spinButtonHeight;
+        position: absolute;
+        right: 0;
+        height: @spinButtonHeight;
 
-    &--up {
-      top: 0;
+        &--up {
+            top: 0;
+        }
+
+        &--down {
+            bottom: 0;
+        }
+
+        & img {
+            margin: 0;
+            padding: 0;
+            border-left: 1px solid black;
+            height: (@inputHeight / 2);
+            display: block;
+        }
+
+        &:active,
+        &:hover,
+        &:focus {
+            margin: 0;
+            background-color: #faf7f0;
+        }
     }
 
-    &--down {
-      bottom: 0;
+    .spin-button {
     }
-
-    & img {
-      margin: 0;
-      padding: 0;
-      border-left: 1px solid black;
-      height: (@inputHeight / 2);
-      display: block;
-    }
-
-    
-    &:active,
-    &:hover,
-    &:focus {
-      margin: 0;
-      background-color: #faf7f0;
-      
-    }
-  }
-
-  .spin-button {
-    
-  }
 }
 
 label.sbLabel {
-  font-weight: bold;
-  font-size: 1.2em;
+    font-weight: bold;
+    font-size: 1.2em;
 }

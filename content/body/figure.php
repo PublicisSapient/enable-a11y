@@ -20,7 +20,7 @@
 
         <h2>HTML5 Example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>
             Here is the correct way to use the <code>&lt;figure&gt;</code> tag.  Note that this traditional styling in this example (i.e. with the more complex content visually above the description) is only one way of styling figures, and is not the only way to do so.
@@ -42,7 +42,7 @@
             </figure>
         </div>
 
-        <?php includeShowcode("html5-example")?>
+        <?php includeShowcode("html5-example"); ?>
         <script type="application/json" id="html5-example-props">
         {
             "replaceHtmlRules": {
@@ -59,7 +59,7 @@
 
         <h2>ARIA Example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
+        <?php includeStats(["isForNewBuilds" => false]); ?>
 
         <p>
             If you have existing markup that has the meaning as the example of above, you can mark it up using ARIA.
@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("aria-example")?>
+        <?php includeShowcode("aria-example"); ?>
         <script type="application/json" id="aria-example-props">
         {
             "replaceHtmlRules": {

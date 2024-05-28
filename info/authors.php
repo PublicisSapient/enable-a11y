@@ -5,7 +5,7 @@
     <title>
         Enable - HTML5 Code Examples Accessible To Everyone
     </title>
-    <?php include "includes/common-head-tags.php";?>
+    <?php include "includes/common-head-tags.php"; ?>
 
     <link rel="stylesheet" type="text/css" href="css/all.css" />
     <link rel="stylesheet" type="text/css" href="css/tabs.css" />
@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <?php include "includes/documentation-header.php";?>
+    <?php include "includes/documentation-header.php"; ?>
 
     <main>
-    <?php include "includes/pause-anim-control.php" ?>
+    <?php include "includes/pause-anim-control.php"; ?>
         
     <h1>
         Contributers
@@ -28,7 +28,7 @@
         <li>
     </main>
 
-    <?php include "includes/example-footer.php"?>
+    <?php include "includes/example-footer.php"; ?>
 
 </body>
 

@@ -1,205 +1,200 @@
 @import "shared/mixins-and-vars";
 
 main {
-  background-color: #444;
-  color: white;
-  width: 100%;
+    background-color: #444;
+    color: white;
+    width: 100%;
 }
 
 strong {
-  color: #fff !important;
+    color: #fff !important;
 }
 
-
 .homepage {
-  &__hero {
-    color: @color0;
-    background: #ccc;
-    min-height: 30vh;
-    padding: 40px;
-    text-align: center;
+    &__hero {
+        color: @color0;
+        background: #ccc;
+        min-height: 30vh;
+        padding: 40px;
+        text-align: center;
 
-    // center text vertically
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        // center text vertically
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    &--heading {
-      font-family: @font-default-brand;
-      font-size: (80/@px);
-      margin: 0 auto;
-      font-weight: normal;
-      color: darken(@color1, 5%);
+        &--heading {
+            font-family: @font-default-brand;
+            font-size: (80 / @px);
+            margin: 0 auto;
+            font-weight: normal;
+            color: darken(@color1, 5%);
+        }
+
+        &--copy {
+            margin-bottom: 30px;
+        }
     }
 
-    &--copy {
-      margin-bottom: 30px;
-    }
-  }
+    &__hero-link {
+        @button-height: (50 / @px);
+        text-decoration: none;
 
-  &__hero-link {
-    @button-height: (50/@px);
-    text-decoration: none;
+        &:focus,
+        &:hover {
+            text-decoration: underline;
+        }
 
-    &:focus,
-    &:hover {
-      text-decoration: underline;
-    }
+        &--main {
+            display: inline-block;
+            height: @button-height;
+            line-height: @button-height;
+            background: @color1;
+            color: white;
+            padding: 0 20px;
+            margin-right: 20px;
+        }
 
-    &--main {
-      display: inline-block;
-      height: @button-height;
-      line-height: @button-height;
-      background: @color1;
-      color: white;
-      padding: 0 20px;
-      margin-right: 20px;
-    }
+        &--secondary {
+            display: inline-block;
+            white-space: nowrap;
+            color: @color0;
 
-    &--secondary {
-      display: inline-block;
-      white-space: nowrap;
-      color: @color0;
+            height: @button-height;
+            line-height: @button-height;
 
-      height: @button-height;
-      line-height: @button-height;
+            @media @mobile {
+                margin-top: 20px;
+            }
 
-      @media @mobile {
-        margin-top: 20px;
-      }
-
-      &:after {
-        .icon-mixin('../images/chevron-up.svg');
-        filter: none;
-        transform: rotate(90deg);
-        top: (4.5/@px);
-      }
+            &:after {
+                .icon-mixin("../images/chevron-up.svg");
+                filter: none;
+                transform: rotate(90deg);
+                top: (4.5 / @px);
+            }
+        }
     }
 
-  }
+    &__intro {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
+        @media @tablet-up {
+            flex-direction: row;
+        }
 
-  &__intro {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+        &--section {
+            flex-grow: 1;
+            width: 100%;
 
-    @media @tablet-up {
-      flex-direction: row;
+            @media @tablet-up {
+                width: 33%;
+            }
+        }
+
+        &--section + &--section {
+            margin-left: 2%;
+        }
+
+        &--section-icon {
+            width: 100px;
+            height: 100px;
+        }
+
+        &--header {
+            font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+            font-weight: bold;
+            font-size: (20 / @px);
+            border: none;
+            margin-bottom: 20px;
+            color: #ccc;
+            text-align: center;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0 auto 30px auto;
+                padding: 20px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                background-size: 80px 80px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+
+                @media (forced-colors: active) {
+                    & {
+                        filter: invert() brightness(61%) contrast(434%);
+                    }
+                }
+            }
+
+            &--code::before {
+                background-image: data-uri("../images/icons/code.svg");
+                background-color: @color-scratch;
+            }
+
+            &--existing::before {
+                background-image: data-uri("../images/icons/integrate.svg");
+                background-color: @color-integrate;
+            }
+
+            &--npm::before {
+                background-image: data-uri("../images/icons/npm.svg");
+                background-color: @color-npm;
+
+                @media (forced-colors: active) {
+                    & {
+                        background-color: #fff;
+                        filter: grayscale() invert() contrast(434%);
+                    }
+                }
+            }
+
+            &--question::before {
+                background-image: data-uri("../images/icons/question.svg");
+                background-color: @color-npm;
+            }
+
+            &--donate:before {
+                background-image: data-uri("../images/icons/donate.svg");
+                background-color: @color-scratch;
+            }
+
+            &--bug:before {
+                background-image: data-uri("../images/icons/bug.svg");
+                background-color: @color-integrate;
+            }
+        }
+
+        a {
+            color: @color-style;
+        }
     }
 
-    &--section {
-      flex-grow: 1;
-      width: 100%;
-
-      @media @tablet-up {
-        width: 33%;
-      }
-    }
-
-    &--section+&--section {
-      margin-left: 2%;
-    }
-
-    &--section-icon {
-      width: 100px;
-      height: 100px;
-    }
-
-
-    &--header {
-      font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-      font-weight: bold;
-      font-size: (20/@px);
-      border: none;
-      margin-bottom: 20px;
-      color: #ccc;
-      text-align: center;
-
-      &::before {
-        content: "";
-        display: block;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin: 0 auto 30px auto;
+    &__bottom-copy {
+        background: #ccc;
+        color: #222;
+        line-height: 1.5;
         padding: 20px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        background-size: 80px 80px;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
 
-        @media (forced-colors: active) {
-          & {
-            filter: invert() brightness(61%) contrast(434%)
-          }
+        &:nth-child(2n) {
+            background: #eee;
         }
-      }
 
-      &--code::before { 
-        background-image: data-uri('../images/icons/code.svg');  
-        background-color: @color-scratch;
-      } 
-
-      &--existing::before {
-        background-image: data-uri('../images/icons/integrate.svg');
-        background-color: @color-integrate;
-      }
-
-      &--npm::before {
-        background-image: data-uri('../images/icons/npm.svg');
-        background-color: @color-npm;
-
-        @media (forced-colors: active) {
-          & {
-            background-color: #fff;
-            filter: grayscale() invert() contrast(434%);
-          }
+        @media @desktop {
+            padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
         }
-      }
 
-      &--question::before {
-        background-image: data-uri('../images/icons/question.svg');
-        background-color: @color-npm;
-      }
+        strong {
+            color: #000 !important;
+        }
 
-      &--donate:before {
-        background-image: data-uri('../images/icons/donate.svg');
-        background-color: @color-scratch;
-      }
-
-      &--bug:before {
-        background-image: data-uri('../images/icons/bug.svg');
-        background-color: @color-integrate;
-      }
-    }
-
-    a {
-      color: @color-style;
-    }
-  }
-
-  &__bottom-copy {
-    
-    background: #ccc;
-    color: #222;
-    line-height: 1.5;
-    padding: 20px;
-
-    &:nth-child(2n) {
-      background: #eee;
-    }
-
-    @media @desktop {
-      padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
-    }
-
-    strong {
-      color: #000 !important;
-    }
-
-    /* I have no idea why this was put here -- commenting out for now */
-    /* &::after {
+        /* I have no idea why this was put here -- commenting out for now */
+        /* &::after {
       content: "";
       position: absolute; 
       display: block;
@@ -209,12 +204,12 @@ strong {
       right: 0;
       bottom: 0;
     } */
-    
-    &--heading {
-      font-family: @font-default-copy;
-      font-weight: bold;
-      font-size: (22/@px);
-      color: #444;
+
+        &--heading {
+            font-family: @font-default-copy;
+            font-weight: bold;
+            font-size: (22 / @px);
+            color: #444;
+        }
     }
-  }
 }

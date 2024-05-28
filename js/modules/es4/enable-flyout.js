@@ -13,13 +13,12 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-import accessibility from "../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js"
 
-let EnableFlyoutHamburger;
-
+let EnableFlyout;
 
 
-EnableFlyoutHamburger = new function() {
+
+EnableFlyout = new function() {
   // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
   const topNavSel = '.enable-flyout__top-level';
@@ -393,6 +392,5 @@ EnableFlyoutHamburger = new function() {
   }
 }
 
-// EnableFlyoutHamburger.init();
+// EnableFlyout.init();
 
-export default EnableFlyoutHamburger;

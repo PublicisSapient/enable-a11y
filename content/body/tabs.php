@@ -26,9 +26,11 @@
 
 <h2>ARIA Tablist Example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   In order to make a tablist accessible, there are a few complications:
@@ -74,12 +76,12 @@
         </a>
       </li>
       <li>
-        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone">
+        <a href="#heading__two-tone" class="enable-tab" data-owns="tabpanel__two-tone"  >
           2 Tone
         </a>
       </li>
       <li>
-        <a href="#heading__third-wave" class="enable-tab" data-owns="tabpanel__third-wave">
+        <a href="#heading__third-wave" class="enable-tab" data-owns="tabpanel__third-wave" data-tab-selected-on-load="true">
           Third Wave
         </a>
       </li>
@@ -167,7 +169,7 @@
 const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 </script>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -178,12 +180,16 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
   "steps": [{
       "label": "Create basic DOM for users without JavaScript",
       "highlight": "href ",
-      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
+      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the JavaScript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
     },
     {
       "label": "Ensure classes are set up so roles will be assigned for JavaScript users",
       "highlight": "%INLINE%originalHTMLExample1 ||| class=\"enable-tablist\" ||| class=\"enable-tab\" ||| class=\"enable-tabpanel\"",
-      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the Javascript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
+      "notes": "This is a basic list of links that answer to the headings of what will be the tabpanels when the JavaScript is executed.  Users who don't load the JavaScript (because of a network error or because they elected not to load it) will get this usable HTML.  Note that these links will "
+    },{
+      "label": "If needed, ensure the JavaScript can assign the tab that should be selected on load",
+      "highlight": "%INLINE%originalHTMLExample1 ||| data-tab-selected-on-load",
+      "notes": "In our implementation, we use the <code>data-tab-selected-on-load</code> attribute to determine which tab is selected on load.  If not included, the first tab is selected"
     },
     {
       "label": "Use data-owns to connect tabs with their tabpanel",
@@ -224,11 +230,4 @@ const originalHTMLExample1 = document.getElementById('example1').innerHTML;
 }
 </script>
 
-<?= includeNPMInstructions(
-  'tabs',
-  array(),
-  '',
-  false,
-  array(),
-  '.enable-tablist'
-) ?>
+<?= includeNPMInstructions("tabs", [], "", false, [], ".enable-tablist") ?>

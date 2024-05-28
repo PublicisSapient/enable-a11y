@@ -14,7 +14,7 @@
         <li>The element will not submit its data to the server like a real form field.</li>
         <li>Coding
           <code>&lt;input type="number" role="textbox" /></code> doesn't do anything useful in any
-          screenreader.
+          screen reader.
         </li>
       </ul>
 
@@ -43,7 +43,7 @@
 
 
 <h2>HTML example</h2>
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 
 
@@ -71,7 +71,7 @@
 
 </div>
 
-<?php includeShowcode("html-example")?>
+<?php includeShowcode("html-example"); ?>
 
 <script type="application/json" id="html-example-props">
 {
@@ -97,7 +97,11 @@
 
 <h2>ARIA example</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => "Recommended only if you needed to create a JavaScript WYSIWYG editor.")) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "Recommended only if you needed to create a JavaScript WYSIWYG editor.",
+]); ?>
 
 <p>
   Keep in mind that if you use this in a form, none of the nice free form functionality (e.g.: HTML5 validation,
@@ -143,7 +147,7 @@
 
 
 
-<?php includeShowcode("aria-example")?>
+<?php includeShowcode("aria-example"); ?>
 
 <script type="application/json" id="aria-example-props">
 {
@@ -217,7 +221,7 @@
 
 <p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
 
-<?php includeShowcode("charcount-example")?>
+<?php includeShowcode("charcount-example"); ?>
 
 <script type="application/json" id="charcount-example-props">
 {
@@ -244,13 +248,7 @@
 
 
 
-<?= includeNPMInstructions(
-    'enable-character-count', 
-    array(),
-    '',
-    false, 
-    array(
-      'noCSS' => true
-    )
-  ) 
+<?= includeNPMInstructions("enable-character-count", [], "", false, [
+    "noCSS" => true,
+])
 ?>

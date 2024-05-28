@@ -21,7 +21,11 @@
 
 <h2>HTML5 version using details and summary tags</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'There are small bugs with this solution with some screen reader/browser combinations.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "There are small bugs with this solution with some screen reader/browser combinations.",
+]); ?>
 
 <p>
   <strong>This should be the ideal solution</strong>, since it is a native HTML5 control that doesn't require
@@ -79,7 +83,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -137,7 +141,7 @@
 </div>
 
 
-<?php includeShowcode("example1a")?> 
+<?php includeShowcode("example1a"); ?> 
 
 <script type="application/json" id="example1a-props">
 {
@@ -153,7 +157,7 @@
     {
       "label": "Create a fieldset with a legend so the checkboxes can be treated as a group.",
       "highlight": "\\s*&lt;legend[^;]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset[^;]*&gt; ||| \\s*&lt;\/fieldset&gt;",
-      "notes": "Note the legend is visally-hidden with the `sr-only` class."
+      "notes": "Note the legend is visually-hidden with the `sr-only` class."
     },
     {
       "label": "Create the checkboxes",
@@ -172,8 +176,13 @@
 
 <h2>ARIA version</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is best solution for both new and existing work.')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" => "This is best solution for both new and existing work.",
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   Even though this is not native, it is pretty easy to set up. There is really one HTML attribute that you have to
@@ -213,7 +222,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -250,7 +259,11 @@
 
 <h2 id="multiselect">ARIA dropdown with checkboxes</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is a better solution that using multi-select <code>&lt;select&gt;</code> boxes, in my opinion.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is a better solution that using multi-select <code>&lt;select&gt;</code> boxes, in my opinion.",
+]); ?>
 
 <p>Frequently, there is a requirement to create a "multi-select selectbox". It is possible to do this with the
   <code>&lt;select&gt;</code> tag, but many users (sighted, partially sighted and non-sighted)
@@ -294,7 +307,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example-aria-multiselect")?>
+<?php includeShowcode("example-aria-multiselect"); ?>
 
 <script type="application/json" id="example-aria-multiselect-props">
 {
@@ -336,12 +349,11 @@
 
 
 <?= includeNPMInstructions(
-    'enable-drawer',
-    array(),
-    'enable-drawer',
+    "enable-drawer",
+    [],
+    "enable-drawer",
     false,
-    array(),
+    [],
     null,
-    true
-  ) 
-?>
+    true,
+) ?>

@@ -1,204 +1,200 @@
-'use strict'
+'use strict';
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-
-
-
 describe('Dialog Tests', () => {
-  beforeAll(async () => {
-  });
+    beforeAll(async () => {});
 
-  async function areElementsOutsideDialogSwipable() {
-    let r;
+    async function areElementsOutsideDialogSwipable() {
+        let r;
 
-    r = await page.evaluate(() => {
-      const dialogEl = document.querySelector('#favDialog');
-      const { body } = document;
-      let r = false;
-      let currentEl = dialogEl;
+        r = await page.evaluate(() => {
+            const dialogEl = document.querySelector('#favDialog');
+            const { body } = document;
+            let r = false;
+            let currentEl = dialogEl;
 
-      do {
-        const siblings = currentEl.parentNode.childNodes;
-        for (let i = 0; i < siblings.length; i++) {
-          const sibling = siblings[i];
-          if (sibling !== currentEl && sibling.getAttribute && sibling.getAttribute('aria-hidden') !== 'true') {
-            return true;
-          }
-        }
-  
-        // we then set the currentEl to be the parent node
-        // and repeat (unless the currentNode is the body tag).
-        currentEl = currentEl.parentNode;
-      } while (currentEl !== body);
+            do {
+                const siblings = currentEl.parentNode.childNodes;
+                for (let i = 0; i < siblings.length; i++) {
+                    const sibling = siblings[i];
+                    if (
+                        sibling !== currentEl &&
+                        sibling.getAttribute &&
+                        sibling.getAttribute('aria-hidden') !== 'true'
+                    ) {
+                        return true;
+                    }
+                }
 
-      return false;
+                // we then set the currentEl to be the parent node
+                // and repeat (unless the currentNode is the body tag).
+                currentEl = currentEl.parentNode;
+            } while (currentEl !== body);
+
+            return false;
+        });
+
+        return r;
+    }
+
+    it('Focus on open and close tests', async () => {
+        let domInfo;
+
+        await page.goto(`${config.BASE_URL}/dialog.php`);
+        // focus on button that opens modal;
+        await page.waitForSelector('#updateDetails');
+        await page.focus('#updateDetails');
+
+        // check to see if the modal is visible
+        domInfo = await page.evaluate(() => {
+            const dialogEl = document.querySelector('#favDialog');
+
+            return {
+                isOpen: dialogEl.getAttribute('open') !== null,
+            };
+        });
+
+        expect(domInfo.isOpen).toBe(false);
+
+        page.keyboard.press('Space');
+
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        // check to see if the close button has focus and the dialog is visible.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const dialogEl = document.querySelector('#favDialog');
+
+            return {
+                html: activeElement.outerHTML,
+                isProperClass: activeElement.classList.contains(
+                    'a11y-modal__button--close',
+                ),
+                isOpen: dialogEl.getAttribute('open') !== null,
+            };
+        });
+
+        expect(domInfo.isProperClass).toBe(true);
+        expect(domInfo.isOpen).toBe(true);
+
+        // Click close button
+        page.keyboard.press('Space');
+
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        // check to see if the button that opened the modal is now focused.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const dialogEl = document.querySelector('#favDialog');
+
+            return {
+                isProperId:
+                    activeElement.getAttribute('id') === 'updateDetails',
+                isOpen: dialogEl.getAttribute('open') !== null,
+            };
+        });
+        expect(domInfo.isProperId).toBe(true);
+        expect(domInfo.isOpen).toBe(false);
     });
 
-    return r;
+    it('Check Focus Loop', async () => {
+        let domInfo,
+            focusedNodes = [];
 
-  }
-  
-  it('Focus on open and close tests', async () => {
-    let domInfo;
+        await page.goto(`${config.BASE_URL}/dialog.php`);
+        // focus on button that opens modal;
+        await page.waitForSelector('#updateDetails');
+        await page.focus('#updateDetails');
+        page.keyboard.press('Space');
 
-    await page.goto(`${config.BASE_URL}/dialog.php`);
-    // focus on button that opens modal;
-    await page.waitForSelector('#updateDetails');
-    await page.focus('#updateDetails');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-    // check to see if the modal is visible
-    domInfo = await page.evaluate(() => {
-      const dialogEl = document.querySelector('#favDialog');
-      
-      return {
-        isOpen: (dialogEl.getAttribute('open') !== null)
-      };
+        // need page.evaluate to find aria attributes.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+
+            return {
+                html: activeElement.outerHTML,
+                isProperClass: activeElement.classList.contains(
+                    'a11y-modal__button--close',
+                ),
+            };
+        });
+
+        expect(domInfo.isProperClass).toBe(true);
+
+        domInfo = {};
+
+        // Lets tab through the modal and see if there is a loop.
+        do {
+            if (domInfo.html) {
+                focusedNodes.push(domInfo.html);
+            }
+            page.keyboard.press('Tab');
+
+            // grab HTML of activeElement and make sure it is in dialog
+            domInfo = await page.evaluate(() => {
+                const { activeElement } = document;
+
+                return {
+                    html: activeElement.outerHTML,
+                    isInsideModal: activeElement.closest('dialog') !== null,
+                };
+            });
+
+            expect(domInfo.isInsideModal).toBe(true);
+        } while (!focusedNodes.includes(domInfo.html));
     });
 
-    expect(domInfo.isOpen).toBe(false);
+    it('Check To Ensure Nodes Outside Dialog are hidden with aria-hidden', async () => {
+        let el, r;
 
+        await page.goto(`${config.BASE_URL}/dialog.php`);
+        // focus on button that opens modal;
+        await page.waitForSelector('#updateDetails');
+        await page.focus('#updateDetails');
 
+        page.keyboard.press('Space');
 
-    page.keyboard.press('Space');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+        r = await areElementsOutsideDialogSwipable();
+        expect(r).toBe(false);
 
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    // check to see if the close button has focus and the dialog is visible.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const dialogEl = document.querySelector('#favDialog');
-      
-      return {
-        html: activeElement.outerHTML,
-        isProperClass: activeElement.classList.contains('a11y-modal__button--close'),
-        isOpen: (dialogEl.getAttribute('open') !== null)
-      };
+        page.keyboard.press('Space');
+        await testHelpers.fastPause();
+        r = await areElementsOutsideDialogSwipable();
+        expect(r).toBe(true);
     });
 
-   
-    expect(domInfo.isProperClass).toBe(true);
-    expect(domInfo.isOpen).toBe(true);
+    it('Ensure dialog has proper label and description', async () => {
+        let domInfo;
 
-    // Click close button
-    page.keyboard.press('Space');
+        await page.goto(`${config.BASE_URL}/dialog.php`);
+        // focus on button that opens modal;
+        await page.waitForSelector('#updateDetails');
+        await page.focus('#updateDetails');
 
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
+        // Ensure dialog has aria-labelledby and aria-describedby
+        domInfo = await page.evaluate(() => {
+            const dialog = document.querySelector('#favDialog');
+            const ariaLabelledby = dialog.getAttribute('aria-labelledby');
+            const ariaDescribedby = dialog.getAttribute('aria-describedby');
+            const labelEl = document.getElementById(ariaLabelledby);
+            const descEl = document.getElementById(ariaDescribedby);
 
-    // check to see if the button that opened the modal is now focused.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const dialogEl = document.querySelector('#favDialog');
+            return {
+                label: labelEl.innerText,
+                desc: descEl.innerText,
+            };
+        });
 
-      return {
-        isProperId: activeElement.getAttribute('id') === 'updateDetails',
-        isOpen: (dialogEl.getAttribute('open') !== null)
-      };
+        expect(domInfo.label.trim()).not.toBe('');
+        expect(domInfo.desc.trim()).not.toBe('');
     });
-    expect(domInfo.isProperId).toBe(true);
-    expect(domInfo.isOpen).toBe(false);
-
-  });
-
-  it('Check Focus Loop', async () => {
-    let domInfo, focusedNodes = [];
-
-    await page.goto(`${config.BASE_URL}/dialog.php`);
-    // focus on button that opens modal;
-    await page.waitForSelector('#updateDetails');
-    await page.focus('#updateDetails');
-    page.keyboard.press('Space');
-
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    // need page.evaluate to find aria attributes.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      
-      return {
-        html: activeElement.outerHTML,
-        isProperClass: activeElement.classList.contains('a11y-modal__button--close')
-      };
-    });
-
-
-    expect(domInfo.isProperClass).toBe(true);
-
-    domInfo = {};
-
-    // Lets tab through the modal and see if there is a loop.
-    do {
-      if (domInfo.html) {
-        focusedNodes.push(domInfo.html);
-      }
-      page.keyboard.press('Tab');
-
-      // grab HTML of activeElement and make sure it is in dialog
-      domInfo = await page.evaluate(() => {
-        const { activeElement } = document;
-        
-        return {
-          html: activeElement.outerHTML,
-          isInsideModal: (activeElement.closest('dialog') !== null)
-        };
-      });
-
-      expect(domInfo.isInsideModal).toBe(true);
-    } while (!focusedNodes.includes(domInfo.html));
-  });
-
-  it('Check To Ensure Nodes Outside Dialog are hidden with aria-hidden', async () => {
-    let el, r;
-
-    await page.goto(`${config.BASE_URL}/dialog.php`);
-    // focus on button that opens modal;
-    await page.waitForSelector('#updateDetails');
-    await page.focus('#updateDetails');
-
-
-    page.keyboard.press('Space');
-
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-    r = await areElementsOutsideDialogSwipable();
-    expect(r).toBe(false);
-
-    page.keyboard.press('Space');
-    await testHelpers.fastPause();
-    r = await areElementsOutsideDialogSwipable();
-    expect(r).toBe(true);
-  });
-
-  it('Ensure dialog has proper label and description', async () => {
-    let domInfo;
-
-    await page.goto(`${config.BASE_URL}/dialog.php`);
-    // focus on button that opens modal;
-    await page.waitForSelector('#updateDetails');
-    await page.focus('#updateDetails');
-
-    // Ensure dialog has aria-labelledby and aria-describedby
-    domInfo = await page.evaluate(() => {
-      const dialog = document.querySelector('#favDialog');
-      const ariaLabelledby = dialog.getAttribute('aria-labelledby');
-      const ariaDescribedby = dialog.getAttribute('aria-describedby');
-      const labelEl = document.getElementById(ariaLabelledby);
-      const descEl = document.getElementById(ariaDescribedby);
-      
-      return {
-        label: labelEl.innerText,
-        desc: descEl.innerText
-      };
-    });
-
-
-    expect(domInfo.label.trim()).not.toBe('');
-    expect(domInfo.desc.trim()).not.toBe('');
-
-  });
-  
 });

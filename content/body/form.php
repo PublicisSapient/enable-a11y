@@ -34,7 +34,7 @@
 
 
 <h2 id="html5" tabindex="-1">HTML5 example</h2>
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   If you are marking up a form from scratch, use the HTML5 <code>fieldset</code> and <code>legend</code> tags to
@@ -72,7 +72,7 @@
   </form>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -93,7 +93,7 @@
 
 <h2 id="aria" tabindex="-1">ARIA form role example (with ARIA used to replace fieldset and legend as well)</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
   Unfortunately, there will be times when you will come across a bit of code that is supposed to be a form but is not
@@ -111,7 +111,7 @@
 </ul>
 
 <p>
-  While I would still endevour to advise to code forms correctly, the following code should reduce the amount of coding
+  While I would still endeavour to advise to code forms correctly, the following code should reduce the amount of coding
   time on existing work to fix accessibility issues for screen reader users.</p>
 
 <div id="example2" class="enable-example">
@@ -142,7 +142,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -153,7 +153,7 @@
       "notes": ""
     },
     {
-      "label": "Insert group role to minic native HTML fieldset",
+      "label": "Insert group role to mimic native HTML fieldset",
       "highlight": "role=\"group\"",
       "notes": ""
     },

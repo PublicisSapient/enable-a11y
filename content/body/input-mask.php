@@ -38,7 +38,7 @@
     While we want users to be able to input just the numbers into a form, it would be nice to be able to format the
     input with dashes as users type so they can keep track of which digits have already been entered. This is especially
     nice when users are given an even larger set of characters to enter, such as a credit card, a Windows Activation
-    Licence key:
+    License key:
 </p>
 
 <figure>
@@ -60,13 +60,13 @@
     <li><strong>Visually only masking:</strong> The masking should only affect how the data input looks visually. For
         example, if spaces appear in the masked data, it's just for presentational purposes; the data submitted to the
         server in the end should not have the spaces in it.
-    <li><strong>Flexable input of data:</strong> If the input field has data in it, the user should be able to move the
-        cursor inside the input field with a keybord or mouse and edit the data anywhere the cursor can move (i.e. not
+    <li><strong>Flexible input of data:</strong> If the input field has data in it, the user should be able to move the
+        cursor inside the input field with a keyboard or mouse and edit the data anywhere the cursor can move (i.e. not
         just at the end of the data). They should also be able to paste data anywhere into the field as well as select
-        multiple characters that can be replaced or erased. <em>It should be the same behavior as an unmaked input
+        multiple characters that can be replaced or erased. <em>It should be the same behavior as an unmasked input
             field.</em></li>
     <li><strong>Keyboard friendly:</strong> Keyboard users should be able to access the masked field with the TAB key,
-        <em>just like an unmaked input field.</em>
+        <em>just like an unmasked input field.</em>
     </li>
     <li><strong>Screen reader friendly:</strong> Screen reader users should be able to use the masked input field
         <em>just like an unmasked input field.</em>
@@ -84,8 +84,10 @@
 </p>
 
 <?php
-    $check = '<img class="compliance-table__icon" src="images/checkmark.svg" alt=""> Yes.';
-    $uncheck = '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
+$check =
+    '<img class="compliance-table__icon" src="images/checkmark.svg" alt=""> Yes.';
+$uncheck =
+    '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
 <table class="comparison-table">
     <caption>Comparison of input masking libraries</caption>
@@ -132,7 +134,7 @@
 </table>
 
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible) I
-    created Enable's Input Making library. You can test it out with a screen reader and keyboard youself.</p>
+    created Enable's Input Making library. You can test it out with a screen reader and keyboard yourself.</p>
 
 <h2>Example 1: Static Input Masking</h2>
 
@@ -191,7 +193,7 @@
     </form>
 </div>
 
-<?php includeShowcode("input-mask-example")?>
+<?php includeShowcode("input-mask-example"); ?>
 <script type="application/json" id="input-mask-example-props">
 {
     "replaceHtmlRules": {},
@@ -260,7 +262,7 @@
 
     <figure>
         <img src="images/input-mask/input-mask-dom.webp"
-            alt="A digram of the input mask's DOM, which is described fully below.">
+            alt="A diagram of the input mask's DOM, which is described fully below.">
 
         <figcaption>A 3D representation of the DOM of the input mask component.</figcaption>
     </figure>
@@ -277,14 +279,14 @@
     <h3>Keyboard UX</h3>
     <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would. Keyboard
         focus, when applied to the input field, is visible since the input field and the facade are the same size. When
-        the user types into the input field, javascript updates the facade with the same data, except it has format
+        the user types into the input field, JavaScript updates the facade with the same data, except it has format
         information. The user can even select text (via the usual SHIFT+arrow keys) and the equivalent text is selected
         in the input field underneath. Data can also be cut, copied and pasted from the input field, and the facade will
         be appropriately updated.</p>
 
     <h3>Mouse UX</h3>
     <p>For mouse users, when the click on what they think is the input field, they are actually clicking on the facade
-        stacked on top. Javascript figures out where in the input data they are clicking and ensure the cursor in the
+        stacked on top. JavaScript figures out where in the input data they are clicking and ensure the cursor in the
         input field stacked underneath is placed in the right area. Because all mouse events are basically passed on to
         the input field underneath, the user can select text with a mouse and the appropriate text is selected in the
         input field so that is updated correctly. </p>
@@ -374,7 +376,7 @@
     </form>
 </div>
 
-<?php includeShowcode("credit-card-example")?>
+<?php includeShowcode("credit-card-example"); ?>
 <script type="application/json" id="credit-card-example-props">
 {
     "replaceHtmlRules": {},
@@ -399,4 +401,4 @@
 }
 </script>
 
-<?= includeNPMInstructions('input-mask', array(''), '', false , array()) ?>
+<?= includeNPMInstructions("input-mask", [""], "", false, []) ?>
