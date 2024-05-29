@@ -148,7 +148,7 @@ function initEnable() {
 
     focusDeepLink();
 
-    tableOfContents.init(['/index.php', '/faq.php']);
+    tableOfContents.init(['/index.php', '/faq.php'], true, true);
 }
 
 initEnable();
