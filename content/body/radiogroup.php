@@ -32,6 +32,7 @@
 
 
 <div id="example1" class="enable-example">
+    <!-- The "Set Alerts for your Account" heading has a permalink and is included in the TOC when it shouldn't be -->
   <h3 class="form-heading">Set Alerts for your Account</h3>
 
 
@@ -102,7 +103,8 @@
 </p>
 
 <div id="example1-styled" class="enable-example">
-  <div class="enable-radio">
+    <div class="enable-radio">
+      <!-- The "Set Alerts for your Account" heading has a permalink and is included in the TOC when it shouldn't be -->
     <h3 class="form-heading">Set Alerts for your Account</h3>
 
 
@@ -186,6 +188,7 @@
 </p>
 
 <div id="example2" class="enable-example">
+    <!-- The "Set Alerts for your Account" heading has a permalink and is included in the TOC when it shouldn't be -->
   <h3 class="form-heading">Set Alerts for your Account</h3>
 
 
@@ -287,6 +290,7 @@
 
 
 <div id="example4" class="enable-example">
+    <!-- The "Set Alerts for your Account" heading has a permalink and is included in the TOC when it shouldn't be -->
   <h3 class="form-heading">Set Alerts for your Account</h3>
   <div role="radiogroup" class="aria-form-group" aria-labelledby="html2-alert1">
     <p id="html2-alert1" class="legend">Send an alert when balance exceeds $ 3,000</p>

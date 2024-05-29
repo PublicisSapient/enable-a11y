@@ -9,7 +9,7 @@
   there. Because of this, I have spent a lot of time working on Enable's combobox implementation.
 </p>
 
-
+<!-- Example 3 is the first example on the page. This doesn't make sense. -->
 <h2>Example 3: Using HTML5 datalist</h2>
 
 <?php includeStats(array('doNot' => true, 'comment' => 'This does not work with assistive technologies in most web browsers.')) ?>
@@ -514,6 +514,7 @@
 
           <div role="listbox" id="aria-example-2__list" hidden>
             <div class="enable-combobox__group" role="group" aria-describedby="cat-1">
+            <!-- The "Communist States" heading has a permalink and is included in the TOC when it shouldn't be -->
               <h2 class="enable-combobox__group-header" role="presentation" id="cat-1">Communist States</h2>
 
               <div role="option">People's Republic of China</div>
@@ -529,6 +530,7 @@
             </div>
 
             <div class="enable-combobox__group" role="group" aria-describedby="cat-2">
+            <!-- The "Other States" heading has a permalink and is included in the TOC when it shouldn't be -->
               <h2 class="enable-combobox__group-header" role="presentation" id="cat-2">Other States</h2>
               <div role="option">Afghanistan</div>
               <div role="option">Albania</div>
