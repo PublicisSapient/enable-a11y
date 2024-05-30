@@ -89,7 +89,8 @@ const tableOfContents = new function() {
         toggleButton?.setAttribute('aria-expanded', 'true');
         toc.style.display = 'grid';
         toggleButton.focus();
-        window.addEventListener('click', this.toggleOnOutsideClick);
+        window.addEventListener('click', this.closeToggleTOCOnEvent);
+        window.addEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
     this.closeToggleTOC = () => {
@@ -98,13 +99,14 @@ const tableOfContents = new function() {
         toggleButton.setAttribute('aria-expanded', 'false');
         toc.style.display = 'none';
         toggleButton.focus();
-        window.removeEventListener('click', this.toggleOnOutsideClick);
+        window.removeEventListener('click', this.closeToggleTOCOnEvent);
+        window.removeEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
-    this.toggleOnOutsideClick = (event) => {
+    this.closeToggleTOCOnEvent = (event) => {
         const toc = document.getElementById('enable-toc--toggle');
         const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        if (!toggleButton.contains(event.target) && !toc.contains(event.target)) {
+        if ((event.type === 'keyup' && event.key === 'Escape') || (!toggleButton.contains(event.target) && !toc.contains(event.target))) {
             this.closeToggleTOC();
         }
     }
