@@ -81,8 +81,6 @@ function initEnable() {
         },
     );
 
-
-
     pauseAnimControl.init();
 
     // So screen reader users, like VoiceOver users, can navigate via heading and have focus
