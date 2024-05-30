@@ -96,7 +96,7 @@
   }
 }
 .enable-form-example label.error::before {
-  content: '';
+  content: "";
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22128%22%20height%3D%22128%22%20overflow%3D%22visible%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20opacity%3D%22.2%22%20d%3D%22M4%2064c0%2033.636%2027.364%2061%2061%2061s61-27.364%2061-61S98.636%203%2065%203%204%2030.364%204%2064z%22%2F%3E%3Cpath%20opacity%3D%22.2%22%20d%3D%22M3%2064c0%2034.188%2027.813%2062%2062%2062%2034.188%200%2062-27.813%2062-62S99.187%202%2065%202%203%2029.813%203%2064z%22%2F%3E%3ClinearGradient%20id%3D%22a%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2260.49%22%20y1%3D%221.742%22%20x2%3D%2269.656%22%20y2%3D%22126.241%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23a70000%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23a70000%22%2F%3E%3C%2FlinearGradient%3E%3Cpath%20fill%3D%22url(%23a)%22%20d%3D%22M4%2063c0%2033.636%2027.364%2061%2061%2061s61-27.364%2061-61S98.636%202%2065%202%204%2029.364%204%2063z%22%2F%3E%3ClinearGradient%20id%3D%22b%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2257.765%22%20y1%3D%221.689%22%20x2%3D%2272.515%22%20y2%3D%22126.69%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23bd0000%22%2F%3E%3Cstop%20offset%3D%22.352%22%20style%3D%22stop-color%3A%23c40000%22%2F%3E%3Cstop%20offset%3D%22.869%22%20style%3D%22stop-color%3A%23d80000%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23de0000%22%2F%3E%3C%2FlinearGradient%3E%3Ccircle%20fill%3D%22url(%23b)%22%20cx%3D%2265%22%20cy%3D%2263%22%20r%3D%2260%22%2F%3E%3ClinearGradient%20id%3D%22c%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2223.375%22%20y1%3D%2214.566%22%20x2%3D%2271.625%22%20y2%3D%2267.816%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23e05e5e%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23d81818%22%2F%3E%3C%2FlinearGradient%3E%3Cpath%20fill%3D%22url(%23c)%22%20d%3D%22M57.75%2056.5c24.934-8.476%2065.898-6.226%2065.898-6.226C117.811%2023.25%2093.771%203%2065%203%2031.863%203%205%2029.863%205%2063a59.81%2059.81%200%200%200%204.715%2023.354S32.817%2064.976%2057.75%2056.5z%22%2F%3E%3ClinearGradient%20id%3D%22d%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2263.818%22%20y1%3D%2254.581%22%20x2%3D%2272.118%22%20y2%3D%22124.92%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23bd0000%22%2F%3E%3Cstop%20offset%3D%22.043%22%20style%3D%22stop-color%3A%23c10606%22%2F%3E%3Cstop%20offset%3D%22.294%22%20style%3D%22stop-color%3A%23d62424%22%2F%3E%3Cstop%20offset%3D%22.541%22%20style%3D%22stop-color%3A%23e63a3a%22%2F%3E%3Cstop%20offset%3D%22.78%22%20style%3D%22stop-color%3A%23ef4747%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23f24b4b%22%2F%3E%3C%2FlinearGradient%3E%3Cpath%20fill%3D%22url(%23d)%22%20d%3D%22M65%20122C32.03%20122%205.283%2095.406%205.013%2062.5c-.002.167-.013.333-.013.5%200%2033.137%2026.863%2060%2060%2060s60-26.863%2060-60c0-.167-.012-.333-.013-.5C124.717%2095.406%2097.97%20122%2065%20122z%22%2F%3E%3ClinearGradient%20id%3D%22e%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%22-68.751%22%20y1%3D%22-319.85%22%20x2%3D%22-194.001%22%20y2%3D%22-319.85%22%20gradientTransform%3D%22rotate(180%20-33%20-143.25)%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23e57373%22%2F%3E%3Cstop%20offset%3D%22.118%22%20style%3D%22stop-color%3A%23ec9393%22%2F%3E%3Cstop%20offset%3D%22.266%22%20style%3D%22stop-color%3A%23f4b4b4%22%2F%3E%3Cstop%20offset%3D%22.39%22%20style%3D%22stop-color%3A%23f9c9c9%22%2F%3E%3Cstop%20offset%3D%22.472%22%20style%3D%22stop-color%3A%23fbd0d0%22%2F%3E%3Cstop%20offset%3D%22.548%22%20style%3D%22stop-color%3A%23f9c8c8%22%2F%3E%3Cstop%20offset%3D%22.67%22%20style%3D%22stop-color%3A%23f5b1b1%22%2F%3E%3Cstop%20offset%3D%22.821%22%20style%3D%22stop-color%3A%23ed8b8b%22%2F%3E%3Cstop%20offset%3D%22.994%22%20style%3D%22stop-color%3A%23e35858%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23e35656%22%2F%3E%3C%2FlinearGradient%3E%3Cpath%20fill%3D%22url(%23e)%22%20d%3D%22M65%204.101c32.97%200%2059.717%2026.594%2059.987%2059.5.001-.167.013-.333.013-.5%200-33.137-26.863-60-60-60s-60%2026.863-60%2060c0%20.167.011.333.013.5.27-32.906%2027.017-59.5%2059.987-59.5z%22%2F%3E%3ClinearGradient%20id%3D%22f%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%2261.692%22%20y1%3D%2246.315%22%20x2%3D%2269.442%22%20y2%3D%2283.065%22%3E%3Cstop%20offset%3D%220%22%20style%3D%22stop-color%3A%23bd0000%22%2F%3E%3Cstop%20offset%3D%22.167%22%20style%3D%22stop-color%3A%23c10907%22%2F%3E%3Cstop%20offset%3D%22.445%22%20style%3D%22stop-color%3A%23cd2319%22%2F%3E%3Cstop%20offset%3D%22.796%22%20style%3D%22stop-color%3A%23e04c36%22%2F%3E%3Cstop%20offset%3D%221%22%20style%3D%22stop-color%3A%23ed6749%22%2F%3E%3C%2FlinearGradient%3E%3Cpath%20fill%3D%22url(%23f)%22%20d%3D%22M26%2049a1%201%200%200%200-1%201v24a1%201%200%200%200%201%201h78a1%201%200%200%200%201-1V50a1%201%200%200%200-1-1H26z%22%2F%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M26%2050h78v24H26z%22%2F%3E%3Cpath%20fill%3D%22%23CCC%22%20d%3D%22M27%2051h77v-1H26v24h1z%22%2F%3E%3C%2Fsvg%3E");
   background-size: 0.7rem 0.7rem;
   display: inline-block;
@@ -113,12 +113,12 @@
 .enable-form-example [role="checkbox"] + label {
   display: inline;
 }
-.enable-form-example input[type=submit] {
+.enable-form-example input[type="submit"] {
   display: block;
   margin: 2rem auto 0 auto;
   padding-bottom: 0;
 }
-.enable-form-example input[type=submit] {
+.enable-form-example input[type="submit"] {
   margin-bottom: 1em;
 }
 .enable-form-example fieldset,
@@ -133,7 +133,7 @@
 .enable-form-example fieldset .legend,
 .enable-form-example .aria-form-group .legend {
   position: relative;
-  border-color: #AAAAAA;
+  border-color: #aaaaaa;
   font-weight: bold;
   font-size: 1em;
   text-align: center;
@@ -180,7 +180,7 @@
   background: #99cc66;
 }
 .enable-form-example [role="checkbox"][aria-checked="true"]:after {
-  content: '✓';
+  content: "✓";
   display: block;
   position: absolute;
   top: 0;

@@ -49,7 +49,7 @@ div.heading-example [role="heading"][aria-level="1"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
-  font-family: 'Ultra', sans-serif;
+  font-family: "Ultra", sans-serif;
   font-size: 36px;
   line-height: 42px;
   text-transform: uppercase;
@@ -61,7 +61,7 @@ div.heading-example [role="heading"][aria-level="5"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
-  font-family: 'Orienta', sans-serif;
+  font-family: "Orienta", sans-serif;
   border: none;
 }
 div.heading-example h2,
@@ -82,7 +82,7 @@ div.heading-example [role="heading"][aria-level="6"] {
   color: #343434;
   font-weight: normal;
   text-transform: uppercase;
-  font-family: 'Orienta', sans-serif;
+  font-family: "Orienta", sans-serif;
   letter-spacing: 1px;
   font-style: italic;
 }
@@ -101,7 +101,7 @@ div.heading-example [role="heading"][aria-level="7"] {
   margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
-  font-family: 'Orienta', sans-serif;
+  font-family: "Orienta", sans-serif;
 }
 div.heading-example h4,
 div.heading-example [role="heading"][aria-level="4"] {
