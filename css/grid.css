@@ -129,7 +129,7 @@ table.data img {
 /* specific grid css */
 .annotate {
   font-style: italic;
-  color: #366ED4;
+  color: #366ed4;
 }
 .hidden {
   display: none !important;
@@ -167,11 +167,11 @@ table.data img {
   position: relative;
 }
 .edit-text-button::after {
-  background-image: url('../imgs/pencil-icon.png');
+  background-image: url("../imgs/pencil-icon.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 44px;
-  content: ' ';
+  content: " ";
   height: 17px;
   opacity: 0.6;
   position: absolute;
@@ -190,7 +190,7 @@ table.data img {
 [role="gridcell"]:focus,
 [role="gridcell"] *:focus,
 [role="grid"] [tabindex="0"]:focus {
-  outline: #097EFB;
+  outline: #097efb;
   outline-style: dotted;
   outline-width: 3px;
 }
@@ -200,7 +200,7 @@ table.data img {
   position: fixed;
   height: 65px;
   width: 85px;
-  background: url('../imgs/black_keys.png') no-repeat;
+  background: url("../imgs/black_keys.png") no-repeat;
   background-size: contain;
 }
 @media screen and (max-width: 1000px) {
@@ -230,12 +230,12 @@ ul[role="menu"] li {
   padding: 0;
   width: 8em;
   border: thin solid black;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 [role="menuitem"] {
   padding: 0.25em;
 }
 [role="menuitem"]:focus,
 [role="menuitem"]:hover {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
