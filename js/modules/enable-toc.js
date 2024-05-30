@@ -83,18 +83,41 @@ const tableOfContents = new function() {
         return tocList;
     }
 
+    this.openToggleTOC = () => {
+        const toc = document.getElementById('enable-toc--toggle');
+        const toggleButton = document.querySelector('.enable-toc__toggle-button');
+        toggleButton?.setAttribute('aria-expanded', 'true');
+        toc.style.display = 'grid';
+        toggleButton.focus();
+        window.addEventListener('click', this.toggleOnOutsideClick);
+    }
+
+    this.closeToggleTOC = () => {
+        const toc = document.getElementById('enable-toc--toggle');
+        const toggleButton = document.querySelector('.enable-toc__toggle-button');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toc.style.display = 'none';
+        toggleButton.focus();
+        window.removeEventListener('click', this.toggleOnOutsideClick);
+    }
+
+    this.toggleOnOutsideClick = (event) => {
+        const toc = document.getElementById('enable-toc--toggle');
+        const toggleButton = document.querySelector('.enable-toc__toggle-button');
+        if (!toggleButton.contains(event.target) && !toc.contains(event.target)) {
+            this.closeToggleTOC();
+        }
+    }
+
     /* Action when clicking the toggle TOC button */
     this.toggleTOC = () => {
-        const toc = document.getElementById('enable-toc--toggle');
         const toggleButton = document.querySelector('.enable-toc__toggle-button');
         toggleButton.setAttribute('data-tooltip', 'Open or close the Table of Contents');
         const isExpanded = toggleButton?.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
-            toggleButton.setAttribute('aria-expanded', 'false');
-            toc.style.display = 'none';
+            this.closeToggleTOC();
         } else {
-            toggleButton?.setAttribute('aria-expanded', 'true');
-            toc.style.display = 'grid';
+            this.openToggleTOC();
         }
     }
 
