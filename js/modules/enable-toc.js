@@ -87,6 +87,7 @@ const tableOfContents = new function() {
     this.toggleTOC = () => {
         const toc = document.getElementById('enable-toc--toggle');
         const toggleButton = document.querySelector('.enable-toc__toggle-button');
+        toggleButton.setAttribute('data-tooltip', 'Open or close the Table of Contents');
         const isExpanded = toggleButton?.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
             toggleButton.setAttribute('aria-expanded', 'false');
@@ -151,6 +152,7 @@ const tableOfContents = new function() {
         toggleButton.setAttribute('aria-label', 'Toggle the Table of Contents');
         toggleButton.setAttribute('aria-controls', 'enable-toc--toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('data-tooltip', 'Open or close the Table of Contents');
         toggleButton.innerHTML = '<img src="/images/icons/toc.svg" alt="" />';
         toggleButton.addEventListener('click', this.toggleTOC);
 
@@ -186,6 +188,10 @@ const tableOfContents = new function() {
     this.moveToToggleButton = () => {
         // Update the body class to not show the TOC as a sidebar
         document.getElementsByTagName('body')[0].classList.remove('enable-toc-as-sidebar');
+
+        // Update the toggle button tooltip
+        const toggleButton = document.querySelector('.enable-toc__toggle-button');
+        toggleButton.setAttribute('data-tooltip', 'The Table of Contents has moved here. Click to open or close.');
 
         // Set the cookie to remember the sidebar state
         setCookie('enable-toc-as-sidebar', 'false');
