@@ -47,14 +47,14 @@
   width: 100%;
 }
 .enable-video-player .able-media-container iframe:focus {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 .enable-video-player .able-media-container iframe:focus:not(:focus-visible) {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 .enable-video-player .able-media-container iframe:focus-visible {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
