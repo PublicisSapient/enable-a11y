@@ -630,17 +630,17 @@ header .search-form,
   top: 1em;
   right: 1em;
 }
-nav {
+nav.site__nav {
   position: static;
   background: #000000;
   padding: 0.4em;
   line-height: 1.6;
 }
-nav ul li {
+nav.site__nav ul li {
   display: inline-block;
   margin-right: 1em;
 }
-nav ul li a {
+nav.site__nav ul li a {
   color: white;
   text-decoration: none;
 }
@@ -772,38 +772,4 @@ footer,
 footer a,
 [role="contentinfo"] a {
   color: #ccccff;
-}
-#toc {
-  padding: 1em;
-  background: #f0f8ff;
-}
-@media only screen and (min-width: 720px) {
-  #toc {
-    float: right;
-    max-width: 50%;
-    margin-left: 2em;
-  }
-}
-#toc h2 {
-  font-weight: normal;
-}
-#toc h2::before {
-  content: none;
-}
-#toc ol,
-#toc ul {
-  margin-left: 0.5em;
-}
-#toc ~ h2 {
-  clear: right;
-}
-@media only screen and (min-width: 720px) {
-  #toc:has(+ h2) {
-    float: left;
-    max-width: 100%;
-    margin-left: 0;
-  }
-}
-#toc:has(+ h2) ~ h2 {
-  clear: left;
 }
