@@ -1,6 +1,6 @@
 @import "shared/mixins-and-vars";
 
-.toc-as-sidebar {
+.enable-toc-as-sidebar {
     main#main {
         @media @tablet-up {
             margin-left: 25%;
@@ -8,7 +8,7 @@
     }
 }
 
-nav.toc {
+.enable-toc {
     background-color: white;
     grid-template-columns: 1fr auto;
     align-items: end;
@@ -39,8 +39,8 @@ nav.toc {
         }
     }
 
-    .move-to-sidebar-button,
-    .hide-sidebar-button {
+    &__move-to-sidebar-button,
+    &__hide-sidebar-button {
         padding: 5px 10px;
         border: none;
         margin-bottom: 2px;
@@ -50,46 +50,7 @@ nav.toc {
         }
     }
 
-    .toc-level-1 {
-        grid-column-start: 1;
-        grid-column-end: -1;
-        max-width: 100%;
-        border-top: 1px solid gray;
-        padding-top: 20px;
-    }
-}
-
-nav.sidebar-toc {
-    display: none;
-    position: sticky;
-    float: left;
-    top: 2.5rem;
-    right: 0;
-    bottom: 0;
-    width: 25%;
-    max-width: 300px;
-
-    h2 {
-        margin-top: 20px;
-    }
-
-    .toc-as-sidebar & {
-        @media @tablet-up {
-            display: grid;            
-        }
-    }
-}
-
-nav.toggle-toc {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    border-radius: 5px;
-    box-shadow: gray 0 0 5px;
-    max-width: 500px;
-    z-index: 2;
-
-    .move-to-sidebar-button {
+    &__move-to-sidebar-button {
         display: none;
 
         @media @tablet-up {
@@ -97,35 +58,74 @@ nav.toggle-toc {
         }
     }
 
-    h2 {
-        scroll-margin-top: 0;
-        margin-top: 8px;
+    &__level-1-content {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        max-width: 100%;
+        border-top: 1px solid gray;
+        padding-top: 20px;
     }
-
-    .toc-as-sidebar & {
-        @media @tablet-up {
-            display: none;            
-        }
-    }
-}
-
-.toggle-toc-button {
-    position: relative;
-    top: -2px;
-    display: inline-block;
-    padding: 5px 10px;
-    margin-left: -10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-
-    .toc-as-sidebar & {
-        @media @tablet-up {
-            display: none;
-        }
-    }
-
-    & ~ h1 {
+    
+    &__toggle-button {
+        position: relative;
+        top: -2px;
         display: inline-block;
+        padding: 5px 10px;
+        margin-left: -10px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    
+        .enable-toc-as-sidebar & {
+            @media @tablet-up {
+                display: none;
+            }
+        }
+    
+        & ~ h1 {
+            display: inline-block;
+        }
+    }
+
+    &--sidebar {
+        display: none;
+        position: sticky;
+        float: left;
+        top: 2.5rem;
+        right: 0;
+        bottom: 0;
+        width: 25%;
+        max-width: 300px;
+    
+        h2 {
+            margin-top: 20px;
+        }
+    
+        .enable-toc-as-sidebar & {
+            @media @tablet-up {
+                display: grid;            
+            }
+        }
+    }
+
+    &--toggle {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: gray 0 0 5px;
+        max-width: 500px;
+        z-index: 2;
+    
+        h2 {
+            scroll-margin-top: 0;
+            margin-top: 8px;
+        }
+    
+        .enable-toc-as-sidebar & {
+            @media @tablet-up {
+                display: none;            
+            }
+        }
     }
 }
