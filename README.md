@@ -157,7 +157,7 @@ If you are trying to contribute to the Enable site from a forked version of this
 
 ### I Made a New Component! How do I make sure it is available on NPM
 
-You will need to update the version number that NPM broadcasts as the latest version number.  Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past).  This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
+You will need to update the version number that NPM broadcasts as the latest version number. Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past). This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
 
 ## References
 
