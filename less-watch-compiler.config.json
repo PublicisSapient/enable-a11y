@@ -3,5 +3,7 @@
     "minified": false,
     "sourceMap": false,
     "watchFolder": "less",
-    "outputFolder": "css"
+    "outputFolder": "css",
+    "mainFile": "shared/all.less"
+
 }
