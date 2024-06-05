@@ -28,6 +28,28 @@ A place to learn and share with developers what makes web work accessible. This 
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
+  - Install options:
+    - ```bash
+      brew install java
+      ```
+    - ```bash
+      brew install openjdk
+      ```
+  - Additional tasks
+
+    - ```bash
+      java -version
+      ```
+
+      If you get "Unable to locate a Java Runtime", proceed to next step.
+
+    - Ensure your symlink is correctly mapped (these instructions will also appear after you brew install java)
+
+      - ```bash
+         sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
+        /Library/Java/JavaVirtualMachines/openjdk.jdk
+        ```
+
 > Note: Any changes to these prerequisites will need to be reflected in the GitHub Actions in order to run the CI/CD checks.
 
 #### Optional installations (since `npm run server` will run an express server)
@@ -165,5 +187,3 @@ When testing using screen readers, these resources may be of help to you:
 
 - [Desktop Screen Readers Survival Guide - Basic Keyboard Shortcuts](https://dequeuniversity.com/screenreaders/survival-guide)
 - [NVDA Users Guide](https://www.nvaccess.org/files/nvda/documentation/userGuide.html)
-
-test commit for github userid
