@@ -29,26 +29,33 @@ A place to learn and share with developers what makes web work accessible. This 
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
   - Install options:
-    - ```bash
-      brew install java
-      ```
-    - ```bash
-      brew install openjdk
-      ```
-  - Additional tasks
 
-    - ```bash
-      java -version
-      ```
-
-      If you get "Unable to locate a Java Runtime", proceed to next step.
-
-    - Ensure your symlink is correctly mapped (these instructions will also appear after you brew install java)
+    - Brew Install Options:
 
       - ```bash
-         sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
-        /Library/Java/JavaVirtualMachines/openjdk.jdk
+        brew install java
         ```
+      - ```bash
+        brew install openjdk
+        ```
+      - Additional tasks
+
+        - ```bash
+          java -version
+          ```
+
+          If you get "Unable to locate a Java Runtime", proceed to next step.
+
+        - Ensure your symlink is correctly mapped (these instructions will also appear after you brew install java)
+
+          - ```bash
+            sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
+            /Library/Java/JavaVirtualMachines/openjdk.jdk
+            ```
+
+    - Manual Install Options:
+      - Mac Install <https://www.java.com/en/download/help/mac_install.html>
+      - Windows Install <https://www.java.com/en/download/help/windows_manual_download.html>
 
 > Note: Any changes to these prerequisites will need to be reflected in the GitHub Actions in order to run the CI/CD checks.
 
@@ -81,7 +88,7 @@ A place to learn and share with developers what makes web work accessible. This 
 
    > See the [Chromedriver issues](#chromedriver-issues) section if you encounter an error related to Chromedriver.
 
-   > Make sure your server is running in another terminal before running `npm run test`.
+   > Make sure your local server is running in another terminal before running `npm run test`.
 
 ## Tests
 
