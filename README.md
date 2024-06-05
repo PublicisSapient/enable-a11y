@@ -81,6 +81,8 @@ A place to learn and share with developers what makes web work accessible. This 
 
    > See the [Chromedriver issues](#chromedriver-issues) section if you encounter an error related to Chromedriver.
 
+   > Make sure your server is running in another terminal before running `npm run test`.
+
 ## Tests
 
 ### Tools used for testing
