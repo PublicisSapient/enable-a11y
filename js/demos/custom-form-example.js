@@ -36,8 +36,8 @@ const formValidator = new (function () {
             },
             // Specify validation error messages
             messages: {
-                name_js: 'Error: Please enter your first name',
-                email_js: 'Error: Please enter a valid email address',
+                name_js: 'Error: enter your first name',
+                email_js: 'Error: enter a valid email address',
                 phone_js: 'Error: Phone number invalid',
             },
             // Make sure the form is submitted to the destination defined
