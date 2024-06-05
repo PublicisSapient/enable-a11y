@@ -1,0 +1,8 @@
+.meter-container {
+  align-items: center;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  width: min-content;
+}
