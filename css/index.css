@@ -196,3 +196,73 @@ strong {
   font-size: 1.375rem;
   color: #444;
 }
+
+/***********************************************/
+/******* CODE FOR ADDING LIGHT/DARK MODE *******/
+/***********************************************/
+:root {
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: light) {
+
+  /*Enable intro section*/
+  .homepage__hero--heading {
+    color: #004d00;
+  }
+  .homepage__hero {
+    color: #301414;
+    background: #ccc;
+  }
+
+  /*3 components after header section*/
+  main {
+    background-color: #444444;
+  }
+
+  /* Bottom copy heading*/
+  .homepage__bottom-copy--heading {
+    color: #444;
+  }
+  /*What makes enable diff? & found a bug section*/
+  .homepage__bottom-copy {
+    background: #ccc;
+    color: #222;
+  }
+  /*Want to donate code section*/
+  .homepage__bottom-copy:nth-child(2n) {
+    background: #eee;
+  }
+}
+@media (prefers-color-scheme: dark) {
+
+  /*Enable intro section*/
+  .homepage__hero--heading {
+    color: #ccffcc;
+  }
+  .homepage__hero {
+    color: #dabebe;
+    background: #222222;
+  }
+
+  /*3 components after header section*/
+  main {
+    background-color: #111111;
+  }
+
+  /* Bottom copy heading*/
+  .homepage__bottom-copy--heading {
+    color: #eeeeee;
+  }
+  /*What makes enable diff & found a bug section*/
+  .homepage__bottom-copy {
+    background: #222;
+    color: #ccc;
+  }
+  /*Want to donate code section*/
+  .homepage__bottom-copy:nth-child(2n) {
+    background: #444;
+  }
+}
+/***********************************************/
+/***********************************************/
+
