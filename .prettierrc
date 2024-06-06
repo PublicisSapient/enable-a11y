@@ -1,22 +1,20 @@
 {
-    "phpVersion": "8.1",
-    "plugins": ["@prettier/plugin-php"],
-    "tabWidth": 4,
-    "bracketSameLine": true,
-    "printWidth": 80,
-    "singleQuote": false,
-    "overrides": [
-        {
-            "files": ["*.js"],
-            "options": {
-                "singleQuote": true
-            }
-        },
-        {
-            "files": ["*.md", "package.json", "package-lock.json"],
-            "options": {
-                "tabWidth": 2
-            }
-        }
-    ]
+  "phpVersion": "8.1",
+  "plugins": ["@prettier/plugin-php"],
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "printWidth": 80,
+  "singleQuote": false,
+  "semi": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
 }
