@@ -21,6 +21,7 @@ https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/listbox.php
 https://www.useragentman.com/enable/log.php
 https://www.useragentman.com/enable/marquee.php
+https://www.useragentman.com/enable/meter.php
 https://www.useragentman.com/enable/multi-level-hamburger-menu.php
 https://www.useragentman.com/enable/pause-anim-control.php
 https://www.useragentman.com/enable/progress.php

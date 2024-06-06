@@ -20,15 +20,16 @@
 </p>
 
 <div id="html5-example" class="enable-example">
+  <strong>Disk Space:</strong>
   <div class="meter-container">
-    <strong aria-hidden="true">Volume:</strong>
-    <meter aria-label="Current volume" min="0" max="100" optimum="100" low="20" high="80"  value="10"></meter>
+    <strong aria-hidden="true">C:</strong>
+    <meter aria-label="Disk C" min="0" max="100" optimum="0" low="20" high="80"  value="20"></meter>
   
-    <strong aria-hidden="true">Brightness:</strong>
-    <meter aria-label="Current brightness" min="0" max="100" optimum="0" low="20" high="80" value="25"></meter>
+    <strong aria-hidden="true">D:</strong>
+    <meter aria-label="Disk D" min="0" max="100" optimum="0" low="20" high="80" value="90"></meter>
 
-    <strong aria-hidden="true">Battery:</strong>
-    <meter aria-label="Remaining battery" min="0" max="100" optimum="100" low="20" high="50" value="10"></meter>
+    <strong aria-hidden="true">E:</strong>
+    <meter aria-label="Disk E" min="0" max="100" optimum="0" low="20" high="80" value="60"></meter>
   </div>
 </div>
 
