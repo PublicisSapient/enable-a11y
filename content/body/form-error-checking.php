@@ -38,7 +38,7 @@
           <fieldset>
             <legend>Contact Information</legend>
 
-            <p class="form-instructions"><span class="required-symbol">*</span>denotes a required field.</p>
+            <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
             <div class="enable-form-example__fieldset-inner-container">
               <div class="field-block">
@@ -163,7 +163,7 @@
 
             <div class="enable-form-example__fieldset-inner-container">
 
-              <p class="form-instructions"><span class="required-symbol">*</span>denotes a required field.</p>
+              <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
               <div class="field-block">
                 <label class="required" for="name_js">Full Name</label>
