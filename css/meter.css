@@ -6,3 +6,37 @@
   justify-content: space-between;
   width: min-content;
 }
+
+.meter-container p {
+  margin: 0;
+}
+
+.meter {
+  background: #f7f7f7;
+  border: 1px solid #d5d5d5;
+  border-radius: 1em;
+  block-size: 0.5em;
+  display: block;
+  width: 80px;
+}
+
+.meter[aria-valuenow]:before {
+  content: "";
+  display: block;
+  height: 100%;
+}
+
+.meter[aria-valuenow="20"]:before {
+  background: green;
+  width: 20%;
+}
+
+.meter[aria-valuenow="60"]:before {
+  background: orange;
+  width: 60%;
+}
+
+.meter[aria-valuenow="90"]:before {
+  background: red;
+  width: 90%;
+}
