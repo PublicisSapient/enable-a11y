@@ -1,6 +1,6 @@
-<p>On many websites, I have come across situations were text has been crossed out using the <code>&lt;del&gt;</code> or
+<p>On many websites, I have come across situations where text has been crossed out using the <code>&lt;del&gt;</code> or
   <code>&lt;strike&gt;</code> tags. Unfortunately, most browsers don't expose the role of these tags to screen readers,
-  so text coded with these tags can be confusing. Take for example, the product tile below.
+  so text coded with these tags can be confusing. Take, for example, the product tile below.
 
 <div id="example1" class="enable-example">
   <a class="product-tile product-tile__bad-example"
@@ -103,7 +103,7 @@
 
 <p>
   Highlighted text can also be marked up in a similar way to emphasize that it is highlighted. Take this example (which
-  is same markup we use in the code walkthroughs to highlight text).  It has visually hidden text to tell screen reader users where the highlighted code begins and ends (e.g. in Voiceover's reading mode, the highlighted code will read "Start of highlighted code" and "End of Highlighted code" at the beginning and end of the code that is highlighted)
+  is the same markup we use in the code walkthroughs to highlight text).  It has visually hidden text to tell screen reader users where the highlighted code begins and ends (e.g. in Voiceover's reading mode, the highlighted code will read "Start of highlighted code" and "End of Highlighted code" at the beginning and end of the code that is highlighted)
 </p>
 
 <div id="highlight-example" class="enable-example">
