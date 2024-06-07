@@ -140,7 +140,7 @@
 
       <p>
         The following example used <a href="https://jqueryvalidation.org">jQuery.validate()</a> which is not accessible. We do not recommend using this library for new projects. 
-        it is just used as an example of how we can take existing code and make it accessible. If you want information about how to make forms accessible with JavaScript in the general sense, please read <a href="https://medium.com/@lsnrae/accessible-form-validation-9fa637ddb0fc">Alison Walden's excellent article on form validation</a>.  
+        It is just used as an example of how we can take existing code and make it accessible. If you want information about how to make forms accessible with JavaScript in the general sense, please read <a href="https://medium.com/@lsnrae/accessible-form-validation-9fa637ddb0fc">Alison Walden's excellent article on form validation</a>.  
       </p>
 
       <div id="example2" class="enable-example">
