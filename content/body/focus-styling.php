@@ -14,7 +14,7 @@
 
 
 <p>
-  When I am auditing a website for accessibility issues for the first time, lack of focus indicators is usually one of
+  When I am auditing a website for accessibility issues for the first time, a lack of focus indicators is usually one of
   the first things I see. This is usually because a lot of designers and/or developers will think that focus indicators
   look ugly and will put in the following CSS to get rid of them:
 </p>

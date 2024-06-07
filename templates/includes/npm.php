@@ -1,6 +1,6 @@
 <h3 id="npm-instructions" tabindex="-1">Installation Instructions</h3>
 
-<p>You can load this JavaScript library into your application in serveral ways:
+<p>You can load this JavaScript library into your application in several ways:
 
 <ul>
   <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
@@ -34,7 +34,7 @@
   </li>
   <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
       href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
-      HTTP/2 You May Not Need Webpack Anymore</a>
+      HTTP/2, You May Not Need Webpack Anymore</a>
   <li>Stack Overflow has a really good thread about <a
       href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
   </li>
@@ -190,8 +190,8 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 <ol>
   <li>
     Grab the source by either <a href="npm.php">using NPM</a>, <a
-      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a
-      href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a>, or <a
+      href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from GitHub.
   </li>
   <li>
     If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>
@@ -211,7 +211,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   </li>
   <?php if (!($other["noCSS"] ?? false)) { ?>
   <li>
-    Load the CSS in the head of you document:
+    Load the CSS in the head of your document:
 
     <?php includeShowcodeStaticBegin(); ?>
 &lt;html&gt;
@@ -231,7 +231,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 
   <?php includeShowcodeStaticEnd();} ?>
   <li>
-    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+    Load your scripts using the following code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
 
     <?php includeShowcodeStaticBegin(); ?>
 &lt;script type="module"&gt;
