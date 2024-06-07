@@ -1,8 +1,7 @@
 
 <p>
-  Many users, myself included, use the text-resizing functionality offered by their browser and/or operating system.
-  This functionality is not only used by people who are partially sighted, but also those who wear glasses and for those
-  who want to see text on their mobile devices in the sunlight.
+  Many users, myself included, use the text-resizing functionality offered by their browser and/or operating system. 
+  This functionality is not only used by people who are partially sighted but also by those who wear glasses and those who want to see text on their mobile devices in the sunlight.
 </p>
 
 <p>
@@ -11,7 +10,7 @@
 </p>
 
 <p>
-    <strong>If you are looking how to alter the design slightly when font-resizing is triggered, you may want to checkout our page on <a href="hero-image-text-resize.php">Accessible Text in Hero Images</a>.</strong>  The article demos a lightweight JavaScript library that can treat text-resizing almost like another breakpoint.
+    <strong>If you are looking at how to alter the design slightly when font resizing is triggered, you may want to check out our page on <a href="hero-image-text-resize.php">Accessible Text in Hero Images</a>.</strong>  The article demos a lightweight JavaScript library that can treat text-resizing almost like another breakpoint.
 </p>
 
 <h2>Replace Pixels With Rems</h2>
@@ -28,14 +27,14 @@
 
 <ol>
   <li>Pixels are an absolute unit.</li>
-  <li>Rems are responsive in that they are relative to the font-size of a parent that is sized in pixels. If the pixel font-size of the parent of an element sized in rems changes, than the font-size of the element changes. 
+  <li>Rems are responsive in that they are relative to the font size of a parent that is sized in pixels. If the pixel font size of the parent of an element sized in rems changes, then the font size of the element changes. 
   </li>
 </ol>
 
 
 
 <p>
-  In most browsers users who use their browser functionality to resize text will not be able to resize text measured in
+  In most browsers, users who use their browser functionality to resize text will not be able to resize text measured in
   pixels,
   since pixels are absolute (except in Firefox, see below). Text sized in rems, however, will resize, because the browsers' text resize
   functionality
@@ -105,9 +104,9 @@ body {
   This is something that a lot of seasoned front-end developers still get wrong: using units with the <code>line-height</code> CSS attribute.  Using units in <code>line-height</code> is bad because:
 
   <ul>
-    <li>Using absolute units in <code>line-height</code> mean they don't grow when text-zoom is activated in most browsers.</li>
-    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decides to change the font-size, the line-height will also have to be changed.  Using unitless line-heights mean that if the developer changes the <code>font-size</code> attribute, the 
-    <code>line-height</code> will be automatically adjusted, since it represents the <code>font-size</code> multiplied by that value.
+    <li>Using absolute units in <code>line-height</code> means they don't grow when text-zoom is activated in most browsers.</li>
+    <li>Using relative units (e.g. <code>rem</code>) in line-height is better (in that it will increase when text is zoomed), but if a developer decides to change the font-size, the line-height will also have to be changed.  Using unitless line-heights means that if the developer changes the <code>font-size</code> attribute, the 
+    <code>line-height</code> will be automatically adjusted since it represents the <code>font-size</code> multiplied by that value.
   </ul>
 
   <p>
@@ -163,13 +162,13 @@ body {
 <h2 id="text-resize-instructions" tabindex="-1">How to Resize Text in Modern Browsers</h2>
 
 <p>
-  There is a lot of confusion on how to actually test <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">the WCAG Success Criterion 1.4.4: Resize text</a>.  The requirement states that users should be able to resize text (and only text) up to 200% without any loss of information.  It is possible to test this in all browsers, but you should be familiar with all the caveats, which are listed below.
+  There is a lot of confusion on how to test <a href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html">the WCAG Success Criterion 1.4.4: Resize text</a>.  The requirement states that users should be able to resize text (and only text) up to 200% without any loss of information.  It is possible to test this in all browsers, but you should be familiar with all the caveats, which are listed below.
 </p>
 
 <h3>Safari:</h3>
 <ol>
-  <li><strong>Desktop (OSX):</strong> To increase the font size, press Option-Command-Plus sign (+). To
-    decrease the font size, press Option-Command-Minus sign (-)</li>
+  <li><strong>Desktop (OSX):</strong> To increase the font size, press the Option-Command-Plus sign (+). To
+    decrease the font size, press the Option-Command-Minus sign (-)</li>
   <li><strong>Mobile (iOS):</strong> When first writing this article, it looked like there was no way to
     actually resize text in iOS Safari natively. The only way to resize text is at the operating system
     level (by opening the iOS <strong>Settings</strong> app and under <strong>Accessibility</strong>
@@ -229,38 +228,30 @@ body {
   <li><strong>Desktop:</strong>
     <ul>
       <li>At the top right, click More <span aria-hidden="true">⋮</span> and then Settings.</li>
-      <li>Under "Appearance," nex" to "Font size," click the Down arrow <span aria-hidden="true">▾</span>.
-        Then select the font size you want (you have a choice
-        of
-        very small, small, medium, large and very large). You can have a little bit more
-        granular
-        control by clicking "Customize fonts" and moving the "Font Size" range widget.</li>
+      <li>Under "Appearance," next" to "Font size," click the Down arrow ▾.
+          Then select the font size you want (you have a choice of very small, small, medium, large, and very large). 
+          You can have a little bit more granular control by clicking "Customize fonts" and moving the "Font Size" range widget.</li>
     </ul>
     <p><em>Note that Chrome will <strong>not</strong> resize text that is sized in <code>px</code>
         units.</em></p>
   </li>
   <li><strong>Mobile (Android):</strong>
     <ul>
-      <li>Go to Settings, and then Accessibility. You can change the font-size by using the "Text
-        Scaling" slider.</li>
+      <li>Go to Settings, and then Accessibility. 
+          You can change the font size by using the "Text Scaling" slider.</li>
     </ul>
-    <p><strong><em>Please note that Chrome for Android has some serious differences than all other
-          browsers. Text is only resized inside HTML element has more than 217 characters in
-          it,
-          and only if they have a dynamic height . This is not useful as an accessibility
-          feature,
-          since it is not guaranteed to resize all the content on the page. Because of this,
-          text-zoom-resize does not support Chrome for Android.</em></strong></p>
-    <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=779409">A bug has been filed a
+    <p><strong><em>Please note that Chrome for Android has some serious differences from all other browsers. 
+      Text is only resized inside HTML elements has more than 217 characters in it, and only if they have a dynamic height. 
+      This is not useful as an accessibility feature, since it is not guaranteed to resize all the content on the page. Because of this, text-zoom-resize does not support Chrome for Android.</em></strong></p>
+    <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=779409">A bug was filed a
         year and a half ago with Google on this issue</a>, and I have submitted my own comments
-      to
-      it. Hopefully this will be resolved soon.</p>
+      to it. Hopefully this will be resolved soon.</p>
 
     <p>
       <strong>(Update: this was kind of fixed in 2022 <a
-          href="https://bugs.chromium.org/p/chromium/issues/detail?id=645717">in this Chromium tickets</a>, but my
+          href="https://bugs.chromium.org/p/chromium/issues/detail?id=645717">in this Chromium ticket</a>, but my
         testing has revealed it is not 100% fixed. If you bump up the sizing in Chrome and view this website, you will
-        notice that some of typography, like that inside the hamburger menu, are still not being resized
+        notice that some of the typography, like that inside the hamburger menu, is still not being resized
         correctly).</strong>
     </p>
   </li>
@@ -318,10 +309,8 @@ body {
       href="https://mcmw.abilitynet.org.uk/microsoft-edge-making-text-larger/">article</a>, but I
     couldn't get it to work (I think Microsoft may have removed this feature).</li>
   <li><strong>For Edge &gt; 18 (which is based on the Blink rendering engine):</strong> go to
-    Settings,
-    and choose the "Appearance" tab. You can change the "Font size" select box value, or have more
-    fine
-    grained control by clicking "Custom fonts" and moving the "Font size" slider.</li>
+    Settings, and choose the "Appearance" tab. You can change the "Font size" select box value or have more
+    fine-grained control by clicking "Custom fonts" and moving the "Font size" slider.</li>
 </ul>
 
 <p>(This list was partially lifted from <a href="https://usability.yale.edu/web-accessibility/articles/zoom-resizing-text">Zoom
