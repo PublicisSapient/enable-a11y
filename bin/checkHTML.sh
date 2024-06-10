@@ -256,7 +256,6 @@ runVNUTests() {
 	numTempFiles=$(echo "${TEMP_FILES}" | awk -F" " '{print NF}')
 
 	echo "Checking HTML..."
-	axe --version
 	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
 	VNU_ERR_CODE="$?"
 
