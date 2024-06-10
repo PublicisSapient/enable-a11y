@@ -110,7 +110,7 @@
             "notes": ""
         },
         {
-            "label": "Set the associated values for min, max, and value using the associated aria values.",
+            "label": "Set the associated aria values for min, max, and value.",
             "highlight": "aria-valuenow ||| aria-valuemin ||| aria-valuemax",
             "notes": "These will be <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code>. Using aria values will ensure the screen reader announces these correctly."
         },
