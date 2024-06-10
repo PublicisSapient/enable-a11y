@@ -18,7 +18,8 @@
   outline-offset: 3px;
 }
 .play-pause-anim__checkbox-container {
-  position: relative;
+  position: sticky;
+  top: 19.3125rem;
   width: 100vw;
   top: 0;
   left: 0;
@@ -31,19 +32,15 @@
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
-    position: fixed;
-    top: 0.3125rem;
+    top: 120px;
     left: initial;
-    right: 20px;
-    border-radius: 50px;
     border: solid 2px white;
-    width: min-content;
     line-height: 2.4;
   }
 }
 .play-pause-anim__checkbox-container label {
   padding: 10px 20px;
-  display: inline-block;
+  display: inline;
   cursor: pointer;
 }
 @media only screen and (min-width: 960px) {

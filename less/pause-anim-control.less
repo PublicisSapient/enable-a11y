@@ -18,7 +18,9 @@
 
 .play-pause-anim {
     &__checkbox-container {
-        position: relative;
+        position: sticky;
+        top: 19.3125rem;
+        // position: relative;
         width: 100vw;
         top: 0;
         left: 0;
@@ -30,19 +32,21 @@
         height: 2.4;
 
         @media @desktop {
-            position: fixed;
-            top: (5 / @px);
+            // position: fixed;
+            // top: (5 / @px);
+            top: 120px;
             left: initial;
-            right: 20px;
-            border-radius: 50px;
+            // right: 20px;
+            // border-radius: 50px;
             border: solid 2px white;
-            width: min-content;
+            // width: min-content;
             line-height: 2.4;
         }
 
         label {
             padding: 10px 20px;
-            display: inline-block;
+            // display: inline-block;
+            display: inline;
             cursor: pointer;
 
             @media @desktop {

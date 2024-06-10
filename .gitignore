@@ -6,3 +6,4 @@ tmp
 
 # auto-gen PHP files/logs
 php_errors.log
+.map

@@ -17,9 +17,9 @@
 
 
     <!-- Here is the main menu will be placed by our global.js Javascript -->
-    <div id="enable-flyout-menu" data-component="EnableFlyout" data-props-id="flyout-props">
+    <!-- <div id="enable-flyout-menu" data-component="EnableFlyout" data-props-id="flyout-props">
 
-    </div>
+    </div> -->
 
     <!--  HTML Templates that the Flyout menu uses  -->
     
@@ -171,6 +171,42 @@
         </span>
     </template>
 
+    <!-- 
+
+    // Move header nav options to footer 
+    
+        {
+            "id": "flyout__link--no-image",
+            "props": {
+                "label": "FAQ",
+                "url": "faq.php"
+            }
+        },
+        {
+            "id": "flyout__link--no-image",
+            "props": {
+                "label": "Accessible Code Quality",
+                "url": "code-quality.php"
+            }
+        },
+        {
+            "id": "flyout__link--no-image",
+            "props": {
+                "label": "Credits",
+                "url": "acknowledgements.php"
+            }
+        },
+        {
+            "id": "flyout__link--no-image",
+            "props": {
+                "label": "Bookmarklets",
+                "url": "bookmarklets.php",
+                "listItemClasses": "enable-flyout__last-top-level-link"
+            }
+        },
+
+    -->
+
     <!-- id, props, content -->
     <script id="flyout-props" type="application/json">
     {
@@ -181,35 +217,7 @@
                 "content": [{
                         "id": "flyout__home-mobile-only"
                     },
-                    {
-                        "id": "flyout__link--no-image",
-                        "props": {
-                            "label": "FAQ",
-                            "url": "faq.php"
-                        }
-                    },
-                    {
-                        "id": "flyout__link--no-image",
-                        "props": {
-                            "label": "Accessible Code Quality",
-                            "url": "code-quality.php"
-                        }
-                    },
-                    {
-                        "id": "flyout__link--no-image",
-                        "props": {
-                            "label": "Credits",
-                            "url": "acknowledgements.php"
-                        }
-                    },
-                    {
-                        "id": "flyout__link--no-image",
-                        "props": {
-                            "label": "Bookmarklets",
-                            "url": "bookmarklets.php",
-                            "listItemClasses": "enable-flyout__last-top-level-link"
-                        }
-                    },
+                    
 
                     {
                         "id": "flyout__button",

@@ -8,6 +8,9 @@
 * {
   box-sizing: border-box;
 }
+#enable-flyout-menu {
+  display: inline;
+}
 .enable-flyout {
   --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
   --enable-flyout__is-hamburger: 1;
@@ -43,6 +46,7 @@
   will-change: right;
 }
 .enable-flyout__container {
+  display: inline-block;
   padding: 0;
   margin-bottom: 0;
   color: #fff;
@@ -499,7 +503,7 @@
     text-align: left;
   }
   .enable-flyout__top-level {
-    display: block;
+    display: inline-block;
     height: auto;
     overflow: visible;
   }
@@ -534,7 +538,7 @@
     background: white;
   }
   .enable-flyout__list {
-    display: flow-root;
+    display: inline;
     text-align: center;
   }
   .enable-flyout__open-level-button {
