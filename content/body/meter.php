@@ -72,34 +72,43 @@
   <div class="meter-container">
     <p aria-hidden="true">C:</p>
     <div
-      class="meter"
+      class="enable-custom-meter"
       role="meter"
       aria-label="Disk C"
       aria-valuenow="0.2"
       aria-valuemin="0"
       aria-valuemax="1"
+      low="0.5"
+      high="0.75"
+      optimum="0"
     >
     </div>
   
     <p aria-hidden="true">D:</p>
     <div
-      class="meter"
+      class="enable-custom-meter"
       role="meter"
       aria-label="Disk D"
       aria-valuenow="0.9"
       aria-valuemin="0"
       aria-valuemax="1"
+      low="0.5"
+      high="0.75"
+      optimum="0"
     >
     </div>
 
     <p aria-hidden="true">E:</p>
     <div
-      class="meter"
+      class="enable-custom-meter"
       role="meter"
       aria-label="Disk E"
       aria-valuenow="0.6"
       aria-valuemin="0"
       aria-valuemax="1"
+      low="0.5"
+      high="0.75"
+      optimum="0"
     >
     </div>
   </div>
@@ -120,14 +129,24 @@
             "notes": "These will be <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code>. Using aria values will ensure the screen reader announces these correctly."
         },
         {
-            "label": "Add the <code>aria-label</code> attribute to announce the name of each meter.",
-            "highlight": "aria-label",
-            "notes": ""
+          "label": "Add the <code>aria-label</code> attribute to announce the name of each meter.",
+          "highlight": "aria-label",
+          "notes": ""
         },
         {
           "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
           "highlight": "%OPENCLOSECONTENTTAG%p",
           "notes": ""
+        },
+        {
+          "label": "Use JS to calculate and pass meter percentage/color to CSS via style variables.",
+          "highlight": "meter-js~",
+          "notes": "Pass calculated values to CSS via custom style variables. <code>element.setAttribute('style', `--meter-percentage: ${percentage}%;--meter-color: ${color};`)</code>"
+        },
+        {
+          "label": "Create CSS psuedo element using passed style variables.",
+          "highlight": "%CSS% meter-css~",
+          "notes": "If you prefer not to use JS or want color to be handled by CSS, you can alternatively do this with <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors'>CSS Attribute Selectors</a>. However, this will limit certain functionality with meter color/percentage."
         }
     ]
 }
