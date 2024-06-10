@@ -94,11 +94,13 @@ const enableCharacterCount = new function() {
     asideEl.setAttribute('id', 'enable-character-count__global');
     asideEl.className="sr-only";
 
-    liveRegion = document.createElement('output');
+    // <output> causes VoiceOver to speak the character count twice.
+    // Using <div> as an aria-live region resolves this issue.
+    liveRegion = document.createElement('div');
     liveRegion.className = 'sr-only';
     liveRegion.id = 'character-count__status';
-    /* liveRegion.setAttribute('role', 'status');
-    liveRegion.setAttribute('aria-live', 'polite'); */
+    liveRegion.role = 'region';
+    liveRegion.ariaLive = 'polite';
     lastBodyEl.insertAdjacentElement('afterend', asideEl);
     asideEl.appendChild(liveRegion);
     liveRegion.insertAdjacentHTML('afterend', `<span id="character-count__desc" class="sr-only">${globalCounterInstructions}</span>`);
