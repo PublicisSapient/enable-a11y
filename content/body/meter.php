@@ -61,6 +61,11 @@
   Should a case arise where there HTML5 meter component is not accessible for a given browser, the following can be used as an alternative.
 </p>
 
+<p>
+  If you are using VNU for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
+  This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">Aria 1.2</a>.
+</p>
+
 <div id="aria-example" class="enable-example">
   <strong>Disk Space:</strong>
 
