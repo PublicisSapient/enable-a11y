@@ -12,8 +12,8 @@
 }
 
 .meter {
-  background: #f7f7f7;
-  border: 1px solid #d5d5d5;
+  background: #EFEFEF;
+  border: 1px solid #E4E4E4;
   border-radius: 1em;
   block-size: 0.5em;
   display: block;
@@ -26,17 +26,58 @@
   height: 100%;
 }
 
-.meter[aria-valuenow="20"]:before {
-  background: green;
-  width: 20%;
+.meter[aria-valuenow^="1"]:before {
+  background: #C74821;
+  width: 100%;
 }
 
-.meter[aria-valuenow="60"]:before {
-  background: orange;
+.meter[aria-valuenow^="0.9"]:before {
+  background: #C74821;
+  width: 90%;
+}
+
+.meter[aria-valuenow^="0.8"]:before {
+  background: #C74821;
+  width: 80%;
+}
+
+.meter[aria-valuenow^="0.7"]:before {
+  background: #F4BC41;
+  width: 70%;
+}
+
+.meter[aria-valuenow^="0.6"]:before {
+  background: #F4BC41;
   width: 60%;
 }
 
-.meter[aria-valuenow="90"]:before {
-  background: red;
-  width: 90%;
+.meter[aria-valuenow^="0.5"]:before {
+  background: #F4BC41;
+  width: 50%;
+}
+
+.meter[aria-valuenow^="0.4"]:before {
+  background: #F4BC41;
+  width: 40%;
+}
+
+
+.meter[aria-valuenow^="0.3"]:before {
+  background: #F4BC41;
+  width: 30%;
+}
+
+.meter[aria-valuenow^="0.2"]:before {
+  background: #387A26;
+  width: 20%;
+}
+
+.meter[aria-valuenow^="0.1"]:before {
+  background: #387A26;
+  width: 10%;
+}
+
+.meter[aria-valuenow^="0.0"]:before {
+  background: #387A26;
+  width: 5%;
 }
