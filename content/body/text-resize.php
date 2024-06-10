@@ -241,7 +241,7 @@ body {
           You can change the font size by using the "Text Scaling" slider.</li>
     </ul>
     <p><strong><em>Please note that Chrome for Android has some serious differences from all other browsers. 
-      Text is only resized inside HTML elements has more than 217 characters in it, and only if they have a dynamic height. 
+      Text is only resized inside HTML elements with more than 217 characters in it, and only if they have a dynamic height. 
       This is not useful as an accessibility feature, since it is not guaranteed to resize all the content on the page. Because of this, text-zoom-resize does not support Chrome for Android.</em></strong></p>
     <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=779409">A bug was filed a
         year and a half ago with Google on this issue</a>, and I have submitted my own comments
