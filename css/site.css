@@ -249,6 +249,9 @@
   margin: 0px 15px 5px 0px;
   display: inline-block;
 }
+.enable-stats__heading-icon {
+  margin: 0 0.9375rem 0 0;
+}
 .enable-stats__label {
   display: inline-block;
   text-align: left;

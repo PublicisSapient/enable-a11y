@@ -39,6 +39,10 @@ function json_cached_api_results($cache_file = null, $expires = null)
 
         // Remove cache file on error to avoid writing wrong xml
         if ($api_results && $json_results) {
+            if (!file_exists(dirname(__FILE__) . "/api-cache")) {
+                mkdir(dirname(__FILE__) . "/api-cache", 0777, true);
+            }
+
             file_put_contents($cache_file, $json_results);
         } elseif (file_exists($cache_file)) {
             unlink($cache_file);

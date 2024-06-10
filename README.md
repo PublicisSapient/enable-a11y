@@ -28,6 +28,35 @@ A place to learn and share with developers what makes web work accessible. This 
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
+  - Install options:
+
+    - Brew Install Options:
+
+      - ```bash
+        brew install java
+        ```
+      - ```bash
+        brew install openjdk
+        ```
+      - Additional tasks
+
+        - ```bash
+          java -version
+          ```
+
+          If you get "Unable to locate a Java Runtime", proceed to next step.
+
+        - Ensure your symlink is correctly mapped (these instructions will also appear after you brew install java)
+
+          - ```bash
+            sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk \
+            /Library/Java/JavaVirtualMachines/openjdk.jdk
+            ```
+
+    - Manual Install Options:
+      - Mac Install <https://www.java.com/en/download/help/mac_install.html>
+      - Windows Install <https://www.java.com/en/download/help/windows_manual_download.html>
+
 > Note: Any changes to these prerequisites will need to be reflected in the GitHub Actions in order to run the CI/CD checks.
 
 #### Optional installations (since `npm run server` will run an express server)
@@ -58,6 +87,8 @@ A place to learn and share with developers what makes web work accessible. This 
 4. Make sure everything is installed correctly by running the automated tests using `npm run test`.
 
    > See the [Chromedriver issues](#chromedriver-issues) section if you encounter an error related to Chromedriver.
+
+   > Make sure your local server is running in another terminal before running `npm run test`.
 
 ## Tests
 
@@ -157,7 +188,7 @@ If you are trying to contribute to the Enable site from a forked version of this
 
 ### I Made a New Component! How do I make sure it is available on NPM
 
-You will need to update the version number that NPM broadcasts as the latest version number.  Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past).  This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
+You will need to update the version number that NPM broadcasts as the latest version number. Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past). This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
 
 ## References
 
