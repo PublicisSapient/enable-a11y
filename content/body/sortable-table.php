@@ -3,11 +3,11 @@
 
       
 
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
-        <?php includeStats(array('isNPM' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
+        <?php includeStats(["isForNewBuilds" => false]); ?>
+        <?php includeStats(["isNPM" => true]); ?>
 
-        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensure partially-sighted and blind users know that a sort has been successul.</p>
+        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensure partially-sighted and blind users know that a sort has been successful.</p>
 
 
 
@@ -87,7 +87,14 @@
             </div>
         </div>
 
-        <?php includeShowcode("sortable-table-example", null, null, null, true, 2)?>
+        <?php includeShowcode(
+            "sortable-table-example",
+            null,
+            null,
+            null,
+            true,
+            2,
+        ); ?>
 
         <script type="application/json" id="sortable-table-example-props">
         {
@@ -124,7 +131,7 @@
                     "notes": ""
                 },
                 {
-                    "label": "Add aria-descibedby to sort buttons",
+                    "label": "Add aria-describedby to sort buttons",
                     "highlight": "aria-describedby",
                     "notes": "This lets screen reader users know what happens on screen when the press the buttons.  Note that these instructions can be hidden visually so screen reader users only experience it, but I like to keep it in since it's useful to all users."
                 },
@@ -148,7 +155,7 @@
                     ]
                 },
                 {
-                    "label": "Add JS",
+                    "label": "Add JavaScript",
                     "highlight": "%FILE% js/modules/sortable-tables.js",
                     "notes": "This is the code that sorts the table.  When the user sorts a table column, it changes the column's header visually and semantically with <code>aria-sort</code> to ensure screen readers know the column is sorted in a specific direction.  It also updates the aria live region with the new sorting information."
                 }
@@ -157,9 +164,10 @@
         </script>
 
 <?= includeNPMInstructions(
-    'sortable-tables',
-    array(),
-    'deque-table-sortable',
+    "sortable-tables",
+    [],
+    "deque-table-sortable",
     false,
-    array(),
-    '.pagination__table') ?>
+    [],
+    ".pagination__table",
+) ?>

@@ -1,1 +1,1 @@
-<?php include "text-resize.php";?>
+<?php include "text-resize.php"; ?>

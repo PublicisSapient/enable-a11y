@@ -285,6 +285,17 @@ code {
 .comparison-table__icon {
   width: 20px;
 }
+iframe:focus {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}
+iframe:focus:not(:focus-visible) {
+  outline: none !important;
+}
+iframe:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}
 /*
 @media (prefers-color-scheme: dark) {
   body {

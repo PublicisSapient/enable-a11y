@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { interpolate } from './interpolate.js';
-import EnableFlyoutHamburger from './enable-hamburger.js';
 
 
 class Templify {

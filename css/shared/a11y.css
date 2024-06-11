@@ -69,16 +69,16 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 *:focus {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 *:focus:not(:focus-visible) {
   outline: none;
 }
 *:focus-visible {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 

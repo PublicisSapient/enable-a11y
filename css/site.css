@@ -68,7 +68,7 @@
     z-index: 2;
   }
   .enable-flyout__level .enable-flyout__level .enable-flyout__list--photo-layout .enable-flyout__link:focus {
-    outline: solid 2px #097EFB;
+    outline: solid 2px #097efb;
   }
   .enable-flyout__level .enable-flyout__menu-item--close {
     display: none;
@@ -172,6 +172,7 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
+  margin: 10px 0;
 }
 .enable-logo__text {
   display: block;
@@ -228,13 +229,13 @@
   background-color: #ffffcc;
 }
 .enable-stats__desc--do-not {
-  background-color: #ccccff;
+  background-color: #ffcccc;
 }
 .enable-stats__desc--style {
   background-color: #ccccff;
 }
 .enable-stats__desc--npm {
-  background-color: #ffcccc;
+  background-color: #ccfffc;
 }
 .enable-stats__center {
   display: flex;
@@ -247,6 +248,9 @@
   height: 1.875rem;
   margin: 0px 15px 5px 0px;
   display: inline-block;
+}
+.enable-stats__heading-icon {
+  margin: 0 0.9375rem 0 0;
 }
 .enable-stats__label {
   display: inline-block;
