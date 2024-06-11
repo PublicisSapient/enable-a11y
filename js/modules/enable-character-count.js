@@ -96,6 +96,8 @@ const enableCharacterCount = new function() {
     const asideEl = document.createElement('aside');
     asideEl.setAttribute('id', 'enable-character-count__global');
     asideEl.className="sr-only";
+    asideEl.role = 'region';
+    asideEl.ariaLive = 'polite';
     lastBodyEl.insertAdjacentElement('afterend', asideEl);
 
     // <output> causes VoiceOver to speak the character count twice.
@@ -107,20 +109,14 @@ const enableCharacterCount = new function() {
   }
 
   function createCounterForScreenReader() {
-      const result = document.createElement('div');
-      result.className = 'sr-only';
+      const result = document.createElement('p');
       result.id = 'character-count__status';
-      result.role = 'region';
-      result.ariaLive = 'polite';
       return result;
   }
 
   function createCounterInstructionsForScreenReader() {
-      const result = document.createElement('div');
-      result.className = 'sr-only';
+      const result = document.createElement('p');
       result.id = 'character-count__instructions';
-      result.role = 'region';
-      result.ariaLive = 'polite';
       return result;
   }
 
@@ -171,7 +167,7 @@ const enableCharacterCount = new function() {
   }
 
   function onFocusOut(event) {
-    counterInstructionsForScreenReader.innerHTML = '';
+    counterInstructionsForScreenReader.textContent = '';
   }
 
   const writeCharCount = (target) => {
@@ -190,12 +186,12 @@ const enableCharacterCount = new function() {
     const numChars = target.value.length;
     if (maxLength) {
       const charsRemaining = parseInt(maxLength) - numChars;
-      counterForScreenReader.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
+      counterForScreenReader.textContent = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
     }
   }
 
   function announceInstructions() {
-    counterInstructionsForScreenReader.innerHTML = globalCounterInstructions;
+    counterInstructionsForScreenReader.textContent = globalCounterInstructions;
   }
 }
 
