@@ -57,6 +57,8 @@ jobs:
                   echo $OSTYPE &&
                   which google-chrome &&
                   google-chrome --version
+            - name: Install X11 dependencies for robotjs (needed for unit testing on input-mask tests)
+              run: sudo apt-get install libxtst-dev
             - name: Install npm dependencies
               run: npm ci
             - name: Start server and wait for localhost to be available
