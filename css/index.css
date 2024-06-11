@@ -200,11 +200,7 @@ strong {
 /***********************************************/
 /******* CODE FOR ADDING DARK MODE *******/
 /***********************************************/
-:root {
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: dark) {
-
+@media screen and (prefers-color-scheme: dark) {
   /*Enable intro section*/
   .homepage__hero--heading {
     color: #ccffcc;
