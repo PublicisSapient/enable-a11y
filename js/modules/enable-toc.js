@@ -1,4 +1,5 @@
 'use strict'
+import tooltip from './tooltip.js';
 import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
 
 /*******************************************************************************
@@ -269,6 +270,9 @@ const tableOfContents = new function() {
         if (!sidebarCookieValue) {
             setCookie('enable-toc-as-sidebar', `${showAsSidebarDefault}`);
         }
+
+        // Add the tooltip component
+        tooltip.init();
     }
 }
 
