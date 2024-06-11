@@ -85,7 +85,7 @@
 </figure>
 
 <p>
-  This is typical of a lot of hero images on the web. It's so common, that I created a JavaScript library to work
+  This is typical of a lot of hero images on the web. It's so common that I created a JavaScript library to work
   around this issue. When the text is resized using the
   browser's text-zooming feature, the layout changes to accommodate the larger text:
 </p>

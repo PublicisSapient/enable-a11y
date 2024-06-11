@@ -213,7 +213,7 @@
 
 
 <p>
-  Note that <strong>it is much better to remove the <code>all</code> keywords and just transition what you need
+  Note that <strong>it is much better to remove the <code>all</code> keyword and just transition what you need
     instead.</strong> This solution should only be a band-aid solution until you can fix the issue properly.
 </p>
 
@@ -326,7 +326,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
   <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
 </figure>
 
-<p>Here is the markup that implements the double-focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>
+<p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>
 
 <?php includeShowcode("double-focus-ring-example", "", "", "", false); ?>
 <script type="application/json" id="double-focus-ring-example-props">

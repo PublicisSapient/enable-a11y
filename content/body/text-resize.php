@@ -167,8 +167,8 @@ body {
 
 <h3>Safari:</h3>
 <ol>
-  <li><strong>Desktop (OSX):</strong> To increase the font size, press the Option-Command-Plus sign (+). To
-    decrease the font size, press the Option-Command-Minus sign (-)</li>
+  <li><strong>Desktop (OSX):</strong> To increase the font size, press Option-Command-Plus sign (+). To
+    decrease the font size, press Option-Command-Minus sign (-)</li>
   <li><strong>Mobile (iOS):</strong> When first writing this article, it looked like there was no way to
     actually resize text in iOS Safari natively. The only way to resize text is at the operating system
     level (by opening the iOS <strong>Settings</strong> app and under <strong>Accessibility</strong>
