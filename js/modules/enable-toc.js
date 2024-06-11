@@ -69,6 +69,10 @@ const tableOfContents = new function() {
                         const clonedLink = child.cloneNode(true);
                         clonedLink.setAttribute('class', 'enable-toc__link');
                         tocItem.appendChild(clonedLink);
+                    } else if (child.nodeName === 'IMG') {
+                        const clonedImage = child.cloneNode(true);
+                        clonedImage.setAttribute('class', 'enable-toc__image');
+                        tocItem.appendChild(clonedImage);
                     } else if (el.textContent) {
                         addMissingIDToHeading(el);
                         const tocLink = document.createElement('a');
