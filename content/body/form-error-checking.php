@@ -42,17 +42,17 @@
 
             <div class="enable-form-example__fieldset-inner-container">
               <div class="field-block">
-                <label class="required" for="name_html5">Full Name:</label>
+                <label class="required" for="name_html5">Full Name</label>
                 <input id="name_html5" size="25" type="text" required  autocomplete="name" >
               </div>
 
               <div class="field-block">
-                <label class="required" for="email_html5">E-mail address:</label>
+                <label class="required" for="email_html5">E-mail address</label>
                 <input id="email_html5" size="25" type="email" required autocomplete="email" >
               </div>
 
               <div class="field-block">
-                <label class="required" for="phone_html5">Phone Number:</label>
+                <label class="required" for="phone_html5">Phone Number</label>
                 <input                   id="phone_html5"
                   size="25"
                   type="text"
@@ -166,12 +166,12 @@
               <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
               <div class="field-block">
-                <label class="required" for="name_js">Full Name:</label>
+                <label class="required" for="name_js">Full Name</label>
                 <input id="name_js" name="name_js" size="25" type="text" required >
               </div>
 
               <div class="field-block">
-                <label class="required" for="email_js">E-mail address:</label>
+                <label class="required" for="email_js">E-mail address</label>
                 <input                   id="email_js"
                   name="email_js"
                   size="25"
@@ -181,7 +181,7 @@
               </div>
 
               <div class="field-block">
-                <label class="required" for="phone_js">Phone Number:</label>
+                <label class="required" for="phone_js">Phone Number</label>
                 <input                   id="phone_js"
                   name="phone_js"
                   size="25"
@@ -197,7 +197,7 @@
               </div>
 
               <div class="field-block">
-                <label for="age-range">Age Range:</label>
+                <label for="age-range">Age Range</label>
                 <select id="age-range">
                   <option>Choose one</option>
                   <option value="a">0 to 18 years old</option>
