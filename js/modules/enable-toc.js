@@ -1,4 +1,5 @@
 'use strict'
+import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
 
 /*******************************************************************************
  * enable-toc.js - UI for the Table of Contents
@@ -13,26 +14,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-function splitCookies() {
-    const list = {};
-    document?.cookie?.split(';')?.forEach((cookie) => {
-        const parts = cookie.split('=');
-        list[parts.shift().trim()] = decodeURI(parts.join('='));
-    });
-    return list;
-}
 
-function getCookie(name) {
-    return splitCookies()[name];
-}
-
-function setCookie(name, value) {
-    document.cookie = `${name}=${value}; path=/;`;
-}
-
-function deleteCookie(name) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-}
 
 const tableOfContents = new function() {
     let toc;

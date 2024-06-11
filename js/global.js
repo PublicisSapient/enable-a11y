@@ -17,25 +17,7 @@ import enableVisibleOnFocus from './modules/enable-visible-on-focus.js';
 import offscreenObserver from './modules/offscreen-observer.js';
 import textZoom from './demos/hero-image-text-resize.js';
 import tableOfContents from './modules/enable-toc.js';
-
-function scrollToEl(el) {
-    /*
-     * The setTimeout is here to ensure the focused elements coordinates are accurate
-     */
-    window.setTimeout(() => {
-        const rect = el.getBoundingClientRect(),
-            scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop,
-            scrollLeft =
-                window.pageXOffset || document.documentElement.scrollLeft,
-            elTop = rect.top + scrollTop,
-            elLeft = rect.left + scrollLeft;
-        window.scrollTo({
-            top: elTop - 200,
-            left: elLeft,
-        });
-    }, 100);
-}
+import { scrollToEl, addMissingIDToHeading } from './modules/helpers.js';
 
 function focusDeepLink() {
     const { hash } = window.location;
@@ -63,6 +45,7 @@ function buildFlyoutMenuHTML() {
     // Initialize the hamburger menu.
     EnableFlyout.init();
 }
+
 function findImagesNextToHeading(headingId, className) {
     const heading = document.getElementById(headingId);
     let images = '';
@@ -128,23 +111,7 @@ function initEnable() {
                     el.closest('.enable-example') === null &&
                     el.closest('.no-permalink-headings') === null
                 ) {
-                    if (!el.id) {
-                        const innerTextId =
-                            el.innerText
-                                .toLowerCase()
-                                .replace(/[^a-zA-Z0-9]+/g, '-') + '--heading';
-
-                        //console.log(innerTextId, document.querySelectorAll(`#${innerTextId}`).length);
-                        if (
-                            document.querySelectorAll(`#${innerTextId}`)
-                                .length >= 1
-                        ) {
-                            headingIndex++;
-                            el.id = `${innerTextId}-${headingIndex}`;
-                        } else {
-                            el.id = `${innerTextId}`;
-                        }
-                    }
+                    addMissingIDToHeading(el, headingIndex);
 
                     if (el.getAttribute('tabIndex') === null) {
                         el.setAttribute('tabIndex', '-1');
@@ -176,14 +143,16 @@ function initEnable() {
                 }
 
                 // now, let's put a link tag inside the heading so we can deeplink to it easily
-                if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
-                    el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`
+                if (
+                    el.nodeName !== 'H1' &&
+                    el.getAttribute('role') !== 'heading'
+                ) {
+                    el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`;
                 }
 
                 return;
-            })
-        };
-
+            });
+    }
 
     focusDeepLink();
 
