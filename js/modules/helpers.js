@@ -1,6 +1,6 @@
 'use strict'
 
-export function scrollToEl(el) {
+function scrollToEl(el) {
     /*
      * The setTimeout is here to ensure the focused elements coordinates are accurate
      */
@@ -19,7 +19,7 @@ export function scrollToEl(el) {
     }, 100);
 }
 
-export function addMissingIDToHeading(headingElement, headingIndex = 0) {
+function addMissingIDToHeading(headingElement, headingIndex = 0) {
     if (!headingElement.id) {
         const innerTextId = headingElement.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + '--heading';
 
@@ -32,7 +32,7 @@ export function addMissingIDToHeading(headingElement, headingIndex = 0) {
     }
 }
 
-export function splitCookies() {
+function splitCookies() {
     const list = {};
     document?.cookie?.split(';')?.forEach((cookie) => {
         const parts = cookie.split('=');
@@ -41,14 +41,16 @@ export function splitCookies() {
     return list;
 }
 
-export function getCookie(name) {
+function getCookie(name) {
     return splitCookies()[name];
 }
 
-export function setCookie(name, value) {
+function setCookie(name, value) {
     document.cookie = `${name}=${value}; path=/;`;
 }
 
-export function deleteCookie(name) {
+function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
+
+export { scrollToEl, addMissingIDToHeading, splitCookies, getCookie, setCookie, deleteCookie }
