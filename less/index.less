@@ -4,6 +4,12 @@ main {
     background-color: #444;
     color: white;
     width: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            background-color: #111111;
+        }
+    }
 }
 
 strong {
@@ -23,12 +29,25 @@ strong {
         flex-direction: column;
         justify-content: center;
 
+        @media (prefers-color-scheme: dark) {
+            & {
+                color: #dabebe;
+                background: #222222;
+            }
+        }
+
         &--heading {
             font-family: @font-default-brand;
             font-size: (80 / @px);
             margin: 0 auto;
             font-weight: normal;
             color: darken(@color1, 5%);
+
+            @media (prefers-color-scheme: dark) {
+                & {
+                    color: #ccffcc;
+                }
+            }
         }
 
         &--copy {
@@ -183,10 +202,23 @@ strong {
 
         &:nth-child(2n) {
             background: #eee;
+
+            @media (prefers-color-scheme: dark) {
+                & {
+                    background: #444;
+                }
+            }
         }
 
         @media @desktop {
             padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
+        }
+
+        @media (prefers-color-scheme: dark) {
+            & {
+                background: #222;
+                color: #ccc;
+            }
         }
 
         strong {
@@ -210,6 +242,12 @@ strong {
             font-weight: bold;
             font-size: (22 / @px);
             color: #444;
+
+            @media (prefers-color-scheme: dark) {
+                & {
+                    color: #eeeeee;
+                }
+            }
         }
     }
 }
