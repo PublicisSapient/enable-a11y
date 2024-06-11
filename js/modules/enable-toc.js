@@ -116,12 +116,12 @@ const tableOfContents = new function() {
     }
 
     this.closeToggleTOCOnEvent = (event) => {
-        event.preventDefault();
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         if (
             (event.type === 'keyup' && event.key === 'Escape') ||
             (!toggleButtonSelector?.contains(event.target) && !toggleTOCSelector?.contains(event.target))
         ) {
+            event.preventDefault();
             this.closeToggleTOC();
         }
     }
