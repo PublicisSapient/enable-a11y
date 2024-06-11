@@ -2,6 +2,7 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
+import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
 
 const tabListContainerSelector = '#example1 .enable-tablist';
 const tabSelector = `${tabListContainerSelector} .enable-tab`;
@@ -167,46 +168,36 @@ describe('Tablist Tests', () => {
         // tab to next focusable element in the DOM
         page.keyboard.press('Tab');
 
-        const tabPanelDomInfo = await page.evaluate((tabPanel) => {
-            const activeElement = document.activeElement;
+        const tabPanelDomInfo = await page.evaluate(
+            (tabPanel, tabbableSelector) => {
+                const activeElement = document.activeElement;
 
-            const tabPanelVisibleEl = document.querySelector(tabPanel);
+                const tabPanelVisibleEl = document.querySelector(tabPanel);
 
-            const getFocusableElements = (container) => {
-                // Define a list of selectors for focusable elements
-                const focusableSelectors = [
-                    'a[href]',
-                    'button',
-                    'textarea',
-                    'input',
-                    'select',
-                    '[tabindex]:not([tabindex="-1"])',
-                    '[contenteditable]',
-                ];
+                const getFocusableElements = (container) => {
+                    // Use querySelectorAll to find all matching elements within the container
+                    const focusableElements =
+                        container.querySelectorAll(tabbableSelector);
 
-                // Combine the selectors into a single selector string
-                const combinedSelector = focusableSelectors.join(',');
+                    // Convert the NodeList to an Array (if needed) and return it
+                    return Array.from(focusableElements);
+                };
 
-                // Use querySelectorAll to find all matching elements within the container
-                const focusableElements =
-                    container.querySelectorAll(combinedSelector);
+                let focusableElements = [];
 
-                // Convert the NodeList to an Array (if needed) and return it
-                return Array.prototype.slice.call(focusableElements);
-            };
+                if (tabPanelVisibleEl) {
+                    focusableElements = getFocusableElements(tabPanelVisibleEl);
+                }
 
-            let focusableElements = [];
-
-            if (tabPanelVisibleEl) {
-                focusableElements = getFocusableElements(tabPanelVisibleEl);
-            }
-
-            return {
-                focusableElements,
-                isActiveElementInCurrentTabPanel:
-                    focusableElements[0] === activeElement,
-            };
-        }, tabPanel);
+                return {
+                    focusableElements,
+                    isActiveElementInCurrentTabPanel:
+                        focusableElements[0] === activeElement,
+                };
+            },
+            tabPanel,
+            accessibility.tabbableSelector,
+        );
 
         if (tabPanelDomInfo.focusableElements.length > 0) {
             expect(tabPanelDomInfo.isActiveElementInCurrentTabPanel).toBe(true);
