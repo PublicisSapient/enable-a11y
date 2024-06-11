@@ -127,7 +127,7 @@ function initEnable() {
 
                         // add icons next to the heading if the content below the heading has any images
                         if (
-                            el.nextElementSibling.classList.contains(
+                            el.nextElementSibling?.classList.contains(
                                 'enable-stats',
                             )
                         ) {
