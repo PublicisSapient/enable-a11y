@@ -27,7 +27,7 @@ const tableOfContents = new function() {
         }
     }
 
-    this.createContent = (numberFirstLevelHeadings) => {
+    this.createContent = (numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan) => {
         // Table of Contents container setup
         const tocList = document.createElement(numberFirstLevelHeadings ? 'ol' : 'ul');
         tocList.setAttribute('class', 'enable-toc__level-1-content');
@@ -44,7 +44,12 @@ const tableOfContents = new function() {
                  *  entries in the table of contents are linked to the headings.
                  */
                 const headingLevel = Number(el.nodeName?.toLowerCase()?.split('h')?.[1] || 0);
-                if (headingLevel === 1 || prevHeadingLevel === 0) {
+
+                // Skip headings that are within the selector or deeper than the specified level
+                if (selectorToSkipHeadingsWithin && el.closest(selectorToSkipHeadingsWithin) !== null || ignoreHeadersDeeperThan && headingLevel > ignoreHeadersDeeperThan) {
+                    // Do not add headings to the TOC
+                    return;
+                } else if (headingLevel === 1 || prevHeadingLevel === 0) {
                     prevHeadingLevel = headingLevel;
                     return;
                 } else if (headingLevel > prevHeadingLevel && prevHeadingLevel !== 1) {
@@ -231,14 +236,20 @@ const tableOfContents = new function() {
         toggleButtonSelector.focus();
     }
 
-    this.init = (skipPages = [], showAsSidebarDefault = true, numberFirstLevelHeadings = true) => {
+    this.init = ({
+        skipPages = [],
+        showAsSidebarDefault = true,
+        numberFirstLevelHeadings = true,
+        selectorToSkipHeadingsWithin,
+        ignoreHeadersDeeperThan,
+    }) => {
         // Skip the Table of Contents on certain pages
         if (skipPages.includes(location.pathname)) {
             return;
         }
 
         // Create the Table of Contents
-        this.toc = this.createContent(numberFirstLevelHeadings);
+        this.toc = this.createContent(numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan);
 
         // Insert the TOC beside the main content and beside the H1
         this.appendAsSidebar();

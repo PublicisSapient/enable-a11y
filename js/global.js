@@ -156,7 +156,12 @@ function initEnable() {
 
     focusDeepLink();
 
-    tableOfContents.init(['/index.php', '/faq.php'], true, true);
+    tableOfContents.init({
+        skipPages: ['/index.php', '/faq.php'],
+        showAsSidebarDefault: true,
+        numberFirstLevelHeadings: true,
+        selectorToSkipHeadingsWithin: '.enable-example',
+    });
 }
 
 initEnable();
