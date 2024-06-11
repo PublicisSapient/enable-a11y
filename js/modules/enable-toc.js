@@ -17,7 +17,15 @@ import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
 
 
 const tableOfContents = new function() {
-    let toc;
+    this.toc;
+
+    const commonSelectors = () => {
+        return {
+            sidebarTOCSelector: document.getElementById('enable-toc--sidebar'),
+            toggleTOCSelector: document.getElementById('enable-toc--toggle'),
+            toggleButtonSelector: document.querySelector('.enable-toc__toggle-button'),
+        }
+    }
 
     this.createContent = (numberFirstLevelHeadings) => {
         // Table of Contents container setup
@@ -66,38 +74,43 @@ const tableOfContents = new function() {
     }
 
     this.openToggleTOC = () => {
-        const toc = document.getElementById('enable-toc--toggle');
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        toggleButton?.setAttribute('aria-expanded', 'true');
-        toc.style.display = 'grid';
-        toggleButton.focus();
+        const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
+        toggleButtonSelector?.setAttribute('aria-expanded', 'true');
+        if (toggleTOCSelector) {
+            toggleTOCSelector.style.display = 'grid';
+        }
+        toggleButtonSelector?.focus();
         window.addEventListener('click', this.closeToggleTOCOnEvent);
         window.addEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
     this.closeToggleTOC = () => {
-        const toc = document.getElementById('enable-toc--toggle');
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        toggleButton.setAttribute('aria-expanded', 'false');
-        toc.style.display = 'none';
-        toggleButton.focus();
+        const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
+        toggleButtonSelector?.setAttribute('aria-expanded', 'false');
+        if (toggleTOCSelector) {
+            toggleTOCSelector.style.display = 'none';
+        }
+        toggleButtonSelector?.focus();
         window.removeEventListener('click', this.closeToggleTOCOnEvent);
         window.removeEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
     this.closeToggleTOCOnEvent = (event) => {
-        const toc = document.getElementById('enable-toc--toggle');
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        if ((event.type === 'keyup' && event.key === 'Escape') || (!toggleButton.contains(event.target) && !toc.contains(event.target))) {
+        event.preventDefault();
+        const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
+        if (
+            (event.type === 'keyup' && event.key === 'Escape') ||
+            (!toggleButtonSelector?.contains(event.target) && !toggleTOCSelector?.contains(event.target))
+        ) {
             this.closeToggleTOC();
         }
     }
 
     /* Action when clicking the toggle TOC button */
     this.toggleTOC = () => {
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        toggleButton.setAttribute('data-tooltip', 'Open or close the Table of Contents');
-        const isExpanded = toggleButton?.getAttribute('aria-expanded') === 'true';
+        const { toggleButtonSelector } = commonSelectors();
+        toggleButtonSelector?.setAttribute('data-tooltip', 'Open or close the Table of Contents');
+        const isExpanded = toggleButtonSelector?.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
             this.closeToggleTOC();
         } else {
@@ -124,7 +137,7 @@ const tableOfContents = new function() {
         // Append the elements to the nav
         nav.appendChild(tocHeading);
         nav.appendChild(hideSidebarButton);
-        nav.appendChild(toc);
+        nav.appendChild(this.toc);
 
         // Insert the nav and button elements
         const main = document.getElementsByTagName('main')?.[0];
@@ -150,7 +163,7 @@ const tableOfContents = new function() {
         // Append the elements to the nav
         nav.appendChild(tocHeading);
         nav.appendChild(moveToSidebarButton);
-        const clonedToc = toc.cloneNode(true);
+        const clonedToc = this.toc.cloneNode(true);
         nav.appendChild(clonedToc);
 
         // Create the button to toggle the TOC
@@ -180,10 +193,11 @@ const tableOfContents = new function() {
         document.getElementsByTagName('body')[0].classList.add('enable-toc-as-sidebar');
 
         // Hide the TOC toggle button and content
-        const toc = document.getElementById('enable-toc--toggle');
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        toggleButton.setAttribute('aria-expanded', 'false');
-        toc.style.display = 'none';
+        const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
+        toggleButtonSelector?.setAttribute('aria-expanded', 'false');
+        if (toggleTOCSelector) {
+            toggleTOCSelector.style.display = 'none';
+        }
 
         // Set the cookie to remember the sidebar state
         setCookie('enable-toc-as-sidebar', 'true');
@@ -197,14 +211,14 @@ const tableOfContents = new function() {
         document.getElementsByTagName('body')[0].classList.remove('enable-toc-as-sidebar');
 
         // Update the toggle button tooltip
-        const toggleButton = document.querySelector('.enable-toc__toggle-button');
-        toggleButton.setAttribute('data-tooltip', 'The Table of Contents has moved here. Click to open or close.');
+        const { toggleButtonSelector } = commonSelectors();
+        toggleButtonSelector?.setAttribute('data-tooltip', 'The Table of Contents has moved here. Click to open or close.');
 
         // Set the cookie to remember the sidebar state
         setCookie('enable-toc-as-sidebar', 'false');
 
         // Focus on the TOC toggle button
-        document.querySelector('.enable-toc__toggle-button').focus();
+        toggleButtonSelector.focus();
     }
 
     this.init = (skipPages = [], showAsSidebarDefault = true, numberFirstLevelHeadings = true) => {
@@ -214,9 +228,9 @@ const tableOfContents = new function() {
         }
 
         // Create the Table of Contents
-        toc = this.createContent(numberFirstLevelHeadings);
+        this.toc = this.createContent(numberFirstLevelHeadings);
 
-        // Insert the TOC beside the main content and/or beside the H1
+        // Insert the TOC beside the main content and beside the H1
         this.appendAsSidebar();
         this.appendAsToggleButton();
 
