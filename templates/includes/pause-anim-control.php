@@ -1,6 +1,15 @@
 
+
 <div role="navigation" aria-label="Pause Animation" id="enable-pause-control" data-is-sticky="top">
+     <!-- Enable Logo (link to homepage) -->
+    <?php
+/* include "includes/logo-link.php";  */
+?>    
+
+
+
     <div class="play-pause-anim__checkbox-container">
+    <span class="enable-logo__text">Enable</span>
         
     <!-- Here is the main menu will be placed by our global.js Javascript -->
     <div id="enable-flyout-menu" data-component="EnableFlyout" data-props-id="flyout-props">

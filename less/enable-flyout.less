@@ -28,7 +28,11 @@
     box-sizing: border-box;
 }
 #enable-flyout-menu {
-    display: inline;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
 }
 
 .enable-flyout {
@@ -38,7 +42,7 @@
 
     width: ~"calc(min(@{flyout-width}, 350px))";
     right: @hamburger-offset-y;
-    background: #2e2f35;
+    // background: #2e2f35;
     color: @color0;
 
     font-size: (14 / @px);
@@ -234,7 +238,7 @@
         display: block;
 
         font-family: "Helvetica", "Arial", "sans-serif";
-        font-size: (14 / @px);
+        font-size: (18 / @px);
         padding: (14 / @px) (14 / @px) (14 / @px) 0;
         text-decoration: none;
         text-indent: 20px;
@@ -243,6 +247,7 @@
         background: transparent;
         border: none;
         text-align: left;
+        text-transform: uppercase;
 
         .enable-flyout-container--positioned-left & {
             text-align: right;
