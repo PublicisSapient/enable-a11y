@@ -4,11 +4,8 @@
   display: grid;
   grid-template-columns: 1fr auto;
   justify-content: space-between;
+  text-wrap: nowrap;
   width: min-content;
-}
-
-.meter-container p {
-  margin: 0;
 }
 
 .enable-custom-meter {

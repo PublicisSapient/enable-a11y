@@ -18,17 +18,17 @@
 </p>
 
 <div id="html5-example" class="enable-example">
-  <strong>Disk Space:</strong>
+  <strong>Storage Space</strong>
 
   <div class="meter-container">
-    <p aria-hidden="true">C:</p>
-    <meter aria-label="Disk C" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
+    <meter aria-labelledby="disk-c-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
-    <p aria-hidden="true">D:</p>
-    <meter aria-label="Disk D" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-d-meter" aria-hidden="true">Disk D:</label>
+    <meter aria-labelledby="disk-d-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
 
-    <p aria-hidden="true">E:</p>
-    <meter aria-label="Disk E" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-e-meter" aria-hidden="true">Disk E:</label>
+    <meter aaria-labelledby="disk-e-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   </div>
 </div>
 
@@ -67,11 +67,12 @@
 </p>
 
 <div id="aria-example" class="enable-example">
-  <strong>Disk Space:</strong>
+  <strong>Storage Space</strong>
 
   <div class="meter-container">
-    <p aria-hidden="true">C:</p>
+    <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
     <div
+      aria-labelledby="disk-c-meter"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk C"
@@ -84,8 +85,9 @@
     >
     </div>
   
-    <p aria-hidden="true">D:</p>
+    <label id="disk-d-meter" aria-hidden="true">Disk D:</label>
     <div
+      aria-labelledby="disk-d-meter"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk D"
@@ -98,8 +100,9 @@
     >
     </div>
 
-    <p aria-hidden="true">E:</p>
+    <label id="disk-e-meter" aria-hidden="true">Disk E:</label>
     <div
+      aria-labelledby="disk-e-meter"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk E"
