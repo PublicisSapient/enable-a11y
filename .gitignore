@@ -4,6 +4,9 @@ api-cache
 tmp
 .vscode
 
+# generated css map files
+*.css.map
+
 # auto-gen PHP files/logs
 php_errors.log
-.map
+
