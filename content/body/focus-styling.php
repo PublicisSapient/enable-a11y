@@ -50,7 +50,7 @@
       2.4.7</a></strong>.
 </p>
 <p>
-  <strong>What you can do is make focus indicators only appear for keyboard users.</strong> This can be done using the
+  <strong>What can you do to make focus indicators only appear for keyboard users?</strong> This can be done using the
   <code>:focus-visible</code> CSS pseudo-class. Here is how the Enable site codes them globally using <a
     href="https://www.tpgi.com/focus-visible-and-backwards-compatibility/">TPGI's excellent method to use
     <code>:focus-visible</code> while ensuring browsers that don't support it fallback to using <code>:focus</code>

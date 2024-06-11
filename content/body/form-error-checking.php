@@ -22,9 +22,9 @@
       ]); ?>
 
       <p>
-        You can use just the <code>required pattern </code> attributes on HTML forms to do client-side validation <strong>without JavaScript</strong>. 
+        You can use just the <code>required</code> and <code>pattern</code> attributes on HTML forms to do client-side validation <strong>without JavaScript</strong>. 
         However, to make the messaging more accessible, we have added a tiny bit of JavaScript code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) 
-        to ensure the error messages themselves are more accessible to screen reader users. (see the last step in the code walkthrough for details)
+        to ensure the error messages themselves are more accessible to screen reader users (see the last step in the code walkthrough for details).
       </p>
 
       <div id="example1" class="enable-example">
