@@ -27,6 +27,9 @@
 * {
     box-sizing: border-box;
 }
+#enable-flyout-menu {
+    display: inline;
+}
 
 .enable-flyout {
     --enable-flyout__desktop-media-query: @desktop;
@@ -68,6 +71,7 @@
     }
 
     &__container {
+        display: inline-block;
         padding: 0;
         margin-bottom: 0;
         color: @color0;
@@ -608,7 +612,7 @@
         }
 
         &__top-level {
-            display: block;
+            display: inline-block;
             height: auto;
             overflow: visible;
         }
@@ -652,7 +656,8 @@
         }
 
         &__list {
-            display: flow-root;
+            // display: flow-root;
+            display: inline;
             text-align: center;
         }
 
