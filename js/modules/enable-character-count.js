@@ -109,15 +109,15 @@ const enableCharacterCount = new function() {
   }
 
   function createCounterForScreenReader() {
-		const result = document.createElement('p');
-		result.id = 'character-count__status';
-		return result;
+    const result = document.createElement('p');
+    result.id = 'character-count__status';
+    return result;
   }
 
   function createCounterInstructionsForScreenReader() {
-		const result = document.createElement('p');
-		result.id = 'character-count__instructions';
-		return result;
+    const result = document.createElement('p');
+    result.id = 'character-count__instructions';
+    return result;
   }
 
   function wasArrowPressed(key) {
@@ -157,18 +157,18 @@ const enableCharacterCount = new function() {
   }
 
   function onKeyDown(event) {
-      const dataset = event.target.dataset
-      const keyName = event.key;
+    const dataset = event.target.dataset
+    const keyName = event.key;
 
-      if (dataset.readCharacterCountWithKey) {
-          if (keyName === dataset.readCharacterCountWithKey)
-              announceCharacterCount(event.target);
-      }
+    if (dataset.readCharacterCountWithKey) {
+      if (keyName === dataset.readCharacterCountWithKey)
+        announceCharacterCount(event.target);
+    }
 
-      if (dataset.readCharacterCountWithCtrlAndKey) {
-          if (event.ctrlKey === true && keyName === dataset.readCharacterCountWithCtrlAndKey)
-              announceCharacterCount(event.target);
-      }
+    if (dataset.readCharacterCountWithCtrlAndKey) {
+      if (event.ctrlKey === true && keyName === dataset.readCharacterCountWithCtrlAndKey)
+        announceCharacterCount(event.target);
+    }
   }
 
   this.onFocus = (e) => {
@@ -206,20 +206,20 @@ const enableCharacterCount = new function() {
   }
   
   function announceCharacterCount(target) {
-		if (typeof announcementTimeout === 'number') {
-			counterForScreenReader.textContent = '';
-			clearTimeout(announcementTimeout);
-		}
+    if (typeof announcementTimeout === 'number') {
+      counterForScreenReader.textContent = '';
+      clearTimeout(announcementTimeout);
+    }
 
-		announcementTimeout = setTimeout(() => {
-			const maxLength = target.maxLength;
-			const numChars = target.value.length;
-			counterForScreenReader.textContent = interpolate(globalScreenReaderTemplate, { numChars, maxLength });
-		}, 250);
+    announcementTimeout = setTimeout(() => {
+      const maxLength = target.maxLength;
+      const numChars = target.value.length;
+      counterForScreenReader.textContent = interpolate(globalScreenReaderTemplate, { numChars, maxLength });
+    }, 250);
   }
 
   function announceInstructions() {
-		counterInstructionsForScreenReader.textContent = globalCounterInstructions;
+    counterInstructionsForScreenReader.textContent = globalCounterInstructions;
   }
 }
 
