@@ -22,13 +22,13 @@
 
   <div class="meter-container">
     <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
-    <meter aria-labelledby="disk-c-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <meter aria-labelledby="disk-c-meter" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
     <label id="disk-d-meter" aria-hidden="true">Disk D:</label>
-    <meter aria-labelledby="disk-d-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <meter aria-labelledby="disk-d-meter" class="enable-custom-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
 
     <label id="disk-e-meter" aria-hidden="true">Disk E:</label>
-    <meter aaria-labelledby="disk-e-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <meter aria-labelledby="disk-e-meter" class="enable-custom-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   </div>
 </div>
 

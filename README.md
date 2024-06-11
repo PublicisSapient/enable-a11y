@@ -182,7 +182,7 @@ If you encounter an error when trying to commit some code from within an IDE (li
 
 ### VNU validation error
 
-If your build is failing due to an invalid error with VNU, you can update 'data/vnu-filters' with the corresponding error message. This will ignore these invalid errors and allow your build to complete.
+If your build is failing due to an invalid error with VNU (i.e. a false positive), you can update 'data/vnu-filters' with the corresponding error message. This will ignore these invalid errors and allow your build to complete.
 
 ### Pull Request from fork not completing CI/CD tests
 

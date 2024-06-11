@@ -11,9 +11,9 @@ const meter = new function() {
     for (let i = 0; i < this.meterEls.length; i++) {
       const element = this.meterEls[i];
 
-      const value = Number(element.getAttribute('aria-valuenow'));
-      const min = Number(element.getAttribute('aria-valuemin'));
-      const max = Number(element.getAttribute('aria-valuemax'));
+      const value = Number(element.getAttribute('aria-valuenow')) || Number(element.getAttribute('value'));
+      const min = Number(element.getAttribute('aria-valuemin')) || Number(element.getAttribute('min'));
+      const max = Number(element.getAttribute('aria-valuemax')) || Number(element.getAttribute('max'));
 
       // Calculate meter fill percentage and color
       const percentage = (value / (max - min)) * 100;
@@ -30,10 +30,10 @@ const meter = new function() {
    * @returns color value
    */
   this.calculateColor = function(element) {
-    const value = Number(element.getAttribute('aria-valuenow'));
-    const low = Number(element.getAttribute('data-low'));
-    const high = Number(element.getAttribute('data-high'));
-    const optimum = Number(element.getAttribute('data-optimum')) || high;
+    const value = Number(element.getAttribute('aria-valuenow')) || Number(element.getAttribute('value'));
+    const low = Number(element.getAttribute('data-low')) || Number(element.getAttribute('low'));
+    const high = Number(element.getAttribute('data-high')) || Number(element.getAttribute('high'));
+    const optimum = Number(element.getAttribute('data-optimum')) || Number(element.getAttribute('optimum')) || high;
 
     // Hex codes for meter style var
     const negative = '#C74821';

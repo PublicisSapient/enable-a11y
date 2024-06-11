@@ -5,7 +5,7 @@
   grid-template-columns: 1fr auto;
   justify-content: space-between;
   text-wrap: nowrap;
-  width: min-content;
+  width: fit-content;
 }
 
 .enable-custom-meter {
@@ -15,6 +15,12 @@
   block-size: 0.5em;
   display: block;
   width: 80px;
+}
+
+
+.enable-custom-meter::-webkit-meter-bar {
+  /* Hides default styling for cross browser consistency. */
+  display: none;
 }
 
 .enable-custom-meter:before {
