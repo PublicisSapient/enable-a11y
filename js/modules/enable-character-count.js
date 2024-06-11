@@ -6,7 +6,8 @@ const enableCharacterCount = new function() {
     globalVisualTemplate,
     globalCounterInstructions,
     charCountTemplate,
-    liveRegion,
+    counterForScreenReader,
+    counterInstructionsForScreenReader,
     globalWarningThreshold,
     timeout;
 
@@ -25,8 +26,9 @@ const enableCharacterCount = new function() {
     globalCounterInstructions = dataset.counterInstructions || 'Press Escape to find out how many more characters you can type.';
     globalWarningThreshold = dataset.warningThreshold || 20;
 
-    document.body.addEventListener('keyup', this.onKeyUp, true);
-    document.body.addEventListener('focus', this.onFocus, true);
+    charCountInitEl.addEventListener('keyup', this.onKeyUp, true);
+    charCountInitEl.addEventListener('focus', this.onFocus, true);
+    charCountInitEl.addEventListener('focusout', onFocusOut)
 
     addLiveRegion();
 
@@ -94,17 +96,32 @@ const enableCharacterCount = new function() {
     const asideEl = document.createElement('aside');
     asideEl.setAttribute('id', 'enable-character-count__global');
     asideEl.className="sr-only";
+    lastBodyEl.insertAdjacentElement('afterend', asideEl);
 
     // <output> causes VoiceOver to speak the character count twice.
     // Using <div> as an aria-live region resolves this issue.
-    liveRegion = document.createElement('div');
-    liveRegion.className = 'sr-only';
-    liveRegion.id = 'character-count__status';
-    liveRegion.role = 'region';
-    liveRegion.ariaLive = 'polite';
-    lastBodyEl.insertAdjacentElement('afterend', asideEl);
-    asideEl.appendChild(liveRegion);
-    liveRegion.insertAdjacentHTML('afterend', `<span id="character-count__desc" class="sr-only">${globalCounterInstructions}</span>`);
+    counterForScreenReader = createCounterForScreenReader()
+    asideEl.appendChild(counterForScreenReader);
+    counterInstructionsForScreenReader = createCounterInstructionsForScreenReader()
+    counterForScreenReader.insertAdjacentElement('afterend', counterInstructionsForScreenReader);
+  }
+
+  function createCounterForScreenReader() {
+      const result = document.createElement('div');
+      result.className = 'sr-only';
+      result.id = 'character-count__status';
+      result.role = 'region';
+      result.ariaLive = 'polite';
+      return result;
+  }
+
+  function createCounterInstructionsForScreenReader() {
+      const result = document.createElement('div');
+      result.className = 'sr-only';
+      result.id = 'character-count__instructions';
+      result.role = 'region';
+      result.ariaLive = 'polite';
+      return result;
   }
 
   function wasArrowPressed(key) {
@@ -132,7 +149,6 @@ const enableCharacterCount = new function() {
 
     
       writeCharCount(target);
-      liveRegion.innerHTML = '';
 
       if (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) {
         timeout = setTimeout(() => {
@@ -151,6 +167,11 @@ const enableCharacterCount = new function() {
     if (dataset.hasCharacterCount) {
       announceCharCount(target);
     }
+    announceInstructions();
+  }
+
+  function onFocusOut(event) {
+    counterInstructionsForScreenReader.innerHTML = '';
   }
 
   const writeCharCount = (target) => {
@@ -169,10 +190,12 @@ const enableCharacterCount = new function() {
     const numChars = target.value.length;
     if (maxLength) {
       const charsRemaining = parseInt(maxLength) - numChars;
-      liveRegion.innerHTML = '';
-      liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
-      
+      counterForScreenReader.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
     }
+  }
+
+  function announceInstructions() {
+    counterInstructionsForScreenReader.innerHTML = globalCounterInstructions;
   }
 }
 
