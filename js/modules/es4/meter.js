@@ -31,9 +31,9 @@ const meter = new function() {
    */
   this.calculateColor = function(element) {
     const value = Number(element.getAttribute('aria-valuenow'));
-    const low = Number(element.getAttribute('low'));
-    const high = Number(element.getAttribute('high'));
-    const optimum = Number(element.getAttribute('optimum')) || high;
+    const low = Number(element.getAttribute('data-low'));
+    const high = Number(element.getAttribute('data-high'));
+    const optimum = Number(element.getAttribute('data-optimum')) || high;
 
     // Hex codes for meter style var
     const negative = '#C74821';

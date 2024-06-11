@@ -78,9 +78,9 @@
       aria-valuenow="0.2"
       aria-valuemin="0"
       aria-valuemax="1"
-      low="0.5"
-      high="0.75"
-      optimum="0"
+      data-low="0.5"
+      data-high="0.75"
+      data-optimum="0"
     >
     </div>
   
@@ -92,9 +92,9 @@
       aria-valuenow="0.9"
       aria-valuemin="0"
       aria-valuemax="1"
-      low="0.5"
-      high="0.75"
-      optimum="0"
+      data-low="0.5"
+      data-high="0.75"
+      data-optimum="0"
     >
     </div>
 
@@ -106,9 +106,9 @@
       aria-valuenow="0.6"
       aria-valuemin="0"
       aria-valuemax="1"
-      low="0.5"
-      high="0.75"
-      optimum="0"
+      data-low="0.5"
+      data-high="0.75"
+      data-optimum="0"
     >
     </div>
   </div>
@@ -140,7 +140,7 @@
         },
         {
           "label": "Use JS to calculate and pass meter percentage/color to CSS via style variables.",
-          "highlight": "meter-js~",
+          "highlight": "%JS% meter.init",
           "notes": "Pass calculated values to CSS via custom style variables. <code>element.setAttribute('style', `--meter-percentage: ${percentage}%;--meter-color: ${color};`)</code>"
         },
         {
