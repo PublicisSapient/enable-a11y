@@ -18,11 +18,11 @@
     h2 {
         font-weight: normal;
         border-bottom: none;
-        margin-left: 8px;
+        margin-left: 0.5rem;
         line-height: 1em;
-    
+
         &::before {
-          content: none;
+            content: none;
         }
     }
 
@@ -32,7 +32,7 @@
     }
 
     li {
-        margin-bottom: 8px;
+        margin-bottom: 0.5rem;
 
         a {
             text-decoration: none;
@@ -41,9 +41,9 @@
 
     &__move-to-sidebar-button,
     &__hide-sidebar-button {
-        padding: 5px 10px;
+        padding: 0.3125rem 0.625rem;
         border: none;
-        margin-bottom: 2px;
+        margin-bottom: 0.125rem;
 
         &:hover {
             background-color: #ccc;
@@ -54,7 +54,7 @@
         display: none;
 
         @media @tablet-up {
-            display: grid;            
+            display: grid;
         }
     }
 
@@ -62,26 +62,26 @@
         grid-column-start: 1;
         grid-column-end: -1;
         max-width: 100%;
-        border-top: 1px solid gray;
-        padding-top: 20px;
+        border-top: 0.0625rem solid gray;
+        padding-top: 1.25rem;
     }
-    
+
     &__toggle-button {
         position: relative;
-        top: -2px;
+        top: -0.125rem;
         display: inline-block;
-        padding: 5px 10px;
-        margin-left: -10px;
+        padding: 0.3125rem 0.625rem;
+        margin-left: -0.625rem;
         border: none;
         background: none;
         cursor: pointer;
-    
+
         .enable-toc-as-sidebar & {
             @media @tablet-up {
                 display: none;
             }
         }
-    
+
         & ~ h1 {
             display: inline-block;
         }
@@ -95,15 +95,15 @@
         right: 0;
         bottom: 0;
         width: 25%;
-        max-width: 300px;
-    
+        max-width: 18.75rem;
+
         h2 {
-            margin-top: 20px;
+            margin-top: 1.25rem;
         }
-    
+
         .enable-toc-as-sidebar & {
             @media @tablet-up {
-                display: grid;            
+                display: grid;
             }
         }
     }
@@ -112,19 +112,19 @@
         display: none;
         position: absolute;
         z-index: 1;
-        border-radius: 5px;
-        box-shadow: gray 0 0 5px;
-        max-width: 500px;
+        border-radius: 0.3125rem;
+        box-shadow: gray 0 0 0.3125rem;
+        max-width: 31.25rem;
         z-index: 2;
-    
+
         h2 {
             scroll-margin-top: 0;
-            margin-top: 8px;
+            margin-top: 0.5rem;
         }
-    
+
         .enable-toc-as-sidebar & {
             @media @tablet-up {
-                display: none;            
+                display: none;
             }
         }
     }
