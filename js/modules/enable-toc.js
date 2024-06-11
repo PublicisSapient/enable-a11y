@@ -59,11 +59,21 @@ const tableOfContents = new function() {
                 const tocItem = document.createElement('li');
                 tocItem.setAttribute('class', `enable-toc__item-${el.tagName.toLowerCase()}`);
 
-                const tocLink = el.id ? document.createElement('a') : document.createElement('p');
-                el.id && tocLink.setAttribute('href', `#${el.id}`);
-                tocLink.textContent = el.textContent;
-            
-                tocItem.appendChild(tocLink);
+                el.childNodes.forEach((child) => {
+                    if (child.nodeName === 'A') {
+                        const clonedLink = child.cloneNode(true);
+                        clonedLink.setAttribute('class', 'enable-toc__link');
+                        tocItem.appendChild(clonedLink);
+                    } else if (el.textContent) {
+                        addMissingIDToHeading(el);
+                        const tocLink = document.createElement('a');
+                        tocLink.setAttribute('href', `#${el.id}`);
+                        tocLink.textContent = el.textContent;
+                        tocLink.setAttribute('class', 'enable-toc__link');
+                        tocItem.appendChild(tocLink);
+                    }
+                });
+
                 tocNode.appendChild(tocItem);
                 tocNode = tocItem;
                 prevHeadingLevel = headingLevel;
