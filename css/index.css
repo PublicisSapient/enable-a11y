@@ -6,7 +6,6 @@
   border-bottom: double 3px #000;
 }
 main {
-  background-color: #444;
   color: white;
   width: 100%;
 }
@@ -15,20 +14,20 @@ strong {
 }
 .homepage__hero {
   color: #301414;
-  background: #ccc;
   min-height: 30vh;
   padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.8rem;
 }
 .homepage__hero--heading {
   font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  font-size: 5rem;
+  font-size: 4.8rem;
   margin: 0 auto;
   font-weight: normal;
-  color: #004d00;
+  color: #e12351;
 }
 .homepage__hero--copy {
   margin-bottom: 30px;

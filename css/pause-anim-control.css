@@ -18,6 +18,7 @@
   outline-offset: 3px;
 }
 .play-pause-anim__checkbox-container {
+  align-items: center;
   position: sticky;
   top: 19.3125rem;
   width: 100vw;
@@ -28,18 +29,18 @@
   background-color: #000;
   white-space: nowrap;
   text-align: center;
-  height: 2.4;
+  display: flex;
+  flex-direction: row;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
     top: 120px;
     left: initial;
-    border: solid 2px white;
     line-height: 2.4;
   }
 }
 .play-pause-anim__checkbox-container label {
-  padding: 10px 20px;
+  padding: 10px 62px;
   display: inline;
   cursor: pointer;
 }

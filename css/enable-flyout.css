@@ -9,7 +9,11 @@
   box-sizing: border-box;
 }
 #enable-flyout-menu {
-  display: inline;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  justify-content: center;
 }
 .enable-flyout {
   --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
@@ -17,7 +21,6 @@
   --enable-flyout__desktop-min: 960px;
   width: calc(min(75vw, 350px));
   right: calc(-1 * min(75vw, 350px));
-  background: #2e2f35;
   color: #fff;
   font-size: 0.875rem;
   font-weight: 100;
@@ -169,7 +172,7 @@
   color: #fff;
   display: block;
   font-family: "Helvetica", "Arial", "sans-serif";
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   padding: 0.875rem 0.875rem 0.875rem 0;
   text-decoration: none;
   text-indent: 20px;
@@ -178,6 +181,7 @@
   background: transparent;
   border: none;
   text-align: left;
+  text-transform: uppercase;
   -webkit-appearance: none;
   -khtml-appearance: none;
   -ms-appearance: none;

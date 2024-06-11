@@ -149,13 +149,12 @@
 }
 .enable-logo__container {
   text-decoration: none;
-  font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  color: #fff;
+  text-align: center;
+  color: #2b2828;
   margin-bottom: -10px;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   .enable-logo__container {
-    transform: scale(0.75);
     height: 4.6875rem;
     transform-origin: 0 50%;
     margin-left: 10px;
@@ -175,18 +174,16 @@
   margin: 10px 0;
 }
 .enable-logo__text {
+  font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
   display: block;
-  position: absolute;
   display: inline-block;
   color: #fff;
   font-size: 3.6875rem;
   padding-left: 1.25rem;
-  top: 0.5rem;
 }
 @media only screen and (min-width: 720px) {
   .enable-logo__text {
     font-size: 1.875rem;
-    top: 0.9375rem;
   }
 }
 .enable-logo__sub-text {
