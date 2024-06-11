@@ -1,4 +1,4 @@
-<div class="homepage__hero" style="prefers-color-scheme: dark">
+<div class="homepage__hero">
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
       <h1 class="homepage__hero--heading"><?= $title ?></h1>
