@@ -20,6 +20,12 @@
         padding-left: (25 / @px);
         background-repeat: no-repeat;
 
+        @media (prefers-color-scheme: dark) {
+            color: #fff;
+            background-color: #222;
+            background-image: data-uri("../images/plus-dark.svg");
+        }
+
         .remove-default-details-styles();
 
         &:hover {
@@ -30,6 +36,10 @@
     &[open] > .enable-drawer__button,
     & .enable-drawer__button[aria-expanded="true"] {
         background-image: data-uri("../images/minus.svg");
+
+        @media (prefers-color-scheme: dark) {
+            background-image: data-uri("../images/minus-dark.svg");
+        }
     }
 }
 
@@ -111,3 +121,13 @@
         border-bottom: none;
     }
 }
+
+// @media (prefers-color-scheme: dark) {
+//     .enable-drawer {
+//         & > .enable-drawer__button {
+//         color: white;
+//         background: black;
+//         background-image: data-uri("../images/plus-dark.svg");
+//         }
+//     }
+// }
