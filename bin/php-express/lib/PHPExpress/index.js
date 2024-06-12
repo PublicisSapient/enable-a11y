@@ -13,7 +13,10 @@ var PHPExpress = function (opts) {
             console.log(`Error was: ${error || stderr}`)
             process.exit(1);
         } else {
-            this.binPath = stdout.trim();
+            const stdoutVal = stdout.trim();
+            if (stdoutVal !== '') {
+                this.binPath = stdoutVal;
+            }
             console.log(`PHP found at ${this.binPath}`);
         }
     });

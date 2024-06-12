@@ -36,7 +36,7 @@
 
                         <li>For the ARIA
                             <code>progressbar</code> role (but not the HTML5
-                            <code>progress</code> tag) NVDA will intepret the value of
+                            <code>progress</code> tag) NVDA will interpret the value of
                             <code>aria-valuenow</code> as a percentage value, regardless of the value of
                             <code>aria-valuemax</code>. It will also not read out the values correctly "live" when
                             incrementing.
@@ -72,7 +72,7 @@
 
         <h2>HTML5 progress bar</h2>
 
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>
             This progress bar uses aria-live regions to update the status of the progress bar. It works in for all
@@ -88,7 +88,7 @@
             </progress>
             <strong class="sr-only" id="html1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
-        <?php includeShowcode("html5-example")?>
+        <?php includeShowcode("html5-example"); ?>
         <script type="application/json" id="html5-example-props">
         {
             "replaceHtmlRules": {},
@@ -119,7 +119,7 @@
             </progress>
         </div>
 
-        <?php includeShowcode("html5-focus-example")?>
+        <?php includeShowcode("html5-focus-example"); ?>
         <script type="application/json" id="html5-focus-example-props">
         {
             "replaceHtmlRules": {},
@@ -129,7 +129,7 @@
                     "notes": "This allows the progress bar to be focusable via JavaScript only"
                 },
                 {
-                    "label": "Focus element using Javascript when progress starts progressing",
+                    "label": "Focus element using JavaScript when progress starts progressing",
                     "highlight": "%JS% progressTest.progressTestClickEvent ||| el.focus\\(\\);",
                     "notes": ""
                 }
@@ -140,7 +140,7 @@
 
         <h2>ARIA role="progressbar" Example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
+        <?php includeStats(["isForNewBuilds" => false]); ?>
 
         <p>This progress bar uses aria-live regions to update the status of the progress bar. Same rules for updating this aria-live region applies as the HTML5 example above.
         </p>
@@ -151,7 +151,7 @@
             </div>
             <strong class="sr-only" id="aria1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
-        <?php includeShowcode("aria-example1")?>
+        <?php includeShowcode("aria-example1"); ?>
         <script type="application/json" id="aria-example1-props">
         {
             "replaceHtmlRules": {},
@@ -187,7 +187,11 @@
 
         <h2>Advanced ARIA progressbar role example</h2>
 
-        <?php includeStats(array('doNot' => true, 'comment' => 'This example is provided for informational purposes only, since this solution does not work for all web browser/screen reader combinations (e.g. Safari with VoiceOver on OSX &lt;= 12.13.1 and Safari with VoiceOver on iOS &lt;= 14.6 ')) ?>
+        <?php includeStats([
+            "doNot" => true,
+            "comment" =>
+                "This example is provided for informational purposes only, since this solution does not work for all web browser/screen reader combinations (e.g. Safari with VoiceOver on OSX &lt;= 12.13.1 and Safari with VoiceOver on iOS &lt;= 14.6 ",
+        ]); ?>
 
         <p>
         This is when you want to add text descriptions to the values inside a progress bar.  The example below is just one way this can be implemented.
@@ -213,7 +217,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("aria-valuetext-example")?>
+        <?php includeShowcode("aria-valuetext-example"); ?>
         <script type="application/json" id="aria-valuetext-example-props">
         {
             "replaceHtmlRules": {},

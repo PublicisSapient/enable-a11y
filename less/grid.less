@@ -5,7 +5,8 @@
 /*                                    Tables                                  */
 /******************************************************************************/
 
-th, td {
+th,
+td {
     text-align: left;
     text-align: start;
 }
@@ -43,10 +44,10 @@ table td.pre {
 }
 
 /* A footnote at the bottom of a def table */
-table.def           td.footnote {
+table.def td.footnote {
     padding-top: 0.6em;
 }
-table.def           td.footnote::before {
+table.def td.footnote::before {
     content: " ";
     display: block;
     height: 0.6em;
@@ -86,8 +87,10 @@ table.index caption {
     margin: 0 auto 1em;
 }
 
-table.data td,  table.data th,
-table.index td, table.index th {
+table.data td,
+table.data th,
+table.index td,
+table.index th {
     padding: 0.5em 1em;
     border-width: 1px;
     border-color: silver;
@@ -99,9 +102,9 @@ table.data thead td:empty {
     border: 0;
 }
 
-table.data  thead,
+table.data thead,
 table.index thead,
-table.data  tbody,
+table.data tbody,
 table.index tbody {
     border-bottom: 2px solid;
 }
@@ -111,8 +114,8 @@ table.index colgroup {
     border-left: 2px solid;
 }
 
-table.data  tbody th:first-child,
-table.index tbody th:first-child  {
+table.data tbody th:first-child,
+table.index tbody th:first-child {
     border-right: 2px solid;
     border-top: 1px solid silver;
     padding-right: 1em;
@@ -131,146 +134,144 @@ table.complex.data td {
 
 table.data.longlastcol td:last-child,
 table.data td.long {
- vertical-align: baseline;
- text-align: left;
+    vertical-align: baseline;
+    text-align: left;
 }
 
 table.data img {
     vertical-align: middle;
 }
 
-
 /* specific grid css */
- 
+
 .annotate {
-	font-style: italic;
-	color: #366ED4;
+    font-style: italic;
+    color: #366ed4;
 }
 
 .hidden {
-	display: none !important;
+    display: none !important;
 }
 
 [role="button"] {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 [aria-sort="ascending"] {
-	position: relative;
+    position: relative;
 }
 
 [aria-sort="ascending"]::after {
-	content: " ";
-	border-bottom: 0.4em solid black;
-	border-left: 0.4em solid transparent;
-	border-right: 0.4em solid transparent;
-  position: absolute;
-  right: 1em;
-  top: 0.8em;
+    content: " ";
+    border-bottom: 0.4em solid black;
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    position: absolute;
+    right: 1em;
+    top: 0.8em;
 }
 
 [aria-sort="descending"] {
-	position: relative;
+    position: relative;
 }
 
 [aria-sort="descending"]::after {
-	content: " ";
-	border-left: 0.4em solid transparent;
-	border-right: 0.4em solid transparent;
-	border-top: 0.4em solid black;
-  position: absolute;
-  right: 1em; 
-  top: 0.8em;
+    content: " ";
+    border-left: 0.4em solid transparent;
+    border-right: 0.4em solid transparent;
+    border-top: 0.4em solid black;
+    position: absolute;
+    right: 1em;
+    top: 0.8em;
 }
 
 .edit-text-button {
-	color: #360;
-	display: block;
-	position: relative;
+    color: #360;
+    display: block;
+    position: relative;
 }
 
 .edit-text-button::after {
-	background-image: data-uri('../imgs/pencil-icon.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 44px;
-	content: ' ';
-	height: 17px;
-	opacity: 0.6;
-	position: absolute;
-	right: -24px;
-	top: 0px;
-	width: 20px;
+    background-image: data-uri("../imgs/pencil-icon.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 44px;
+    content: " ";
+    height: 17px;
+    opacity: 0.6;
+    position: absolute;
+    right: -24px;
+    top: 0px;
+    width: 20px;
 }
 
-.edit-text-button:hover, .edit-text-button:focus {
-	color: black;
+.edit-text-button:hover,
+.edit-text-button:focus {
+    color: black;
 }
 
-.edit-text-button:hover::after, .edit-text-button:focus::after {
-	opacity: 1;
+.edit-text-button:hover::after,
+.edit-text-button:focus::after {
+    opacity: 1;
 }
 
 [role="gridcell"]:focus,
 [role="gridcell"] *:focus,
 [role="grid"] [tabindex="0"]:focus {
-	outline: @focus-color;
-	outline-style: dotted;
-	outline-width: 3px;
+    outline: @focus-color;
+    outline-style: dotted;
+    outline-width: 3px;
 }
 
-
 #arrow-keys-indicator {
-	bottom: 10px;
-	left: 0;
-	position: fixed;
-	height: 65px;
-	width: 85px;
-	background: data-uri('../imgs/black_keys.png') no-repeat;
-	background-size: contain;
+    bottom: 10px;
+    left: 0;
+    position: fixed;
+    height: 65px;
+    width: 85px;
+    background: data-uri("../imgs/black_keys.png") no-repeat;
+    background-size: contain;
 }
 
 @media screen and (max-width: 1000px) {
-	#arrow-keys-indicator {
-		display: none;
-	}
+    #arrow-keys-indicator {
+        display: none;
+    }
 }
-
-
 
 /* Menu button */
 button {
     cursor: pointer;
     font-size: 110%;
-  }
-  
-  .menu-wrapper {
-    position: relative
-  }
-  
-  ul[role="menu"] {
+}
+
+.menu-wrapper {
+    position: relative;
+}
+
+ul[role="menu"] {
     display: none;
     position: absolute;
     margin: 0;
     padding: 0;
     z-index: 1;
-  }
-  
-  ul[role="menu"] li {
+}
+
+ul[role="menu"] li {
     list-style: none;
-  }
-  
-  [role="menu"] {
+}
+
+[role="menu"] {
     padding: 0;
     width: 8em;
     border: thin solid black;
-    background-color: #EEEEEE;
-  }
-  [role="menuitem"] {
+    background-color: #eeeeee;
+}
+[role="menuitem"] {
     padding: 0.25em;
-  }
-  
-  [role="menuitem"]:focus,
-  [role="menuitem"]:hover {
-    background-color: #FFFFFF;
-  }
+}
+
+[role="menuitem"]:focus,
+[role="menuitem"]:hover {
+    background-color: #ffffff;
+}

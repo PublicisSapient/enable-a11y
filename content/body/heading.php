@@ -25,7 +25,7 @@
 
 <h2>HTML5 Headings</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Most developers are familiar HTML5 heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>)
@@ -48,7 +48,7 @@
     <h6>This is an h6</h6>
 </div>
 
-<?php includeShowcode("html-example")?>
+<?php includeShowcode("html-example"); ?>
 <script type="application/json"
   id="html-example-props">
 {
@@ -68,7 +68,11 @@
 
 <h2>ARIA Headings</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'You can fix existing markup this way, but really, why not just change the markup to the HTML5 ones?')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "You can fix existing markup this way, but really, why not just change the markup to the HTML5 ones?",
+]); ?>
 
 <p>The following are ARIA headings. Note that ARIA supports
   heading levels 1-10.
@@ -97,7 +101,7 @@
     equivalent)</div>
 </div>
 
-<?php includeShowcode("aria-example")?>
+<?php includeShowcode("aria-example"); ?>
 <script type="application/json"
   id="aria-example-props">
 {

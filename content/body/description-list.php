@@ -11,7 +11,7 @@
         <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd</code> tags, respectively.
         Note that, unlike the ARIA version, there is no group tag around the name value pairs.</p>
 
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
         
         <div id="html5-def-list-example" class="enable-example">
             <dl>
@@ -27,7 +27,7 @@
             </dl>
         </div>
 
-        <?php includeShowcode("html5-def-list-example")?>
+        <?php includeShowcode("html5-def-list-example"); ?>
 
         <script type="application/json" id="html5-def-list-example-props">
         {
@@ -36,7 +36,7 @@
             "steps": [{
                 "label": "Use <code>dl</code> tag to encapsulate the whole list",
                 "highlight": "%OPENCLOSETAG%dl",
-                "notes": "The <code>dl</code> stands for <strong>description list</strong>.  It was changed from <a href=\"http://html5doctor.com/the-dl-element/\">its previous name of definiton list in HTML4</a>"
+                "notes": "The <code>dl</code> stands for <strong>description list</strong>.  It was changed from <a href=\"http://html5doctor.com/the-dl-element/\">its previous name of definition list in HTML4</a>"
             },
             {
                 "label": "Each description term is encapsulated in a <code>dt</code> ",
@@ -53,7 +53,7 @@
 
         <h2>Aria Roles example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
+        <?php includeStats(["isForNewBuilds" => false]); ?>
 
         <p>This is the ARIA equivalent of the definition list.  While I do like the semantic addition of the <code>listitem</code> role to group the name/value pairs, it is still best to use the native HTML5 definition lists.</p>
 
@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("aria-def-list-example")?>
+        <?php includeShowcode("aria-def-list-example"); ?>
 
         <script type="application/json" id="aria-def-list-example-props">
         {

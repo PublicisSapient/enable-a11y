@@ -39,12 +39,16 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guideline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes",
+    $copy,
+    "Example of a Reflow Issue in horizontal navigation",
+    "Reflow Problem",
+); ?>
 
 <p>This is obviously a Reflow violation.  But how do we fix this?</p>
 
@@ -59,9 +63,13 @@
 <p>The navigation in this iframe differs from the previous one in that it doesn't scroll in two directions, thus avoiding the WCAG reflow violation.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&className=reflow-examples__remove-overflow",
+    $copy,
+    "Example of a Reflow Issue fixed by removing overflow scroll CSS",
+    "Solution 1: Let The Browser Do The Work",
+); ?>
 
 <h3>Solution #2: Use Arrow Buttons to Access Offscreen Content</h3>
 
@@ -77,9 +85,13 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&hasArrows=true&className=reflow-examples__show-arrow-buttons",
+    $copy,
+    "Example of a Reflow Issue fixed by putting in arrow buttons",
+    "Solution 2: Use Arrow Buttons",
+); ?>
 
 <p>Note that we made put set <code>tabindex="-1"</code> on the arrow buttons, since they are not needed for keyboard users.</p>
 
@@ -94,12 +106,13 @@
 <p>The navigation in this iframe differs from the previous ones in that it only appears when users click the dropdown, thereby avoiding reflow issues.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 
-    'isIframe=yes&hasDropdown=true&className=reflow-examples__remove-overflow', 
-    $copy,'Example of a Reflow Issue fixed by using a dropdown to display the navigation bar',
-    'Solution 3: Use a Drawer');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&hasDropdown=true&className=reflow-examples__remove-overflow",
+    $copy,
+    "Example of a Reflow Issue fixed by using a dropdown to display the navigation bar",
+    "Solution 3: Use a Drawer",
+); ?>
 
 <p>Alternatively, you can put the content in a <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a>.</p>
 
@@ -112,7 +125,7 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp", "")?>
+  <?php pictureWebpPng("images/reflow/plp", ""); ?>
 
   <figcaption>Figure 1. Screenshot of the desktop view of a typical product listing page. On the left-hand side, there
     is a list of checkboxes. On the right-hand is a list of product tiles (in this case, showing a list of movies on physical media such as DVD, Blu-ray and VHS.</figcaption>
@@ -139,7 +152,7 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp--mobile", "")?>
+  <?php pictureWebpPng("images/reflow/plp--mobile", ""); ?>
 
   <figcaption>Figure 2. Screenshot of the mobile view of the same product listing page. The list of filter checkboxes is
     replaced with a "Filter Results" button above the product tiles.</figcaption>
@@ -151,7 +164,7 @@
 </p>
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp--mobile--filter-modal", "")?>
+  <?php pictureWebpPng("images/reflow/plp--mobile--filter-modal", ""); ?>
 
   <figcaption>Figure 3. Screenshot of the same mobile view of the same product listing page, showing a modal containing
     the list of filter checkboxes in the desktop view. This modal appears when the "Filter Results" button is
@@ -168,7 +181,7 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/product-tile-list--desktop", "")?>
+  <?php pictureWebpPng("images/reflow/product-tile-list--desktop", ""); ?>
 
   <figcaption>Figure 4: Screenshot of a list of four product tiles that use up the full width of the browser viewport.</figcaption>
 </figure>
@@ -187,6 +200,11 @@
 <p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-product-tile-carousel.php', 'isIframe=yes', $copy, 'Example of using Indicators in a carousel to resolve reflow issues', 'Using a Carousel');
+<?php includeMobileIframe(
+    "reflow__example-of-product-tile-carousel.php",
+    "isIframe=yes",
+    $copy,
+    "Example of using Indicators in a carousel to resolve reflow issues",
+    "Using a Carousel",
+);
 ?>

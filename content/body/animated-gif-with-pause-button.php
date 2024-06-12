@@ -1,7 +1,15 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'All the examples here are useful for new and existing work where you want to pause animated GIFs in the most straightforward way.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "All the examples here are useful for new and existing work where you want to pause animated GIFs in the most straightforward way.",
+]); ?>
 
 <div class="pausable-animated-gif__warning-message">
-  <?php includeStats(array('isForNewBuilds' => false, 'comment' => 'Warning: All animations are currently paused because of the <a href="pause-anim-control.php">Pause Animations Control</a> at the top of the page being checked.')) ?>
+  <?php includeStats([
+      "isForNewBuilds" => false,
+      "comment" =>
+          'Warning: All animations are currently paused because of the <a href="pause-anim-control.php">Pause Animations Control</a> at the top of the page being checked.',
+  ]); ?>
 </div>
 
 <p>If you are going to have animated Gifs that are longer than 5 seconds on your page, you really should have a pause
@@ -23,12 +31,13 @@
     Faulkner</a>.
   The pause first example was from <a href="https://css-tricks.com/pause-gif-details-summary/">Chris
     Coyier</a>.
+</p>
 
 
 <h2>Animation off by default</h2>
 
 
-<p>This is the prefered and simplest way of embedding animated GIFs: only have them animate if the user explicitly wants to see them.</p>
+<p>This is the preferred and simplest way of embedding animated GIFs: only have them animate if the user explicitly wants to see them.</p>
 
 <div id="example1" class="enable-example">
 
@@ -48,7 +57,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -119,7 +128,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -163,7 +172,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example3")?>
+<?php includeShowcode("example3"); ?>
 
 <script type="application/json" id="example3-props">
 {
@@ -179,7 +188,7 @@
       "notes": "This sets the CSS variable <strong>--prefers-reduced-motion</strong> to 1 if the user has asked the OS to reduce animations, and 0 otherwise."
     },
     {
-      "label": "Use JS to find out if it should show the animation ot not",
+      "label": "Use JavaScript to find out if it should show the animation or not",
       "highlight": "%FILE% js/modules/enable-animatedGif.js ~ this.respectReduceMotionSettings",
       "notes": "This function, if run at load time, will initially show the animation if the OS prefers-reduced-motion setting is not on."
     }

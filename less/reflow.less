@@ -12,28 +12,27 @@
 @show-device-border-breakpoint: ~"only screen and (min-width: @{device-breakpoint-width})";
 
 .reflow-example {
-  &__frame {
+    &__frame {
+        display: block;
+        margin: 20px auto 0;
+        width: 100%;
+        height: ~"min(@{frame-height}, 70vh)";
 
-    display: block;
-    margin: 20px auto 0;
-    width: 100%;
-    height: ~"min(@{frame-height}, 70vh)";
+        .border-image(url("../images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px);
 
-    .border-image(url("../images/reflow/mobile-phone--border.webp"), 36px, 17px, 45px, 17px);
+        @media @tablet-up {
+            height: @frame-height;
+        }
 
-    @media @tablet-up {
-      height: @frame-height;
-    } 
+        @media @show-device-border-breakpoint {
+            width: @frame-width;
+        }
 
-    @media @show-device-border-breakpoint {
-      width: @frame-width;
-    }
-
-    .enable-focus({
+        .enable-focus({
       outline: solid 2px @focus-color !important;
       outline-offset: -2px;
     }, {
       outline: none !important;
-    })
-  }
+    });
+    }
 }

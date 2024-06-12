@@ -5,11 +5,36 @@
         "es2021": true,
         "jest": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "prettier"],
     "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 12
     },
     "rules": {
-    }
+        "no-undef": "warn",
+        "no-unused-vars": "warn"
+    },
+    "ignorePatterns": [
+        "node_modules",
+        "enable-node-libs",
+        "js/enable-libs",
+        "js/modules",
+        "js/out",
+        "tmp",
+        "**.sh",
+        "**.less",
+        "**.php",
+        "js/tmp.js",
+        "js/demos/ana-tudor/**",
+        "bin/php-express/**"
+    ],
+    "plugins": ["import", "node", "promise"],
+    "overrides": [
+        {
+            "files": ["*.test.js", "test-config.js"],
+            "rules": {
+                "no-undef": "warn"
+            }
+        }
+    ]
 }

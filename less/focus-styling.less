@@ -1,17 +1,17 @@
 @import "shared/mixins-and-vars";
 
 #double-focus-ring-example {
-  background-image: linear-gradient(to right, #fffbd5, #b20a2c);
+    background-image: linear-gradient(to right, #fffbd5, #b20a2c);
 
-  a {
-    margin: 5px;
-    padding: 10px;
-    background: #ffffcc;
-    display: inline-block;
-  }
+    a {
+        margin: 5px;
+        padding: 10px;
+        background: #ffffcc;
+        display: inline-block;
+    }
 
-  * {
-    .enable-focus(
+    * {
+        .enable-focus(
       {
         outline: solid 2px @focus-color;
         box-shadow: 3px 3px 0 white,
@@ -24,6 +24,5 @@
         box-shadow: none;
       }
     );
-  }
-
+    }
 }

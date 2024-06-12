@@ -1,4 +1,8 @@
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This page discusses what is needed to make the content of the video accessible.  If you are looking for an accessible video player, you should check out <a href="video-player.php">the Enable Video Player</a> page.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'This page discusses what is needed to make the content of the video accessible.  If you are looking for an accessible video player, you should check out <a href="video-player.php">the Enable Video Player</a> page.',
+]); ?>
 
 
 <h2>What are Captions, Audio Descriptions and Transcripts (and Why Should I Care)?</h2>
@@ -9,9 +13,9 @@
 <dl>
   <dt>Captions: </dt>
   <dd>A text version of speech and other important audio content in a video, allowing it to be accessible to people who
-    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video’s
+    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video's
         language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
-    Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambiant sound, music,
+    Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
     etc).</dd>
 
   <dt>Audio Descriptions:</dt>
@@ -48,7 +52,7 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
   What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
 
-  <?php include("includes/wcag-video-table.php") ?>
+  <?php include "includes/wcag-video-table.php"; ?>
 
 <p>
   To find one of the most cost-effective way of implementing all three, I would suggest looking into the <a href="video-player.php">Enable Video Player</a> page, which shows how do so using <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>.
@@ -73,7 +77,7 @@
   in the subtitles) that can be integral to understanding content or videos for deaf and hard of hearing users. This
   could lead to missing key context in the video, such as why a monster might be in the room in a horror movie
   (skittering, door creaking open, and other faint soft sounds), a buzzer indicating a wrong answer or end of the round
-  that isn’t announced by the host in a game show, etc. These are overt examples, but it is a huge reason auto captions
+  that isn't announced by the host in a game show, etc. These are overt examples, but it is a huge reason auto captions
   should not be a replacement but rather a starting point for providing accessible captioning (and transcripts).
 </p>
 
@@ -82,10 +86,10 @@
   them to YouTube (or to whatever video provider you are using), will save time in the subtitling of the video.
 </p>
 
-YouTube auto captions (and others) do not often capture sound (other than just “[music]”) that can be integral to
+YouTube auto captions (and others) do not often capture sound (other than just "[music]") that can be integral to
 understanding content or videos for deaf and hard of hearing users.
 It could lead to missing key context such as why a monster might be in the room in a horror movie (e.g.: a door creaking
-open, eerie music being player), a buzzer indicating a wrong answer or end of the round that isn’t announced by the host
+open, eerie music being player), a buzzer indicating a wrong answer or end of the round that isn't announced by the host
 in a game show, etc. These are overt examples, but it is a huge reason auto captions should not be a replacement but
 rather a starting point for providing accessible captioning (and transcripts).
 
@@ -93,7 +97,7 @@ rather a starting point for providing accessible captioning (and transcripts).
 
 <p>
   Note that YouTube does have a "transcript" functionality, but what it basically does is just show all the captions
-  with timing information in a section of the page.  Here is a screenshot of where it appears in the video component on
+  with timing information in a section of the page. Here is a screenshot of where it appears in the video component on
   YouTube (next to the save button is a menu button with three dots, with a screen reader label of "More actions", that
   has "Show transcript" as a menu item):
 </p>
@@ -105,7 +109,9 @@ rather a starting point for providing accessible captioning (and transcripts).
 
 <figure>
 
-  <?php pictureWebpPng("images/pages/video-player/youtube-captions-example", "A screenshot of the YouTube transcript component for the video linked above.  The text reads:
+  <?php pictureWebpPng(
+      "images/pages/video-player/youtube-captions-example",
+      "A screenshot of the YouTube transcript component for the video linked above.  The text reads:
 
 
 
@@ -132,7 +138,8 @@ The only hope.
 1:04
 The Turkish Exorcist.
 1:09
-(A very rough version of Tubular Bells from the movie's soundtrack plays in the background)")?>
+(A very rough version of Tubular Bells from the movie's soundtrack plays in the background)",
+  ); ?>
 
   <figcaption>Figure 1. A screenshot of the YouTube transcript of <a
       href="https://www.youtube.com/watch?v=dceIpnMw6CE">the trailer for The Turkish Exorcist</a>. Note that the
@@ -146,11 +153,14 @@ The Turkish Exorcist.
 </p>
 
 <figure>
-  <?php pictureWebpPng("images/pages/video-player/ableplayer-captions-example", "A screenshot of the AblePlayer transcript component for the Accessible Video Player example above.  The transcript reads:
+  <?php pictureWebpPng(
+      "images/pages/video-player/ableplayer-captions-example",
+      "A screenshot of the AblePlayer transcript component for the Accessible Video Player example above.  The transcript reads:
     
     (Scene is a title screen, which reads 'Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile. Zoltan Hawryluk - useragentman.com')
 In this video, I will be demonstrating how to create an accessible modal dialog using the HTML5 dialog tag. It uses a polyfill for browsers that don't support it yet natively. For details on the polyfill and more information on how this demo was built, please checkout the video's accompanying blog post on useragentman.com. 
-    "); ?>
+    ",
+  ); ?>
   <figcaption>
     Figure 2. A screenshot of the AblePlayer example transcript at the bottom of this page. To sighted users, the visual
     action in the video not covered by the closed captions appear in the red blocks inside the transcript.

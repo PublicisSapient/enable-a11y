@@ -1,15 +1,11 @@
 @import "shared/mixins-and-vars";
 
 .pagination {
-    
-
-    &__inactive
-    {
+    &__inactive {
         display: none !important;
     }
 
-    &__pager
-    {
+    &__pager {
         /*
          * This is used by the script to determine what the
          * max width is for the mobile breakpoint.
@@ -20,8 +16,7 @@
         margin: 0 auto;
     }
 
-    &__pager-item
-    {
+    &__pager-item {
         .appearance(none);
         position: relative;
         padding: 10px;
@@ -32,8 +27,8 @@
         cursor: pointer;
         background-color: #fff;
         width: 3em;
-        font-size: (14/@px);
-   
+        font-size: (14 / @px);
+
         &:hover {
             background-color: #0e384c;
             color: white;
@@ -43,9 +38,7 @@
             z-index: 1;
         }
 
-
-        &--selected
-        {
+        &--selected {
             border-bottom: solid #00f 3px;
             color: #00f;
         }

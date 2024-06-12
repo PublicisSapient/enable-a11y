@@ -46,9 +46,9 @@
                 <p>Why does Mozilla make this so difficult?!?!</p>
                 <ol>
                   <li>In the navigation toolbar, go to the rightmost icon (screen reader users will hear it being
-                    refered to
+                    referred to
                     as the "Firefox" button. Sighted users will see it as a hamburger menu at the right most edge of the
-                    naviation toolbar, as shown in the screenshot below:<br class="break--with-space" />
+                    navigation toolbar, as shown in the screenshot below:<br class="break--with-space" />
                     <img src="images/bookmarklets/firefox-menu.png" alt="" />
                   </li>
                   <li>Choose the Bookmarks item, as shown in this screenshot: <br class="break--with-space" />
@@ -83,7 +83,7 @@
   You'd be surprised how many pages have duplicate IDs in their HTML. This is very common with pages that
   have multiple instances of a component on a web page (e.g. A product listing page with several product tiles on it).
   This bookmarklet can help you check in-browser if there are multiple tags with the same ID (you will need to open your
-  console to see the results). It was slighly modified from <a
+  console to see the results). It was slightly modified from <a
     href="https://matthewbusche.com/2015/04/13/checking-an-html-page-for-duplicate-ids-using-javascript/">the
     bookmarklet written by Matthew Busche</a>.
 </p>

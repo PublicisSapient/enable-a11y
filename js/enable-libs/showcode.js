@@ -125,7 +125,7 @@ const showcode = new function () {
     const { cssRules } = el.sheet;
     for (let i = 0; i < cssRules.length; i++) {
 
-      if (debug) { console.log('x', showAllCSS); }
+      if (debug) { console.debug('x', showAllCSS); }
       const cssRule = cssRules[i].cssText.trim();
 
       for (let j = 0; j < selectorPropertyPairs.length; j++) {
@@ -135,7 +135,7 @@ const showcode = new function () {
 
         properties.shift();
 
-        if (debug) { console.log(cssRule, selector); }
+        if (debug) { console.debug(cssRule, selector); }
 
         if (showAllCSS || cssRule.indexOf(selector + ' ') === 0) {
           // Now we must highlight the properties.
@@ -312,12 +312,11 @@ const showcode = new function () {
 
     const highlightStrings = value.split('|||');
     let command;
+
     for (let i = 0; i < highlightStrings.length; i++) {
       const isFinalStep = (i === (highlightStrings.length - 1));
       let highlightString = highlightStrings[i].trim();
       let isFileCommandExecuted = false;
-
-      console.log('string', highlightString);
 
       if (highlightString !== "") {
 
@@ -333,7 +332,11 @@ const showcode = new function () {
         // "%OPENCLOSETAG%fieldset"
         //    Highlight all the fieldset opening and closing tags
         // "%OPENCLOSECONTENTTAG%fieldset"
-        //    Highlight all the fieldset content as well as the open and close tags. Note that
+        //    Highlight all the fieldset content as well as the open and close tags. Note that if
+        //    you want to higlight all the fieldsets with a specific ID, you can that with
+        //
+        //            "%OPENCLOSECONTENTTAG%fieldset id=\"enable-flyout-menu\""
+        //
         // "%OPENCLOSECONTENTTAG%fieldset highlghtstring attribute"
         // "%CSS%.foo .bar"
         //    Will show all CSS selectors that match the rule given (in this case, `.foo .bar`).
@@ -391,14 +394,11 @@ const showcode = new function () {
             case '%BEGINENDCOMMENTTAG%':
               {
                 highlightString = highlightString.trim();
-                console.log(`foo! -${highlightString}-`);
                 highlightString = `\\s*&lt;!--[^-]*BEGIN-${highlightString}[^-]*--&gt;[\\s\\S]*?&lt;!--[^-]*END-${highlightString}[^-]*--&gt;`;
-                console.log(highlightString);
                 break;
               }
             case '%FILE%':
               {
-                console.log('command is FILE');
                 isFileCommandExecuted = true;
                 splitHighlightString = highlightString.split('~');
                 const fileName = splitHighlightString[0].trim();
@@ -407,11 +407,6 @@ const showcode = new function () {
                     codeEl.innerHTML = this.entify(text.trim());
                     code = this.entify(text.trim());
                     highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep);
-
-                    /* if (doScroll, isFinalStep) {
-                      this.scrollToHighlightedText(codeEl);
-                    }
-                    console.log('haha', text); */
                   });
                 })();
 
@@ -444,7 +439,7 @@ const showcode = new function () {
                 code = '';
 
                 for (let j = 0; j < funcNames.length; j++) {
-                  if (debug) { console.log('j', j, funcNames, funcNames[j]) }
+                  if (debug) { console.debug('j', j, funcNames, funcNames[j]) }
 
                   // see animatedGIF example on how this works.
                   const funcNameSplit = funcNames[j].split('#');
@@ -548,7 +543,7 @@ const showcode = new function () {
                 const htmlAttr = (command === '%OUTERHTML%' ? 'outerHTML' : 'innerHTML');
                 if (HTMLTemplateEl) {
                   let html = HTMLTemplateEl[htmlAttr];
-                  html = html.replace(`id="${id}"`, "");
+                  html = html.replace(`id="${id}"`, `id='${id}'`);
                   html = html.replace(/\s{2,}/g, " ");
                   code = this.entify(formatHTML(html));
                   highlightString = null;
@@ -566,6 +561,8 @@ const showcode = new function () {
           code = highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code , codeEl, doScroll, isFinalStep);
         }
 
+      } else if (isFinalStep) {
+        notesEl.innerHTML = '';
       }
 
       if (command !== '%CSS%' && command !== '%JS%') {
@@ -576,9 +573,9 @@ const showcode = new function () {
 
     }
 
-    if (doScroll) {
+    /* if (doScroll) {
       this.scrollToHighlightedText(codeEl);
-    }
+    } */
 
     
     setReadMoreCSSVar(notesEl);
@@ -637,9 +634,7 @@ const showcode = new function () {
 
     codeEl.innerHTML = code;
 
-    if (doScroll) {
-      this.scrollToHighlightedText(codeEl);
-    }
+    this.scrollToHighlightedText(doScroll, codeEl);
 
     // Set up the ARIA alert to announce changes to screen readers.
     if (isFinalStep) {
@@ -660,10 +655,6 @@ const showcode = new function () {
           screenReaderAlert = `(Now highlighting ${highlightedItems.length} items in the code below.)`;    
       }
 
-
-      // console.log('query', query, highlightedItems, screenReaderAlert, isFinalStep, changesAlertEl);
-      
-
       notesEl.innerHTML = showcodeNotes || '';
       changesAlertEl.innerHTML = showcodeNotes ? `${showcodeNotes} ${screenReaderAlert}` : ''; 
     }
@@ -676,41 +667,88 @@ const showcode = new function () {
 
   this.getStickyContainersOffset = (el) => {
     const stickyEls = document.querySelectorAll('[data-is-sticky="top"] div');
-    console.log('length', stickyEls.length);
     let offset = 0;
     
     stickyEls.forEach((stickyEl) => {
       //if (el.contains(stickyEl)) {
         offset += stickyEl.offsetHeight;
-        console.log('counted', stickyEl.outerHTML);
       //}
     });
 
     return offset
   }
 
-  this.scrollToHighlightedText = (codeEl) => {
+  this.scrollToHighlightedText = (doScroll, codeEl) => {
     // now ... let's see if we can scroll the page to the first highlighted part
     const firstHighlightedElement = codeEl.querySelector('.showcode__highlight');
     const containerEl = codeEl.closest('.showcode__container');
+    const stepsEl = containerEl.querySelector('.showcode__steps');
     const uiEl = containerEl.querySelector('.showcode__ui');
+
+    // if the code sample does not have a UI, then bail
+    if (uiEl === null) {
+      return;
+    }
+
     const stickyContainersOffset = uiEl.offsetHeight + this.getStickyContainersOffset(codeEl) + 10;
-    console.log('hmmm ', this.getStickyContainersOffset(codeEl))
+    const { body } = document;
+   
+    // If the pause animations checkbox is checked, 
+    // set behavior to "auto" (no animatied scrolling).
+    // Otherwise, set it to "smooth" (animated scrolling).
+    const behavior = body.classList.contains('pause-anim-control__prefers-reduced-motion') ? 'auto' : 'smooth';
 
-
+    
     if (firstHighlightedElement) {
-      const { body } = document;
-
-      // If the pause animations checkbox is checked, 
-      // set behavior to "auto" (no animatied scrolling).
-      // Otherwise, set it to "smooth" (animated scrolling).
-      const behavior = body.classList.contains('pause-anim-control__prefers-reduced-motion') ? 'auto' : 'smooth';
 
       // set the value correctly in the .scrollIntoView() method.
       firstHighlightedElement.style.scrollMarginTop = stickyContainersOffset + 'px';
-      firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
+      if (doScroll) {
+        firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
+      }
+
+      
+    }
+
+    this.scrollIntoViewIfOffscreen(containerEl, stepsEl, firstHighlightedElement, behavior);
+  }
+
+  this.scrollIntoViewIfOffscreen = (containerEl, stepsEl, firstHighlightedElement, behavior) => {
+    if (!elementIsVisibleInViewport(containerEl, true)) { 
+      const { top } = stepsEl.getBoundingClientRect();
+
+      if (top < 0) {
+        
+        window.scrollTo(0, window.scrollY + top);
+
+        if (firstHighlightedElement) {
+          firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
+
+          /* setTimeout(() => {
+            firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
+          }, 0.71); */
+        } else {
+          containerEl.scrollIntoView({ behavior: behavior, block: 'start', left: 0, top: 0 })
+        }
+        
+      
+      }
     }
   }
+  
+  // From https://www.30secondsofcode.org/js/s/element-is-visible-in-viewport/
+  // elementIsVisibleInViewport(el); // false - (not fully visible)
+  // elementIsVisibleInViewport(el, true); // true - (partially visible)
+  const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+    const { innerHeight, innerWidth } = window;
+    return partiallyVisible
+      ? ((top > 0 && top < innerHeight) ||
+          (bottom > 0 && bottom < innerHeight)) &&
+          ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+  };
+
 
 
   this.addJsObj('scrollToHighlightedText', this.scrollToHighlightedText);
@@ -785,6 +823,8 @@ const showcode = new function () {
    * @param {JSON} replaceRulesJson - Replace rules.
    */
   const displayCode = (htmlBlock, originalHTMLId, replaceRulesJson) => {
+    const showOuterHTML = (htmlBlock.dataset.showcodeDisplayOuterhtml === 'true');
+
     const isWholeDoc = (originalHTMLId === 'document');
     let block;
 
@@ -805,7 +845,7 @@ const showcode = new function () {
       formatHTMLInBlock(block, replaceRulesJson)
 
       // let's do search and replace here
-      const unformattedHTML = isWholeDoc ? block.outerHTML : block.innerHTML;
+      const unformattedHTML = (isWholeDoc || showOuterHTML) ? block.outerHTML : block.innerHTML;
       let formattedHTML;
       
       if (isJS) {
@@ -838,7 +878,7 @@ const showcode = new function () {
         }
       }
     } catch (ex) {
-      console.log(ex);
+      console.error(ex);
     }
   }
 
@@ -877,6 +917,9 @@ const showcode = new function () {
 
     // now, let's ensure <title></title> always appears on one line.
     s = s.replace(/<title>[\s]*<\/title>/, '<title></title>');
+
+    // Now also separate <template> tags;
+    s = s.replace(/<\/template>/g, '</template>\n');
     return s;
   }
 
@@ -947,7 +990,7 @@ const showcode = new function () {
           }
 
         } catch (ex) {
-          console.log(ex);
+          console.error(ex);
         }
       }
     } else {
@@ -966,7 +1009,7 @@ const showcode = new function () {
       const { showcodeProps } = dataset;
 
       if (!showcodeProps) {
-        console.error('Block ' + i + ' does not have any props');
+        console.info('Block ' + i + ' does not have any props');
       } else {
         try {
           const propsEl = document.getElementById(showcodeProps);
@@ -980,7 +1023,7 @@ const showcode = new function () {
             displayCode(htmlBlock, showcodeId, replaceHtmlRules);
             displayStepsWidget(showcodeId, steps, replaceHtmlRules);
           } else {
-            console.log('No props file: ', showcodeProps);
+            console.info('No props file: ', showcodeProps);
             displayCode(htmlBlock, showcodeId, {});
           }
         } catch (ex) {

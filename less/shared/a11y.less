@@ -10,15 +10,15 @@
 
 @import "mixins-and-vars";
 
- .sr-only {
-	.enable__visually-hidden;
+.sr-only {
+    .enable__visually-hidden;
 }
 
 /*
  * For `.sr-only` elements that should be visible when it gains focus. 
  */
 .visible-when-focused:focus {
-	.enable__visually-hidden--reverse();
+    .enable__visually-hidden--reverse();
 }
 
 /*
@@ -26,11 +26,11 @@
  * a `.ally-target` element.
  */
 .bypass-block-link:focus {
-	position: absolute;
-	text-decoration: none;
-	background: #ffffcc;
-	padding: 0.2em;
-	z-index: 10;
+    position: absolute;
+    text-decoration: none;
+    background: #ffffcc;
+    padding: 0.2em;
+    z-index: 10;
 }
 
 /*
@@ -39,7 +39,7 @@
  * since it will look like it was tabbed into
  */
 .bypass-block-target:focus {
-	outline: none;
+    outline: none;
 }
 
 /*
@@ -53,11 +53,11 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-	outline: solid 2px @focus-color; 
+    outline: solid 2px @focus-color;
 }
 
 * {
-	.enable-focus(
+    .enable-focus(
 		{
 			outline: solid 2px @focus-color;
 		},
@@ -75,32 +75,34 @@
  */
 
 .placeholder-removed {
-	opacity: 0.999;
+    opacity: 0.999;
 }
 
-[placeholder] {	
-	background-color: #fff;
-	border: solid 1px #777;
+[placeholder] {
+    background-color: #fff;
+    border: solid 1px #777;
 }
 
 ::-webkit-input-placeholder {
-	 color: #777;
-	 opacity: 1;
+    color: #777;
+    opacity: 1;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-	 color: #777;
-	 opacity: 1;
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #777;
+    opacity: 1;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-	 color: #777;
-	 opacity: 1;
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #777;
+    opacity: 1;
 }
 
 :-ms-input-placeholder {
-	 color: #777;
-	 opacity: 1;
+    color: #777;
+    opacity: 1;
 }
 
 /*
@@ -112,7 +114,7 @@ body {
      * the size set in the iOS Accessibility settings.
      */
     font: -apple-system-body;
-		font-size: 16px;
+    font-size: 16px;
 
     /*
      * Put whatever font you want to use here or in the body
@@ -127,5 +129,5 @@ body {
 /* Prevents sticky header to obscure focused elements */
 main *:focus,
 main *:focus-visible {
-	scroll-margin-top: 15rem;
+    scroll-margin-top: 15rem;
 }

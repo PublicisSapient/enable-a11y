@@ -10,14 +10,14 @@
 .tabs__instructions {
     display: none;
 
-    .tabs--has-js &  {
+    .tabs--has-js & {
         display: inherit;
         background: black;
         color: white;
         padding: 0.5em;
     }
 }
- 
+
 [role="tablist"] {
     float: left;
     list-style: none;
@@ -30,7 +30,6 @@
         padding-left: 0;
     }
 
-
     li {
         position: relative; /*for z-index*/
         float: left;
@@ -40,7 +39,7 @@
         @media @desktop {
             margin: 0 0.5em 0 0;
         }
-        
+
         [role="tab"] {
             appearance: none;
             position: relative;
@@ -53,10 +52,10 @@
             background: #fff;
             color: #444;
             text-decoration: none;
-            margin: .5em 0 0;
-            padding: .5em .5em .35em;
+            margin: 0.5em 0 0;
+            padding: 0.5em 0.5em 0.35em;
             border-style: solid;
-            border-color: #ccc; 
+            border-color: #ccc;
             border-width: 2px 2px 0;
             -moz-border-radius-topleft: 0.5em;
             -moz-border-radius-topright: 0.5em;
@@ -70,13 +69,15 @@
                 font-size: 0.8em;
             }
 
-            &:link { border-color: #ccc; }
+            &:link {
+                border-color: #ccc;
+            }
 
             &:hover,
             &:focus,
             &:active {
                 border-color: #999;
-                text-shadow: 0 1px 1px rgba(0, 0, 0,.2);
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
             }
 
             .enable-focus(
@@ -88,7 +89,7 @@
                 }
             );
 
-            &:active { 
+            &:active {
                 top: 2px;
             }
 
@@ -101,16 +102,15 @@
         }
     }
 
-    &[aria-selected="true"] { 
-
+    &[aria-selected="true"] {
         a {
             top: 2px;
             font-weight: bold;
             color: #333;
             background: #fafafa;
             border-color: #999;
-            text-shadow: 0 1px 1px rgba(0, 0, 0,.2);
-            
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
             &:hover,
             &:focus {
                 color: #333;
@@ -130,11 +130,11 @@
 }
 
 [role="tabpanel"] {
-    position: relative;  /*for z-index*/
+    position: relative; /*for z-index*/
     visibility: visible;
     clear: left;
     overflow: auto;
-    padding: .5em 3em 2em;
+    padding: 0.5em 3em 2em;
     border: 2px solid #999;
     border-radius: 1em;
     z-index: 1;
@@ -152,16 +152,16 @@
     &.visible {
         display: block;
     }
-    
-    h2 { display: inline-block; }
+
+    h2 {
+        display: inline-block;
+    }
 
     ol {
         margin-bottom: 10px;
     }
-
 }
 
 [role="tab"] {
     appearance: none;
 }
-

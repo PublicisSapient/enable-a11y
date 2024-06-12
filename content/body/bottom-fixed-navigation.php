@@ -1,3 +1,4 @@
+<!-- File WIP -->
 
 <div id="example1">
     <div class="enable-visible-on-focus__container enable-skip-link--begin">
@@ -20,7 +21,7 @@
             
 
 
-            <?php includeShowcode("example1")?>
+            <?php includeShowcode("example1"); ?>
 
             <script type="application/json" id="example1-props">
             {
@@ -31,7 +32,7 @@
                 "steps": [{
                     "label": "Make the two skip links point to each other",
                     "highlight": "%OPENCLOSECONTENTTAG%div",
-                    "notes": "These two skip links point to each other.  In order to understand how the CSS and JS works, please take a look at our <a href=\"38-visible-on-focus.php\">Visible of Focus skip link example</a>"
+                    "notes": "These two skip links point to each other.  In order to understand how the CSS and JavaScript works, please take a look at our <a href=\"38-visible-on-focus.php\">Visible of Focus skip link example</a>"
                 }]
             }
             </script>

@@ -10,9 +10,11 @@
 
 <h2>HTML5 Modal Dialog</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   This example uses the HTML5 <code>&lt;dialog&gt;</code> tag. For
@@ -72,7 +74,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1", "", "", "", true, 2)?>
+<?php includeShowcode("example1", "", "", "", true, 2); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -81,7 +83,7 @@
     {
       "label": "Mark up the button that opens the dialog correctly",
       "highlight": "aria-haspopup",
-      "notes": "This will ensure that screenreader users know that this button will open a modal dialog before they press it."
+      "notes": "This will ensure that screen reader users know that this button will open a modal dialog before they press it."
     },
     {
       "label": "Mark up your dialog with the dialog tag",
@@ -116,7 +118,7 @@
     {
       "label": "Ensure the dialog's form has the right method set",
       "highlight": "method=\"dialog\"",
-      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successul submission of this form."
+      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successful submission of this form."
     },
     {
       "label": "Ensure the CTA that opens the dialog, as well as the one that closes it, are buttons",
@@ -137,6 +139,6 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-dialog', array(), '', true, array(
-  'needsAccessibilityLib' => true
-)) ?>
+<?= includeNPMInstructions("enable-dialog", [], "", true, [
+    "needsAccessibilityLib" => true,
+]) ?>

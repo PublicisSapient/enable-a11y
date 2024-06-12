@@ -1,13 +1,12 @@
 @import "shared/mixins-and-vars";
 
-@carousel-green: #2A6803;
+@carousel-green: #2a6803;
 @indicator-color: #333;
 .glider {
+    border: solid 1px black;
+    .no-scrollbars();
 
-  border: solid 1px black;
-  .no-scrollbars();
-
-  .enable-focus(
+    .enable-focus(
     {
       outline: solid 2px @focus-color-dark-bg;
       outline-offset: -5px;
@@ -17,58 +16,58 @@
     }
   );
 
-  &-dot {
-    .enable-focus({
+    &-dot {
+        .enable-focus({
       outline: solid 2px @focus-color !important;
       outline-offset: 2px;
     }, {
       outline: none !important;
     });
 
-    // If there is only one dot, make it invisible.
-    &:only-child {
-      display: none;
+        // If there is only one dot, make it invisible.
+        &:only-child {
+            display: none;
+        }
+
+        // turn off default
+        border-radius: 0;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        background: none;
+
+        &:hover,
+        &:active {
+            background: none;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 4px;
+            border: solid 1px @indicator-color;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 0;
+        }
+
+        &.active {
+            width: 90px;
+            background: none;
+
+            &::after {
+                background: @indicator-color;
+            }
+        }
     }
 
-    // turn off default
-    border-radius: 0;
-    width: 30px;
-    height: 24px;
-    position: relative;
-    background: none;
+    &-slide {
+        display: block;
+        background: black;
+        color: white;
+        // height: 77vw !important;
 
-    &:hover,
-    &:active {
-      background: none;
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 4px;
-      border: solid 1px @indicator-color;
-      position: absolute;
-      top: calc(50% - 2px);
-      left: 0;
-    }
-
-    &.active {
-      width: 90px;
-      background: none;
-
-      &::after {
-        background: @indicator-color;
-      }
-    }
-  }
-
-  &-slide {
-    display: block;
-    background: black;
-    color: white;
-    // height: 77vw !important;
-
-    .enable-focus(
+        .enable-focus(
       {
         outline: solid 2px @focus-color;
         outline-offset: -5px;
@@ -78,162 +77,152 @@
       }
     );
 
-    .enable-mobile-visible-on-focus__container & {
+        .enable-mobile-visible-on-focus__container & {
+            @media @tablet {
+                height: 72vw !important;
+            }
 
-      @media @tablet {
-        height: 72vw !important;
-      }
-
-      @media @desktop {
-        height: 689px !important;
-      }
-    }
-  }
-
-  &-prev,
-  &-next {
-    background: #000;
-    color: white;
-    padding: 5px 10px;
-    transform: scale(0.8, 1.5);
-    // clip: rect(6px 100px 100px 0);
-    top: calc(24vw - (75px / 2));
-    border-bottom: solid 6px transparent;
-
-    @media @desktop {
-      top: 200px;
+            @media @desktop {
+                height: 689px !important;
+            }
+        }
     }
 
+    &-prev,
+    &-next {
+        background: #000;
+        color: white;
+        padding: 5px 10px;
+        transform: scale(0.8, 1.5);
+        // clip: rect(6px 100px 100px 0);
+        top: calc(24vw - (75px / 2));
+        border-bottom: solid 6px transparent;
 
-    #example2 & {
-      @media @desktop {
-        background: white;
-        color: #000;
-        top: calc(50% - 20px);
-      }
-    }
+        @media @desktop {
+            top: 200px;
+        }
 
-    .enable-focus({
+        #example2 & {
+            @media @desktop {
+                background: white;
+                color: #000;
+                top: calc(50% - 20px);
+            }
+        }
+
+        .enable-focus({
       outline: solid 2px @focus-color !important;
       outline-offset: -5px;
     }, {
       outline: none;
     });
-  }
+    }
 
-  &-prev {
-    left: 0;
-    transform-origin: 0 50%;
-  }
+    &-prev {
+        left: 0;
+        transform-origin: 0 50%;
+    }
 
-  &-next {
-    right: 0;
-    transform-origin: 100% 50%;
-  }
+    &-next {
+        right: 0;
+        transform-origin: 100% 50%;
+    }
 }
 
 .enable-carousel {
-  &__example {
-    padding: 0;
-    margin: 0 -1em;
-    border: none;
-  }
-
-  &__skip-link {
-    display: block;
-    margin: 2px auto;
-    background: @carousel-green;
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    z-index: 5;
-    transform: translateZ(1px)
-  }
-
-  &__slide {
-    position: relative;
-    padding-left: 40px;
-    padding-right: 40px;
-
-    &-heading {
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      font-family: "Arial", "Helvetica", sans-serif;
+    &__example {
+        padding: 0;
+        margin: 0 -1em;
+        border: none;
     }
 
-    &-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
+    &__skip-link {
+        display: block;
+        margin: 2px auto;
+        background: @carousel-green;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        z-index: 5;
+        transform: translateZ(1px);
     }
 
-    &-copy {
-      box-sizing: border-box;
-      background: #000;
-      color: white;
-      // position: absolute;
-      // bottom: 0;
-      width: 100%;
-      padding: 10px;
-      
-      @media @tablet-up {
-        padding: 20px 40px;
-      }
-    }
+    &__slide {
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
 
-    &-cta {
-      display: block;
-      margin: 0 auto;
-      background: @carousel-green;
-      color: #fff;
-      padding: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      text-align: center;
-    }
-  }
+        &-heading {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-family: "Arial", "Helvetica", sans-serif;
+        }
 
-  
+        &-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        &-copy {
+            box-sizing: border-box;
+            background: #000;
+            color: white;
+            // position: absolute;
+            // bottom: 0;
+            width: 100%;
+            padding: 10px;
+
+            @media @tablet-up {
+                padding: 20px 40px;
+            }
+        }
+
+        &-cta {
+            display: block;
+            margin: 0 auto;
+            background: @carousel-green;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
 }
 
 .product-tile-carousel {
+    &__example {
+        margin: 0 -12px;
+        position: relative;
+        left: 2px;
+    }
 
+    &__copy {
+        position: absolute;
+        display: block;
+        color: white;
+        font-family: "Ex Rounded Bold", "Helvetica", "Ariel", sans-serif;
+        font-size: (18 / @px);
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        min-height: 100px;
+        padding: 20px 10px 0 10px;
+        width: 100%;
+        text-align: center;
+        text-shadow:
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000;
+    }
 
-
-  &__example {
-    margin: 0 -12px;
-    position: relative;
-    left: 2px;
-  }
-
-  &__copy {
-    position: absolute;
-    display: block;
-    color: white;
-    font-family: "Ex Rounded Bold", "Helvetica", "Ariel", sans-serif;
-    font-size: (18/@px);
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    min-height: 100px;
-    padding: 20px 10px 0 10px;
-    width: 100%;
-    text-align: center;
-    text-shadow:
-   -2px -2px 0 #000,  
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-     2px 2px 0 #000;
-  }
-
-  &__slide {
-    position: relative;
-    padding: 0 !important;
-
-  }
-
-
+    &__slide {
+        position: relative;
+        padding: 0 !important;
+    }
 }

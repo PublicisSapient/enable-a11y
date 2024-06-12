@@ -122,10 +122,10 @@
   transition: color 0.3s ease-in-out;
 }
 #icon-font-example section a:nth-child(1):hover i {
-  color: #3B5998;
+  color: #3b5998;
 }
 #icon-font-example section a:nth-child(2):hover i {
-  color: #4099FF;
+  color: #4099ff;
 }
 #icon-font-example section a:nth-child(3):hover i {
   color: #007bb6;

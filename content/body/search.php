@@ -12,7 +12,7 @@
     </div>
   </form>
 </div>
-<?php includeShowcode("search-example", "", "", "", true, 2)?>
+<?php includeShowcode("search-example", "", "", "", true, 2); ?>
 
 <script type="application/json" id="search-example-props">
 {

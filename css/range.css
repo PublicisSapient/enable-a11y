@@ -3,9 +3,9 @@
   --progress-flll-shadow: var(--progress-shadow);
   --fill-color: linear-gradient(to right, LightCyan, var(--primary-color));
   --thumb-shadow: 0 0 4px rgba(0, 0, 0, 0.3),
-      -3px 9px 9px rgba(255, 255, 255, 0.33) inset,
-      -1px 3px 2px rgba(255, 255, 255, 0.33) inset,
-      0 0 0 99px var(--primary-color) inset;
+        -3px 9px 9px rgba(255, 255, 255, 0.33) inset,
+        -1px 3px 2px rgba(255, 255, 255, 0.33) inset,
+        0 0 0 99px var(--primary-color) inset;
 }
 .range-slider.grad input:hover {
   --thumb-transform: scale(1.2);
@@ -21,7 +21,7 @@
   --progress-flll-shadow: none;
   --thumb-shadow: 0 0 0 7px var(--primary-color) inset, 0 0 0 99px white inset;
   --thumb-shadow-hover: 0 0 0 9px var(--primary-color) inset,
-      0 0 0 99px white inset;
+        0 0 0 99px white inset;
   --thumb-shadow-active: 0 0 0 13px var(--primary-color) inset;
 }
 .range-slider.overlay {
@@ -69,9 +69,9 @@
   --thumb-size: 22px;
   --thumb-color: white;
   --thumb-shadow: 0 0 3px rgba(0, 0, 0, 0.4), 0 0 1px rgba(0, 0, 0, 0.5) inset,
-      0 0 0 99px var(--thumb-color) inset;
+        0 0 0 99px var(--thumb-color) inset;
   --thumb-shadow-active: 0 0 0 calc(var(--thumb-size) / 4) inset var(--thumb-color),
-      0 0 0 99px var(--primary-color) inset, 0 0 3px rgba(0, 0, 0, 0.4);
+        0 0 0 99px var(--primary-color) inset, 0 0 3px rgba(0, 0, 0, 0.4);
   --thumb-shadow-hover: var(--thumb-shadow);
   --ticks-thickness: 1px;
   --ticks-height: 5px;

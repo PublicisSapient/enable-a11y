@@ -68,7 +68,7 @@
   position: absolute;
 }
 .enable-mobile-visible-on-focus__container:focus-within {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
   outline-offset: 2px;
   z-index: 2;
 }

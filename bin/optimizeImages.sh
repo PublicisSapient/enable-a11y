@@ -17,7 +17,7 @@ if [ "$#" = "2" ]
 then
     LIST="$2"
 else
-    LIST="images/main-menu images/hamburger-menu-copy images/hero-image-text-resize images/text-spacing images/focus images/pages/video-player";
+    LIST="images/main-menu images/hamburger-menu-copy images/hero-image-text-resize images/text-spacing images/focus images/pages/video-player images/code-quality";
 fi
 
 DIR="$PWD"

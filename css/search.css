@@ -12,7 +12,7 @@
 }
 .search__term {
   width: 100%;
-  border: 3px solid #4E7963;
+  border: 3px solid #4e7963;
   border-right: none;
   padding: 5px;
   height: 2.25rem;
@@ -22,8 +22,8 @@
 .search__button {
   width: 2.5rem;
   height: 2.25rem;
-  border: 1px solid #4E7963;
-  background: #4E7963;
+  border: 1px solid #4e7963;
+  background: #4e7963;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;

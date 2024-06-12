@@ -21,7 +21,10 @@
 
         <h2>Example 1 - News Ticker</h2>
         
-        <?php includeStats(array('isForNewBuilds' => true, 'This solution is good for new and existing work.')) ?>
+        <?php includeStats([
+            "isForNewBuilds" => true,
+            "This solution is good for new and existing work.",
+        ]); ?>
 
         <p>
             The news headlines in this ticker are provided by <a href="https://newsapi.org">News API</a>.
@@ -33,7 +36,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("marquee-example")?>
+        <?php includeShowcode("marquee-example"); ?>
         <script type="application/json" id="marquee-example-props">
         {
             "replaceHtmlRules": {},

@@ -58,7 +58,7 @@
   outline: 1px solid transparent;
   margin: 0;
 }
-.deque-table-sortable__group table thead th[colspan]:not([colspan='1']) {
+.deque-table-sortable__group table thead th[colspan]:not([colspan="1"]) {
   text-align: center;
 }
 .deque-table-sortable__group table thead th .sortableColumnLabel:after {
@@ -74,11 +74,11 @@
   /* This is the down arrow SVG. */
   content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg version='1.1' viewBox='0 0 41 57' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle /%3E%3Cdesc /%3E%3Cdefs /%3E%3Cg fill='none' fill-rule='evenodd' id='Icons' stroke='none' stroke-width='1'%3E%3Cg fill='%23fff' stroke='%23000' id='XXX-Artboard-1' transform='translate(-1239.000000, -138.000000)'%3E%3Cg id='Double-Arrows' transform='translate(1239.000000, 138.150000)'%3E%3Cpath d='M10.5623119,63.8182709 C9.30468998,64.898534 8.28518598,64.4398218 8.28518598,62.7838679 L8.28518598,25.7523495 C8.28518598,24.1008014 9.29767763,23.6316601 10.5623119,24.7179466 L31.0451159,42.3121194 C32.3027378,43.3923825 32.3097502,45.1378116 31.0451159,46.2240981 L10.5623119,63.8182709 Z' id='Triangle-1' transform='translate(20.138075, 44.267339) scale(1, -1) rotate(-90.000000) translate(-20.138075, -44.267339) ' /%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
-.deque-table-sortable__group table thead th[aria-sort='descending'] .sortableColumnLabel:after {
+.deque-table-sortable__group table thead th[aria-sort="descending"] .sortableColumnLabel:after {
   transform: scaleY(-1) translateY(-0.3125rem);
 }
 .deque-table-sortable__group table thead:before {
-  content: '';
+  content: "";
   display: block;
   width: 7px;
 }

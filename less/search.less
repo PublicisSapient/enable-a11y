@@ -1,35 +1,35 @@
 @import "shared/mixins-and-vars";
 
 .search {
-  @search-color: #4E7963;
+    @search-color: #4e7963;
 
-  width: 100%;
-  position: relative;
-  display: flex;
- 
-  &__term {
     width: 100%;
-    border: 3px solid @search-color;
-    border-right: none;
-    padding: 5px;
-    height: (36 / @px);
-    border-radius: 5px 0 0 5px;
-    color: #000;
-  }
+    position: relative;
+    display: flex;
 
-  &__button {
-    width: (40 / @px);
-    height: (36 / @px);
-    border: 1px solid @search-color;
-    background: @search-color;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    margin: 0 !important;
-  }
+    &__term {
+        width: 100%;
+        border: 3px solid @search-color;
+        border-right: none;
+        padding: 5px;
+        height: (36 / @px);
+        border-radius: 5px 0 0 5px;
+        color: #000;
+    }
 
-  &__icon {
-    width: (20 / @px);
-  }
+    &__button {
+        width: (40 / @px);
+        height: (36 / @px);
+        border: 1px solid @search-color;
+        background: @search-color;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        margin: 0 !important;
+    }
+
+    &__icon {
+        width: (20 / @px);
+    }
 }

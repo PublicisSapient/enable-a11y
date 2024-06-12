@@ -12,7 +12,11 @@
 
 <h2>Example 3: Using HTML5 datalist</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'This does not work with assistive technologies in most web browsers.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "This does not work with assistive technologies in most web browsers.",
+]); ?>
 
 <p>
   Ironically, this seems to be inaccessible compared to the ARIA version:
@@ -105,7 +109,7 @@
       <option id="Olive" value="Olive">Olive</option>
       <option id="Onion" value="Onion">Onion</option>
       <option id="Orange" value="Orange">Orange</option>
-      <option id="Parship" value="Parship">Parship</option>
+      <option id="Parsnip" value="Parsnip">Parsnip</option>
       <option id="Pea" value="Pea">Pea</option>
       <option id="Pear" value="Pear">Pear</option>
       <option id="Pineapple" value="Pineapple">Pineapple</option>
@@ -128,14 +132,14 @@
       <option id="Watercress" value="Watercress">Watercress</option>
       <option id="Watermelon" value="Watermelon">Watermelon</option>
       <option id="Yam" value="Yam">Yam</option>
-      <option id="Zucchi" value="Zucchi">Zucchi</option>
+      <option id="Zucchini" value="Zucchini">Zucchini</option>
     </datalist>
 
     <button type="submit" class="combobox-example__button">Submit</button>
   </form>
 </div>
 
-<?php includeShowcode("dataset-example")?>
+<?php includeShowcode("dataset-example"); ?>
 
 <script type="application/json" id="dataset-example-props">
 {
@@ -170,8 +174,14 @@
 
 <h2 id="aria-combobox" tabindex="-1">Enable's ARIA combobox.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This combobox works better with screen readers than the native HTML5 version')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This combobox works better with screen readers than the native HTML5 version",
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   This is a heavily refactored version of
@@ -243,7 +253,7 @@
             <li tabindex="-1" role="option">Olive</li>
             <li tabindex="-1" role="option">Onion</li>
             <li tabindex="-1" role="option">Orange</li>
-            <li tabindex="-1" role="option">Parship</li>
+            <li tabindex="-1" role="option">Parsnip</li>
             <li tabindex="-1" role="option">Pea</li>
             <li tabindex="-1" role="option">Pear</li>
             <li tabindex="-1" role="option">Pineapple</li>
@@ -264,7 +274,7 @@
             <li tabindex="-1" role="option">Watercress</li>
             <li tabindex="-1" role="option">Watermelon</li>
             <li tabindex="-1" role="option">Yam</li>
-            <li tabindex="-1" role="option">Zucchi</li>
+            <li tabindex="-1" role="option">Zucchini</li>
           </ul>
 
           <div class="sr-only" id="aria-fruit__desc">
@@ -280,7 +290,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 <script type="application/json" id="example1-props">
 {
   "replaceHtmlRules": {
@@ -294,7 +304,7 @@
     {
       "label": "Code label to be associated with input",
       "highlight": "for",
-      "notes": "Ensure the label is properly lababelled"
+      "notes": "Ensure the label is properly labelled"
     },
     {
       "label": "Component instructions for the component using aria-describedby",
@@ -333,7 +343,11 @@
 
 <h2>Autosubmit Using an ARIA Combobox</h2>
 
-<?php includeStats(array('isNPM' => true, 'comment' => 'This is a feature of the NPM module described in the <a href="#aria-combobox">previous section</a>.')) ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        'This is a feature of the NPM module described in the <a href="#aria-combobox">previous section</a>.',
+]); ?>
 
 <p>
     There are many e-commerce sites that have a search form with a combobox that submits when the user chooses one of the options.
@@ -444,10 +458,15 @@
   </form>
 </div>
 
-<?php includeShowcode("submit-on-select-example", "", "", "
+<?php includeShowcode(
+    "submit-on-select-example",
+    "",
+    "",
+    "
             <p><strong>Note: since it is very similar, please follow all the steps in the two previous examples first before
             implementing the following steps.</strong></p>
-        ")?>
+        ",
+); ?>
 
 <script type="application/json" id="submit-on-select-example-props">
 {
@@ -470,7 +489,7 @@
     ]
   },
   "steps": [{
-    "label": "Create JS code to submit query when clicking the option elements.",
+    "label": "Create JavaScript code to submit query when clicking the option elements.",
     "highlight": "%INLINE% autocomplete-submit",
     "notes": "Note that custom event <code>combobox-change</code> that this event handler uses. This fires when an option is chosen from the list.  It takes the value chosen and puts it inside a Google Search URL, using URLSearchParams and a template string."
   }]
@@ -480,7 +499,11 @@
 
 <h2>ARIA Combobox With Categories</h2>
 
-<?php includeStats(array('isNPM' => true, 'comment' => 'This is an experimental feature of the NPM library described in the <a href="#aria-combobox">previous section</a>')) ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        'This is an experimental feature of the NPM library described in the <a href="#aria-combobox">previous section</a>',
+]); ?>
 
 <p>Another ARIA combobox example, this time with the options grouped into categories.
   Note the special formatting in the dropdown. This is common
@@ -735,10 +758,15 @@
 </div>
 
 
-<?php includeShowcode("example2", "", "", "
+<?php includeShowcode(
+    "example2",
+    "",
+    "",
+    "
             <p><strong>Note: since it is very similar, please follow all the steps in the previous example first before
             implementing the following steps.</strong></p>
-        ")?>
+        ",
+); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -790,4 +818,11 @@
 </script>
 
 
-<?= includeNPMInstructions('combobox', array(), 'enable-combobox', false, array(), '.enable-combobox') ?>
+<?= includeNPMInstructions(
+    "combobox",
+    [],
+    "enable-combobox",
+    false,
+    [],
+    ".enable-combobox",
+) ?>

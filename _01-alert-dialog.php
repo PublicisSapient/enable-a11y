@@ -5,14 +5,14 @@
 "HTML Tidy for HTML5 for Apple macOS version 5.6.0">
 
 <title>Alert Dialog Example</title>
-		<?php include("includes/common-head-tags.php"); ?>
+		<?php include "includes/common-head-tags.php"; ?>
 <link media="all" rel="stylesheet" href="css/dialog.css">
 </head>
 <body>
 <div id="a11y-modal__non-modal-content">
-<?php include("includes/documentation-header.php"); ?>
+<?php include "includes/documentation-header.php"; ?>
 <main id="main" tabindex="-1">
-    <?php include "includes/pause-anim-control.php" ?>
+    <?php include "includes/pause-anim-control.php"; ?>
 <!-- <aside class="notes">
 <h2>Notes:</h2>
 <ul>

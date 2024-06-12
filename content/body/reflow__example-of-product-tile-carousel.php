@@ -1,15 +1,14 @@
 <?php
 
-$copy = getCgiVar('copy');
-$heading = getCgiVar('heading');
-$hasDropdown = (getCgiVar('hasDropdown') == 'true');
-$hasArrows = (getCgiVar('hasArrows') == 'true');
-$className = getCgiVar('className');
+$copy = getCgiVar("copy");
+$heading = getCgiVar("heading");
+$hasDropdown = getCgiVar("hasDropdown") == "true";
+$hasArrows = getCgiVar("hasArrows") == "true";
+$className = getCgiVar("className");
 
-if ($heading == '') {
-  $heading = 'Reflow Violation Example';
+if ($heading == "") {
+    $heading = "Reflow Violation Example";
 }
-
 ?>
 
 <h1><?= $heading ?></h1>

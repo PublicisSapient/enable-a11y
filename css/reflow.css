@@ -29,13 +29,13 @@
   }
 }
 .reflow-example__frame:focus {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 .reflow-example__frame:focus:not(:focus-visible) {
   outline: none !important;
 }
 .reflow-example__frame:focus-visible {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }

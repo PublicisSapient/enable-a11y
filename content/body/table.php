@@ -12,7 +12,7 @@
   <li><code>th</code> tags <strong>must have a <code>scope</code> attribute</strong> set to <code>row</code> if it is a heading for a
     table row, or <code>col</code> if it is a column row</li>
   <li>All tables <strong>must have a text <code>summary</code></strong> describing the data in the table. This can be coded using a
-    <code>summary</code> tag (see the first exmaple), or
+    <code>summary</code> tag (see the first example), or
     a <code>aria-labelledby</code> on the table element (see the <a href="#table-with-figcaption">figcaption example</a>)
   </li>
 
@@ -41,7 +41,11 @@
 
 <h2>A Simple Table</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'Go through the <a href="#developer-walkthrough-1">the walkthrough below</a> to ensure you are adding all the markup needed.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'Go through the <a href="#developer-walkthrough-1">the walkthrough below</a> to ensure you are adding all the markup needed.',
+]); ?>
 
 <p>Just a simple table.  Walkthrough the HTML code below and make sure you are adding all the things that make tables accessible in your work.</p>
 
@@ -80,7 +84,7 @@
   </table>
 </div>
 
-<?php includeShowcode("table-example1")?>
+<?php includeShowcode("table-example1"); ?>
 
 <script type="application/json" id="table-example1-props">
 {
@@ -122,7 +126,10 @@
 
 <h2 id="table-with-figcaption">A Simple Table with the caption placed inside a <code>figcaption</code> tag</h2>
 
-<?php includeStats(array('isStyle' => false, 'This is more flexible than using the <code>&lt;caption&gt;</code> tag, since it allows for table captioning outside of the <code>&lt;table&gt;</code> markup')) ?>
+<?php includeStats([
+    "isStyle" => false,
+    "This is more flexible than using the <code>&lt;caption&gt;</code> tag, since it allows for table captioning outside of the <code>&lt;table&gt;</code> markup",
+]); ?>
 
 <p>Note that the caption is on the bottom, instead of the top of the table.</p>
 
@@ -160,7 +167,7 @@
   </figure>
 </div>
 
-<?php includeShowcode("example3")?>
+<?php includeShowcode("example3"); ?>
 
 <script type="application/json" id="example3-props">
 {
@@ -176,7 +183,7 @@
 
 <h2>A Complex Table Made Using HTML5</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
   Complex tables may have headings for column groups as well as individual columns.
@@ -241,7 +248,7 @@
   </figure>
 </div>
 
-<?php includeShowcode("complex-table")?>
+<?php includeShowcode("complex-table"); ?>
 
 <script type="application/json" id="complex-table-props">
 {
@@ -254,7 +261,7 @@
     {
       "label": "Mark up column groups with scope=\"colgroup\"",
       "highlight": "scope=\"colgroup\"",
-      "notes": "Note that column groups here help catagorize the column headers underneath"
+      "notes": "Note that column groups here help categorize the column headers underneath"
     },
     {
       "label": "Mark up the columns underneath the normal way",
@@ -284,7 +291,11 @@
 
 <h2 id="table-aria">A Simple Table Made Using Aria Roles</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.",
+]); ?>
 
 <p>This is relatively new to ARIA and may not be implemented by all assistive technologies. It should only
   be used when there is existing code that is not marked up as an HTML table, but looks and
@@ -312,7 +323,7 @@
   </div>
 </template>
 
-<?php includeShowcode("role-presentation-code", "", "", "", false)?>
+<?php includeShowcode("role-presentation-code", "", "", "", false); ?>
 <script type="application/json" id="role-presentation-code-props">
 {
   "replaceHtmlRules": {},
@@ -358,7 +369,7 @@
 
 </div>
 
-<?php includeShowcode("aria-example-1")?>
+<?php includeShowcode("aria-example-1"); ?>
 
 <script type="application/json" id="aria-example-1-props">
 {
@@ -376,7 +387,7 @@
     {
       "label": "Separate the table head and body with separate rowgroups",
       "highlight": "role=\"rowgroup\"",
-      "notes": "This replaces the <code>thead</code> and <code>tbody</code> tagss in the native HTML table markup"
+      "notes": "This replaces the <code>thead</code> and <code>tbody</code> tags in the native HTML table markup"
     },
     {
       "label": "Mark up the table rows with <code>row=\"row\"</code>",
@@ -386,7 +397,7 @@
     {
       "label": "Mark up the table column headers",
       "highlight": "role=\"columnheader\"",
-      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers becasue the existing design didn't have them, you could do so using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
+      "notes": "This replaces the <code>&lt;th scope=\"col\"&gt;</code> in the native HTML markup. <strong>Note:</strong> that if you ever wanted to hide the column headers because the existing design didn't have them, you could do so using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code> class</a>, but it is highly recommended to always have visible table headings, since it can confuse partially sighted users."
     },
     {
       "label": "Mark up the table row headers",
@@ -408,7 +419,11 @@
 <h2>A Complex Table Made Using Aria Roles</h2>
 
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        "This should only be done as a last result in existing code if a developer thought it was a good idea to code tabular data with a bunch of <code>&lt;div&gt;</code> tags and it would be too hard to recode.",
+]); ?>
 
 <p>
     It takes real talent to code tables this way: It's wrong and it takes a lot of time.  You really should reconsider recoding your tables with <code>&lt;table&gt;</code> tags instead.  Your colleagues will thank you, I will thank you, and you know that you did a good deed.
@@ -464,7 +479,7 @@
 
 </div>
 
-<?php includeShowcode("complex-aria-example")?>
+<?php includeShowcode("complex-aria-example"); ?>
 
 <script type="application/json" id="complex-aria-example-props">
 {
@@ -472,7 +487,7 @@
   "steps": [{
       "label": "Use <code>aria-colspan</code> and <code>aria-rowspan</code> when you have a cell that spans multiple columns and rows",
       "highlight": "aria-colspan ||| aria-rowspan",
-      "notes": "This is equivalient to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables."
+      "notes": "This is equivalent to the <code>colspan</code> and <code>rowspan</code> attributes used in native HTML5 tables."
     }
 
   ]
@@ -482,10 +497,14 @@
 
 <h2 id="sticky-table-header" tabindex="-1">Sticky Table Header</h2>
 
-<?php includeStats(array('isStyle' => false, 'comment' => 'This is a great way to style a table when there is a lot of data inside of it.')) ?>
+<?php includeStats([
+    "isStyle" => false,
+    "comment" =>
+        "This is a great way to style a table when there is a lot of data inside of it.",
+]); ?>
 
 <p>
-    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it respresents.
+    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
 </p>
 
 <p>
@@ -2229,7 +2248,7 @@
 </figure>
 </div>
 
-<?php includeShowcode("sticky-header-table-example")?>
+<?php includeShowcode("sticky-header-table-example"); ?>
 
 <script type="application/json" id="sticky-header-table-example-props">
 {

@@ -1,80 +1,78 @@
 @import "shared/mixins-and-vars";
 
-
-
 .base-timer {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  text-align: center;
-  margin: 0 auto;
-
-  &__svg {
-    transform: scaleX(-1);
-  }
-
-  &__circle {
-    fill: none;
-    stroke: none;
-  }
-
-  &__path-elapsed {
-    stroke-width: 7px;
-    stroke: grey;
-  }
-
-  &__path-remaining {
-    stroke-width: 7px;
-    stroke-linecap: round;
-    transform: rotate(90deg);
-    transform-origin: center;
-    transition: 1s linear all;
-    fill-rule: nonzero;
-    stroke: currentColor;
-
-    &.green {
-      color: rgb(65, 184, 131);
-    }
-
-    &.orange {
-      color: orange;
-    }
-
-    &.red {
-      color: red;
-    }
-  }
-
-  &__label {
-    position: absolute;
+    position: relative;
     width: 300px;
     height: 300px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-  }
-
-  &__start-timer {
-    @height: (30/@px);
-
-    padding: 0 (10/@px);
-    font-size: @height - (10/@px);
-    line-height: @height;
-    border: none;
-    height: @height;
-    border-radius: (@height / 2);
-    background: #006600;
-    color: white;
+    text-align: center;
     margin: 0 auto;
-    display: block;
-    margin-top: 20px;
-    transition: background-color 0.25s ease-in-out;
-    outline-offset: 2px;
 
-    &:hover {
-      background: #009900;
+    &__svg {
+        transform: scaleX(-1);
     }
-  }
+
+    &__circle {
+        fill: none;
+        stroke: none;
+    }
+
+    &__path-elapsed {
+        stroke-width: 7px;
+        stroke: grey;
+    }
+
+    &__path-remaining {
+        stroke-width: 7px;
+        stroke-linecap: round;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 1s linear all;
+        fill-rule: nonzero;
+        stroke: currentColor;
+
+        &.green {
+            color: rgb(65, 184, 131);
+        }
+
+        &.orange {
+            color: orange;
+        }
+
+        &.red {
+            color: red;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+    }
+
+    &__start-timer {
+        @height: (30 / @px);
+
+        padding: 0 (10 / @px);
+        font-size: @height - (10 / @px);
+        line-height: @height;
+        border: none;
+        height: @height;
+        border-radius: (@height / 2);
+        background: #006600;
+        color: white;
+        margin: 0 auto;
+        display: block;
+        margin-top: 20px;
+        transition: background-color 0.25s ease-in-out;
+        outline-offset: 2px;
+
+        &:hover {
+            background: #009900;
+        }
+    }
 }

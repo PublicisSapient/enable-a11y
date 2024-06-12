@@ -10,17 +10,17 @@ ul[role="menubar"] {
   padding: 10px;
   font-size: 110%;
   list-style: none;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 ul[role="menubar"] [role="menuitem"],
 ul[role="menubar"] [role="separator"] {
   padding: 0.25em;
-  background-color: #EEEEEE;
-  border: 2px solid #EEEEEE;
+  background-color: #eeeeee;
+  border: 2px solid #eeeeee;
 }
 ul[role="menubar"] [role="separator"] {
   padding-top: 0.15em;
-  background-image: url('../images/separator.png');
+  background-image: url("../images/separator.png");
   background-position: center;
   background-repeat: repeat-x;
 }

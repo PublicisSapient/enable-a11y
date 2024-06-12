@@ -1,7 +1,7 @@
 <p>
   A switch is like a checkbox, in that is designed to be an input control that has a binary value
   (either <strong>checked</strong> and <strong>unchecked</strong> or <strong>on</strong> or <strong>off</strong>,
-  depending on the screenreader).
+  depending on the screen reader).
   Like <a href="tabs.php">tablists.php</a>, switches do not have a native HTML5 tag, so we implement custom code using
   the
   <code>switch</code> role in JavaScript.
@@ -22,21 +22,21 @@
   valuable lesson: developers shouldn't be dishonest to users to make things easier for themselves.
 </p>
 
-<p>
-
 
 <h2>A simple switch coded with ARIA.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>This code is based on information from the
     <a href="https://developer.mozilla.org/en-US/">MDN</a> article on
     <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_switch_role">Using
       the switch role</a>.  The switch reports the checked state as "on" or "off" in VoiceOver
-    and "checked" or "unchecked" in NVDA and ChromeVox.  In order to make some consistancy among user agents, an <code>aria-describedby</code> on the switch can state the "on/off" state to all screen readers. This description is also given visually, to make it obvious what the state is for sighted users.  Developers could hide this text with the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a>, and put "off" and "on" labels on sides of the right and left sides of the component if they wish instead. 
+    and "checked" or "unchecked" in NVDA and ChromeVox.  In order to make some consistency among user agents, an <code>aria-describedby</code> on the switch can state the "on/off" state to all screen readers. This description is also given visually, to make it obvious what the state is for sighted users.  Developers could hide this text with the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a>, and put "off" and "on" labels on sides of the right and left sides of the component if they wish instead. 
 </p>
 
 <div id="example1" class="enable-example">
@@ -49,7 +49,7 @@
 </div>
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -70,7 +70,7 @@
       "notes": "This is a progressive enhancement technique, in case the browser and/or screen reader cannot interpret the <code>switch</code> role with the <code>aria-checked</code> attribute"
     },
     {
-      "label": "Use Javascript to allow users to turn the switch on and off",
+      "label": "Use JavaScript to allow users to turn the switch on and off",
       "highlight": "%FILE%./js/modules/switch.js ||| switch-change",
       "notes": "Note that the switch changes state when the button is clicked.  This will work for both mice and keyboard since click fires using both devices when attached to buttons.  Note as well we set a custom event, <code>switch-change</code>, so developers can set event handler when the switch changes value."
     },
@@ -83,12 +83,4 @@
 }
 </script>
 
-<?= includeNPMInstructions(
-  'switch',
-  array(),
-  '',
-  false,
-  array(),
-  null,
-  true
-) ?>
+<?= includeNPMInstructions("switch", [], "", false, [], null, true) ?>

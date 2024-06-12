@@ -5,71 +5,70 @@
  */
 
 .a11y-modal {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-  border: thin #000 solid;
-  background-color: #fff;
-  z-index: 3; /* places the modal dialog on top of everything else */
-  position: fixed;
-  top: 25%;
-  left: 25%;
-  display: none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border: thin #000 solid;
+    background-color: #fff;
+    z-index: 3; /* places the modal dialog on top of everything else */
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    display: none;
 
-  &.visible {
-    display: block;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
-  &__button--close {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    .vendor(appearance, none);
-    background: none;
-    border: none;
-    display: inline;
-
-    & {
-      img {
-        border: 0;
-        width: 38px;
-        height: 38px;
-      }
+    &.visible {
+        display: block;
     }
-  }
+
+    h1 {
+        text-align: center;
+    }
+
+    &__button--close {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        .vendor(appearance, none);
+        background: none;
+        border: none;
+        display: inline;
+
+        & {
+            img {
+                border: 0;
+                width: 38px;
+                height: 38px;
+            }
+        }
+    }
 }
 
 dialog {
-	position: fixed;
+    position: fixed;
 }
-
 
 /*
  * For decorating the page (not the modal)
  */
 .image {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: calc(50% - 50vmin);
-  width: 100vmin;
-  margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: calc(50% - 50vmin);
+    width: 100vmin;
+    margin: 0 auto;
 
-  &__container {
-    position: relative;
-    height: 92vmin;
-  }
+    &__container {
+        position: relative;
+        height: 92vmin;
+    }
 }
 
 .modal__opener {
-  z-index: 2;
-  position: absolute;
-  left: calc(50% - 27vmin);
-  top: 22vmin;
-  font-size: 2.5vmin;
+    z-index: 2;
+    position: absolute;
+    left: calc(50% - 27vmin);
+    top: 22vmin;
+    font-size: 2.5vmin;
 }

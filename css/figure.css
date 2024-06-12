@@ -22,7 +22,7 @@ figure figcaption,
 figure span,
 [role="figure"] span {
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-style: italic;
   display: table-caption;
   caption-side: bottom;

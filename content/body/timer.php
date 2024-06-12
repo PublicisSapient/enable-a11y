@@ -4,7 +4,10 @@
 
 <h2>Timer Example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is good for new as well as existing work.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" => "This solution is good for new as well as existing work.",
+]); ?>
 
 <p>This demo is based on code from
   <a href="https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/">this
@@ -23,7 +26,7 @@
 </div>
 
 
-<?php includeShowcode("timer-example")?>
+<?php includeShowcode("timer-example"); ?>
 <script type="application/json" id="timer-example-props">
 {
   "replaceHtmlRules": {

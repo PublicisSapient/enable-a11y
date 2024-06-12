@@ -10,13 +10,13 @@
 
     /* Turns off styling - not usually needed, but good to know. */
     .vendor(appearance, none);
-	
-	/* Apply border. */
-	border: inset 3px;
-	
-	/* Dimensions */
-	width: 242px;
-	height: 45px;
+
+    /* Apply border. */
+    border: inset 3px;
+
+    /* Dimensions */
+    width: 242px;
+    height: 45px;
 }
 
 progress.uam {
@@ -26,11 +26,11 @@ progress.uam {
 
     /* Firefox and Polyfill */
     & {
-        background: data-uri('../images/example2BW.png') #cccccc;
+        background: data-uri("../images/example2BW.png") #cccccc;
     }
     /* Chrome */
     &::-webkit-progress-bar {
-        background: data-uri('../images/example2BW.png') #cccccc;
+        background: data-uri("../images/example2BW.png") #cccccc;
     }
 
     /*
@@ -39,16 +39,16 @@ progress.uam {
 
     /* Firefox */
     &::-moz-progress-bar {
-        background: data-uri('../images/example2Color.png') #8f6534;
+        background: data-uri("../images/example2Color.png") #8f6534;
     }
     /* Chrome */
     &::-webkit-progress-value {
-        background: data-uri('../images/example2Color.png') #8f6534;
+        background: data-uri("../images/example2Color.png") #8f6534;
     }
 }
 
 .uam[role="progressbar"] {
-    background: data-uri('../images/example2BW.png') #cccccc;
+    background: data-uri("../images/example2BW.png") #cccccc;
 
     /* Polyfill */
     &:after {
@@ -64,7 +64,7 @@ progress.uam {
         content: "";
         display: block;
         height: 100%;
-        background: data-uri('../images/example2Color.png') #8f6534;
+        background: data-uri("../images/example2Color.png") #8f6534;
     }
 
     .generate-progress-frames(10);
@@ -72,7 +72,7 @@ progress.uam {
     .generate-progress-frames(@n, @i: 0) when (@i =< @n) {
         @val: @i * 10;
         &[aria-valuenow="@{val}"]:before {
-          width: (@i * 100% / @n);
+            width: (@i * 100% / @n);
         }
         .generate-progress-frames(@n, (@i + 1));
     }
@@ -88,13 +88,11 @@ progress.uam {
     margin-top: 10px;
 }
 
-
 .verbose {
-
     .generate-verbose-progress-frames(7);
 
     .generate-verbose-progress-frames(@n, @i: 0) when (@i =< @n) {
-        &[aria-valuenow="@{i}"] li:nth-child( -n + @{i} ) {
+        &[aria-valuenow="@{i}"] li:nth-child(-n + @{i}) {
             font-weight: bold;
         }
         .generate-verbose-progress-frames(@n, (@i + 1));

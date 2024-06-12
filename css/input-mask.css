@@ -53,7 +53,7 @@
   animation: none;
 }
 .enable-input-mask__input:focus + .enable-input-mask__mask .enable-input-mask__mask-mid-val:not(:empty) {
-  background: #B4D5FE;
+  background: #b4d5fe;
 }
 @keyframes blink {
   0% {

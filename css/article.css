@@ -23,7 +23,7 @@
   overflow: auto;
 }
 .sticky-table__container:focus-within {
-  outline: #097EFB 2px solid;
+  outline: #097efb 2px solid;
 }
 .sticky-table__container:focus-within .sticky-table__keyboard-instructions {
   display: block;

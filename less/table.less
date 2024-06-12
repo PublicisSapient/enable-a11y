@@ -1,16 +1,14 @@
 @import "shared/mixins-and-vars";
- 
-@table-header-height: 2em; 
 
+@table-header-height: 2em;
 
 .sticky-table {
-
     &__keyboard-instructions {
         display: none;
         background: black;
         color: white;
         padding: 10px;
-        font-size: (12/@px);
+        font-size: (12 / @px);
         position: absolute;
         top: 0;
     }
@@ -24,7 +22,6 @@
             overflow: auto;
         }
 
-
         &:focus-within {
             outline: @focus-color 2px solid;
 
@@ -32,23 +29,21 @@
                 display: block;
             }
         }
-    
 
         table,
         [role="table"] {
             margin-bottom: 0;
             position: relative;
             border: solid 1px black;
-
         }
 
         thead {
             background: white;
-            transform: translateZ(1px)
+            transform: translateZ(1px);
         }
 
         th[scope="col"],
-        [role="columnheader"] {    
+        [role="columnheader"] {
             .sticky();
             top: 0; // was (38/@px);
         }
@@ -65,7 +60,6 @@
         left: 0;
         z-index: 1;
     }
-
 }
 
 caption,
@@ -93,7 +87,7 @@ table + figcaption {
             margin: 0 1em;
             top: 3px;
         }
-        
+
         &:before {
             left: -110px;
         }
@@ -111,8 +105,8 @@ figure figcaption.caption {
 
 table,
 [role="table"] {
-	width: 100%;
-	max-width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     border-collapse: collapse;
     display: table;
 
@@ -120,25 +114,27 @@ table,
         margin-bottom: 0;
     }
 
-    
-
-    th,td,
-    [role="columnheader"], [role="rowheader"], [role="cell"] {
+    th,
+    td,
+    [role="columnheader"],
+    [role="rowheader"],
+    [role="cell"] {
         line-height: 1.2;
         text-align: left;
         padding: 10px;
         display: table-cell;
-        font-size: (14/@px);
+        font-size: (14 / @px);
     }
 
     th,
-    [role="columnheader"], [role="rowheader"] {
+    [role="columnheader"],
+    [role="rowheader"] {
         font-weight: bold;
         color: white;
         background-color: black;
     }
 
-    tr, 
+    tr,
     [role="row"] {
         display: table-row;
         background-color: #fff;
@@ -152,23 +148,24 @@ table,
         display: table-row-group;
     }
 
-
     @table-width: 100%;
-    @table-column-width: @table-width / 7; 
+    @table-column-width: @table-width / 7;
     @table-body-height: 80vh;
-
 
     &.fixed-headers {
         border-collapse: collapse;
-        
+
         &,
         & thead,
         & .thead {
             width: @table-width;
         }
-        
-        td, th,
-        [role="columnheader"], [role="rowheader"], [role="cell"] {
+
+        td,
+        th,
+        [role="columnheader"],
+        [role="rowheader"],
+        [role="cell"] {
             overflow: hidden;
             width: @table-column-width;
             max-width: @table-column-width;
@@ -179,9 +176,9 @@ table,
             hyphens: auto;
         }
 
-        
         th,
-        [role="columnheader"], [role="rowheader"] {
+        [role="columnheader"],
+        [role="rowheader"] {
             border-left: solid 1px #fff;
             border-right: solid 1px #fff;
         }
@@ -193,10 +190,9 @@ table,
         }
         thead,
         .thead {
-            
             tr {
-            display: block;
-            position: relative;
+                display: block;
+                position: relative;
             }
         }
         tbody,
@@ -205,7 +201,6 @@ table,
             overflow: auto;
             width: calc(~"100% + 16px");
             height: @table-body-height;
-            
         }
     }
 
@@ -221,17 +216,15 @@ table,
         }
 
         &__bottom {
-            border-top: none; 
+            border-top: none;
         }
-
-
     }
 }
 
-
 .enable-table {
     &--centered-data {
-        th, td {
+        th,
+        td {
             text-align: center;
         }
     }
@@ -256,9 +249,7 @@ table,
     }
 }
 
-&.enable-tabl
-
-.screenshot-table {
+&.enable-tabl .screenshot-table {
     margin: 0 auto;
     width: initial;
     max-width: initial;

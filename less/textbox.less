@@ -8,24 +8,22 @@ textarea,
 
     display: inline-block;
     width: 200px;
-    font-size: (@font-size/@px);
-    line-height: (@line-height/@font-size);
+    font-size: (@font-size / @px);
+    line-height: (@line-height / @font-size);
     border: solid 1px black;
     background: #fff;
     vertical-align: bottom;
-
 }
 
 textarea,
 [aria-multiline="true"] {
-    min-height: (6 * @line-height/@px);
+    min-height: (6 * @line-height / @px);
     overflow: auto;
     .vendor(appearance, textarea);
     resize: both;
     min-width: 20rem;
     max-width: none !important;
 }
-
 
 .textarea-label {
     vertical-align: top;
@@ -39,20 +37,16 @@ fieldset {
 }
 
 #charcount-example {
-
     .enable-character-count {
         display: block;
         width: 20rem;
         margin-left: 45%;
         text-align: right;
         margin-top: 5px;
-    
     }
 
     label.desc {
         width: 15rem;
         float: left;
     }
-
-
 }

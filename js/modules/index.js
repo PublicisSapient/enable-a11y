@@ -7,7 +7,7 @@ import animatedGifPause from "enable-animatedGif.js";
 import EnableCarousel from "enable-carousel.js";
 import enableListbox from "enable-listbox.js";
 import enableVisibleOnFocus from "enable-visible-on-focus.js";
-import EnableFlyoutHamburger from "enable-hamburger.js";
+import EnableFlyout from "enable-flyout-hamburger.js";
 import { interpolate, htmlToDomNode } from "interpolate.js";
 import inputMask from "input-mask.js";
 import offscreenObserver from "offscreen-observer.js";
