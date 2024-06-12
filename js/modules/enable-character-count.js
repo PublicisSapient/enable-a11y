@@ -157,18 +157,19 @@ const enableCharacterCount = new function() {
   }
 
   function onKeyDown(event) {
-    const dataset = event.target.dataset
-    const keyName = event.key;
+    const keyPressed = event.key;
+    if (isReadCharacterCountKeyPressed(event, keyPressed) || isReadCharacterCountCtrlAndKeyPressed(event, keyPressed))
+      announceCharacterCount(event.target);
+  }
 
-    if (dataset.readCharacterCountWithKey) {
-      if (keyName === dataset.readCharacterCountWithKey)
-        announceCharacterCount(event.target);
-    }
+  function isReadCharacterCountKeyPressed(event, keyPressed) {
+    const readCharacterCountWithKey = event.target.dataset.readCharacterCountWithKey;
+    return readCharacterCountWithKey && keyPressed === readCharacterCountWithKey;
+  }
 
-    if (dataset.readCharacterCountWithCtrlAndKey) {
-      if (event.ctrlKey === true && keyName === dataset.readCharacterCountWithCtrlAndKey)
-        announceCharacterCount(event.target);
-    }
+  function isReadCharacterCountCtrlAndKeyPressed(event, keyPressed) {
+    const readCharacterCountWithCtrlAndKey = event.target.dataset.readCharacterCountWithCtrlAndKey;
+    return readCharacterCountWithCtrlAndKey && event.ctrlKey && keyPressed === readCharacterCountWithCtrlAndKey;
   }
 
   this.onFocus = (e) => {
