@@ -21,14 +21,14 @@
   <strong>Storage Space</strong>
 
   <div class="container">
-    <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
-    <meter aria-labelledby="disk-c-meter" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-c-meter-html5" aria-hidden="true">Disk C:</label>
+    <meter aria-labelledby="disk-c-meter-html5" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
-    <label id="disk-d-meter" aria-hidden="true">Disk D:</label>
-    <meter aria-labelledby="disk-d-meter" class="enable-custom-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-d-meter-html5" aria-hidden="true">Disk D:</label>
+    <meter aria-labelledby="disk-d-meter-html5" class="enable-custom-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
 
-    <label id="disk-e-meter" aria-hidden="true">Disk E:</label>
-    <meter aria-labelledby="disk-e-meter" class="enable-custom-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label id="disk-e-meter-html5" aria-hidden="true">Disk E:</label>
+    <meter aria-labelledby="disk-e-meter-html5" class="enable-custom-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   </div>
 </div>
 
@@ -70,9 +70,9 @@
   <strong>Storage Space</strong>
 
   <div class="container">
-    <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
+    <label id="disk-c-meter-aria" aria-hidden="true">Disk C:</label>
     <div
-      aria-labelledby="disk-c-meter"
+      aria-labelledby="disk-c-meter-aria"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk C"
@@ -85,9 +85,9 @@
     >
     </div>
   
-    <label id="disk-d-meter" aria-hidden="true">Disk D:</label>
+    <label id="disk-d-meter-aria" aria-hidden="true">Disk D:</label>
     <div
-      aria-labelledby="disk-d-meter"
+      aria-labelledby="disk-d-meter-aria"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk D"
@@ -100,9 +100,9 @@
     >
     </div>
 
-    <label id="disk-e-meter" aria-hidden="true">Disk E:</label>
+    <label id="disk-e-meter-aria" aria-hidden="true">Disk E:</label>
     <div
-      aria-labelledby="disk-e-meter"
+      aria-labelledby="disk-e-meter-aria"
       class="enable-custom-meter"
       role="meter"
       aria-label="Disk E"

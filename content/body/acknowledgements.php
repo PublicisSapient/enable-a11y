@@ -19,6 +19,8 @@
   </li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
   </li>
+  <li><a href="https://github.com/akr3081">Adam Rock</a> for the <a href="/meter.php">accessible meter component</a>
+  </li>
 
   <li><a href="https://code.iamkate.com">Kate Morley</a> for her <a
       href="https://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/">ARIA radio buttons</a>
