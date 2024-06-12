@@ -1,0 +1,17 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.eliza .chat-row {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.eliza h1,
+.eliza h2,
+.eliza p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
