@@ -55,14 +55,14 @@
 
 
         <p>
-            Progress bars show the completion status of a current task.  It may be something that is fairly static 
+            Progress bars show the completion status of a current task.  It may be fairly static 
             for the page (e.g. A page with a progress bar indicating the delivery status of a package is unlikely 
-            to be updated in real time after the page is loaded), then you won't need an aria-live region that 
-            announces the status value.  However, if it is a task that is being reported in real time (e.g. 
-            how log it will take to upload a movie file to a web server), then you will want that information 
-            updated to the user in real time as it happens.  In the latter case, the developer and UX designer should
-            think how immediate this information should be given to screen reader users, since this information cause
-            a bit of noise, and set the aria-live level appropriately. If the user is not going to be doing anything
+            to be updated in real-time after the page is loaded), then you won't need an aria-live region that 
+            announces the status value.  However, if it is a task that is being reported in real-time (e.g. 
+            how long it will take to upload a movie file to a web server), then you will want that information 
+            updated to the user in real-time as it happens.  In the latter case, the developer and UX designer should
+            think about how immediately this information should be given to screen reader users since this information causes
+            a bit of noise and sets the aria-live level appropriately. If the user is not going to be doing anything
             else on the screen while the action is happening and needs immediate updates, use <code>aria-live="assertive"</code>.
             If the user is going to be doing other things on the page while the progress bar is updating, use <code>"polite"</code>
             instead.
@@ -75,11 +75,10 @@
         <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>
-            This progress bar uses aria-live regions to update the status of the progress bar. It works in for all
-            screen
-            readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
+            This progress bar uses aria-live regions to update the status of the progress bar. It works for all
+            screen readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
             users are updated as soon as the progress bar value changes.  Be mindful of how often the ARIA live region updates, so it
-            doesn't cause unnecessary noise for screen readers users.
+            doesn't cause unnecessary noise for screen reader users.
 
         </p>
 
@@ -109,7 +108,7 @@
 
         <p>
             This progress bar uses the screen reader's native functionality to read the
-            progress bar by setting keyboard focus on the bar when incrementing.  
+            progress bar by setting the keyboard focus on the bar when incrementing.  
             <strong>This doesn't announce updates on Mac OSX Voiceover with Safari.</strong>
         </p>
 
@@ -142,7 +141,7 @@
 
         <?php includeStats(["isForNewBuilds" => false]); ?>
 
-        <p>This progress bar uses aria-live regions to update the status of the progress bar. Same rules for updating this aria-live region applies as the HTML5 example above.
+        <p>This progress bar uses aria-live regions to update the status of the progress bar. The same rules for updating this aria-live region apply as the HTML5 example above.
         </p>
 
         <div id="aria-example1" class="enable-example">
@@ -174,7 +173,7 @@
         }
         </script>
 
-        <p>This progress bar uses the screen reader's native functionality to read the progress bar by setting keyboard
+        <p>This progress bar uses the screen reader's native functionality to read the progress bar by setting the keyboard
             focus on the bar when incrementing.
             <strong>At the time of this writing, this doesn't work in Voiceover on OSX &lt;= 10.15.7</strong>
         </p>

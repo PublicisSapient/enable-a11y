@@ -1,9 +1,9 @@
-<p><strong>Screen reader only text</strong> (also known as <strong>visually hidden text</strong>) is text that cannot be seen visually, but can be read by
+<p><strong>Screen reader only text</strong> (also known as <strong>visually hidden text</strong>) is text that cannot be seen visually but can be read by
   screen readers. It's used to give extra information to screen readers users
   when they need extra information that isn't in the visual text on the screen.
 </p>
 
-<p>Example of when we need to use screen reader only text include:</p>
+<p>Examples of when we need to use screen reader only text include:</p>
 
 <ul>
   <li><strong>Instructions on how to use a widget that is only needed for screen
@@ -21,7 +21,7 @@
   <li><strong>Hiding fieldset legends visually.</strong> While you could do the
     same thing with an <code>aria-label</code> inside a group, using a
     <code>legend</code> is better due to the First Rule of ARIA.</li>
-  <li><strong>Exposing visual styled information, like strikethrough text to
+  <li><strong>Exposing visually styled information, like strikethrough text to
       screen reader users.</strong> <a
       href="exposing-style-info-to-screen-readers.php#solution-1-use-visually-hidden-text--heading">Our
       product tile demo</a> shows how we use screen reader only text to do this.
@@ -32,7 +32,7 @@
       visually hidden headings to complete a page's outline</a> from <a
       href="https://www.accessibility-developer-guide.com/">Accessibility
       Developer Guide</a> talks about this in depth.</li>
-    <li>Text read in your screen reader's reading mode (i.e. using it to read the page, not for reading out the interactive elements that have focus), screen reader only text is guaranteed to work.  ARIA labels might not be read in your screen readers reading mode.</li>
+    <li>Text read in your screen reader's reading mode (i.e. using it to read the page, not for reading out the interactive elements that have focus), screen reader only text is guaranteed to work.  ARIA labels might not be read in your screen reader reading mode.</li>
 </ul>
 
 <p>
@@ -41,7 +41,7 @@
 
 <h2>Show Me The CSS That I Can Use To Make Screen Reader Only Text</h2>
 
-<p>There have been many variations of the CSS that makes up our
+<p>There have been many variations of the CSS that make up our
   <code>sr-only</code> class in Enable, the earliest reference of which seems to
   come from <a
     href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">Hiding
@@ -75,8 +75,8 @@
 
 <ol>
   <li><strong>When giving an accessible name or label to a group of elements (using the <code>group</code> role) or a landmark</strong>. A good example is in step #4 of <a href="/multi-level-hamburger-menu.php#developer-walkthrough-2">the code walkthrough for the explanation of what makes the Enable Hamburger Menu accessible</a>.</li>
-  <li><strong>To update the semantic meaning of an element coded with an ARIA <code>role</code> attribute</strong>, such as a step #1 of <a href="progress.php#developer-walkthrough-3">Enable ARIA progress bar example</a>.</li>
-  <li><strong>When an accessible label is missing from a control.</strong>  For example, if you have a button that just a background image or an icon font (you could use screen reader only text for this too, but all modern screen readers can understand ARIA labels on interactive elements)</li>
+  <li><strong>To update the semantic meaning of an element coded with an ARIA <code>role</code> attribute</strong>, such as step #1 of <a href="progress.php#developer-walkthrough-3">Enable ARIA progress bar example</a>.</li>
+  <li><strong>When an accessible label is missing from a control.</strong>  For example, if you have a button that is just a background image or an icon font (you could use screen reader only text for this too, but all modern screen readers can understand ARIA labels on interactive elements)</li>
 </ol>
 
 <p>
@@ -86,8 +86,8 @@
 <h2>What To Remember When Using Screen Reader Only Text Or Aria-Labels In Production</h2>
 
 <ol>
-  <li>If you are using a content management system (CMS), you should remember that you must make screen reader only text and any aria-labels authorable.  I advise always having a default value for these items in case someone forgets to author them, or better still, make them mandatory for authors to fill out in the CMS (since screen reader only text and aria-labels are sometimes forget by content authors). <strong>This is really important when you have a multilingual website, since hard coding screen reader-only text and aria-labels will result in that text may not be understood by users who don't know the language that hard-coded text is written in</strong>.</li>
-  <li>If you are using a third-party like <a href="https://www.motionpoint.com">MotionPoint</a> to do your translation, you will want to make sure their service logs the translation of screen reader only text, aria-labels and image alt text.</li>
+  <li>If you are using a content management system (CMS), you should remember that you must make screen reader only text and any aria-labels authorable.  I advise always having a default value for these items in case someone forgets to author them, or better still, make them mandatory for authors to fill out in the CMS (since screen reader only text and aria-labels are sometimes forgotten by content authors). <strong>This is really important when you have a multilingual website, since hard-coding screen reader-only text and aria-labels will result in that text may not be understood by users who don't know the language that hard-coded text is written in</strong>.</li>
+  <li>If you are using a third party like <a href="https://www.motionpoint.com">MotionPoint</a> to do your translation, you will want to make sure their service logs the translation of screen reader only text, aria-labels, and image alt text.</li>
   <li>You should always use screen-reader only text and aria-labels as a last resort.  If there is any visual text that can be used instead, use <code>aria-labelledby</code> to point to that content instead of using an aria-label.  This is to ensure the screen reader user experience is as close to the visual experience as much as possible.</li>
 </ol>
   

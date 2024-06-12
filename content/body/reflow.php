@@ -1,7 +1,7 @@
 <p>
   When Reflow was first introduced into WCAG 2.1, the wording of the requirement was a little hard for some people to understand. <strong>Basically,
-  content should be understandable without the user having to scroll in two dimensions (or, in developer terms, make your layout responsive).</strong> Exceptions to this is content
-  which requires the given layout in order to preserve the content's meaning, including:
+  content should be understandable without the user having to scroll in two dimensions (or, in developer terms, make your layout responsive).</strong> Exceptions to this are content
+  that requires the given layout in order to preserve the content's meaning, including:
 </p>
 
 <ul>
@@ -23,11 +23,11 @@
 </ol>
 
 <p>
-  Why were these numbers chosen?  At the time this WCAG requirement was written, 1280x1024 resolution displays were considered the average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the same as looking at the website at a 320x256 pixel resolution.  While some may think this viewport view is smaller than any user will actually use, it's how the guideline is written.  Besides, if you don't have any reflow issues at this viewport, its very likely you won't have any at any other viewport size larger than that.
+  Why were these numbers chosen?  At the time this WCAG requirement was written, 1280x1024 resolution displays were considered the average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the same as looking at the website at a 320x256 pixel resolution.  While some may think this viewport view is smaller than any user will actually use, it's how the guideline is written.  Besides, if you don't have any reflow issues at this viewport, it's very likely you won't have any at any other viewport size larger than that.
 </p>
 
 <p>
-  Here are a list of common scenarios we have had to fix.  If you have any others you may want to add, please feel free to go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> to report one your would like to add.
+  Here is a list of common scenarios we have had to fix.  If you have any others you may want to add, please feel free to go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> to report one you would like to add.
 </p>    
 
 
@@ -93,7 +93,7 @@
     "Solution 2: Use Arrow Buttons",
 ); ?>
 
-<p>Note that we made put set <code>tabindex="-1"</code> on the arrow buttons, since they are not needed for keyboard users.</p>
+<p>Note that we set <code>tabindex="-1"</code> on the arrow buttons since they are not needed for keyboard users.</p>
 
 
 <h3 id="drawer-fix">Solution #3: Use a Drawer to Expose Content</h3>
@@ -119,7 +119,7 @@
 <h2>Common Reflow Problem #2: Filters on Product Listing Pages</h2> 
 
 <p>
-  A common design problem on many e-commerce sites is on PLPs (product listing pages). Consider the screenshot below
+  A common design problem on many e-commerce sites is PLPs (product listing pages). Consider the screenshot below
   that shows a desktop PLP with a list of product tiles that follow a list of filters:
 </p>
 
@@ -128,7 +128,7 @@
   <?php pictureWebpPng("images/reflow/plp", ""); ?>
 
   <figcaption>Figure 1. Screenshot of the desktop view of a typical product listing page. On the left-hand side, there
-    is a list of checkboxes. On the right-hand is a list of product tiles (in this case, showing a list of movies on physical media such as DVD, Blu-ray and VHS.</figcaption>
+    is a list of checkboxes. On the right-hand is a list of product tiles (in this case, showing a list of movies on physical media such as DVD, Blu-ray, and VHS.</figcaption>
 </figure>
 
 <p>
@@ -140,13 +140,13 @@
 <p>
   You could use the <a href="#drawer-fix">Drawer Reflow Fix</a> described earlier, but doing this would cause a lot of
   scrolling up and down. Also, since implementing the dropdown solution would mean the product tiles would not appear on the screen at the same time and the filters due to the small screen size, sighted users may not
-  understand what the filters are actually doing (since, in the desktop view, clicking the checkboxes in the filter list would immediately
+  understand what the filters are doing (since, in the desktop view, clicking the checkboxes in the filter list would immediately
   update the product tile section with the filtered results).
 </p>
 
 <p>
   To address these issues, most projects I have worked on (and many e-commerce sites I have used) have implemented
-  putting the filters in a modal. The modal should appear when the user clicks on a button labelled something like
+  putting the filters in a modal. The modal should appear when the user clicks on a button labeled something like
   "Filter Results":
 </p>
 
@@ -171,7 +171,7 @@
     pressed.</figcaption>
 </figure>
 
-<p>You could also put the filter UI in a the mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>
+<p>You could also put the filter UI in a mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>
 
 <h2>Common Reflow Problem #3: Using a Carousel</h2>
 

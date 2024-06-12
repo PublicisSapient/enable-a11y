@@ -1,6 +1,6 @@
 <h3 id="npm-instructions" tabindex="-1">Installation Instructions</h3>
 
-<p>You can load this JavaScript library into your application in serveral ways:
+<p>You can load this JavaScript library into your application in several ways:
 
 <ul>
   <li>as an <a href="https://webpack.js.org/api/module-methods/#es6-recommended">ES6 module using Webpack</a>.</li>
@@ -23,7 +23,7 @@
 </p>
 <?php } else { ?>
 
-<p>If you haven't done so already, choosing which you should use is obviously a major architectural decision.
+<p>If you haven't done so already, choosing which you should use is a major architectural decision.
   Here are a few articles that will help you decide:
 </p>
 
@@ -45,7 +45,7 @@
 <?php if ($bemPrefix != "") { ?>
 <h4>Important Note On The CSS Classes Used In This Module:</h4>
 
-<p><strong>This module requires specific CSS class names to be used in order it to work correctly.</strong>
+<p><strong>This module requires specific CSS class names to be used for it to work correctly.</strong>
 These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the documentation above to see where these CSS classes are inserted.
 
 <?php } elseif ($bemPrefix === true || $bemPrefix === false) { ?>
@@ -161,7 +161,7 @@ el.add();
     <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
   </li>
   <li>
-    You can import the module using require like this:
+    You can import the module using requirements like this:
 
 <?php includeShowcodeStaticBegin(); ?>
 var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default; 
@@ -190,8 +190,8 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 <ol>
   <li>
     Grab the source by either <a href="npm.php">using NPM</a>, <a
-      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a> or <a
-      href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from github.
+      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a>, or <a
+      href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from GitHub.
   </li>
   <li>
     If you want to load the module as a native ES6 module, copy <code>js/modules/<?= $moduleName ?>.js</code>

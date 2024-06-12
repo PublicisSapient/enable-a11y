@@ -1,5 +1,5 @@
 <p>
-  Many users use headings to visually skim through a web page.  They usually give (and should give) a brief summary of the more detailed content below them.  If you are sighted, you can find the headings in the image of the newspaper below quite easily:
+  Many users use headings to visually skim through a web page.  They usually give (and should give) a summary of the more detailed content below them.  If you are sighted, you can find the headings in the image of the newspaper below quite easily:
 </p>
 
 
@@ -16,7 +16,7 @@
 
 
 <p>
-  Screen reader users also use headings to skim through a web page quickly, and are used by screen-reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
+  Screen-reader users also use headings to skim through a web page quickly and are used by screen-reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
 </p>
 
 <div class="enable-example">
@@ -28,8 +28,8 @@
 <?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
-  Most developers are familiar HTML5 heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>)
-  Note that lower heading levels (e.g. h1) don't necessarily have to be visually larger than higher ones (e.g. H4), bit it is a common convention. The following are HTML headings. The styling was originally derived from
+  Most developers are familiar with HTML5 heading tags (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>)
+  Note that lower heading levels (e.g. h1) don't necessarily have to be visually larger than higher ones (e.g. H4), but it is a common convention. The following are HTML headings. The styling was originally derived from
       <a
         href="https://tympanus.net/codrops/2012/11/02/heading-set-styling-with-css/">Heading
         Set Styling
@@ -71,7 +71,7 @@
 <?php includeStats([
     "isForNewBuilds" => false,
     "comment" =>
-        "You can fix existing markup this way, but really, why not just change the markup to the HTML5 ones?",
+        "You can fix the existing markup this way, but really, why not just change the markup to the HTML5 ones?",
 ]); ?>
 
 <p>The following are ARIA headings. Note that ARIA supports
@@ -79,7 +79,7 @@
 </p>
 
 <p>
-  Besides <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>, you should use real HTML5 headings since they affect how a web pages is indexed by search engines.
+  Besides <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>, you should use real HTML5 headings since they affect how a web page is indexed by search engines.
 </p>
 
 <div id="aria-example"

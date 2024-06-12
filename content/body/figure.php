@@ -16,7 +16,7 @@
             </ul>
         </aside> -->
 
-        <p>The <code>&lt;figure&gt;</code> tag is used to describe illustrations, diagrams, photos, code listings, etc.  Usually this description is visible.  Figures are very common in the non-digital world in text books.  They are great to give a TL;DR summary of a more complex piece of content.</p>
+        <p>The <code>&lt;figure&gt;</code> tag is used to describe illustrations, diagrams, photos, code listings, etc.  Usually, this description is visible.  Figures are very common in the non-digital world in textbooks.  They are great for giving a TL;DR summary of a more complex piece of content.</p>
 
         <h2>HTML5 Example</h2>
 
@@ -62,7 +62,7 @@
         <?php includeStats(["isForNewBuilds" => false]); ?>
 
         <p>
-            If you have existing markup that has the meaning as the example of above, you can mark it up using ARIA.
+            If you have an existing markup that has the same meaning as the example above, you can mark it up using ARIA.
         </p>
         
 
