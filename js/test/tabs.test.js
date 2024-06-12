@@ -9,6 +9,10 @@ const tabSelector = `${tabListContainerSelector} .enable-tab`;
 const tabPanel = '#example1 .enable-tabpanel';
 
 describe('Tablist Tests', () => {
+    beforeEach(async () => {
+        await page.setJavaScriptEnabled(true);
+    });
+
     it('Should focus tab with default active attribute', async () => {
         await page.goto(`${config.BASE_URL}/tabs.php`);
 
@@ -185,7 +189,7 @@ describe('Tablist Tests', () => {
 
                 let focusableElements = [];
 
-                if (tabPanelVisibleEl) {
+                if (tabPanelVisibleEl.contains(activeElement)) {
                     focusableElements = getFocusableElements(tabPanelVisibleEl);
                 }
 
@@ -202,5 +206,145 @@ describe('Tablist Tests', () => {
         if (tabPanelDomInfo.focusableElements.length > 0) {
             expect(tabPanelDomInfo.isActiveElementInCurrentTabPanel).toBe(true);
         }
+    });
+    it('Should jump to target element when JS is off', async () => {
+        await page.goto(`${config.BASE_URL}/tabs.php`);
+
+        await page.setJavaScriptEnabled(false);
+
+        await page.waitForSelector('#example1');
+
+        const tabPanelDomInfo = await page.evaluate((tabSelector) => {
+            const tabEls = Array.from(document.querySelector(tabSelector));
+
+            const tabChildrenHaveLinkedPanels = tabEls.every((tabEl) => {
+                const href = tabEl.getAttribute('href').toString();
+
+                const identifier = href.includes('#') ? href.slice(1) : href;
+
+                const panelEl = document.querySelector(`#${identifier}`);
+
+                return panelEl instanceof HTMLElement;
+            });
+
+            return {
+                tabChildrenHaveLinkedPanels,
+            };
+        }, tabSelector);
+
+        const tabsEl = await page.$$(tabSelector);
+
+        // focus target tab
+        const targetElement = tabsEl[2];
+
+        targetElement.focus();
+
+        await testHelpers.pauseFor();
+
+        // simulate click on target tab
+        page.keyboard.press('Enter');
+
+        const domInfo = await page.evaluate((tabEl) => {
+            const activeElement = document.activeElement;
+
+            const activeELementId = activeElement.getAttribute('id');
+
+            const tabElHref = tabEl.getAttribute('href');
+
+            const tabElementId = tabElHref.includes('#')
+                ? tabElHref.slice(1)
+                : tabElHref;
+
+            return {
+                activeELementId,
+                tabElementId,
+            };
+        }, targetElement);
+
+        // check if each tab has associated panel
+        expect(tabPanelDomInfo.tabChildrenHaveLinkedPanels).toBe(true);
+
+        // check if upon clicking a tab focus shifts to associated panel
+        expect(domInfo.activeELementId).toEqual(domInfo.tabElementId);
+    });
+
+    it('Should focus selected tab when using keyboard and display instructions', async () => {
+        await page.goto(`${config.BASE_URL}/tabs.php`);
+
+        await page.waitForSelector('#example1');
+
+        // tab index to set the focus
+        const targetTabIndex = 1;
+
+        const tabsEl = await page.$$(tabSelector);
+
+        tabsEl[targetTabIndex].click();
+
+        await testHelpers.pauseFor();
+
+        // shift focus to the interactive element before the tab component on the page
+        await page.keyboard.down('Shift');
+        await page.keyboard.press('Tab');
+        await page.keyboard.up('Shift');
+
+        // bring focus back to the tab component
+        page.keyboard.press('Tab');
+
+        const getSelectedTab = (tabSelector) => {
+            const tabEls = Array.from(document.querySelectorAll(tabSelector));
+
+            const selectedTabIndex = tabEls.findIndex(
+                (element) => element.getAttribute('aria-selected') === 'true',
+            );
+            return {
+                selectedTabIndex,
+            };
+        };
+
+        const getKeyboardInstructionElVisibility = () => {
+            const element = document.querySelector(
+                '#tabs-keyboard-only-instructions',
+            );
+            if (!element) {
+                return false;
+            }
+
+            return !element.classList.contains('sr-only');
+        };
+
+        const topToBottomFocusDomInfo = await page.evaluate(
+            getSelectedTab,
+            tabSelector,
+        );
+
+        const kbInstructionVisible = await page.evaluate(
+            getKeyboardInstructionElVisibility,
+        );
+        expect(topToBottomFocusDomInfo.selectedTabIndex).toBe(targetTabIndex);
+
+        expect(kbInstructionVisible).toBe(true);
+
+        // shift focus to the interactive element after the tab component on the page
+        page.keyboard.press('Tab');
+
+        await testHelpers.pauseFor();
+
+        const kbInstructionNotVisible = !(await page.evaluate(
+            getKeyboardInstructionElVisibility,
+        ));
+
+        expect(kbInstructionNotVisible).toBe(true);
+
+        // bring focus back to the tab component
+        await page.keyboard.down('Shift');
+        await page.keyboard.press('Tab');
+        await page.keyboard.up('Shift');
+
+        const bottomToTopFocusDomInfo = await page.evaluate(
+            getSelectedTab,
+            tabSelector,
+        );
+
+        expect(bottomToTopFocusDomInfo.selectedTabIndex).toBe(targetTabIndex);
     });
 });
