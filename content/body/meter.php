@@ -20,7 +20,7 @@
 <div id="html5-example" class="enable-example">
   <strong>Storage Space</strong>
 
-  <div class="meter-container">
+  <div class="container">
     <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
     <meter aria-labelledby="disk-c-meter" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
@@ -69,7 +69,7 @@
 <div id="aria-example" class="enable-example">
   <strong>Storage Space</strong>
 
-  <div class="meter-container">
+  <div class="container">
     <label id="disk-c-meter" aria-hidden="true">Disk C:</label>
     <div
       aria-labelledby="disk-c-meter"
@@ -142,14 +142,14 @@
           "notes": ""
         },
         {
-          "label": "Use JS to calculate and pass meter percentage/color to CSS via style variables.",
+          "label": "Use JS to calculate and pass meter percentage/state to CSS via style variables.",
           "highlight": "%JS% meter.init",
-          "notes": "Pass calculated values to CSS via custom style variables. <code>element.setAttribute('style', `--meter-percentage: ${percentage}%;--meter-color: ${color};`)</code>"
+          "notes": "Pass calculated values to CSS with <code>element.setAttribute('style', `--meter-percentage: ${percentage}%;`)</code> and <code>element.setAttribute('meter-state', state)</code>."
         },
         {
           "label": "Create CSS psuedo element using passed style variables.",
           "highlight": "%CSS% meter-css~",
-          "notes": "If you prefer not to use JS or want color to be handled by CSS, you can alternatively do this with <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors'>CSS Attribute Selectors</a>. However, this will limit certain functionality with meter color/percentage."
+          "notes": "If you prefer not to use JS, you can alternatively do this with <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors'>CSS Attribute Selectors</a>. However, this will limit certain functionality with meter state/percentage."
         }
     ]
 }

@@ -15,32 +15,28 @@ const meter = new function() {
       const min = Number(element.getAttribute('aria-valuemin')) || Number(element.getAttribute('min'));
       const max = Number(element.getAttribute('aria-valuemax')) || Number(element.getAttribute('max'));
 
-      // Calculate meter fill percentage and color
+      // Calculate meter fill percentage and state
       const percentage = (value / (max - min)) * 100;
-      const color = this.calculateColor(element)
+      const state = this.calculateMeterState(element)
 
       // Apply values as style vars to be used by component css
-      element.setAttribute('style', `--meter-percentage: ${percentage}%;--meter-color: ${color};`)
+      element.setAttribute('style', `--meter-percentage: ${percentage}%`)
+      element.setAttribute('meter-state', state);
     }
   }
 
   /**
-   * Calculates meter color from element attributes
+   * Calculates meter state from element attributes
    * @param {node} element - Element of the meter component
-   * @returns color value
+   * @returns meter state value
    */
-  this.calculateColor = function(element) {
+  this.calculateMeterState = function(element) {
     const value = Number(element.getAttribute('aria-valuenow')) || Number(element.getAttribute('value'));
     const low = Number(element.getAttribute('data-low')) || Number(element.getAttribute('low'));
     const high = Number(element.getAttribute('data-high')) || Number(element.getAttribute('high'));
     const optimum = Number(element.getAttribute('data-optimum')) || Number(element.getAttribute('optimum')) || high;
 
-    // Hex codes for meter style var
-    const negative = '#C74821';
-    const neutral = '#F4BC41';
-    const positive = '#387A26';
-
-    let color = positive;
+    let state = 'positive';
     if (low && high) {
       const isHigh = value >= high;
       const isMedium = value > low && value < high;
@@ -48,13 +44,13 @@ const meter = new function() {
       const isHighValueOptimal = optimum > high;
 
       if (isMedium) {
-        color = neutral;
+        state = 'neutral';
       } else if ((isLow && isHighValueOptimal) || (isHigh && !isHighValueOptimal))  {
-        color = negative;
+        state = 'negative';
       }
     }
 
-    return color;
+    return state;
   }
 }
 

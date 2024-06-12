@@ -1,4 +1,11 @@
-.meter-container {
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.container {
   align-items: center;
   column-gap: 10px;
   display: grid;
@@ -7,26 +14,31 @@
   text-wrap: nowrap;
   width: fit-content;
 }
-
 .enable-custom-meter {
   background: #EFEFEF;
   border: 1px solid #E4E4E4;
   border-radius: 1em;
-  block-size: 0.5em;
+  block-size: 1em;
   display: block;
-  width: 80px;
+  width: 120px;
 }
-
-
-.enable-custom-meter::-webkit-meter-bar {
-  /* Hides default styling for cross browser consistency. */
-  display: none;
+.enable-custom-meter[meter-state="positive"]:before {
+  background: #387a26;
 }
-
+.enable-custom-meter[meter-state="neutral"]:before {
+  background: #f4bc41;
+}
+.enable-custom-meter[meter-state="negative"]:before {
+  background: #c74821;
+}
 .enable-custom-meter:before {
-  background: var(--meter-color);
+  border-radius: 1em;
   content: "";
   display: block;
   height: 100%;
   width: var(--meter-percentage);
+}
+.enable-custom-meter::-webkit-meter-bar {
+  /* Hides default styling for cross browser consistency. */
+  display: none;
 }

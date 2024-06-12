@@ -1,0 +1,56 @@
+@import "shared/mixins-and-vars";
+
+// Variables for meter color
+@positive: #387a26;
+@neutral: #f4bc41;
+@negative: #c74821;
+
+// Mixin for customizing meter
+.meter(@bg; @border-color; @width) {
+    background: @bg;
+    border: 1px solid @border-color;
+    border-radius: 1em;
+    block-size: 1em;
+    display: block;
+    width: @width;
+
+    &[meter-state="positive"]:before {
+        background: @positive;
+    }
+
+    &[meter-state="neutral"]:before {
+        background: @neutral;
+    }
+
+    &[meter-state="negative"]:before {
+        background: @negative;
+    }
+
+    &:before {
+        border-radius: 1em;
+        content: "";
+        display: block;
+        height: 100%;
+        width: var(--meter-percentage);
+    }
+
+    &::-webkit-meter-bar {
+        /* Hides default styling for cross browser consistency. */
+        display: none;
+    }
+}
+
+.container {
+    // Container for example meters (not needed for meter)
+    align-items: center;
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    width: fit-content;
+}
+
+.enable-custom-meter {
+    .meter(#EFEFEF;#E4E4E4;120px);
+}
