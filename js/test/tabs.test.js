@@ -88,7 +88,7 @@ describe('Tablist Tests', () => {
         // focus the first tab item in the tab group
         tabsEl[0].click();
 
-        await testHelpers.pauseFor();
+        await testHelpers.pause();
 
         // remove the already focused tab item(first one)
         for (let tabItemIndex in Array.from(tabsEl).splice(1)) {
@@ -167,7 +167,7 @@ describe('Tablist Tests', () => {
 
         await page.waitForSelector(tabPanel);
 
-        await testHelpers.pauseFor();
+        await testHelpers.pause();
 
         // tab to next focusable element in the DOM
         page.keyboard.press('Tab');
@@ -239,7 +239,7 @@ describe('Tablist Tests', () => {
 
         targetElement.focus();
 
-        await testHelpers.pauseFor();
+        await testHelpers.pause();
 
         // simulate click on target tab
         page.keyboard.press('Enter');
@@ -280,7 +280,7 @@ describe('Tablist Tests', () => {
 
         tabsEl[targetTabIndex].click();
 
-        await testHelpers.pauseFor();
+        await testHelpers.pause();
 
         // shift focus to the interactive element before the tab component on the page
         await page.keyboard.down('Shift');
@@ -327,7 +327,7 @@ describe('Tablist Tests', () => {
         // shift focus to the interactive element after the tab component on the page
         page.keyboard.press('Tab');
 
-        await testHelpers.pauseFor();
+        await testHelpers.pause();
 
         const kbInstructionNotVisible = !(await page.evaluate(
             getKeyboardInstructionElVisibility,
