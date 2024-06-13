@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"firsttris.vscode-jest-runner",
+		"stylelint.vscode-stylelint",
+		"eamodio.gitlens",
+		"wix.vscode-import-cost",
+		"christian-kohler.path-intellisense",
+		"formulahendry.auto-rename-tag",
+		"deque-systems.vscode-axe-linter"
+	]
+}
