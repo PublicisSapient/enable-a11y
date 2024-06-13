@@ -62,7 +62,7 @@
         <?php includeStats(["isForNewBuilds" => false]); ?>
 
         <p>
-            If you have an existing markup that has the same meaning as the example above, you can mark it up using ARIA.
+            If you have existing markup that has the same meaning as the example above, you can mark it up using ARIA.
         </p>
         
 

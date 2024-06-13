@@ -12,14 +12,14 @@
 <div class="enable-example">
 <dl>
   <dt>Captions: </dt>
-  <dd>A text version of speech and other important audio content in a video, allows it to be accessible to people who
-    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video's
-        language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
+  <dd>Text that appears during the playing of a video, usually placed at the bottom of the viewing area, that displays what people in the video are saying in realtime. 
+    Captions also describe other important audio content in a video, like sound effects in the background. <strong><em>They are different from subtitles, which involve translating the video's
+    language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
     Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
     etc).</dd>
 
   <dt>Audio Descriptions:</dt>
-  <dd>An extra audio track with spoken commentary helps users with visual disabilities perceive content that is
+  <dd>An extra audio track with spoken commentary helps blind and partially-sighted users perceive content that is
     presented only visually. A narrator usually describes the visual-only content in the video. Audio descriptions can
     be implemented in several ways:
 

@@ -315,7 +315,7 @@
   and love typography, so the idea of using font technology to render images just
   seems wrong to me ... the above just emphasizes that point of view.</p>
 
-<p>That said, there are plenty of legacy codes out there that use icon fonts.  
+<p>That said, there are plenty of legacy code out there that use icon fonts.  
     Here is how you code font icons in an accessible way. This code is refactored from <a
     href="https://codepen.io/SitePoint/pen/xxyQMP">a Codepen demo by George Martsoukos</a> (modified to add the
   accessibility features in it).</p>

@@ -16,7 +16,7 @@
         <div id="html5-def-list-example" class="enable-example">
             <dl>
                 <dt>Gojira:</dt>
-                <dd>A Japanese kaiju monster was created in the 1960s.</dd>
+                <dd>A Japanese kaiju monster created in the 1960s.</dd>
 
                 <dt>Frankenstein:</dt>
                 <dd>A fictional doctor who created a fictional being out of the spare parts of dead people.</dd>
@@ -61,7 +61,7 @@
             <div class="dl" role="list">
                 <div role="listitem">
                     <div role="term">Gojira:</div>
-                    <div role="definition">A Japanese kaiju monster was created in the 1960s.</div>
+                    <div role="definition">A Japanese kaiju monster created in the 1960s.</div>
                 </div>
 
                 <div role="listitem">

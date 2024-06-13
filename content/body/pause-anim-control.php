@@ -466,7 +466,7 @@
   <h3>Making scrollIntoView() Respect the Pause Control</h3>
 
   <p>
-    It is possible to make the DOM element's <code>scrollIntoView()</code> method respect the setting of the pause
+    It is possible to make a DOM element's <code>scrollIntoView()</code> method respect the setting of the pause
     control. You will notice that all the code walkthroughs will not animate when changing steps and the "Pause
     animations" control is checked. This part of the code shows you how this works:
   </p>
