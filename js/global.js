@@ -16,6 +16,7 @@ import EnableFlyout from './modules/enable-flyout.js';
 import enableVisibleOnFocus from './modules/enable-visible-on-focus.js';
 import offscreenObserver from './modules/offscreen-observer.js';
 import textZoom from './demos/hero-image-text-resize.js';
+import tableOfContents from './modules/enable-toc.js';
 
 function scrollToEl(el) {
     /*
@@ -109,6 +110,8 @@ function initEnable() {
         },
     );
 
+
+
     pauseAnimControl.init();
 
     // So screen reader users, like VoiceOver users, can navigate via heading and have focus
@@ -169,10 +172,24 @@ function initEnable() {
                         }
                     }
                 }
-            });
-    }
+
+                if (el.getAttribute('tabIndex') === null) {
+                    el.setAttribute('tabIndex', '-1');
+                }
+
+                // now, let's put a link tag inside the heading so we can deeplink to it easily
+                if (el.nodeName !== 'H1' && el.getAttribute('role') !== 'heading') {
+                    el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`
+                }
+
+                return;
+            })
+        };
+
 
     focusDeepLink();
+
+    tableOfContents.init(['/index.php', '/faq.php'], true, true);
 }
 
 initEnable();
