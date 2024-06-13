@@ -14,19 +14,7 @@
     display: block;
     width: @width;
 
-    &[meter-state="positive"]:before {
-        background: @positive;
-    }
-
-    &[meter-state="neutral"]:before {
-        background: @neutral;
-    }
-
-    &[meter-state="negative"]:before {
-        background: @negative;
-    }
-
-    &:before {
+    .meter-before() {
         border-radius: 1em;
         content: "";
         display: block;
@@ -34,9 +22,36 @@
         width: var(--meter-percentage);
     }
 
+    &:before {
+        .meter-before();
+    }
+    &[meter-state="positive"]:before {
+        background: @positive;
+    }
+    &[meter-state="neutral"]:before {
+        background: @neutral;
+    }
+    &[meter-state="negative"]:before {
+        background: @negative;
+    }
+
+    /* Hides ::-webkit-meter-bar for cross browser consistency with Safari */
     &::-webkit-meter-bar {
-        /* Hides default styling for cross browser consistency. */
         display: none;
+    }
+
+    /* Styles and attribute selectors for :before must also be applied to ::moz-meter-bar to support Firefox */
+    &::-moz-meter-bar {
+        .meter-before();
+    }
+    &[meter-state="positive"]::-moz-meter-bar {
+        background: @positive;
+    }
+    &[meter-state="neutral"]::-moz-meter-bar {
+        background: @neutral;
+    }
+    &[meter-state="negative"]::-moz-meter-bar {
+        background: @negative;
     }
 }
 
