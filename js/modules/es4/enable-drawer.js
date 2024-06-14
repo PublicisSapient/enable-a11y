@@ -14,7 +14,7 @@
 ******************************************************************************/
 
 
-const enableDrawer = new function() {
+const enableDrawer = new (function() {
   this.init = function() {
     document.body.addEventListener("click", function(e) {
       var target = e.target;
@@ -40,5 +40,4 @@ const enableDrawer = new function() {
       }
     });
   }
-}
-
+})

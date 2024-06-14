@@ -1,24 +1,10 @@
 'use strict'
 
-/*******************************************************************************
- * enable-flyout-hamburger.js - An accessible desktop flyout/mobile hamburger
- * menu hybrid menu.
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 27, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/hamburger.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
-
 let EnableFlyout;
 
 
 
-EnableFlyout = new function() {
+EnableFlyout = new (function() {
   // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
   const topNavSel = '.enable-flyout__top-level';
@@ -390,7 +376,4 @@ EnableFlyout = new function() {
 
     $root.classList.add('enable-flyout--initialized');
   }
-}
-
-// EnableFlyout.init();
-
+})

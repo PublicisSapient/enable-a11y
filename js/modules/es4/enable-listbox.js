@@ -1,20 +1,6 @@
 'use strict'
 
-/*******************************************************************************
- * enable-listbox.js - UI for the ARIA listbox role
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released 
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/
- * 
- * Released under the MIT License.
- ******************************************************************************/
-
-
-const enableListbox = new function() {
+const enableListbox = new (function() {
 
   const showEvent = new CustomEvent('enable-listbox-show', {
     bubbles: true
@@ -248,6 +234,4 @@ const enableListbox = new function() {
       this.collapse(buttonEl, listboxEl, true);
     });
   }
-}
-
-
+})

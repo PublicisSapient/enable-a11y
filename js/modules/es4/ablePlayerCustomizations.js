@@ -1,20 +1,5 @@
 'use strict'
 
-/*******************************************************************************
- * ablePlayerCustomizations.js - Customization of AblePlayer, loaded as a module
- * 
- * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released Dec 28, 2021
- *
- * More information about this script available at:
- * https://www.useragentman.com/enable/video-player.php
- * 
- * Released under the MIT License.
- ******************************************************************************/
-
-/* global AblePlayer, jQuery */
-
 let hasClicked = false;
 
 function ablePlayerCustomizations($, extraCustomizations) {
@@ -95,4 +80,3 @@ function ablePlayerCustomizations($, extraCustomizations) {
 }
 
 ablePlayerCustomizations(jQuery);
-

@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-
-
 class Templify {
     constructor(element, props) {
         this.props = props;
@@ -48,5 +45,3 @@ class Templify {
         return html;
     }
 }
-
-
