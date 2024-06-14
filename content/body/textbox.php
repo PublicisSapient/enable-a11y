@@ -98,9 +98,9 @@
 <h2>ARIA example</h2>
 
 <?php includeStats([
-	"isForNewBuilds" => false,
-	"comment" =>
-		"Recommended only if you needed to create a JavaScript WYSIWYG editor.",
+    "isForNewBuilds" => false,
+    "comment" =>
+        "Recommended only if you needed to create a JavaScript WYSIWYG editor.",
 ]); ?>
 
 <p>
@@ -203,7 +203,12 @@
 
         <div>
           <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
-          <textarea id="notes--example2" data-has-character-count="true" data-read-character-count-with-key="Escape" data-read-character-count-with-ctrl-and-key="r" name="notes--example2" maxlength="100"></textarea>
+          <textarea
+            id="notes--example2"
+            data-has-character-count="true"
+            data-read-count-key="Escape"
+            name="notes--example2"
+            maxlength="100"></textarea>
         </div>
 
       </div>
@@ -249,6 +254,6 @@
 
 
 <?= includeNPMInstructions("enable-character-count", [], "", false, [
-	"noCSS" => true,
+    "noCSS" => true,
 ])
 ?>

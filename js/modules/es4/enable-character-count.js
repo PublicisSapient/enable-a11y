@@ -1,22 +1,17 @@
 
 const enableCharacterCount = new function() {
-  let charCountInitEl,
-    globalVisualTemplate,
-    charCountTemplate,
-    globalWarningThreshold,
+  let globalWarningThreshold,
+    readCountKey,
     announcementTimeout;
 
   let idIndex = 0;
 
   this.init = () => { 
     const charCountEls = document.querySelectorAll('[data-has-character-count]');
-    charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
-    const charCountTemplateEl = document.getElementById('enable-character-count__template');
+    const charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
     const dataset = charCountInitEl ? charCountInitEl.dataset : {};
 
-    charCountTemplate = charCountTemplateEl ? charCountTemplateEl.innerHTML : '<span aria-hidden="true">${visualText}</span>';
-
-    globalVisualTemplate = dataset.visualText || '${numChars}/${maxLength}';
+    readCountKey = 'Escape';
     globalWarningThreshold = dataset.warningThreshold || 20;
 
     charCountEls.forEach((target) => {
@@ -24,7 +19,7 @@ const enableCharacterCount = new function() {
       setIdIfNullFor(target);
       setUpAriaDescribedByFor(target);
       addLiveRegion(target);
-      createCounterFor(target);
+      createCounterContainerFor(target);
       writeCharCount(target);
     });
   }
@@ -41,25 +36,34 @@ const enableCharacterCount = new function() {
   }
 
   function setUpAriaDescribedByFor(target) {
-    const maxCharacterCount = target.maxLength;
-    const readCharacterCountKey = target.dataset.readCharacterCountWithKey;
-    const description = `In edit text area with a ${maxCharacterCount} character limit.`;
-    const instructions = `Press ${readCharacterCountKey} to find out how many more characters are allowed.`;
+    const describedByContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
     const ariaDescribedByElement = document.createElement('p');
     ariaDescribedByElement.id = `${target.id}-aria-describedby`;
     ariaDescribedByElement.className="sr-only";
-    ariaDescribedByElement.textContent = `${description} ${instructions}`;
+    ariaDescribedByElement.textContent = describedByContent;
     target.insertAdjacentElement('afterend', ariaDescribedByElement);
     target.setAttribute('aria-describedby', ariaDescribedByElement.id);
   }
 
-  function createCounterFor(target) {
-    const counterEl = document.createElement('output');
-    counterEl.id = `${target.id}__counter`;
-    counterEl.className = "enable-character-count";
-    counterEl.setAttribute('aria-live', 'off')
-    target.setAttribute('data-character-count-label', counterEl.id);
-    target.insertAdjacentElement('afterend', counterEl);
+  function getScreenReaderDescription(target) {
+    const { maxLength, dataset } = target;
+    const description = dataset.description ?? 'In edit text area with a ${maxLength} character limit.';
+    return interpolate(description, { maxLength });
+  }
+
+  function getScreenReaderInstructions(target) {
+    const { readCountKey, instructions } = target.dataset;
+    const defaultInstructions = 'Press ${readCountKey} to find out how many more characters are allowed.';
+    const instructionsToInterpolate = instructions ?? defaultInstructions;
+    return interpolate(instructionsToInterpolate, { readCountKey });
+  }
+
+  function createCounterContainerFor(target) {
+    const container= document.createElement('div');
+    container.id = `${target.id}-counter-container`;
+    container.className = "enable-character-count";
+    target.setAttribute('data-character-count-container', container.id);
+    target.insertAdjacentElement('afterend', container);
   }
 
   function addLiveRegion(target) {
@@ -76,6 +80,26 @@ const enableCharacterCount = new function() {
     const result = document.createElement('p');
     result.id = `${parent.id}-character-count-status`;
     return result;
+  }
+
+  function writeCharCount(target) {
+    const { dataset } = target;
+    const { characterCountContainer } = dataset;
+    const container = document.getElementById(characterCountContainer);
+    if (container) {
+      container.innerHTML = getCounterHTML(target);
+    }
+  }
+
+  function getCounterHTML(target) {
+    const { maxLength, dataset, value } = target;
+    const numChars = value.length;
+    const charsRemaining = maxLength - numChars;
+    const visualTextTemplate = dataset.visualText ?? '${numChars}/${maxLength}';
+    const visualText = interpolate(visualTextTemplate, { numChars, maxLength, charsRemaining });
+    const counterElementTemplate = document.getElementById('enable-character-count__template');
+    const counterElement = counterElementTemplate ?? '<span aria-hidden="true">${visualText}</span>'
+    return interpolate(counterElement, { visualText });
   }
 
   function wasArrowPressed(key) {
@@ -129,23 +153,8 @@ const enableCharacterCount = new function() {
       announceCharacterCount(target);
   }
 
-  const writeCharCount = (target) => {
-    const { maxLength, dataset, value } = target;
-    const { characterCountLabel } = dataset;
-    const characterCountLabelEl = document.getElementById(characterCountLabel);
-    if (characterCountLabelEl) {
-      characterCountLabelEl.innerHTML = getCounterHTML(value.length, parseInt(maxLength));
-    }
-  }
-
-  function getCounterHTML(numChars, maxLength) {
-    const charsRemaining = maxLength - numChars;
-    const visualText = interpolate(globalVisualTemplate, { numChars, maxLength, charsRemaining });
-    return interpolate(charCountTemplate, { visualText });
-  }
-
   function announceCharacterCount(target) {
-    announceCharacterCountWithDelay(target, 150)
+    announceCharacterCountWithDelay(target, 250)
   }
   
   function announceCharacterCountWithDelay(target, delay) {
@@ -159,7 +168,7 @@ const enableCharacterCount = new function() {
     announcementTimeout = setTimeout(() => {
       const maxLength = target.maxLength;
       const numChars = target.value.length;
-      const charsRemaining = parseInt(maxLength) - numChars;
+      const charsRemaining = maxLength - numChars;
       const screenReaderText = target.dataset.screenReaderText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
       counterForScreenReader.textContent = interpolate(screenReaderText, { numChars, maxLength, charsRemaining });
     }, delay);
