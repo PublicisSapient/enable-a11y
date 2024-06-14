@@ -2,23 +2,11 @@
 
 echo "Running convert-modules-to-libs.sh";
 
-if [ "$*" = "" ]
-then
-  FILES="*.js"
-else
-  FILES="$*"
-fi
+# Remove the original ES4 files
+rm js/modules/es4/*.js
 
-cd js/modules/
+# Duplicate the ES6 files into the ES4 folder
+cp js/modules/*.js js/modules/es4/
 
-if [ ! -d "es4" ]
-then
-  mkdir es4
-fi
-
-for i in $FILES
-do
-  echo "Converting $i"
-  grep -v ^import $i | grep -v ^export > es4/$i
-done
-
+# Convert the ES6 files to ES4 using jscodeshift
+npx jscodeshift -t bin/remove-imports-exports.js js/modules/es4/*.js
