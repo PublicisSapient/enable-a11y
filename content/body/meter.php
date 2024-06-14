@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  This page provides examples of both HTML and aria based solutions for creating accessible meter components.
+  This page provides examples of both HTML and ARIA based solutions for creating accessible meter components.
 </p>
 
 <h2>HTML5 Meter Example</h2>
@@ -42,13 +42,13 @@
             "notes": "Set the <code>min</code> and <code>max</code> values to the min and max values of what your meter bar is measuring. <code>value</code> is the current value. Setting the <code>low</code>, <code>high</code>, and <code>optimum</code> fields will result in browser specific colors."
         },
         {
-          "label": "Add the <code>aria-label</code> attribute to announce the name of each meter.",
-          "highlight": "aria-label",
-            "notes": ""
+          "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each meter.",
+          "highlight": "aria-labelledby",
+          "notes": "This should point to the <code>id</code> of the associated label tag."
         },
         {
             "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
-            "highlight": "%OPENCLOSECONTENTTAG%p",
+            "highlight": "aria-hidden",
             "notes": ""
         }
     ]
@@ -58,11 +58,11 @@
 <h2>ARIA role="meter" Example</h2>
 
 <p>
-  Should a case arise where there HTML5 meter component is not accessible for a given browser, the following can be used as an alternative.
+  Should a case arise where the HTML5 meter component is not accessible for a given browser, the following can be used as an alternative.
 </p>
 
 <p>
-  If you are using VNU for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
+  Hint: If you are using v.Nu for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
   This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">Aria 1.2</a>.
 </p>
 
@@ -132,24 +132,24 @@
             "notes": "These will be <code>aria-valuemin</code>, <code>aria-valuemax</code>, and <code>aria-valuenow</code>. Using aria values will ensure the screen reader announces these correctly."
         },
         {
-          "label": "Add the <code>aria-label</code> attribute to announce the name of each meter.",
-          "highlight": "aria-label",
-          "notes": ""
+          "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each meter.",
+          "highlight": "aria-labelledby",
+          "notes": "This should point to the <code>id</code> of the associated label tag."
         },
         {
-          "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
-          "highlight": "%OPENCLOSECONTENTTAG%p",
-          "notes": ""
+            "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
+            "highlight": "aria-hidden",
+            "notes": ""
         },
         {
-          "label": "Use JS to calculate and pass meter percentage/state to CSS via style variables.",
-          "highlight": "%JS% meter.init",
-          "notes": "Pass calculated values to CSS with <code>element.setAttribute('style', `--meter-percentage: ${percentage}%;`)</code> and <code>element.setAttribute('meter-state', state)</code>."
+          "label": "Use JS to calculate and pass meter percentage/state.",
+          "highlight": "%JS% meter.init ||| element.setAttribute\\('style', `--meter-percentage: \\${percentage}%`\\); ||| element.setAttribute\\('meter-state', state\\);",
+          "notes": "By setting these new attributes on the element, we can access them from the CSS."
         },
         {
-          "label": "Create CSS psuedo element using passed style variables.",
-          "highlight": "%CSS% meter-css~",
-          "notes": "If you prefer not to use JS, you can alternatively do this with <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors'>CSS Attribute Selectors</a>. However, this will limit certain functionality with meter state/percentage."
+          "label": "Use new attributes in CSS to style the meter element and it's psuedo elements.",
+          "highlight": "%CSS% meter-css~ ||| meter-state ||| var\\(--meter-percentage\\)",
+          "notes": "To support Firefox, be sure to set these attributes for both <code>::before</code> and <code>::-moz-meter-bar</code>. Lastly to avoid styling issues with Safari, be sure to hide <code>::-webkit-meter-bar</code>."
         }
     ]
 }

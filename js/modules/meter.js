@@ -20,7 +20,7 @@ const meter = new function() {
       const state = this.calculateMeterState(element)
 
       // Apply values as style vars to be used by component css
-      element.setAttribute('style', `--meter-percentage: ${percentage}%`)
+      element.setAttribute('style', `--meter-percentage: ${percentage}%`);
       element.setAttribute('meter-state', state);
     }
   }
