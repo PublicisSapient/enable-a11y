@@ -1,7 +1,7 @@
 <?php includeStats([
     "isForNewBuilds" => true,
     "comment" =>
-        "All the examples here are useful for new and existing work where you want to pause animated GIFs most straightforwardly",
+        "All the examples here are useful for new and existing work where you want to pause animated GIFs in the most straightforward way.",
 ]); ?>
 
 <div class="pausable-animated-gif__warning-message">
