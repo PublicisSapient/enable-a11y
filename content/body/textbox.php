@@ -205,10 +205,15 @@
           <label for="notes--example2" class="textarea-label">Delivery Notes:</label>
           <textarea
             id="notes--example2"
+            name="notes--example2"
+            maxlength="100"
             data-has-character-count="true"
             data-read-count-key="Escape"
-            name="notes--example2"
-            maxlength="100"></textarea>
+            data-warning-threshold="20"
+            data-visual-text="${numChars}/${maxLength}"
+            data-description="In edit text area with a ${maxLength} character limit."
+            data-instructions="Press ${keyToPress} to find out how many more characters are allowed."
+            data-character-count-text="Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining."></textarea>
         </div>
 
       </div>
@@ -232,20 +237,44 @@
 {
   "replaceHtmlRules": {},
   "steps": [
-
     {
-      "label": "Place an aria-describedby for instructions",
-      "highlight": "%INLINE%charcount-example ||| aria-describedby"
+      "label": "Set the 'maxlength' attribute of the textarea element.",
+      "highlight": "%INLINE%charcount-example ||| maxlength"
     },
     {
-      "label": "Code the instructions for this component.",
-      "highlight": "%INLINE%enable-character-count__global ||| id=\"character-count__desc\"",
-      "notes": "This is the target of the <code>aria-describedby</code> in the previous step."
+      "label": "Set hasCharacterCount for the textarea element.",
+      "highlight": "%INLINE%charcount-example ||| data-has-character-count",
+      "notes": "There's no need to explicitly provide a value of \"true\"."
     },
     {
-      "label": "Have an ARIA live region to announce when user starts approaching character count limit",
-      "highlight": "%INLINE%enable-character-count__global ||| %OPENCLOSECONTENTTAG%output",
-      "notes": ""
+      "label": "Optional: Provide a key for the user to press to read out the character count.",
+      "highlight": "%INLINE%charcount-example ||| data-read-count-key",
+      "notes": "The default is the 'Escape' key. For information regarding which keypress events are recognized visit https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values."
+    },
+    {
+      "label": "Optional: Change the amount of available characters left before the screen reader starts announcing after each keypress.",
+      "highlight": "%INLINE%charcount-example ||| data-warning-threshold",
+      "notes": "The default is 20 characters before the limit is reached."
+    },
+    {
+      "label": "Optional: Visually change how the character count looks.",
+      "highlight": "%INLINE%charcount-example ||| data-visual-text",
+      "notes": "<strong>${numChars}</strong> and <strong>${maxLength}</strong> are used to string interpolate the values. Make sure they're present. The default is <code>${numChars}/${maxLength}</code> which looks like: <code>11/100</code>."
+    },
+    {
+      "label": "Optional—Internationalization: Change the description.",
+      "highlight": "%INLINE%charcount-example ||| data-description",
+      "notes": "<strong>${maxLength}</strong> is required to string interpolate the value set in Step #1 so that the screen reader can let the user know the maximum character limit."
+    },
+    {
+      "label": "Optional—Internationalization: Change the keypress instructions.",
+      "highlight": "%INLINE%charcount-example ||| data-instructions",
+      "notes": "<strong>${keyToPress}</strong> is required to string interpolate the value set in Step #3 so that the screen reader can let the user know which key to press."
+    },
+    {
+      "label": "Optional—Internationalization: Change the announcement for character count.",
+      "highlight": "%INLINE%charcount-example ||| data-character-count-text",
+      "notes": "Provide both <strong>${numChars}</strong> and <strong>${maxLength}</strong> together to provide an informative announcement. <strong>${charsRemaining}</strong> may or may not be beneficial and can be omitted."
     }
   ]
 }
