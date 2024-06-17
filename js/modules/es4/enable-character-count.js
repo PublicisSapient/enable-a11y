@@ -1,19 +1,11 @@
 
 const enableCharacterCount = new function() {
-  let globalWarningThreshold,
-    readCountKey,
-    announcementTimeout;
-
+  const defaultReadCharacterCountKey = 'Escape';
+  let announcementTimeout;
   let idIndex = 0;
 
   this.init = () => { 
     const charCountEls = document.querySelectorAll('[data-has-character-count]');
-    const charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
-    const dataset = charCountInitEl ? charCountInitEl.dataset : {};
-
-    readCountKey = 'Escape';
-    globalWarningThreshold = dataset.warningThreshold || 20;
-
     charCountEls.forEach((target) => {
       setUpEventsFor(target);
       setIdIfNullFor(target);
@@ -31,8 +23,9 @@ const enableCharacterCount = new function() {
   }
 
   function setIdIfNullFor(target) {
-    if (target.id == null)
+    if (target.id == null) {
       target.id = `enable-character-counter-${idIndex++}`;
+    }
   }
 
   function setUpAriaDescribedByFor(target) {
@@ -53,9 +46,10 @@ const enableCharacterCount = new function() {
 
   function getScreenReaderInstructions(target) {
     const { readCountKey, instructions } = target.dataset;
-    const defaultInstructions = 'Press ${readCountKey} to find out how many more characters are allowed.';
+    const keyToPress = readCountKey ?? defaultReadCharacterCountKey;
+    const defaultInstructions = 'Press ${keyToPress} to find out how many more characters are allowed.';
     const instructionsToInterpolate = instructions ?? defaultInstructions;
-    return interpolate(instructionsToInterpolate, { readCountKey });
+    return interpolate(instructionsToInterpolate, { keyToPress });
   }
 
   function createCounterContainerFor(target) {
@@ -116,47 +110,41 @@ const enableCharacterCount = new function() {
 
   function onKeyUp(event) {
     const { target, key } = event;
-    const { dataset } = target;
-
-    if (dataset.hasCharacterCount) {
-      const inputLength = target.value.length;
-      const { maxLength } = target;
-    
-      writeCharCount(target);
-
-      if (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) {
-          announceCharacterCountWithDelay(target, 1000);
-      }
+    const { dataset, maxLength } = target;
+    writeCharCount(target);
+    const inputLength = target.value.length;
+    const warningThreshold = dataset.warningThreshold ?? 20;
+    const isWithinWarningThreshold = inputLength > (maxLength - warningThreshold);
+    if (isWithinWarningThreshold && !wasArrowPressed(key)) {
+      announceCharacterCountWithDelay(target, 1000);
     }
   }
 
   function onKeyDown(event) {
-    const keyPressed = event.key;
-    if (isReadCharacterCountKeyPressed(event, keyPressed) || isReadCharacterCountCtrlAndKeyPressed(event, keyPressed))
-      announceCharacterCount(event.target);
+    const { target, key } = event;
+    const { dataset } = target;
+    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
+      announceCharacterCount(target);
+    }
   }
 
-  function isReadCharacterCountKeyPressed(event, keyPressed) {
-    const readCharacterCountWithKey = event.target.dataset.readCharacterCountWithKey;
-    return readCharacterCountWithKey && keyPressed === readCharacterCountWithKey;
-  }
-
-  function isReadCharacterCountCtrlAndKeyPressed(event, keyPressed) {
-    const readCharacterCountWithCtrlAndKey = event.target.dataset.readCharacterCountWithCtrlAndKey;
-    return readCharacterCountWithCtrlAndKey && event.ctrlKey && keyPressed === readCharacterCountWithCtrlAndKey;
+  function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
+    if (readCountKey) {
+      return keyPressed === readCountKey;
+    } else {
+      return keyPressed === defaultReadCharacterCountKey;
+    }
   }
 
   function onFocus(event) {
     const { target } = event;
-    const { dataset } = target;
-    if (dataset.hasCharacterCount)
-      announceCharacterCount(target);
+    announceCharacterCount(target);
   }
 
   function announceCharacterCount(target) {
-    announceCharacterCountWithDelay(target, 250)
+    announceCharacterCountWithDelay(target, 200);
   }
-  
+
   function announceCharacterCountWithDelay(target, delay) {
     const counterForScreenReader = getScreenReaderCharacterCount(target);
 
@@ -169,8 +157,8 @@ const enableCharacterCount = new function() {
       const maxLength = target.maxLength;
       const numChars = target.value.length;
       const charsRemaining = maxLength - numChars;
-      const screenReaderText = target.dataset.screenReaderText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
-      counterForScreenReader.textContent = interpolate(screenReaderText, { numChars, maxLength, charsRemaining });
+      const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
+      counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
     }, delay);
   }
 
