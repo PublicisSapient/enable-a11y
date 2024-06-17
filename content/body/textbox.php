@@ -264,17 +264,17 @@
     {
       "label": "Optional—Internationalization: Change the description.",
       "highlight": "%INLINE%charcount-example ||| data-description",
-      "notes": "<strong>${maxLength}</strong> is required to string interpolate the value set in Step #1 so that the screen reader can let the user know the maximum character limit. The value highlighted below is the default."
+      "notes": "<strong>${maxLength}</strong> is required to string interpolate the value set in Step #1 so that the screen reader can let the user know the maximum character limit. The description text highlighted below is the default."
     },
     {
       "label": "Optional—Internationalization: Change the keypress instructions.",
       "highlight": "%INLINE%charcount-example ||| data-instructions",
-      "notes": "<strong>${keyToPress}</strong> is required to string interpolate the value set in Step #3 so that the screen reader can let the user know which key to press. The value highlighted below is the default."
+      "notes": "<strong>${keyToPress}</strong> is required to string interpolate the value set in Step #3 so that the screen reader can let the user know which key to press. The instructions text highlighted below is the default."
     },
     {
       "label": "Optional—Internationalization: Change the announcement for character count.",
       "highlight": "%INLINE%charcount-example ||| data-character-count-text",
-      "notes": "Provide both <strong>${numChars}</strong> and <strong>${maxLength}</strong> together to provide an informative announcement. <strong>${charsRemaining}</strong> may or may not be beneficial and can be omitted. The value highlighted below is the default."
+      "notes": "Provide both <strong>${numChars}</strong> and <strong>${maxLength}</strong> together to provide an informative announcement. <strong>${charsRemaining}</strong> may or may not be beneficial and can be omitted. The text value highlighted below is the default."
     }
   ]
 }
