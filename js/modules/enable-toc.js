@@ -45,6 +45,7 @@ const tableOfContents = new function() {
                  *  entries in the table of contents are linked to the headings.
                  */
                 const headingLevel = Number(el.nodeName?.toLowerCase()?.split('h')?.[1] || 0);
+                addMissingIDToHeading(el);
 
                 // Skip headings that are within the selector or deeper than the specified level
                 if (selectorToSkipHeadingsWithin && el.closest(selectorToSkipHeadingsWithin) !== null || ignoreHeadersDeeperThan && headingLevel > ignoreHeadersDeeperThan) {
@@ -65,17 +66,12 @@ const tableOfContents = new function() {
                 const tocItem = document.createElement('li');
                 tocItem.setAttribute('class', `enable-toc__item-${el.tagName.toLowerCase()}`);
 
-                el.childNodes.forEach((child) => {
-                    if (child.nodeName === 'A') {
-                        const clonedLink = child.cloneNode(true);
-                        clonedLink.setAttribute('class', 'enable-toc__link');
-                        tocItem.appendChild(clonedLink);
-                    } else if (child.nodeName === 'IMG') {
+                el.childNodes && el.childNodes.forEach((child) => {
+                    if (child.nodeName === 'IMG') {
                         const clonedImage = child.cloneNode(true);
                         clonedImage.setAttribute('class', 'enable-toc__image');
                         tocItem.appendChild(clonedImage);
                     } else if (el.textContent) {
-                        addMissingIDToHeading(el);
                         const tocLink = document.createElement('a');
                         tocLink.setAttribute('href', `#${el.id}`);
                         tocLink.textContent = el.textContent;
