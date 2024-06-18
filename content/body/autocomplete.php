@@ -331,11 +331,7 @@
 <script type="application/json" id="html5-example-props">
 {
     "replaceHtmlRules": {},
-    "steps": [{
-            "label": "Use the HTML5 autocomplete property enable autocomplete on your input.",
-            "highlight": "%OPENCLOSECONTENTTAG%autocomplete",
-            "notes": "This will help users fill out forms more quickly and accurately."
-        },
+    "steps": [
         {
           "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each form field.",
           "highlight": "aria-labelledby",
