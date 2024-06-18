@@ -326,3 +326,96 @@
     </button>
     </form>
 </div>
+
+<?php includeShowcode("html5-example"); ?>
+<script type="application/json" id="html5-example-props">
+{
+    "replaceHtmlRules": {},
+    "steps": [{
+            "label": "Use the HTML5 autocomplete property enable autocomplete on your input.",
+            "highlight": "%OPENCLOSECONTENTTAG%autocomplete",
+            "notes": "This will help users fill out forms more quickly and accurately."
+        },
+        {
+          "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each form field.",
+          "highlight": "aria-labelledby",
+          "notes": "This should point to the <code>id</code> of the associated label tag."
+        },
+        {
+          "label": "Use the <code>required</code> attribute to make a field required.",
+          "highlight": "required",
+          "notes": "This will prevent the form from being submitted if the field is empty."
+        },
+        {
+          "label": "Use the <code>placeholder</code> attribute to provide a hint to the user.",
+          "highlight": "placeholder",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>type</code> attribute to specify the type of input.",
+          "highlight": "type",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>name</code> attribute to provide a name for the field.",
+          "highlight": "name",
+          "notes": "This will help you identify the field when the form is submitted."
+        },
+        {
+          "label": "Use the <code>autocomplete</code> attribute to enable autocomplete on your input.",
+          "highlight": "autocomplete",
+          "notes": "This will help users fill out forms more quickly and accurately."
+        },
+        {
+          "label": "Use the <code>id</code> attribute to provide a unique identifier for the field.",
+          "highlight": "id",
+          "notes": "This will help you associate the field with its label."
+        },
+        {
+          "label": "Use the <code>class</code> attribute to style the input field.",
+          "highlight": "class",
+            "notes": "This will help you apply styles to the field."
+        },
+        {
+          "label": "Use the <code>label</code> tag to provide a label for the field.",
+          "highlight": "label",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>for</code> attribute to associate the label with the input field.",
+          "highlight": "for",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>div</code> tag to group the label and input field.",
+          "highlight": "div",
+          "notes": "This will help you style the label and input field together."
+        },
+        {
+          "label": "Use the <code>svg</code> tag to add an icon to the input field.",
+          "highlight": "svg",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>path</code> tag to add an icon to the input field.",
+          "highlight": "path",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>circle</code> tag to add an icon to the input field.",
+          "highlight": "circle",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>rect</code> tag to add an icon to the input field.",
+          "highlight": "rect",
+          "notes": "This will help users understand what information is expected in the field."
+        },
+        {
+          "label": "Use the <code>button</code> tag to create a submit button.",
+          "highlight": "button",
+          "notes": "This will allow users to submit the form."
+        }
+    ]
+}
+</script>
