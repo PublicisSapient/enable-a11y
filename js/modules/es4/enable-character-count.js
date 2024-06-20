@@ -47,8 +47,7 @@ const enableCharacterCount = new function() {
   function getScreenReaderInstructions(target) {
     const { readCountKey, instructions } = target.dataset;
     const keyToPress = readCountKey ?? defaultReadCharacterCountKey;
-    const defaultInstructions = 'Press ${keyToPress} to find out how many more characters are allowed.';
-    const instructionsToInterpolate = instructions ?? defaultInstructions;
+    const instructionsToInterpolate = instructions ?? 'Press ${keyToPress} to find out how many more characters are allowed.';
     return interpolate(instructionsToInterpolate, { keyToPress });
   }
 
@@ -129,11 +128,9 @@ const enableCharacterCount = new function() {
   }
 
   function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
-    if (readCountKey) {
+    if (readCountKey)
       return keyPressed === readCountKey;
-    } else {
-      return keyPressed === defaultReadCharacterCountKey;
-    }
+    return keyPressed === defaultReadCharacterCountKey;
   }
 
   function onFocus(event) {
