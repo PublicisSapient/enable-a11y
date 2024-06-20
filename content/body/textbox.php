@@ -242,7 +242,7 @@
       "highlight": "%INLINE%charcount-example ||| maxlength"
     },
     {
-      "label": "Set hasCharacterCount for the textarea element.",
+      "label": "Set the custom data-has-character-count attribute for the textarea element.",
       "highlight": "%INLINE%charcount-example ||| data-has-character-count",
       "notes": "There's no need to explicitly provide a value of \"true\"."
     },
