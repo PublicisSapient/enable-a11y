@@ -243,8 +243,7 @@
     },
     {
       "label": "Set the custom data-has-character-count attribute for the textarea element.",
-      "highlight": "%INLINE%charcount-example ||| data-has-character-count",
-      "notes": "There's no need to explicitly provide a value of \"true\"."
+      "highlight": "%INLINE%charcount-example ||| data-has-character-count"
     },
     {
       "label": "Optional: Provide a key for the user to press to read out the character count.",
