@@ -251,7 +251,7 @@
       "notes": "The default is the Escape key. For information regarding which keypress events are recognized visit <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values\">MDN docs</a>."
     },
     {
-      "label": "Optional: Change the amount of available characters left before the screen reader starts announcing after each keypress.",
+      "label": "Optional: Change how many characters are left before announcing after each keypress.",
       "highlight": "%INLINE%charcount-example ||| data-warning-threshold",
       "notes": "The default is 20 characters before the limit is reached."
     },
