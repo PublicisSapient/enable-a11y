@@ -1,7 +1,7 @@
 
 <script type="module">
-    import toast from "./js/modules/toast.js"
-    import toast from "./js/demos/toast.js"
+    import toastModule from "/js/modules/toast.js"
+    import app from "/js/demos/toast.js"
     
-    toast.init();
+    app.init();
 </script>
