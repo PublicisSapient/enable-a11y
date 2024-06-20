@@ -229,7 +229,7 @@
 
 </div>
 
-<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
+<p>Below is the HTML markup needed to add the character counter to a textarea element, as well as instructions on how to use it in your own projects.</p>
 
 <?php includeShowcode("charcount-example"); ?>
 
