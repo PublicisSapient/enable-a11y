@@ -7,7 +7,7 @@
         it would be a no-brainer to just code things the HTML5 way and call it a day instead of creating custom 
         code.  However, many designers don't like the design of native HTML5 error message "bubbles", and want/demand 
         that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have labelled
-        both of the solution below good for new and existing work: the HTML5 one is good if you want to implement 
+        both of the solutions below good for new and existing work: the HTML5 one is good if you want to implement 
         validation quickly, and the custom JavaScript implementation is good if you want design flexibility.
       </p>
 
@@ -24,9 +24,9 @@
 
       <p>
         You can use just <code>required</code> and
-        <code>pattern</code> attributes on HTML forms to do client side
-        validation <strong>without JavaScript</strong>.  However, in order to make the messaging
-        more accessible, we have added a tiny bit of JavaScript code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) in order to ensure the error messages
+        <code>pattern</code> attributes on HTML forms to do client-side
+        validation <strong>without JavaScript</strong>.  However, to make the messaging
+        more accessible, we have added a tiny bit of JavaScript code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) to ensure the error messages
         themselves are more accessible to screen reader users (see the last step in the code
         walkthrough for details)
       </p>
@@ -139,7 +139,7 @@
 
       <p>
         You can do the custom validation as well, but you have to ensure that
-        when the form submits and there is an error, the first input value with
+        when the form is submitted and there is an error, the first input value with
         an error receives focus so that keyboard and/or screen reader users can
         correct mistakes easily.  You also have to ensure that form errors are marked
         up as <code>&lt;label&gt;</code> tags for the form fields they are associated with.
@@ -148,7 +148,7 @@
       <p>
         The following example used
         <a href="https://jqueryvalidation.org">jQuery.validate()</a> which is
-        not accessible. We do not recommend to use this library for new projects
+        not accessible. We do not recommend using this library for new projects
         ... it is just used as an example of how we can take existing code and
         make it accessible. If you want information about how to make forms
         accessible with JavaScript in the general sense, please read
