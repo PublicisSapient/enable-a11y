@@ -5,7 +5,7 @@
 
 <?php includeStats(["isForNewBuilds" => true]); ?>
 
-You can style an HTML5 checkbox using CSS easily. You don't need to make faux checkbox
+You can style an HTML5 checkbox using CSS easily. You don't need to make a faux checkbox
 using <code>&lt;div&gt;</code> tags.
 
 <div id="example2" class="enable-example">
@@ -43,7 +43,7 @@ using <code>&lt;div&gt;</code> tags.
 
 <p>
     If you come across a <code>&lt;div&gt;</code> in existing code that is marked up like a checkbox,
-    you can fix it this way. It is preferable to use the HTML5 version instead, if you can implement
+    you can fix it this way. It is preferable to use the HTML5 version instead if you can implement
     it quickly.
 </p>
 
@@ -186,11 +186,11 @@ using <code>&lt;div&gt;</code> tags.
 
 <p>
     We usually think of checkboxes being either <strong>checked</strong> or <strong>unchecked</strong>. There is a third
-    possible state: <strong>indeterminate</strong>. The most common use-case for this, as outlined in <a
+    possible state: <strong>indeterminate</strong>. The most common use case for this, as outlined in <a
         href="https://css-tricks.com/indeterminate-checkboxes/">the CSS Tricks article about Indeterminate
         Checkboxes</a>, is for nested checkboxes. Consider you have a group of related attributes, like toppings in an
     ice-cream cone, that you can select with a group of checkboxes. It would be great to be able to have a "select all"
-    checkbox that can choose all of them &mdash; because who doesn't want all the things on their ice-cream cone?!?! The
+    checkbox that can choose all of them &mdash; because who doesn't want all the things on their ice cream cone?!?! The
     problem is, what is this "select all" checkbox set to when some of the ingredients are checked but not all of them?
     While I have seen select all checkboxes not checked in this case, it can be argued that we give the indeterminate
     state for the checkbox.
@@ -222,8 +222,8 @@ checkboxEl.checked = false;
 <p>Note the last bit in the code above where we set the <code>.checked</code> property to <code>false</code>.  This is done for progressive enhancement. While <a
         href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate#browser_compatibility">MDN reports that
         indeterminate is supported in all major browsers</a>, <strong>we should still consider that not all
-        browser/screen reader pairs (e.g. Firefox/NVDA, Firefox/Voiceover at the time of this writing) will announce the indeterminate
-        state</strong>. For this reason, we should set the checked attribute to something that makes sense for screen reader users who
+        browser/screen-reader pairs (e.g. Firefox/NVDA, Firefox/Voiceover at the time of this writing) will announce the indeterminate
+        state</strong>. For this reason, we should set the checked attribute to something that makes sense for screen-reader users who
     use those browser/screen-reader pairs. Setting the checkbox to unchecked does make the most sense in this "Select
     All" scenario.
 </p>
@@ -269,7 +269,7 @@ checkboxEl.checked = false;
 
 <p>This example uses a library we developed to set up the hierarchical structure for the select all button to work.
     Below are the developer notes on how the library does it. If you are interested in using the library, please <a
-        href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p>
+        href="#npm-instructions">read the instructions on how to use the library in your projects</a>.</p>
 
 <?php includeShowcode("indeterminate-example"); ?>
 
@@ -294,7 +294,7 @@ checkboxEl.checked = false;
 <h2>Indeterminate Checkboxes Using ARIA</h2>
 
 <p>
-    Just like two-state checkboxes, we can use ARIA to create faux-checkboxes.  At the time of this writing, there is one advantage of doing so: Firefox using Voiceover and NVDA will report an indeterminate checkbox's state as mixed using ARIA.
+    Just like two-state checkboxes, we can use ARIA to create faux checkboxes.  At the time of this writing, there is one advantage of doing so: Firefox using Voiceover and NVDA will report an indeterminate checkbox's state as mixed using ARIA.
 </p>
 
 
@@ -361,7 +361,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 
 
 <p>This example uses the same library we used in the native HTML5 example to set up the hierarchical structure for the select all button to work. As you compare the developer notes below to that of the HTML5 example, you will see the way to implement is similar.  Please <a
-        href="#npm-instructions">read the instructions on how to use the library in your own projects</a>.</p> 
+        href="#npm-instructions">read the instructions on how to use the library in your projects</a>.</p> 
 
 <?php includeShowcode("aria-indeterminate-example"); ?>
 
@@ -382,7 +382,7 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 }
 </script>
 
-<h2>How to Install the Hierarchical Checkbox library Into Your Projects</h2>
+<h2>How to Install the Hierarchical Checkbox Library into Your Projects</h2>
 
 <?= includeNPMInstructions("hierarchical-checkboxes", [""], "", false, [
     "noCSS" => true,
