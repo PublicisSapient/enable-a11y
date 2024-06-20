@@ -5,7 +5,7 @@ const enableCharacterCount = new function() {
   let idIndex = 0;
 
   this.init = () => { 
-    const charCountEls = document.querySelectorAll('[data-has-character-count]');
+    const charCountEls = document.querySelectorAll("[data-has-character-count='true']");
     charCountEls.forEach((target) => {
       setUpEventsFor(target);
       setIdIfNullFor(target);
