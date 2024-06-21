@@ -62,6 +62,35 @@ function buildFlyoutMenuHTML() {
     // Initialize the hamburger menu.
     EnableFlyout.init();
 }
+function findImagesNextToHeading(headingId, className) {
+    const heading = document.getElementById(headingId);
+    let images = '';
+
+    if (heading) {
+        let nextElement = heading.nextElementSibling;
+
+        // Iterate over siblings with the specified class name
+        while (nextElement && nextElement.classList.contains(className)) {
+            const imgElements = nextElement.querySelectorAll('img');
+
+            // Append attributes of img elements to the images string
+            imgElements.forEach((img) => {
+                const attributes = Array.from(img.attributes)
+                    .map((attr) => {
+                        return attr.name !== 'class'
+                            ? `${attr.name}="${attr.value}"`
+                            : ((attr.value += ' enable-stats__heading-icon'),
+                              `${attr.name}="${attr.value}"`);
+                    })
+                    .join(' ');
+                images += `<img ${attributes}>`;
+            });
+            // Move to the next sibling
+            nextElement = nextElement.nextElementSibling;
+        }
+    }
+    return images;
+}
 
 function initEnable() {
     offscreenObserver.init(document.querySelector('[role="banner"]'));
@@ -126,6 +155,18 @@ function initEnable() {
                         el.getAttribute('role') !== 'heading'
                     ) {
                         el.innerHTML = `<a class="heading__deeplink" href="#${el.id}" title="Permalink to ${el.innerText}" aria-label="Permalink to ${el.innerText}">${el.innerHTML}</a>`;
+                        // add icons next to the heading if the content below the heading has any images
+                        if (
+                            el.nextElementSibling.classList.contains(
+                                'enable-stats',
+                            )
+                        ) {
+                            const images = findImagesNextToHeading(
+                                el.id,
+                                'enable-stats',
+                            );
+                            el.innerHTML = images + el.innerHTML;
+                        }
                     }
                 }
             });
