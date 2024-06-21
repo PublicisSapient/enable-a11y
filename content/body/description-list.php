@@ -4,25 +4,25 @@
 
        
 
-        <p>Description lists used to be called definition lists.  They used to be used when defining a list of related items (e.g. like the list of movie monsters below).  In the HTML5 era, its semantic definition is a lot more broad and is now used to give descriptions to a list of related items.</p>
+        <p>Description lists used to be called definition lists.  They used to be used when defining a list of related items (e.g. the list of movie monsters below).  In the HTML5 era, its semantic definition is a lot more broad and is now used to give descriptions to a list of related items.</p>
 
         <h2>A HTML Description List</h2>
 
         <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd</code> tags, respectively.
-        Note that, unlike the ARIA version, there is no group tag around the name value pairs.</p>
+        Note that, unlike the ARIA version, there is no group tag around the name-value pairs.</p>
 
         <?php includeStats(["isForNewBuilds" => true]); ?>
         
         <div id="html5-def-list-example" class="enable-example">
             <dl>
                 <dt>Gojira:</dt>
-                <dd>A japanese kaiju monster created in the 1960s.</dd>
+                <dd>A Japanese kaiju monster created in the 1960s.</dd>
 
                 <dt>Frankenstein:</dt>
-                <dd>A fictional doctor that created a fictional being out of the spare parts of dead people.</dd>
+                <dd>A fictional doctor who created a fictional being out of the spare parts of dead people.</dd>
 
                 <dt>8-man:</dt>
-                <dd>A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates Robocop
+                <dd>A manga featuring a robot whose brain is filled with the memories of a cop gunned down in action. Predates Robocop
                     by at least 20 years.</dd>
             </dl>
         </div>
@@ -61,17 +61,17 @@
             <div class="dl" role="list">
                 <div role="listitem">
                     <div role="term">Gojira:</div>
-                    <div role="definition">A japanese kaiju monster created in the 1960s.</div>
+                    <div role="definition">A Japanese kaiju monster created in the 1960s.</div>
                 </div>
 
                 <div role="listitem">
                     <div role="term">Frankenstein:</div>
-                    <div role="definition">A fictional doctor that created a fictional being out of the spare parts of dead people.</div>
+                    <div role="definition">A fictional doctor who created a fictional being out of the spare parts of dead people.</div>
                 </div>
 
                 <div role="listitem">
                     <div role="term">8-man:</div>
-                    <div role="definition">A manga featuring a robot whose brain is filled of the memories of a cop gunned down in action. Predates
+                    <div role="definition">A manga featuring a robot whose brain is filled with the memories of a cop gunned down in action. Predates
                         Robocop by at least 20 years.</div>
                 </div>
             </div>

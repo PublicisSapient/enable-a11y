@@ -161,7 +161,7 @@ el.add();
     <a href="npm.php">Install the <code>enable-a11y</code> NPM project</a>.
   </li>
   <li>
-    You can import the module using require like this:
+  You can import the module using <code>require</code> like this:
 
 <?php includeShowcodeStaticBegin(); ?>
 var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default; 

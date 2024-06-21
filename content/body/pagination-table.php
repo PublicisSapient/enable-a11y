@@ -9,7 +9,7 @@
 <?php includeStats(["isNPM" => true]); ?>
 
 <p>
-  If you have a lot of data in a table that you want to present the user in small, bite-sized chunks, you may want to
+  If you have a lot of data in a table that you want to present to the user in small, bite-sized chunks, you may want to
   use a pagination UI element to do this. The solution presented below is accessible and works for keyboard and screen
   reader users.
 </p>
