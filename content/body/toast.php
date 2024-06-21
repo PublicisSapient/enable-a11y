@@ -35,6 +35,10 @@
     <div id="example1" class="enable-example">
         <div class="controls">
             <div class="control-group">
+                <label for="messageInput">Toast Message:</label>
+                <input type="text" id="messageInput" placeholder="Toast Message" value="A new toast message!">
+            </div>
+            <div class="control-group">
                 <label>Position:</label>
                 <div>
                     <label><input type="radio" name="position" value="bottom-right" checked> Bottom Right</label>
@@ -46,11 +50,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label for="messageInput">Toast Message:</label>
-                <input type="text" id="messageInput" placeholder="Toast Message" value="Default toast message">
-            </div>
-            <div class="control-group">
-                <label>Importance Level:</label>
+                <label>Level:</label>
                 <div>
                     <label><input type="radio" name="level" value="normal" checked> Normal</label>
                     <label><input type="radio" name="level" value="error"> Error</label>
@@ -71,7 +71,7 @@
             </div>
             <div class="button-group">
                 <button id="showToastButton">Show Toast</button>
-                <button id="toggleRackButton">Show Toast Rack</button>
+                <button id="toggleRackButton">Toggle Toast Rack</button>
             </div>
         </div>
         <div id="toastRack" class="toast-rack">

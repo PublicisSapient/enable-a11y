@@ -1,9 +1,3 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
-}
 .controls {
   margin-bottom: 20px;
   display: flex;
@@ -21,8 +15,4 @@ body {
 .controls .button-group {
   display: flex;
   gap: 10px;
-}
-.status {
-  margin-top: 20px;
-  font-size: 16px;
 }
