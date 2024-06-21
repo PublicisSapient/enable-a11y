@@ -1,0 +1,106 @@
+// Variables
+@toast-background: #333;
+@toast-color: #fff;
+@toast-padding: 10px;
+@toast-border-radius: 5px;
+@toast-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@toast-transition: all 0.5s ease-in-out;
+@toast-close-color: @toast-color;
+@toast-close-hover-color: #ff0000;
+@rack-background: rgba(241, 241, 241, 0.9);
+@rack-border: 1px solid #ddd;
+@rack-padding: 10px;
+@rack-width: 300px;
+@rack-max-height: 400px;
+
+// Toast container positions
+.toast-container {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    transition: @toast-transition;
+
+    &.bottom-right,
+    &.bottom-left,
+    &.bottom-center {
+        bottom: 20px;
+    }
+
+    &.top-right,
+    &.top-left,
+    &.top-center {
+        top: 20px;
+    }
+
+    &.bottom-right,
+    &.top-right {
+        right: 20px;
+    }
+
+    &.bottom-left,
+    &.top-left {
+        left: 20px;
+    }
+
+    &.top-center,
+    &.bottom-center,
+    &.middle-center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.middle-center {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Toast element styles
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background: @toast-background;
+    color: @toast-color;
+    padding: @toast-padding;
+    border-radius: @toast-border-radius;
+    box-shadow: @toast-box-shadow;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.toast-visible {
+        opacity: 1;
+    }
+
+    &.toast-exit {
+        opacity: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: @toast-close-color;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+            color: @toast-close-hover-color;
+        }
+    }
+}
+
+// Toast rack styles
+.toast-rack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: @rack-background;
+    border: @rack-border;
+    padding: @rack-padding;
+    width: @rack-width;
+    max-height: @rack-max-height;
+    overflow-y: auto;
+    display: none;
+    z-index: 9998;
+}
