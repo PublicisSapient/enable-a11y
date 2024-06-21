@@ -93,12 +93,12 @@
     {
       "label": "Use aria-labelledby to point to the title of the modal",
       "highlight": "aria-labelledby",
-      "notes": "If there is no visible label in the dialog, use <code>aria-label</code> to set a screen-reader only label that describes the purpose of the modal.  This will be read by the screen reader when the modal is first opened"
+      "notes": "If there is no visible label in the dialog, use <code>aria-label</code> to set a screen reader only label that describes the purpose of the modal.  This will be read by the screen reader when the modal is first opened"
     },
     {
       "label": "Use aria-describedby to point to a summary description of the modal",
       "highlight": "aria-describedby",
-      "notes": "This will give screen-reader users supplementary information about this modal.  In this case, the user must login in order to continue."
+      "notes": "This will give screen reader users supplementary information about this modal.  In this case, the user must login in order to continue."
     },
     {
       "label": "Use proper roles inside the modal",

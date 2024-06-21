@@ -20,7 +20,7 @@
 
 <h2>How Screen Reader Users Navigate Tables</h2>
 
-<p>Screen-reader users should be able to navigate the table using their screen-reader's built-in navigation:
+<p>Screen reader users should be able to navigate the table using their screen reader's built-in navigation:
 </p>
 
 <ul>

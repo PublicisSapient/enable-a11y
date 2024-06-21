@@ -285,7 +285,7 @@ $uncheck =
         JavaScript figures out where in the input data they are clicking and ensures the cursor in the input field stacked underneath is placed in the right area. 
         Because all mouse events are basically passed on to the input field underneath, the user can select text with a mouse, and the appropriate text is selected in the input field, so that is updated correctly.</p>
 
-    <h3>Screen-reader UX</h3>
+    <h3>Screen Reader UX</h3>
     <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e., the input field's value is announced character by character). 
         This is done via an ARIA live region, which is described in the code walkthrough above. 
         So, instead of the screen reader reading the input field as a large integer (in this case, "two billion one hundred twenty-three million one hundred twenty-one thousand two hundred thirty-one"), 

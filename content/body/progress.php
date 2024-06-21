@@ -9,7 +9,7 @@
 
             <p>The most bulletproof of the methods below to use is the ARIA version, without changing focus to the
                 progress bar as it's changing, since
-                it works with the majority of screen-readers.
+                it works with the majority of screen readers.
             </p>
 
             <p>Screen reader specific information:</p>

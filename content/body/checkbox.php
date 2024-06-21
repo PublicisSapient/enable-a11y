@@ -222,9 +222,9 @@ checkboxEl.checked = false;
 <p>Note the last bit in the code above where we set the <code>.checked</code> property to <code>false</code>.  This is done for progressive enhancement. While <a
         href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate#browser_compatibility">MDN reports that
         indeterminate is supported in all major browsers</a>, <strong>we should still consider that not all
-        browser/screen-reader pairs (e.g. Firefox/NVDA, Firefox/Voiceover at the time of this writing) will announce the indeterminate
-        state</strong>. For this reason, we should set the checked attribute to something that makes sense for screen-reader users who
-    use those browser/screen-reader pairs. Setting the checkbox to unchecked does make the most sense in this "Select
+        browser/screen reader pairs (e.g. Firefox/NVDA, Firefox/Voiceover at the time of this writing) will announce the indeterminate
+        state</strong>. For this reason, we should set the checked attribute to something that makes sense for screen reader users who
+    use those browser/screen reader pairs. Setting the checkbox to unchecked does make the most sense in this "Select
     All" scenario.
 </p>
 

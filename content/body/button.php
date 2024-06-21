@@ -17,7 +17,7 @@
                     difference, from a UX point of view, is that links go to another web page,
                     while buttons cause an action on a page (or submit a form). Keep this in mind
                     when you are coding your CTAs. We should be marking up these controls correctly
-                    so screen-reader users know in advance what will happen when they interact with them.
+                    so screen reader users know in advance what will happen when they interact with them.
                 </li>
 
             </ul>

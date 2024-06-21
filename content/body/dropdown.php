@@ -1,7 +1,7 @@
 <!-- <aside class="notes">
             <h2>Notes:</h2>
 
-            <p>The HTML5 version does not update its state on all browser/screen-reader combinations
+            <p>The HTML5 version does not update its state on all browser/screen reader combinations
                 reliably. For example:</p>
             <ul>
                 <li>

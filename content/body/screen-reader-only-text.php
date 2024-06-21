@@ -12,7 +12,7 @@
     rows of data at a time, we hide the instructions that non-sighted users will
     find useful (i.e. "The buttons inside this control allow you to paginate
     through the data in the table below, 10 columns at a time.") using an
-    <code>aria-describedby</code> that points to screen-reader only text.</li>
+    <code>aria-describedby</code> that points to screen reader only text.</li>
   <li><strong>Announcing changes to the page that screen readers users may not
       see.</strong> For example, in our <a
       href="status.php#visually-hidden-status-message--heading">Wiktionary
@@ -88,7 +88,7 @@
 <ol>
   <li>If you are using a content management system (CMS), you should remember that you must make screen reader only text and any aria-labels authorable.  I advise always having a default value for these items in case someone forgets to author them, or better still, make them mandatory for authors to fill out in the CMS (since screen reader-only text and aria-labels are sometimes forgotten by content authors). <strong>This is really important when you have a multilingual website, since hard-coding screen reader-only text and aria-labels will result in that text may not be understood by users who don't know the language that hard-coded text is written in</strong>.</li>
   <li>If you are using a third-party like <a href="https://www.motionpoint.com">MotionPoint</a> to do your translation, you will want to make sure their service logs the translation of screen reader only text, aria-labels, and image alt text.</li>
-  <li>You should always use screen-reader only text and aria-labels as a last resort.  If there is any visual text that can be used instead, use <code>aria-labelledby</code> to point to that content instead of using an aria-label.  This is to ensure the screen reader user experience is as close to the visual experience as much as possible.</li>
+  <li>You should always use screen reader only text and aria-labels as a last resort.  If there is any visual text that can be used instead, use <code>aria-labelledby</code> to point to that content instead of using an aria-label.  This is to ensure the screen reader user experience is as close to the visual experience as much as possible.</li>
 </ol>
   
 
