@@ -16,9 +16,9 @@
 
 <p>
   This page shows two examples of a slider: an HTML5 one implemented with <code>&lt;input type="range"&gt;</code> and
-  an ARIA one using the <code>slider</code> role and fair amount of JavaScript. While the latter solution
+  an ARIA one using the <code>slider</code> role and a fair amount of JavaScript. While the latter solution
   is accessible on both desktop and mobile, it works so differently than the native one in mobile devices due
-  to JavaScript limitations, and is a great example of "just because you <em>can</em> so something, it doesn't
+  to JavaScript limitations, and is a great example of "just because you <em>can</em> do something, it doesn't
   mean you should".
 </p>
 
@@ -27,7 +27,7 @@
 <?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
-  <strong>This is by the preferred method of implementing a slider.</strong>
+  <strong>This is the preferred method of implementing a slider.</strong>
   It "just works". Note that the UI for mobile screen reader users is very different
   between the two major operating systems:
 </p>
@@ -71,13 +71,13 @@
     '
             
             <p>
-                Although we give basic information cover how to style HTML5 Sliders, we do gloss over some minor 
+                Although we give basic information covering how to style HTML5 Sliders, we do gloss over some minor 
                 cross-browser styling issues. More information on making them
                 look super pretty can be found here:
             </p>
 
             <ul>
-                <li><a href="https://www.cssportal.com/style-input-range/">Style Input Range</a> on-line generator tool can
+                <li><a href="https://www.cssportal.com/style-input-range/">Style Input Range</a> online generator tool can
                     get you up and running quickly.</li>
                 <li><a href="https://css-tricks.com/sliding-nightmare-understanding-range-input/">A Sliding Nightmare:
                         Understanding the Range Input</a>
@@ -148,7 +148,7 @@
 <p>
   Sometimes, the need comes up to have a slider with minimum and maximum values. Even though one single HTML5 range
   element
-  can't do this, it is possible to combine two of them, with a little bit of CSS and surprisingly tiny amount of JavaScript, to
+  can't do this, it is possible to combine two of them, with a little bit of CSS and a surprisingly tiny amount of JavaScript, to
   achieve
   this effect.
 </p>
@@ -156,9 +156,9 @@
 <p>
   I cannot claim credit for this solution -- it's the work of the
   hugely talented <a href="https://css-tricks.com/author/thebabydino/">Ana Tudor</a>. Anyone interested
-  in bleeding edge CSS and animation work should definitely check out <a
+  in bleeding-edge CSS and animation work should definitely check out <a
     href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask">Ana's Codepen</a>
-  and/or <a href="https://www.patreon.com/anatudor">donating to help fund her research and mad scientist
+  and/or <a href="https://www.patreon.com/anatudor">donate to help fund her research and mad scientist
     inclinations</a>.
 </p>
 
@@ -313,7 +313,7 @@
   <li>
     I also refactored it to work with mobile. I couldn't use the same UI as the native
     <code>&lt;input type="range"&gt;</code>,
-    since using either iOS's vertical swiping and Android's hardware volume buttons to control the slider is impossible
+    since using either iOS's vertical swiping or Android's hardware volume buttons to control the slider is impossible
     today.
   </li>
   <li>
@@ -322,11 +322,10 @@
 </ul>
 
 <p>
-  I honestly struggled as to whether it was a Good Idea to share this component to the outside world. In the end, I am
+  I honestly struggled as to whether it was a Good Idea to share this component with the outside world. In the end, I am
   posting this here as a great example of <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>.
   I do think, however, that it shows an interesting use case for the <a href="skip-link.php">mobile skip links</a> as
-  mobile
-  only buttons, which could be used in something else in the future.
+  mobile-only buttons, which could be used in something else in the future.
 </p>
 
 <h3>A note on all ARIA sliders on this page:</h3>

@@ -33,11 +33,11 @@
   <li><em>Maybe</em> because you can't use <code>::before</code> or <code>::after</code> pseudo-elements to style form
     elements, although there are <a href="https://www.scottohara.me/blog/2014/06/24/pseudo-element-input.html">other
       ways around this without using ARIA</a>.</li>
-  <li>If you wanted to create a WYSIWYG editor then you would have to do this, since form elements don't allow the
+  <li>If you wanted to create a WYSIWYG editor, then you would have to do this, since form elements don't allow the
     editing of formatted text.</li>
 </ol>
 
-<p>This last use case we do not cover, since creating an accessible WYSIWYG editor would involve quite a bit of
+<p>This last use case we do not cover since creating an accessible WYSIWYG editor would involve quite a bit of
   JavaScript (I will be adding a page in Enable about WYSIWYG editors in the future).
 </p>
 
@@ -100,12 +100,12 @@
 <?php includeStats([
     "isForNewBuilds" => false,
     "comment" =>
-        "Recommended only if you needed to create a JavaScript WYSIWYG editor.",
+        "It is recommended only if you need to create a JavaScript WYSIWYG editor.",
 ]); ?>
 
 <p>
-  Keep in mind that if you use this in a form, none of the nice free form functionality (e.g.: HTML5 validation,
-  inclusion of data when submitting a form in an HTTP request, etc), won't work. These example do, however, show up in
+  Keep in mind that if you use this in a form, none of the nice free-form functionality (e.g., HTML5 validation,
+  inclusion of data when submitting a form in an HTTP request, etc.) won't work. These examples do, however, show up in
   Voiceover's Rotor and NVDA's Element Dialogue.
 </p>
 
@@ -184,12 +184,12 @@
 
 
 
-<h2>Textbox With Character Counter</h2>
+<h2>Textbox with Character Counter</h2>
 
 <p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
 
 <ol>
-  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
+  <li>They use the keyboard to access the textbox (e.g., using the TAB key).</li>
   <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
 </ol>
 
@@ -219,7 +219,7 @@
 
 </div>
 
-<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
+<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your projects.</p>
 
 <?php includeShowcode("charcount-example"); ?>
 

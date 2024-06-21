@@ -30,22 +30,22 @@
 
 <ul>
   <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
-    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File Format Differences</a>
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File format differences.</a>
   </li>
   <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
-      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
+      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">with ES Modules and
       HTTP/2, You May Not Need Webpack Anymore</a>
   <li>Stack Overflow has a really good thread about <a
-      href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
+      href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs. ES6 modules</a> as well.
   </li>
 </ul>
 
 <?php } ?>
 
 <?php if ($bemPrefix != "") { ?>
-<h4>Important Note On The CSS Classes Used In This Module:</h4>
+<h4>Important Note on the CSS Classes Used in This Module:</h4>
 
-<p><strong>This module requires specific CSS class names to be used for it to work correctly.</strong>
+<p><strong>This module requires specific CSS class names to be used in order for it to work correctly.</strong>
 These CSS classes begin with <code><?= $bemPrefix ?>__</code>.  Please see the documentation above to see where these CSS classes are inserted.
 
 <?php } elseif ($bemPrefix === true || $bemPrefix === false) { ?>
@@ -184,13 +184,13 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 <h4>Using ES6 modules natively.</h4>
 
 <p>
-  This is the method that this page you are reading now loads the scripts.
+  This is the method by which this page you are reading now loads the scripts.
 </p>
 
 <ol>
   <li>
     Grab the source by either <a href="npm.php">using NPM</a>, <a
-      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file</a>, or <a
+      href="https://github.com/PublicisSapient/enable-a11y/archive/refs/heads/master.zip">grabbing a ZIP file,</a> or <a
       href="https://github.com/PublicisSapient/enable-a11y">cloning the enable source code</a> from GitHub.
   </li>
   <li>
