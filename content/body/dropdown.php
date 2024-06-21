@@ -39,7 +39,7 @@
     drawer is opened (most of the time it does, but I have noticed it enough to make mention of it here).
   </li>
   <li>
-    Chrome with Voiceover report "Disclosure triangle" as the role, which is quite odd and misleading.
+    Chrome with Voiceover reports "Disclosure triangle" as the role, which is quite odd and misleading.
   <li>
     Chromevox doesn't indicate that the <code>summary</code> is
     expandable when it gains keyboard focus
@@ -270,7 +270,7 @@
   have difficulty using them and don't even know they are multi-selectable (the comments in <a
     href="https://twitter.com/JotaEme_R">Juan Manuel Ramallo's</a> blog post, <a
     href="https://dev.to/juanmanuelramallo/does-anyone-else-think-html5-multiple-selects-sucks-36ib">Does anyone else
-    think HTML5 multiple select sucks?</a> agrees, and the comments in the post, show a lot of developers agree). I have
+    think HTML5 multiple select sucks?</a> agrees, and the comments in the post show a lot of developers agree). I have
   found making dropdowns with
   checkboxes inside is a better solution, and this can be done without a lot of effort.
 </p>

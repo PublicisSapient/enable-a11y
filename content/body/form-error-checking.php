@@ -6,7 +6,7 @@
         There are two ways to make accessible forms: the native HTML5 way or using JavaScript.  You would think 
         it would be a no-brainer to just code things the HTML5 way and call it a day instead of creating custom 
         code.  However, many designers don't like the design of the native HTML5 error message "bubbles", and want or demand 
-        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have labelled
+        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have labeled
         both of the solutions below as good for new and existing work: the HTML5 one is good if you want to implement 
         validation quickly, and the custom JavaScript implementation is good if you want design flexibility.
       </p>

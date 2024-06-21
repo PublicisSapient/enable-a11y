@@ -82,7 +82,7 @@
 <p>
   The user can choose any item inside that menu with either
   a mouse or keyboard. Menu subcategories are visually indicated
-  by a right-pointing chevron, and assistive technologies as
+  by a right-pointing chevron, and to assistive technologies as
   collapsible/expandable buttons. Clicking on these subcategory
   buttons will show the subcategory menu appearing, with keyboard
   focus being applied to the back button that will take users back
@@ -102,7 +102,7 @@
 <p>
   If you are in the desktop breakpoint (i.e. a viewport width greater
   than or equal to <span class="breakpoint-width"></span>), then a mega menu
-  will appear across to top of the page underneath the Enable logo in the
+  will appear across the top of the page underneath the Enable logo in the
   global header.
 </p>
 
@@ -122,7 +122,7 @@
 <p>
   Users can either click the CTAs in the menu with either a mouse or keyboard.
   Menu subcategories are visually indicated
-  by a downwards pointing chevron, and assistive technologies as
+  by a downwards pointing chevron, and to assistive technologies as
   collapsible/expandable buttons. Clicking on these subcategory
   buttons will show the subcategory menu appearing below the button.
   Keyboard users can then tab immediately into the subcategory menu with

@@ -15,7 +15,7 @@
               class="showcode__heading">Code Walkthrough of the Above Example</h<?= $headingLevel ?>>
 
             <p>
-              Below is the HTML of the above example. Use the drop-down
+              Below is the HTML of the above example. Use the dropdown
               to highlight each of the individual steps that make the
               example accessible.
             </p>

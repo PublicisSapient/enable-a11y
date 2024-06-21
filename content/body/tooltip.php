@@ -19,7 +19,7 @@
 ]); ?>
 
 <p>
-  This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
 
 <div id="example1" class="enable-example">
@@ -102,7 +102,7 @@
 </ul> 
 
 <p>
-  A really good round-up of how <code>title</code> attribute works, its history, and where it is appropriate to
+  A really good round-up of how the <code>title</code> attribute works, its history, and where it is appropriate to
   use it is in
   <a href="https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/">The Trials and
     Tribulations of the Title Attribute</a> by <a href="https://www.scottohara.me/">Scott O'Hara</a>

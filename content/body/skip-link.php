@@ -32,7 +32,7 @@
     focus events to the mobile browser.</strong>  Screen reader users can focus on them, but partially sighted users may be initially confused when they cannot see what they are focusing on.</p>
 
 <p>Unlike a lot of implementations, this example has, in my opinion, one super helpful feature: we have two skip links pointing to each other. If a keyboard user triggers the skip link by accident, they can <strong>undo
-  their mistakes</strong> by pressing the ENTER key again, which will return the focus to where they came from.  <strong>This is useful for people who have hand tremors.</strong> This feature was thought up by my colleague Alison Hall during an accessibility hackathon.</p>
+  their mistakes</strong> by pressing the ENTER key again, which will return the focus back to where they came from.  <strong>This is useful for people who have hand tremors.</strong> This feature was thought up by my colleague Alison Hall during an accessibility hackathon.</p>
 
 
 <div id="desktop-example" class="enable-example">

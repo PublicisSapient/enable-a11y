@@ -1,5 +1,5 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
-  What many don't know is that they need audio descriptions to be WCAG AA compliant.</p>
+  What many don't know is that they need audio descriptions in order to be WCAG AA compliant.</p>
 
 <?php include "includes/wcag-video-table.php"; ?>
 
