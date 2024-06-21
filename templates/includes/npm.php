@@ -34,7 +34,7 @@
   </li>
   <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
       href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">With ES Modules and
-      HTTP/2 You May Not Need Webpack Anymore</a>
+      HTTP/2, You May Not Need Webpack Anymore</a>
   <li>Stack Overflow has a really good thread about <a
       href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs ES6 modules</a> as well.
   </li>
@@ -211,7 +211,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
   </li>
   <?php if (!($other["noCSS"] ?? false)) { ?>
   <li>
-    Load the CSS in the head of you document:
+    Load the CSS in the head of your document:
 
     <?php includeShowcodeStaticBegin(); ?>
 &lt;html&gt;
@@ -231,7 +231,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 
   <?php includeShowcodeStaticEnd();} ?>
   <li>
-    Load your scripts using the follwing code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
+    Load your scripts using the following code (<strong>NOTE:</strong> you must use <code>&lt;script type="module"&gt;</code>):
 
     <?php includeShowcodeStaticBegin(); ?>
 &lt;script type="module"&gt;
