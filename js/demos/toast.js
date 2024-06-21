@@ -97,7 +97,7 @@ const app = new (function () {
         const totalVisible = this.toast.visibleQueue.length;
         const totalNotifications = this.toast.toastQueue.length;
         document.getElementById('status').textContent =
-            `Total Visible: ${totalVisible}, Total Notifications: ${totalNotifications}`;
+            `Visible: ${totalVisible}, Total: ${totalNotifications}`;
         document.getElementById('rackContentStatus').textContent =
             `Toast rack contains ${totalNotifications} toasts.`;
     };
