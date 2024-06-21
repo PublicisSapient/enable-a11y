@@ -141,7 +141,7 @@
             type="text"
             id="address"
             placeholder="123 Main St"
-            autocomplete="street-address"
+            autocomplete="address-line1"
             required=""
             name="address"
             aria-labelledby="address-label"
