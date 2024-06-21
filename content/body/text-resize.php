@@ -228,7 +228,7 @@ body {
   <li><strong>Desktop:</strong>
     <ul>
       <li>At the top right, click More <span aria-hidden="true">⋮</span> and then Settings.</li>
-      <li>Under "Appearance," next" to "Font size," click the Down arrow <span aria-hidden="true">▾</span>.
+      <li>Under "Appearance", next to "Font size", click the Down arrow <span aria-hidden="true">▾</span>.
           Then select the font size you want (you have a choice of very small, small, medium, large, and very large). 
           You can have a little bit more granular control by clicking "Customize fonts" and moving the "Font Size" range widget.</li>
     </ul>
