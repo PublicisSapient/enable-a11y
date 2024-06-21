@@ -369,7 +369,7 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Switch",
+                                            "label": "Switch / Toggle",
                                             "url-slug": "switch",
                                             "alt": ""
                                         }
