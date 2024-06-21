@@ -16,7 +16,7 @@
 
 
 <p>
-  Screen-reader users also use headings to skim through a web page quickly and are used by screen-reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
+  Screen reader users also use headings to skim through a web page quickly and are used by screen reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
 </p>
 
 <div class="enable-example">

@@ -36,10 +36,10 @@
   </dd>
 
   <dt>Transcripts:</dt>
-  <dd>A transcript is used by users who can neither hear audio nor see video, like deaf/blind users. It is like the
-    script the actors in the video used to know what is going on in the story that they are about to act in. A transcript
-    also should include descriptions of audio information in the video (like laughing) and visual information (such as
-    the creak of a door opening).
+  <dd>A transcript is used by users who can neither hear audio nor see video, like deaf or blind users. It is like the
+      script, the actors in the video used to know what was going on in the story that they were about to act in. A transcript
+      also should include descriptions of audio information in the video (like laughing) and visual information (such as
+      the creak of a door opening).
   </dd>
 </dl>
 </div>
@@ -50,7 +50,7 @@
 </p>
 
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
-  What many don't know is that they need audio descriptions to be WCAG AA compliant.</p>
+  What many don't know is that they need audio descriptions in order to be WCAG AA compliant.</p>
 
   <?php include "includes/wcag-video-table.php"; ?>
 
@@ -62,7 +62,7 @@
 
 
 
-<h2>Should I use auto-generated captions For My Videos?</h2>
+<h2>Should I Use Auto-Generated Captions For My Videos?</h2>
 
 <p>
   Some video services like YouTube will generate captions automatically using AI that converts audio to text. While this
@@ -149,7 +149,7 @@ The Turkish Exorcist.
 <p>
   Now compare this with the AblePlayer video in the first example above. The AblePlayer video does have a
   proper transcript; it contains descriptions of what is happening visually that are not given by the spoken text in the
-  video).
+  video.
 </p>
 
 <figure>

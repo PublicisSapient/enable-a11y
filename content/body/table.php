@@ -6,7 +6,7 @@
 
 
 
-<p><strong>Many web developers who use <code>&lt;table&gt;</code> markup, however, don't know there are some additional codes they need to make them accessible</strong> (even <a href="https://css-tricks.com/complete-guide-table-element/">the CSS tricks so called "Complete" Guide to the Table Element</a> doesn't cover these items adequately, in my opinion):</p>
+<p><strong>Many web developers who use <code>&lt;table&gt;</code> markup, however, don't know there is some additional code they need to make them accessible</strong> (even <a href="https://css-tricks.com/complete-guide-table-element/">the CSS Tricks' so called "Complete" Guide to the Table Element</a> doesn't cover these items adequately, in my opinion):</p>
 
 <ul>
   <li><code>th</code> tags <strong>must have a <code>scope</code> attribute</strong> set to <code>row</code> if it is a heading for a
@@ -522,7 +522,7 @@
     If you are not worried about large hits to a backend database for generating
     the data or a ridiculously huge HTTP payload, I would
     suggest considering the use of a table with a fixed table header.  It has a
-    way less complicated UI, and if marked up correctly, is accessible via screen readers and keyboard.
+    way less complicated UI, and if marked up correctly, is still accessible via screen readers and keyboard.
 </p>
 
 <p><em>(Note: Data from this table was taken from <a href="https://worldpopulationreview.com/countries/countries-by-gdp#worldCountries">World Population Review</a>).</em></p>

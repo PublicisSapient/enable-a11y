@@ -62,7 +62,7 @@
             how long it will take to upload a movie file to a web server), then you will want that information 
             updated to the user in real-time as it happens.  In the latter case, the developer and UX designer should
             think about how immediately this information should be given to screen reader users since this information causes
-            a bit of noise and sets the aria-live level appropriately. If the user is not going to be doing anything
+            a bit of noise, and set the aria-live level appropriately. If the user is not going to be doing anything
             else on the screen while the action is happening and needs immediate updates, use <code>aria-live="assertive"</code>.
             If the user is going to be doing other things on the page while the progress bar is updating, use <code>"polite"</code>
             instead.

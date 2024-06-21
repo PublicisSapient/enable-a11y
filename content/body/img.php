@@ -183,7 +183,7 @@
 <h2>Using SVG Sprites</h2>
 
 <p>
-  Many developers use SVG Sprites so they can put all their SVG icons in one place and have their <code>svg</code> tags point to a shape in the sprite inside their HTML code.  This can make your webpage more efficient when there are a lot of icons on a page, as described in the article <a href="https://cloudfour.com/thinks/svg-icon-stress-test/">Which SVG technique performs best for way too many icons?</a> by <a href="https://tylersticka.com/">Tyler Sticka</a>.  Here, we should you how to embed them in an accessible way like the other SVG examples on this page.
+  Many developers use SVG Sprites so they can put all their SVG icons in one place and have their <code>svg</code> tags point to a shape in the sprite inside their HTML code.  This can make your webpage more efficient when there are a lot of icons on a page, as described in the article <a href="https://cloudfour.com/thinks/svg-icon-stress-test/">Which SVG technique performs best for way too many icons?</a> by <a href="https://tylersticka.com/">Tyler Sticka</a>.  Here, we show you how to embed them in an accessible way like the other SVG examples on this page.
 </p>
 
 <p>

@@ -119,7 +119,7 @@
 <h2>Common Reflow Problem #2: Filters on Product Listing Pages</h2> 
 
 <p>
-  A common design problem on many e-commerce sites is PLPs (product listing pages). Consider the screenshot below
+  A common design problem on many e-commerce sites is on PLPs (product listing pages). Consider the screenshot below
   that shows a desktop PLP with a list of product tiles that follow a list of filters:
 </p>
 
