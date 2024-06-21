@@ -1,16 +1,5 @@
 'use strict';
 
-/*******************************************************************************
- * toast.js - Example logic for Accessible Toast Notifications
- *
- * Written by [Your Name] <your.email@example.com>
- * Part of the Enable accessible component library.
- * Version 1.0 released
- *
- * More information about this script available at:
- *
- * Released under the MIT License.
- ******************************************************************************/
 import toastModule from '../modules/toast.js';
 
 const app = new (function () {

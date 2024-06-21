@@ -3,12 +3,12 @@
 /*******************************************************************************
  * toast.js - UI for Accessible Toast Notifications
  * 
- * Written by [Your Name] <your.email@example.com>
+ * Written by Otto Wachter <github.com/vonwao>
  * Part of the Enable accessible component library.
- * Version 1.0 released [Release Date]
+ * Version 1.x released [Release Date]
  *
  * More information about this script available at:
- * [Your Website]
+ * https://www.useragentman.com/enable/toast.php
  * 
  * Released under the MIT License.
  ******************************************************************************/
