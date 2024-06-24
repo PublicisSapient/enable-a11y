@@ -16,6 +16,9 @@
                     },
                 },
             }
+        },
+        corePlugins: {
+            preflight: false, // disable preflight - prevents Tailwind from resetting all styles
         }
     }
 </script>
