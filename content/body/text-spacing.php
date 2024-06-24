@@ -11,7 +11,7 @@
         </p>
 
         <ol>
-            <li>Test for issues when text-spacing is altered in a document.</li>
+            <li>Test for issues when text spacing is altered in a document.</li>
             <li>Fix the issues that come up.</li>
         </ol>
 
