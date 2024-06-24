@@ -266,7 +266,7 @@
     {
       "label": "Set up the CSS for the custom styles",
       "highlight": "%CSS% radiogroup-css~ [role=\"radio\"][aria-checked=\"true\"]::after ||| top[^;]*; ||| left[^;]*; ||| width[^;]*; ||| height[^;]*; ||| transform[^;]*;",
-      "notes": "The <strong>::after</strong> pseudo-element is the coloured inner circle of the checked radio button. The width and height is the size of the radio button minus the border width, and then scaled down using CSS transforms. It is then positioned on top of the radio button's outer circle."
+      "notes": "The <strong>::after</strong> pseudo-element is the colored inner circle of the checked radio button. The width and height is the size of the radio button minus the border width, and then scaled down using CSS transforms. It is then positioned on top of the radio button's outer circle."
     },
     {
       "label": "Set up the CSS so the inner and outer circles are really circles",

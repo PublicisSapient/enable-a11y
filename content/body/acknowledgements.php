@@ -1,13 +1,13 @@
 <p>
   Originally, Enable started out as a small personal website to help me show other developers how accessible code is
   structured.
-  Some of the solutions are my own, some I have borrowed from others (because why reinvent the wheel, especially when
-  you have learned from the best already?)
+  Some of the solutions are my own, and some I have borrowed from others (because why reinvent the wheel, especially when
+  you have already learned from the best?)
 </p>
 
 <p>
   What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code I have
-  built on that I have accessibility features to.
+  built on that I have accessibility features for.
 </p>
 
 <h2>Code Used By Enable</h2>
