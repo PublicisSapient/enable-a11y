@@ -7,7 +7,7 @@
 <div id="html5-example" class="enable-example">
     <form class="tw-mx-auto tw-max-w-md tw-space-y-6 tw-py-12" id="autocomplete">
     <div class="tw-space-y-2 tw-text-center">
-        <h1 class="tw-text-3xl tw-font-bold">Checkout</h1>
+        <h2 class="tw-text-3xl tw-font-bold">Checkout</h2>
         <p class="tw-text-gray-500 dark:tw-text-gray-400">Enter your information to complete your purchase.</p>
     </div>
     <div class="tw-grid tw-grid-cols-2 tw-gap-4">
