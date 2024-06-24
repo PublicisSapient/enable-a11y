@@ -32,7 +32,7 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         ]); ?>
 
         <p>
-            The following example is a log that will announce the CPU usage of the webserver every five seconds.
+            The following example is a log that will announce the CPU usage of the web server every five seconds.
 
         </p><div id="log-example" class="enable-example">
         <pre id="syslog" role="log" aria-atomic="true">
