@@ -119,7 +119,7 @@
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
   },
   "marquee.php": {
-    "title": "The Marquee Content Role",
+    "title": "The Marquee Content (a.k.a. Scrolling Banner) Role",
     "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
