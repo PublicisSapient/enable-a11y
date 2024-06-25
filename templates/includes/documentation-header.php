@@ -282,7 +282,7 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Number Input Spinner",
+                                            "label": "Accessible Numeric Fields",
                                             "url-slug": "spinner",
                                             "alt": ""
                                         }
