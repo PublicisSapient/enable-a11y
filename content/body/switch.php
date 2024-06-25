@@ -2,13 +2,13 @@
 A switch (also known as a toggle) is like a checkbox, in that is designed to be an input control that has a binary value
   (either <strong>checked</strong> and <strong>unchecked</strong> or <strong>on</strong> or <strong>off</strong>,
   depending on the screen reader).
-  Like <a href="tabs.php">tablists.php</a>, switches/toggles do not have a native HTML5 tag, so we implement custom code using
+  Like <a href="tabs.php">tablists.php</a>, switches do not have a native HTML5 tag, so we implement custom code using
   the
   <code>switch</code> role in JavaScript.
 </p>
 
 <p>
-  Many developers will implement switches/toggles using the <code>&lt;input type="checkbox"&gt;</code>, since the native HTML5
+  Many developers will implement switches using the <code>&lt;input type="checkbox"&gt;</code>, since the native HTML5
   checkbox control is already accessible. While you could do this, I would argue this is semantically dishonest: partially
   sighted users who use a screen reader hear that the control is a checkbox, but there is no checkmark involved.
 </p>
@@ -23,7 +23,7 @@ A switch (also known as a toggle) is like a checkbox, in that is designed to be 
 </p>
 
 
-<h2>A simple switch/toggle coded with ARIA.</h2>
+<h2>A simple switch coded with ARIA.</h2>
 
 <?php includeStats(["isForNewBuilds" => true]); ?>
 <?php includeStats([

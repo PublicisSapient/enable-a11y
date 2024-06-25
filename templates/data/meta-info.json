@@ -119,7 +119,7 @@
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
   },
   "marquee.php": {
-    "title": "The Marquee Content Role",
+    "title": "The Marquee Content (a.k.a. Scrolling Banner) Role",
     "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
@@ -156,7 +156,7 @@
     "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users."
   },
   "spinner.php": {
-    "title": "Number Input Spinner",
+    "title": "Accessible Numeric Fields (a.k.a. Numeric Spinner or Stepper)",
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
   "status.php": {
