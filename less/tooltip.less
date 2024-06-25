@@ -13,22 +13,19 @@
     /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
-     */
+    */
     border: 1px solid transparent;
 
     &:before {
         content: "";
-        width: 1rem;
-        height: 1rem;
-        background: black;
+        width: 3;
+        height: 3;
         position: absolute;
-        top: -0.5rem;
-        left: 2rem;
-        transform: rotate(45deg);
-
+        left: 0.1rem;
         /* Again, we put a transparent border here for Windows High Contrast Mode */
-        border-top: 1px solid transparent;
-        border-left: 1px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
     }
 
     &:after {
@@ -42,5 +39,42 @@
 
     &--hidden {
         .enable__visually-hidden();
+    }
+
+    /* Additional tooltip styles */
+    &.tp:before {
+        top: -0.5rem;
+    }
+
+    &.btm:before {
+        bottom: -0.5rem;
+        transform: rotate(180deg);
+    }
+}
+
+.icon-button {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 50%; /* to make it circular */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px; /* adjust font size as needed */
+    border: none;
+    cursor: pointer;
+
+    &:focus-visible {
+        /* Ensure the focus style is distinct from the background */
+        outline: solid 2px #3b99fc;
+        outline-offset: 2px;
+    }
+
+    &:hover {
+        /* Hover styling */
+        transition: background-color 0.3s ease; /* smooth transition */
+
+        background-color: darkblue; /* Example darker background on hover */
     }
 }

@@ -27,7 +27,12 @@
     <a href="/" data-tooltip="This tooltip is accessible!">This link has a tooltip</a>
     <label for="input-tooltip-example2">and so does this input field:</label>
     <input id="input-tooltip-example2" type="text" data-tooltip="You can put tooltips on any focusable item.">
+
+    <button class="icon-button" aria-label="Information" aria-describedby="tooltip" data-tooltip="This tooltip appears on click instead of hover">
+      <span class="icon" aria-hidden="true">i</span>
+    </button>
   </p>
+
 </div>
 
 
