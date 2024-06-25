@@ -64,17 +64,18 @@
     font-size: 12px; /* adjust font size as needed */
     border: none;
     cursor: pointer;
-
-    &:focus-visible {
-        /* Ensure the focus style is distinct from the background */
-        outline: solid 2px #3b99fc;
-        outline-offset: 2px;
-    }
+    position: relative; /* Ensure relative positioning for pseudo-elements */
 
     &:hover {
         /* Hover styling */
         transition: background-color 0.3s ease; /* smooth transition */
-
         background-color: darkblue; /* Example darker background on hover */
+    }
+
+    /* Ensure the button content is centered */
+    .icon {
+        display: block; /* Ensure block display for icon */
+        text-align: center; /* Center text horizontally */
+        line-height: 1; /* Adjust line height as needed */
     }
 }

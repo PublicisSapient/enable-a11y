@@ -72,6 +72,9 @@
   /* adjust font size as needed */
   border: none;
   cursor: pointer;
+  position: relative;
+  /* Ensure relative positioning for pseudo-elements */
+  /* Ensure the button content is centered */
 }
 .icon-button:focus-visible {
   /* Ensure the focus style is distinct from the background */
@@ -84,4 +87,12 @@
   /* smooth transition */
   background-color: darkblue;
   /* Example darker background on hover */
+}
+.icon-button .icon {
+  display: block;
+  /* Ensure block display for icon */
+  text-align: center;
+  /* Center text horizontally */
+  line-height: 1;
+  /* Adjust line height as needed */
 }
