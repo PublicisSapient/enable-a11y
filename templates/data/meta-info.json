@@ -67,7 +67,7 @@
     "isNPM": "true"
   },
   "dropdown.php": {
-    "title": "Accessible Drawers",
+    "title": "Accessible Drawers (a.k.a. Accordions or Expandos)",
     "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accessible with just a little bit of markup.",
     "isNPM": "true"
   },
@@ -165,7 +165,7 @@
   },
   "switch.php": {
     "title": "The ARIA Switch/Toggle Role",
-    "desc": "A control with no native HTML5 equivalent, switches/Toggles have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
+    "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
   },
   "table.php": {
     "title": "Accessible Tables",

@@ -2,9 +2,9 @@
   A switch is like a checkbox, in that is designed to be an input control that has a binary value
   (either <strong>checked</strong> and <strong>unchecked</strong> or <strong>on</strong> or <strong>off</strong>,
   depending on the screen reader).
-  Like <a href="tabs.php">tablists.php</a>, switches/Toggles do not have a native HTML5 tag, so we implement custom code using
+  Like <a href="tabs.php">tablists.php</a>, switches/toggles do not have a native HTML5 tag, so we implement custom code using
   the
-  <code>switch/toggle</code> role in JavaScript.
+  <code>switch</code> role in JavaScript.
 </p>
 
 <p>
@@ -35,7 +35,7 @@
 <p>This code is based on information from the
     <a href="https://developer.mozilla.org/en-US/">MDN</a> article on
     <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_switch_role">Using
-      the switch/toggle role</a>.  The switch/toggle reports the checked state as "on" or "off" in VoiceOver
+      the switch role</a>.  The switch/toggle reports the checked state as "on" or "off" in VoiceOver
     and "checked" or "unchecked" in NVDA and ChromeVox.  In order to make some consistency among user agents, an <code>aria-describedby</code> on the switch/toggle can state the "on/off" state to all screen readers. This description is also given visually, to make it obvious what the state is for sighted users.  Developers could hide this text with the <a href="screen-reader-only-text.php"><code>sr-only</code> class</a>, and put "off" and "on" labels on sides of the right and left sides of the component if they wish instead. 
 </p>
 
