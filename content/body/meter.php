@@ -1,7 +1,7 @@
 <p>
   The meter component is used to show a scalar measurement within a known range or a fractional value. 
   For example, meter could be used to display a device's current battery or a car's remaining fuel level. 
-  In cases where there is no fixed maxium, it is preferable to utilize the <a href="/progress.php">progress bar</a> component.
+  In cases where there is no fixed maximum, it is preferable to utilize the <a href="/progress.php">progress bar</a> component.
 </p>
 
 <p>
