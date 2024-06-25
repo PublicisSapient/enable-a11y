@@ -21,10 +21,9 @@
 <div id="example1">
   <div class="enable-video-player">
     <audio id="audio1" preload="auto" data-able-player data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
-      <source type="audio/ogg" src="audio/example.ogg"/>
       <source type="audio/mpeg" src="audio/example.mp3"/>
-      <!-- <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English"> -->
-      <!-- <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en" label="English Audio Descriptions"> -->
+      <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English Captions">
+      <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en" label="English Audio Descriptions">
     </audio>
   </div>
 </div>
