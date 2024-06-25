@@ -119,7 +119,7 @@
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
   },
   "marquee.php": {
-    "title": "The Marquee Role (a.k.a. a Scrolling Banner)",
+    "title": "The Marquee Role (a.k.a. Scrolling Banner)",
     "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
@@ -164,7 +164,7 @@
     "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
   },
   "switch.php": {
-    "title": "The ARIA Switch/Toggle Role",
+    "title": "The ARIA Switch Role  (a.k.a. Toggle)",
     "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
   },
   "table.php": {
