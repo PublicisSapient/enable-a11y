@@ -28,6 +28,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
           
         stack trace: ${JSON.stringify(e.stackTrace())}`;
             } else if (type === 'log' || type === 'debug') {
+                // This check is required to confirm the absence of console.log and debug statements in the code.
                 const location = e.location();
                 throw `Console log: ${e.text()}
         type: ${type}, file: ${location.url}, line: ${location.lineNumber}`;
