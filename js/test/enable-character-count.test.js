@@ -26,11 +26,11 @@ async function keyboardType(text) {
 }
 
 describe('Tests for the ARIA live region', () => {
-  const liveRegionSuffixedBy = '-live-region-character-count-status';
+  const liveRegionSuffix = '-live-region-character-count-status';
   let characterCountStatus;
 
   beforeAll(async () => {
-    characterCountStatus = await page.$(`[id$="${liveRegionSuffixedBy}"]`);
+    characterCountStatus = await page.$(`[id$="${liveRegionSuffix}"]`);
   });
 
   it('Is created for data-has-character-count="true"', async () => {
@@ -40,7 +40,7 @@ describe('Tests for the ARIA live region', () => {
   it('Is created with correct suffix appended', async () => {
     const id = await page.evaluate((p) => p.id, characterCountStatus);
     const textAreaId = await page.evaluate((textarea) => textarea.id, textArea);
-    expect(id).toBe(`${textAreaId}${liveRegionSuffixedBy}`);
+    expect(id).toBe(`${textAreaId}${liveRegionSuffix}`);
   });
 
   it('Has correct character count when outside warning threshold', async () => {
@@ -74,11 +74,11 @@ describe('Tests for the ARIA live region', () => {
 });
 
 describe('Tests for the displayed character count', () => {
-  const characterCountContainerSuffixedBy = '-counter-container';
+  const characterCountContainerSuffix = '-counter-container';
   let divCharacterCount;
 
   beforeAll(async () => {
-    divCharacterCount = await page.$(`[id$="${characterCountContainerSuffixedBy}"]`);
+    divCharacterCount = await page.$(`[id$="${characterCountContainerSuffix}"]`);
   });
 
   it('Is created for data-has-character-count="true"', async () => {
@@ -88,7 +88,7 @@ describe('Tests for the displayed character count', () => {
   it('Is created with correct suffix appended', async () => {
     const id = await page.evaluate((p) => p.id, divCharacterCount);
     const textAreaId = await page.evaluate((textarea) => textarea.id, textArea);
-    expect(id).toBe(`${textAreaId}${characterCountContainerSuffixedBy}`);
+    expect(id).toBe(`${textAreaId}${characterCountContainerSuffix}`);
   });
 
   it('Is created with correct default value', async () => {
@@ -115,7 +115,31 @@ describe('Tests for the displayed character count', () => {
   });
 
   async function getCharacterCount() {
-    const selector = `div[id$="${characterCountContainerSuffixedBy}"] span:first-child`;
+    const selector = `div[id$="${characterCountContainerSuffix}"] span:first-child`;
     return await page.$eval(selector, (span) => span.textContent);
   }
+});
+
+describe('Tests for the ARIA described-by', () => {
+  const ariaDescribedBySuffix = '-aria-describedby';
+  let describedBy;
+
+  beforeAll(async () => {
+    describedBy = await page.$(`[id$="${ariaDescribedBySuffix}"]`);
+  });
+
+  it('Is created for data-has-character-count="true"', async () => {
+    expect(describedBy).not.toBeNull();
+  });
+
+  it('Is created with correct suffix appended', async () => {
+    const id = await page.evaluate((p) => p.id, describedBy);
+    const textAreaId = await page.evaluate((textarea) => textarea.id, textArea);
+    expect(id).toBe(`${textAreaId}${ariaDescribedBySuffix}`);
+  });
+
+  it('Is created with correct default value', async () => {
+    const result = await page.evaluate((p) => p.innerHTML, describedBy);
+    expect(result).toBe('In edit text area with a 100 character limit. Press Escape to find out how many more characters are allowed.');
+  });
 });
