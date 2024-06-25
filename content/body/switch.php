@@ -1,5 +1,5 @@
 <p>
-  A switch is like a checkbox, in that is designed to be an input control that has a binary value
+A switch (also known as a toggle) is like a checkbox, in that is designed to be an input control that has a binary value
   (either <strong>checked</strong> and <strong>unchecked</strong> or <strong>on</strong> or <strong>off</strong>,
   depending on the screen reader).
   Like <a href="tabs.php">tablists.php</a>, switches/toggles do not have a native HTML5 tag, so we implement custom code using
