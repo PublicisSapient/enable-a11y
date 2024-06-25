@@ -1,6 +1,8 @@
 import { interpolate } from "./interpolate.js";
 
 const enableCharacterCount = new function() {
+  'use strict';
+
   const defaultReadCharacterCountKey = 'Escape';
   let announcementTimeout;
   let idIndex = 0;
