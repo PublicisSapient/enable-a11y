@@ -13,8 +13,17 @@ beforeEach(async () => {
 });
 
 afterEach(async () => {
-  await page.evaluate((textarea) => (textarea.value = ''), textArea);
+  await resetCharacterCountText();
 });
+
+async function resetCharacterCountText() {
+  await page.evaluate((textarea) => (textarea.value = ''), textArea);
+  await page.keyboard.press('ArrowDown');
+}
+
+async function keyboardType(text) {
+  await page.keyboard.type(text, { delay: 1 });
+}
 
 describe('Tests for the ARIA live region', () => {
   const liveRegionSuffixedBy = '-live-region-character-count-status';
@@ -26,6 +35,9 @@ describe('Tests for the ARIA live region', () => {
 
   it('Is created for data-has-character-count="true"', async () => {
     expect(characterCountStatus).not.toBeNull();
+  });
+
+  it('Is created with correct suffix appended', async () => {
     const id = await page.evaluate((p) => p.id, characterCountStatus);
     const textAreaId = await page.evaluate((textarea) => textarea.id, textArea);
     expect(id).toBe(`${textAreaId}${liveRegionSuffixedBy}`);
@@ -52,15 +64,58 @@ describe('Tests for the ARIA live region', () => {
     expect(result).toBe('Character Count: 100 out of 100. 0 characters remaining.');
   });
 
-  async function keyboardType(text) {
-    await page.keyboard.type(text, { delay: 1 });
-  }
-
   async function announcementTimeout(value) {
     await page.keyboard.press('ArrowDown', { delay: value });
   }
 
   async function evaluateStatus() {
     return await page.evaluate((p) => p.innerHTML, characterCountStatus);
+  }
+});
+
+describe('Tests for the displayed character count', () => {
+  const characterCountContainerSuffixedBy = '-counter-container';
+  let divCharacterCount;
+
+  beforeAll(async () => {
+    divCharacterCount = await page.$(`[id$="${characterCountContainerSuffixedBy}"]`);
+  });
+
+  it('Is created for data-has-character-count="true"', async () => {
+    expect(divCharacterCount).not.toBeNull();
+  });
+
+  it('Is created with correct suffix appended', async () => {
+    const id = await page.evaluate((p) => p.id, divCharacterCount);
+    const textAreaId = await page.evaluate((textarea) => textarea.id, textArea);
+    expect(id).toBe(`${textAreaId}${characterCountContainerSuffixedBy}`);
+  });
+
+  it('Is created with correct default value', async () => {
+    const result = await getCharacterCount();
+    expect(result).toBe('0/100');
+  });
+
+  it('Has correct character count when outside warning threshold', async () => {
+    await keyboardType('This sentence has 32 characters.');
+    const result = await getCharacterCount();
+    expect(result).toBe('32/100');
+  });
+
+  it('Has correct character count when within warning threshold', async () => {
+    await keyboardType('This sentence will be within the default threshold set for the character counter.');
+    const result = await getCharacterCount();
+    expect(result).toBe('81/100');
+  });
+
+  it('Has max character count when too much is typed', async () => {
+    await keyboardType('This sentence contains more than the allotted one hundred max characters that is allowed by default for this textarea.');
+    const result = await getCharacterCount();
+    expect(result).toBe('100/100');
+  });
+
+  async function getCharacterCount() {
+    const selector = `div[id$="${characterCountContainerSuffixedBy}"] span:first-child`;
+    return await page.$eval(selector, (span) => span.textContent);
   }
 });
