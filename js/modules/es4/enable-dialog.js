@@ -1,5 +1,18 @@
 'use strict'
 
+/*******************************************************************************
+ * enable-dialog.js - Fixes for the HTML5 dialog (both native
+ * and polyfill)
+ * 
+ * Based on this gist:
+ * https://gist.github.com/samthor/babe9fad4a65625b301ba482dad284d1
+ *
+ * Written by Sam Thorogood.
+ * Updated by Zoltan Hawryluk to implement focus loop in open dialog.
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
 const enableDialog = new (function() {
   /**
    * Updates the passed dialog to retain focus and restore it when the dialog is closed. Won't
@@ -98,4 +111,4 @@ const enableDialog = new (function() {
       this.registerFocusRestoreDialog(favDialog);
     }
   }
-})
+});

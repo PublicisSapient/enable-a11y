@@ -1,8 +1,22 @@
 "use strict";
 
-/**
- * keyCodes() is an object to contain key code values for the application
- */
+/*******************************************************************************
+ * enable-slider.js - Implementation of the ARIA slider role UI.
+ * 
+ * Based on code by the Open Ajax Alliance
+ * Original code available at:
+ * https://web.archive.org/web/20170715191225/http://oaa-accessibility.org/example/32/
+ * 
+ * Refactored by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 written May 17, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/slider.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
 const keyCodes = function() {
     // Define values for keycodes
     this.backspace = 8;
@@ -20,7 +34,7 @@ const keyCodes = function() {
     this.up = 38;
     this.right = 39;
     this.down = 40;
-  } // end keyCodes
+  };
 
 /**
  *

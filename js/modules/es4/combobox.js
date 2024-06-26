@@ -1,5 +1,20 @@
 'use strict'
 
+/*******************************************************************************
+ * enable-combobox.js - Implementation of the ARIA combobox UI
+ *
+ * Script based on combobox example on the Webkit Blog:
+ * https://webkit.org/blog-files/aria1.0/combobox_with_live_region_status.html
+ * 
+ * Refactored by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released Dec 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/combobox.php
+ *
+ * Released under the MIT License.
+ ******************************************************************************/
 
 const EnableCombobox = function(componentRoot) {
   let root = null,

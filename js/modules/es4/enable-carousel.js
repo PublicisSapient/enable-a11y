@@ -1,5 +1,18 @@
 'use strict'
 
+/*******************************************************************************
+ * enable-carousel.js - Accessible shim over the Glider carousel
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released December 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/carousel.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
 let counter = 0;
 
 const EnableCarousel = function (container, options, gliderOptions) {

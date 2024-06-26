@@ -1,5 +1,18 @@
 'use strict'
 
+/*******************************************************************************
+ * enable-paginate.js - Accessible table pagination module
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released Dec 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/table.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
 const paginationTables = new (function() {
   let perPage = 20;
   const baseClass = "pagination";

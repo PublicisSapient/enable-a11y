@@ -1,5 +1,17 @@
 'use strict'
 
+/*******************************************************************************
+ * tabs.js - UI for Accessible tabs
+ * 
+ * Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released Dec. 27, 2021
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/tabs.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
 const tabgroup = new (function() {
 
   this.init = function() {
