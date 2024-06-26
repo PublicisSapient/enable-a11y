@@ -26,7 +26,7 @@ const enableCharacterCount = new function() {
   }
 
   function setIdIfNullFor(target) {
-    if (target.id == null) {
+    if (!target.id) {
       target.id = `enable-character-counter-${idIndex++}`;
     }
   }
