@@ -98,9 +98,8 @@
 <h2>ARIA example</h2>
 
 <?php includeStats([
-    "isForNewBuilds" => false,
-    "comment" =>
-        "Recommended only if you needed to create a JavaScript WYSIWYG editor.",
+  "isForNewBuilds" => false,
+  "comment" => "Recommended only if you needed to create a JavaScript WYSIWYG editor.",
 ]); ?>
 
 <p>
@@ -191,7 +190,46 @@
 <ol>
   <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
   <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
+  <li>When they use the keyboard to press the key set by the <code>data-read-count-key</code> attribute—the default is the Escape key.</li>
 </ol>
+
+<div id="charcount-simple" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment Information</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+        <div>
+          <label class="textarea-label">Delivery Notes:</label>
+          <textarea
+            maxlength="100"
+            data-has-character-count="true"
+          ></textarea>
+        </div>
+      </div>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<?php includeShowcode("charcount-simple"); ?>
+
+<script type="application/json" id="charcount-simple-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [
+      {
+        "label": "Set the 'maxlength' attribute of the textarea element.",
+        "highlight": "%INLINE%charcount-simple ||| maxlength"
+      },
+      {
+        "label": "Set the custom data-has-character-count attribute for the textarea element.",
+        "highlight": "%INLINE%charcount-simple ||| data-has-character-count"
+      }
+    ]
+  }
+</script>
+
+<p>The character counter can also be customized using data attributes. The character counter below shows the available data attributes and their default values.</p>
 
 <div id="charcount-example" class="enable-example">
   <form class="enable-form-example">
@@ -282,6 +320,6 @@
 
 
 <?= includeNPMInstructions("enable-character-count", [], "", false, [
-    "noCSS" => true,
+  "noCSS" => true,
 ])
 ?>
