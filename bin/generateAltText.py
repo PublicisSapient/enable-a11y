@@ -28,5 +28,5 @@ def process_directory(directory):
             print(f"Image: {filename}\nAlt Text: {alt_text}\n")
 
 # Directory containing images
-image_directory = "/Users/zolhawry/git/enable-a11y/images/main-menu"
+image_directory = "/Users/zolhawry/Pictures"
 process_directory(image_directory)
