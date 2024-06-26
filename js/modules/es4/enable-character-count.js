@@ -111,21 +111,28 @@ const enableCharacterCount = new function() {
 
   function onKeyUp(event) {
     const { target, key } = event;
-    const { dataset, maxLength } = target;
+    const { dataset } = target;
     writeCharCount(target);
-    const inputLength = target.value.length;
-    const warningThreshold = dataset.warningThreshold ?? 20;
-    const isWithinWarningThreshold = inputLength > (maxLength - warningThreshold);
-    if (isWithinWarningThreshold && !wasArrowPressed(key)) {
+    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
+      announceCharacterCount(target);
+    }
+    if (isWithinWarningThreshold(target) && !wasArrowPressed(key)) {
       announceCharacterCountWithDelay(target, 1000);
     }
+  }
+
+  function isWithinWarningThreshold(target) {
+    const { dataset, maxLength } = target;
+    const inputLength = target.value.length;
+    const warningThreshold = dataset.warningThreshold ?? 20;
+    return inputLength > (maxLength - warningThreshold);
   }
 
   function onKeyDown(event) {
     const { target, key } = event;
     const { dataset } = target;
     if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
-      announceCharacterCount(target);
+      getScreenReaderCharacterCount(target).textContent = '';
     }
   }
 
@@ -145,20 +152,21 @@ const enableCharacterCount = new function() {
   }
 
   function announceCharacterCountWithDelay(target, delay) {
-    const counterForScreenReader = getScreenReaderCharacterCount(target);
-
     if (typeof announcementTimeout === 'number') {
-      counterForScreenReader.textContent = '';
       clearTimeout(announcementTimeout);
     }
-
     announcementTimeout = setTimeout(() => {
-      const maxLength = target.maxLength;
-      const numChars = target.value.length;
-      const charsRemaining = maxLength - numChars;
-      const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
-      counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
+      setContentsForScreenReader(target)
     }, delay);
+  }
+
+  function setContentsForScreenReader(target) {
+    const maxLength = target.maxLength;
+    const numChars = target.value.length;
+    const charsRemaining = maxLength - numChars;
+    const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
+    const counterForScreenReader = getScreenReaderCharacterCount(target);
+    counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
   }
 
   function getScreenReaderCharacterCount(target) {
