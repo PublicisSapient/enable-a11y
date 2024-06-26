@@ -170,9 +170,9 @@ $uncheck =
 
                     <!-- BEGIN-INPUT-MASK -->
                     <div class="enable-input-mask">
-                        <input id="winkey" type="text" name="cc" data-mask="9999 9999 9999 9999"
-                        pattern="[0-9]{15,16}" class="enable-input-mask__input" aria-describedby="winkey__desc"
-                            maxlength="16" inputmode="numeric" />
+                        <input id="winkey" type="text" name="cc" data-mask="CCCCC-CCCCC-CCCCC-CCCCC-CCCCC"
+                            pattern="[a-zA-Z0-9]{25}" class="enable-input-mask__input" aria-describedby="winkey__desc"
+                            maxlength="25" />
                         <div class="enable-input-mask__mask" aria-hidden="true"></div>
                         <div id="winkey__alert" aria-live="assertive" class="enable-input-mask__alert sr-only"></div>
                     </div>
