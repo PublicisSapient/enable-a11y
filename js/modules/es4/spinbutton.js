@@ -273,7 +273,7 @@ function spinbutton(el) {
   this.init();
 }
 
-const spinbuttons = new function () {
+const spinbuttons = new (function() {
   const buttons = [];
 
   this.add = ($el) => {
@@ -288,7 +288,4 @@ const spinbuttons = new function () {
     }
   }
   
-}
-
-
-
+})
