@@ -63,10 +63,12 @@ const enableCharacterCount = new function() {
 
   function addLiveRegion(target) {
     const liveRegion = document.createElement('div');
-    liveRegion.id = `${target.id}-live-region`
+    const liveRegionId = `${target.id}-live-region`;
+    liveRegion.id = liveRegionId;
     liveRegion.className="sr-only";
     liveRegion.role = 'region';
     liveRegion.ariaLive = 'polite';
+    liveRegion.ariaLabel = `${liveRegionId}-aria-label`;
     target.insertAdjacentElement('afterend', liveRegion);
     liveRegion.appendChild(createCounterForScreenReader(liveRegion));
   }
