@@ -199,8 +199,9 @@
       <legend>Payment Information</legend>
       <div class="enable-form-example__fieldset-inner-container">
         <div>
-          <label class="textarea-label">Delivery Notes:</label>
+          <label for="textarea-characount-simple" class="textarea-label">Delivery Notes:</label>
           <textarea
+            id="textarea-characount-simple"
             maxlength="100"
             data-has-character-count="true"
           ></textarea>
