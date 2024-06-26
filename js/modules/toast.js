@@ -17,6 +17,7 @@ const toastModule = new function() {
 
   this.init = function() {
     this.rackContent = document.getElementById('rackContent');
+    this.updateToggleRackButton();
   };
 
   this.Toast = class {
@@ -31,6 +32,7 @@ const toastModule = new function() {
 
       // Initialize the toast rack
       this.rackContent = document.getElementById('rackContent');
+      this.toggleRackButton = document.getElementById('toggleRackButton');
     }
 
     // Create the container for the toasts
@@ -68,6 +70,7 @@ const toastModule = new function() {
       this.updateToastRack();
 
       this.updateVisibleToasts();
+      this.updateToggleRackButton();
     }
 
     // Create the individual toast element
@@ -106,6 +109,7 @@ const toastModule = new function() {
           this.visibleQueue = this.visibleQueue.filter(t => t.id !== toastData.id);
           this.updateVisibleToasts();
           this.updateToastRack();
+          this.updateToggleRackButton();
         }, 500); // Match the CSS animation duration
       }
     }
@@ -164,6 +168,14 @@ const toastModule = new function() {
       document.getElementById('rackContentStatus').textContent = `Toast rack contains ${totalNotifications} toasts.`;
     }
 
+    // Update the toggle rack button with the number of toasts
+    updateToggleRackButton() {
+      const totalNotifications = this.toastQueue.length;
+      if (this.toggleRackButton) {
+        this.toggleRackButton.textContent = `Toggle Toast Rack (${totalNotifications})`;
+      }
+    }
+
     // Clear all toasts
     clearAllToasts() {
       this.visibleQueue.forEach(toast => {
@@ -177,6 +189,7 @@ const toastModule = new function() {
       console.log("All toasts cleared");
       this.updateStatus();
       this.updateToastRack();
+      this.updateToggleRackButton();
     }
   }
 };
