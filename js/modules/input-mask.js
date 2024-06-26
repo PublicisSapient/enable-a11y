@@ -302,8 +302,7 @@ const inputMask = new function () {
     }
 
     const getMaskedValue = (inputEl) => {
-        const { dataset } = inputEl;
-        const value = inputEl.value || '';
+        const { dataset, input = '' } = inputEl;
         const { mask } = dataset;
         const valueArr = value.split('');
         const maskArr = mask.split('');
