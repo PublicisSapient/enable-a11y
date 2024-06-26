@@ -302,7 +302,8 @@ const inputMask = new function () {
     }
 
     const getMaskedValue = (inputEl) => {
-        const { dataset, value } = inputEl;
+        const { dataset } = inputEl;
+        const value = inputEl.value || '';
         const { mask } = dataset;
         const valueArr = value.split('');
         const maskArr = mask.split('');
@@ -466,7 +467,7 @@ const inputMask = new function () {
     }
 
     const getPreviousValue = (el) => {
-        return el.dataset[getDatasetAttr('PreVal')];
+        return el.dataset[getDatasetAttr('PreVal')] || '';
     }
 
     const populateMasks = () => {
