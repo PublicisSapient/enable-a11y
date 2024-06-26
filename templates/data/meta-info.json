@@ -182,7 +182,7 @@
     "isNPM": "true"
   },
   "reflow.php": {
-    "title": "Reflow",
+    "title": "Content That Scrolls In Two Dimensions (a WCAG Reflow Violation)",
     "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
     "hasIframes": true
   },

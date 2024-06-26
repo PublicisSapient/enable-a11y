@@ -495,7 +495,7 @@
                                 }, {
                                     "id": "flyout__link",
                                     "props": {
-                                        "label": "Reflow",
+                                        "label": "Reflow Content",
                                         "url-slug": "reflow",
                                         "alt": ""
                                     }
