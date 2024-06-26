@@ -101,6 +101,10 @@
     "title": "Accessible Images",
     "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
   },
+  "infographic.php": {
+    "title": "Accessible Infographics",
+    "desc": "How to code SVG and bitmap images so they are understandable by screen reader users."
+  },
   "input-mask.php": {
     "title": "Accessible Input Masking",
     "desc": "How to code masking of keyboard input in form fields so they are accessible."
