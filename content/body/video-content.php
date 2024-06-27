@@ -37,7 +37,7 @@
 
   <dt>Transcripts:</dt>
   <dd>A transcript is used by users who can neither hear audio nor see video, like deaf or blind users. It is like the
-      script, the actors in the video used to know what was going on in the story that they were about to act in. A transcript
+      script the actors in the video used to know what was going on in the story that they were about to act in. A transcript
       also should include descriptions of audio information in the video (like laughing) and visual information (such as
       the creak of a door opening).
   </dd>

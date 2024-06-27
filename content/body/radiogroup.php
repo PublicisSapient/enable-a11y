@@ -184,7 +184,7 @@
 <?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
-    Use when some developer before you decided to make <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time.
+    Use when some developer before you decided that making <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time.
     Even though it wasn't.  Bad, developer! Bad!
 </p>
 

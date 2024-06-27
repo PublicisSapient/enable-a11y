@@ -50,7 +50,7 @@
 </figure>
 
 <p>
-    To deal with this problem, there are many input masking JavaScript libraries exist that will mask input as the
+    To deal with this problem, there are many input masking JavaScript libraries exist that will mask the input as the
     user types. The problem is that a lot of them have quirks that make them hard for all users, especially those with
     disabilities. I have spent a lot of time playing with input masking, and I have found that in order for an input
     mask to be truly accessible, it should have the following features:
@@ -61,7 +61,7 @@
         example, if spaces appear in the masked data, it's just for presentational purposes; the data submitted to the
         server in the end should not have the spaces in it.
     <li><strong>Flexible input of data:</strong> If the input field has data in it, the user should be able to move the
-        cursor inside the input field with a keyboard or mouse and edit the data anywhere the cursor can move (i.e., not
+        cursor inside the input field with a keyboard or mouse and edit the data anywhere the cursor can move (i.e. not
         just at the end of the data). They should also be able to paste data anywhere into the field as well as select
         multiple characters that can be replaced or erased. <em>It should have the same behavior as an unmasked input
             field.</em></li>
@@ -73,7 +73,7 @@
     </li>
     <li><strong>Screen reader alerts:</strong> If the user pauses while typing the data, screen readers will announce
         <strong>all</strong> the characters in the input field individually instead of reading the data as a word. This
-        is because the data used in masking (e.g., phone numbers, credit cards, product keys, etc.) are not words, and it
+        is because the data used in masking (e.g. phone numbers, credit cards, product keys, etc.) are not words, and it
         is better UX to have the data read out character by character.
     </li>
 </ol>
@@ -134,7 +134,7 @@ $uncheck =
 </table>
 
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible), I
-    created Enable's Input Making library. You can test it out with a screen reader and keyboard yourself.</p>
+    created Enable's Input Masking library. You can test it out with a screen reader and keyboard yourself.</p>
 
 <h2>Example 1: Static Input Masking</h2>
 
@@ -213,13 +213,13 @@ $uncheck =
 }
 </script>
 
-<h2 id="data-mask-format" tabindex="-1">How to set the data-mask attribute</h2>
+<h2 id="data-mask-format" tabindex="-1">How to Set the data-mask Attribute</h2>
 
 <p>For the phone number field, you will note it is <code>999-999-9999</code>. The <code>9</code> characters are what we
     call <strong>input characters</strong> and represent where inputted data (in this case digits) should appear. The
     dash characters are what we call <strong>format characters</strong> and will be automatically put in the visual
     field as the user types in the numbers. Users don't need to add them manually.</p>
-<p>Note that spaces, dashes, and round brackets (i.e., <code>" "</code>, <code>"-"</code>, <code>"("</code> and
+<p>Note that spaces, dashes, and round brackets (i.e. <code>" "</code>, <code>"-"</code>, <code>"("</code> and
     <code>")"</code>)can be used as format characters. Possible input characters are:
 <dl>
     <dt><code>"_"</code> (underscore)</dt>
@@ -238,7 +238,7 @@ $uncheck =
     <dd>Any number</dd>
 </dl>
 
-<h2>How does the library work?</h2>
+<h2>How Does the Library Work?</h2>
 
 <p>
     If you just want to implement input masking and don't care how it works, just skip this section. If you are
@@ -251,7 +251,7 @@ $uncheck =
     </summary>
     <div class="content">
 
-        <h3>How the DOM and CSS are set up.</h3>
+        <h3>How the DOM and CSS are Set Up.</h3>
 
         <p>We don't change the data inside the input field. Instead, we create an absolutely positioned HTML block
             (which we call a facade) that, using a higher z-index than the input field, sits on top of it. This contains
@@ -283,10 +283,10 @@ $uncheck =
     <h3>Mouse UX</h3>
     <p>For mouse users, when they click on what they think is the input field, they are actually clicking on the facade stacked on top. 
         JavaScript figures out where in the input data they are clicking and ensures the cursor in the input field stacked underneath is placed in the right area. 
-        Because all mouse events are basically passed on to the input field underneath, the user can select text with a mouse, and the appropriate text is selected in the input field, so that is updated correctly.</p>
+        Because all mouse events are basically passed on to the input field underneath, the user can select text with a mouse, and the appropriate text is selected in the input field, so that it is updated correctly.</p>
 
     <h3>Screen Reader UX</h3>
-    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e., the input field's value is announced character by character). 
+    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input field's value is announced character by character). 
         This is done via an ARIA live region, which is described in the code walkthrough above. 
         So, instead of the screen reader reading the input field as a large integer (in this case, "two billion one hundred twenty-three million one hundred twenty-one thousand two hundred thirty-one"), 
         it will read it as the phone number one digit at a time (i.e., two one two three one two one two three one). This makes it easy for screen reader users to know what they just typed in.</p>
@@ -297,7 +297,7 @@ $uncheck =
 
 
 <p>
-    The credit card fields are a little different. At the time of this writing, the format characters (i.e., the spaces) are
+    The credit card fields are a little different. At the time of this writing, the format characters (i.e. the spaces) are
     put in different places depending on whether it's an American Express (a.k.a. AMEX) card or another credit card type:
 </p>
 

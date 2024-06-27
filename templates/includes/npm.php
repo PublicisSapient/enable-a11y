@@ -30,11 +30,11 @@
 
 <ul>
   <li><a href="https://gist.github.com/jkrems">Jan Olaf Krems</a> gives a great overview of the
-    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript File format differences.</a>
+    <a href="https://gist.github.com/jkrems/b14894e0b8efde10aa10a28c652d3541">JavaScript file format differences.</a>
   </li>
   <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
-      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">with ES Modules and
-      HTTP/2, You May Not Need Webpack Anymore</a>
+      href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">with ES modules and
+      HTTP/2, Yyou may not need Webpack anymore</a>
   <li>Stack Overflow has a really good thread about <a
       href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs. ES6 modules</a> as well.
   </li>
@@ -184,7 +184,7 @@ var <?= $moduleVar ?> = require('enable-a11y/<?= $moduleName ?>').default;
 <h4>Using ES6 modules natively.</h4>
 
 <p>
-  This is the method by which this page you are reading now loads the scripts.
+  This is the method by which the page you are reading now loads the scripts.
 </p>
 
 <ol>

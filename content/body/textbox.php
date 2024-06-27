@@ -104,7 +104,7 @@
 ]); ?>
 
 <p>
-  Keep in mind that if you use this in a form, none of the nice free-form functionality (e.g., HTML5 validation,
+  Keep in mind that if you use this in a form, none of the nice free-form functionality (e.g. HTML5 validation,
   inclusion of data when submitting a form in an HTTP request, etc.) won't work. These examples do, however, show up in
   Voiceover's Rotor and NVDA's Element Dialogue.
 </p>
@@ -189,7 +189,7 @@
 <p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
 
 <ol>
-  <li>They use the keyboard to access the textbox (e.g., using the TAB key).</li>
+  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
   <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
 </ol>
 

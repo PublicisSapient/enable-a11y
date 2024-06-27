@@ -9,7 +9,7 @@
         <h2>A HTML Description List</h2>
 
         <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd</code> tags, respectively.
-        Note that, unlike the ARIA version, there is no group tag around the name-value pairs.</p>
+        Note that, unlike the ARIA version, there is no group tag around the name/value pairs.</p>
 
         <?php includeStats(["isForNewBuilds" => true]); ?>
         

@@ -92,7 +92,7 @@
 
 <p>
   Keyboard users experience a focus loop
-  that keeps the current menu panel until the menu is closed.
+  that keeps the current menu panel open until the menu is closed.
   If the user either uses a mouse
   to click outside the menu or hits the Escape key, the menu will close.
 </p>

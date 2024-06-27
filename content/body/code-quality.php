@@ -261,7 +261,7 @@
   <h3>A More Complex Example: Testing Focus States on Multiple Pages</h3>
 
   <p>This is an example of a test that ensures all interactive elements on all the pages within Enable have a focus state (in our case, using a CSS `outline`).
-Note that we ignore <code>iframe</code>, <code>video,</code> and <code>body</code> tags in this test because of the tests giving false negatives (which we are actively looking into to fix)</p>
+Note that we ignore <code>iframe</code>, <code>video</code>, and <code>body</code> tags in this test because of the tests giving false negatives (which we are actively looking into to fix).</p>
 
   <template id="test-code-walkthrough2" data-showcode-is-js="true">
     <!--
@@ -344,7 +344,7 @@ Note that we ignore <code>iframe</code>, <code>video,</code> and <code>body</cod
 
   <h2>Using GitHub Actions to Run the Tests in the CI/CD Pipeline</h2>
 
-  <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Github Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of Github actions on your project, the page describes writing a.yml file that contains the GitHub actions steps that you'd like to enforce. The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
+  <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">GitHub Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of GitHub Actions on your project, the page describes writing a .yml file that contains the GitHub Actions steps that you'd like to enforce. The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
 
   <template id="github-actions-walkthrough" data-showcode-is-js="true">
   <!--<?php include "../.github/workflows/push-actions.yml"; ?>-->
