@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessible Toast Notifications</title>
-    <link rel="stylesheet" href="toast.css">
-    <link rel="stylesheet" href="app.css">
-</head>
-<body>
     <p>
         <strong>Toast notifications are non-blocking alerts that provide feedback or information to users. They are hidden by default and become visible when triggered by a user action or system event.</strong> Toast notifications can be styled, positioned, and customized to suit various needs. This demo showcases an accessible implementation of toast notifications.
     </p>
@@ -90,8 +80,8 @@
         "steps": [
             {
                 "label": "Create markup",
-                "highlight": "data-tooltip",
-                "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
+                "highlight": "",
+                "notes": ""
             },
             {
                 "label": "Create JavaScript events for toast script",
@@ -119,5 +109,3 @@
 
     <script src="toast.js"></script>
     <script src="app.js"></script>
-</body>
-</html>
