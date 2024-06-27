@@ -12,8 +12,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-
-const tabgroup = new function() {
+const tabgroup = new (function() {
 
   this.init = function() {
     this.tabgroupEls = document.querySelectorAll('.enable-tablist');
@@ -167,5 +166,4 @@ const tabgroup = new function() {
     }
 
   };
-};
-
+});

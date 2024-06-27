@@ -13,7 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const readMore = new function() {
+const readMore = new (function() {
 
   this.clickEvent = (e) => {
     const { target, currentTarget } = e;
@@ -57,7 +57,4 @@ const readMore = new function() {
   }
 
   document.body.addEventListener('click', this.clickEvent)
-}
-
-
-
+})
