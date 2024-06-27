@@ -31,7 +31,7 @@ const tableOfContents = new function() {
     this.createContent = (numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan) => {
         // Table of Contents container setup
         const tocList = document.createElement(numberFirstLevelHeadings ? 'ol' : 'ul');
-        tocList.setAttribute('class', 'enable-toc__level-1-content');
+        tocList.classList.add('enable-toc__level-1-content');
 
         let prevHeadingLevel = 0;
         let tocNode = tocList;
@@ -56,7 +56,7 @@ const tableOfContents = new function() {
                     return;
                 } else if (headingLevel > prevHeadingLevel && prevHeadingLevel !== 1) {
                     const subList = document.createElement('ul');
-                    subList.setAttribute('class', `enable-toc__level-${headingLevel - 1}-content`);
+                    subList.classList.add(`enable-toc__level-${headingLevel - 1}-content`);
                     tocNode.appendChild(subList);
                     tocNode = subList;
                 }
@@ -64,18 +64,18 @@ const tableOfContents = new function() {
                 tocNode = tocNode.closest(`.enable-toc__level-${headingLevel - 1}-content`);
                 
                 const tocItem = document.createElement('li');
-                tocItem.setAttribute('class', `enable-toc__item-${el.tagName.toLowerCase()}`);
+                tocItem.classList.add(`enable-toc__item-${el.tagName.toLowerCase()}`);
 
                 el.childNodes && el.childNodes.forEach((child) => {
                     if (child.nodeName === 'IMG') {
                         const clonedImage = child.cloneNode(true);
-                        clonedImage.setAttribute('class', 'enable-toc__image');
+                        clonedImage.classList.add('enable-toc__image');
                         tocItem.appendChild(clonedImage);
                     } else if (el.textContent) {
                         const tocLink = document.createElement('a');
                         tocLink.setAttribute('href', `#${el.id}`);
                         tocLink.textContent = el.textContent;
-                        tocLink.setAttribute('class', 'enable-toc__link');
+                        tocLink.classList.add('enable-toc__link');
                         tocItem.appendChild(tocLink);
                     }
                 });
@@ -139,14 +139,15 @@ const tableOfContents = new function() {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
         nav.setAttribute('id', 'enable-toc--sidebar');
-        nav.setAttribute('class', 'enable-toc enable-toc--sidebar');
+        nav.classList.add('enable-toc');
+        nav.classList.add('enable-toc--sidebar');
         const tocHeading = document.createElement('h2');
         tocHeading.textContent = 'Contents';
 
         // Create the button to hide the TOC and move it to the toggle button
         const hideSidebarButton = document.createElement('button');
         hideSidebarButton.textContent = 'Hide';
-        hideSidebarButton.setAttribute('class', 'enable-toc__hide-sidebar-button');
+        hideSidebarButton.classList.add('enable-toc__hide-sidebar-button');
         hideSidebarButton.setAttribute('aria-label', 'Hide Table of Contents sidebar');
         hideSidebarButton.addEventListener('click', this.moveToToggleButton);
 
@@ -165,14 +166,15 @@ const tableOfContents = new function() {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
         nav.setAttribute('id', 'enable-toc--toggle');
-        nav.setAttribute('class', 'enable-toc enable-toc--toggle');
+        nav.classList.add('enable-toc');
+        nav.classList.add('enable-toc--toggle');
         const tocHeading = document.createElement('h2');
         tocHeading.textContent = 'Contents';
 
         // Create the button to move the TOC to the sidebar
         const moveToSidebarButton = document.createElement('button');
         moveToSidebarButton.textContent = 'Move to Sidebar';
-        moveToSidebarButton.setAttribute('class', 'enable-toc__move-to-sidebar-button');
+        moveToSidebarButton.classList.add('enable-toc__move-to-sidebar-button');
         moveToSidebarButton.setAttribute('aria-label', 'Move Table of Contents to Sidebar');
         moveToSidebarButton.addEventListener('click', this.moveToSidebar);
 
@@ -184,7 +186,7 @@ const tableOfContents = new function() {
 
         // Create the button to toggle the TOC
         const toggleButton = document.createElement('button');
-        toggleButton.setAttribute('class', 'enable-toc__toggle-button');
+        toggleButton.classList.add('enable-toc__toggle-button');
         toggleButton.setAttribute('aria-label', 'Toggle the Table of Contents');
         toggleButton.setAttribute('aria-controls', 'enable-toc--toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
