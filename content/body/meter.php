@@ -17,6 +17,53 @@
   this will utilize the meter role which will read out the current percentage of the meter.
 </p>
 
+<figure>
+  <figcaption id="screen-reader-table__caption" class="caption">
+    Screen reader announcements of the HTML5 meter component by platform
+  </figcaption>
+
+    <div class="sticky-table__container">
+      <table class="screen-reader-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Chrome (Android, Talkback)</th>
+            <th scope="col">Firefox (Windows, NVDA)</th>
+            <th scope="col">Safari (OSX, Voiceover)</th>
+            <th scope="col">Safari (iOS, Voiceover)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p>
+              Reads the meter value. <hr/>
+              <em>0,2, Disk C</em> <br/>
+              <em>0.9, Disk D</em> <br/>
+              <em>0.6, Disk E</em>
+            </p></td>
+            <td><p>
+              Reads the meter value. <hr/>
+              <em>Disk C, Progress Bar, 0.2</em> <br/>
+              <em>Disk D, Progress Bar, 0.9</em> <br/>
+              <em>Disk E, Progress Bar, 0.6</em>
+            </p></td>
+            <td><p>
+              Reads the meter condition. <hr/>
+              <em>Optimal value, Disk C, Level Indicator</em> <br/>
+              <em>Critical value, Disk D, Level Indicator</em> <br/>
+              <em>Suboptimal value, Disk E, Level Indicator</em>
+            </p></td>
+            <td><p>
+              Reads the meter condition. <hr/>
+              <em>Disk C, Optimal value</em> <br/>
+              <em>Disk D, Critical value</em> <br/>
+              <em>Disk E, Suboptimal value</em>
+            </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</figure>
+
 <div id="html5-example" class="enable-example">
   <strong>Storage Space</strong>
 
@@ -65,6 +112,53 @@
   Hint: If you are using v.Nu for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
   This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">Aria 1.2</a>.
 </p>
+
+<figure>
+  <figcaption id="screen-reader-table__caption" class="caption">
+    Screen reader announcements of the ARIA meter component by platform
+  </figcaption>
+
+    <div class="sticky-table__container">
+      <table class="screen-reader-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Chrome (Android, Talkback)</th>
+            <th scope="col">Firefox (Windows, NVDA)</th>
+            <th scope="col">Safari (OSX, Voiceover)</th>
+            <th scope="col">Safari (iOS, Voiceover)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p>
+              Reads the meter value. <hr/>
+              <em>0,2, Disk C</em> <br/>
+              <em>0.9, Disk D</em> <br/>
+              <em>0.6, Disk E</em>
+            </p></td>
+            <td><p>
+              Reads the meter value. <hr/>
+              <em>Disk C, Progress Bar, 0.2</em> <br/>
+              <em>Disk D, Progress Bar, 0.9</em> <br/>
+              <em>Disk E, Progress Bar, 0.6</em>
+            </p></td>
+            <td><p>
+              Reads the meter condition. <hr/>
+              <em>Disk C, Optimal, Level Indicator</em> <br/>
+              <em>Disk D, Critical, Level Indicator</em> <br/>
+              <em>Disk E, Suboptimal, Level Indicator</em>
+            </p></td>
+            <td><p>
+              Reads the meter value <hr/>
+              <em>Disk C, 0.2</em> <br/>
+              <em>Disk D, 0.9</em> <br/>
+              <em>Disk E, 0.6</em> <br/>
+            </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</figure>
 
 <div id="aria-example" class="enable-example">
   <strong>Storage Space</strong>
