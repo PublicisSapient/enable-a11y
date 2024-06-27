@@ -1,0 +1,852 @@
+
+# File: ./css/toast.css
+.toast-container {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+.toast-container.bottom-right,
+.toast-container.bottom-left,
+.toast-container.bottom-center {
+  bottom: 20px;
+}
+.toast-container.top-right,
+.toast-container.top-left,
+.toast-container.top-center {
+  top: 20px;
+}
+.toast-container.bottom-right,
+.toast-container.top-right {
+  right: 20px;
+}
+.toast-container.bottom-left,
+.toast-container.top-left {
+  left: 20px;
+}
+.toast-container.top-center,
+.toast-container.bottom-center,
+.toast-container.middle-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.toast-container.middle-center {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.toast.toast-visible {
+  opacity: 1;
+}
+.toast.toast-exit {
+  opacity: 0;
+}
+.toast button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.toast button:hover {
+  color: #ff0000;
+}
+.toast-rack {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(241, 241, 241, 0.9);
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  z-index: 9998;
+}
+
+# File: ./css/toast-demo.css
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.controls .control-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.controls label {
+  font-weight: normal;
+}
+.controls .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+# File: ./less/toast-demo.less
+// Variables
+@margin: 20px;
+@gap: 10px;
+@font-size: 16px;
+
+// Controls styles
+.controls {
+    margin-bottom: @margin;
+    display: flex;
+    flex-direction: column;
+    gap: @gap;
+
+    .control-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: @gap;
+    }
+
+    label {
+        font-weight: normal;
+    }
+
+    .button-group {
+        display: flex;
+        gap: @gap;
+    }
+}
+
+# File: ./less/toast.less
+// Variables
+@toast-background: #333;
+@toast-color: #fff;
+@toast-padding: 10px;
+@toast-border-radius: 5px;
+@toast-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+@toast-transition: all 0.5s ease-in-out;
+@toast-close-color: @toast-color;
+@toast-close-hover-color: #ff0000;
+@rack-background: rgba(241, 241, 241, 0.9);
+@rack-border: 1px solid #ddd;
+@rack-padding: 10px;
+@rack-width: 300px;
+@rack-max-height: 400px;
+
+// Toast container positions
+.toast-container {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    transition: @toast-transition;
+
+    &.bottom-right,
+    &.bottom-left,
+    &.bottom-center {
+        bottom: 20px;
+    }
+
+    &.top-right,
+    &.top-left,
+    &.top-center {
+        top: 20px;
+    }
+
+    &.bottom-right,
+    &.top-right {
+        right: 20px;
+    }
+
+    &.bottom-left,
+    &.top-left {
+        left: 20px;
+    }
+
+    &.top-center,
+    &.bottom-center,
+    &.middle-center {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.middle-center {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// Toast element styles
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background: @toast-background;
+    color: @toast-color;
+    padding: @toast-padding;
+    border-radius: @toast-border-radius;
+    box-shadow: @toast-box-shadow;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.toast-visible {
+        opacity: 1;
+    }
+
+    &.toast-exit {
+        opacity: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: @toast-close-color;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+            color: @toast-close-hover-color;
+        }
+    }
+}
+
+// Toast rack styles
+.toast-rack {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: @rack-background;
+    border: @rack-border;
+    padding: @rack-padding;
+    width: @rack-width;
+    max-height: @rack-max-height;
+    overflow-y: auto;
+    display: none;
+    z-index: 9998;
+}
+
+# File: ./js/modules/toast.js
+'use strict'
+
+/*******************************************************************************
+ * toast.js - UI for Accessible Toast Notifications
+ * 
+ * Written by Otto Wachter <github.com/vonwao>
+ * Part of the Enable accessible component library.
+ * Version 1.x released [Release Date]
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/toast.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
+const toastModule = new function() {
+
+  this.init = function() {
+    this.rackContent = document.getElementById('rackContent');
+  };
+
+  this.Toast = class {
+    constructor(options = {}) {
+      this.container = this.createContainer(options.position || 'bottom-right');
+      this.maxVisible = options.maxVisible || 1;
+      this.toastQueue = [];
+      this.visibleQueue = [];
+      this.levels = options.levels || {};
+      this.ariaLive = options.ariaLive || 'polite'; // Default to polite
+      document.body.appendChild(this.container);
+
+      // Initialize the toast rack
+      this.rackContent = document.getElementById('rackContent');
+    }
+
+    // Create the container for the toasts
+    createContainer(position) {
+      const container = document.createElement('div');
+      container.className = `toast-container ${position}`;
+      if (position.includes('top')) {
+        container.style.flexDirection = 'column-reverse';
+      } else {
+        container.style.flexDirection = 'column';
+      }
+      return container;
+    }
+
+    // Show a new toast notification
+    showToast(message, level = 'normal') {
+      const toastData = {
+        message,
+        level,
+        id: Date.now() // unique id for each toast
+      };
+      this.toastQueue.push(toastData);
+      this.visibleQueue.push(toastData);
+      console.log("Toast added to queue and visibleQueue:", toastData);
+
+      const toastElement = this.createToastElement(toastData);
+
+      this.container.appendChild(toastElement);
+
+      // Force reflow to ensure the element is rendered before adding the visible class
+      toastElement.offsetHeight;
+      toastElement.classList.add('toast-visible');
+
+      // Update the toast rack with the new toast
+      this.updateToastRack();
+
+      this.updateVisibleToasts();
+    }
+
+    // Create the individual toast element
+    createToastElement(toastData) {
+      const { message, level, id } = toastData;
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.style.backgroundColor = this.levels[level]?.color || '#333';
+      toast.setAttribute('tabindex', '-1');
+      toast.setAttribute('aria-live', this.ariaLive); // Set aria-live attribute
+      toast.setAttribute('data-id', id);
+
+      const messageSpan = document.createElement('span');
+      messageSpan.textContent = message;
+      toast.appendChild(messageSpan);
+
+      const closeButton = document.createElement('button');
+      closeButton.setAttribute('aria-label', 'close alert');
+      closeButton.textContent = '✖'; // Improved close button style
+      closeButton.addEventListener('click', () => {
+        console.log("Close button clicked for toast:", message);
+        this.dismissToast(toastData);
+      });
+      toast.appendChild(closeButton);
+
+      return toast;
+    }
+
+    // Dismiss a toast notification
+    dismissToast(toastData) {
+      const toastElement = this.container.querySelector(`[data-id="${toastData.id}"]`);
+      if (toastElement) {
+        toastElement.classList.add('toast-exit');
+        setTimeout(() => {
+          toastElement.remove();
+          this.visibleQueue = this.visibleQueue.filter(t => t.id !== toastData.id);
+          this.updateVisibleToasts();
+          this.updateToastRack();
+        }, 500); // Match the CSS animation duration
+      }
+    }
+
+    // Update the visible toasts according to the max visible limit
+    updateVisibleToasts() {
+      console.log("Updating visible toasts");
+
+      // Remove excess toasts from the visibleQueue
+      while (this.visibleQueue.length > this.maxVisible) {
+        const toastToRemove = this.visibleQueue.shift();
+        this.dismissToast(toastToRemove);
+      }
+
+      // Ensure only maxVisible toasts are displayed
+      this.visibleQueue.forEach((toast, index) => {
+        const toastElement = this.container.querySelector(`[data-id="${toast.id}"]`);
+        if (index < this.maxVisible) {
+          toastElement.classList.add('toast-visible');
+        } else {
+          toastElement.classList.remove('toast-visible');
+        }
+      });
+
+      this.updateStatus();
+    }
+
+    // Update the status of the toasts
+    updateStatus() {
+      const totalVisible = this.visibleQueue.length;
+      const totalNotifications = this.toastQueue.length;
+      document.getElementById('status').textContent = `Total Visible: ${totalVisible}, Total Notifications: ${totalNotifications}`;
+    }
+
+    // Update the toast rack
+    updateToastRack() {
+      console.log("Updating toast rack");
+      this.rackContent.innerHTML = '';
+      this.toastQueue.forEach(toastData => {
+        const { message, level, id } = toastData;
+        const toastElement = document.createElement('div');
+        toastElement.className = 'toast toast-visible'; // Ensure opacity is 1
+        toastElement.style.backgroundColor = this.levels[level]?.color || '#333';
+        toastElement.setAttribute('data-id', id);
+
+        const messageSpan = document.createElement('span');
+        messageSpan.textContent = message;
+        toastElement.appendChild(messageSpan);
+
+        console.log(`Appending toast to rack: ${message}`); // Debugging log
+        this.rackContent.appendChild(toastElement);
+      });
+      const totalNotifications = this.toastQueue.length;
+      console.log(`Toast rack updated with ${totalNotifications} toasts.`);
+      this.rackContent.setAttribute('aria-live', 'assertive');
+      document.getElementById('rackContentStatus').textContent = `Toast rack contains ${totalNotifications} toasts.`;
+    }
+
+    // Clear all toasts
+    clearAllToasts() {
+      this.visibleQueue.forEach(toast => {
+        const toastElement = this.container.querySelector(`[data-id="${toast.id}"]`);
+        if (toastElement) {
+          toastElement.remove();
+        }
+      });
+      this.toastQueue = [];
+      this.visibleQueue = [];
+      console.log("All toasts cleared");
+      this.updateStatus();
+      this.updateToastRack();
+    }
+  }
+};
+
+export default toastModule;
+
+# File: ./js/modules/es4/toast.js
+'use strict'
+
+/*******************************************************************************
+ * toast.js - UI for Accessible Toast Notifications
+ * 
+ * Written by Otto Wachter <github.com/vonwao>
+ * Part of the Enable accessible component library.
+ * Version 1.x released [Release Date]
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/toast.php
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
+const toastModule = new function() {
+
+  this.init = function() {
+    this.rackContent = document.getElementById('rackContent');
+  };
+
+  this.Toast = class {
+    constructor(options = {}) {
+      this.container = this.createContainer(options.position || 'bottom-right');
+      this.maxVisible = options.maxVisible || 1;
+      this.toastQueue = [];
+      this.visibleQueue = [];
+      this.levels = options.levels || {};
+      this.ariaLive = options.ariaLive || 'polite'; // Default to polite
+      document.body.appendChild(this.container);
+
+      // Initialize the toast rack
+      this.rackContent = document.getElementById('rackContent');
+    }
+
+    // Create the container for the toasts
+    createContainer(position) {
+      const container = document.createElement('div');
+      container.className = `toast-container ${position}`;
+      if (position.includes('top')) {
+        container.style.flexDirection = 'column-reverse';
+      } else {
+        container.style.flexDirection = 'column';
+      }
+      return container;
+    }
+
+    // Show a new toast notification
+    showToast(message, level = 'normal') {
+      const toastData = {
+        message,
+        level,
+        id: Date.now() // unique id for each toast
+      };
+      this.toastQueue.push(toastData);
+      this.visibleQueue.push(toastData);
+      console.log("Toast added to queue and visibleQueue:", toastData);
+
+      const toastElement = this.createToastElement(toastData);
+
+      this.container.appendChild(toastElement);
+
+      // Force reflow to ensure the element is rendered before adding the visible class
+      toastElement.offsetHeight;
+      toastElement.classList.add('toast-visible');
+
+      // Update the toast rack with the new toast
+      this.updateToastRack();
+
+      this.updateVisibleToasts();
+    }
+
+    // Create the individual toast element
+    createToastElement(toastData) {
+      const { message, level, id } = toastData;
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.style.backgroundColor = this.levels[level]?.color || '#333';
+      toast.setAttribute('tabindex', '-1');
+      toast.setAttribute('aria-live', this.ariaLive); // Set aria-live attribute
+      toast.setAttribute('data-id', id);
+
+      const messageSpan = document.createElement('span');
+      messageSpan.textContent = message;
+      toast.appendChild(messageSpan);
+
+      const closeButton = document.createElement('button');
+      closeButton.setAttribute('aria-label', 'close alert');
+      closeButton.textContent = '✖'; // Improved close button style
+      closeButton.addEventListener('click', () => {
+        console.log("Close button clicked for toast:", message);
+        this.dismissToast(toastData);
+      });
+      toast.appendChild(closeButton);
+
+      return toast;
+    }
+
+    // Dismiss a toast notification
+    dismissToast(toastData) {
+      const toastElement = this.container.querySelector(`[data-id="${toastData.id}"]`);
+      if (toastElement) {
+        toastElement.classList.add('toast-exit');
+        setTimeout(() => {
+          toastElement.remove();
+          this.visibleQueue = this.visibleQueue.filter(t => t.id !== toastData.id);
+          this.updateVisibleToasts();
+          this.updateToastRack();
+        }, 500); // Match the CSS animation duration
+      }
+    }
+
+    // Update the visible toasts according to the max visible limit
+    updateVisibleToasts() {
+      console.log("Updating visible toasts");
+
+      // Remove excess toasts from the visibleQueue
+      while (this.visibleQueue.length > this.maxVisible) {
+        const toastToRemove = this.visibleQueue.shift();
+        this.dismissToast(toastToRemove);
+      }
+
+      // Ensure only maxVisible toasts are displayed
+      this.visibleQueue.forEach((toast, index) => {
+        const toastElement = this.container.querySelector(`[data-id="${toast.id}"]`);
+        if (index < this.maxVisible) {
+          toastElement.classList.add('toast-visible');
+        } else {
+          toastElement.classList.remove('toast-visible');
+        }
+      });
+
+      this.updateStatus();
+    }
+
+    // Update the status of the toasts
+    updateStatus() {
+      const totalVisible = this.visibleQueue.length;
+      const totalNotifications = this.toastQueue.length;
+      document.getElementById('status').textContent = `Total Visible: ${totalVisible}, Total Notifications: ${totalNotifications}`;
+    }
+
+    // Update the toast rack
+    updateToastRack() {
+      console.log("Updating toast rack");
+      this.rackContent.innerHTML = '';
+      this.toastQueue.forEach(toastData => {
+        const { message, level, id } = toastData;
+        const toastElement = document.createElement('div');
+        toastElement.className = 'toast toast-visible'; // Ensure opacity is 1
+        toastElement.style.backgroundColor = this.levels[level]?.color || '#333';
+        toastElement.setAttribute('data-id', id);
+
+        const messageSpan = document.createElement('span');
+        messageSpan.textContent = message;
+        toastElement.appendChild(messageSpan);
+
+        console.log(`Appending toast to rack: ${message}`); // Debugging log
+        this.rackContent.appendChild(toastElement);
+      });
+      const totalNotifications = this.toastQueue.length;
+      console.log(`Toast rack updated with ${totalNotifications} toasts.`);
+      this.rackContent.setAttribute('aria-live', 'assertive');
+      document.getElementById('rackContentStatus').textContent = `Toast rack contains ${totalNotifications} toasts.`;
+    }
+
+    // Clear all toasts
+    clearAllToasts() {
+      this.visibleQueue.forEach(toast => {
+        const toastElement = this.container.querySelector(`[data-id="${toast.id}"]`);
+        if (toastElement) {
+          toastElement.remove();
+        }
+      });
+      this.toastQueue = [];
+      this.visibleQueue = [];
+      console.log("All toasts cleared");
+      this.updateStatus();
+      this.updateToastRack();
+    }
+  }
+};
+
+
+# File: ./js/demos/toast.js
+'use strict';
+
+import toastModule from '../modules/toast.js';
+
+const app = new (function () {
+    console.log('toast demo!!!');
+    let toastIndex = 0;
+
+    this.init = function () {
+        this.toast = new toastModule.Toast({
+            position: 'bottom-right',
+            style: 'padding: 10px; border-radius: 5px;',
+            alertArea: true,
+            maxVisible: 2,
+            levels: {
+                normal: { color: '#007bff' },
+                error: { color: '#dc3545' },
+                warning: { color: '#ffc107' },
+                success: { color: '#28a745' },
+            },
+            ariaLive: 'polite', // Default aria-live value
+        });
+
+        this.attachEventListeners();
+    };
+
+    this.attachEventListeners = function () {
+        document
+            .getElementById('showToastButton')
+            .addEventListener('click', this.showToastButtonClickEvent);
+        document
+            .getElementById('clearAllButton')
+            .addEventListener('click', this.clearAllButtonClickEvent);
+        document
+            .getElementById('toggleRackButton')
+            .addEventListener('click', this.toggleRackButtonClickEvent);
+
+        document.querySelectorAll('input[name="position"]').forEach((radio) => {
+            radio.addEventListener('change', this.positionChangeEvent);
+        });
+    };
+
+    this.showToastButtonClickEvent = (e) => {
+        const message = document.getElementById('messageInput').value;
+        const level = document.querySelector(
+            'input[name="level"]:checked',
+        ).value;
+        const ariaLive = document.querySelector(
+            'input[name="ariaLive"]:checked',
+        ).value;
+        this.toast.ariaLive = ariaLive; // Set aria-live value
+        toastIndex++;
+        const fullMessage = `Toast ${toastIndex}: ${message}`;
+        try {
+            this.toast.showToast(fullMessage, level);
+        } catch (error) {
+            console.error('Error showing toast:', error);
+        }
+        this.updateStatus();
+    };
+
+    this.clearAllButtonClickEvent = (e) => {
+        try {
+            this.toast.clearAllToasts();
+        } catch (error) {
+            console.error('Error clearing toasts:', error);
+        }
+        this.updateStatus();
+    };
+
+    this.toggleRackButtonClickEvent = (e) => {
+        const rack = document.getElementById('toastRack');
+        if (rack.style.display === 'block') {
+            rack.style.display = 'none';
+        } else {
+            rack.style.display = 'block';
+        }
+        console.log(
+            `Toast rack ${rack.style.display === 'block' ? 'shown' : 'hidden'}`,
+        );
+    };
+
+    this.positionChangeEvent = (e) => {
+        try {
+            this.toast.container.className = `toast-container ${e.target.value}`;
+            if (e.target.value.includes('top')) {
+                this.toast.container.style.flexDirection = 'column-reverse';
+            } else {
+                this.toast.container.style.flexDirection = 'column';
+            }
+        } catch (error) {
+            console.error('Error changing toast position:', error);
+        }
+    };
+
+    this.updateStatus = function () {
+        const totalVisible = this.toast.visibleQueue.length;
+        const totalNotifications = this.toast.toastQueue.length;
+        document.getElementById('status').textContent =
+            `Visible: ${totalVisible}, Total: ${totalNotifications}`;
+        document.getElementById('rackContentStatus').textContent =
+            `Toast rack contains ${totalNotifications} toasts.`;
+    };
+})();
+
+// app.init();
+export default app;
+
+# File: ./content/body/toast.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Toast Notifications</title>
+    <link rel="stylesheet" href="toast.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <p>
+        <strong>Toast notifications are non-blocking alerts that provide feedback or information to users. They are hidden by default and become visible when triggered by a user action or system event.</strong> Toast notifications can be styled, positioned, and customized to suit various needs. This demo showcases an accessible implementation of toast notifications.
+    </p>
+
+    <h2>Accessible Toast Notifications Example</h2>
+
+    <?php includeStats([
+        "isForNewBuilds" => true,
+        "comment" => "Recommended for new and existing work.",
+    ]); ?>
+    <?php includeStats(["isNPM" => true]); ?>
+
+    <p>
+        In order to make toast notifications accessible, there are a few considerations:
+    </p>
+    <ol>
+        <li>Toasts should be announced by screen readers when they appear.</li>
+        <li>Keyboard users should be able to navigate to and dismiss toasts.</li>
+        <li>Toasts should support different levels of severity (normal, error, warning, success), each with a unique color for visual distinction.</li>
+    </ol>
+    <p>
+        Our implementation ensures that toasts are fully accessible and follow best practices for ARIA and keyboard interaction. When a toast appears, it is announced to screen readers. Toasts can be configured to stay visible for a set amount of time or until manually dismissed by the user. Additionally, all toasts are stored in a toast rack for future reference.
+    </p>
+
+    <div id="example1" class="enable-example">
+        <div class="controls">
+            <div class="control-group">
+                <label for="messageInput">Toast Message:</label>
+                <input type="text" id="messageInput" placeholder="Toast Message" value="A new toast message!">
+            </div>
+            <div class="control-group">
+                <label>Position:</label>
+                <div>
+                    <label><input type="radio" name="position" value="bottom-right" checked> Bottom Right</label>
+                    <label><input type="radio" name="position" value="top-right"> Top Right</label>
+                    <label><input type="radio" name="position" value="top-left"> Top Left</label>
+                    <label><input type="radio" name="position" value="bottom-left"> Bottom Left</label>
+                    <label><input type="radio" name="position" value="top-center"> Top Center</label>
+                    <label><input type="radio" name="position" value="bottom-center"> Bottom Center</label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>Level:</label>
+                <div>
+                    <label><input type="radio" name="level" value="normal" checked> Normal</label>
+                    <label><input type="radio" name="level" value="error"> Error</label>
+                    <label><input type="radio" name="level" value="warning"> Warning</label>
+                    <label><input type="radio" name="level" value="success"> Success</label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label>Aria Live:</label>
+                <div>
+                    <label><input type="radio" name="ariaLive" value="polite" checked> Polite</label>
+                    <label><input type="radio" name="ariaLive" value="assertive"> Assertive</label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="maxVisibleInput">Max Visible:</label>
+                <input type="number" id="maxVisibleInput" placeholder="Max Visible" value="2">
+            </div>
+            <div class="button-group">
+                <button id="showToastButton">Show Toast</button>
+                <button id="toggleRackButton">Toggle Toast Rack</button>
+            </div>
+        </div>
+        <div id="toastRack" class="toast-rack">
+            <button id="clearAllButton">Clear All</button>
+            <div id="rackContent"></div>
+            <div id="rackContentStatus"></div>
+        </div>
+        <div id="status" class="status"></div>
+    </div>
+
+    <?php includeShowcode("example1"); ?>
+
+    <script type="application/json" id="example1-props">
+    {
+        "replaceHtmlRules": {},
+        "steps": [
+            {
+                "label": "Create markup",
+                "highlight": "data-tooltip",
+                "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
+            },
+            {
+                "label": "Create JavaScript events for toast script",
+                "highlight": "%JS% toastModule.create; toastModule.init",
+                "notes": "When the page is loaded, create the toast DOM object and initialize the events that will display the toasts. <strong>Note the role of toast being added to the toast DOM object</strong>."
+            },
+            {
+                "label": "Create the show and hide methods for the toast",
+                "highlight": "%JS% toastModule.show; toastModule.hide",
+                "notes": "We make sure the element that triggered the toast's <code>show</code> method will be connected to it with the aria-live attribute, which ensures screen readers announce the toast on focus."
+            },
+            {
+                "label": "Ensure toast disappears when the close button is clicked",
+                "highlight": "%JS% toastModule.onClick",
+                "notes": "This is to ensure users can make the toast disappear without any additional actions."
+            },
+            {
+                "label": "Set up the CSS",
+                "highlight": "%CSS%toast-css~ .toast; .toast::before; .toast--hidden ||| border[^:]*: 1px solid transparent; ",
+                "notes": "The styling for the toast notifications ensures they are visible and accessible. <strong>Note the highlighted properties</strong>. This ensures the toasts appear correctly in various display modes."
+            }
+        ]
+    }
+    </script>
+
+    <script src="toast.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+# File: ./content/head/toast.php
+<link rel="stylesheet" type="text/css" href="css/toast.css" >
+<link rel="stylesheet" type="text/css" href="css/toast-demo.css" >
+# File: ./content/bottom/toast.php
+
+<script type="module">
+    import toastModule from "/js/modules/toast.js"
+    import app from "/js/demos/toast.js"
+    
+    app.init();
+</script>
