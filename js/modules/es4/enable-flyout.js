@@ -13,12 +13,11 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-
 let EnableFlyout;
 
 
 
-EnableFlyout = new function() {
+EnableFlyout = new (function() {
   // cache all the queries, classes, node lists and media queries.
   const menuSel = '.enable-flyout__open-menu-button';
   const topNavSel = '.enable-flyout__top-level';
@@ -390,7 +389,4 @@ EnableFlyout = new function() {
 
     $root.classList.add('enable-flyout--initialized');
   }
-}
-
-// EnableFlyout.init();
-
+})

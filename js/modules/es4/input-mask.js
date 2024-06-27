@@ -12,7 +12,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const inputMask = new function () {
+const inputMask = new (function() {
     this.bemPrefix = 'enable-input-mask';
 
     const inputClass = `${this.bemPrefix}__input`;
@@ -492,5 +492,4 @@ const inputMask = new function () {
 
     this.init();
 
-}
-
+})
