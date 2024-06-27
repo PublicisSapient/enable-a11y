@@ -65,9 +65,9 @@
 </figure>
 
 <div id="html5-example" class="enable-example">
-  <strong>Storage Space</strong>
+  <strong id="group-heading">Storage Space</strong>
 
-  <div class="container">
+  <div class="container" role="group" aria-labelledby="group-heading">
     <label id="disk-c-meter-html5" aria-hidden="true">Disk C:</label>
     <meter aria-labelledby="disk-c-meter-html5" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
@@ -161,9 +161,9 @@
 </figure>
 
 <div id="aria-example" class="enable-example">
-  <strong>Storage Space</strong>
+  <strong id="group-heading">Storage Space</strong>
 
-  <div class="container">
+  <div class="container" role="group" aria-labelledby="group-heading">
     <label id="disk-c-meter-aria" aria-hidden="true">Disk C:</label>
     <div
       aria-labelledby="disk-c-meter-aria"
