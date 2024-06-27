@@ -1,5 +1,5 @@
 <p>
-  Carousels are a list of content panels that the mouse user can cycle through using arrow controls and panel indicators.
+  Carousels are a list of content panels that a mouse user can cycle through using arrow controls and panel indicators.
   Usually, carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
   They exist to cram as
   much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
