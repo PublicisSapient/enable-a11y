@@ -57,18 +57,16 @@ const toastModule = new function() {
       this.toastQueue.push(toastData);
       this.visibleQueue.push(toastData);
       console.log("Toast added to queue and visibleQueue:", toastData);
-
       const toastElement = this.createToastElement(toastData);
-
       this.container.appendChild(toastElement);
+      toastElement.offsetHeight; // Force reflow to ensure the element is rendered before adding the visible class
 
-      // Force reflow to ensure the element is rendered before adding the visible class
-      toastElement.offsetHeight;
-      toastElement.classList.add('toast-visible');
+      setTimeout(() => {
+        toastElement.classList.add('toast-visible');
+      }, 100); // Slight delay to ensure screen readers catch the change
 
       // Update the toast rack with the new toast
       this.updateToastRack();
-
       this.updateVisibleToasts();
       this.updateToggleRackButton();
     }
@@ -81,6 +79,7 @@ const toastModule = new function() {
       toast.style.backgroundColor = this.levels[level]?.color || '#333';
       toast.setAttribute('tabindex', '-1');
       toast.setAttribute('aria-live', this.ariaLive); // Set aria-live attribute
+      toast.setAttribute('role', 'alert'); // Set aria-live attribute
       toast.setAttribute('data-id', id);
 
       const messageSpan = document.createElement('span');
@@ -89,7 +88,7 @@ const toastModule = new function() {
 
       const closeButton = document.createElement('button');
       closeButton.setAttribute('aria-label', 'close alert');
-      closeButton.textContent = '✖'; // Improved close button style
+      closeButton.textContent = '✖';
       closeButton.addEventListener('click', () => {
         console.log("Close button clicked for toast:", message);
         this.dismissToast(toastData);
@@ -151,7 +150,7 @@ const toastModule = new function() {
       this.toastQueue.forEach(toastData => {
         const { message, level, id } = toastData;
         const toastElement = document.createElement('div');
-        toastElement.className = 'toast toast-visible'; // Ensure opacity is 1
+        toastElement.className = 'toast toast-visible';
         toastElement.style.backgroundColor = this.levels[level]?.color || '#333';
         toastElement.setAttribute('data-id', id);
 
@@ -159,7 +158,7 @@ const toastModule = new function() {
         messageSpan.textContent = message;
         toastElement.appendChild(messageSpan);
 
-        console.log(`Appending toast to rack: ${message}`); // Debugging log
+        console.log(`Appending toast to rack: ${message}`);
         this.rackContent.appendChild(toastElement);
       });
       const totalNotifications = this.toastQueue.length;
