@@ -1,39 +1,34 @@
 <!--
 // v0 by Vercel.
 // https://v0.dev/t/x487VW4mqN8
-// https://tailwindcss.com/docs/installation
-// https://tailwindcss.com/docs/using-with-preprocessors#sass
 -->
 <div id="html5-example" class="enable-example">
-    <form class="tw-mx-auto tw-max-w-md tw-space-y-6 tw-py-12" id="autocomplete">
-    <div class="tw-space-y-2 tw-text-center">
-        <h2 class="tw-text-3xl tw-font-bold">Checkout</h2>
-        <p class="tw-text-gray-500 dark:tw-text-gray-400">Enter your information to complete your purchase.</p>
-    </div>
-    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
-        <div class="tw-space-y-2 tw-relative">
-        <label
-            class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-            for="first-name"
-            id="first-name-label"
-        >
-            First name
-        </label>
-        <div class="tw-relative">
-            <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="first-name"
-            placeholder="John"
-            autocomplete="given-name"
-            required=""
-            name="first-name"
-            aria-labelledby="first-name-label"
-
-            />
-            <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="First Name Icon">
-                <svg
+  <form class="form form--autocomplete" id="autocomplete">
+    <fieldset class="form__fieldset">
+      <legend class="form__legend">Checkout</legend>
+      <div class="form__header">
+        <h2 class="form__title">Checkout</h2>
+        <p class="form__subtitle">Enter your information to complete your purchase.</p>
+      </div>
+      <div class="form__body">
+        <fieldset class="form__group">
+          <legend class="form__group-legend">Personal Information</legend>
+          <div class="form__row form__row--two-cols">
+            <div class="form__field">
+              <label class="form__label" for="first-name" id="first-name-label">First name</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="first-name"
+                  placeholder="John"
+                  autocomplete="given-name"
+                  required
+                  name="first-name"
+                  aria-labelledby="first-name-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -43,37 +38,29 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
+                    class="form__icon"
+                  >
                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-            </i>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="tw-space-y-2 tw-relative">
-        <label
-            class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-            for="last-name"
-            id="last-name-label"
-        >
-            Last name
-        </label>
-        <div class="tw-relative">
-            <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="last-name"
-            placeholder="Doe"
-            autocomplete="family-name"
-            required=""
-            name="last-name"
-            aria-labelledby="last-name-label"
-            />
-            <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="Last Name Icon">
-                <svg
+            <div class="form__field">
+              <label class="form__label" for="last-name" id="last-name-label">Last name</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="last-name"
+                  placeholder="Doe"
+                  autocomplete="family-name"
+                  required
+                  name="last-name"
+                  aria-labelledby="last-name-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -83,38 +70,34 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
+                    class="form__icon"
+                  >
                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-            </i>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
-    </div>
-    <div class="tw-space-y-2 tw-relative">
-        <label
-        class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-        for="email"
-        id="email-label"
-        >
-        Email
-        </label>
-        <div class="tw-relative">
-        <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="email"
-            id="email"
-            placeholder="john@example.com"
-            autocomplete="email"
-            required=""
-            name="email"
-            aria-labelledby="email-label"
-        />
-        <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="Email Icon">    
-                <svg
+          </div>
+        </fieldset>
+        <fieldset class="form__group">
+          <legend class="form__group-legend">Contact Information</legend>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="email" id="email-label">Email</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  placeholder="john@example.com"
+                  autocomplete="email"
+                  required
+                  name="email"
+                  aria-labelledby="email-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -124,79 +107,31 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                    >
+                    class="form__icon"
+                  >
                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
-            </i>
-        </div>
-        </div>
-    </div>
-    <div class="tw-space-y-2 tw-relative">
-        <label
-        class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-        for="address"
-        id="address-label"
-        >
-        Street address
-        </label>
-        <div class="tw-relative">
-        <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="address"
-            placeholder="123 Main St"
-            autocomplete="address-line1"
-            required=""
-            name="address"
-            aria-labelledby="address-label"
-        />
-        <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-        <i role="img" aria-label="Street Address Icon">    
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="tw-w-5 tw-h-5 tw-text-gray-400"
-            >
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-        </i>
-
-        </div>
-        </div>
-    </div>
-    <div class="tw-grid tw-grid-cols-3 tw-gap-4">
-        <div class="tw-space-y-2 tw-relative">
-        <label
-            class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-            for="city"
-            id="city-label"
-        >
-            City
-        </label>
-        <div class="tw-relative">
-            <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="city"
-            placeholder="New York"
-            autocomplete="address-level2"
-            required=""
-            name="city"
-            aria-labelledby="city-label"
-            />
-            <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="City Icon">
-                <svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="address" id="address-label">Street address</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="address"
+                  placeholder="123 Main St"
+                  autocomplete="address-line1"
+                  required
+                  name="address"
+                  aria-labelledby="address-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -206,37 +141,31 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
+                    class="form__icon"
+                  >
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-            </i>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="tw-space-y-2 tw-relative">
-        <label
-            class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-            for="state"
-            id="state-label"
-        >
-            State
-        </label>
-        <div class="tw-relative">
-            <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="state"
-            placeholder="NY"
-            autocomplete="address-level1"
-            required=""
-            name="state"
-            aria-labelledby="state-label"
-            />
-            <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="State Icon">
-                <svg
+          </div>
+          <div class="form__row form__row--three-cols">
+            <div class="form__field">
+              <label class="form__label" for="city" id="city-label">City</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="city"
+                  placeholder="New York"
+                  autocomplete="address-level2"
+                  required
+                  name="city"
+                  aria-labelledby="city-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -246,37 +175,29 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
+                    class="form__icon"
+                  >
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-            </i>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
-        <div class="tw-space-y-2 tw-relative">
-        <label
-            class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-            for="zip"
-            id="zip-label"
-        >
-            Zip
-        </label>
-        <div class="tw-relative">
-            <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="text"
-            id="zip"
-            placeholder="10001"
-            autocomplete="postal-code"
-            required=""
-            name="zip"
-            aria-labelledby="zip-label"
-            />
-            <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-            <i role="img" aria-label="Postal Code Icon">
-                <svg
+            <div class="form__field">
+              <label class="form__label" for="state" id="state-label">State</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="state"
+                  placeholder="NY"
+                  autocomplete="address-level1"
+                  required
+                  name="state"
+                  aria-labelledby="state-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -286,63 +207,125 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
+                    class="form__icon"
+                  >
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-            </i>
+                  </svg>
+                </div>
+              </div>
             </div>
-        </div>
-        </div>
-    </div>
-    <div class="tw-space-y-2 tw-relative">
-        <label
-        class="tw-text-sm tw-font-medium tw-leading-none peer-disabled:tw-cursor-not-allowed peer-disabled:tw-opacity-70"
-        for="phone"
-        id="phone-label"
-        >
-        Phone
-        </label>
-        <div class="tw-relative">
-        <input
-            class="tw-flex tw-h-10 tw-w-full tw-rounded-md tw-border tw-border-input tw-bg-background tw-px-3 tw-py-2 tw-text-sm tw-ring-offset-background file:tw-border-0 file:tw-bg-transparent file:tw-text-sm file:tw-font-medium placeholder:tw-text-muted-foreground focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-cursor-not-allowed disabled:tw-opacity-50 tw-pl-10"
-            type="tel"
-            id="phone"
-            placeholder="(123) 456-7890"
-            autocomplete="tel"
-            required=""
-            name="phone"
-            aria-labelledby="phone-label"
-        />
-        <div class="tw-absolute tw-inset-y-0 tw-left-0 tw-flex tw-items-center tw-pl-3 tw-pointer-events-none">
-        <i role="img" aria-label="Phone Icon">    
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="tw-w-5 tw-h-5 tw-text-gray-400"
-                >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-        </i>
-        </div>
-        </div>
-    </div>
-    <button
-        class="tw-inline-flex tw-items-center tw-justify-center tw-whitespace-nowrap tw-rounded-md tw-text-sm tw-font-medium tw-ring-offset-background tw-transition-colors focus-visible:tw-outline-none focus-visible:tw-ring-2 focus-visible:tw-ring-ring focus-visible:tw-ring-offset-2 disabled:tw-pointer-events-none disabled:tw-opacity-50 tw-bg-primary tw-text-primary-foreground hover:tw-bg-primary/90 tw-h-10 tw-px-4 tw-py-2 tw-w-full"
-        type="submit"
-    >
-        Place order
-    </button>
-    </form>
+            <div class="form__field">
+              <label class="form__label" for="zip" id="zip-label">Zip</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="zip"
+                  placeholder="10001"
+                  autocomplete="postal-code"
+                  required
+                  name="zip"
+                  aria-labelledby="zip-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="form__icon"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="country" id="country-label">Country</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="text"
+                  id="country"
+                  placeholder="United States"
+                  autocomplete="country-name"
+                  required
+                  name="country"
+                  aria-labelledby="country-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="form__icon"
+                  >
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="phone" id="phone-label">Phone</label>
+              <div class="form__input-container">
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="phone"
+                  placeholder="(123) 456-7890"
+                  autocomplete="tel"
+                  required
+                  name="phone"
+                  aria-labelledby="phone-label"
+                />
+                <div class="form__input-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="form__icon"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="form__button" type="submit">Place order</button>
+    </fieldset>
+  </form>
 </div>
+
+
+
 
 <?php includeShowcode("html5-example"); ?>
 <script type="application/json" id="html5-example-props">

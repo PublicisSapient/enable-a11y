@@ -1,0 +1,117 @@
+.form--autocomplete {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+.form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.form__legend {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.form__header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form__title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.form__subtitle {
+  color: #6c757d;
+}
+.form__body {
+  display: flex;
+  flex-direction: column;
+}
+.form__group {
+  margin-bottom: 20px;
+}
+.form__group-legend {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.form__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.form__row--two-cols {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form__row--two-cols .form__field {
+  width: 48%;
+}
+.form__row--three-cols {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form__row--three-cols .form__field {
+  width: 30%;
+}
+.form__label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.form__input-container {
+  position: relative;
+}
+.form__input {
+  height: 40px;
+  padding: 10px;
+  padding-left: 40px;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #fff;
+}
+.form__input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.form__input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+.form__input-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.form__input-icon .form__icon {
+  width: 20px;
+  height: 20px;
+  color: #6c757d;
+}
+.form__button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.form__button:hover {
+  background-color: #0056b3;
+}
+.form__button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
