@@ -333,6 +333,16 @@
     "replaceHtmlRules": {},
     "steps": [
         {
+        "label": "Insert form tag",
+        "highlight": "\\s*&lt;[\/]?form&gt;",
+        "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
+        },
+        {
+        "label": "Insert fieldset and legend",
+        "highlight": "\\s*&lt;[\/]?fieldset&gt; ||| \\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
+        "notes": "The <strong>legend</strong> tag must be a direct child of the <strong>fieldset</strong> tag in order for it to work across screen readers."
+        },
+        {
           "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each form field.",
           "highlight": "aria-labelledby",
           "notes": "This should point to the <code>id</code> of the associated label tag."
@@ -386,26 +396,6 @@
           "label": "Use the <code>div</code> tag to group the label and input field.",
           "highlight": "div",
           "notes": "This will help you style the label and input field together."
-        },
-        {
-          "label": "Use the <code>svg</code> tag to add an icon to the input field.",
-          "highlight": "svg",
-          "notes": "This will help users understand what information is expected in the field."
-        },
-        {
-          "label": "Use the <code>path</code> tag to add an icon to the input field.",
-          "highlight": "path",
-          "notes": "This will help users understand what information is expected in the field."
-        },
-        {
-          "label": "Use the <code>circle</code> tag to add an icon to the input field.",
-          "highlight": "circle",
-          "notes": "This will help users understand what information is expected in the field."
-        },
-        {
-          "label": "Use the <code>rect</code> tag to add an icon to the input field.",
-          "highlight": "rect",
-          "notes": "This will help users understand what information is expected in the field."
         },
         {
           "label": "Use the <code>button</code> tag to create a submit button.",

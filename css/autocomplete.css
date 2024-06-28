@@ -24,7 +24,8 @@
   font-weight: bold;
 }
 .form__subtitle {
-  color: #6c757d;
+  color: #495057;
+  /* Updated color for better contrast */
 }
 .form__body {
   display: flex;
@@ -99,7 +100,8 @@
 .form__button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #0056b3;
+  /* Updated color for better contrast */
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -109,7 +111,8 @@
   transition: background-color 0.2s;
 }
 .form__button:hover {
-  background-color: #0056b3;
+  background-color: #004085;
+  /* Updated color for better contrast */
 }
 .form__button:disabled {
   background-color: #6c757d;
