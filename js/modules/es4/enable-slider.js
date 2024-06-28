@@ -17,10 +17,6 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-/**
- * keyCodes() is an object to contain key code values for the application
- */
 const keyCodes = function() {
     // Define values for keycodes
     this.backspace = 8;
@@ -38,7 +34,7 @@ const keyCodes = function() {
     this.up = 38;
     this.right = 39;
     this.down = 40;
-  } // end keyCodes
+  };
 
 /**
  *
@@ -859,4 +855,3 @@ const enableSliders = new(function() {
     }
   };
 })();
-

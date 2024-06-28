@@ -175,5 +175,4 @@ const enableCharacterCount = new function() {
     const liveRegion = document.getElementById(`${target.id}-live-region`);
     return document.getElementById(`${liveRegion.id}-character-count-status`);
   }
-}
-
+})
