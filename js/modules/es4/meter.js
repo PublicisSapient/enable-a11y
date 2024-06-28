@@ -22,6 +22,9 @@ const meter = new function() {
       // Apply values as style vars to be used by component css
       element.setAttribute('style', `--meter-percentage: ${percentage}%`);
       element.setAttribute('meter-state', state);
+
+      // Set the aria-valuetext to ensure consistent screen reader behavior across browsers/platforms
+      element.setAttribute('aria-valuetext', `${percentage}%`);
     }
   }
 

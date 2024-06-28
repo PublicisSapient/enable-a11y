@@ -17,57 +17,10 @@
   this will utilize the meter role which will read out the current percentage of the meter.
 </p>
 
-<figure>
-  <figcaption id="screen-reader-table__caption" class="caption">
-    Screen reader announcements of the HTML5 meter component by platform
-  </figcaption>
-
-    <div class="sticky-table__container">
-      <table class="screen-reader-table" tabindex="0">
-        <thead>
-          <tr>
-            <th scope="col">Chrome (Android, Talkback)</th>
-            <th scope="col">Firefox (Windows, NVDA)</th>
-            <th scope="col">Safari (OSX, Voiceover)</th>
-            <th scope="col">Safari (iOS, Voiceover)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><p>
-              Reads the meter value. <hr/>
-              <em>0,2, Disk C</em> <br/>
-              <em>0.9, Disk D</em> <br/>
-              <em>0.6, Disk E</em>
-            </p></td>
-            <td><p>
-              Reads the meter value. <hr/>
-              <em>Disk C, Progress Bar, 0.2</em> <br/>
-              <em>Disk D, Progress Bar, 0.9</em> <br/>
-              <em>Disk E, Progress Bar, 0.6</em>
-            </p></td>
-            <td><p>
-              Reads the meter condition. <hr/>
-              <em>Optimal value, Disk C, Level Indicator</em> <br/>
-              <em>Critical value, Disk D, Level Indicator</em> <br/>
-              <em>Suboptimal value, Disk E, Level Indicator</em>
-            </p></td>
-            <td><p>
-              Reads the meter condition. <hr/>
-              <em>Disk C, Optimal value</em> <br/>
-              <em>Disk D, Critical value</em> <br/>
-              <em>Disk E, Suboptimal value</em>
-            </p></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</figure>
-
 <div id="html5-example" class="enable-example">
-  <strong id="group-heading">Storage Space</strong>
+  <strong id="group-heading-html5">Storage Space</strong>
 
-  <div class="container" role="group" aria-labelledby="group-heading">
+  <div class="container" role="group" aria-labelledby="group-heading-html5">
     <label id="disk-c-meter-html5" aria-hidden="true">Disk C:</label>
     <meter aria-labelledby="disk-c-meter-html5" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
@@ -97,6 +50,11 @@
             "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
             "highlight": "aria-hidden",
             "notes": ""
+        },
+        {
+          "label": "Have JS apply the aria-valuetext attribute to ensure consistent screen reader behavior",
+          "highlight": "%JS% meter.init ||| element.setAttribute\\('aria-valuetext', `\\${percentage}%`\\);",
+          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JS apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense."
         }
     ]
 }
@@ -113,57 +71,10 @@
   This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">Aria 1.2</a>.
 </p>
 
-<figure>
-  <figcaption id="screen-reader-table__caption" class="caption">
-    Screen reader announcements of the ARIA meter component by platform
-  </figcaption>
-
-    <div class="sticky-table__container">
-      <table class="screen-reader-table" tabindex="0">
-        <thead>
-          <tr>
-            <th scope="col">Chrome (Android, Talkback)</th>
-            <th scope="col">Firefox (Windows, NVDA)</th>
-            <th scope="col">Safari (OSX, Voiceover)</th>
-            <th scope="col">Safari (iOS, Voiceover)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><p>
-              Reads the meter value. <hr/>
-              <em>0,2, Disk C</em> <br/>
-              <em>0.9, Disk D</em> <br/>
-              <em>0.6, Disk E</em>
-            </p></td>
-            <td><p>
-              Reads the meter value. <hr/>
-              <em>Disk C, Progress Bar, 0.2</em> <br/>
-              <em>Disk D, Progress Bar, 0.9</em> <br/>
-              <em>Disk E, Progress Bar, 0.6</em>
-            </p></td>
-            <td><p>
-              Reads the meter condition. <hr/>
-              <em>Disk C, Optimal, Level Indicator</em> <br/>
-              <em>Disk D, Critical, Level Indicator</em> <br/>
-              <em>Disk E, Suboptimal, Level Indicator</em>
-            </p></td>
-            <td><p>
-              Reads the meter value <hr/>
-              <em>Disk C, 0.2</em> <br/>
-              <em>Disk D, 0.9</em> <br/>
-              <em>Disk E, 0.6</em> <br/>
-            </p></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</figure>
-
 <div id="aria-example" class="enable-example">
-  <strong id="group-heading">Storage Space</strong>
+  <strong id="group-heading-aria">Storage Space</strong>
 
-  <div class="container" role="group" aria-labelledby="group-heading">
+  <div class="container" role="group" aria-labelledby="group-heading-aria">
     <label id="disk-c-meter-aria" aria-hidden="true">Disk C:</label>
     <div
       aria-labelledby="disk-c-meter-aria"
@@ -238,6 +149,11 @@
           "notes": "By setting these new attributes on the element, we can access them from the CSS."
         },
         {
+          "label": "Have JS apply the aria-valuetext attribute to ensure consistent screen reader behavior",
+          "highlight": "%JS% meter.init ||| element.setAttribute\\('aria-valuetext', `\\${percentage}%`\\);",
+          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JS apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense."
+        },
+        {
           "label": "Use new attributes in CSS to style the meter element and it's psuedo elements.",
           "highlight": "%CSS% meter-css~ ||| meter-state ||| var\\(--meter-percentage\\)",
           "notes": "To support Firefox, be sure to set these attributes for both <code>::before</code> and <code>::-moz-meter-bar</code>. Lastly to avoid styling issues with Safari, be sure to hide <code>::-webkit-meter-bar</code>."
@@ -245,3 +161,87 @@
     ]
 }
 </script>
+
+
+<h2>Screen Reader Support</h2>
+
+<p>
+  Due to inconsistent support of the meter component, this solution utilizes <code>aria-valuetext</code>. This attribute defines how the value of the meter should be announced by various screen readers.
+  If you prefer not to utilize this attribute, the tables below outline how screen readers will announce these meter component acros different browsers/platforms.
+</p>
+
+<figure>
+  <figcaption id="screen-reader-table__caption" class="caption">
+    Screen reader announcements of the HTML5/ARIA meter components by platform
+  </figcaption>
+
+    <div class="sticky-table__container">
+      <table class="screen-reader-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Example</th>
+            <th scope="col">Chrome (Android, Talkback)</th>
+            <th scope="col">Firefox (Windows, NVDA)</th>
+            <th scope="col">Safari (OSX, Voiceover)</th>
+            <th scope="col">Safari (iOS, Voiceover)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML5</td>
+            <td>
+              Reads the meter value. <hr/>
+              <em>0,2, Disk C</em> <br/>
+              <em>0.9, Disk D</em> <br/>
+              <em>0.6, Disk E</em>
+            </td>
+            <td>
+              Reads the meter value. <hr/>
+              <em>Disk C, Progress Bar, 0.2</em> <br/>
+              <em>Disk D, Progress Bar, 0.9</em> <br/>
+              <em>Disk E, Progress Bar, 0.6</em>
+            </td>
+            <td>
+              Reads the meter condition. <hr/>
+              <em>Optimal value, Disk C, Level Indicator</em> <br/>
+              <em>Critical value, Disk D, Level Indicator</em> <br/>
+              <em>Suboptimal value, Disk E, Level Indicator</em>
+            </td>
+            <td>
+              Reads the meter condition. <hr/>
+              <em>Disk C, Optimal value</em> <br/>
+              <em>Disk D, Critical value</em> <br/>
+              <em>Disk E, Suboptimal value</em>
+            </td>
+          </tr>
+          <tr>
+            <td>ARIA</td>
+            <td>
+              Reads the meter value. <hr/>
+              <em>0,2, Disk C</em> <br/>
+              <em>0.9, Disk D</em> <br/>
+              <em>0.6, Disk E</em>
+            </td>
+            <td>
+              Reads the meter value. <hr/>
+              <em>Disk C, Progress Bar, 0.2</em> <br/>
+              <em>Disk D, Progress Bar, 0.9</em> <br/>
+              <em>Disk E, Progress Bar, 0.6</em>
+            </td>
+            <td>
+              Reads the meter condition. <hr/>
+              <em>Disk C, Optimal, Level Indicator</em> <br/>
+              <em>Disk D, Critical, Level Indicator</em> <br/>
+              <em>Disk E, Suboptimal, Level Indicator</em>
+            </td>
+            <td>
+              Reads the meter value <hr/>
+              <em>Disk C, 0.2</em> <br/>
+              <em>Disk D, 0.9</em> <br/>
+              <em>Disk E, 0.6</em> <br/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</figure>
