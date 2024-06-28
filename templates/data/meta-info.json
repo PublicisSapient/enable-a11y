@@ -29,6 +29,10 @@
     "desc": "",
     "wip": true
   },
+  "autocomplete.php": {
+    "title": "Autocomplete Form",
+    "desc": "A form with autocomplete fields that are accessible to screen reader users."
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
