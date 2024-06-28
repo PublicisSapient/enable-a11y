@@ -1,5 +1,4 @@
-
-const enableCharacterCount = new function() {
+const enableCharacterCount = new (function() {
   'use strict';
 
   const defaultReadCharacterCountKey = 'Escape';
