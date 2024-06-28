@@ -1,106 +1,101 @@
 const enableCharacterCount = new (function() {
-  let charCountInitEl,
-    globalScreenReaderTemplate,
-    globalVisualTemplate,
-    globalCounterInstructions,
-    charCountTemplate,
-    liveRegion,
-    globalWarningThreshold,
-    timeout;
+  'use strict';
 
-  let idIndex = '0';
+  const defaultReadCharacterCountKey = 'Escape';
+  let announcementTimeout;
+  let idIndex = 0;
 
   this.init = () => { 
-    const charCountEls = document.querySelectorAll('[data-has-character-count]');
-    charCountInitEl = charCountEls.length > 0 ? charCountEls[0] : null;
-    const charCountTemplateEl = document.getElementById('enable-character-count__template');
-    const dataset = charCountInitEl ? charCountInitEl.dataset : {};
-
-    charCountTemplate = charCountTemplateEl ? charCountTemplateEl.innerHTML : '<span class="sr-only">${screenReaderText}</span><span aria-hidden="true">${visualText}</span>';
-
-    globalScreenReaderTemplate = dataset.screenReaderText || 'Character Count: ${numChars} out of ${maxLength}';
-    globalVisualTemplate = dataset.visualText || '${numChars}/${maxLength}';
-    globalCounterInstructions = dataset.counterInstructions || 'Press Escape to find out how many more characters you can type.';
-    globalWarningThreshold = dataset.warningThreshold || 20;
-
-    document.body.addEventListener('keyup', this.onKeyUp, true);
-    document.body.addEventListener('focus', this.onFocus, true);
-
-    addLiveRegion();
-
-    charCountEls.forEach((target, i) => {
-      setAriaDesc(target);
-      createCounterFor(target);
+    const charCountEls = document.querySelectorAll("[data-has-character-count='true']");
+    charCountEls.forEach((target) => {
+      setUpEventsFor(target);
+      setIdIfNullFor(target);
+      setUpAriaDescribedByFor(target);
+      addLiveRegion(target);
+      createCounterContainerFor(target);
       writeCharCount(target);
     });
   }
 
-  function setAriaDesc(target) {
-    const { dataset } = target;
+  function setUpEventsFor(target) {
+    target.addEventListener('keyup', onKeyUp);
+    target.addEventListener('keydown', onKeyDown);
+    target.addEventListener('focus', onFocus);
+  }
 
-    if (dataset.announceAfterEscape === 'true') {
-      const desc = target.getAttribute('aria-describedby') || '';
-      target.setAttribute('aria-describedby', `${desc} character-count__desc`.trim());
-
+  function setIdIfNullFor(target) {
+    if (!target.id) {
+      target.id = `enable-character-counter-${idIndex++}`;
     }
   }
 
-  function getNewId() {
-    const id = `enable-character-counter-${idIndex}`;
-    id++;
+  function setUpAriaDescribedByFor(target) {
+    const describedByContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
+    const ariaDescribedByElement = document.createElement('p');
+    ariaDescribedByElement.id = `${target.id}-aria-describedby`;
+    ariaDescribedByElement.className="sr-only";
+    ariaDescribedByElement.textContent = describedByContent;
+    target.insertAdjacentElement('afterend', ariaDescribedByElement);
+    target.setAttribute('aria-describedby', ariaDescribedByElement.id);
   }
 
-  function getCounterHTML(target, numChars, maxLength) {
+  function getScreenReaderDescription(target) {
+    const { maxLength, dataset } = target;
+    const description = dataset.description ?? 'In edit text area with a ${maxLength} character limit.';
+    return interpolate(description, { maxLength });
+  }
+
+  function getScreenReaderInstructions(target) {
+    const { readCountKey, instructions } = target.dataset;
+    const keyToPress = readCountKey ?? defaultReadCharacterCountKey;
+    const instructionsToInterpolate = instructions ?? 'Press ${keyToPress} to find out how many more characters are allowed.';
+    return interpolate(instructionsToInterpolate, { keyToPress });
+  }
+
+  function createCounterContainerFor(target) {
+    const container= document.createElement('div');
+    container.id = `${target.id}-counter-container`;
+    container.className = "enable-character-count";
+    target.setAttribute('data-character-count-container', container.id);
+    target.insertAdjacentElement('afterend', container);
+  }
+
+  function addLiveRegion(target) {
+    const liveRegion = document.createElement('div');
+    const liveRegionId = `${target.id}-live-region`;
+    liveRegion.id = liveRegionId;
+    liveRegion.className="sr-only";
+    liveRegion.role = 'region';
+    liveRegion.ariaLive = 'polite';
+    liveRegion.ariaLabel = `${liveRegionId}-aria-label`;
+    target.insertAdjacentElement('afterend', liveRegion);
+    liveRegion.appendChild(createCounterForScreenReader(liveRegion));
+  }
+
+  function createCounterForScreenReader(parent) {
+    const result = document.createElement('p');
+    result.id = `${parent.id}-character-count-status`;
+    return result;
+  }
+
+  function writeCharCount(target) {
+    const { dataset } = target;
+    const { characterCountContainer } = dataset;
+    const container = document.getElementById(characterCountContainer);
+    if (container) {
+      container.innerHTML = getCounterHTML(target);
+    }
+  }
+
+  function getCounterHTML(target) {
+    const { maxLength, dataset, value } = target;
+    const numChars = value.length;
     const charsRemaining = maxLength - numChars;
-    const { dataset } = target;
-    const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
-    const visualTemplate = dataset.visualTemplate || globalVisualTemplate;
-    const screenReaderText = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
-    const visualText = interpolate(visualTemplate, { numChars, maxLength, charsRemaining });
-    const screenReaderCount = interpolate(charCountTemplate, { screenReaderText, visualText });
-
-    return screenReaderCount;
-  }
-
-  function createCounterFor(target) {
-    let ariaDescBy = target.getAttribute('aria-describedby');
-    ariaDescBy = ariaDescBy ? ariaDescBy.replace('character-count__desc', '') : '';
-    ariaDescBy = ariaDescBy.split(/\s+/)[0];
-
-    const ariaDescByEl = ariaDescBy && document.getElementById(ariaDescBy);
-    const counterEl = document.createElement('output');
-    const targetId = target.id || getNewId();
-    counterEl.className = "enable-character-count";
-    counterEl.id = `${targetId}__counter`;
-    counterEl.setAttribute('aria-live', 'off')
-    target.setAttribute('data-character-count-label', counterEl.id);
-
-    // adds the character counter to the textarea's aria-describedby
-    target.setAttribute('aria-describedby', `${ariaDescBy} ${counterEl.id}`)
-    
-    if (ariaDescByEl) {
-      ariaDescByEl.insertAdjacentElement('afterend', counterEl);
-    } else {
-      target.insertAdjacentElement('afterend', counterEl);
-    }
-
-  }
-
-  function addLiveRegion() {
-    const lastBodyEl = document.body.lastElementChild;
-
-    const asideEl = document.createElement('aside');
-    asideEl.setAttribute('id', 'enable-character-count__global');
-    asideEl.className="sr-only";
-
-    liveRegion = document.createElement('output');
-    liveRegion.className = 'sr-only';
-    liveRegion.id = 'character-count__status';
-    /* liveRegion.setAttribute('role', 'status');
-    liveRegion.setAttribute('aria-live', 'polite'); */
-    lastBodyEl.insertAdjacentElement('afterend', asideEl);
-    asideEl.appendChild(liveRegion);
-    liveRegion.insertAdjacentHTML('afterend', `<span id="character-count__desc" class="sr-only">${globalCounterInstructions}</span>`);
+    const visualTextTemplate = dataset.visualText ?? '${numChars}/${maxLength}';
+    const visualText = interpolate(visualTextTemplate, { numChars, maxLength, charsRemaining });
+    const counterElementTemplate = document.getElementById('enable-character-count__template');
+    const counterElement = counterElementTemplate ?? '<span aria-hidden="true">${visualText}</span>'
+    return interpolate(counterElement, { visualText });
   }
 
   function wasArrowPressed(key) {
@@ -115,59 +110,68 @@ const enableCharacterCount = new (function() {
     }
   }
 
-  this.onKeyUp = (e) => {
-    const { target, key } = e;
+  function onKeyUp(event) {
+    const { target, key } = event;
     const { dataset } = target;
-
-    if (dataset.hasCharacterCount) {
-      const inputLength = target.value.length;
-      const { maxLength } = target;
-
-      timeout && clearTimeout(timeout);
-
-
-    
-      writeCharCount(target);
-      liveRegion.innerHTML = '';
-
-      if (inputLength > maxLength - globalWarningThreshold && !wasArrowPressed(key)) {
-        timeout = setTimeout(() => {
-          announceCharCount(target);
-        }, 1000);
-      }
-
-
+    writeCharCount(target);
+    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
+      announceCharacterCount(target);
+    }
+    if (isWithinWarningThreshold(target) && !wasArrowPressed(key)) {
+      announceCharacterCountWithDelay(target, 1000);
     }
   }
 
-  this.onFocus = (e) => {
-    const { target } = e;
+  function isWithinWarningThreshold(target) {
+    const { dataset, maxLength } = target;
+    const inputLength = target.value.length;
+    const warningThreshold = dataset.warningThreshold ?? 20;
+    return inputLength > (maxLength - warningThreshold);
+  }
+
+  function onKeyDown(event) {
+    const { target, key } = event;
     const { dataset } = target;
-
-    if (dataset.hasCharacterCount) {
-      announceCharCount(target);
+    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
+      getScreenReaderCharacterCount(target).textContent = '';
     }
   }
 
-  const writeCharCount = (target) => {
-    const { maxLength, dataset, value } = target;
-    const { characterCountLabel, characterCountDelta } = dataset;
-    const characterCountLabelEl = document.getElementById(characterCountLabel);
-
-    if (maxLength && characterCountLabelEl) {
-      characterCountLabelEl.innerHTML = getCounterHTML(target, value.length, parseInt(maxLength));
-    }
+  function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
+    if (readCountKey)
+      return keyPressed === readCountKey;
+    return keyPressed === defaultReadCharacterCountKey;
   }
 
-  const announceCharCount = (target) => {
-    const { maxLength, dataset } = target;
-    const screenReaderTemplate = dataset.screenReaderTemplate || globalScreenReaderTemplate;
+  function onFocus(event) {
+    const { target } = event;
+    announceCharacterCount(target);
+  }
+
+  function announceCharacterCount(target) {
+    announceCharacterCountWithDelay(target, 200);
+  }
+
+  function announceCharacterCountWithDelay(target, delay) {
+    if (typeof announcementTimeout === 'number') {
+      clearTimeout(announcementTimeout);
+    }
+    announcementTimeout = setTimeout(() => {
+      setContentsForScreenReader(target)
+    }, delay);
+  }
+
+  function setContentsForScreenReader(target) {
+    const maxLength = target.maxLength;
     const numChars = target.value.length;
-    if (maxLength) {
-      const charsRemaining = parseInt(maxLength) - numChars;
-      liveRegion.innerHTML = '';
-      liveRegion.innerHTML = interpolate(screenReaderTemplate, { numChars, maxLength, charsRemaining });
-      
-    }
+    const charsRemaining = maxLength - numChars;
+    const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
+    const counterForScreenReader = getScreenReaderCharacterCount(target);
+    counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
+  }
+
+  function getScreenReaderCharacterCount(target) {
+    const liveRegion = document.getElementById(`${target.id}-live-region`);
+    return document.getElementById(`${liveRegion.id}-character-count-status`);
   }
 })
