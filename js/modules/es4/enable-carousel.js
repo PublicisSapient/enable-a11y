@@ -13,7 +13,6 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
 let counter = 0;
 
 const EnableCarousel = function (container, options, gliderOptions) {
@@ -313,4 +312,3 @@ const EnableCarousel = function (container, options, gliderOptions) {
     }
   };
 }
-
