@@ -7,7 +7,7 @@
         <?php includeStats(["isForNewBuilds" => false]); ?>
         <?php includeStats(["isNPM" => true]); ?>
 
-        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensure partially-sighted and blind users know that a sort has been successful.</p>
+        <p>Giving users the ability to sort data tables is useful for everyone.  We should ensure they are coded correctly.  In the example below, you will learn about the <code>grid</code> role that you should use for these tables, and how the UI for the sorting routines ensures that partially-sighted and blind users know that a sort has been successful.</p>
 
 
 

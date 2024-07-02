@@ -17,16 +17,16 @@
 
 <p>
   This is the component that the most development and testing time was spent on. On many sites I have done accessibility
-  audits on, there is a main navigation that <strong>appears as a traditional flyout menu on the desktop breakpoint, and a
+  audits on, there is a main navigation that <strong>appears as a traditional flyout menu on the desktop breakpoint and a
   mobile hamburger menu on
   the tablet and mobile breakpoints</strong>. More often than not, this component would have several accessibility issues:
 </p>
 
 <ol>
-  <li>On desktop, when the user opened a menu flyout and tabbed through the flyout to the next flyout button, the flyout
+  <li>On the desktop, when the user opened a menu flyout and tabbed through the flyout to the next flyout button, the flyout
     wouldn't close.</li>
   <li>On mobile, there wouldn't be a focus loop around the hamburger menu when opened.</li>
-  <li>On mobile, when opening up a submenu, focus wouldn't go the the back button/close button of the new submenu.</li>
+  <li>On mobile, when opening up a submenu, the focus wouldn't go the the back button/close button of the new submenu.</li>
   <li>Links and collapsable buttons were not marked up correctly.</li>
 </ol>
 
@@ -54,7 +54,7 @@
       "Screenshot of the banner on the top of this page in the mobile breakpoint",
   ); ?>
 
-  <figcaption>Figure 1. The hamburger menu icon appears on the upper right hand side of the page. It is
+  <figcaption>Figure 1. The hamburger menu icon appears on the upper right-hand side of the page. It is
     denoted by three horizontal lines that has become the standard.</figcaption>
 </figure>
 
@@ -75,14 +75,14 @@
 
   <figcaption>
     Figure 2. When the hamburger menu icon is clicked, the black menu above appears.
-    It has a close button (that gains keyboard focus when first opened) and few CTAs
+    It has a close button (that gains keyboard focus when first opened) and a few CTAs
     stacked on top of each other.</figcaption>
 </figure>
 
 <p>
   The user can choose any item inside that menu with either
   a mouse or keyboard. Menu subcategories are visually indicated
-  by a right pointing chevron, and to assistive technologies as
+  by a right-pointing chevron, and to assistive technologies as
   collapsible/expandable buttons. Clicking on these subcategory
   buttons will show the subcategory menu appearing, with keyboard
   focus being applied to the back button that will take users back
@@ -91,8 +91,8 @@
 
 
 <p>
-  Keyboard users experiencing a focus loop
-  that keeps the current menu panel until the menu is closed.
+  Keyboard users experience a focus loop
+  that keeps the current menu panel open until the menu is closed.
   If the user either uses a mouse
   to click outside the menu or hits the Escape key, the menu will close.
 </p>
@@ -101,8 +101,8 @@
 
 <p>
   If you are in the desktop breakpoint (i.e. a viewport width greater
-  then or equal to <span class="breakpoint-width"></span>), then a mega menu
-  will appear in across to top of the page underneath the Enable logo in the
+  than or equal to <span class="breakpoint-width"></span>), then a mega menu
+  will appear across the top of the page underneath the Enable logo in the
   global header.
 </p>
 
@@ -115,7 +115,7 @@
 
   <figcaption>
     Figure 3. The mega menu is a horizontal bar with the
-    top level CTAs appearing inside it next to one another.
+    top-level CTAs appearing inside it next to one another.
   </figcaption>
 </figure>
 
@@ -153,13 +153,13 @@
 </p>
 
 
-<h2>How can I use this script in my own site</h2>
+<h2>How can I use this script on my site?</h2>
 
 
 <ol>
-  <li>Follow the instructions below in order to <a href="#npm-instructions">learn how to download the hamburger menu
+  <li>Follow the instructions below to <a href="#npm-instructions">learn how to download the hamburger menu
       library</a>.</li>
-  <li>Use the following code walkthrough below to create your own menu navigation.</li>
+  <li>Use the following code walkthrough below to create your menu navigation.</li>
 </ol>
 
 <?php includeShowcode("website-banner", "", "", "", true, 0, "", true); ?>

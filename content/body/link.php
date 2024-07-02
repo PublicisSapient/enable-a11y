@@ -66,10 +66,10 @@
 <h2>Links That "Look Like Buttons"</h2>
 
 <p>
-  There are many times where you want a CTA to stick out from the rest of the text, maybe even covering a more prominent
+  There are many times when you want a CTA to stick out from the rest of the text, maybe even covering a more prominent
   and bigger area on the screen. If you make the CTA look like a button, you are being dishonest: it <em>looks</em> like
-  a button, but its not since it has a URL associated with it. In order to distinguish this from other buttons, we
-  should make a small change to it, like adding a right pointing chevron to the CTA like the example below:
+  a button, but it's not since it has a URL associated with it. To distinguish this from other buttons, we
+  should make a small change to it, like adding a right-pointing chevron to the CTA like the example below:
 </p>
 
 <?php include "includes/hero-example.php"; ?>
@@ -101,7 +101,7 @@
 <h2>Breadcrumbs</h2>
 
 <p>
-  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the hierarchy that
+  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the hierarchy where
   the current page resides.
 </p>
 

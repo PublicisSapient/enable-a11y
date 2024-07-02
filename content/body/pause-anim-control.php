@@ -41,16 +41,16 @@
   ]); ?>
   <?php includeStats(["isNPM" => true]); ?>
   <p>
-    Pause all the CSS, Canvas, Video, SVG SMIL and GIF
+    Pause all the CSS, Canvas, Video, SVG SMIL, and GIF
     animations on this page with the checkbox at the top of this page.
-    The CSS, Video and SVG SMIL animations don't know
+    The CSS, Video, and SVG SMIL animations don't know
     anything about the checkbox. The Canvas and GIF animations only require
-    a small amount of set up to work.
+    a small amount of setup to work.
   </p>
 
   <p>
     (Note: if you have set your operating system to Reduce Motion,
-    it will be checked by default and animations on the page will not play until the checkbox is unchecked)
+    it will be checked by default, and animations on the page will not play until the checkbox is unchecked)
   </p>
 
   <h2>Quick Start guide</h2>
@@ -100,7 +100,7 @@
   <p>The TL;DR:</p>
 
   <ul>
-    <li>When the page loads, the script checks to see what the OS setting for animations (via the <a
+    <li>When the page loads, the script checks to see what the OS setting for animations is (via the <a
         href="">prefers-reduced-motion media query</a>).</li>
     <li>If <code>prefers-reduced-motion</code> media-query is set to "reduce", the script turns off the
       animations and checks the checkbox by default.</li>
@@ -114,7 +114,7 @@
 
   <h2>Code walkthroughs</h2>
 
-  <p>This section will show how the script stops the different type of animations.</p>
+  <p>This section will show how the script stops the different types of animations.</p>
 
   <h3>CSS Animations</h3>
 
@@ -174,7 +174,7 @@
   <p>Most Canvas Animations (like <a href="https://codepen.io/thebabydino/pen/gbJwMQ">this great elastic collision
       demo</a> from
     <a href="https://codepen.io/thebabydino">Ana Tudor</a>) rely on code using
-    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame()</code></a> to produces a frame of
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame"><code>requestAnimationFrame()</code></a> to produce a frame of
     animation.
     When the checkbox is checked, we just set window.requestAnimationFrame to a dummy function, and set it back
     when the checkbox
@@ -229,7 +229,7 @@
     SMIL being deprecated in Chrome, this
     <a href="https://groups.google.com/a/chromium.org/g/blink-dev/c/5o0yiO440LM/m/YGEJBsjUAwAJ?pli=1">deprecation
       was suspended</a>
-    (i.e. it is still a web standard and will continue to be in the forseeable future, due to push back from the
+    (i.e. it is still a web standard and will continue to be in the foreseeable future, due to pushback from the
     web development community).
   </p>
 
@@ -338,7 +338,7 @@
   <p>Unlike SVG SMIL animations, there is no browser API to pause GIF/WEBP animations.
     This script works around this by allowing the developer to include two different
     renditions of the image: one animated, the other not. CSS is then used to hide
-    and show each rendition according the user's preference.</p>
+    and show each rendition according to the user's preference.</p>
 
   <p>(If you are looking for a way to add pause buttons on GIF animations, please
     take a look at <a href="36-animated-gif-with-pause-button.php">
@@ -425,7 +425,7 @@
     Note that when the user unchecks the "Pause animations" checkbox,
     the videos will only start playing if they were playing when the checkbox was
     originally checked. <strong><em>(Since this video does not autoplay, you must play it first and then check the
-        "Pause Animations" checkbox in order to test it properly)</em></strong>
+        "Pause Animations" checkbox to test it properly)</em></strong>
   </p>
 
 
@@ -466,7 +466,7 @@
   <h3>Making scrollIntoView() Respect the Pause Control</h3>
 
   <p>
-    It is possible to make the a DOM element's <code>scrollIntoView()</code> method respect the setting of the pause
+    It is possible to make a DOM element's <code>scrollIntoView()</code> method respect the setting of the pause
     control. You will notice that all the code walkthroughs will not animate when changing steps and the "Pause
     animations" control is checked. This part of the code shows you how this works:
   </p>

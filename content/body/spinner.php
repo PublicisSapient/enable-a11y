@@ -40,7 +40,7 @@
 <p>
   Numeric form fields fall into two categories: ones that are supposed to measure a quantity (e.g. items in a shopping
   cart, number of dependents in your family), and ones that don't (e.g. a zip code, a social insurance number, etc).
-  On mobile devices for both of these fields you will want a virtual numeric keyboard to appear. However, it doesn't
+  On mobile devices, for both of these fields, you will want a virtual numeric keyboard to appear. However, it doesn't
   make sense for increase/decrease controls to appear for either mouse or keyboard users for those that don't represent
   a quantity.
 </p>
@@ -104,7 +104,7 @@
               pattern="[0-9]*"&gt;</code>. This is currently what the
   <a
     href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">recommendation
-    of the UK government when dealing with numeric
+    of the UK government is when dealing with numeric
     information that isn't a quantity</a>.
 </p>
 
@@ -144,7 +144,7 @@
 <?php includeStats([
     "isForNewBuilds" => false,
     "comment" =>
-        'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may really want to question some of your other life choices)',
+        'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may want to question some of your other life choices)',
 ]); ?>
 <?php includeStats([
     "isNPM" => true,
@@ -156,9 +156,9 @@
     - Spinbutton using IMG elements for buttons</a>
   by the
   <a href="http://oaa-accessibility.org/">Open Ajax Alliance</a> (now
-  currently offline). I refactored the code and released it as an NPM module for your convenience. It was created before
+   offline). I refactored the code and released it as an NPM module for your convenience. It was created before
   <code>&lt;input type="number"&gt;</code> was supported on all browsers.
-  I would recommend to just use that instead, but if you have existing code you need to fix, use the instructions below
+  I would recommend just using that instead, but if you have existing code you need to fix, use the instructions below
   to
   make it work.
 </p>

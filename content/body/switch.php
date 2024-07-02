@@ -14,9 +14,9 @@
 </p>
 
 <p>
-  My father, who is partially sighted, has fallen in this trap on a website once on his tablet. He was afraid of
-  submitting an order form because he felt that the screen reader was lying to him, and he afraid of making a mistake
-  because he didn't know what the control really did (he wasn't sure what it was, but it certainly didn't look like a
+  My father, who is partially sighted, has fallen into this trap on a website once on his tablet. He was afraid of
+  submitting an order form because he felt that the screen reader was lying to him, and he was afraid of making a mistake
+  because he didn't know what the control did (he wasn't sure what it was, but it certainly didn't look like a
   checkbox). He tried to explain to me this issue over the phone, and after quite a few minutes not understanding what
   the trouble was, I went over to his house to see what he was talking about. After looking at his tablet, I learned a
   valuable lesson: developers shouldn't be dishonest to users to make things easier for themselves.
