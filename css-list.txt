@@ -15,7 +15,6 @@ css/dialog-html5.css
 css/dropdown.css
 css/enable-carousel.css
 css/enable-listbox.css
-css/enable-toc.css
 css/enable-visible-on-focus.css
 css/figure.css
 css/form.css

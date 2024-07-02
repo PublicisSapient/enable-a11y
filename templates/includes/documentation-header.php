@@ -499,13 +499,6 @@
                                         "url-slug": "reflow",
                                         "alt": ""
                                     }
-                                }, {
-                                    "id": "flyout__link",
-                                    "props": {
-                                        "label": "Table of Contents",
-                                        "url-slug": "table-of-contents",
-                                        "alt": ""
-                                    }
                                 }
 
                             ]
