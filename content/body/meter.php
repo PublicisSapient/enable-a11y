@@ -170,9 +170,13 @@
   If you prefer not to utilize this attribute, the tables below outline how screen readers will announce these meter component acros different browsers/platforms.
 </p>
 
+<p>
+  For those using axe validation, use of <code>aria-valuetext</code> may cause an 'aria-allowed-attr' error. To resolve this, be sure to update to v4.9.1 or newer.
+</p>
+
 <figure>
   <figcaption id="screen-reader-table__caption" class="caption">
-    Screen reader announcements of the HTML5/ARIA meter components by platform
+    Screen reader announcements of the HTML5/ARIA meter components by platform (without aria-valuetext)
   </figcaption>
 
     <div class="sticky-table__container">
@@ -190,25 +194,25 @@
           <tr>
             <td>HTML5</td>
             <td>
-              Reads the meter value. <hr/>
+              Reads meter value. <hr/>
               <em>0,2, Disk C</em> <br/>
               <em>0.9, Disk D</em> <br/>
               <em>0.6, Disk E</em>
             </td>
             <td>
-              Reads the meter value. <hr/>
+              Reads meter value. <hr/>
               <em>Disk C, Progress Bar, 0.2</em> <br/>
               <em>Disk D, Progress Bar, 0.9</em> <br/>
               <em>Disk E, Progress Bar, 0.6</em>
             </td>
             <td>
-              Reads the meter condition. <hr/>
+              Reads meter condition. <hr/>
               <em>Optimal value, Disk C, Level Indicator</em> <br/>
               <em>Critical value, Disk D, Level Indicator</em> <br/>
               <em>Suboptimal value, Disk E, Level Indicator</em>
             </td>
             <td>
-              Reads the meter condition. <hr/>
+              Reads meter condition. <hr/>
               <em>Disk C, Optimal value</em> <br/>
               <em>Disk D, Critical value</em> <br/>
               <em>Disk E, Suboptimal value</em>
@@ -217,28 +221,106 @@
           <tr>
             <td>ARIA</td>
             <td>
-              Reads the meter value. <hr/>
+              Reads meter value. <hr/>
               <em>0,2, Disk C</em> <br/>
               <em>0.9, Disk D</em> <br/>
               <em>0.6, Disk E</em>
             </td>
             <td>
-              Reads the meter value. <hr/>
+              Reads meter value. <hr/>
               <em>Disk C, Progress Bar, 0.2</em> <br/>
               <em>Disk D, Progress Bar, 0.9</em> <br/>
               <em>Disk E, Progress Bar, 0.6</em>
             </td>
             <td>
-              Reads the meter condition. <hr/>
+              Reads meter condition. <hr/>
               <em>Disk C, Optimal, Level Indicator</em> <br/>
               <em>Disk D, Critical, Level Indicator</em> <br/>
               <em>Disk E, Suboptimal, Level Indicator</em>
             </td>
             <td>
-              Reads the meter value <hr/>
+              Reads meter value <hr/>
               <em>Disk C, 0.2</em> <br/>
               <em>Disk D, 0.9</em> <br/>
               <em>Disk E, 0.6</em> <br/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</figure>
+
+<br />
+
+<figure>
+  <figcaption id="screen-reader-table-aria-valuetext__caption" class="caption">
+    Screen reader announcements of the HTML5/ARIA meter components by platform (with aria-valuetext)
+  </figcaption>
+
+    <div class="sticky-table__container">
+      <table class="screen-reader-table-aria-valuetext" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Example</th>
+            <th scope="col">Chrome (Android, Talkback)</th>
+            <th scope="col">Firefox (Windows, NVDA)</th>
+            <th scope="col">Safari (OSX, Voiceover)</th>
+            <th scope="col">Safari (iOS, Voiceover)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML5 <br />(aria-valuetext)</td>
+            <td>
+              Reads meter value. <hr/>
+              <em>20%, Disk C</em> <br/>
+              <em>90%, Disk D</em> <br/>
+              <em>60%, Disk E</em>
+            </td>
+            <td>
+              Reads meter value. <hr/>
+              <em>Disk C, Progress Bar, 20%</em> <br/>
+              <em>Disk D, Progress Bar, 90%</em> <br/>
+              <em>Disk E, Progress Bar, 60%</em>
+            </td>
+            <td>
+              Reads meter condition. <hr/>
+              <em>20%, Disk C, Level Indicator</em> <br/>
+              <em>90%, Disk D, Level Indicator</em> <br/>
+              <em>60%, Disk E, Level Indicator</em>
+            </td>
+            <td>
+              Reads meter condition. <hr/>
+              <em>Disk C, 20%</em> <br/>
+              <em>Disk D, 90%</em> <br/>
+              <em>Disk E, 60%</em>
+            </td>
+          </tr>
+          <tr>
+            <td>ARIA <br />(aria-valuetext)</td>
+            <td>
+              Reads meter percentage. <hr/>
+              <em>20%, Disk C</em> <br/>
+              <em>90%, Disk D</em> <br/>
+              <em>60%, Disk E</em>
+            </td>
+            <td>
+              Reads meter percentage. <hr/>
+              <em>Disk C, Progress Bar, 20%</em> <br/>
+              <em>Disk D, Progress Bar, 90%</em> <br/>
+              <em>Disk E, Progress Bar, 60%</em>
+            </td>
+            <td>
+              Reads meter percentage. <hr/>
+              <em>Disk C, 20%, Level Indicator</em> <br/>
+              <em>Disk D, 90%, Level Indicator</em> <br/>
+              <em>Disk E, 60%, Level Indicator</em>
+            </td>
+            <td>
+              Reads meter percentage. <hr/>
+              <em>Disk C, 20%</em> <br/>
+              <em>Disk D, 90%</em> <br/>
+              <em>Disk E, 60%</em> <br/>
             </td>
           </tr>
         </tbody>
