@@ -1,10 +1,9 @@
 'use strict'
-
-
-
+// import tooltip from './tooltip.js'; // Temp: disable init of tooltip since it causes unexpected behavior
 const tableOfContents = new (function() {
     this.toc;
 
+    /* Common selectors used in the Table of Contents code */
     const commonSelectors = () => {
         return {
             sidebarTOCSelector: document.getElementById('enable-toc--sidebar'),
@@ -13,6 +12,7 @@ const tableOfContents = new (function() {
         }
     }
 
+    /* Create the Table of Contents content */
     this.createContent = (numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan, collapseNestedHeadingsAfterLevel) => {
         // Table of Contents container setup
         const tocList = document.createElement(numberFirstLevelHeadings ? 'ol' : 'ul');
@@ -38,12 +38,15 @@ const tableOfContents = new (function() {
 
                 // Skip headings that are within the selector or deeper than the specified level
                 if (selectorToSkipHeadingsWithin && el.closest(selectorToSkipHeadingsWithin) !== null || ignoreHeadersDeeperThan && headingLevel > ignoreHeadersDeeperThan) {
-                    // Do not add headings to the TOC
+                    // Do not add ignored headings to the TOC
                     return;
                 } else if (headingLevel === 1 || prevHeadingLevel === 0) {
                     prevHeadingLevel = headingLevel;
+                    // Do not add the H1 heading to the TOC
                     return;
                 } else if (headingLevel > prevHeadingLevel && prevHeadingLevel !== 1) {
+
+                    // Create a new list for the subheadings
                     const subList = document.createElement('ul');
                     subList.classList.add(`enable-toc__level-${headingLevel - 1}-content`);
 
@@ -68,21 +71,26 @@ const tableOfContents = new (function() {
                         subList.style.display = 'none';
                     }
 
+                    // Append the subList to the current tocNode
                     tocNode.appendChild(subList);
                     tocNode = subList;
                 }
 
                 tocNode = tocNode.closest(`.enable-toc__level-${headingLevel - 1}-content`);
                 
+                // Create the TOC item for the heading
                 const tocItem = document.createElement('li');
                 tocItem.classList.add(`enable-toc__item-${el.tagName.toLowerCase()}`);
 
+                // Add the heading content to the TOC item
                 el.childNodes && el.childNodes.forEach((child) => {
                     if (child.nodeName === 'IMG') {
+                        // Clone an image within a heading and add it to the TOC
                         const clonedImage = child.cloneNode(true);
                         clonedImage.classList.add('enable-toc__image');
                         tocItem.appendChild(clonedImage);
                     } else if (el.textContent) {
+                        // Add the heading text content to the TOC
                         const tocLink = document.createElement('a');
                         tocLink.setAttribute('href', `#${el.id}`);
                         tocLink.textContent = el.textContent;
@@ -91,6 +99,7 @@ const tableOfContents = new (function() {
                     }
                 });
 
+                // Add the TOC item to the TOC list
                 tocNode.appendChild(tocItem);
                 tocNode = tocItem;
                 prevHeadingLevel = headingLevel;
@@ -110,6 +119,7 @@ const tableOfContents = new (function() {
         subList.style.display = isExpanded ? 'none' : 'block';
     }
 
+    /* Action to open/show the "Toggle TOC" content */
     this.openToggleTOC = () => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         toggleButtonSelector?.setAttribute('aria-expanded', 'true');
@@ -121,6 +131,7 @@ const tableOfContents = new (function() {
         window.addEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
+    /* Action to close/hide the "Toggle TOC" content */
     this.closeToggleTOC = () => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         toggleButtonSelector?.setAttribute('aria-expanded', 'false');
@@ -132,6 +143,7 @@ const tableOfContents = new (function() {
         window.removeEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
+    /* Trigger the action to close/hide the "Toggle TOC" when clicking outside of the TOC or hitting the Escape key */
     this.closeToggleTOCOnEvent = (event) => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         if (
@@ -143,10 +155,10 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Action when clicking the toggle TOC button */
+    /* Action when clicking the toggle TOC button for the "Toggle TOC" */
     this.toggleTOC = () => {
         const { toggleButtonSelector } = commonSelectors();
-        toggleButtonSelector?.setAttribute('data-tooltip', 'Open or close the Table of Contents');
+        toggleButtonSelector?.removeAttribute('data-tooltip');
         const isExpanded = toggleButtonSelector?.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
             this.closeToggleTOC();
@@ -155,7 +167,7 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Initial code to add the TOC as a sidebar */
+    /* Initial code to add the TOC as a sidebar ("Sidebar TOC") */
     this.appendAsSidebar = () => {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
@@ -182,7 +194,7 @@ const tableOfContents = new (function() {
         main?.insertAdjacentElement('beforebegin', nav);
     }
 
-    /* Initial code to add the TOC as a toggle button beside the header */
+    /* Initial code to add the TOC as a toggle button beside the header ("Toggle TOC") */
     this.appendAsToggleButton = () => {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
@@ -217,7 +229,7 @@ const tableOfContents = new (function() {
         toggleButton.setAttribute('aria-label', 'Toggle the Table of Contents');
         toggleButton.setAttribute('aria-controls', 'enable-toc--toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
-        toggleButton.setAttribute('data-tooltip', 'Open or close the Table of Contents');
+        toggleButton.setAttribute('title', 'Open or close the Table of Contents');
         toggleButton.innerHTML = '<img src="/images/icons/toc.svg" alt="" />';
         toggleButton.addEventListener('click', this.toggleTOC);
 
@@ -233,11 +245,12 @@ const tableOfContents = new (function() {
         }
     }
 
+    /* Action for showing the "Sidebar TOC" and hiding the "Toggle TOC" */
     this.moveToSidebar = () => {
         // Update the body class to show the TOC as a sidebar
         document.getElementsByTagName('body')[0].classList.add('enable-toc-as-sidebar');
 
-        // Hide the TOC toggle button and content
+        // Hide the "Toggle TOC" toggle button and content
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         toggleButtonSelector?.setAttribute('aria-expanded', 'false');
         if (toggleTOCSelector) {
@@ -251,6 +264,7 @@ const tableOfContents = new (function() {
         document.querySelector('.enable-toc__hide-sidebar-button').focus();
     }
 
+    /* Action for showing the "Toggle TOC" and hiding the "Sidebar TOC" */
     this.moveToToggleButton = () => {
         // Update the body class to not show the TOC as a sidebar
         document.getElementsByTagName('body')[0].classList.remove('enable-toc-as-sidebar');
@@ -266,6 +280,7 @@ const tableOfContents = new (function() {
         toggleButtonSelector.focus();
     }
 
+    /* Initialize the Table of Contents on a page */
     this.init = ({
         skipPages = [],
         showAsSidebarDefault = true,
@@ -282,7 +297,7 @@ const tableOfContents = new (function() {
         // Create the Table of Contents
         this.toc = this.createContent(numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan, collapseNestedHeadingsAfterLevel);
 
-        // Insert the TOC beside the main content and beside the H1
+        // Insert the TOC beside the main content and beside the H1 ("Toggle TOC" and "Sidebar TOC")
         this.appendAsSidebar();
         this.appendAsToggleButton();
 
@@ -298,6 +313,6 @@ const tableOfContents = new (function() {
         }
 
         // Add the tooltip component
-        tooltip.init();
+        // tooltip.init(); // Temp: disable init of tooltip since it causes unexpected behavior
     }
 });
