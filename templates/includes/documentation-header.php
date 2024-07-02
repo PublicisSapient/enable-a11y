@@ -474,6 +474,13 @@
                                 }, {
                                     "id": "flyout__link",
                                     "props": {
+                                        "label": "Infographic",
+                                        "url-slug": "infographic",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
                                         "label": "Figure",
                                         "url-slug": "figure",
                                         "alt": ""
