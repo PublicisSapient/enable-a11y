@@ -3,6 +3,7 @@ css/alert.css
 css/all.css
 css/animated-hide-and-show.css
 css/article.css
+css/audio-player.css
 css/bottom-fixed-nav.css
 css/button.css
 css/checkbox.css
