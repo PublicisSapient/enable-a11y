@@ -70,7 +70,6 @@ const tableOfContents = new function() {
                     if (collapseNestedHeadingsAfterLevel && headingLevel > collapseNestedHeadingsAfterLevel + 1) {
                         // Create a button to expand/collapse the subheadings
                         expandButton = document.createElement('button');
-                        expandButton.setAttribute('id', `enable-drawer${elementCount}`);
                         expandButton.classList.add('enable-drawer__button');
                         expandButton.setAttribute('aria-expanded', 'false');
                         expandButton.setAttribute('aria-label', `Links for the content under the heading`);
@@ -233,10 +232,19 @@ const tableOfContents = new function() {
         const clonedToc = this.toc.cloneNode(true);
         nav.appendChild(clonedToc);
 
-        // Add the event listener to the cloned TOC
+        // Update the unique IDs for the expanded content
+        const expandedContent = clonedToc.querySelectorAll('.enable-drawer__content');
+        expandedContent?.forEach((content) => {
+            const originalId = content.getAttribute('id');
+            content.setAttribute('id', `${originalId}-toggle`);
+        });
+
+        // Add the event listener to the cloned TOC, and update the unique aria-controls attribute
         const expandButtons = clonedToc.querySelectorAll('.enable-drawer__button');
         expandButtons?.forEach((button) => {
             button.addEventListener('click', this.expandButtonClick);
+            const originalControlId = button.getAttribute('aria-controls');
+            button.setAttribute('aria-controls', `${originalControlId}-toggle`);
         });
 
         // Create the button to toggle the TOC
