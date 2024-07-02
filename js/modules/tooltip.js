@@ -21,8 +21,6 @@ const tooltip = new function () {
     const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
     let timeout;
     let tooltipTarget = null;
-
-
     let isTooltipVisible;
     let tooltipBelongsTo;
 
@@ -35,28 +33,26 @@ const tooltip = new function () {
     function isInViewport(elem) {
         var distance = elem.getBoundingClientRect();
         return (
-        distance.top >= 0 &&
-        distance.left >= 0 &&
-        distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+            distance.top >= 0 &&
+            distance.left >= 0 &&
+            distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            distance.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
 
     this.init = () => {
         this.create();
 
-        // mouse events
-        body.addEventListener('mouseover', this.show);
+        // Button click events
+        body.addEventListener('click', this.handleClick);
 
-        // equivalent keyboard events
+        // Hover events for inputs and other elements
+        body.addEventListener('mouseover', this.handleHover);
         body.addEventListener('focus', this.show, true);
         body.addEventListener('blur', this.hide, true);
-        
-        // used to make tooltip disappear when ESC key 
-        // is pressed.
+
+        // Escape key to hide tooltip
         body.addEventListener('keyup', this.onKeyup);
-
-
     }
 
     this.create = () => {
@@ -71,21 +67,41 @@ const tooltip = new function () {
 
     this.onKeyup = (e) => {
         // check if escape is pressed
-        if (e.which === 27)  {
+        if (e.which === 27) {
             this.hide();
-            e.preventDefault(); 
+            e.preventDefault();
         }
     }
+    
     this.show = (e) => {
+        tooltipTarget = e.target;
         timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
     }
 
-    this.showTimeout = (e) => {
-        // This is the element that needs the tooltip
+    this.handleClick = (e) => {
         tooltipTarget = e.target;
-        
-        // The text the tooltip contains is in the
-        // data-tooltip attribute
+
+        // Check if tooltipTarget is a button
+        if (tooltipTarget.tagName.toLowerCase() === 'button') {
+            if (isTooltipVisible && tooltipBelongsTo === tooltipTarget) {
+                this.hide();
+            } else {
+                this.showTimeout(e);
+            }
+        }
+    }
+
+    this.handleHover = (e) => {
+        tooltipTarget = e.target;
+
+        // Check if tooltipTarget is an input or other element
+        if (tooltipTarget !== tooltipEl && !tooltipTarget.matches('button')) {
+            this.show(e);
+        }
+    }
+
+    this.showTimeout = (e) => {
+        tooltipTarget = e.target;
         const text = tooltipTarget.dataset.tooltip;
 
         // don't do this if the tooltip is visible for this element already
@@ -93,69 +109,51 @@ const tooltip = new function () {
             return;
         }
 
-        // If this is an element with a tooltip,
-        if (text) {
-            // the coordinates of the tooltipTarget
-            const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
+        const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
 
-            tooltipTarget.setAttribute('aria-describedby', 'tooltip');
+        tooltipTarget.setAttribute('aria-describedby', 'tooltip');
+        tooltipEl.innerHTML = text;
+        tooltipEl.setAttribute('aria-hidden', "false");
+        tooltipEl.classList.remove('tooltip--hidden');
+        tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.scrollY) + 'px + 1em)';
+        tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
+        tooltipEl.classList.remove('btm');
+        tooltipEl.classList.add('tp');
 
-            // show the tool tip
-            tooltipEl.innerHTML = text;
-            tooltipEl.setAttribute('aria-hidden', "false");
-            tooltipEl.classList.remove('tooltip--hidden');
+        isTooltipVisible = true;
+        tooltipBelongsTo = tooltipTarget;
 
-            // position the tooltip below the tooltipTarget
-            tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.pageYOffset) + 'px + 1em)';
-            tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
-            isTooltipVisible = true;
-            tooltipBelongsTo = tooltipTarget;
+        // Position the tooltip
+        if (!isInViewport(tooltipEl)) {
+            const tooltipHeight = tooltipEl.offsetHeight;
+            tooltipEl.classList.add('btm');
+            tooltipEl.classList.remove('tp');
 
-            // if the tooltip element is not in the viewport, we should scroll the page down so the user can see it.
-            // Note that this always assumes that the tooltip is below the focused element.
-            if (!isInViewport(tooltipEl)) {
-                const afterStyle = window.getComputedStyle(tooltipEl, '::after');
-                const afterHeight = parseInt(afterStyle.height);
-                const tooltipY = element.getBoundingClientRect().top;
-
-                if (window.scrollY < tooltipY) {
-                    window.scrollTo(window.scrollX, tooltipY);
-                }
-
-                
-            }
+            tooltipStyle.top = 'calc(' + (tooltipTargetRect.top + window.scrollY - tooltipHeight) + 'px - 1em)';
         }
 
         tooltipTarget.addEventListener('mouseleave', this.hide);
-
         tooltipEl.addEventListener('mouseleave', this.hide);
 
-
         tooltipTarget.dispatchEvent(
-            new CustomEvent(
-                'enable-show',
-                {
-                    'bubbles': true,
-                }
-            )
+            new CustomEvent('enable-show', { bubbles: true })
         );
     }
 
     this.hide = (e) => {
-        if (e && e.type === 'mouseleave') {
+        if (e && e.type === 'click') {
             const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
             if (hoveredElement === tooltipEl) {
                 return;
             }
         }
 
-
         if (tooltipTarget) {
-            console.log("cancelling");
             tooltipTarget.removeEventListener('mouseleave', this.hide);
             tooltipEl.removeEventListener('mouseleave', this.hide);
             tooltipTarget = null;
         }
+
         clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
@@ -163,15 +161,9 @@ const tooltip = new function () {
         tooltipBelongsTo = null;
 
         tooltipEl.dispatchEvent(
-            new CustomEvent(
-                'enable-hide',
-                {
-                    'bubbles': true,
-                }
-            )
+            new CustomEvent('enable-hide', { bubbles: true })
         );
     }
 }
-
 
 export default tooltip;
