@@ -32,6 +32,7 @@
     }
 
     li {
+        position: relative;
         margin-bottom: 0.5rem;
 
         a {
@@ -130,6 +131,27 @@
             @media @tablet-up {
                 display: none;
             }
+        }
+    }
+
+    .enable-drawer__button {
+        position: absolute;
+        left: -2.375rem;
+        top: -0.3125rem;
+        background: white;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem 0.125rem 0.125rem 0.75rem;
+
+        img {
+            height: 1.2rem;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+            will-change: background;
+        }
+
+        &:hover img {
+            background: #ddd;
         }
     }
 }

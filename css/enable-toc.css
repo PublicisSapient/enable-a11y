@@ -31,6 +31,7 @@
   margin-left: 0.5em;
 }
 .enable-toc li {
+  position: relative;
   margin-bottom: 0.5rem;
 }
 .enable-toc li a {
@@ -117,4 +118,22 @@
   .enable-toc-as-sidebar .enable-toc--toggle {
     display: none;
   }
+}
+.enable-toc .enable-drawer__button {
+  position: absolute;
+  left: -2.375rem;
+  top: -0.3125rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.125rem 0.125rem 0.75rem;
+}
+.enable-toc .enable-drawer__button img {
+  height: 1.2rem;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+  will-change: background;
+}
+.enable-toc .enable-drawer__button:hover img {
+  background: #ddd;
 }

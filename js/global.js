@@ -89,6 +89,7 @@ function initEnable() {
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,
         selectorToSkipHeadingsWithin: '.enable-example',
+        collapseNestedHeadingsAfterLevel: 2,
     });
 }
 
