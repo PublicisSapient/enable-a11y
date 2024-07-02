@@ -1,4 +1,18 @@
 'use strict'
+
+/*******************************************************************************
+ * enable-toc.js - UI for the Table of Contents
+ * 
+ * Written by Alison Hall <alisonh0101@gmail.com>
+ * Part of the Enable accessible component library.
+ * Version 1.0 released July 2024
+ *
+ * More information about this script available at:
+ * https://www.useragentman.com/enable/
+ * 
+ * Released under the MIT License.
+ ******************************************************************************/
+
 // import tooltip from './tooltip.js'; // Temp: disable init of tooltip since it causes unexpected behavior
 const tableOfContents = new (function() {
     this.toc;

@@ -1,6 +1,4 @@
 'use strict'
-// import tooltip from './tooltip.js'; // Temp: disable init of tooltip since it causes unexpected behavior
-import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
 
 /*******************************************************************************
  * enable-toc.js - UI for the Table of Contents
@@ -15,6 +13,8 @@ import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
  * Released under the MIT License.
  ******************************************************************************/
 
+// import tooltip from './tooltip.js'; // Temp: disable init of tooltip since it causes unexpected behavior
+import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
 
 const tableOfContents = new function() {
     this.toc;
