@@ -4,7 +4,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "sk-proj-TbBPQvY0RwVgiKio4IEfT3BlbkFJszUUbH7sRB1mDdmJtl33"))
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", ""))
 # Function to encode an image as base64
 def encode_image_to_base64(image_path):
     with Image.open(image_path) as img:
