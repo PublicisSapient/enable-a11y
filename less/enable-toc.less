@@ -34,9 +34,18 @@
     li {
         position: relative;
         margin-bottom: 0.5rem;
+    }
 
-        a {
-            text-decoration: none;
+    &__link {
+        color: @color-link;
+        text-decoration: none;
+
+        &:visited {
+            color: @color-link;
+        }
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 

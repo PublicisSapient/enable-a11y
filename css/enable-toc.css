@@ -34,8 +34,15 @@
   position: relative;
   margin-bottom: 0.5rem;
 }
-.enable-toc li a {
+.enable-toc__link {
+  color: #00567c;
   text-decoration: none;
+}
+.enable-toc__link:visited {
+  color: #00567c;
+}
+.enable-toc__link:hover {
+  text-decoration: underline;
 }
 .enable-toc__move-to-sidebar-button,
 .enable-toc__hide-sidebar-button {
