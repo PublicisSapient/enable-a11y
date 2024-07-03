@@ -1,7 +1,9 @@
 'use strict'
 
 /*******************************************************************************
- * meter.js - Adds full support for meter component without use of HTML5 meter
+ * meter.js - Helper script for HTML5/ARIA meter components. 
+ * Meter state/percentage is calculated and the appropriate attributes are 
+ * applied to the element.
  ******************************************************************************/
 
 const meter = new function() {
