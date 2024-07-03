@@ -33,9 +33,6 @@ def process_directory(directory):
             alt_text = generate_alt_text(base64_image)
             print(f"Image: {filename}\nAlt Text: {alt_text}\n")
 
-# Set your OpenAI API key
-# openai.api_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJpZCI6MTY4NTYsInJvbGVzIjpbImRlZmF1bHQiXSwicGF0aWQiOiIxZGY2NjM0ZS04MjcyLTQxODctODg4Yy00MThiOTMwYjg1YzAifSwiaWF0IjoxNzE5MzQzNDgzLCJleHAiOjE3Mjk3MTE0ODN9.5Vo1VWZI5E9qgegoPBOw2kB-nOVYcxH8jv5MxIn-v1Y"
-
 # Directory containing images
 image_directory = "/Users/zolhawry/git/enable-a11y/images/main-menu"
 process_directory(image_directory)
