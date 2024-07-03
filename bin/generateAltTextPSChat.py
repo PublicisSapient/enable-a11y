@@ -1,39 +1,61 @@
-import os
+import os;
+import requests
+import pandas as pd
 from openai import OpenAI
-from PIL import Image
-import base64
-from io import BytesIO
+import sys
 
-# Function to encode an image as base64
-def encode_image_to_base64(image_path):
-    with Image.open(image_path) as img:
-        buffered = BytesIO()
-        img.save(buffered, format="JPEG")
-        return base64.b64encode(buffered.getvalue()).decode('utf-8')
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key=os.environ.get("OPENAI_API_KEY"),
+)
 
-# Function to generate alt text using ChatGPT-4
-def generate_alt_text(base64_image):
-    prompt = f"Generate a detailed, descriptive alt text for the image below:\n[data:image/jpeg;base64,{base64_image}]"
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo-instruct",
-        messages=prompt,
-        max_tokens=150
-    )
-    return response.choices[0].text.strip()
 
-# Process all images in the specified directory
-def process_directory(directory):
-    supported_extensions = ['jpg', 'jpeg', 'png']
-    for filename in os.listdir(directory):
-        if any(filename.lower().endswith(ext) for ext in supported_extensions):
-            image_path = os.path.join(directory, filename)
-            base64_image = encode_image_to_base64(image_path)
-            alt_text = generate_alt_text(base64_image)
-            print(f"Image: {filename}\nAlt Text: {alt_text}\n")
+def generate_alt_text(image_url):
+    """
+    Generate alt text for a given image URL using OpenAI's PSChat.
+    """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": f"Generate a descriptive alt text for this image URL: {image_url}"}
+            ]
+        )
+        alt_text = response['choices'][0]['message']['content']
+        return alt_text
+    except Exception as e:
+        print(f"Error generating alt text for URL {image_url}: {str(e)}")
+        return None
 
-# Set your OpenAI API key
-# openai.api_key = 'your-openai-api-key'
+def process_urls(file_path):
+    """
+    Process each URL in the given file to generate alt text and save the results to a CSV file.
+    """
+    try:
+        # Read URLs from a file
+        with open(file_path, 'r') as file:
+            urls = file.read().splitlines()
 
-# Directory containing images
-image_directory = "/Users/zolhawry/git/enable-a11y/images/main-menu"
-process_directory(image_directory)
+        # List to hold URL and alt text pairs
+        results = []
+
+        # Generate alt text for each URL
+        for url in urls:
+            alt_text = generate_alt_text(url)
+            results.append([url, alt_text])
+
+        # Create a DataFrame and save to CSV
+        df = pd.DataFrame(results, columns=['URL', 'Alt Text'])
+        df.to_csv('output.csv', index=False)
+        print("CSV file has been created successfully.")
+    except Exception as e:
+        print(f"Error processing file {file_path}: {str(e)}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <path_to_text_file_with_urls>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+    process_urls(file_path)
