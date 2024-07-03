@@ -156,7 +156,7 @@
     "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users."
   },
   "spinner.php": {
-    "title": "Accessible Numeric Fields (a.k.a. Numeric Spinner or Stepper)",
+    "title": "Accessible Numeric Fields",
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
   "status.php": {
