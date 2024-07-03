@@ -1,29 +1,20 @@
 'use strict';
 
-const puppeteer = require('puppeteer'); // v22.0.0 or later
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-let targetPage = '';
-let browser;
 
 describe('Combobox Test', () => {
     beforeAll(async () => {
-        browser = await puppeteer.launch({ headless: false });
-        const page = await browser.newPage();
-        targetPage = page;
-
-        await targetPage.goto(`${config.BASE_URL}/combobox.php`);
+        await page.goto(`${config.BASE_URL}/combobox.php`);
     });
 
     it('HTML5 Native combobox is not completely keyboard accessible', async () => {
         //select the Input box of the HTM5 Combobox
-        await targetPage.waitForSelector('#html5-fruit');
-        const comboBoxCount = Array.from(
-            await targetPage.$$('#html5-fruit'),
-        ).length;
+        await page.waitForSelector('#html5-fruit');
+        const comboBoxCount = Array.from(await page.$$('#html5-fruit')).length;
         // to add focus on the input element
-        await targetPage.focus('#html5-fruit');
-        const activeElement = await targetPage.evaluate(() => {
+        await page.focus('#html5-fruit');
+        const activeElement = await page.evaluate(() => {
             const id = document.activeElement.id;
             const ariaDescribedBy =
                 document.activeElement.getAttribute('aria-describedby');
@@ -38,33 +29,31 @@ describe('Combobox Test', () => {
         expect(activeElement.ariaDescribedBy).toBe('html5-fruit__desc');
 
         //set the input value to apple and test the Combo box selection using keys
-        await targetPage.type('#html5-fruit', 'apple');
+        await page.type('#html5-fruit', 'apple');
         await testHelpers.pauseFor(100);
-        await testHelpers.keyDownAndUp(targetPage, 'ArrowDown');
-        await targetPage.keyboard.press('Enter');
+        await testHelpers.keyDownAndUp(page, 'ArrowDown');
+        await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
         // Enter not supported using Keyboard, value is not selected
-        const valueAfterEnter = await targetPage.evaluate(
+        const valueAfterEnter = await page.evaluate(
             () => document.getElementById('html5-fruit')?.value,
         );
 
-        await targetPage.waitForSelector('#languages');
-        const datalistCount = Array.from(
-            await targetPage.$$('#languages'),
-        ).length;
+        await page.waitForSelector('#languages');
+        const datalistCount = Array.from(await page.$$('#languages')).length;
         expect(valueAfterEnter).toBe('');
         expect(datalistCount).toBe(1);
     });
 
     it('ARIA Combobox  is completely keyboard accessible', async () => {
         let domInfo = {};
-        await targetPage.waitForSelector('#aria-fruit');
-        await targetPage.focus('#aria-fruit');
+        await page.waitForSelector('#aria-fruit');
+        await page.focus('#aria-fruit');
         // type some characters in the combobox
-        await targetPage.type('#aria-fruit', 'app', { delay: 100 });
+        await page.type('#aria-fruit', 'app', { delay: 100 });
         const expectedScreenReaderText =
             '2 items. <span class="sr-only">As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.</span>';
-        domInfo = await targetPage.evaluate(() => {
+        domInfo = await page.evaluate(() => {
             const { activeElement } = document;
             const ariaDescribedBy =
                 activeElement.getAttribute('aria-describedby');
@@ -85,10 +74,10 @@ describe('Combobox Test', () => {
         expect(domInfo.sceenReaderText).toBe(expectedScreenReaderText);
 
         //Test the value selection work using the keyboard
-        testHelpers.keyDownAndUp(targetPage, 'ArrowDown');
-        await targetPage.keyboard.press('Enter');
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+        await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
-        domInfo = await targetPage.evaluate(() => {
+        domInfo = await page.evaluate(() => {
             const focusedElementType = document?.activeElement?.type;
             const inputElement = document.getElementById('aria-fruit');
             const ariaExpanded = inputElement.getAttribute('aria-expanded');
@@ -105,14 +94,14 @@ describe('Combobox Test', () => {
         expect(domInfo.focusedElementType).toBe('reset');
 
         // Test the reset button functionality using the keyboard
-        await targetPage.keyboard.press('Enter');
+        await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
-        const valueAfterReset = await targetPage.evaluate(
+        const valueAfterReset = await page.evaluate(
             () => document?.activeElement?.value,
         );
 
         expect(valueAfterReset).toBe('');
     });
 
-    afterAll(async () => await browser.close());
+    afterAll(async () => {});
 });
