@@ -31,18 +31,33 @@ function focusDeepLink() {
     }
 }
 
+/**
+ * Assigns a unique ID to a heading element if it does not already have one.
+ * The ID is generated based on the text content of the heading and, if necessary,
+ * a numeric suffix to ensure uniqueness within the document.
+ *
+ * @param {HTMLElement} headingElement - The heading element to which the ID should be assigned.
+ * @param {number} [headingIndex=0] - Optional starting index used to help generate a unique ID.
+ */
 function addMissingIDToHeading(headingElement, headingIndex = 0) {
-    if (!headingElement.id) {
-        const innerTextId = headingElement.innerText.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + '--heading';
-
-        if (document.querySelectorAll(`#${innerTextId}`).length >= 1) {
-            headingIndex++;
-            headingElement.id = `${innerTextId}-${headingIndex}`;
-        } else {
-            headingElement.id = `${innerTextId}`;
-        }
+    if (headingElement.id) {
+        return; // Exit if the heading already has an ID
     }
+
+    // Create a base ID from the heading's text content
+    const baseId = headingElement.textContent.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-') + '--heading';
+    let newId = baseId + (headingIndex ? `-${headingIndex}` : '');
+
+    // Check for uniqueness and adjust if necessary
+    while (document.getElementById(newId)) {
+        headingIndex++;
+        newId = `${baseId}-${headingIndex}`;
+    }
+
+    // Assign the unique ID to the heading element
+    headingElement.id = newId;
 }
+
 
 function findImagesNextToHeading(headingId, className) {
     const heading = document.getElementById(headingId);
