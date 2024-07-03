@@ -12,7 +12,7 @@
 ******************************************************************************/
 
 
-const offscreenObserver = new function () {
+const offscreenObserver = new (function() {
   const { body } = document;
   const isHeaderOffscreenClass = 'offscreen-observer__is-header-offscreen' ;
 
@@ -41,6 +41,4 @@ const offscreenObserver = new function () {
   this.init = function (el) {
     respondToVisibility(el, this.setOffscreenStyle);
   }
-}
-
-
+})

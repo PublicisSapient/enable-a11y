@@ -1,5 +1,4 @@
-
-const enableCharacterCount = new function() {
+const enableCharacterCount = new (function() {
   let charCountInitEl,
     globalScreenReaderTemplate,
     globalVisualTemplate,
@@ -171,5 +170,4 @@ const enableCharacterCount = new function() {
       
     }
   }
-}
-
+})
