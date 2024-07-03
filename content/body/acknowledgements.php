@@ -7,7 +7,7 @@
 
 <p>
   What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code I have
-  built on that I have accessibility features for.
+  built on that I have accessibility features to.
 </p>
 
 <h2>Code Used By Enable</h2>
