@@ -661,7 +661,7 @@
                             }, {
                                 "id": "flyout__link",
                                 "props": {
-                                    "label": "Marquee",
+                                    "label": "Marquee / Auto-Scrolling Content",
                                     "url-slug": "marquee",
                                     "alt": ""
                                 }

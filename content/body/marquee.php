@@ -1,5 +1,5 @@
 <p>
-    Marquees (a.k.a. Scrolling Banner) are meant for content that scrolls or updates consistently, like a stock ticker or a news feed. 
+Marquees (a.k.a. Auto-Scrolling Content) are meant for content that scrolls or updates consistently, like a stock ticker or a news feed. 
     Although they have a default <code>aria-live</code> value of <code>off</code>, you can use <code>aria-live="polite"</code> to let users hear the information within a marquee in almost real-time.  Do this carefully since it would be a bad user experience to have a screen reader update too often. The rest of your application will become unusable to screen reader users due to too much screen reader noise when there are too many alerts.
 </p>
 
