@@ -68,7 +68,7 @@
 
 <p>
   Hint: If you are using v.Nu for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
-  This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">Aria 1.2</a>.
+  This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">ARIA 1.2</a>.
 </p>
 
 <div id="aria-example" class="enable-example">
