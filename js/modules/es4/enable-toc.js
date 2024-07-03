@@ -17,7 +17,10 @@
 const tableOfContents = new (function() {
     this.toc;
 
-    /* Common selectors used in the Table of Contents code */
+    /**
+     * Retrieves common selectors used across the Table of Contents functionalities.
+     * @returns {Object} An object containing DOM elements for the sidebar, toggle, and toggle button.
+     */
     const commonSelectors = () => {
         return {
             sidebarTOCSelector: document.getElementById('enable-toc--sidebar'),
@@ -26,7 +29,14 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Create the Table of Contents content */
+    /**
+     * Creates the content for the Table of Contents based on specified parameters.
+     * @param {boolean} numberFirstLevelHeadings - Whether to number the first level headings (ol vs ul elements)
+     * @param {string} selectorToSkipHeadingsWithin - Selector defining areas to skip headings within.
+     * @param {number} ignoreHeadersDeeperThan - Level of headers to ignore (e.g., deeper than 3 for h4 to h6).
+     * @param {number} collapseNestedHeadingsAfterLevel - Level after which nested headings should be collapsible.
+     * @returns {HTMLElement} The constructed TOC list element.
+     */
     this.createContent = (numberFirstLevelHeadings, selectorToSkipHeadingsWithin, ignoreHeadersDeeperThan, collapseNestedHeadingsAfterLevel) => {
         // Table of Contents container setup
         const tocList = document.createElement(numberFirstLevelHeadings ? 'ol' : 'ul');
@@ -122,7 +132,13 @@ const tableOfContents = new (function() {
         return tocList;
     }
 
-    /* Action to expand or collapse the subheadings */
+    /**
+     * Handles click events on expand/collapse buttons within the Table of Contents (TOC).
+     * This function toggles the expanded state of subheading lists in the TOC, showing or hiding
+     * the content under headings based on the current state.
+     *
+     * @param {Event} event - The event object associated with the click event on the expand/collapse button.
+     */
     this.expandButtonClick = (event) => {
         const expandButton = event.target.closest('.enable-drawer__button');
         const isExpanded = expandButton.getAttribute('aria-expanded') === 'true';
@@ -132,7 +148,12 @@ const tableOfContents = new (function() {
         subList.style.display = isExpanded ? 'none' : 'block';
     }
 
-    /* Action to open/show the "Toggle TOC" content */
+    /**
+     * Opens and displays the "Toggle TOC" content, making it visible and accessible to users.
+     * This function sets the appropriate aria-expanded attribute, changes the display style to make the TOC visible,
+     * sets focus to the toggle button, and adds event listeners to handle closing the TOC when clicking outside
+     * or pressing the Escape key.
+     */
     this.openToggleTOC = () => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         toggleButtonSelector?.setAttribute('aria-expanded', 'true');
@@ -144,7 +165,12 @@ const tableOfContents = new (function() {
         window.addEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
-    /* Action to close/hide the "Toggle TOC" content */
+    /**
+     * Closes and hides the "Toggle TOC" content, making it invisible and inaccessible to users.
+     * This function resets the aria-expanded attribute, changes the display style to hide the TOC,
+     * sets focus back to the toggle button for accessibility, and removes event listeners that handle
+     * closing the TOC when clicking outside or pressing the Escape key.
+     */
     this.closeToggleTOC = () => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         toggleButtonSelector?.setAttribute('aria-expanded', 'false');
@@ -156,7 +182,13 @@ const tableOfContents = new (function() {
         window.removeEventListener('keyup', this.closeToggleTOCOnEvent);
     }
 
-    /* Trigger the action to close/hide the "Toggle TOC" when clicking outside of the TOC or hitting the Escape key */
+    /**
+     * Handles events to close the "Toggle TOC" when specific conditions are met, such as clicking outside the TOC
+     * or pressing the Escape key. This function ensures that the TOC is closed in appropriate scenarios to enhance
+     * usability and accessibility.
+     *
+     * @param {Event} event - The event object that triggered this function, which could be a click or keyup event.
+     */
     this.closeToggleTOCOnEvent = (event) => {
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
         if (
@@ -168,10 +200,14 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Action when clicking the toggle TOC button for the "Toggle TOC" */
+    /**
+     * Toggles the visibility of the "Toggle TOC" content by checking its current state and either opening or closing it.
+     * This function is triggered when the toggle TOC button is clicked. It removes any tooltip attributes, checks the
+     * current expanded state of the TOC, and calls the appropriate function to either open or close the TOC.
+     */
     this.toggleTOC = () => {
         const { toggleButtonSelector } = commonSelectors();
-        toggleButtonSelector?.removeAttribute('data-tooltip');
+        toggleButtonSelector?.removeAttribute('data-tooltip'); // Remove any tooltip attributes that might be set on the toggle button.
         const isExpanded = toggleButtonSelector?.getAttribute('aria-expanded') === 'true';
         if (isExpanded) {
             this.closeToggleTOC();
@@ -180,7 +216,12 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Initial code to add the TOC as a sidebar ("Sidebar TOC") */
+    /**
+     * Appends the Table of Contents (TOC) as a sidebar to the main content area of the page.
+     * This function creates a navigation container, sets up the necessary elements for the sidebar TOC,
+     * and inserts it before the main content of the page. It also includes a button to hide the sidebar TOC,
+     * enhancing the interactivity and accessibility of the page layout.
+     */
     this.appendAsSidebar = () => {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
@@ -207,7 +248,11 @@ const tableOfContents = new (function() {
         main?.insertAdjacentElement('beforebegin', nav);
     }
 
-    /* Initial code to add the TOC as a toggle button beside the header ("Toggle TOC") */
+    /**
+     * Appends the Table of Contents (TOC) as a toggle button beside the page header, allowing users to toggle the visibility of the TOC.
+     * This function sets up a navigation container specifically for toggling the TOC, adds a button to potentially move the TOC to the sidebar,
+     * and ensures all elements are properly labeled and accessible. It also handles the dynamic creation of a cloned TOC for toggling purposes.
+     */
     this.appendAsToggleButton = () => {
         // Create the nav and heading elements
         const nav = document.createElement('nav');
@@ -267,7 +312,12 @@ const tableOfContents = new (function() {
         }
     }
 
-    /* Action for showing the "Sidebar TOC" and hiding the "Toggle TOC" */
+    /**
+     * Transitions the display of the Table of Contents (TOC) from a toggleable overlay to a permanent sidebar.
+     * This function updates the body class to reflect the sidebar state, hides the toggleable TOC, and sets a cookie
+     * to remember the user's preference for displaying the TOC as a sidebar. It also focuses on the hide button
+     * for accessibility purposes.
+     */
     this.moveToSidebar = () => {
         // Update the body class to show the TOC as a sidebar
         document.getElementsByTagName('body')[0].classList.add('enable-toc-as-sidebar');
@@ -286,7 +336,12 @@ const tableOfContents = new (function() {
         document.querySelector('.enable-toc__hide-sidebar-button').focus();
     }
 
-    /* Action for showing the "Toggle TOC" and hiding the "Sidebar TOC" */
+    /**
+     * Transitions the display of the Table of Contents (TOC) from a sidebar to a toggleable button.
+     * This function updates the body class to remove the sidebar display, updates the tooltip for the toggle button,
+     * sets a cookie to remember the user's preference for not displaying the TOC as a sidebar, and focuses on the toggle button
+     * for improved accessibility and user interaction.
+     */
     this.moveToToggleButton = () => {
         // Update the body class to not show the TOC as a sidebar
         document.getElementsByTagName('body')[0].classList.remove('enable-toc-as-sidebar');
@@ -302,7 +357,19 @@ const tableOfContents = new (function() {
         toggleButtonSelector.focus();
     }
 
-    /* Initialize the Table of Contents on a page */
+    /**
+     * Initializes the Table of Contents (TOC) on a page based on various configuration options.
+     * This function checks if the TOC should be skipped on certain pages, creates the TOC with specified options,
+     * appends it as both a sidebar and a toggle button, and sets up the necessary state based on cookies and default settings.
+     * 
+     * @param {Object} config - Configuration options for initializing the TOC.
+     * @param {Array<string>} config.skipPages - Pages where the TOC should not be initialized.
+     * @param {boolean} config.showAsSidebarDefault - Whether to show the TOC as a sidebar by default when first initialized on desktop.
+     * @param {boolean} config.numberFirstLevelHeadings - Whether the first level headings should be numbered or be bullets.
+     * @param {string} config.selectorToSkipHeadingsWithin - Selector to identify areas within which headings should not be included in the TOC.
+     * @param {number} config.ignoreHeadersDeeperThan - Level of headers to not include in the TOC (e.g., deeper than 3 for h4 to h6).
+     * @param {number} config.collapseNestedHeadingsAfterLevel - Level after which nested headings should be collapsible.
+     */
     this.init = ({
         skipPages = [],
         showAsSidebarDefault = true,
