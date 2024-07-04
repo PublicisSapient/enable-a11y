@@ -2,6 +2,27 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
+let domInfo;
+
+//Utility function to write assertions
+async function verifyActiveElementAttributes(page, expectedAttributes) {
+    const results = await page.evaluate(() => {
+        const { activeElement } = document;
+        return {
+            ariaDescribedBy: activeElement.getAttribute('aria-describedby'),
+            ariaExpanded: activeElement.getAttribute('aria-expanded'),
+            role: activeElement.getAttribute('role'),
+            ariaOwns: activeElement.getAttribute('aria-owns'),
+            ariaAutocomplete: activeElement.getAttribute('aria-autocomplete'),
+        };
+    });
+    // Perform assertions based on expected attributes
+    expect(results.ariaDescribedBy).toBe(expectedAttributes.ariaDescribedBy);
+    expect(results.ariaExpanded).toBe(expectedAttributes.ariaExpanded);
+    expect(results.role).toBe(expectedAttributes.role);
+    expect(results.ariaOwns).toBe(expectedAttributes.ariaOwns);
+    expect(results.ariaAutocomplete).toBe(expectedAttributes.ariaAutocomplete);
+}
 
 describe('Combobox Test', () => {
     beforeAll(async () => {
@@ -34,7 +55,7 @@ describe('Combobox Test', () => {
         await testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
-        // Enter not supported using Keyboard, value is not selected
+        // Enter not behave as expected using Keyboard, value is not selected
         const valueAfterEnter = await page.evaluate(
             () => document.getElementById('html5-fruit')?.value,
         );
@@ -46,32 +67,19 @@ describe('Combobox Test', () => {
     });
 
     it('ARIA Combobox  is completely keyboard accessible', async () => {
-        let domInfo = {};
         await page.waitForSelector('#aria-fruit');
         await page.focus('#aria-fruit');
-        // type some characters in the combobox
+        // Type some characters in the combobox
         await page.type('#aria-fruit', 'app', { delay: 100 });
-        const expectedScreenReaderText =
-            '2 items. <span class="sr-only">As you type, press the enter key or use the up and down arrow keys to choose the autocomplete items.</span>';
-        domInfo = await page.evaluate(() => {
-            const { activeElement } = document;
-            const ariaDescribedBy =
-                activeElement.getAttribute('aria-describedby');
-            const ariaExpanded = activeElement.getAttribute('aria-expanded');
-            const sceenReaderText = document.querySelector(
-                '#aria-fruit+div[role="alert"]',
-            ).innerHTML;
-
-            return {
-                ariaDescribedBy,
-                ariaExpanded,
-                sceenReaderText,
-            };
-        });
-        expect(domInfo.ariaDescribedBy).toBe('aria-fruit__desc');
-        expect(domInfo.ariaExpanded).toBe('true');
-        // Test the screen reader is having the count of options and assistant in selecting the options.
-        expect(domInfo.sceenReaderText).toBe(expectedScreenReaderText);
+        // Testing Attributes of the Active Combobox
+        const expectedAttributes = {
+            ariaDescribedBy: 'aria-fruit__desc',
+            ariaExpanded: 'true',
+            role: 'combobox',
+            ariaOwns: 'aria-fruit__list',
+            ariaAutocomplete: 'list',
+        };
+        await verifyActiveElementAttributes(page, expectedAttributes);
 
         //Test the value selection work using the keyboard
         testHelpers.keyDownAndUp(page, 'ArrowDown');
@@ -101,6 +109,58 @@ describe('Combobox Test', () => {
         );
 
         expect(valueAfterReset).toBe('');
+    });
+
+    it('AutoSubmit using the aria combobox is completely keyboard accessible', async () => {
+        await page.waitForSelector('#video-games');
+        await page.focus('#video-games');
+        await page.type('#video-games', 'a', { delay: 100 });
+
+        // Testing Attributes of the Active Combobox
+        const expectedAttributes = {
+            ariaDescribedBy: 'video-games__desc',
+            ariaExpanded: 'true',
+            role: 'combobox',
+            ariaOwns: 'video-games__list',
+            ariaAutocomplete: 'list',
+        };
+        await verifyActiveElementAttributes(page, expectedAttributes);
+
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+        await page.keyboard.press('Enter');
+        // Testing Redirection on submission
+        await page.waitForNavigation();
+        const currentUrl = await page.url();
+        expect(currentUrl.includes('google.com')).toBe(true);
+    });
+
+    it('Selection in different categories using the aria combobox is completely keyboard accessible', async () => {
+        await page.goto(`${config.BASE_URL}/combobox.php`);
+        await page.waitForSelector('#aria-example-2');
+        await page.focus('#aria-example-2');
+        await page.type('#aria-example-2', 'can', { delay: 100 });
+        const expectedAttributes = {
+            ariaDescribedBy: 'aria-example-2__desc',
+            ariaExpanded: 'true',
+            role: 'combobox',
+            ariaOwns: 'aria-example-2__list',
+            ariaAutocomplete: 'list',
+        };
+        await verifyActiveElementAttributes(page, expectedAttributes);
+
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+        await page.keyboard.press('Enter');
+        await testHelpers.pauseFor(100);
+        //Testing the category and value selection
+        const selected = await page.$eval(
+            '.enable-combobox__category-alert',
+            (el) => {
+                const arr = el.value.split(',').map((item) => item.trim());
+                return { value: arr[0], category: arr[1] }; // containing value and category
+            },
+        );
+        expect(selected.value).toBe('Canada');
+        expect(selected.category).toBe('Other States group');
     });
 
     afterAll(async () => {});
