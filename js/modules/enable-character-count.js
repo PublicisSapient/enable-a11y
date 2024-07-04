@@ -10,28 +10,27 @@ const enableCharacterCount = new function() {
   this.init = () => { 
     const charCountEls = document.querySelectorAll("[data-has-character-count='true']");
     charCountEls.forEach((target) => {
-      setUpEventsFor(target);
-      setIdIfNullFor(target);
-      setUpAriaDescribedByFor(target);
+      setUpEventListeners(target);
+      setIdIfNull(target);
+      setUpAriaDescribedBy(target);
       addLiveRegion(target);
-      createCounterContainerFor(target);
+      createCounterContainer(target);
       writeCharCount(target);
     });
   }
 
-  function setUpEventsFor(target) {
+  function setUpEventListeners(target) {
     target.addEventListener('keyup', onKeyUp);
-    target.addEventListener('keydown', onKeyDown);
     target.addEventListener('focus', onFocus);
   }
 
-  function setIdIfNullFor(target) {
+  function setIdIfNull(target) {
     if (!target.id) {
       target.id = `enable-character-counter-${idIndex++}`;
     }
   }
 
-  function setUpAriaDescribedByFor(target) {
+  function setUpAriaDescribedBy(target) {
     const describedByContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
     const ariaDescribedByElement = document.createElement('p');
     ariaDescribedByElement.id = `${target.id}-aria-describedby`;
@@ -54,7 +53,7 @@ const enableCharacterCount = new function() {
     return interpolate(instructionsToInterpolate, { keyToPress });
   }
 
-  function createCounterContainerFor(target) {
+  function createCounterContainer(target) {
     const container= document.createElement('div');
     container.id = `${target.id}-counter-container`;
     container.className = "enable-character-count";
@@ -69,15 +68,7 @@ const enableCharacterCount = new function() {
     liveRegion.className="sr-only";
     liveRegion.role = 'region';
     liveRegion.ariaLive = 'polite';
-    liveRegion.ariaLabel = `${liveRegionId}-aria-label`;
     target.insertAdjacentElement('afterend', liveRegion);
-    liveRegion.appendChild(createCounterForScreenReader(liveRegion));
-  }
-
-  function createCounterForScreenReader(parent) {
-    const result = document.createElement('p');
-    result.id = `${parent.id}-character-count-status`;
-    return result;
   }
 
   function writeCharCount(target) {
@@ -131,14 +122,6 @@ const enableCharacterCount = new function() {
     return inputLength > (maxLength - warningThreshold);
   }
 
-  function onKeyDown(event) {
-    const { target, key } = event;
-    const { dataset } = target;
-    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
-      getScreenReaderCharacterCount(target).textContent = '';
-    }
-  }
-
   function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
     if (readCountKey)
       return keyPressed === readCountKey;
@@ -164,17 +147,24 @@ const enableCharacterCount = new function() {
   }
 
   function setContentsForScreenReader(target) {
+    const liveRegion = getLiveRegion(target);
+    if (liveRegion.textContent.endsWith('!')) {
+      liveRegion.textContent = getTextToRead(target);
+    } else {
+      liveRegion.textContent = `${getTextToRead(target)}!`;
+    }
+  }
+
+  function getLiveRegion(target) {
+    return document.getElementById(`${target.id}-live-region`);
+  }
+
+  function getTextToRead(target) {
     const maxLength = target.maxLength;
     const numChars = target.value.length;
     const charsRemaining = maxLength - numChars;
     const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
-    const counterForScreenReader = getScreenReaderCharacterCount(target);
-    counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
-  }
-
-  function getScreenReaderCharacterCount(target) {
-    const liveRegion = document.getElementById(`${target.id}-live-region`);
-    return document.getElementById(`${liveRegion.id}-character-count-status`);
+    return interpolate(characterCountText, { numChars, maxLength, charsRemaining });
   }
 }
 
