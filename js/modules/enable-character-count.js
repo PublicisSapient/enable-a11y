@@ -22,6 +22,7 @@ const enableCharacterCount = new function() {
   function setUpEventListeners(target) {
     target.addEventListener('keyup', onKeyUp);
     target.addEventListener('focus', onFocus);
+    target.addEventListener('focusout', onFocusOut);
   }
 
   function setIdIfNull(target) {
@@ -57,6 +58,7 @@ const enableCharacterCount = new function() {
     const container= document.createElement('div');
     container.id = `${target.id}-counter-container`;
     container.className = "enable-character-count";
+    container.ariaHidden = 'true';
     target.setAttribute('data-character-count-container', container.id);
     target.insertAdjacentElement('afterend', container);
   }
@@ -88,30 +90,19 @@ const enableCharacterCount = new function() {
     const visualTextTemplate = dataset.visualText ?? '${numChars}/${maxLength}';
     const visualText = interpolate(visualTextTemplate, { numChars, maxLength, charsRemaining });
     const counterElementTemplate = document.getElementById('enable-character-count__template');
-    const counterElement = counterElementTemplate ?? '<span aria-hidden="true">${visualText}</span>'
+    const counterElement = counterElementTemplate ?? '<span>${visualText}</span>'
     return interpolate(counterElement, { visualText });
-  }
-
-  function wasArrowPressed(key) {
-    switch(key) {
-      case 'ArrowUp':
-      case 'ArrowDown':
-      case 'ArrowLeft':
-      case 'ArrowRight':
-        return true;
-      default:
-        return false;
-    }
   }
 
   function onKeyUp(event) {
     const { target, key } = event;
     const { dataset } = target;
     writeCharCount(target);
+
+    const isAlphaKeyPressed = !isModifierPressed(key) && !isWhitespacePressed(key) && !isNavigationPressed(key);
     if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
       announceCharacterCount(target);
-    }
-    if (isWithinWarningThreshold(target) && !wasArrowPressed(key)) {
+    } else if (isWithinWarningThreshold(target) && isAlphaKeyPressed) {
       announceCharacterCountWithDelay(target, 1000);
     }
   }
@@ -121,6 +112,26 @@ const enableCharacterCount = new function() {
     const inputLength = target.value.length;
     const warningThreshold = dataset.warningThreshold ?? 20;
     return inputLength > (maxLength - warningThreshold);
+  }
+
+  function isModifierPressed(key) {
+    return key === 'Alt' || key === 'Shift' || key === 'Meta'
+  }
+
+  function isWhitespacePressed(key) {
+    return key === 'Tab' || key === 'Enter'
+  }
+
+  function isNavigationPressed(key) {
+    switch(key) {
+      case 'ArrowUp':
+      case 'ArrowDown':
+      case 'ArrowLeft':
+      case 'ArrowRight':
+        return true;
+      default:
+        return false;
+    }
   }
 
   function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
@@ -134,8 +145,9 @@ const enableCharacterCount = new function() {
     announceCharacterCount(target);
   }
 
-  function announceCharacterCount(target) {
-    announceCharacterCountWithDelay(target, 200);
+  function onFocusOut(event) {
+    const { target } = event;
+    getLiveRegion(target).textContent = '';
   }
 
   function announceCharacterCountWithDelay(target, delay) {
@@ -143,11 +155,11 @@ const enableCharacterCount = new function() {
       clearTimeout(announcementTimeout);
     }
     announcementTimeout = setTimeout(() => {
-      setContentsForScreenReader(target)
+      announceCharacterCount(target)
     }, delay);
   }
 
-  function setContentsForScreenReader(target) {
+  function announceCharacterCount(target) {
     const liveRegion = getLiveRegion(target);
     if (liveRegion.textContent.endsWith('!')) {
       liveRegion.textContent = getTextToRead(target);
