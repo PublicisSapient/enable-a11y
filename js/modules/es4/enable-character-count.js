@@ -30,11 +30,9 @@ const enableCharacterCount = new (function() {
   }
 
   function setUpAriaDescribedBy(target) {
-    const describedByContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
     const ariaDescribedByElement = document.createElement('p');
     ariaDescribedByElement.id = `${target.id}-aria-describedby`;
     ariaDescribedByElement.className="sr-only";
-    ariaDescribedByElement.textContent = describedByContent;
     target.insertAdjacentElement('afterend', ariaDescribedByElement);
     target.setAttribute('aria-describedby', ariaDescribedByElement.id);
   }
@@ -140,12 +138,39 @@ const enableCharacterCount = new (function() {
 
   function onFocus(event) {
     const { target } = event;
+    setAriaDescribedBy(target);
     announceCharacterCount(target);
   }
 
   function onFocusOut(event) {
     const { target } = event;
-    getLiveRegion(target).textContent = '';
+    removeAriaDescribedBy(target);
+    removeLiveRegion(target);
+  }
+
+  function setAriaDescribedBy(target) {
+    const describedBy = getAriaDescribedBy(target);
+    if (describedBy) {
+      describedBy.textContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
+    }
+  }
+
+  function removeAriaDescribedBy(target) {
+    const describedby = getAriaDescribedBy(target);
+    if (describedby) {
+      describedby.textContent = '';
+    }
+  }
+
+  function getAriaDescribedBy(target) {
+    return document.getElementById(`${target.id}-aria-describedby`);
+  }
+
+  function removeLiveRegion(target) {
+      const liveRegion = getLiveRegion(target)
+      if (liveRegion) {
+          liveRegion.textContent = '';
+      }
   }
 
   function announceCharacterCountWithDelay(target, delay) {
