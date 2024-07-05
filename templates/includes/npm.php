@@ -34,7 +34,7 @@
   </li>
   <li><a href="https://ecmascript.engineer/">Joe Honton</a> discusses that <a
       href="https://betterprogramming.pub/2020-004-the-rollout-of-modules-is-complete-d25f04870284">with ES modules and
-      HTTP/2, Yyou may not need Webpack anymore</a>
+      HTTP/2, you may not need Webpack anymore</a>
   <li>Stack Overflow has a really good thread about <a
       href="https://stackoverflow.com/questions/57448588/webpack-vs-es6-modules">Webpack vs. ES6 modules</a> as well.
   </li>
