@@ -104,7 +104,7 @@
 ]); ?>
 
 <p>
-  Keep in mind that if you use this in a form, none of the nice free-form functionality (e.g. HTML5 validation,
+  Keep in mind that if you use this in a form, the nice free-form functionality (e.g. HTML5 validation,
   inclusion of data when submitting a form in an HTTP request, etc.) won't work. These examples do, however, show up in
   Voiceover's Rotor and NVDA's Element Dialogue.
 </p>
