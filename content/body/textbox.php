@@ -230,7 +230,17 @@
   }
 </script>
 
-<p>The character counter can also be customized using data attributes. The character counter below shows the available data attributes and their default values.</p>
+<p>With the above two attributes set, the character counter will be created for the textbox and ARIA regions will be appended below the textbox. These ARIA regions will not be visible to sighted users but will provide the information needed for screen readers to announce the character count.</p>
+
+<ol>
+  <li>ARIA-describedby Region: this area will be populated when the textbox comes into focus so that screen readers can read the description and instructions.</li>
+  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the key to announce the character count.</li>
+    <ul>
+      <li>Note: Chrome only announces the character count when there's a change to the text. In order to have Chrome announce on each key press—to align with other browsers—the JavaScript toggles between appending and removing an exclamation mark to the end of the announcement text.</li>
+    </ul>
+</ol>
+
+<p>The character counter can also be customized using additional data attributes. The character counter below shows the available data attributes and their default values.</p>
 
 <div id="charcount-example" class="enable-example">
   <form class="enable-form-example">
