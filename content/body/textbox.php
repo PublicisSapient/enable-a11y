@@ -234,10 +234,11 @@
 
 <ol>
   <li>ARIA-describedby Region: this area will be populated when the textbox comes into focus so that screen readers can read the description and instructions.</li>
-  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the key to announce the character count.</li>
+  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the key to announce the character count.
     <ul>
       <li>Note: Chrome only announces the character count when there's a change to the text. In order to have Chrome announce on each key press—to align with other browsers—the JavaScript toggles between appending and removing an exclamation mark to the end of the announcement text.</li>
     </ul>
+  </li>
 </ol>
 
 <p>The character counter can also be customized using additional data attributes. The character counter below shows the available data attributes and their default values.</p>
