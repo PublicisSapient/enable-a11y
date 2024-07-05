@@ -50,7 +50,7 @@
 </figure>
 
 <p>
-    To deal with this problem, there are many input masking JavaScript libraries exist that will mask the input as the
+    To deal with this problem, there are many input masking JavaScript libraries that will mask the input as the
     user types. The problem is that a lot of them have quirks that make them hard for all users, especially those with
     disabilities. I have spent a lot of time playing with input masking, and I have found that in order for an input
     mask to be truly accessible, it should have the following features:
