@@ -289,7 +289,7 @@ $uncheck =
     <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input field's value is announced character by character). 
         This is done via an ARIA live region, which is described in the code walkthrough above. 
         So, instead of the screen reader reading the input field as a large integer (in this case, "two billion one hundred twenty-three million one hundred twenty-one thousand two hundred thirty-one"), 
-        it will read it as the phone number one digit at a time (i.e., two one two three one two one two three one). This makes it easy for screen reader users to know what they just typed in.</p>
+        it will read it as the phone number one digit at a time (i.e. two one two three one two one two three one). This makes it easy for screen reader users to know what they just typed in.</p>
 </details>
 
 
