@@ -201,7 +201,7 @@
   }
   </script>
 
-  <h3>A Simple Interactive Example: Switches</h3>
+  <h3>A Simple Interactive Example: Switches/Toggles</h3>
 
   <p>This example is used to test <a href="switch.php">Enable's switch component</a> to ensure that it is keyboard accessible and that the HTML structure includes all the necessary accessibility features (e.g., the <code>role="switch"</code>, a valid <code>aria-checked</code> attribute set, a proper label, etc.).  Please go through the code walkthrough below for more details.
 
