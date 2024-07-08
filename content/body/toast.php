@@ -70,7 +70,9 @@
     <li>Toasts should support different levels of severity (normal, error, warning, success), each with a unique color for visual distinction.</li>
 </ol>
 <p>
-    Our implementation ensures that toasts are fully accessible and follow best practices for ARIA and keyboard interaction. When a toast appears, it is announced to screen readers. Toasts can be configured to stay visible for a set amount of time or until manually dismissed by the user. Additionally, all toasts are stored in a toast rack for future reference.
+    Our implementation ensures that toasts are fully accessible and follow best practices for ARIA and keyboard interaction. 
+    When a toast appears, it is announced to screen readers. Toasts will remain visible until manually dismissed by the user. 
+    Additionally, all toasts are stored in a toast rack for future reference.
 </p>
 
 <div id="example1" class="enable-example">
