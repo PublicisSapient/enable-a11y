@@ -82,7 +82,7 @@ const app = new (function () {
 
     this.positionChangeEvent = (e) => {
         try {
-            this.toast.container.className = `enable-toast__container enable-toast__container--${e.target.value}`;
+            this.toast.container.className = `enable-toast enable-toast--${e.target.value}`;
         } catch (error) {
             console.error('Error changing toast position:', error);
         }
