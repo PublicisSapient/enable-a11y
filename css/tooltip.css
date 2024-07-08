@@ -23,8 +23,8 @@
 }
 .tooltip:before {
   content: "";
-  width: 3;
-  height: 3;
+  width: 0.01rem;
+  height: 0.01rem;
   position: absolute;
   left: 0.1rem;
   /* Again, we put a transparent border here for Windows High Contrast Mode */
@@ -58,28 +58,38 @@
   bottom: -0.5rem;
   transform: rotate(180deg);
 }
-.icon-button {
-  width: 20px;
-  height: 20px;
+.tooltipButtonCommon {
+  color: white;
   background-color: blue;
-  border-radius: 50%;
-  /* to make it circular */
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  /* adjust font size as needed */
   border: none;
   cursor: pointer;
   position: relative;
-  /* Ensure relative positioning for pseudo-elements */
-  /* Ensure the button content is centered */
 }
-.icon-button:focus-visible {
-  /* Ensure the focus style is distinct from the background */
-  outline: solid 2px #3b99fc;
-  outline-offset: 2px;
+.tooltipButtonHover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
+}
+.icon-button {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* to make it circular */
+  font-weight: bold;
+  font-size: 12px;
+  /* adjust font size as needed */
+  /* Ensure the button content is centered */
 }
 .icon-button:hover {
   /* Hover styling */
@@ -95,4 +105,28 @@
   /* Center text horizontally */
   line-height: 1;
   /* Adjust line height as needed */
+}
+.text-button {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  vertical-align: text-bottom;
+}
+.text-button:hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
+}
+@media only screen and (min-width: 720px) {
+  .text-button {
+    vertical-align: bottom;
+  }
 }
