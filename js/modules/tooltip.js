@@ -19,10 +19,11 @@ const tooltip = new function () {
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
     const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
-    let timeout;
+    let timeout = null;
     let tooltipTarget = null;
-    let isTooltipVisible;
-    let tooltipBelongsTo;
+    let isTooltipVisible = false;
+    let tooltipBelongsTo = null;
+    let tabbedIn = false;
 
     /*!
     * Determine if an element is in the viewport
@@ -51,6 +52,10 @@ const tooltip = new function () {
         body.addEventListener('focus', this.show, true);
         body.addEventListener('blur', this.hide, true);
 
+        // Check for tabbing
+        body.addEventListener('keydown', this.onKeydown);
+        body.addEventListener('mousedown', this.mousedown);
+
         // Escape key to hide tooltip
         body.addEventListener('keyup', this.onKeyup);
     }
@@ -65,6 +70,16 @@ const tooltip = new function () {
         body.appendChild(tooltipEl);
     }
 
+    this.mousedown = (e) => {
+        tabbedIn = false;
+    }
+
+    this.onKeydown = (e) => {
+        if (e.key === 'Tab'){
+            tabbedIn = true;
+        }
+    }
+
     this.onKeyup = (e) => {
         // check if escape is pressed
         if (e.which === 27) {
@@ -75,29 +90,29 @@ const tooltip = new function () {
     
     this.show = (e) => {
         tooltipTarget = e.target;
+
+        //Hide tooltip on initial focus
+        if (tooltipTarget.tagName.toLowerCase() === 'button' && tabbedIn) {
+            return;
+        }
         timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
     }
 
     this.handleClick = (e) => {
         tooltipTarget = e.target;
 
-        // Check if tooltipTarget is a button
-        if (tooltipTarget.tagName.toLowerCase() === 'button') {
-            if (isTooltipVisible && tooltipBelongsTo === tooltipTarget) {
-                this.hide();
+        if (tooltipTarget.tagName.toLowerCase() === 'button' && tabbedIn) {
+            if (!isTooltipVisible) {
+                timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
             } else {
-                this.showTimeout(e);
+                this.hide(e);
             }
+        } else {
+            if (tooltipTarget !== tooltipEl){
+                this.show(e);
+            }          
         }
-    }
-
-    this.handleHover = (e) => {
-        tooltipTarget = e.target;
-
-        // Check if tooltipTarget is an input or other element
-        if (tooltipTarget !== tooltipEl && !tooltipTarget.matches('button')) {
-            this.show(e);
-        }
+        
     }
 
     this.showTimeout = (e) => {
@@ -142,8 +157,8 @@ const tooltip = new function () {
 
     this.hide = (e) => {
         if (e && e.type === 'click') {
-            const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
-            if (hoveredElement === tooltipEl) {
+            const clickedElement = document.elementFromPoint(e.clientX, e.clientY);
+            if (clickedElement === tooltipEl) {
                 return;
             }
         }

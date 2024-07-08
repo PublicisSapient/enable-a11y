@@ -23,17 +23,37 @@
 </p>
 
 <div id="example1" class="enable-example">
-  <p>
-    <a href="/" data-tooltip="This tooltip is accessible!">This link has a tooltip</a>
-    <label for="input-tooltip-example2">and so does this input field:</label>
-    <input id="input-tooltip-example2" type="text" data-tooltip="You can put tooltips on any focusable item.">
-
-
-    <button class="icon-button" aria-label="Tooltip Information" data-tooltip="This tooltip appears on click instead of hover">
-      <span class="icon" aria-hidden="true">i</span>
-    </button>
-  </p>
-
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Vehicle Inspection Form</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+          <div class="field-block">
+            <label for="tooltip_example_1" class="form-label">
+              <span>VIN</span>
+              <button role="button" type="button" class="text-button" aria-label="Clickable tooltip information" 
+                data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
+                <span>What's this?</span>
+              </button>
+              </label>
+            <input id="tooltip_example_1" size="25" type="text">
+          </div>
+          <div class="field-block">
+            <label for="tooltip_example_2" class="form-label">Make</label>
+            <input id="tooltip_example_2" size="25" type="text" data-tooltip="The brand or company that produced the vehicle.">
+          </div>
+          <div class="field-block">
+            <label for="tooltip_example_3" class="form-label">
+              <span>Body style</span>
+            </label>
+            <input id="tooltip_example_3" size="25" type="text">
+            <button id="icon-button" type="button" class="icon-button" aria-label="Clickable tooltip information" 
+                data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
+                <span class="icon" aria-hidden="true">i</span>
+              </button>
+          </div>
+      </div>
+    </fieldset>
+  </form>
 </div>
 
 
@@ -55,7 +75,7 @@
     {
       "label": "Create the show and hide methods for the tooltip",
       "highlight": "%JS% tooltip.show; tooltip.hide",
-      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
+      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with the aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
     },
     {
       "label": "Ensure tooltip disappears when Escape key is pressed",
