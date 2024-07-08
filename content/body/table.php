@@ -1,35 +1,35 @@
 
 
 <p>
-    <strong>When coding tabular data on a webpage, you should use the <code>&lt;table&gt;</code> tag.</strong>  Some developers, surprisingly don't do this .  Some also don't realize <a href="https://adrianroselli.com/2017/11/a-responsive-accessible-table.html#Update01">it's a bad idea to use flexbox to style tabular data</a>.  I think the aversion to using <code>&lt;table&gt;</code> markup comes from <a href="https://codepen.io/johneemac/pen/dyMwNoO">the bad old-school way developers, who couldn't use CSS back in the 90s, used to use table for layout</a> (which you should never do now with <a href="https://blog.hubspot.com/website/html-email-table">a small exception for those who have to code HTML emails</a>).
+    <strong>When coding tabular data on a webpage, you should use the <code>&lt;table&gt;</code> tag.</strong>  Some developers, surprisingly don't do this.  Some also don't realize <a href="https://adrianroselli.com/2017/11/a-responsive-accessible-table.html#Update01">it's a bad idea to use flexbox to style tabular data</a>.  I think the aversion to using <code>&lt;table&gt;</code> markup comes from <a href="https://codepen.io/johneemac/pen/dyMwNoO">the bad old-school way developers, who couldn't use CSS back in the 90s, used to use table for layout</a> (which you should never do now with <a href="https://blog.hubspot.com/website/html-email-table">a small exception for those who have to code HTML emails</a>).
 </p>
 
 
 
-<p><strong>Many web developers who use <code>&lt;table&gt;</code> markup, however, don't know there are some additional code they need to make them accessible</strong> (even <a href="https://css-tricks.com/complete-guide-table-element/">the CSS tricks so called "Complete" Guide to the Table Element</a> doesn't really cover these items adequately, in my opinion):</p>
+<p><strong>Many web developers who use <code>&lt;table&gt;</code> markup, however, don't know there is some additional code they need to make them accessible</strong> (even <a href="https://css-tricks.com/complete-guide-table-element/">the CSS Tricks' so called "Complete" Guide to the Table Element</a> doesn't cover these items adequately, in my opinion):</p>
 
 <ul>
   <li><code>th</code> tags <strong>must have a <code>scope</code> attribute</strong> set to <code>row</code> if it is a heading for a
     table row, or <code>col</code> if it is a column row</li>
   <li>All tables <strong>must have a text <code>summary</code></strong> describing the data in the table. This can be coded using a
     <code>summary</code> tag (see the first example), or
-    a <code>aria-labelledby</code> on the table element (see the <a href="#table-with-figcaption">figcaption example</a>)
+    an <code>aria-labelledby</code> on the table element (see the <a href="#table-with-figcaption">figcaption example</a>)
   </li>
 
 </ul>
 
 <h2>How Screen Reader Users Navigate Tables</h2>
 
-<p>Screen-reader users should be able to navigate the table using their screen-reader's built in navigation:
+<p>Screen reader users should be able to navigate the table using their screen reader's built-in navigation:
 </p>
 
 <ul>
-  <li>In voiceover, go to the rotor, choose the table and navigate around with the CAPS-LOCK + arrow-keys.
+  <li>In voiceover, go to the rotor, choose the table, and navigate around with the CAPS-LOCK + arrow-keys.
   </li>
   <li>
     In NVDA, press the T key to go to the next table (SHIFT+T to go to the previous one), use the arrow
     keys to get out of the
-    caption and CTRL+ALT+arrow-keys to move around the table. To ensure you understand how the tables
+    caption, and CTRL+ALT+arrow-keys to move around the table. To ensure you understand how the tables
     are being
     read, you may want to install the
     <a href="https://addons.nvda-project.org/addons/focusHighlight.en.html">
@@ -302,7 +302,7 @@
   semantically contains tabular data.
 </p>
 
-<p><strong>Note:</strong> The structure your markup should be structured similar to <a href="#developer-walkthrough-5">the HTML structure used in the code walkthrough below</a>,
+<p><strong>Note:</strong> The structure your markup should be structured similarly to <a href="#developer-walkthrough-5">the HTML structure used in the code walkthrough below</a>,
   but if not, don't fret.
   If your existing markup has extra tags that are between what should be direct ancestors,
   you can tell the screen reader to pretend they are not
@@ -430,7 +430,7 @@
 </p>
 
 <p>
-    To be honest, I felt really dirty coding this example.  I hope you realize I took one for the team here.  Please take my sacrifice seriously.  Don't do this unless you are really in a bind.
+    To be honest, I felt dirty coding this example.  I hope you realize I took one for the team here.  Please take my sacrifice seriously.  Don't do this unless you are really in a bind.
 </p>
 
 
@@ -504,7 +504,7 @@
 ]); ?>
 
 <p>
-    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scrolls down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
+    When you have a lot of data you need to present to the user, you may want to ensure that when sighted users scroll down the page, the table's header is always visible. This is so they can always remember the association with the table data and what it represents.
 </p>
 
 <p>
@@ -513,17 +513,16 @@
 
 <ol>
     <li>It is CSS only.</li>
-    <li>It is easily searchable within the browser ... no extra coding required!</li>
-    <li>The UI is easy to understand and really straightforward.</li>
-    <li>If there are links inside the table, and you are concerned about the amount of tabstops there are inside the table for keyboard users, you could use <a href="skip-link.php">skip links</a> around the table    so they can skip this table entirely.</li>
+    <li>It is easily searchable within the browser ... no extra coding is required!</li>
+    <li>The UI is easy to understand and straightforward.</li>
+    <li>If there are links inside the table, and you are concerned about the number of tab stops there are inside the table for keyboard users, you could use <a href="skip-link.php">skip links</a> around the table    so they can skip this table entirely.</li>
 </ol>
 
 <p>
     If you are not worried about large hits to a backend database for generating
     the data or a ridiculously huge HTTP payload, I would
     suggest considering the use of a table with a fixed table header.  It has a
-    way less complicated UI, and if marked up correctly, is totally
-    accessible via screen readers and keyboard.
+    way less complicated UI, and if marked up correctly, is still accessible via screen readers and keyboard.
 </p>
 
 <p><em>(Note: Data from this table was taken from <a href="https://worldpopulationreview.com/countries/countries-by-gdp#worldCountries">World Population Review</a>).</em></p>
