@@ -191,7 +191,58 @@
 <ol>
   <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
   <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
+  <li>When they use the keyboard to press the key set by the <code>data-read-count-key</code> attribute—the default is the Escape key.</li>
 </ol>
+
+<div id="charcount-simple" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Payment Information</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+        <div>
+          <label for="textarea-characount-simple" class="textarea-label">Delivery Notes:</label>
+          <textarea
+            id="textarea-characount-simple"
+            maxlength="100"
+            data-has-character-count="true"
+          ></textarea>
+        </div>
+      </div>
+    </fieldset>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<?php includeShowcode("charcount-simple"); ?>
+
+<script type="application/json" id="charcount-simple-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [
+      {
+        "label": "Set the 'maxlength' attribute of the textarea element.",
+        "highlight": "%INLINE%charcount-simple ||| maxlength"
+      },
+      {
+        "label": "Set the custom data-has-character-count attribute for the textarea element.",
+        "highlight": "%INLINE%charcount-simple ||| data-has-character-count"
+      }
+    ]
+  }
+</script>
+
+<p>With the above two attributes set, the character counter will be created for the textbox and ARIA regions will be appended below the textbox. These ARIA regions will not be visible to sighted users but will provide the information needed for screen readers to announce the character count.</p>
+
+<ol>
+  <li>ARIA-describedby Region: this area will be populated when the textbox comes into focus so that screen readers can read the description and instructions.</li>
+  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the key to announce the character count.
+    <ul>
+      <li>Note: Chrome only announces the character count when there's a change to the text. In order to have Chrome announce on each key press—to align with other browsers—the JavaScript toggles between appending and removing an exclamation mark to the end of the announcement text.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The character counter can also be customized using additional data attributes. The character counter below shows the available data attributes and their default values.</p>
 
 <div id="charcount-example" class="enable-example">
   <form class="enable-form-example">
@@ -229,7 +280,7 @@
 
 </div>
 
-<p>The character counter uses a JavaScript library to implement it.  Below is the HTML markup needed for it to work, as well as instructions on how to load the library in your own projects.</p>
+<p>Below is the HTML markup needed to add the character counter to a textarea element, as well as instructions on how to use it in your own projects.</p>
 
 <?php includeShowcode("charcount-example"); ?>
 
@@ -242,17 +293,16 @@
       "highlight": "%INLINE%charcount-example ||| maxlength"
     },
     {
-      "label": "Set hasCharacterCount for the textarea element.",
-      "highlight": "%INLINE%charcount-example ||| data-has-character-count",
-      "notes": "There's no need to explicitly provide a value of \"true\"."
+      "label": "Set the custom data-has-character-count attribute for the textarea element.",
+      "highlight": "%INLINE%charcount-example ||| data-has-character-count"
     },
     {
       "label": "Optional: Provide a key for the user to press to read out the character count.",
       "highlight": "%INLINE%charcount-example ||| data-read-count-key",
-      "notes": "The default is the 'Escape' key. For information regarding which keypress events are recognized visit https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values."
+      "notes": "The default is the Escape key. For information regarding which keypress events are recognized visit <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values\">MDN docs</a>."
     },
     {
-      "label": "Optional: Change the amount of available characters left before the screen reader starts announcing after each keypress.",
+      "label": "Optional: Change how many characters are left before announcing after each keypress.",
       "highlight": "%INLINE%charcount-example ||| data-warning-threshold",
       "notes": "The default is 20 characters before the limit is reached."
     },

@@ -13,8 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-const paginationTables = new function() {
+const paginationTables = new (function() {
   let perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
@@ -240,6 +239,4 @@ const paginationTables = new function() {
 
   }
 
-};
-
-
+});

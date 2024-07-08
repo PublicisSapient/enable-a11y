@@ -14,7 +14,6 @@
  ******************************************************************************/
 
 /* global AblePlayer, jQuery */
-
 let hasClicked = false;
 
 function ablePlayerCustomizations($, extraCustomizations) {
@@ -95,4 +94,3 @@ function ablePlayerCustomizations($, extraCustomizations) {
 }
 
 ablePlayerCustomizations(jQuery);
-

@@ -1,40 +1,40 @@
 import { interpolate } from "./interpolate.js";
 
 const enableCharacterCount = new function() {
+  'use strict';
+
   const defaultReadCharacterCountKey = 'Escape';
   let announcementTimeout;
   let idIndex = 0;
 
   this.init = () => { 
-    const charCountEls = document.querySelectorAll('[data-has-character-count]');
+    const charCountEls = document.querySelectorAll("[data-has-character-count='true']");
     charCountEls.forEach((target) => {
-      setUpEventsFor(target);
-      setIdIfNullFor(target);
-      setUpAriaDescribedByFor(target);
+      setUpEventListeners(target);
+      setIdIfNull(target);
+      setUpAriaDescribedBy(target);
       addLiveRegion(target);
-      createCounterContainerFor(target);
+      createCounterContainer(target);
       writeCharCount(target);
     });
   }
 
-  function setUpEventsFor(target) {
+  function setUpEventListeners(target) {
     target.addEventListener('keyup', onKeyUp);
-    target.addEventListener('keydown', onKeyDown);
     target.addEventListener('focus', onFocus);
+    target.addEventListener('focusout', onFocusOut);
   }
 
-  function setIdIfNullFor(target) {
-    if (target.id == null) {
+  function setIdIfNull(target) {
+    if (!target.id) {
       target.id = `enable-character-counter-${idIndex++}`;
     }
   }
 
-  function setUpAriaDescribedByFor(target) {
-    const describedByContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
+  function setUpAriaDescribedBy(target) {
     const ariaDescribedByElement = document.createElement('p');
     ariaDescribedByElement.id = `${target.id}-aria-describedby`;
     ariaDescribedByElement.className="sr-only";
-    ariaDescribedByElement.textContent = describedByContent;
     target.insertAdjacentElement('afterend', ariaDescribedByElement);
     target.setAttribute('aria-describedby', ariaDescribedByElement.id);
   }
@@ -48,33 +48,28 @@ const enableCharacterCount = new function() {
   function getScreenReaderInstructions(target) {
     const { readCountKey, instructions } = target.dataset;
     const keyToPress = readCountKey ?? defaultReadCharacterCountKey;
-    const defaultInstructions = 'Press ${keyToPress} to find out how many more characters are allowed.';
-    const instructionsToInterpolate = instructions ?? defaultInstructions;
+    const instructionsToInterpolate = instructions ?? 'Press ${keyToPress} to find out how many more characters are allowed.';
     return interpolate(instructionsToInterpolate, { keyToPress });
   }
 
-  function createCounterContainerFor(target) {
+  function createCounterContainer(target) {
     const container= document.createElement('div');
     container.id = `${target.id}-counter-container`;
     container.className = "enable-character-count";
+    container.ariaHidden = 'true';
     target.setAttribute('data-character-count-container', container.id);
     target.insertAdjacentElement('afterend', container);
   }
 
   function addLiveRegion(target) {
     const liveRegion = document.createElement('div');
-    liveRegion.id = `${target.id}-live-region`
+    const liveRegionId = `${target.id}-live-region`;
+    liveRegion.id = liveRegionId;
     liveRegion.className="sr-only";
     liveRegion.role = 'region';
     liveRegion.ariaLive = 'polite';
+    liveRegion.ariaLabel = `ARIA live region for ${target.id}`
     target.insertAdjacentElement('afterend', liveRegion);
-    liveRegion.appendChild(createCounterForScreenReader(liveRegion));
-  }
-
-  function createCounterForScreenReader(parent) {
-    const result = document.createElement('p');
-    result.id = `${parent.id}-character-count-status`;
-    return result;
   }
 
   function writeCharCount(target) {
@@ -93,11 +88,39 @@ const enableCharacterCount = new function() {
     const visualTextTemplate = dataset.visualText ?? '${numChars}/${maxLength}';
     const visualText = interpolate(visualTextTemplate, { numChars, maxLength, charsRemaining });
     const counterElementTemplate = document.getElementById('enable-character-count__template');
-    const counterElement = counterElementTemplate ?? '<span aria-hidden="true">${visualText}</span>'
+    const counterElement = counterElementTemplate ?? '<span>${visualText}</span>'
     return interpolate(counterElement, { visualText });
   }
 
-  function wasArrowPressed(key) {
+  function onKeyUp(event) {
+    const { target, key } = event;
+    const { dataset } = target;
+    writeCharCount(target);
+
+    const isAlphaKeyPressed = !isModifierPressed(key) && !isWhitespacePressed(key) && !isNavigationPressed(key);
+    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
+      announceCharacterCount(target);
+    } else if (isWithinWarningThreshold(target) && isAlphaKeyPressed) {
+      announceCharacterCountWithDelay(target, 1000);
+    }
+  }
+
+  function isWithinWarningThreshold(target) {
+    const { dataset, maxLength } = target;
+    const inputLength = target.value.length;
+    const warningThreshold = dataset.warningThreshold ?? 20;
+    return inputLength > (maxLength - warningThreshold);
+  }
+
+  function isModifierPressed(key) {
+    return key === 'Alt' || key === 'Shift' || key === 'Meta'
+  }
+
+  function isWhitespacePressed(key) {
+    return key === 'Tab' || key === 'Enter'
+  }
+
+  function isNavigationPressed(key) {
     switch(key) {
       case 'ArrowUp':
       case 'ArrowDown':
@@ -109,63 +132,77 @@ const enableCharacterCount = new function() {
     }
   }
 
-  function onKeyUp(event) {
-    const { target, key } = event;
-    const { dataset, maxLength } = target;
-    writeCharCount(target);
-    const inputLength = target.value.length;
-    const warningThreshold = dataset.warningThreshold ?? 20;
-    const isWithinWarningThreshold = inputLength > (maxLength - warningThreshold);
-    if (isWithinWarningThreshold && !wasArrowPressed(key)) {
-      announceCharacterCountWithDelay(target, 1000);
-    }
-  }
-
-  function onKeyDown(event) {
-    const { target, key } = event;
-    const { dataset } = target;
-    if (isReadCharacterCountKeyPressed(key, dataset.readCountKey)) {
-      announceCharacterCount(target);
-    }
-  }
-
   function isReadCharacterCountKeyPressed(keyPressed, readCountKey) {
-    if (readCountKey) {
+    if (readCountKey)
       return keyPressed === readCountKey;
-    } else {
-      return keyPressed === defaultReadCharacterCountKey;
-    }
+    return keyPressed === defaultReadCharacterCountKey;
   }
 
   function onFocus(event) {
     const { target } = event;
+    setAriaDescribedBy(target);
     announceCharacterCount(target);
   }
 
-  function announceCharacterCount(target) {
-    announceCharacterCountWithDelay(target, 200);
+  function onFocusOut(event) {
+    const { target } = event;
+    removeAriaDescribedBy(target);
+    removeLiveRegion(target);
+  }
+
+  function setAriaDescribedBy(target) {
+    const describedBy = getAriaDescribedBy(target);
+    if (describedBy) {
+      describedBy.textContent = `${getScreenReaderDescription(target)} ${getScreenReaderInstructions(target)}`;
+    }
+  }
+
+  function removeAriaDescribedBy(target) {
+    const describedby = getAriaDescribedBy(target);
+    if (describedby) {
+      describedby.textContent = '';
+    }
+  }
+
+  function getAriaDescribedBy(target) {
+    return document.getElementById(`${target.id}-aria-describedby`);
+  }
+
+  function removeLiveRegion(target) {
+      const liveRegion = getLiveRegion(target)
+      if (liveRegion) {
+          liveRegion.textContent = '';
+      }
   }
 
   function announceCharacterCountWithDelay(target, delay) {
-    const counterForScreenReader = getScreenReaderCharacterCount(target);
-
     if (typeof announcementTimeout === 'number') {
-      counterForScreenReader.textContent = '';
       clearTimeout(announcementTimeout);
     }
-
     announcementTimeout = setTimeout(() => {
-      const maxLength = target.maxLength;
-      const numChars = target.value.length;
-      const charsRemaining = maxLength - numChars;
-      const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
-      counterForScreenReader.textContent = interpolate(characterCountText, { numChars, maxLength, charsRemaining });
+      announceCharacterCount(target)
     }, delay);
   }
 
-  function getScreenReaderCharacterCount(target) {
-    const liveRegion = document.getElementById(`${target.id}-live-region`);
-    return document.getElementById(`${liveRegion.id}-character-count-status`);
+  function announceCharacterCount(target) {
+    const liveRegion = getLiveRegion(target);
+    if (liveRegion.textContent.endsWith('!')) {
+      liveRegion.textContent = getTextToRead(target);
+    } else {
+      liveRegion.textContent = `${getTextToRead(target)}!`;
+    }
+  }
+
+  function getLiveRegion(target) {
+    return document.getElementById(`${target.id}-live-region`);
+  }
+
+  function getTextToRead(target) {
+    const maxLength = target.maxLength;
+    const numChars = target.value.length;
+    const charsRemaining = maxLength - numChars;
+    const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
+    return interpolate(characterCountText, { numChars, maxLength, charsRemaining });
   }
 }
 

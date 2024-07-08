@@ -171,4 +171,3 @@ const enableVisibleOnFocus = new (function () {
     }
   };
 })();
-
