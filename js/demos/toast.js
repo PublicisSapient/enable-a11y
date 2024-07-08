@@ -82,12 +82,7 @@ const app = new (function () {
 
     this.positionChangeEvent = (e) => {
         try {
-            this.toast.container.className = `toast-container ${e.target.value}`;
-            if (e.target.value.includes('top')) {
-                this.toast.container.style.flexDirection = 'column-reverse';
-            } else {
-                this.toast.container.style.flexDirection = 'column';
-            }
+            this.toast.container.className = `enable-toast__container enable-toast__container--${e.target.value}`;
         } catch (error) {
             console.error('Error changing toast position:', error);
         }
@@ -103,5 +98,4 @@ const app = new (function () {
     };
 })();
 
-// app.init();
 export default app;

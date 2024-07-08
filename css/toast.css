@@ -1,38 +1,38 @@
-.toast-container {
+.enable-toast__container {
   position: fixed;
   z-index: 9999;
   display: flex;
   transition: all 0.5s ease-in-out;
 }
-.toast-container.bottom-right,
-.toast-container.bottom-left,
-.toast-container.bottom-center {
+.enable-toast__container.enable-toast__container--bottom-right,
+.enable-toast__container.enable-toast__container--bottom-left,
+.enable-toast__container.enable-toast__container--bottom-center {
   bottom: 20px;
 }
-.toast-container.top-right,
-.toast-container.top-left,
-.toast-container.top-center {
+.enable-toast__container.enable-toast__container--top-right,
+.enable-toast__container.enable-toast__container--top-left,
+.enable-toast__container.enable-toast__container--top-center {
   top: 20px;
 }
-.toast-container.bottom-right,
-.toast-container.top-right {
+.enable-toast__container.enable-toast__container--bottom-right,
+.enable-toast__container.enable-toast__container--top-right {
   right: 20px;
 }
-.toast-container.bottom-left,
-.toast-container.top-left {
+.enable-toast__container.enable-toast__container--bottom-left,
+.enable-toast__container.enable-toast__container--top-left {
   left: 20px;
 }
-.toast-container.top-center,
-.toast-container.bottom-center,
-.toast-container.middle-center {
+.enable-toast__container.enable-toast__container--top-center,
+.enable-toast__container.enable-toast__container--bottom-center,
+.enable-toast__container.enable-toast__container--middle-center {
   left: 50%;
   transform: translateX(-50%);
 }
-.toast-container.middle-center {
+.enable-toast__container.enable-toast__container--middle-center {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.toast {
+.enable-toast__toast {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,23 +45,23 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.toast.toast-visible {
+.enable-toast__toast.enable-toast__toast--visible {
   opacity: 1;
 }
-.toast.toast-exit {
+.enable-toast__toast.enable-toast__toast--exit {
   opacity: 0;
 }
-.toast button {
+.enable-toast__toast .enable-toast__close-button {
   background: none;
   border: none;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
 }
-.toast button:hover {
+.enable-toast__toast .enable-toast__close-button:hover {
   color: #ff0000;
 }
-.toast-rack {
+.enable-toast__rack {
   position: fixed;
   top: 20px;
   right: 20px;

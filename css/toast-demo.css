@@ -1,18 +1,18 @@
-.controls {
+.enable-toast__controls {
   margin-bottom: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
 }
-.controls .control-group {
+.enable-toast__controls .enable-toast__control-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.625rem;
 }
-.controls label {
+.enable-toast__controls label {
   font-weight: normal;
 }
-.controls .button-group {
+.enable-toast__controls .enable-toast__button-group {
   display: flex;
   gap: 0.625rem;
 }

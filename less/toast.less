@@ -14,49 +14,49 @@
 @rack-max-height: 400px;
 
 // Toast container positions
-.toast-container {
+.enable-toast__container {
     position: fixed;
     z-index: 9999;
     display: flex;
     transition: @toast-transition;
 
-    &.bottom-right,
-    &.bottom-left,
-    &.bottom-center {
+    &.enable-toast__container--bottom-right,
+    &.enable-toast__container--bottom-left,
+    &.enable-toast__container--bottom-center {
         bottom: 20px;
     }
 
-    &.top-right,
-    &.top-left,
-    &.top-center {
+    &.enable-toast__container--top-right,
+    &.enable-toast__container--top-left,
+    &.enable-toast__container--top-center {
         top: 20px;
     }
 
-    &.bottom-right,
-    &.top-right {
+    &.enable-toast__container--bottom-right,
+    &.enable-toast__container--top-right {
         right: 20px;
     }
 
-    &.bottom-left,
-    &.top-left {
+    &.enable-toast__container--bottom-left,
+    &.enable-toast__container--top-left {
         left: 20px;
     }
 
-    &.top-center,
-    &.bottom-center,
-    &.middle-center {
+    &.enable-toast__container--top-center,
+    &.enable-toast__container--bottom-center,
+    &.enable-toast__container--middle-center {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    &.middle-center {
+    &.enable-toast__container--middle-center {
         top: 50%;
         transform: translate(-50%, -50%);
     }
 }
 
 // Toast element styles
-.toast {
+.enable-toast__toast {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,15 +69,15 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 
-    &.toast-visible {
+    &.enable-toast__toast--visible {
         opacity: 1;
     }
 
-    &.toast-exit {
+    &.enable-toast__toast--exit {
         opacity: 0;
     }
 
-    button {
+    .enable-toast__close-button {
         background: none;
         border: none;
         color: @toast-close-color;
@@ -91,7 +91,7 @@
 }
 
 // Toast rack styles
-.toast-rack {
+.enable-toast__rack {
     position: fixed;
     top: 20px;
     right: 20px;
