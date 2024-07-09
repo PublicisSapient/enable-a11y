@@ -1,8 +1,8 @@
 <p>
   Originally, Enable started out as a small personal website to help me show other developers how accessible code is
   structured.
-  Some of the solutions are my own, some I have borrowed from others (because why reinvent the wheel, especially when
-  you have learned from the best already?)
+  Some of the solutions are my own, and some I have borrowed from others (because why reinvent the wheel, especially when
+  you have already learned from the best?)
 </p>
 
 <p>

@@ -81,15 +81,14 @@
 <p>
   Although native HTML5 select boxes were difficult to style in the past, <strong>it is possible to style the default
     (i.e. closed) state completely using CSS</strong>. We have used <a href="https://twitter.com/scottjehl">Scott
-    Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
-    browser CSS demo</a> to style our demo below.</p>
+    Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> to style our demo below.</p>
 
 <p>
   <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
-  The gut reaction from a lot of designers is to change their appearance, since they understandably want to control
-  ever aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
+  The gut reaction from a lot of designers is to change their appearance since they understandably want to control
+  every aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
   manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.
-  Take a look at how the options are displayed when the activates the control:
+  Take a look at how the options are displayed when the user activates the control:
 </p>
 
 <figure>
@@ -133,10 +132,8 @@
 
 
 
-<p>What follows is an excellent customly styled native HTML5 select box. It uses code from <a
-    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
-    browser CSS demo</a> that you can download via
-  NPM.
+<p>What follows is an excellent custom-styled native HTML5 select box. It uses code from <a
+    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> that you can download via NPM.
   Instead of putting my usual notes as an explanation, visit their blog post <a
     href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It's 2019</a>.
 
@@ -265,7 +262,7 @@
 ]); ?>
 
 <p>
-  This listbox I made is accessible, and I have used in a few projects in the past. It works well, a developer can
+  This listbox I made is accessible, and I have used it in a few projects in the past. It works well, a developer can
   ensure it looks the same in all browsers, and I am happy with the accessibility features in it. However, I strongly
   recommend you use the <code>&lt;select&gt;</code> box example instead. Using this library means that:
 </p>
