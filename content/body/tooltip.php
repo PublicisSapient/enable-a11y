@@ -38,7 +38,7 @@
                 <span>What's this?</span>
               </button>
               </label>
-            <input id="tooltip_example_1" size="25" type="text">
+            <input id="tooltip_input_1" size="25" type="text">
           </div>
           <div class="field-block">
             <label for="tooltip_example_2" class="form-label">Make</label>
@@ -48,7 +48,7 @@
             <label for="tooltip_example_3" class="form-label">
               <span>Body style</span>
             </label>
-            <input id="tooltip_example_3" size="25" type="text">
+            <input id="tooltip_input_3" size="25" type="text">
             <button id="tooltip_example_3" type="button" class="icon-button" aria-label="Clickable tooltip information" 
                 data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
                 <span class="icon" aria-hidden="true">i</span>
