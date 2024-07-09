@@ -21,6 +21,9 @@
 <p>
   This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
+<p>
+  The form example below shows three different entry points for tooltips. The first is a text button, the second is an input box, and the third is an icon button.
+</p>
 
 <div id="example1" class="enable-example">
   <form class="enable-form-example">
@@ -30,7 +33,7 @@
           <div class="field-block">
             <label for="tooltip_example_1" class="form-label">
               <span>VIN</span>
-              <button role="button" type="button" class="text-button" aria-label="Clickable tooltip information" 
+              <button id="tooltip_example_1" type="button" class="text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
                 <span>What's this?</span>
               </button>
@@ -46,7 +49,7 @@
               <span>Body style</span>
             </label>
             <input id="tooltip_example_3" size="25" type="text">
-            <button id="icon-button" type="button" class="icon-button" aria-label="Clickable tooltip information" 
+            <button id="tooltip_example_3" type="button" class="icon-button" aria-label="Clickable tooltip information" 
                 data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
                 <span class="icon" aria-hidden="true">i</span>
               </button>
