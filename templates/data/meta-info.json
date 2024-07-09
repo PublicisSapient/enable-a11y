@@ -127,6 +127,10 @@
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
   },
+  "multimedia-content.php": {
+    "title": "Accessible Multimedia Content",
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
+  },
   "multi-level-hamburger-menu.php": {
     "title": "Accessible Flyout/Hamburger Hybrid Menus",
     "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
