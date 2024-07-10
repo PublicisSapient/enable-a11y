@@ -132,8 +132,8 @@ const tooltip = new function () {
         tooltipEl.classList.remove('tooltip--hidden');
         tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.scrollY) + 'px + 1em)';
         tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
-        tooltipEl.classList.remove('btm');
-        tooltipEl.classList.add('tp');
+        tooltipEl.classList.remove('tooltip--bottom');
+        tooltipEl.classList.add('tooltip--top');
 
         isTooltipVisible = true;
         tooltipBelongsTo = tooltipTarget;
@@ -141,8 +141,8 @@ const tooltip = new function () {
         // Position the tooltip
         if (!isInViewport(tooltipEl)) {
             const tooltipHeight = tooltipEl.offsetHeight;
-            tooltipEl.classList.add('btm');
-            tooltipEl.classList.remove('tp');
+            tooltipEl.classList.add('tooltip--bottom');
+            tooltipEl.classList.remove('tooltip--top');
 
             tooltipStyle.top = 'calc(' + (tooltipTargetRect.top + window.scrollY - tooltipHeight) + 'px - 1em)';
         }

@@ -5,6 +5,24 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+/* Common styling for button entrypoints */
+.tooltip-button-common {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.tooltip-button-hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
+}
+/* Main tooltip */
 .tooltip {
   display: block;
   background: black;
@@ -20,6 +38,7 @@
     */
   border: 1px solid transparent;
   /* Additional tooltip styles */
+  /* Button entrypoints */
 }
 .tooltip:before {
   content: "";
@@ -51,30 +70,14 @@
   width: 1px;
   margin: -1px;
 }
-.tooltip.tp:before {
+.tooltip--top:before {
   top: -0.5rem;
 }
-.tooltip.btm:before {
+.tooltip--bottom:before {
   bottom: -0.5rem;
   transform: rotate(180deg);
 }
-.tooltipButtonCommon {
-  color: white;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-.tooltipButtonHover {
-  /* Hover styling */
-  transition: background-color 0.3s ease;
-  /* smooth transition */
-  background-color: darkblue;
-  /* Example darker background on hover */
-}
-.icon-button {
+.tooltip__icon-button {
   color: white;
   background-color: blue;
   justify-content: center;
@@ -87,18 +90,18 @@
   border-radius: 50%;
   /* to make it circular */
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.75rem;
   /* adjust font size as needed */
   /* Ensure the button content is centered */
 }
-.icon-button:hover {
+.tooltip__icon-button:hover {
   /* Hover styling */
   transition: background-color 0.3s ease;
   /* smooth transition */
   background-color: darkblue;
   /* Example darker background on hover */
 }
-.icon-button .icon {
+.tooltip__icon-button .icon {
   display: block;
   /* Ensure block display for icon */
   text-align: center;
@@ -106,7 +109,7 @@
   line-height: 1;
   /* Adjust line height as needed */
 }
-.text-button {
+.tooltip__text-button {
   color: white;
   background-color: blue;
   justify-content: center;
@@ -118,7 +121,7 @@
   padding: 0.25rem;
   vertical-align: text-bottom;
 }
-.text-button:hover {
+.tooltip__text-button:hover {
   /* Hover styling */
   transition: background-color 0.3s ease;
   /* smooth transition */
@@ -126,7 +129,7 @@
   /* Example darker background on hover */
 }
 @media only screen and (min-width: 720px) {
-  .text-button {
+  .tooltip__text-button {
     vertical-align: bottom;
   }
 }

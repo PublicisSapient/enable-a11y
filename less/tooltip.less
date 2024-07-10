@@ -1,5 +1,23 @@
 @import "shared/mixins-and-vars";
 
+/* Common styling for button entrypoints */
+.tooltip-button-common {
+    color: white;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip-button-hover {
+    /* Hover styling */
+    transition: background-color 0.3s ease; /* smooth transition */
+    background-color: darkblue; /* Example darker background on hover */
+}
+
+/* Main tooltip */
 .tooltip {
     display: block;
     background: black;
@@ -42,63 +60,48 @@
     }
 
     /* Additional tooltip styles */
-    &.tp:before {
+    &--top:before {
         top: -0.5rem;
     }
 
-    &.btm:before {
+    &--bottom:before {
         bottom: -0.5rem;
         transform: rotate(180deg);
     }
-}
 
-.tooltipButtonCommon {
-    color: white;
-    background-color: blue;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    position: relative;
-}
+    /* Button entrypoints */
+    &__icon-button {
+        .tooltip-button-common();
+        width: 20px;
+        height: 20px;
+        border-radius: 50%; /* to make it circular */
+        font-weight: bold;
+        font-size: (12 / @px); /* adjust font size as needed */
 
-.tooltipButtonHover {
-    /* Hover styling */
-    transition: background-color 0.3s ease; /* smooth transition */
-    background-color: darkblue; /* Example darker background on hover */
-}
+        &:hover {
+            .tooltip-button-hover();
+        }
 
-.icon-button {
-    .tooltipButtonCommon();
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; /* to make it circular */
-    font-weight: bold;
-    font-size: 12px; /* adjust font size as needed */
-
-    &:hover {
-        .tooltipButtonHover();
+        /* Ensure the button content is centered */
+        .icon {
+            display: block; /* Ensure block display for icon */
+            text-align: center; /* Center text horizontally */
+            line-height: 1; /* Adjust line height as needed */
+        }
     }
 
-    /* Ensure the button content is centered */
-    .icon {
-        display: block; /* Ensure block display for icon */
-        text-align: center; /* Center text horizontally */
-        line-height: 1; /* Adjust line height as needed */
-    }
-}
+    &__text-button {
+        .tooltip-button-common();
+        border-radius: 0.2rem;
+        padding: 0.25rem;
+        vertical-align: text-bottom;
 
-.text-button {
-    .tooltipButtonCommon();
-    border-radius: 0.2rem;
-    padding: 0.25rem;
-    vertical-align: text-bottom;
+        &:hover {
+            .tooltip-button-hover();
+        }
 
-    &:hover {
-        .tooltipButtonHover();
-    }
-
-    @media only screen and (min-width: 720px) {
-        vertical-align: bottom;
+        @media only screen and (min-width: 720px) {
+            vertical-align: bottom;
+        }
     }
 }
