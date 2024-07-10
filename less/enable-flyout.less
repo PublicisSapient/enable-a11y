@@ -12,7 +12,7 @@
 @desktop: ~"only screen and (min-width: @{desktop-min})"; // please use mobile first here.
 @hamburger-translate-y: ~"min(@{flyout-width}, 350px)";
 @hamburger-offset-y: ~"calc(-1 * @{hamburger-translate-y})";
-@hamburger-menu-icon-top: 12px;
+@hamburger-menu-icon-top: 20px;
 @focus-area-padding: 15px;
 
 // This would be normally set to a lower number.  However, AblePlayer's
@@ -32,7 +32,7 @@
     align-items: center;
     flex-grow: 1;
     text-align: center;
-    justify-content: center;
+    justify-content: end;
 }
 
 .enable-flyout {
@@ -81,8 +81,25 @@
         color: @color0;
     }
 
-    > .enable-flyout__list .enable-flyout__link {
-        top: -1px;
+    > .enable-flyout__list {
+        li:last-child a::after {
+            content: "";
+        }
+
+        a {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+
+            &::after {
+                content: "|";
+                padding: 0 10px;
+            }
+        }
+
+        .enable-flyout__link {
+            top: -1px;
+        }
     }
 
     &__secondary-navigation {
@@ -110,7 +127,7 @@
     }
 
     &__last-top-level-link {
-        margin-right: 40px !important;
+        // margin-right: 40px !important;
 
         &::after {
             content: "";
@@ -247,7 +264,8 @@
         background: transparent;
         border: none;
         text-align: left;
-        text-transform: uppercase;
+        // text-transform: uppercase;
+        font-weight: bold;
 
         .enable-flyout-container--positioned-left & {
             text-align: right;
@@ -685,7 +703,7 @@
         }
 
         &__menu-item {
-            display: inline-block;
+            // display: inline-block;
 
             &--close {
                 display: none;

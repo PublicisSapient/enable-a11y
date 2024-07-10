@@ -7,16 +7,15 @@
 }
 .enable-flyout__open-level-button,
 .enable-flyout__link {
-  font-weight: normal;
+  font-weight: bold;
 }
 .enable-flyout__open-level-button:hover,
 .enable-flyout__link:hover,
 .enable-flyout__open-level-button:focus,
 .enable-flyout__link:focus {
-  font-weight: normal;
+  font-weight: bold;
 }
 .enable-flyout__level .enable-flyout__menu-item {
-  display: inline-block;
   font-size: 14px;
   margin-right: 0;
 }
@@ -155,7 +154,6 @@
 }
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   .enable-logo__container {
-    height: 4.6875rem;
     transform-origin: 0 50%;
     margin-left: 10px;
   }
@@ -174,17 +172,11 @@
   margin: 10px 0;
 }
 .enable-logo__text {
-  font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  display: block;
-  display: inline-block;
   color: #fff;
-  font-size: 3.6875rem;
   padding-left: 1.25rem;
+  width: 150px;
 }
 @media only screen and (min-width: 720px) {
-  .enable-logo__text {
-    font-size: 1.875rem;
-  }
 }
 .enable-logo__sub-text {
   display: block;
@@ -260,7 +252,7 @@
 .screenshot-table td {
   border: solid 1px black;
 }
-.enable-flyout__open-menu-button {
-  margin-top: -3px;
+.footer ul li {
+  list-style: none;
 }
 /*# sourceMappingURL=site.css.map */

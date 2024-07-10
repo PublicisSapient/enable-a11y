@@ -13,21 +13,34 @@
 .pause-anim-control {
     &__checkbox {
         outline-offset: 3px;
+        margin: 0 0 0 14px;
     }
 }
 
 .play-pause-anim {
+    &__background-pill {
+        font-size: 14px;
+        background-color: #2b2929;
+        border-radius: 25px;
+        display: inline-flex;
+        align-items: center;
+    }
+
     &__checkbox-container {
         align-items: center;
         position: sticky;
         top: 19.3125rem;
         // position: relative;
         width: 100vw;
+        min-width: @min-screen-width; //460px;
         top: 0;
         left: 0;
         color: white;
-        padding: 0;
-        background-color: #000;
+        padding: 20px;
+        // background-color: #000;
+        // background-color: #2b2929;
+        // background-color: #2b2929c2;
+        background-color: #5d5c5c; // remove transparency
         white-space: nowrap;
         text-align: center;
         // height: 2.4;
@@ -43,25 +56,40 @@
             // border-radius: 50px;
             // border: solid 2px white;
             // width: min-content;
-            line-height: 2.4;
+            // line-height: 2.4;
         }
 
         label {
             // padding: 10px 20px;
-            padding: 10px 62px;
+            // padding: 0px 62px;
+            // padding: 4px 20px;
             // display: inline-block;
-            display: inline;
+            // display: inline;
             cursor: pointer;
+            padding: 10px 20px;
 
             @media @desktop {
-                padding: 0 20px;
+                // padding: 0px 20px;
             }
+        }
+
+        .pause-button {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin: 0px 10px 0 0;
         }
 
         a {
             color: #ccccff;
-            margin-right: 20 / @px;
+            // margin-right: 20 / @px;
         }
+    }
+
+    &__sundries {
+        // padding: 20px;
+        display: flex;
+        margin-right: 3rem;
     }
 }
 

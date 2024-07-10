@@ -6,16 +6,18 @@
 .enable-flyout {
     &__open-level-button,
     &__link {
-        font-weight: normal;
+        // font-weight: normal;
+        font-weight: bold;
 
         &:hover,
         &:focus {
-            font-weight: normal;
+            // font-weight: normal;
+            font-weight: bold;
         }
     }
 
     &__level &__menu-item {
-        display: inline-block;
+        // display: inline-block;
         font-size: 14px;
         margin-right: 0;
     }
@@ -188,6 +190,9 @@
 
     &__container {
         text-decoration: none;
+        // MoniceDemo is a commercial font - removing.
+        // Comfortaa could be a possible replacement if necessary
+        // font-family: "Comfortaa", Arial, Helvetica, sans-serif;
         // font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
 
         text-align: center;
@@ -196,7 +201,7 @@
 
         @media @mobile {
             // transform: scale(0.75);
-            height: (75 / @px);
+            // height: (75 / @px);
             transform-origin: 0 50%;
             margin-left: 10px;
         }
@@ -216,17 +221,23 @@
     }
 
     &__text {
-        font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-        display: block;
+        //font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
+        // font-family: "Comfortaa", Arial, Helvetica, sans-serif;
+        // display: block;
         // position: absolute;
-        display: inline-block;
+        // display: inline-block;
         color: #fff;
-        font-size: (59 / @px);
+        //font-size: (59 / @px);
+        // font-size: (30 / @px);
+        // font-size: (40 / @px);
         padding-left: (20 / @px);
+        // font-weight: bold;
+        // margin-bottom: -8px;
         // top: (8 / @px);
+        width: 150px;
 
         @media @tablet-up {
-            font-size: (30 / @px);
+            //font-size: (30 / @px);
             // top: (15 / @px);
         }
     }
@@ -322,5 +333,13 @@
 }
 
 .enable-flyout__open-menu-button {
-    margin-top: -3px;
+    // margin-top: -3px;
+}
+
+.footer {
+    ul {
+        li {
+            list-style: none;
+        }
+    }
 }

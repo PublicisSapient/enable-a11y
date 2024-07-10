@@ -2,20 +2,37 @@
 
 main {
     // background-color: #444;
-    color: white;
+    // color: white;
+    color: #2b2929;
     width: 100%;
 }
 
-strong {
-    color: #fff !important;
+a,
+a:-webkit-any-link {
+    // color: @color-style;
+    // color: #2b2929;
+    // color: #05a8aa;
+    color: #fb8b24;
+    //color: #ef2556;
+    /* font-weight: bold; */
+    // border-bottom: 3px solid;
+    // text-decoration: none;
 }
+
+// a:-webkit-any-link {
+//     color: #fb8b24;
+// }
+
+// strong {
+//     color: #fff !important;
+// }
 
 .homepage {
     &__hero {
         color: @color0;
         // background: #ccc;
         min-height: 30vh;
-        padding: 40px;
+        padding: 20px;
         text-align: center;
 
         // center text vertically
@@ -29,14 +46,14 @@ strong {
             // font-size: (80 / @px);
             font-size: 4.8rem;
 
-            margin: 0 auto;
+            margin: 30px auto;
             font-weight: normal;
             // color: darken(@color1, 5%);
             color: #e12351;
         }
 
         &--copy {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
     }
 
@@ -90,8 +107,14 @@ strong {
         }
 
         &--section {
+            font-size: 18px;
+            border-radius: 25px;
+            // background-color: #fffffff2;
+            background-color: #f4f7f5;
+            padding: 20px;
             flex-grow: 1;
             width: 100%;
+            text-align: center;
 
             @media @tablet-up {
                 width: 33%;
@@ -100,6 +123,9 @@ strong {
 
         &--section + &--section {
             margin-left: 2%;
+
+            // background-color: #b8d5b8;
+            background-color: #f4f7f5;
         }
 
         &--section-icon {
@@ -108,26 +134,37 @@ strong {
         }
 
         &--header {
-            font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+            // font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
             font-weight: bold;
             font-size: (20 / @px);
             border: none;
-            margin-bottom: 20px;
-            color: #ccc;
-            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            // color: #ccc;
+            color: #2b2929;
+            text-align: left;
+            display: flex;
 
             &::before {
                 content: "";
-                display: block;
-                width: 100px;
-                height: 100px;
+                // display: block;
+                // width: 100px;
+                // height: 100px;
+                display: inline-flex;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
-                margin: 0 auto 30px auto;
+                // margin: 0 auto 30px auto;
+                margin-right: 20px;
                 padding: 20px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                background-size: 80px 80px;
+                // box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+                // background-size: 80px 80px;
+                // box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
+                background-size: 40px;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
+                background-color: #fff;
+                flex-shrink: 0;
 
                 @media (forced-colors: active) {
                     & {
@@ -138,17 +175,17 @@ strong {
 
             &--code::before {
                 background-image: data-uri("../images/icons/code.svg");
-                background-color: @color-scratch;
+                // background-color: @color-scratch;
             }
 
             &--existing::before {
                 background-image: data-uri("../images/icons/integrate.svg");
-                background-color: @color-integrate;
+                // background-color: @color-integrate;
             }
 
             &--npm::before {
                 background-image: data-uri("../images/icons/npm.svg");
-                background-color: @color-npm;
+                // background-color: @color-npm;
 
                 @media (forced-colors: active) {
                     & {
@@ -160,42 +197,52 @@ strong {
 
             &--question::before {
                 background-image: data-uri("../images/icons/question.svg");
-                background-color: @color-npm;
+                // background-color: @color-npm;
             }
 
             &--donate:before {
                 background-image: data-uri("../images/icons/donate.svg");
-                background-color: @color-scratch;
+                // background-color: @color-scratch;
             }
 
             &--bug:before {
                 background-image: data-uri("../images/icons/bug.svg");
-                background-color: @color-integrate;
+                // background-color: @color-integrate;
             }
         }
 
         a {
-            color: @color-style;
+            // color: @color-style;
+            // color: #2b2929;
+            // color: #05a8aa;
+            // color: #fb8b24; // Orange
+            color: #ef2556; // Pink
+            /* font-weight: bold; */
+            border-bottom: 3px solid;
+            text-decoration: none;
         }
     }
 
     &__bottom-copy {
-        background: #ccc;
-        color: #222;
+        background: #e12251;
+        //color: #222;
+        color: #fff;
         line-height: 1.5;
         padding: 20px;
+        text-align: center;
 
-        &:nth-child(2n) {
-            background: #eee;
-        }
+        // &:nth-child(2n) {
+        //     background: #f4f7f5;
+        // }
 
         @media @desktop {
             padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
+            padding-bottom: 60px;
         }
 
-        strong {
-            color: #000 !important;
-        }
+        // strong {
+        //     color: #000 !important;
+        // }
 
         /* I have no idea why this was put here -- commenting out for now */
         /* &::after {
@@ -210,10 +257,53 @@ strong {
     } */
 
         &--heading {
-            font-family: @font-default-copy;
+            // font-family: @font-default-copy;
             font-weight: bold;
-            font-size: (22 / @px);
-            color: #444;
+            //font-size: (22 / @px);
+            font-size: 2.375rem;
+            // color: #444;
+            color: #fff;
+            display: inline-flex;
+        }
+
+        &--heading::before {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        &.background-secondary {
+            background: #f4f7f5;
+            p {
+                color: #17183b;
+            }
+        }
+
+        &.background-tertiary {
+            background: #17183b;
+        }
+
+        .background-secondary &--heading {
+            color: #17183b;
+        }
+
+        ul {
+            column-count: 2;
+            column-gap: 13px;
+            margin: 0;
+            padding: 0;
+            // display: flex;
+
+            li {
+                margin-bottom: 20px;
+                background-color: #fff;
+                border-radius: 25px;
+                padding: 20px;
+                list-style-type: none;
+                color: #2b2929;
+                // width: 25%;
+                // align-content: center;
+            }
         }
     }
 }

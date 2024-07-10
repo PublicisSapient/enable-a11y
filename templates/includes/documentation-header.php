@@ -25,7 +25,16 @@
     
     <template id="flyout__root">
         <ul class="enable-flyout__list">
-            ${html:content}
+            <li><a href="/components">Components</a></li>
+            <li><a href="/code-patterns">Code Patterns</a></li>
+            <li>
+                <a href="/testing">Testing</a>
+                <!-- <ul>
+                    <li>Accessible code quality</li>
+                    <li>Bookmarklets</li>
+                </ul> -->
+            </li>
+            <!-- <li><a href="https://github.com/PublicisSapient/enable-a11y">Github</a></li> -->
         </ul>
     </template>
 
@@ -209,6 +218,247 @@
 
     <!-- id, props, content -->
     <script id="flyout-props" type="application/json">
+    {
+        "content": [{
+            "id": "flyout__container",
+            "content": [{
+                "id": "flyout__root",
+                "content": [{
+                        "id": "flyout__home-mobile-only"
+                    },
+                    
+
+                    {
+                        "id": "flyout__button",
+                        "props": {
+                            "id": "components",
+                            "sectionName": "Components"
+                        },
+                        "content": [{
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "simple-controls",
+                                    "sectionName": "Simple Controls"
+                                },
+                                "content": [{
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Link",
+                                            "url-slug": "link",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Dropdown / Drawer / Expando",
+                                            "url-slug": "dropdown",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Tooltip",
+                                            "url-slug": "tooltip",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Switch",
+                                            "url-slug": "switch",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Skip Links",
+                                            "url-slug": "skip-link",
+                                            "alt": ""
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "flyout__subsection",
+                                "props": {
+                                    "id": "complex-controls",
+                                    "sectionName": "Complex Controls"
+                                },
+                                "content": [
+
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Carousel",
+                                            "url-slug": "carousel",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Flyout Hamburger Menu",
+                                            "url-slug": "multi-level-hamburger-menu",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Modal Dialog",
+                                            "url-slug": "dialog",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Tablist",
+                                            "url-slug": "tabs",
+                                            "alt": ""
+                                        }
+                                    }, {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Video Player",
+                                            "url-slug": "video-player",
+                                            "alt": ""
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "flyout__button",
+                        "props": {
+                            "id": "code-patterns",
+                            "sectionName": "Code Patterns"
+                        },
+                        "content": [{
+                            "id": "flyout__subsection",
+                            "props": {
+                                "id": "focus-management",
+                                "sectionName": "Focus Management"
+                            },
+                            "content": [{
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Form Error Checking",
+                                    "url-slug": "form-error-checking",
+                                    "alt": ""
+                                }
+                            }, {
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Focus Styling Tips",
+                                    "url-slug": "focus-styling",
+                                    "alt": ""
+                                }
+                            }]
+                        }, {
+                            "id": "flyout__subsection",
+                            "props": {
+                                "id": "typography",
+                                "sectionName": "Typography"
+                            },
+                            "content": [{
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Basic Resizable Text",
+                                        "url-slug": "text-resize",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Accessible Text Spacing",
+                                        "url-slug": "text-spacing",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Resizing Text in Hero Images",
+                                        "url-slug": "hero-image-text-resize",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Accessible Text in SVGs",
+                                        "url-slug": "accessible-text-svg",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Exposing Style Information To Screen Readers",
+                                        "url-slug": "exposing-style-info-to-screen-readers",
+                                        "alt": ""
+                                    }
+                                }
+
+                            ]
+                        }, {
+                            "id": "flyout__subsection",
+                            "props": {
+                                "id": "aria-live-regions",
+                                "sectionName": "ARIA Live Regions"
+                            },
+                            "content": [{
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Alert",
+                                    "url-slug": "alert",
+                                    "alt": ""
+                                }
+                            }, {
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Log",
+                                    "url-slug": "log",
+                                    "alt": ""
+                                }
+                            }, {
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Timer",
+                                    "url-slug": "timer",
+                                    "alt": ""
+                                }
+                            }, {
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Marquee",
+                                    "url-slug": "marquee",
+                                    "alt": ""
+                                }
+                            }, {
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Status",
+                                    "url-slug": "status",
+                                    "alt": ""
+                                }
+                            }]
+                        }]
+                    }
+                ]
+            }]
+        }]
+    }
+    </script>
+
+
+</div>
+
+<!--
+
     {
         "content": [{
             "id": "flyout__container",
@@ -687,7 +937,5 @@
             }]
         }]
     }
-    </script>
 
-
-</div>
+-->
