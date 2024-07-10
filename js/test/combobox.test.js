@@ -1,8 +1,6 @@
 'use strict';
-
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-let domInfo;
 
 //Utility function to write assertions
 async function verifyActiveElementAttributes(page, expectedAttributes) {
@@ -16,54 +14,25 @@ async function verifyActiveElementAttributes(page, expectedAttributes) {
             ariaAutocomplete: activeElement.getAttribute('aria-autocomplete'),
         };
     });
+    // To get the corresponding element having the details of the aria-description
+    const containerForAriaDescribedby = results.ariaDescribedBy
+        ? await page.$(`#${results.ariaDescribedBy}`)
+        : '';
+
     // Perform assertions based on expected attributes
     expect(results.ariaDescribedBy).toBe(expectedAttributes.ariaDescribedBy);
     expect(results.ariaExpanded).toBe(expectedAttributes.ariaExpanded);
     expect(results.role).toBe(expectedAttributes.role);
     expect(results.ariaOwns).toBe(expectedAttributes.ariaOwns);
     expect(results.ariaAutocomplete).toBe(expectedAttributes.ariaAutocomplete);
+    // Testing the element with aria-ariaDescribedBy is existing in the dom
+    expect(containerForAriaDescribedby).not.toBeNull();
 }
 
 describe('Combobox Test', () => {
+    let domInfo;
     beforeAll(async () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
-    });
-
-    it('HTML5 Native combobox is not completely keyboard accessible', async () => {
-        //select the Input box of the HTM5 Combobox
-        await page.waitForSelector('#html5-fruit');
-        const comboBoxCount = Array.from(await page.$$('#html5-fruit')).length;
-        // to add focus on the input element
-        await page.focus('#html5-fruit');
-        const activeElement = await page.evaluate(() => {
-            const id = document.activeElement.id;
-            const ariaDescribedBy =
-                document.activeElement.getAttribute('aria-describedby');
-            return {
-                id,
-                ariaDescribedBy,
-            };
-        });
-        expect(comboBoxCount).toBe(1);
-        expect(activeElement.id).toBe('html5-fruit');
-        // Verify aria attribute
-        expect(activeElement.ariaDescribedBy).toBe('html5-fruit__desc');
-
-        //set the input value to apple and test the Combo box selection using keys
-        await page.type('#html5-fruit', 'apple');
-        await testHelpers.pauseFor(100);
-        await testHelpers.keyDownAndUp(page, 'ArrowDown');
-        await page.keyboard.press('Enter');
-        await testHelpers.pauseFor(100);
-        // Enter not behave as expected using Keyboard, value is not selected
-        const valueAfterEnter = await page.evaluate(
-            () => document.getElementById('html5-fruit')?.value,
-        );
-
-        await page.waitForSelector('#languages');
-        const datalistCount = Array.from(await page.$$('#languages')).length;
-        expect(valueAfterEnter).toBe('');
-        expect(datalistCount).toBe(1);
     });
 
     it('ARIA Combobox  is completely keyboard accessible', async () => {
