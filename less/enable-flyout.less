@@ -721,6 +721,10 @@
             .enable-flyout__link {
                 color: black;
 
+                @media (prefers-color-scheme: dark) {
+                    color: white;
+                }
+
                 &::after {
                     filter: none;
                 }
@@ -768,17 +772,3 @@
         left: @hamburger-offset-y;
     }
 }
-
-// @media (prefers-color-scheme: dark) {
-//     // .example main {
-//     //     background: #222222;
-//     //     color: #ccc;
-//     //     #ed1b95
-//     // }
-
-//     @media @desktop {.enable-flyout__body--is-open__level {
-//         background: #641bed;
-//     }
-// }
-
-// }
