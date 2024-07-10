@@ -1,7 +1,8 @@
 <div class="homepage__hero">
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
-      <h1 class="homepage__hero--heading"><?= $title ?></h1>
+      <!-- <h1 class="homepage__hero--heading"><?= $title ?></h1> -->
+       <h1 class="homepage__hero--heading"><img src="/images/accessible-text-svg/logo-enable-pink.svg" /> </h1>
 
       <p>A space for developers to learn and collaborate on making the web accessible.</p>
     </div>
