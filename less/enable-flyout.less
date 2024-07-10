@@ -625,6 +625,11 @@
             background: white;
             color: black;
             width: 100%;
+
+            @media (prefers-color-scheme: dark) {
+                color: white;
+                background: #222;
+            }
         }
 
         &__menu-item {
@@ -648,6 +653,11 @@
                 transform: scale(1.2);
                 font-weight: bold;
                 background: white;
+
+                @media (prefers-color-scheme: dark) {
+                    color: white;
+                    background: #222;
+                }
             }
         }
 
@@ -701,6 +711,11 @@
             color: black;
             text-align: center;
 
+            @media (prefers-color-scheme: dark) {
+                color: white;
+                background: #222;
+            }
+
             .enable-flyout__open-level-button,
             .enable-flyout__close-level-button,
             .enable-flyout__link {
@@ -753,3 +768,17 @@
         left: @hamburger-offset-y;
     }
 }
+
+// @media (prefers-color-scheme: dark) {
+//     // .example main {
+//     //     background: #222222;
+//     //     color: #ccc;
+//     //     #ed1b95
+//     // }
+
+//     @media @desktop {.enable-flyout__body--is-open__level {
+//         background: #641bed;
+//     }
+// }
+
+// }
