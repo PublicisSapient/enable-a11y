@@ -34,7 +34,7 @@
                If you take a petabyte's worth of 1GB flash drives and lined them up end to end, they would stretch over 92
                football fields.<br />
                You can have 4,000 digital photos everyday for the rest of your life.<br/>
-               Sources fo this image are Lifewire.com, Blogs.loc.gov and cobaltiron.com.
+               Sources of this image are Lifewire.com, Blogs.loc.gov and cobaltiron.com.
             </p>
          </div>
       </details>
