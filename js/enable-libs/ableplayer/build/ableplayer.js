@@ -1601,7 +1601,7 @@ var AblePlayerInstances = [];
 			var groups = [];
 			groups.push('keyboard');
 			if (this.lyricsMode) {
-				groups.push('transcript');
+			groups.push('transcript');
 			}
 			return groups;
 		}
@@ -5577,6 +5577,19 @@ var AblePlayerInstances = [];
 					this.$vidcapContainer.append(this.$captionsWrapper);
 				}
 			}
+			// Add cues to this.captions for the current language 
+			for (i = 0; i < this.captions.length; i++) { 
+				if (this.captions[i].language === trackLang) { 
+					this.captions[i].cues = cues; 
+				}
+			}
+			// Do the same for this.tracks 
+			for (i = 0; i < this.tracks.length; i++) { 
+				if (this.tracks[i].language === trackLang) { 
+					this.tracks[i].cues = cues; 
+				}
+			}
+		} else if (this.mediaType === 'audio') {
 			// Add cues to this.captions for the current language 
 			for (i = 0; i < this.captions.length; i++) { 
 				if (this.captions[i].language === trackLang) { 
