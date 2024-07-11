@@ -304,7 +304,7 @@
     {
       "label": "Code label to be associated with input",
       "highlight": "for",
-      "notes": "Ensure the label is properly labelled"
+      "notes": "Ensure the label is properly labeled"
     },
     {
       "label": "Component instructions for the component using aria-describedby",
