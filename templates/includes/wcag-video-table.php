@@ -24,8 +24,8 @@
         <tr>
             <th scope="row">Audio Descriptions</th>
             <td class="rowspan2__top">
-                <span aria-hidden="true">One or the other</span>
-                <span class="sr-only">Use either audio descriptions or transcripts to be single A compliant.</span>
+                
+                <span>Use either audio descriptions or transcripts to be single A compliant.</span>
             </td>
             <td>
                 <img class="compliance-table__icon" src="images/checkmark.svg" alt="required">

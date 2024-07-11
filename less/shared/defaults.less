@@ -313,6 +313,17 @@ code {
 .compliance-table {
     width: 450px;
     max-width: 100%;
+
+    .has-multi-tables & {
+        vertical-align: top;
+
+        @media @desktop {
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
 }
 
 .compliance-table,
@@ -341,6 +352,15 @@ code {
 
     &__icon {
         width: 20px;
+    }
+}
+
+.has-multi-tables {
+    text-align: center;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
     }
 }
 

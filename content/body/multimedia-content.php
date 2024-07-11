@@ -8,10 +8,11 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
   What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
 
+  <div class="has-multi-tables">
   <?php include "includes/wcag-video-table.php"; ?>
 
   <?php include "includes/wcag-audio-table.php"; ?>
-
+</div>
 
 <h2>Captions:</h2
   <p>A text version of speech and other important audio content in a video, allowing it to be accessible to people who
@@ -49,7 +50,7 @@
 While AI has come a long way recently, and can sometimes be very accurate, you still should remediate AI-generated captions since it still produces errors.  AI programs such as <a href="https://github.com/ggerganov/whisper.cpp">Whisper C++</a> can generate well written captions (and can even translate from other languages into English) with greater accuracy than older technologies (e.g. <a href="https://support.google.com/youtube/answer/6373554?hl=en">YouTube's auto-generated captions</a>).  Let's discuss the issues with AI caption programs in detail below.
 </p>
 
-<h4>Background Noise and Music</h4>
+<h3>Do Background Sounds and Music Need Captions?</h3>
 
 <p>
   Some video services like YouTube will generate captions automatically using AI that converts audio to text. While this works reasonably well in when it's just one or two people talking in the video, auto-captioning software can fail when there is a lot of background music and noise (this is especially true with YouTube auto-generated captions).  Programs like Whisper C++ are much better in these situations, but can mess up the timing of the captions in certain situations. And while Whisper C++ can do a good job with music lyrics in some situations, it depends on the music sometimes.  Also Whisper C++ can sometimes hallucinate, which is another reason to double check its work.
