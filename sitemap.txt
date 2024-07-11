@@ -16,6 +16,7 @@ https://www.useragentman.com/enable/form.php
 https://www.useragentman.com/enable/heading.php
 https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/img.php
+https://www.useragentman.com/enable/infographic.php
 https://www.useragentman.com/enable/input-mask.php
 https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/listbox.php
