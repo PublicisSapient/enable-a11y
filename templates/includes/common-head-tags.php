@@ -40,7 +40,11 @@
   rel="stylesheet"
   href="css/pause-animations-demo.css" />
 
-  <link id="pause-anim-css"
+<link id="pause-anim-css"
   rel="stylesheet"
   href="css/pause-anim-control.css" />
+
+<link id="enable-toc-css"
+  rel="stylesheet"
+  href="css/enable-toc.css" />
 
