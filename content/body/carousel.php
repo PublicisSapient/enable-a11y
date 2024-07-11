@@ -1,6 +1,6 @@
 <p>
-  Carousels are a list of content panels that mouse user can cycle through using arrow controls and panel indicator.
-  Usually carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
+  Carousels are a list of content panels that a mouse user can cycle through using arrow controls and panel indicators.
+  Usually, carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
   They exist to cram as
   much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
     Fold</a>" real estate on websites. Although <a href="https://vwo.com/blog/is-above-the-fold-really-dead/">it is
@@ -20,19 +20,25 @@
   </ul>
 
 <p>
-  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarentee</a>.
+  That said, there are times when as a web developer you are asked to implement an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarantee</a>.
   Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
   the
-  code walkthrough below will contain information developers need to implement accessible carosuels regardless of the
+  code walkthrough below will contain information developers need to implement accessible carousels regardless of the
   carousel frameworks being used. If the developer is making a carousel from scratch, they can use the NPM module that
   makes Glider.js accessible (see below).
 </p>
 
 <h2>Solution 1: Treat The Carousel Like A List of Controls.</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is the best solution when you can guarentee there will be one interactive/keyboard focusable element in every carousel panel.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This solution is the best solution when you can guarantee there will be one interactive/keyboard focusable element in every carousel panel.",
+]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>
@@ -94,8 +100,8 @@
           alt="A man with a mullet and a maniacal face holding a sword in the middle of a field.">
         <div class="enable-carousel__slide-copy">
           <h2 id="slide03-title" class="enable-carousel__slide-heading">Samurai Cop</h2>
-          <p>The story of a cop with an epic mullet and a samuari sword who, along with his cool
-            parner, take on a gang of cocaine smugglers in early '90's Los Angeles.
+          <p>The story of a cop with an epic mullet and a samurai sword who, along with his cool
+            partner, take on a gang of cocaine smugglers in early '90's Los Angeles.
           </p>
           <a class="enable-carousel__slide-cta" href="https://en.wikipedia.org/wiki/Samurai_Cop"
             aria-describedby="slide03-title">Learn More</a>
@@ -128,7 +134,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -164,7 +170,7 @@
     {
       "label": "Ensure the previous and next buttons are hidden to mobile screen readers",
       "highlight": "aria-hidden",
-      "notes": "Since mobile screenreaders don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
+      "notes": "Since mobile screen readers don't use a keyboard, we must hide the previous and next CTAs using aria-hidden to remove them from the accessibility API."
     },
     {
       "label": "Initialize the carousel via JavaScript",
@@ -193,9 +199,13 @@
 
 <h2>Solution 2: Treat The Carousel Like A List of Content</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'This solution is best to use when you don\'t if each panel will have an interactive/keyboard focusable control in every panel.',
+]); ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <p>
@@ -212,7 +222,7 @@
   <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide">«</button>
-    <div id="announcements-carousel" tabindex="0" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
+    <div id="announcements-carousel" tabindex="-1" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">
       <div class="enable-carousel__slide" aria-labelledby="example2__slide01-title example2__slide-01-desc" >
         <div class="enable-carousel__slide-copy  enable-carousel__slide-copy--variation1">
           <h2 id="example2__slide01-title" class="enable-carousel__slide-heading" >Hours of Operation Change</h2>
@@ -265,7 +275,7 @@
 
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -296,18 +306,11 @@
 </script>
 
 
-<?= includeNPMInstructions(
-    'enable-carousel', 
-    array(
-    ),
-    'enable-carousel',
-    false, 
-    array(
-      "es6Notes" => "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
-      "otherSampleCode" => "// Note that this component doesn't currently work when<br />// new components are added after page load.",
-
-      "needsGlider" => true,
-      "customInit" => "../content/code-fragments/carousel-init.js"
-    )
-  ) 
-?>
+<?= includeNPMInstructions("enable-carousel", [], "enable-carousel", false, [
+    "es6Notes" =>
+        "<p><em><strong>Note:</strong> If you want to have the skip links like in the example above, please ensure you also include the <a href=\"skip-link.php#npm-instructions\">NPM module for skip links as well</a>.</em></p>",
+    "otherSampleCode" =>
+        "// Note that this component doesn't currently work when<br />// new components are added after page load.",
+    "needsGlider" => true,
+    "customInit" => "../content/code-fragments/carousel-init.js",
+]) ?>

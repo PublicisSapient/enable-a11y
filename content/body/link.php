@@ -25,7 +25,7 @@
 
 <h2>Native HTML5</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Everyone who took basic HTML knows how to code these, but there are a few things below that you may have never known
@@ -43,14 +43,14 @@
     This paragraph has a few native
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">HTML5 links</a>
     in it. It is best to use native, non-ARIA links because they are
-    guarenteed to be used in
+    guaranteed to be used in
     <a href="https://en.wikipedia.org/wiki/Netscape_Navigator">older browsers</a>
     and <a href="https://en.wikipedia.org/wiki/Wget">other user agents</a>.
   </p>
 
 </div>
 
-<?php includeShowcode("html5-examples")?>
+<?php includeShowcode("html5-examples"); ?>
 
 <script type="application/json" id="html5-examples-props">
 {
@@ -66,17 +66,15 @@
 <h2>Links That "Look Like Buttons"</h2>
 
 <p>
-  There are many times where you want a CTA to stick out from the rest of the text, maybe even covering a more prominent
+  There are many times when you want a CTA to stick out from the rest of the text, maybe even covering a more prominent
   and bigger area on the screen. If you make the CTA look like a button, you are being dishonest: it <em>looks</em> like
-  a button, but its not since it has a URL associated with it. In order to distinguish this from other buttons, we
-  should make a small change to it, like adding a right pointing chevron to the CTA like the example below:
+  a button, but it's not since it has a URL associated with it. To distinguish this from other buttons, we
+  should make a small change to it, like adding a right-pointing chevron to the CTA like the example below:
 </p>
 
-<?php
-    include 'includes/hero-example.php';
-?>
+<?php include "includes/hero-example.php"; ?>
 
-<?php includeShowcode("hero-example")?>
+<?php includeShowcode("hero-example"); ?>
 <script type="application/json" id="hero-example-props">
 {
   "replaceHtmlRules": {},
@@ -88,7 +86,7 @@
     {
       "label": "Use an aria-label to give context to screen reader users",
       "highlight": "aria-label",
-      "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Austrailia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
+      "notes": "Using the label \"Learn More\" doesn't give screen reader users a lot of context about what they are going to learn about, especially when the are tabbing around the user interface with their keyboard.  In order to work around this, we add an <code>aria-label</code> to give that context.  There are other ways to solve this issue - <a href=\"https://www.visionaustralia.org/\">Vision Australia</a> has a great rundown of these options in their article, <a href=\"https://www.visionaustralia.org/services/digital-access/blog/how-to-make-read-more-links-accessible\">How to make \"Read more\" links accessible</a>."
     },
     {
       "label": "Add chevron via CSS",
@@ -103,7 +101,7 @@
 <h2>Breadcrumbs</h2>
 
 <p>
-  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the heirarchy that
+  Breadcrumbs are usually at the top of the page after the main nav. Users can use them to navigate the hierarchy where
   the current page resides.
 </p>
 
@@ -124,7 +122,7 @@
   </nav>
 </div>
 
-<?php includeShowcode("breadcrumb-example")?>
+<?php includeShowcode("breadcrumb-example"); ?>
 
 <script type="application/json" id="breadcrumb-example-props">
 {
@@ -137,7 +135,7 @@
   {
     "label": "Add an aria label to the nav",
     "highlight": "aria-label",
-    "notes": "This will make it easy for screen reader users to differentiate the breadcrumb navigation from other bits of navigation on the page, espeecially if they would like to jump to it using NVDA's Element List, VoiceOver's rotor, or anything similar in any other screen reader being used."
+    "notes": "This will make it easy for screen reader users to differentiate the breadcrumb navigation from other bits of navigation on the page, especially if they would like to jump to it using NVDA's Element List, VoiceOver's rotor, or anything similar in any other screen reader being used."
   },
   {
     "label": "Use aria-current for self referring links",
@@ -161,7 +159,7 @@
   </p>
 </div>
 
-<?php includeShowcode("open-new-window-example")?>
+<?php includeShowcode("open-new-window-example"); ?>
 
 <script type="application/json" id="open-new-window-example-props">
 {
@@ -176,7 +174,7 @@
 
 <h2>Using ARIA</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
   I am not sure why anyone would code a link with anything but an <code>&lt;a&gt;</code> tag, but
@@ -214,7 +212,7 @@
   </p>
 </div>
 
-<?php includeShowcode("aria-examples")?>
+<?php includeShowcode("aria-examples"); ?>
 
 <script type="application/json" id="aria-examples-props">
 {
@@ -230,7 +228,7 @@
       "notes": "This makes the fake links accessible."
     },
     {
-      "label": "Create Javascript events",
+      "label": "Create JavaScript events",
       "highlight": "%JS% ariaLinkShim",
       "notes": "This code will activate the links using mouse clicks or hitting the ENTER key"
     },

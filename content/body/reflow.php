@@ -1,7 +1,7 @@
 <p>
   When Reflow was first introduced into WCAG 2.1, the wording of the requirement was a little hard for some people to understand. <strong>Basically,
-  content should be understandable without the user having to scroll in two dimensions (or, in developer terms, make your layout responsive).</strong> Exceptions to this is content
-  which requires the given layout in order to preserve the content's meaning, including:
+  content should be understandable without the user having to scroll in two dimensions (or, in developer terms, make your layout responsive).</strong> Exceptions to this are content
+  that requires the given layout in order to preserve the content's meaning, including:
 </p>
 
 <ul>
@@ -23,11 +23,11 @@
 </ol>
 
 <p>
-  Why were these numbers chosen?  At the time this WCAG requirement was written, 1280x1024 resolution displays were considered the average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the same as looking at the website at a 320x256 pixel resolution.  While some may think this viewport view is smaller than any user will actually use, it's how the guideline is written.  Besides, if you don't have any reflow issues at this viewport, its very likely you won't have any at any other viewport size larger than that.
+  Why were these numbers chosen?  At the time this WCAG requirement was written, 1280x1024 resolution displays were considered the average size of a desktop computer display, and if you zoomed a website at that resolution by 400%, it would be the same as looking at the website at a 320x256 pixel resolution.  While some may think this viewport view is smaller than any user will actually use, it's how the guideline is written.  Besides, if you don't have any reflow issues at this viewport, it's very likely you won't have any at any other viewport size larger than that.
 </p>
 
 <p>
-  Here are a list of common scenarios we have had to fix.  If you have any others you may want to add, please feel free to go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> to report one your would like to add.
+  Here is a list of common scenarios we have had to fix.  If you have any others you may want to add, please feel free to go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> to report one you would like to add.
 </p>    
 
 
@@ -39,12 +39,16 @@
 
 <!--
 <?php ob_start(); ?>
-<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
+<p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guideline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes', $copy, 'Example of a Reflow Issue in horizontal navigation', 'Reflow Problem');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes",
+    $copy,
+    "Example of a Reflow Issue in horizontal navigation",
+    "Reflow Problem",
+); ?>
 
 <p>This is obviously a Reflow violation.  But how do we fix this?</p>
 
@@ -59,9 +63,13 @@
 <p>The navigation in this iframe differs from the previous one in that it doesn't scroll in two directions, thus avoiding the WCAG reflow violation.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&className=reflow-examples__remove-overflow', $copy, 'Example of a Reflow Issue fixed by removing overflow scroll CSS', 'Solution 1: Let The Browser Do The Work');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&className=reflow-examples__remove-overflow",
+    $copy,
+    "Example of a Reflow Issue fixed by removing overflow scroll CSS",
+    "Solution 1: Let The Browser Do The Work",
+); ?>
 
 <h3>Solution #2: Use Arrow Buttons to Access Offscreen Content</h3>
 
@@ -77,11 +85,15 @@
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
 
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 'isIframe=yes&hasArrows=true&className=reflow-examples__show-arrow-buttons', $copy, 'Example of a Reflow Issue fixed by putting in arrow buttons', 'Solution 2: Use Arrow Buttons');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&hasArrows=true&className=reflow-examples__show-arrow-buttons",
+    $copy,
+    "Example of a Reflow Issue fixed by putting in arrow buttons",
+    "Solution 2: Use Arrow Buttons",
+); ?>
 
-<p>Note that we made put set <code>tabindex="-1"</code> on the arrow buttons, since they are not needed for keyboard users.</p>
+<p>Note that we set <code>tabindex="-1"</code> on the arrow buttons since they are not needed for keyboard users.</p>
 
 
 <h3 id="drawer-fix">Solution #3: Use a Drawer to Expose Content</h3>
@@ -94,12 +106,13 @@
 <p>The navigation in this iframe differs from the previous ones in that it only appears when users click the dropdown, thereby avoiding reflow issues.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-issue.php', 
-    'isIframe=yes&hasDropdown=true&className=reflow-examples__remove-overflow', 
-    $copy,'Example of a Reflow Issue fixed by using a dropdown to display the navigation bar',
-    'Solution 3: Use a Drawer');
-?>
+<?php includeMobileIframe(
+    "reflow__example-of-issue.php",
+    "isIframe=yes&hasDropdown=true&className=reflow-examples__remove-overflow",
+    $copy,
+    "Example of a Reflow Issue fixed by using a dropdown to display the navigation bar",
+    "Solution 3: Use a Drawer",
+); ?>
 
 <p>Alternatively, you can put the content in a <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a>.</p>
 
@@ -112,10 +125,10 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp", "")?>
+  <?php pictureWebpPng("images/reflow/plp", ""); ?>
 
   <figcaption>Figure 1. Screenshot of the desktop view of a typical product listing page. On the left-hand side, there
-    is a list of checkboxes. On the right-hand is a list of product tiles (in this case, showing a list of movies on physical media such as DVD, Blu-ray and VHS.</figcaption>
+    is a list of checkboxes. On the right-hand is a list of product tiles (in this case, showing a list of movies on physical media such as DVD, Blu-ray, and VHS.</figcaption>
 </figure>
 
 <p>
@@ -127,19 +140,19 @@
 <p>
   You could use the <a href="#drawer-fix">Drawer Reflow Fix</a> described earlier, but doing this would cause a lot of
   scrolling up and down. Also, since implementing the dropdown solution would mean the product tiles would not appear on the screen at the same time and the filters due to the small screen size, sighted users may not
-  understand what the filters are actually doing (since, in the desktop view, clicking the checkboxes in the filter list would immediately
+  understand what the filters are doing (since, in the desktop view, clicking the checkboxes in the filter list would immediately
   update the product tile section with the filtered results).
 </p>
 
 <p>
   To address these issues, most projects I have worked on (and many e-commerce sites I have used) have implemented
-  putting the filters in a modal. The modal should appear when the user clicks on a button labelled something like
+  putting the filters in a modal. The modal should appear when the user clicks on a button labeled something like
   "Filter Results":
 </p>
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp--mobile", "")?>
+  <?php pictureWebpPng("images/reflow/plp--mobile", ""); ?>
 
   <figcaption>Figure 2. Screenshot of the mobile view of the same product listing page. The list of filter checkboxes is
     replaced with a "Filter Results" button above the product tiles.</figcaption>
@@ -151,14 +164,14 @@
 </p>
 <figure>
 
-  <?php pictureWebpPng("images/reflow/plp--mobile--filter-modal", "")?>
+  <?php pictureWebpPng("images/reflow/plp--mobile--filter-modal", ""); ?>
 
   <figcaption>Figure 3. Screenshot of the same mobile view of the same product listing page, showing a modal containing
     the list of filter checkboxes in the desktop view. This modal appears when the "Filter Results" button is
     pressed.</figcaption>
 </figure>
 
-<p>You could also put the filter UI in a the mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>
+<p>You could also put the filter UI in a mobile version of the <a href="multi-level-hamburger-menu.php">Flyout Hamburger Menu</a> if you like that look better.</p>
 
 <h2>Common Reflow Problem #3: Using a Carousel</h2>
 
@@ -168,7 +181,7 @@
 
 <figure>
 
-  <?php pictureWebpPng("images/reflow/product-tile-list--desktop", "")?>
+  <?php pictureWebpPng("images/reflow/product-tile-list--desktop", ""); ?>
 
   <figcaption>Figure 4: Screenshot of a list of four product tiles that use up the full width of the browser viewport.</figcaption>
 </figure>
@@ -187,6 +200,11 @@
 <p>The navigation in this iframe scrolls vertically, while the rest of the page scrolls horizontally.  It violates the <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">WCAG Reflow guidline</a>.</p>
 <?php $copy = urlencode(ob_get_contents()); ?>
 -->
-<?php
-  includeMobileIframe('reflow__example-of-product-tile-carousel.php', 'isIframe=yes', $copy, 'Example of using Indicators in a carousel to resolve reflow issues', 'Using a Carousel');
+<?php includeMobileIframe(
+    "reflow__example-of-product-tile-carousel.php",
+    "isIframe=yes",
+    $copy,
+    "Example of using Indicators in a carousel to resolve reflow issues",
+    "Using a Carousel",
+);
 ?>

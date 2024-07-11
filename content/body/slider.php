@@ -7,7 +7,7 @@
                     heavily modified
                     by the Enable project to be accessible, for both desktop and mobile users.</li>
                 <li>Since both of the method changing the native <code>&lt;input type="range"&gt;</code> slider values
-                    cannot be implemented via JS for both Voiceover and Talkback, an alternative UI was made using
+                    cannot be implemented via JavaScript for both Voiceover and Talkback, an alternative UI was made using
                     <a href="38-visible-on-focus.php">visible on focus</a> components. <strong>This alternative UI is
                         only visible when using a mobile screen reader.</strong>
                 </li>
@@ -16,18 +16,18 @@
 
 <p>
   This page shows two examples of a slider: an HTML5 one implemented with <code>&lt;input type="range"&gt;</code> and
-  an ARIA one using the <code>slider</code> role and fair amount of JavaScript. While the latter solution
-  is accessible on both desktop and mobile, it works so diffently than the native one in mobile devices due
-  to JavaScript limitations, and is a great example of "just because you <em>can</em> so something, it doesn't
+  an ARIA one using the <code>slider</code> role and a fair amount of JavaScript. While the latter solution
+  is accessible on both desktop and mobile, it works so differently than the native one in mobile devices due
+  to JavaScript limitations, and is a great example of "just because you <em>can</em> do something, it doesn't
   mean you should".
 </p>
 
 <h2>A Dead-Simple HTML5 Slider</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
-  <strong>This is by the preferred method of implementing a slider.</strong>
+  <strong>This is the preferred method of implementing a slider.</strong>
   It "just works". Note that the UI for mobile screen reader users is very different
   between the two major operating systems:
 </p>
@@ -61,16 +61,23 @@
 
 
 
-<?php includeShowcode("html-example", "", "", "", true, 3, '
+<?php includeShowcode(
+    "html-example",
+    "",
+    "",
+    "",
+    true,
+    3,
+    '
             
             <p>
-                Although we give basic information cover how to style HTML5 Sliders, we do gloss over some minor 
+                Although we give basic information covering how to style HTML5 Sliders, we do gloss over some minor 
                 cross-browser styling issues. More information on making them
                 look super pretty can be found here:
             </p>
 
             <ul>
-                <li><a href="https://www.cssportal.com/style-input-range/">Style Input Range</a> on-line generator tool can
+                <li><a href="https://www.cssportal.com/style-input-range/">Style Input Range</a> online generator tool can
                     get you up and running quickly.</li>
                 <li><a href="https://css-tricks.com/sliding-nightmare-understanding-range-input/">A Sliding Nightmare:
                         Understanding the Range Input</a>
@@ -81,14 +88,15 @@
                     Microsoft Edge now relies on the same rendering engine Google Chrome uses). Recommended if you are
                     trying to work out the cross-browser quirks between the two implementations.</li>
             </ul>
-        ')?>
+        ',
+); ?>
 <script type="application/json" id="html-example-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Use an input of type range",
       "highlight": "type=\"range\"",
-      "notes": "This can receive keyboard focus for free, since its a form element.  No JS required."
+      "notes": "This can receive keyboard focus for free, since its a form element.  No JavaScript required."
     },
     {
       "label": "Add the min, max, step, and default value of the slider",
@@ -98,7 +106,7 @@
     {
       "label": "Set the slider's label",
       "highlight": "for",
-      "notes": "Just like any inteactive component, it needs a label"
+      "notes": "Just like any interactive component, it needs a label"
     },
     {
       "label": "Set an onchange event to display current value.",
@@ -111,7 +119,7 @@
     {
       "label": "Set the output tag's role to presentation",
       "highlight": "role=\"presentation\"",
-      "notes": "Since this is the value of the range element and it is already announced when screen reader users inteact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
     },
     {
       "label": "Style the slider's track",
@@ -124,7 +132,7 @@
       "notes": "Again, different selectors for WebKit and Blink based browsers vs. Firefox"
     },
     {
-      "label": "Style specfic browser implementations",
+      "label": "Style specific browser implementations",
       "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\"range\"]::-moz-range-thumb)",
       "notes": "There are certain layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
 
@@ -135,12 +143,12 @@
 
 <h2>An HTML5 Slider With Min and Max Values</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Sometimes, the need comes up to have a slider with minimum and maximum values. Even though one single HTML5 range
   element
-  can't do this, it is possible to combine two of them, with a little bit of CSS and surprisingly tiny amount of JS, to
+  can't do this, it is possible to combine two of them, with a little bit of CSS and a surprisingly tiny amount of JavaScript, to
   achieve
   this effect.
 </p>
@@ -148,9 +156,9 @@
 <p>
   I cannot claim credit for this solution -- it's the work of the
   hugely talented <a href="https://css-tricks.com/author/thebabydino/">Ana Tudor</a>. Anyone interested
-  in bleeding edge CSS and animation work should definitely check out <a
+  in bleeding-edge CSS and animation work should definitely check out <a
     href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask">Ana's Codepen</a>
-  and/or <a href="https://www.patreon.com/anatudor">donating to help fund her research and mad scientist
+  and/or <a href="https://www.patreon.com/anatudor">donate to help fund her research and mad scientist
     inclinations</a>.
 </p>
 
@@ -189,7 +197,7 @@
 
 
 
-<?php includeShowcode("html-multi-example")?>
+<?php includeShowcode("html-multi-example"); ?>
 <script type="application/json" id="html-multi-example-props">
 {
   "replaceHtmlRules": {},
@@ -232,7 +240,7 @@
     {
       "label": "Set the output tag's role to presentation",
       "highlight": "role=\"presentation\"",
-      "notes": "Since this is the value of the range element and it is already announced when screen reader users inteact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
+      "notes": "Since this is the value of the range element and it is already announced when screen reader users interact with it, setting the <strong>output</strong> tag's role of <strong>presentation</strong> will prevent this value from being announced twice.  (the <strong>output</strong> tag is, my default, an ARIA live region).  "
     },
     {
       "label": "Style the slider's control",
@@ -270,7 +278,7 @@
       "notes": "This CSS ensures that the container's <code>::after</code> pseudo-element acts as the area of the track that is in between the two slider controls.  For a detailed explanation as to why, see <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/#the-tricky-part\">The Tricky Part</a> of Ana Tudor's article <a href=\"https://css-tricks.com/multi-thumb-sliders-particular-two-thumb-case/\">Multi-Thumb Sliders: Particular Two-Thumb Case</a>."
     },
     {
-      "label": "Style specfic browser implementations",
+      "label": "Style specific browser implementations",
       "highlight": "%CSS% enable-slider-style~ @supports selector(input[type=\"range\"]::-moz-range-thumb)",
       "notes": "There are small layout differences between Firefox and Blink/WebKit based browsers.  To work around this, I have used a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@supports#selector\">@supports selector()</a> to give specific styles to the Firefox implementation.  This is supported by all browsers except Safari right now, so it is best to target Firefox when adding differing styles."
 
@@ -281,8 +289,16 @@
 
 <h2>ARIA Sliders</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'I wouldn\'t use this solution in production. The HTML5 range input is a much better solution.')) ?>
-<?php includeStats(array('isNPM' => true, 'comment' => 'Despite this, I have implemented it as an NPM module in case it is useful for anyone.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        'I wouldn\'t use this solution in production. The HTML5 range input is a much better solution.',
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+    "comment" =>
+        "Despite this, I have implemented it as an NPM module in case it is useful for anyone.",
+]); ?>
 
 <p>
   This NPM module is easily the one that took the longest to do.
@@ -297,7 +313,7 @@
   <li>
     I also refactored it to work with mobile. I couldn't use the same UI as the native
     <code>&lt;input type="range"&gt;</code>,
-    since using either iOS's vertical swiping and Android's hardware volume buttons to control the slider is impossible
+    since using either iOS's vertical swiping or Android's hardware volume buttons to control the slider is impossible
     today.
   </li>
   <li>
@@ -306,11 +322,10 @@
 </ul>
 
 <p>
-  I honestly struggled as to whether it was a Good Idea to share this component to the outside world. In the end, I am
+  I honestly struggled as to whether it was a Good Idea to share this component with the outside world. In the end, I am
   posting this here as a great example of <a href="https://www.w3.org/TR/using-aria/#rule1">The First Rule of ARIA</a>.
   I do think, however, that it shows an interesting use case for the <a href="skip-link.php">mobile skip links</a> as
-  mobile
-  only buttons, which could be used in something else in the future.
+  mobile-only buttons, which could be used in something else in the future.
 </p>
 
 <h3>A note on all ARIA sliders on this page:</h3>
@@ -320,22 +335,22 @@
   JavaScript library will use to create the DOM elements:
 </p>
 
-<?php includeShowcode("template-code")?>
+<?php includeShowcode("template-code"); ?>
 <script type="application/json" id="template-code-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Insert dynamic values placeholders in the template",
       "highlight": "\\$\\{[^}]+\\}",
-      "notes": "These are the dymamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
+      "notes": "These are the dynamic parts of the template. These values will be populated by the JavaScript.  Note the format is similar to that of <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\">JavaScript template strings</a>"
     },
     {
       "label": "Create an interpolation function",
       "highlight": "%FILE% js/modules/interpolate.js",
-      "notes": "This code will make a regular Javascript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
+      "notes": "This code will make a regular JavaScript string act like a template string.  It is used in the next step. <a href=\"interpolate.php\">More information about the Enable interpolate module</a>"
     },
     {
-      "label": "Insert dymanic values into the template using the interpolation function.",
+      "label": "Insert dynamic values into the template using the interpolation function.",
       "highlight": "%FILE% js/modules/enable-slider.js ~ const handle =[^;]*;",
       "notes": "This takes the <code>innerHTML</code> of the template element and runs it through the interpolation function of the last step.   The result is then injected into the DOM of page."
     }
@@ -355,14 +370,14 @@
 
 
 
-<?php includeShowcode("aria-example1")?>
+<?php includeShowcode("aria-example1"); ?>
 <script type="application/json" id="aria-example1-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Place ARIA slider roles in document",
       "highlight": "%INLINE% aria-example1 ||| role=\"slider\"",
-      "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\"0\"</strong> and some JS routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
+      "notes": "We used a <strong>button</strong> tag to ensure it gets keyboard focus for free.  If you use a <strong>div</strong>, you would need to add a <strong>tabindex=\"0\"</strong> and some JavaScript routines to ensure it worked correctly.  It's definitely worth using a <strong>button</strong> instead."
     },
     {
       "label": "Add the min, max and current values that the slider can be set to, as well as the current value",
@@ -423,7 +438,7 @@
 
 
 
-<?php includeShowcode("aria-example2")?>
+<?php includeShowcode("aria-example2"); ?>
 <script type="application/json" id="aria-example2-props">
 {
   "replaceHtmlRules": {},
@@ -511,4 +526,8 @@
   </template>
 </div>
 
-<?= includeNPMInstructions('enable-slider', array('js/modules/interpolate.js'), 'enable-slider') ?>
+<?= includeNPMInstructions(
+    "enable-slider",
+    ["js/modules/interpolate.js"],
+    "enable-slider",
+) ?>

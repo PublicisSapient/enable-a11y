@@ -127,7 +127,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -441,14 +441,14 @@ code {
   width: 20px;
 }
 iframe:focus {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 iframe:focus:not(:focus-visible) {
   outline: none !important;
 }
 iframe:focus-visible {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 /*
@@ -523,16 +523,16 @@ iframe:focus-visible {
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 *:focus {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 *:focus:not(:focus-visible) {
   outline: none;
 }
 *:focus-visible {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
@@ -630,17 +630,16 @@ header .search-form,
   top: 1em;
   right: 1em;
 }
-nav {
+.site__nav {
   position: static;
   background: #000000;
-  padding: 0.4em;
   line-height: 1.6;
 }
-nav ul li {
+.site__nav ul li {
   display: inline-block;
   margin-right: 1em;
 }
-nav ul li a {
+.site__nav ul li a {
   color: white;
   text-decoration: none;
 }

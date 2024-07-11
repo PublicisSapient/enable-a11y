@@ -12,7 +12,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const inputMask = new function () {
+const inputMask = new (function() {
     this.bemPrefix = 'enable-input-mask';
 
     const inputClass = `${this.bemPrefix}__input`;
@@ -302,7 +302,7 @@ const inputMask = new function () {
     }
 
     const getMaskedValue = (inputEl) => {
-        const { dataset, value } = inputEl;
+        const { dataset, value = '' } = inputEl;
         const { mask } = dataset;
         const valueArr = value.split('');
         const maskArr = mask.split('');
@@ -466,7 +466,7 @@ const inputMask = new function () {
     }
 
     const getPreviousValue = (el) => {
-        return el.dataset[getDatasetAttr('PreVal')];
+        return el.dataset[getDatasetAttr('PreVal')] || '';
     }
 
     const populateMasks = () => {
@@ -492,5 +492,4 @@ const inputMask = new function () {
 
     this.init();
 
-}
-
+})

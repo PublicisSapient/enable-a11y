@@ -1,5 +1,11 @@
         <?php
-          global $walkthroughIndex;
+        global $walkthroughIndex;
+
+        if ($displayOuterHTML) {
+            $showcodeExampleAttribs = 'data-showcode-display-outerhtml="true"';
+        } else {
+            $showcodeExampleAttribs = "";
+        }
         ?>
 
         <div class="showcode__container">
@@ -9,25 +15,23 @@
               class="showcode__heading">Code Walkthrough of the Above Example</h<?= $headingLevel ?>>
 
             <p>
-              Below is the HTML of the above example. Use the dropdown
-              to highlight each of the individual steps that makes the
-              example accessible.
+              Below is the HTML of the above example. Use the dropdown to highlight each of the individual steps that make the example accessible.
             </p>
 
             <?= $prologue ?>
-            <?php endif ?>
+            <?php endif; ?>
           </div>
 
           <?php if ($isInteractive): ?>
           <?= $extra ?>
-          <?php endif ?>
+          <?php endif; ?>
 
           <?php if ($isInteractive): ?>
               <div class="showcode__ui">
-            <?php endif ?>
+            <?php endif; ?>
             <?php if ($isInteractive): ?>
               <div id="<?= $id ?>__steps" class="showcode__steps"></div>
-            <?php endif ?>
+            <?php endif; ?>
               <div id="<?= $id ?>__changes-alert" class="showcode__changes-alert sr-only" role="alert" aria-live="assertive"></div>
               <div class="showcode__notes-container " >
                 <div id="<?= $id ?>__notes" class="showcode__notes " ></div>
@@ -49,7 +53,7 @@
                 <div class="showcode__scroll-message">☜ Scroll to read full source ☞</div>
               </div>
               <?php if ($isInteractive): ?>
-              </div><?php endif ?>
+              </div><?php endif; ?>
 
 
           <div class="showcode">
@@ -60,12 +64,12 @@
                         data-showcode-props="<?= $id ?>-props"
                         tabindex="0"
                         aria-describedby="<?= $id ?>__example-desc"
+                        <?= $showcodeExampleAttribs ?>
                     >
                     </code>
                 </pre>
           </div>
         </div>
 
-        <?php
-        $walkthroughIndex = $walkthroughIndex + 1;
-        ?>
+        <?php $walkthroughIndex = $walkthroughIndex + 1;
+?>

@@ -3,27 +3,29 @@
      
 
       <p>
-        There are two ways to make accessible forms: the native HTML5 way, or using JavaScript.  You would think 
+        There are two ways to make accessible forms: the native HTML5 way or using JavaScript.  You would think 
         it would be a no-brainer to just code things the HTML5 way and call it a day instead of creating custom 
-        code.  However, many designers don't like the design of native HTML5 error message "bubbles", and want/demand 
-        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have laballed
-        both of the solution below good for new and existing work: the HTML5 one is good if you want to implement 
-        validation quickly, and the custom JavaScript implementation is good if you want design flexibility.</p>
+        code.  However, many designers don't like the design of the native HTML5 error message "bubbles", and want or demand 
+        that flexibility.  Since there doesn't seem to be any easy cross-browser workaround for this, I have labeled
+        both of the solutions below as good for new and existing work: the HTML5 one is good if you want to implement 
+        validation quickly, and the custom JavaScript implementation is good if you want design flexibility.
+      </p>
 
 
       
 
       <h2>Using native HTML5 validation</h2>
 
-      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is great if you want to implement validation quickly and don\'t care about the styling restrictions of native HTML5 validation.' )) ?>
+      <?php includeStats([
+          "isForNewBuilds" => true,
+          "comment" =>
+              'This is great if you want to implement validation quickly and don\'t care about the styling restrictions of native HTML5 validation.',
+      ]); ?>
 
       <p>
-        You can use just <code>required</code> and
-        <code>pattern</code> attributes on HTML forms to do client side
-        validation <strong>without JavaScript</strong>.  However, in order to make the messaging
-        more accessible, we have added a tiny bit of JS code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) in order to ensure the error messages
-        themselves are more accessible to screen reader users (see the last step in the code
-        walkthrough for details)
+        You can use just the <code>required</code> and <code>pattern</code> attributes on HTML forms to do client-side validation <strong>without JavaScript</strong>. 
+        However, to make the messaging more accessible, we have added a tiny bit of JavaScript code (inspired by <a href="https://pauljadam.com/guides/html5-form.html">this accessible HTML5 forms code demo by Paul J Adam</a>) 
+        to ensure the error messages themselves are more accessible to screen reader users (see the last step in the code walkthrough for details).
       </p>
 
       <div id="example1" class="enable-example">
@@ -37,17 +39,17 @@
 
             <div class="enable-form-example__fieldset-inner-container">
               <div class="field-block">
-                <label class="required" for="name_html5">Full Name:</label>
+                <label class="required" for="name_html5">Full Name</label>
                 <input id="name_html5" size="25" type="text" required  autocomplete="name" >
               </div>
 
               <div class="field-block">
-                <label class="required" for="email_html5">E-mail address:</label>
+                <label class="required" for="email_html5">E-mail address</label>
                 <input id="email_html5" size="25" type="email" required autocomplete="email" >
               </div>
 
               <div class="field-block">
-                <label class="required" for="phone_html5">Phone Number:</label>
+                <label class="required" for="phone_html5">Phone Number</label>
                 <input                   id="phone_html5"
                   size="25"
                   type="text"
@@ -70,7 +72,7 @@
 
       
 
-      <?php includeShowcode("example1")?>
+      <?php includeShowcode("example1"); ?>
 
       <script type="application/json" id="example1-props">
       {
@@ -85,7 +87,7 @@
           {
             "label": "All form fields need labels",
             "highlight": "for",
-            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>.  <strong>Note that label tags should never have <code>div</code> tags inside of them</strong> since it is invalid HTML and some screenreader/browser pairs (JAWS with Edge, Voiceover with Safari) may have problems with them."
+            "notes": "Each form field have a <strong>label</strong> tag whose <strong>for</strong> element connects it to the form field via the form field's <strong>id</strong>.  <strong>Note that label tags should never have <code>div</code> tags inside of them</strong> since it is invalid HTML and some screen reader/browser pairs (JAWS with Edge, Voiceover with Safari) may have problems with them."
           },
           {
             "label": "All form fields that are required need the required attribute",
@@ -111,7 +113,7 @@
             "notes": ""
           },
           {
-            "label": "Use Javascript to make the error message text more accessible",
+            "label": "Use JavaScript to make the error message text more accessible",
             "highlight": "%FILE% js/demos/native-form-example.js",
             "notes": "When a form with errors is submitted, focus goes to the first invalid form field.  Unfortunately, some browser/screen reader pairs don't read out the form field label that the error belongs to, so screen reader users may not know what currently has focus.  This script below ensures the form field label is in the error message to tell screen reader users what currently has focus."
           }
@@ -121,26 +123,25 @@
 
       <h2>Using custom validation</h2>
 
-      <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is good if you want custom styling of the error messages')); ?>
-      <?php includeStats(array('isNPM' => true, 'comment' => 'The solution below involves using Enable\'s accessibility.js library to make it easier to code.')) ?>
+      <?php includeStats([
+          "isForNewBuilds" => true,
+          "comment" =>
+              "This solution is good if you want custom styling of the error messages",
+      ]); ?>
+      <?php includeStats([
+          "isNPM" => true,
+          "comment" =>
+              'The solution below involves using Enable\'s accessibility.js library to make it easier to code.',
+      ]); ?>
 
       <p>
-        You can do the custom validation as well, but you have to ensure that
-        when the form submits and there is an error, the first input value with
-        an error receives focus so that keyboard and/or screen reader users can
-        correct mistakes easily.  You also have to ensure that form errors are marked
-        up as <code>&lt;label&gt;</code> tags for the form fields they are associated with.
+        You can do the custom validation as well, but you have to ensure that when the form is submitted and there is an error, the first input value with an error receives focus so that keyboard and/or screen reader users can correct mistakes easily. 
+        You also have to ensure that form errors are marked up as <code>&lt;label&gt;</code> tags for the form fields they are associated with.
       </p>
 
       <p>
-        The following example used
-        <a href="https://jqueryvalidation.org">jQuery.validate()</a> which is
-        not accessible. We do not recommend to use this library for new projects
-        ... it is just used as an example of how we can take existing code and
-        make it accessible. If you want information about how to make forms
-        accessible with JavaScript in the general sense, please read
-        <a           href="https://medium.com/@lsnrae/accessible-form-validation-9fa637ddb0fc"
-          >Alison Walden's excellent article on form validation</a>.
+        The following example used <a href="https://jqueryvalidation.org">jQuery.validate()</a> which is not accessible. We do not recommend using this library for new projects. 
+        It is just used as an example of how we can take existing code and make it accessible. If you want information about how to make forms accessible with JavaScript in the general sense, please read <a href="https://medium.com/@lsnrae/accessible-form-validation-9fa637ddb0fc">Alison Walden's excellent article on form validation</a>.  
       </p>
 
       <div id="example2" class="enable-example">
@@ -153,12 +154,12 @@
               <p class="form-instructions"><span class="required-symbol">*</span> denotes a required field.</p>
 
               <div class="field-block">
-                <label class="required" for="name_js">Full Name:</label>
+                <label class="required" for="name_js">Full Name</label>
                 <input id="name_js" name="name_js" size="25" type="text" required >
               </div>
 
               <div class="field-block">
-                <label class="required" for="email_js">E-mail address:</label>
+                <label class="required" for="email_js">E-mail address</label>
                 <input                   id="email_js"
                   name="email_js"
                   size="25"
@@ -168,7 +169,7 @@
               </div>
 
               <div class="field-block">
-                <label class="required" for="phone_js">Phone Number:</label>
+                <label class="required" for="phone_js">Phone Number</label>
                 <input                   id="phone_js"
                   name="phone_js"
                   size="25"
@@ -184,7 +185,7 @@
               </div>
 
               <div class="field-block">
-                <label for="age-range">Age Range:</label>
+                <label for="age-range">Age Range</label>
                 <select id="age-range">
                   <option>Choose one</option>
                   <option value="a">0 to 18 years old</option>
@@ -201,7 +202,7 @@
 
       
 
-      <?php includeShowcode("example2")?>
+      <?php includeShowcode("example2"); ?>
 
       <script type="application/json" id="example2-props">
       {
@@ -216,7 +217,7 @@
           {
             "label": "Set your form up so that jQuery validate knows that it needs to initialize it onload",
             "highlight": "js-form-validation",
-            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/demos/custom-form-example.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implemtation."
+            "notes": "In this example, we set a class named <strong>js-form-validation</strong>.  Take a look at <a href='js/demos/custom-form-example.js'>the script we are using on this page for this form</a>.  It is commented so you can use this as a model for your own implementation."
           },
           {
             "label": "Put in fieldsets and legends",
@@ -262,7 +263,7 @@
             "notes": ""
           },
           {
-            "label": "Use Javascript to ensure the, when a form with an error is submitted, focus is applied to the first form element with an error",
+            "label": "Use JavaScript to ensure the, when a form with an error is submitted, focus is applied to the first form element with an error",
             "highlight": "%JS% formValidator.init ||| accessibility[^)]*\\)\\;",
             "notes": "In order to do this easily, we use <code>accessibility.applyFormFocus(), which is part of my <a href=\"https://github.com/zoltan-dulac/accessibility.js\">accessibility.js</a> library.  As long as the invalid elements are marked up with <code>aria-invalid</code> after the form is submitted, focus will go to the first invalid element."
           }
@@ -271,12 +272,8 @@
       </script>
 
       
-<?= includeNPMInstructions('accessibility', array(
-    ),
-    null,
-    false, 
-    array(
-      'needsAccessibilityLib' => true
-    )) ?>
+<?= includeNPMInstructions("accessibility", [], null, false, [
+    "needsAccessibilityLib" => true,
+]) ?>
 
     

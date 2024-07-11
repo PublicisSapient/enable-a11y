@@ -1,6 +1,6 @@
-<p>On many websites, I have come across situations were text has been crossed out using the <code>&lt;del&gt;</code> or
-  <code>&lt;strike&gt;</code> tags. Unforunately, most browsers don't expose the role of these tags to screen readers,
-  so text coded with these tags can be confusing. Take for example, the product tile below.
+<p>On many websites, I have come across situations where text has been crossed out using the <code>&lt;del&gt;</code> or
+  <code>&lt;strike&gt;</code> tags. Unfortunately, most browsers don't expose the role of these tags to screen readers,
+  so text coded with these tags can be confusing. Take, for example, the product tile below.
 
 <div id="example1" class="enable-example">
   <a class="product-tile product-tile__bad-example"
@@ -39,7 +39,11 @@
 
 <h2>Solution: Use Visually Hidden Text</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best way to implement style information to screen readers.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is the best way to implement style information to screen readers.",
+]); ?>
 
 <p>
   The most bulletproof way to fix this today that I know of is using visually hidden text to ensure that screen readers know it is old information. <strong>Notice that I am not using <code>del</code>
@@ -76,7 +80,7 @@
 <p>Let's walk through how we ensure this stricken text is read correctly by screen readers and other assistive
   technologies.</p>
 
-<?php includeShowcode("sr-only-text-example")?>
+<?php includeShowcode("sr-only-text-example"); ?>
 <script type="application/json" id="sr-only-text-example-props">
 {
   "replaceHtmlRules": {},
@@ -86,7 +90,7 @@
       "notes": "Note that we use <code>.del</code> and <code>.ins</code> classes to denote deleted and inserted content respectively. We also don't use <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code>.  This is because <code>&lt;mark&gt;</code> is a semantic tag, and <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code> are not, in the same way <a href=\"https://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em\">developers should use strong tags instead of the b tag in HTML</a>"
     },
     {
-      "label": "Use the sr-only class to generate screen-reader only text",
+      "label": "Use the sr-only class to generate screen reader only text",
       "highlight": "%OPENCLOSECONTENTTAG%span",
       "notes": ""
     }
@@ -99,7 +103,7 @@
 
 <p>
   Highlighted text can also be marked up in a similar way to emphasize that it is highlighted. Take this example (which
-  is same markup we use in the code walkthroughs to highlight text).  It has visually hidden text to tell screen reader users where the highlighted code begins and ends (e.g. in Voiceover's reading mode, the highlighted code will read "Start of highlighted code" and "End of Highlighted code" at the beginning and end of the code that is highlighted)
+  is the same markup we use in the code walkthroughs to highlight text).  It has visually hidden text to tell screen reader users where the highlighted code begins and ends (e.g. in Voiceover's reading mode, the highlighted code will read "Start of highlighted code" and "End of Highlighted code" at the beginning and end of the code that is highlighted)
 </p>
 
 <div id="highlight-example" class="enable-example">
@@ -112,7 +116,7 @@
   </code></pre>
 </div>
 
-<?php includeShowcode("highlight-example", "", "", "", true, 2)?>
+<?php includeShowcode("highlight-example", "", "", "", true, 2); ?>
 <script type="application/json" id="highlight-example-props">
 {
   "replaceHtmlRules": {},
@@ -122,7 +126,7 @@
       "notes": "The <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark\">HTML <code>mark</code> tag</a> is the standard HTML tag you should use to highlight text."
     },
     {
-      "label": "Use the sr-only class to generate screen-reader only text",
+      "label": "Use the sr-only class to generate screen reader only text",
       "highlight": "%OPENCLOSECONTENTTAG%span",
       "notes": ""
     }

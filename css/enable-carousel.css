@@ -35,14 +35,14 @@
   background: none;
 }
 .glider-dot:focus {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: 2px;
 }
 .glider-dot:focus:not(:focus-visible) {
   outline: none !important;
 }
 .glider-dot:focus-visible {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: 2px;
 }
 .glider-dot:only-child {
@@ -74,14 +74,14 @@
   color: white;
 }
 .glider-slide:focus {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
   outline-offset: -5px;
 }
 .glider-slide:focus:not(:focus-visible) {
   outline: none;
 }
 .glider-slide:focus-visible {
-  outline: solid 2px #097EFB;
+  outline: solid 2px #097efb;
   outline-offset: -5px;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
@@ -119,7 +119,7 @@
 }
 .glider-prev:focus,
 .glider-next:focus {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -5px;
 }
 .glider-prev:focus:not(:focus-visible),
@@ -128,7 +128,7 @@
 }
 .glider-prev:focus-visible,
 .glider-next:focus-visible {
-  outline: solid 2px #097EFB !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -5px;
 }
 .glider-prev {
@@ -147,7 +147,7 @@
 .enable-carousel__skip-link {
   display: block;
   margin: 2px auto;
-  background: #2A6803;
+  background: #2a6803;
   color: #fff;
   padding: 10px;
   text-decoration: none;
@@ -188,7 +188,7 @@
 .enable-carousel__slide-cta {
   display: block;
   margin: 0 auto;
-  background: #2A6803;
+  background: #2a6803;
   color: #fff;
   padding: 10px;
   text-decoration: none;

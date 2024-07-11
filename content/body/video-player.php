@@ -1,23 +1,23 @@
 <p>What makes a video accessible is widely misunderstood. Many web professionals know about closed captions.
-  What many don't know is that they absolutely need audio descriptions in order to be WCAG AA compliant.</p>
+  What many don't know is that they need audio descriptions in order to be WCAG AA compliant.</p>
 
-<?php include("includes/wcag-video-table.php") ?>
+<?php include "includes/wcag-video-table.php"; ?>
 
 <p>
-  For a lot of companies and organizations, re-cutting a alternative cut of each video on their website is
-  cost prohibitive:
+  For a lot of companies and organizations, re-cutting an alternative cut of each video on their website is
+  cost-prohibitive:
 </p>
 
 <ol>
-  <li>It requires a voice-actor to recite the audio descriptions.</li>
+  <li>It requires a voice actor to recite the audio descriptions.</li>
   <li>It requires a video editor to re-edit the video.</li>
-  <li>Sometimes, other footage needs to be shot to accomodate the amount of time needed to insert the audio
+  <li>Sometimes, other footage needs to be shot to accommodate the amount of time needed to insert the audio
     descriptions into the video.</li>
 </ol>
 
 <p>
   Because of this, I have recommended using our custom build of <a href="https://ableplayer.github.io/ableplayer/">Able Player</a>
-  and have the browser insert the audio descriptions. We have added some extra code to our build to ensure that Able Player 
+  and having the browser insert the audio descriptions. We have added some extra code to our build to ensure that Able Player 
   plays the audio descriptions correctly on all devices (the official build has some issues in iOS &mdash; we will be submitting 
   a PR to the official AblePlayer code so they can be incorporated in the official build).   Able Player requires a separate caption file (in WebVTT format)
   so the player knows at what time the captions should be read out. In many instances, I also set the player
@@ -26,7 +26,7 @@
 </p>
 
 <p>
-  One of the great side-effects is that if you implement audio-descriptions this way, the caption file + the audio
+  One of the great side effects is that if you implement audio descriptions this way, the caption file + the audio
   descriptions file will produce a transcript for free, so your video player will meet a WCAG AAA guideline.
 </p>
 
@@ -38,8 +38,8 @@
 <h2>Video Player With Text-To-Speech Audio Descriptions</h2>
 
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 
 <div id="example1">
@@ -53,7 +53,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 <script type="application/json" id="example1-props">
 {
   "replaceHtmlRules": {},
@@ -91,7 +91,7 @@
     {
       "label": "Write the captions track",
       "highlight": "%FILE%vtt/dialog-document__html5.vtt",
-      "notes": "WebVTT is the web standard format that all videos should use for video captions.  <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> was the tool used to create all the WebVTT files on this page.  Althought it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
+      "notes": "WebVTT is the web standard format that all videos should use for video captions.  <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> was the tool used to create all the WebVTT files on this page.  Although it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
     },
     {
       "label": "Write the audio descriptions captions track",
@@ -109,16 +109,16 @@
 
 
 <?= includeNPMInstructions(
-        'ablePlayerCustomizations',
-        array(),
-        '',
-        false,
-        array(
-            "otherImports" => "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';"
-        ),
-        null,
-        false,
-        true
-    )
-    ?>
+    "ablePlayerCustomizations",
+    [],
+    "",
+    false,
+    [
+        "otherImports" =>
+            "// AblePlayer uses this module, available via NPM<br/>import Cookies from 'js-cookie';",
+    ],
+    null,
+    false,
+    true,
+) ?>
 

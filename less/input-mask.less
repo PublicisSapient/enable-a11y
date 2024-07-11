@@ -4,7 +4,7 @@
     position: relative;
     display: inline-flex;
     white-space: break-spaces;
-    
+
     &__input {
         color: transparent;
 
@@ -13,7 +13,8 @@
         }
     }
 
-    &__input, &__mask {
+    &__input,
+    &__mask {
         font-family: "Helvetica", "Arial", sans-serif;
     }
 
@@ -32,7 +33,6 @@
     &__mask-post-val {
         display: inline-block;
     }
-    
 
     &__input:focus + &__mask &__mask-post-val {
         &::before {
@@ -47,25 +47,32 @@
             position: absolute;
         }
 
-        &:empty::after { 
+        &:empty::after {
             content: "\00a0";
         }
-
     }
 
-    &__input:focus + &__mask &__mask-mid-val:not(:empty) + &__mask-post-val::before {
+    &__input:focus
+        + &__mask
+        &__mask-mid-val:not(:empty)
+        + &__mask-post-val::before {
         background: transparent;
         animation: none;
     }
-    
 
-    &__input:focus + &__mask  &__mask-mid-val:not(:empty) {
-        background: #B4D5FE;
+    &__input:focus + &__mask &__mask-mid-val:not(:empty) {
+        background: #b4d5fe;
     }
 }
 
 @keyframes blink {
-    0% { background-color: transparent; }
-    50% { background-color: black; }
-    100% { background-color: transparent; }
-  }
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: black;
+    }
+    100% {
+        background-color: transparent;
+    }
+}

@@ -15,7 +15,7 @@ The <code>log</code> role is an ARIA-live region where new information is added 
             <h2>Notes:</h2>
 
             <ul>
-                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screenreaders will
+                <li>By default, Chromevox is the only browser will only say the updates in the log. All other screen readers will
                     read the whole log like an alert.
                 </li>
                 <li>
@@ -25,10 +25,14 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         </aside> -->
         <h2>Example 1: </h2>
 
-        <?php includeStats(array('doNot' => true, 'comment' => 'This doesn\'t seem to work as intended in many browser/screen reader combinations, so I advise not using it.')) ?>
+        <?php includeStats([
+            "doNot" => true,
+            "comment" =>
+                'This doesn\'t seem to work as intended in many browser/screen reader combinations, so I advise not using it.',
+        ]); ?>
 
         <p>
-            The following example is a log that will announce the CPU usage of the webserver every five seconds.
+            The following example is a log that will announce the CPU usage of the web server every five seconds.
 
         </p><div id="log-example" class="enable-example">
         <pre id="syslog" role="log" aria-atomic="true">
@@ -36,7 +40,7 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         </pre>
 </div>
 
-        <?php includeShowcode("log-example")?>
+        <?php includeShowcode("log-example"); ?>
         <script type="application/json" id="log-example-props">
         {
             "replaceHtmlRules": {

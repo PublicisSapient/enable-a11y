@@ -1,7 +1,7 @@
 <!-- <aside class="notes">
             <h2>Notes:</h2>
 
-            <p>The HTML5 version does not update its state on all browser/screen-reader combinations
+            <p>The HTML5 version does not update its state on all browser/screen reader combinations
                 reliably. For example:</p>
             <ul>
                 <li>
@@ -21,10 +21,14 @@
 
 <h2>HTML5 version using details and summary tags</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'There are small bugs with this solution with some screen reader/browser combinations.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "There are small bugs with this solution with some screen reader/browser combinations.",
+]); ?>
 
 <p>
-  <strong>This should be the ideal solution</strong>, since it is a native HTML5 control that doesn't require
+  <strong>This should be the ideal solution</strong> since it is a native HTML5 control that doesn't require
   JavaScript. However, there
   are some issues:
 </p>
@@ -35,7 +39,7 @@
     drawer is opened (most of the time it does, but I have noticed it enough to make mention of it here).
   </li>
   <li>
-    Chrome with Voiceover report "Disclosure triangle" as the role, which is a quite odd and misleading.
+    Chrome with Voiceover reports "Disclosure triangle" as the role, which is quite odd and misleading.
   <li>
     Chromevox doesn't indicate that the <code>summary</code> is
     expandable when it gains keyboard focus
@@ -46,7 +50,7 @@
   These issues have been around for a while (see <a
     href="https://www.hassellinclusion.com/blog/accessible-accordions-part-2-using-details-summary/">Graham Armfield's
     article about the details tag from 2019</a>). I hope that browser manufacturers can fix their accessibility APIs so
-  this can work correctly in all platforms.
+  this can work correctly on all platforms.
 </p>
 
 
@@ -79,7 +83,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -137,7 +141,7 @@
 </div>
 
 
-<?php includeShowcode("example1a")?> 
+<?php includeShowcode("example1a"); ?> 
 
 <script type="application/json" id="example1a-props">
 {
@@ -153,7 +157,7 @@
     {
       "label": "Create a fieldset with a legend so the checkboxes can be treated as a group.",
       "highlight": "\\s*&lt;legend[^;]*&gt;[\\s\\S]*&lt;/legend&gt; ||| \\s*&lt;fieldset[^;]*&gt; ||| \\s*&lt;\/fieldset&gt;",
-      "notes": "Note the legend is visally-hidden with the `sr-only` class."
+      "notes": "Note the legend is visually-hidden with the `sr-only` class."
     },
     {
       "label": "Create the checkboxes",
@@ -172,13 +176,18 @@
 
 <h2>ARIA version</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is best solution for both new and existing work.')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" => "This is the best solution for both new and existing work.",
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
-  Even though this is not native, it is pretty easy to set up. There is really one HTML attribute that you have to
+  Even though this is not native, it is pretty easy to set up. There is one HTML attribute that you have to
   change with JavaScript when the drawer opens or closes: <code>aria-expanded</code>. I just use CSS to style it
-  depending what that attribute is set to, and everything just works.
+  depending on what that attribute is set to, and everything just works.
 </p>
 
 <div id="example2" class="enable-example">
@@ -213,7 +222,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example2")?>
+<?php includeShowcode("example2"); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -250,10 +259,14 @@
 
 <h2 id="multiselect">ARIA dropdown with checkboxes</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is a better solution that using multi-select <code>&lt;select&gt;</code> boxes, in my opinion.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is a better solution than using multi-select <code>&lt;select&gt;</code> boxes, in my opinion.",
+]); ?>
 
 <p>Frequently, there is a requirement to create a "multi-select selectbox". It is possible to do this with the
-  <code>&lt;select&gt;</code> tag, but many users (sighted, partially sighted and non-sighted)
+  <code>&lt;select&gt;</code> tag, but many users (sighted, partially sighted, and non-sighted)
   have difficulty using them and don't even know they are multi-selectable (the comments in <a
     href="https://twitter.com/JotaEme_R">Juan Manuel Ramallo's</a> blog post, <a
     href="https://dev.to/juanmanuelramallo/does-anyone-else-think-html5-multiple-selects-sucks-36ib">Does anyone else
@@ -294,7 +307,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example-aria-multiselect")?>
+<?php includeShowcode("example-aria-multiselect"); ?>
 
 <script type="application/json" id="example-aria-multiselect-props">
 {
@@ -336,12 +349,11 @@
 
 
 <?= includeNPMInstructions(
-    'enable-drawer',
-    array(),
-    'enable-drawer',
+    "enable-drawer",
+    [],
+    "enable-drawer",
     false,
-    array(),
+    [],
     null,
-    true
-  ) 
-?>
+    true,
+) ?>

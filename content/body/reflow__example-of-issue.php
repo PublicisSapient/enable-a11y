@@ -1,15 +1,14 @@
 <?php
 
-$copy = getCgiVar('copy');
-$heading = getCgiVar('heading');
-$hasDropdown = (getCgiVar('hasDropdown') == 'true');
-$hasArrows = (getCgiVar('hasArrows') == 'true');
-$className = getCgiVar('className');
+$copy = getCgiVar("copy");
+$heading = getCgiVar("heading");
+$hasDropdown = getCgiVar("hasDropdown") == "true";
+$hasArrows = getCgiVar("hasArrows") == "true";
+$className = getCgiVar("className");
 
-if ($heading == '') {
-  $heading = 'Reflow Violation Example';
+if ($heading == "") {
+    $heading = "Reflow Violation Example";
 }
-
 ?>
 
 <h1><?= $heading ?></h1>
@@ -18,15 +17,11 @@ if ($heading == '') {
 
 <div class="reflow-examples__index  <?= $className ?>" aria-label="Alphabetical Index">
 
-  <?php
-    if ($hasDropdown) {
-  ?>
+  <?php if ($hasDropdown) { ?>
   <details class="enable-drawer  reflow-examples__dropdown">
     <summary class="enable-drawer__button">Display Index Navigation</summary>
     <div class="content reflow-examples__dropdown--content">
-      <?php 
-    }
-  ?>
+      <?php } ?>
       <button class="reflow-examples__arrow-button reflow-examples__arrow-button--previous" tabindex="-1"
         aria-hidden="true">◀<span class="sr-only">Display previous links.</span></button>
       <ul class="reflow-examples__list">
@@ -57,14 +52,10 @@ if ($heading == '') {
 
       <button class="reflow-examples__arrow-button reflow-examples__arrow-button--next" tabindex="-1"
         aria-hidden="true">▶<span class="sr-only">Display next links.</span></button>
-      <?php
-    if ($hasDropdown) {
-  ?>
+      <?php if ($hasDropdown) { ?>
     </div>
   </details>
-  <?php 
-    }
-  ?>
+  <?php } ?>
 </div>
 
 <div class="reflow-examples__content">
@@ -223,7 +214,7 @@ if ($heading == '') {
         </li>
         <li>
           <a href="https://en.wikipedia.org/wiki/Cote-dIvoire">Côte
-            d’Ivoire</a>
+            d'Ivoire</a>
         </li>
         <li>
           <a href="https://en.wikipedia.org/wiki/Croatia">Croatia</a>
@@ -849,11 +840,8 @@ if ($heading == '') {
   </div>
 
 
-<?php 
-  if ($hasArrows) {
-?>
+<?php if ($hasArrows) { ?>
 <script src="js/modules/reflow-arrows.js" type="module">
 </script>
-<?php
-  }
+<?php }
 ?>

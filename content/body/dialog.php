@@ -2,17 +2,19 @@
 
 <p>
   Modals are pieces of stand-alone content that pop up inside of the main web page document. If that content is not
-  interactive (i.e. just formatted text), then the modal has a role of <a
+  interactive (i.e. just formatted text), then the modal has the role of <a
     href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alertdialog_role"><code>alertdialog</code></a>.
   Modals with interactive content inside have a role of <a
-    href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role"><code>dialog</code></a>.  This instructions on this page cover the <code>dialog</code> role.
+    href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role"><code>dialog</code></a>.  The instructions on this page cover the <code>dialog</code> role.
 </p>
 
 <h2>HTML5 Modal Dialog</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>
   This example uses the HTML5 <code>&lt;dialog&gt;</code> tag. For
@@ -22,7 +24,7 @@
             <code>role="dialog"</code>.
             Making modal dialogs accessible for the first time can be tricky.
             Full notes on how the accessibility features of this example can be
-            found on my blog post,
+            found in my blog post,
             <a href="https://www.useragentman.com/blog/?p=7603"
               >Creating Accessible HTML5 Modal Dialogs For Desktop and Mobile</a>
 </p>
@@ -72,7 +74,7 @@
   </div>
 </div>
 
-<?php includeShowcode("example1", "", "", "", true, 2)?>
+<?php includeShowcode("example1", "", "", "", true, 2); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -81,7 +83,7 @@
     {
       "label": "Mark up the button that opens the dialog correctly",
       "highlight": "aria-haspopup",
-      "notes": "This will ensure that screenreader users know that this button will open a modal dialog before they press it."
+      "notes": "This will ensure that screen reader users know that this button will open a modal dialog before they press it."
     },
     {
       "label": "Mark up your dialog with the dialog tag",
@@ -91,12 +93,12 @@
     {
       "label": "Use aria-labelledby to point to the title of the modal",
       "highlight": "aria-labelledby",
-      "notes": "If there is no visible label in the dialog, use <code>aria-label</code> to set a screen-reader only label that describes the purpose of the modal.  This will be read by the screen reader when the modal is first opened"
+      "notes": "If there is no visible label in the dialog, use <code>aria-label</code> to set a screen reader only label that describes the purpose of the modal.  This will be read by the screen reader when the modal is first opened"
     },
     {
       "label": "Use aria-describedby to point to a summary description of the modal",
       "highlight": "aria-describedby",
-      "notes": "This will give screen-reader users supplementary information about this modal.  In this case, the user must login in order to continue."
+      "notes": "This will give screen reader users supplementary information about this modal.  In this case, the user must login in order to continue."
     },
     {
       "label": "Use proper roles inside the modal",
@@ -116,7 +118,7 @@
     {
       "label": "Ensure the dialog's form has the right method set",
       "highlight": "method=\"dialog\"",
-      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successul submission of this form."
+      "notes": "Browsers that support <code>&lt;dialog&gt;</code> will close the dialog upon successful submission of this form."
     },
     {
       "label": "Ensure the CTA that opens the dialog, as well as the one that closes it, are buttons",
@@ -137,6 +139,6 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-dialog', array(), '', true, array(
-  'needsAccessibilityLib' => true
-)) ?>
+<?= includeNPMInstructions("enable-dialog", [], "", true, [
+    "needsAccessibilityLib" => true,
+]) ?>

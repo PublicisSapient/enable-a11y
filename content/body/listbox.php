@@ -58,7 +58,7 @@
 
 
 <p>
-  Like radio button, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
+  Like radio buttons, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
   buttons are great for a small amount of choices, select boxes are better for a large set of choices.
 </p>
 
@@ -76,20 +76,19 @@
 
 <h2>HTML5 native select element example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true)) ?>
+<?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
   Although native HTML5 select boxes were difficult to style in the past, <strong>it is possible to style the default
     (i.e. closed) state completely using CSS</strong>. We have used <a href="https://twitter.com/scottjehl">Scott
-    Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
-    browser CSS demo</a> to style our demo below.</p>
+    Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> to style our demo below.</p>
 
 <p>
   <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
-  The gut reaction from a lot of designers is to change their appearance, since they understanably want to control
-  ever aspect of the design of the user interface consistantly across browsers and devices. However, mobile browser
+  The gut reaction from a lot of designers is to change their appearance since they understandably want to control
+  every aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
   manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.
-  Take a look at how the options are displayed when the activates the control:
+  Take a look at how the options are displayed when the user activates the control:
 </p>
 
 <figure>
@@ -113,7 +112,7 @@
                 alt="Like all desktop web browsers, Firefox on OSX displays the select box options are in a scrollable list positioned directly below the button that opens it.">
             </td>
             <td><img src="images/pages/listbox/android-select-options.png"
-                alt="The options of the select box in Chrome for Android appear in a scrollable modal overlayed on top of the page. The options text takes up most of the width of the viewport.">
+                alt="The options of the select box in Chrome for Android appear in a scrollable modal overlaid on top of the page. The options text takes up most of the width of the viewport.">
             </td>
             <td><img src="images/pages/listbox/ios-select-options.png"
                 alt="Safari for iOS displays the select box options in a 3-D scroll wheel on the bottom of the viewport. It also takes up the full width of the screen.">
@@ -133,12 +132,10 @@
 
 
 
-<p>What follows is an excellent customly styled native HTML5 select box. It uses code from <a
-    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross
-    browser CSS demo</a> that you can download via
-  NPM.
-  Instead of putting my usual notes as an explantion, visit their blog post <a
-    href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It’s 2019</a>.
+<p>What follows is an excellent custom-styled native HTML5 select box. It uses code from <a
+    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> that you can download via NPM.
+  Instead of putting my usual notes as an explanation, visit their blog post <a
+    href="https://www.filamentgroup.com/lab/select-css.html">Styling a Select Like It's 2019</a>.
 
 </p>
 
@@ -231,7 +228,7 @@
   </select>
 </div>
 
-<?php includeShowcode("html5-example")?>
+<?php includeShowcode("html5-example"); ?>
 
 <script type="application/json" id="html5-example-props">
 {
@@ -259,12 +256,14 @@
 
 <h2>ARIA listbox example</h2>
 
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats(["isForNewBuilds" => false]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
-  This listbox I made is accessible, and I have used in a few projects in the past. It works well, a developer can
-  ensure it looks the same in all browsers, and I am happy with the accessibilty features in it. However, I strongly
+  This listbox I made is accessible, and I have used it in a few projects in the past. It works well, a developer can
+  ensure it looks the same in all browsers, and I am happy with the accessibility features in it. However, I strongly
   recommend you use the <code>&lt;select&gt;</code> box example instead. Using this library means that:
 </p>
 
@@ -387,7 +386,7 @@
 </p>
 
 
-<?php includeShowcode("aria-example")?>
+<?php includeShowcode("aria-example"); ?>
 
 <script type="application/json" id="aria-example-props">
 {
@@ -412,7 +411,7 @@
     {
       "label": "When listbox is closed, hide listbox list with CSS <code>display: none</strong>.",
       "highlight": "class=\"hidden\"",
-      "notes": "This prevents the screenreader from reading the contents of the hidden information in reading mode."
+      "notes": "This prevents the screen reader from reading the contents of the hidden information in reading mode."
     },
     {
       "label": "Place aria-selected attributes on options",
@@ -445,11 +444,11 @@
 </script>
 
 <?= includeNPMInstructions(
-  'enable-listbox',
-  array(),
-  'enable-listbox',
-  false,
-  array(),
-  null,
-  true
+    "enable-listbox",
+    [],
+    "enable-listbox",
+    false,
+    [],
+    null,
+    true,
 ) ?>
