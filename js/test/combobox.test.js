@@ -2,22 +2,25 @@
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-//Utility function to write assertions
+//Utility function to write assertions for checking combo box's input aria-attributes
 async function verifyActiveElementAttributes(page, expectedAttributes) {
     const results = await page.evaluate(() => {
         const { activeElement } = document;
+        const ariaOwns = activeElement.getAttribute('aria-owns');
+        const domElementForAriaOwns = Array.from(
+            document.querySelectorAll(`#${ariaOwns}`),
+        );
+        const roleForAriaOwnsId = domElementForAriaOwns[0].getAttribute('role');
         return {
             ariaDescribedBy: activeElement.getAttribute('aria-describedby'),
             ariaExpanded: activeElement.getAttribute('aria-expanded'),
             role: activeElement.getAttribute('role'),
             ariaOwns: activeElement.getAttribute('aria-owns'),
             ariaAutocomplete: activeElement.getAttribute('aria-autocomplete'),
+            domElementForAriaOwns,
+            roleForAriaOwnsId,
         };
     });
-    // To get the corresponding element having the details of the aria-description
-    const containerForAriaDescribedby = results.ariaDescribedBy
-        ? await page.$(`#${results.ariaDescribedBy}`)
-        : '';
 
     // Perform assertions based on expected attributes
     expect(results.ariaDescribedBy).toBe(expectedAttributes.ariaDescribedBy);
@@ -25,9 +28,30 @@ async function verifyActiveElementAttributes(page, expectedAttributes) {
     expect(results.role).toBe(expectedAttributes.role);
     expect(results.ariaOwns).toBe(expectedAttributes.ariaOwns);
     expect(results.ariaAutocomplete).toBe(expectedAttributes.ariaAutocomplete);
-    // Testing the element with aria-ariaDescribedBy is existing in the dom
-    expect(containerForAriaDescribedby).not.toBeNull();
+    // Testing aria-owns id exist in dom
+    expect(results.domElementForAriaOwns.length).toBe(1);
+    expect(results.roleForAriaOwnsId).toBe('listbox');
 }
+//Utility function to write assertions for checking aria-describedBy id exist in the dom
+async function verifyAriaDescribedById(page, id) {
+    const domElementForAriaDescribedby = await page.$(`#${id}`);
+    testHelpers.pauseFor(100);
+    expect(domElementForAriaDescribedby).not.toBeNull();
+}
+//Utility function to write assertions for checking aria-owns id exist in the dom
+/*async function verifyAriaOwnsId(page, id) {
+    console.log(id);
+    const results = await page.evaluate((id) => {
+        const domElementForAriaOwns = Array.from(document.querySelectorAll(id));
+        console.log(domElementForAriaOwns);
+         return {
+            domElementForAriaOwns,
+            role: domElementForAriaOwns[0]?.getAttribute('role'),
+         }          
+    });
+    expect(results.domElementForAriaOwns.length).toBe(1); 
+    expect(results.role).toBe('listbox');   
+}*/
 
 describe('Combobox Test', () => {
     let domInfo;
@@ -49,6 +73,8 @@ describe('Combobox Test', () => {
             ariaAutocomplete: 'list',
         };
         await verifyActiveElementAttributes(page, expectedAttributes);
+        //  await verifyAriaOwnsId(page, "#aria-fruit__list");
+        await verifyAriaDescribedById(page, 'aria-fruit__desc');
 
         //Test the value selection work using the keyboard
         testHelpers.keyDownAndUp(page, 'ArrowDown');
@@ -94,6 +120,7 @@ describe('Combobox Test', () => {
             ariaAutocomplete: 'list',
         };
         await verifyActiveElementAttributes(page, expectedAttributes);
+        await verifyAriaDescribedById(page, 'video-games__desc');
 
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
@@ -116,6 +143,7 @@ describe('Combobox Test', () => {
             ariaAutocomplete: 'list',
         };
         await verifyActiveElementAttributes(page, expectedAttributes);
+        await verifyAriaDescribedById(page, 'aria-example-2__desc');
 
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
