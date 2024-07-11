@@ -5,7 +5,7 @@
   <li>Provide full keyboard support with proper label for screen readers.</li>
   <li>Ensure all controls have proper contrast and clear focus indicators.</li>
   <li>Include playback speed controls for those with cognitive disabilities.</li>
-  <li>Support for transcripts, captions, and subtitles (see our breakdown of this on the <a href="/video-player.php">Accessible Video Player</a> page).</li>
+  <li>Support for captions/subtitles (see our breakdown of this on the <a href="/video-player.php">Accessible Video Player</a> page).</li>
 </ul>
 
 <p>
@@ -19,11 +19,10 @@
 
 
 <div id="example1">
-  <div class="enable-video-player">
+  <div class="enable-audio-player">
     <audio id="audio1" preload="auto" data-able-player data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
       <source type="audio/mpeg" src="audio/example.mp3"/>
       <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English Captions">
-      <track kind="descriptions" src="vtt/dialog-document__html5--desc.vtt" srclang="en" label="English Audio Descriptions">
     </audio>
   </div>
 </div>
