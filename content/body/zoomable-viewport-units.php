@@ -1,4 +1,4 @@
-
+<!-- File WIP -->
     
       
 
@@ -30,7 +30,7 @@
       </div>
 
 
-      <?php includeShowcode("example1")?>
+      <?php includeShowcode("example1"); ?>
 
         <script type="application/json" id="example1-props">
         {
@@ -43,14 +43,14 @@
               "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
             },
             {
-              "label": "Create javascript events for tooltip script",
+              "label": "Create JavaScript events for tooltip script",
               "highlight": "%JS% tooltip.create; tooltip.init",
               "notes": "When the page is loaded, create the tooltip DOM object and initialize the mouse and keyboard events that will display the tooltips. <strong>Note the role of tooltip being added to the tooltip DOM object</strong>."
             },
             {
               "label": "Create the show and hide methods for the tooltip",
               "highlight": "%JS% tooltip.show; tooltip.hide",
-              "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screenreaders announce the tooltip on focus."
+              "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
             },
             {
               "label": "Ensure tooltip disappears when Escape key is pressed",

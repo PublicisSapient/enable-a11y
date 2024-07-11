@@ -4,21 +4,24 @@
 [role="switch"][aria-checked] {
     margin: 0;
     padding: 0;
-    width: (60/@px);
-    height: (34/@px);
-    border: (2/@px) solid black;
+    width: (60 / @px);
+    height: (34 / @px);
+    border: (2 / @px) solid black;
     display: inline-block;
     margin-right: 0.25em;
-    line-height: (20/@px);
+    line-height: (20 / @px);
     vertical-align: middle;
     text-align: center;
-    font: (12/@px) "Open Sans", "Arial", serif;
+    font:
+        (12 / @px) "Open Sans",
+        "Arial",
+        serif;
     overflow: hidden;
     position: relative;
-    border-radius: (34/@px);
+    border-radius: (34 / @px);
 
     span {
-        padding: 0 (4/@px);
+        padding: 0 (4 / @px);
     }
 
     & :first-child {
@@ -33,16 +36,16 @@
     &[aria-checked="false"] :first-child,
     &[aria-checked="true"] :last-child,
     &[aria-pressed="false"] :first-child,
-    &[aria-pressed="true"] :last-child  {
+    &[aria-pressed="true"] :last-child {
         background: #262;
         color: #eef;
-        height: (30/@px);
-        width: (30/@px);
+        height: (30 / @px);
+        width: (30 / @px);
         display: block;
         top: 0;
         position: absolute;
         overflow: hidden;
-        border-radius: (22/@px);
+        border-radius: (22 / @px);
         padding: 0;
         line-height: 1.7rem;
     }
@@ -56,8 +59,11 @@
 }
 
 label.switch--label {
-    font: (16/@px) "Open Sans", "Arial", sans-serif;
-    line-height: (20/@px);
+    font:
+        (16 / @px) "Open Sans",
+        "Arial",
+        sans-serif;
+    line-height: (20 / @px);
     user-select: none;
     vertical-align: middle;
     .vendor(user-select, none);

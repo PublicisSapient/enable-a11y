@@ -18,6 +18,15 @@
   overflow: hidden;
   text-align: center;
 }
+.product-tile del,
+.product-tile ins,
+.product-tile mark {
+  background-color: transparent;
+}
+.product-tile del,
+.product-tile mark.del {
+  text-decoration: line-through;
+}
 .product-tile__badge {
   position: absolute;
   top: 0;
@@ -31,8 +40,8 @@
 .product-tile__image {
   width: 100%;
 }
-.product-tile--good-example del::before,
-.product-tile--good-example ins::before {
+.product-tile--not-as-good-example del::before,
+.product-tile--not-as-good-example ins::before {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
@@ -46,9 +55,11 @@
   -ms-user-select: none;
   user-select: none;
 }
-.product-tile--good-example del::before {
+.product-tile--not-as-good-example del::before,
+.product-tile--not-as-good-example mark.del::before {
   content: "Old price: ";
 }
-.product-tile--good-example ins::before {
+.product-tile--not-as-good-example ins::before,
+.product-tile--not-as-good-example mark.ins::before {
   content: "Current price: ";
 }

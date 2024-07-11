@@ -1,0 +1,41 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.reflow-example__frame {
+  display: block;
+  margin: 20px auto 0;
+  width: 100%;
+  height: min(561px, 70vh);
+  padding: 36px 17px 45px 17px;
+  border-image-slice: 36 17 45 17;
+  border-image-width: 36px 17px 45px 17px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("../images/reflow/mobile-phone--border.webp");
+  border-style: solid;
+}
+@media only screen and (min-width: 720px) {
+  .reflow-example__frame {
+    height: 561px;
+  }
+}
+@media only screen and (min-width: 386px) {
+  .reflow-example__frame {
+    width: 354px;
+  }
+}
+.reflow-example__frame:focus {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}
+.reflow-example__frame:focus:not(:focus-visible) {
+  outline: none !important;
+}
+.reflow-example__frame:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}

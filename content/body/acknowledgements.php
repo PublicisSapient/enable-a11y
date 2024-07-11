@@ -1,8 +1,8 @@
 <p>
   Originally, Enable started out as a small personal website to help me show other developers how accessible code is
   structured.
-  Some of the solutions are my own, some I have borrowed from others (because why reinvent the wheel, especially when
-  you have learned from the best already?)
+  Some of the solutions are my own, and some I have borrowed from others (because why reinvent the wheel, especially when
+  you have already learned from the best?)
 </p>
 
 <p>
@@ -10,12 +10,33 @@
   built on that I have accessibility features to.
 </p>
 
+<h2>Direct Contributers</h2>
+
+<p>
+  The following people have contributed directly to the Enable project by adding code/content via pull requests.
+</p>
+
+<ul>
+  <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
+  </li>
+  <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
+  <li><a href="https://www.useragentman.com/">Zoltan Hawryluk</a> for starting the Enable project to begin with.</li>
+</ul>
+
 <h2>Code Used By Enable</h2>
+
+<p>
+  We have either been inspired by, or have integrated work, by the following people.
+</p> 
 
 <ul>
   <li><a href="https://twitter.com/lsnrae">Alison Walden</a> for her UX guidelines for both <a
       href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
       carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>
+  </li>
+  <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
+  </li>
+  <li><a href="https://github.com/akr3081">Adam Rock</a> for the <a href="/meter.php">accessible meter component</a>
   </li>
 
   <li><a href="https://code.iamkate.com">Kate Morley</a> for her <a
@@ -118,6 +139,8 @@
 
 <h2>Icons</h2>
 
+<p>Since we are not designers, we have used the following icons within the Enable website.</p>
+
 <ul>
   <li><a href="https://www.behance.net/coquet_adrien">Adrien Coquet</a> for the Integration Icon.</li>
   <li><a href="https://thenounproject.com/icondownloads/">Icongrapher</a> for the Build Icon.</li>
@@ -132,7 +155,7 @@
 
 <h2>Typography</h2>
 
-<p>Thanks to</p>
+<p>The following font-faces are used within the Enable website.</p>
 
 <ul>
   <li><a href="https://edricstudio.com">Edric Studio</a> for the <a

@@ -106,6 +106,10 @@ table li {
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
+.centered-block {
+  margin: 0 auto;
+  display: block;
+}
 .example h1 {
   text-align: center;
 }
@@ -197,9 +201,18 @@ select {
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
 }
-.list--no-decoration {
+.list--no-decoration,
+.list--inline {
   list-style: none;
   margin-left: 0;
+}
+.list--inline {
+  margin-left: -5px;
+}
+.list--inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .break--with-space {
   content: "A" !important;
@@ -234,6 +247,54 @@ code {
   border-radius: 3px;
   padding: 3px;
   word-wrap: break-word;
+}
+.center {
+  text-align: center;
+}
+.margin-bottom {
+  margin-bottom: 40px;
+}
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+}
+.compliance-table,
+.comparison-table {
+  margin: 1em auto 3em auto;
+}
+.compliance-table th,
+.comparison-table th,
+.compliance-table td,
+.comparison-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.compliance-table th a,
+.comparison-table th a {
+  color: #ccccff;
+}
+.compliance-table tr,
+.comparison-table tr {
+  background: none !important;
+}
+.compliance-table td,
+.comparison-table td {
+  border: solid 1px black;
+}
+.compliance-table__icon,
+.comparison-table__icon {
+  width: 20px;
+}
+iframe:focus {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}
+iframe:focus:not(:focus-visible) {
+  outline: none !important;
+}
+iframe:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
 }
 /*
 @media (prefers-color-scheme: dark) {

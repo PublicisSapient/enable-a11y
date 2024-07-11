@@ -1,5 +1,5 @@
 <p>
-    An <code>alert</code> is an ARIA live region is meant for error or warning messages that appear on the screen.  It is usally implied to have a <code>aria-live</code> value of <code>assertive</code>
+    An <code>alert</code> is an ARIA live region meant for error or warning messages that appear on the screen.  It is usually implied to have an <code>aria-live</code> value of <code>assertive</code>
 </p>
     
 
@@ -13,10 +13,10 @@
                     An assertive alert will be spoken immediately by a screen reader, and will
                     interrupt what the screen reader was saying at that moment. For example, if
                     the user tabs into a button and the screen reader is describing it, triggering
-                    an asserive alert will interrupt that description in order
+                    an assertive alert will interrupt that description in order
                     to give the alert to the user immediately.
                 </li>
-                <li>A polite alert will be spoken when the screenreader finishes what it
+                <li>A polite alert will be spoken when the screen reader finishes what it
                     currently saying to the user. Using the same example above, if
                     the user tabs into a button and the screen reader is describing it,
                     a polite alert wait until it has finished describing that button before
@@ -27,10 +27,13 @@
 
         <h2>Example 1: Visual alert</h2>
 
-        <?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution works well for new and existing work.')) ?>
+        <?php includeStats([
+            "isForNewBuilds" => true,
+            "comment" => "This solution works well for new and existing work.",
+        ]); ?>
 
         <p>
-            Clicking the button below will show the current time on the screen.  Since the current time text is inside an div with <code>role="alert"</code> and <code>aria-live="assertive"</code>, the text will be announced immediately by screen readers.
+            Clicking the button below will show the current time on the screen.  Since the current time text is inside a div with <code>role="alert"</code> and <code>aria-live="assertive"</code>, the text will be announced immediately by screen readers.
         </p>
 
         <div id="visual-alert-example" class="enable-example">
@@ -42,7 +45,7 @@
 
         </div>
 
-        <?php includeShowcode("visual-alert-example")?>
+        <?php includeShowcode("visual-alert-example"); ?>
 
         <script type="application/json" id="visual-alert-example-props">
         {

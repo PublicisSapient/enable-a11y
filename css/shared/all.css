@@ -8,6 +8,7 @@
 @import "../../fonts/Droid-Sans/stylesheet.css";
 @import "../../fonts/OpenSans/stylesheet.css";
 @import "../../fonts/GraublauSansWeb/stylesheet.css";
+@import "../../fonts/ex-rounded/stylesheet.css";
 html,
 body,
 div,
@@ -126,7 +127,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -260,6 +261,10 @@ table li {
   padding: 0.5em 10px;
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
+.centered-block {
+  margin: 0 auto;
+  display: block;
+}
 .example h1 {
   text-align: center;
 }
@@ -351,9 +356,18 @@ select {
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
 }
-.list--no-decoration {
+.list--no-decoration,
+.list--inline {
   list-style: none;
   margin-left: 0;
+}
+.list--inline {
+  margin-left: -5px;
+}
+.list--inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .break--with-space {
   content: "A" !important;
@@ -388,6 +402,54 @@ code {
   border-radius: 3px;
   padding: 3px;
   word-wrap: break-word;
+}
+.center {
+  text-align: center;
+}
+.margin-bottom {
+  margin-bottom: 40px;
+}
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+}
+.compliance-table,
+.comparison-table {
+  margin: 1em auto 3em auto;
+}
+.compliance-table th,
+.comparison-table th,
+.compliance-table td,
+.comparison-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.compliance-table th a,
+.comparison-table th a {
+  color: #ccccff;
+}
+.compliance-table tr,
+.comparison-table tr {
+  background: none !important;
+}
+.compliance-table td,
+.comparison-table td {
+  border: solid 1px black;
+}
+.compliance-table__icon,
+.comparison-table__icon {
+  width: 20px;
+}
+iframe:focus {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
+}
+iframe:focus:not(:focus-visible) {
+  outline: none !important;
+}
+iframe:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -461,16 +523,16 @@ code {
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097efb;
 }
 *:focus {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097efb;
 }
 *:focus:not(:focus-visible) {
   outline: none;
 }
 *:focus-visible {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097efb;
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
@@ -568,17 +630,16 @@ header .search-form,
   top: 1em;
   right: 1em;
 }
-nav {
+.site__nav {
   position: static;
   background: #000000;
-  padding: 0.4em;
   line-height: 1.6;
 }
-nav ul li {
+.site__nav ul li {
   display: inline-block;
   margin-right: 1em;
 }
-nav ul li a {
+.site__nav ul li a {
   color: white;
   text-decoration: none;
 }
@@ -627,8 +688,9 @@ nav ul li a {
 }
 main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
+#main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-  padding: 1em;
+  padding: 1rem;
   margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;

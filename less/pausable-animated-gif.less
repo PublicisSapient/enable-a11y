@@ -1,94 +1,95 @@
 @import "shared/mixins-and-vars";
 
 .pausable-animated-gif {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  font-size: 0; // this is to remove a gap in the open expando at the bottom of it.
-  .width-fit-content();
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    font-size: 0; // this is to remove a gap in the open expando at the bottom of it.
+    .width-fit-content();
 
-  img {
-    max-width: 100%;
-  }
-
-  summary {
-    color: #fff;
-    background: #000;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 2;
-    border-radius: 50%;
-    background-image: data-uri('../images/pausable-animated-gif/play_circle_filled-24px.svg');
-    background-size: 90% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-
-  }
-
-  [open] summary {
-    background-image: data-uri('../images/pausable-animated-gif/pause_circle_filled-24px.svg');
-    box-shadow: 0 0 0 2px #fff;
-    background-color: white;
-
-  }
-
-  /* for blink/webkit */
-  details summary::-webkit-details-marker {
-    display: none;
-  }
-  /* for firefox */
-  details > summary:first-of-type {
-    list-style: none;
-  }
-
-  summary + * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #000;
-    color: #fff;
-    //overflow-y: auto;
-  }
-
-  summary + * a {
-    color: #fff;
-  }
-  summary:focus {
-    box-shadow: 0 0 0 0.25rem orange;
-    outline: transparent 2px solid;
-  }
-
-  &__animated-image img {
-    display: inline-block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: visible;
-  }
-
-  &__warning-message {
-    display: none;
-
-    .pause-anim-control__prefers-reduced-motion & {
-      display: block;
+    img {
+        max-width: 100%;
     }
-  }
 
+    summary {
+        color: #fff;
+        background: #000;
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 2;
+        border-radius: 50%;
+        background-image: data-uri(
+            "../images/pausable-animated-gif/play_circle_filled-24px.svg"
+        );
+        background-size: 90% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: white;
+    }
+
+    [open] summary {
+        background-image: data-uri(
+            "../images/pausable-animated-gif/pause_circle_filled-24px.svg"
+        );
+        box-shadow: 0 0 0 2px #fff;
+        background-color: white;
+    }
+
+    /* for blink/webkit */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+    /* for firefox */
+    details > summary:first-of-type {
+        list-style: none;
+    }
+
+    summary + * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        color: #fff;
+        //overflow-y: auto;
+    }
+
+    summary + * a {
+        color: #fff;
+    }
+    summary:focus {
+        box-shadow: 0 0 0 0.25rem orange;
+        outline: transparent 2px solid;
+    }
+
+    &__animated-image img {
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        overflow: visible;
+    }
+
+    &__warning-message {
+        display: none;
+
+        .pause-anim-control__prefers-reduced-motion & {
+            display: block;
+        }
+    }
 }
 
 :root {
-  /* This is a test */
-  --prefers-reduced-motion: 0;
+    /* This is a test */
+    --prefers-reduced-motion: 0;
 }
 
 @media (prefers-reduced-motion) {
-  :root {
-    --prefers-reduced-motion: 1;
-  }
+    :root {
+        --prefers-reduced-motion: 1;
+    }
 }

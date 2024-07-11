@@ -12,15 +12,22 @@
       </div>
       <picture>
         <source srcset="images/text-resize/cuneyt-1024.webp 1024w, images/text-resize/cuneyt-960.webp 960w"
-          media="(min-width: 720px)" type="image/webp">
+          media="(min-width: 720px)"
+          sizes="(min-width: 1024px) 954px, (min-width:960px) 890px"
+          type="image/webp">
         <source
           srcset="images/text-resize/cuneyt-portrait-729.webp 729w, images/text-resize/cuneyt-portrait-375.webp 375w"
+          sizes="(min-width: 729px) 659px, (min-width: 375px) 305px"
           type="image/webp">
-        <source srcset="images/text-resize/cuneyt-1024.jpg 1024w, images/text-resize/cuneyt-960.jpg 960w"
-          media="(min-width: 720px)">
+        <source
+          srcset="images/text-resize/cuneyt-1024.jpg 1024w, images/text-resize/cuneyt-960.jpg 960w"
+          sizes="(min-width: 1024px) 954px, (min-width:960px) 890px"
+          media="(min-width: 720px)"
+        >
         <img class="text-resize__hero--image" alt="Portrait shot of Cüneyt Arkın in front of a starry background"
           srcset="images/text-resize/cuneyt-portrait-729.jpg 729w, images/text-resize/cuneyt-portrait-375.jpg 375w"
-          sizes="100vw">
+          sizes="(min-width: 729px) 659px, (min-width: 375px) 305px"
+        />
       </picture>
     </div>
   </div>

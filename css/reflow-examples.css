@@ -1,0 +1,131 @@
+.font-heading-3 {
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 1.25rem;
+  border-bottom: double 3px #000;
+}
+.iframed-example [role="banner"],
+.iframed-example [role="navigation"],
+.iframed-example nav,
+.iframed-example footer {
+  display: none;
+}
+:root {
+  scrollbar-width: thin;
+}
+body {
+  scrollbar-color: #fff #000;
+  scrollbar-width: thin;
+}
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 3px;
+  height: 3px;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+body ::-webkit-scrollbar-track {
+  background: #000;
+}
+#main {
+  max-width: 100% !important;
+}
+.reflow-examples__index {
+  text-align: center;
+  background: black;
+  margin: 0 -1em 1em -1em;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+}
+.reflow-examples__arrow-button {
+  display: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.reflow-examples__show-arrow-buttons {
+  padding: 0;
+}
+.reflow-examples__show-arrow-buttons .reflow-examples__arrow-button {
+  display: inline-block;
+  width: calc(1.5rem + 12px);
+  position: absolute;
+  top: calc(calc(1.5rem + 12px)/11);
+}
+.reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--previous {
+  text-align: left;
+  left: 0;
+  background: linear-gradient(to right, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
+}
+.reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--next {
+  text-align: right;
+  right: 0;
+  background: linear-gradient(to left, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
+}
+.reflow-examples__show-arrow-buttons .reflow-examples__list {
+  padding: 0 calc(1.5rem + 12px);
+}
+.reflow-examples__show-arrow-buttons .reflow-examples__list::after {
+  display: inline-block;
+  content: "";
+  width: calc(1.5rem + 12px);
+}
+.reflow-examples__remove-overflow {
+  white-space: normal;
+}
+.reflow-examples__content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.reflow-examples__list {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.reflow-examples__remove-overflow .reflow-examples__list {
+  overflow: auto;
+  white-space: normal;
+}
+.reflow-examples__list-item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5vw 1vw;
+}
+.reflow-examples__link {
+  color: white;
+  text-decoration: none;
+}
+.reflow-examples__dropdown {
+  background: white;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+.reflow-examples__dropdown--content {
+  padding: 0;
+  margin: 0 -0.75rem;
+}
+.reflow-examples__dropdown .reflow-examples__list {
+  background: black;
+}
+h1 {
+  font-size: 1.5625rem;
+  text-align: center;
+  margin-bottom: 1em;
+}
+a[tabindex="-1"] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}

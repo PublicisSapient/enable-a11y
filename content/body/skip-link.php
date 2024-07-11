@@ -3,7 +3,7 @@
 <p>
   When keyboard users encounter components with a lot of interactive elements in them (e.g. a website's
   main
-  navigation), they may want to tab (or on a mobile device, swipe) 100 times through those elements in order to get to
+  navigation), they may want to tab (or on a mobile device, swipe) 100 times through those elements to get to
   the CTAs in the
   main
   content. Skip links fix this issue.
@@ -11,24 +11,28 @@
 
 <p>Traditionally, a skip link is a keyboard-only link  that keyboard
   users
-  can use to skip blocks of interactive elements. They are <strong>usually visible only when focused into</strong> and <strong>mouse
+  can use to skip blocks of interactive elements. They are <strong>usually visible only when focused on</strong> and <strong>mouse
   users will never see them.</strong>
 </p>
 
 <p>
   This page discusses two types of skip links: the <strong>traditional skip link that works for desktop computers</strong>, and
-  <strong>one that also works for mobile devices (which will only be experienced by mobile screen-reader users)</strong>.  
+  <strong>one that also works for mobile devices (which will only be experienced by mobile screen reader users)</strong>.  
 </p>
 
 <h2>Traditional Skip Link</h2>
 
-<?php includeStats(array('doNot' => true, 'comment' => 'Please review our mobile friendly solution before you decide to choose this one.')) ?>
+<?php includeStats([
+    "doNot" => true,
+    "comment" =>
+        "Please review our mobile friendly solution before you decide to choose this one.",
+]); ?>
 
-<p>This is an variation of a traditional skip link seen on many websites today. They appear only when keyboard focus is applied to them. Note that while it works well on desktop, <strong>it fails on mobile, due to screen readers not passing
-    focus events to the mobile browser.</strong>  Screen reader users can focus into them, but partially sighted users may be initially confused when they cannot see what they are focusing into.</p>
+<p>This is a variation of a traditional skip link seen on many websites today. They appear only when keyboard focus is applied to them. Note that while it works well on desktop, <strong>it fails on mobile, due to screen readers not passing
+    focus events to the mobile browser.</strong>  Screen reader users can focus on them, but partially sighted users may be initially confused when they cannot see what they are focusing on.</p>
 
-<p>Unlike a lot of implementations, this example has, in my opinion, one really super helpful feature: we have two skip links pointing to each other. If a keyboard user triggers the skip link by accident, they can <strong>undo
-  their mistakes</strong> by pressing they ENTER key again, which will return focus back to where they came from.  <strong>This is useful for people who have hand tremors.</strong> This feature was thought up by my colleague Alison Hall during an accessibility hackathon.</p>
+<p>Unlike a lot of implementations, this example has, in my opinion, one super helpful feature: we have two skip links pointing to each other. If a keyboard user triggers the skip link by accident, they can <strong>undo
+  their mistakes</strong> by pressing the ENTER key again, which will return the focus back to where they came from.  <strong>This is useful for people who have hand tremors.</strong> This feature was thought up by my colleague Alison Hall during an accessibility hackathon.</p>
 
 
 <div id="desktop-example" class="enable-example">
@@ -258,7 +262,7 @@
   </div>
 </div>
 
-<?php includeShowcode("desktop-example")?>
+<?php includeShowcode("desktop-example"); ?>
 
 <script type="application/json" id="desktop-example-props">
 {
@@ -294,13 +298,18 @@
 
 <h2>Mobile Friendly Skip Links</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This solution is suggested for both new and existing websites.')) ?>
-<?php includeStats(array('isForNewBuilds' => false)) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This solution is suggested for both new and existing websites.",
+]); ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
 <p>These skip links work on a different principle than the ones above. They use a little bit of JavaScript to
-  work,
-  and work really well for mobile screen reader users. <strong>Due to technical limitations, once focused on,
+  work and work well for mobile screen reader users. <strong>Due to technical limitations, once focused on,
     the skip links will remain visible unless they are clicked.</strong>
   This seems like a reasonable tradeoff (and can arguably be better for accessibility).
 </p>
@@ -534,7 +543,7 @@
   </div>
 </div>
 
-<?php includeShowcode("mobile-example")?>
+<?php includeShowcode("mobile-example"); ?>
 
 <script type="application/json" id="mobile-example-props">
 {
@@ -577,7 +586,7 @@
       "notes": ""
     },
     {
-      "label": "Initialize the Javascript",
+      "label": "Initialize the JavaScript",
       "highlight": "%JS% enableVisibleOnFocus.init",
       "notes": "This sets up all the events needed for the links"
     },
@@ -605,4 +614,8 @@
 }
 </script>
 
-<?= includeNPMInstructions('enable-visible-on-focus', array(), 'enable-mobile-visible-on-focus') ?>
+<?= includeNPMInstructions(
+    "enable-visible-on-focus",
+    [],
+    "enable-mobile-visible-on-focus",
+) ?>

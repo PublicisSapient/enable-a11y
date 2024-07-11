@@ -7,12 +7,16 @@ var PHPExpress = function (opts) {
     console.log('path,', this.binPath);
     this.binPath = opts.binPath || '/usr/bin/php';
     console.log('binPath', this.binPath);
-    exec("which php81", (error, stdout, stderr) => {
+    exec(`${__dirname}/../../../findPHP.sh`, (error, stdout, stderr) => {
         if (error || stderr) {
-            console.log(`Cannot use OS to find PHP. Assuming ${this.binPath}.`)
+            console.log(`Cannot use OS to find PHP. Bailing.`)
             console.log(`Error was: ${error || stderr}`)
+            process.exit(1);
         } else {
-            this.binPath = stdout.trim();
+            const stdoutVal = stdout.trim();
+            if (stdoutVal !== '') {
+                this.binPath = stdoutVal;
+            }
             console.log(`PHP found at ${this.binPath}`);
         }
     });

@@ -13,20 +13,23 @@
  * Released under the MIT License.
  ******************************************************************************/
 
+let counter = 0;
 
-const EnableCarousel = function (container, options) {
+const EnableCarousel = function (container, options, gliderOptions) {
   let glider;
 
   this.container = container;
   this.options = options || {};
+  this.gliderOptions = gliderOptions || {};
   this.useArrowButtons = this.options.useArrowButtons || false;
+  this.id = null;
+  this.indicatorsId = null;
 
   const supportsInertNatively = HTMLElement.prototype.hasOwnProperty('inert');
   const $previousButton = this.container.parentNode.querySelector('.glider-prev');
   const $nextButton = this.container.parentNode.querySelector(".glider-next");
   this.$alert = this.container.parentNode.querySelector('.enable-carousel__alert');
 
-  console.log('alert', this.$alert);
   let accessibility; // for the accessibility library, if it is needed.
 
   this.polyfillURL = this.options.polyfillURL;
@@ -47,12 +50,19 @@ const EnableCarousel = function (container, options) {
   }
 
   this.init = function () {
-    // initializes Glider. We ensure that the carousel
-    // is set to not have any animations by default.
-    // eslint-disable-next-line no-undef
-    glider = new Glider(this.container, {
+    // check if there is an id for the container. If not, we make one.
+    this.id = this.container.id || `enable-carousel-${counter}`;
+    counter++;
+    if (!this.container.id) {
+      this.container.setAttribute('id', this.id);
+    }
+
+    this.indicatorsSelector = `#${this.id}__indicators`;
+    this.indicatorsRoot = document.querySelector(this.indicatorsSelector);
+
+    const defaultGliderOptions = {
       slidesToShow: 1,
-      dots: "#dots",
+      dots: this.indicatorsSelector,
       duration: 0,
       arrows: {
         prev: $previousButton,
@@ -61,7 +71,17 @@ const EnableCarousel = function (container, options) {
       draggable: true,
       scrollLock: true,
       animationDuration: 0
-    });
+    };
+    
+    const mergedGliderOptions = { ... defaultGliderOptions, ... this.gliderOptions};
+
+    // initializes Glider. We ensure that the carousel
+    // is set to not have any animations by default.
+    // eslint-disable-next-line no-undef
+    glider = new Glider(this.container, mergedGliderOptions);
+
+    this.removeBadAria();
+    this.blockBadAria();
 
     this.slidePanelSelector = '.enable-carousel__slide';
     this.slidePanels = this.container.querySelectorAll(this.slidePanelSelector);
@@ -102,6 +122,58 @@ const EnableCarousel = function (container, options) {
       this.setTabthroughEvents();
     }
   }
+
+  this.removeBadAria = () => {
+    if (this.indicatorsRoot) {
+      const indicatorList = this.indicatorsRoot.querySelectorAll('[role]');
+      this.indicatorsRoot.removeAttribute('role');
+      indicatorList.forEach((el, i) => {
+        this.fixIndicator(el, i);
+      });
+    }
+    
+  }
+
+  this.blockBadAria = () => {
+    if (this.indicatorsRoot) {
+
+      const attributeObserver = new MutationObserver(this.removeTabListRoleObserver);
+      attributeObserver.observe(this.indicatorsRoot, { attributeFilter: [ 'role' ]});
+
+      const addDotObserver = new MutationObserver(this.fixIndicatorsObserver);
+      addDotObserver.observe(this.indicatorsRoot, { childList: true });
+    }
+  }
+
+  this.removeTabListRoleObserver = (mutationList) => {
+    this.indicatorsRoot.removeAttribute('role');
+    this.indicatorsRoot.classList.add('enable-carousel__dots')
+  }
+
+  this.fixIndicatorsObserver = (mutationList) => {
+    mutationList.forEach((mutation, i) => {
+      const { addedNodes } = mutation;
+
+      if (addedNodes.length > 0) {
+        addedNodes.forEach((el) => {
+          var { parentNode } = el;
+          // The equivalent of parent.children.indexOf(child)
+          var i = Array.prototype.indexOf.call(parentNode.children, el);
+
+          this.fixIndicator(el, i);
+        });
+      }
+      
+    });
+  }
+
+  this.fixIndicator = (el, i) => {
+    el.removeAttribute('role');
+    el.setAttribute('aria-label', `Display Slide ${i+1}.`);
+    el.setAttribute('tabindex', '-1');
+    el.setAttribute('aria-hidden', 'true');
+  }
+      
 
   this.preventSpaceFromScrolling = (e) => {
     // Because Safari/Voiceover sometimes scroll the page
@@ -195,7 +267,6 @@ const EnableCarousel = function (container, options) {
 
     if (this.$alert && $currentSlide && !parentNode.contains(relatedTarget)) {
       this.$alert.innerHTML=$currentSlide.innerHTML;
-      console.log('alerted');
     }
 
   }
@@ -241,4 +312,3 @@ const EnableCarousel = function (container, options) {
     }
   };
 }
-

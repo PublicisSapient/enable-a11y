@@ -13,10 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-
-
-const enableDialog = new function() {
+const enableDialog = new (function() {
   /**
    * Updates the passed dialog to retain focus and restore it when the dialog is closed. Won't
    * upgrade a dialog more than once. Supports IE11+ and is a no-op otherwise.
@@ -114,5 +111,4 @@ const enableDialog = new function() {
       this.registerFocusRestoreDialog(favDialog);
     }
   }
-}
-
+});

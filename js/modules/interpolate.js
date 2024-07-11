@@ -34,6 +34,7 @@ const entities = [
 const disallowedInHTMLTemplate = [
   /<script/gi,
   /<style/gi,
+  /<iframe/gi
 ]
 
 

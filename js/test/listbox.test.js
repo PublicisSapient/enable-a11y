@@ -1,8 +1,7 @@
-'use strict'
+'use strict';
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-
 
 // let domInfo = await page.evaluateHandle(() => document.activeElement);
 
@@ -11,382 +10,356 @@ import testHelpers from './test-helpers.js';
 }); */
 
 describe('ARIA Listbox', () => {
-  beforeAll(async () => {
-  });
-  
-  async function cycleThroughItems() {
-    let domInfo, listboxValues;
+    beforeAll(async () => {});
 
+    async function cycleThroughItems() {
+        let domInfo, listboxValues;
 
-    // focus on the listbox button and check attributes;
-    await page.waitForSelector('#exp_button');
-    await page.focus('#exp_button');
+        // focus on the listbox button and check attributes;
+        await page.waitForSelector('#exp_button');
+        await page.focus('#exp_button');
 
-    // get all the listbox possible values
-    listboxValues = await page.evaluate(() => {
-      const { activeElement } = document;
-      const { parentNode } = activeElement;
-      const listboxOptions = parentNode.querySelectorAll('[role="option"]');
-      const listboxValues = [];
+        // get all the listbox possible values
+        listboxValues = await page.evaluate(() => {
+            const { activeElement } = document;
+            const { parentNode } = activeElement;
+            const listboxOptions =
+                parentNode.querySelectorAll('[role="option"]');
+            const listboxValues = [];
 
-      for (let i=0; i<listboxOptions.length; i++) {
-        listboxValues.push(listboxOptions[i].innerText.trim());
-      }
- 
-      return listboxValues;
-    });
+            for (let i = 0; i < listboxOptions.length; i++) {
+                listboxValues.push(listboxOptions[i].innerText.trim());
+            }
 
-    // console.log('all values', listboxValues);
+            return listboxValues;
+        });
 
-    for (let i=0; i<listboxValues.length; i++) {
-      // Press down arrow and make sure new Element gets focus.
-      // We use testHelpers.keyUpAndDown() since the enable-listbox
-      // library does things on both events, so using vanilla
-      // page.keyboard.press() doesn't always give us the expected
-      // result.
-      testHelpers.keyDownAndUp(page, 'ArrowDown');
-        
-      
-      // await 100ms before continuing further
-      await testHelpers.fastPause();
+        // console.log('all values', listboxValues);
 
+        for (let i = 0; i < listboxValues.length; i++) {
+            // Press down arrow and make sure new Element gets focus.
+            // We use testHelpers.keyUpAndDown() since the enable-listbox
+            // library does things on both events, so using vanilla
+            // page.keyboard.press() doesn't always give us the expected
+            // result.
+            testHelpers.keyDownAndUp(page, 'ArrowDown');
 
-      // now, let's press enter and cycle through all the elements with the down arrow.
-      domInfo = await page.evaluate(() => {
-        const { activeElement } = document;
+            // await 100ms before continuing further
+            await testHelpers.fastPause();
 
-        return {
-          value: activeElement.innerText.trim()
-        };
-      });
-      
-      expect(domInfo.value).toBe(listboxValues[i]);
-      // console.log('value selected:', el.value);
-      
+            // now, let's press enter and cycle through all the elements with the down arrow.
+            domInfo = await page.evaluate(() => {
+                const { activeElement } = document;
+
+                return {
+                    value: activeElement.innerText.trim(),
+                };
+            });
+
+            expect(domInfo.value).toBe(listboxValues[i]);
+            // console.log('value selected:', el.value);
+        }
+
+        // one more down arrow should go to the first element.
+        // We use testHelpers.keyUpAndDown() since the enable-listbox
+        // library does things on both events, so using vanilla
+        // page.keyboard.press() doesn't always give us the expected
+        // result.
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        // now, let's press enter and cycle through all the elements with the down arrow.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+
+            return {
+                value: activeElement.innerText.trim(),
+            };
+        });
+
+        expect(domInfo.value).toBe(listboxValues[0]);
+        // console.log('value selected 1:', el.value);
+
+        // one more up arrow should go to the last element.
+        // We use testHelpers.keyUpAndDown() since the enable-listbox
+        // library does things on both events, so using vanilla
+        // page.keyboard.press() doesn't always give us the expected
+        // result.
+        testHelpers.keyDownAndUp(page, 'ArrowUp');
+
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        // now, let's press enter and cycle through all the elements with the down arrow.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+
+            return {
+                value: activeElement.innerText.trim(),
+            };
+        });
+
+        expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
+
+        return listboxValues;
     }
 
-    // one more down arrow should go to the first element.
-    // We use testHelpers.keyUpAndDown() since the enable-listbox
-    // library does things on both events, so using vanilla
-    // page.keyboard.press() doesn't always give us the expected
-    // result.
-    testHelpers.keyDownAndUp(page, 'ArrowDown');
-      
-    
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
+    it('Try keyboard tabbing and picking 2nd value with the Enter key', async () => {
+        let domInfo;
 
+        await page.goto(`${config.BASE_URL}/listbox.php`);
+        // focus on the listbox button and check attributes;
+        await page.waitForSelector('#exp_button');
+        await page.focus('#exp_button');
 
-    // now, let's press enter and cycle through all the elements with the down arrow.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
+        // need page.evaluate to find aria attributes.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            let ariaExpanded = activeElement.getAttribute('aria-expanded');
 
-      return {
-        value: activeElement.innerText.trim()
-      };
-    });
-    
-    expect(domInfo.value).toBe(listboxValues[0]);
-    // console.log('value selected 1:', el.value);
+            if (ariaExpanded === 'false' || ariaExpanded === null) {
+                ariaExpanded = 'false';
+            }
 
-    // one more up arrow should go to the last element.
-    // We use testHelpers.keyUpAndDown() since the enable-listbox
-    // library does things on both events, so using vanilla
-    // page.keyboard.press() doesn't always give us the expected
-    // result.
-    testHelpers.keyDownAndUp(page, 'ArrowUp');
-      
-    
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
+            return {
+                html: activeElement.outerHTML,
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+                ariaExpanded,
+            };
+        });
 
+        expect(domInfo.ariaHaspopup).toBe('listbox');
+        expect(domInfo.ariaExpanded).toBe('false');
 
-    // now, let's press enter and cycle through all the elements with the down arrow.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
+        // press the space key and check if the component has aria-expanded to be true.
+        page.keyboard.press('Space');
 
-      return {
-        value: activeElement.innerText.trim()
-      };
-    });
-    
-    expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-    return listboxValues;
-  }
-  
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const button = document.getElementById('exp_button');
 
-  it('Try keyboard tabbing and picking 2nd value with the Enter key', async () => {
-    let domInfo;
+            return {
+                buttonAriaExpanded: button.getAttribute('aria-expanded'),
+                role: activeElement.getAttribute('role'),
+                value: activeElement.innerText.trim(),
+                html: activeElement.outerHTML,
+                ariaSelected: activeElement.getAttribute('aria-selected'),
+            };
+        });
+        expect(domInfo.buttonAriaExpanded).toBe('true');
+        expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
+        expect(domInfo.role).toBe('option'),
+            expect(domInfo.ariaSelected).toBe('false');
 
-    await page.goto(`${config.BASE_URL}/listbox.php`);
-    // focus on the listbox button and check attributes;
-    await page.waitForSelector('#exp_button');
-    await page.focus('#exp_button');
+        // Press down arrow and make sure new Element gets focus.
+        // We use testHelpers.keyUpAndDown() since the enable-listbox
+        // library does things on both events, so using vanilla
+        // page.keyboard.press() doesn't always give us the expected
+        // result.
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-    // need page.evaluate to find aria attributes.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      let ariaExpanded = activeElement.getAttribute('aria-expanded');
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const button = document.getElementById('exp_button');
 
-      if (ariaExpanded === 'false' || ariaExpanded === null) {
-        ariaExpanded = 'false'
-      }
+            return {
+                buttonAriaExpanded: button.getAttribute('aria-expanded'),
+                role: activeElement.getAttribute('role'),
+                value: activeElement.innerText.trim(),
+                html: activeElement.outerHTML,
+                ariaSelected: activeElement.getAttribute('aria-selected'),
+            };
+        });
+        expect(domInfo.buttonAriaExpanded).toBe('true');
+        expect(domInfo.value).toBe('Plutonium');
+        expect(domInfo.role).toBe('option'),
+            expect(domInfo.ariaSelected).toBe('false');
 
-      return {
-        html: activeElement.outerHTML,
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
-        ariaExpanded
-      };
-    });
+        // Press Enter to see if the new value gets populated in the button.
+        page.keyboard.press('Enter');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-    expect(domInfo.ariaExpanded).toBe('false');
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            let ariaExpanded = activeElement.getAttribute('aria-expanded');
 
-    // press the space key and check if the component has aria-expanded to be true.
-    page.keyboard.press('Space');
+            if (ariaExpanded === 'false' || ariaExpanded === null) {
+                ariaExpanded = 'false';
+            }
+            return {
+                html: activeElement.outerHTML,
+                value: activeElement.innerHTML.trim(),
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+                ariaExpanded,
+            };
+        });
 
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const button = document.getElementById('exp_button');
-
-      return {
-        buttonAriaExpanded: button.getAttribute('aria-expanded'),
-        role: activeElement.getAttribute('role'),
-        value: activeElement.innerText.trim(),
-        html: activeElement.outerHTML,
-        ariaSelected: activeElement.getAttribute('aria-selected')
-
-      };
-    });
-    expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
-    expect(domInfo.role).toBe('option'),
-    expect(domInfo.ariaSelected).toBe('false');
-
-
-    // Press down arrow and make sure new Element gets focus.
-    // We use testHelpers.keyUpAndDown() since the enable-listbox
-    // library does things on both events, so using vanilla
-    // page.keyboard.press() doesn't always give us the expected
-    // result.
-    testHelpers.keyDownAndUp(page, 'ArrowDown');
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const button = document.getElementById('exp_button');
-
-      return {
-        buttonAriaExpanded: button.getAttribute('aria-expanded'),
-        role: activeElement.getAttribute('role'),
-        value: activeElement.innerText.trim(),
-        html: activeElement.outerHTML,
-        ariaSelected: activeElement.getAttribute('aria-selected')
-
-      };
-    });
-    expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Plutonium');
-    expect(domInfo.role).toBe('option'),
-    expect(domInfo.ariaSelected).toBe('false')
-
-
-
-    // Press Enter to see if the new value gets populated in the button.
-    page.keyboard.press('Enter');
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      let ariaExpanded = activeElement.getAttribute('aria-expanded');
-      
-      if (ariaExpanded === 'false' || ariaExpanded === null) {
-        ariaExpanded = 'false'
-      }
-      return {
-        html: activeElement.outerHTML,
-        value: activeElement.innerHTML.trim(),
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
-        ariaExpanded
-      };
+        expect(domInfo.ariaHaspopup).toBe('listbox');
+        expect(domInfo.ariaExpanded).toBe('false');
+        expect(domInfo.value).toBe('Plutonium');
     });
 
+    it('Try keyboard tabbing and picking 2nd value with the tab key', async () => {
+        let domInfo;
 
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-    expect(domInfo.ariaExpanded).toBe('false');
-    expect(domInfo.value).toBe('Plutonium');
-  });
+        await page.goto(`${config.BASE_URL}/listbox.php`);
+        // focus on the listbox button and check attributes;
+        await page.waitForSelector('#exp_button');
+        await page.focus('#exp_button');
 
-  it('Try keyboard tabbing and picking 2nd value with the tab key', async () => {
-    let domInfo;
+        // need page.evaluate to find aria attributes.
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            let ariaExpanded = activeElement.getAttribute('aria-expanded');
 
-    await page.goto(`${config.BASE_URL}/listbox.php`);
-    // focus on the listbox button and check attributes;
-    await page.waitForSelector('#exp_button');
-    await page.focus('#exp_button');
+            if (ariaExpanded === 'false' || ariaExpanded === null) {
+                ariaExpanded = 'false';
+            }
 
-    // need page.evaluate to find aria attributes.
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      let ariaExpanded = activeElement.getAttribute('aria-expanded');
+            return {
+                html: activeElement.outerHTML,
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+                ariaExpanded,
+            };
+        });
 
-      if (ariaExpanded === 'false' || ariaExpanded === null) {
-        ariaExpanded = 'false'
-      }
+        expect(domInfo.ariaHaspopup).toBe('listbox');
+        expect(domInfo.ariaExpanded).toBe('false');
 
-      return {
-        html: activeElement.outerHTML,
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
-        ariaExpanded
-      };
+        // press the space key and check if the component has aria-expanded to be true.
+        page.keyboard.press('Space');
+
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const button = document.getElementById('exp_button');
+
+            return {
+                buttonAriaExpanded: button.getAttribute('aria-expanded'),
+                role: activeElement.getAttribute('role'),
+                value: activeElement.innerText.trim(),
+                html: activeElement.outerHTML,
+                ariaSelected: activeElement.getAttribute('aria-selected'),
+            };
+        });
+        expect(domInfo.buttonAriaExpanded).toBe('true');
+        expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
+        expect(domInfo.role).toBe('option'),
+            expect(domInfo.ariaSelected).toBe('false');
+
+        // Press down arrow and make sure new Element gets focus.
+        // We use testHelpers.keyUpAndDown() since the enable-listbox
+        // library does things on both events, so using vanilla
+        // page.keyboard.press() doesn't always give us the expected
+        // result.
+        testHelpers.keyDownAndUp(page, 'ArrowDown');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            const button = document.getElementById('exp_button');
+
+            return {
+                buttonAriaExpanded: button.getAttribute('aria-expanded'),
+                role: activeElement.getAttribute('role'),
+                value: activeElement.innerText.trim(),
+                html: activeElement.outerHTML,
+                ariaSelected: activeElement.getAttribute('aria-selected'),
+            };
+        });
+        expect(domInfo.buttonAriaExpanded).toBe('true');
+        expect(domInfo.value).toBe('Plutonium');
+        expect(domInfo.role).toBe('option'),
+            expect(domInfo.ariaSelected).toBe('false');
+
+        // Press Enter to see if the new value gets populated in the button.
+        page.keyboard.press('Tab');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
+            let ariaExpanded = activeElement.getAttribute('aria-expanded');
+
+            if (ariaExpanded === 'false' || ariaExpanded === null) {
+                ariaExpanded = 'false';
+            }
+            return {
+                html: activeElement.outerHTML,
+                value: activeElement.innerHTML.trim(),
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+                ariaExpanded,
+            };
+        });
+
+        // console.log('html', el.html);
+
+        expect(domInfo.ariaHaspopup).toBe('listbox');
+        expect(domInfo.ariaExpanded).toBe('false');
+        expect(domInfo.value).toBe('Plutonium');
     });
 
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-    expect(domInfo.ariaExpanded).toBe('false');
+    it('Iterate through all values and click ENTER to choose value', async () => {
+        let domInfo, listboxValues;
 
-    // press the space key and check if the component has aria-expanded to be true.
-    page.keyboard.press('Space');
+        await page.goto(`${config.BASE_URL}/listbox.php`);
 
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
+        listboxValues = await cycleThroughItems();
 
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const button = document.getElementById('exp_button');
+        // Now let's press ENTER to check if the correct value is set.
+        page.keyboard.press('Enter');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-      return {
-        buttonAriaExpanded: button.getAttribute('aria-expanded'),
-        role: activeElement.getAttribute('role'),
-        value: activeElement.innerText.trim(),
-        html: activeElement.outerHTML,
-        ariaSelected: activeElement.getAttribute('aria-selected')
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
 
-      };
-    });
-    expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Supercalifragilisticexpialidociousium');
-    expect(domInfo.role).toBe('option'),
-    expect(domInfo.ariaSelected).toBe('false');
+            return {
+                value: activeElement.innerText.trim(),
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+            };
+        });
 
-
-    // Press down arrow and make sure new Element gets focus.
-    // We use testHelpers.keyUpAndDown() since the enable-listbox
-    // library does things on both events, so using vanilla
-    // page.keyboard.press() doesn't always give us the expected
-    // result.
-    testHelpers.keyDownAndUp(page, 'ArrowDown');
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      const button = document.getElementById('exp_button');
-
-      return {
-        buttonAriaExpanded: button.getAttribute('aria-expanded'),
-        role: activeElement.getAttribute('role'),
-        value: activeElement.innerText.trim(),
-        html: activeElement.outerHTML,
-        ariaSelected: activeElement.getAttribute('aria-selected')
-
-      };
-    });
-    expect(domInfo.buttonAriaExpanded).toBe('true');
-    expect(domInfo.value).toBe('Plutonium');
-    expect(domInfo.role).toBe('option'),
-    expect(domInfo.ariaSelected).toBe('false')
-
-
-
-    // Press Enter to see if the new value gets populated in the button.
-    page.keyboard.press('Tab');
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-      let ariaExpanded = activeElement.getAttribute('aria-expanded');
-      
-      if (ariaExpanded === 'false' || ariaExpanded === null) {
-        ariaExpanded = 'false'
-      }
-      return {
-        html: activeElement.outerHTML,
-        value: activeElement.innerHTML.trim(),
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
-        ariaExpanded
-      };
+        expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
+        expect(domInfo.ariaHaspopup).toBe('listbox');
     });
 
+    it('Iterate through all values and click ESCAPE to choose value', async () => {
+        let domInfo, listboxValues;
 
-    // console.log('html', el.html);
+        await page.goto(`${config.BASE_URL}/listbox.php`);
 
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-    expect(domInfo.ariaExpanded).toBe('false');
-    expect(domInfo.value).toBe('Plutonium');
-  });
+        listboxValues = await cycleThroughItems();
 
+        // Now let's press ESCAPE to check if the correct value is set.
+        page.keyboard.press('Escape');
 
-  it('Iterate through all values and click ENTER to choose value', async () => {
-    let domInfo, listboxValues;
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
 
-    await page.goto(`${config.BASE_URL}/listbox.php`);
+        domInfo = await page.evaluate(() => {
+            const { activeElement } = document;
 
-    listboxValues = await cycleThroughItems();
+            return {
+                value: activeElement.innerText.trim(),
+                ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
+                html: activeElement.outerHTML,
+            };
+        });
+        // console.log('html', el.html);
 
-    // Now let's press ENTER to check if the correct value is set.
-    page.keyboard.press('Enter');
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-
-      return {
-        value: activeElement.innerText.trim(),
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup')
-      };
+        expect(domInfo.value).toBe('');
+        expect(domInfo.ariaHaspopup).toBe('listbox');
     });
-
-    expect(domInfo.value).toBe(listboxValues[listboxValues.length - 1]);
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-
-  });
-
-  it('Iterate through all values and click ESCAPE to choose value', async () => {
-    let domInfo, listboxValues;
-
-    await page.goto(`${config.BASE_URL}/listbox.php`);
-
-    listboxValues = await cycleThroughItems();
-
-    // Now let's press ESCAPE to check if the correct value is set.
-    page.keyboard.press('Escape');
-
-    // await 100ms before continuing further
-    await testHelpers.fastPause();
-
-    domInfo = await page.evaluate(() => {
-      const { activeElement } = document;
-
-      return {
-        value: activeElement.innerText.trim(),
-        ariaHaspopup: activeElement.getAttribute('aria-haspopup'),
-        html: activeElement.outerHTML
-      };
-    });
-    // console.log('html', el.html);
-
-    expect(domInfo.value).toBe('');
-    expect(domInfo.ariaHaspopup).toBe('listbox');
-  });
-
-
-  
 });

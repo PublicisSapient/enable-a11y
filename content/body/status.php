@@ -1,7 +1,6 @@
 <p>
-  Status messages allow screen readers and other assistive technology to tell users that content has changed on the page 
-  without interrupting what the user is doing by changing element has focused.  A perfect example of this 
-  usecase is in a search component like in the example below.
+  Status messages allow screen readers and other assistive technology to tell users that content has changed on the page. It does this without interrupting what the user is doing by changing which interactive element has focus.  
+  A perfect example of this use-case is in a search component like in the example below.
 </p>
 
 
@@ -39,7 +38,7 @@
 </div>
 
 
-<?php includeShowcode("visually-hidden-example")?>
+<?php includeShowcode("visually-hidden-example"); ?>
 
 <script type="application/json" id="visually-hidden-example-props">
 {

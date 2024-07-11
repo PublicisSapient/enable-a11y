@@ -16,20 +16,72 @@
 .glider::-webkit-scrollbar {
   display: none;
 }
+.glider:focus {
+  outline: solid 2px #3b99fc;
+  outline-offset: -5px;
+}
+.glider:focus:not(:focus-visible) {
+  outline: none;
+}
+.glider:focus-visible {
+  outline: solid 2px #3b99fc;
+  outline-offset: -5px;
+}
+.glider-dot {
+  border-radius: 0;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  background: none;
+}
+.glider-dot:focus {
+  outline: solid 2px #097efb !important;
+  outline-offset: 2px;
+}
+.glider-dot:focus:not(:focus-visible) {
+  outline: none !important;
+}
+.glider-dot:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: 2px;
+}
+.glider-dot:only-child {
+  display: none;
+}
+.glider-dot:hover,
+.glider-dot:active {
+  background: none;
+}
+.glider-dot::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  border: solid 1px #333;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+}
+.glider-dot.active {
+  width: 90px;
+  background: none;
+}
+.glider-dot.active::after {
+  background: #333;
+}
 .glider-slide {
   display: block;
   background: black;
   color: white;
 }
 .glider-slide:focus {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097efb;
   outline-offset: -5px;
 }
 .glider-slide:focus:not(:focus-visible) {
   outline: none;
 }
 .glider-slide:focus-visible {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px #097efb;
   outline-offset: -5px;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
@@ -48,8 +100,8 @@
   color: white;
   padding: 5px 10px;
   transform: scale(0.8, 1.5);
-  clip: rect(6px 100px 100px 0);
   top: calc(24vw - (75px / 2));
+  border-bottom: solid 6px transparent;
 }
 @media only screen and (min-width: 960px) {
   .glider-prev,
@@ -67,8 +119,8 @@
 }
 .glider-prev:focus,
 .glider-next:focus {
-  outline: solid 2px #3b99fc !important;
-  outline-offset: -2px;
+  outline: solid 2px #097efb !important;
+  outline-offset: -5px;
 }
 .glider-prev:focus:not(:focus-visible),
 .glider-next:focus:not(:focus-visible) {
@@ -76,8 +128,8 @@
 }
 .glider-prev:focus-visible,
 .glider-next:focus-visible {
-  outline: solid 2px #3b99fc !important;
-  outline-offset: -2px;
+  outline: solid 2px #097efb !important;
+  outline-offset: -5px;
 }
 .glider-prev {
   left: 0;
@@ -90,11 +142,12 @@
 .enable-carousel__example {
   padding: 0;
   margin: 0 -1em;
+  border: none;
 }
 .enable-carousel__skip-link {
   display: block;
   margin: 2px auto;
-  background: #2A6803;
+  background: #2a6803;
   color: #fff;
   padding: 10px;
   text-decoration: none;
@@ -135,10 +188,33 @@
 .enable-carousel__slide-cta {
   display: block;
   margin: 0 auto;
-  background: #2A6803;
+  background: #2a6803;
   color: #fff;
   padding: 10px;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+}
+.product-tile-carousel__example {
+  margin: 0 -12px;
+  position: relative;
+  left: 2px;
+}
+.product-tile-carousel__copy {
+  position: absolute;
+  display: block;
+  color: white;
+  font-family: "Ex Rounded Bold", "Helvetica", "Ariel", sans-serif;
+  font-size: 1.125rem;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100px;
+  padding: 20px 10px 0 10px;
+  width: 100%;
+  text-align: center;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+.product-tile-carousel__slide {
+  position: relative;
+  padding: 0 !important;
 }

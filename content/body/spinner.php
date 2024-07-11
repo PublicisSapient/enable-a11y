@@ -39,10 +39,10 @@
 
 <p>
   Numeric form fields fall into two categories: ones that are supposed to measure a quantity (e.g. items in a shopping
-  cart, number of dependants in your family), and ones that don't (e.g. a zip code, a social insurance number, etc).
-  On mobile devices for both of these fields you will want a virtual numeric keyboard to appear. However, it doesn't
+  cart, number of dependents in your family), and ones that don't (e.g. a zip code, a social insurance number, etc).
+  On mobile devices, for both of these fields, you will want a virtual numeric keyboard to appear. However, it doesn't
   make sense for increase/decrease controls to appear for either mouse or keyboard users for those that don't represent
-  a quanity.
+  a quantity.
 </p>
 
 <p>
@@ -53,7 +53,11 @@
 
 <h2>HTML input type="number" example</h2>
 
-<?php includeStats(array('isForNewBuilds' => true, 'comment' => 'This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.')) ?>
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        "This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.",
+]); ?>
 
 <div id="html-example" class="enable-example">
   <form>
@@ -64,7 +68,7 @@
 </div>
 
 
-<?php includeShowcode("html-example")?>
+<?php includeShowcode("html-example"); ?>
 <script type="application/json" id="html-example-props">
 {
   "replaceHtmlRules": {},
@@ -81,7 +85,7 @@
     {
       "label": "Add inputmode attribute to text input",
       "highlight": "inputmode",
-      "notes": "This is needed so iOS Safari users will receive a numeric keyboard instead of the full querty keyboard when the edit the data in this control. If you don't need the decimal point, you can use <code>pattern=\"\\d*\"</code> instead.  Chrome on Android only needs the <code>type=\"number\"</code> to bring up the numeric keyboard."
+      "notes": "This is needed so iOS Safari users will receive a numeric keyboard instead of the full QWERTY keyboard when the edit the data in this control. If you don't need the decimal point, you can use <code>pattern=\"\\d*\"</code> instead.  Chrome on Android only needs the <code>type=\"number\"</code> to bring up the numeric keyboard."
     },
     {
       "label": "Add min, max and current value attributes",
@@ -92,7 +96,7 @@
 }
 </script>
 
-<h2>HTML numeric value that isn't a quanity</h2>
+<h2>HTML numeric value that isn't a quantity</h2>
 
 <p>
   It is possible to have a numeric input without the spinner by using
@@ -100,7 +104,7 @@
               pattern="[0-9]*"&gt;</code>. This is currently what the
   <a
     href="https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/">recommendation
-    of the UK government when dealing with numeric
+    of the UK government is when dealing with numeric
     information that isn't a quantity</a>.
 </p>
 
@@ -110,7 +114,7 @@
   <input id="non-quantity" type="text" inputmode="numeric" pattern="[0-9]*">
 </div>
 
-<?php includeShowcode("non-quantity-example")?>
+<?php includeShowcode("non-quantity-example"); ?>
 <script type="application/json" id="non-quantity-example-props">
 {
   "replaceHtmlRules": {},
@@ -122,7 +126,7 @@
     {
       "label": "Add inputmode attribute to text input",
       "highlight": "inputmode",
-      "notes": "This will cause mobile users to receive a numeric keyboard instead of the full querty keyboard."
+      "notes": "This will cause mobile users to receive a numeric keyboard instead of the full QWERTY keyboard."
     },
     {
       "label": "Add pattern attribute to text input",
@@ -137,8 +141,14 @@
 
 <h2>ARIA example</h2>
 
-<?php includeStats(array('isForNewBuilds' => false, 'comment' => 'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may really want to question some of your other life choices)')) ?>
-<?php includeStats(array('isNPM' => true)) ?>
+<?php includeStats([
+    "isForNewBuilds" => false,
+    "comment" =>
+        'I also don\'t see any reason why you wouldn\'t want to modify existing code to use this, unless you used <code>&lt;div&gt;</code> tags instead of <code>&lt;input&gt;</code> tags for form fields (in which case, you may want to question some of your other life choices)',
+]); ?>
+<?php includeStats([
+    "isNPM" => true,
+]); ?>
 
 <p>
   The ARIA spinner examples were originally in the article
@@ -146,9 +156,9 @@
     - Spinbutton using IMG elements for buttons</a>
   by the
   <a href="http://oaa-accessibility.org/">Open Ajax Alliance</a> (now
-  currently offline). I refactored the code and released it as an NPM module for yoru convenience. It was created before
+   offline). I refactored the code and released it as an NPM module for your convenience. It was created before
   <code>&lt;input type="number"&gt;</code> was supported on all browsers.
-  I would recommend to just use that instead, but if you have existing code you need to fix, use the instructions below
+  I would recommend just using that instead, but if you have existing code you need to fix, use the instructions below
   to
   make it work.
 </p>
@@ -180,7 +190,7 @@
 
 
 
-<?php includeShowcode("example1")?>
+<?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -196,7 +206,7 @@
       "notes": ""
     },
     {
-      "label": "Label the spinbuttons with aria-labelledby",
+      "label": "Label the spin buttons with aria-labelledby",
       "highlight": "aria-labelledby",
       "notes": ""
     },
@@ -206,10 +216,10 @@
       "notes": "Note the <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>  class that ensures the instructions are not visible to sighted users."
     },
     {
-      "label": "Explose min, max and current values via ARIA so screen readers can report them",
+      "label": "Expose min, max and current values via ARIA so screen readers can report them",
       "highlight": "aria-valuemin ||| aria-valuemax ||| aria-valuenow ||| data-increment",
       "notes": [
-        "The spinbutton.js script uses these values in the script, as well as the <strong>data-increment</strong> attribtute so that it can do the right thing when the arrow keys are pressed.",
+        "The spinbutton.js script uses these values in the script, as well as the <strong>data-increment</strong> attribute so that it can do the right thing when the arrow keys are pressed.",
         "When the up or right keys are pressed, 1 is added to the value.",
         "When the down or left keys are pressed, 1 is subtracted from it.",
         "The <strong>Home</strong> and <strong>End</strong> keys set the value to the <strong>aria-maxvalue</strong> and <strong>aria-min-value</strong> respectively.",
@@ -225,11 +235,4 @@
 }
 </script>
 
-<?= includeNPMInstructions(
-  'spinbutton',
-  array(),
-  '',
-  false,
-  array(),
-  '.spinbutton'
-) ?>
+<?= includeNPMInstructions("spinbutton", [], "", false, [], ".spinbutton") ?>

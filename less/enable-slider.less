@@ -41,16 +41,16 @@
 
 /* This is a mixin that contains the styles for the slider's track. */
 .track() {
-  width: @track-width;
-  height: @track-height;
-  box-sizing: @slider-box-sizing;
-  cursor: pointer;
+    width: @track-width;
+    height: @track-height;
+    box-sizing: @slider-box-sizing;
+    cursor: pointer;
 
-  background: @track-color;
-  border-radius: @track-radius;
-  border: @track-border-width solid @track-border-color;
-  position: relative;
-  top: 2px;
+    background: @track-color;
+    border-radius: @track-radius;
+    border: @track-border-width solid @track-border-color;
+    position: relative;
+    top: 2px;
 }
 
 /*
@@ -61,107 +61,106 @@
  * and screen readers. :-)
  */
 .thumb() {
-  .appearance(none);
+    .appearance(none);
 
-  box-sizing: @slider-box-sizing;
-  border: @thumb-border-width solid @thumb-border-color;
-  height: @thumb-height;
-  width: @thumb-width;
-  border-radius: @thumb-radius;
-  background: @thumb-color;
-  cursor: pointer;
-  margin-top: ((-@track-border-width * 2 + @track-height) / 2) -
-    (@thumb-height / 2);
+    box-sizing: @slider-box-sizing;
+    border: @thumb-border-width solid @thumb-border-color;
+    height: @thumb-height;
+    width: @thumb-width;
+    border-radius: @thumb-radius;
+    background: @thumb-color;
+    cursor: pointer;
+    margin-top: ((-@track-border-width * 2 + @track-height) / 2) -
+        (@thumb-height / 2);
 }
 
 .label() {
-  display: block;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 0.5em;
-  clear: both;
-  font-weight: bold;
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5em;
+    clear: both;
+    font-weight: bold;
 }
 
 .container() {
-  width: calc(100% - 6.3em);
-  display: inline-block;
-  height: ((@slider-height) / @px);
-  transform: translateY(-5px);
+    width: calc(100% - 6.3em);
+    display: inline-block;
+    height: ((@slider-height) / @px);
+    transform: translateY(-5px);
 }
 
 .multi-thumb() {
-  pointer-events: auto;
-  transform: translateZ(0);
-  z-index: 1;
+    pointer-events: auto;
+    transform: translateZ(0);
+    z-index: 1;
 }
 
 .multi-track() {
-  background: none; /* get rid of Firefox track background */
-  border: none;
-  height: 100%;
-  width: 100%;
+    background: none; /* get rid of Firefox track background */
+    border: none;
+    height: 100%;
+    width: 100%;
 }
 
 /*
  * Thumb focus styles
  */
 .thumb-focus() {
-  outline: solid 2px @focus-color;
-  outline-offset: 4px;
+    outline: solid 2px @focus-color;
+    outline-offset: 4px;
 }
 
 .undo-thumb-focus() {
-  outline: none;
+    outline: none;
 }
 
 /*
  * Track focus styles
  */
 .track-focus() {
-  background: @track-focus-color;
+    background: @track-focus-color;
 }
 
-
 input[type="range"] {
-  .appearance(none);
-  margin: 0;
-  font-size: 1rem;
-  width: @track-width;
-  border: none;
-  box-sizing: @slider-box-sizing;
+    .appearance(none);
+    margin: 0;
+    font-size: 1rem;
+    width: @track-width;
+    border: none;
+    box-sizing: @slider-box-sizing;
 
-  &:focus {
-    outline: solid 2px transparent;
-  }
+    &:focus {
+        outline: solid 2px transparent;
+    }
 
-  &::-webkit-slider-runnable-track {
-    .track();
-  }
-
-  &::-moz-range-track {
-    .track();
-  }
-
-  &::-webkit-slider-thumb {
-    .thumb();
-  }
-
-  &::-moz-range-thumb {
-    .thumb();
-  }
-
-  &:focus {
     &::-webkit-slider-runnable-track {
-      .track-focus();
+        .track();
     }
 
     &::-moz-range-track {
-      .track-focus();
+        .track();
     }
-  }
 
-  .enable-focus(
+    &::-webkit-slider-thumb {
+        .thumb();
+    }
+
+    &::-moz-range-thumb {
+        .thumb();
+    }
+
+    &:focus {
+        &::-webkit-slider-runnable-track {
+            .track-focus();
+        }
+
+        &::-moz-range-track {
+            .track-focus();
+        }
+    }
+
+    .enable-focus(
     {
       &::-webkit-slider-thumb {
         .thumb-focus();
@@ -184,10 +183,10 @@ input[type="range"] {
 }
 
 .html-slider {
-  &__container {
-    .container();
+    &__container {
+        .container();
 
-    /*
+        /*
      * This allows us to adjust the top padding for the container div 
      * in Firefox only, since its implementation needs extra padding on
      * the top to be pixel perfect. ¯\_(ツ)_/¯
@@ -196,119 +195,117 @@ input[type="range"] {
      * right now, but that's okay, since we only care about Firefox here.
      */
 
-     @supports selector(input[type="range"]::-moz-range-thumb) {
-      & {
-        transform: translateY(3px);
-      }
-    }
-  }
-
-
-
-  &__multi {
-    &--output {
-      position: absolute;
-      background: @output-bgcolor;
-      color: @output-color;
-      text-align: center;
-      width: @output-width;
-      top: (@slider-height + 10px);
-
-      /* This positions the particular values in the form */
-      &[for="a"] {
-        left: ~"calc(@{thumb-radius} + (var(--a) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
-      }
-
-      &[for="b"] {
-        left: ~"calc(@{thumb-radius} + (var(--b) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
-      }
-    }
-
-    &--container {
-      --minValue: ~"calc(min(var(--a), var(--b)))";
-      --maxValue: ~"calc(max(var(--a), var(--b)))";
-      --dif: calc(var(--max) - var(--min));
-      position: relative;
-      padding: 0;
-      display: block;
-      margin-bottom: (@slider-height + 30px);
-      width: 100%;
-
-      /* This will replace the track */ 
-      &::before {
-        .track();
-        
-        /* These are custom styles not needed by track pseudo-elements */
-        position: absolute;
-        content: "";
-        display: block;
-        top: ((@slider-height-px /2  - @track-height));
-        z-index: -2;
-        width: ~"calc(100% - @{thumb-border-width})";
-      }
-
-      /* This will be the coloured part in between the sliders */
-      &::after {
-        .track();
-
-        content: '';
-        display: 'block';
-        position: absolute;
-        z-index: -1;
-        left: ~"calc(@{thumb-radius} + (var(--minValue) / var(--dif)) * (100% - 2* @{thumb-radius}))";
-        top: ((@slider-height-px /2  - @track-height));
-        width: ~"calc((var(--maxValue) - var(--minValue)) / var(--dif) * (100% - 2* @{thumb-radius}))";
-        background: @track-diff-color;
-
-        // For Windows High Contrast Mode
-        outline: 2px solid transparent;
-        outline-offset: -4px;
-      }
-
-      input[type="range"] {
-        position: absolute;
-        pointer-events: none;
-        background: none;
-
-        &::-webkit-slider-thumb {
-          .multi-thumb();
-        }
-        &::-moz-range-thumb {
-          .multi-thumb();
-          transform: translateY(10px);
-        }
-
-        &::-webkit-slider-runnable-track {
-          .multi-track();
-          margin-top: 23px;
-        }
-
-        &::-moz-range-track {
-          .multi-track();
-        }
-        
         @supports selector(input[type="range"]::-moz-range-thumb) {
-          & {
-            transform: translateY(5px);
-            height: 0px;
-          }
+            & {
+                transform: translateY(3px);
+            }
         }
-      }
     }
-  }
 
-  &__output {
-    display: inline-block;
-    height: (@slider-height / @px);
-    line-height: (@slider-height / @px);
-    position: relative;
-    width: 6em;
-    text-align: center;
-  }
+    &__multi {
+        &--output {
+            position: absolute;
+            background: @output-bgcolor;
+            color: @output-color;
+            text-align: center;
+            width: @output-width;
+            top: (@slider-height + 10px);
 
-  &__label {
-    .label();
-  }
+            /* This positions the particular values in the form */
+            &[for="a"] {
+                left: ~"calc(@{thumb-radius} + (var(--a) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
+            }
+
+            &[for="b"] {
+                left: ~"calc(@{thumb-radius} + (var(--b) / var(--dif)) * (100% - @{thumb-width}) - (@{output-width} / 2))";
+            }
+        }
+
+        &--container {
+            --minValue: ~"calc(min(var(--a), var(--b)))";
+            --maxValue: ~"calc(max(var(--a), var(--b)))";
+            --dif: calc(var(--max) - var(--min));
+            position: relative;
+            padding: 0;
+            display: block;
+            margin-bottom: (@slider-height + 30px);
+            width: 100%;
+
+            /* This will replace the track */
+            &::before {
+                .track();
+
+                /* These are custom styles not needed by track pseudo-elements */
+                position: absolute;
+                content: "";
+                display: block;
+                top: ((@slider-height-px / 2 - @track-height));
+                z-index: -2;
+                width: ~"calc(100% - @{thumb-border-width})";
+            }
+
+            /* This will be the coloured part in between the sliders */
+            &::after {
+                .track();
+
+                content: "";
+                display: "block";
+                position: absolute;
+                z-index: -1;
+                left: ~"calc(@{thumb-radius} + (var(--minValue) / var(--dif)) * (100% - 2* @{thumb-radius}))";
+                top: ((@slider-height-px / 2 - @track-height));
+                width: ~"calc((var(--maxValue) - var(--minValue)) / var(--dif) * (100% - 2* @{thumb-radius}))";
+                background: @track-diff-color;
+
+                // For Windows High Contrast Mode
+                outline: 2px solid transparent;
+                outline-offset: -4px;
+            }
+
+            input[type="range"] {
+                position: absolute;
+                pointer-events: none;
+                background: none;
+
+                &::-webkit-slider-thumb {
+                    .multi-thumb();
+                }
+                &::-moz-range-thumb {
+                    .multi-thumb();
+                    transform: translateY(10px);
+                }
+
+                &::-webkit-slider-runnable-track {
+                    .multi-track();
+                    margin-top: 23px;
+                }
+
+                &::-moz-range-track {
+                    .multi-track();
+                }
+
+                @supports selector(input[type="range"]::-moz-range-thumb) {
+                    & {
+                        transform: translateY(5px);
+                        height: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__output {
+        display: inline-block;
+        height: (@slider-height / @px);
+        line-height: (@slider-height / @px);
+        position: relative;
+        width: 6em;
+        text-align: center;
+    }
+
+    &__label {
+        .label();
+    }
 }
 
 /*
@@ -316,200 +313,197 @@ input[type="range"] {
  */
 
 .enable-slider {
-  position: relative;
-
-  &__label {
-    .label();
-  }
-
-  &__hidden-label {
-    display: none;
-  }
-
-  &__handle {
-    transform: scale(2);
-    touch-action: none;
-
-    &:focus,
-    &:active,
-    &.focus & {
-      background-color: #eee !important;
-    }
-
-    &-button {
-      .appearance(none);
-      background: none;
-      border: none;
-      display: block;
-      outline-offset: 2px;
-      margin: -6px -3px;
-    }
-  }
-
-  &__button {
-    .appearance(none);
-    border: none;
-    background: green;
-    color: white;
-
-    &-label {
-      display: inline-block;
-      transform: translateY(-2px);
-
-
-      .enable-slider--vertical & {
-        transform: rotate(90deg) translateX(-3px);
-      }
-    }
-
-    &-container {
-      position: absolute;
-      top: -2px;
-      width: (8/@px);
-      height: (12/@px);
-
-      .enable-slider--vertical & { 
-        height: (10/@px);
-      }
-
-
-      &--decrease {
-        left: 2px;
-
-        .enable-slider--vertical & {
-          left: 3px;
-          bottom: 6px;
-        }
-      }
-
-      &--increase {
-        right: 2px;
-
-        .enable-slider--vertical & {
-          right: 3px;
-          top: 8px;
-        }
-      }
-    }
-  }
-
-  &--horizontal {
-    margin: 20px 0 50px 0;
-    padding: 0;
-    width: 90vw;
-    max-width: 100%;
-    height: 10px;
-    background-color: #eef;
-    border: 2px solid black;
-
-    .enable-slider__handle {
-      margin: -2px 0 0 0;
-      background-color: #808080;
-      position: absolute;
-      left: -300em;
-      top: -30em;
-      z-index: 10;
-
-      padding: 7px 2px;
-      border: 1px solid black;
-      border-radius: 5px;
-
-      &,
-      & .enable-slider__handle-button {
-        width: 24px;
-        height: 12px;
-      }
-    }
-
-    .enable-slider__value {
-      margin: 24px 0 0 0;
-      padding: 5px;
-      width: 30px;
-      height: 15px;
-      text-align: center;
-      font-weight: bold;
-
-      position: absolute;
-      left: -30em;
-      top: -30em;
-      z-index: 10;
-    }
-  }
-
-  &--vertical {
-    margin: 50px;
-    padding: 0;
-    height: 540px;
-    width: 20px;
-    background-color: #eef;
-    border: 2px solid black;
-
-    .enable-slider__handle {
-      margin: 0 0 0 -2px;
-      padding: 2px 7px;
-      width: 12px;
-      height: 24px;
-      background-color: #808080;
-
-      position: absolute;
-      left: -300em;
-      top: -30em;
-      z-index: 10;
-
-      border: 1px solid black;
-      border-radius: 5px;
-    }
-
-    .enable-slider__value {
-      margin: 0 0 0 30px;
-      padding: 5px;
-      width: 30px;
-      height: 15px;
-      text-align: center;
-      font-weight: bold;
-
-      position: absolute;
-      left: -30em;
-      top: -30em;
-      z-index: 10;
-    }
-  }
-
-  &__slider-range {
-    pointer-events: none;
-    margin: 0 2px 2px 0;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    background-color: #00f;
-
-    position: absolute;
-    left: -300em;
-    top: -30em;
-    z-index: 0;
-
-    // For Windows High Contrast Mode
-    outline: solid 4px transparent;
-    outline-offset: -5px;
-    
-  }
-
-  &__number-fallback {
-    background: #fff;
-    text-align: right;
-    z-index: 11;
     position: relative;
-    height: (30 / @px);
-    color: black;
-  }
 
-  .hidden {
-    position: absolute;
-    top: -20em;
-    left: -200em;
-  }
+    &__label {
+        .label();
+    }
 
-  output {
-    padding-left: 1em;
-  }
+    &__hidden-label {
+        display: none;
+    }
+
+    &__handle {
+        transform: scale(2);
+        touch-action: none;
+
+        &:focus,
+        &:active,
+        &.focus & {
+            background-color: #eee !important;
+        }
+
+        &-button {
+            .appearance(none);
+            background: none;
+            border: none;
+            display: block;
+            outline-offset: 2px;
+            margin: -6px -3px;
+        }
+    }
+
+    &__button {
+        .appearance(none);
+        border: none;
+        background: green;
+        color: white;
+
+        &-label {
+            display: inline-block;
+            transform: translateY(-2px);
+
+            .enable-slider--vertical & {
+                transform: rotate(90deg) translateX(-3px);
+            }
+        }
+
+        &-container {
+            position: absolute;
+            top: -2px;
+            width: (8 / @px);
+            height: (12 / @px);
+
+            .enable-slider--vertical & {
+                height: (10 / @px);
+            }
+
+            &--decrease {
+                left: 2px;
+
+                .enable-slider--vertical & {
+                    left: 3px;
+                    bottom: 6px;
+                }
+            }
+
+            &--increase {
+                right: 2px;
+
+                .enable-slider--vertical & {
+                    right: 3px;
+                    top: 8px;
+                }
+            }
+        }
+    }
+
+    &--horizontal {
+        margin: 20px 0 50px 0;
+        padding: 0;
+        width: 90vw;
+        max-width: 100%;
+        height: 10px;
+        background-color: #eef;
+        border: 2px solid black;
+
+        .enable-slider__handle {
+            margin: -2px 0 0 0;
+            background-color: #808080;
+            position: absolute;
+            left: -300em;
+            top: -30em;
+            z-index: 10;
+
+            padding: 7px 2px;
+            border: 1px solid black;
+            border-radius: 5px;
+
+            &,
+            & .enable-slider__handle-button {
+                width: 24px;
+                height: 12px;
+            }
+        }
+
+        .enable-slider__value {
+            margin: 24px 0 0 0;
+            padding: 5px;
+            width: 30px;
+            height: 15px;
+            text-align: center;
+            font-weight: bold;
+
+            position: absolute;
+            left: -30em;
+            top: -30em;
+            z-index: 10;
+        }
+    }
+
+    &--vertical {
+        margin: 50px;
+        padding: 0;
+        height: 540px;
+        width: 20px;
+        background-color: #eef;
+        border: 2px solid black;
+
+        .enable-slider__handle {
+            margin: 0 0 0 -2px;
+            padding: 2px 7px;
+            width: 12px;
+            height: 24px;
+            background-color: #808080;
+
+            position: absolute;
+            left: -300em;
+            top: -30em;
+            z-index: 10;
+
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .enable-slider__value {
+            margin: 0 0 0 30px;
+            padding: 5px;
+            width: 30px;
+            height: 15px;
+            text-align: center;
+            font-weight: bold;
+
+            position: absolute;
+            left: -30em;
+            top: -30em;
+            z-index: 10;
+        }
+    }
+
+    &__slider-range {
+        pointer-events: none;
+        margin: 0 2px 2px 0;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        background-color: #00f;
+
+        position: absolute;
+        left: -300em;
+        top: -30em;
+        z-index: 0;
+
+        // For Windows High Contrast Mode
+        outline: solid 4px transparent;
+        outline-offset: -5px;
+    }
+
+    &__number-fallback {
+        background: #fff;
+        text-align: right;
+        z-index: 11;
+        position: relative;
+        height: (30 / @px);
+        color: black;
+    }
+
+    .hidden {
+        position: absolute;
+        top: -20em;
+        left: -200em;
+    }
+
+    output {
+        padding-left: 1em;
+    }
 }

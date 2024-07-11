@@ -26,11 +26,11 @@
 
       <h2 class="homepage__intro--header homepage__intro--header--code">Learn How To Create Accessible Code</h2>
       <p>
-        Whether you are new to accessibility or are a seasoned veteran, Enable's aim to <strong>teach devlopers how to
+        Whether you are new to accessibility or are a seasoned veteran, Enable's aim is to <strong>teach developers how to
           make
           something accessible</strong> and to <strong>show why it is.</strong> Developers can walk through the code
         step
-        by step to understand what HTML, CSS and JavaScript are needed to ensure their work "just works" for all users,
+        by step to understand what HTML, CSS, and JavaScript are needed to ensure their work "just works" for all users,
         no
         matter how they navigate the web.
       </p>
@@ -44,7 +44,7 @@
           ARIA</a> when recommending code and encourages the use of native HTML5 functionality whenever possible (as
         long
         as browser accessibility support is there). However, since we know there are a lot of developers looking to make
-        their existing custom widgets accessibile quickly due to time constraints, we also show custom code examples and
+        their existing custom widgets accessible quickly due to time constraints, we also show custom code examples and
         what code features make them work with assistive technology.
       </p>
 
@@ -54,11 +54,11 @@
       <h2 class="homepage__intro--header homepage__intro--header--npm">Use Pre-built Accessible Components</h2>
 
       <p>
-        Enable also includes components that can be included into your own projects via NPM, with instructions how to
-        integrate them as Webpack modules, native ES6 Modules or as old school ES4 JavaScript libraries. Accessible
-        hamburger menus, carousels and mobile friendly skip links, are only a few examples of prebuilt code you can use
+        Enable also includes components that can be included in your own projects via NPM, with instructions on how to
+        integrate them as Webpack modules, native ES6 Modules, or as old school ES4 JavaScript libraries. Accessible
+        hamburger menus, carousels, and mobile-friendly skip links, are only a few examples of prebuilt code you can use
         in
-        your projects today. We also encourage developers to consider contributing their own code to us for the benefit
+        your projects today. We also encourage developers to consider contributing their own code for the benefit
         of
         the developer community at large.
     </div>
@@ -116,7 +116,7 @@
   <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--bug">Found a bug?</h2>
 
   <p>
-    Feel free to log a bug on our Github project page!  If are a developer and know how to fix, please create a PR (if
+    Feel free to log a bug on our Github project page! If are a developer and know how to fix it, please create a PR (if
     you have never done this before, read the <a
         href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
         Github article about creating a pull request from a fork</a>).

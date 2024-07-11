@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20200314 at Thu Sep 30 11:56:25 2021
+Created by FontForge 20230101 at Wed Mar  6 11:30:46 2024
  By Zoltan Hawryluk
 This rendition (C) 1998 Andrew C. Bul+hac?k. Freely distributable.
 </metadata>
@@ -60,6 +60,8 @@ d="M600 300h-200v-200h-100v200h-200v100h200v200h100v-200h200v-100z" />
     <glyph glyph-name="comma" unicode="," 
 d="M200 100h50v50h50v150h100v-200h-50v-50h-50v-50h-100v100z" />
     <glyph glyph-name="hyphen" unicode="-" 
+d="M600 300h-500v100h500v-100z" />
+    <glyph glyph-name="hyphen" unicode="&#x2010;" 
 d="M600 300h-500v100h500v-100z" />
     <glyph glyph-name="hyphen" unicode="&#x2010;" 
 d="M600 300h-500v100h500v-100z" />
@@ -220,7 +222,7 @@ d="M550 400v-50h-50v-50h-50v-50h-50v-50h-50v-50h-50v-50h300v-100h-500v100h50v50h
     <glyph glyph-name="braceleft" unicode="{" 
 d="M372 101h-121v50v100v49v33v30v38v50v100v51h121v100h-128h-43v-100h-49v-200h-84v-100h84v-201h49v-50v-50h171v100z" />
     <glyph glyph-name="bar" unicode="|" 
-d="M200 700h100v-700h-100v700zM400 700h100v-700h-100v700z" />
+d="M301 700h100v-700h-100v700z" />
     <glyph glyph-name="braceright" unicode="}" 
 d="M222 99h121v50v100v49v33v30v38v50v100v51h-121v100h128h43v-100h49v-200h102v-100h-102v-201h-49v-50v-50h-171v100z" />
     <glyph glyph-name="uni0084" 

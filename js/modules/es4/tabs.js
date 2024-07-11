@@ -12,8 +12,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-
-const tabgroup = new function() {
+const tabgroup = new (function() {
 
   this.init = function() {
     this.tabgroupEls = document.querySelectorAll('.enable-tablist');
@@ -28,12 +27,11 @@ const tabgroup = new function() {
     let activeTab = null;
     const activeHash = location.hash;
     const { keyboardOnlyInstructions } = tabgroupEl.dataset;
-
     this.addRoles(tabgroupEl);
+    const tabElSelectedOnInit = tabgroupEl.querySelector('[role="tab"][aria-selected="true"]');
 
     if (keyboardOnlyInstructions) {
       const tabEls = tabgroupEl.querySelectorAll('[role="tab"]');
-
       tabEls.forEach((el) =>
         el.setAttribute("aria-describedby", keyboardOnlyInstructions)
       );
@@ -52,7 +50,7 @@ const tabgroup = new function() {
       preventClickDefault: true,
 
       // This selects the first tab by default.
-      doSelectFirstOnInit: true,
+      doSelectFirstOnInit: !tabElSelectedOnInit,
 
       // This sets what the sr-only class is (default is .sr-only)
       visuallyHiddenClass: "sr-only",
@@ -62,28 +60,7 @@ const tabgroup = new function() {
       // this method is called afterwards.  It hides all the tabpanels
       // except for the one that checked tab is supposed to show (the
       // one with the ID on the tab's aria-controls attribute).
-      ariaCheckedCallback: function(
-        e,
-        currentlyCheckedEl
-      ) {
-        if (!currentlyCheckedEl) {
-          return;
-        }
-
-        const groupEl = currentlyCheckedEl.closest('[role="tablist"]');
-        const activePanelId = currentlyCheckedEl.getAttribute("aria-controls");
-        const panelEls =
-          groupEl.parentNode.querySelectorAll('[role="tabpanel"]');
-
-        for (let i = 0; i < panelEls.length; i++) {
-          var panel = panelEls[i];
-          if (panel.id === activePanelId) {
-            panel.classList.add("visible");
-          } else {
-            panel.classList.remove("visible");
-          }
-        }
-      },
+      ariaCheckedCallback: this.ariaCheckedCallback,
       activatedEventName: 'enable-selected'
     });
 
@@ -105,6 +82,28 @@ const tabgroup = new function() {
 
     if (activeTab) {
       activeTab.click();
+    } else if (tabElSelectedOnInit) {
+      this.ariaCheckedCallback(null, tabElSelectedOnInit);
+    }
+  }
+
+  this.ariaCheckedCallback = (e, currentlyCheckedEl) => {
+    if (!currentlyCheckedEl) {
+      return;
+    }
+
+    const groupEl = currentlyCheckedEl.closest('[role="tablist"]');
+    const activePanelId = currentlyCheckedEl.getAttribute("aria-controls");
+    const panelEls =
+      groupEl.parentNode.querySelectorAll('[role="tabpanel"]');
+
+    for (let i = 0; i < panelEls.length; i++) {
+      var panel = panelEls[i];
+      if (panel.id === activePanelId) {
+        panel.classList.add("visible");
+      } else {
+        panel.classList.remove("visible");
+      }
     }
   }
 
@@ -114,11 +113,16 @@ const tabgroup = new function() {
     if (tabgroupEl.getAttribute("role") !== "tablist") {
       console.info('Roles do not exist. Adding');
       const tabEls = tabgroupEl.querySelectorAll(".enable-tab");
+      const tabElSelectedOnInit = tabgroupEl.querySelector(".enable-tab[data-tab-selected-on-load");
       tabgroupEl.setAttribute("role", "tablist");
       tabEls.forEach((tabEl) => {
         this.addTabRole(tabEl);
         this.addPresentationRoles(tabgroupEl, tabEl);
       });
+
+      if (tabElSelectedOnInit) {
+        tabElSelectedOnInit.setAttribute('aria-selected', 'true');
+      }
     }
   };
 
@@ -148,7 +152,7 @@ const tabgroup = new function() {
     const { target, key } = e;
     const role = target.getAttribute("role");
 
-    if (role === "tab" && key === "Enter") {
+    if (role === "tab" && (key === "Enter" || key === " ")) {
       const { href } = target;
       const splitHref = href.split("#");
       if (splitHref.length === 2) {
@@ -162,5 +166,4 @@ const tabgroup = new function() {
     }
 
   };
-};
-
+});

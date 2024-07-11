@@ -47,32 +47,14 @@
   width: 100%;
 }
 .enable-video-player .able-media-container iframe:focus {
-  outline: solid 2px #3b99fc !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
 .enable-video-player .able-media-container iframe:focus:not(:focus-visible) {
-  outline: none !important;
-}
-.enable-video-player .able-media-container iframe:focus-visible {
-  outline: solid 2px #3b99fc !important;
+  outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
-.compliance-table {
-  width: 450px;
-  max-width: 100%;
-  margin: 1em auto 3em auto;
-}
-.compliance-table th,
-.compliance-table td {
-  text-align: center;
-  vertical-align: middle;
-}
-.compliance-table tr {
-  background: none !important;
-}
-.compliance-table td {
-  border: solid 1px black;
-}
-.compliance-table__icon {
-  width: 20px;
+.enable-video-player .able-media-container iframe:focus-visible {
+  outline: solid 2px #097efb !important;
+  outline-offset: -2px;
 }

@@ -9,7 +9,7 @@
 
             <p>The most bulletproof of the methods below to use is the ARIA version, without changing focus to the
                 progress bar as it's changing, since
-                it works with the majority of screen-readers.
+                it works with the majority of screen readers.
             </p>
 
             <p>Screen reader specific information:</p>
@@ -36,7 +36,7 @@
 
                         <li>For the ARIA
                             <code>progressbar</code> role (but not the HTML5
-                            <code>progress</code> tag) NVDA will intepret the value of
+                            <code>progress</code> tag) NVDA will interpret the value of
                             <code>aria-valuenow</code> as a percentage value, regardless of the value of
                             <code>aria-valuemax</code>. It will also not read out the values correctly "live" when
                             incrementing.
@@ -55,13 +55,13 @@
 
 
         <p>
-            Progress bars show the completion status of a current task.  It may be something that is fairly static 
+            Progress bars show the completion status of a current task.  It may be fairly static 
             for the page (e.g. A page with a progress bar indicating the delivery status of a package is unlikely 
-            to be updated in real time after the page is loaded), then you won't need an aria-live region that 
-            announces the status value.  However, if it is a task that is being reported in real time (e.g. 
-            how log it will take to upload a movie file to a web server), then you will want that information 
-            updated to the user in real time as it happens.  In the latter case, the developer and UX designer should
-            think how immediate this information should be given to screen reader users, since this information cause
+            to be updated in real-time after the page is loaded), then you won't need an aria-live region that 
+            announces the status value.  However, if it is a task that is being reported in real-time (e.g. 
+            how long it will take to upload a movie file to a web server), then you will want that information 
+            updated to the user in real-time as it happens.  In the latter case, the developer and UX designer should
+            think about how immediately this information should be given to screen reader users since this information causes
             a bit of noise, and set the aria-live level appropriately. If the user is not going to be doing anything
             else on the screen while the action is happening and needs immediate updates, use <code>aria-live="assertive"</code>.
             If the user is going to be doing other things on the page while the progress bar is updating, use <code>"polite"</code>
@@ -72,14 +72,13 @@
 
         <h2>HTML5 progress bar</h2>
 
-        <?php includeStats(array('isForNewBuilds' => true)) ?>
+        <?php includeStats(["isForNewBuilds" => true]); ?>
 
         <p>
-            This progress bar uses aria-live regions to update the status of the progress bar. It works in for all
-            screen
-            readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
+            This progress bar uses aria-live regions to update the status of the progress bar. It works for all
+            screen readers. It is the most bulletproof way to implement a progress bar if you need to ensure that screen reader
             users are updated as soon as the progress bar value changes.  Be mindful of how often the ARIA live region updates, so it
-            doesn't cause unnecessary noise for screen readers users.
+            doesn't cause unnecessary noise for screen reader users.
 
         </p>
 
@@ -88,7 +87,7 @@
             </progress>
             <strong class="sr-only" id="html1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
-        <?php includeShowcode("html5-example")?>
+        <?php includeShowcode("html5-example"); ?>
         <script type="application/json" id="html5-example-props">
         {
             "replaceHtmlRules": {},
@@ -109,7 +108,7 @@
 
         <p>
             This progress bar uses the screen reader's native functionality to read the
-            progress bar by setting keyboard focus on the bar when incrementing.  
+            progress bar by setting the keyboard focus on the bar when incrementing.  
             <strong>This doesn't announce updates on Mac OSX Voiceover with Safari.</strong>
         </p>
 
@@ -119,7 +118,7 @@
             </progress>
         </div>
 
-        <?php includeShowcode("html5-focus-example")?>
+        <?php includeShowcode("html5-focus-example"); ?>
         <script type="application/json" id="html5-focus-example-props">
         {
             "replaceHtmlRules": {},
@@ -129,7 +128,7 @@
                     "notes": "This allows the progress bar to be focusable via JavaScript only"
                 },
                 {
-                    "label": "Focus element using Javascript when progress starts progressing",
+                    "label": "Focus element using JavaScript when progress starts progressing",
                     "highlight": "%JS% progressTest.progressTestClickEvent ||| el.focus\\(\\);",
                     "notes": ""
                 }
@@ -140,9 +139,9 @@
 
         <h2>ARIA role="progressbar" Example</h2>
 
-        <?php includeStats(array('isForNewBuilds' => false)) ?>
+        <?php includeStats(["isForNewBuilds" => false]); ?>
 
-        <p>This progress bar uses aria-live regions to update the status of the progress bar. Same rules for updating this aria-live region applies as the HTML5 example above.
+        <p>This progress bar uses aria-live regions to update the status of the progress bar. The same rules for updating this aria-live region apply as the HTML5 example above.
         </p>
 
         <div id="aria-example1" class="enable-example">
@@ -151,7 +150,7 @@
             </div>
             <strong class="sr-only" id="aria1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
-        <?php includeShowcode("aria-example1")?>
+        <?php includeShowcode("aria-example1"); ?>
         <script type="application/json" id="aria-example1-props">
         {
             "replaceHtmlRules": {},
@@ -174,7 +173,7 @@
         }
         </script>
 
-        <p>This progress bar uses the screen reader's native functionality to read the progress bar by setting keyboard
+        <p>This progress bar uses the screen reader's native functionality to read the progress bar by setting the keyboard
             focus on the bar when incrementing.
             <strong>At the time of this writing, this doesn't work in Voiceover on OSX &lt;= 10.15.7</strong>
         </p>
@@ -187,7 +186,11 @@
 
         <h2>Advanced ARIA progressbar role example</h2>
 
-        <?php includeStats(array('doNot' => true, 'comment' => 'This example is provided for informational purposes only, since this solution does not work for all web browser/screen reader combinations (e.g. Safari with VoiceOver on OSX &lt;= 12.13.1 and Safari with VoiceOver on iOS &lt;= 14.6 ')) ?>
+        <?php includeStats([
+            "doNot" => true,
+            "comment" =>
+                "This example is provided for informational purposes only, since this solution does not work for all web browser/screen reader combinations (e.g. Safari with VoiceOver on OSX &lt;= 12.13.1 and Safari with VoiceOver on iOS &lt;= 14.6 ",
+        ]); ?>
 
         <p>
         This is when you want to add text descriptions to the values inside a progress bar.  The example below is just one way this can be implemented.
@@ -213,7 +216,7 @@
             </div>
         </div>
 
-        <?php includeShowcode("aria-valuetext-example")?>
+        <?php includeShowcode("aria-valuetext-example"); ?>
         <script type="application/json" id="aria-valuetext-example-props">
         {
             "replaceHtmlRules": {},

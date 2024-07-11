@@ -1,29 +1,26 @@
 @import "shared/mixins-and-vars";
- 
-@table-header-height: 2em; 
 
+@table-header-height: 2em;
 
 .sticky-table {
-
     &__keyboard-instructions {
         display: none;
         background: black;
         color: white;
         padding: 10px;
-        font-size: (12/@px);
+        font-size: (12 / @px);
         position: absolute;
         top: 0;
     }
 
     &__container {
-        /* overflow: auto;
-        max-height: 70vh; */
+        overflow: auto;
+        max-height: 70vh;
         position: relative;
 
         &--horizontal-scroll {
             overflow: auto;
         }
-
 
         &:focus-within {
             outline: @focus-color 2px solid;
@@ -32,25 +29,23 @@
                 display: block;
             }
         }
-    
 
         table,
         [role="table"] {
             margin-bottom: 0;
             position: relative;
             border: solid 1px black;
-
         }
 
         thead {
             background: white;
-            transform: translateZ(1px)
+            transform: translateZ(1px);
         }
 
         th[scope="col"],
-        [role="columnheader"] {    
+        [role="columnheader"] {
             .sticky();
-            top: (38/@px);
+            top: 0; // was (38/@px);
         }
 
         th[scope="row"],
@@ -65,12 +60,11 @@
         left: 0;
         z-index: 1;
     }
-
 }
 
 caption,
 .caption,
-figcaption {
+table + figcaption {
     display: table-caption;
     text-align: center;
     font-style: italic;
@@ -93,25 +87,26 @@ figcaption {
             margin: 0 1em;
             top: 3px;
         }
-        
+
         &:before {
             left: -110px;
         }
         &:after {
             transform: scaleX(-1);
+            right: -110px;
         }
     }
 }
 
-figcaption.caption {
+figure figcaption.caption {
     display: block;
     margin-top: 1em;
 }
 
 table,
 [role="table"] {
-	width: 100%;
-	max-width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     border-collapse: collapse;
     display: table;
 
@@ -119,25 +114,27 @@ table,
         margin-bottom: 0;
     }
 
-    
-
-    th,td,
-    [role="columnheader"], [role="rowheader"], [role="cell"] {
+    th,
+    td,
+    [role="columnheader"],
+    [role="rowheader"],
+    [role="cell"] {
         line-height: 1.2;
         text-align: left;
         padding: 10px;
         display: table-cell;
-        font-size: (14/@px);
+        font-size: (14 / @px);
     }
 
     th,
-    [role="columnheader"], [role="rowheader"] {
+    [role="columnheader"],
+    [role="rowheader"] {
         font-weight: bold;
         color: white;
         background-color: black;
     }
 
-    tr, 
+    tr,
     [role="row"] {
         display: table-row;
         background-color: #fff;
@@ -151,22 +148,24 @@ table,
         display: table-row-group;
     }
 
-
     @table-width: 100%;
-    @table-column-width: @table-width / 7; 
+    @table-column-width: @table-width / 7;
     @table-body-height: 80vh;
 
     &.fixed-headers {
         border-collapse: collapse;
-        
+
         &,
         & thead,
         & .thead {
             width: @table-width;
         }
-        
-        td, th,
-        [role="columnheader"], [role="rowheader"], [role="cell"] {
+
+        td,
+        th,
+        [role="columnheader"],
+        [role="rowheader"],
+        [role="cell"] {
             overflow: hidden;
             width: @table-column-width;
             max-width: @table-column-width;
@@ -177,9 +176,9 @@ table,
             hyphens: auto;
         }
 
-        
         th,
-        [role="columnheader"], [role="rowheader"] {
+        [role="columnheader"],
+        [role="rowheader"] {
             border-left: solid 1px #fff;
             border-right: solid 1px #fff;
         }
@@ -191,10 +190,9 @@ table,
         }
         thead,
         .thead {
-            
             tr {
-            display: block;
-            position: relative;
+                display: block;
+                position: relative;
             }
         }
         tbody,
@@ -203,12 +201,55 @@ table,
             overflow: auto;
             width: calc(~"100% + 16px");
             height: @table-body-height;
-            
+        }
+    }
+
+    .rowspan2 {
+        &__top {
+            border-bottom: none;
+            vertical-align: bottom;
+
+            span {
+                display: inline-block;
+                transform: translateY(1rem);
+            }
+        }
+
+        &__bottom {
+            border-top: none;
         }
     }
 }
 
-.screenshot-table {
+.enable-table {
+    &--centered-data {
+        th,
+        td {
+            text-align: center;
+        }
+    }
+
+    &--with-borders {
+        th {
+            border-left: solid 1px white;
+            border-right: solid 1px white;
+
+            &:first-child {
+                border-left: solid 1px black;
+            }
+
+            &:last-child {
+                border-right: solid 1px black;
+            }
+        }
+
+        td {
+            border: solid 1px black;
+        }
+    }
+}
+
+&.enable-tabl .screenshot-table {
     margin: 0 auto;
     width: initial;
     max-width: initial;

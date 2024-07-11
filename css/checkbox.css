@@ -47,7 +47,7 @@
   place-content: center;
 }
 .enable-checkbox input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid #3b99fc;
+  outline: max(2px, 0.15em) solid #097efb;
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) {
@@ -55,7 +55,7 @@
   outline-offset: 0;
 }
 .enable-checkbox input[type="checkbox"]:focus-visible {
-  outline: max(2px, 0.15em) solid #3b99fc;
+  outline: max(2px, 0.15em) solid #097efb;
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]::before {
@@ -69,6 +69,10 @@
   box-shadow: inset 1em 1em var(--form-control-color);
   /* Windows High Contrast Mode */
   background-color: CanvasText;
+}
+.enable-checkbox input[type="checkbox"]:indeterminate::before {
+  clip-path: polygon(0% 40%, 100% 40%, 100% 60%, 0% 60%);
+  transform: scale(1);
 }
 .enable-checkbox input[type="checkbox"]:checked::before {
   transform: scale(1);
@@ -89,34 +93,47 @@
   display: block;
   margin: 10px auto;
 }
-#group-example legend {
+#group-example legend,
+#indeterminate-example legend {
   width: 100%;
   text-align: center;
   border-bottom: 3px solid black;
 }
-#group-example .checkbox-container {
+#group-example .checkbox-container,
+#indeterminate-example .checkbox-container {
   display: block;
   width: fit-content;
   margin: 0 auto;
   position: relative;
 }
-#group-example .checkbox-container input {
+#group-example .checkbox-container input,
+#indeterminate-example .checkbox-container input {
   position: absolute;
   left: 0;
 }
-#group-example .checkbox-container label {
+#group-example .checkbox-container label,
+#indeterminate-example .checkbox-container label {
   width: 190px;
   margin-bottom: 10px;
   padding-left: 1.875rem;
   grid-template-columns: initial;
 }
-#group-example .error {
+#group-example .error,
+#indeterminate-example .error {
   display: block;
   width: fit-content;
   margin: 0 auto 1em auto;
 }
-#group-example button {
+#group-example button,
+#indeterminate-example button {
   margin: 10px auto;
   text-align: center;
   display: block;
+}
+#aria-indeterminate-example label {
+  display: inline;
+}
+#aria-indeterminate-example .checkbox-container {
+  min-width: 190px;
+  list-style-type: none;
 }

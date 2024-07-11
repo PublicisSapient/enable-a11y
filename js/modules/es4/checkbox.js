@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const checkbox = new function () {
+const checkbox = new (function() {
 
   this.navigate = (evt) => {
     // ref is the element that fired the event.
@@ -46,6 +46,12 @@ const checkbox = new function () {
             {
               'bubbles': true
             }
+          ));
+          ref.dispatchEvent(new CustomEvent(
+            'enable-change',
+            {
+              'bubbles': true
+            }
           ))
         }
       }
@@ -59,6 +65,4 @@ const checkbox = new function () {
 
   this.init();
 
-};
-
-
+});

@@ -101,7 +101,7 @@
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 .enable-radio [type="radio"]:focus + label:before {
-  outline: 2px #3b99fc solid;
+  outline: 2px #097efb solid;
 }
 .enable-radio [type="radio"]:not(:checked) + label:after {
   opacity: 0;

@@ -1,0 +1,23 @@
+# Ignore artifacts:
+node_modules
+css
+data
+diagram-gimp-files
+enable-node-libs
+fonts
+images
+js/enable-libs
+js/modules
+js/out
+tmp
+videos
+vtt
+bin/php-express
+**.ico
+**/*.jpeg
+**/*.jpg
+**/*.png
+**/*.webp
+**/*.mp4
+**/*.gif
+**/*.xcf

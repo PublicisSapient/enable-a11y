@@ -18,7 +18,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const animatedGifPause = new function () {
+const animatedGifPause = new (function() {
     const detailsQuery = '.pausable-animated-gif details';
     let summaryPauseClass;
 
@@ -100,6 +100,4 @@ const animatedGifPause = new function () {
     }
 
     this.init();
-}
-
-
+})

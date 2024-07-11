@@ -1,114 +1,113 @@
 @import "shared/mixins-and-vars";
 
 .enable-drawer {
-  & > .enable-drawer__button {
-    .vendor(appearance, none);
-    border: none;
-    margin: 0;
-    padding: 0;
-    color: #000;
-    background: transparent;
-    font-size: 1rem;
-    list-style: none;
-    cursor: default;
-    width: 100%;
-    text-align: left;
-    background-image: data-uri('../images/plus.svg'); 
-    background-size: (20/@px) (20/@px);
-    background-repeat: no-repeat;
-    padding-left: (25/@px);
-    background-repeat: no-repeat;
-   
-    .remove-default-details-styles();
+    & > .enable-drawer__button {
+        .vendor(appearance, none);
+        border: none;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        background: white;
+        font-size: 1rem;
+        font-weight: bold;
+        list-style: none;
+        cursor: default;
+        width: 100%;
+        text-align: left;
+        background-image: data-uri("../images/plus.svg");
+        background-size: (20 / @px) (20 / @px);
+        background-repeat: no-repeat;
+        padding-left: (25 / @px);
+        background-repeat: no-repeat;
 
-  }
+        .remove-default-details-styles();
 
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
-  &[open] > .enable-drawer__button,
-  & .enable-drawer__button[aria-expanded="true"] { 
-      background-image: data-uri('../images/minus.svg');
-  }
+    &[open] > .enable-drawer__button,
+    & .enable-drawer__button[aria-expanded="true"] {
+        background-image: data-uri("../images/minus.svg");
+    }
 }
-
 
 .enable-drawer {
-  &__content {
-    display: none;
-  }
+    &__content {
+        display: none;
+    }
 
-  &__button[aria-expanded="true"] + &__content {
-     display: block;
-  }
-  // <a href="https://iconscout.com/icons/plus" target="_blank">Plus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
-  // <a href="https://iconscout.com/icons/minus" target="_blank">Minus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+    &__button[aria-expanded="true"] + &__content {
+        display: block;
+    }
+    // <a href="https://iconscout.com/icons/plus" target="_blank">Plus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+    // <a href="https://iconscout.com/icons/minus" target="_blank">Minus Icon</a> on <a href="https://iconscout.com">Iconscout</a>
 }
 
-
 .enable-multiselect {
+    &__button {
+        font-weight: bold;
+    }
 
-  &__list {
-    padding-left: 0;
-  }
-  
-  &__list-item {
-    display: inline-block; 
-  }
+    &__list {
+        padding-left: 0;
+    }
 
-  &__label {
-    position: relative;
-    display: inline-block;
-    border: solid 1px #999;
-    padding: 5px;
-    margin: 5px 5px 0 0;
-    border-radius: 8px;
+    &__list-item {
+        display: inline-block;
+    }
 
-   
-    .remove-default-details-styles();
-  }
+    &__label {
+        position: relative;
+        display: inline-block;
+        border: solid 1px #999;
+        padding: 5px;
+        margin: 5px 5px 0 0;
+        border-radius: 8px;
 
-  &__checkbox:checked + &__label {
-    padding-left: 32px;
-    background: data-uri('../images/simple-checkmark.svg');
-    background-repeat: no-repeat;
-    background-size: 14px 20px;
-    background-position: 10px 5px;
-    background-color: #ccffcc;
-  }
+        .remove-default-details-styles();
+    }
 
+    &__checkbox:checked + &__label {
+        padding-left: 32px;
+        background: data-uri("../images/simple-checkmark.svg");
+        background-repeat: no-repeat;
+        background-size: 14px 20px;
+        background-position: 10px 5px;
+        background-color: #ccffcc;
+    }
 
-  // We don't use the `enable
-  &__checkbox:focus + &__label {
-    outline: solid 2px @focus-color;
-  }
+    // We don't use the `enable
+    &__checkbox:focus + &__label {
+        outline: solid 2px @focus-color;
+    }
 
+    &__button {
+        .vendor(appearance, none);
+        padding: 5px;
+        background-size: (20 / @px) (20 / @px);
+        background-repeat: no-repeat;
+        padding-right: (25 / @px);
+        background-repeat: no-repeat;
+        background-image: data-uri("../images/chevron-down.svg");
+        background-position: right 5px;
+        width: 130px;
+        border: solid 1px #ccc;
+        background-color: white;
 
-  &__button {
-    .vendor(appearance, none);
-    padding: 5px;
-    background-size: (20/@px) (20/@px);
-    background-repeat: no-repeat;
-    padding-right: (25/@px);
-    background-repeat: no-repeat;
-    background-image: data-uri('../images/chevron-down.svg');
-    background-position: right 5px;
-    width: 130px;
-    border: solid 1px #ccc;
-    background-color: white;
+        .remove-default-details-styles();
+    }
 
-    .remove-default-details-styles();
-  }
+    &__contents {
+        display: inline-block;
+        border: solid 1px #999;
+        padding: 10px;
+        margin-top: -2px;
+    }
 
-  &__contents {
-    display: inline-block;
-    border: solid 1px #999;
-    padding: 10px;
-    margin-top: -2px;
-  }
-
-  &[open] &__button {
-    background-image: data-uri('../images/chevron-up.svg');
-    border-bottom: none;
-  }
-
-
+    &[open] &__button {
+        background-image: data-uri("../images/chevron-up.svg");
+        border-bottom: none;
+    }
 }
