@@ -131,6 +131,10 @@
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
   },
+  "meter.php": {
+    "title": "Meter",
+    "desc": "Meter component which is supported by non html5 browsers."
+  },
   "multi-level-hamburger-menu.php": {
     "title": "Accessible Flyout/Hamburger Hybrid Menus",
     "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",

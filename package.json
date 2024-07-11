@@ -84,7 +84,7 @@
   },
   "homepage": "https://github.com/PublicisSapient/enable-a11y#readme",
   "devDependencies": {
-    "@axe-core/cli": "^4.8.5",
+    "@axe-core/cli": "^4.9.1",
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
     "@prettier/plugin-php": "^0.22.2",
