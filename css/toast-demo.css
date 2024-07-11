@@ -4,15 +4,15 @@
   flex-direction: column;
   gap: 0.625rem;
 }
-.enable-toast__controls .enable-toast__control-group {
+.enable-toast__controls__control-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 0.625rem;
 }
-.enable-toast__controls label {
+.enable-toast__controls__label {
   font-weight: normal;
 }
-.enable-toast__controls .enable-toast__button-group {
+.enable-toast__controls__button-group {
   display: flex;
   gap: 0.625rem;
 }

@@ -4,31 +4,31 @@
   display: flex;
   transition: all 0.5s ease-in-out;
 }
-.enable-toast__container.enable-toast__container--bottom-right,
-.enable-toast__container.enable-toast__container--bottom-left,
-.enable-toast__container.enable-toast__container--bottom-center {
+.enable-toast__container--bottom-right,
+.enable-toast__container--bottom-left,
+.enable-toast__container--bottom-center {
   bottom: 20px;
 }
-.enable-toast__container.enable-toast__container--top-right,
-.enable-toast__container.enable-toast__container--top-left,
-.enable-toast__container.enable-toast__container--top-center {
+.enable-toast__container--top-right,
+.enable-toast__container--top-left,
+.enable-toast__container--top-center {
   top: 20px;
 }
-.enable-toast__container.enable-toast__container--bottom-right,
-.enable-toast__container.enable-toast__container--top-right {
+.enable-toast__container--bottom-right,
+.enable-toast__container--top-right {
   right: 20px;
 }
-.enable-toast__container.enable-toast__container--bottom-left,
-.enable-toast__container.enable-toast__container--top-left {
+.enable-toast__container--bottom-left,
+.enable-toast__container--top-left {
   left: 20px;
 }
-.enable-toast__container.enable-toast__container--top-center,
-.enable-toast__container.enable-toast__container--bottom-center,
-.enable-toast__container.enable-toast__container--middle-center {
+.enable-toast__container--top-center,
+.enable-toast__container--bottom-center,
+.enable-toast__container--middle-center {
   left: 50%;
   transform: translateX(-50%);
 }
-.enable-toast__container.enable-toast__container--middle-center {
+.enable-toast__container--middle-center {
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -45,20 +45,20 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-.enable-toast__toast.enable-toast__toast--visible {
+.enable-toast__toast--visible {
   opacity: 1;
 }
-.enable-toast__toast.enable-toast__toast--exit {
+.enable-toast__toast--exit {
   opacity: 0;
 }
-.enable-toast__toast .enable-toast__close-button {
+.enable-toast__close-button {
   background: none;
   border: none;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
 }
-.enable-toast__toast .enable-toast__close-button:hover {
+.enable-toast__close-button:hover {
   color: #ff0000;
 }
 .enable-toast__rack {
