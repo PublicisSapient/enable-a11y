@@ -1,6 +1,6 @@
 <p>
-  Carousels are a list of content panels that mouse user can cycle through using arrow controls and panel indicator.
-  Usually carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
+  Carousels are a list of content panels that a mouse user can cycle through using arrow controls and panel indicators.
+  Usually, carousels show only one panel at a time, and they usually (but not always) have at least one CTA in them.
   They exist to cram as
   much content in the valuable "<a href="https://elementor.com/resources/glossary/what-is-above-the-fold/">Above The
     Fold</a>" real estate on websites. Although <a href="https://vwo.com/blog/is-above-the-fold-really-dead/">it is
@@ -20,7 +20,7 @@
   </ul>
 
 <p>
-  That said, there are times when as a web developer you are asked upon implementing an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarantee</a>.
+  That said, there are times when as a web developer you are asked to implement an accessible one.  On this page are two ways of implementing accessible carousels: <a href="#solution-1-treat-the-carousel-like-a-list-of-controls---heading">one solution is good when you know there will be at least one interactive control in each panel</a>, and <a href="#solution-2-treat-the-carousel-like-a-list-of-content--heading">the other is good when you cannot make that guarantee</a>.
   Note that all the carousels on this page use <a href="https://nickpiscitelli.github.io/Glider.js/">Glider.js</a>, but
   the
   code walkthrough below will contain information developers need to implement accessible carousels regardless of the

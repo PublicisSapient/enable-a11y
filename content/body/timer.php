@@ -13,7 +13,7 @@
   <a href="https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/">this
     article</a> by
   <a href="https://css-tricks.com/author/mateuszrybczonek/">
-    Mateusz Rybczonek </a>.
+    Mateusz Rybczonek</a>.
 
   It has been modified to add accessibility features to it.
 </p>

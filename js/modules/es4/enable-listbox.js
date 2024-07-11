@@ -13,8 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-const enableListbox = new function() {
+const enableListbox = new (function() {
 
   const showEvent = new CustomEvent('enable-listbox-show', {
     bubbles: true
@@ -248,6 +247,4 @@ const enableListbox = new function() {
       this.collapse(buttonEl, listboxEl, true);
     });
   }
-}
-
-
+});

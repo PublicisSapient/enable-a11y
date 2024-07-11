@@ -35,7 +35,7 @@
 </p>
 
 <ol>
-  <li>Generating all the HTML of all the PHP pages on the site.</li>
+  <li>Generating all the HTML for all the PHP pages on the site.</li>
   <li>Separating pages that initialize instantly (let's call this group "A") with ones that need a bit more processing
     time due to JavaScript use (let's call this group "B").</li>
   <li>Parsing the group A pages with v.Nu, using one call to v.Nu (since each call to the v.Nu command line tool would
@@ -44,9 +44,9 @@
 </ol>
 
 <p>
-  Note that v.Nu requires <a href="https://java.sun.com">Java</a> in order to run. If this is a concern on your project,
+  Note that v.Nu requires <a href="https://java.sun.com">Java</a> in order to run. If this is a concern for your project,
   you may want to
-  try using <a href="https://html-validate.org/usage/">this Node based HTML validator</a> instead (I have not used this
+  try using <a href="https://html-validate.org/usage/">this Node based HTML validator</a> instead (I have not used it
   yet, so your mileage may vary).
 </p>
 
@@ -74,9 +74,9 @@
 </p>
 
 <p>
-  Both tools go through all the Enable pages to check to see if colour contrast is right, alt attributes are set, ARIA
+  Both tools go through all the Enable pages to check to see if color contrast is right, alt attributes are set, ARIA
   is marked up correctly, and so on. As axe-core explicitly states after execution, automated testing can only catch
-  from 20% to 50% of accessibility issues. Is there any way to improve upon that?
+   20% to 50% of accessibility issues. Is there any way to improve upon that?
 </p>
 
 
@@ -87,7 +87,7 @@
   accessibility feature
   you have just implemented stays within the project. For example, if you create a custom <a
     href="listbox.php#aria-listbox-example--heading">accessible listbox dropdown</a>, you want to make sure that when
-  keyboard users tab into the component and use the arrow keys, then they can change the selected listbox value.
+  keyboard users tab into the component and use the arrow keys, they can change the selected listbox value.
 </p>
 
 <p>
@@ -145,12 +145,12 @@
 
 <h3>A Simple Example: Having Screen Readers Read Strikethrough Text</h3>
 
-<p>Let's look at a simple example that just involves just steps 1 through 3. If you look at the page for <a
-    href="exposing-style-info-to-screen-readers.php">Exposing Style Information To Screen Readers</a>, we use
+<p>Let's look at a simple example that just involves steps 1 through 3. If you look at the page for <a
+    href="exposing-style-info-to-screen-readers.php">Exposing Style Information to Screen Readers</a>, we use
   visually-hidden content inside of <code>mark</code> tags. We want to
   ensure that a new developer that contributes code to Enable never removes this <a href="screen-reader-only-text.php">screen reader only text</a> by accident, so we create a jest
   test file, <code>exposing-style-info-to-screen-readers.test.js</code>, to ensure we can test that this CSS is in these
-  example. Let's walk through this file to show how it works.
+  examples. Let's walk through this file to show how it works.
 
   <template id="test-code-walkthrough" data-showcode-is-js="true">
     <!--
@@ -201,9 +201,9 @@
   }
   </script>
 
-  <h3>A Simple Interactive Example: Switches</h3>
+  <h3>A Simple Interactive Example: Switches/Toggles</h3>
 
-  <p>This example is used to test <a href="switch.php">Enable's switch component</a> to ensure that it is keyboard accessible and that the HTML structure includes all the necessary accessibility features (e.g. the <code>role="switch"</code>, a valid <code>aria-checked</code> attribute set, a proper label, etc.).  Please go through the code walkthrough below for more details.
+  <p>This example is used to test <a href="switch.php">Enable's switch component</a> to ensure that it is keyboard accessible and that the HTML structure includes all the necessary accessibility features (e.g., the <code>role="switch"</code>, a valid <code>aria-checked</code> attribute set, a proper label, etc.).  Please go through the code walkthrough below for more details.
 
 <template id="switch-test-code-walkthrough" data-showcode-is-js="true">
     <!--
@@ -261,7 +261,7 @@
   <h3>A More Complex Example: Testing Focus States on Multiple Pages</h3>
 
   <p>This is an example of a test that ensures all interactive elements on all the pages within Enable have a focus state (in our case, using a CSS `outline`).
-Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code> tags in this test because of the tests giving false negatives (which we are actively looking into to fix)</p>
+Note that we ignore <code>iframe</code>, <code>video</code>, and <code>body</code> tags in this test because of the tests giving false negatives (which we are actively looking into to fix).</p>
 
   <template id="test-code-walkthrough2" data-showcode-is-js="true">
     <!--
@@ -344,7 +344,7 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
 
   <h2>Using GitHub Actions to Run the Tests in the CI/CD Pipeline</h2>
 
-  <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">Github Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of Github actions on your project, the page describes writing a .yml file that contains the GitHub actions steps that you'd like to enforce.The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
+  <p>The best place to start is by reading the documentation inside the <a href="https://calmcode.io/course/github-actions/prevent-merge">GitHub Actions: Prevent Merge</a> page on the  <a href="https://calmcode.io">Calmcode</a> website.  Once you go through the set up of GitHub Actions on your project, the page describes writing a .yml file that contains the GitHub Actions steps that you'd like to enforce. The .yml file that we used for Enable looks like this (the highlighted section is the part we wrote to set up the unit testing and automated testing):</p>  
 
   <template id="github-actions-walkthrough" data-showcode-is-js="true">
   <!--<?php include "../.github/workflows/push-actions.yml"; ?>-->
@@ -367,7 +367,7 @@ Note that we ignore <code>iframe</code>, <code>video</code> and <code>body</code
 
   <ol> 
     <li>In your github project, go to settings, located as the last item in the main navigation of your github project
-      (note that it may be under the ellipsis button named "Additional Navigation Items")
+      (note that it may be under the ellipsis button named "Additional Navigation Items").
       <br />
       <img src="images/code-quality/github-actions-1.webp" alt="" /></li>
     <li>Expand the "Actions" collapsable button in the menu of the left hand side of the settings page and click the "General" link.  Inside the Actions permissions radio group, choose the "Allow all actions and reusable workflows" radio button and save.<br />

@@ -26,11 +26,11 @@
 
       <h2 class="homepage__intro--header homepage__intro--header--code">Learn How To Create Accessible Code</h2>
       <p>
-        Whether you are new to accessibility or are a seasoned veteran, Enable's aim to <strong>teach developers how to
+        Whether you are new to accessibility or are a seasoned veteran, Enable's aim is to <strong>teach developers how to
           make
           something accessible</strong> and to <strong>show why it is.</strong> Developers can walk through the code
         step
-        by step to understand what HTML, CSS and JavaScript are needed to ensure their work "just works" for all users,
+        by step to understand what HTML, CSS, and JavaScript are needed to ensure their work "just works" for all users,
         no
         matter how they navigate the web.
       </p>
@@ -54,9 +54,9 @@
       <h2 class="homepage__intro--header homepage__intro--header--npm">Use Pre-built Accessible Components</h2>
 
       <p>
-        Enable also includes components that can be included into your own projects via NPM, with instructions on how to
-        integrate them as Webpack modules, native ES6 Modules or as old school ES4 JavaScript libraries. Accessible
-        hamburger menus, carousels and mobile-friendly skip links, are only a few examples of prebuilt code you can use
+        Enable also includes components that can be included in your own projects via NPM, with instructions on how to
+        integrate them as Webpack modules, native ES6 Modules, or as old school ES4 JavaScript libraries. Accessible
+        hamburger menus, carousels, and mobile-friendly skip links, are only a few examples of prebuilt code you can use
         in
         your projects today. We also encourage developers to consider contributing their own code for the benefit
         of

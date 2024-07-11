@@ -12,12 +12,11 @@
   ]); ?>
 </div>
 
-<p>If you are going to have animated Gifs that are longer than 5 seconds on your page, you really should have a pause
-  button on them. Not only do users with ADHD find them distracting, the vast majority of users find them annoying.</p>
+<p>If you are going to have animated GIFs that are longer than 5 seconds on your page, you really should have a pause
+  button on them. Not only do users with ADHD find them distracting, but the vast majority of users find them annoying.</p>
 
-<p>I am one of them. Don't get me wrong: I loves GIF memes as much as anyone. But when I'm trying to read the content on
-  an e-commerce site, I will leave if some baby is dancing all over the place elsewhere on the screen. I find it really
-  annoying.</p>
+<p>I am one of them. Don't get me wrong: I love GIF memes as much as anyone. But when I'm trying to read the content on
+  an e-commerce site, I will leave if some baby is dancing all over the place elsewhere on the screen. I find it annoying.</p>
 
 <p>Animated GIFs also use up unnecessary battery power.</p>
 
@@ -147,11 +146,11 @@
 }
 </script>
 
-<h2>Animation off when OS prefers reduced motion.</h2>
+<h2>Animation is off when OS prefers reduced motion.</h2>
 
 <p>
   This is the only example on this page that does require JavaScript. It
-  detect whether the OS
+  detects whether the OS
   has "reduced motion" turned on by default. If it is, then it keeps the
   details widget closed.
 </p>

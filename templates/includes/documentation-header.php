@@ -282,7 +282,7 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Number Input Spinner",
+                                            "label": "Accessible Numeric Fields",
                                             "url-slug": "spinner",
                                             "alt": ""
                                         }
@@ -369,7 +369,7 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Switch",
+                                            "label": "Switch / Toggle",
                                             "url-slug": "switch",
                                             "alt": ""
                                         }
@@ -474,6 +474,13 @@
                                 }, {
                                     "id": "flyout__link",
                                     "props": {
+                                        "label": "Infographic",
+                                        "url-slug": "infographic",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
                                         "label": "Figure",
                                         "url-slug": "figure",
                                         "alt": ""
@@ -495,7 +502,7 @@
                                 }, {
                                     "id": "flyout__link",
                                     "props": {
-                                        "label": "Reflow",
+                                        "label": "Reflow Content",
                                         "url-slug": "reflow",
                                         "alt": ""
                                     }
@@ -661,7 +668,7 @@
                             }, {
                                 "id": "flyout__link",
                                 "props": {
-                                    "label": "Marquee",
+                                    "label": "Marquee / Auto-Scrolling Content",
                                     "url-slug": "marquee",
                                     "alt": ""
                                 }
