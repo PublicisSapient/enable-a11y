@@ -1600,6 +1600,7 @@ var AblePlayerInstances = [];
 		else if (this.mediaType === 'audio') {
 			var groups = [];
 			groups.push('keyboard');
+			groups.push('captions');
 			if (this.lyricsMode) {
 			groups.push('transcript');
 			}
@@ -1783,6 +1784,28 @@ var AblePlayerInstances = [];
 				'default': 0 // off because clicking an icon to see the sign window has a powerful impact
 			});
 
+		} else if (this.mediaType === 'audio') {
+			// Caption preferences
+			prefs.push({
+				'name': 'prefCaptions', // closed captions default state
+				'label': null,
+				'group': 'captions',
+				'default': 1
+			});
+
+			prefs.push({
+				'name': 'prefCaptionsPosition',
+				'label': this.tt.prefCaptionsPosition,
+				'group': 'captions',
+				'default': this.defaultCaptionsPosition
+			});
+
+			prefs.push({
+				'name': 'prefCaptionsFont',
+				'label': this.tt.prefCaptionsFont,
+				'group': 'captions',
+				'default': 'sans-serif'
+			});
 		}
 		return prefs;
 	};
@@ -3412,6 +3435,11 @@ var AblePlayerInstances = [];
 				'class' : 'able-vidcap-container'
 			});
 			this.$vidcapContainer = this.$mediaContainer.wrap(vidcapContainer).parent();
+		} else if (this.mediaType === 'audio') {
+			vidcapContainer = $('<div>',{
+				'class' : 'able-vidcap-container'
+			});
+			this.$vidcapContainer = this.$mediaContainer.wrap(vidcapContainer).parent();
 		}
 		this.injectPlayerControlArea();
 		this.injectTextDescriptionArea();
@@ -4240,7 +4268,7 @@ var AblePlayerInstances = [];
 			playbackSupported = false;
 		}
 
-		if (this.mediaType === 'video') {
+		if (this.mediaType === 'video' || this.mediaType === 'audio') {
 			numA11yButtons = 0;
 			if (this.hasCaptions) {
 				numA11yButtons++;
@@ -5552,7 +5580,7 @@ var AblePlayerInstances = [];
 
 		// Currently only showing captions for video, not audio 
 		// TODO: Revisit this to enable captions for audio 
-		if (this.mediaType === 'video') {
+		if (this.mediaType === 'video' || this.mediaType === 'audio') {
 
 			if (!(this.usingYouTubeCaptions || this.usingVimeoCaptions)) {
 				// create a pair of nested divs for displaying captions
@@ -5577,19 +5605,6 @@ var AblePlayerInstances = [];
 					this.$vidcapContainer.append(this.$captionsWrapper);
 				}
 			}
-			// Add cues to this.captions for the current language 
-			for (i = 0; i < this.captions.length; i++) { 
-				if (this.captions[i].language === trackLang) { 
-					this.captions[i].cues = cues; 
-				}
-			}
-			// Do the same for this.tracks 
-			for (i = 0; i < this.tracks.length; i++) { 
-				if (this.tracks[i].language === trackLang) { 
-					this.tracks[i].cues = cues; 
-				}
-			}
-		} else if (this.mediaType === 'audio') {
 			// Add cues to this.captions for the current language 
 			for (i = 0; i < this.captions.length; i++) { 
 				if (this.captions[i].language === trackLang) { 

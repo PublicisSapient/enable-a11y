@@ -25,6 +25,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // Replace initDescription and handleTranscriptToggle methods with custom ones 
   // that add extra functionality
   AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
+  AblePlayer.prototype.oldInitDefaultCaption = AblePlayer.prototype.initDefaultCaption;
   AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
   AblePlayer.prototype.oldGetRootPath = AblePlayer.prototype.getRootPath;
 
@@ -43,6 +44,12 @@ function ablePlayerCustomizations($, extraCustomizations) {
   AblePlayer.prototype.initDescription = function() {
     setDescriptionCookies();
     this.oldInitDescription();
+    adjustTranscriptVisibility(this);
+  }
+
+  // Resolves issue where transcript visibility is not set properly when only captions are present.
+  AblePlayer.prototype.initDefaultCaption = function() {
+    this.oldInitDefaultCaption();
     adjustTranscriptVisibility(this);
   }
 
