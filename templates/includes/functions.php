@@ -170,9 +170,9 @@ function includeStats($props)
                     "This is the best solution to use, especially when building from scratch.";
             } elseif ($isForNewBuilds == false) {
                 $comment =
-                    'If you already are using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' .
+                    'If you are already using a component similar to this in existing work that is not accessible, go to the <a href="#developer-walkthrough-' .
                     $walkthroughIndex .
-                    '">developer walkthrough</a> of this section to see how we made our implementation accessible.';
+                    '">developer walkthrough</a> in this section to see how we made our implementation accessible.';
             }
         } elseif (isset($doNot)) {
             $comment =
