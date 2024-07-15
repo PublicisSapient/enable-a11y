@@ -29,6 +29,7 @@ css/log.css
 css/marquee.css
 css/math.css
 css/menubar.css
+css/meter.css
 css/paginate.css
 css/pausable-animated-gif.css
 css/pause-animations-demo.css

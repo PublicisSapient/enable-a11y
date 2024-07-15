@@ -1,5 +1,5 @@
 The first browser we are going to demonstrate is Safari using VoiceOver, which is built into OSX.
-Right now, keyboard focus is on the link just before the button labelled "Log into our website", 
+Right now, keyboard focus is on the link just before the button labeled "Log into our website", 
 which will open the modal when pressed.
 
 So, let's use the keyboard to navigate to the button ...
@@ -8,7 +8,7 @@ So, let's use the keyboard to navigate to the button ...
 
 You may have noticed that when the dialog opened, the close button gains focus.
 Also, note that the screen reader said "close this dialog, button".
-This tells the screen reader user that focus is on a button labelled "close this dialog".
+This tells the screen reader user that focus is on a button labeled "close this dialog".
 (Incidentally, this label was coded as alt attibute for the button's <img> tag).
 You'll also note that the screen reader reports it is a web dialog.
 That's  because the button is inside a HTML <dialog> tag.

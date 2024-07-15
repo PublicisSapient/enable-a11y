@@ -90,7 +90,7 @@
       "notes": "Note that we use <code>.del</code> and <code>.ins</code> classes to denote deleted and inserted content respectively. We also don't use <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code>.  This is because <code>&lt;mark&gt;</code> is a semantic tag, and <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code> are not, in the same way <a href=\"https://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em\">developers should use strong tags instead of the b tag in HTML</a>"
     },
     {
-      "label": "Use the sr-only class to generate screen-reader only text",
+      "label": "Use the sr-only class to generate screen reader only text",
       "highlight": "%OPENCLOSECONTENTTAG%span",
       "notes": ""
     }
@@ -126,7 +126,7 @@
       "notes": "The <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark\">HTML <code>mark</code> tag</a> is the standard HTML tag you should use to highlight text."
     },
     {
-      "label": "Use the sr-only class to generate screen-reader only text",
+      "label": "Use the sr-only class to generate screen reader only text",
       "highlight": "%OPENCLOSECONTENTTAG%span",
       "notes": ""
     }

@@ -59,7 +59,7 @@ module.exports = {
 }
       <?php includeShowcodeStaticEnd(); ?>
 
-      <p>Note the <code>../enable-node-libs/</code> and <code>~</code> path aliases.  This is due to the production Enable having fixed versions of some third party JavaScript libraries. In your code, these libraries will point to the production NPM versions inside your code (i.e. <code>glider-js</code>, <code>accessibility-js-routines</code>, <code>js-cookie</code>and <code>jquery</code> (jQuery is needed for AblePlayer only).</p>
+      <p>Note the <code>../enable-node-libs/</code> and <code>~</code> path aliases.  This is due to the production Enable having fixed versions of some third-party JavaScript libraries. In your code, these libraries will point to the production NPM versions inside your code (i.e. <code>glider-js</code>, <code>accessibility-js-routines</code>, <code>js-cookie</code>and <code>jquery</code> (jQuery is needed for AblePlayer only).</p>
       
       
   </li>
