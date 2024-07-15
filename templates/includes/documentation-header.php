@@ -24,15 +24,15 @@
     <!--  HTML Templates that the Flyout menu uses  -->
     
     <template id="flyout__root">
-        <ul class="enable-flyout__list">
+        <ul class="enable-flyout__list flyout-fork">
             <li><a href="/components">Components</a></li>
             <li><a href="/code-patterns">Code Patterns</a></li>
             <li>
-                <a href="/testing">Testing</a>
-                <!-- <ul>
-                    <li>Accessible code quality</li>
-                    <li>Bookmarklets</li>
-                </ul> -->
+                <button href="/testing" class="enable-flyout__open-level-button" aria-expanded="false" aria-controls="flyout__root-section">Testing</button>
+                <ul id="flyout__root-section" aria-label="Testing" role="group" class="enable-flyout enable-flyout__level enable-flyout__dropdown">
+                    <li><a href="/accessible-code-quality">Accessible code quality</a></li>
+                    <li><a href="/tools">Tools (Bookmarklets)</a></li>
+                </ul>
             </li>
             <!-- <li><a href="https://github.com/PublicisSapient/enable-a11y">Github</a></li> -->
         </ul>

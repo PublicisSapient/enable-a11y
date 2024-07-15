@@ -338,8 +338,22 @@
 
 .footer {
     ul {
+        margin: 20px;
+        padding: 0;
         li {
             list-style: none;
+            display: inline;
+            padding: 10px 0;
         }
+        li::after {
+            content: "|";
+        }
+        li:last-child::after {
+            content: "";
+        }
+    }
+
+    &__attribution {
+        font-size: small;
     }
 }

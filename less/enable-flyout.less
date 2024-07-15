@@ -35,6 +35,39 @@
     justify-content: end;
 }
 
+.enable-flyout .flyout-fork {
+    @media @mobile, @tablet {
+        border: 10px solid orange;
+        li {
+            display: block;
+            text-align: left;
+            margin: 20px;
+            a {
+                margin: 20px;
+            }
+
+            button {
+                margin: 0;
+            }
+            a::after {
+                content: "";
+            }
+
+            ul {
+                background-color: orange;
+            }
+        }
+    }
+
+    @media @desktop {
+        border: 10px solid green;
+
+        .enable-flyout--is-open {
+            background-color: #000;
+        }
+    }
+}
+
 .enable-flyout {
     --enable-flyout__desktop-media-query: @desktop;
     --enable-flyout__is-hamburger: 1;

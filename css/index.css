@@ -26,13 +26,31 @@ a:-webkit-any-link {
 }
 .homepage__hero--heading {
   font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  font-size: 4.8rem;
   margin: 30px auto;
   font-weight: normal;
   color: #e12351;
 }
+.homepage__hero--heading img {
+  width: 12rem;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__hero--heading img {
+    width: 18rem;
+  }
+}
 .homepage__hero--copy {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__hero--copy {
+    margin-bottom: 40px;
+  }
+}
+.homepage__hero p {
+  max-width: 40rem;
 }
 .homepage__hero-link {
   text-decoration: none;
@@ -94,16 +112,27 @@ a:-webkit-any-link {
   padding: 20px;
   flex-grow: 1;
   width: 100%;
-  text-align: center;
+}
+.homepage__intro--section p {
+  text-align: justify;
 }
 @media only screen and (min-width: 720px) {
   .homepage__intro--section {
     width: 33%;
   }
+  .homepage__intro--section p {
+    text-align: center;
+  }
 }
 .homepage__intro--section + .homepage__intro--section {
-  margin-left: 2%;
   background-color: #f4f7f5;
+  margin-top: 20px;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__intro--section + .homepage__intro--section {
+    margin-left: 2%;
+    margin-top: 0;
+  }
 }
 .homepage__intro--section-icon {
   width: 100px;
@@ -113,17 +142,24 @@ a:-webkit-any-link {
   font-weight: bold;
   font-size: 1.25rem;
   border: none;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #2b2929;
   text-align: left;
   display: flex;
+  align-items: center;
+}
+@media only screen and (min-width: 960px) {
+  .homepage__intro--header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
 }
 .homepage__intro--header::before {
   content: "";
   display: inline-flex;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   margin-right: 20px;
   padding: 20px;
@@ -132,6 +168,12 @@ a:-webkit-any-link {
   background-position: 50% 50%;
   background-color: #fff;
   flex-shrink: 0;
+}
+@media only screen and (min-width: 960px) {
+  .homepage__intro--header::before {
+    width: 50px;
+    height: 50px;
+  }
 }
 @media (forced-colors: active) {
   .homepage__intro--header::before {
@@ -194,9 +236,14 @@ a:-webkit-any-link {
 }
 .homepage__bottom-copy--heading {
   font-weight: bold;
-  font-size: 2.375rem;
+  font-size: 1.8rem;
   color: #fff;
   display: inline-flex;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__bottom-copy--heading {
+    font-size: 2.375rem;
+  }
 }
 .homepage__bottom-copy--heading::before {
   width: 20px;
@@ -216,10 +263,14 @@ a:-webkit-any-link {
   color: #17183b;
 }
 .homepage__bottom-copy ul {
-  column-count: 2;
-  column-gap: 13px;
   margin: 0;
   padding: 0;
+}
+@media only screen and (min-width: 720px) {
+  .homepage__bottom-copy ul {
+    column-count: 2;
+    column-gap: 13px;
+  }
 }
 .homepage__bottom-copy ul li {
   margin-bottom: 20px;
