@@ -430,7 +430,7 @@
 
 
   <div id="ableplayer-example">
-    <div class="enable-video-player">
+    <div class="enable-media-player">
       <video playsinline data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
         data-root-path="./js/enable-libs/ableplayer/" data-heading-level="4">
         <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English">

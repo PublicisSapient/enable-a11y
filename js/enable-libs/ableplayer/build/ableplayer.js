@@ -1602,7 +1602,7 @@ var AblePlayerInstances = [];
 			groups.push('keyboard');
 			groups.push('captions');
 			if (this.lyricsMode) {
-			groups.push('transcript');
+				groups.push('transcript');
 			}
 			return groups;
 		}

@@ -3,7 +3,6 @@ css/alert.css
 css/all.css
 css/animated-hide-and-show.css
 css/article.css
-css/audio-player.css
 css/bottom-fixed-nav.css
 css/button.css
 css/checkbox.css
@@ -16,6 +15,7 @@ css/dialog-html5.css
 css/dropdown.css
 css/enable-carousel.css
 css/enable-listbox.css
+css/enable-media-player.css
 css/enable-visible-on-focus.css
 css/figure.css
 css/form.css
@@ -50,4 +50,3 @@ css/text-resize.css
 css/text-spacing.css
 css/timer.css
 css/tooltip.css
-css/video-player.css
