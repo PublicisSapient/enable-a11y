@@ -21,7 +21,6 @@ async function verifyActiveElementAttributes(page, expectedAttributes) {
             roleForAriaOwnsId,
         };
     });
-
     // Perform assertions based on expected attributes
     expect(results.ariaDescribedBy).toBe(expectedAttributes.ariaDescribedBy);
     expect(results.ariaExpanded).toBe(expectedAttributes.ariaExpanded);
@@ -52,6 +51,52 @@ async function verifyAriaDescribedById(page, id) {
     expect(results.domElementForAriaOwns.length).toBe(1); 
     expect(results.role).toBe('listbox');   
 }*/
+describe("All combobox's Attributes Test", () => {
+    let domInfo;
+    beforeAll(async () => {
+        await page.goto(`${config.BASE_URL}/combobox.php`);
+    });
+
+    it('ARIA attributes are set', async () => {
+        domInfo = await page.evaluate(() => {
+            const comboEls = document.querySelectorAll(
+                'input[role="combobox"]',
+            );
+            return {
+                comboBoxList: Array.from(comboEls)?.map((el) => {
+                    const ariaDescribedBy = el.getAttribute('aria-describedby');
+                    const ariaOwns = el.getAttribute('aria-owns');
+                    const domElementForAriaDescribedby =
+                        document.getElementById(ariaDescribedBy);
+                    const domElementForAriaOwns =
+                        document.getElementById(ariaOwns);
+                    const roleForAriaOwns =
+                        domElementForAriaOwns.getAttribute('role');
+                    return {
+                        ariaDescribedBy,
+                        ariaOwns,
+                        ariaExpanded: el.getAttribute('aria-expanded'),
+                        ariaAutocomplete: el.getAttribute('aria-autocomplete'),
+                        domElementForAriaDescribedby,
+                        domElementForAriaOwns,
+                        roleForAriaOwns,
+                    };
+                }),
+            };
+        });
+        domInfo.comboBoxList.forEach((combobox) => {
+            expect(combobox.ariaDescribedBy).not.toBeNull();
+            expect(combobox.ariaOwns).not.toBeNull();
+            expect(combobox.ariaExpanded).toBe('false');
+            expect(combobox.ariaAutocomplete).toBe('list');
+            expect(combobox.domElementForAriaDescribedby).not.toBeNull();
+            // Verify the aria-own dom element
+            expect(combobox.domElementForAriaOwns).not.toBeNull();
+            expect(combobox.roleForAriaOwns).toBe('listbox');
+        });
+    });
+    afterAll(async () => {});
+});
 
 describe('Combobox1 Test', () => {
     let domInfo;
