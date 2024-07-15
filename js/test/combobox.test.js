@@ -53,7 +53,7 @@ async function verifyAriaDescribedById(page, id) {
     expect(results.role).toBe('listbox');   
 }*/
 
-describe('Combobox Test', () => {
+describe('Combobox1 Test', () => {
     let domInfo;
     beforeAll(async () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
@@ -105,7 +105,12 @@ describe('Combobox Test', () => {
 
         expect(valueAfterReset).toBe('');
     });
-
+    afterAll(async () => {});
+});
+describe('Combobox2 Test', () => {
+    beforeAll(async () => {
+        await page.goto(`${config.BASE_URL}/combobox.php`);
+    });
     it('AutoSubmit using the aria combobox is completely keyboard accessible', async () => {
         await page.waitForSelector('#video-games');
         await page.focus('#video-games');
@@ -129,7 +134,12 @@ describe('Combobox Test', () => {
         const currentUrl = await page.url();
         expect(currentUrl.includes('google.com')).toBe(true);
     });
-
+    afterAll(async () => {});
+});
+describe('Combobox3 Test', () => {
+    beforeAll(async () => {
+        await page.goto(`${config.BASE_URL}/combobox.php`);
+    });
     it('Selection in different categories using the aria combobox is completely keyboard accessible', async () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
         await page.waitForSelector('#aria-example-2');
