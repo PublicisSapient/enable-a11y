@@ -3,7 +3,6 @@
     <div class="homepage__hero--copy">
       <!-- <h1 class="homepage__hero--heading"><?= $title ?></h1> -->
        <h1 class="homepage__hero--heading"><img src="/images/accessible-text-svg/logo-enable-pink.svg" /> </h1>
-
       <p>A space for developers to learn and collaborate on making the web accessible.</p>
     </div>
 
@@ -86,11 +85,11 @@
 </div>
 <div class="homepage__bottom-copy background-secondary">
   <h2 class="homepage__bottom-copy--heading homepage__intro--header homepage__intro--header--donate">Want to donate code to Enable?</h2>
-  <p>We would love to know about any code you would like to donate to enable!</p>
+  <p>We would love to know about any code you would like to donate to Enable!</p>
   <ul>
     <li> If you would like to discuss this with us first,
       please go to the <a href="https://github.com/PublicisSapient/enable-a11y/issues">Enable Github issue page</a> and
-      opening up a new issue describing the code you would like to donate and a sample page on how it works.</li>
+      open up a new issue describing the code you would like to donate and a sample page on how it works.</li>
     <li>
       If you would like to submit a PR, feel free to do so! Please read <a
         href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork">the
