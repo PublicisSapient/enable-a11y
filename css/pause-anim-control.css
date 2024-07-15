@@ -19,7 +19,7 @@
   margin: 0 0 0 14px;
 }
 .play-pause-anim__background-pill {
-  font-size: 14px;
+  font-size: 1.125rem;
   background-color: #2b2929;
   border-radius: 25px;
   display: inline-flex;

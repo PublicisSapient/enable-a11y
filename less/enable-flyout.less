@@ -35,35 +35,74 @@
     justify-content: end;
 }
 
-.enable-flyout .flyout-fork {
+// .enable-flyout {
+//     background-color: #2b2929;
+// }
+
+.themed-layout-xxx {
     @media @mobile, @tablet {
-        border: 10px solid orange;
-        li {
-            display: block;
-            text-align: left;
-            margin: 20px;
-            a {
-                margin: 20px;
-            }
-
-            button {
-                margin: 0;
-            }
-            a::after {
-                content: "";
-            }
-
-            ul {
-                background-color: orange;
-            }
+        .enable-flyout {
+            background-color: #2b2929;
         }
     }
 
-    @media @desktop {
-        border: 10px solid green;
+    .enable-flyout .flyout-fork {
+        @media @mobile, @tablet {
+            border: 10px solid green;
+            li {
+                display: block;
+                text-align: left;
+                margin: 20px;
+                a {
+                    margin: 20px;
+                    font-weight: bold;
+                }
 
-        .enable-flyout--is-open {
-            background-color: #000;
+                button {
+                    margin: 0;
+                }
+                a::after {
+                    content: "";
+                }
+
+                ul {
+                    background-color: #5d5c5c;
+                }
+            }
+        }
+
+        @media @desktop {
+            // border: 10px solid purple;
+            padding: 20px;
+
+            > li {
+                position: relative;
+                a {
+                    font-weight: bold;
+                }
+                button {
+                    margin-left: -22px;
+                }
+
+                ul {
+                    background: #5d5c5c;
+                    padding: 20px;
+                    width: 16rem;
+                    border-radius: 0 0 10px 10px;
+                    box-shadow: none;
+                    margin-top: 28px;
+                    margin-left: -23px;
+
+                    li {
+                        display: block;
+                        text-align: left;
+                    }
+
+                    a {
+                        font-weight: bold;
+                    }
+                }
+            }
         }
     }
 }

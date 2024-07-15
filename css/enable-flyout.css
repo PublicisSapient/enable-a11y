@@ -16,33 +16,61 @@
   justify-content: end;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
-  .enable-flyout .flyout-fork {
-    border: 10px solid orange;
+  .themed-layout-xxx .enable-flyout {
+    background-color: #2b2929;
   }
-  .enable-flyout .flyout-fork li {
+}
+@media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  .themed-layout-xxx .enable-flyout .flyout-fork {
+    border: 10px solid green;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork li {
     display: block;
     text-align: left;
     margin: 20px;
   }
-  .enable-flyout .flyout-fork li a {
+  .themed-layout-xxx .enable-flyout .flyout-fork li a {
     margin: 20px;
+    font-weight: bold;
   }
-  .enable-flyout .flyout-fork li button {
+  .themed-layout-xxx .enable-flyout .flyout-fork li button {
     margin: 0;
   }
-  .enable-flyout .flyout-fork li a::after {
+  .themed-layout-xxx .enable-flyout .flyout-fork li a::after {
     content: "";
   }
-  .enable-flyout .flyout-fork li ul {
-    background-color: orange;
+  .themed-layout-xxx .enable-flyout .flyout-fork li ul {
+    background-color: #5d5c5c;
   }
 }
 @media only screen and (min-width: 960px) {
-  .enable-flyout .flyout-fork {
-    border: 10px solid green;
+  .themed-layout-xxx .enable-flyout .flyout-fork {
+    padding: 20px;
   }
-  .enable-flyout .flyout-fork .enable-flyout--is-open {
-    background-color: #000;
+  .themed-layout-xxx .enable-flyout .flyout-fork > li {
+    position: relative;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork > li a {
+    font-weight: bold;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork > li button {
+    margin-left: -22px;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork > li ul {
+    background: #5d5c5c;
+    padding: 20px;
+    width: 16rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: none;
+    margin-top: 28px;
+    margin-left: -23px;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork > li ul li {
+    display: block;
+    text-align: left;
+  }
+  .themed-layout-xxx .enable-flyout .flyout-fork > li ul a {
+    font-weight: bold;
   }
 }
 .enable-flyout {

@@ -22,7 +22,7 @@ give404IfNotValid();
 </head>
 
 <body class="<?= isset($fileProps->bodyClass) ? $fileProps->bodyClass : "" ?>">
-  
+  <div class="themed-layout-xxx">
   <?php include "includes/documentation-header.php"; ?>
   <?php include "includes/pause-anim-control.php"; ?>
   <?php getAsideContent(); ?>
@@ -51,6 +51,7 @@ give404IfNotValid();
     <?php include "includes/example-footer.php"; ?>
 
     <?php getBottomBodyTags(); ?>
+</div>
 </body>
 
 </html>
