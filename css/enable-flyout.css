@@ -21,9 +21,6 @@
   }
 }
 @media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
-  .themed-layout-xxx .enable-flyout .flyout-fork {
-    border: 10px solid green;
-  }
   .themed-layout-xxx .enable-flyout .flyout-fork li {
     display: block;
     text-align: left;
