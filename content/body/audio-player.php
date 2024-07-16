@@ -21,8 +21,8 @@
 <div id="example1">
   <div class="enable-media-player">
     <audio id="audio1" preload="auto" data-able-player data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
-      <source type="audio/mpeg" src="audio/example.mp3"></source>
-      <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English Captions"></track>
+      <source type="audio/mpeg" src="audio/example.mp3" />
+      <track kind="captions" src="vtt/dialog-document__html5.vtt" srclang="en" label="English Captions" />
     </audio>
   </div>
 </div>
