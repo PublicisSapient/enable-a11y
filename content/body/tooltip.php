@@ -31,21 +31,21 @@
       <legend>Vehicle Inspection Form</legend>
       <div class="enable-form-example__fieldset-inner-container">
           <div class="field-block">
-            <label class="form-label">
+            <label for="tooltip_example_1" class="form-label">
               <span>VIN</span>
-              <button id="tooltip_example_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
+            </label>          
+            <input id="tooltip_example_1" size="2h5" type="text">
+            <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
                 <span>What's this?</span>
               </button>
-              </label>
-            <input id="tooltip_input_1" size="25" type="text">
           </div>
           <div class="field-block">
-            <label class="form-label">Make</label>
+            <label for="tooltip_example_2" class="form-label">Make</label>
             <input id="tooltip_example_2" size="25" type="text" data-tooltip="The brand or company that produced the vehicle.">
           </div>
           <div class="field-block">
-            <label class="form-label">
+            <label for="tooltip_example_3" class="form-label">
               <span>Body style</span>
             </label>
             <input id="tooltip_input_3" size="25" type="text">
