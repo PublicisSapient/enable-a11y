@@ -8,4 +8,3 @@ report/*
 
 # auto-gen PHP files/logs
 php_errors.log
-.aider*
