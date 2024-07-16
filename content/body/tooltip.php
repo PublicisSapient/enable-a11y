@@ -34,7 +34,7 @@
             <label for="tooltip_example_1" class="form-label">
               <span>VIN</span>
             </label>          
-            <input id="tooltip_example_1" size="2h5" type="text">
+            <input id="tooltip_example_1" size="25" type="text">
             <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
                 <span>What's this?</span>
