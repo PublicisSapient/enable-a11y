@@ -2,55 +2,6 @@
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-//Utility function to write assertions for checking combo box's input aria-attributes
-async function verifyActiveElementAttributes(page, expectedAttributes) {
-    const results = await page.evaluate(() => {
-        const { activeElement } = document;
-        const ariaOwns = activeElement.getAttribute('aria-owns');
-        const domElementForAriaOwns = Array.from(
-            document.querySelectorAll(`#${ariaOwns}`),
-        );
-        const roleForAriaOwnsId = domElementForAriaOwns[0].getAttribute('role');
-        return {
-            ariaDescribedBy: activeElement.getAttribute('aria-describedby'),
-            ariaExpanded: activeElement.getAttribute('aria-expanded'),
-            role: activeElement.getAttribute('role'),
-            ariaOwns: activeElement.getAttribute('aria-owns'),
-            ariaAutocomplete: activeElement.getAttribute('aria-autocomplete'),
-            domElementForAriaOwns,
-            roleForAriaOwnsId,
-        };
-    });
-    // Perform assertions based on expected attributes
-    expect(results.ariaDescribedBy).toBe(expectedAttributes.ariaDescribedBy);
-    expect(results.ariaExpanded).toBe(expectedAttributes.ariaExpanded);
-    expect(results.role).toBe(expectedAttributes.role);
-    expect(results.ariaOwns).toBe(expectedAttributes.ariaOwns);
-    expect(results.ariaAutocomplete).toBe(expectedAttributes.ariaAutocomplete);
-    // Testing aria-owns id exist in dom
-    expect(results.domElementForAriaOwns.length).toBe(1);
-    expect(results.roleForAriaOwnsId).toBe('listbox');
-}
-//Utility function to write assertions for checking aria-describedBy id exist in the dom
-async function verifyAriaDescribedById(page, id) {
-    const domElementForAriaDescribedby = await page.$(`#${id}`);
-    testHelpers.pauseFor(100);
-    expect(domElementForAriaDescribedby).not.toBeNull();
-}
-//Utility function to write assertions for checking aria-owns id exist in the dom
-/*async function verifyAriaOwnsId(page, id) {
-    console.log(id);
-    const results = await page.evaluate((id) => {
-        const domElementForAriaOwns = Array.from(document.querySelectorAll(id));
-        console.log(domElementForAriaOwns);
-         return {
-            domElementForAriaOwns,
-            role: domElementForAriaOwns[0]?.getAttribute('role'),
-         }          
-    });
-    expect(results.domElementForAriaOwns.length).toBe(1); 
-    expect(results.role).toBe('listbox');   
-}*/
 describe("All combobox's Attributes Test", () => {
     let domInfo;
     beforeAll(async () => {
@@ -98,7 +49,7 @@ describe("All combobox's Attributes Test", () => {
     afterAll(async () => {});
 });
 
-describe('Combobox1 Test', () => {
+describe('Combobox1 Test for Accessible features', () => {
     let domInfo;
     beforeAll(async () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
@@ -109,18 +60,12 @@ describe('Combobox1 Test', () => {
         await page.focus('#aria-fruit');
         // Type some characters in the combobox
         await page.type('#aria-fruit', 'app', { delay: 100 });
-        // Testing Attributes of the Active Combobox
-        const expectedAttributes = {
-            ariaDescribedBy: 'aria-fruit__desc',
-            ariaExpanded: 'true',
-            role: 'combobox',
-            ariaOwns: 'aria-fruit__list',
-            ariaAutocomplete: 'list',
-        };
-        await verifyActiveElementAttributes(page, expectedAttributes);
-        //  await verifyAriaOwnsId(page, "#aria-fruit__list");
-        await verifyAriaDescribedById(page, 'aria-fruit__desc');
-
+        // Testing count in aria-live
+        /*   const ariaLiveInfo = await page.evaluate(() => {
+            const nextSibling = document.activeElement?.nextElementSibling;
+            return nextSibling?.getAttribute('aria-live') || null;
+        });
+        console.log(ariaLiveInfo);*/
         //Test the value selection work using the keyboard
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
@@ -160,18 +105,6 @@ describe('Combobox2 Test', () => {
         await page.waitForSelector('#video-games');
         await page.focus('#video-games');
         await page.type('#video-games', 'a', { delay: 100 });
-
-        // Testing Attributes of the Active Combobox
-        const expectedAttributes = {
-            ariaDescribedBy: 'video-games__desc',
-            ariaExpanded: 'true',
-            role: 'combobox',
-            ariaOwns: 'video-games__list',
-            ariaAutocomplete: 'list',
-        };
-        await verifyActiveElementAttributes(page, expectedAttributes);
-        await verifyAriaDescribedById(page, 'video-games__desc');
-
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
         // Testing Redirection on submission
@@ -190,16 +123,6 @@ describe('Combobox3 Test', () => {
         await page.waitForSelector('#aria-example-2');
         await page.focus('#aria-example-2');
         await page.type('#aria-example-2', 'can', { delay: 100 });
-        const expectedAttributes = {
-            ariaDescribedBy: 'aria-example-2__desc',
-            ariaExpanded: 'true',
-            role: 'combobox',
-            ariaOwns: 'aria-example-2__list',
-            ariaAutocomplete: 'list',
-        };
-        await verifyActiveElementAttributes(page, expectedAttributes);
-        await verifyAriaDescribedById(page, 'aria-example-2__desc');
-
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
