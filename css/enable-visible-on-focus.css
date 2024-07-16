@@ -114,3 +114,13 @@
 .fake-component a {
   color: #330000;
 }
+@media (prefers-color-scheme: dark) {
+  .fake-component {
+    background: #222;
+    color: white;
+    border: solid 1px #111;
+  }
+  .fake-component a {
+    color: #fdfbcc;
+  }
+}

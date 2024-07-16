@@ -196,3 +196,33 @@ strong {
   font-size: 1.375rem;
   color: #444;
 }
+@media (prefers-color-scheme: dark) {
+  /*Enable intro section*/
+  .homepage__hero--heading {
+    color: #ccffcc;
+  }
+  .homepage__hero {
+    color: #dabebe;
+    background: #222222;
+  }
+  /*3 components after header section*/
+  main {
+    background-color: #111111;
+  }
+  /* Bottom copy heading*/
+  .homepage__bottom-copy--heading {
+    color: #eeeeee;
+  }
+  /*What makes enable diff & found a bug section*/
+  .homepage__bottom-copy {
+    background: #222;
+    color: #ccc;
+  }
+  .homepage__bottom-copy strong {
+    color: #ccc !important;
+  }
+  /*Want to donate code section*/
+  .homepage__bottom-copy:nth-child(2n) {
+    background: #444;
+  }
+}
