@@ -33,7 +33,7 @@
           <div class="field-block">
             <label for="tooltip_example_1" class="form-label">
               <span>VIN</span>
-            </label>          
+            </label>  
             <input id="tooltip_example_1" size="25" type="text">
             <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
@@ -48,8 +48,8 @@
             <label for="tooltip_example_3" class="form-label">
               <span>Body style</span>
             </label>
-            <input id="tooltip_input_3" size="25" type="text">
-            <button id="tooltip_example_3" type="button" class="tooltip__icon-button" aria-label="Clickable tooltip information" 
+            <input id="tooltip_example_3" size="25" type="text">
+            <button id="tooltip_button_3" type="button" class="tooltip__icon-button" aria-label="Clickable tooltip information" 
                 data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
                 <span class="icon" aria-hidden="true">i</span>
               </button>
