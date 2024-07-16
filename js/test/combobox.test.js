@@ -40,6 +40,7 @@ describe("All combobox's Attributes Test", () => {
                 }),
             };
         });
+        // Test all aria attributes of the combobox
         domInfo.comboBoxList.forEach((combobox) => {
             expect(combobox.ariaDescribedBy).not.toBeNull();
             expect(combobox.ariaOwns).not.toBeNull();
@@ -64,18 +65,28 @@ describe('ARIA Combobox Test for Accessible features', () => {
         await testHelpers.pauseFor(100);
     });
     it('ARIA Combobox  is able to alert the matching count updates', async () => {
-        const ariaLiveValue = await page.evaluate(() => {
-            const ariaLiveElem = document.querySelector(
+        // Getting the alert element
+        const ariaInfoOfCount = await page.evaluate(() => {
+            const alertElem = document.querySelector(
                 '#example1 [role="alert"]',
             );
-            return ariaLiveElem?.textContent;
+            const ariaLive = alertElem.getAttribute('aria-live');
+            return {
+                alertElemValue: alertElem?.textContent,
+                ariaLive,
+            };
         });
-        expect(ariaLiveValue).toContain('2 items');
+        // Testing the aria-live attribute
+        expect(ariaInfoOfCount.alertElemValue).toContain('2 items');
+        expect(ariaInfoOfCount.ariaLive).toBe('assertive');
     });
 
     it('ARIA Combobox select value using keyboard', async () => {
+        // Using keyboard to go through the List
         testHelpers.keyDownAndUp(page, 'ArrowDown');
+        // Enter
         await page.keyboard.press('Enter');
+        // Pause for 100 ms
         await testHelpers.pauseFor(100);
         domInfo = await page.evaluate(() => {
             const focusedElementType = document?.activeElement?.type;
