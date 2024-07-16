@@ -49,24 +49,26 @@ describe("All combobox's Attributes Test", () => {
     afterAll(async () => {});
 });
 
-describe('Combobox1 Test for Accessible features', () => {
+describe('ARIA Combobox Test for Accessible features', () => {
     let domInfo;
     beforeAll(async () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
-    });
-
-    it('ARIA Combobox  is completely keyboard accessible', async () => {
         await page.waitForSelector('#aria-fruit');
         await page.focus('#aria-fruit');
-        // Type some characters in the combobox
         await page.type('#aria-fruit', 'app', { delay: 100 });
-        // Testing count in aria-live
-        /*   const ariaLiveInfo = await page.evaluate(() => {
-            const nextSibling = document.activeElement?.nextElementSibling;
-            return nextSibling?.getAttribute('aria-live') || null;
+        await testHelpers.pauseFor(100);
+    });
+    it('ARIA Combobox  is able to alert the matching count updates', async () => {
+        const ariaLiveValue = await page.evaluate(() => {
+            const ariaLiveElem = document.querySelector(
+                '#example1 [role="alert"]',
+            );
+            return ariaLiveElem?.textContent;
         });
-        console.log(ariaLiveInfo);*/
-        //Test the value selection work using the keyboard
+        expect(ariaLiveValue).toContain('2 items');
+    });
+
+    it('ARIA Combobox select value using keyboard', async () => {
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
@@ -85,15 +87,27 @@ describe('Combobox1 Test for Accessible features', () => {
         expect(domInfo.ariaExpanded).toBe('false');
         expect(domInfo.selectedValue).toBe('Apple');
         expect(domInfo.focusedElementType).toBe('reset');
+    });
 
-        // Test the reset button functionality using the keyboard
+    it('ARIA Combobox  is able to reset using the reset button', async () => {
+        // Focus will be on the Reset button
         await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
         const valueAfterReset = await page.evaluate(
             () => document?.activeElement?.value,
         );
-
         expect(valueAfterReset).toBe('');
+    });
+    it('ARIA Combobox  is able to reset using the escape key', async () => {
+        await page.type('#aria-fruit', 'app', { delay: 100 });
+        // Now let's press ESCAPE to check if the value is reset.
+        page.keyboard.press('Escape');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+        const valueAfterEscapeButton = await page.evaluate(
+            () => document?.activeElement?.value,
+        );
+        expect(valueAfterEscapeButton).toBe('');
     });
     afterAll(async () => {});
 });
