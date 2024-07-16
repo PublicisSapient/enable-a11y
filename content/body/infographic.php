@@ -15,8 +15,11 @@
       Alt Text</a>
    article, one can use a short summary for alt text and place a more detailed description within the main text
    underneath.
-   This information is also covered in the <a target="blank"
-      href="https://www.w3.org/WAI/tutorials/images/complex/">W3C's Complex Images Tutorial</a>.
+</p>
+
+<p>
+   The information on this page is also covered in the <a target="blank"
+      href="https://www.w3.org/WAI/tutorials/images/complex/">W3C's Complex Images Tutorial</a>.  We do note we did not implement their recommendation of using <code>longdesc</code> since it is on <a href="https://html.spec.whatwg.org/multipage/obsolete.html">the list of obsolete HTML tags on the WHATWG specification</a>.
 </p>
 
 <div id="infographics-bitmap-example" class="enable-example">
@@ -59,16 +62,14 @@
 
 <h2>Infographics using Scalable Vector Graphics(SVG)</h2>
 
-<p>If a SVG (Scalable Vector Graphics) is used for infographics then the nodes that read the text within, should read it
-   from top to bottom, left to right.
-   <a target="blank"
-      href="https://www.sitepoint.com/tips-accessible-svg/https://www.sitepoint.com/tips-accessible-svg/"> As explained
-      here,</a> The best way to make SVG accessible to Assistive Technologies (AT) like screen readers and speech
-         recognition tools is to put it directly into your HTML.
+<p>If an SVG (Scalable Vector Graphics) is used for infographics, and the text within it would accurately describe the information inside the infographics, then SVG authors should ensure the text nodes are read 
+   from top to bottom, left to right. As mentioned in 
+   <a href="https://www.sitepoint.com/tips-accessible-svg/https://www.sitepoint.com/tips-accessible-svg/">Tips for Creating Accessible SVG</a> by <a href="https://tink.uk/">Léonie Watson</a>, the best way to make SVG accessible to Assistive Technologies (AT) like screen readers and speech
+         recognition tools is to put it directly into your HTML using the <code>svg</code> tag, instead of embedding it using the <code>img</code> tag.
 </p>
 
 <p>
-   Add inline SVG images into your HTML for better accessibility.
+   Here is an example of an embedded SVG with accessible text:
 </p>
 
 <div id="infographics-svg-example" class="enable-example">
@@ -76,7 +77,7 @@
        "../images/infographics/infographics_vector.svg",
    ); ?>
    <!-- added this paragraph as the title and description of SVG is not getting ready by the screen reader on mobile device -->
-<p class="center">This image is <a href="http://www.freepik.com">designed by Freepik</a><p>
+<div class="center">This image is based on this <a href="https://www.freepik.com/free-vector/template-with-steps-infographic_7065848.htm#fromView=search&page=1&position=1&uuid=f3f7c521-06a3-4350-b4a7-a77669f967b3">template with steps for infographic</a> on from <a href="https://www.freepik.com">Freepik</a></div>
 
 </div>
 

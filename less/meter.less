@@ -2,7 +2,7 @@
 
 // Variables for meter color
 @positive: #387a26;
-@neutral: #f4bc41;
+@neutral: #f4bc41; 
 @negative: #c74821;
 
 // Mixin for customizing meter
@@ -19,29 +19,31 @@
         content: "";
         display: block;
         height: 100%;
+        // This variable is set by the JS
         width: var(--meter-percentage);
     }
 
-    &:before {
+    &::before {
         .meter-before();
     }
-    &[meter-state="positive"]:before {
+    &[meter-state="positive"]::before {
         background: @positive;
     }
-    &[meter-state="neutral"]:before {
+    &[meter-state="neutral"]::before {
         background: @neutral;
     }
-    &[meter-state="negative"]:before {
+    &[meter-state="negative"]::before {
         background: @negative;
     }
 
-    /* Hides ::-webkit-meter-bar for cross browser consistency with Safari */
     &::-webkit-meter-bar {
+        /* Hides ::-webkit-meter-bar for cross browser consistency with Safari */
         display: none;
     }
 
-    /* Styles and attribute selectors for :before must also be applied to ::moz-meter-bar to support Firefox */
+    
     &::-moz-meter-bar {
+        /* Styles and attribute selectors for ::before must also be applied to ::moz-meter-bar to support Firefox */
         .meter-before();
     }
     &[meter-state="positive"]::-moz-meter-bar {
@@ -55,16 +57,6 @@
     }
 }
 
-.container {
-    // Container for example meters (not needed for meter)
-    align-items: center;
-    column-gap: 10px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    justify-content: space-between;
-    text-wrap: nowrap;
-    width: fit-content;
-}
 
 .enable-custom-meter {
     .meter(#EFEFEF;#E4E4E4;120px);
