@@ -54,6 +54,7 @@
                 <span class="icon" aria-hidden="true">i</span>
               </button>
           </div>
+          <input value="Submit" type="submit">
       </div>
     </fieldset>
   </form>
