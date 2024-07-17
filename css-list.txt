@@ -7,6 +7,7 @@ css/bottom-fixed-nav.css
 css/button.css
 css/checkbox.css
 css/combobox.css
+css/cookiebanner.css
 css/date.css
 css/definition-term.css
 css/deque-table-sortable.css
