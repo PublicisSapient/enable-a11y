@@ -1,10 +1,10 @@
 <p>
 
   <strong>A "tooltip" is a non-modal (or non-blocking) overlay containing text-only content that provides supplemental
-  information about an existing UI control. It is hidden by default, and becomes available on hover or focus of the
+  information about an existing UI control. It is hidden by default and becomes available on hover or focus of the
   control it describes.</strong> <a href="https://sarahmhigley.com/">Sarah M. Higley</a> came up with this definition for what a
   tooltip is in her article <a href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG
-    2.1</a>, and its better than anything I could write, so I hope she doesn't mind me stealing it.
+    2.1</a>, and it's better than anything I could write, so I hope she doesn't mind me stealing it.
 </p>
 
 
@@ -19,7 +19,7 @@
 ]); ?>
 
 <p>
-  This solution can be styled exactly the want, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
 <p>
   The form example below shows three different entry points for tooltips. The first is a text button, the second is an input box, and the third is an icon button.
@@ -117,7 +117,7 @@
     browser decides looks good.</li>
   <li><strong>There is a small delay</strong> between the time the user hovers the item with the tooltip and when the
     tooltip appears. There isn't a way to adjust this delay.</li>
-  <li><strong>The tooltip inherits the z-index of element being hovered.</strong> If there are elements close by that
+  <li><strong>The tooltip inherits the z-index of the element being hovered.</strong> If there are elements close by that
     have a higher
     stacking order, it will not appear as intended.</li>
 </ul>
@@ -127,12 +127,12 @@
 </p>
 
 <ul>
-  <li>For <a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H28">providing definitions to abbreviations</a> using the <code>&lt;abbr&gt;</code> tag (However, <a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> suggests <a href="https://www.tpgi.com/short-note-the-abbreviation-appreciation-society/">other methods for expanding abbreviations in a more user friendly way</a>.</li>
+  <li>For <a href="https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140311/H28">providing definitions to abbreviations</a> using the <code>&lt;abbr&gt;</code> tag (However, <a href="https://twitter.com/stevefaulkner">Steve Faulkner</a> suggests <a href="https://www.tpgi.com/short-note-the-abbreviation-appreciation-society/">other methods for expanding abbreviations in a more user-friendly way</a>.</li>
   <li>For <a href="https://dequeuniversity.com/tips/provide-iframe-titles">providing titles to iFrames</a> (which has nothing to do with its tooltip functionality).</li>
 </ul> 
 
 <p>
-  A really good round up of how the <code>title</code> attribute works, its history, and where it is appropriate to
+  A really good round-up of how the <code>title</code> attribute works, its history, and where it is appropriate to
   use it is in
   <a href="https://www.24a11y.com/2017/the-trials-and-tribulations-of-the-title-attribute/">The Trials and
     Tribulations of the Title Attribute</a> by <a href="https://www.scottohara.me/">Scott O'Hara</a>

@@ -323,7 +323,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
     </tbody>
   </table>
 
-  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
+  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Colored Focus States on a Gradient Background</figcaption>
 </figure>
 
 <p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>

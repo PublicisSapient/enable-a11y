@@ -33,7 +33,7 @@
 <?php includeStats(["isNPM" => true]); ?>
 
 <p>
-  In order to make a tablist accessible, there are a few complications:
+  To make a tablist accessible, there are a few complications:
 </p>
 
 <ol>
@@ -41,22 +41,22 @@
       href="radiogroup.php">how users navigate a group of radio buttons</a>)</li>
   <li>Keyboard users may not know how this interaction works, and when they try to navigate through the tablist with a
     Tab key, they will be a bit confused when they skip over the whole list with one key press.</li>
-  <li>While you can give screen reader user verbal instructions about how to interact with a tablist, keyboard users
-    that <strong>don't</strong> use a screen reader won't hear them.</li>
+  <li>While you can give screen reader users verbal instructions about how to interact with a tablist, keyboard users
+    who <strong>don't</strong> use a screen reader won't hear them.</li>
 </ol>
 
 <p>
-  In order to fix this UX issue, I show the instructions visually to keyboard users only. <strong>These instructions
+  To fix this UX issue, I show the instructions visually to keyboard users only. <strong>These instructions
     don't appear for mouse users.</strong> They also don't appear for mobile screen reader users who don't use a
-  keyboard.  Our implementation "borrows" their visual design, while adding our own code to conform to the <a href="https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html">W3C's recommended UX for a tablist</a> (their implementation, unfortunately, doesn't seem to work with a keyboard
+  keyboard.  Our implementation "borrows" their visual design, while adding our code to conform to the <a href="https://www.w3.org/TR/wai-aria-practices/examples/tabs/tabs-1/tabs.html">W3C's recommended UX for a tablist</a> (their implementation, unfortunately, doesn't seem to work with a keyboard
     with some screen reader/browser combinations, like VoiceOver for Safari on OSX).
 </p>
 
 <p>
-  This issue has been handled in differently in <a href="http://simplyaccessible.com/article/danger-aria-tabs/">Danger!
+  This issue has been handled differently in <a href="http://simplyaccessible.com/article/danger-aria-tabs/">Danger!
     ARIA tabs</a>, written by
   <a href="http://simplyaccessible.com/article/author/jeffsmith/">Jeff Smith</a> (TL;DR: He decided to not code them
-  using ARIA tabs, but as a list of links that anchor to the tabpanels).
+  using ARIA tabs but as a list of links that anchor to the tabpanels).
 </p>
 
 
