@@ -1,6 +1,7 @@
 .cookie-banner {
   position: fixed;
   bottom: 0;
+  z-index: 1000;
 }
 .cookie-banner-form {
   display: flex;

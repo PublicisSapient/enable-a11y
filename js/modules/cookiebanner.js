@@ -2,11 +2,9 @@
 
 const cookieBanner = new function() {
   let modalCookieBanner;
-  let nonModalCookieBanner;
 
   this.init = function() {
-    modalCookieBanner = document.getElementById('modal-cookie-banner');
-    nonModalCookieBanner = document.getElementById('non-modal-cookie-banner');
+    modalCookieBanner = document.getElementById('cookie-banner');
     setUpModalButton();
     setUpNonModalButton();
   }
@@ -21,7 +19,7 @@ const cookieBanner = new function() {
   function setUpNonModalButton() {
     const showNonModalButton = document.getElementById('show-non-modal-button');
     showNonModalButton.addEventListener('click', () => {
-      nonModalCookieBanner.show();
+      modalCookieBanner.show();
     })
   }
 }
