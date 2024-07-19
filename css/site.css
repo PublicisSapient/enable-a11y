@@ -27,6 +27,17 @@ main {
 .plp h1 {
   margin: 0 0 80px 0;
 }
+.plp h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #222;
+  font-size: 1.6rem;
+  padding: 20px 0;
+  margin: 40px 0 79px;
+}
+.plp h2 a {
+  color: #000;
+}
 .plp .plp-list {
   margin: 20px 0;
   padding: 0;
