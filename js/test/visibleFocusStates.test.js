@@ -131,10 +131,10 @@ describe('Test Focus States on all pages on Enable', () => {
     for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
         it(`Desktop Breakpoint: Test focus states on ${file}`, async () => {
-            await testPageWidth(file, true);
+            await testFocusStates(file, true);
         });
         it(`Mobile Breakpoint: Test focus states on ${file}`, async () => {
-            await testPageWidth(file, false);
+            await testFocusStates(file, false);
         });
     }
 });
