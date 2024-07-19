@@ -582,6 +582,32 @@
     filter: none;
   }
 }
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open .enable-flyout__level {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout__list--photo-layout .enable-flyout__link:hover,
+  .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open .enable-flyout__open-level-button,
+  .enable-flyout--is-open .enable-flyout__close-level-button,
+  .enable-flyout--is-open .enable-flyout__link {
+    color: white;
+  }
+}
 @keyframes enable-flyout__anim--mobile-open {
   0% {
     right: calc(-1 * min(75vw, 350px));
