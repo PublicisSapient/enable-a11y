@@ -30,8 +30,12 @@ fieldset div {
 }
 .enable-character-count {
   display: block;
-  width: 20rem;
   margin-left: 45%;
   text-align: right;
   margin-top: 5px;
+}
+@media only screen and (min-width: 720px) {
+  .enable-character-count {
+    width: 20rem;
+  }
 }

@@ -18,7 +18,7 @@ describe('Test Focus States on all pages on Enable', () => {
         await desktopBrowser.close();
     });
 
-    async function testPage(filename, isDesktop) {
+    async function testFocusStates(filename, isDesktop) {
         let domInfo,
             tabStops = 0,
             page;
@@ -123,18 +123,18 @@ describe('Test Focus States on all pages on Enable', () => {
 
         page.close();
     }
-    // end testPage()
+    // end testFocusStates()
 
     // This goes through all the URLs in the site and
-    // runs testPage() on it twice, one in the desktop
+    // runs testFocusStates() on it twice, one in the desktop
     // browser and one in the mobile.
     for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
         it(`Desktop Breakpoint: Test focus states on ${file}`, async () => {
-            await testPage(file, true);
+            await testPageWidth(file, true);
         });
         it(`Mobile Breakpoint: Test focus states on ${file}`, async () => {
-            await testPage(file, false);
+            await testPageWidth(file, false);
         });
     }
 });

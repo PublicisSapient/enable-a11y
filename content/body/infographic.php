@@ -37,7 +37,7 @@
                If you take a petabyte's worth of 1GB flash drives and lined them up end to end, they would stretch over 92
                football fields.<br />
                You can have 4,000 digital photos everyday for the rest of your life.<br/>
-               Sources fo this image are Lifewire.com, Blogs.loc.gov and cobaltiron.com.
+               Sources of this image are Lifewire.com, Blogs.loc.gov and cobaltiron.com.
             </p>
          </div>
       </details>
@@ -54,8 +54,8 @@
   },
   {
     "label": "Define the long description",
-    "highlight": "content",
-    "notes": "Contains the description of the image"
+    "highlight": "%OPENCLOSECONTENTTAG%details",
+    "notes": "Contains the description of the image inside a drawer"
   }]
 }
 </script>
@@ -66,6 +66,10 @@
    from top to bottom, left to right. As mentioned in 
    <a href="https://www.sitepoint.com/tips-accessible-svg/https://www.sitepoint.com/tips-accessible-svg/">Tips for Creating Accessible SVG</a> by <a href="https://tink.uk/">Léonie Watson</a>, the best way to make SVG accessible to Assistive Technologies (AT) like screen readers and speech
          recognition tools is to put it directly into your HTML using the <code>svg</code> tag, instead of embedding it using the <code>img</code> tag.
+</p>
+
+<p>
+   Since this solution requires adding to code structure of the SVG image (specifically, the `aria-hidden` to decorative parts of the SVG and possibly changing the order of <code>text</code> nodes changes so screen readers from top to bottom, left to right.  <strong>As such, designers should not assume that just creating an SVG with live text will "just work".  A developer (or a designer with coding experience) must be involved  to make sure the SVG complies with the coding steps in the walkthrough below.</strong>
 </p>
 
 <p>
@@ -93,7 +97,7 @@
   },
   {
     "label": "Reposition the text nodes and, if feasible, group them together inside a <g> (group) tag.",
-    "highlight": "text",
+    "highlight": "%OPENCLOSECONTENTTAG%text",
     "notes": "Reposition the text nodes so that the screen reader reads them from top to bottom and left to right.Grouping text nodes when the content within the group is logically related can aid in making the content more accessible."
   }]
 }

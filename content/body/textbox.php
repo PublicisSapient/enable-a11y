@@ -186,13 +186,15 @@
 
 <h2>Textbox with Character Counter</h2>
 
-<p>The character counter is visible at all times.  It is announced to screen reader users when:</p>
+<p>A character counter is something that shows users how many characters they can type into a textbox.  It is visible at all times.  Our implementation has the character count information announced to screen reader users in the following scenarios:</p>
 
 <ol>
-  <li>They use the keyboard to access the textbox (e.g. using the TAB key).</li>
+  <li>A user uses the keyboard to access the textbox (e.g. using the TAB key) or swipes into the textbox on a mobile device</li>
   <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
   <li>When they use the keyboard to press the key set by the <code>data-read-count-key</code> attribute—the default is the Escape key.</li>
 </ol>
+
+<p>Note that the code walkthrough below is specific to our implemtation.</p> 
 
 <div id="charcount-simple" class="enable-example">
   <form class="enable-form-example">
@@ -221,11 +223,13 @@
     "steps": [
       {
         "label": "Set the 'maxlength' attribute of the textarea element.",
-        "highlight": "%INLINE%charcount-simple ||| maxlength"
+        "highlight": "%INLINE%charcount-simple ||| maxlength",
+        "notes": "This stores the maximum amount of character that can be input into the textbox"
       },
       {
         "label": "Set the custom data-has-character-count attribute for the textarea element.",
-        "highlight": "%INLINE%charcount-simple ||| data-has-character-count"
+        "highlight": "%INLINE%charcount-simple ||| data-has-character-count",
+        "notes": "This is specific to the Enable implementation. Our JavaScript library ensures that only textboxes with this attribute set update the character count below it."
       }
     ]
   }
@@ -333,6 +337,6 @@
 
 
 <?= includeNPMInstructions("enable-character-count", [], "", false, [
-  "noCSS" => true,
+    "noCSS" => true,
 ])
 ?>
