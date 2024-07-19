@@ -16,44 +16,44 @@
   justify-content: end;
 }
 @media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
-  .themed-layout-xxx .enable-flyout {
+  .enable-flyout__top-level {
     background-color: #2b2929;
   }
 }
 @media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
-  .themed-layout-xxx .enable-flyout .flyout-fork li {
+  .enable-flyout .flyout-fork li {
     display: block;
     text-align: left;
     margin: 20px;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork li a {
+  .enable-flyout .flyout-fork li a {
     margin: 20px;
     font-weight: bold;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork li button {
+  .enable-flyout .flyout-fork li button {
     margin: 0;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork li a::after {
+  .enable-flyout .flyout-fork li a::after {
     content: "";
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork li ul {
+  .enable-flyout .flyout-fork li ul {
     background-color: #5d5c5c;
   }
 }
 @media only screen and (min-width: 960px) {
-  .themed-layout-xxx .enable-flyout .flyout-fork {
+  .enable-flyout .flyout-fork {
     padding: 20px;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li {
+  .enable-flyout .flyout-fork > li {
     position: relative;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li a {
+  .enable-flyout .flyout-fork > li a {
     font-weight: bold;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li button {
+  .enable-flyout .flyout-fork > li button {
     margin-left: -22px;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li ul {
+  .enable-flyout .flyout-fork > li ul {
     background: #5d5c5c;
     padding: 20px;
     width: 16rem;
@@ -62,11 +62,11 @@
     margin-top: 28px;
     margin-left: -23px;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li ul li {
+  .enable-flyout .flyout-fork > li ul li {
     display: block;
     text-align: left;
   }
-  .themed-layout-xxx .enable-flyout .flyout-fork > li ul a {
+  .enable-flyout .flyout-fork > li ul a {
     font-weight: bold;
   }
 }

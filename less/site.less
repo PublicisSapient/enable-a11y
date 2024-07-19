@@ -3,6 +3,121 @@
 // site specific hamburger menu styles
 @default-menu-item-with-photo-width: 118px;
 @default-menu-item-with-photo-horiz-padding: 5px;
+
+// .sub-page-layout-wrapper {
+//     display: flex;
+
+.sub-component-navigation {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+    padding: 40px;
+
+    a {
+        color: #000;
+    }
+}
+
+main {
+    // margin-left: 250px;
+    width: calc(100% - 400px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.plp {
+    margin: 5rem 10rem;
+
+    h1 {
+        margin: 0 0 80px 0;
+    }
+
+    .plp-list {
+        margin: 20px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        .item-wrapper {
+            display: flex;
+            margin-bottom: 25px;
+
+            .icon-wrapper {
+                width: 355px;
+                min-width: 355px;
+                border-radius: 10px;
+                // display: inline-flex;
+                // flex-direction: column;
+                text-align: center;
+                padding: 10px 10px 80px;
+                background-color: #f5f7f5;
+                height: 18rem;
+
+                h5 {
+                    display: block;
+                    padding: 20px;
+                    margin-top: 14px;
+
+                    a {
+                        color: #000;
+                        font-weight: bold;
+                        font-size: 24px;
+                        padding: 20px;
+                        margin: auto;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .links-wrapper {
+                ul {
+                    width: 40rem;
+                    text-decoration: none;
+
+                    li {
+                        list-style-type: none;
+                        padding: 10px;
+                        border-bottom: 2px solid #000;
+
+                        a {
+                            font-size: 1.3rem;
+                            color: #000;
+                            font-family: helvetica;
+                            font-weight: bold;
+                            text-decoration: none;
+                        }
+
+                        a:hover {
+                            color: #e12251;
+                        }
+
+                        a.get-code {
+                            position: relative;
+                        }
+
+                        .get-code:after {
+                            content: " ";
+                            width: 25px;
+                            height: 25px;
+                            background: url(/images/icons/components/link-to-external-site.svg);
+                            position: absolute;
+                            right: -34px;
+                            top: -2px;
+                        }
+                    }
+
+                    li:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+// }
+
 .enable-flyout {
     &__open-level-button,
     &__link {

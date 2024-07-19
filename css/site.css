@@ -5,6 +5,94 @@
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+.sub-component-navigation {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  overflow: auto;
+  padding: 40px;
+}
+.sub-component-navigation a {
+  color: #000;
+}
+main {
+  width: calc(100% - 400px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.plp {
+  margin: 5rem 10rem;
+}
+.plp h1 {
+  margin: 0 0 80px 0;
+}
+.plp .plp-list {
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.plp .plp-list .item-wrapper {
+  display: flex;
+  margin-bottom: 25px;
+}
+.plp .plp-list .item-wrapper .icon-wrapper {
+  width: 355px;
+  min-width: 355px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 10px 80px;
+  background-color: #f5f7f5;
+  height: 18rem;
+}
+.plp .plp-list .item-wrapper .icon-wrapper h5 {
+  display: block;
+  padding: 20px;
+  margin-top: 14px;
+}
+.plp .plp-list .item-wrapper .icon-wrapper h5 a {
+  color: #000;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 20px;
+  margin: auto;
+  display: inline-block;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul {
+  width: 40rem;
+  text-decoration: none;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li {
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 2px solid #000;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li a {
+  font-size: 1.3rem;
+  color: #000;
+  font-family: helvetica;
+  font-weight: bold;
+  text-decoration: none;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li a:hover {
+  color: #e12251;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li a.get-code {
+  position: relative;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li .get-code:after {
+  content: " ";
+  width: 25px;
+  height: 25px;
+  background: url(/images/icons/components/link-to-external-site.svg);
+  position: absolute;
+  right: -34px;
+  top: -2px;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li:last-child {
+  border-bottom: 0;
+}
 .enable-flyout__open-level-button,
 .enable-flyout__link {
   font-weight: bold;

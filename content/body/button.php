@@ -1,5 +1,5 @@
 
-    <!-- <aside class="notes">
+    <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -22,7 +22,19 @@
 
             </ul>
 
-        </aside> -->
+        </aside> 
+
+        <div>
+            <div class="sub-component-navigation">
+                <nav >
+                    <h2><a href="/components.php">Components</a></h2>
+                    <ul>
+                        <li><a href="/button.php">Button</a></li>
+                        <li><a href="">Checkbox</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
         <p>
             <strong>A Button is an interactive element that triggers an action on a webpage or submits a form.</strong>

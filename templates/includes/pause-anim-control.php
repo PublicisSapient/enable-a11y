@@ -9,7 +9,7 @@
 
 
     <div class="play-pause-anim__checkbox-container">
-        <img src="images/accessible-text-svg/logo-enable-white.svg" class="enable-logo__text"/>
+        <a href="/"><img src="images/accessible-text-svg/logo-enable-white.svg" class="enable-logo__text"/></a>
         <!-- <span class="enable-logo__text">Enable</span> -->
             
         <!-- Here is the main menu will be placed by our global.js Javascript -->

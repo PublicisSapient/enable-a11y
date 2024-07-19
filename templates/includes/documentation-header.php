@@ -25,7 +25,7 @@
     
     <template id="flyout__root">
         <ul class="enable-flyout__list flyout-fork">
-            <li><a href="/components">Components</a></li>
+            <li><a href="/components.php">Components</a></li>
             <li><a href="/code-patterns">Code Patterns</a></li>
             <li>
                 <button href="/testing" class="enable-flyout__open-level-button" aria-expanded="false" aria-controls="flyout__root-section">Testing</button>
