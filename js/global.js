@@ -68,7 +68,8 @@ function initEnable() {
                 // 2) it does not have an ancestor with class no-permalink-headings
                 if (
                     el.closest('.enable-example') === null &&
-                    el.closest('.no-permalink-headings') === null
+                    el.closest('.no-permalink-headings') === null &&
+                    el.closest('.cookie-banner') === null
                 ) {
                     createPermalinksForHeading(el, headingIndex, true);
                 }
@@ -88,7 +89,7 @@ function initEnable() {
         skipPages: ['/index.php', '/faq.php'],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,
-        selectorToSkipHeadingsWithin: '.enable-example',
+        selectorToSkipHeadingsWithin: '.enable-example, .cookie-banner',
         collapseNestedHeadingsAfterLevel: 2,
     });
 }
