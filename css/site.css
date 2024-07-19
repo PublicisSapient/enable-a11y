@@ -65,7 +65,7 @@ main {
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li {
   list-style-type: none;
-  padding: 10px;
+  padding: 26px 10px;
   border-bottom: 2px solid #000;
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li a {
