@@ -89,49 +89,51 @@ $check =
 $uncheck =
     '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
-<table class="comparison-table">
-    <caption>Comparison of input masking libraries</caption>
-    <thead>
-        <tr>
-            <th scope="col"><span class="sr-only">Library</span></th>
-            <th scope="col">Can access with keyboard</th>
-            <th scope="col">Screen reader friendly</th>
-            <th scope="col">Visually only masking</th>
-            <th scope="col">Flexible Input of data</th>
+<div class="sticky-table__container">
+    <table class="comparison-table">
+        <caption>Comparison of input masking libraries</caption>
+        <thead>
+            <tr>
+                <th class="sticky-table__sticky-horiz-heading" scope="col"><span class="sr-only">Library</span></th>
+                <th scope="col">Can access with keyboard</th>
+                <th scope="col">Screen reader friendly</th>
+                <th scope="col">Visually only masking</th>
+                <th scope="col">Flexible Input of data</th>
 
-            <th scope="col">Screen reader alerts</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
-            <td><?= $check ?>
-            <td><?= $check ?>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
-            </th>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
-            <td><?= $check ?></td>
-            <td><?= $check ?> (although the demo page doesn't use proper labels).</td>
-            <td>No</td>
-            <td>No, typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one
-                character.</td>
-            <td>No</td>
-        </tr>
+                <th scope="col">Screen reader alerts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
+                <td><?= $check ?>
+                <td><?= $check ?>
+                <td><?= $check ?></td>
+                <td>No, typing in the middle of data results in cursor being moved to end of string</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
+                </th>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td>No, typing in the middle of data results in cursor being moved to end of string</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
+                <td><?= $check ?></td>
+                <td><?= $check ?> (although the demo page doesn't use proper labels).</td>
+                <td>No</td>
+                <td>No, typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one
+                    character.</td>
+                <td>No</td>
+            </tr>
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+    </div>
 
 <p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible), I
     created Enable's Input Masking library. You can test it out with a screen reader and keyboard yourself.</p>
