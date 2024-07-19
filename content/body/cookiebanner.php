@@ -66,6 +66,24 @@
 
 <?php includeShowcode("cookie-banner-container"); ?>
 
+<script type="application/json" id="cookie-banner-container-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [
+    {
+      "label": "Use a form and ensure it has its aria-labelledby attribute set",
+      "highlight": "aria-labelledby",
+      "notes": "Using a form is good practice—<a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes\">MDN docs</a>—to have the dialog close automatically when a button within it is pressed. Using aria-labelledby along with using a div element with a role of document (next step) ensures it's read out when the dialog is opened."
+    },
+    {
+      "label": "Use the document role to enclose the cookie explanation",
+      "highlight": "role",
+      "notes": "This presents the content in reading mode for screen readers."
+    }
+  ]
+}
+</script>
+
 <p>
   With the HTML set up, use the built-in methods <code>.showModal()</code> or <code>.show()</code> for the
   <code>dialog</code> HTML tag to show a modal or a non-modal dialog, respectively.
