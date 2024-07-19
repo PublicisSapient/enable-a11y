@@ -42,7 +42,7 @@
 <div id="cookie-banner-container">
   <dialog id="cookie-banner" class="cookie-banner">
     <form class="cookie-banner-form" method="dialog" aria-labelledby="cookie-banner-title">
-      <button id="cookie-banner-close" class="cookie-banner-close-button" autofocus>
+      <button id="cookie-banner-close-button" class="cookie-banner-close-button" autofocus>
         <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close dialog">
       </button>
 
