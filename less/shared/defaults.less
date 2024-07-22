@@ -344,6 +344,31 @@ code {
     }
 }
 
+.meter-demo-container {
+    // Container for example meters (not needed for meter)
+    align-items: center;
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    width: fit-content;
+}
+
+.screen-reader-table {
+
+    tr {
+        @first-col-width: 125px;
+        td {
+            width: calc(~"(100% -  @{first-col-width}) / 5");
+        }
+
+        td:first-child {
+            width: @first-col-width;
+        }
+    }
+}
+
 iframe {
     .enable-focus({
     outline: solid 2px @focus-color !important;

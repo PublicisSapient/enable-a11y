@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 textarea,
 [role="textbox"] {
   display: inline-block;
@@ -37,8 +30,12 @@ fieldset div {
 }
 .enable-character-count {
   display: block;
-  width: 20rem;
   margin-left: 45%;
   text-align: right;
   margin-top: 5px;
+}
+@media only screen and (min-width: 720px) {
+  .enable-character-count {
+    width: 20rem;
+  }
 }

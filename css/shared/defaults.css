@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 body {
   font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -284,6 +277,21 @@ code {
 .compliance-table__icon,
 .comparison-table__icon {
   width: 20px;
+}
+.meter-demo-container {
+  align-items: center;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  text-wrap: nowrap;
+  width: fit-content;
+}
+.screen-reader-table tr td {
+  width: calc((100% -  125px) / 5);
+}
+.screen-reader-table tr td:first-child {
+  width: 125px;
 }
 iframe:focus {
   outline: solid 2px #097efb !important;
