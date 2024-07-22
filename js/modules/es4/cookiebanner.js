@@ -1,10 +1,10 @@
 'use-strict'
 
 const cookieBanner = new (function() {
-  let modalCookieBanner;
+  let cookieBanner;
 
   this.init = function() {
-    modalCookieBanner = document.getElementById('cookie-banner');
+    cookieBanner = document.getElementById('cookie-banner');
     setUpModalButton();
     setUpNonModalButton();
   }
@@ -12,14 +12,14 @@ const cookieBanner = new (function() {
   function setUpModalButton() {
     const showModalButton = document.getElementById('show-modal-button');
     showModalButton.addEventListener('click', () => {
-      modalCookieBanner.showModal();
+      cookieBanner.showModal();
     });
   }
 
   function setUpNonModalButton() {
     const showNonModalButton = document.getElementById('show-non-modal-button');
     showNonModalButton.addEventListener('click', () => {
-      modalCookieBanner.show();
+      cookieBanner.show();
     })
   }
 })
