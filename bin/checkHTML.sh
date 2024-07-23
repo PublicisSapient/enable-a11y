@@ -23,8 +23,10 @@
 
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
-mycommand="ipconfig"
-if ! command -v -- "$mycommand" > /dev/null 2>&1; then
+
+which ifconfig 1>&2 > /dev/null
+if [ "$?" = "0" ]
+then
 	MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
 else
 	MYIP=${MYIP:-`ipconfig.exe | grep -im1 'IPv4 Address' | cut -d ':' -f2`}
