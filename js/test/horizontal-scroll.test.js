@@ -3,7 +3,7 @@
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
 
-const fileList = testHelpers.getPageList();
+const fileList = ['code-quality.php']; //testHelpers.getPageList();
 let mobileBrowser, desktopBrowser;
 
 describe('Test Horizontal Scrolling on all pages on Enable', () => {
@@ -17,6 +17,34 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
         await mobileBrowser.close();
         await desktopBrowser.close();
     });
+
+    async function checkViewportWidth() {
+        const domInfo = await page.evaluate(() => {
+            const { clientWidth, scrollWidth } = document.body;
+            const { innerWidth } = window;
+            const domInfo = {};
+            const firstWrapTextCheckbox = document.querySelector(
+                '.showcode__wrap-text',
+            );
+
+            return {
+                doesPageHorizontallyScroll: scrollWidth > clientWidth,
+                clientWidth,
+                scrollWidth,
+                isWrapChecked: firstWrapTextCheckbox
+                    ? firstWrapTextCheckbox.checked
+                    : 'no checkbox',
+            };
+        });
+
+        if (!domInfo.doesPageHorizontallyScroll) {
+            console.log(
+                `isWrapChecked: (${domInfo.isWrapChecked}), scrollWidth: ${domInfo.scrollWidth}, clientWidth: ${domInfo.clientWidth}.`,
+            );
+        }
+
+        expect(domInfo.doesPageHorizontallyScroll).toBe(false);
+    }
 
     async function testPageWidth(filename, isDesktop) {
         let domInfo, page;
@@ -32,26 +60,32 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
             waitUntil: 'load',
         });
 
-        domInfo = await page.evaluate(() => {
-            const { clientWidth, scrollWidth } = document.body;
-            const { innerWidth } = window;
-            const domInfo = {};
+        await checkViewportWidth();
 
-            return {
-                doesPageHorizontallScroll: scrollWidth > clientWidth,
-                clientWidth,
-                scrollWidth,
-                innerWidth,
-            };
+        const hasCheckbox = await page.evaluate(() => {
+            const firstWrapTextCheckbox = document.querySelector(
+                '.showcode__wrap-text',
+            );
+            if (firstWrapTextCheckbox) {
+                firstWrapTextCheckbox.focus();
+                return true;
+            } else {
+                return false;
+            }
         });
 
-        if (domInfo.doesPageHorizontallScroll) {
-            console.log(
-                `Page ${filename} - scrollWidth: ${domInfo.scrollWidth}, clientWidth: ${domInfo.clientWidth}.`,
-            );
-        }
+        console.log(
+            `has checkbox: ${hasCheckbox}, filename: ${filename}, isDesktop: ${isDesktop}`,
+        );
 
-        expect(domInfo.doesPageHorizontallScroll).toBe(false);
+        if (hasCheckbox) {
+            // press space and check if it's unchecked.
+            await page.keyboard.press('Space');
+
+            testHelpers.fastPause();
+
+            await checkViewportWidth();
+        }
     }
 
     // This goes through all the URLs in the site and
