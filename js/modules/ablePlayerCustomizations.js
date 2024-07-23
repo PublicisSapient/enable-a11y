@@ -56,7 +56,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // set the DOM so that the video takes up half the screen
   // and that the transcript placed next to the video.
   function adjustTranscriptVisibility(player) {
-    if (player.$transcriptDiv.is(':visible')) {
+    if (player.$transcriptDiv && player.$transcriptDiv.is(':visible')) {
       player.$ableDiv.addClass('able-transcript-visible');
     } else {
       player.$ableDiv.removeClass('able-transcript-visible');

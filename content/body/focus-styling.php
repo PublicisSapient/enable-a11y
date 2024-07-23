@@ -1,6 +1,8 @@
 <p>
-  Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are
-  usually styled with
+  Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are easily
+  styled with the <code>outline</code> CSS property and the <code>:focus</code> and <code>:focus-visible</code> pseudo-classes.
+  Unfortunately, many designers hate them and try to get focus-styles removed from a website.  This page discussed 
+  in detail why this should be avoided and how to keep designers happy by having focus-styles appear for keyboard users only. 
 </p>
 
 <h2>Focus Styling For Keyboard Users Only</h2>
@@ -323,7 +325,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
     </tbody>
   </table>
 
-  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
+  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Colored Focus States on a Gradient Background</figcaption>
 </figure>
 
 <p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>

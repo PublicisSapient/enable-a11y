@@ -101,6 +101,10 @@
     "title": "Accessible Images",
     "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
   },
+  "infographic.php": {
+    "title": "Accessible Infographics",
+    "desc": "How to code SVG and bitmap images so they are understandable by screen reader users."
+  },
   "input-mask.php": {
     "title": "Accessible Input Masking",
     "desc": "How to code masking of keyboard input in form fields so they are accessible."
@@ -119,13 +123,17 @@
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
   },
   "marquee.php": {
-    "title": "The Marquee Role",
+    "title": "The Marquee (a.k.a. Auto-Scrolling Content)",
     "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
     "title": "Accessible Math Equations",
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
+  },
+  "meter.php": {
+    "title": "Meter",
+    "desc": "Meter component which is supported by non html5 browsers."
   },
   "multimedia-content.php": {
     "title": "Accessible Multimedia Content",
@@ -168,7 +176,7 @@
     "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
   },
   "switch.php": {
-    "title": "The ARIA Switch Role",
+    "title": "The ARIA Switch Role  (a.k.a. Toggle)",
     "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
   },
   "table.php": {
@@ -186,7 +194,7 @@
     "isNPM": "true"
   },
   "reflow.php": {
-    "title": "Reflow",
+    "title": "Content That Scrolls In Two Dimensions (a WCAG Reflow Violation)",
     "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
     "hasIframes": true
   },
