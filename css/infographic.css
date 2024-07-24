@@ -2,3 +2,6 @@
   width: 100%;
   height: auto;
 }
+svg text {
+  font-family: "Helvetica", "Arial", sans-serif;
+}

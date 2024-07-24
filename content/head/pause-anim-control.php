@@ -6,4 +6,8 @@
         height: 400px;
         background: #000;
     }
+
+    main {
+        overflow-x: hidden;
+    }
     </style>
