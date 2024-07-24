@@ -2,7 +2,7 @@
 
 // Variables for meter color
 @positive: #387a26;
-@neutral: #f4bc41; 
+@neutral: #f4bc41;
 @negative: #c74821;
 
 // Mixin for customizing meter
@@ -41,7 +41,6 @@
         display: none;
     }
 
-    
     &::-moz-meter-bar {
         /* Styles and attribute selectors for ::before must also be applied to ::moz-meter-bar to support Firefox */
         .meter-before();
@@ -56,7 +55,6 @@
         background: @negative;
     }
 }
-
 
 .enable-custom-meter {
     .meter(#EFEFEF;#E4E4E4;120px);
