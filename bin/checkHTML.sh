@@ -214,7 +214,7 @@ downloadHTML() {
 
 
 	#.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
-	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
+	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php multimedia-content.php"
 
 
 	echo "Downloading rendered HTML..."

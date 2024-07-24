@@ -14,12 +14,14 @@
     <?php include "includes/wcag-audio-table.php"; ?>
 </div>
 
-<h2>Captions:</h2 <p>A text version of speech and other important audio content in a video, allowing it to be accessible
-to people who
-can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video's
-        language into an alternate language &mdash;</em></strong> closed captions are in the same language as the audio.
-Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
-etc).</p>
+<h2>Captions:</h2>
+<p>A text version of speech and other important audio content in a video, allowing it to be accessible
+    to people who
+    can't hear all of the audio. <strong><em>They are different from subtitles, which involve translating the video's
+            language into an alternate language &mdash;</em></strong> closed captions are in the same language as the
+    audio.
+    Subtitles don't usually contain any information about other non-spoken audio in a video (e.g. ambient sound, music,
+    etc).</p>
 
 
 <h3>How To Edit and Create Caption Files</h3>
@@ -112,7 +114,7 @@ etc).</p>
 </ol>
 
 <p><strong>Please note: If all of the visual information in described in the video's audio track already, then a
-        separate audio description track is not necessary.</strong></p>
+        separate audio description track is not necessary.</strong>
 </p>
 
 <h2>Transcripts:</h2>
@@ -121,8 +123,6 @@ etc).</p>
     also should include descriptions of audio information in the video (like laughing) and visual information (such as
     the creak of a door opening).
 </p>
-</dl>
-</div>
 
 <p>
     All of these concepts are explained in greater detail in <a href="https://webaim.org/techniques/captions/">WebAIM's
@@ -265,190 +265,195 @@ In this video, I will be demonstrating how to create an accessible modal dialog 
 
 
 
-<h2>Good Contrast On Overlay Text</h3>
+<h2>Good Contrast On Overlay Text</h2>
 
-    <p>Just like live HTML text over images, overlayed text in video must have enough contrast to be legible. Unlike
-        live HTML text, it is impossible to enlarge this text or change the colour of overlayed text via CSS, since it
-        is "burned in" to the pixels of the video. An example is in the image below.</p>
+<p>Just like live HTML text over images, overlayed text in video must have enough contrast to be legible. Unlike
+    live HTML text, it is impossible to enlarge this text or change the colour of overlayed text via CSS, since it
+    is "burned in" to the pixels of the video. An example is in the image below.</p>
 
-    <div role="figure" aria-labelledby="aria-caption--overlay">
-        <img src="images/multimedia/overlay-text.jpg"
-            alt="Two martial artists are engaged in combat in an outdoor setting with traditional buildings in the background. The text 'PRODUCTION MANAGER: RICHARD CHEUNG' is overlaid in large white letters across the image. Some of this text is hard to read due to the white text blending in with some of the light gray buildings in the background." />
-        <span id="aria-caption--overlay">
-            A screenshot from the opening credits from <a
-                href="https://en.wikipedia.org/wiki/Dance_of_the_Drunk_Mantis">the film "Dance of the Drunk Mantis"</a>.
+<div role="figure" aria-labelledby="aria-caption--overlay">
+    <img src="images/multimedia/overlay-text.jpg"
+        alt="Two martial artists are engaged in combat in an outdoor setting with traditional buildings in the background. The text 'PRODUCTION MANAGER: RICHARD CHEUNG' is overlaid in large white letters across the image. Some of this text is hard to read due to the white text blending in with some of the light gray buildings in the background." />
+    <span id="aria-caption--overlay">
+        A screenshot from the opening credits from <a href="https://en.wikipedia.org/wiki/Dance_of_the_Drunk_Mantis">the
+            film "Dance of the Drunk Mantis"</a>.
 
-        </span>
+    </span>
+</div>
+
+<p>While you could check foreground and background colours of individual pixels using a tool like the WebAIM
+    Contrast Checker, what I usually do is take a screenshot of the video frame with the burned in text and use a
+    screenshot-based tool like <a
+        href="https://chromewebstore.google.com/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en">Color
+        Contrast Analyzer Chrome Plugin</a> offered by <a href="https://accessibility.oit.ncsu.edu/">IT
+        Accessibility at NC State</a>.</p>
+
+
+<div role="figure" aria-labelledby="aria-caption--overlay2">
+    <img src="images/multimedia/overlay-text-2.jpg"
+        alt="Two men fighting in the background with words overlayed on top that read 'Also Starring: Sun Kwei (as Rubber Legs student'), Charlier Shek (as Moneybags)'.  Like the previous screenshot, some of the text is hard to read since the white text sometimes blends into the light background of the ground." />
+    <span id="aria-caption--overlay2">
+        Another screenshot from the opening credits from <a
+            href="https://en.wikipedia.org/wiki/Dance_of_the_Drunk_Mantis">the film "Dance of the Drunk
+            Mantis".</a>.
+    </span>
+</div>
+
+<div role="figure" aria-labelledby="aria-caption--overlay2a">
+    <img src="images/multimedia/overlay-text-2a.jpg"
+        alt="A screenshot of the WCAG 2.0 Contrast Checker plugin for Chrome testing the previous screenshot. It outlines a lot of the text, but some of it is not outlined, which indicates the text doesn't have proper contrast." />
+    <span id="aria-caption--overlay2a">
+        A screenshot of the WCAG 2.0 Contrast Checker plugin for Chrome testing the previous screenshot.
+    </span>
+</div>
+
+<p>
+    Just like any colour contrast issues on web pages, you can fix this by:
+</p>
+
+<ul>
+    <li>Changing the text color</li>
+    <li>Adding text outlines</li>
+    <li>Adding text shadows</li>
+    <li>Adding a semi-transparent background block to the text</li>
+    <li>Darkening the background around the text with a gradient</li>
+</ul>
+
+<div role="figure" aria-labelledby="aria-caption--killer-b-1">
+    <img src="images/multimedia/killerb-1.jpg"
+        alt="A screenshot from the trailer of a film.  There is easy-to-read text overlayed on top of the action in the background that reads 'Killer B Cinema proudly presents'." />
+    <span id="aria-caption--killer-b-1">
+        A screenshot from <a href="https://youtu.be/V9ofOPLoMHg">the trailer for the 1973 Turkish film Karate
+            Girl</a>. Note that the text is easy to read due to the addition of dark text shadowing around the text
+        onscreen.
+    </span>
+</div>
+
+<h2>Fixing Low Background Noise</h2>
+
+<p>A lot of background noise can be an issue for hard-of-hearding users who are listening to multimedia content. <a
+        href="https://www.w3.org/WAI/WCAG21/Understanding/low-or-no-background-audio.html">WCAG 1.4.7: Low or No
+        Background Audio</a> (a AAA requirement) states that recommends that for all multimedia content, one of the
+    following should be true:
+
+<ul>
+    <li>There is no background audio.</li>
+    <li>The background audio can be turned off.</li>
+    <li>The background sounds are at least 20 decibels lower (i.e. four times as quieter) than the foreground speech
+        content, with the exception of occasional sounds that last for only one or two seconds.</li>
+</ul>
+
+<p>
+    While this is an AAA requirement, it would be nice to fix these types of issues when they arise. If you have a
+    piece of multimedia that has a lot of background noise, we recommend fixing that by re-mixing the audio. If you
+    don't have the original multi-channel master of the audio, this problem still can be fixed by separating the
+    speech with the rest of the audio using AI using a tool like <a href="https://vocalremover.org/">Vocal
+        Remover</a>. You can then take these two tracks and remixing them with the vocals boosted in volume using a
+    tool like <a href="https://www.audacityteam.org/">Audacity</a>. If the vocals aren't clear enough, you could use
+    a tool like <a href="https://podcast.adobe.com/enhance?checkout=true#">Adobe Podcast's Enhance Speech tool</a>.
+</p>
+
+<p>If the background noise is a persistent hiss or hum, you can <a
+        href="https://www.zdnet.com/article/how-to-remove-background-noise-in-audacity-for-better-sounding-podcasts/">Audacity's
+        Noise Reduction tool</a> to remove that from the audio track.</p>
+
+<p>Below are two videos from a VHS copy of the American dub of the Japanese cartoon "8-man" (called "eighth Man" in the
+    U.S.). The first video has the original audio with a lot of bad audio noise from the original over-the-air
+    recording. The second video has removed that noise by extracting the voice data using <a
+        href="https://vocalremover.org/">Vocal Remover</a>, improving its fidelity using <a
+        href="https://podcast.adobe.com/enhance?checkout=true#">Adobe Podcast's Enhance Speech tool</a> and remixing
+    it with the similar music from a different source. The results can be quite impressive.</p>
+
+<div role="figure" class="video-figure" aria-labelledby="eighth-man-video-before">
+    <div class="enable-video-player">
+        <video data-able-player id="eighth-man-video-before__video" data-youtube-id="cJR0tBNj3uA" preload="auto"
+            data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
+            <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
+        </video>
     </div>
+    <span id="eighth-man-video-before" class="video-figure__caption">
+        An English language clip from an over-the-air recording of the 8th-man cartoon "Virus". Note that really bad
+        audio hum in the background that makes the clip's audio almost unlistenable.
+    </span>
+</div>
 
-    <p>While you could check foreground and background colours of individual pixels using a tool like the WebAIM
-        Contrast Checker, what I usually do is take a screenshot of the video frame with the burned in text and use a
-        screenshot-based tool like <a
-            href="https://chromewebstore.google.com/detail/color-contrast-analyzer/dagdlcijhfbmgkjokkjicnnfimlebcll?hl=en">Color
-            Contrast Analyzer Chrome Plugin</a> offered by <a href="https://accessibility.oit.ncsu.edu/">IT
-            Accessibility at NC State</a>.</p>
-
-
-    <div role="figure" aria-labelledby="aria-caption--overlay2">
-        <img src="images/multimedia/overlay-text-2.jpg"
-            alt="Two men fighting in the background with words overlayed on top that read 'Also Starring: Sun Kwei (as Rubber Legs student'), Charlier Shek (as Moneybags)'.  Like the previous screenshot, some of the text is hard to read since the white text sometimes blends into the light background of the ground." />
-        <span id="aria-caption--overlay2">
-            Another screenshot from the opening credits from <a
-                href="https://en.wikipedia.org/wiki/Dance_of_the_Drunk_Mantis">the film "Dance of the Drunk
-                Mantis".</a>.
-        </span>
+<div role="figure" class="video-figure" aria-labelledby="eighth-man-video-after">
+    <div class="enable-video-player">
+        <video data-able-player id="eighth-man-video-after__video" data-youtube-id="K-B7-GS6ipM" preload="auto"
+            data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
+            <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
+        </video>
     </div>
+    <span id="eighth-man-video-after" class="video-figure__caption">
+        The same clip after AI was used to clean up the audio as described above. The differences are night and day.
+    </span>
+</div>
 
-    <div role="figure" aria-labelledby="aria-caption--overlay2a">
-        <img src="images/multimedia/overlay-text-2a.jpg"
-            alt="A screenshot of the WCAG 2.0 Contrast Checker plugin for Chrome testing the previous screenshot. It outlines a lot of the text, but some of it is not outlined, which indicates the text doesn't have proper contrast." />
-        <span id="aria-caption--overlay2a">
-            A screenshot of the WCAG 2.0 Contrast Checker plugin for Chrome testing the previous screenshot. </a>.
-        </span>
+<h2>Sign Language</h2>
+
+<p>Watching a video with captions can be more inclusive, but does add to the cognitive load and eye fatigue of the
+    person watching the film. For people who understand sign language, it may be more desireable to have sign
+    language interpretation as part of the mulimedia content.</p>
+
+<p>Not everyone with hearing loss understands sign language. It should be noted that there are many sign languages
+    used throughout the world. <a href="https://en.wikipedia.org/wiki/American_Sign_Language">American Sign
+        Language</a>, <a href="https://en.wikipedia.org/wiki/British_Sign_Language">British Sign Lanaguage</a> and
+    <a href="https://en.wikipedia.org/wiki/Plains_Indian_Sign_Language">Plains Sign Language</a> are just a few
+    examples. For these reasons, <a
+        href="https://www.w3.org/WAI/WCAG21/Understanding/sign-language-prerecorded.html">Sign Language support in
+        pre-recorded multimedia</a> is a WCAG AAA guideline.
+</p>
+
+<p>That said, Deaf users may want to have sign language and captions at the same time, especially if the may have
+    trouble reading the captions due to cogntive of vision related disabilities. For that reason, sign language
+    support in multimedia is mandated in a lot of government communications in countries around the world.</p>
+
+<p>If you do wish to have sign language in your media, you will want to keep the following in mind:</p>
+
+<ol>
+    <li>Ensure there is good lighting for the sign language video.</li>
+    <li>Include a high contrast border around the signer that captures a lot of the signing space (transparent
+        background is experimental).</li>
+    <li>Ensuring high contrast between hands and background/clothes is ideal.</li>
+    <li>The sign language interpreters face must be large enough for the viewer to see their facial expressions.
+    </li>
+    <li>The standard placement for a sign language interpreter is in the bottom right of video, but this can be
+        adjusted in order to not obscure important content in a video.</li>
+    <li>If you are in a multilanguage environment (like Canada), you may need two interpreters (e.g. American Sign
+        Language for English-speaking Canada and <a href="https://en.wikipedia.org/wiki/Quebec_Sign_Language">Quebec
+            Sign Language</a>) for French-speaking Canada.</li>
+    <li>Remember just because two countries (like the United States and the United Kingdom) have the same spoken
+        language, they still may have two different forms of sign language (in this case, ASL and BSL).</li>
+    <li>Some video editors may want to freeze the sign language interpreter to emphasize what is being said.</li>
+</ol>
+
+<h2>Considerations when Broadcasting Events Live</h2>
+
+<p>Live online events need to be accessible as well! The following should be kept in mind if you want to ensure an
+    accessible experience for all viewers.</p>
+
+<ol>
+    <li>Captions should be used throughout your entire broadcast. Human made ones are better than AI ones (or you
+        could also have a human edit the AI ones on the fly).</li>
+    <li>When posting the video afterwards, your captions should be edited for clarity and accuracy.</li>
+    <li>Consider using sign language interpreters for your presentation. If you do so, please keep in mind that one
+        interpreter is not enough, since any kind of on-the-fly translation is a cognitively tiring experience for
+        the translator.</li>
+</ol>
+
+<div role="figure" class="video-figure" aria-labelledby="canada-covid-update-example">
+    <div class="enable-video-player">
+        <video data-able-player id="canada-covid-update-example__video" data-youtube-id="00TbnrkLY5k" preload="auto"
+            data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
+            <track kind="captions" src="vtt/covid-update.vtt" srclang="en"
+                label="English Captions generated by YouTube A.I.">
+        </video>
     </div>
-
-    <p>
-        Just like any colour contrast issues on web pages, you can fix this by:
-    </p>
-
-    <ul>
-        <li>Changing the text color</li>
-        <li>Adding text outlines</li>
-        <li>Adding text shadows</li>
-        <li>Adding a semi-transparent background block to the text</li>
-        <li>Darkening the background around the text with a gradient</li>
-    </ul>
-
-    <div role="figure" aria-labelledby="aria-caption--killer-b-1">
-        <img src="images/multimedia/killerb-1.jpg"
-            alt="A screenshot from the trailer of a film.  There is easy-to-read text overlayed on top of the action in the background that reads 'Killer B Cinema proudly presents'." />
-        <span id="aria-caption--killer-b-1">
-            A screenshot from <a href="https://youtu.be/V9ofOPLoMHg">the trailer for the 1973 Turkish film Karate
-                Girl</a>. Note that the text is easy to read due to the addition of dark text shadowing around the text
-            onscreen.
-        </span>
-    </div>
-
-    <h2>Fixing Low Background Noise</h2>
-
-    <p>A lot of background noise can be an issue for hard-of-hearding users who are listening to multimedia content. <a
-            href="https://www.w3.org/WAI/WCAG21/Understanding/low-or-no-background-audio.html">WCAG 1.4.7: Low or No
-            Background Audio</a> (a AAA requirement) states that recommends that for all multimedia content, one of the
-        following should be true:
-
-    <ul>
-        <li>There is no background audio.</li>
-        <li>The background audio can be turned off.</li>
-        <li>The background sounds are at least 20 decibels lower (i.e. four times as quieter) than the foreground speech
-            content, with the exception of occasional sounds that last for only one or two seconds.</li>
-    </ul>
-
-    <p>
-        While this is an AAA requirement, it would be nice to fix these types of issues when they arise. If you have a
-        piece of multimedia that has a lot of background noise, we recommend fixing that by re-mixing the audio. If you
-        don't have the original multi-channel master of the audio, this problem still can be fixed by separating the
-        speech with the rest of the audio using AI using a tool like <a href="https://vocalremover.org/">Vocal
-            Remover</a>. You can then take these two tracks and remixing them with the vocals boosted in volume using a
-        tool like <a href="https://www.audacityteam.org/">Audacity</a>. If the vocals aren't clear enough, you could use
-        a tool like <a href="https://podcast.adobe.com/enhance?checkout=true#">Adobe Podcast's Enhance Speech tool</a>.
-    </p>
-
-    <p>If the background noise is a persistent hiss or hum, you can <a
-            href="https://www.zdnet.com/article/how-to-remove-background-noise-in-audacity-for-better-sounding-podcasts/">Audacity's
-            Noise Reduction tool</a> to remove that from the audio track.</p>
-
-    <p>Below are two videos from a VHS copy of the American dub of the Japanese cartoon "8-man" (called "8th Man" in the
-        U.S.). The first video has the original audio with a lot of bad audio noise from the original over-the-air
-        recording. The second video has removed that noise by extracting the voice data using <a
-            href="https://vocalremover.org/">Vocal Remover</a>, improving its fidelity using <a
-            href="https://podcast.adobe.com/enhance?checkout=true#">Adobe Podcast's Enhance Speech tool</a> and remixing
-        it with the similar music from a different source. The results can be quite impressive.</p>
-
-    <div role="figure" class="video-figure" aria-labelledby="8th-man-video__before">
-        <div class="enable-video-player">
-            <video data-able-player id="8th-man-video__before" data-youtube-id="cJR0tBNj3uA" preload="auto" data-skin="2020"
-                data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
-                <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
-            </video>
-        </div>
-        <span id="8th-man-video__before" class="video-figure__caption">
-            An English language clip from an over-the-air recording of the 8th-man cartoon "Virus". Note that really bad
-            audio hum in the background that makes the clip's audio almost unlistenable.
-        </span>
-    </div>
-
-    <div role="figure" class="video-figure" aria-labelledby="8th-man-video__after">
-        <div class="enable-video-player">
-            <video data-able-player id="8th-man-after" data-youtube-id="K-B7-GS6ipM" preload="auto" data-skin="2020"
-                data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
-                <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
-            </video>
-        </div>
-        <span id="8th-man-video__after" class="video-figure__caption">
-            The same clip after AI was used to clean up the audio as described above. The differences are night and day.
-        </span>
-    </div>
-
-    <h2>Sign Language</h2>
-
-    <p>Watching a video with captions can be more inclusive, but does add to the cognitive load and eye fatigue of the
-        person watching the film. For people who understand sign language, it may be more desireable to have sign
-        language interpretation as part of the mulimedia content.</p>
-
-    <p>Not everyone with hearing loss understands sign language. It should be noted that there are many sign languages
-        used throughout the world. <a href="https://en.wikipedia.org/wiki/American_Sign_Language">American Sign
-            Language</a>, <a href="https://en.wikipedia.org/wiki/British_Sign_Language">British Sign Lanaguage</a> and
-        <a href="https://en.wikipedia.org/wiki/Plains_Indian_Sign_Language">Plains Sign Language</a> are just a few
-        examples. For these reasons, <a
-            href="https://www.w3.org/WAI/WCAG21/Understanding/sign-language-prerecorded.html" Sign Language support in
-            pre-recorded multimedia</a> is a WCAG AAA guideline</a>.
-    </p>
-
-    <p>That said, Deaf users may want to have sign language and captions at the same time, especially if the may have
-        trouble reading the captions due to cogntive of vision related disabilities. For that reason, sign language
-        support in multimedia is mandated in a lot of government communications in countries around the world.</p>
-
-    <p>If you do wish to have sign language in your media, you will want to keep the following in mind:</p>
-
-    <ol>
-        <li>Ensure there is good lighting for the sign language video.</li>
-        <li>Include a high contrast border around the signer that captures a lot of the signing space (transparent
-            background is experimental).</li>
-        <li>Ensuring high contrast between hands and background/clothes is ideal.</li>
-        <li>The sign language interpreters face must be large enough for the viewer to see their facial expressions.
-        </li>
-        <li>The standard placement for a sign language interpreter is in the bottom right of video, but this can be
-            adjusted in order to not obscure important content in a video.</li>
-        <li>If you are in a multilanguage environment (like Canada), you may need two interpreters (e.g. American Sign
-            Language for English-speaking Canada and <a href="https://en.wikipedia.org/wiki/Quebec_Sign_Language">Quebec
-                Sign Language</a>) for French-speaking Canada.</li>
-        <li>Remember just because two countries (like the United States and the United Kingdom) have the same spoken
-            language, they still may have two different forms of sign language (in this case, ASL and BSL).</li>
-        <li>Some video editors may want to freeze the sign language interpreter to emphasize what is being said.</li>
-    </ol>
-
-    <h2>Considerations when Broadcasting Events Live</h2>
-
-    <p>Live online events need to be accessible as well! The following should be kept in mind if you want to ensure an
-        accessible experience for all viewers.</p>
-
-    <ol>
-        <li>Captions should be used throughout your entire broadcast. Human made ones are better than AI ones (or you
-            could also have a human edit the AI ones on the fly).</li>
-        <li>When posting the video afterwards, your captions should be edited for clarity and accuracy.</li>
-        <li>Consider using sign language interpreters for your presentation. If you do so, please keep in mind that one
-            interpreter is not enough, since any kind of on-the-fly translation is a cognitively tiring experience for
-            the translator.</li>
-    </ol>
-
-    <div role="figure" class="video-figure" aria-labelledby="canada-covid-update-example">
-        <div class="enable-video-player">
-            <video data-able-player id="canada-covid-update-example" data-youtube-id="00TbnrkLY5k" preload="auto" data-skin="2020"
-                data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
-                <track kind="captions" src="vtt/covid-update.vtt" srclang="en" label="English Captions generated by YouTube A.I.">
-            </video>
-        </div>
-        <span id="canada-covid-update-example" class="video-figure__caption">
-            A COVID-19 update given by the Government of Canada, which was broadcast live on May 20, 2020.  Note the two sign language interpreters for the two different forms of sign language used in Canada.  These translators are swapped out just after the 31 minute mark to ensure the translators are not fatigued, which can easily lead to mistakes in the translation.  Unfortunately, the captions are auto-generated by an A.I., which results in a less than optimal experience for users that need them.
-        </span>
-    </div>
+    <span id="canada-covid-update-example" class="video-figure__caption">
+        A COVID-19 update given by the Government of Canada, which was broadcast live on May 20, 2020. Note the two sign
+        language interpreters for the two different forms of sign language used in Canada. These translators are swapped
+        out just after the 31 minute mark to ensure the translators are not fatigued, which can easily lead to mistakes
+        in the translation. Unfortunately, the captions are auto-generated by an A.I., which results in a less than
+        optimal experience for users that need them.
+    </span>
+</div>

@@ -44,6 +44,16 @@ function ablePlayerCustomizations($, extraCustomizations) {
     setDescriptionCookies();
     this.oldInitDescription();
     adjustTranscriptVisibility(this);
+
+
+  // Ensure all media players have a unique aria-label
+  const ariaLabels = [ 'video player', 'audio player'];
+  for (let i=0; i<ariaLabels.length; i++) {
+    const query = `[aria-label="${ariaLabels[i]}"]`;
+    document.querySelectorAll(query).forEach((el, j) => {
+      el.setAttribute('aria-label', `${ariaLabels[i]} ${j}`);
+    });
+  }
   }
 
   // When transcript button is clicked, adjust layout of page.
@@ -95,6 +105,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   if (extraCustomizations && typeof(extraCustomizations) === 'function') {
     extraCustomizations();
   }
+
 }
 
 ablePlayerCustomizations(jQuery);
