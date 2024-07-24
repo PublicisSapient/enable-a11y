@@ -58,3 +58,31 @@ a.tile-cta::after {
   transform: scale(0.8) translateY(0.375rem);
   display: inline-block;
 }
+.video-figure {
+  display: block;
+}
+.video-figure .able-timer,
+.video-figure .able-speed,
+.video-figure .able-status,
+.video-figure .able-elapsedTime,
+.video-figure .able-duration,
+.video-figure .able-right-controls span {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-block;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+.video-figure .video-figure__caption {
+  margin-bottom: 0;
+  display: block;
+}
+.video-figure .able-status-bar {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+.video-figure .able-status-bar {
+  height: 1.5em;
+  min-height: 1.5em;
+}
+.video-figure .able-status {
+  text-align: right;
+}

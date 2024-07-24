@@ -251,6 +251,17 @@ code {
   width: 450px;
   max-width: 100%;
 }
+.has-multi-tables .compliance-table {
+  vertical-align: top;
+}
+@media only screen and (min-width: 960px) {
+  .has-multi-tables .compliance-table {
+    display: inline-block;
+  }
+  .has-multi-tables .compliance-table:not(:last-child) {
+    margin-right: 20px;
+  }
+}
 .compliance-table,
 .comparison-table {
   margin: 1em auto 3em auto;
@@ -277,6 +288,14 @@ code {
 .compliance-table__icon,
 .comparison-table__icon {
   width: 20px;
+}
+.has-multi-tables {
+  text-align: center;
+}
+.has-multi-tables::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 .meter-demo-container {
   align-items: center;
