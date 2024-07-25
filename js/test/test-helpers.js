@@ -53,19 +53,19 @@ const testHelpers = new (function () {
 
     this.fastPause = async function () {
         return await new Promise((res) =>
-            setTimeout(res, config.KEYPRESS_FAST_TIMEOUT),
+            setTimeout(res, config.KEYPRESS_FAST_TIMEOUT)
         );
     };
 
     this.pause = async function () {
         return await new Promise((res) =>
-            setTimeout(res, config.KEYPRESS_TIMEOUT),
+            setTimeout(res, config.KEYPRESS_TIMEOUT)
         );
     };
 
     this.pauseFor = async function (n) {
         return await new Promise((res) =>
-            setTimeout(res, config.KEYPRESS_TIMEOUT),
+            setTimeout(res, config.KEYPRESS_TIMEOUT)
         );
     };
 
@@ -88,7 +88,7 @@ const testHelpers = new (function () {
             let currentHTMLSize = html.length;
 
             let bodyHTMLSize = await page.evaluate(
-                () => document.body.innerHTML.length,
+                () => document.body.innerHTML.length
             );
 
             console.log(
@@ -97,7 +97,7 @@ const testHelpers = new (function () {
                 ' <> curr: ',
                 currentHTMLSize,
                 ' body html size: ',
-                bodyHTMLSize,
+                bodyHTMLSize
             );
 
             if (lastHTMLSize !== 0 && currentHTMLSize === lastHTMLSize)

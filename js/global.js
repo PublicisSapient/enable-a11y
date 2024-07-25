@@ -51,7 +51,7 @@ function initEnable() {
         document.querySelectorAll('.breakpoint-width'),
         (el, i) => {
             el.innerHTML = breakpointWidth;
-        },
+        }
     );
 
     pauseAnimControl.init();
@@ -147,11 +147,11 @@ if (document.location.hash === '#debug') {
                             ? event.detail[property]()
                             : '',
                         'target:',
-                        event.target,
+                        event.target
                     );
                 }
             },
-            true,
+            true
         );
     }
 }

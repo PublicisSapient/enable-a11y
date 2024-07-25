@@ -59,7 +59,7 @@ d3.csv('../../data/line-chart.csv').then(function (data) {
     x.domain(
         d3.extent(data, function (d) {
             return d.date1;
-        }),
+        })
     ); //<=date1
     y.domain([
         0,

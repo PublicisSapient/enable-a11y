@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const pageData = JSON.parse(
-    fs.readFileSync('templates/data/meta-info.json', 'utf8'),
+    fs.readFileSync('templates/data/meta-info.json', 'utf8')
 );
 const { argv } = process;
 if (argv.length < 2) {

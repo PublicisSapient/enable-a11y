@@ -71,7 +71,7 @@ describe('Dialog Tests', () => {
             return {
                 html: activeElement.outerHTML,
                 isProperClass: activeElement.classList.contains(
-                    'a11y-modal__button--close',
+                    'a11y-modal__button--close'
                 ),
                 isOpen: dialogEl.getAttribute('open') !== null,
             };
@@ -121,7 +121,7 @@ describe('Dialog Tests', () => {
             return {
                 html: activeElement.outerHTML,
                 isProperClass: activeElement.classList.contains(
-                    'a11y-modal__button--close',
+                    'a11y-modal__button--close'
                 ),
             };
         });

@@ -28,7 +28,7 @@ describe('Input mask test suite', () => {
         await page.type('#tel', '1234567890');
         const maskedTelephone = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => span.textContent,
+            (span) => span.textContent
         );
         expect(maskedTelephone).toBe('123-456-7890');
     });
@@ -38,7 +38,7 @@ describe('Input mask test suite', () => {
         await page.type('#winkey', 'abcdefghijklmnopqrstuvwxy');
         const maskedWinKey = await page.$$eval(
             'span.enable-input-mask__mask-pre-val',
-            (spans) => spans[1].textContent,
+            (spans) => spans[1].textContent
         );
         expect(maskedWinKey).toBe('ABCDE-FGHIJ-KLMNO-PQRST-UVWXY');
     });
@@ -48,7 +48,7 @@ describe('Input mask test suite', () => {
         await page.type('#cc', '5555555555555555');
         const maskedWinKey = await page.$$eval(
             'span.enable-input-mask__mask-pre-val',
-            (spans) => spans[2].textContent,
+            (spans) => spans[2].textContent
         );
         expect(maskedWinKey).toBe('5555 5555 5555 5555');
     });
@@ -58,7 +58,7 @@ describe('Input mask test suite', () => {
         await page.type('#cc', '3455555555555555');
         const maskedWinKey = await page.$$eval(
             'span.enable-input-mask__mask-pre-val',
-            (spans) => spans[2].textContent,
+            (spans) => spans[2].textContent
         );
         expect(maskedWinKey).toBe('3455 555555 55555');
     });
@@ -78,7 +78,7 @@ describe('Input mask test suite', () => {
         await page.keyboard.type('1');
         const maskedTelephone = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => span.textContent,
+            (span) => span.textContent
         );
         expect(maskedTelephone).toBe('123-456-781');
     });
@@ -143,7 +143,7 @@ describe('Input mask test suite', () => {
             'span.enable-input-mask__mask-pre-val',
             (span) => {
                 return window.getSelection().toString();
-            },
+            }
         );
         // check screenshot for the selection, should match up - "123-45"
         await page.screenshot({ path: 'mouseSelection.png' });
@@ -175,7 +175,7 @@ describe('Input mask test suite', () => {
             'span.enable-input-mask__mask-pre-val',
             (span) => {
                 return window.getSelection().toString();
-            },
+            }
         );
         // check screenshot for the selection, should match up - "6-7890"
         await page.screenshot({ path: 'keyBoardSelection.png' });
@@ -192,7 +192,7 @@ describe('Input mask test suite', () => {
         await page.type('#tel', 'abscded');
         const maskedTelephone = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => span.textContent,
+            (span) => span.textContent
         );
         expect(maskedTelephone).toBe('');
     });

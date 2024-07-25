@@ -7,7 +7,7 @@ describe('Styled Elements Tests', () => {
         let domInfo;
 
         await page.goto(
-            `${config.BASE_URL}/exposing-style-info-to-screen-readers.php`,
+            `${config.BASE_URL}/exposing-style-info-to-screen-readers.php`
         );
 
         // The area of the page that has the product tile
@@ -16,7 +16,7 @@ describe('Styled Elements Tests', () => {
         // check the DOM to see if the visually hidden CSS generated content is there.
         domInfo = await page.evaluate(() => {
             const markEls = document.querySelectorAll(
-                '#sr-only-text-example mark',
+                '#sr-only-text-example mark'
             );
             let hasMissingMarkContent = false;
 
@@ -42,7 +42,7 @@ describe('Styled Elements Tests', () => {
         let domInfo;
 
         await page.goto(
-            `${config.BASE_URL}/exposing-style-info-to-screen-readers.php`,
+            `${config.BASE_URL}/exposing-style-info-to-screen-readers.php`
         );
 
         // The area of the page that has the highlighted code
@@ -51,7 +51,7 @@ describe('Styled Elements Tests', () => {
         // check the DOM to see if the visually hidden CSS generated content is there.
         domInfo = await page.evaluate(() => {
             const markEls = document.querySelectorAll(
-                '#highlight-example mark',
+                '#highlight-example mark'
             );
             let hasMissingBeginningContent = false;
             let hasMissingEndContent = false;

@@ -24,7 +24,7 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
             const { innerWidth } = window;
             const domInfo = {};
             const firstWrapTextCheckbox = document.querySelector(
-                '.showcode__wrap-text',
+                '.showcode__wrap-text'
             );
 
             return {
@@ -39,7 +39,7 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
 
         if (!domInfo.doesPageHorizontallyScroll) {
             console.log(
-                `isWrapChecked: (${domInfo.isWrapChecked}), scrollWidth: ${domInfo.scrollWidth}, clientWidth: ${domInfo.clientWidth}.`,
+                `isWrapChecked: (${domInfo.isWrapChecked}), scrollWidth: ${domInfo.scrollWidth}, clientWidth: ${domInfo.clientWidth}.`
             );
         }
 
@@ -64,7 +64,7 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
 
         const hasCheckbox = await page.evaluate(() => {
             const firstWrapTextCheckbox = document.querySelector(
-                '.showcode__wrap-text',
+                '.showcode__wrap-text'
             );
             if (firstWrapTextCheckbox) {
                 firstWrapTextCheckbox.focus();
@@ -75,7 +75,7 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
         });
 
         console.log(
-            `has checkbox: ${hasCheckbox}, filename: ${filename}, isDesktop: ${isDesktop}`,
+            `has checkbox: ${hasCheckbox}, filename: ${filename}, isDesktop: ${isDesktop}`
         );
 
         if (hasCheckbox) {

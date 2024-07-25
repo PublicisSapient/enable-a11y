@@ -35,7 +35,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
         domInfo = await page.evaluate((showcodeSelectSel) => {
             const selectEls = document.querySelectorAll(showcodeSelectSel);
             const jsonBlocks = document.querySelectorAll(
-                'script[type="application/json"]',
+                'script[type="application/json"]'
             );
             let jsonErrorID = '';
             let allJsonBlocksHaveIDs = true;
@@ -67,7 +67,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
 
         if (domInfo.jsonErrorID !== '') {
             console.error(
-                `You must fix the JSON inside the script with id="${domInfo.jsonErrorID}".`,
+                `You must fix the JSON inside the script with id="${domInfo.jsonErrorID}".`
             );
         }
 
@@ -83,20 +83,20 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             document.querySelectorAll(showcodeSelectSel);
                         const selectEl = selectEls[i];
                         const containerEl = selectEl.closest(
-                            '.showcode__container',
+                            '.showcode__container'
                         );
                         const optionEls =
                             selectEl.getElementsByTagName('option');
 
                         const codeEl = containerEl.querySelector(
-                            '.showcode__example--code',
+                            '.showcode__example--code'
                         );
                         const hasCodeEl = codeEl !== null;
                         function findNearestHeading(el) {
                             let currentNode = el;
 
                             currentNode = currentNode.closest(
-                                '.showcode__container',
+                                '.showcode__container'
                             );
                             do {
                                 currentNode =
@@ -104,7 +104,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                                 if (
                                     currentNode &&
                                     currentNode.matches(
-                                        'h1, h2, h3, h4, h5, h6',
+                                        'h1, h2, h3, h4, h5, h6'
                                     )
                                 ) {
                                     break;
@@ -127,14 +127,14 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                         };
                     },
                     showcodeSelectSel,
-                    i,
+                    i
                 );
 
                 const { hasCodeEl, originalCodeHTML, numOptions } = domInfo;
 
                 if (originalCodeHTML === '') {
                     console.error(
-                        `There code tag is blank.  Select index: ${i}\nUnder heading "${domInfo.nearestHeading}"`,
+                        `There code tag is blank.  Select index: ${i}\nUnder heading "${domInfo.nearestHeading}"`
                     );
                 }
 
@@ -147,7 +147,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             (showcodeSelectSel, i, j, numOptions) => {
                                 const selectEls =
                                     document.querySelectorAll(
-                                        showcodeSelectSel,
+                                        showcodeSelectSel
                                     );
                                 const selectEl = selectEls[i];
                                 const optionEls =
@@ -176,7 +176,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             showcodeSelectSel,
                             i,
                             j,
-                            numOptions,
+                            numOptions
                         );
 
                         const { origSelectValue, newSelectValue } = domInfo;
@@ -190,14 +190,14 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             (showcodeSelectSel, i) => {
                                 const selectEls =
                                     document.querySelectorAll(
-                                        showcodeSelectSel,
+                                        showcodeSelectSel
                                     );
                                 const selectEl = selectEls[i];
                                 const containerEl = selectEl.closest(
-                                    '.showcode__container',
+                                    '.showcode__container'
                                 );
                                 const codeEl = containerEl.querySelector(
-                                    '.showcode__example--code',
+                                    '.showcode__example--code'
                                 );
                                 const value = selectEl.value;
 
@@ -205,7 +205,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                                     let currentNode = el;
 
                                     currentNode = currentNode.closest(
-                                        '.showcode__container',
+                                        '.showcode__container'
                                     );
                                     do {
                                         currentNode =
@@ -213,7 +213,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                                         if (
                                             currentNode &&
                                             currentNode.matches(
-                                                'h1, h2, h3, h4, h5, h6',
+                                                'h1, h2, h3, h4, h5, h6'
                                             )
                                         ) {
                                             break;
@@ -238,7 +238,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             },
                             showcodeSelectSel,
                             i,
-                            j,
+                            j
                         );
 
                         if (
@@ -246,7 +246,7 @@ describe('Test Code Walkthroughs on all pages on Enable', () => {
                             domInfo.newCodeHTML === ''
                         ) {
                             console.error(
-                                `Code walkthrough did not update on ${filename}.  Select index: ${i}, option index: ${j}\nSelected value: ${domInfo.selectValue}.\nUnder heading "${domInfo.nearestHeading}"`,
+                                `Code walkthrough did not update on ${filename}.  Select index: ${i}, option index: ${j}\nSelected value: ${domInfo.selectValue}.\nUnder heading "${domInfo.nearestHeading}"`
                             );
                         }
                         expect(domInfo.selectValue).toBe(newSelectValue);

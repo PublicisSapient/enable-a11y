@@ -24,7 +24,7 @@ describe('ARIA Switch Tests', () => {
         await page.waitForSelector('#example1');
 
         const switchesInPage = Array.from(
-            await page.$$('[role="switch"]'),
+            await page.$$('[role="switch"]')
         ).length;
         expect(switchesInPage).toBeGreaterThan(0);
 

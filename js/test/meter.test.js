@@ -14,7 +14,7 @@ describe('Meter Tests', () => {
         domInfo = await page.evaluate(() => {
             const example = document.querySelector('#html5-example');
             const meterElements = Array.from(
-                example.getElementsByClassName('enable-custom-meter'),
+                example.getElementsByClassName('enable-custom-meter')
             );
 
             return {
@@ -46,7 +46,7 @@ describe('Meter Tests', () => {
         domInfo = await page.evaluate(() => {
             const example = document.querySelector('#aria-example');
             const meterElements = Array.from(
-                example.getElementsByClassName('enable-custom-meter'),
+                example.getElementsByClassName('enable-custom-meter')
             );
 
             return {

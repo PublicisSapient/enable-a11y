@@ -3,7 +3,7 @@ import textZoomEvent from '../../enable-node-libs/text-zoom-event/dist/textZoomE
 
 const svgTextSpacingDemo = new (function () {
     const pathEl = document.getElementById(
-        'accessible-text-svg-demo__svgTextPath',
+        'accessible-text-svg-demo__svgTextPath'
     );
     const rollinEl = document.getElementById('rollin');
 
@@ -33,7 +33,7 @@ const svgTextSpacingDemo = new (function () {
 // This is the bit that does the animation.
 const textpathAnimation = new (function () {
     const buttonEl = document.getElementById(
-        'accessible-text-svg-demo__control',
+        'accessible-text-svg-demo__control'
     );
     let state = 'rollout';
 

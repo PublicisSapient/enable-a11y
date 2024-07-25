@@ -17,7 +17,7 @@ $form.addEventListener('submit', (e) => {
     if (isFormValid) {
         $error.classList.remove('visible');
         alert(
-            'The lord of the underworld has been informed. He respects your wishes.',
+            'The lord of the underworld has been informed. He respects your wishes.'
         );
         e.stopPropagation();
     } else {

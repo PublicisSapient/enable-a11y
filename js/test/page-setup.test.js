@@ -57,10 +57,10 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
             // get meta info posters.
             const openGraphPoster = document.querySelector(
-                'meta[property="og:image"]',
+                'meta[property="og:image"]'
             );
             const twitterGraphPoster = document.querySelector(
-                'meta[name="twitter:image"]',
+                'meta[name="twitter:image"]'
             );
 
             const openGraphPosterContent =

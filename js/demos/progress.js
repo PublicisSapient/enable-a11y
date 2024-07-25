@@ -6,7 +6,7 @@ const progressTest = new (function () {
 
     this.init = function () {
         const progressEls = document.querySelectorAll(
-            'progress, [role="progressbar"]',
+            'progress, [role="progressbar"]'
         );
         progressEls.forEach((el) => {
             const next = el.nextElementSibling;
@@ -73,7 +73,7 @@ const progressTest = new (function () {
     function startHelper(arrowEl, el, isAria) {
         const start = parseFloat(isAria ? el.getAttribute('aria-valuemin') : 0);
         const max = parseFloat(
-            isAria ? el.getAttribute('aria-valuemax') : el.max,
+            isAria ? el.getAttribute('aria-valuemax') : el.max
         );
         const timeout = parseInt(el.dataset.timeout || 100);
         const step = parseInt(el.dataset.step || 10);
@@ -100,7 +100,7 @@ const progressTest = new (function () {
             if (stepLabelEl) {
                 el.setAttribute(
                     'aria-valuetext',
-                    `Step ${n} of ${max}: ${stepLabelEl.innerHTML}`,
+                    `Step ${n} of ${max}: ${stepLabelEl.innerHTML}`
                 );
             }
         }

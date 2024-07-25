@@ -11,7 +11,7 @@ describe('ARIA Checkbox Tests', () => {
     async function getCheckboxValue(n) {
         return await page.evaluate((n) => {
             const checkboxEls = document.querySelectorAll(
-                '#example-role-checkbox [role="checkbox"]',
+                '#example-role-checkbox [role="checkbox"]'
             );
             const checkboxEl = checkboxEls[n];
             let r;
@@ -30,7 +30,7 @@ describe('ARIA Checkbox Tests', () => {
         await page.waitForSelector('#example-role-checkbox');
 
         const checkboxesInPage = Array.from(
-            await page.$$('#example-role-checkbox [role="checkbox"]'),
+            await page.$$('#example-role-checkbox [role="checkbox"]')
         ).length;
         expect(checkboxesInPage).toBeGreaterThan(0);
 
@@ -38,7 +38,7 @@ describe('ARIA Checkbox Tests', () => {
             //focus the checkbox
             domInfo = await page.evaluate((i) => {
                 const checkboxEls = document.querySelectorAll(
-                    '#example-role-checkbox [role="checkbox"]',
+                    '#example-role-checkbox [role="checkbox"]'
                 );
                 const checkboxEl = checkboxEls[i];
                 const ariaLabelledby =
@@ -103,7 +103,7 @@ describe('ARIA Checkbox Tests', () => {
         await page.waitForSelector('#example-role-checkbox');
 
         const checkboxesInPage = Array.from(
-            await page.$$('[role="checkbox"]'),
+            await page.$$('[role="checkbox"]')
         ).length;
         expect(checkboxesInPage).toBeGreaterThan(0);
 
@@ -148,7 +148,7 @@ describe('ARIA Checkbox Tests', () => {
         await page.waitForSelector('#example-role-checkbox');
 
         const checkboxesInPage = Array.from(
-            await page.$$('[role="checkbox"]'),
+            await page.$$('[role="checkbox"]')
         ).length;
         expect(checkboxesInPage).toBeGreaterThan(0);
 
@@ -159,7 +159,7 @@ describe('ARIA Checkbox Tests', () => {
 
                 const afterStyle = window.getComputedStyle(
                     checkboxEl,
-                    '::after',
+                    '::after'
                 );
                 const content = afterStyle.content;
 
@@ -190,7 +190,7 @@ describe('Indeterminate Checkbox Tests', () => {
         const indeterminateCheckSelector =
             '#indeterminate-example input[type="checkbox"]:not(#select-all)';
         const subcategoryCheckboxesInPage = Array.from(
-            await page.$$(indeterminateCheckSelector),
+            await page.$$(indeterminateCheckSelector)
         ).length;
         expect(subcategoryCheckboxesInPage).toBeGreaterThan(0);
 
@@ -198,7 +198,7 @@ describe('Indeterminate Checkbox Tests', () => {
             domInfo = await page.evaluate(
                 (i, indeterminateCheckSelector) => {
                     const checkboxEl = document.querySelectorAll(
-                        indeterminateCheckSelector,
+                        indeterminateCheckSelector
                     )[i];
                     const selectAllEl = document.getElementById('select-all');
 
@@ -221,18 +221,18 @@ describe('Indeterminate Checkbox Tests', () => {
                     };
                 },
                 i,
-                indeterminateCheckSelector,
+                indeterminateCheckSelector
             );
 
             expect(domInfo.isCheckedBefore).toBe(false);
             expect(domInfo.isCheckedAfter).toBe(true);
             expect(domInfo.isSelectAllCheckedBefore).toBe(false);
             expect(domInfo.isSelectAllCheckedAfter).toBe(
-                i === subcategoryCheckboxesInPage - 1 ? true : false,
+                i === subcategoryCheckboxesInPage - 1 ? true : false
             );
             expect(domInfo.isSelectAllMixedBefore).toBe(i === 0 ? false : true);
             expect(domInfo.isSelectAllMixedAfter).toBe(
-                i === subcategoryCheckboxesInPage - 1 ? false : true,
+                i === subcategoryCheckboxesInPage - 1 ? false : true
             );
         }
     });

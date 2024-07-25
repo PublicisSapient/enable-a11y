@@ -5,6 +5,7 @@
     "bracketSameLine": true,
     "printWidth": 80,
     "singleQuote": false,
+    "trailingComma": "es5",
     "overrides": [
         {
             "files": ["*.js"],
@@ -16,6 +17,12 @@
             "files": ["*.md", "package.json", "package-lock.json"],
             "options": {
                 "tabWidth": 2
+            }
+        },
+        {
+            "files": ["*.php"],
+            "options": {
+                "trailingComma": "none"
             }
         }
     ]

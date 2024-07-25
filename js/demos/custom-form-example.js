@@ -75,7 +75,7 @@ const formValidator = new (function () {
                             formField.dataset.origAriaDesc = ariaDesc;
                             formField.setAttribute(
                                 'aria-describedby',
-                                ariaDesc + ' ' + formField.id + '-error',
+                                ariaDesc + ' ' + formField.id + '-error'
                             );
                         }
                     } else {
@@ -83,7 +83,7 @@ const formValidator = new (function () {
                         if (ariaDesc) {
                             formField.setAttribute(
                                 'aria-describedby',
-                                ariaDesc,
+                                ariaDesc
                             );
                         } else {
                             formField.removeAttribute('aria-describedby');

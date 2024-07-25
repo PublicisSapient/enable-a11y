@@ -21,7 +21,7 @@ describe('Tablist Tests', () => {
         let domInfo = await page.evaluate((tabSelector) => {
             const focusTab =
                 document.querySelector(
-                    `${tabSelector}[data-tab-selected-on-load=true]`,
+                    `${tabSelector}[data-tab-selected-on-load=true]`
                 ) || Array.from(document.querySelectorAll(`${tabSelector}`))[0];
 
             focusTab.focus();
@@ -42,7 +42,7 @@ describe('Tablist Tests', () => {
         const domInfo = await page.evaluate(
             (tabListContainerSelector, tabSelector) => {
                 const tabContainerEl = document.querySelector(
-                    tabListContainerSelector,
+                    tabListContainerSelector
                 );
 
                 const tabEls = Array.from(document.querySelector(tabSelector));
@@ -55,13 +55,13 @@ describe('Tablist Tests', () => {
                             tabEl.getAttribute('role') === 'tab' &&
                             tabEl.hasAttribute('data-owns') &&
                             tabEl.hasAttribute('aria-controls') &&
-                            tabEl.hasAttribute('aria-describedby'),
+                            tabEl.hasAttribute('aria-describedby')
                     ),
                     tabChildrenHaveLinkedPanels: tabEls.every((tabEl) => {
                         const controlsEl = tabEl.getAttribute('aria-controls');
 
                         const panelEl = document.querySelector(
-                            `#${controlsEl}`,
+                            `#${controlsEl}`
                         );
 
                         return panelEl instanceof HTMLElement;
@@ -69,7 +69,7 @@ describe('Tablist Tests', () => {
                 };
             },
             tabListContainerSelector,
-            tabSelector,
+            tabSelector
         );
         expect(domInfo.tabContainerHasRole).toBe(true);
 
@@ -102,12 +102,12 @@ describe('Tablist Tests', () => {
 
                     const unFocusedTabEls = Array.from(
                         document.querySelectorAll(
-                            `${tabSelector}[aria-selected=false]`,
-                        ),
+                            `${tabSelector}[aria-selected=false]`
+                        )
                     );
 
                     const currentTabItem = Array.from(
-                        document.querySelectorAll(tabSelector),
+                        document.querySelectorAll(tabSelector)
                     ).splice(1)[index];
 
                     const isTabItemActive = activeElement === currentTabItem;
@@ -119,7 +119,7 @@ describe('Tablist Tests', () => {
                     const unFocusedTabsHaveRightAria = unFocusedTabEls.every(
                         (tabEl) =>
                             tabEl.getAttribute('tabindex') === '-1' &&
-                            tabEl.getAttribute('aria-selected') === 'false',
+                            tabEl.getAttribute('aria-selected') === 'false'
                     );
 
                     return {
@@ -129,7 +129,7 @@ describe('Tablist Tests', () => {
                     };
                 },
                 tabItemIndex,
-                tabSelector,
+                tabSelector
             );
 
             expect(domInfo.isTabItemActive).toBe(true);
@@ -200,7 +200,7 @@ describe('Tablist Tests', () => {
                 };
             },
             tabPanel,
-            accessibility.tabbableSelector,
+            accessibility.tabbableSelector
         );
 
         if (tabPanelDomInfo.focusableElements.length > 0) {
@@ -294,7 +294,7 @@ describe('Tablist Tests', () => {
             const tabEls = Array.from(document.querySelectorAll(tabSelector));
 
             const selectedTabIndex = tabEls.findIndex(
-                (element) => element.getAttribute('aria-selected') === 'true',
+                (element) => element.getAttribute('aria-selected') === 'true'
             );
             return {
                 selectedTabIndex,
@@ -303,7 +303,7 @@ describe('Tablist Tests', () => {
 
         const getKeyboardInstructionElVisibility = () => {
             const element = document.querySelector(
-                '#tabs-keyboard-only-instructions',
+                '#tabs-keyboard-only-instructions'
             );
             if (!element) {
                 return false;
@@ -314,11 +314,11 @@ describe('Tablist Tests', () => {
 
         const topToBottomFocusDomInfo = await page.evaluate(
             getSelectedTab,
-            tabSelector,
+            tabSelector
         );
 
         const kbInstructionVisible = await page.evaluate(
-            getKeyboardInstructionElVisibility,
+            getKeyboardInstructionElVisibility
         );
         expect(topToBottomFocusDomInfo.selectedTabIndex).toBe(targetTabIndex);
 
@@ -330,7 +330,7 @@ describe('Tablist Tests', () => {
         await testHelpers.pause();
 
         const kbInstructionNotVisible = !(await page.evaluate(
-            getKeyboardInstructionElVisibility,
+            getKeyboardInstructionElVisibility
         ));
 
         expect(kbInstructionNotVisible).toBe(true);
@@ -342,7 +342,7 @@ describe('Tablist Tests', () => {
 
         const bottomToTopFocusDomInfo = await page.evaluate(
             getSelectedTab,
-            tabSelector,
+            tabSelector
         );
 
         expect(bottomToTopFocusDomInfo.selectedTabIndex).toBe(targetTabIndex);

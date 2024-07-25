@@ -54,7 +54,7 @@ var inAllWebComponents = new (function () {
         if (key === 'q') {
             console.log(
                 'h1s: ',
-                inAllWebComponents.call('querySelectorAll', 'h1'),
+                inAllWebComponents.call('querySelectorAll', 'h1')
             );
         }
     };
