@@ -25,7 +25,7 @@
 
 <br />
 
-<button id="show-modal-button">Show Modal Banner</button>
+<button id="show-modal-button" aria-haspopup="dialog">Show Modal Banner</button>
 
 <h2>Non-Modal Cookie Banner</h2>
 
@@ -37,17 +37,17 @@
 
 <br />
 
-<button id="show-non-modal-button">Show Non-Modal Banner</button>
+<button id="show-non-modal-button" aria-haspopup="dialog">Show Non-Modal Banner</button>
 
 <div id="cookie-banner-container">
   <dialog id="cookie-banner" class="cookie-banner">
-    <form class="cookie-banner-form" method="dialog" aria-labelledby="cookie-banner-title">
-      <button id="cookie-banner-close-button" class="cookie-banner-close-button" autofocus>
-        <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close dialog">
+    <form class="cookie-banner__form" method="dialog" aria-labelledby="cookie-banner-title">
+      <button id="cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
+        <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close dialog">
       </button>
 
       <div role="document" tabindex="0">
-        <h2 id="cookie-banner-title">Cookie Notice</h2>
+        <h2 id="cookie-banner-title" class="cookie-banner__form__title">Cookie Notice</h2>
         <p id="cookie-banner-message">
           We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
           functional, performance and targeting cookies to help us understand how people use our website, to improve your
@@ -56,9 +56,9 @@
         </p>
       </div>
 
-      <div class="cookie-banner-action-buttons">
-        <button id="cookie-banner-accept-button">Accept</button>
-        <button id="cookie-banner-reject-button" class="cookie-banner-reject-button">Reject</button>
+      <div class="cookie-banner__action-buttons">
+        <button id="cookie-banner-accept-button" class="cookie-banner__accept-button">Accept</button>
+        <button id="cookie-banner-reject-button" class="cookie-banner__reject-button">Reject</button>
       </div>
     </form>
   </dialog>
