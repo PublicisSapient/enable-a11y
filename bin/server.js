@@ -46,7 +46,7 @@ function render(req, res) {
             } else {
                 res.send(body);
             }
-        }
+        },
     );
 }
 
@@ -61,6 +61,6 @@ const server = app.listen(port, function () {
     console.log(
         'PHP Express server listening at http://%s:%s',
         'localhost',
-        port
+        port,
     );
 });

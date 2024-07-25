@@ -16,14 +16,14 @@ describe('Carousel Tests', () => {
         await page.waitForSelector('#example1');
 
         const numSlidesInCarousel = Array.from(
-            await page.$$('#example1 .enable-carousel__slide')
+            await page.$$('#example1 .enable-carousel__slide'),
         ).length;
         expect(numSlidesInCarousel).toBeGreaterThan(0);
 
         // First detect if the first focused element is the skip link.
         domInfo = await page.evaluate(() => {
             const firstSkipLink = document.querySelector(
-                '#beginning-of-component-1'
+                '#beginning-of-component-1',
             );
             firstSkipLink.focus();
             return {
@@ -49,11 +49,11 @@ describe('Carousel Tests', () => {
                 const { activeElement } = document;
                 const $container = document.querySelector('#example1');
                 const $slides = $container.querySelectorAll(
-                    '.enable-carousel__slide'
+                    '.enable-carousel__slide',
                 );
                 const $currentSlide = $slides[i];
                 const $parentOfActiveElement = activeElement.closest(
-                    '.enable-carousel__slide'
+                    '.enable-carousel__slide',
                 );
                 const isActiveElementInCurrentSlide =
                     $parentOfActiveElement === $currentSlide;
@@ -84,7 +84,7 @@ describe('Carousel Tests', () => {
                     const { activeElement } = document;
                     const $container = document.querySelector('#example1');
                     const $slides = $container.querySelectorAll(
-                        '.enable-carousel__slide'
+                        '.enable-carousel__slide',
                     );
                     const $currentSlide = $slides[i];
                     const $previousSlide =
@@ -110,11 +110,11 @@ describe('Carousel Tests', () => {
                     // returned by .getBoundingClientRect() will not be seen
                     // outside the function.
                     currentSlideRect = JSON.parse(
-                        JSON.stringify(currentSlideRect)
+                        JSON.stringify(currentSlideRect),
                     );
                     containerRect = JSON.parse(JSON.stringify(containerRect));
                     previousSlideRect = JSON.parse(
-                        JSON.stringify(previousSlideRect)
+                        JSON.stringify(previousSlideRect),
                     );
                     nextSlideRect = JSON.parse(JSON.stringify(nextSlideRect));
 
@@ -142,7 +142,7 @@ describe('Carousel Tests', () => {
                     };
                 },
                 i,
-                numSlidesInCarousel
+                numSlidesInCarousel,
             );
             //const {x, y, bottom, right, width, height} = domInfo.containerRect;
 
@@ -186,7 +186,7 @@ describe('Carousel Tests', () => {
         await page.waitForSelector('#example2');
 
         const slidesInCarousel = Array.from(
-            await page.$$('#example2 .enable-carousel__slide')
+            await page.$$('#example2 .enable-carousel__slide'),
         );
         const numSlidesInCarousel = slidesInCarousel.length;
         expect(numSlidesInCarousel).toBeGreaterThan(0);
@@ -194,7 +194,7 @@ describe('Carousel Tests', () => {
         // Let's set focus on the first slide.
         domInfo = await page.evaluate(() => {
             const $firstSlide = document.querySelector(
-                '#example2 .enable-carousel__slide'
+                '#example2 .enable-carousel__slide',
             );
             $firstSlide.focus();
             return {
@@ -212,7 +212,7 @@ describe('Carousel Tests', () => {
         domInfo = await page.evaluate(() => {
             const { activeElement } = document;
             const $prevButton = document.querySelector(
-                '#example2 .glider-prev'
+                '#example2 .glider-prev',
             );
             const isDisabled =
                 $prevButton.getAttribute('aria-disabled') === 'true';
@@ -252,7 +252,7 @@ describe('Carousel Tests', () => {
             domInfo = await page.evaluate((i) => {
                 const { activeElement } = document;
                 const $nextButton = document.querySelector(
-                    '#example2 .glider-next'
+                    '#example2 .glider-next',
                 );
 
                 return {
@@ -272,7 +272,7 @@ describe('Carousel Tests', () => {
             domInfo = await page.evaluate((i) => {
                 const { activeElement } = document;
                 const $slides = document.querySelectorAll(
-                    '#example2 .enable-carousel__slide'
+                    '#example2 .enable-carousel__slide',
                 );
                 const $currentSlide = $slides[i];
 
@@ -300,7 +300,7 @@ describe('Carousel Tests', () => {
         domInfo = await page.evaluate(() => {
             const { activeElement } = document;
             const $nextButton = document.querySelector(
-                '#example2 .glider-next'
+                '#example2 .glider-next',
             );
             const isDisabled =
                 $nextButton.getAttribute('aria-disabled') === 'true';
@@ -325,7 +325,7 @@ describe('Carousel Tests', () => {
             domInfo = await page.evaluate((i) => {
                 const { activeElement } = document;
                 const $prevButton = document.querySelector(
-                    '#example2 .glider-prev'
+                    '#example2 .glider-prev',
                 );
 
                 return {
@@ -342,7 +342,7 @@ describe('Carousel Tests', () => {
             domInfo = await page.evaluate((i) => {
                 const { activeElement } = document;
                 const $slides = document.querySelectorAll(
-                    '#example2 .enable-carousel__slide'
+                    '#example2 .enable-carousel__slide',
                 );
                 const $currentSlide = $slides[i];
 
@@ -372,7 +372,7 @@ describe('Carousel Tests', () => {
         domInfo = await page.evaluate(() => {
             const { activeElement } = document;
             const $prevButton = document.querySelector(
-                '#example2 .glider-prev'
+                '#example2 .glider-prev',
             );
             const isDisabled =
                 $prevButton.getAttribute('aria-disabled') === 'true';

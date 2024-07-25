@@ -7,7 +7,7 @@ const htmlList = [];
 
 async function getHTML() {
     const fileData = JSON.parse(
-        fs.readFileSync('templates/data/meta-info.json', 'utf8')
+        fs.readFileSync('templates/data/meta-info.json', 'utf8'),
     );
     const projectRoot = 'http://localhost:8888/';
     const numFiles = Object.keys(fileData).length;
@@ -21,7 +21,7 @@ async function getHTML() {
             const download = await wget.download(
                 `${projectRoot}${i}`,
                 `tmp/${i}`,
-                {}
+                {},
             );
             download.on('error', function (err) {
                 console.error(err);

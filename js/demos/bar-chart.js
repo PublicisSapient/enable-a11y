@@ -7,7 +7,7 @@ const lineChartDemo = function (chartSel, tableSel) {
     const $table = document.querySelector(tableSel);
 
     const $rawDataTab = document.querySelector(
-        '.enable-tab[href="#bar-chart__heading--raw-data"]'
+        '.enable-tab[href="#bar-chart__heading--raw-data"]',
     );
     const $linkToData = document.querySelector('.bar-chart__link-to-data');
 
@@ -52,7 +52,7 @@ const lineChartDemo = function (chartSel, tableSel) {
     this.addTitle = ($svg, s) => {
         var $title = document.createElementNS(
             'http://www.w3.org/2000/svg',
-            'title'
+            'title',
         );
         $title.textContent = s;
         $svg.prepend($title);
@@ -92,7 +92,7 @@ const lineChartDemo = function (chartSel, tableSel) {
         chartSel,
         data,
         options,
-        responsiveOptions
+        responsiveOptions,
     );
 
     $linkToData.addEventListener('click', linkToDataClickEvent);

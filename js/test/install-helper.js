@@ -55,7 +55,7 @@ async function installMouseHelper(page) {
                         box.style.top = event.pageY + 'px';
                         updateButtons(event.buttons);
                     },
-                    true
+                    true,
                 );
                 document.addEventListener(
                     'mousedown',
@@ -63,7 +63,7 @@ async function installMouseHelper(page) {
                         updateButtons(event.buttons);
                         box.classList.add('button-' + event.which);
                     },
-                    true
+                    true,
                 );
                 document.addEventListener(
                     'mouseup',
@@ -71,14 +71,14 @@ async function installMouseHelper(page) {
                         updateButtons(event.buttons);
                         box.classList.remove('button-' + event.which);
                     },
-                    true
+                    true,
                 );
                 function updateButtons(buttons) {
                     for (let i = 0; i < 5; i++)
                         box.classList.toggle('button-' + i, buttons & (1 << i));
                 }
             },
-            false
+            false,
         );
     });
 }

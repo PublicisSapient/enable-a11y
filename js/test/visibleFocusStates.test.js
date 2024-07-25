@@ -65,7 +65,7 @@ describe('Test Focus States on all pages on Enable', () => {
                 if (isRangeInput && !hasFocusRing) {
                     let rangeThumbSlideStyle = window.getComputedStyle(
                         activeElement,
-                        '::-webkit-slider-thumb'
+                        '::-webkit-slider-thumb',
                     );
                     checkedPseudoEl = true;
                     outline = rangeThumbSlideStyle.outline;
@@ -85,7 +85,7 @@ describe('Test Focus States on all pages on Enable', () => {
                     outlineWidth,
                     outlineStyle,
                     isEnableSkipLink: activeElement.classList.contains(
-                        'enable-mobile-visible-on-focus'
+                        'enable-mobile-visible-on-focus',
                     ),
                     isBody: activeElement === document.body,
                     isIframe,
@@ -109,10 +109,10 @@ describe('Test Focus States on all pages on Enable', () => {
                     console.log('Bad focus on: ', domInfo.html);
                     console.log(
                         'Checked Pseudo element',
-                        domInfo.checkedPseudoEl
+                        domInfo.checkedPseudoEl,
                     );
                     console.log(
-                        `outlineColor: ${domInfo.outlineColor}\noutline: ${domInfo.outline}\noutlineWidth: ${domInfo.outlineWidth}\noutlineStyle: ${domInfo.outlineStyle}`
+                        `outlineColor: ${domInfo.outlineColor}\noutline: ${domInfo.outline}\noutlineWidth: ${domInfo.outlineWidth}\noutlineStyle: ${domInfo.outlineStyle}`,
                     );
                 }
 

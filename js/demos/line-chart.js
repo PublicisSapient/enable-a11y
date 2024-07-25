@@ -58,7 +58,7 @@ d3.csv('../../data/ice-cream.csv').then(function (data) {
     x.domain(
         d3.extent(data, function (d) {
             return d.year;
-        })
+        }),
     ); //<=year
     y.domain([
         0,

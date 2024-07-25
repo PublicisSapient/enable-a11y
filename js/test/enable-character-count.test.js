@@ -41,7 +41,7 @@ describe('Tests for the ARIA live region', () => {
         const id = await page.evaluate((p) => p.id, liveRegion);
         const textAreaId = await page.evaluate(
             (textarea) => textarea.id,
-            textArea
+            textArea,
         );
         expect(id).toBe(`${textAreaId}${liveRegionSuffix}`);
     });
@@ -51,29 +51,29 @@ describe('Tests for the ARIA live region', () => {
         await announce();
         const result = await evaluateStatus();
         expect(result).toContain(
-            'Character Count: 32 out of 100. 68 characters remaining.'
+            'Character Count: 32 out of 100. 68 characters remaining.',
         );
     });
 
     it('Has correct character count when within warning threshold', async () => {
         await keyboardType(
-            'This sentence will be within the default threshold set for the character counter.'
+            'This sentence will be within the default threshold set for the character counter.',
         );
         await announce();
         const result = await evaluateStatus();
         expect(result).toContain(
-            'Character Count: 81 out of 100. 19 characters remaining.'
+            'Character Count: 81 out of 100. 19 characters remaining.',
         );
     });
 
     it('Has max character count when too much is typed', async () => {
         await keyboardType(
-            'This sentence contains more than the allotted one hundred max characters that is allowed by default for this textarea.'
+            'This sentence contains more than the allotted one hundred max characters that is allowed by default for this textarea.',
         );
         await announce();
         const result = await evaluateStatus();
         expect(result).toContain(
-            'Character Count: 100 out of 100. 0 characters remaining.'
+            'Character Count: 100 out of 100. 0 characters remaining.',
         );
     });
 
@@ -92,7 +92,7 @@ describe('Tests for the displayed character count', () => {
 
     beforeAll(async () => {
         divCharacterCount = await page.$(
-            `[id$="${characterCountContainerSuffix}"]`
+            `[id$="${characterCountContainerSuffix}"]`,
         );
     });
 
@@ -104,7 +104,7 @@ describe('Tests for the displayed character count', () => {
         const id = await page.evaluate((p) => p.id, divCharacterCount);
         const textAreaId = await page.evaluate(
             (textarea) => textarea.id,
-            textArea
+            textArea,
         );
         expect(id).toBe(`${textAreaId}${characterCountContainerSuffix}`);
     });
@@ -122,7 +122,7 @@ describe('Tests for the displayed character count', () => {
 
     it('Has correct character count when within warning threshold', async () => {
         await keyboardType(
-            'This sentence will be within the default threshold set for the character counter.'
+            'This sentence will be within the default threshold set for the character counter.',
         );
         const result = await getCharacterCount();
         expect(result).toBe('81/100');
@@ -130,7 +130,7 @@ describe('Tests for the displayed character count', () => {
 
     it('Has max character count when too much is typed', async () => {
         await keyboardType(
-            'This sentence contains more than the allotted one hundred max characters that is allowed by default for this textarea.'
+            'This sentence contains more than the allotted one hundred max characters that is allowed by default for this textarea.',
         );
         const result = await getCharacterCount();
         expect(result).toBe('100/100');
@@ -158,7 +158,7 @@ describe('Tests for the ARIA described-by', () => {
         const id = await page.evaluate((p) => p.id, describedBy);
         const textAreaId = await page.evaluate(
             (textarea) => textarea.id,
-            textArea
+            textArea,
         );
         expect(id).toBe(`${textAreaId}${ariaDescribedBySuffix}`);
     });
@@ -166,7 +166,7 @@ describe('Tests for the ARIA described-by', () => {
     it('Is created with correct default value', async () => {
         const result = await page.evaluate((p) => p.innerHTML, describedBy);
         expect(result).toBe(
-            'In edit text area with a 100 character limit. Press Escape to find out how many more characters are allowed.'
+            'In edit text area with a 100 character limit. Press Escape to find out how many more characters are allowed.',
         );
     });
 });

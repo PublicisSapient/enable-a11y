@@ -11,7 +11,7 @@ const alert = new (function () {
     this.checkboxChangeHandler = (e) => {
         assertiveAlertEl.setAttribute(
             'aria-expanded',
-            checkboxEl.checked ? 'true' : 'false'
+            checkboxEl.checked ? 'true' : 'false',
         );
     };
 

@@ -18,7 +18,7 @@ const getNPMModules = function () {
 
                 if (item.isNPM) {
                     listItemsHTML.push(
-                        interpolate($npmListItemTemplate.innerHTML, item)
+                        interpolate($npmListItemTemplate.innerHTML, item),
                     );
                 }
             }

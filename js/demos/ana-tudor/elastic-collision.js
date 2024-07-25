@@ -310,6 +310,6 @@ setTimeout(function () {
                 //init();
             }
         },
-        false
+        false,
     );
 }, 15);

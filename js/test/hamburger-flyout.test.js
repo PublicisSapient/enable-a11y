@@ -95,7 +95,7 @@ describe('Hamburger Menu Tests', () => {
                     const { activeElement } = document;
                     const controlledEl = document.getElementById(ariaControls);
                     const menuButton = document.querySelector(
-                        `[aria-controls="${ariaControls}"]`
+                        `[aria-controls="${ariaControls}"]`,
                     );
 
                     return {
@@ -124,7 +124,7 @@ describe('Hamburger Menu Tests', () => {
             browser = isDesktop ? desktopBrowser : mobileBrowser;
             const page = await browser.newPage();
             await page.goto(
-                `${config.BASE_URL}/multi-level-hamburger-menu.php`
+                `${config.BASE_URL}/multi-level-hamburger-menu.php`,
             );
 
             // Test on initial load.
@@ -138,13 +138,13 @@ describe('Hamburger Menu Tests', () => {
 
             domInfo = await page.evaluate(() => {
                 const mobileMenuButton = document.querySelector(
-                    '.enable-flyout__open-menu-button'
+                    '.enable-flyout__open-menu-button',
                 );
                 const { activeElement } = document;
 
                 const buttonStyle = window.getComputedStyle(
                     mobileMenuButton,
-                    null
+                    null,
                 );
 
                 return {

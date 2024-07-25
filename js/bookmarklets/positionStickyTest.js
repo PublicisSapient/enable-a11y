@@ -14,7 +14,7 @@ function positionStickyTest(el) {
         bottom === 'auto'
     ) {
         console.log(
-            `This node must have top, left, right or bottom set to something other than auto.`
+            `This node must have top, left, right or bottom set to something other than auto.`,
         );
     }
 
