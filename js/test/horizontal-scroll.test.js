@@ -21,8 +21,6 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
     async function checkViewportWidth() {
         const domInfo = await page.evaluate(() => {
             const { clientWidth, scrollWidth } = document.body;
-            const { innerWidth } = window;
-            const domInfo = {};
             const firstWrapTextCheckbox = document.querySelector(
                 '.showcode__wrap-text',
             );
@@ -47,7 +45,7 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
     }
 
     async function testPageWidth(filename, isDesktop) {
-        let domInfo, page;
+        let page;
 
         if (isDesktop) {
             page = await desktopBrowser.newPage();
