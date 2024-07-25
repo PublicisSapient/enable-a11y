@@ -6,6 +6,33 @@ import testHelpers from './test-helpers.js';
 const getActiveElementValue = async () => {
     return page.evaluate(() => document?.activeElement?.value);
 };
+//Utility function is added to test autosuggestion functionality of all comboboxes
+const testAutosuggestions = async (
+    listSelector,
+    typeText,
+    expectedSubstring,
+    expectedCount,
+) => {
+    await page.waitForSelector(`${listSelector}`);
+    // Getting all the visible option elements
+    const suggestions = await page.evaluate((selector) => {
+        const parent = document.querySelector(selector);
+        const items = Array.from(parent.querySelectorAll('[role="option"]'));
+        return items
+            .filter((item) => !item.hasAttribute('hidden'))
+            .map((item) => item.textContent?.toLowerCase()?.trim());
+    }, `${listSelector}`);
+
+    const allContainSubstring = suggestions.every((suggestion) =>
+        suggestion.includes(expectedSubstring),
+    );
+    // Assertions to test the autosuggestion options
+    expect(allContainSubstring).toBeTruthy();
+    expect(suggestions.length).toBe(expectedCount);
+    console.log(
+        `Suggestions after typing '${typeText}': ${suggestions.join(', ')}`,
+    );
+};
 
 describe("All combobox's Attributes Test", () => {
     let domInfo;
@@ -61,10 +88,21 @@ describe('ARIA Combobox Test for Accessible features', () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
         await page.waitForSelector('#aria-fruit');
         await page.focus('#aria-fruit');
-        await page.type('#aria-fruit', 'app', { delay: 100 });
+        await page.type('#aria-fruit', 'ap', { delay: 100 });
         await testHelpers.pauseFor(100);
     });
-    it('ARIA Combobox  is able to alert the matching count updates', async () => {
+    it('ARIA Combobox  is able to suggest the correct autosuggestion', async () => {
+        await testAutosuggestions('#aria-fruit__list', 'ap', 'ap', 3);
+    });
+
+    it('ARIA Combobox  is able to update the autosuggestion on typing', async () => {
+        // Updating the typing string from "ap -> app"
+        await page.type('#aria-fruit', 'p', { delay: 100 });
+        await testHelpers.pauseFor(100);
+
+        await testAutosuggestions('#aria-fruit__list', 'app', 'app', 2);
+    });
+    it('ARIA Combobox  is able to alert the matching count updates using aria-live', async () => {
         // Getting the alert element
         const ariaInfoOfCount = await page.evaluate(() => {
             const alertElem = document.querySelector(
@@ -128,7 +166,18 @@ describe('AutoSubmit Combobox Test', () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
         await page.waitForSelector('#video-games');
         await page.focus('#video-games');
-        await page.type('#video-games', 'a', { delay: 100 });
+        await page.type('#video-games', 'ap', { delay: 100 });
+    });
+    it('ARIA Combobox  is able to suggest the correct autosuggestion', async () => {
+        await testAutosuggestions('#video-games__list', 'ap', 'ap', 3);
+    });
+
+    it('ARIA Combobox  is able to update the autosuggestion on typing', async () => {
+        // Updating the typing string from "ap -> app"
+        await page.type('#video-games', 'p', { delay: 100 });
+        await testHelpers.pauseFor(100);
+
+        await testAutosuggestions('#video-games__list', 'app', 'app', 2);
     });
     it('ARIA Combobox  is able to alert the matching count updates', async () => {
         const ariaInfoOfCount = await page.evaluate(() => {
@@ -141,7 +190,7 @@ describe('AutoSubmit Combobox Test', () => {
                 ariaLive,
             };
         });
-        expect(ariaInfoOfCount.alertElemValue).toContain('32 items');
+        expect(ariaInfoOfCount.alertElemValue).toContain('2 items');
         expect(ariaInfoOfCount.ariaLive).toBe('polite');
     });
     it('ARIA Combobox  is able to reset using the reset button', async () => {
@@ -180,7 +229,17 @@ describe('ARIA Combobox with categories Test', () => {
         await page.goto(`${config.BASE_URL}/combobox.php`);
         await page.waitForSelector('#aria-example-2');
         await page.focus('#aria-example-2');
-        await page.type('#aria-example-2', 'can', { delay: 100 });
+    });
+    it('ARIA Combobox  is able to suggest the correct autosuggestion', async () => {
+        await page.type('#aria-example-2', 'ch', { delay: 100 });
+        await testAutosuggestions('#aria-example-2__list', 'ch', 'ch', 6);
+    });
+    it('ARIA Combobox  is able to update the autosuggestion on typing', async () => {
+        // Updating the typing string from "ch -> chi"
+        await page.type('#aria-example-2', 'i', { delay: 100 });
+        await testHelpers.pauseFor(100);
+
+        await testAutosuggestions('#aria-example-2__list', 'chi', 'chi', 3);
     });
     it('ARIA Combobox  is able to alert the matching count updates', async () => {
         const ariaInfoOfCount = await page.evaluate(() => {
@@ -196,7 +255,18 @@ describe('ARIA Combobox with categories Test', () => {
         expect(ariaInfoOfCount.alertElemValue).toContain('3 items');
         expect(ariaInfoOfCount.ariaLive).toBe('polite');
     });
+    it('ARIA Combobox  is able to reset using the escape key', async () => {
+        // Now let's press ESCAPE to check if the value is reset.
+        page.keyboard.press('Escape');
+        // await 100ms before continuing further
+        await testHelpers.fastPause();
+        const valueAfterEscapeButton = await getActiveElementValue();
+
+        expect(valueAfterEscapeButton).toBe('');
+    });
     it('Selection in different categories using the aria combobox is completely keyboard accessible', async () => {
+        await page.focus('#aria-example-2');
+        await page.type('#aria-example-2', 'can', { delay: 100 });
         testHelpers.keyDownAndUp(page, 'ArrowDown');
         await page.keyboard.press('Enter');
         await testHelpers.pauseFor(100);
@@ -217,16 +287,6 @@ describe('ARIA Combobox with categories Test', () => {
         await testHelpers.pauseFor(100);
         const valueAfterReset = await getActiveElementValue();
         expect(valueAfterReset).toBe('');
-    });
-    it('ARIA Combobox  is able to reset using the escape key', async () => {
-        await page.type('#aria-example-2', 'app', { delay: 100 });
-        // Now let's press ESCAPE to check if the value is reset.
-        page.keyboard.press('Escape');
-        // await 100ms before continuing further
-        await testHelpers.fastPause();
-        const valueAfterEscapeButton = await getActiveElementValue();
-
-        expect(valueAfterEscapeButton).toBe('');
     });
 
     afterAll(async () => {});
