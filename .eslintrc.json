@@ -6,6 +6,16 @@
         "jest": true
     },
     "extends": ["eslint:recommended", "prettier"],
+    "globals": {
+        "Chartist": "readonly",
+        "demo": "readonly",
+        "__dirname": "readonly",
+        "domContainer": "readonly",
+        "EnableCarousel": "readonly",
+        "htmlButtonExample": "readonly",
+        "page": "readonly",
+        "process": "readonly"
+    },
     "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 12
