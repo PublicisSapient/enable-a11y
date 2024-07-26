@@ -1,0 +1,13 @@
+.custom-context-menu {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+.custom-context-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
