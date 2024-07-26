@@ -1,3 +1,7 @@
+.enable-video-player {
+  position: relative;
+  z-index: 0;
+}
 .enable-video-player .able-wrapper {
   max-width: initial !important;
 }
