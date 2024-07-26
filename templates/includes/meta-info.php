@@ -19,4 +19,12 @@ if ($fileProps->title != "") {
 <meta name="twitter:description" content="<?= $fileProps->desc ?>" />
 <meta name="twitter:title" content="<?= $fileProps->title ?>" />
 <meta name="twitter:image" content="<?= $fileProps->posterImg ?>" />
+<script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "<?= $fileProps->definedTermName ?>",
+          "description": "<?= $fileProps->definedTermDescription ?>"
+    }
+</script>
 

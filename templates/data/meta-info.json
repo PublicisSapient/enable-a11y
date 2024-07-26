@@ -76,8 +76,10 @@
     "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
   },
   "focus-styling.php": {
-    "title": "Focus Styling",
-    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
+    "title": "How to Create Accessible Focus Outlines in CSS",
+    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
+    "definedTermName":"What is a Focus Outline?",
+    "definedTermDescription":"Simply put, when a specific HTML element is ready to accept keyboard input, it is considered to be 'in focus'. As users navigate a webpage using the keyboard (typically via the Tab key), different elements receive focus, allowing screen readers to read their content. According to accessibility standards, any element in focus should have a visible border around it, known as the focus outline. This helps users, especially those relying on screen readers or keyboard navigation, to know which element is currently active."
   },
   "form-error-checking.php": {
     "title": "Accessible Form Error Checking",
