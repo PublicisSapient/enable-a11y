@@ -1,34 +1,35 @@
 <p>
-  The meter component is used to show a scalar measurement within a known range or a fractional value. 
-  For example, meter could be used to display a device's current battery or a car's remaining fuel level. 
-  In cases where there is no fixed maximum, it is preferable to utilize the <a href="/progress.php">progress bar</a> component.
+  A meter is used to show a scalar measurement within a known range or a fractional value. 
+  For example, a meter could be used to display a device's current battery or a car's remaining fuel level. 
+  In cases where there is no fixed maximum, it is preferable to utilize the <a href="/progress.php">progress bar</a>.
 </p>
 
+
 <p>
-  This page provides examples of both HTML and ARIA based solutions for creating accessible meter components.
+  This page provides examples of both HTML and ARIA based solutions for creating accessible meters.
 </p>
 
 <h2>HTML5 Meter Example</h2>
 <?php includeStats(["isForNewBuilds" => true]); ?>
 
 <p>
-  Use of the HTML5 meter element is supported in most browsers. As defined in the 
+  Use of the HTML5 <code>meter</code> element is supported in most browsers. As defined in the 
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter#technical_summary">MDN docs</a>, 
-  this will utilize the meter role which will read out the current percentage of the meter.
+  it is equivalent to the ARIA <code>meter</code> role which will allow screen readers to read out the current percentage of the meter.
 </p>
 
 <div id="html5-example" class="enable-example">
   <strong id="group-heading-html5">Storage Space</strong>
 
-  <div class="container" role="group" aria-labelledby="group-heading-html5">
-    <label id="disk-c-meter-html5" aria-hidden="true">Disk C:</label>
-    <meter aria-labelledby="disk-c-meter-html5" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+  <div class="meter-demo-container" role="group" aria-labelledby="group-heading-html5">
+    <label for="disk-c-meter-html5" >Disk C:</label>
+    <meter id="disk-c-meter-html5" class="enable-custom-meter" value="0.2" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   
-    <label id="disk-d-meter-html5" aria-hidden="true">Disk D:</label>
-    <meter aria-labelledby="disk-d-meter-html5" class="enable-custom-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label for="disk-d-meter-html5" >Disk D:</label>
+    <meter id="disk-d-meter-html5" class="enable-custom-meter" value="0.9" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
 
-    <label id="disk-e-meter-html5" aria-hidden="true">Disk E:</label>
-    <meter aria-labelledby="disk-e-meter-html5" class="enable-custom-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
+    <label for="disk-e-meter-html5" >Disk E:</label>
+    <meter id="disk-e-meter-html5" class="enable-custom-meter" value="0.6" min="0" max="1" optimum="0" low="0.2" high="0.8"></meter>
   </div>
 </div>
 
@@ -37,44 +38,45 @@
 {
     "replaceHtmlRules": {},
     "steps": [{
-            "label": "Use the HTML5 meter tag to create your meter component.",
+            "label": "Use the HTML5 meter tag to create a meter.",
             "highlight": "%OPENCLOSECONTENTTAG%meter",
             "notes": "Set the <code>min</code> and <code>max</code> values to the min and max values of what your meter bar is measuring. <code>value</code> is the current value. Setting the <code>low</code>, <code>high</code>, and <code>optimum</code> fields will result in browser specific colors."
         },
         {
-          "label": "Add the <code>aria-labelledby</code> attribute to announce the name of each meter.",
-          "highlight": "aria-labelledby",
-          "notes": "This should point to the <code>id</code> of the associated label tag."
+          "label": "Add labels to the meter.",
+          "highlight": "for",
+          "notes": "This should be like adding labels to for elements &mdash; the label points to the meter it labels."
         },
         {
-            "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
-            "highlight": "aria-hidden",
-            "notes": ""
-        },
-        {
-          "label": "Have JS apply the aria-valuetext attribute to ensure consistent screen reader behavior",
+          "label": "Have JavaScript apply the aria-valuetext attribute to ensure consistent screen reader behavior",
           "highlight": "%JS% meter.init ||| element.setAttribute\\('aria-valuetext', `\\${percentage}%`\\);",
-          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JS apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense."
+          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JavaScript apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense.  We do this in JavaScript to avoid mistakes (and if the browser doesn't apply the Javascript, the fallback is still acceptable and accessible; it just improves UX)"
+        },
+        {
+          "label": "Use new attributes in CSS to style the meter element and it's psuedo elements.",
+          "highlight": "%FILE% css/meter.css ~ (\\[meter-state=\\\"[^\\\"]*\\\"\\]|::-webkit-meter-bar|::-moz-meter-bar)",
+          "notes": "To support Firefox, be sure to set these attributes for both <code>::before</code> and <code>::-moz-meter-bar</code>. Lastly to avoid styling issues with Safari, be sure to hide <code>::-webkit-meter-bar</code>."
         }
     ]
 }
 </script>
 
 <h2>ARIA role="meter" Example</h2>
+<?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
-  Should a case arise where the HTML5 meter component is not accessible for a given browser, the following can be used as an alternative.
+  Should a case arise where the HTML5 meter component is not accessible for a given browser, or you have to refactor existing code, the following can be used as an alternative.
 </p>
 
 <p>
-  Hint: If you are using v.Nu for validation, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
-  This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">ARIA 1.2</a>.
+  Note: If you are <a href="code-quality.php#v-nu--heading">using v.Nu to validate your HTML</a> and have an older version, there is a <a href="https://github.com/validator/validator/issues/1380">known issue</a> with <code>role="meter"</code>.
+  This gets flagged as an invalid role despite being defined in <a href="https://www.w3.org/TR/wai-aria-1.2/#meter">ARIA 1.2</a>.  You may want to update the software to avoid it being flagged.
 </p>
 
 <div id="aria-example" class="enable-example">
   <strong id="group-heading-aria">Storage Space</strong>
 
-  <div class="container" role="group" aria-labelledby="group-heading-aria">
+  <div class="meter-demo-container" role="group" aria-labelledby="group-heading-aria">
     <label id="disk-c-meter-aria" aria-hidden="true">Disk C:</label>
     <div
       aria-labelledby="disk-c-meter-aria"
@@ -125,7 +127,7 @@
     "replaceHtmlRules": {},
     "steps": [{
             "label": "Use the div tag with <code>role=\"meter\"</code>.",
-            "highlight": "role",
+            "highlight": "role=\"meter\"",
             "notes": ""
         },
         {
@@ -139,24 +141,14 @@
           "notes": "This should point to the <code>id</code> of the associated label tag."
         },
         {
-            "label": "Apply <code>aria-hidden</code> to any visual labels to prevent redundant items being read out.",
-            "highlight": "aria-hidden",
-            "notes": ""
-        },
-        {
-          "label": "Use JS to calculate and pass meter percentage/state.",
+          "label": "Use JavaScript to calculate and pass meter percentage/state.",
           "highlight": "%JS% meter.init ||| element.setAttribute\\('style', `--meter-percentage: \\${percentage}%`\\); ||| element.setAttribute\\('meter-state', state\\);",
           "notes": "By setting these new attributes on the element, we can access them from the CSS."
         },
         {
-          "label": "Have JS apply the aria-valuetext attribute to ensure consistent screen reader behavior",
+          "label": "Have JavaScript apply the aria-valuetext attribute to ensure consistent screen reader behavior",
           "highlight": "%JS% meter.init ||| element.setAttribute\\('aria-valuetext', `\\${percentage}%`\\);",
-          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JS apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense."
-        },
-        {
-          "label": "Use new attributes in CSS to style the meter element and it's psuedo elements.",
-          "highlight": "%CSS% meter-css~ ||| meter-state ||| var\\(--meter-percentage\\)",
-          "notes": "To support Firefox, be sure to set these attributes for both <code>::before</code> and <code>::-moz-meter-bar</code>. Lastly to avoid styling issues with Safari, be sure to hide <code>::-webkit-meter-bar</code>."
+          "notes": "Meter components can be interpretted in different ways by different browsers (value, percentage, optimnal, etc). By having JavaScript apply <code>aria-valuetext</code> we can ensure this is read consistently and in a way that makes the most sense.  We do this in JavaScript to avoid mistakes (and if the browser doesn't apply the Javascript, the fallback is still acceptable and accessible; it just improves UX)"
         }
     ]
 }
@@ -166,8 +158,7 @@
 <h2>Screen Reader Support</h2>
 
 <p>
-  Due to inconsistent support of the meter component, this solution utilizes <code>aria-valuetext</code>. This attribute defines how the value of the meter should be announced by various screen readers.
-  If you prefer not to utilize this attribute, the tables below outline how screen readers will announce these meter component acros different browsers/platforms.
+  Due to inconsistent support of the <code>meter</code> tag and ARIA role, the examples on this page use <code>aria-valuetext</code>. This attribute defines how the value of the meter should be announced by various screen readers. We use a Javascript library to implement it so that there are less human error when authoring it.  If you prefer not to utilize this attribute, the tables below outline how screen readers will announce these meter component acros different browsers/platforms.
 </p>
 
 <p>
@@ -258,7 +249,7 @@
   </figcaption>
 
     <div class="sticky-table__container">
-      <table class="screen-reader-table-aria-valuetext" tabindex="0">
+      <table class="screen-reader-table screen-reader-table-aria-valuetext" tabindex="0">
         <thead>
           <tr>
             <th scope="col">Example</th>

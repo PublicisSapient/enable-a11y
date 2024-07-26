@@ -459,14 +459,6 @@
                                 {
                                     "id": "flyout__link",
                                     "props": {
-                                        "label": "Progress Bar",
-                                        "url-slug": "progress",
-                                        "alt": ""
-                                    }
-                                },
-                                {
-                                    "id": "flyout__link",
-                                    "props": {
                                         "label": "Image",
                                         "url-slug": "img",
                                         "alt": ""
@@ -495,6 +487,21 @@
                                 }, {
                                     "id": "flyout__link",
                                     "props": {
+                                        "label": "Meter",
+                                        "url-slug": "meter",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link",
+                                    "props": {
+                                        "label": "Progress Bar",
+                                        "url-slug": "progress",
+                                        "alt": ""
+                                    }
+                                }, {
+                                    "id": "flyout__link",
+                                    "props": {
                                         "label": "Screen Reader Only Text",
                                         "url-slug": "screen-reader-only-text",
                                         "alt": ""
@@ -504,13 +511,6 @@
                                     "props": {
                                         "label": "Reflow Content",
                                         "url-slug": "reflow",
-                                        "alt": ""
-                                    }
-                                }, {
-                                    "id": "flyout__link",
-                                    "props": {
-                                        "label": "Meter",
-                                        "url-slug": "meter",
                                         "alt": ""
                                     }
                                 }
@@ -539,8 +539,8 @@
                             }, {
                                 "id": "flyout__link",
                                 "props": {
-                                    "label": "Video Content",
-                                    "url-slug": "video-content",
+                                    "label": "Mulitmedia Content",
+                                    "url-slug": "multimedia-content",
                                     "alt": ""
                                 }
                             }]

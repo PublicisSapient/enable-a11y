@@ -297,7 +297,7 @@ const tableOfContents = new (function() {
         toggleButton.setAttribute('aria-controls', 'enable-toc--toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('title', 'Open or close the Table of Contents');
-        toggleButton.innerHTML = '<img src="/images/icons/toc.svg" alt="" />';
+        toggleButton.innerHTML = '<img src="images/icons/toc.svg" alt="" />';
         toggleButton.addEventListener('click', this.toggleTOC);
 
         // Insert the nav and button elements

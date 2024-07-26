@@ -85,7 +85,12 @@ function initEnable() {
     focusDeepLink();
 
     tableOfContents.init({
-        skipPages: ['/index.php', '/faq.php'],
+        skipPages: [
+            '/index.php',
+            '/faq.php',
+            '/enable/index.php',
+            '/enable/faq.php',
+        ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,
         selectorToSkipHeadingsWithin: '.enable-example',
