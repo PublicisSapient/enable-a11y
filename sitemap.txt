@@ -6,6 +6,7 @@ https://www.useragentman.com/enable/button.php
 https://www.useragentman.com/enable/carousel.php
 https://www.useragentman.com/enable/checkbox.php
 https://www.useragentman.com/enable/combobox.php
+https://www.useragentman.com/enable/contextmenu.php
 https://www.useragentman.com/enable/description-list.php
 https://www.useragentman.com/enable/dialog.php
 https://www.useragentman.com/enable/dropdown.php
