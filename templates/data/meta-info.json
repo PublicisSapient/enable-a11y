@@ -150,6 +150,10 @@
     "title": "Accessible Progress Bars",
     "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
   },
+  "landmark.php": {
+    "title": "Landmark",
+    "desc": "A landmark in HTML refers to specific elements or attributes that provide a way to programmatically identify the different parts of a web page, enhancing accessibility for users relying on assistive technologies."
+  },
   "radiogroup.php": {
     "title": "Accessible Radio Groups",
     "desc": "They way radio buttons are made accessible is slightly different than other form controls."
