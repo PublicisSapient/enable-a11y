@@ -6,6 +6,11 @@
     xmlns="http://www.w3.org/2000/svg"
     aria-labelledby="infographicsTitle infographicsDescription">
     <title id="infographicsTitle">This inforgraphics represents steps for a process.</title>
+    <style>
+    text {
+        font-family: "Helvetica", "Arial", sans-serif;
+    }
+    </style>
     <desc id="infographicsDescription"> This image is <a href="http://www.freepik.com">designed by
         Freepik.</a>
     </desc>
@@ -463,33 +468,28 @@
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,90.6633,287.106)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-60"
-                    y="0">
-           STEP</text>
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0"
+                    y="0">STEP</text>
                 <text class="sr-only">01</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,91.25,188.347)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-60"
-                    y="0">
-           TIME
-         </text>
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0"
+                    y="0">TIME</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,68.4313,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-45"
-                    y="20">
-           Time flows steadily, a river of moments</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-15"
+                    y="20">Time flows steadily, a river of</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,68.4313,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-20"
-                    y="35">
-           past and future dreams.</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-25"
+                    y="35"> moments past and future dreams.</text>
             </g>
             <g aria-hidden="true"><!-- beginning of group-->
                 <path
@@ -611,31 +611,29 @@
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,262.701,287.106)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="2"
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0"
                     y="0">STEP</text>
                 <text class="sr-only">02</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,262.917,188.347)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-65"
-                    y="0">
-            TALK
-         </text>
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0"
+                    y="0">TALK</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,240.469,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-10"
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-13"
                     y="20"
-                >Conversations ripple through time,</text>
+                >Conversations ripple through</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,240.469,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-10"
-                    y="35">stitching together hearts and minds.</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-18"
+                    y="35"> time, bringing people together.</text>
             </g>
             <g aria-hidden="true"><!--start-->
                 <path
@@ -749,29 +747,28 @@
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,434.74,287.106)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
                     x="0"
                     y="0">STEP</text>
                 <text class="sr-only">03</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,431.558,188.347)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
                     x="0"
-                    y="0">LOOK
-         </text>
+                    y="0">LOOK</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,412.507,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-20"
-                    y="20">Gaze deep into the canvas of reality,</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-11"
+                    y="20">Gaze deep into reality, where</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,412.507,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-20"
-                    y="35"> where stories wait to be uncovered.
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-10"
+                    y="35">stories wait to be uncovered.
          </text>
             </g>
             <g aria-hidden="true"><!-- beginning of group-->
@@ -890,29 +887,25 @@
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,606.778,287.106)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-70"
-                    y="0">
-             STEP</text>
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0" y="0">STEP</text>
                 <text class="sr-only">04</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,599.405,188.347)"
-                    style="font-variant:normal;font-weight:500;font-size:20.5956px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-70"
-                    y="0">
-               DRAW
-            </text>
+                    style="font-variant:normal;font-weight:500;font-size:20.5956px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="0"
+                    y="0">DRAW</text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,584.546,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-20" y="20">With inspired hands, bring visions to life,</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-9" y="20">With inspired hands, bring </text>
                 <text
                     xml:space="preserve"
                     transform="matrix(1,0,0,-1,584.546,174.97)"
-                    style="font-variant:normal;font-weight:500;font-size:9.5px;font-family:Montserrat;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                    x="-20" y="35">shaping dreams into tangible forms.</text>
+                    style="font-variant:normal;font-weight:500;font-size:9.5px;-inkscape-font-specification:Montserrat-Medium;writing-mode:lr-tb;fill:#2b1d47;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                    x="-12" y="35">visions to life and into reality.</text>
             </g>
             <g aria-hidden="true"><!-- beginning of group-->
                 <path
