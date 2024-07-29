@@ -19,6 +19,9 @@ A place to learn and share with developers what makes web work accessible. This 
     - Install using homebrew: `brew install lynx`
     - Install using MacPorts: `sudo port install lynx`
     - Install on Ubuntu: `sudo apt install lynx`
+    - Install on WIndows:
+      - It is recommended to visit the [Cygwin](https://cygwin.com/) and choose the Install or update the link. Use the install program to install Cygwin's version of lynx.
+      - To ensure lynx can be found when installing and using [git bash](https://git-scm.com/downloads), developers should edit the `.bash_profile` and add `export PATH="$PATH:/c/cygwin64/bin/"` and the end of the file (assuming cygwin is installed in the `C:\cygwin64\bin\` directory).
 - PHP (version > 8.1)
   - Install options:
     - [Install from browser](https://www.php.net/downloads.php)
