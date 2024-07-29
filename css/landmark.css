@@ -1,0 +1,13 @@
+code {
+    background-color: #f4f4f4;
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+}
+.explanation {
+    margin-bottom: 20px;
+}
+#banner-example header, [role="banner"] {
+     background: #686868;
+   
+}
