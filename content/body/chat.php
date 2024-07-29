@@ -40,7 +40,7 @@ It's loaded in dynamically with JS
   <span id="notification-area">
   </span>
 
-  <div id="sr-announce" class="sr-only"></div>
+  <!-- <div id="sr-announce" class="sr-only"></div> -->
 
   <template id="user-message-template">
     <div class="chat-message-outter-wrapper text-right">
