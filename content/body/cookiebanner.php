@@ -34,7 +34,7 @@
         <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
       </button>
 
-      <div role="document" tabindex="0">
+      <div role="document">
         <h2 id="cookie-banner-title" class="cookie-banner__title">Cookie Notice</h2>
         <p id="cookie-banner-message">
           We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
@@ -105,7 +105,7 @@
       <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
     </button>
 
-    <div role="document" tabindex="0">
+    <div role="document">
       <h2 id="non-modal-cookie-banner-title" class="cookie-banner__title">Cookie Notice</h2>
       <p id="non-modal-cookie-banner-message">
         We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
