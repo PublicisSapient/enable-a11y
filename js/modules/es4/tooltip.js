@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const tooltip = new (function() {
+const tooltip = new function () {
     // global constants
     const { body } = document;
     const tooltipEl = document.createElement('div');
@@ -67,6 +67,7 @@ const tooltip = new (function() {
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
         tooltipEl.setAttribute('aria-hidden', 'true');
+        tooltipEl.setAttribute('aria-live', 'off');
         body.appendChild(tooltipEl);
     }
 
@@ -127,6 +128,7 @@ const tooltip = new (function() {
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
 
         tooltipTarget.setAttribute('aria-describedby', 'tooltip');
+        tooltipEl.setAttribute('aria-live', "polite");
         tooltipEl.innerHTML = text;
         tooltipEl.setAttribute('aria-hidden', "false");
         tooltipEl.classList.remove('tooltip--hidden');
@@ -172,6 +174,7 @@ const tooltip = new (function() {
         clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
+        tooltipEl.setAttribute('aria-live', 'off');
         isTooltipVisible = false;
         tooltipBelongsTo = null;
 
@@ -179,4 +182,6 @@ const tooltip = new (function() {
             new CustomEvent('enable-hide', { bubbles: true })
         );
     }
-})
+}
+
+export default tooltip;
