@@ -1,8 +1,6 @@
 .cookie-banner {
   position: fixed;
   bottom: 0;
-  z-index: 1000; // Ensure the non-modal dialog is above other content
-
   background-color: #333;
   color: white;
   padding: 20px;
@@ -26,19 +24,19 @@
     }
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-
-    &__title {
-      color: white;
-    }
+  &__title {
+    flex: 1;
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
   }
 
   &__action-buttons {
     display: flex;
     flex-direction: row;
-    margin-left: auto;
+    justify-content: flex-end;
   }
 
   &__accept-button {
@@ -60,5 +58,26 @@
     margin-left: 20px;
     border-radius: 5px;
     font-size: large;
+  }
+}
+
+.non-modal-cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: unset;
+  margin: unset;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1em;
+  text-align: center;
+  z-index: 1000; // Ensure the non-modal dialog is above other content
+  justify-content: space-between;
+
+  &__show {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -1,7 +1,6 @@
 .cookie-banner {
   position: fixed;
   bottom: 0;
-  z-index: 1000;
   background-color: #333;
   color: white;
   padding: 20px;
@@ -22,17 +21,18 @@
   width: 38px;
   height: 38px;
 }
-.cookie-banner__form {
-  display: flex;
-  flex-direction: column;
-}
-.cookie-banner__form__title {
+.cookie-banner__title {
+  flex: 1;
+  margin-top: 0;
+  text-align: center;
   color: white;
+  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-weight: bold;
 }
 .cookie-banner__action-buttons {
   display: flex;
   flex-direction: row;
-  margin-left: auto;
+  justify-content: flex-end;
 }
 .cookie-banner__accept-button {
   background-color: green;
@@ -63,4 +63,23 @@
   margin-left: 20px;
   border-radius: 5px;
   font-size: large;
+}
+.non-modal-cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: unset;
+  margin: unset;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1em;
+  text-align: center;
+  z-index: 1000;
+  justify-content: space-between;
+}
+.non-modal-cookie-banner__show {
+  display: flex;
+  flex-direction: column;
 }
