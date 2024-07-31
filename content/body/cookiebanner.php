@@ -27,7 +27,7 @@
 
 <button id="show-modal-button" aria-haspopup="dialog">Show Modal Banner</button>
 
-<div id="cookie-banner-container">
+<div id="cookie-banner-example" class="enable-example--no-border">
   <dialog id="cookie-banner" class="cookie-banner">
     <form method="dialog" aria-labelledby="cookie-banner-title">
       <button id="cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
@@ -52,9 +52,9 @@
   </dialog>
 </div>
 
-<?php includeShowcode("cookie-banner-container"); ?>
+<?php includeShowcode("cookie-banner-example"); ?>
 
-<script type="application/json" id="cookie-banner-container-props">
+<script type="application/json" id="cookie-banner-example-props">
   {
     "replaceHtmlRules": {},
     "steps": [
@@ -99,26 +99,30 @@
 
 <button id="show-non-modal-button" aria-haspopup="dialog">Show Non-Modal Banner</button>
 
-<aside id="non-modal-cookie-banner" class="non-modal-cookie-banner" aria-labelledby="non-modal-cookie-banner-title">
-  <button id="non-modal-cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
-    <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
-  </button>
+<div id="cookie-banner-example2" class="enable-example--no-border">
+  <aside id="non-modal-cookie-banner" class="non-modal-cookie-banner" aria-labelledby="non-modal-cookie-banner-title">
+    <button id="non-modal-cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
+      <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
+    </button>
 
-  <div role="document" tabindex="0">
-    <h2 id="non-modal-cookie-banner-title" class="cookie-banner__title">Cookie Notice</h2>
-    <p id="non-modal-cookie-banner-message">
-      We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
-      functional, performance and targeting cookies to help us understand how people use our website, to improve your
-      user experience and to provide you with targeted advertisements. You can accept all cookies, or click to review
-      your cookie preferences.
-    </p>
-  </div>
+    <div role="document" tabindex="0">
+      <h2 id="non-modal-cookie-banner-title" class="cookie-banner__title">Cookie Notice</h2>
+      <p id="non-modal-cookie-banner-message">
+        We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
+        functional, performance and targeting cookies to help us understand how people use our website, to improve your
+        user experience and to provide you with targeted advertisements. You can accept all cookies, or click to review
+        your cookie preferences.
+      </p>
+    </div>
 
-  <div class="cookie-banner__action-buttons">
-    <button id="non-modal-cookie-banner-accept-button" class="cookie-banner__accept-button">Accept</button>
-    <button id="non-modal-cookie-banner-reject-button" class="cookie-banner__reject-button">Reject</button>
-  </div>
-</aside>
+    <div class="cookie-banner__action-buttons">
+      <button id="non-modal-cookie-banner-accept-button" class="cookie-banner__accept-button">Accept</button>
+      <button id="non-modal-cookie-banner-reject-button" class="cookie-banner__reject-button">Reject</button>
+    </div>
+  </aside>
+</div>
+
+<?php includeShowcode("cookie-banner-example2"); ?>
 
 <p>
   With the HTML set up, use the built-in methods <code>.showModal()</code> or <code>.show()</code> for the

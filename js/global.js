@@ -17,81 +17,73 @@ import enableVisibleOnFocus from './modules/enable-visible-on-focus.js';
 import offscreenObserver from './modules/offscreen-observer.js';
 import textZoom from './demos/hero-image-text-resize.js';
 import tableOfContents from './modules/enable-toc.js';
-import {
-    focusDeepLink,
-    createPermalinksForHeading,
-} from './modules/helpers.js';
+import { focusDeepLink, createPermalinksForHeading } from './modules/helpers.js';
 
 function buildFlyoutMenuHTML() {
-    // This is the DOM element where the hamburger menu will be inserted into.
-    const hamburgerMenuEl = document.getElementById('enable-flyout-menu');
+  // This is the DOM element where the hamburger menu will be inserted into.
+  const hamburgerMenuEl = document.getElementById('enable-flyout-menu');
 
-    // This is where the structure of the hamburger menu is stored (in JSON format).
-    const hamburgerMenuJSONEl = document.getElementById('flyout-props');
-    const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);
+  // This is where the structure of the hamburger menu is stored (in JSON format).
+  const hamburgerMenuJSONEl = document.getElementById('flyout-props');
+  const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);
 
-    // Now, let's use Templify to convert the JSON into HTML.
-    const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
+  // Now, let's use Templify to convert the JSON into HTML.
+  const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
 
-    // Initialize the hamburger menu.
-    EnableFlyout.init();
+  // Initialize the hamburger menu.
+  EnableFlyout.init();
 }
 
 function initEnable() {
-    offscreenObserver.init(document.querySelector('[role="banner"]'));
+  offscreenObserver.init(document.querySelector('[role="banner"]'));
 
-    enableVisibleOnFocus.init();
-    buildFlyoutMenuHTML();
+  enableVisibleOnFocus.init();
+  buildFlyoutMenuHTML();
 
-    // This is so we can use the breakpoint widths inside the documentation.
-    const breakpointWidth = window
-        .getComputedStyle(document.querySelector('.enable-flyout'))
-        .getPropertyValue('--enable-flyout__desktop-min');
-    Array.prototype.forEach.call(
-        document.querySelectorAll('.breakpoint-width'),
-        (el, i) => {
-            el.innerHTML = breakpointWidth;
-        },
-    );
+  // This is so we can use the breakpoint widths inside the documentation.
+  const breakpointWidth = window
+    .getComputedStyle(document.querySelector('.enable-flyout'))
+    .getPropertyValue('--enable-flyout__desktop-min');
+  Array.prototype.forEach.call(document.querySelectorAll('.breakpoint-width'), (el, i) => {
+    el.innerHTML = breakpointWidth;
+  });
 
-    pauseAnimControl.init();
+  pauseAnimControl.init();
 
-    // Add permalinks on all pages except home, so screen reader users, like VoiceOver users, can navigate via heading and have focus applied to the heading.
-    let headingIndex = 0;
+  // Add permalinks on all pages except home, so screen reader users, like VoiceOver users, can navigate via heading and have focus applied to the heading.
+  let headingIndex = 0;
 
-    if (location.href.indexOf('index.php') === -1) {
-        document
-            .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
-            .forEach((el) => {
-                // Only do this if:
-                // 1) it is not part of an example
-                // 2) it does not have an ancestor with class no-permalink-headings
-                if (
-                    el.closest('.enable-example') === null &&
-                    el.closest('.no-permalink-headings') === null &&
-                    el.closest('.cookie-banner') === null
-                ) {
-                    createPermalinksForHeading(el, headingIndex, true);
-                }
+  if (location.href.indexOf('index.php') === -1) {
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]').forEach((el) => {
+      // Only do this if:
+      // 1) it is not part of an example
+      // 2) it does not have an ancestor with class no-permalink-headings
+      if (
+        el.closest('.enable-example') === null &&
+        el.closest('.enable-example--no-border') === null &&
+        el.closest('.no-permalink-headings') === null
+      ) {
+        createPermalinksForHeading(el, headingIndex, true);
+      }
 
-                // If the heading doesn't have a tabindex, add one.
-                if (el.getAttribute('tabIndex') === null) {
-                    el.setAttribute('tabIndex', '-1');
-                }
+      // If the heading doesn't have a tabindex, add one.
+      if (el.getAttribute('tabIndex') === null) {
+        el.setAttribute('tabIndex', '-1');
+      }
 
-                return;
-            });
-    }
-
-    focusDeepLink();
-
-    tableOfContents.init({
-        skipPages: ['/index.php', '/faq.php'],
-        showAsSidebarDefault: true,
-        numberFirstLevelHeadings: true,
-        selectorToSkipHeadingsWithin: '.enable-example, .cookie-banner',
-        collapseNestedHeadingsAfterLevel: 2,
+      return;
     });
+  }
+
+  focusDeepLink();
+
+  tableOfContents.init({
+    skipPages: ['/index.php', '/faq.php'],
+    showAsSidebarDefault: true,
+    numberFirstLevelHeadings: true,
+    selectorToSkipHeadingsWithin: '.enable-example, .enable-example--no-border',
+    collapseNestedHeadingsAfterLevel: 2,
+  });
 }
 
 initEnable();
@@ -103,51 +95,49 @@ showcode.addJsObj('initEnable', initEnable);
 showcode.addJsObj('buildFlyoutMenuHTML', buildFlyoutMenuHTML);
 
 if (document.location.hash === '#debug') {
-    console.log('logging enable events (debug mode)');
+  console.log('logging enable events (debug mode)');
 
-    // debug on event handlers
-    const events = {
-        'enable-listbox-change': 'value, id',
-        'enable-listbox-show': '',
-        'enable-listbox-hide': '',
-        'enable-combobox-change': 'value',
-        'enable-combobox-show': '',
-        'enable-combobox-hide': '',
-        'enable-focus-show': '',
-        'enable-focus-hide': '',
-        'enable-paginate-render': 'page',
-        'enable-pause-animations': '',
-        'enable-play-animations': '',
-        'enable-checked': 'group',
-        'enable-unchecked': 'group',
-        'enable-expanded': '',
-        'enable-collapsed': '',
-        'enable-table-sort': 'index',
-        'enable-switch-change': 'isChecked',
-        'enable-selected': '',
-        'enable-show': '',
-        'enable-hide': '',
-        'enable-spinbutton-change': 'value',
-    };
+  // debug on event handlers
+  const events = {
+    'enable-listbox-change': 'value, id',
+    'enable-listbox-show': '',
+    'enable-listbox-hide': '',
+    'enable-combobox-change': 'value',
+    'enable-combobox-show': '',
+    'enable-combobox-hide': '',
+    'enable-focus-show': '',
+    'enable-focus-hide': '',
+    'enable-paginate-render': 'page',
+    'enable-pause-animations': '',
+    'enable-play-animations': '',
+    'enable-checked': 'group',
+    'enable-unchecked': 'group',
+    'enable-expanded': '',
+    'enable-collapsed': '',
+    'enable-table-sort': 'index',
+    'enable-switch-change': 'isChecked',
+    'enable-selected': '',
+    'enable-show': '',
+    'enable-hide': '',
+    'enable-spinbutton-change': 'value',
+  };
 
-    for (let eventName in events) {
-        const properties = events[eventName].split(',');
-        document.addEventListener(
-            eventName,
-            (event) => {
-                for (var i = 0; i < properties.length; i++) {
-                    const property = properties[i].trim();
-                    console.log(
-                        `${eventName} fired. ${property}:`,
-                        event.detail && event.detail[property]
-                            ? event.detail[property]()
-                            : '',
-                        'target:',
-                        event.target,
-                    );
-                }
-            },
-            true,
-        );
-    }
+  for (let eventName in events) {
+    const properties = events[eventName].split(',');
+    document.addEventListener(
+      eventName,
+      (event) => {
+        for (var i = 0; i < properties.length; i++) {
+          const property = properties[i].trim();
+          console.log(
+            `${eventName} fired. ${property}:`,
+            event.detail && event.detail[property] ? event.detail[property]() : '',
+            'target:',
+            event.target,
+          );
+        }
+      },
+      true,
+    );
+  }
 }
