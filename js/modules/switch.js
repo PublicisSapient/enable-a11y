@@ -23,7 +23,7 @@ const Switch = new function () {
 
     this.onClick = (evt) => {
         let el = evt.target;
-        const id = el.id;
+        const id = el.id.split('-')[0];
         const switchEl = el.closest('[role="switch"]');
         let ariaDescribedBy;
         let isChecked;
