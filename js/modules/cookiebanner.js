@@ -1,9 +1,15 @@
 'use-strict'
 
+import { DialogFocusManager } from "../enable-libs/dialogFocusManager.js";
+
 const cookieBanner = new function () {
   this.init = function () {
     setUpShowModalButton();
     setUpShowNonModalButton();
+
+    const dialog = document.getElementById(`cookie-banner`);
+    const manager = new DialogFocusManager();
+    manager.focusOn(dialog);
   }
 
   function setUpShowModalButton() {
