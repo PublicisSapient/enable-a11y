@@ -65,3 +65,13 @@ nav.breadcrumb [aria-current="page"] {
   font-weight: 700;
   text-decoration: none;
 }
+@media (prefers-color-scheme: dark) {
+  nav.breadcrumb [aria-current="page"] {
+    color: #fff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  nav.breadcrumb {
+    background: #282828;
+  }
+}
