@@ -101,7 +101,7 @@
 
 <div id="cookie-banner-example2" class="enable-example--no-border">
   <aside id="non-modal-cookie-banner-example" class="non-modal-cookie-banner__example" aria-labelledby="non-modal-cookie-banner-title">
-    <button id="non-modal-cookie-banner-close-button-example" class="cookie-banner__close-button" autofocus>
+    <button id="non-modal-cookie-banner-close-button-example" class="cookie-banner__close-button">
       <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
     </button>
 
