@@ -100,7 +100,7 @@
 <button id="show-non-modal-button" aria-haspopup="dialog">Show Non-Modal Banner</button>
 
 <div id="cookie-banner-example2" class="enable-example--no-border">
-  <aside id="non-modal-cookie-banner" class="non-modal-cookie-banner" aria-labelledby="non-modal-cookie-banner-title">
+  <aside id="non-modal-cookie-banner" class="non-modal-cookie-banner__example" aria-labelledby="non-modal-cookie-banner-title">
     <button id="non-modal-cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
       <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
     </button>
@@ -124,7 +124,25 @@
 
 <?php includeShowcode("cookie-banner-example2"); ?>
 
-<p>
-  With the HTML set up, use the built-in methods <code>.showModal()</code> or <code>.show()</code> for the
-  <code>dialog</code> HTML tag to show a modal or a non-modal dialog, respectively.
-</p>
+<script type="application/json" id="cookie-banner-example2-props">
+  {
+    "replaceHtmlRules": {},
+    "steps": [
+      {
+        "label": "Use the HTML aside tag",
+        "highlight": "%OPENCLOSECONTENTTAG%aside",
+        "notes": ""
+      },
+      {
+        "label": "Ensure the aside element has \"aria-labelledby\" set",
+        "highlight": "%INLINE%aria-labelledby=\"non-modal-cookie-banner-title\"",
+        "notes": "Using aria-labelledby along with a div element with a role of document ensures it's read out when the dialog is opened."
+      },
+      {
+        "label": "Use the document role to enclose the cookie explanation",
+        "highlight": "%INLINE%role=\"document\"",
+        "notes": "This presents the content in reading mode for screen readers."
+      }
+    ]
+  }
+</script>

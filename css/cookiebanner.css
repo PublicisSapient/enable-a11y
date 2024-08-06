@@ -65,7 +65,9 @@
   font-size: large;
 }
 .non-modal-cookie-banner {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -77,9 +79,7 @@
   padding: 1em;
   text-align: center;
   z-index: 1000;
-  justify-content: space-between;
 }
-.non-modal-cookie-banner__show {
-  display: flex;
-  flex-direction: column;
+.non-modal-cookie-banner__example {
+  display: none;
 }

@@ -62,7 +62,9 @@
 }
 
 .non-modal-cookie-banner {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -74,10 +76,8 @@
   padding: 1em;
   text-align: center;
   z-index: 1000; // Ensure the non-modal dialog is above other content
-  justify-content: space-between;
 
-  &__show {
-    display: flex;
-    flex-direction: column;
+  &__example {
+    display: none;
   }
 }
