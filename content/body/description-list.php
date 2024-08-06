@@ -8,7 +8,7 @@
 
         <h2>A HTML Description List</h2>
 
-        <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd</code> tags, respectively.
+        <p>Definition lists are just name/value pairs, marked up with the <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> tags, respectively.
         Note that, unlike the ARIA version, there is no group tag around the name/value pairs.</p>
 
         <?php includeStats(["isForNewBuilds" => true]); ?>
@@ -101,3 +101,32 @@
         }
         </script>
     
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://www.useragentman.com/enable/description-list.php",
+                "name": "Accessible Description Lists",
+                "description": "How to create accessible description lists"
+                "additionalType": "https://www.useragentman.com/enable/description-list.php",
+                "hasPart": [
+                    {
+                    "@type": "WebPageElement",
+                    "name": "Native Description List Example",
+                    "description": "Instructions and examples for creating accessible native HTML description lists.",
+                    "additionalType": "http://schema.org/WebPageElement"
+                    },
+                    {
+                    "@type": "WebPageElement",
+                    "name": "Aria Roles example",
+                    "description": "Instructions and examples for creating accessible custom description lists.",
+                    "additionalType": "http://schema.org/WebPageElement",
+                    "accessibilityAPI": "ARIA",
+                    "accessibilityControl": [
+                        "fullKeyboardControl",
+                        "fullMouseControl"
+                    ]
+                    }
+                ]
+            }
+        </script>
