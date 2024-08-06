@@ -21,12 +21,5 @@ if ($fileProps->title != "") {
 <meta name="twitter:image" content="<?= $fileProps->posterImg ?>" />
 
 <link rel="icon" type="image/x-icon" href="images/ENABLE.svg">
-<script type="application/ld+json">
-    {
-          "@context": "https://schema.org",
-          "@type": "DefinedTerm",
-          "name": "<?= $fileProps->definedTermName ?>",
-          "description": "<?= $fileProps->definedTermDescription ?>"
-    }
-</script>
+
 

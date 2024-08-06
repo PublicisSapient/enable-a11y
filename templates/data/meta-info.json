@@ -77,9 +77,7 @@
   },
   "focus-styling.php": {
     "title": "How to Create Accessible Focus Outlines in CSS",
-    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
-    "definedTermName":"What is a Focus Outline?",
-    "definedTermDescription":"Simply put, when a specific HTML element is ready to accept keyboard input, it is considered to be 'in focus'. As users navigate a webpage using the keyboard (typically via the Tab key), different elements receive focus, allowing screen readers to read their content. According to accessibility standards, any element in focus should have a visible border around it, known as the focus outline. This helps users, especially those relying on screen readers or keyboard navigation, to know which element is currently active."
+    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide."
   },
   "form-error-checking.php": {
     "title": "Accessible Form Error Checking",

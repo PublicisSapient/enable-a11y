@@ -357,3 +357,45 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
   }
 ]}
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How to Create Accessible Focus Outlines in CSS",
+  "description": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
+  "url": "https://www.useragentman.com/enable/focus-styling.php",
+  "mainEntity": [
+    {
+      "@type": "Article",
+      "name": "What is Focus Outline?",
+      "articleBody": "when a specific HTML element is ready to accept keyboard input, it is considered to be "in focus." As users navigate a webpage using the keyboard (typically via the Tab key), different elements receive focus, allowing screen readers to read their content",
+      "url": "https://www.useragentman.com/enable/focus-styling.php#what-is-a-focus-outline---heading"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Focus Styling for Keyboard Users Only",
+      "text": "How to style focus outline specially for keyboard users",
+      "url": "https://www.useragentman.com/enable/focus-styling.php#focus-styling-for-keyboard-users-only--heading"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Increase Hit Area Inside Focusable Elements",
+      "text": "Identify all focusable elements on the page and evaluate their hit area.",
+      "url": "https://www.useragentman.com/enable/focus-styling.php#increase-hit-areas-inside-focusable-elements--heading"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Issues with CSS Transitions and CSS Outline in Safari",
+      "text": "Understand common issues with CSS transitions and CSS outline in Safari.",
+      "url": "https://www.useragentman.com/enable/focus-styling.php#issues-with-css-transitions-and-css-outline-in-safari--heading"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Considerations for Windows High Contrast Mode Users",
+      "text": "Test your website in Windows High Contrast mode to identify any accessibility issues.",
+      "url": "https://www.useragentman.com/enable/focus-styling.php#don-t-forget-windows-high-contrast-mode-users---heading"
+    }
+  ]
+}
+</script>
