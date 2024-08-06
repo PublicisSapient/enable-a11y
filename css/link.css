@@ -26,10 +26,10 @@ a[target="_blank"] .new-window-icon-dark {
 }
 @media (prefers-color-scheme: dark) {
   a[target="_blank"] {
-    color: #A8C7FA;
+    color: #a8c7fa;
   }
   a[target="_blank"]:visited {
-    color: #4593F8;
+    color: #4593f8;
   }
   a[target="_blank"] .new-window-icon {
     display: none;

@@ -493,6 +493,9 @@ iframe:focus-visible {
   .heading__deeplink:visited {
     color: #ccc;
   }
+  .enable-example span {
+    color: #4593F8;
+  }
 }
 /*********************************************************
  * a11y.css - a stylesheet to help create 

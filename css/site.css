@@ -266,3 +266,8 @@
 .enable-flyout__open-menu-button {
   margin-top: -3px;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-stats a {
+    color: #3775c6;
+  }
+}
