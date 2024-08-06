@@ -255,6 +255,13 @@
             position: relative;
             z-index: 2;
         }
+
+        &:visited {
+            color: @color0;
+            @media (prefers-color-scheme: dark) {
+                color: @color0;
+            }
+        }
     }
 
     &__open-level-button {

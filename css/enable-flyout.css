@@ -196,6 +196,18 @@
   position: relative;
   z-index: 2;
 }
+.enable-flyout__open-level-button:visited,
+.enable-flyout__close-level-button:visited,
+.enable-flyout__link:visited {
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .enable-flyout__open-level-button:visited,
+  .enable-flyout__close-level-button:visited,
+  .enable-flyout__link:visited {
+    color: #fff;
+  }
+}
 .enable-flyout-container--positioned-left .enable-flyout__open-level-button {
   padding-right: 10px;
 }
