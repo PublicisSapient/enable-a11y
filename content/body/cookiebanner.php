@@ -100,14 +100,14 @@
 <button id="show-non-modal-button" aria-haspopup="dialog">Show Non-Modal Banner</button>
 
 <div id="cookie-banner-example2" class="enable-example--no-border">
-  <aside id="non-modal-cookie-banner" class="non-modal-cookie-banner__example" aria-labelledby="non-modal-cookie-banner-title">
-    <button id="non-modal-cookie-banner-close-button" class="cookie-banner__close-button" autofocus>
+  <aside id="non-modal-cookie-banner-example" class="non-modal-cookie-banner__example" aria-labelledby="non-modal-cookie-banner-title">
+    <button id="non-modal-cookie-banner-close-button-example" class="cookie-banner__close-button" autofocus>
       <img class="cookie-banner__close-button__icon" src="images/close-window.svg" alt="close cookie notice">
     </button>
 
     <div role="document">
-      <h2 id="non-modal-cookie-banner-title" class="cookie-banner__title">Cookie Notice</h2>
-      <p id="non-modal-cookie-banner-message">
+      <h2 id="non-modal-cookie-banner-title-example" class="cookie-banner__title">Cookie Notice</h2>
+      <p id="non-modal-cookie-banner-message-example">
         We use strictly necessary cookies to make our Sites work. In addition, if you consent, we will use optional
         functional, performance and targeting cookies to help us understand how people use our website, to improve your
         user experience and to provide you with targeted advertisements. You can accept all cookies, or click to review
@@ -116,8 +116,8 @@
     </div>
 
     <div class="cookie-banner__action-buttons">
-      <button id="non-modal-cookie-banner-accept-button" class="cookie-banner__accept-button">Accept</button>
-      <button id="non-modal-cookie-banner-reject-button" class="cookie-banner__reject-button">Reject</button>
+      <button id="non-modal-cookie-banner-accept-button-example" class="cookie-banner__accept-button">Accept</button>
+      <button id="non-modal-cookie-banner-reject-button-example" class="cookie-banner__reject-button">Reject</button>
     </div>
   </aside>
 </div>
