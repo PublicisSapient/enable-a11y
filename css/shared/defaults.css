@@ -327,9 +327,15 @@ iframe:focus-visible {
     color: #ccc;
   }
   a {
-    color: #4593F8;
+    color: #4593f8;
   }
   a:visited {
-    color: #C589F9;
+    color: #c589f9;
+  }
+  .heading__deeplink {
+    color: #ccc;
+  }
+  .heading__deeplink:visited {
+    color: #ccc;
   }
 }
