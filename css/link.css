@@ -18,6 +18,25 @@ a[target="_blank"]:visited {
 }
 a[target="_blank"] .new-window-icon {
   height: 0.75rem;
+  display: inline;
+}
+a[target="_blank"] .new-window-icon-dark {
+  height: 0.75rem;
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  a[target="_blank"] {
+    color: #A8C7FA;
+  }
+  a[target="_blank"]:visited {
+    color: #4593F8;
+  }
+  a[target="_blank"] .new-window-icon {
+    display: none;
+  }
+  a[target="_blank"] .new-window-icon-dark {
+    display: inline;
+  }
 }
 nav.breadcrumb {
   padding: 0.8em 1em;

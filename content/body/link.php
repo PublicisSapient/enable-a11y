@@ -154,6 +154,7 @@
       Links That Open a New Window or Tab
 
       <img class="new-window-icon" src="images/icons/new-window.svg" alt="(Opens in a new window)" />
+      <img class="new-window-icon-dark" src="images/icons/new-window_darkmode.svg" alt="(Opens in a new window)" />
 
     </a>
   </p>
