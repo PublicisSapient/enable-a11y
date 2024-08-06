@@ -1,0 +1,1 @@
+<script src="js/demos/video-player.js" type="module"></script>
