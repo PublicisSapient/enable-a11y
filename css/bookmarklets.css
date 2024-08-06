@@ -11,3 +11,8 @@
 main strong {
   background: white;
 }
+@media (prefers-color-scheme: dark) {
+  main strong {
+    background: #222;
+  }
+}
