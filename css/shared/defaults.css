@@ -326,4 +326,7 @@ iframe:focus-visible {
   strong {
     color: #ccc;
   }
+  a {
+    color: #4593F8;
+  }
 }

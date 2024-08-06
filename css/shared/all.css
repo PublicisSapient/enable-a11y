@@ -481,6 +481,9 @@ iframe:focus-visible {
   strong {
     color: #ccc;
   }
+  a {
+    color: #4593F8;
+  }
 }
 /*********************************************************
  * a11y.css - a stylesheet to help create 
