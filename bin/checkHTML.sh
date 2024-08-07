@@ -23,7 +23,28 @@
 
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
-MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+
+which ifconfig 1>&2 2> /dev/null
+if [ "$?" = "0" ]
+then
+	MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+else
+	id=$(netsh interface show interface | grep "Connected" | awk '{print $4}')
+	MYIP=$(ipconfig | awk -v desc="$id" '
+		BEGIN {found=0}
+		{
+			if ($0 ~ desc) {
+			found=1
+			} else if ($0 ~ /^[^ ]/ && found) {
+				found=0
+			}
+			if (found && /IPv4 Address/) {
+				gsub(/.*: /, "", $0)
+				print $0
+				exit
+			}
+		}')
+fi
 PROJECT_URL="http://$MYIP:8888/index.php"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PHP=`bin/findPHP.sh`
@@ -214,7 +235,7 @@ downloadHTML() {
 
 
 	#.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
-	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
+	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php multimedia-content.php"
 
 
 	echo "Downloading rendered HTML..."

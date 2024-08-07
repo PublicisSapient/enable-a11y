@@ -539,8 +539,8 @@
                             }, {
                                 "id": "flyout__link",
                                 "props": {
-                                    "label": "Video Content",
-                                    "url-slug": "video-content",
+                                    "label": "Mulitmedia Content",
+                                    "url-slug": "multimedia-content",
                                     "alt": ""
                                 }
                             }]
