@@ -171,6 +171,10 @@
     "title": "Accessible Numeric Fields",
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
+  "datetimepicker.php": {
+    "title": "Accessible DateTimePicker",
+    "desc": "An accessible DateTimePicker is a user interface component designed to allow users to easily select dates and times, with features that ensure usability for individuals with disabilities."
+  },
   "status.php": {
     "title": "The ARIA Status Role",
     "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
