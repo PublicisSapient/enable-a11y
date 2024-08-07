@@ -1,8 +1,24 @@
-node_modules
-.DS_Store
-api-cache
+# compiled output
 tmp
-.vscode
+api-cache
+
+# dependencies
+node_modules
 
 # auto-gen PHP files/logs
 php_errors.log
+
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+
+# misc
+npm-debug.log
+yarn-error.log
+package-lock.json
