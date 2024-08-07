@@ -36,7 +36,7 @@
   </li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
   </li>
-  <li><a href="https://github.com/akr3081">Adam Rock</a> for the <a href="/meter.php">accessible meter component</a>
+  <li><a href="https://github.com/akr3081">Adam Rock</a> for the accessible <a href="/meter.php">meter</a> and <a href="/audio-player.php">audio player</a> components
   </li>
 
   <li><a href="https://code.iamkate.com">Kate Morley</a> for her <a

@@ -25,6 +25,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // Replace initDescription and handleTranscriptToggle methods with custom ones 
   // that add extra functionality
   AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
+  AblePlayer.prototype.oldInitDefaultCaption = AblePlayer.prototype.initDefaultCaption;
   AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
   AblePlayer.prototype.oldGetRootPath = AblePlayer.prototype.getRootPath;
 
@@ -54,6 +55,12 @@ function ablePlayerCustomizations($, extraCustomizations) {
       el.setAttribute('aria-label', `${ariaLabels[i]} ${j}`);
     });
   }
+  }
+
+  // Resolves issue where transcript visibility is not set properly when only captions are present.
+  AblePlayer.prototype.initDefaultCaption = function() {
+    this.oldInitDefaultCaption();
+    adjustTranscriptVisibility(this);
   }
 
   // When transcript button is clicked, adjust layout of page.

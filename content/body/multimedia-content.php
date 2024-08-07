@@ -365,7 +365,7 @@ In this video, I will be demonstrating how to create an accessible modal dialog 
     it with the similar music from a different source. The results can be quite impressive.</p>
 
 <div role="figure" class="video-figure" aria-labelledby="eighth-man-video-before">
-    <div class="enable-video-player">
+    <div class="enable-media-player">
         <video data-able-player id="eighth-man-video-before__video" data-youtube-id="cJR0tBNj3uA" preload="auto"
             data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
             <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
@@ -378,7 +378,7 @@ In this video, I will be demonstrating how to create an accessible modal dialog 
 </div>
 
 <div role="figure" class="video-figure" aria-labelledby="eighth-man-video-after">
-    <div class="enable-video-player">
+    <div class="enable-media-player">
         <video data-able-player id="eighth-man-video-after__video" data-youtube-id="K-B7-GS6ipM" preload="auto"
             data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
             <track kind="descriptions" src="vtt/clip-8th-man.vtt" srclang="en" label="English Audio Descriptions">
@@ -442,7 +442,7 @@ In this video, I will be demonstrating how to create an accessible modal dialog 
 </ol>
 
 <div role="figure" class="video-figure" aria-labelledby="canada-covid-update-example">
-    <div class="enable-video-player">
+    <div class="enable-media-player">
         <video data-able-player id="canada-covid-update-example__video" data-youtube-id="00TbnrkLY5k" preload="auto"
             data-skin="2020" data-root-path="./js/enable-libs/ableplayer/" data-heading-level="3">
             <track kind="captions" src="vtt/covid-update.vtt" srclang="en"
