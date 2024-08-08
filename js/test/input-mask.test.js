@@ -146,7 +146,7 @@ describe('Input mask test suite', () => {
             },
         );
         // check screenshot for the selection, should match up - "123-45"
-        await page.screenshot({ path: 'mouseSelection.png' });
+        // await page.screenshot({ path: 'mouseSelection.png' });
         expect(expectedSelection).toBe(selectedText);
     });
 
@@ -178,7 +178,7 @@ describe('Input mask test suite', () => {
             },
         );
         // check screenshot for the selection, should match up - "6-7890"
-        await page.screenshot({ path: 'keyBoardSelection.png' });
+        // await page.screenshot({ path: 'keyBoardSelection.png' });
         expect(expectedSelection).toBe(selectedText);
     });
 
