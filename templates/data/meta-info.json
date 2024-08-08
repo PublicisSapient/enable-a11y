@@ -52,6 +52,10 @@
     "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
     "isNPM": "true"
   },
+  "cookiebanner.php": {
+    "title": "Accessible Cookie Banners",
+    "desc": "Blocking and non-blocking accessible cookie banners."
+  },
   "date.php": {
     "title": "Accessible Date Widget",
     "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web developer to do?  ",
