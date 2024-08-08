@@ -8,6 +8,14 @@ figure,
     border: solid 1px #ccc;
     background: #ffffcc;
 
+    &:has(.showcode) {
+        padding: 0;
+
+        code {
+            max-width: calc(100vw - 40px);
+        }
+    }
+
     img {
         max-width: 100%;
     }
