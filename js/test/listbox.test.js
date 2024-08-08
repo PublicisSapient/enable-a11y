@@ -336,11 +336,11 @@ describe('ARIA Listbox', () => {
     });
 
     it('Iterate through all values and click ESCAPE to choose value', async () => {
-        let domInfo, listboxValues;
+        let domInfo;
 
         await page.goto(`${config.BASE_URL}/listbox.php`);
 
-        listboxValues = await cycleThroughItems();
+        await cycleThroughItems();
 
         // Now let's press ESCAPE to check if the correct value is set.
         page.keyboard.press('Escape');

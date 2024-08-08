@@ -1,6 +1,5 @@
 const fs = require('fs');
 const fsExtra = require('fs-extra');
-const { exec } = require('child_process');
 
 console.log('Running promote-node-modules-to-server.js');
 console.log('clearing lib directory');

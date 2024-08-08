@@ -8,13 +8,6 @@ const alert = new (function () {
         assertiveAlertEl.innerHTML = `The time now is ${new Date().toLocaleTimeString()}`;
     };
 
-    this.checkboxChangeHandler = (e) => {
-        assertiveAlertEl.setAttribute(
-            'aria-expanded',
-            checkboxEl.checked ? 'true' : 'false',
-        );
-    };
-
     this.init = () => {
         sayTimeEl.addEventListener('click', this.sayTimeClickHandler);
     };

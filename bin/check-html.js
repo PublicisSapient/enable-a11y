@@ -1,6 +1,5 @@
 const fs = require('fs');
 const wget = require('wget-improved');
-const { execFile } = require('child_process');
 const { vnu } = require('vnu');
 
 const htmlList = [];
@@ -27,7 +26,7 @@ async function getHTML() {
                 console.error(err);
                 return 1;
             });
-            download.on('end', function (output) {
+            download.on('end', function () {
                 numFilesIndexed++;
                 if (numFilesIndexed === numFiles) {
                     console.log('Files downloaded.  Analyzing');

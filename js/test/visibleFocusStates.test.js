@@ -19,9 +19,7 @@ describe('Test Focus States on all pages on Enable', () => {
     });
 
     async function testFocusStates(filename, isDesktop) {
-        let domInfo,
-            tabStops = 0,
-            page;
+        let domInfo, page;
 
         if (isDesktop) {
             page = await desktopBrowser.newPage();

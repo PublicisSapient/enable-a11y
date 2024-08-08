@@ -1,4 +1,4 @@
-var htmlButtonExample = new (function () {
+new (function () {
     const activate = (e) => {
         const { target } = e;
         if (

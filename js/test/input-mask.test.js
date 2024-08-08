@@ -141,7 +141,7 @@ describe('Input mask test suite', () => {
         //get the selection
         const selectedText = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => {
+            () => {
                 return window.getSelection().toString();
             },
         );
@@ -173,7 +173,7 @@ describe('Input mask test suite', () => {
         //get the selection
         const selectedText = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => {
+            () => {
                 return window.getSelection().toString();
             },
         );

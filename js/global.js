@@ -15,7 +15,6 @@ import Templify from './modules/templify.js';
 import EnableFlyout from './modules/enable-flyout.js';
 import enableVisibleOnFocus from './modules/enable-visible-on-focus.js';
 import offscreenObserver from './modules/offscreen-observer.js';
-import textZoom from './demos/hero-image-text-resize.js';
 import tableOfContents from './modules/enable-toc.js';
 import {
     focusDeepLink,
@@ -31,7 +30,7 @@ function buildFlyoutMenuHTML() {
     const hamburgerMenuJSON = JSON.parse(hamburgerMenuJSONEl.innerHTML);
 
     // Now, let's use Templify to convert the JSON into HTML.
-    const hamburgerMenu = new Templify(hamburgerMenuEl, hamburgerMenuJSON);
+    new Templify(hamburgerMenuEl, hamburgerMenuJSON);
 
     // Initialize the hamburger menu.
     EnableFlyout.init();
@@ -49,7 +48,7 @@ function initEnable() {
         .getPropertyValue('--enable-flyout__desktop-min');
     Array.prototype.forEach.call(
         document.querySelectorAll('.breakpoint-width'),
-        (el, i) => {
+        (el) => {
             el.innerHTML = breakpointWidth;
         },
     );

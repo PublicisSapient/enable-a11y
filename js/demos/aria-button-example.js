@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 var ariaButtonExample = new (function () {
     const activate = (e) => {
         const { target } = e;

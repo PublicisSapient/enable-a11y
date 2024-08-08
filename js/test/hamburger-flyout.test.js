@@ -2,7 +2,6 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-import puppeteer from 'puppeteer';
 
 let mobileBrowser, desktopBrowser;
 
@@ -121,7 +120,7 @@ describe('Hamburger Menu Tests', () => {
         try {
             let domInfo;
 
-            browser = isDesktop ? desktopBrowser : mobileBrowser;
+            const browser = isDesktop ? desktopBrowser : mobileBrowser;
             const page = await browser.newPage();
             await page.goto(
                 `${config.BASE_URL}/multi-level-hamburger-menu.php`,
@@ -140,7 +139,6 @@ describe('Hamburger Menu Tests', () => {
                 const mobileMenuButton = document.querySelector(
                     '.enable-flyout__open-menu-button',
                 );
-                const { activeElement } = document;
 
                 const buttonStyle = window.getComputedStyle(
                     mobileMenuButton,

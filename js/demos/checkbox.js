@@ -1,5 +1,3 @@
-import showcode from '../enable-libs/showcode.js';
-
 const $form = document.getElementById('group-example__form');
 const $checkboxes = $form.querySelectorAll('input[type="checkbox"]');
 const $error = document.getElementById('html-checkbox__error');
@@ -25,5 +23,3 @@ $form.addEventListener('submit', (e) => {
         $error.focus();
     }
 });
-
-//showcode.addJsObj('checkbox', checkbox);

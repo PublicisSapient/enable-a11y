@@ -63,7 +63,7 @@ const testHelpers = new (function () {
         );
     };
 
-    this.pauseFor = async function (n) {
+    this.pauseFor = async function () {
         return await new Promise((res) =>
             setTimeout(res, config.KEYPRESS_TIMEOUT),
         );

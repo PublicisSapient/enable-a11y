@@ -1,7 +1,6 @@
 'use strict';
 
 import config from './test-config.js';
-import testHelpers from './test-helpers.js';
 
 describe('ARIA Checkbox Tests', () => {
     beforeAll(async () => {});
@@ -14,7 +13,6 @@ describe('ARIA Checkbox Tests', () => {
                 '#example-role-checkbox [role="checkbox"]',
             );
             const checkboxEl = checkboxEls[n];
-            let r;
 
             return checkboxEl.getAttribute('aria-checked');
         }, n);
@@ -22,7 +20,7 @@ describe('ARIA Checkbox Tests', () => {
 
     // Test #1
     it('See if all ARIA checkboxes on page are keyboard accessible', async () => {
-        let ariaChecked, domInfo;
+        let domInfo;
 
         await page.goto(`${config.BASE_URL}/checkbox.php`);
 
@@ -82,7 +80,7 @@ describe('ARIA Checkbox Tests', () => {
             // press space and check if it's unchecked.
             await page.keyboard.press('Space');
 
-            ariaChecked = await getCheckboxValue(i);
+            let ariaChecked = await getCheckboxValue(i);
             expect(ariaChecked).toBe(notOrigAriaChecked);
 
             // press space again and check if it's unchecked.
@@ -181,7 +179,7 @@ describe('Indeterminate Checkbox Tests', () => {
 
     // Test #1
     it('Test HTML5 Indeterminate Checkboxes ', async () => {
-        let ariaChecked, domInfo;
+        let domInfo;
 
         await page.goto(`${config.BASE_URL}/checkbox.php`);
 

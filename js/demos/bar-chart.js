@@ -21,7 +21,7 @@ const lineChartDemo = function (chartSel, tableSel) {
             series.push([]);
         }
 
-        $bodyRows.forEach(($el, i) => {
+        $bodyRows.forEach(($el) => {
             const $rowData = $el.querySelectorAll('td');
 
             labels.push($el.querySelector('th').innerText);
@@ -105,5 +105,5 @@ const lineChartDemo = function (chartSel, tableSel) {
     $chart.classList.add('bar-chart--initialized');
 };
 
-const demo = new lineChartDemo('#bar-chart', '#bar-chart__data');
+new lineChartDemo('#bar-chart', '#bar-chart__data');
 tabs.init();

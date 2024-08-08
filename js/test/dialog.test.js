@@ -12,7 +12,6 @@ describe('Dialog Tests', () => {
         r = await page.evaluate(() => {
             const dialogEl = document.querySelector('#favDialog');
             const { body } = document;
-            let r = false;
             let currentEl = dialogEl;
 
             do {
@@ -152,7 +151,7 @@ describe('Dialog Tests', () => {
     });
 
     it('Check To Ensure Nodes Outside Dialog are hidden with aria-hidden', async () => {
-        let el, r;
+        let r;
 
         await page.goto(`${config.BASE_URL}/dialog.php`);
         // focus on button that opens modal;

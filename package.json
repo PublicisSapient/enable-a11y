@@ -46,7 +46,7 @@
     "lint": "bin/checkHTML.sh",
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
-    "eslint": "eslint \"content/**\" \"js/**\" \"bin/**\"",
+    "eslint": "eslint .",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "watch": "npm-watch",
