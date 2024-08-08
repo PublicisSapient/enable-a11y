@@ -1,5 +1,23 @@
 @import "shared/mixins-and-vars";
 
+/* Common styling for button entrypoints */
+.tooltip-button-common {
+    color: white;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip-button-hover {
+    /* Hover styling */
+    transition: background-color 0.3s ease; /* smooth transition */
+    background-color: darkblue; /* Example darker background on hover */
+}
+
+/* Main tooltip */
 .tooltip {
     display: block;
     background: black;
@@ -13,22 +31,19 @@
     /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
-     */
+    */
     border: 1px solid transparent;
 
     &:before {
         content: "";
-        width: 1rem;
-        height: 1rem;
-        background: black;
+        width: 0.01rem;
+        height: 0.01rem;
         position: absolute;
-        top: -0.5rem;
-        left: 2rem;
-        transform: rotate(45deg);
-
+        left: 0.1rem;
         /* Again, we put a transparent border here for Windows High Contrast Mode */
-        border-top: 1px solid transparent;
-        border-left: 1px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
     }
 
     &:after {
@@ -42,5 +57,51 @@
 
     &--hidden {
         .enable__visually-hidden();
+    }
+
+    /* Additional tooltip styles */
+    &--top:before {
+        top: -0.5rem;
+    }
+
+    &--bottom:before {
+        bottom: -0.5rem;
+        transform: rotate(180deg);
+    }
+
+    /* Button entrypoints */
+    &__icon-button {
+        .tooltip-button-common();
+        width: 20px;
+        height: 20px;
+        border-radius: 50%; /* to make it circular */
+        font-weight: bold;
+        font-size: (12 / @px); /* adjust font size as needed */
+
+        &:hover {
+            .tooltip-button-hover();
+        }
+
+        /* Ensure the button content is centered */
+        .icon {
+            display: block; /* Ensure block display for icon */
+            text-align: center; /* Center text horizontally */
+            line-height: 1; /* Adjust line height as needed */
+        }
+    }
+
+    &__text-button {
+        .tooltip-button-common();
+        border-radius: 0.2rem;
+        padding: 0.25rem;
+        vertical-align: text-bottom;
+
+        &:hover {
+            .tooltip-button-hover();
+        }
+
+        @media only screen and (min-width: 720px) {
+            vertical-align: bottom;
+        }
     }
 }
