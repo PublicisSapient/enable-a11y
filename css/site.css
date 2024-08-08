@@ -267,19 +267,25 @@
   margin-top: -3px;
 }
 @media (prefers-color-scheme: dark) {
+  .enable-stats__desc {
+    color: white;
+  }
   .enable-stats a {
-    color: #D6E0EB;
+    color: #d6e0eb;
   }
   .enable-stats__desc--scratch {
     background-color: #3c4c3d;
   }
   .enable-stats__desc--integrate {
-    background-color: #7D5D12;
+    background-color: #7d5d12;
   }
   .enable-stats__desc--npm {
     background-color: #516664;
   }
-  .enable-stats__desc {
-    color: white;
+  .enable-stats__desc--do-not {
+    background-color: #763f56;
+  }
+  .enable-stats__desc--style {
+    background-color: #432155;
   }
 }
