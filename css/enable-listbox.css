@@ -47,6 +47,13 @@ fieldset .legend,
   top: -1.5em;
   margin-bottom: 0px !important;
 }
+@media (prefers-color-scheme: dark) {
+  fieldset,
+  .fieldset,
+  [role="radiogroup"] {
+    background-color: #333;
+  }
+}
 /* These are styles just for the global error */
 .error {
   text-align: left;

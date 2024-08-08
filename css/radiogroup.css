@@ -121,3 +121,8 @@ fieldset .legend,
   border-bottom: none;
   text-align: left;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-radio [type="radio"] + label {
+    color: #ddd;
+  }
+}
