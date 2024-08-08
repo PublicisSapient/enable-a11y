@@ -62,3 +62,25 @@
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .product-tile {
+        color: white;
+        border: solid 1px #555;
+
+        &__badge {
+            background: #555;
+        }
+
+        del,
+        ins,
+        mark {
+            color: white;
+        }
+
+        del,
+        mark.del {
+            color: white;
+        }
+    }
+}
