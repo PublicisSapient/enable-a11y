@@ -68,3 +68,8 @@ fieldset .legend,
   height: 0.7rem;
   margin-right: 0.5em;
 }
+@media (prefers-color-scheme: dark) {
+  .error {
+    color: #ff6a6a;
+  }
+}
