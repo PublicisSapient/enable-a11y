@@ -175,7 +175,7 @@ fieldset .legend,
     background: #222;
   }
   .enable-listbox [role="option"]:focus {
-    background: #0A4481;
+    background: #0a4481;
   }
   .enable-listbox button {
     background: #ccc;
