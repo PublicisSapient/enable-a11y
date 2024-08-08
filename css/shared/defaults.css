@@ -321,7 +321,7 @@ iframe:focus-visible {
     background: #444;
   }
   code {
-    background-color: #555;
+    background-color: #111;
   }
   strong {
     color: #ccc;
@@ -339,6 +339,6 @@ iframe:focus-visible {
     color: #ccc;
   }
   .enable-example span {
-    color: #4593f8;
+    color: #4593F8;
   }
 }

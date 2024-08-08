@@ -151,6 +151,12 @@
   top: -1.5em;
   display: block;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-form-example fieldset,
+  .enable-form-example .aria-form-group {
+    background-color: #222;
+  }
+}
 .enable-form-example [role="radio"],
 .enable-form-example [role="checkbox"] {
   display: inline-block;
