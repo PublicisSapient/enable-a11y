@@ -166,3 +166,18 @@ fieldset .legend,
 .enable-listbox .hidden {
   display: none;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-listbox {
+    background: #444;
+    border: 1px solid #222;
+  }
+  .enable-listbox [role="listbox"] {
+    background: #222;
+  }
+  .enable-listbox [role="option"]:focus {
+    background: #0A4481;
+  }
+  .enable-listbox button {
+    background: #ccc;
+  }
+}
