@@ -19,5 +19,7 @@ if ($fileProps->title != "") {
 <meta name="twitter:description" content="<?= $fileProps->desc ?>" />
 <meta name="twitter:title" content="<?= $fileProps->title ?>" />
 <meta name="twitter:image" content="<?= $fileProps->posterImg ?>" />
+
 <link rel="icon" type="image/x-icon" href="images/ENABLE.svg">
+
 

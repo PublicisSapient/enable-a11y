@@ -76,8 +76,8 @@
     "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
   },
   "focus-styling.php": {
-    "title": "Focus Styling",
-    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
+    "title": "How to Create Accessible Focus Outlines in CSS",
+    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide."
   },
   "form-error-checking.php": {
     "title": "How to Ensure Accessible Form Validation and Error Checking",
