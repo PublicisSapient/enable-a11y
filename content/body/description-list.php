@@ -100,4 +100,32 @@
             }]
         }
         </script>
-    
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": "https://www.useragentman.com/enable/description-list.php",
+                "name": "Accessible Description Lists",
+                "description": "How to create accessible description lists"
+                "additionalType": "https://www.useragentman.com/enable/description-list.php",
+                "hasPart": [
+                    {
+                    "@type": "WebPageElement",
+                    "name": "Native Description List Example",
+                    "description": "Instructions and examples for creating accessible native HTML description lists.",
+                    "additionalType": "http://schema.org/WebPageElement"
+                    },
+                    {
+                    "@type": "WebPageElement",
+                    "name": "Aria Roles example",
+                    "description": "Instructions and examples for creating accessible custom description lists.",
+                    "additionalType": "http://schema.org/WebPageElement",
+                    "accessibilityAPI": "ARIA",
+                    "accessibilityControl": [
+                        "fullKeyboardControl",
+                        "fullMouseControl"
+                    ]
+                    }
+                ]
+            }
+        </script>
