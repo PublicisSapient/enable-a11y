@@ -1,9 +1,7 @@
-.context-menu {
+.context-menu__list {
   display: none;
   position: fixed;
   z-index: 99;
-}
-.context-menu__list {
   list-style-type: none;
   padding: 0;
   margin-top: 0;
