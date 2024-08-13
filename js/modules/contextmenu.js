@@ -10,7 +10,6 @@ export default function ContextMenu() {
       if (link) {
         event.preventDefault();
         showContextMenu(event.x, event.y);
-        document.addEventListener("click", hideContextMenu);
       }
     })
   }
@@ -21,38 +20,55 @@ export default function ContextMenu() {
       hideContextMenu();
     }
     const menu = createContextMenu();
+    addMenuItemEventListeners(menu);
     menu.style.left = `${eventX}px`;
     menu.style.top = `${eventY}px`;
     document.getElementById('main').appendChild(menu);
     menu.focus();
     menu.addEventListener("keydown", onMenuKeyDown);
+    document.addEventListener("click", hideContextMenu);
   }
   
+  function addMenuItemEventListeners(menu) {
+    const items = menu.querySelectorAll('li');
+    for (let item of items) {
+      item.addEventListener("click", onContextMenuItemClicked);
+      item.addEventListener("mouseover", onMouseOverItem);
+      item.addEventListener("mouseout", onMouseOutItem);
+    }
+  }
+
   function hideContextMenu() {
     const menu = document.getElementById("context-menu-list");
     if (!menu) {
       return;
     }
+    removeMenuItemEventListeners(menu);
+    menu.removeEventListener("keydown", onMenuKeyDown);
+    menu.remove();
+    document.removeEventListener("click", hideContextMenu);
+    previousFocus.focus();
+  }
+  
+  function removeMenuItemEventListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.removeEventListener("click", onContextMenuItemClicked);
       item.removeEventListener("mouseover", onMouseOverItem);
       item.removeEventListener("mouseout", onMouseOutItem);
     }
-    menu.removeEventListener("keydown", onMenuKeyDown);
-    menu.remove();
-
-    document.removeEventListener("click", hideContextMenu);
-    previousFocus.focus();
   }
-  
+
+  function onMenuKeyDown(event) {
+    if (event.key === 'Escape') {
+      hideContextMenu();
+    }
+  }
+
   function createContextMenu() {
     const ul = createElement('ul', { id: 'context-menu-list', class: 'context-menu__list', role: 'menu', tabindex: '0' });
     getMenuItems().forEach(item => {
       const li = createListItem(item);
-      li.addEventListener("click", onContextMenuItemClicked);
-      li.addEventListener("mouseover", onMouseOverItem);
-      li.addEventListener("mouseout", onMouseOutItem);
       ul.appendChild(li);
     });
     return ul;
@@ -71,13 +87,13 @@ export default function ContextMenu() {
         role: 'menuitem',
         tabindex: '0',
         iconSrc: 'images/contextmenu/check_24dp_color.png',
-        iconAlt: 'checkmark',
+        iconAlt: 'selected',
         iconClass: 'context-menu__list__item__withIcon__icon'
       },
       {text: 'Show Full URLs', className: 'context-menu__list__item', role: 'menuitem', tabindex: '0'}
     ];
   }
-  
+
   function createListItem(data) {
     const { text, className, role, tabindex, ariaHidden, iconSrc, iconAlt, iconClass } = data;
     const children = [];
@@ -91,7 +107,7 @@ export default function ContextMenu() {
     }
     return createElement('li', { class: className, role, tabindex, 'aria-hidden': ariaHidden }, children);
   }
-  
+
   function createElement(tag, attributes = {}, children = []) {
     const element = document.createElement(tag);
     for (const [key, value] of Object.entries(attributes)) {
@@ -100,19 +116,12 @@ export default function ContextMenu() {
     children.forEach(child => element.appendChild(child));
     return element;
   }
-  
-  function onMenuKeyDown(event) {
-    console.log(`onMenuKeyDown ${event.key}`)
-    if (event.key === 'Escape') {
-      hideContextMenu();
-    }
-  }
-  
+
   function onContextMenuItemClicked(event) {
     const { target } = event;
     console.log(target.textContent);
   }
-  
+
   function onMouseOverItem(event) {
     const {currentTarget} = event;
     const img = currentTarget.querySelector('img');
