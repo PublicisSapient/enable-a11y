@@ -1,9 +1,12 @@
 'use-strict'
 
 export default function ContextMenu() {
+  let previousFocus;
+
   this.init = new function () {
     document.addEventListener("contextmenu", (event) => {
       const link = event.target.closest(".link-context-menu");
+      previousFocus = event.target;
       if (link) {
         event.preventDefault();
         showContextMenu(event.x, event.y);
@@ -13,32 +16,34 @@ export default function ContextMenu() {
   }
   
   function showContextMenu(eventX, eventY) {
-    let isContextMenuShowing = document.getElementById("context-menu-list") !== null;
-    if (isContextMenuShowing) {
+    let isMenuShowing = document.getElementById("context-menu-list") !== null;
+    if (isMenuShowing) {
       hideContextMenu();
     }
-    const contextMenu = createContextMenu();
-    contextMenu.style.left = `${eventX}px`;
-    contextMenu.style.top = `${eventY}px`;
-    document.getElementById('main').appendChild(contextMenu);
-    contextMenu.focus();
+    const menu = createContextMenu();
+    menu.style.left = `${eventX}px`;
+    menu.style.top = `${eventY}px`;
+    document.getElementById('main').appendChild(menu);
+    menu.focus();
+    menu.addEventListener("keydown", onMenuKeyDown);
   }
   
   function hideContextMenu() {
-    const list = document.getElementById("context-menu-list");
-    if (!list) {
+    const menu = document.getElementById("context-menu-list");
+    if (!menu) {
       return;
     }
-    const items = list.querySelectorAll('li');
+    const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.removeEventListener("click", onContextMenuItemClicked);
       item.removeEventListener("mouseover", onMouseOverItem);
       item.removeEventListener("mouseout", onMouseOutItem);
     }
-    list.removeEventListener("keydown", onMenuKeyDown);
-    list.remove();
+    menu.removeEventListener("keydown", onMenuKeyDown);
+    menu.remove();
 
     document.removeEventListener("click", hideContextMenu);
+    previousFocus.focus();
   }
   
   function createContextMenu() {
@@ -99,33 +104,6 @@ export default function ContextMenu() {
   function onMenuKeyDown(event) {
     console.log(`onMenuKeyDown ${event.key}`)
     if (event.key === 'Escape') {
-      hideContextMenu();
-    }
-    
-    const focusedElement = document.activeElement;
-    if (event.key === 'ArrowRight' || event.key === "ArrowDown") {
-      const nextElement = focusedElement.children[0] ?? focusedElement.nextElementSibling;
-      if (nextElement) {
-        nextElement.focus();
-      }
-    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-      const nextElement = focusedElement.previousElementSibling;
-      if (nextElement) {
-        nextElement.focus();
-      }
-    }
-    
-    let isDefaultSelect = false;
-    if (event.code === 'Space' || event.key === ' ' || event.keyCode === 32) {
-      console.log('Space pressed');
-      isDefaultSelect = event.ctrlKey && event.altKey;
-    }
-    
-    // const isDefaultSelect = event.ctrlKey && event.altKey && event.key === 'Space';
-    if (event.key === 'Enter' || isDefaultSelect) {
-      if (focusedElement.tagName === "LI") {
-        focusedElement.click();
-      }
       hideContextMenu();
     }
   }
