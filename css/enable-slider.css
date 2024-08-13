@@ -442,6 +442,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   .enable-slider__handle.focus .enable-slider__handle {
     background-color: #999 !important;
   }
+  .enable-slider__button {
+    background: darkgreen;
+  }
   .html-slider__multi--container::after {
     background: white;
   }
