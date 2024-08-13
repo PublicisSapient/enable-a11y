@@ -13,7 +13,7 @@ http://www.flaticon.com/free-icon/doctor_194824
 Chat Content goes here 
 It's loaded in dynamically with JS
 -->
-<div class="eliza">
+<!-- <div class="eliza">
   <div class="container">
     <div class="row chat-row">
       <div class="col-md-8 col-md-offset-2">
@@ -22,10 +22,10 @@ It's loaded in dynamically with JS
         <div id="sr-announce" class="sr-only" role="alert" aria-live="assertive"></div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Area to send a message and ownership info -->
-  <div class="container send-wrapper">
+  <!-- <div class="container send-wrapper">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 send-inner-wrapper">
         <label for="eliza-input" class="send-message-help-text">What would you like to say to Eliza?</label>
@@ -34,15 +34,15 @@ It's loaded in dynamically with JS
         
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- notifications.js appends notification html elements to this -->
-  <span id="notification-area">
-  </span>
+  <!-- <span id="notification-area">
+  </span> -->
 
   <!-- <div id="sr-announce" class="sr-only"></div> -->
 
-  <template id="user-message-template">
+  <!-- <template id="user-message-template">
     <div class="chat-message-outter-wrapper text-right">
       <div class="chat-message-wrapper you-message">
         <p class="chat-user-text">You (${time}): </p>
@@ -67,4 +67,31 @@ It's loaded in dynamically with JS
   <template id="button-template">
       <button class="eliza__response-button">${label}</button>
   </template>
+</div> -->
+
+<!-- New Chatbot UI -->
+<div class="chatbot-container">
+  <div class="chatbot">
+    <div class="chatbot-heading">
+      <h2>Chatbot</h2>
+    </div>
+    <ul class="chatbot-dialogue">
+      <li class="chatbot-dialogue-chat chatbot-dialogue-incoming">
+        <img src="images/eliza/guy.png" class="chat-message-icon">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      </li>
+      <li class="chatbot-dialogue-chat chatbot-dialogue-outgoing">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      </li>
+    </ul>
+    <form class="chatbot-input">
+      <textarea></textarea>
+      <button type="submit"><span class="material-symbols-outlined">send</span></button>
+    </form>
+  </div>
+
+  <button class="chatbot-btn">
+    <span class="material-symbols-outlined">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
 </div>
