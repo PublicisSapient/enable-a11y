@@ -77,7 +77,7 @@ It's loaded in dynamically with JS
     </div>
     <ul class="chatbot-dialogue">
       <li class="chatbot-dialogue-chat chatbot-dialogue-incoming">
-        <img src="images/eliza/guy.png" class="chat-message-icon">
+        <img alt="" src="images/eliza/guy.png" class="chat-message-icon">
         <p>How can I help you today?</p>
       </li>
     </ul>
