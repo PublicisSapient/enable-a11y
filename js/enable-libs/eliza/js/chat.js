@@ -17,7 +17,6 @@ const toggleChatbot = () => {
   chatInput.focus();
 }
 
-
 chatForm.addEventListener("submit", submitChat);
 chatForm.addEventListener("keypress", submitOnEnter);
 chatButton.addEventListener("click", toggleChatbot);
