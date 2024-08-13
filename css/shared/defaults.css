@@ -338,6 +338,10 @@ iframe:focus-visible {
   .heading__deeplink:visited {
     color: #ccc;
   }
+  .enable-example {
+    border: solid 1px #eee;
+    border-left: solid 5px #eee;
+  }
   .enable-example span {
     color: #ccc;
   }
