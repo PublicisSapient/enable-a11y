@@ -1,5 +1,8 @@
-.context-menu__list {
+.context-menu__example {
   display: none;
+}
+.context-menu__list {
+  display: block;
   position: fixed;
   z-index: 99;
   list-style-type: none;
@@ -10,6 +13,7 @@
   background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
+  outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;

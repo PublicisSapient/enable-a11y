@@ -2,19 +2,21 @@
   Context menus are used for...
 </p>
 
-<ul id="context-menu-list" class="context-menu__list" role="menu">
-  <li class="context-menu__list__item" role="menuitem">Back</li>
-  <li class="context-menu__list__item__disabled" role="menuitem">Forward</li>
-  <li class="context-menu__list__item" role="menuitem">Reload</li>
-  <li class="context-menu__list__item" role="menuitem">More Tools</li>
-  <li class="context-menu__list__item__divider" role="menuitem"></li>
-  <li class="context-menu__list__item__withIcon" role="menuitem">
-    <img src="images/contextmenu/check_24dp_color.png" alt="checkmark" class="context-menu__list__item__withIcon__icon"/>
-    Show Bookmarks
-  </li>
-  <li class="context-menu__list__item" role="menuitem">Show Full URLs</li>
-</ul>
-
 <a id="link-context-menu" class="link-context-menu" href="https://google.com" aria-describedby="link-describedby">Google</a>
 
 <p id="link-describedby" hidden="hidden">Link with custom context menu</p>
+
+<div class="enable-example--no-border">
+  <ul id="context-menu-list" class="context-menu__example" role="menu" tabindex="0">
+    <li class="context-menu__list__item" role="menuitem" tabindex="0">Back</li>
+    <li class="context-menu__list__item__disabled" role="menuitem" tabindex="0">Forward</li>
+    <li class="context-menu__list__item" role="menuitem" tabindex="0">Reload</li>
+    <li class="context-menu__list__item" role="menuitem" tabindex="0">More Tools</li>
+    <li class="context-menu__list__item__divider" aria-hidden="true"></li>
+    <li class="context-menu__list__item__withIcon" role="menuitem" tabindex="0">
+      <img src="images/contextmenu/check_24dp_color.png" alt="checkmark" class="context-menu__list__item__withIcon__icon"/>
+      Show Bookmarks
+    </li>
+    <li class="context-menu__list__item" role="menuitem" tabindex="0">Show Full URLs</li>
+  </ul>
+</div>
