@@ -78,10 +78,7 @@ It's loaded in dynamically with JS
     <ul class="chatbot-dialogue">
       <li class="chatbot-dialogue-chat chatbot-dialogue-incoming">
         <img src="images/eliza/guy.png" class="chat-message-icon">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      </li>
-      <li class="chatbot-dialogue-chat chatbot-dialogue-outgoing">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>How can I help you today?</p>
       </li>
     </ul>
     <form class="chatbot-input">
@@ -90,8 +87,8 @@ It's loaded in dynamically with JS
     </form>
   </div>
 
-  <button class="chatbot-btn">
-    <span class="material-symbols-outlined">mode_comment</span>
-    <span class="material-symbols-outlined">close</span>
+  <button class="chatbot-btn">    
+    <span aria-hidden="true" class="material-symbols-outlined">mode_comment</span>
+    <span aria-hidden="true" class="material-symbols-outlined">close</span>
   </button>
 </div>
