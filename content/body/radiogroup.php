@@ -334,3 +334,63 @@
   }]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How to Create Accessible Radio Groups",
+  "description": "Here is a step-by-step guide to creating accessible radio groups",
+  "url": "https://www.useragentman.com/enable/radiogroup.php",
+  "mainEntity": [
+      {
+      "@type": "Article",
+      "name": "Radio Buttons grouped with fieldsets",
+      "articleBody": "This is the recommended way of grouping radio buttons. Please look at the next few examples.",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#radio-buttons-grouped-with-fieldsets--heading"
+      },
+      {
+      "@type": "HowTo",
+      "name": "Step-by-Step to make the group radio buttons accessible",
+      "text": "See the dropdown to highlight each of the individual steps that make the group radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-1"
+      },
+      {
+      "@type": "Article",
+      "name": "HTML5 radio buttons that have custom styling",
+      "articleBody": "Read this to style native radio buttons like a Jedi Master",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-radio-buttons-that-have-custom-styling--heading"
+      },
+      {
+      "@type": "HowTo",
+      "name": "Step-by-Step to make the custom styled radio buttons accessible",
+      "text": "See the dropdown to highlight each of the individual steps that make the custom styled radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-2"
+      },
+      {
+      "@type": "Article",
+      "name": "Custom radio buttons",
+      "articleBody": "making <div> and/or <span> tags look like radio buttons?",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#custom-radio-buttons-using-aria--heading"
+      },
+      {
+      "@type": "HowTo",
+      "name": "Step-by-Step to make the custom radio buttons accessible",
+      "text": "See the dropdown to highlight each of the individual steps that make the custom radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-3"
+      },
+      {
+      "@type": "Article",
+      "name": "An alternative to fieldsets",
+      "articleBody": "Replace fieldsets with an ARIA radiogroup role",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-version-that-uses-radiogroup-roles---heading"
+      },
+      {
+      "@type": "HowTo",
+      "name": "Step-by-Step to make replace fieldsets with an ARIA radiogroup",
+      "text": "See the dropdown to highlight each of the individual steps that make an ARIA radiogroup",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-4"
+      },
+  ]
+}
+</script>

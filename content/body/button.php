@@ -30,6 +30,10 @@
         </p>
 
         <p>
+            An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.
+        </p>
+
+        <p>
             This may seem obvious to many developers.
             Unfortunately, there is a lot of code out there that uses <code>&lt;a&gt;</code> tags
             to do the work of a <code>&lt;button&gt;</code>.
@@ -45,6 +49,10 @@
 
         <h2>An HTML Button.</h2>
         <?php includeStats(["isForNewBuilds" => true]); ?>
+
+        <p>
+            An HTML button is a clickable element that allows users to perform an action, such as submitting a form, triggering a function, or navigating to another page.
+        </p>
 
         <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 
@@ -251,3 +259,56 @@
 
         </div>
     
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "How to Create Accessible Buttons",
+            "description": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+            "url": "https://www.useragentman.com/enable/button.php",
+            "mainEntity": [
+                {
+                "@type": "Article",
+                "name": "Accessible Button ?",
+                "articleBody": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+                "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+                },
+                {
+                "@type": "HowTo",
+                "name": "An HTML Button",
+                "text": "An HTML button is a clickable element that allows users to perform an action, such as submitting a form, triggering a function, or navigating to another page.",
+                "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+                },
+                {
+                "@type": "HowTo",
+                "name": "Code Walkthrough to make button accessible",
+                "text": "See the dropdown to highlight each of the individual steps that make the button accessible",
+                "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-1"
+                },
+                {
+                "@type": "HowTo",
+                "name": "A link with the role of button",
+                "text": "Links can behave like a button, especially when it triggers an action rather than navigating to a different page.",
+                "url": "https://www.useragentman.com/enable/button.php#a-link-with-the-role-of-button--heading"
+                },
+                {
+                "@type": "HowTo",
+                "name": "A link with the role of button and be accessible",
+                "text": "See the dropdown to highlight each of the individual steps that make the link behave like a button and be accessible",
+                "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-2"
+                },
+                {
+                "@type": "HowTo",
+                "name": "A Div with the role of button and be accessible",
+                "text": "See the dropdown to highlight each of the individual steps that make the div behave like a button and be accessible",
+                "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-3"
+                },
+                {
+                "@type": "HowTo",
+                "name": "Disabled HTML Button",
+                "text": "There are two ways of making a button disabled; Using one of these attributes, disabled=true or aria-disabled=true",
+                "url": "https://www.useragentman.com/enable/button.php#disabled-html-button---heading"
+                },   
+            ]
+            }
+        </script>
