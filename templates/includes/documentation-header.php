@@ -395,7 +395,7 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Thumbnail Gallery",
+                                            "label": "Thumbnail Carousel",
                                             "url-slug": "thumbnail-carousel",
                                             "alt": ""
                                         }
