@@ -75,9 +75,9 @@ It's loaded in dynamically with JS
     <div class="chatbot-heading">
       <h2>Chatbot</h2>
     </div>
-    <ul class="chatbot-dialogue">
-      <li class="chatbot-dialogue-chat chatbot-dialogue-incoming">
-        <img alt="" src="images/eliza/guy.png" class="chat-message-icon">
+    <ul aria-live="polite" class="chatbot-dialogue" tabindex="0">
+      <li class="chatbot-dialogue-chat chatbot-dialogue-incoming initial-chat">
+        <img alt="" src="images/eliza/guy.png" aria-hidden="true" class="chat-message-icon">
         <p>How can I help you today?</p>
       </li>
     </ul>
