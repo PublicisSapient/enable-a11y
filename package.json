@@ -9,6 +9,7 @@
     "./combobox": "./js/modules/combobox.js",
     "./enable-animatedGif": "./js/modules/enable-animatedGif.js",
     "./enable-carousel": "./js/modules/enable-carousel.js",
+    "./enable-thumbnail-carousel": "./js/modules/enable-thumbnail-carousel.js",
     "./enable-drawer": "./js/modules/enable-drawer.js",
     "./enable-listbox": "./js/modules/enable-listbox.js",
     "./enable-slider": "./js/modules/enable-slider.js",
@@ -116,6 +117,7 @@
     "wget-improved": "^3.4.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "bin-build": "^2.1.1",
     "d3": "^7.8.5",
     "dialog-polyfill": "^0.5.6",

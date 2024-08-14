@@ -115,6 +115,7 @@ function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
  *  $other:                (array) contains other properties. Current ones are:
  *                             - needsAccessibilityLib: (boolean) if we need accessibility.js
  *                             - needsGlider: (boolean) if we need the Glider.js carousel library
+ * *                           - needsSplide: (boolean) if we need the Splide thumbnail navigation library
  *                             - needsAblePlayerLibs: (boolean) if we need the AblePlayer library
  *                             - otherImports: (string) JS code used to import 3rd party libraries
  *                             - noCSS: (boolean) true if the module doesn't have any CSS included in Enable
@@ -353,5 +354,3 @@ function getURIPrefix()
 }
 
 getMetadata();
-
-?>

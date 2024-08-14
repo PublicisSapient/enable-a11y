@@ -50,6 +50,8 @@ module.exports = {
       '~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
       '../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module'),
       '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider'),
+    '~@splidejs/splide': path.resolve(__dirname, 'node_modules/@splidejs/splide'),
+    '~@splidejs/splide/dist/js/splide.min.js': path.resolve(__dirname, 'node_modules/@splidejs/splide/dist/js/splide.min.js'),
       '~jquery/dist/jquery.min.js': path.resolve(__dirname, 'node_modules/jquery/src/jquery'),
       '../enable-node-libs/ableplayer/thirdparty/js.cookie.js': path.resolve(__dirname, 'node_modules/js-cookie/dist/js.cookie')
     },
