@@ -88,6 +88,7 @@ It's loaded in dynamically with JS
   </div>
 
   <button class="chatbot-btn">    
+    <p class="chatbot-btn-label sr-only">Open the chat dialogue.</p>
     <span aria-hidden="true" class="material-symbols-outlined">mode_comment</span>
     <span aria-hidden="true" class="material-symbols-outlined">close</span>
   </button>

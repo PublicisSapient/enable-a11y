@@ -42,7 +42,9 @@ const submitOnEnter = (e) => {
 };
 
 const toggleChatbot = () => {
+  const chatButtonLabel = document.querySelector('.chatbot-btn-label');
   chatContainer.classList.toggle("show-chatbot");
+  chatContainer.classList.contains("show-chatbot") ? chatButtonLabel.innerText = "Close the chat dialogue." : chatButtonLabel.innerText = "Open the chat dialogue.";
   chatInput.focus();
 }
 

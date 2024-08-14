@@ -170,7 +170,7 @@
 }
 
 .chatbot-btn span:last-child,
-.show-chatbot .chatbot-btn span:first-child {
+.show-chatbot .chatbot-btn span {
   opacity: 0;
 }
 
