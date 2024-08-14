@@ -82,12 +82,16 @@ It's loaded in dynamically with JS
       </li>
     </ul>
     <form class="chatbot-input">
-      <textarea></textarea>
-      <button type="submit"><span class="material-symbols-outlined">send</span></button>
+      <label class="sr-only" for="chat-textarea">Chat dialogue:</label>
+      <textarea id="chat-textarea"></textarea>
+      <button type="submit">
+        <p class="sr-only">Submit your chat dialogue.</p>
+        <span aria-hidden="true" class="material-symbols-outlined">send</span>
+      </button>
     </form>
   </div>
 
-  <button class="chatbot-btn">    
+  <button class="chatbot-btn">
     <p class="chatbot-btn-label sr-only">Open the chat dialogue.</p>
     <span aria-hidden="true" class="material-symbols-outlined">mode_comment</span>
     <span aria-hidden="true" class="material-symbols-outlined">close</span>
