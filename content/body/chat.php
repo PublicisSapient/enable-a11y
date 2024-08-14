@@ -85,14 +85,14 @@ It's loaded in dynamically with JS
       <label class="sr-only" for="chat-textarea">Chat dialogue:</label>
       <textarea id="chat-textarea"></textarea>
       <button type="submit">
-        <p class="sr-only">Submit your chat dialogue.</p>
+        <span class="sr-only">Submit your chat dialogue.</span>
         <span aria-hidden="true" class="material-symbols-outlined">send</span>
       </button>
     </form>
   </div>
 
   <button class="chatbot-btn">
-    <p class="chatbot-btn-label sr-only">Open the chat dialogue.</p>
+    <span class="chatbot-btn-label sr-only">Open the chat dialogue.</span>
     <span aria-hidden="true" class="material-symbols-outlined">mode_comment</span>
     <span aria-hidden="true" class="material-symbols-outlined">close</span>
   </button>
