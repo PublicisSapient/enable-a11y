@@ -28,7 +28,7 @@
   text-align: center;
   text-shadow: 0 0 0.0714em #73994d;
   font-weight: bold;
-  transform: scale(2.5) translateY(-0.0625rem) translateX(-0.125rem);
+  transform: scale(2.5) translateY(-1 / 16rem) translateX(-2 / 16rem);
 }
 [role="checkbox"][aria-checked="mixed"]:after {
   content: "-";
