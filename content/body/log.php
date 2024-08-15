@@ -70,4 +70,38 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         ]}
         </script>
 
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Accessible Log Display Guide",
+            "description": "Learn about Accessible Log Displays, explore a live example, and follow a detailed code walkthrough for better web accessibility.",
+            "url": "https://www.useragentman.com/enable/log.php",
+            "mainEntity": {
+                "@type": "FAQPage",
+                "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is an Accessible Log Display?",
+                    "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An Accessible Log Display is a component that provides real-time updates in a way that is accessible to all users, including those using assistive technologies."
+                    }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Live Example of Accessible Log Display",
+                    "description": "A live demonstration of an Accessible Log Display with real-time updates and ARIA live regions.",
+                    "exampleOfWork": {
+                        "@type": "WebPage",
+                        "name": "Accessible Log Display Guide Code Sample",
+                        "url": "https://www.useragentman.com/enable/log.php#example-1---heading"
+                    }
+                }
+            ]
+            }
+        }
+    </script>
+
     

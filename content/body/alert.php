@@ -77,7 +77,7 @@
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Understanding ARIA Alert Property",
-            "url": "https://www.useragentman.com/enable/alert.php"
+            "url": "https://www.useragentman.com/enable/alert.php",
             "description": "Learn about the ARIA alert property with examples, code samples, and best practices to improve web accessibility.",
             "mainEntity": {
                 "@type": "FAQPage",

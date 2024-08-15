@@ -16,8 +16,8 @@
     "wip": true
   },
   "alert.php": {
-    "title": "ARIA Alert",
-    "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag"
+    "title": "ARIA Alert: Understanding, Live Example and Code Walkthrough",
+    "desc": "Learn about the ARIA alert property, how it enhances web accessibility, and explore practical examples with code samples. Master ARIA alerts for better UX."
   },
   "animated-gif-with-pause-button.php": {
     "title": "Animated GIFs with Pause Buttons",
@@ -119,8 +119,8 @@
     "isNPM": "true"
   },
   "log.php": {
-    "title": "Accessible Log Displays",
-    "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
+    "title": "Accessible Log Display: Understanding, Live Example, and Code Walkthrough",
+    "desc": "Discover how to implement an Accessible Log Display with a live example and detailed code walkthrough. Enhance web accessibility with best practices."
   },
   "marquee.php": {
     "title": "The Marquee (a.k.a. Auto-Scrolling Content)",
