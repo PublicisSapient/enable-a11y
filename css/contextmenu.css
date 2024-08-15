@@ -1,3 +1,18 @@
+.link-context-menu {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.opener {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #3b99fc;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
 .context-menu__example {
   display: none;
 }
@@ -84,10 +99,4 @@
 .context-menu__list__item__withIcon__icon {
   width: 16px;
   height: 16px;
-}
-.opener {
-  display: block;
-  width: 60px;
-  height: 60px;
-  background-color: #3b99fc;
 }

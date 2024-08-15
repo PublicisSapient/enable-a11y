@@ -2,21 +2,54 @@
 
 export default function ContextMenu() {
   let previousFocus;
-
+  let longPressTimeout;
+  
   this.init = new function () {
+    addContextMenuListener();
+    addLongTapListener();
+  }
+  
+  function addContextMenuListener() {
     document.addEventListener('contextmenu', (event) => {
       previousFocus = event.target;
-
+      
       const link = event.target.closest('.link-context-menu');
       if (link) {
         event.preventDefault();
         showContextMenu(event.x, event.y);
       }
-
+      
       const opener = event.target.closest('.opener');
       if (opener) {
         event.preventDefault();
         showContextMenu(event.x, event.y);
+      }
+    });
+  }
+  
+  function addLongTapListener() {
+    document.addEventListener('touchstart', (event) => {
+      previousFocus = event.target;
+      
+      if (longPressTimeout) {
+        clearTimeout(longPressTimeout);
+      }
+      
+      const iOSLongPressTime = 500;
+      const link = event.target.closest('.link-context-menu');
+      if (link) {
+        event.preventDefault();
+        longPressTimeout = setTimeout(() => {
+          showContextMenu(event.x, event.y);
+        }, iOSLongPressTime);
+      }
+      
+      const opener = event.target.closest('.opener');
+      if (opener) {
+        event.preventDefault();
+        longPressTimeout = setTimeout(() => {
+          showContextMenu(event.x, event.y);
+        }, iOSLongPressTime);
       }
     });
   }
@@ -27,21 +60,32 @@ export default function ContextMenu() {
       hideContextMenu();
     }
     const menu = createContextMenu();
-    addMenuItemEventListeners(menu);
     menu.style.left = `${eventX}px`;
     menu.style.top = `${eventY}px`;
     document.getElementById('main').append(menu);
-    menu.addEventListener('keydown', onMenuKeyDown);
-    menu.focus();
+    addWebListeners(menu);
+    focusOn(menu);
     document.addEventListener('click', hideContextMenu);
   }
   
-  function addMenuItemEventListeners(menu) {
+  function addWebListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.addEventListener('click', onContextMenuItemClicked);
       item.addEventListener('mouseover', onMouseOverItem);
       item.addEventListener('mouseout', onMouseOutItem);
+    }
+    menu.addEventListener('keydown', onMenuKeyDown);
+  }
+  
+  function focusOn(menu) {
+    if (longPressTimeout) {
+      setTimeout(() => {
+        menu.focus();
+      }, 200);
+      longPressTimeout = null;
+    } else {
+      menu.focus();
     }
   }
 
@@ -50,8 +94,7 @@ export default function ContextMenu() {
     if (!menu) {
       return;
     }
-    removeMenuItemEventListeners(menu);
-    menu.removeEventListener('keydown', onMenuKeyDown);
+    removeWebListeners(menu);
     menu.remove();
     document.removeEventListener('click', hideContextMenu);
     if (previousFocus) {
@@ -59,13 +102,14 @@ export default function ContextMenu() {
     }
   }
   
-  function removeMenuItemEventListeners(menu) {
+  function removeWebListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.removeEventListener('click', onContextMenuItemClicked);
       item.removeEventListener('mouseover', onMouseOverItem);
       item.removeEventListener('mouseout', onMouseOutItem);
     }
+    menu.removeEventListener('keydown', onMenuKeyDown);
   }
 
   function onMenuKeyDown(event) {
