@@ -42,6 +42,7 @@
   position: -webkit-sticky;
   position: sticky;
   left: 0;
+  z-index: 1;
 }
 .sticky-table__sticky-horiz-heading {
   position: -webkit-sticky;
@@ -173,8 +174,8 @@ table.fixed-headers [role="rowheader"],
 table.fixed-headers [role="cell"],
 [role="table"].fixed-headers [role="cell"] {
   overflow: hidden;
-  width: 14.28571429%;
-  max-width: 14.28571429%;
+  width: 100% / 7;
+  max-width: 100% / 7;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;

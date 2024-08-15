@@ -2,10 +2,9 @@
 
 import config from './test-config.js';
 import testHelpers from './test-helpers.js';
-import fs from 'fs';
 
 const fileList = testHelpers.getPageList();
-let mobileBrowser, mobilePage, desktopBrowser, desktopPage;
+let desktopBrowser, desktopPage;
 
 describe('Test for PHP errors on all pages on Enable', () => {
     beforeAll(async () => {
@@ -55,8 +54,6 @@ describe('Test for PHP errors on all pages on Enable', () => {
     }
 
     for (let i = 0; i < fileList.length; i++) {
-        const file = fileList[i];
-
         // TODO: We are ignoring reflow.php here since it times out a lot.
         // I think this is because of the iframes in the document,
         // but I'm not sure.
