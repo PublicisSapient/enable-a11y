@@ -9,7 +9,6 @@ const dictLookup = new (function () {
         '.wiktionary-lookup__content-container',
     );
 
-    const $sourceURL = document.querySelector('.wiktionary-lookup__source-url');
     const $licenceInfo = document.querySelector(
         '.wiktionary-lookup__license-info',
     );
@@ -18,10 +17,8 @@ const dictLookup = new (function () {
     const $pageAlert = document.querySelector('.wiktionary-lookup__page-alert');
 
     function showPage(page, text) {
-        const sourceurl = baseURL + '/wiki/' + page;
         $pageTitle.innerHTML = page;
         $wikiInfo.innerHTML = text;
-        //$sourceURL.setAttribute("href", sourceurl);
         $licenceInfo.style.display = 'block';
         $pageAlert.innerHTML = `Now displaying information about the word "${page}".`;
 

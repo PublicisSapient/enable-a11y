@@ -5,7 +5,6 @@ import { interpolate } from './modules/interpolate.js';
 const getNPMModules = function () {
     const $npmList = document.getElementById('npm-list');
     const $npmListItemTemplate = document.getElementById('npm-list__list-item');
-    const $npmListTemplate = document.getElementById('npm-list__list');
     let result = fetch('templates/data/meta-info.json');
 
     result
