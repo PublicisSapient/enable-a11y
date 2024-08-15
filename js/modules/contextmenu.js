@@ -5,53 +5,40 @@ export default function ContextMenu() {
   let longPressTimeout;
   
   this.init = new function () {
-    addContextMenuListener();
-    addLongTapListener();
+    const link = document.getElementById('link-context-menu');
+    if (link) {
+      addContextMenuListener(link);
+      addLongTapListener(link);
+    }
+    
+    const opener = document.getElementById('opener');
+    if (opener) {
+      addContextMenuListener(opener);
+      addLongTapListener(opener);
+    }
   }
   
-  function addContextMenuListener() {
-    document.addEventListener('contextmenu', (event) => {
+  function addContextMenuListener(element) {
+    element.addEventListener('contextmenu', (event) => {
       previousFocus = event.target;
-      
-      const link = event.target.closest('.link-context-menu');
-      if (link) {
-        event.preventDefault();
-        showContextMenu(event.x, event.y);
-      }
-      
-      const opener = event.target.closest('.opener');
-      if (opener) {
-        event.preventDefault();
-        showContextMenu(event.x, event.y);
-      }
-    });
+      event.preventDefault();
+      showContextMenu(event.x, event.y);
+    })
   }
   
-  function addLongTapListener() {
-    document.addEventListener('touchstart', (event) => {
+  function addLongTapListener(element) {
+    const iOSLongPressTime = 500;
+    element.addEventListener('touchstart', (event) => {
       previousFocus = event.target;
-      
       if (longPressTimeout) {
         clearTimeout(longPressTimeout);
       }
-      
-      const iOSLongPressTime = 500;
-      const link = event.target.closest('.link-context-menu');
-      if (link) {
-        event.preventDefault();
-        longPressTimeout = setTimeout(() => {
-          showContextMenu(event.x, event.y);
-        }, iOSLongPressTime);
-      }
-      
-      const opener = event.target.closest('.opener');
-      if (opener) {
-        event.preventDefault();
-        longPressTimeout = setTimeout(() => {
-          showContextMenu(event.x, event.y);
-        }, iOSLongPressTime);
-      }
-    });
+      event.preventDefault();
+      const touch = event.touches[0];
+      longPressTimeout = setTimeout(() => {
+        showContextMenu(touch.pageX, touch.pageY);
+      }, iOSLongPressTime);
+    })
   }
   
   function showContextMenu(eventX, eventY) {
@@ -63,12 +50,12 @@ export default function ContextMenu() {
     menu.style.left = `${eventX}px`;
     menu.style.top = `${eventY}px`;
     document.getElementById('main').append(menu);
-    addWebListeners(menu);
+    addContextMenuListeners(menu);
     focusOn(menu);
     document.addEventListener('click', hideContextMenu);
   }
   
-  function addWebListeners(menu) {
+  function addContextMenuListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.addEventListener('click', onContextMenuItemClicked);
@@ -79,7 +66,9 @@ export default function ContextMenu() {
   }
   
   function focusOn(menu) {
+    // longPressTimeout is assigned when a 'touchstart' event fires.
     if (longPressTimeout) {
+      // On iOS, wait for long-tap animation to end before focusing.
       setTimeout(() => {
         menu.focus();
       }, 200);
@@ -94,7 +83,7 @@ export default function ContextMenu() {
     if (!menu) {
       return;
     }
-    removeWebListeners(menu);
+    removeContextMenuListeners(menu);
     menu.remove();
     document.removeEventListener('click', hideContextMenu);
     if (previousFocus) {
@@ -102,7 +91,7 @@ export default function ContextMenu() {
     }
   }
   
-  function removeWebListeners(menu) {
+  function removeContextMenuListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
       item.removeEventListener('click', onContextMenuItemClicked);

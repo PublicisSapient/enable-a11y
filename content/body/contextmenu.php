@@ -2,13 +2,11 @@
   Context menus are used for...
 </p>
 
+<h2>Links</h2>
+
 <a id="link-context-menu" class="link-context-menu" href="https://google.com" aria-describedby="link-describedby">Google</a>
 
 <p id="link-describedby" hidden="hidden">Link with custom context menu</p>
-
-<div id="opener" class="opener">
-
-</div>
 
 <div class="enable-example--no-border">
   <ul id="context-menu-list" class="context-menu__example" role="menu" tabindex="0">
@@ -24,3 +22,11 @@
     <li class="context-menu__list__item" role="menuitem" tabindex="0">Show Full URLs</li>
   </ul>
 </div>
+
+<h2>DIV Area</h2>
+
+<div id="opener" class="opener" role="button" tabindex="0" aria-describedby="div-describedby"></div>
+
+<p id="div-describedby" hidden="hidden">In area with a custom context menu. Triple-tap to open the custom context menu.</p>
+
+<div>See if it appends behind this text here</div>
