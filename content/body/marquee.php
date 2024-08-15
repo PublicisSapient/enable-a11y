@@ -60,4 +60,35 @@ Marquees (a.k.a. Auto-Scrolling Content) are meant for content that scrolls or u
         }
         </script>
 
-    
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Mastering Marquee: Auto Scrolling Text with Live Example and Code Samples",
+    "url": "https://www.useragentman.com/enable/marquee.php",
+    "description": "Learn how to create an auto-scrolling Marquee for your web pages. Explore a live example and get detailed code samples to implement it effortlessly.",
+    "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How can I create a Marquee without using the deprecated <marquee> tag?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can create an auto-scrolling text effect using CSS animations and JavaScript, which are accessible and work across modern browsers."
+            }
+        },
+        {
+                "@type": "CreativeWork",
+                "name": "Live Example of Marquee",
+                "description": "A live demonstration of Marquee (Auto Scrolling) through News Ticker application",
+                "exampleOfWork": {
+                    "@type": "WebPage",
+                    "name": "Marquee Code Sample",
+                    "url": "https://www.useragentman.com/enable/marquee.php#example-1-news-ticker--heading"
+                }
+            }
+        ]
+    }
+    }
+</script>    

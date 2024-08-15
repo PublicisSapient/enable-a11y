@@ -74,3 +74,36 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ARIA Status: Understanding, Live Example, and Code Walkthrough",
+        "url": "https://www.useragentman.com/enable/status.php",
+        "description": "Learn about the ARIA status role, with live examples and code samples to enhance web accessibility.",
+        "mainEntity": {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is ARIA Status?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "ARIA Status is an ARIA role used to communicate non-critical updates or changes in content to assistive technologies without interrupting the user."
+                  }
+                },
+                {
+                    "@type": "CreativeWork",
+                    "name": "Live Example of ARIA Status role",
+                    "description": "A live demonstration of an ARIA status role.",
+                    "exampleOfWork": {
+                        "@type": "WebPage",
+                        "name": "ARIA Status Code Sample",
+                        "url": "https://www.useragentman.com/enable/status.php#visually-hidden-status-message--heading"
+                    }
+                }
+            ]
+        }
+    }
+</script>

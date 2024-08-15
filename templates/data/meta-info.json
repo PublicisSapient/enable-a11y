@@ -123,8 +123,8 @@
     "desc": "Discover how to implement an Accessible Log Display with a live example and detailed code walkthrough. Enhance web accessibility with best practices."
   },
   "marquee.php": {
-    "title": "The Marquee (a.k.a. Auto-Scrolling Content)",
-    "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
+    "title": "Mastering Marquee: Auto Scrolling Text with Live Example and Code Samples",
+    "desc": "Learn how to create an auto-scrolling Marquee for your web pages. Explore a live example and get detailed code samples to implement it effortlessly."
   },
   "math.php": {
     "title": "Accessible Math Equations",
@@ -172,8 +172,8 @@
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
   "status.php": {
-    "title": "The ARIA Status Role",
-    "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
+    "title": "ARIA Status: Understanding, Live Example, and Code Walkthrough",
+    "desc": "Learn about the ARIA status role, its importance in accessibility, and see a live example with supporting code samples to improve user experience."
   },
   "switch.php": {
     "title": "The ARIA Switch Role  (a.k.a. Toggle)",
