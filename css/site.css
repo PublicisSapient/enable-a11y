@@ -249,6 +249,11 @@
   margin: 0px 15px 5px 0px;
   display: inline-block;
 }
+.enable-stats__icon-dark {
+  height: 1.875rem;
+  margin: 0px 15px 5px 0px;
+  display: none;
+}
 .enable-stats__label {
   display: inline-block;
   text-align: left;
@@ -287,5 +292,15 @@
   }
   .enable-stats__desc--style {
     background-color: #432155;
+  }
+  .enable-stats__icon {
+    height: 1.875rem;
+    margin: 0px 15px 5px 0px;
+    display: none;
+  }
+  .enable-stats__icon-dark {
+    height: 1.875rem;
+    margin: 0px 15px 5px 0px;
+    display: inline-block;
   }
 }
