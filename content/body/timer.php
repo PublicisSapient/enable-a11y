@@ -69,3 +69,36 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ARIA Timer Guide",
+    "description": "Learn about the ARIA Timer role, see a live example, and explore the code implementation for enhanced web accessibility.",
+    "url": "https://www.useragentman.com/enable/timer.php",
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the ARIA role for a timer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ARIA role for a timer is `role='timer'`, used to convey time-based information to assistive technologies."
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Live Example of ARIA Timer",
+          "description": "A live demonstration of an ARIA Timer with real-time timer example.",
+          "exampleOfWork": {
+              "@type": "WebPage",
+              "name": "ARIA Timer Code Sample",
+              "url": "https://www.useragentman.com/enable/timer.php#timer-example--heading"
+          }
+        }
+      ]
+    }
+  }
+</script>

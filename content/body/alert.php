@@ -72,7 +72,7 @@
         </script>
 
 
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebPage",
@@ -91,14 +91,14 @@
                         }
                     },
                     {
-                        "@type": "Exmaple",
-                        "name": "ARIA Alert Example",
-                        "url": "https://www.useragentman.com/enable/alert.php#example-1-visual-alert--heading"
-                    },
-                    {
-                        "@type": "HowTo",
-                        "name": "Code walkthrough of ARIA Alert",
-                        "url": "https://www.useragentman.com/enable/alert.php#developer-walkthrough-1"
+                        "@type": "CreativeWork",
+                        "name": "Live Example of ARIA Alert",
+                        "description": "A live demonstration of an ARIA Alert.",
+                        "exampleOfWork": {
+                            "@type": "WebPage",
+                            "name": "ARIA Alert Code Sample",
+                            "url": "https://www.useragentman.com/enable/alert.php#example-1-visual-alert--heading"
+                        }
                     }
                 ]
             }

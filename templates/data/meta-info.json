@@ -242,8 +242,8 @@
     "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
   },
   "timer.php": {
-    "title": "ARIA Timer",
-    "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
+    "title": "ARIA Timer: Understanding, Live Example and Code Walkthrough",
+    "desc": "Discover what ARIA Timer is, see a live example, and explore the supporting code. Learn how to implement an accessible countdown timer with ARIA roles and attributes."
   },
   "tooltip.php": {
     "title": "Tooltip",
