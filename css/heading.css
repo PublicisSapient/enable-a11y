@@ -8,7 +8,7 @@ div.heading-example {
   text-shadow: 0 2px 0 rgba(255, 255, 255, 0.7);
 }
 div.heading-example p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.4;
   text-align: justify;
 }
@@ -43,7 +43,7 @@ div.heading-example [role="heading"][aria-level="1"] {
   color: #343434;
   font-weight: normal;
   font-family: "Ultra", sans-serif;
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 42px;
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
@@ -59,12 +59,12 @@ div.heading-example [role="heading"][aria-level="5"] {
 }
 div.heading-example h2,
 div.heading-example [role="heading"][aria-level="2"] {
-  font-size: 33px;
+  font-size: 2.0625rem;
   line-height: 36.36363636px;
 }
 div.heading-example h5,
 div.heading-example [role="heading"][aria-level="5"] {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 54.54545455px;
 }
 div.heading-example h3,
@@ -81,12 +81,12 @@ div.heading-example [role="heading"][aria-level="6"] {
 }
 div.heading-example h3,
 div.heading-example [role="heading"][aria-level="3"] {
-  font-size: 30px;
+  font-size: 1.875rem;
   line-height: 29.33333333px;
 }
 div.heading-example h6,
 div.heading-example [role="heading"][aria-level="6"] {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 48.88888889px;
 }
 div.heading-example h4,
@@ -98,10 +98,10 @@ div.heading-example [role="heading"][aria-level="7"] {
 }
 div.heading-example h4,
 div.heading-example [role="heading"][aria-level="4"] {
-  font-size: 25px;
+  font-size: 1.5625rem;
   line-height: 14.4px;
 }
 div.heading-example [role="heading"][aria-level="7"] {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 20px;
 }

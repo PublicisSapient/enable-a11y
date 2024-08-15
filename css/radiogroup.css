@@ -40,7 +40,7 @@
   border-radius: 50%;
 }
 .aria-radio-label {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.38888889;
 }
 .enable-radio [type="radio"] {
@@ -71,7 +71,7 @@
   cursor: pointer;
   display: inline-block;
   color: #666;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.44444444;
 }
 .enable-radio [type="radio"] + label:before {

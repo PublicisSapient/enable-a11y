@@ -19,10 +19,10 @@ body {
   width: initial;
 }
 .chart-example svg {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .chart-example .tick text {
-  font-size: calc(10px * var(--text-zoom-factor));
+  font-size: calc(0.625rem * var(--text-zoom-factor));
 }
 #bar-chart {
   height: 400px;
