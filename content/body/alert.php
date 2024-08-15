@@ -71,4 +71,37 @@
         }
         </script>
 
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Understanding ARIA Alert Property",
+            "url": "https://www.useragentman.com/enable/alert.php"
+            "description": "Learn about the ARIA alert property with examples, code samples, and best practices to improve web accessibility.",
+            "mainEntity": {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is the ARIA alert property?",
+                        "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The ARIA alert property is used to inform screen reader users of important changes on a web page."
+                        }
+                    },
+                    {
+                        "@type": "Exmaple",
+                        "name": "ARIA Alert Example",
+                        "url": "https://www.useragentman.com/enable/alert.php#example-1-visual-alert--heading"
+                    },
+                    {
+                        "@type": "HowTo",
+                        "name": "Code walkthrough of ARIA Alert",
+                        "url": "https://www.useragentman.com/enable/alert.php#developer-walkthrough-1"
+                    }
+                ]
+            }
+        }
+    </script>
     
