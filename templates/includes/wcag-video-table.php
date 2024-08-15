@@ -1,8 +1,9 @@
-<table class="compliance-table">
+<div class="sticky-table__container" tabindex="0">
+    <table class="compliance-table">
     <caption>WCAG video related guidelines</caption>
     <thead>
         <tr>
-            <th scope="col"><span class="sr-only">Requirement</span></th>
+            <th scope="col"  class="sticky-table__sticky-horiz-heading"><span class="sr-only">Requirement</span></th>
             <th scope="col">A</th>
             <th scope="col">AA</th>
             <th scope="col">AAA</th>
@@ -76,3 +77,4 @@
 
     </tbody>
 </table>
+</div>
