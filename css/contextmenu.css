@@ -85,3 +85,9 @@
   width: 16px;
   height: 16px;
 }
+.opener {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #3b99fc;
+}

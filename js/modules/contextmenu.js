@@ -4,18 +4,25 @@ export default function ContextMenu() {
   let previousFocus;
 
   this.init = new function () {
-    document.addEventListener("contextmenu", (event) => {
-      const link = event.target.closest(".link-context-menu");
+    document.addEventListener('contextmenu', (event) => {
       previousFocus = event.target;
+
+      const link = event.target.closest('.link-context-menu');
       if (link) {
         event.preventDefault();
         showContextMenu(event.x, event.y);
       }
-    })
+
+      const opener = event.target.closest('.opener');
+      if (opener) {
+        event.preventDefault();
+        showContextMenu(event.x, event.y);
+      }
+    });
   }
   
   function showContextMenu(eventX, eventY) {
-    let isMenuShowing = document.getElementById("context-menu-list") !== null;
+    let isMenuShowing = document.getElementById('context-menu-list') !== null;
     if (isMenuShowing) {
       hideContextMenu();
     }
@@ -23,39 +30,41 @@ export default function ContextMenu() {
     addMenuItemEventListeners(menu);
     menu.style.left = `${eventX}px`;
     menu.style.top = `${eventY}px`;
-    document.getElementById('main').appendChild(menu);
+    document.getElementById('main').append(menu);
+    menu.addEventListener('keydown', onMenuKeyDown);
     menu.focus();
-    menu.addEventListener("keydown", onMenuKeyDown);
-    document.addEventListener("click", hideContextMenu);
+    document.addEventListener('click', hideContextMenu);
   }
   
   function addMenuItemEventListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
-      item.addEventListener("click", onContextMenuItemClicked);
-      item.addEventListener("mouseover", onMouseOverItem);
-      item.addEventListener("mouseout", onMouseOutItem);
+      item.addEventListener('click', onContextMenuItemClicked);
+      item.addEventListener('mouseover', onMouseOverItem);
+      item.addEventListener('mouseout', onMouseOutItem);
     }
   }
 
   function hideContextMenu() {
-    const menu = document.getElementById("context-menu-list");
+    const menu = document.getElementById('context-menu-list');
     if (!menu) {
       return;
     }
     removeMenuItemEventListeners(menu);
-    menu.removeEventListener("keydown", onMenuKeyDown);
+    menu.removeEventListener('keydown', onMenuKeyDown);
     menu.remove();
-    document.removeEventListener("click", hideContextMenu);
-    previousFocus.focus();
+    document.removeEventListener('click', hideContextMenu);
+    if (previousFocus) {
+      previousFocus.focus()
+    }
   }
   
   function removeMenuItemEventListeners(menu) {
     const items = menu.querySelectorAll('li');
     for (let item of items) {
-      item.removeEventListener("click", onContextMenuItemClicked);
-      item.removeEventListener("mouseover", onMouseOverItem);
-      item.removeEventListener("mouseout", onMouseOutItem);
+      item.removeEventListener('click', onContextMenuItemClicked);
+      item.removeEventListener('mouseover', onMouseOverItem);
+      item.removeEventListener('mouseout', onMouseOutItem);
     }
   }
 
@@ -69,7 +78,7 @@ export default function ContextMenu() {
     const ul = createElement('ul', { id: 'context-menu-list', class: 'context-menu__list', role: 'menu', tabindex: '0' });
     getMenuItems().forEach(item => {
       const li = createListItem(item);
-      ul.appendChild(li);
+      ul.append(li);
     });
     return ul;
   }
@@ -113,7 +122,7 @@ export default function ContextMenu() {
     for (const [key, value] of Object.entries(attributes)) {
       element.setAttribute(key, value);
     }
-    children.forEach(child => element.appendChild(child));
+    children.forEach(child => element.append(child));
     return element;
   }
 
@@ -126,7 +135,7 @@ export default function ContextMenu() {
     const {currentTarget} = event;
     const img = currentTarget.querySelector('img');
     if (img) {
-      img.setAttribute("src", "images/contextmenu/check_24dp_white.png");
+      img.setAttribute('src', 'images/contextmenu/check_24dp_white.png');
     }
   }
   
@@ -134,7 +143,7 @@ export default function ContextMenu() {
     const {currentTarget} = event;
     const img = currentTarget.querySelector('img');
     if (img) {
-      img.setAttribute("src", "images/contextmenu/check_24dp_color.png");
+      img.setAttribute('src', 'images/contextmenu/check_24dp_color.png');
     }
   }
 }

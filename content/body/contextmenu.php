@@ -6,6 +6,10 @@
 
 <p id="link-describedby" hidden="hidden">Link with custom context menu</p>
 
+<div id="opener" class="opener">
+
+</div>
+
 <div class="enable-example--no-border">
   <ul id="context-menu-list" class="context-menu__example" role="menu" tabindex="0">
     <li class="context-menu__list__item" role="menuitem" tabindex="0">Back</li>
