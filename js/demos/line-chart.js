@@ -9,7 +9,6 @@ const margin = { top: 30, right: 20, bottom: 30, left: 50 },
 // Parse the date / time
 // Enable changed d3.time.format to d3.timeFormat due to API changes
 // details: https://stackoverflow.com/questions/39369789/how-to-solve-typeerror-d3-time-is-undefined
-const parseDate = d3.timeParse('%d-%b-%y');
 
 // Set the ranges
 // Enable changed d3.time.scale changed to d3.scaleTime and d3.scale.linear changed to d3.scaleLinear
@@ -111,8 +110,7 @@ d3.csv('../../data/ice-cream.csv').then(function (data) {
         const rows = tbody.selectAll('tr').data(data).enter().append('tr');
 
         // create a cell in each row for each column
-        const cells = rows
-            .selectAll('td')
+        rows.selectAll('td')
             .data(function (row) {
                 return columns.map(function (column) {
                     return { column: column, value: row[column] };
