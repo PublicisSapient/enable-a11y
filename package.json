@@ -49,6 +49,8 @@
     "eslint": "eslint .",
     "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
+    "stylelint": "npx stylelint \"**/*.less\"",
+    "stylelint:fix": "npx stylelint \"**/*.less\" --fix",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh",
     "prepare": "node .husky/install.mjs"
@@ -106,11 +108,14 @@
     "jscodeshift": "^0.15.2",
     "jsdoc": "^4.0.2",
     "pa11y-ci": "^3.1.0",
+    "postcss-less": "^6.0.0",
     "prettier": "^3.2.5",
     "puppeteer": "22.3.0",
     "puppeteer-keyboard": "^0.2.0",
     "robotjs": "^0.6.0",
     "selenium-webdriver": "^4.18.1",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1",
     "vnu-jar": "^23.4.11",
     "webpack-cli": "^5.1.4",
     "wget-improved": "^3.4.0"
