@@ -19,6 +19,9 @@ const tooltip = new function () {
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
     const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
+    const escapeKey = 'Escape';
+    const tabKey = 'Tab';
+    const buttonName = 'BUTTON';
     let timeout = null;
     let tooltipTarget = null;
     let isTooltipVisible = false;
@@ -76,14 +79,14 @@ const tooltip = new function () {
     }
 
     this.onKeydown = (e) => {
-        if (e.key === 'Tab'){
+        if (e.key === tabKey){
             tabbedIn = true;
         }
     }
 
     this.onKeyup = (e) => {
         // check if escape is pressed
-        if (e.which === 27) {
+        if (e.key === escapeKey) {
             this.hide();
             e.preventDefault();
         }
@@ -93,7 +96,7 @@ const tooltip = new function () {
         tooltipTarget = e.target;
 
         //Hide tooltip on initial focus
-        if (tooltipTarget.tagName.toLowerCase() === 'button' && tabbedIn) {
+        if (tooltipTarget.tagName === buttonName && tabbedIn) {
             return;
         }
         timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
@@ -102,7 +105,7 @@ const tooltip = new function () {
     this.handleClick = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName.toLowerCase() === 'button' && tabbedIn) {
+        if (tooltipTarget.tagName === buttonName && tabbedIn) {
             if (!isTooltipVisible) {
                 timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
             } else {
@@ -132,8 +135,8 @@ const tooltip = new function () {
         tooltipEl.innerHTML = text;
         tooltipEl.setAttribute('aria-hidden', "false");
         tooltipEl.classList.remove('tooltip--hidden');
-        tooltipStyle.top = 'calc(' + (tooltipTargetRect.bottom + window.scrollY) + 'px + 1em)';
-        tooltipStyle.left = (tooltipTargetRect.left + window.pageXOffset) + 'px';
+        tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
+        tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;
         tooltipEl.classList.remove('tooltip--bottom');
         tooltipEl.classList.add('tooltip--top');
 
@@ -146,7 +149,7 @@ const tooltip = new function () {
             tooltipEl.classList.add('tooltip--bottom');
             tooltipEl.classList.remove('tooltip--top');
 
-            tooltipStyle.top = 'calc(' + (tooltipTargetRect.top + window.scrollY - tooltipHeight) + 'px - 1em)';
+            tooltipStyle.top = `calc(${tooltipTargetRect.top + window.scrollY - tooltipHeight}px - 1em)`
         }
 
         tooltipTarget.addEventListener('mouseleave', this.hide);

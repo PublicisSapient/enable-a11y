@@ -1,22 +1,5 @@
 @import "shared/mixins-and-vars";
 
-/* Common styling for button entrypoints */
-.tooltip-button-common {
-    color: white;
-    background-color: blue;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    position: relative;
-}
-
-.tooltip-button-hover {
-    /* Hover styling */
-    transition: background-color 0.3s ease; /* smooth transition */
-    background-color: darkblue; /* Example darker background on hover */
-}
-
 /* Main tooltip */
 .tooltip {
     display: block;
@@ -27,6 +10,23 @@
     position: absolute;
     border-radius: 0.5rem;
     z-index: 2147483647;
+
+    /* Common styling for button entrypoints */
+    .button-common {
+        color: white;
+        background-color: blue;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .button-hover {
+        /* Hover styling */
+        transition: background-color 0.3s ease; /* smooth transition */
+        background-color: darkblue; /* Example darker background on hover */
+    }
 
     /* 
      * We put a transparent border here for Windows High Contrast Mode. 
@@ -71,7 +71,7 @@
 
     /* Button entrypoints */
     &__icon-button {
-        .tooltip-button-common();
+        .button-common();
         width: 20px;
         height: 20px;
         border-radius: 50%; /* to make it circular */
@@ -79,7 +79,7 @@
         font-size: (12 / @px); /* adjust font size as needed */
 
         &:hover {
-            .tooltip-button-hover();
+            .button-hover();
         }
 
         /* Ensure the button content is centered */
@@ -91,13 +91,13 @@
     }
 
     &__text-button {
-        .tooltip-button-common();
+        .button-common();
         border-radius: 0.2rem;
         padding: 0.25rem;
         vertical-align: text-bottom;
 
         &:hover {
-            .tooltip-button-hover();
+            .button-hover();
         }
 
         @media only screen and (min-width: 720px) {
