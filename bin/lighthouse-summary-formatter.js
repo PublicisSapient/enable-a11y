@@ -1,6 +1,5 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
-const chalk = require('chalk');
 const Table = require('cli-table3');
 const cliProgress = require('cli-progress');
 
@@ -11,6 +10,9 @@ const COMMAND_ARGS = [
     '-f tmp/downloaded-urls.txt --params "--only-categories=accessibility"',
 ];
 const DOWNLOADED_URLS = 'tmp/downloaded-urls.txt';
+const RED_TEXT = '\x1b[31m';
+const YELLOW_TEXT = '\x1b[33m';
+const GREEN_TEXT = '\x1b[32m';
 
 const getNumPages = () => {
     try {
@@ -168,22 +170,21 @@ const formatSummary = () => {
             .map((item) => {
                 if (item?.detail?.accessibility === 1) {
                     return console.log(
-                        chalk.green(
-                            `✅ Pass: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n`,
-                        ),
+                        GREEN_TEXT,
+                        `✅ Pass: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n`,
                     );
                 }
 
                 if (item?.error) {
                     return console.log(
-                        chalk.yellow(`🚫 Error scanning: ${item.url}\n`),
+                        YELLOW_TEXT,
+                        `🚫 Error scanning: ${item.url}\n`,
                     );
                 }
 
                 console.log(
-                    chalk.red(
-                        `❌ Fail: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n`,
-                    ),
+                    RED_TEXT,
+                    `❌ Fail: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n`,
                 );
 
                 // Output failed accessibility test data in table format
