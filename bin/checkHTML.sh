@@ -459,6 +459,22 @@ function runPa11yTests() {
 	fi
 }
 
+
+
+function runLighthouseTests() {
+	#. Download the HTML files if they have not already been downloaded
+	if ! [ -f tmp/downloaded-urls.txt ]
+	then
+		bin/generateSiteMap.sh
+		downloadHTML
+	else
+		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
+	fi
+
+	node bin/lighthouse-summary-formatter.js
+}
+
+
 #.. let's wipe the tmp directory if it exists
 if [ -z "$(ls -A tmp)" ]
 then
@@ -475,6 +491,9 @@ then
 elif [ "$1" = "pa11y" ]
 then
 	runPa11yTests
+elif [ "$1" = "lighthouse" ]
+then
+	runLighthouseTests
 else
 	#.. Run checks and preparation for tests
 	bin/generateSiteMap.sh
@@ -484,6 +503,7 @@ else
 	runVNUTests
 	runAXETests
 	runPa11yTests
+	runLighthouseTests
 
 	#.. Remove temporary files on success
 	rm tmp/* 2> /dev/null
