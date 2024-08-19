@@ -23,7 +23,9 @@ const getNumPages = () => {
             );
         }
 
-        return fs.readFileSync(DOWNLOADED_URLS).toString().split('\n').length;
+        return (
+            fs.readFileSync(DOWNLOADED_URLS).toString().split('\n').length - 1
+        );
     } catch (err) {
         console.log(`Error getting the number of pages: ${err.message}`);
     }
