@@ -124,10 +124,21 @@ const formatErrorReport = ({ fileName }) => {
             fs.readFileSync(`${REPORT_PATH}${fileName}`, 'utf-8'),
         );
 
+        if (report?.runtimeError) {
+            return logger(
+                `🚫 Error scanning: ${fileName} - ${report?.runtimeError?.message}\n`,
+                'yellow',
+            );
+        }
+
         // Iterate through the audits and log issues where score is < 1 and not null
         for (const key in report.audits) {
             const audit = report.audits[key];
             if (audit.score < 1 && audit.score !== null) {
+                logger(
+                    `❌ Fail: ${item.url} with a score of ${parseInt(audit.score) * 100}%\n\nVisit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${item?.file} to see the full accessibility report.\n\n`,
+                    'red',
+                );
                 logger(`Issue: ${audit.id}\n`, 'white', true);
                 logger(`Title: ${audit.title}\n`, 'white', true);
                 logger(
@@ -165,15 +176,6 @@ const formatSummary = () => {
                         'green',
                     );
                 }
-
-                if (item?.error) {
-                    return logger(`🚫 Error scanning: ${item.url}\n`, 'yellow');
-                }
-
-                logger(
-                    `❌ Fail: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n\nVisit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${item?.file} to see the full accessibility report.\n\n`,
-                    'red',
-                );
 
                 // Output failed accessibility test data in table format
                 formatErrorReport({ fileName: item?.file });
