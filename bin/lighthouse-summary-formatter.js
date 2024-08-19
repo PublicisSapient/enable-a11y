@@ -142,7 +142,7 @@ const formatErrorReport = ({ fileName }) => {
 
         // Display the table in terminal
         console.log(
-            `Visit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${fileName} to see the real report.\n`,
+            `Visit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${fileName} to see the full accessibility report.\n`,
         );
         console.log(`${table.toString()}\n`);
     } catch (err) {
@@ -201,5 +201,5 @@ runLighthouseBatch()
         formatSummary();
     })
     .catch((err) => {
-        console.log(`Error in runLightHouseBatch: ${err.message}`);
+        console.log(`Error: ${err.message}`);
     });
