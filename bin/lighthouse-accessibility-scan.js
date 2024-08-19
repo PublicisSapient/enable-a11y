@@ -136,7 +136,7 @@ const formatErrorReport = ({ fileName }) => {
             const audit = report.audits[key];
             if (audit.score < 1 && audit.score !== null) {
                 logger(
-                    `❌ Fail: ${item.url} with a score of ${parseInt(audit.score) * 100}%\n\nVisit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${item?.file} to see the full accessibility report.\n\n`,
+                    `❌ Fail: ${fileName} with a score of ${parseInt(audit.score) * 100}%\n\nVisit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${item?.file} to see the full accessibility report.\n\n`,
                     'red',
                 );
                 logger(`Issue: ${audit.id}\n`, 'white', true);
