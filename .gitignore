@@ -4,6 +4,7 @@ api-cache
 tmp
 .vscode
 report/*
+.idea
 
 # auto-gen PHP files/logs
 php_errors.log
