@@ -471,7 +471,7 @@ function runLighthouseTests() {
 		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
 	fi
 
-	node bin/lighthouse-summary-formatter.js
+	node bin/lighthouse-accessibility-scan.js
 }
 
 

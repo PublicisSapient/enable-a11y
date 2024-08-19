@@ -57,12 +57,16 @@ const runLighthouseBatch = () => {
     // Init new instance of progress bar
     const progressBar = new cliProgress.SingleBar(
         {
-            format: `Lighthouse Scan Progress ... |{bar}| {percentage}% || {value}/${numPages} Pages || ETA: {eta_formatted} || {duration_formatted}`,
+            format: `Lighthouse Scan Progress: |{bar}| {percentage}% || {value}/${numPages} Pages || ETA: {eta_formatted} || {duration_formatted}`,
             barCompleteChar: '\u2588',
             barIncompleteChar: '\u2591',
             hideCursor: false,
         },
         cliProgress.Presets.shades_classic,
+    );
+
+    console.log(
+        `\nLighthouse Scan Started on ${numPages} pages, this may take awhile ...\n`,
     );
 
     // Start the progess bar
@@ -95,7 +99,7 @@ const runLighthouseBatch = () => {
             if (code === 0) {
                 progressBar.update(numPages);
                 progressBar.stop();
-                resolve('Lighthouse batch scan completed successfully.');
+                resolve();
             } else {
                 progressBar.stop();
                 reject(
