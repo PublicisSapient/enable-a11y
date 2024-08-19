@@ -1,8 +1,16 @@
 <p>
-  Context menus are used for...
+  Context menus are custom, right-click menus that provide users with quick access to additional options
+  or actions related to a specific element or area on the page. Context menus are usually opened using a combination
+  of keyboard keys—VO-Shift-M using VoiceOver on Mac—or a triple-tap action on mobile devices.
 </p>
 
 <h2>Links</h2>
+
+<p>
+  Below is a link that has a custom context meu. The reasons for a link to have a custom context menu are many. It
+  could be purely for style, it could be wanting to hide default browser options, it could be providing custom
+  functionality, and many other reasons.
+</p>
 
 <a id="link-context-menu" class="link-context-menu" href="https://google.com" aria-describedby="link-describedby">Google</a>
 
@@ -23,10 +31,14 @@
   </ul>
 </div>
 
-<h2>DIV Area</h2>
+<h2>A Specific Area</h2>
 
-<div id="opener" class="opener" role="button" tabindex="0" aria-describedby="div-describedby"></div>
+<p>
+  It's possible to show a custom context menu for when a user right-clicks inside a specific area. It's best not to
+  allow accessibility users to be able to interact with this area though; instead override the context menu for
+  elements that have more context such as links and buttons. Moreover, forcing an area to be accessible will require
+  assigning a role of "button", "link", or some other attribute that doesn't correctly represent the area, and will
+  only confuse accessibility users because the area will be announced as a "button", "link", etc., respectively.
+</p>
 
-<p id="div-describedby" hidden="hidden">In area with a custom context menu. Triple-tap to open the custom context menu.</p>
-
-<div>See if it appends behind this text here</div>
+<div id="specific-area" class="specific-area" role="region"></div>

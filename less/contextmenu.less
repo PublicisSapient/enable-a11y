@@ -5,10 +5,10 @@
   user-select: none;
 }
 
-.opener {
+.specific-area {
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 80px;
   background-color: #3b99fc;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -16,73 +16,71 @@
 }
 
 .context-menu {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+
   &__example {
     display: none;
   }
 
-  &__list {
-    display: block;
-    position: fixed;
-    z-index: 1000;
+  .listItem {
+    padding: 4px 12px 4px 26px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6f42c1;
 
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-    margin-left: 0;
-    width: 200px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #444;
+    &:hover {
+      background: #6f42c1;
+      color: #fff;
+    }
+  }
 
-    .listItem {
-      padding: 4px 12px 4px 26px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #6f42c1;
+  &__item {
+    .listItem();
+
+    &__divider {
+      height: 1px;
+      background: #6f42c1;
+      margin: 4px 8px;
+    }
+
+    &__disabled {
+      .listItem();
+      color: #ccc;
+      cursor: default;
 
       &:hover {
-        background: #6f42c1;
-        color: #fff;
+        background: unset;
+        color: #ccc;
       }
     }
 
-    &__item {
+    &__withIcon {
       .listItem();
+      padding-left: 4px;
+      justify-content: flex-start;
+      gap: 4px;
 
-      &__divider {
-        height: 1px;
-        background: #6f42c1;
-        margin: 4px 8px;
-      }
-
-      &__disabled {
-        .listItem();
-        color: #ccc;
-        cursor: default;
-
-        &:hover {
-          background: unset;
-          color: #ccc;
-        }
-      }
-
-      &__withIcon {
-        .listItem();
-        padding-left: 4px;
-        justify-content: flex-start;
-        gap: 4px;
-
-        &__icon {
-          width: 16px;
-          height: 16px;
-        }
+      &__icon {
+        width: 16px;
+        height: 16px;
       }
     }
   }

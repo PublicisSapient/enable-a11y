@@ -11,10 +11,10 @@ export default function ContextMenu() {
       addLongTapListener(link);
     }
     
-    const opener = document.getElementById('opener');
-    if (opener) {
-      addContextMenuListener(opener);
-      addLongTapListener(opener);
+    const area = document.getElementById('specific-area');
+    if (area) {
+      addContextMenuListener(area);
+      addLongTapListener(area);
     }
   }
   
@@ -108,7 +108,7 @@ export default function ContextMenu() {
   }
 
   function createContextMenu() {
-    const ul = createElement('ul', { id: 'context-menu-list', class: 'context-menu__list', role: 'menu', tabindex: '0' });
+    const ul = createElement('ul', { id: 'context-menu-list', class: 'context-menu', role: 'menu', tabindex: '0' });
     getMenuItems().forEach(item => {
       const li = createListItem(item);
       ul.append(li);
@@ -118,21 +118,21 @@ export default function ContextMenu() {
 
   function getMenuItems() {
     return [
-      {text: 'Back', className: 'context-menu__list__item', role: 'menuitem', tabindex: '0'},
-      {text: 'Forward', className: 'context-menu__list__item__disabled', role: 'menuitem', tabindex: '0'},
-      {text: 'Reload', className: 'context-menu__list__item', role: 'menuitem', tabindex: '0'},
-      {text: 'More Tools', className: 'context-menu__list__item', role: 'menuitem', tabindex: '0'},
-      {className: 'context-menu__list__item__divider', ariaHidden: 'true'},
+      {text: 'Back', className: 'context-menu__item', role: 'menuitem', tabindex: '0'},
+      {text: 'Forward', className: 'context-menu__item__disabled', role: 'menuitem', tabindex: '0'},
+      {text: 'Reload', className: 'context-menu__item', role: 'menuitem', tabindex: '0'},
+      {text: 'More Tools', className: 'context-menu__item', role: 'menuitem', tabindex: '0'},
+      {className: 'context-menu__item__divider', ariaHidden: 'true'},
       {
         text: 'Show Bookmarks',
-        className: 'context-menu__list__item__withIcon',
+        className: 'context-menu__item__withIcon',
         role: 'menuitem',
         tabindex: '0',
         iconSrc: 'images/contextmenu/check_24dp_color.png',
         iconAlt: 'selected',
-        iconClass: 'context-menu__list__item__withIcon__icon'
+        iconClass: 'context-menu__item__withIcon__icon'
       },
-      {text: 'Show Full URLs', className: 'context-menu__list__item', role: 'menuitem', tabindex: '0'}
+      {text: 'Show Full URLs', className: 'context-menu__item', role: 'menuitem', tabindex: '0'}
     ];
   }
 
