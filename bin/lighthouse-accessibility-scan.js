@@ -1,17 +1,64 @@
+/**************************************************
+ * Usage:
+ *
+ * 1. npm run test
+ *
+ *    Will run the entire set of tests including this lighthouse test against all URL's
+ *    found in the tmp/downloaded-urls.txt file.
+ *
+ *
+ * 2. npm run test-lighthouse
+ *
+ *    Will run only the lighthouse accessibility tests against all URL's
+ *    found in the tmp/downloaded-urls.txt file.
+ *
+ *
+ * 3. npm run test-lighthouse-url {VALID URL}
+ *
+ *    Will run the lighthouse accessibilty tests against a single URL.
+ *    For example: npm run test-lighthouse-url https://www.useragentman.com/enable/index.php
+ *
+ *
+ * Note:
+ *
+ * If the tmp/downloaded-urls.txt file does not exist, you can create one or
+ * you can generate one by first running npm run test.
+ ***********************************************  */
+
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-const COMMAND = './node_modules/.bin/lighthouse-batch';
-const ARGS = [
-    '-f tmp/downloaded-urls.txt --params "--only-categories=accessibility"',
-];
 const SUMMARY_PATH = 'report/lighthouse/summary.json';
 const REPORT_PATH = 'report/lighthouse/';
-const DOWNLOADED_URLS = 'tmp/downloaded-urls.txt';
 const RED_TXT = '\x1b[31m%s\x1b[0m';
 const GREEN_TXT = '\x1b[32m%s\x1b[0m';
 const YELLOW_TXT = '\x1b[33m%s\x1b[0m';
 const SCORE_THRESHOLD = 1;
+
+const getOptions = () => {
+    const singleUrl = process.argv[2];
+    const downloadedUrls = 'tmp/downloaded-urls.txt';
+    const isValidUrl = URL.canParse(singleUrl);
+
+    if (singleUrl !== undefined && !isValidUrl) {
+        console.error(
+            `Error: ${singleUrl} is not a valid URL. Please include http:// or https://`,
+        );
+        process.exit(1);
+    }
+
+    const args = isValidUrl
+        ? [`-s ${singleUrl} --params "--only-categories=accessibility"`]
+        : [`-f ${downloadedUrls} --params "--only-categories=accessibility"`];
+
+    const numPages = isValidUrl ? 1 : getNumPages(downloadedUrls);
+
+    return {
+        command: './node_modules/.bin/lighthouse-batch',
+        args,
+        numPages,
+    };
+};
 
 const readFileSync = (path, encoding = 'utf-8') => {
     try {
@@ -27,9 +74,9 @@ const fileExists = (path) => {
     }
 };
 
-const getNumPages = () => {
-    fileExists(DOWNLOADED_URLS);
-    return readFileSync(DOWNLOADED_URLS).split('\n').filter(Boolean).length;
+const getNumPages = (downloadedUrls) => {
+    fileExists(downloadedUrls);
+    return readFileSync(downloadedUrls).split('\n').filter(Boolean).length;
 };
 
 const getReport = (fileName) => {
@@ -48,14 +95,14 @@ const logPageStatus = ({ fileName }) => {
         return;
     }
 
-    const statusText =
+    const statusColor =
         categories.accessibility.score >= SCORE_THRESHOLD ? GREEN_TXT : RED_TXT;
     const statusMessage =
         categories.accessibility.score >= SCORE_THRESHOLD
             ? '✅ Pass'
             : '❌ Fail';
 
-    console.log(statusText, `${statusMessage}: ${requestedUrl}\n`);
+    console.log(statusColor, `${statusMessage}: ${requestedUrl}\n`);
 };
 
 const printIssuesSummary = (audits, url, fileName, score) => {
@@ -65,18 +112,18 @@ const printIssuesSummary = (audits, url, fileName, score) => {
         `Visit https://googlechrome.github.io/lighthouse/viewer/ and upload ${fileName} to see the full accessibility report.\n`,
     );
 
-    let errCount = 1;
-    for (const { score, id, title, description, details } of Object.values(
-        audits,
-    )) {
-        if (score < 1 && score !== null) {
-            console.log(`  Issue ${errCount}: ${id}\n`);
-            console.log(`  Title: ${title}\n`);
-            console.log(`  Selector: ${details?.items[0]?.node?.selector}\n`);
-            console.log(`  Description: ${description}\n\n`);
-            errCount++;
-        }
-    }
+    Object.values(audits).forEach(
+        ({ score, id, title, description, details }, index) => {
+            if (score < 1 && score !== null) {
+                console.log(`  Issue ${index + 1}: ${id}\n`);
+                console.log(`  Title: ${title}\n`);
+                console.log(
+                    `  Selector: ${details?.items[0]?.node?.selector}\n`,
+                );
+                console.log(`  Description: ${description}\n\n`);
+            }
+        },
+    );
 };
 
 const formatSummary = () => {
@@ -103,22 +150,23 @@ const formatSummary = () => {
     });
 
     const totalCount = passCount + failCount + errorCount;
-    const statusText = failCount === 0 ? GREEN_TXT : RED_TXT;
+    const statusColor = failCount === 0 ? GREEN_TXT : RED_TXT;
     console.log(
-        statusText,
+        statusColor,
         `Scan complete: ${passCount}/${totalCount} URLs passed\n`,
     );
 };
 
 const runLighthouseBatch = () => {
-    const numPages = getNumPages();
+    const { numPages } = getOptions();
 
     console.log(
         `\nLighthouse Scan Started on ${numPages} pages, this may take awhile ...\n`,
     );
 
     return new Promise((resolve, reject) => {
-        const child = spawn(COMMAND, ARGS, { shell: true });
+        const { command, args } = getOptions();
+        const child = spawn(command, args, { shell: true });
 
         child.stderr.on('data', (data) => {
             data.toString()
@@ -134,11 +182,11 @@ const runLighthouseBatch = () => {
                 });
         });
 
-        child.on('error', (err) => {
+        child.on('error', (err) =>
             reject(
                 new Error(`Failed to run the lighthouse scan: ${err.message}`),
-            );
-        });
+            ),
+        );
 
         child.on('close', (code) => {
             if (code === 0) resolve();
@@ -154,6 +202,6 @@ const runLighthouseBatch = () => {
 
 runLighthouseBatch()
     .then(formatSummary)
-    .catch((err) => {
-        console.error(`Error running runLighthouseBatch: ${err.message}`);
-    });
+    .catch((err) =>
+        console.error(`Error running runLighthouseBatch: ${err.message}`),
+    );

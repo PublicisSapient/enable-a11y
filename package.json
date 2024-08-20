@@ -44,6 +44,7 @@
     "test-axe": "bin/checkHTML.sh axe",
     "test-pa11y": "bin/checkHTML.sh pa11y",
     "test-lighthouse": "bin/checkHTML.sh lighthouse",
+    "test-lighthouse-url": "node bin/lighthouse-accessibility-scan",
     "lint": "bin/checkHTML.sh",
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
