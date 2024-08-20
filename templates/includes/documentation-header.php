@@ -305,7 +305,7 @@
                                     }, {
                                         "id": "flyout__link",
                                         "props": {
-                                            "label": "Form Error Checking",
+                                            "label": "Accessible Form Validation",
                                             "url-slug": "form-error-checking",
                                             "alt": ""
                                         }
@@ -603,7 +603,7 @@
                             "content": [{
                                 "id": "flyout__link",
                                 "props": {
-                                    "label": "Form Error Checking",
+                                    "label": "Accessible Form Validation",
                                     "url-slug": "form-error-checking",
                                     "alt": ""
                                 }
