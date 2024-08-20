@@ -83,8 +83,10 @@
         <li>In <strong><em>Appearance</em></strong>, you will have the option to choose Light, Dark, or Auto.</li>
     </ol>
   </li>
-  <img src="images/dark-mode-example/DarkMode_MacOS.png" width=400 height=349
-  alt="MacOS System Settings Dark Mode">
+  <li>
+    <img src="images/dark-mode-example/DarkMode_MacOS.png" width=400 height=349
+    alt="MacOS System Settings Dark Mode">
+  </li>
 
   <li><strong>Mobile (iOS):</strong>
     <ol>
@@ -93,8 +95,10 @@
         <li>Under <strong><em>Appearance</em></strong>, you will again see the option for Light, Dark, or Automatic.</li>
     </ol>
   </li>
-  <img src="images/dark-mode-example/DarkMode_iOS.png" width=192 height=400
-  alt="iPhone/iPad Settings Dark Mode">
+  <li>
+    <img src="images/dark-mode-example/DarkMode_iOS.png" width=192 height=400
+    alt="iPhone/iPad Settings Dark Mode">
+  </li>
 
 </ul>
 
@@ -107,8 +111,10 @@
         <li>In <strong><em>Colors</em></strong> under <strong><em>Choose your mode</em></strong>, you will have the option to choose Light, Dark, or Custom, as well as change your accent color to your preference.</li>
     </ol>
   </li>
-  <img src="images/dark-mode-example/DarkMode_Windows.png" width=400 height=315
-  alt="Windows Color Settings Dark Mode">
+  <li>
+    <img src="images/dark-mode-example/DarkMode_Windows.png" width=400 height=315
+    alt="Windows Color Settings Dark Mode">
+  </li>
 </ul>
 
 <h3>Android:</h3>
@@ -120,8 +126,10 @@
         <li>In <strong><em>Display</em></strong>, toggle Dark mode based on your preference.</li>
     </ol>
   </li>
-  <img src="images/dark-mode-example/DarkMode_Android.png" width=193 height=400
-  alt="Android Dark Theme Settings">
+  <li>
+    <img src="images/dark-mode-example/DarkMode_Android.png" width=193 height=400
+    alt="Android Dark Theme Settings">
+  </li>
 </ul>
 
 <h3>Ubuntu:</h3>
@@ -133,6 +141,8 @@
         <li>In <strong><em>Appearance</em></strong>, under <strong><em>Style</em></strong>, you will see the option to choose Light or Dark mode.</li>
     </ol>
   </li>
-  <img src="images/dark-mode-example/DarkMode_Ubuntu.png" width=400 height=333
-  alt="Ubuntu Dark Mode Settings">
+  <li>
+    <img src="images/dark-mode-example/DarkMode_Ubuntu.png" width=400 height=333
+    alt="Ubuntu Dark Mode Settings">
+  </li>
 </ul>
