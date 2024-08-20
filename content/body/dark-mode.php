@@ -54,7 +54,7 @@
 
 <p>
     However, sometimes an inaccessible contrast ratio is not so obvious.  This is why it is important to use tools that check the ratio, as there are things that might be overseen.  
-    Tools like <a href="https://wave.webaim.org/">WAVE</a> web accessibility evaluation tools</a>, 
+    Tools like <a href="https://wave.webaim.org/">WAVE</a> web accessibility evaluation tools, 
     <a href="https://webaim.org/resources/contrastchecker/">WebAIM Contrast Checker</a>,
     and <a href="https://accessible-colors.com/">accessible-colors</a>
     allow for developers to test their page contrasts to ensure that they are creating the most accessible user interface possible.
