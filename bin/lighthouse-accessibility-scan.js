@@ -21,8 +21,8 @@
  *
  * Note:
  *
- * If the tmp/downloaded-urls.txt file does not exist, you can create one or
- * you can generate one by first running npm run test.
+ * If the tmp/downloaded-urls.txt file does not exist, you can manually create one
+ * or you can generate one by first running npm run test-lighthouse.
  ***********************************************  */
 
 const { spawn } = require('child_process');
