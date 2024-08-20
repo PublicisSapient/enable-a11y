@@ -140,10 +140,11 @@
     "wicg-inert": "^3.1.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "npm test"
+    "*.{js,jsx,ts,tsx,css,less}": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier --write"
     ]
   },
   "bin": {
