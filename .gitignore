@@ -3,6 +3,7 @@ node_modules
 api-cache
 tmp
 .vscode
+.idea
 
 # auto-gen PHP files/logs
 php_errors.log

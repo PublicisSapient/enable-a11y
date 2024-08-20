@@ -6,13 +6,15 @@
         "jest": true
     },
     "extends": ["eslint:recommended", "prettier"],
+    "globals": {
+        "Chartist": "readonly",
+        "__dirname": "readonly",
+        "page": "readonly",
+        "process": "readonly"
+    },
     "parserOptions": {
         "sourceType": "module",
         "ecmaVersion": 12
-    },
-    "rules": {
-        "no-undef": "warn",
-        "no-unused-vars": "warn"
     },
     "ignorePatterns": [
         "node_modules",
@@ -26,15 +28,13 @@
         "**.php",
         "js/tmp.js",
         "js/demos/ana-tudor/**",
-        "bin/php-express/**"
+        "bin/php-express/**",
+        "content/code-fragments/**/*"
     ],
     "plugins": ["import", "node", "promise"],
     "overrides": [
         {
-            "files": ["*.test.js", "test-config.js"],
-            "rules": {
-                "no-undef": "warn"
-            }
+            "files": ["*.test.js", "test-config.js"]
         }
     ]
 }

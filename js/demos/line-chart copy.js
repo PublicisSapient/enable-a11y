@@ -112,8 +112,7 @@ d3.csv('../../data/line-chart.csv').then(function (data) {
         const rows = tbody.selectAll('tr').data(data).enter().append('tr');
 
         // create a cell in each row for each column
-        const cells = rows
-            .selectAll('td')
+        rows.selectAll('td')
             .data(function (row) {
                 return columns.map(function (column) {
                     return { column: column, value: row[column] };

@@ -3,7 +3,6 @@ const path = require('path');
 const rewrite = require('express-urlrewrite');
 const app = express();
 const port = 8888;
-const { exec } = require('child_process');
 
 let phpCmd = 'php';
 

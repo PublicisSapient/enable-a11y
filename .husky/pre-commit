@@ -9,5 +9,4 @@ if [ "$NODE_ENV" = "production" ] || [ "$CI" = "true" ]; then
 fi
 
 # If you have issues when running the npx command in an IDE, you should try running the command in the terminal instead. This issue is due to the PATH values not being set as expected in the IDE in order for npx to be recognized. See https://stackoverflow.com/questions/67115897/vscode-github-desktop-pre-commit-hook-npx-command-not-found for more information.
-# npm run test-all
 npx lint-staged

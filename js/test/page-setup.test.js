@@ -15,7 +15,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
         // This tests that there are no browser or js errors.
         desktopPage.on('console', async (e) => {
-            const args = await Promise.all(e.args().map((a) => a.jsonValue()));
+            await Promise.all(e.args().map((a) => a.jsonValue()));
 
             const type = e.type();
 
