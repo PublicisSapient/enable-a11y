@@ -1,195 +1,159 @@
 const { spawn } = require('child_process');
 const fs = require('fs');
 
-const REPORT_PATH = 'report/lighthouse/';
-const SUMMARY_PATH = 'report/lighthouse/summary.json';
 const COMMAND = './node_modules/.bin/lighthouse-batch';
-const COMMAND_ARGS = [
+const ARGS = [
     '-f tmp/downloaded-urls.txt --params "--only-categories=accessibility"',
 ];
+const SUMMARY_PATH = 'report/lighthouse/summary.json';
+const REPORT_PATH = 'report/lighthouse/';
 const DOWNLOADED_URLS = 'tmp/downloaded-urls.txt';
+const RED_TXT = '\x1b[31m%s\x1b[0m';
+const GREEN_TXT = '\x1b[32m%s\x1b[0m';
+const YELLOW_TXT = '\x1b[33m%s\x1b[0m';
+const SCORE_THRESHOLD = 1;
 
-const logger = (text, color, indent = '') => {
-    if (indent) {
-        indent = '\t';
+const readFileSync = (path, encoding = 'utf-8') => {
+    try {
+        return fs.readFileSync(path, encoding);
+    } catch (err) {
+        throw new Error(`Error reading file at ${path}: ${err.message}`);
     }
-    switch (color) {
-        case 'red':
-            return console.log(indent + '\x1b[31m%s\x1b[0m', text);
-        case 'green':
-            return console.log(indent + '\x1b[32m%s\x1b[0m', text);
-        case 'yellow':
-            return console.log(indent + '\x1b[33m%s\x1b[0m', text);
-        case 'white':
-        default:
-            return console.log(indent + '\x1b[37m%s\x1b[0m', text);
+};
+
+const fileExists = (path) => {
+    if (!fs.existsSync(path)) {
+        throw new Error(`File not found: ${path}`);
     }
 };
 
 const getNumPages = () => {
-    try {
-        // Check if the file exists before reading
-        if (!fs.existsSync(DOWNLOADED_URLS)) {
-            throw new Error(
-                `Downloaded URL's file not found: ${DOWNLOADED_URLS}`,
-            );
-        }
+    fileExists(DOWNLOADED_URLS);
+    return readFileSync(DOWNLOADED_URLS).split('\n').filter(Boolean).length;
+};
 
-        return fs
-            .readFileSync(DOWNLOADED_URLS)
-            .toString()
-            .split('\n')
-            .filter((url) => url).length;
-    } catch (err) {
-        logger(`Error getting the number of pages: ${err.message}`);
+const getReport = (fileName) => {
+    fileExists(fileName);
+    return JSON.parse(readFileSync(fileName));
+};
+
+const logPageStatus = ({ fileName }) => {
+    const { runtimeError, requestedUrl, categories } = getReport(fileName);
+
+    if (runtimeError) {
+        console.log(
+            YELLOW_TXT,
+            `🚫 Error scanning: ${requestedUrl} - ${runtimeError.message}\n`,
+        );
+        return;
+    }
+
+    const statusText =
+        categories.accessibility.score >= SCORE_THRESHOLD ? GREEN_TXT : RED_TXT;
+    const statusMessage =
+        categories.accessibility.score >= SCORE_THRESHOLD
+            ? '✅ Pass'
+            : '❌ Fail';
+
+    console.log(statusText, `${statusMessage}: ${requestedUrl}\n`);
+};
+
+const printIssuesSummary = (audits, url, fileName, score) => {
+    console.log(RED_TXT, `\n${url} failed scan with score: ${score}%:\n`);
+    console.log(
+        RED_TXT,
+        `Visit https://googlechrome.github.io/lighthouse/viewer/ and upload ${fileName} to see the full accessibility report.\n`,
+    );
+
+    let errCount = 1;
+    for (const { score, id, title, description, details } of Object.values(
+        audits,
+    )) {
+        if (score < 1 && score !== null) {
+            console.log(`  Issue ${errCount}: ${id}\n`);
+            console.log(`  Title: ${title}\n`);
+            console.log(`  Selector: ${details?.items[0]?.node?.selector}\n`);
+            console.log(`  Description: ${description}\n\n`);
+            errCount++;
+        }
     }
 };
 
-const sortSummary = (a, b) => {
-    const scoreA = a.score;
-    const scoreB = b.score;
-    const errorA = a.error;
-    const errorB = b.error;
+const formatSummary = () => {
+    fileExists(SUMMARY_PATH);
+    const summary = JSON.parse(readFileSync(SUMMARY_PATH));
 
-    if (scoreA === scoreB) {
-        return 0;
-    }
+    let passCount = 0,
+        failCount = 0,
+        errorCount = 0;
 
-    // Items with a higher score come first
-    if (scoreA === 1) return -1;
-    if (scoreB === 1) return 1;
+    console.log('\nLighthouse Scan Summary ...\n');
 
-    // Errors come second
-    if (errorA) return -1;
-    if (errorB) return 1;
+    summary.forEach((item) => {
+        const fileName = `${REPORT_PATH}${item.file}`;
+        const report = getReport(fileName);
+        const score = Number(item.score) * 100;
 
-    // Otherwise, failed scores come last
-    return 0;
+        if (item?.error) return errorCount++;
+        if (report.categories.accessibility.score === SCORE_THRESHOLD)
+            return passCount++;
+
+        printIssuesSummary(report.audits, item.url, fileName, score);
+        failCount++;
+    });
+
+    const totalCount = passCount + failCount + errorCount;
+    const statusText = failCount === 0 ? GREEN_TXT : RED_TXT;
+    console.log(
+        statusText,
+        `Scan complete: ${passCount}/${totalCount} URLs passed\n`,
+    );
 };
 
 const runLighthouseBatch = () => {
     const numPages = getNumPages();
 
-    logger(
+    console.log(
         `\nLighthouse Scan Started on ${numPages} pages, this may take awhile ...\n`,
     );
 
     return new Promise((resolve, reject) => {
-        const child = spawn(COMMAND, COMMAND_ARGS, { shell: true });
+        const child = spawn(COMMAND, ARGS, { shell: true });
 
-        // Lighthouse outputs the progress in stderr, update the progress here
         child.stderr.on('data', (data) => {
-            const output = data.toString();
-            const lines = output.split('\n');
-
-            lines.map((line) => {
-                if (line.includes('Printer json output written')) {
-                    const match = line.match(/(?<=written to\s).*$/);
-                    if (match) {
-                        logger(`Report generated in ${match}\n`);
-                    }
-                }
-            });
+            data.toString()
+                .split('\n')
+                .filter((line) =>
+                    line.includes('Printer json output written to'),
+                )
+                .forEach((line) => {
+                    const match = line.match(
+                        /(?<=Printer json output written to\s).*$/,
+                    );
+                    if (match) logPageStatus({ fileName: match[0] });
+                });
         });
 
-        // On error log it
         child.on('error', (err) => {
-            logger(`Failed to run the lighthouse scan: ${err.message}`);
+            reject(
+                new Error(`Failed to run the lighthouse scan: ${err.message}`),
+            );
         });
 
-        // On close update progress and resolve or reject the promise
         child.on('close', (code) => {
-            if (code === 0) {
-                resolve();
-            } else {
+            if (code === 0) resolve();
+            else
                 reject(
                     new Error(
                         `Lighthouse batch scan failed with exit code ${code}.`,
                     ),
                 );
-            }
         });
     });
 };
 
-const formatErrorReport = ({ fileName }) => {
-    try {
-        // Check if the file exists before reading
-        if (!fs.existsSync(`${REPORT_PATH}${fileName}`)) {
-            throw new Error(`Report not found: ${REPORT_PATH}${fileName}`);
-        }
-
-        // Get report file
-        const report = JSON.parse(
-            fs.readFileSync(`${REPORT_PATH}${fileName}`, 'utf-8'),
-        );
-
-        if (report?.runtimeError) {
-            return logger(
-                `🚫 Error scanning: ${fileName} - ${report?.runtimeError?.message}\n`,
-                'yellow',
-            );
-        }
-
-        // Iterate through the audits and log issues where score is < 1 and not null
-        for (const key in report.audits) {
-            const audit = report.audits[key];
-            if (audit.score < 1 && audit.score !== null) {
-                logger(
-                    `❌ Fail: ${fileName} with a score of ${parseInt(audit.score) * 100}%\n\nVisit https://googlechrome.github.io/lighthouse/viewer/ and upload ./${REPORT_PATH}${item?.file} to see the full accessibility report.\n\n`,
-                    'red',
-                );
-                logger(`Issue: ${audit.id}\n`, 'white', true);
-                logger(`Title: ${audit.title}\n`, 'white', true);
-                logger(
-                    `Selector: ${audit?.details?.items[0]?.node?.selector}\n`,
-                    'white',
-                    true,
-                );
-                logger(`Description: ${audit.description}\n\n`, 'white', true);
-            }
-        }
-    } catch (err) {
-        logger(`Error processing the report: ${err.message}`);
-    }
-};
-
-const formatSummary = () => {
-    try {
-        // Check if the file exists before reading
-        if (!fs.existsSync(SUMMARY_PATH)) {
-            throw new Error(`Summary not found: ${SUMMARY_PATH}`);
-        }
-
-        // Get summary file
-        const summary = JSON.parse(fs.readFileSync(SUMMARY_PATH, 'utf8'));
-
-        logger('Lighthouse Scan Results ...\n');
-
-        // Iterate over the results of each page and log them
-        summary
-            .sort((a, b) => sortSummary(a, b))
-            .map((item) => {
-                if (item?.detail?.accessibility === 1) {
-                    return logger(
-                        `✅ Pass: ${item.url} with a score of ${parseInt(item?.detail?.accessibility) * 100}%\n`,
-                        'green',
-                    );
-                }
-
-                // Output failed accessibility test data in table format
-                formatErrorReport({ fileName: item?.file });
-            });
-    } catch (err) {
-        logger(`Error processing the summary: ${err.message}`);
-    }
-};
-
-// Run the lighthouse script
 runLighthouseBatch()
-    .then(() => {
-        formatSummary();
-    })
+    .then(formatSummary)
     .catch((err) => {
-        logger(`Error: ${err.message}`);
+        console.error(`Error running runLighthouseBatch: ${err.message}`);
     });
