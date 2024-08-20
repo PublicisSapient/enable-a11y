@@ -141,10 +141,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,less}": [
-      "eslint --fix"
+        "eslint --fix"
     ],
     "*.{js,jsx,ts,tsx,json}": [
-      "prettier --write"
+        "prettier --write",
+        "npm test"
     ]
   },
   "bin": {
