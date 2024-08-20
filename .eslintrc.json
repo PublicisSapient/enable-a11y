@@ -16,10 +16,6 @@
         "sourceType": "module",
         "ecmaVersion": 12
     },
-    "rules": {
-        "no-undef": "warn",
-        "no-unused-vars": "warn"
-    },
     "ignorePatterns": [
         "node_modules",
         "enable-node-libs",
@@ -38,10 +34,7 @@
     "plugins": ["import", "node", "promise"],
     "overrides": [
         {
-            "files": ["*.test.js", "test-config.js"],
-            "rules": {
-                "no-undef": "warn"
-            }
+            "files": ["*.test.js", "test-config.js"]
         }
     ]
 }
