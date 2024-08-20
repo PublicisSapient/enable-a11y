@@ -3,7 +3,7 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # Check if NODE_ENV is set to production
-if [ "$NODE_ENV" = "production" || "$CI" = "true"]; then
+if [ "$NODE_ENV" = "production" ] || [ "$CI" = "true" ]; then
   echo "Skipping pre-commit hook in production environment"
   exit 0
 fi

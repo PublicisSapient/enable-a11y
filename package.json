@@ -44,7 +44,7 @@
     "test-axe": "bin/checkHTML.sh axe",
     "test-pa11y": "bin/checkHTML.sh pa11y",
     "test-all": "concurrently --kill-others \"npm run test-local\" \"npm run test-vnu\" \"npm run test-axe\" \"npm run test-pa11y\"",
-    "lint": "bin/checkHTML.sh",
+    "lint": "npm run eslint && bin/checkHTML.sh",
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
     "eslint": "eslint \"content/**\" \"js/**\" \"bin/**\"",
@@ -140,8 +140,9 @@
     "wicg-inert": "^3.1.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "bin": {
