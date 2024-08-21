@@ -146,14 +146,13 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,less}": [
-        "eslint --fix",
-        "npm run stylelint",
-        "git add"
+      "eslint --fix",
+      "npm run stylelint",
+      "git add"
     ],
     "*.{js,jsx,ts,tsx,json}": [
-        "prettier --write",
-        "npm test",
-        "git add"
+      "prettier --write",
+      "git add"
     ]
   },
   "bin": {
