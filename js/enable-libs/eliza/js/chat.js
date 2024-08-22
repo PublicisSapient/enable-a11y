@@ -15,7 +15,7 @@ const generateResponse = (incomingChat) => {
 const createChatLi = (message, className) => {
   const chatLi = document.createElement("li");
   chatLi.classList.add("chatbot-dialogue-chat", className);
-  let chatContent = className === "chatbot-dialogue-outgoing" ? `<p></p>` : `<img src="images/eliza/guy.png" class="chat-message-icon"><p></p>`;
+  let chatContent = className === "chatbot-dialogue-outgoing" ? `<span class="sr-only">You respond:</span><p></p>` : `<img alt="" aria-hidden="true" class="chat-message-icon" src="images/eliza/guy.png"><span class="sr-only">Chatbot says:</span><p></p>`;
   chatLi.innerHTML = chatContent;
   chatLi.querySelector("p").textContent = message;
   return chatLi;
@@ -46,6 +46,11 @@ const toggleChatbot = () => {
   chatContainer.classList.toggle("show-chatbot");
   chatContainer.classList.contains("show-chatbot") ? chatButtonLabel.innerText = "Close the chat dialogue." : chatButtonLabel.innerText = "Open the chat dialogue.";
   chatInput.focus();
+  setTimeout(() => {
+    const initialChat = createChatLi("How can I help you today?", "chatbot-dialogue-incoming");
+    chatDialogue.appendChild(initialChat);
+    chatDialogue.scrollTo(0, chatDialogue.scrollHeight);
+  }, 400)
 }
 
 chatForm.addEventListener("submit", submitChat);
