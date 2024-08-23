@@ -35,8 +35,53 @@
     "wip": true
   },
   "button.php": {
-    "title": "Accessible Buttons",
-    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
+    "title": "How to Create Accessible Buttons",
+    "desc": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+    "url": "https://www.useragentman.com/enable/button.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "Accessible Button ?",
+      "desc": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+      "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "An HTML Button",
+      "desc": "An HTML button is a clickable element that allows users to perform an action, such as submitting a form, triggering a function, or navigating to another page.",
+      "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough to make button accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the button accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-1"
+      },
+      {
+      "type": "HowTo",
+      "title": "A link with the role of button",
+      "desc": "Links can behave like a button, especially when it triggers an action rather than navigating to a different page.",
+      "url": "https://www.useragentman.com/enable/button.php#a-link-with-the-role-of-button--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "A link with the role of button and be accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the link behave like a button and be accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-2"
+      },
+      {
+      "type": "HowTo",
+      "title": "A Div with the role of button and be accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the div behave like a button and be accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-3"
+      },
+      {
+      "type": "HowTo",
+      "title": "Disabled HTML Button",
+      "desc": "There are two ways of making a button disabled; Using one of these attributes, disabled=true or aria-disabled=true",
+      "url": "https://www.useragentman.com/enable/button.php#disabled-html-button---heading"
+      }   
+  ]
   },
   "carousel.php": {
     "title": "Accessible Carousels",
@@ -44,8 +89,77 @@
     "isNPM": "true"
   },
   "checkbox.php": {
-    "title": "Accessible Checkboxes",
-    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes."
+    "title": "How to Create Accessible Checkboxes",
+    "desc": "Here is a step-by-step guide to creating accessible checkboxes",
+    "url": "https://www.useragentman.com/enable/checkbox.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "A real styled HTML5 checkbox",
+      "desc": "You can style an HTML5 checkbox using CSS easily.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-real-styled-html5-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the styled checkboxe accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-1"
+      },
+      {
+      "type": "Article",
+      "title": "A DIV with a role of checkbox",
+      "desc": "If you come across a <div> in that is marked up like a checkbox, that is not accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-div-with-a-role-of-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make a <div> that is marked up like a checkbox accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-2"
+      },
+      {
+      "type": "Article",
+      "title": "HTML checkbox group",
+      "desc": "If you have a group of checkboxes, you could use <role='group'> instead of fieldsets",
+      "url": "https://www.useragentman.com/enable/checkbox.php#html-checkbox-group--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make a group of checkboxes accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make a group of checkboxes accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-3"
+      },
+      {
+      "type": "Article",
+      "title": "Indeterminate Checkboxes Using Native HTML",
+      "desc": "We usually think of checkboxes being either checked or unchecked. There is a third possible state: indeterminate. Note that this indeterminate state can be set via JavaScript. There is no indeterminate HTML attribute.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#indeterminate-checkboxes-using-native-html--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step Indeterminate Checkboxes Using Native HTML",
+      "desc": "See the dropdown to highlight each of the individual steps that make the example accessible.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-5"
+      },
+      {
+      "type": "Article",
+      "title": "Indeterminate Checkboxes Using ARIA",
+      "desc": "Just like two-state checkboxes, we can use ARIA to create faux checkboxes.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#indeterminate-checkboxes-using-aria--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step Indeterminate Checkboxes Using ARIA",
+      "desc": "See the dropdown to highlight each of the individual steps that make the example accessible.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-7"
+      },
+      {
+      "type": "HowTo",
+      "title": "How to Install the Hierarchical Checkbox Library into Your Projects",
+      "desc": "See the step-by-step installation guide for the Hierarchical Checkbox Library",
+      "url": "https://www.useragentman.com/enable/checkbox.php#how-to-install-the-hierarchical-checkbox-library-into-your-projects--heading"
+      }
+  ]  
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
@@ -155,8 +269,59 @@
     "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
   },
   "radiogroup.php": {
-    "title": "Accessible Radio Groups",
-    "desc": "They way radio buttons are made accessible is slightly different than other form controls."
+    "title": "How to Create Accessible Radio Groups",
+    "desc": "Here is a step-by-step guide to creating accessible radio groups",
+    "url": "https://www.useragentman.com/enable/radiogroup.php",
+    "mainEntity": [
+      {
+      "type": "Article",
+      "title": "Radio Buttons grouped with fieldsets",
+      "desc": "This is the recommended way of grouping radio buttons. Please look at the next few examples.",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#radio-buttons-grouped-with-fieldsets--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the group radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the group radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-1"
+      },
+      {
+      "type": "Article",
+      "title": "HTML5 radio buttons that have custom styling",
+      "desc": "Read this to style native radio buttons like a Jedi Master",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-radio-buttons-that-have-custom-styling--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the custom styled radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the custom styled radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-2"
+      },
+      {
+      "type": "Article",
+      "title": "Custom radio buttons",
+      "desc": "making <div> and/or <span> tags look like radio buttons?",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#custom-radio-buttons-using-aria--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the custom radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the custom radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-3"
+      },
+      {
+      "type": "Article",
+      "title": "An alternative to fieldsets",
+      "desc": "Replace fieldsets with an ARIA radiogroup role",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-version-that-uses-radiogroup-roles---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make replace fieldsets with an ARIA radiogroup",
+      "desc": "See the dropdown to highlight each of the individual steps that make an ARIA radiogroup",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-4"
+      }
+  ]
   },
   "skip-link.php": {
     "title": "Skip Links (That Work In Mobile Too!)",
