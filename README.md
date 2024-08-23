@@ -10,7 +10,7 @@ A place to learn and share with developers what makes web work accessible. This 
 
 - nvm: A Node version manager. It allows you to install several versions of node on the same machine and change versions easily.
   - [Here are instructions in how to install nvm](https://github.com/nvm-sh/nvm#usage)
-  - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
+  - After installing nvm, install a Node version >= 20.15.0 using nvm, ideally `nvm install 20.15.0`
 - npm: a Node Package Manager, usually installed alongside Node
   - More info: [Downloading and installing Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - Lynx: A text-only browser used for testing for how a website will work without graphics turned on.
@@ -74,6 +74,17 @@ A place to learn and share with developers what makes web work accessible. This 
    ```sh
    git clone git@github.com:PublicisSapient/enable-a11y.git
    cd enable-a11y
+   ```
+
+   ```sh
+   nvm use
+   ```
+
+   This instructs nvm to use the Node version specified in the `.nvmrc` file located in the project root directory.
+
+   > Note: If the specified version has not been installed yet, nvm will advise to install it after running the command above.
+
+   ```sh
    npm clean-install
    ```
 
