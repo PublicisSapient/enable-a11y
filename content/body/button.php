@@ -29,7 +29,6 @@
             The <code>&lt;button&gt;</code> tag has been available for a long time and developers should utilize it for this specific purpose.
         </p>
 
-
         <p>
             This may seem obvious to many developers.
             Unfortunately, there is a lot of code out there that uses <code>&lt;a&gt;</code> tags
@@ -46,7 +45,6 @@
 
         <h2>An HTML Button.</h2>
         <?php includeStats(["isForNewBuilds" => true]); ?>
-
 
         <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 

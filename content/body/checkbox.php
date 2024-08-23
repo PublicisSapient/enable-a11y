@@ -386,4 +386,5 @@ checkboxEl.setAttribute('aria-checked', 'mixed');
 
 <?= includeNPMInstructions("hierarchical-checkboxes", [""], "", false, [
     "noCSS" => true,
-]) ?>
+])
+?>
