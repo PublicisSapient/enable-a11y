@@ -81,7 +81,6 @@ describe('Carousel Tests', () => {
             // ensures this happens, so we test for it.
             domInfo = await page.evaluate(
                 (i, numSlidesInCarousel) => {
-                    const { activeElement } = document;
                     const $container = document.querySelector('#example1');
                     const $slides = $container.querySelectorAll(
                         '.enable-carousel__slide',
@@ -249,7 +248,7 @@ describe('Carousel Tests', () => {
             await page.keyboard.press('Tab');
             await testHelpers.pauseFor(500);
 
-            domInfo = await page.evaluate((i) => {
+            domInfo = await page.evaluate(() => {
                 const { activeElement } = document;
                 const $nextButton = document.querySelector(
                     '#example2 .glider-next',
@@ -322,7 +321,7 @@ describe('Carousel Tests', () => {
             await page.keyboard.up('Shift');
             await testHelpers.pauseFor(500);
 
-            domInfo = await page.evaluate((i) => {
+            domInfo = await page.evaluate(() => {
                 const { activeElement } = document;
                 const $prevButton = document.querySelector(
                     '#example2 .glider-prev',

@@ -6,6 +6,14 @@ figure,
   border: solid 1px #ccc;
   background: #ffffcc;
 }
+figure:has(.showcode),
+[role="figure"]:has(.showcode) {
+  padding: 0;
+}
+figure:has(.showcode) code,
+[role="figure"]:has(.showcode) code {
+  max-width: calc(100vw - 40px);
+}
 figure img,
 [role="figure"] img {
   max-width: 100%;

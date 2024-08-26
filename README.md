@@ -19,6 +19,9 @@ A place to learn and share with developers what makes web work accessible. This 
     - Install using homebrew: `brew install lynx`
     - Install using MacPorts: `sudo port install lynx`
     - Install on Ubuntu: `sudo apt install lynx`
+    - Install on WIndows:
+      - It is recommended to visit the [Cygwin](https://cygwin.com/) and choose the Install or update the link. Use the install program to install Cygwin's version of lynx.
+      - To ensure lynx can be found when installing and using [git bash](https://git-scm.com/downloads), developers should edit the `.bash_profile` and add `export PATH="$PATH:/c/cygwin64/bin/"` and the end of the file (assuming cygwin is installed in the `C:\cygwin64\bin\` directory).
 - PHP (version > 8.1)
   - Install options:
     - [Install from browser](https://www.php.net/downloads.php)
@@ -98,6 +101,7 @@ A place to learn and share with developers what makes web work accessible. This 
 - Axe CLI: Uses a browser webdriver to open pages and run accessibility tests on it.
 - pa11y CLI: Uses Puppeteer to run its own headless Chrome browser to run accessibility tests.
 - Jest + Puppeteer: Used to run and validate code in unit tests.
+- Lighthouse CLI: Uses a browser webdriver to open and run accessibility audits on each page and then provides reports and a summary.
 
 Read [the Enable Code Quality article](https://www.useragentman.com/enable/code-quality.php) for the full details behind the testing tools being used and how.
 
@@ -109,6 +113,8 @@ Read [the Enable Code Quality article](https://www.useragentman.com/enable/code-
 - Run only the v.Nu tests: `npm run test-vnu`
 - Run only the Axe tests: `npm run test-axe`
 - Run only the Pa11y tests: `npm run test-pa11y`
+- Run only the Lighthouse tests on all URL's: `npm run test-lighthouse`
+- Run only the Lighthouse tests on a single URL: `npm run test-lighthouse-url {Valid URL}`
 
 If you are noticing that the jest tests are taking a long time, you might want to run `npm run jest-debug-memory-leak`. If the heap size for each test group increases a lot, there is a memory leak in the tests. More information about that can be found at in the article [Your Jest Tests are Leaking Memory](https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html) by [David Chanin](https://chanind.github.io/about/)
 

@@ -84,8 +84,8 @@
     "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
   },
   "form-error-checking.php": {
-    "title": "Accessible Form Error Checking",
-    "desc": "It is not hard to ensure forms work correctly with screen readers and other technology."
+    "title": "How to Ensure Accessible Form Validation and Error Checking",
+    "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone."
   },
   "form.php": {
     "title": "Accessible Form Structure",

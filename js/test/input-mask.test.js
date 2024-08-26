@@ -141,12 +141,12 @@ describe('Input mask test suite', () => {
         //get the selection
         const selectedText = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => {
+            () => {
                 return window.getSelection().toString();
             },
         );
         // check screenshot for the selection, should match up - "123-45"
-        await page.screenshot({ path: 'mouseSelection.png' });
+        // await page.screenshot({ path: 'mouseSelection.png' });
         expect(expectedSelection).toBe(selectedText);
     });
 
@@ -173,12 +173,12 @@ describe('Input mask test suite', () => {
         //get the selection
         const selectedText = await page.$eval(
             'span.enable-input-mask__mask-pre-val',
-            (span) => {
+            () => {
                 return window.getSelection().toString();
             },
         );
         // check screenshot for the selection, should match up - "6-7890"
-        await page.screenshot({ path: 'keyBoardSelection.png' });
+        // await page.screenshot({ path: 'keyBoardSelection.png' });
         expect(expectedSelection).toBe(selectedText);
     });
 
