@@ -36,7 +36,7 @@
   },
   "button.php": {
     "title": "How to Create Accessible Buttons",
-    "desc": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.",
     "url": "https://www.useragentman.com/enable/button.php",
     "mainEntity":[
       {
