@@ -274,6 +274,14 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
+                                            "label": "Autocomplete Form",
+                                            "url-slug": "autocomplete",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
                                             "label": "Slider / Range Input",
                                             "url-slug": "slider",
                                             "alt": ""

@@ -2,6 +2,7 @@ https://www.useragentman.com/enable/index.php
 https://www.useragentman.com/enable/accessible-text-svg.php
 https://www.useragentman.com/enable/alert.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
+https://www.useragentman.com/enable/autocomplete.php
 https://www.useragentman.com/enable/button.php
 https://www.useragentman.com/enable/carousel.php
 https://www.useragentman.com/enable/checkbox.php
