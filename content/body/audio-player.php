@@ -9,9 +9,7 @@
 </ul>
 
 <p>
-  Due to the general complexity of this issue, it is recommended to use our custom build of <a href="https://ableplayer.github.io/ableplayer/">Able Player</a> and have the browser the audio descriptions.
-  This build includes code to ensure that Able Player plays correctly across various browsers/devices. 
-  Providing a WebVTT caption file ensures that Able Player reads these captions at the correct timestamp. 
+  Due to the general complexity of this issue, it is recommended to use our custom build of <a href="https://ableplayer.github.io/ableplayer/">Able Player</a> to display the captions.  The nice thing about AblePlayer is that it also generates a caption for those who cannot hear the video but want to read the content contained within it.  Our build of Able Player includes code to ensure that it plays correctly across various browsers/devices (installation instructions are at the bottom of this page).  Providing a WebVTT caption file ensures that Able Player reads these captions at the correct timestamp. 
 </p>
 
 
@@ -65,9 +63,15 @@
     },
     {
       "label": "Write the captions track",
-      "highlight": "%FILE%vtt/dialog-document__html5.vtt",
-      "notes": "WebVTT is the web standard format that all media should use for captions.  <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> was the tool used to create all the WebVTT files on this page.  Although it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
+      "highlight": "%FILE%vtt/audio.vtt ",
+      "notes": "WebVTT is the web standard format that all media should use for captions.  We used <a href=\"https://github.com/ggerganov/whisper.cpp\">Whisper.cpp</a>, an AI that can create captions, to do the initial work on the captions."
     },
+    {
+      "label": "Add speaker information to the caption file.",
+      "highlight": "%FILE%vtt/audio.vtt ~ &lt;v[^;]*;",
+      "notes": "All AI generated content needs to be remediated. We used <a href=\"https://nikse.dk/SubtitleEdit/\">Subtitle Edit</a> to correct any errors in the WebVTT file and add the speaker and sound effect information to it.  Although it is a Windows program, there are <a href=\"https://www.nikse.dk/SubtitleEdit/Help#linux\">instructions on how to run Subtitle Edit on Linux</a>."
+    },
+    
     {
       "label": "Add AblePlayer customizations",
       "highlight": "%JS%ablePlayerCustomizations ||| //[^<]*",
