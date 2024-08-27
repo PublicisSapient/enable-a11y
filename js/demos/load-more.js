@@ -65,17 +65,17 @@ function setCount(itemCount) {
 const resetProducts = [
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Modern Tufted Armless Lounge Chair details.',
         image: 'https://via.assets.so/furniture.png?id=1&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Minimalist Felt Lounge Chair details.',
         image: 'https://via.assets.so/furniture.png?id=2&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Classic Tufted Leather Wingback Chair details.',
         image: 'https://via.assets.so/furniture.png?id=3&q=95&w=360&h=360&fit=fill',
     },
 ];
@@ -83,32 +83,32 @@ const resetProducts = [
 const products = [
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Wire Frame Accent Chair details.',
         image: 'https://via.assets.so/furniture.png?id=4&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Modern Wooden End Table details.',
         image: 'https://via.assets.so/furniture.png?id=5&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Ergonomic Leather Office Chair details.',
         image: 'https://via.assets.so/furniture.png?id=6&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Modern Wood Slat Back Dining Chair details.',
         image: 'https://via.assets.so/furniture.png?id=7&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Wooden Picnic Table with Attached Benches details.',
         image: 'https://via.assets.so/furniture.png?id=8&q=95&w=360&h=360&fit=fill',
     },
     {
         title: 'Product',
-        alt: 'This is a product.',
+        alt: 'Go to Classic Windsor Chair details.',
         image: 'https://via.assets.so/furniture.png?id=9&q=95&w=360&h=360&fit=fill',
     },
 ];

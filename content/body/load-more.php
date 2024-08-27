@@ -17,16 +17,18 @@ which talks about the detriments of a user experience that features infinite scr
 
 <p>This is the preferred way of implementing loading more content in an accessible way that aids goal-oriented finding tasks.</p>
 
+<p>The following demo makes use of placeholder assets pulled from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a></p>
+
 <div id="example1" class="enable-example">
     <div id="product-grid">
       <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=1&q=95&w=360&h=360&fit=fill" alt="This is a product." />
+        <img src="https://via.assets.so/furniture.png?id=1&q=95&w=360&h=360&fit=fill" alt="Go to Modern Tufted Armless Lounge Chair details." />
       </a>
       <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=2&q=95&w=360&h=360&fit=fill" alt="This is a product." />
+        <img src="https://via.assets.so/furniture.png?id=2&q=95&w=360&h=360&fit=fill" alt="Go to Minimalist Felt Lounge Chair details." />
       </a>
       <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=3&q=95&w=360&h=360&fit=fill" alt="This is a product." />
+        <img src="https://via.assets.so/furniture.png?id=3&q=95&w=360&h=360&fit=fill" alt="Go to Classic Tufted Leather Wingback Chair details." />
       </a>
     </div>
     <p id="product-count" aria-live="polite">Showing 3 of 9 products</p>
