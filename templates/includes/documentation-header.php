@@ -14,6 +14,36 @@
     </div>
 
 
+    <!-- Main search bar -->
+    <div id="search-example-2" class="search-example-2">
+        <form autocomplete="off" class="search-bar" role="search" tabindex="-1">
+            <div class="search">
+            <label for="search-input" class="sr-only">Search:</label>
+            <input id="search-input" autocomplete="off" type="text" class="search-input" placeholder="What are you looking for?">
+    
+            <button type="submit" class="search-button">
+                <img class="search__icon" src="images/search.svg" alt="Search">
+            </button>
+
+            <ul id="search-results" class="autocomplete-list" role="listbox" aria-labelledby="search-input">
+            </ul>
+            
+
+            <!-- <div id="autocomplete" class="autocomplete" style="width:300px;">
+                <input id="search-input" type="text" class="search__term" placeholder="What are you looking for?">
+                <div id="autocomplete-items" class="autocomplete-items"></div>
+            </div> -->
+        </div>
+        </form>
+        
+    </div>
+
+
+        <!-- <div class="stork-wrapper">
+            <input data-stork="federalist" class="stork-input" />
+            <div data-stork="federalist-output" class="stork-output"></div>
+            </div>
+         -->
 
 
     <!-- Here is the main menu will be placed by our global.js Javascript -->
@@ -171,7 +201,192 @@
         </span>
     </template>
 
+    <style>
+
+
+    .search-button {
+        width: 28px;
+        height: 100%;
+        border: 1px solid #4e7963;
+        background: #4e7963;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        margin: 0 !important;
+        position: relative;
+        left: -4px;
+    }
+
+    .search {
+
+
+    }
+
+    .search-input {
+        padding: 5px;
+
+    }
+
+    .search-bar{
+        display: flex;
+    }
+
+    .search-bar-home {
+        padding: 1ex .5em;
+        width: 20em;
+        font-size: 1.3rem;
+        line-height: 1;
+        background: #fff;
+        border: 1px solid #d5d5d5;
+        border-radius: 2px;
+        box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+
+    }
+        
+   .autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    
+    }
+
+    .search-example-2{
+        position: relative;
+        left: 0;
+        width:20em;
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 999999999999999999999999999999999;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .autocomplete-list{
+        
+        position: absolute;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        /* border-bottom: 1px solid #d5d5d5; */
+        border-top: none;
+        background-color: #fff;
+        list-style: none;
+        width: 12.5em;
+        z-index: 999999999999999999999999999999999;
+    }
+
+    .autocomplete-list li {
+        color: black;
+        padding: 10px;
+        border-bottom: 1px solid #d5d5d5;
+    }
+
+    #search-results{
+        /* display: none; */
+    }
+
+    .search-results {
+        
+        padding:50;
+        border-top: 1px solid red;
+        border-top: none;
+        max-height: 200px;
+        overflow-y: auto;
+        position: relative;
+        background-color: #fff;
+        z-index: 99999999999999999999999;
+        top: 100%; /* Position directly below the search input */
+        left: 0; /* Align with the left edge of the search input */
+        width: 100%; /* Match the width of the search input */
+        list-style: none; /* Remove default list styling */
+        border-radius: 5px 0 0 5px;
+    }
+
+
+
+    .autocomplete-list a {
+        text-decoration: none;
+    }
+    
+    .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    }
+    .autocomplete-list a:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+    }
+    .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+    }
+
+    
+</style>
+
     <!-- id, props, content -->
+    <script src="node_modules/flexsearch/dist/flexsearch.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
+    <!-- <script src="https://files.stork-search.net/releases/v1.6.0/stork.js"></script>
+            <script>
+            stork.register(
+                'federalist',
+                'https://files.stork-search.net/releases/v1.6.0/federalist.st'
+            ) -->
+            </script>
+    <!-- <script type = "module">
+
+        /// Step 1: Example data this needs to be extracted from website in this form final result is shown here
+        const documents = [
+            { id: '1', title: 'Sample Title 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+            { id: '2', title: 'Sample Title 2', description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.' },
+            // Add more documents as needed
+        ];
+
+        // Step 2: Adding index/document to the library
+        var index = new FlexSearch.Document({
+            tokenize: "forward",
+            cache: 100,
+            document: {
+                id: 'id',
+                store: [
+                    "title", "description"
+                ],
+                index: ["title", "description"]
+            }
+        });
+    
+        documents.forEach(item => {
+            index.add({
+                id: item.id,
+                title: item.title,
+                description: item.description
+            });
+        });
+    
+        
+        // Step 3: Searching
+        const query = 'sample'; // Example search query
+        const results = index.search(query);
+
+        console.log('Results here')
+    
+        // Step 4: Display search results
+        console.log(results);
+
+    </script> -->
+    <script src="js/demos/search.js" type="module"></script>
     <script id="flyout-props" type="application/json">
     {
         "content": [{

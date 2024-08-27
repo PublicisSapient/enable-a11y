@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Tooltip",
+        "content": "This article includes best practices on accessible tooltips",
+        "keywords": "Simple controls, ",
+        "link": "/tooltip.php"
+    },
+    {
+        "id": 2,
+        "title": "Accessible Form Structure",
+        "content": "Best practices for accessible form structure",
+        "keywords": "Form UX patterns",
+        "link": "/form.php"
+    },
+    {
+        "id": 3,
+        "title": "Accessible Form Validation",
+        "content": "Best practices for form validation",
+        "keywords": "Form UX Patterns,",
+        "link": "/form-error-checking.php"
+    },
+    {
+        "id": 4,
+        "title": "Search Forms",
+        "content": "Best practices for search forms",
+        "keywords": "Form UX Patterns",
+        "link": "/search.php"
+    },
+    {
+        "id": 5,
+        "title": "Accessible Buttons",
+        "content": "Best practices for buttons",
+        "keywords": "Form Elements,",
+        "link": "/button.php"
+    },
+    {
+        "id": 6,
+        "title": "Accessible Checkboxes",
+        "content": "Best practices for form checkboxes",
+        "keywords": "Form Elements,",
+        "link": "/checkbox.php"
+    }
+]
