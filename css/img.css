@@ -55,8 +55,8 @@
 }
 #svg-sprite-example svg,
 #svg-sprite-example a {
-  width: 45 / 16rem;
-  height: 45 / 16rem;
+  width: 2.8125rem;
+  height: 2.8125rem;
   display: inline-block;
 }
 #svg-sprite-example svg:focus,
