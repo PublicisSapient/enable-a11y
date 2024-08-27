@@ -569,6 +569,20 @@
                         "content": [{
                             "id": "flyout__subsection",
                             "props": {
+                                "id": "styling",
+                                "sectionName": "Styling"
+                            },
+                            "content": [{
+                                "id": "flyout__link",
+                                "props": {
+                                    "label": "Dark Mode",
+                                    "url-slug": "dark-mode",
+                                    "alt": ""
+                                }
+                            }]
+                        }, {
+                            "id": "flyout__subsection",
+                            "props": {
                                 "id": "focus-management",
                                 "sectionName": "Focus Management"
                             },
