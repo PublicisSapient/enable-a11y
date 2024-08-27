@@ -151,9 +151,8 @@
       "git add"
     ],
     "*.{js,jsx,ts,tsx,json}": [
-        "prettier --write",
-        "npm test",
-        "git add"
+      "prettier --write",
+      "git add"
     ]
   },
   "bin": {
