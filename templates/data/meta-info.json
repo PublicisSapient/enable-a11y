@@ -122,6 +122,10 @@
     "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what developers must do if they have to use a custom one.",
     "isNPM": "true"
   },
+  "load-more.php": {
+    "title": "Load More Buttons for Pagination",
+    "desc": "How to approach pagination using load more buttons."
+  },
   "log.php": {
     "title": "Accessible Log Displays",
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."

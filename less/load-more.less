@@ -1,0 +1,54 @@
+@import "shared/mixins-and-vars";
+
+#product-grid {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-grid-tile {
+    width: 33.3333%;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 20px;
+    img {
+        max-width: 100%;
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+}
+
+#product-count {
+    text-align: center;
+}
+
+#load-more-btn {
+    font-size: (15 / @px);
+    font-weight: bold;
+    min-width: 200px;
+    min-height: 44px;
+    display: block;
+    cursor: pointer;
+    background: #450a0a;
+    color: #fff;
+    border: none;
+    margin: 10px auto;
+}
+
+#reset-btn {
+    font-size: (15 / @px);
+    font-weight: bold;
+    min-width: 200px;
+    min-height: 44px;
+    display: block;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin: 10px auto;
+}
+
+.hideBtn {
+    display: none !important;
+}
