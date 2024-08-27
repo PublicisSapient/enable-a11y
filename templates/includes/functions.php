@@ -361,6 +361,7 @@ getMetadata();
 
 function processJsonFile()
 {
+    global $jsonLdStrOutput;
     $uriFile = getURIFilename();
     $tokenToFind = trim(preg_replace("/^\//", "", $uriFile));
     $metaFile = "./data/meta-info.json";
@@ -441,7 +442,7 @@ function processJsonFile()
     // Ensure slashes are not escaped in the final output
     $jsonLdStr = str_replace("\\/", "/", $jsonLdStr);
 
-    echo '<script type="application/ld+json">' . $jsonLdStr . "</script>";
+    $jsonLdStrOutput = $jsonLdStr;
 }
 
 processJsonFile();
