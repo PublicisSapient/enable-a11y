@@ -13,7 +13,7 @@
 }
 .product-grid-tile img {
   max-width: 100%;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   padding: 20px;
 }
 #product-count {
@@ -27,7 +27,7 @@
   display: block;
   cursor: pointer;
   background: #450a0a;
-  color: #FFF;
+  color: #fff;
   border: none;
   margin: 10px auto;
 }
