@@ -46,7 +46,7 @@
 }
 .play-pause-anim__checkbox-container a {
   color: #ccccff;
-  margin-right: 1.25rem;
+  margin-right: 20 / 16rem;
 }
 .pause-anim-control__gif--animated,
 .pause-anim-control__gif--still {

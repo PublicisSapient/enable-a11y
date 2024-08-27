@@ -391,7 +391,14 @@
                                     "sectionName": "Complex Controls"
                                 },
                                 "content": [
-
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Audio Player",
+                                            "url-slug": "audio-player",
+                                            "alt": ""
+                                        }
+                                    },
                                     {
                                         "id": "flyout__link",
                                         "props": {
