@@ -1,114 +1,261 @@
-const loadMoreBtn = document.getElementById('load-more-btn');
-const resetBtn = document.getElementById('reset-btn');
-const productGrid = document.getElementById('product-grid');
+const resetProductsData = [
+    {
+        name: 'Modern Tufted Armless Lounge Chair',
+        image: 'images/load-more/chair1.png',
+        price: '$399.99',
+        category: 'Modern Chairs',
+    },
+    {
+        name: 'Minimalist Felt Lounge Chair',
+        image: 'images/load-more/chair2.png',
+        price: '$199.99',
+        category: 'Simple Chairs',
+    },
+    {
+        name: 'Classic Tufted Leather Wingback Chair',
+        image: 'images/load-more/chair3.png',
+        price: '$799.99',
+        category: 'Leather Chairs',
+    },
+];
 
-loadMoreBtn.addEventListener('click', loadMore);
-resetBtn.addEventListener('click', reset);
+const productsData = [
+    {
+        name: 'Wire Frame Accent Chair',
+        image: 'images/load-more/chair4.png',
+        price: '$99.99',
+        category: 'Metal Chairs',
+    },
+    {
+        name: 'Modern Wooden End Table',
+        image: 'images/load-more/chair5.png',
+        price: '$149.99',
+        category: 'End Tables',
+    },
+    {
+        name: 'Ergonomic Leather Office Chair',
+        image: 'images/load-more/chair6.png',
+        price: '$299.99',
+        category: 'Office Chairs',
+    },
+    {
+        name: 'Modern Wood Slat Back Dining Chair',
+        image: 'images/load-more/chair7.png',
+        price: '$99.99',
+        category: 'Wooden Chairs',
+    },
+    {
+        name: 'Wooden Picnic Table with Benches',
+        image: 'images/load-more/chair8.png',
+        price: '$999.99',
+        category: 'Outdoor Chairs',
+    },
+    {
+        name: 'Classic Windsor Chair',
+        image: 'images/load-more/chair9.png',
+        price: '$149.99',
+        category: 'Kitchen Chairs',
+    },
+];
 
-let itemCount = 0;
-let itemCountLoadMore = 3;
-let itemPerPage = 3;
-const itemTotal = 9;
+class ExampleGrid {
+    constructor({
+        type,
+        products,
+        resetProducts,
+        loadMoreBtn,
+        resetBtn,
+        productGrid,
+        countText,
+        tileClass,
+        focusClass,
+    }) {
+        this.type = type;
+        this.products = products;
+        this.resetProducts = resetProducts;
+        this.loadMoreBtn = document.getElementById(loadMoreBtn);
+        this.resetBtn = document.getElementById(resetBtn);
+        this.productGrid = document.getElementById(productGrid);
+        this.countText = document.getElementById(countText);
+        this.tileClass = tileClass;
+        this.focusClass = focusClass;
+        this.itemCount = 0;
+        this.itemCountLoadMore = 3;
+        this.itemPerPage = 3;
+        this.itemTotal = 9;
 
-function generateTiles(productData) {
-    productData.forEach((data) => {
-        const anchor = document.createElement('a');
-        anchor.href = '/';
-        anchor.className = 'product-grid-tile';
-
-        const image = document.createElement('img');
-        image.src = data.image;
-        image.alt = data.alt;
-
-        anchor.appendChild(image);
-        productGrid.appendChild(anchor);
-    });
-}
-
-function loadMore() {
-    const productData = products.slice(itemCount, itemCount + itemPerPage);
-    generateTiles(productData);
-
-    itemCount += 3;
-    itemCountLoadMore += 3;
-
-    if (itemCount === itemTotal - itemPerPage) {
-        loadMoreBtn.classList.add('hideBtn');
+        this.configure();
     }
 
-    setCount(itemCountLoadMore);
+    configure() {
+        this.loadMoreBtn.addEventListener('click', this.loadMore.bind(this));
+        this.resetBtn.addEventListener('click', this.reset.bind(this));
+    }
 
-    const items = document.querySelectorAll('.product-grid-tile');
-    items[itemCountLoadMore - itemPerPage].focus();
+    createProductHtml(product) {
+        switch (this.type) {
+            case 'product-grid':
+                return `
+                    <div class="${this.tileClass}">
+                        <a href="/" class="${this.focusClass}">
+                        <span class="sr-only">${product.name}</span>
+                        </a>
+                        <img src="${product.image}" alt="${product.name}" />
+                        <p class="product-name">${product.name}</p>
+                        <p class="product-price">${product.price}</p>
+                        <button type="button" class="add-to-cart-btn" aria-label="Add ${product.name} to cart.">Add to Cart</button>
+                    </div>
+                `;
+            case 'view-grid':
+                return `
+                    <div class="${this.tileClass}">
+                        <div class="tile-relative">
+                            <img src="${product.image}" alt="${product.name}" />
+                            <button type="button" class="${this.focusClass}">
+                                Shop ${product.category}
+                            </button>
+                        </div>
+                    </div>
+                `;
+            default:
+                return new Error(`Type of ${this.type} is not supported`);
+        }
+    }
+
+    generateTiles(productData) {
+        productData.forEach((product) => {
+            const productHtml = this.createProductHtml(product);
+            this.productGrid.insertAdjacentHTML('beforeend', productHtml);
+        });
+    }
+
+    loadMore() {
+        const productData = this.products.slice(
+            this.itemCount,
+            this.itemCount + this.itemPerPage,
+        );
+        this.generateTiles(productData);
+
+        this.itemCount += 3;
+        this.itemCountLoadMore += 3;
+
+        if (this.itemCount === this.itemTotal - this.itemPerPage) {
+            this.loadMoreBtn.classList.add('hide-btn');
+            this.resetBtn.classList.remove('hide-btn');
+        }
+
+        this.setCount(this.itemCountLoadMore);
+
+        const items = document.querySelectorAll(`.${this.focusClass}`);
+        items[this.itemCountLoadMore - this.itemPerPage].focus();
+    }
+
+    reset() {
+        this.productGrid.innerHTML = '';
+        this.generateTiles(this.resetProducts);
+
+        this.itemCount = 0;
+        this.itemCountLoadMore = 3;
+
+        this.setCount(this.itemCountLoadMore);
+
+        this.loadMoreBtn.classList.remove('hide-btn');
+        this.resetBtn.classList.add('hide-btn');
+
+        const items = document.querySelectorAll(`.${this.focusClass}`);
+        items[0].focus();
+    }
+
+    setCount(itemCount) {
+        const type = this.type === 'product-grid' ? 'products' : 'categories';
+        this.countText.innerText = `Showing ${itemCount} of 9 ${type}`;
+    }
 }
 
-function reset() {
-    productGrid.innerHTML = '';
-    generateTiles(resetProducts);
+new ExampleGrid({
+    type: 'product-grid',
+    products: productsData,
+    resetProducts: resetProductsData,
+    loadMoreBtn: 'load-more-btn',
+    resetBtn: 'product-reset-btn',
+    productGrid: 'product-grid',
+    countText: 'product-count',
+    tileClass: 'product-tile',
+    focusClass: 'product-details-link',
+});
 
-    itemCount = 0;
-    itemCountLoadMore = 3;
+new ExampleGrid({
+    type: 'view-grid',
+    products: productsData,
+    resetProducts: resetProductsData,
+    loadMoreBtn: 'view-more-btn',
+    resetBtn: 'view-reset-btn',
+    productGrid: 'view-grid',
+    countText: 'view-count',
+    tileClass: 'view-tile',
+    focusClass: 'view-details-link',
+});
 
-    setCount(itemCountLoadMore);
+// const loadMoreBtn = document.getElementById('load-more-btn');
+// const resetBtn = document.getElementById('reset-btn');
+// const productGrid = document.getElementById('product-grid');
 
-    loadMoreBtn.classList.remove('hideBtn');
+// loadMoreBtn.addEventListener('click', loadMore);
+// resetBtn.addEventListener('click', reset);
 
-    const items = document.querySelectorAll('.product-grid-tile');
-    items[0].focus();
-}
+// let itemCount = 0;
+// let itemCountLoadMore = 3;
+// let itemPerPage = 3;
+// const itemTotal = 9;
 
-function setCount(itemCount) {
-    const count = document.getElementById('product-count');
-    count.innerText = `Showing ${itemCount} of 9 products`;
-}
+// function generateTiles(productData) {
+//     productData.forEach((data) => {
+//         const anchor = document.createElement('a');
+//         anchor.href = '/';
+//         anchor.className = 'product-grid-tile';
 
-const resetProducts = [
-    {
-        title: 'Product',
-        alt: 'Go to Modern Tufted Armless Lounge Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=1&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Minimalist Felt Lounge Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=2&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Classic Tufted Leather Wingback Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=3&q=95&w=360&h=360&fit=fill',
-    },
-];
+//         const image = document.createElement('img');
+//         image.src = data.image;
+//         image.alt = data.alt;
 
-const products = [
-    {
-        title: 'Product',
-        alt: 'Go to Wire Frame Accent Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=4&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Modern Wooden End Table details.',
-        image: 'https://via.assets.so/furniture.png?id=5&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Ergonomic Leather Office Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=6&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Modern Wood Slat Back Dining Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=7&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Wooden Picnic Table with Attached Benches details.',
-        image: 'https://via.assets.so/furniture.png?id=8&q=95&w=360&h=360&fit=fill',
-    },
-    {
-        title: 'Product',
-        alt: 'Go to Classic Windsor Chair details.',
-        image: 'https://via.assets.so/furniture.png?id=9&q=95&w=360&h=360&fit=fill',
-    },
-];
+//         anchor.appendChild(image);
+//         productGrid.appendChild(anchor);
+//     });
+// }
+
+// function loadMore() {
+//     const productData = products.slice(itemCount, itemCount + itemPerPage);
+//     generateTiles(productData);
+
+//     itemCount += 3;
+//     itemCountLoadMore += 3;
+
+//     if (itemCount === itemTotal - itemPerPage) {
+//         loadMoreBtn.classList.add('hideBtn');
+//     }
+
+//     setCount(itemCountLoadMore);
+
+//     const items = document.querySelectorAll('.product-grid-tile');
+//     items[itemCountLoadMore - itemPerPage].focus();
+// }
+
+// function reset() {
+//     productGrid.innerHTML = '';
+//     generateTiles(resetProducts);
+
+//     itemCount = 0;
+//     itemCountLoadMore = 3;
+
+//     setCount(itemCountLoadMore);
+
+//     loadMoreBtn.classList.remove('hideBtn');
+
+//     const items = document.querySelectorAll('.product-grid-tile');
+//     items[0].focus();
+// }
+
+// function setCount(itemCount) {
+//     const count = document.getElementById('product-count');
+//     count.innerText = `Showing ${itemCount} of 9 products`;
+// }

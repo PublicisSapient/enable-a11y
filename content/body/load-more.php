@@ -20,20 +20,40 @@ which talks about the detriments of a user experience that features infinite scr
 <p>The following demo makes use of placeholder assets pulled from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a></p>
 
 <div id="example1" class="enable-example">
-    <div id="product-grid">
-      <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=1&q=95&w=360&h=360&fit=fill" alt="Go to Modern Tufted Armless Lounge Chair details." />
-      </a>
-      <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=2&q=95&w=360&h=360&fit=fill" alt="Go to Minimalist Felt Lounge Chair details." />
-      </a>
-      <a href="/" class="product-grid-tile">
-        <img src="https://via.assets.so/furniture.png?id=3&q=95&w=360&h=360&fit=fill" alt="Go to Classic Tufted Leather Wingback Chair details." />
-      </a>
-    </div>
+    <section id="product-grid">
+      <div class="product-tile">
+        <a href="/" class="product-details-link">
+          <span class="sr-only">Modern Tufted Armless Lounge Chair</span>
+        </a>
+        <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
+        <p class="product-name">Modern Tufted Armless Lounge Chair</p>
+        <p class="product-price">$399.99</p>
+        <button type="button" class="add-to-cart-btn" aria-label="Add Modern Tufted Armless Lounge Chair to cart.">Add to Cart</button>
+      </div>
+
+      <div class="product-tile">
+        <a href="/" class="product-details-link">
+          <span class="sr-only">Minimalist Felt Lounge Chair</span>
+        </a>
+        <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
+        <p class="product-name">Minimalist Felt Lounge Chair</p>
+        <p class="product-price">$199.99</p>
+        <button type="button" class="add-to-cart-btn" aria-label="Add Minimalist Felt Lounge Chair to cart.">Add to Cart</button>
+      </div>
+
+      <div class="product-tile">
+        <a href="/" class="product-details-link">
+          <span class="sr-only">Classic Tufted Leather Wingback Chair</span>
+        </a>
+        <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
+        <p class="product-name">Classic Tufted Leather Wingback Chair</p>
+        <p class="product-price">$799.99</p>
+        <button type="button" class="add-to-cart-btn" aria-label="Add Classic Tufted Leather Wingback Chair to cart.">Add to Cart</button>
+      </div>
+    </section>
     <p id="product-count" aria-live="polite">Showing 3 of 9 products</p>
     <button id="load-more-btn" type="button">Load More Products</button>
-    <button id="reset-btn" type="button">Reset Product Grid Demo</button>
+    <button id="product-reset-btn" class="hide-btn" type="button">Reset Product Grid Demo</button>
 </div>
 
 
@@ -93,20 +113,37 @@ which talks about the detriments of a user experience that features infinite scr
 <p>When you implement this way, you are presuming the user loading this webpage is okay with the extra battery power being used to animate this image.  It is not a very nice thing to assume.  I hope your mom is proud of you.</p>
 
 <div id="example2" class="enable-example">
-  <div class="pausable-animated-gif">
-    <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
-    <details open>
-
-
-
-      <summary role="button" class="pausable-animated-gif__play-pause-button" aria-label="pause">
-      </summary>
-
-      <div class="pausable-animated-gif__animated-image">
-        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running" loading="lazy">
+  <section id="view-grid">
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
+        <button type="button" class="view-details-link">
+          Shop Modern Chairs
+        </button>
       </div>
-    </details>
-  </div>
+    </div>
+
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
+        <button type="button" class="view-details-link">
+          Shop Simple Chairs
+        </button>
+      </div>
+    </div>
+
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
+        <button type="button" class="view-details-link">
+          Shop Leather Chairs
+        </button>
+      </div>
+    </div>
+  </section>
+  <p id="view-count" aria-live="polite">Showing 3 of 9 categories</p>
+  <button id="view-more-btn" type="button">View More Categories</button>
+  <button id="view-reset-btn" class="hide-btn" type="button">Reset Category Grid Demo</button>
 </div>
 
 <?php includeShowcode("example2"); ?>
@@ -123,55 +160,6 @@ which talks about the detriments of a user experience that features infinite scr
       "label": "Ensure the summary tag has the correct aria-label",
       "highlight": "aria-label",
       "notes": "After doing this step, make sure all other steps in example 1 above are followed."
-    }
-  ]
-}
-</script>
-
-<h2>Animation is off when OS prefers reduced motion.</h2>
-
-<p>
-  This is the only example on this page that does require JavaScript. It
-  detects whether the OS
-  has "reduced motion" turned on by default. If it is, then it keeps the
-  details widget closed.
-</p>
-
-<div id="example3" class="enable-example">
-  <div class="pausable-animated-gif pausable-animated-gif--respects-os-motion-settings">
-    <img src="images/running-man-anim__still.jpg" alt="A drawing of a man running" loading="lazy">
-    <details>
-
-
-
-      <summary role="button" class="pausable-animated-gif__play-pause-button"></summary>
-
-      <div class="pausable-animated-gif__animated-image">
-        <img src="images/running-man-anim.gif" alt="Animated: A drawing of a man running" loading="lazy">
-      </div>
-    </details>
-  </div>
-</div>
-
-<?php includeShowcode("example3"); ?>
-
-<script type="application/json" id="example3-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [{
-      "label": "Put CSS class on container to configure the player",
-      "highlight": "pausable-animated-gif--respects-os-motion-settings",
-      "notes": "This class will be used in step 3."
-    },
-    {
-      "label": "Use CSS variables to store prefers motion settings",
-      "highlight": "%CSS%pausable-animated-gif-style1~ :root;@media (prefers-reduced-motion)",
-      "notes": "This sets the CSS variable <strong>--prefers-reduced-motion</strong> to 1 if the user has asked the OS to reduce animations, and 0 otherwise."
-    },
-    {
-      "label": "Use JavaScript to find out if it should show the animation or not",
-      "highlight": "%FILE% js/modules/enable-animatedGif.js ~ this.respectReduceMotionSettings",
-      "notes": "This function, if run at load time, will initially show the animation if the OS prefers-reduced-motion setting is not on."
     }
   ]
 }
