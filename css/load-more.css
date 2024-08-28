@@ -37,6 +37,7 @@
 }
 .view-details-link {
   position: absolute;
+  line-height: 2.75rem;
   left: 0;
   bottom: 0;
   font-size: 1rem;
@@ -46,6 +47,9 @@
   color: #fff;
   min-height: 44px;
   border: none;
+  outline-offset: 4px;
+  text-align: center;
+  text-decoration: none;
 }
 #product-count,
 #view-count {
@@ -59,10 +63,11 @@
   min-height: 44px;
   display: block;
   cursor: pointer;
-  background: #0c3f75;
+  background: #3a4b5c;
   color: #fff;
   border: none;
   margin: 10px auto;
+  outline-offset: 4px;
 }
 #product-reset-btn,
 #view-reset-btn {
@@ -75,9 +80,9 @@
   background: none;
   border: none;
   margin: 10px auto;
+  outline-offset: 4px;
 }
-.add-to-cart-btn,
-.view-category-btn {
+.add-to-cart-btn {
   font-size: 0.9375rem;
   font-weight: bold;
   min-height: 44px;
@@ -85,6 +90,7 @@
   color: #fff;
   border: none;
   padding: 0 15px;
+  outline-offset: 4px;
 }
 .hide-btn {
   display: none !important;

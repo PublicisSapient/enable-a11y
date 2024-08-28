@@ -347,6 +347,9 @@ const showcode = new function () {
         //    Will show HTML encased in tag with given id
         // "%OUTERHTML% id"
         //    Will show HTML encased in tag with given id (including the tag)
+        // "%FILE% filePath"
+        //    Will allow you to change the code block to a file of your choosing by passing the URL path to the file
+        //    this is useful when you want to show a part of another file e.g. a JavaScript file
 
         command = highlightString.match(commandsRe);
 

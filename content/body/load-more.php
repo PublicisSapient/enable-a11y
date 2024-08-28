@@ -13,54 +13,115 @@ the ultimate goal of your website.</p>
 <p>Consider reading this article by Nieman Norman Group <a href="https://www.nngroup.com/articles/infinite-scrolling/">https://www.nngroup.com/articles/infinite-scrolling/</a> 
 which talks about the detriments of a user experience that features infinite scroll.</p>
 
-<h2>The Load More Button</h2>
+<h2>Category Grid Load More Example</h2>
+
+<p>Category grid's are relatively simple components</p>
+
+<div id="example1" class="enable-example">
+  <p id="view-count" aria-live="polite">Showing 3 of 9 Categories</p>
+
+  <section id="view-grid">
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
+        <a href="/" class="view-details-link">
+          Shop Modern Chairs
+        </a>
+      </div>
+    </div>
+
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
+        <a href="/" class="view-details-link">
+          Shop Simple Chairs
+        </a>
+      </div>
+    </div>
+
+    <div class="view-tile">
+      <div class="tile-relative">
+        <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
+        <a href="/" class="view-details-link">
+          Shop Leather Chairs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <button id="view-more-btn" type="button">View More Categories</button>
+  <button id="view-reset-btn" class="hide-btn" type="button">Reset Category Grid Demo</button>
+</div>
+
+<?php includeShowcode("example1"); ?>
+
+<script type="application/json" id="example1-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Ensure details has open attribute set",
+      "highlight": "open",
+      "notes": "This ensures the animated version is shown by default."
+    },
+    {
+      "label": "Ensure the summary tag has the correct aria-label",
+      "highlight": "aria-label",
+      "notes": "After doing this step, make sure all other steps in example 1 above are followed."
+    }
+  ]
+}
+</script>
+
+<h2>Product Listing Page Load More Example</h2>
 
 <p>This is the preferred way of implementing loading more content in an accessible way that aids goal-oriented finding tasks.</p>
 
 <p>The following demo makes use of placeholder assets pulled from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a></p>
 
-<div id="example1" class="enable-example">
-    <section id="product-grid">
-      <div class="product-tile">
-        <a href="/" class="product-details-link">
-          <span class="sr-only">Modern Tufted Armless Lounge Chair</span>
-        </a>
-        <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
-        <p class="product-name">Modern Tufted Armless Lounge Chair</p>
-        <p class="product-price">$399.99</p>
-        <button type="button" class="add-to-cart-btn" aria-label="Add Modern Tufted Armless Lounge Chair to cart.">Add to Cart</button>
-      </div>
+<div id="example2" class="enable-example">
+  <p id="product-count" aria-live="polite">Showing 3 of 9 Products</p>
 
-      <div class="product-tile">
-        <a href="/" class="product-details-link">
-          <span class="sr-only">Minimalist Felt Lounge Chair</span>
-        </a>
-        <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
-        <p class="product-name">Minimalist Felt Lounge Chair</p>
-        <p class="product-price">$199.99</p>
-        <button type="button" class="add-to-cart-btn" aria-label="Add Minimalist Felt Lounge Chair to cart.">Add to Cart</button>
-      </div>
+  <section id="product-grid">
+    <div class="product-tile" role="group" aria-labelledby="product-grid-product-1">
+      <a href="/" class="product-details-link">
+        <span class="sr-only">Modern Tufted Armless Lounge Chair</span>
+      </a>
+      <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
+      <p id="product-grid-product-1" class="product-name">Modern Tufted Armless Lounge Chair</p>
+      <p class="product-price">$399.99</p>
+      <button type="button" class="add-to-cart-btn">Add to Cart</button>
+    </div>
 
-      <div class="product-tile">
-        <a href="/" class="product-details-link">
-          <span class="sr-only">Classic Tufted Leather Wingback Chair</span>
-        </a>
-        <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
-        <p class="product-name">Classic Tufted Leather Wingback Chair</p>
-        <p class="product-price">$799.99</p>
-        <button type="button" class="add-to-cart-btn" aria-label="Add Classic Tufted Leather Wingback Chair to cart.">Add to Cart</button>
-      </div>
-    </section>
-    <p id="product-count" aria-live="polite">Showing 3 of 9 products</p>
-    <button id="load-more-btn" type="button">Load More Products</button>
-    <button id="product-reset-btn" class="hide-btn" type="button">Reset Product Grid Demo</button>
+    <div class="product-tile" role="group" aria-labelledby="product-grid-product-2">
+      <a href="/" class="product-details-link">
+        <span class="sr-only">Minimalist Felt Lounge Chair</span>
+      </a>
+      <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
+      <p id="product-grid-product-2" class="product-name">Minimalist Felt Lounge Chair</p>
+      <p class="product-price">$199.99</p>
+      <button type="button" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-tile" role="group" aria-labelledby="product-grid-product-3">
+      <a href="/" class="product-details-link">
+        <span class="sr-only">Classic Tufted Leather Wingback Chair</span>
+      </a>
+      <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
+      <p id="product-grid-product-3" class="product-name">Classic Tufted Leather Wingback Chair</p>
+      <p class="product-price">$799.99</p>
+      <button type="button" class="add-to-cart-btn">Add to Cart</button>
+    </div>
+  </section>
+  
+  <button id="load-more-btn" type="button">Load More Products</button>
+  <button id="product-reset-btn" class="hide-btn" type="button">Reset Product Grid Demo</button>
 </div>
 
 
 
-<?php includeShowcode("example1"); ?>
+<?php includeShowcode("example2"); ?>
 
-<script type="application/json" id="example1-props">
+<script type="application/json" id="example2-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
@@ -102,64 +163,6 @@ which talks about the detriments of a user experience that features infinite scr
       "label": "Add support for Enable's Pause Animation Control",
       "highlight": "%FILE% js/modules/enable-animatedGif.js ~ document.addEventListener\\('enable-play-animations'[^\\)]*\\);",
       "notes": "I added extra JavaScript to the original example to handle: <ul><li>the state of the pause/play button to be reported to screen readers.</li><li>to ensure this component respects the user's <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion\"><code>prefers-reduced-motion</code> settings</a></li></ul>"
-    }
-  ]
-}
-</script>
-
-<h2>Animation on by default</h2>
-
-
-<p>When you implement this way, you are presuming the user loading this webpage is okay with the extra battery power being used to animate this image.  It is not a very nice thing to assume.  I hope your mom is proud of you.</p>
-
-<div id="example2" class="enable-example">
-  <section id="view-grid">
-    <div class="view-tile">
-      <div class="tile-relative">
-        <img src="images/load-more/chair1.png" alt="Modern Tufted Armless Lounge Chair" />
-        <button type="button" class="view-details-link">
-          Shop Modern Chairs
-        </button>
-      </div>
-    </div>
-
-    <div class="view-tile">
-      <div class="tile-relative">
-        <img src="images/load-more/chair2.png" alt="Minimalist Felt Lounge Chair" />
-        <button type="button" class="view-details-link">
-          Shop Simple Chairs
-        </button>
-      </div>
-    </div>
-
-    <div class="view-tile">
-      <div class="tile-relative">
-        <img src="images/load-more/chair3.png" alt="Classic Tufted Leather Wingback Chair" />
-        <button type="button" class="view-details-link">
-          Shop Leather Chairs
-        </button>
-      </div>
-    </div>
-  </section>
-  <p id="view-count" aria-live="polite">Showing 3 of 9 categories</p>
-  <button id="view-more-btn" type="button">View More Categories</button>
-  <button id="view-reset-btn" class="hide-btn" type="button">Reset Category Grid Demo</button>
-</div>
-
-<?php includeShowcode("example2"); ?>
-
-<script type="application/json" id="example2-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [{
-      "label": "Ensure details has open attribute set",
-      "highlight": "open",
-      "notes": "This ensures the animated version is shown by default."
-    },
-    {
-      "label": "Ensure the summary tag has the correct aria-label",
-      "highlight": "aria-label",
-      "notes": "After doing this step, make sure all other steps in example 1 above are followed."
     }
   ]
 }

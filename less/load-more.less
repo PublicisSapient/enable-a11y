@@ -1,6 +1,7 @@
 @import "shared/mixins-and-vars";
 
-@button-bg: #0c3f75;
+@button-bg1: #0c3f75;
+@button-bg2: #3a4b5c;
 @button-txt: #fff;
 
 #product-grid,
@@ -46,15 +47,19 @@
 
 .view-details-link {
     position: absolute;
+    line-height: (44 / @px);
     left: 0;
     bottom: 0;
     font-size: (16 / @px);
     font-weight: bold;
     width: 100%;
-    background: @button-bg;
+    background: @button-bg1;
     color: @button-txt;
     min-height: 44px;
     border: none;
+    outline-offset: 4px;
+    text-align: center;
+    text-decoration: none;
 }
 
 #product-count,
@@ -70,10 +75,11 @@
     min-height: 44px;
     display: block;
     cursor: pointer;
-    background: @button-bg;
+    background: @button-bg2;
     color: @button-txt;
     border: none;
     margin: 10px auto;
+    outline-offset: 4px;
 }
 
 #product-reset-btn,
@@ -87,17 +93,18 @@
     background: none;
     border: none;
     margin: 10px auto;
+    outline-offset: 4px;
 }
 
-.add-to-cart-btn,
-.view-category-btn {
+.add-to-cart-btn {
     font-size: (15 / @px);
     font-weight: bold;
     min-height: 44px;
-    background: @button-bg;
+    background: @button-bg1;
     color: @button-txt;
     border: none;
     padding: 0 15px;
+    outline-offset: 4px;
 }
 
 .hide-btn {

@@ -1,17 +1,20 @@
 const resetProductsData = [
     {
+        id: 'product-1',
         name: 'Modern Tufted Armless Lounge Chair',
         image: 'images/load-more/chair1.png',
         price: '$399.99',
         category: 'Modern Chairs',
     },
     {
+        id: 'product-2',
         name: 'Minimalist Felt Lounge Chair',
         image: 'images/load-more/chair2.png',
         price: '$199.99',
         category: 'Simple Chairs',
     },
     {
+        id: 'product-3',
         name: 'Classic Tufted Leather Wingback Chair',
         image: 'images/load-more/chair3.png',
         price: '$799.99',
@@ -21,36 +24,42 @@ const resetProductsData = [
 
 const productsData = [
     {
+        id: 'product-4',
         name: 'Wire Frame Accent Chair',
         image: 'images/load-more/chair4.png',
         price: '$99.99',
         category: 'Metal Chairs',
     },
     {
+        id: 'product-5',
         name: 'Modern Wooden End Table',
         image: 'images/load-more/chair5.png',
         price: '$149.99',
         category: 'End Tables',
     },
     {
+        id: 'product-6',
         name: 'Ergonomic Leather Office Chair',
         image: 'images/load-more/chair6.png',
         price: '$299.99',
         category: 'Office Chairs',
     },
     {
+        id: 'product-7',
         name: 'Modern Wood Slat Back Dining Chair',
         image: 'images/load-more/chair7.png',
         price: '$99.99',
         category: 'Wooden Chairs',
     },
     {
+        id: 'product-8',
         name: 'Wooden Picnic Table with Benches',
         image: 'images/load-more/chair8.png',
         price: '$999.99',
         category: 'Outdoor Chairs',
     },
     {
+        id: 'product-9',
         name: 'Classic Windsor Chair',
         image: 'images/load-more/chair9.png',
         price: '$149.99',
@@ -96,14 +105,14 @@ class ExampleGrid {
         switch (this.type) {
             case 'product-grid':
                 return `
-                    <div class="${this.tileClass}">
+                    <div class="${this.tileClass}" role="group" arialabelledby="${product.type}-${product.id}">
                         <a href="/" class="${this.focusClass}">
                         <span class="sr-only">${product.name}</span>
                         </a>
                         <img src="${product.image}" alt="${product.name}" />
-                        <p class="product-name">${product.name}</p>
+                        <p id="${product.type}-${product.id}" class="product-name">${product.name}</p>
                         <p class="product-price">${product.price}</p>
-                        <button type="button" class="add-to-cart-btn" aria-label="Add ${product.name} to cart.">Add to Cart</button>
+                        <button type="button" class="add-to-cart-btn">Add to Cart</button>
                     </div>
                 `;
             case 'view-grid':
@@ -111,9 +120,9 @@ class ExampleGrid {
                     <div class="${this.tileClass}">
                         <div class="tile-relative">
                             <img src="${product.image}" alt="${product.name}" />
-                            <button type="button" class="${this.focusClass}">
+                            <a href="/" class="${this.focusClass}">
                                 Shop ${product.category}
-                            </button>
+                            </a>
                         </div>
                     </div>
                 `;
@@ -148,6 +157,10 @@ class ExampleGrid {
 
         const items = document.querySelectorAll(`.${this.focusClass}`);
         items[this.itemCountLoadMore - this.itemPerPage].focus();
+        items[this.itemCountLoadMore - this.itemPerPage].scrollIntoView({
+            block: 'center',
+            behavior: 'smooth',
+        });
     }
 
     reset() {
@@ -164,10 +177,11 @@ class ExampleGrid {
 
         const items = document.querySelectorAll(`.${this.focusClass}`);
         items[0].focus();
+        items[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
     }
 
     setCount(itemCount) {
-        const type = this.type === 'product-grid' ? 'products' : 'categories';
+        const type = this.type === 'product-grid' ? 'Products' : 'Categories';
         this.countText.innerText = `Showing ${itemCount} of 9 ${type}`;
     }
 }
