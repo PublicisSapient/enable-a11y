@@ -42,34 +42,34 @@ body ::-webkit-scrollbar-track {
   background-color: transparent;
   color: white;
   font-weight: bold;
-  font-size: 20 / 16rem;
+  font-size: 1.25rem;
 }
 .reflow-examples__show-arrow-buttons {
   padding: 0;
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button {
   display: inline-block;
-  width: calc(24 / 16rem + 12px);
+  width: calc(1.5rem + 12px);
   position: absolute;
-  top: calc(calc(24 / 16rem + 12px)/11);
+  top: calc(calc(1.5rem + 12px)/11);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--previous {
   text-align: left;
   left: 0;
-  background: linear-gradient(to right, #000, #000 24 / 16rem, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__arrow-button--next {
   text-align: right;
   right: 0;
-  background: linear-gradient(to left, #000, #000 24 / 16rem, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to left, #000, #000 1.5rem, rgba(0, 0, 0, 0) 100%);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__list {
-  padding: 0 calc(24 / 16rem + 12px);
+  padding: 0 calc(1.5rem + 12px);
 }
 .reflow-examples__show-arrow-buttons .reflow-examples__list::after {
   display: inline-block;
   content: "";
-  width: calc(24 / 16rem + 12px);
+  width: calc(1.5rem + 12px);
 }
 .reflow-examples__remove-overflow {
   white-space: normal;
@@ -91,7 +91,7 @@ body ::-webkit-scrollbar-track {
   white-space: normal;
 }
 .reflow-examples__list-item {
-  font-size: 24 / 16rem;
+  font-size: 1.5rem;
   font-weight: bold;
   display: inline-block;
   padding: 0.5vw 1vw;
