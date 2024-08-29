@@ -25,6 +25,9 @@
         border: 1px solid #ccc;
         padding: 20px;
     }
+    @media @mobile {
+        width: 100%;
+    }
 }
 
 .product-name {
@@ -47,10 +50,10 @@
 
 .view-details-link {
     position: absolute;
+    font-size: (16 / @px);
     line-height: (44 / @px);
     left: 0;
     bottom: 0;
-    font-size: (16 / @px);
     font-weight: bold;
     width: 100%;
     background: @button-bg1;
@@ -60,6 +63,11 @@
     outline-offset: 4px;
     text-align: center;
     text-decoration: none;
+    @media @tablet {
+        font-size: (12 / @px);
+        line-height: (34 / @px);
+        min-height: 34px;
+    }
 }
 
 #product-count,

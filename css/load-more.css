@@ -20,6 +20,12 @@
   border: 1px solid #ccc;
   padding: 20px;
 }
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .product-tile,
+  .view-tile {
+    width: 100%;
+  }
+}
 .product-name {
   font-size: 1rem;
 }
@@ -37,10 +43,10 @@
 }
 .view-details-link {
   position: absolute;
+  font-size: 1rem;
   line-height: 2.75rem;
   left: 0;
   bottom: 0;
-  font-size: 1rem;
   font-weight: bold;
   width: 100%;
   background: #0c3f75;
@@ -50,6 +56,13 @@
   outline-offset: 4px;
   text-align: center;
   text-decoration: none;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px) {
+  .view-details-link {
+    font-size: 0.75rem;
+    line-height: 2.125rem;
+    min-height: 34px;
+  }
 }
 #product-count,
 #view-count {
