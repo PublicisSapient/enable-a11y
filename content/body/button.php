@@ -17,7 +17,7 @@
                     difference, from a UX point of view, is that links go to another web page,
                     while buttons cause an action on a page (or submit a form). Keep this in mind
                     when you are coding your CTAs. We should be marking up these controls correctly
-                    so screen-reader users know in advance what will happen when they interact with them.
+                    so screen reader users know in advance what will happen when they interact with them.
                 </li>
 
             </ul>
@@ -25,13 +25,13 @@
         </aside> -->
 
         <p>
-            <strong>A Button is an interactive element that triggers an action on a webpage or submits a form.</strong>
+            <strong>A button is an interactive element that triggers an action on a webpage or submits a form.</strong>
             The <code>&lt;button&gt;</code> tag has been available for a long time and developers should utilize it for this specific purpose.
         </p>
 
         <p>
             This may seem obvious to many developers.
-            Unfortunately there is a lot of code out there that uses <code>&lt;a&gt;</code> tags
+            Unfortunately, there is a lot of code out there that uses <code>&lt;a&gt;</code> tags
             to do the work of a <code>&lt;button&gt;</code>.
             This is problematic from an accessibility standpoint because those relying on screen readers may mistakenly assume that clicking it 
             will redirect them to another page.  When I review code like this, it makes me sad.  If you do this in a new project,
@@ -91,7 +91,7 @@
         <p>
             I can't tell you how many times I have seen buttons incorrectly marked up as links on a project.
             When dealing with older projects where it would be time-consuming to refactor the existing functionality and convert these "pseudo-buttons" into proper <code>&lt;button&gt;</code> tags, it might be more practical to add the ARIA <code>role="button"</code> to the existing <code>&lt;a&gt;</code> tags. If you decide to do this, you should first review all the steps below
-            and see what would entail more work: refactoring the code to use actual HTML buttons, or adding the extra
+            and see what would entail more work: refactoring the code to use actual HTML buttons or adding the extra
             JavaScript to the codebase to ensure the "imitation buttons" are accessible.
         </p>
 
@@ -145,7 +145,7 @@
 
         <p>
             This hurts my brain. It goes against the ideas of semantic HTML and it makes Tim Berners-Lee cry.
-            Do you really want to make the Father of the Web cry?  What kind of monster are you?
+            Do you want to make the Father of the Web cry?  What kind of monster are you?
         </p>
 
         <p>
@@ -208,13 +208,13 @@
             </li>
             <li>
                 Use the <code>aria-disabled="true"</code> attribute. This doesn't remove the button
-                from the keyboard tabbing order. It also doesn't prevents click events
+                from the keyboard tabbing order. It also doesn't prevent click events
                 from being fired <em>except for Chrome on Google Android with Talkback on</em>. (Thanks to Noel
                 Tibbles for pointing this out).
             </li>
         </ol>
 
-        <p>The ideal solution would be to use the <code>aria-disabled="true"</code> attribute, while using JavaScript to prevent the click event from performing an action. This allows the button to be accessible by screen reader users, while still notifying them that it is disabled.</p>
+        <p>The ideal solution would be to use the <code>aria-disabled="true"</code> attribute while using JavaScript to prevent the click event from performing an action. This allows the button to be accessible by screen reader users, while still notifying them that it is disabled.</p>
 
         <div class="enable-example">
             <p>The following button is disabled with the <code>disabled</code> attribute
@@ -250,4 +250,3 @@
             </div>
 
         </div>
-    

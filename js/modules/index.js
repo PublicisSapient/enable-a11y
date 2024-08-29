@@ -21,3 +21,4 @@ import { spinbuttons, spinbutton } from "spinbutton.js";
 import Switch from "switch.js";
 import tabgroup from "tabs.js";
 import tooltip from "tooltip.js";
+import tableOfContents from "enable-toc.js";

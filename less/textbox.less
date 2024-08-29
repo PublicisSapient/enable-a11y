@@ -40,17 +40,14 @@ fieldset {
     }
 }
 
-#charcount-example {
-    .enable-character-count {
-        display: block;
-        width: 20rem;
-        margin-left: 45%;
-        text-align: right;
-        margin-top: 5px;
-    }
+.enable-character-count {
+    display: block;
 
-    label.desc {
-        width: 15rem;
-        float: left;
+    margin-left: 45%;
+    text-align: right;
+    margin-top: 5px;
+
+    @media @tablet-up {
+        width: 20rem;
     }
 }

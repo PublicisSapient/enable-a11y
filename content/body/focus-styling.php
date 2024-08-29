@@ -1,6 +1,8 @@
 <p>
-  Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are
-  usually styled with
+  Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are easily
+  styled with the <code>outline</code> CSS property and the <code>:focus</code> and <code>:focus-visible</code> pseudo-classes.
+  Unfortunately, many designers hate them and try to get focus-styles removed from a website.  This page discussed 
+  in detail why this should be avoided and how to keep designers happy by having focus-styles appear for keyboard users only. 
 </p>
 
 <h2>Focus Styling For Keyboard Users Only</h2>
@@ -14,7 +16,7 @@
 
 
 <p>
-  When I am auditing a website for accessibility issues for the first time, lack of focus indicators is usually one of
+  When I am auditing a website for accessibility issues for the first time, a lack of focus indicators is usually one of
   the first things I see. This is usually because a lot of designers and/or developers will think that focus indicators
   look ugly and will put in the following CSS to get rid of them:
 </p>
@@ -44,13 +46,13 @@
 
 <p>
   <strong>This is a bad idea.</strong> Keyboard users need focus states need these focus indicators to know what
-  interactive element currently has focus. "But VoiceOver has it's own focus indicator!" is what I hear some of you say.
+  interactive element currently has focus. "But VoiceOver has its own focus indicator!" is what I hear some of you say.
   Not everyone who uses a keyboard uses VoiceOver. <strong>You absolutely need a visible focus indicator on all your
     interactive elements in order to pass <a href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html">WCAG
       2.4.7</a></strong>.
 </p>
 <p>
-  <strong>What you can do is make focus indicators only appear for keyboard users?</strong> This can be done using the
+  <strong>What can you do to make focus indicators only appear for keyboard users?</strong> This can be done using the
   <code>:focus-visible</code> CSS pseudo-class. Here is how the Enable site codes them globally using <a
     href="https://www.tpgi.com/focus-visible-and-backwards-compatibility/">TPGI's excellent method to use
     <code>:focus-visible</code> while ensuring browsers that don't support it fallback to using <code>:focus</code>
@@ -60,7 +62,7 @@
 <figure class="wide">
   <?php includeShowcode("css-focus-visible", "", "", "", false); ?>
 
-  <figcaption>Figure 2. Much better code that styles focus states for keyboard users, while minimizing its visibility
+  <figcaption>Figure 2. Much better code that styles focus states for keyboard users while minimizing its visibility
     for mouse users.</figcaption>
 </figure>
 
@@ -94,14 +96,14 @@
   Is it just keyboard users that will see focus states styled with <code>focus-visible</code>? Kind of, but there are a
   few subtleties. <a href="https://andyadams.org/">Andy Adams</a> has written <a
     href="https://css-tricks.com/almanac/selectors/f/focus-visible/">a great article for CSS Tricks about
-    :focus-visible</a> that really goes into detail.
+    :focus-visible</a> that goes into detail.
 </p>
 
 <h2>Increase Hit Areas Inside Focusable Elements</h2>
 
 <p>
-  If you use a keyboard to navigate through the main navigation, you will notice the clickable hit-area of the top level
-  navigation items are a lot bigger than they actually take up in the layout:
+  If you use a keyboard to navigate through the main navigation, 
+  you will notice the clickable hit area of the top-level navigation items are a lot bigger than they take up in the layout:
 </p>
 
 
@@ -222,7 +224,7 @@
 
 Sometimes, you will want to style focus states without the CSS <code>outline</code> property. If you do this, but
 instead of using <code>outline: none</code> to remove the default focus ring, developers should use outline with the
-<code>transparent</code> colour:
+<code>transparent</code> color:
 
 
 <figure class="wide">
@@ -250,7 +252,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
 <h2>Guaranteed Contrast on Focus Rings, Regardless of Background</h2>
 
 <p>
-  If you don't know what colour background your focus rings will be on top of, there is a simple way of ensuring your
+  If you don't know what color background your focus rings will be on top of, there is a simple way of ensuring your
   focus rings will follow contrast rules: using <code>outline</code> and <code>box-shadow</code> at the same time.
 </p>
 
@@ -323,7 +325,7 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
     </tbody>
   </table>
 
-  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Coloured Focus States on a Gradient Background</figcaption>
+  <figcaption id="double-focus-screenshot-table-caption">Figure 7. Dual-Colored Focus States on a Gradient Background</figcaption>
 </figure>
 
 <p>Here is the markup that implements the double focus ring.  Notice the use of both <code>outline</code> and <code>box-shadow</code> to create this effect (the box-shadow offsets must be greater than the outline thickness in order for this to work):</p>

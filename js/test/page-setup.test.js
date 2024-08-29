@@ -15,7 +15,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
         // This tests that there are no browser or js errors.
         desktopPage.on('console', async (e) => {
-            const args = await Promise.all(e.args().map((a) => a.jsonValue()));
+            await Promise.all(e.args().map((a) => a.jsonValue()));
 
             const type = e.type();
 
@@ -28,6 +28,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
           
         stack trace: ${JSON.stringify(e.stackTrace())}`;
             } else if (type === 'log' || type === 'debug') {
+                // This check is required to confirm the absence of console.log and debug statements in the code.
                 const location = e.location();
                 throw `Console log: ${e.text()}
         type: ${type}, file: ${location.url}, line: ${location.lineNumber}`;

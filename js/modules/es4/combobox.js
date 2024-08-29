@@ -16,8 +16,6 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-
 const EnableCombobox = function(componentRoot) {
   let root = null,
     form = null,
@@ -511,7 +509,7 @@ const EnableCombobox = function(componentRoot) {
   this.initCombo(componentRoot);
 };
 
-const enableComboboxes = new function() {
+const enableComboboxes = new (function() {
   this.isKeyboardUser = false;
 
   this.list = [];
@@ -538,6 +536,4 @@ const enableComboboxes = new function() {
 
     document.addEventListener('keyup', keyUpEvent);
   }
-}
-
-
+})

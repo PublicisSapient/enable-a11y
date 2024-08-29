@@ -140,10 +140,14 @@
 
         #content-section > :not(&__menu-item) > &__menu-item:nth-child(3),
         #content-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
-            width: calc(150% / 3 - 36px);
+            width: calc(124% / 3 - 36px);
             float: left;
             margin-left: @mulit-column-menu-margin;
             margin-right: @mulit-column-menu-margin;
+        }
+
+        #content-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
+            margin-left: 181px;
         }
 
         #code-patterns-section
@@ -299,6 +303,9 @@
         height: (30 / @px);
         margin: 0px 15px 5px 0px;
         display: inline-block;
+    }
+    &__heading-icon {
+        margin: 0 (15 / @px) 0 0;
     }
 
     &__icon-dark {

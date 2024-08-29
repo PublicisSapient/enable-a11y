@@ -37,7 +37,7 @@
 <p>
     While we want users to be able to input just the numbers into a form, it would be nice to be able to format the
     input with dashes as users type so they can keep track of which digits have already been entered. This is especially
-    nice when users are given an even larger set of characters to enter, such as a credit card, a Windows Activation
+    nice when users are given an even larger set of characters to enter, such as a credit card, or a Windows Activation
     License key:
 </p>
 
@@ -50,7 +50,7 @@
 </figure>
 
 <p>
-    In order to deal with this problem, there exist many input masking JavaScript libraries that will mask input as the
+    To deal with this problem, there are many input masking JavaScript libraries that will mask the input as the
     user types. The problem is that a lot of them have quirks that make them hard for all users, especially those with
     disabilities. I have spent a lot of time playing with input masking, and I have found that in order for an input
     mask to be truly accessible, it should have the following features:
@@ -63,7 +63,7 @@
     <li><strong>Flexible input of data:</strong> If the input field has data in it, the user should be able to move the
         cursor inside the input field with a keyboard or mouse and edit the data anywhere the cursor can move (i.e. not
         just at the end of the data). They should also be able to paste data anywhere into the field as well as select
-        multiple characters that can be replaced or erased. <em>It should be the same behavior as an unmasked input
+        multiple characters that can be replaced or erased. <em>It should have the same behavior as an unmasked input
             field.</em></li>
     <li><strong>Keyboard friendly:</strong> Keyboard users should be able to access the masked field with the TAB key,
         <em>just like an unmasked input field.</em>
@@ -73,13 +73,13 @@
     </li>
     <li><strong>Screen reader alerts:</strong> If the user pauses while typing the data, screen readers will announce
         <strong>all</strong> the characters in the input field individually instead of reading the data as a word. This
-        is because the data used in masking (e.g. phone numbers, credit cards, product keys, etc) are not words, and it
+        is because the data used in masking (e.g. phone numbers, credit cards, product keys, etc.) are not words, and it
         is better UX to have the data read out character by character.
     </li>
 </ol>
 
 <p>
-    When I searched for "Accessible input mask" in Google in Oct 2023, the following three libraries were the most
+    When I searched for "Accessible input mask" in Google in October 2023, the following three libraries were the most
     commonly cited, so I tested for these features:
 </p>
 
@@ -89,52 +89,54 @@ $check =
 $uncheck =
     '<img class="compliance-table__icon" src="images/error.svg" alt="No">';
 ?>
-<table class="comparison-table">
-    <caption>Comparison of input masking libraries</caption>
-    <thead>
-        <tr>
-            <th scope="col"><span class="sr-only">Library</span></th>
-            <th scope="col">Can access with keyboard</th>
-            <th scope="col">Screen reader friendly</th>
-            <th scope="col">Visually only masking</th>
-            <th scope="col">Flexible Input of data</th>
+<div class="sticky-table__container">
+    <table class="comparison-table">
+        <caption>Comparison of input masking libraries</caption>
+        <thead>
+            <tr>
+                <th class="sticky-table__sticky-horiz-heading" scope="col"><span class="sr-only">Library</span></th>
+                <th scope="col">Can access with keyboard</th>
+                <th scope="col">Screen reader friendly</th>
+                <th scope="col">Visually only masking</th>
+                <th scope="col">Flexible Input of data</th>
 
-            <th scope="col">Screen reader alerts</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
-            <td><?= $check ?>
-            <td><?= $check ?>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
-            </th>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td><?= $check ?></td>
-            <td>No, typing in the middle of data results in cursor being moved to end of string</td>
-            <td>No</td>
-        </tr>
-        <tr>
-            <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
-            <td><?= $check ?></td>
-            <td><?= $check ?> (although the demo page doesn't use proper labels).</td>
-            <td>No</td>
-            <td>No, typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one
-                character.</td>
-            <td>No</td>
-        </tr>
+                <th scope="col">Screen reader alerts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><a href="https://designsystem.digital.gov/components/input-mask/">USWDS Input Mask</a></th>
+                <td><?= $check ?>
+                <td><?= $check ?>
+                <td><?= $check ?></td>
+                <td>No, typing in the middle of data results in cursor being moved to end of string</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://github.com/estelle/input-masking">Accessible input masking by Estelle</a>
+                </th>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td><?= $check ?></td>
+                <td>No, typing in the middle of data results in cursor being moved to end of string</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <th scope="row"><a href="https://nosir.github.io/cleave.js/">Cleave.js</a></th>
+                <td><?= $check ?></td>
+                <td><?= $check ?> (although the demo page doesn't use proper labels).</td>
+                <td>No</td>
+                <td>No, typing an invalid character (e.g. a letter in a numeric field) causes the cursor to move up one
+                    character.</td>
+                <td>No</td>
+            </tr>
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+    </div>
 
-<p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible) I
-    created Enable's Input Making library. You can test it out with a screen reader and keyboard yourself.</p>
+<p>Since none of them really fit the bill (and I do think that these features are 100% needed to be truly accessible), I
+    created Enable's Input Masking library. You can test it out with a screen reader and keyboard yourself.</p>
 
 <h2>Example 1: Static Input Masking</h2>
 
@@ -218,12 +220,12 @@ $uncheck =
 <p>For the phone number field, you will note it is <code>999-999-9999</code>. The <code>9</code> characters are what we
     call <strong>input characters</strong> and represent where inputted data (in this case digits) should appear. The
     dash characters are what we call <strong>format characters</strong> and will be automatically put in the visual
-    field as the user types the numbers in. Users don't need to add them manually.</p>
-<p>Note that spaces, dashes and round brackets (i.e. <code>" "</code>, <code>"-"</code>, <code>"("</code> and
+    field as the user types in the numbers. Users don't need to add them manually.</p>
+<p>Note that spaces, dashes, and round brackets (i.e. <code>" "</code>, <code>"-"</code>, <code>"("</code> and
     <code>")"</code>)can be used as format characters. Possible input characters are:
 <dl>
     <dt><code>"_"</code> (underscore)</dt>
-    <dd>Represents any character that isn't a format character</dd>
+    <dd>Represents any character that isn't a format character.</dd>
     <dt><code>"U"</code>
     <dt>
     <dd>Any non-numeric character that we want to change to uppercase, if possible.</dd>
@@ -251,12 +253,12 @@ $uncheck =
     </summary>
     <div class="content">
 
-        <h3>How the DOM and CSS is Set Up.</h3>
+        <h3>How the DOM and CSS are Set Up.</h3>
 
         <p>We don't change the data inside the input field. Instead, we create an absolutely positioned HTML block
             (which we call a facade) that, using a higher z-index than the input field, sits on top of it. This contains
             the formatted input field data and covers the input field so it is no longer visible to the user (We also
-            make the input field's text transparent and ensure the facade and the input field are the same pixel-size).
+            make the input field's text transparent and ensure the facade and the input field are the same pixel size).
         </p>
     </div>
 
@@ -267,37 +269,29 @@ $uncheck =
         <figcaption>A 3D representation of the DOM of the input mask component.</figcaption>
     </figure>
 
-    <p>The diagram above shows that the input field is stacked underneath a facade that contains the visually formatted
-        input with the data mask applied. The input field contains the phone number 212-312-1231, without dashes, in it
-        and the numbers 3121, which is in the middle of the phone number, is selected (presumably because the user wants
-        to cut, copy or erase it). The facade has the same phone number as the input field, but is formatted with dashes
-        in the standard places for a North American phone number. The mask's visual data is divided into the three
-        areas: the text before the selected area (212), the selected text (-3121) and the text after the selected area
-        (231). This was done so we can mimic the input field's blinking cursor as well as show what data has been
-        selected by a mouse (more on this below).</p>
+    <p>The diagram above shows that the input field is stacked underneath a facade that contains the visually formatted input with the data mask applied. 
+        The input field contains the phone number 212-312-1231, without dashes, and the number 3121, which is in the middle of the phone number, is selected (presumably because the user wants to cut, copy, or erase it). 
+        The facade has the same phone number as the input field but is formatted with dashes in the standard places for a North American phone number. 
+        The mask's visual data is divided into three areas: the text before the selected area (212), the selected text (-3121), and the text after the selected area (231). 
+        This was done so we can mimic the input field's blinking cursor as well as show what data has been selected by a mouse (more on this below).</p>
 
     <h3>Keyboard UX</h3>
-    <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would. Keyboard
-        focus, when applied to the input field, is visible since the input field and the facade are the same size. When
-        the user types into the input field, JavaScript updates the facade with the same data, except it has format
-        information. The user can even select text (via the usual SHIFT+arrow keys) and the equivalent text is selected
-        in the input field underneath. Data can also be cut, copied and pasted from the input field, and the facade will
-        be appropriately updated.</p>
+    <p>The input field is keyboard accessible, and keyboard users can type in data just as they normally would. 
+        Keyboard focus, when applied to the input field, is visible since the input field and the facade are the same size. 
+        When the user types into the input field, JavaScript updates the facade with the same data, except it has format information. 
+        The user can even select text (via the usual SHIFT+arrow keys), and the equivalent text is selected in the input field underneath. 
+        Data can also be cut, copied, and pasted from the input field, and the facade will be appropriately updated.</p>
 
     <h3>Mouse UX</h3>
-    <p>For mouse users, when the click on what they think is the input field, they are actually clicking on the facade
-        stacked on top. JavaScript figures out where in the input data they are clicking and ensure the cursor in the
-        input field stacked underneath is placed in the right area. Because all mouse events are basically passed on to
-        the input field underneath, the user can select text with a mouse and the appropriate text is selected in the
-        input field so that is updated correctly. </p>
+    <p>For mouse users, when they click on what they think is the input field, they are actually clicking on the facade stacked on top. 
+        JavaScript figures out where in the input data they are clicking and ensures the cursor in the input field stacked underneath is placed in the right area. 
+        Because all mouse events are basically passed on to the input field underneath, the user can select text with a mouse, and the appropriate text is selected in the input field, so that it is updated correctly.</p>
 
-    <h3>Screen-reader UX</h3>
-    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input
-        field's value announced character by character). This is done via an ARIA live region which is described in the
-        code walkthrough above. So, instead of the screen reader reading the input field as a large integer (in this
-        case "two billion one hundred twenty three million one hundred twenty one thousand two hundred thirty one"), it
-        will read it as the phone number one digit at a time (i.e. two one two three one two one two three one). This
-        makes it easy for screen reader users to know what they just typed in.</p>
+    <h3>Screen Reader UX</h3>
+    <p>If the user stops typing for a while, the "formatted value" of the input field is announced (i.e. the input field's value is announced character by character). 
+        This is done via an ARIA live region, which is described in the code walkthrough above. 
+        So, instead of the screen reader reading the input field as a large integer (in this case, "two billion one hundred twenty-three million one hundred twenty-one thousand two hundred thirty-one"), 
+        it will read it as the phone number one digit at a time (i.e. two one two three one two one two three one). This makes it easy for screen reader users to know what they just typed in.</p>
 </details>
 
 
@@ -305,8 +299,8 @@ $uncheck =
 
 
 <p>
-    Credit card fields are a little different. At the time of this writing, the format characters (i.e. the spaces) are
-    put into different places depending if it's an American Express (a.k.a. AMEX) Card or another credit card type:
+    The credit card fields are a little different. At the time of this writing, the format characters (i.e. the spaces) are
+    put in different places depending on whether it's an American Express (a.k.a. AMEX) card or another credit card type:
 </p>
 
 <figure>

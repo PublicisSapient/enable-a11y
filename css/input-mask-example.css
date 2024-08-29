@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 .example__field-seperator {
   margin-bottom: 1.875rem;
 }
@@ -14,7 +7,7 @@
   display: inline-block;
 }
 .example input {
-  font-size: 1.25rem;
+  font-size: 20 / 16rem;
 }
 .example #cc {
   max-width: calc(30rem - 200px);

@@ -29,6 +29,10 @@
     "desc": "",
     "wip": true
   },
+  "audio-player.php": {
+    "title": "Accessible Audio Player",
+    "desc": "Audio on the web needs to include features such as transcripts, slowdown, and background noise reduction."
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
@@ -84,8 +88,8 @@
     "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
   },
   "form-error-checking.php": {
-    "title": "Accessible Form Error Checking",
-    "desc": "It is not hard to ensure forms work correctly with screen readers and other technology."
+    "title": "How to Ensure Accessible Form Validation and Error Checking",
+    "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone."
   },
   "form.php": {
     "title": "Accessible Form Structure",
@@ -105,6 +109,10 @@
     "title": "Accessible Images",
     "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
   },
+  "infographic.php": {
+    "title": "Accessible Infographics",
+    "desc": "How to code SVG and bitmap images so they are understandable by screen reader users."
+  },
   "input-mask.php": {
     "title": "Accessible Input Masking",
     "desc": "How to code masking of keyboard input in form fields so they are accessible."
@@ -123,13 +131,21 @@
     "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
   },
   "marquee.php": {
-    "title": "The Marquee Role",
+    "title": "The Marquee (a.k.a. Auto-Scrolling Content)",
     "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
   },
   "math.php": {
     "title": "Accessible Math Equations",
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
+  },
+  "meter.php": {
+    "title": "Meter",
+    "desc": "Meter component which is supported by non html5 browsers."
+  },
+  "multimedia-content.php": {
+    "title": "Accessible Multimedia Content",
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
   },
   "multi-level-hamburger-menu.php": {
     "title": "Accessible Flyout/Hamburger Hybrid Menus",
@@ -168,7 +184,7 @@
     "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
   },
   "switch.php": {
-    "title": "The ARIA Switch Role",
+    "title": "The ARIA Switch Role  (a.k.a. Toggle)",
     "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
   },
   "table.php": {
@@ -186,7 +202,7 @@
     "isNPM": "true"
   },
   "reflow.php": {
-    "title": "Reflow",
+    "title": "Content That Scrolls In Two Dimensions (a WCAG Reflow Violation)",
     "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
     "hasIframes": true
   },

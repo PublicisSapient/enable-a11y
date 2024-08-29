@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 [role="link"] {
   color: blue;
   text-decoration: underline;
@@ -40,9 +33,9 @@ a[target="_blank"] .new-window-icon-dark {
 }
 nav.breadcrumb {
   padding: 0.8em 1em;
-  border: 1px solid hsl(0deg 0% 90%);
+  border: 1px solid hsl(0, 0%, 90%);
   border-radius: 4px;
-  background: hsl(300deg 14% 97%);
+  background: hsl(300, 14%, 97%);
 }
 nav.breadcrumb ol {
   margin: 0;

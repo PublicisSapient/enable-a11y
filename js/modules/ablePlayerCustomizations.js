@@ -25,6 +25,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // Replace initDescription and handleTranscriptToggle methods with custom ones 
   // that add extra functionality
   AblePlayer.prototype.oldInitDescription = AblePlayer.prototype.initDescription;
+  AblePlayer.prototype.oldInitDefaultCaption = AblePlayer.prototype.initDefaultCaption;
   AblePlayer.prototype.oldHandleTranscriptToggle = AblePlayer.prototype.handleTranscriptToggle;
   AblePlayer.prototype.oldGetRootPath = AblePlayer.prototype.getRootPath;
 
@@ -44,6 +45,22 @@ function ablePlayerCustomizations($, extraCustomizations) {
     setDescriptionCookies();
     this.oldInitDescription();
     adjustTranscriptVisibility(this);
+
+
+  // Ensure all media players have a unique aria-label
+  const ariaLabels = [ 'video player', 'audio player'];
+  for (let i=0; i<ariaLabels.length; i++) {
+    const query = `[aria-label="${ariaLabels[i]}"]`;
+    document.querySelectorAll(query).forEach((el, j) => {
+      el.setAttribute('aria-label', `${ariaLabels[i]} ${j}`);
+    });
+  }
+  }
+
+  // Resolves issue where transcript visibility is not set properly when only captions are present.
+  AblePlayer.prototype.initDefaultCaption = function() {
+    this.oldInitDefaultCaption();
+    adjustTranscriptVisibility(this);
   }
 
   // When transcript button is clicked, adjust layout of page.
@@ -56,7 +73,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // set the DOM so that the video takes up half the screen
   // and that the transcript placed next to the video.
   function adjustTranscriptVisibility(player) {
-    if (player.$transcriptDiv.is(':visible')) {
+    if (player.$transcriptDiv && player.$transcriptDiv.is(':visible')) {
       player.$ableDiv.addClass('able-transcript-visible');
     } else {
       player.$ableDiv.removeClass('able-transcript-visible');
@@ -95,6 +112,7 @@ function ablePlayerCustomizations($, extraCustomizations) {
   if (extraCustomizations && typeof(extraCustomizations) === 'function') {
     extraCustomizations();
   }
+
 }
 
 ablePlayerCustomizations(jQuery);
