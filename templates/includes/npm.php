@@ -80,6 +80,10 @@ module.exports = {
       ,'~glider-js': path.resolve(__dirname, 'node_modules/glider-js'),
       '~glider-js/glider.js': path.resolve(__dirname, 'node_modules/glider-js/glider')
 <?php } ?> 
+<?php if (array_key_exists("needsSplide", $other)) { ?>
+      '~splide': path.resolve(__dirname, 'node_modules/@splidejs/splide/dist'),
+      '~@splidejs/splide/dist/js/splide.js': path.resolve(__dirname, 'node_modules/@splidejs/splide/dist/js/splide')
+<?php } ?>
 <?php if (array_key_exists("needsAccessibilityLib", $other)) { ?>
       ,'../enable-libs/accessibility-js-routines/dist/accessibility.module.js': path.resolve(__dirname, 'node_modules/accessibility-js-routines/dist/accessibility.module')
 <?php } ?>

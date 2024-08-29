@@ -5,6 +5,7 @@ import { ablePlayerCustomizations, AblePlayerInstances } from "ablePlayerCustomi
 import comboboxes from "combobox.js";
 import animatedGifPause from "enable-animatedGif.js";
 import EnableCarousel from "enable-carousel.js";
+import EnableThumbnailCarousel from "enable-thumbnail-carousel.js";
 import enableListbox from "enable-listbox.js";
 import enableVisibleOnFocus from "enable-visible-on-focus.js";
 import EnableFlyout from "enable-flyout-hamburger.js";

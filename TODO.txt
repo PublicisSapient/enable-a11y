@@ -197,6 +197,9 @@ js/modules/combobox.js:
 js/modules/enable-carousel.js:
   16: import '../node_modules/glider-js/glider.js';
 
+js/modules/enable-thumbnail-carousel.js:
+  16: import '../node_modules/@splidejs/splide/dist/js/splide.min.js';
+
 js/modules/enable-listbox.js:
   16: import accessibility from '../../node_modules/accessibility-js-routines/dist/accessibility.module.js';
 

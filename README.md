@@ -171,6 +171,8 @@ const nodeFiles = [
   'node_modules/indent.js/lib/indent.min.js',
   <b>'node_modules/glider-js/glider.js',
   'node_modules/glider-js/glider.css',</b>
+  <b>'node_modules/@splidejs/splide/dist/js/splide.min.js',
+  'node_modules/@splidejs/splide/dist/css/splide.min.css',</b>
   'node_modules/text-zoom-event/dist/textZoomEvent.module.js',
   'node_modules/dialog-polyfill/index.js',
   'node_modules/jquery/dist/jquery.min.js',

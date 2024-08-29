@@ -3,6 +3,7 @@ alert.php
 animated-gif-with-pause-button.php
 button.php
 carousel.php
+thumbnail-carousel.php
 checkbox.php
 combobox.php
 description-list.php

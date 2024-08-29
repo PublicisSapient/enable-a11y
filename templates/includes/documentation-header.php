@@ -402,6 +402,14 @@
                                     {
                                         "id": "flyout__link",
                                         "props": {
+                                            "label": "Thumbnail Carousel",
+                                            "url-slug": "thumbnail-carousel",
+                                            "alt": ""
+                                        }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
                                             "label": "Carousel",
                                             "url-slug": "carousel",
                                             "alt": ""

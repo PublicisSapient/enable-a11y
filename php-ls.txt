@@ -52,6 +52,7 @@ _01-alert-dialog.php
 41-animated-hide-show.php
 42-play-pause-animations-button.php
 43-read-more.php
+44-thumbnail-carousel.php
 accessible-text-svg.php
 alert-dialog.php
 alert.php
@@ -62,6 +63,7 @@ authors.php
 bottom-fixed-navigation.php
 button.php
 carousel.php
+thumbnail-carousel.php
 checkbox.php
 combobox.php
 date.php
