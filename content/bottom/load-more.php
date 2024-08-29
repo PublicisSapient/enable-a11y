@@ -1,1 +1,1 @@
-<script src="js/demos/load-more.js" type="module"></script>
+<script src="js/demos/load-more/load-more.js" type="module"></script>

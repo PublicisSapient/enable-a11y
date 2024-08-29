@@ -4,18 +4,17 @@
         "This is the best solution to use, especially when building from scratch.",
 ]); ?>
 
-<p>In a world of everything online and always connected, companies are on a mission to keep you browsing their content for as
-   long as they possibly can. Many patterns have come about for how to handle paginated content. Since the introduction of 
-  social media one pattern in particular has been a mainstay for wasting a users time. The infinite scroll pattern. While it's good 
-to keep folks endlessly scrolling content on a page it's not very accessible, it may be hampering the user experience and even hurting
-the ultimate goal of your website.</p>
+<p>In today's digital age, where everything is online and always connected, companies strive to keep users engaged with their content for as long as possible. Various patterns have emerged for managing paginated content, and since the advent of social media, one particular pattern has become prevalent: infinite scroll. While this approach may be beneficial for companies looking to increase user engagement by encouraging endless scrolling, it is not always the most accessible or user-friendly option. In some cases, it can even undermine the primary objectives of a website.</p>
 
-<p>Consider reading this article by Nieman Norman Group <a href="https://www.nngroup.com/articles/infinite-scrolling/">https://www.nngroup.com/articles/infinite-scrolling/</a> 
-which talks about the detriments of a user experience that features infinite scroll.</p>
+<p>In the following demos, we will focus on an alternative to infinite scroll: the "load more" button. This method prevents users from becoming trapped in an endless loop of content, allowing them to easily navigate the rest of the site. It's worth noting that other alternatives, such as traditional pagination, also exist, but for the purposes of these demos, our emphasis will be on the load more button.</p>
+
+<p>For a deeper understanding of the drawbacks of infinite scrolling on user experience, consider reading this insightful article by the Nielsen Norman Group: <a href="https://www.nngroup.com/articles/infinite-scrolling/">https://www.nngroup.com/articles/infinite-scrolling/</a></p>
+
+<p>The following demonstrations use placeholder assets sourced from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a>.</p>
 
 <h2>Category Grid Load More Example</h2>
 
-<p>Category grid's are relatively simple components</p>
+<p>Category grids are typically straightforward components. However, incorporating a "load more" button introduces additional complexity, particularly when ensuring that these components remain accessible. The key takeaway from this example is understanding how the "load more" functionality operates. Notably, when additional category tiles are loaded, the user's focus is returned to the first tile in the newly loaded set. This approach allows users to seamlessly continue from where they left off before clicking the "load more" button.</p>
 
 <div id="example1" class="enable-example">
   <p id="view-count" aria-live="polite">Showing 3 of 9 Categories</p>
@@ -59,14 +58,34 @@ which talks about the detriments of a user experience that features infinite scr
 {
   "replaceHtmlRules": {},
   "steps": [{
-      "label": "Ensure details has open attribute set",
-      "highlight": "open",
-      "notes": "This ensures the animated version is shown by default."
+      "label": "Add a product counter and add the aria-live attribute",
+      "highlight": "%OPENCLOSECONTENTTAG%p id=\"view-count\"",
+      "notes": "It's a good idea to tell users how many products they're viewing out of the total number of products. We add the aria-live attribute set to polite to ensure that when it updates, it will be read out by the screen reader after the focused element is read."
     },
     {
-      "label": "Ensure the summary tag has the correct aria-label",
-      "highlight": "aria-label",
-      "notes": "After doing this step, make sure all other steps in example 1 above are followed."
+      "label": "Ensure all images have alt tags",
+      "highlight": "alt",
+      "notes": "It's important to make sure that all images have a descriptive alt tag."
+    },
+    {
+      "label": "Ensure anchor tags contain both the action and the category name",
+      "highlight": "%OPENCLOSETAG%a ||| %OPENCLOSECONTENTTAG%a",
+      "notes": "It's important that the user knows what action the anchor tags will perform by clicking on them. In our case we've inlcuded the word \"Shop\" in front of the category name. This tells the user they'll be linked to a shops page for the category. For this example we're linking to \"/\", in a real world application this should go to the category page."
+    },
+    {
+      "label": "Ensure buttons contain the action and the descriptor",
+      "highlight": "%OPENCLOSECONTENTTAG%button id=\"view-more-btn\"",
+      "notes": "Make sure that you're including both the action and a descriptor for buttons. This tells the user what they can expect by clicking the button."
+    },
+    {
+      "label": "Ensure the focus goes to the proper tile after clicking View More Categories button.",
+      "highlight": "%FILE% ./js/demos/load-more/load-more.js ~ \\s*const productTiles[\\s\\S]*?\\}\\)\\;",
+      "notes": "It's important to move the users focus state to the first item in the newly loaded products. For demo purposes we're including a reset button. In the real world this data would likely come from an API request. By setting the users focus to the first item in the new batch of products a user can keep browsing through the tiles where they left off."
+    },
+    {
+      "label": "Update the product counter when loading more",
+      "highlight": "%FILE% ./js/demos/load-more/load-more.js ~ \\s*this.setCount[\\s\\S]*?\\)\\;",
+      "notes": "We're calling a counter update function in the demo to change the text of the \"Showing X of X Categories\" text to update the product count the user is viewing. Remember that we added aria-live=\"polite\" to this text in step 1. This will announce the update to the user. In a real application this data would likely come from an API."
     }
   ]
 }
@@ -74,9 +93,9 @@ which talks about the detriments of a user experience that features infinite scr
 
 <h2>Product Listing Page Load More Example</h2>
 
-<p>This is the preferred way of implementing loading more content in an accessible way that aids goal-oriented finding tasks.</p>
+<p>Product listing pages with "load more" functionality can become quite complex. Typically, each product tile not only provides a clickable link to a detailed product page but also includes several other interactive elements. For example, you may have product ratings, an "add to favorites" button, an "add to cart" button, and other interactive features, all of which need to be made accessible.</p>
 
-<p>The following demo makes use of placeholder assets pulled from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a></p>
+<p>The following example is relatively basic but demonstrates how you might structure your product tiles. A key consideration is how the tile elements are grouped using role="group" along with aria-labelledby="productNameId", ensuring accessibility and ease of navigation. Additionally, when more product tiles are loaded, the user's focus is returned to the first tile in the newly loaded set. This feature allows users to seamlessly continue their browsing experience from where they left off before clicking the "load more" button.</p>
 
 <div id="example2" class="enable-example">
   <p id="product-count" aria-live="polite">Showing 3 of 9 Products</p>
@@ -125,44 +144,39 @@ which talks about the detriments of a user experience that features infinite scr
 {
   "replaceHtmlRules": {},
   "steps": [{
-      "label": "Put in details and summary tag structure in HTML",
-      "highlight": "%OPENCLOSETAG%details ||| %OPENCLOSECONTENTTAG%summary",
-      "notes": ""
+      "label": "Add a product counter and add the aria-live attribute",
+      "highlight": "%OPENCLOSECONTENTTAG%p id=\"product-count\"",
+      "notes": "It's a good idea to tell users how many products they're viewing out of the total number of products. We add the aria-live attribute set to polite to ensure that when it updates, it will be read out by the screen reader after the focused element is read."
     },
     {
-      "label": "Place role of button inside the summary",
-      "highlight": "role",
-      "notes": "This is to ensure iOS reports this correctly to VoiceOver"
-    },
-    {
-      "label": "Put animated GIF after the summary tag and the poster image of the animation just before the details tag",
-      "highlight": "%OPENTAG%img",
-      "notes": "Note that the div surrounding the animated GIF is there for styling purposes.  It ensures that, when the summary widget is expanded, the animated image is placed over the still poster"
-    },
-    {
-      "label": "Don't forget the alternative text for the images!",
+      "label": "Ensure all images have alt tags",
       "highlight": "alt",
-      "notes": "Alternative text describes these images to screen reader users in reading mode."
+      "notes": "It's important to make sure that all images have a descriptive alt tag."
     },
     {
-      "label": "Add lazy attributes to images",
-      "highlight": "loading",
-      "notes": "This adds a performance boost by only showing the image when it is visible in the browser viewport."
+      "label": "Ensure anchor tags contain both the action and the category name",
+      "highlight": "%OPENCLOSETAG%a ||| %OPENCLOSECONTENTTAG%a",
+      "notes": "It's important that the user knows what action the anchor tags will perform by clicking on them. In our case we've inlcuded the word \"Shop\" in front of the category name. This tells the user they'll be linked to a shops page for the category. For this example we're linking to \"/\", in a real world application this should go to the category page."
     },
     {
-      "label": "Put aria label inside of summary tag",
-      "highlight": "aria-label",
-      "notes": "Note that when the summary is opened, this aria-label must be changed to <strong>'pause'</strong> and <strong>'play'</strong> when it is closed again."
+      "label": "Ensure buttons contain the action and the descriptor",
+      "highlight": "%OPENCLOSETAG%button ||| %OPENCLOSECONTENTTAG%button",
+      "notes": "Make sure that you're including both the action and a descriptor for buttons. This tells the user what they can expect by clicking the button."
     },
     {
-      "label": "Add small accessibility extras via JavaScript",
-      "highlight": "%FILE% js/modules/enable-animatedGif.js",
-      "notes": "I added extra JavaScript to the original example to handle: <ul><li>the state of the pause/play button to be reported to screen readers.</li><li>to ensure this component respects the user's <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion\"><code>prefers-reduced-motion</code> settings</a></li></ul>"
+      "label": "Ensure the product tile contains the proper role and aria-labelledby",
+      "highlight": "%OPENTAG%div class=\"product-tile\"",
+      "notes": "Since the product tiles contain more than 1 interactive element, it's important to add a role=\"group\" along with an aria-labelledby which points to the ID of the product name. This will ensure that when a user focuses one of the interactive elements, the screen reading will announce that these elements are apart of the group labelled by the product name. This is helpful for when a user tabs past the Add to Cart button and then shift tabs backwords. Without this the user may not know what they are adding to cart."
     },
     {
-      "label": "Add support for Enable's Pause Animation Control",
-      "highlight": "%FILE% js/modules/enable-animatedGif.js ~ document.addEventListener\\('enable-play-animations'[^\\)]*\\);",
-      "notes": "I added extra JavaScript to the original example to handle: <ul><li>the state of the pause/play button to be reported to screen readers.</li><li>to ensure this component respects the user's <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion\"><code>prefers-reduced-motion</code> settings</a></li></ul>"
+      "label": "Ensure the focus goes to the proper tile after clicking Load More Products button",
+      "highlight": "%FILE% ./js/demos/load-more/load-more.js ~ \\s*const productTiles[\\s\\S]*?\\}\\)\\;",
+      "notes": "It's important to move the users focus state to the first item in the newly loaded products. For demo purposes we're including a reset button. In the real world this data would likely come from an API request. By setting the users focus to the first item in the new batch of products a user can keep browsing through the tiles where they left off."
+    },
+    {
+      "label": "Update the product counter when loading more",
+      "highlight": "%FILE% ./js/demos/load-more/load-more.js ~ \\s*this.setCount[\\s\\S]*?\\)\\;",
+      "notes": "We're calling a counter update function in the demo to change the text of the \"Showing X of X Products\" text to update the product count the user is viewing. Remember that we added aria-live=\"polite\" to this text in step 1. This will announce the update to the user. In a real application this data would likely come from an API."
     }
   ]
 }
