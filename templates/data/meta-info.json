@@ -16,8 +16,29 @@
     "wip": true
   },
   "alert.php": {
-    "title": "ARIA Alert",
-    "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag"
+    "title": "ARIA Alert: Understanding, Live Example and Code Walkthrough",
+    "desc": "Learn about the ARIA alert property, how it enhances web accessibility, and explore practical examples with code samples. Master ARIA alerts for better UX.",
+    "url": "https://www.useragentman.com/enable/alert.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "ARIA Alert",
+      "desc": "An alert is an ARIA live region meant for error or warning messages that appear on the screen. It is usually implied to have an aria-live value of assertive.",
+      "url": "https://www.useragentman.com/enable/alert.php"
+      },
+      {
+      "type": "HowTo",
+      "title": "Visual Alert Example",
+      "desc": "Live example of alert aria role",
+      "url": "https://www.useragentman.com/enable/alert.php#example-1-visual-alert--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough for ARIA Alert role",
+      "desc": "See the dropdown to highlight each of the individual steps that make accessible aria alert",
+      "url": "https://www.useragentman.com/enable/alert.php#developer-walkthrough-1"
+      }
+  ]
   },
   "animated-gif-with-pause-button.php": {
     "title": "Animated GIFs with Pause Buttons",
@@ -35,8 +56,53 @@
     "wip": true
   },
   "button.php": {
-    "title": "Accessible Buttons",
-    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help."
+    "title": "How to Create Accessible Buttons",
+    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.",
+    "url": "https://www.useragentman.com/enable/button.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "Accessible Button ?",
+      "desc": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
+      "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "An HTML Button",
+      "desc": "An HTML button is a clickable element that allows users to perform an action, such as submitting a form, triggering a function, or navigating to another page.",
+      "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough to make button accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the button accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-1"
+      },
+      {
+      "type": "HowTo",
+      "title": "A link with the role of button",
+      "desc": "Links can behave like a button, especially when it triggers an action rather than navigating to a different page.",
+      "url": "https://www.useragentman.com/enable/button.php#a-link-with-the-role-of-button--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "A link with the role of button and be accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the link behave like a button and be accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-2"
+      },
+      {
+      "type": "HowTo",
+      "title": "A Div with the role of button and be accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the div behave like a button and be accessible",
+      "url": "https://www.useragentman.com/enable/button.php#developer-walkthrough-3"
+      },
+      {
+      "type": "HowTo",
+      "title": "Disabled HTML Button",
+      "desc": "There are two ways of making a button disabled; Using one of these attributes, disabled=true or aria-disabled=true",
+      "url": "https://www.useragentman.com/enable/button.php#disabled-html-button---heading"
+      }   
+  ]
   },
   "carousel.php": {
     "title": "Accessible Carousels",
@@ -44,8 +110,77 @@
     "isNPM": "true"
   },
   "checkbox.php": {
-    "title": "Accessible Checkboxes",
-    "desc": "This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes."
+    "title": "How to Create Accessible Checkboxes",
+    "desc": "Here is a step-by-step guide to creating accessible checkboxes",
+    "url": "https://www.useragentman.com/enable/checkbox.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "A real styled HTML5 checkbox",
+      "desc": "You can style an HTML5 checkbox using CSS easily.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-real-styled-html5-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the styled checkboxe accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-1"
+      },
+      {
+      "type": "Article",
+      "title": "A DIV with a role of checkbox",
+      "desc": "If you come across a <div> in that is marked up like a checkbox, that is not accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-div-with-a-role-of-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make a <div> that is marked up like a checkbox accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-2"
+      },
+      {
+      "type": "Article",
+      "title": "HTML checkbox group",
+      "desc": "If you have a group of checkboxes, you could use <role='group'> instead of fieldsets",
+      "url": "https://www.useragentman.com/enable/checkbox.php#html-checkbox-group--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make a group of checkboxes accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make a group of checkboxes accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-3"
+      },
+      {
+      "type": "Article",
+      "title": "Indeterminate Checkboxes Using Native HTML",
+      "desc": "We usually think of checkboxes being either checked or unchecked. There is a third possible state: indeterminate. Note that this indeterminate state can be set via JavaScript. There is no indeterminate HTML attribute.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#indeterminate-checkboxes-using-native-html--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step Indeterminate Checkboxes Using Native HTML",
+      "desc": "See the dropdown to highlight each of the individual steps that make the example accessible.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-5"
+      },
+      {
+      "type": "Article",
+      "title": "Indeterminate Checkboxes Using ARIA",
+      "desc": "Just like two-state checkboxes, we can use ARIA to create faux checkboxes.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#indeterminate-checkboxes-using-aria--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step Indeterminate Checkboxes Using ARIA",
+      "desc": "See the dropdown to highlight each of the individual steps that make the example accessible.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-7"
+      },
+      {
+      "type": "HowTo",
+      "title": "How to Install the Hierarchical Checkbox Library into Your Projects",
+      "desc": "See the step-by-step installation guide for the Hierarchical Checkbox Library",
+      "url": "https://www.useragentman.com/enable/checkbox.php#how-to-install-the-hierarchical-checkbox-library-into-your-projects--heading"
+      }
+  ]  
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
@@ -76,12 +211,60 @@
     "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
   },
   "focus-styling.php": {
-    "title": "Focus Styling",
-    "desc": "Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them."
+    "title": "How to Create Accessible Focus Outlines in CSS",
+    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
+    "url": "https://www.useragentman.com/enable/focus-styling.php",
+    "mainEntity": [
+      {
+        "@type": "Article",
+        "title": "What is Focus Outline?",
+        "desc": "when a specific HTML element is ready to accept keyboard input, it is considered to be 'in focus.' As users navigate a webpage using the keyboard (typically via the Tab key), different elements receive focus, allowing screen readers to read their content",
+        "url": "https://www.useragentman.com/enable/focus-styling.php#what-is-a-focus-outline---heading"
+      },
+      {
+        "@type": "HowTo",
+        "title": "Focus Styling for Keyboard Users Only",
+        "desc": "How to style focus outline specially for keyboard users",
+        "url": "https://www.useragentman.com/enable/focus-styling.php#focus-styling-for-keyboard-users-only--heading"
+      },
+      {
+        "@type": "HowTo",
+        "title": "Increase Hit Area Inside Focusable Elements",
+        "desc": "Identify all focusable elements on the page and evaluate their hit area.",
+        "url": "https://www.useragentman.com/enable/focus-styling.php#increase-hit-areas-inside-focusable-elements--heading"
+      },
+      {
+        "@type": "HowTo",
+        "title": "Issues with CSS Transitions and CSS Outline in Safari",
+        "desc": "Understand common issues with CSS transitions and CSS outline in Safari.",
+        "url": "https://www.useragentman.com/enable/focus-styling.php#issues-with-css-transitions-and-css-outline-in-safari--heading"
+      },
+      {
+        "@type": "HowTo",
+        "title": "Considerations for Windows High Contrast Mode Users",
+        "desc": "Test your website in Windows High Contrast mode to identify any accessibility issues.",
+        "url": "https://www.useragentman.com/enable/focus-styling.php#don-t-forget-windows-high-contrast-mode-users---heading"
+      }
+    ]
   },
   "form-error-checking.php": {
     "title": "How to Ensure Accessible Form Validation and Error Checking",
-    "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone."
+    "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone.",
+    "url": "https://www.useragentman.com/enable/form-error-checking.php",
+    "mainEntity": [
+      {
+        "@type": "HowTo",
+        "title": "Using HTML5 for Accessible Form Validation",
+        "desc": "You can use just the required and pattern attributes on HTML forms to do client-side validation without JavaScript.",
+        "url": "https://www.useragentman.com/enable/form-error-checking.php#using-native-html5-validation--heading"
+      },
+      {
+        "@type": "HowTo",
+        "title": "Using Custom Validation for Accessible Form Validation",
+        "desc": "You can use enable-a11y node package to handle client-side form validation and error messages.",
+        "url": "https://www.useragentman.com/enable/form-error-checking.php#using-custom-validation--heading"
+      }
+    ]
   },
   "form.php": {
     "title": "Accessible Form Structure",
@@ -119,12 +302,54 @@
     "isNPM": "true"
   },
   "log.php": {
-    "title": "Accessible Log Displays",
-    "desc": "When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role."
+    "title": "Accessible Log Display: Understanding, Live Example, and Code Walkthrough",
+    "desc": "Discover how to implement an Accessible Log Display with a live example and detailed code walkthrough. Enhance web accessibility with best practices.",
+    "url": "https://www.useragentman.com/enable/log.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "What is Accessible logs ?",
+      "desc": "The log role is an ARIA-live region where new information is added in a meaningful order and old information may disappear.",
+      "url": "https://www.useragentman.com/enable/log.php"
+      },
+      {
+      "type": "HowTo",
+      "title": "Visual Accessible Log Display Example",
+      "desc": "Live example how accessible display log works",
+      "url": "https://www.useragentman.com/enable/log.php#example-1---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough for Accessible Log Display",
+      "desc": "See the dropdown to highlight each of the individual steps that make accessible logs",
+      "url": "https://www.useragentman.com/enable/log.php#developer-walkthrough-1"
+      }
+  ]
   },
   "marquee.php": {
-    "title": "The Marquee (a.k.a. Auto-Scrolling Content)",
-    "desc": "Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them."
+    "title": "Mastering Marquee: Auto Scrolling Text with Live Example and Code Samples",
+    "desc": "Learn how to create an auto-scrolling Marquee for your web pages. Explore a live example and get detailed code samples to implement it effortlessly.",
+    "url": "https://www.useragentman.com/enable/marquee.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "What is Marquee?",
+      "desc": "Marquees (a.k.a. Auto-Scrolling Content) are meant for content that scrolls or updates consistently, like a stock ticker or a news feed.",
+      "url": "https://www.useragentman.com/enable/marquee.php"
+      },
+      {
+      "type": "HowTo",
+      "title": "Accessible Auto Scrolling (Marquee) Example",
+      "desc": "Live example of News Ticker to understand how marquee works",
+      "url": "https://www.useragentman.com/enable/marquee.php#example-1-news-ticker--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough for Accessible Marquee",
+      "desc": "See the dropdown to highlight each of the individual steps that make accessible auto scrolling (marquee)",
+      "url": "https://www.useragentman.com/enable/marquee.php#developer-walkthrough-1"
+      }
+  ]
   },
   "math.php": {
     "title": "Accessible Math Equations",
@@ -155,8 +380,59 @@
     "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
   },
   "radiogroup.php": {
-    "title": "Accessible Radio Groups",
-    "desc": "They way radio buttons are made accessible is slightly different than other form controls."
+    "title": "How to Create Accessible Radio Groups",
+    "desc": "Here is a step-by-step guide to creating accessible radio groups",
+    "url": "https://www.useragentman.com/enable/radiogroup.php",
+    "mainEntity": [
+      {
+      "type": "Article",
+      "title": "Radio Buttons grouped with fieldsets",
+      "desc": "This is the recommended way of grouping radio buttons. Please look at the next few examples.",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#radio-buttons-grouped-with-fieldsets--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the group radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the group radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-1"
+      },
+      {
+      "type": "Article",
+      "title": "HTML5 radio buttons that have custom styling",
+      "desc": "Read this to style native radio buttons like a Jedi Master",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-radio-buttons-that-have-custom-styling--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the custom styled radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the custom styled radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-2"
+      },
+      {
+      "type": "Article",
+      "title": "Custom radio buttons",
+      "desc": "making <div> and/or <span> tags look like radio buttons?",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#custom-radio-buttons-using-aria--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the custom radio buttons accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the custom radio buttons accessible",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-3"
+      },
+      {
+      "type": "Article",
+      "title": "An alternative to fieldsets",
+      "desc": "Replace fieldsets with an ARIA radiogroup role",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#html5-version-that-uses-radiogroup-roles---heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make replace fieldsets with an ARIA radiogroup",
+      "desc": "See the dropdown to highlight each of the individual steps that make an ARIA radiogroup",
+      "url": "https://www.useragentman.com/enable/radiogroup.php#developer-walkthrough-4"
+      }
+  ]
   },
   "skip-link.php": {
     "title": "Skip Links (That Work In Mobile Too!)",
@@ -172,8 +448,29 @@
     "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
   },
   "status.php": {
-    "title": "The ARIA Status Role",
-    "desc": "If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA role \"status\""
+    "title": "ARIA Status: Understanding, Live Example, and Code Walkthrough",
+    "desc": "Learn about the ARIA status role, its importance in accessibility, and see a live example with supporting code samples to improve user experience.",
+    "url": "https://www.useragentman.com/enable/status.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "What is ARIA Status role?",
+      "desc": "Status messages allow screen readers and other assistive technology to tell users that content has changed on the page.",
+      "url": "https://www.useragentman.com/enable/status.php"
+      },
+      {
+      "type": "HowTo",
+      "title": "Visually Hidden Status Message Example",
+      "desc": "Live example of how visually how hidden status role works",
+      "url": "https://www.useragentman.com/enable/status.php#visually-hidden-status-message--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough for Accessible Status role",
+      "desc": "See the dropdown to highlight each of the individual steps that make accessible status messages",
+      "url": "https://www.useragentman.com/enable/status.php#developer-walkthrough-1"
+      }
+  ]
   },
   "switch.php": {
     "title": "The ARIA Switch Role  (a.k.a. Toggle)",
@@ -242,8 +539,29 @@
     "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
   },
   "timer.php": {
-    "title": "ARIA Timer",
-    "desc": "If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise."
+    "title": "ARIA Timer: Understanding, Live Example and Code Walkthrough",
+    "desc": "Discover what ARIA Timer is, see a live example, and explore the supporting code. Learn how to implement an accessible countdown timer with ARIA roles and attributes.",
+    "url": "https://www.useragentman.com/enable/timer.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "What is ARIA Timer?",
+      "desc": "The timer role is to be used on any timer or clock, including stopwatch readouts and countdown timers. Because of the immediate nature of the information given, it is recommended you use aria-live='assertive' to announce the value of the timer.",
+      "url": "https://www.useragentman.com/enable/timer.php"
+      },
+      {
+      "type": "HowTo",
+      "title": "Accessible Timer Example",
+      "desc": "Live example of how accessible timer works",
+      "url": "https://www.useragentman.com/enable/timer.php#timer-example--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Code Walkthrough for Accessible Timer",
+      "desc": "See the dropdown to highlight each of the individual steps that make accessible timer",
+      "url": "https://www.useragentman.com/enable/timer.php#developer-walkthrough-1"
+      }
+  ]
   },
   "tooltip.php": {
     "title": "Tooltip",
