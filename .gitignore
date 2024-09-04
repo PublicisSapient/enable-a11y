@@ -3,6 +3,7 @@ node_modules
 api-cache
 tmp
 .vscode
+report/*
 .idea
 
 # auto-gen PHP files/logs

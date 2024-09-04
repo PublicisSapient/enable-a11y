@@ -7,7 +7,7 @@
   display: inline-block;
 }
 .example input {
-  font-size: 1.25rem;
+  font-size: 20 / 16rem;
 }
 .example #cc {
   max-width: calc(30rem - 200px);

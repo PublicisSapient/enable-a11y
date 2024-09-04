@@ -50,6 +50,10 @@
     "desc": "",
     "wip": true
   },
+  "audio-player.php": {
+    "title": "Accessible Audio Player",
+    "desc": "Audio on the web needs to include features such as transcripts, slowdown, and background noise reduction."
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",
