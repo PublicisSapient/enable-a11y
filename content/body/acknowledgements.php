@@ -22,6 +22,7 @@
   </li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
   <li><a href="https://www.useragentman.com/">Zoltan Hawryluk</a> for starting the Enable project to begin with.</li>
+  <li><a href="https://github.com/shiprarawal">Shipra Rawal</a> for the <a href="./infographic.php">accessible infographics</a> and <a href="./datetimepicker.php">accessible datetime picker</a> component.</li>
 </ul>
 
 <h2>Code Used By Enable</h2>

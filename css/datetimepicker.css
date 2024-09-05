@@ -1,0 +1,26 @@
+.datetimepicker__input-label {
+  padding-right: 0.625rem;
+}
+.datetimepicker__input-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.datetimepicker__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.datetimepicker__table th {
+  background-color: #d0e1f1;
+  width: 50%;
+}
+.datetimepicker__table td,
+.datetimepicker__table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 0.625rem;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) {
+  .datetimepicker__input-wrapper {
+    flex-direction: column;
+  }
+}

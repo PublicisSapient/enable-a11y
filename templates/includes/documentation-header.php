@@ -286,6 +286,14 @@
                                             "url-slug": "spinner",
                                             "alt": ""
                                         }
+                                    },
+                                    {
+                                        "id": "flyout__link",
+                                        "props": {
+                                            "label": "Date Time Picker",
+                                            "url-slug": "datetimepicker",
+                                            "alt": ""
+                                        }
                                     }
                                 ]
                             },

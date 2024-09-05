@@ -2,6 +2,7 @@ https://www.useragentman.com/enable/index.php
 https://www.useragentman.com/enable/accessible-text-svg.php
 https://www.useragentman.com/enable/alert.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
+https://www.useragentman.com/enable/audio-player.php
 https://www.useragentman.com/enable/button.php
 https://www.useragentman.com/enable/carousel.php
 https://www.useragentman.com/enable/checkbox.php
@@ -31,6 +32,7 @@ https://www.useragentman.com/enable/radiogroup.php
 https://www.useragentman.com/enable/skip-link.php
 https://www.useragentman.com/enable/slider.php
 https://www.useragentman.com/enable/spinner.php
+https://www.useragentman.com/enable/datetimepicker.php
 https://www.useragentman.com/enable/status.php
 https://www.useragentman.com/enable/switch.php
 https://www.useragentman.com/enable/table.php

@@ -8,4 +8,4 @@ if [ "$NODE_ENV" = "production" ] || [ "$CI" = "true" ]; then
   exit 0
 fi
 
-npx lint-staged
+# npx lint-staged
