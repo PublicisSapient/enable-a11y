@@ -200,6 +200,44 @@ If you are trying to contribute to the Enable site from a forked version of this
 
 You will need to update the version number that NPM broadcasts as the latest version number. Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past). This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
 
+### Strcutured Data Markup
+
+Structured Data Markup is a way to label or tag the content on your website so that search engines and other platforms can better understand it.
+
+The Article and HowTo tags are two types of structured data markup that help search engines understand specific kinds of content.
+
+#### Article Tag:
+
+This is used to mark up articles, blog posts, or other written content. By using the Article tag, we help search engines identify the main parts of your article, like the headline. This can make your article show up better in search results, sometimes with extra features like the headline or image preview.
+
+#### HowTo Tag:
+
+This is used for content that gives step-by-step instructions on how to do something. When you use the HowTo tag, search engines can display your instructions in a more detailed way, often showing each step directly in the search results.
+
+Example of checkbox in the meta-info.json, where the mainEntity can be an array of 'Article' and 'HowTo' objects extracted from page:
+
+```json
+"checkbox.php": {
+    "title": "How to Create Accessible Checkboxes",
+    "desc": "Here is a step-by-step guide to creating accessible checkboxes",
+    "url": "https://www.useragentman.com/enable/checkbox.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "A real styled HTML5 checkbox",
+      "desc": "You can style an HTML5 checkbox using CSS easily.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-real-styled-html5-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the styled checkboxe accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-1"
+      },
+  ]
+}
+```
+
 ## References
 
 When testing using screen readers, these resources may be of help to you:

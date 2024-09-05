@@ -272,6 +272,11 @@ function getMetadata()
 
                 // Let's ensure these properties are entified.
                 foreach ($fileProps as $prop => $propValue) {
+                    // Check if the argument is not a string
+                    if (!is_string($propValue)) {
+                        // Convert the array (or other non-string data types) to a JSON string
+                        $propValue = json_encode($propValue);
+                    }
                     $fileProps->{$prop} = htmlentities($propValue);
                 }
                 return;
@@ -353,5 +358,93 @@ function getURIPrefix()
 }
 
 getMetadata();
+
+function processJsonFile()
+{
+    global $jsonLdStrOutput;
+    $uriFile = getURIFilename();
+    $tokenToFind = trim(preg_replace("/^\//", "", $uriFile));
+    $metaFile = "./data/meta-info.json";
+
+    // Check if the file exists
+    if (!file_exists($metaFile)) {
+        echo "File does not exist: $metaFile\n";
+        return;
+    }
+
+    // Read the file content
+    $jsonContent = file_get_contents($metaFile);
+
+    // Decode the JSON content
+    $data = json_decode($jsonContent, true);
+
+    // Check if the JSON was decoded successfully
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo "Error decoding JSON: " . json_last_error_msg() . "\n";
+        return;
+    }
+
+    // Check if the token exists in the data
+    if (!array_key_exists($tokenToFind, $data)) {
+        echo "Key '$tokenToFind' does not exist in the JSON data.\n";
+        return;
+    }
+
+    // Get the item associated with the token
+    $item = $data[$tokenToFind];
+
+    $jsonLd = [
+        "@context" => "https://schema.org",
+        "@type" => "WebPage",
+        "name" => isset($item["title"]) ? $item["title"] : "",
+        "description" => isset($item["desc"]) ? $item["desc"] : "",
+        "url" => isset($item["url"])
+            ? str_replace("\/", "/", html_entity_decode($item["url"]))
+            : "",
+        "mainEntity" => [],
+    ];
+
+    // Process 'mainEntity' to generate JSON-LD structure
+    if (isset($item["mainEntity"]) && is_array($item["mainEntity"])) {
+        foreach ($item["mainEntity"] as $entity) {
+            $mainEntity = [
+                "@type" => isset($entity["type"]) ? $entity["type"] : "",
+                "name" => isset($entity["title"]) ? $entity["title"] : "",
+                "articleBody" => isset($entity["desc"]) ? $entity["desc"] : "",
+                "url" => isset($entity["url"])
+                    ? str_replace("\/", "/", html_entity_decode($entity["url"]))
+                    : "",
+            ];
+            // Rename 'articleBody' to 'text' if type is 'HowTo'
+            if (isset($entity["type"]) && $entity["type"] === "HowTo") {
+                $mainEntity["text"] = isset($entity["desc"])
+                    ? $entity["desc"]
+                    : "";
+                unset($mainEntity["articleBody"]);
+            }
+            $jsonLd["mainEntity"][] = $mainEntity;
+        }
+    }
+
+    // Remove 'mainEntity' if it is an empty array
+    if (empty($jsonLd["mainEntity"])) {
+        unset($jsonLd["mainEntity"]);
+    }
+
+    // Remove empty attributes from the main jsonLd array
+    $jsonLd = array_filter($jsonLd, function ($value) {
+        return !empty($value);
+    });
+
+    // Output JSON-LD with pretty print
+    $jsonLdStr = json_encode($jsonLd, JSON_PRETTY_PRINT);
+
+    // Ensure slashes are not escaped in the final output
+    $jsonLdStr = str_replace("\\/", "/", $jsonLdStr);
+
+    $jsonLdStrOutput = $jsonLdStr;
+}
+
+processJsonFile();
 
 ?>
