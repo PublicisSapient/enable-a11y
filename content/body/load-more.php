@@ -17,7 +17,7 @@
 <p>Category grids are typically straightforward components. However, incorporating a "load more" button introduces additional complexity, particularly when ensuring that these components remain accessible. The key takeaway from this example is understanding how the "load more" functionality operates. Notably, when additional category tiles are loaded, the user's focus is returned to the first tile in the newly loaded set. This approach allows users to seamlessly continue from where they left off before clicking the "load more" button.</p>
 
 <div id="example1" class="enable-example">
-  <p id="view-count" aria-live="polite">Showing 3 of 9 Categories</p>
+  <p id="category-count" aria-live="polite">Showing 3 of 9 Categories</p>
 
   <section id="view-grid">
     <div class="view-tile">
@@ -59,7 +59,7 @@
   "replaceHtmlRules": {},
   "steps": [{
       "label": "Add a product counter and add the aria-live attribute",
-      "highlight": "%OPENCLOSECONTENTTAG%p id=\"view-count\"",
+      "highlight": "%OPENCLOSECONTENTTAG%p id=\"category-count\"",
       "notes": "It's a good idea to tell users how many products they're viewing out of the total number of products. We add the aria-live attribute set to polite to ensure that when it updates, it will be read out by the screen reader after the focused element is read."
     },
     {

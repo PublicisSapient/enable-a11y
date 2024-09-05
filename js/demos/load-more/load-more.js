@@ -143,7 +143,7 @@ new ExampleGrid({
     loadMoreBtn: 'view-more-btn',
     resetBtn: 'view-reset-btn',
     productGrid: 'view-grid',
-    countText: 'view-count',
+    countText: 'category-count',
     tileClass: 'view-tile',
     focusClass: 'view-details-link',
 });
