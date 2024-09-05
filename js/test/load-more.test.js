@@ -1,5 +1,6 @@
 'use strict';
 import config from './test-config.js';
+import testHelpers from './test-helpers.js';
 
 const exampleImages1 = '#example1 img';
 const exampleImages2 = '#example2 img';
@@ -63,9 +64,11 @@ describe('Load More Tests', () => {
         expect(domInfo.isFirstTileFocused).toBe(true);
 
         // Tab to the "View More Categories" button and press it to load the first new set
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+
+        // for (let i = 0; i < numTabPress; i++) {
+        //     await page.keyboard.press('Tab');
+        // }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         domInfo = await page.evaluate(() => {
@@ -92,15 +95,11 @@ describe('Load More Tests', () => {
         expect(domInfo.isCountTextUpdated).toBe(true);
 
         // Tab to the "View More Categories" button and press it to load the second new set
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         // Tab to the "Reset Category Grid Demo"
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         // Expect the first tile to be selected after resetting the demo
@@ -199,9 +198,7 @@ describe('Load More Tests', () => {
         expect(domInfo.isFirstTileFocused).toBe(true);
 
         // Tab to the "View More Categories" button and press it to load the first new set
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         domInfo = await page.evaluate(() => {
@@ -228,15 +225,11 @@ describe('Load More Tests', () => {
         expect(domInfo.isCountTextUpdated).toBe(true);
 
         // Tab to the "View More Categories" button and press it to load the second new set
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         // Tab to the "Reset Category Grid Demo"
-        for (let i = 0; i < numTabPress; i++) {
-            await page.keyboard.press('Tab');
-        }
+        testHelpers.keyPressHelper(page, 'Tab', numTabPress);
         await page.keyboard.press('Enter');
 
         // Expect the first tile to be selected after resetting the demo
