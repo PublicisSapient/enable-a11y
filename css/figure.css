@@ -66,24 +66,6 @@ a.tile-cta::after {
   transform: scale(0.8) translateY(0.375rem);
   display: inline-block;
 }
-<<<<<<< HEAD
-=======
-@media (prefers-color-scheme: dark) {
-  figure {
-    background: #222;
-  }
-  figure,
-  [role="figure"] {
-    background: #222;
-    color: #ccc;
-  }
-  figure a,
-  [role="figure"] a {
-    color: #80b5f9;
-  }
-}
-
->>>>>>> 570995da37c48736fecbb337dd541573c617e6b1
 .video-figure {
   display: block;
 }
@@ -112,8 +94,17 @@ a.tile-cta::after {
 .video-figure .able-status {
   text-align: right;
 }
-
 @media (prefers-color-scheme: dark) {
   figure {
     background: #222;
   }
+  figure,
+  [role="figure"] {
+    background: #222;
+    color: #ccc;
+  }
+  figure a,
+  [role="figure"] a {
+    color: #80b5f9;
+  }
+}
