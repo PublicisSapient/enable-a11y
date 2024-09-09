@@ -7,7 +7,7 @@
   <li>They must not be "hard-coded" into the image in order to conform to <a
       href="https://www.w3.org/WAI/WCAG21/Understanding/images-of-text">WCAG 1.4.5 - Images of Text</a>.
   </li>
-  <li>They must adhere to contrast requirements of <a
+  <li>They must adhere to the contrast requirements of <a
       href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">WCAG 1.4.3 - Contrast
       (Minimum)</a>
   </li>
@@ -85,9 +85,9 @@
 </figure>
 
 <p>
-  This is typical of a lot of hero images on the web. It's so common, I created a JavaScript library to work
+  This is typical of a lot of hero images on the web. It's so common that I created a JavaScript library to work
   around this issue. When the text is resized using the
-  browser's text zooming feature, the layout changes to accommodate the larger text:
+  browser's text-zooming feature, the layout changes to accommodate the larger text:
 </p>
 
 <figure>

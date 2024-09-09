@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 .sticky-table__keyboard-instructions {
   display: none;
   background: black;
@@ -49,6 +42,7 @@
   position: -webkit-sticky;
   position: sticky;
   left: 0;
+  z-index: 1;
 }
 .sticky-table__sticky-horiz-heading {
   position: -webkit-sticky;
@@ -67,6 +61,7 @@ table + figcaption {
   width: fit-content;
   margin: 1em auto;
   position: relative;
+  max-width: calc(100% - 200px);
   /* 
         * The decorations around the captions are for tablet and up,
         * since mobile doesn't have enough room

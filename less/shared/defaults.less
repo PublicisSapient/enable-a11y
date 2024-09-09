@@ -313,6 +313,17 @@ code {
 .compliance-table {
     width: 450px;
     max-width: 100%;
+
+    .has-multi-tables & {
+        vertical-align: top;
+
+        @media @desktop {
+            display: inline-block;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
 }
 
 .compliance-table,
@@ -341,6 +352,39 @@ code {
 
     &__icon {
         width: 20px;
+    }
+}
+
+.has-multi-tables {
+    text-align: center;
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+.meter-demo-container {
+    // Container for example meters (not needed for meter)
+    align-items: center;
+    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    width: fit-content;
+}
+
+.screen-reader-table {
+    tr {
+        @first-col-width: 125px;
+        td {
+            width: calc(~"(100% -  @{first-col-width}) / 5");
+        }
+
+        td:first-child {
+            width: @first-col-width;
+        }
     }
 }
 

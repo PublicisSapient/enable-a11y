@@ -1,10 +1,3 @@
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 .enable-form-example__fieldset-inner-container {
   width: min-content;
   margin: 0 auto;
@@ -195,7 +188,7 @@
 }
 .enable-form-example label.required::after {
   color: #e60000;
-  content: " *";
+  content: "*";
   font-weight: normal;
 }
 .enable-form-example .required-symbol {

@@ -13,8 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-
-const radiogroups = new function() {
+const radiogroups = new (function() {
 
   this.init = function() {
     this.radioGroupEls = document.querySelectorAll('.enable-custom-radiogroup');
@@ -34,5 +33,4 @@ const radiogroups = new function() {
       }
     );
   }
-}
-
+});
