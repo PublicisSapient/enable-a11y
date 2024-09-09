@@ -17,6 +17,8 @@
 </p>
 
 <ul>
+  <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
+  <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
   </li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
@@ -30,6 +32,7 @@
 </p> 
 
 <ul>
+<li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing deployment procedures in <a href="https://enable-a11y-react-iqpmwl8kb-publicis-sapient-sandbox.vercel.app/" target="new">Vercel</a> for <a href="https://github.com/PublicisSapient/enable-a11y-react" target="new">Enable(react version)</a> and create npm package for external use of the accessible components.</li>
   <li><a href="https://twitter.com/lsnrae">Alison Walden</a> for her UX guidelines for both <a
       href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
       carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>
