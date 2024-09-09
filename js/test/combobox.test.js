@@ -29,9 +29,6 @@ const testAutosuggestions = async (
     // Assertions to test the autosuggestion options
     expect(allContainSubstring).toBeTruthy();
     expect(suggestions.length).toBe(expectedCount);
-    console.log(
-        `Suggestions after typing '${typeText}': ${suggestions.join(', ')}`,
-    );
 };
 
 describe("All combobox's Attributes Test", () => {
