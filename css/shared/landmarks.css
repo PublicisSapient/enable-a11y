@@ -153,13 +153,6 @@ fieldset {
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
-.font-heading-3 {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 1.25rem;
-  border-bottom: double 3px #000;
-}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
