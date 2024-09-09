@@ -100,3 +100,22 @@
         display: none;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .enable-listbox {
+        background: #444;
+        border: 1px solid #222;
+
+        [role="listbox"] {
+            background: #222;
+        }
+
+        [role="option"]:focus {
+            background: #0a4481;
+        }
+
+        button {
+            background: #ccc;
+        }
+    }
+}

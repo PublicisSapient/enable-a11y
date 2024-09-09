@@ -19,3 +19,12 @@
   outline: solid 2px #097efb;
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
+@media (prefers-color-scheme: dark) {
+  #double-focus-ring-example a {
+    background: #7d5d12;
+    color: #c9e0fd;
+  }
+  #double-focus-ring-example a:visited {
+    color: #c589f9;
+  }
+}

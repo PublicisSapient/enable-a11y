@@ -245,6 +245,12 @@
   margin: 0px 15px 5px 0px;
   display: inline-block;
 }
+
+.enable-stats__icon-dark {
+  height: 1.875rem;
+  margin: 0px 15px 5px 0px;
+  display: none;
+}
 .enable-stats__heading-icon {
   margin: 0 0.9375rem 0 0;
 }
@@ -264,4 +270,37 @@
 }
 .enable-flyout__open-menu-button {
   margin-top: -3px;
+}
+@media (prefers-color-scheme: dark) {
+  .enable-stats__desc {
+    color: white;
+  }
+  .enable-stats a {
+    color: #d6e0eb;
+  }
+  .enable-stats__desc--scratch {
+    background-color: #3c4c3d;
+  }
+  .enable-stats__desc--integrate {
+    background-color: #7d5d12;
+  }
+  .enable-stats__desc--npm {
+    background-color: #516664;
+  }
+  .enable-stats__desc--do-not {
+    background-color: #763f56;
+  }
+  .enable-stats__desc--style {
+    background-color: #432155;
+  }
+  .enable-stats__icon {
+    height: 1.875rem;
+    margin: 0px 15px 5px 0px;
+    display: none;
+  }
+  .enable-stats__icon-dark {
+    height: 1.875rem;
+    margin: 0px 15px 5px 0px;
+    display: inline-block;
+  }
 }

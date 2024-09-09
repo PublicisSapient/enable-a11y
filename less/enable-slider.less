@@ -507,3 +507,40 @@ input[type="range"] {
         padding-left: 1em;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .enable-slider {
+        &--horizontal {
+            background-color: #000014;
+            border: 2px solid #eee;
+
+            .enable-slider__handle {
+                background-color: #6c6c6c;
+                border: 1px solid #eee;
+            }
+        }
+        &__slider-range {
+            background-color: #8f8fff;
+        }
+        &__number-fallback {
+            background: black;
+            color: white;
+        }
+        &__handle {
+            &:focus,
+            &:active,
+            &.focus & {
+                background-color: #999 !important;
+            }
+        }
+        &__button {
+            background: darkgreen;
+        }
+    }
+
+    .html-slider__multi--container {
+        &::after {
+            background: white;
+        }
+    }
+}

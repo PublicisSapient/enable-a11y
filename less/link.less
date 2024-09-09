@@ -15,6 +15,28 @@ a[target="_blank"] {
 
     .new-window-icon {
         height: (12 / @px);
+        display: inline;
+    }
+
+    .new-window-icon-dark {
+        height: (12 / @px);
+        display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: #a8c7fa;
+
+        &:visited {
+            color: #4593f8;
+        }
+
+        .new-window-icon {
+            display: none;
+        }
+
+        .new-window-icon-dark {
+            display: inline;
+        }
     }
 }
 
@@ -47,5 +69,13 @@ nav.breadcrumb {
         color: #000;
         font-weight: 700;
         text-decoration: none;
+
+        @media (prefers-color-scheme: dark) {
+            color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background: #282828;
     }
 }

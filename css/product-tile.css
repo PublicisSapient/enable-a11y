@@ -56,3 +56,21 @@
 .product-tile--not-as-good-example mark.ins::before {
   content: "Current price: ";
 }
+@media (prefers-color-scheme: dark) {
+  .product-tile {
+    color: white;
+    border: solid 1px #555;
+  }
+  .product-tile__badge {
+    background: #555;
+  }
+  .product-tile del,
+  .product-tile ins,
+  .product-tile mark {
+    color: white;
+  }
+  .product-tile del,
+  .product-tile mark.del {
+    color: white;
+  }
+}

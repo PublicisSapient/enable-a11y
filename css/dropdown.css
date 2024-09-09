@@ -104,6 +104,12 @@
   border: solid 1px #ccc;
   background-color: white;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-multiselect__button {
+    background-color: #222;
+    border: solid 1px #777;
+  }
+}
 .enable-multiselect__button::-webkit-details-marker {
   display: none;
 }

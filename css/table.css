@@ -147,6 +147,20 @@ table [role="row"]:nth-child(2n),
 [role="table"] [role="row"]:nth-child(2n) {
   background-color: #cccccc;
 }
+@media (prefers-color-scheme: dark) {
+  table tr,
+  [role="table"] tr,
+  table [role="row"],
+  [role="table"] [role="row"] {
+    background-color: #222;
+  }
+  table tr:nth-child(2n),
+  [role="table"] tr:nth-child(2n),
+  table [role="row"]:nth-child(2n),
+  [role="table"] [role="row"]:nth-child(2n) {
+    background-color: #282828;
+  }
+}
 table [role="rowgroup"],
 [role="table"] [role="rowgroup"] {
   display: table-row-group;

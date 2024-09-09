@@ -202,6 +202,9 @@ strong {
   main {
     background-color: #111111;
   }
+  a {
+    color: #4593f8;
+  }
   /* Bottom copy heading*/
   .homepage__bottom-copy--heading {
     color: #eeeeee;

@@ -39,6 +39,10 @@ fieldset,
         top: -1.5em;
         margin-bottom: 0px !important;
     }
+
+    @media (prefers-color-scheme: dark) {
+        background-color: #333;
+    }
 }
 
 /* These are styles just for the global error */
@@ -54,5 +58,11 @@ fieldset,
         width: 0.7rem;
         height: 0.7rem;
         margin-right: 0.5em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .error {
+        color: #ff6a6a;
     }
 }

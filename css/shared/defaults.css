@@ -348,9 +348,28 @@ iframe:focus-visible {
     background: #444;
   }
   code {
-    background-color: #555;
+    background-color: #111;
   }
   strong {
+    color: #ccc;
+  }
+  a {
+    color: #4593f8;
+  }
+  a:visited {
+    color: #c589f9;
+  }
+  .heading__deeplink {
+    color: #ccc;
+  }
+  .heading__deeplink:visited {
+    color: #ccc;
+  }
+  .enable-example {
+    border: solid 1px #eee;
+    border-left: solid 5px #eee;
+  }
+  .enable-example span {
     color: #ccc;
   }
 }
