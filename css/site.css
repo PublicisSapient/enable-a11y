@@ -47,15 +47,11 @@ main {
 }
 .plp .plp-list .item-wrapper .icon-wrapper h5 {
   display: block;
-  padding: 20px;
-}
-.plp .plp-list .item-wrapper .icon-wrapper h5 a {
   color: #000;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 20px;
+  padding: 40px 20px;
   margin: auto;
-  display: inline-block;
 }
 .plp .plp-list .item-wrapper .icon-wrapper .icon {
   min-height: 100px;

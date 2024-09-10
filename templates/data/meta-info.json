@@ -17,7 +17,7 @@
   },
   "alert.php": {
     "title": "ARIA Alert",
-    "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag"
+    "desc": "How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag."
   },
   "animated-gif-with-pause-button.php": {
     "title": "Animated GIFs with Pause Buttons",

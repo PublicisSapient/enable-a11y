@@ -63,6 +63,13 @@ function buildFlyoutMenuHTML() {
     EnableFlyout.init();
 }
 
+function includesUrl(string) {
+    if (location.href.includes(string)) {
+        return true;
+    }
+    return false;
+}
+
 function initEnable() {
     offscreenObserver.init(document.querySelector('[role="banner"]'));
 
@@ -86,7 +93,11 @@ function initEnable() {
     // applied to the heading.
     let headingIndex = 0;
 
-    if (location.href.indexOf('index.php') === -1) {
+    const indexPage = includesUrl('index.php')
+    const componentsPage = includesUrl('components.php');
+    const codePatternsPage = includesUrl('code-patterns.php');
+
+    if (!indexPage && !componentsPage && !codePatternsPage) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
