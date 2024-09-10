@@ -221,4 +221,10 @@ strong {
   .homepage__bottom-copy:nth-child(2n) {
     background: #444;
   }
+  .homepage__bottom-copy:nth-child(2n) a {
+    color: #7db4fa;
+  }
+  .homepage__bottom-copy:nth-child(2n) a:visited {
+    color: #c589f9;
+  }
 }
