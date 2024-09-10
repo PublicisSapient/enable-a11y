@@ -164,13 +164,11 @@ a:-webkit-any-link {
         }
 
         &--header {
-            // font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
             font-weight: bold;
             font-size: (20 / @px);
             border: none;
             margin-top: 10px;
             margin-bottom: 20px;
-            // color: #ccc;
             color: #2b2929;
             text-align: left;
             display: flex;
@@ -183,19 +181,12 @@ a:-webkit-any-link {
 
             &::before {
                 content: "";
-                // display: block;
-                // width: 100px;
-                // height: 100px;
                 display: inline-flex;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                // margin: 0 auto 30px auto;
                 margin-right: 20px;
                 padding: 20px;
-                // box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
-                // background-size: 80px 80px;
-                // box-shadow: 3px 2px 1px rgba(0, 0, 0, 0.5);
                 background-size: 40px;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
@@ -253,56 +244,27 @@ a:-webkit-any-link {
         }
 
         a {
-            // color: @color-style;
-            // color: #2b2929;
-            // color: #05a8aa;
-            // color: #fb8b24; // Orange
-            color: #ef2556; // Pink
-            /* font-weight: bold; */
+            color: @pink;
             border-bottom: 3px solid;
             text-decoration: none;
         }
     }
 
     &__bottom-copy {
-        background: #e12251;
-        //color: #222;
+        background: @pink;
         color: #fff;
         line-height: 1.5;
         padding: 20px;
         text-align: center;
-
-        // &:nth-child(2n) {
-        //     background: #f4f7f5;
-        // }
 
         @media @desktop {
             padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
             padding-bottom: 60px;
         }
 
-        // strong {
-        //     color: #000 !important;
-        // }
-
-        /* I have no idea why this was put here -- commenting out for now */
-        /* &::after {
-      content: "";
-      position: absolute; 
-      display: block;
-      left: 0;
-      width: 100vw;
-      top: 0;
-      right: 0;
-      bottom: 0;
-    } */
-
         &--heading {
-            // font-family: @font-default-copy;
             font-weight: bold;
-            //font-size: (22 / @px);
             font-size: 1.8rem;
-            // color: #444;
             color: #fff;
             display: inline-flex;
 

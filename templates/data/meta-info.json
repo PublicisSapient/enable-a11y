@@ -7,7 +7,7 @@
   },
   "accessible-text-svg.php": {
     "title": "Accessible Text in SVG",
-    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)",
+    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing).",
     "mainClass": "with-full-bleed-hero"
   },
   "alert-dialog.php": {
@@ -21,7 +21,7 @@
   },
   "animated-gif-with-pause-button.php": {
     "title": "Animated GIFs with Pause Buttons",
-    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
+    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag.",
     "isNPM": "true"
   },
   "animated-hide-show.php": {
@@ -49,7 +49,7 @@
   },
   "combobox.php": {
     "title": "Accessible Autocomplete (a.k.a Combobox)",
-    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
+    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role.",
     "isNPM": "true"
   },
   "date.php": {
@@ -85,7 +85,7 @@
   },
   "form.php": {
     "title": "Accessible Form Structure",
-    "desc": "Learn about proper HTML form structure.  You'd be surprised how often this is not done correctly.",
+    "desc": "Learn about proper HTML form structure. You'd be surprised how often this is not done correctly.",
     "toRefactor": false
   },
   "heading.php": {
@@ -94,7 +94,7 @@
   },
   "hero-image-text-resize.php": {
     "title": "Advanced Text Resizing",
-    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).",
     "isNPM": "true"
   },
   "img.php": {
@@ -107,7 +107,7 @@
   },
   "link.php": {
     "title": "Accessible Links",
-    "desc": "Links are easy to code accessibly, but it's nice to give more context"
+    "desc": "Links are easy to code accessibly, but it's nice to give more context."
   },
   "listbox.php": {
     "title": "Accessible Select Boxes (a.k.a. Listboxes)",
@@ -144,7 +144,7 @@
   },
   "radiogroup.php": {
     "title": "Accessible Radio Groups",
-    "desc": "They way radio buttons are made accessible is slightly different than other form controls."
+    "desc": "The way radio buttons are made accessible is slightly different than other form controls."
   },
   "skip-link.php": {
     "title": "Skip Links (That Work In Mobile Too!)",
@@ -165,7 +165,7 @@
   },
   "switch.php": {
     "title": "The ARIA Switch Role",
-    "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
+    "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users. Here's how to code them correctly."
   },
   "table.php": {
     "title": "Accessible Tables",
@@ -183,7 +183,7 @@
   },
   "reflow.php": {
     "title": "Reflow",
-    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
+    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions). This page talks about common solutions you can use to fix these type of issues.",
     "hasIframes": true
   },
   "reflow__example-of-issue.php": {
@@ -209,7 +209,7 @@
   },
   "tabs.php": {
     "title": "Accessible Tabs",
-    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible.  We've got your back.",
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible. We've got your back.",
     "isNPM": "true"
   },
   "textbox.php": {
@@ -227,7 +227,7 @@
   },
   "text-spacing.php": {
     "title": "Space-Adjusting Typography",
-    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
+    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities."
   },
   "timer.php": {
     "title": "ARIA Timer",

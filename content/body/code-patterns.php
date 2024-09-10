@@ -10,7 +10,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>Learn about proper HTML form structure.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -23,7 +23,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>It is not hard to ensure forms work correctly with screen readers and other technology.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -36,7 +36,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -49,7 +49,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How to code masking of keyboard input in form fields so they are accessible.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -66,7 +66,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>It is not hard to ensure forms work correctly with screen readers and other technology.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -79,7 +79,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -95,7 +95,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -108,7 +108,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -121,7 +121,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -134,7 +134,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing).</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -147,7 +147,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>If you think the style of text on the page is important to screen reader users, how do you code it?</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -163,7 +163,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>How to let screen reader users know when new information appears on the page using the ARIA alert role or the HTML5 output tag.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -176,7 +176,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>When you want up-to-date inbound information, like chat history or error logs, to be consumed by users of assistive technology, use the log role.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -189,7 +189,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>If you have a countdown or a timer on your page, tell users of screen readers and other assistive tech when it updates without too much noise.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -202,7 +202,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>Non essential information that updates frequently should be coded so screen reader users know it's there, but that it doesn't annoy them.</p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
@@ -215,7 +215,7 @@
             </div>
             <div class="links-wrapper">
                 <ul>
-                    <li><p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p></li>
+                    <li><p>If part of a page is updated (e.g. because of an AJAX call), users of screen readers and other assistive tech need to be informed.  Enter the ARIA <code>role="status"</code></p></li>
                     <li><a href="/button.php">See Examples</a></li>
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>

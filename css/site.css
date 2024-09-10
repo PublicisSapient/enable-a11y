@@ -14,17 +14,13 @@ main {
   flex-direction: column;
   height: 100%;
 }
-.plp {
-  margin: 5rem 10rem;
-}
 .plp h1 {
   margin: 0 0 80px 0;
 }
 .plp h2 {
+  font-size: 1.625rem;
   font-weight: bold;
-  font-size: 2rem;
   color: #222;
-  font-size: 1.6rem;
   padding: 20px 0;
   margin: 40px 0 79px;
 }
@@ -42,35 +38,45 @@ main {
   margin-bottom: 25px;
 }
 .plp .plp-list .item-wrapper .icon-wrapper {
-  width: 355px;
   min-width: 355px;
+  min-height: 288px;
   border-radius: 10px;
   text-align: center;
-  padding: 10px 10px 80px;
+  padding: 10px 10px;
   background-color: #f5f7f5;
-  height: 18rem;
 }
 .plp .plp-list .item-wrapper .icon-wrapper h5 {
   display: block;
   padding: 20px;
-  margin-top: 14px;
 }
 .plp .plp-list .item-wrapper .icon-wrapper h5 a {
   color: #000;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 20px;
   margin: auto;
   display: inline-block;
 }
+.plp .plp-list .item-wrapper .icon-wrapper .icon {
+  min-height: 100px;
+}
+.plp .plp-list .item-wrapper .icon-wrapper img {
+  max-width: 100%;
+}
 .plp .plp-list .item-wrapper .links-wrapper ul {
   width: 40rem;
   text-decoration: none;
+  margin: 0;
+  padding-left: 3rem;
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li {
   list-style-type: none;
-  padding: 26px 10px;
+  padding: 26px 0;
   border-bottom: 2px solid #000;
+}
+.plp .plp-list .item-wrapper .links-wrapper ul li code {
+  font-size: 1rem;
+  color: #E12251;
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li a {
   font-size: 1.3rem;
@@ -80,7 +86,7 @@ main {
   text-decoration: none;
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li a:hover {
-  color: #e12251;
+  color: #E12251;
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li a.get-code {
   position: relative;

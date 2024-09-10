@@ -4,9 +4,6 @@
 @default-menu-item-with-photo-width: 118px;
 @default-menu-item-with-photo-horiz-padding: 5px;
 
-// .sub-page-layout-wrapper {
-//     display: flex;
-
 .sub-component-navigation {
     position: fixed;
     width: 200px;
@@ -20,7 +17,6 @@
 }
 
 main {
-    // margin-left: 250px;
     width: calc(100% - 400px);
     display: flex;
     flex-direction: column;
@@ -28,17 +24,14 @@ main {
 }
 
 .plp {
-    margin: 5rem 10rem;
-
     h1 {
         margin: 0 0 80px 0;
     }
 
     h2 {
+        font-size: (26 / @px);
         font-weight: bold;
-        font-size: 2rem;
         color: #222;
-        font-size: 1.6rem;
         padding: 20px 0;
         margin: 40px 0 79px;
         a {
@@ -57,29 +50,33 @@ main {
             margin-bottom: 25px;
 
             .icon-wrapper {
-                width: 355px;
                 min-width: 355px;
+                min-height: 288px;
                 border-radius: 10px;
-                // display: inline-flex;
-                // flex-direction: column;
                 text-align: center;
-                padding: 10px 10px 80px;
+                padding: 10px 10px;
                 background-color: #f5f7f5;
-                height: 18rem;
 
                 h5 {
                     display: block;
                     padding: 20px;
-                    margin-top: 14px;
 
                     a {
                         color: #000;
                         font-weight: bold;
-                        font-size: 24px;
+                        font-size: (24 / @px);
                         padding: 20px;
                         margin: auto;
                         display: inline-block;
                     }
+                }
+
+                .icon {
+                    min-height: 100px;
+                }
+
+                img {
+                    max-width: 100%;
                 }
             }
 
@@ -87,11 +84,18 @@ main {
                 ul {
                     width: 40rem;
                     text-decoration: none;
+                    margin: 0;
+                    padding-left: 3rem;
 
                     li {
                         list-style-type: none;
-                        padding: 26px 10px;
+                        padding: 26px 0;
                         border-bottom: 2px solid #000;
+
+                        code {
+                            font-size: (16 / @px);
+                            color: @pink;
+                        }
 
                         a {
                             font-size: 1.3rem;
@@ -102,7 +106,7 @@ main {
                         }
 
                         a:hover {
-                            color: #e12251;
+                            color: @pink;
                         }
 
                         a.get-code {
