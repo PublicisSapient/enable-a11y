@@ -756,7 +756,7 @@ span.able-modkey {
   /* max-width: 100%; */
   z-index: 8000;
 }
-.able-sign-window video {
+.able-sign-window video, audio {
   width: 100%;
 }
 .able-sign-window:focus {

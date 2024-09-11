@@ -268,10 +268,14 @@ main {
 
         #content-section > :not(&__menu-item) > &__menu-item:nth-child(3),
         #content-section > :not(&__menu-item) > &__menu-item:nth-child(4) {
-            width: calc(150% / 3 - 36px);
+            width: calc(124% / 3 - 36px);
             float: left;
             margin-left: @mulit-column-menu-margin;
             margin-right: @mulit-column-menu-margin;
+        }
+
+        #content-section > :not(&__menu-item) > &__menu-item:nth-child(3) {
+            margin-left: 181px;
         }
 
         #code-patterns-section
@@ -347,25 +351,9 @@ main {
     }
 
     &__text {
-        //font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-        // font-family: "Comfortaa", Arial, Helvetica, sans-serif;
-        // display: block;
-        // position: absolute;
-        // display: inline-block;
         color: #fff;
-        //font-size: (59 / @px);
-        // font-size: (30 / @px);
-        // font-size: (40 / @px);
         padding-left: (20 / @px);
-        // font-weight: bold;
-        // margin-bottom: -8px;
-        // top: (8 / @px);
         width: 150px;
-
-        @media @tablet-up {
-            //font-size: (30 / @px);
-            // top: (15 / @px);
-        }
     }
 
     &__sub-text {
@@ -438,6 +426,9 @@ main {
         height: (30 / @px);
         margin: 0px 15px 5px 0px;
         display: inline-block;
+    }
+    &__heading-icon {
+        margin: 0 (15 / @px) 0 0;
     }
 
     &__label {

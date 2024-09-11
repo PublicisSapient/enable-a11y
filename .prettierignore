@@ -14,3 +14,10 @@ videos
 vtt
 bin/php-express
 **.ico
+**/*.jpeg
+**/*.jpg
+**/*.png
+**/*.webp
+**/*.mp4
+**/*.gif
+**/*.xcf

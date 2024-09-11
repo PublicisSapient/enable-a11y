@@ -13,10 +13,18 @@ if ($fileProps->title != "") {
 <meta property="og:type" content="<?= $fileProps->type ?>" />
 <meta property="og:alt" content="" />
 <meta property="article:author" content="Zoltan Hawryluk" />
-
-
+<meta name="description" content="<?= $fileProps->desc ?>" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="<?= $fileProps->desc ?>" />
 <meta name="twitter:title" content="<?= $fileProps->title ?>" />
 <meta name="twitter:image" content="<?= $fileProps->posterImg ?>" />
+
+<?php
+global $jsonLdStrOutput;
+
+if ($jsonLdStrOutput != "") {
+    echo '<script type="application/ld+json">' . $jsonLdStrOutput . "</script>";
+}
+?>
+<link rel="icon" type="image/x-icon" href="images/ENABLE.svg">
 

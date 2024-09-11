@@ -404,6 +404,17 @@ code {
   width: 450px;
   max-width: 100%;
 }
+.has-multi-tables .compliance-table {
+  vertical-align: top;
+}
+@media only screen and (min-width: 960px) {
+  .has-multi-tables .compliance-table {
+    display: inline-block;
+  }
+  .has-multi-tables .compliance-table:not(:last-child) {
+    margin-right: 20px;
+  }
+}
 .compliance-table,
 .comparison-table {
   margin: 1em auto 3em auto;
@@ -430,6 +441,29 @@ code {
 .compliance-table__icon,
 .comparison-table__icon {
   width: 20px;
+}
+.has-multi-tables {
+  text-align: center;
+}
+.has-multi-tables::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.meter-demo-container {
+  align-items: center;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  text-wrap: nowrap;
+  width: fit-content;
+}
+.screen-reader-table tr td {
+  width: calc((100% -  125px) / 5);
+}
+.screen-reader-table tr td:first-child {
+  width: 125px;
 }
 iframe:focus {
   outline: solid 2px #097efb !important;
@@ -620,15 +654,15 @@ header .search-form,
   top: 1em;
   right: 1em;
 }
-nav {
+.site__nav {
   position: static;
-  padding: 0.4em;
+  padding: 8px;
   line-height: 1.6;
 }
-nav ul li {
+.site__nav ul li {
   display: inline-block;
 }
-nav ul li a {
+.site__nav ul li a {
   color: white;
   text-decoration: none;
 }

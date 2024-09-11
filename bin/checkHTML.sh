@@ -23,7 +23,28 @@
 
 VNU_JAR="node_modules/vnu-jar/build/dist/vnu.jar"
 VNU_CMD="java -jar $VNU_JAR"
-MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+
+which ifconfig 1>&2 2> /dev/null
+if [ "$?" = "0" ]
+then
+	MYIP=`ifconfig -a | grep inet | grep -v inet6 | awk '{print $2}' | head -2 | tail -1`
+else
+	id=$(netsh interface show interface | grep "Connected" | awk '{print $4}')
+	MYIP=$(ipconfig | awk -v desc="$id" '
+		BEGIN {found=0}
+		{
+			if ($0 ~ desc) {
+			found=1
+			} else if ($0 ~ /^[^ ]/ && found) {
+				found=0
+			}
+			if (found && /IPv4 Address/) {
+				gsub(/.*: /, "", $0)
+				print $0
+				exit
+			}
+		}')
+fi
 PROJECT_URL="http://$MYIP:8888/index.php"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PHP=`bin/findPHP.sh`
@@ -214,7 +235,7 @@ downloadHTML() {
 
 
 	#.. This is the list of files that are to be tested with aXe after a delay of 2000 ms.
-	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php"
+	AXE_DELAYED_FILES="math.php pause-anim-control.php video-player.php multimedia-content.php"
 
 
 	echo "Downloading rendered HTML..."
@@ -358,7 +379,7 @@ runAXETests() {
 	# Note that the exception here is for the second carousel variation.  We don't care about the
 	# scrollabe area being focusable, because the scrollable UI is missing for all users.
 	echo "Running immediate tests"
-	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS 
+	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS
 	AXE_UNDELAY_RETURN="$?"
 	echo "Result: $AXE_UNDELAY_RETURN errors"
 
@@ -438,6 +459,22 @@ function runPa11yTests() {
 	fi
 }
 
+
+
+function runLighthouseTests() {
+	#. Download the HTML files if they have not already been downloaded
+	if ! [ -f tmp/downloaded-urls.txt ]
+	then
+		bin/generateSiteMap.sh
+		downloadHTML
+	else
+		: "${DOWNLOADED_URLS:=`cat tmp/downloaded-urls.txt`}"
+	fi
+
+	node bin/lighthouse-accessibility-scan.js
+}
+
+
 #.. let's wipe the tmp directory if it exists
 if [ -z "$(ls -A tmp)" ]
 then
@@ -454,6 +491,9 @@ then
 elif [ "$1" = "pa11y" ]
 then
 	runPa11yTests
+elif [ "$1" = "lighthouse" ]
+then
+	runLighthouseTests
 else
 	#.. Run checks and preparation for tests
 	bin/generateSiteMap.sh
@@ -463,6 +503,7 @@ else
 	runVNUTests
 	runAXETests
 	runPa11yTests
+	runLighthouseTests
 
 	#.. Remove temporary files on success
 	rm tmp/* 2> /dev/null

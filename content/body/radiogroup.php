@@ -12,7 +12,7 @@
         </aside> -->
 
 <p>
-  Radio buttons are the easiest way to get users to chose one of a <em>small</em> set of choices. Many developers forget that
+  Radio buttons are the easiest way to get users to choose one of a <em>small</em> set of choices. Many developers forget that
   a radio button has <strong>two</strong> labels: one unique to each radio button, and one for the entire group.
 </p>
 
@@ -97,7 +97,7 @@
 ]); ?>
 
 <p>
-    Radio buttons can be styled using a bit of careful CSS-fu.  I styled these ones by refactoring
+    Radio buttons can be styled using a bit of careful CSS-fu.  I styled these by refactoring
     the basic CSS from the <a href="https://codepen.io/manabox/pen/raQmpL">Custom Radio Button CSS Only Codepen</a>
   by <a href="http://webcreatormana.com">Mana</a>. I added focus states as well <a
     href="https://www.sarasoueidan.com/blog/inclusively-hiding-and-styling-checkboxes-and-radio-buttons/">ensuring
@@ -184,7 +184,7 @@
 <?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
-    Use when some developer before you decided making <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time.
+    Use when some developer before you decided that making <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time.
     Even though it wasn't.  Bad, developer! Bad!
 </p>
 
@@ -266,7 +266,7 @@
     {
       "label": "Set up the CSS for the custom styles",
       "highlight": "%CSS% radiogroup-css~ [role=\"radio\"][aria-checked=\"true\"]::after ||| top[^;]*; ||| left[^;]*; ||| width[^;]*; ||| height[^;]*; ||| transform[^;]*;",
-      "notes": "The <strong>::after</strong> pseudo-element is the coloured inner circle of the checked radio button. The width and height is the size of the radio button minus the border width, and then scaled down using CSS transforms. It is then positioned on top of the radio button's outer circle."
+      "notes": "The <strong>::after</strong> pseudo-element is the colored inner circle of the checked radio button. The width and height is the size of the radio button minus the border width, and then scaled down using CSS transforms. It is then positioned on top of the radio button's outer circle."
     },
     {
       "label": "Set up the CSS so the inner and outer circles are really circles",

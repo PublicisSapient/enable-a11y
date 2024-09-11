@@ -1,0 +1,75 @@
+.enable-media-player .able-wrapper {
+  max-width: initial !important;
+}
+.enable-media-player .able-descriptions {
+  display: none !important;
+  border: solid 1px red;
+}
+.enable-media-player .able-status-bar {
+  height: 2.4em;
+  min-height: 2.4em;
+}
+.enable-media-player * {
+  box-sizing: content-box;
+}
+.enable-media-player .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible + .able-transcript-area {
+  max-width: 100% !important;
+  left: auto !important;
+  top: auto !important;
+  position: relative !important;
+  margin: 0 auto;
+}
+.enable-media-player .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible + .able-transcript-area .able-alert {
+  display: none !important;
+}
+@media only screen and (min-width: 720px) {
+  .enable-media-player .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible {
+    width: calc(50% - 20px);
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .enable-media-player .able-wrapper:not(.is-fullscreen) .able.able-transcript-visible + .able-transcript-area {
+    width: calc(50% - 2px) !important;
+    max-width: calc(50% - 2px) !important;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1em;
+  }
+}
+.enable-media-player .able-media-container iframe {
+  width: 100%;
+}
+.enable-media-player .able-media-container iframe:focus {
+  outline: solid 2px #097efb;
+  outline-offset: -2px;
+}
+.enable-media-player .able-media-container iframe:focus:not(:focus-visible) {
+  outline: none;
+}
+.enable-media-player .able-media-container iframe:focus-visible {
+  outline: solid 2px #097efb;
+  outline-offset: -2px;
+}
+.enable-media-player .able-media-container iframe *:focus-visible {
+  outline-style: solid;
+}
+.compliance-table {
+  width: 450px;
+  max-width: 100%;
+  margin: 1em auto 3em auto;
+}
+.compliance-table th,
+.compliance-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+.compliance-table tr {
+  background: none !important;
+}
+.compliance-table td {
+  border: solid 1px black;
+}
+.compliance-table__icon {
+  width: 20px;
+}
+/*# sourceMappingURL=enable-media-player.css.map */

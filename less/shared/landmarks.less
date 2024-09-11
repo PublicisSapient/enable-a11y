@@ -10,16 +10,13 @@ body {
     margin: 0;
     position: relative;
     min-width: @min-screen-width;
-    // padding-bottom: 5rem;
 }
 
 header,
 [role="banner"] {
-    // background: @color1;
     margin: 0;
     position: relative;
     border-bottom: solid 1px rgba(0, 0, 0, 0.4);
-    // box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
 
     /*
    * Used to work around a Safari OSX bug with sticky table content
@@ -54,16 +51,12 @@ header,
     }
 }
 
-nav {
+.site__nav {
     position: static;
-    // background: #000000;
-    padding: 0.4em;
+    padding: 8px;
     line-height: 1.6;
-
     ul li {
         display: inline-block;
-        // margin-right: 1em;
-
         a {
             color: white;
             text-decoration: none;
@@ -130,14 +123,12 @@ main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-    // background-color: #2b2929;
     padding: @page-padding;
     margin: 0 auto 5rem;
     max-width: 1024px;
     line-height: 1.4;
     position: relative;
     border-radius: 25px;
-    // z-index: 2;  /* Don't know why this was put in here */
 }
 
 .inline-left {

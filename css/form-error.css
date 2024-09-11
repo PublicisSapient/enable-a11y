@@ -188,7 +188,7 @@
 }
 .enable-form-example label.required::after {
   color: #e60000;
-  content: " *";
+  content: "*";
   font-weight: normal;
 }
 .enable-form-example .required-symbol {

@@ -1,5 +1,4 @@
-
-const horizontalScrollUI = new function () {
+const horizontalScrollUI = new (function() {
   const scrollEvent = (e) => {
     const { target } = e;
 
@@ -23,5 +22,4 @@ const horizontalScrollUI = new function () {
   }
 
   setEvents();
-}
-
+})

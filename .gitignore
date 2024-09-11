@@ -3,6 +3,8 @@ node_modules
 api-cache
 tmp
 .vscode
+report/*
+.idea
 
 # generated css map files
 *.css.map

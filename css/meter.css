@@ -1,0 +1,46 @@
+.enable-custom-meter {
+  background: #EFEFEF;
+  border: 1px solid #E4E4E4;
+  border-radius: 1em;
+  block-size: 1em;
+  display: block;
+  width: 120px;
+}
+.enable-custom-meter::before {
+  border-radius: 1em;
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--meter-percentage);
+}
+.enable-custom-meter[meter-state="positive"]::before {
+  background: #387a26;
+}
+.enable-custom-meter[meter-state="neutral"]::before {
+  background: #f4bc41;
+}
+.enable-custom-meter[meter-state="negative"]::before {
+  background: #c74821;
+}
+.enable-custom-meter::-webkit-meter-bar {
+  /* Hides ::-webkit-meter-bar for cross browser consistency with Safari */
+  display: none;
+}
+.enable-custom-meter::-moz-meter-bar {
+  /* Styles and attribute selectors for ::before must also be applied to ::moz-meter-bar to support Firefox */
+  border-radius: 1em;
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--meter-percentage);
+}
+.enable-custom-meter[meter-state="positive"]::-moz-meter-bar {
+  background: #387a26;
+}
+.enable-custom-meter[meter-state="neutral"]::-moz-meter-bar {
+  background: #f4bc41;
+}
+.enable-custom-meter[meter-state="negative"]::-moz-meter-bar {
+  background: #c74821;
+}
+/*# sourceMappingURL=meter.css.map */

@@ -405,6 +405,22 @@
                 </ul>
             </div>    
         </li>
+
+        <!-- TO DO FINISH FLESHING OUT NEW ITEMS MISSING -->
+         <!-- CREATE ICONS FOR THEM -->
+        <li class="item-wrapper">
+            <div class="icon-wrapper">
+                <h5>Infographic</h5>
+                <div class="icon"><img src="/images/icons/components/pagination-table.svg"></div>
+            </div>
+            <div class="links-wrapper">
+                <ul>
+                    <li><p>If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.</p></li>
+                    <li><a href="/pagination-table.php">See Examples</a></li>
+                    <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
+                </ul>
+            </div>    
+        </li>
     <ul>
 </div>
     

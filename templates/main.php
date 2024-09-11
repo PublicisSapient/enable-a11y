@@ -1,8 +1,8 @@
 <?php
-include "includes/functions.php";
+
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
-
+include "includes/functions.php";
 $isIframe = $_GET["isIframe"] ?? "";
 
 if ($isIframe == "yes") {
