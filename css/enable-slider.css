@@ -414,3 +414,31 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .enable-slider output {
   padding-left: 1em;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-slider--horizontal {
+    background-color: #000014;
+    border: 2px solid #eee;
+  }
+  .enable-slider--horizontal .enable-slider__handle {
+    background-color: #6c6c6c;
+    border: 1px solid #eee;
+  }
+  .enable-slider__slider-range {
+    background-color: #8f8fff;
+  }
+  .enable-slider__number-fallback {
+    background: black;
+    color: white;
+  }
+  .enable-slider__handle:focus,
+  .enable-slider__handle:active,
+  .enable-slider__handle.focus .enable-slider__handle {
+    background-color: #999 !important;
+  }
+  .enable-slider__button {
+    background: darkgreen;
+  }
+  .html-slider__multi--container::after {
+    background: white;
+  }
+}

@@ -22,6 +22,7 @@
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
   </li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
+  <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for implementing dark mode across the project. 
   <li><a href="https://www.useragentman.com/">Zoltan Hawryluk</a> for starting the Enable project to begin with.</li>
 </ul>
 

@@ -25,7 +25,7 @@
 <?php includeStats([
     "isForNewBuilds" => true,
     "comment" =>
-        "This is recommended for use in both new and existing projects.  It ",
+        "This is recommended for use in both new and existing projects.",
 ]); ?>
 
 

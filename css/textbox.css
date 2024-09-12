@@ -28,6 +28,12 @@ textarea,
 fieldset div {
   margin-bottom: 10px;
 }
+@media (prefers-color-scheme: dark) {
+  [role="group"],
+  fieldset {
+    background-color: #333;
+  }
+}
 .enable-character-count {
   display: block;
   margin-left: 45%;

@@ -133,3 +133,8 @@
   text-align: center;
   margin-top: 120px;
 }
+@media (prefers-color-scheme: dark) {
+  #icon-font-example section a {
+    color: #ccc;
+  }
+}

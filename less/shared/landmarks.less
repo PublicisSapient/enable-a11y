@@ -170,6 +170,15 @@ aside,
     box-shadow: 4px 4px 0 black;
     line-height: 1.4;
 
+    @media (prefers-color-scheme: dark) {
+        background: #555 data-uri("../../images/notepad-icon.svg") no-repeat 1em
+            1em;
+
+        a {
+            color: #a7ccfc;
+        }
+    }
+
     max-width: 1024px;
 
     h2 {
@@ -194,6 +203,24 @@ aside,
                 background-repeat: no-repeat;
                 position: relative;
                 top: 0.4rem;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            background: #555;
+
+            h2 {
+                &::before {
+                    content: "";
+                    background: data-uri("../../images/notepad-icon.svg");
+                    width: 2rem;
+                    height: 2rem;
+                    display: inline-block;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    top: 0.4rem;
+                }
             }
         }
     }

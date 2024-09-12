@@ -144,6 +144,14 @@ table,
         &:nth-child(2n) {
             background-color: #cccccc;
         }
+
+        @media (prefers-color-scheme: dark) {
+            background-color: #222;
+
+            &:nth-child(2n) {
+                background-color: #282828;
+            }
+        }
     }
 
     [role="rowgroup"] {

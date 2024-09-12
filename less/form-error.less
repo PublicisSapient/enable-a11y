@@ -150,6 +150,10 @@
             top: -1.5em;
             display: block;
         }
+
+        @media (prefers-color-scheme: dark) {
+            background-color: #222;
+        }
     }
 
     [role="radio"],
@@ -215,5 +219,15 @@
 
     .required-symbol {
         color: #e60000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .enable-form-example label.required::after {
+        color: #ff6a6a;
+    }
+
+    .enable-form-example .required-symbol {
+        color: #ff6a6a;
     }
 }

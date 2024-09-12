@@ -189,6 +189,18 @@
   position: relative;
   z-index: 2;
 }
+.enable-flyout__open-level-button:visited,
+.enable-flyout__close-level-button:visited,
+.enable-flyout__link:visited {
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .enable-flyout__open-level-button:visited,
+  .enable-flyout__close-level-button:visited,
+  .enable-flyout__link:visited {
+    color: #fff;
+  }
+}
 .enable-flyout-container--positioned-left .enable-flyout__open-level-button {
   padding-right: 10px;
 }
@@ -573,6 +585,32 @@
   .enable-flyout--is-open .enable-flyout__close-level-button::after,
   .enable-flyout--is-open .enable-flyout__link::after {
     filter: none;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open .enable-flyout__level {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout__list--photo-layout .enable-flyout__link:hover,
+  .enable-flyout__list--photo-layout .enable-flyout__link:focus {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open {
+    color: white;
+    background: #222;
+  }
+}
+@media only screen and (min-width: 960px) and (prefers-color-scheme: dark) {
+  .enable-flyout--is-open .enable-flyout__open-level-button,
+  .enable-flyout--is-open .enable-flyout__close-level-button,
+  .enable-flyout--is-open .enable-flyout__link {
+    color: white;
   }
 }
 @keyframes enable-flyout__anim--mobile-open {

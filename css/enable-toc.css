@@ -137,3 +137,31 @@
 .enable-toc .enable-drawer__button:hover img {
   background: #ddd;
 }
+@media (prefers-color-scheme: dark) {
+  .enable-toc {
+    background-color: #222;
+  }
+  .enable-toc__move-tosidebar-button {
+    background-color: #333;
+    color: white;
+  }
+  .enable-toc__move-tosidebar-button:hover {
+    background-color: #111;
+  }
+  .enable-toc__hide-sidebar-button {
+    background-color: #333;
+    color: white;
+  }
+  .enable-toc__hide-sidebar-button:hover {
+    background-color: #111;
+  }
+  .enable-toc__link {
+    color: #4593f8;
+  }
+  .enable-toc__link:visited {
+    color: #4593f8;
+  }
+  .enable-toc .enable-drawer__button {
+    background-color: #222;
+  }
+}

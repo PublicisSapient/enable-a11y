@@ -94,3 +94,17 @@ a.tile-cta::after {
 .video-figure .able-status {
   text-align: right;
 }
+@media (prefers-color-scheme: dark) {
+  figure {
+    background: #222;
+  }
+  figure,
+  [role="figure"] {
+    background: #222;
+    color: #ccc;
+  }
+  figure a,
+  [role="figure"] a {
+    color: #80b5f9;
+  }
+}

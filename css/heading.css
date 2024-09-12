@@ -48,6 +48,12 @@ div.heading-example [role="heading"][aria-level="1"] {
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
 }
+@media (prefers-color-scheme: dark) {
+  div.heading-example h1,
+  div.heading-example [role="heading"][aria-level="1"] {
+    color: #ccc;
+  }
+}
 div.heading-example h2,
 div.heading-example h5 [role="heading"][aria-level="2"],
 div.heading-example [role="heading"][aria-level="5"] {
@@ -56,6 +62,13 @@ div.heading-example [role="heading"][aria-level="5"] {
   font-weight: normal;
   font-family: "Orienta", sans-serif;
   border: none;
+}
+@media (prefers-color-scheme: dark) {
+  div.heading-example h2,
+  div.heading-example h5 [role="heading"][aria-level="2"],
+  div.heading-example [role="heading"][aria-level="5"] {
+    color: #ddd;
+  }
 }
 div.heading-example h2,
 div.heading-example [role="heading"][aria-level="2"] {
@@ -79,6 +92,14 @@ div.heading-example [role="heading"][aria-level="6"] {
   letter-spacing: 1px;
   font-style: italic;
 }
+@media (prefers-color-scheme: dark) {
+  div.heading-example h3,
+  div.heading-example h6,
+  div.heading-example [role="heading"][aria-level="3"],
+  div.heading-example [role="heading"][aria-level="6"] {
+    color: #ddd;
+  }
+}
 div.heading-example h3,
 div.heading-example [role="heading"][aria-level="3"] {
   font-size: 30px;
@@ -96,6 +117,12 @@ div.heading-example [role="heading"][aria-level="7"] {
   font-weight: normal;
   font-family: "Orienta", sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  div.heading-example h4,
+  div.heading-example [role="heading"][aria-level="7"] {
+    color: #ddd;
+  }
+}
 div.heading-example h4,
 div.heading-example [role="heading"][aria-level="4"] {
   font-size: 25px;
@@ -104,4 +131,12 @@ div.heading-example [role="heading"][aria-level="4"] {
 div.heading-example [role="heading"][aria-level="7"] {
   font-size: 18px;
   line-height: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+  }
+  div.heading-example {
+    text-shadow: 0 2px 0 rgba(32, 32, 32, 0.7);
+  }
 }

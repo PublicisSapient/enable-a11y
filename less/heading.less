@@ -65,6 +65,10 @@ div.heading-example {
         text-shadow:
             0 2px white,
             0 3px #777;
+
+        @media (prefers-color-scheme: dark) {
+            color: #ccc;
+        }
     }
 
     h2,
@@ -75,6 +79,10 @@ div.heading-example {
         font-weight: normal;
         font-family: "Orienta", sans-serif;
         border: none;
+
+        @media (prefers-color-scheme: dark) {
+            color: #ddd;
+        }
     }
 
     h2,
@@ -100,6 +108,10 @@ div.heading-example {
         font-family: "Orienta", sans-serif;
         letter-spacing: 1px;
         font-style: italic;
+
+        @media (prefers-color-scheme: dark) {
+            color: #ddd;
+        }
     }
 
     h3,
@@ -120,6 +132,10 @@ div.heading-example {
         color: #343434;
         font-weight: normal;
         font-family: "Orienta", sans-serif;
+
+        @media (prefers-color-scheme: dark) {
+            color: #ddd;
+        }
     }
 
     h4,
@@ -131,5 +147,15 @@ div.heading-example {
     [role="heading"][aria-level="7"] {
         font-size: @h7-size;
         line-height: 20 * (18 / @h7-size);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #222;
+    }
+
+    div.heading-example {
+        text-shadow: 0 2px 0 rgba(32, 32, 32, 0.7);
     }
 }

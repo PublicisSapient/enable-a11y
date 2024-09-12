@@ -255,6 +255,13 @@
             position: relative;
             z-index: 2;
         }
+
+        &:visited {
+            color: @color0;
+            @media (prefers-color-scheme: dark) {
+                color: @color0;
+            }
+        }
     }
 
     &__open-level-button {
@@ -622,6 +629,11 @@
             background: white;
             color: black;
             width: 100%;
+
+            @media (prefers-color-scheme: dark) {
+                color: white;
+                background: #222;
+            }
         }
 
         &__menu-item {
@@ -645,6 +657,11 @@
                 transform: scale(1.2);
                 font-weight: bold;
                 background: white;
+
+                @media (prefers-color-scheme: dark) {
+                    color: white;
+                    background: #222;
+                }
             }
         }
 
@@ -698,10 +715,19 @@
             color: black;
             text-align: center;
 
+            @media (prefers-color-scheme: dark) {
+                color: white;
+                background: #222;
+            }
+
             .enable-flyout__open-level-button,
             .enable-flyout__close-level-button,
             .enable-flyout__link {
                 color: black;
+
+                @media (prefers-color-scheme: dark) {
+                    color: white;
+                }
 
                 &::after {
                     filter: none;

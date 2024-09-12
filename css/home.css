@@ -35,3 +35,11 @@ body.with-open-dyslexia * {
 #dyslexia-switch__label {
   font-family: "OpenDyslexic", sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #4593f8;
+  }
+  a:visited {
+    color: #c589f9;
+  }
+}
