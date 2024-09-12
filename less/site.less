@@ -79,14 +79,22 @@ main {
         .item-wrapper {
             display: flex;
             margin-bottom: 25px;
+            flex-direction: column;
+
+            @media @tablet, @desktop {
+                flex-direction: row;
+            }
 
             .icon-wrapper {
-                min-width: 355px;
+                width: 100%;
                 min-height: 288px;
                 border-radius: 10px;
                 text-align: center;
                 padding: 10px 10px;
                 background-color: #f5f7f5;
+                @media @tablet, @desktop {
+                    width: 33.33%;
+                }
 
                 h2 {
                     display: block;
@@ -108,11 +116,17 @@ main {
             }
 
             .links-wrapper {
+                width: 100%;
+                @media @tablet, @desktop {
+                    width: 66.66%;
+                }
                 ul {
-                    width: 40rem;
                     text-decoration: none;
                     margin: 0;
-                    padding-left: 3rem;
+                    padding: 0;
+                    @media @tablet, @desktop {
+                        padding-left: 3rem;
+                    }
 
                     li {
                         list-style-type: none;

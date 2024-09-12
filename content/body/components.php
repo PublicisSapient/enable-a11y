@@ -4,7 +4,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Button</h2>
-                <div class="icon"><img src="/images/icons/components/button.svg"></div>
+                <div class="icon"><img src="/images/icons/components/button.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -17,7 +17,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Checkbox</h2>
-                <div class="icon"><img src="/images/icons/components/checkbox.svg"></div>
+                <div class="icon"><img src="/images/icons/components/checkbox.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -30,7 +30,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Radio Button Group</h2>
-                <div class="icon"><img src="/images/icons/components/radio-button-group.svg"></div>
+                <div class="icon"><img src="/images/icons/components/radio-button-group.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -43,7 +43,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Select Box</h2>
-                <div class="icon"><img src="/images/icons/components/select-box.svg"></div>
+                <div class="icon"><img src="/images/icons/components/select-box.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -56,7 +56,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Text Box</h2>
-                <div class="icon"><img src="/images/icons/components/text-box.svg"></div>
+                <div class="icon"><img src="/images/icons/components/text-box.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -69,7 +69,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Autocomplete Combobox</h2>
-                <div class="icon"><img src="/images/icons/components/auto-complete-combobox.svg"></div>
+                <div class="icon"><img src="/images/icons/components/auto-complete-combobox.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -82,7 +82,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Slider / Range Input</h2>
-                <div class="icon"><img src="/images/icons/components/slider.svg"></div>
+                <div class="icon"><img src="/images/icons/components/slider.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -95,7 +95,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Number Input Spinner</h2>
-                <div class="icon"><img src="/images/icons/components/number-input-spinner.svg"></div>
+                <div class="icon"><img src="/images/icons/components/number-input-spinner.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -108,7 +108,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Link</h2>
-                <div class="icon"><img src="/images/icons/components/link.svg"></div>
+                <div class="icon"><img src="/images/icons/components/link.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -121,7 +121,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Dropdown drawer / expando</h2>
-                <div class="icon"><img src="/images/icons/components/dropdown-drawer-expando.svg"></div>
+                <div class="icon"><img src="/images/icons/components/dropdown-drawer-expando.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -134,7 +134,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Tooltip</h2>
-                <div class="icon"><img src="/images/icons/components/tooltip.svg"></div>
+                <div class="icon"><img src="/images/icons/components/tooltip.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -147,7 +147,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Switch</h2>
-                <div class="icon"><img src="/images/icons/components/switch.svg"></div>
+                <div class="icon"><img src="/images/icons/components/switch.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -160,7 +160,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Skip links</h2>
-                <div class="icon"><img src="/images/icons/components/skip-links.svg"></div>
+                <div class="icon"><img src="/images/icons/components/skip-links.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -173,7 +173,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Carousel</h2>
-                <div class="icon"><img src="/images/icons/components/carousel.svg"></div>
+                <div class="icon"><img src="/images/icons/components/carousel.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -186,7 +186,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Flyout Hamburger Menu</h2>
-                <div class="icon"><img src="/images/icons/components/flyout-hamburger-menu.svg"></div>
+                <div class="icon"><img src="/images/icons/components/flyout-hamburger-menu.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -199,7 +199,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Modal Dialog</h2>
-                <div class="icon"><img src="/images/icons/components/modal-dialog.svg"></div>
+                <div class="icon"><img src="/images/icons/components/modal-dialog.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -212,7 +212,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Tablist</h2>
-                <div class="icon"><img src="/images/icons/components/tablist.svg"></div>
+                <div class="icon"><img src="/images/icons/components/tablist.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -225,7 +225,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Video Player</h2>
-                <div class="icon"><img src="/images/icons/components/video-player.svg"></div>
+                <div class="icon"><img src="/images/icons/components/video-player.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -238,7 +238,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Description List</h2>
-                <div class="icon"><img src="/images/icons/components/description-list.svg"></div>
+                <div class="icon"><img src="/images/icons/components/description-list.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -251,7 +251,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Progress Bar</h2>
-                <div class="icon"><img src="/images/icons/components/progress-bar.svg"></div>
+                <div class="icon"><img src="/images/icons/components/progress-bar.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -264,7 +264,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Image</h2>
-                <div class="icon"><img src="/images/icons/components/image.svg"></div>
+                <div class="icon"><img src="/images/icons/components/image.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -277,7 +277,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Figure</h2>
-                <div class="icon"><img src="/images/icons/components/figure.svg"></div>
+                <div class="icon"><img src="/images/icons/components/figure.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -290,7 +290,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Headings</h2>
-                <div class="icon"><img src="/images/icons/components/headings.svg"></div>
+                <div class="icon"><img src="/images/icons/components/headings.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -303,7 +303,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Screen Reader Only Text</h2>
-                <div class="icon"><img src="/images/icons/components/screen-reader-only-text.svg"></div>
+                <div class="icon"><img src="/images/icons/components/screen-reader-only-text.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -316,7 +316,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Reflow</h2>
-                <div class="icon"><img src="/images/icons/components/reflow.svg"></div>
+                <div class="icon"><img src="/images/icons/components/reflow.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -329,7 +329,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Animated GIF / Webp</h2>
-                <div class="icon"><img src="/images/icons/components/animated-gif-webp.svg"></div>
+                <div class="icon"><img src="/images/icons/components/animated-gif-webp.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -342,7 +342,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Pause All Animations Control</h2>
-                <div class="icon"><img src="/images/icons/components/pause-all-animations-control.svg"></div>
+                <div class="icon"><img src="/images/icons/components/pause-all-animations-control.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -355,7 +355,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Video Content</h2>
-                <div class="icon"><img src="/images/icons/components/video-content.png"></div>
+                <div class="icon"><img src="/images/icons/components/video-content.png" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -368,7 +368,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Simple Table Examples</h2>
-                <div class="icon"><img src="/images/icons/components/simple-table-examples.svg"></div>
+                <div class="icon"><img src="/images/icons/components/simple-table-examples.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -381,7 +381,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Sortable Table</h2>
-                <div class="icon"><img src="/images/icons/components/sortable-table.svg"></div>
+                <div class="icon"><img src="/images/icons/components/sortable-table.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -394,7 +394,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Pagination Table</h2>
-                <div class="icon"><img src="/images/icons/components/pagination-table.svg"></div>
+                <div class="icon"><img src="/images/icons/components/pagination-table.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -410,7 +410,7 @@
         <li class="item-wrapper">
             <div class="icon-wrapper">
                 <h2>Infographic</h2>
-                <div class="icon"><img src="/images/icons/components/pagination-table.svg"></div>
+                <div class="icon"><img src="/images/icons/components/pagination-table.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>

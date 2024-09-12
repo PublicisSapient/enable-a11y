@@ -701,7 +701,7 @@ main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-  padding: 1rem;
+  padding: 1.875rem;
   margin: 0 auto 5rem;
   max-width: 1024px;
   line-height: 1.4;

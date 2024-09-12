@@ -1,12 +1,10 @@
 
 <div class="plp">
-    <h1>Code patterns</h1>
-    <h2>Form UX Patterns</h2>
     <ul class="plp-list">
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Accessible Form Structure</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/accessible-form-structure.svg"></div>
+                <h2>Accessible Form Structure</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/accessible-form-structure.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -18,8 +16,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Form Error Checking</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg"></div>
+                <h2>Form Error Checking</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -31,8 +29,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Search Forms</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/search-forms.svg"></div>
+                <h2>Search Forms</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/search-forms.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -44,8 +42,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Input Masking</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/input-masking.svg"></div>
+                <h2>Input Masking</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/input-masking.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -54,15 +52,11 @@
                     <li><a href="/github.com" class="get-code" target="_blank">Get Code</a></li>
                 </ul>
             </div>    
-        </li>   
-    </ul>
-
-    <h2>Focus Management</h2>
-    <ul class="plp-list">
+        </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Form Error Checking</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg"></div>
+                <h2>Form Error Checking</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -74,8 +68,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Focus Styling Tips</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/focus-styling-tips.svg"></div>
+                <h2>Focus Styling Tips</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/focus-styling-tips.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -85,13 +79,10 @@
                 </ul>
             </div>    
         </li>
-    </ul>
-    <h2>Typography</h2>
-    <ul class="plp-list">
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Basic Resizable Text</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/basic-resizeable-text.svg"></div>
+                <h2>Basic Resizable Text</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/basic-resizeable-text.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -103,8 +94,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Accessible Text Spacing</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/accessible-text-spacing.svg"></div>
+                <h2>Accessible Text Spacing</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/accessible-text-spacing.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -116,8 +107,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Resizing Text in Hero Images</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/resizing-text-in-hero-images.svg"></div>
+                <h2>Resizing Text in Hero Images</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/resizing-text-in-hero-images.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -129,8 +120,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Accessible Text In SVGs</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/accessible-text-in-svgs.svg"></div>
+                <h2>Accessible Text In SVGs</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/accessible-text-in-svgs.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -142,8 +133,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Exposing Style Information to Screen Readers</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/exposing-style-information-to-screen-readers.svg"></div>
+                <h2>Exposing Style Information to Screen Readers</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/exposing-style-information-to-screen-readers.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -153,13 +144,10 @@
                 </ul>
             </div>    
         </li>
-    </ul>
-    <h2>Aria Live Regions</h2>
-    <ul class="plp-list">
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Alert</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/alert.svg"></div>
+                <h2>Alert</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/alert.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -171,8 +159,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Log</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/log.png"></div>
+                <h2>Log</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/log.png" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -184,8 +172,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Timer</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/timer.svg"></div>
+                <h2>Timer</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/timer.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -197,8 +185,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Marquee</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/marquee.svg"></div>
+                <h2>Marquee</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/marquee.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -210,8 +198,8 @@
         </li>
         <li class="item-wrapper">
             <div class="icon-wrapper">
-                <h5>Status</h5>
-                <div class="icon"><img src="/images/icons/code-patterns/status.svg"></div>
+                <h2>Status</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/status.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
                 <ul>
@@ -221,7 +209,6 @@
                 </ul>
             </div>    
         </li>
-    <ul>
-
+    </ul>
 </div>
     

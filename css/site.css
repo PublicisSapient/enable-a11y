@@ -63,14 +63,25 @@ main {
 .plp .plp-list .item-wrapper {
   display: flex;
   margin-bottom: 25px;
+  flex-direction: column;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  .plp .plp-list .item-wrapper {
+    flex-direction: row;
+  }
 }
 .plp .plp-list .item-wrapper .icon-wrapper {
-  min-width: 355px;
+  width: 100%;
   min-height: 288px;
   border-radius: 10px;
   text-align: center;
   padding: 10px 10px;
   background-color: #f5f7f5;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  .plp .plp-list .item-wrapper .icon-wrapper {
+    width: 33.33%;
+  }
 }
 .plp .plp-list .item-wrapper .icon-wrapper h2 {
   display: block;
@@ -87,11 +98,23 @@ main {
 .plp .plp-list .item-wrapper .icon-wrapper img {
   max-width: 100%;
 }
+.plp .plp-list .item-wrapper .links-wrapper {
+  width: 100%;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  .plp .plp-list .item-wrapper .links-wrapper {
+    width: 66.66%;
+  }
+}
 .plp .plp-list .item-wrapper .links-wrapper ul {
-  width: 40rem;
   text-decoration: none;
   margin: 0;
-  padding-left: 3rem;
+  padding: 0;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  .plp .plp-list .item-wrapper .links-wrapper ul {
+    padding-left: 3rem;
+  }
 }
 .plp .plp-list .item-wrapper .links-wrapper ul li {
   list-style-type: none;

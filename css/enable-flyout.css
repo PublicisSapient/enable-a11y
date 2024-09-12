@@ -169,7 +169,7 @@
   font-family: "Helvetica", "Arial", "sans-serif";
   font-size: 1.125rem;
   line-height: 1.6;
-  padding: 0.625rem 0.9375rem;
+  padding: 0.625rem 0.75rem;
   text-decoration: none;
   transition: background 0.2s ease-in-out;
   width: 100%;
@@ -462,11 +462,11 @@
   .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__link:hover:before {
     content: "";
     position: absolute;
-    width: calc(100% - 20px);
+    width: calc(100% - 24px);
     height: 2px;
     background-color: #fff;
     bottom: 12px;
-    left: 10px;
+    left: 12px;
   }
   .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__open-level-button:hover:before,
   .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__close-level-button:hover:before,
