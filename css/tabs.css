@@ -146,3 +146,14 @@
 [role="tab"] {
   appearance: none;
 }
+@media (prefers-color-scheme: dark) {
+  [role="tabpanel"] h2 {
+    color: #333;
+  }
+  [role="tabpanel"] p {
+    color: #333;
+  }
+  [role="tabpanel"] a {
+    color: #075ac4;
+  }
+}
