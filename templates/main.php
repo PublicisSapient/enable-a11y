@@ -22,25 +22,10 @@ give404IfNotValid();
 </head>
 
 <body class="<?= isset($fileProps->bodyClass) ? $fileProps->bodyClass : "" ?>">
-<!-- <div class="themed-layout-xxx"> -->
+
   <?php include "includes/documentation-header.php"; ?>
 
-  <?php include "includes/pause-anim-control.php"; ?>
-
   <?php getAsideContent(); ?>
-
-    <!-- <div class="layout-wrapper"> -->
-        <!-- <div>
-            <div class="sub-component-navigation">
-                <nav >
-                    <h2><a href="/components.php">Components</a></h2>
-                    <ul>
-                        <li><a href="/button.php">Button</a></li>
-                        <li><a href="">Checkbox</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div> -->
         <<?= $mainContentTag ?> id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
         <?php
@@ -65,7 +50,7 @@ give404IfNotValid();
 
     <?php getPreBottomBodyTags(); ?>
 
-    <?php include "includes/example-footer.php"; ?>
+    <?php include "includes/footer.php"; ?>
 
     <?php getBottomBodyTags(); ?>
 <!-- </div> -->

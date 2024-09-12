@@ -1,41 +1,21 @@
 @import "shared/mixins-and-vars";
 
 main {
-    // background-color: #444;
-    // color: white;
-    color: #2b2929;
+    color: @dark-grey;
     width: 100%;
 }
 
 a,
 a:-webkit-any-link {
-    // color: @color-style;
-    // color: #2b2929;
-    // color: #05a8aa;
     color: #fb8b24;
-    //color: #ef2556;
-    /* font-weight: bold; */
-    // border-bottom: 3px solid;
-    // text-decoration: none;
 }
-
-// a:-webkit-any-link {
-//     color: #fb8b24;
-// }
-
-// strong {
-//     color: #fff !important;
-// }
 
 .homepage {
     &__hero {
         color: @color0;
-        // background: #ccc;
         min-height: 30vh;
         padding: 20px;
         text-align: center;
-
-        // center text vertically
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -43,13 +23,9 @@ a:-webkit-any-link {
 
         &--heading {
             font-family: @font-default-brand;
-            // font-size: (80 / @px);
-            // font-size: 4.8rem;
-
             margin: 30px auto;
             font-weight: normal;
-            // color: darken(@color1, 5%);
-            color: #e12351;
+            color: @pink;
 
             img {
                 width: 12rem;
@@ -169,7 +145,7 @@ a:-webkit-any-link {
             border: none;
             margin-top: 10px;
             margin-bottom: 20px;
-            color: #2b2929;
+            color: @dark-grey;
             text-align: left;
             display: flex;
             align-items: center;
@@ -282,24 +258,21 @@ a:-webkit-any-link {
         &.background-secondary {
             background: #f4f7f5;
             p {
-                color: #17183b;
+                color: @blue;
             }
         }
 
         &.background-tertiary {
-            background: #17183b;
+            background: @blue;
         }
 
         .background-secondary &--heading {
-            color: #17183b;
+            color: @blue;
         }
 
         ul {
-            // column-count: 2;
-            // column-gap: 13px;
             margin: 0;
             padding: 0;
-            // display: flex;
 
             @media @tablet-up {
                 column-count: 2;
@@ -312,9 +285,7 @@ a:-webkit-any-link {
                 border-radius: 25px;
                 padding: 20px;
                 list-style-type: none;
-                color: #2b2929;
-                // width: 25%;
-                // align-content: center;
+                color: @dark-grey;
             }
         }
     }

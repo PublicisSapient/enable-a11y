@@ -5,7 +5,6 @@ main {
 a,
 a:-webkit-any-link {
   color: #fb8b24;
-  /* font-weight: bold; */
 }
 .homepage__hero {
   color: #301414;
@@ -21,7 +20,7 @@ a:-webkit-any-link {
   font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
   margin: 30px auto;
   font-weight: normal;
-  color: #e12351;
+  color: #E12251;
 }
 .homepage__hero--heading img {
   width: 12rem;
@@ -235,13 +234,13 @@ a:-webkit-any-link {
   background: #f4f7f5;
 }
 .homepage__bottom-copy.background-secondary p {
-  color: #17183b;
+  color: #17183B;
 }
 .homepage__bottom-copy.background-tertiary {
-  background: #17183b;
+  background: #17183B;
 }
 .background-secondary .homepage__bottom-copy--heading {
-  color: #17183b;
+  color: #17183B;
 }
 .homepage__bottom-copy ul {
   margin: 0;

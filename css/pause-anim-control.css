@@ -20,24 +20,18 @@
 }
 .play-pause-anim__checkbox-container {
   align-items: center;
-  position: sticky;
-  top: 19.3125rem;
-  width: 100vw;
-  min-width: 460px;
-  top: 0;
-  left: 0;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   background-color: #5d5c5c;
   white-space: nowrap;
   text-align: center;
   display: flex;
   flex-direction: row;
+  margin-right: 40px;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
-    top: 120px;
-    left: initial;
+    margin: 0;
   }
 }
 .play-pause-anim__checkbox-container label {
@@ -52,10 +46,6 @@
 }
 .play-pause-anim__checkbox-container a {
   color: #ccccff;
-}
-.play-pause-anim__sundries {
-  display: flex;
-  margin-right: 3rem;
 }
 .pause-anim-control__gif--animated,
 .pause-anim-control__gif--still {

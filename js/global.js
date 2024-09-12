@@ -44,7 +44,7 @@ function includesUrl(string) {
 }
 
 function initEnable() {
-    offscreenObserver.init(document.querySelector('[role="banner"]'));
+    offscreenObserver.init(document.getElementById('header'));
 
     enableVisibleOnFocus.init();
     buildFlyoutMenuHTML();
@@ -100,6 +100,8 @@ function initEnable() {
             '/faq.php',
             '/enable/index.php',
             '/enable/faq.php',
+            '/components.php',
+            '/code-patterns.php'
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,

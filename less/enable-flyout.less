@@ -33,89 +33,22 @@
     flex-grow: 1;
     text-align: center;
     justify-content: end;
+    padding-right: 10px;
 }
 
-// .enable-flyout {
-//     background-color: #2b2929;
-// }
-
-// .themed-layout-xxx {
 @media @mobile, @tablet {
     .enable-flyout__top-level {
-        background-color: #2b2929;
+        background-color: @dark-grey;
     }
 }
-
-.enable-flyout .flyout-fork {
-    @media @mobile, @tablet {
-        li {
-            display: block;
-            text-align: left;
-            margin: 20px;
-            a {
-                margin: 20px;
-                font-weight: bold;
-            }
-
-            button {
-                margin: 0;
-            }
-            a::after {
-                content: "";
-            }
-
-            ul {
-                background-color: #5d5c5c;
-            }
-        }
-    }
-
-    @media @desktop {
-        // border: 10px solid purple;
-        padding: 20px;
-
-        > li {
-            position: relative;
-            a {
-                font-weight: bold;
-            }
-            button {
-                margin-left: -22px;
-            }
-
-            ul {
-                background: #5d5c5c;
-                padding: 20px;
-                width: 16rem;
-                border-radius: 0 0 10px 10px;
-                box-shadow: none;
-                margin-top: 28px;
-                margin-left: -23px;
-
-                li {
-                    display: block;
-                    text-align: left;
-                }
-
-                a {
-                    font-weight: bold;
-                }
-            }
-        }
-    }
-}
-// }
 
 .enable-flyout {
     --enable-flyout__desktop-media-query: @desktop;
     --enable-flyout__is-hamburger: 1;
     --enable-flyout__desktop-min: @desktop-min;
-
     width: ~"calc(min(@{flyout-width}, 350px))";
     right: @hamburger-offset-y;
-    // background: #2e2f35;
     color: @color0;
-
     font-size: (14 / @px);
     font-weight: 100;
     height: @height0;
@@ -124,10 +57,10 @@
     top: 0;
     z-index: (@min-z-index + 1);
     display: none;
-    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
+
 
     &::-webkit-scrollbar {
         width: 2px;
@@ -150,27 +83,6 @@
         padding: 0;
         margin-bottom: 0;
         color: @color0;
-    }
-
-    > .enable-flyout__list {
-        li:last-child a::after {
-            content: "";
-        }
-
-        a {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 500;
-
-            &::after {
-                content: "|";
-                padding: 0 10px;
-            }
-        }
-
-        .enable-flyout__link {
-            top: -1px;
-        }
     }
 
     &__secondary-navigation {
@@ -257,7 +169,7 @@
             position: absolute;
             height: @hamburger-stroke-width;
             width: 100%;
-            background: currentColor;
+            background: #FFF;
 
             // This is to ensure the logo appears in Windows
             // High Contast mode.
@@ -312,7 +224,9 @@
     &__list {
         list-style-type: none;
         margin: 0;
-        padding: 50px 0 0 0;
+        padding: 70px 0 0 0;
+        height: @height0;
+        background: @dark-grey;
     }
 
     &__separator {
@@ -322,14 +236,13 @@
     &__open-level-button,
     &__close-level-button,
     &__link {
-        color: @color0;
+        color: @color0 !important;
         display: block;
-
         font-family: "Helvetica", "Arial", "sans-serif";
         font-size: (18 / @px);
-        padding: (14 / @px) (14 / @px) (14 / @px) 0;
+        line-height: 1.6;
+        padding: (10 / @px) (15 / @px);
         text-decoration: none;
-        text-indent: 20px;
         transition: background @anim-time ease-in-out;
         width: 100%;
         background: transparent;
@@ -386,9 +299,7 @@
     }
 
     &__open-level-button {
-        padding: 25px;
         position: relative;
-
         &::after {
             .icon-mixin("../images/chevron-right.svg");
             top: (5 / @px);
@@ -465,18 +376,13 @@
     }
 
     &__close-level-button {
+        background: @grey;
         cursor: pointer;
         display: block;
-        font-size: (14 / @px);
-        padding: (14 / @px) 0;
-        text-indent: 20px;
         transition: background @anim-time ease-in-out;
         position: relative;
-        padding-left: 26px;
-
         &::before {
             .icon-mixin("../images/chevron-left.svg");
-            margin-left: -33px;
             top: (4 / @px);
 
             @media @desktop {
@@ -491,25 +397,12 @@
     &__open-level-button {
         cursor: pointer;
         display: block;
-        padding: (14 / @px) 0;
-        text-indent: 20px;
+        // padding: (14 / @px) 0;
         transition: background @anim-time ease-in-out;
 
         &:hover {
             background: @color1;
         }
-    }
-
-    &__open-level-button,
-    &__link {
-        @media @desktop {
-            /* This is how you increase the hit area of a CTA */
-            padding: @focus-area-padding 0;
-            margin: (-@focus-area-padding) 0;
-        }
-    }
-    &__close-level-button {
-        background-color: #1e1e24;
     }
 
     &__open-menu-button {
@@ -647,13 +540,15 @@
         }
 
         &__level&--is-open {
+            width: 18rem;
+            border-radius: 0 0 10px 10px;
+            box-shadow: none;
             animation: enable-flyout__anim--desktop-open @anim-time ease-in-out
                 forwards;
             visibility: visible;
-            padding-bottom: 3em;
-            padding-left: calc(50vw - (@desktop-min / 2));
-            padding-right: calc(50vw - (@desktop-min / 2));
-            margin-top: 3px;
+            padding: 15px;
+            top: 66px;
+            left: -14px;
         }
 
         &__open-level-button,
@@ -679,7 +574,7 @@
                     height: 2px;
                     background-color: #fff;
                     bottom: 12px;
-                    left: 14px;
+                    left: 10px;
 
                     .enable-flyout__secondary-navigation--desktop & {
                         content: none;
@@ -708,12 +603,6 @@
             overflow: visible;
         }
 
-        &--is-open {
-            .enable-flyout__open-level-button {
-                display: none;
-            }
-        }
-
         &--is-open &__level {
             display: block;
             position: static;
@@ -723,11 +612,13 @@
         }
 
         &__menu-item {
+            display: inline-block;
             width: auto;
+            position: relative;
         }
 
         &--is-open &__menu-item {
-            width: 100%;
+            display: block;
         }
 
         &__list--photo-layout &__menu-item {
@@ -747,13 +638,13 @@
         }
 
         &__list {
-            // display: flow-root;
             display: inline;
             text-align: center;
+            background: none;
         }
 
         &__open-level-button {
-            padding-right: 5px;
+            // padding-right: 5px;
 
             &::after {
                 background-image: data-uri("../images/chevron-down.svg");
@@ -782,7 +673,6 @@
         &__link {
             display: inline-block;
             text-align: center;
-            // padding-right: 25px !important;
         }
 
         &__link-image {
@@ -793,14 +683,13 @@
 
         &--is-open {
             display: block;
-            background: #fff;
-            color: black;
-            text-align: center;
+            background: @dark-grey;
 
             .enable-flyout__open-level-button,
             .enable-flyout__close-level-button,
             .enable-flyout__link {
-                color: black;
+                color: #FFF;
+                text-align: left;
 
                 &::after {
                     filter: none;
