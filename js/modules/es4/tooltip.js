@@ -22,6 +22,7 @@ const tooltip = new function () {
     const escapeKey = 'Escape';
     const tabKey = 'Tab';
     const buttonName = 'BUTTON';
+    const inputName = 'INPUT';
     let timeout = null;
     let tooltipTarget = null;
     let isTooltipVisible = false;
@@ -70,7 +71,7 @@ const tooltip = new function () {
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
         tooltipEl.setAttribute('aria-hidden', 'true');
-        tooltipEl.setAttribute('aria-live', 'off');
+        tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
 
@@ -94,6 +95,11 @@ const tooltip = new function () {
     
     this.show = (e) => {
         tooltipTarget = e.target;
+
+        //Set aria attribute only for onFocus (input) elements
+        if (tooltipTarget.tagName === inputName){
+            tooltipEl.setAttribute('aria-describedby', 'tooltip');
+        }
 
         //Hide tooltip on initial focus
         if (tooltipTarget.tagName === buttonName && tabbedIn) {
@@ -129,10 +135,7 @@ const tooltip = new function () {
         }
 
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-
-        tooltipTarget.setAttribute('aria-describedby', 'tooltip');
-        tooltipEl.setAttribute('aria-live', "polite");
-        tooltipEl.innerHTML = text;
+        tooltipEl.innerHTML = `<div class="tooltip__content">${text}</div>`;
         tooltipEl.setAttribute('aria-hidden', "false");
         tooltipEl.classList.remove('tooltip--hidden');
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
@@ -171,13 +174,15 @@ const tooltip = new function () {
         if (tooltipTarget) {
             tooltipTarget.removeEventListener('mouseleave', this.hide);
             tooltipEl.removeEventListener('mouseleave', this.hide);
+            if (tooltipTarget.tagName === inputName){
+                tooltipEl.removeAttribute('aria-describedby');
+            }
             tooltipTarget = null;
         }
 
         clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.setAttribute('aria-hidden', 'true');
-        tooltipEl.setAttribute('aria-live', 'off');
         isTooltipVisible = false;
         tooltipBelongsTo = null;
 

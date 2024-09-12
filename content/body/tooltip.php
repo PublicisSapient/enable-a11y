@@ -21,8 +21,12 @@
 <p>
   This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
+
+<h2> Clickable tooltip </h2>
+<p> This type of tooltip can be triggered when the user clicks on the entry element directly.</p>
+
 <p>
-  The form example below shows three different entry points for tooltips. The first is a text button, the second is an input box, and the third is an icon button.
+  The form example below demonstrates tooltips that can be triggered via text button and icon button click.
 </p>
 
 <div id="example1" class="enable-example">
@@ -31,25 +35,21 @@
       <legend>Vehicle Inspection Form</legend>
       <div class="enable-form-example__fieldset-inner-container">
           <div class="field-block">
-            <label for="tooltip_example_1" class="form-label">
+            <label for="clickable_example_1" class="form-label">
               <span>VIN</span>
             </label>  
-            <input id="tooltip_example_1" size="25" type="text">
+            <input id="clickable_example_1" size="25" type="text">
             <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
                 <span>What's this?</span>
               </button>
           </div>
           <div class="field-block">
-            <label for="tooltip_example_2" class="form-label">Make</label>
-            <input id="tooltip_example_2" size="25" type="text" data-tooltip="The brand or company that produced the vehicle.">
-          </div>
-          <div class="field-block">
-            <label for="tooltip_example_3" class="form-label">
+            <label for="clickable_example_2" class="form-label">
               <span>Body style</span>
             </label>
-            <input id="tooltip_example_3" size="25" type="text">
-            <button id="tooltip_button_3" type="button" class="tooltip__icon-button" aria-label="Clickable tooltip information" 
+            <input id="clickable_example_2" size="25" type="text">
+            <button id="tooltip_button_2" type="button" class="tooltip__icon-button" aria-label="Clickable tooltip information" 
                 data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
                 <span class="icon" aria-hidden="true">i</span>
               </button>
@@ -60,10 +60,68 @@
   </form>
 </div>
 
-
 <?php includeShowcode("example1"); ?>
 
 <script type="application/json" id="example1-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+      "label": "Create markup",
+      "highlight": "data-tooltip",
+      "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
+    },
+    {
+      "label": "Create JavaScript events for tooltip script",
+      "highlight": "%JS% tooltip.create; tooltip.init",
+      "notes": "When the page is loaded, create the tooltip DOM object and initialize the mouse and keyboard events that will display the tooltips. <strong>Note the role of tooltip being added to the tooltip DOM object</strong>."
+    },
+    {
+      "label": "Create the show and hide methods for the tooltip",
+      "highlight": "%JS% tooltip.show; tooltip.hide",
+      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with the aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
+    },
+    {
+      "label": "Ensure tooltip disappears when Escape key is pressed",
+      "highlight": "%JS% tooltip.onKeyup",
+      "notes": "This is to ensure keyboard users can make the tooltip disappear without tabbing out of the component."
+    },
+    {
+      "label": "Set up the CSS",
+      "highlight": "%CSS%tooltip-css~ .tooltip; .tooltip::before; .tooltip--hidden ||| border[^:]*: 1px solid transparent; ",
+      "notes": "The arrow that points to this tooltip is CSS generated content. We hide the content ensuring it is still read by screen readers. <strong>Note the highlighted properties</strong>.  <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">These ensure the tooltips appear in Windows High Contrast Mode</a>."
+    }
+  ]
+}
+</script>
+
+<h2> Focusable tooltip </h2>
+<p> This type of tooltip can be triggered when the user either clicks on it or navigates to it by keyboard.</p>
+<p>
+  The form example below demonstrates a tooltip that can be triggered via input field hover.
+</p>
+<div id="example2" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Lease termination form</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+          <div class="field-block">
+            <label for="focusable_example_1" class="form-label">Tenant name</label>
+            <input id="focusable_example_1" size="25" type="text" data-tooltip="The full name of the tenant residing in the residential unit.">
+          </div>
+          <div class="field-block">
+            <label for="focusable_example_2" class="form-label">Termination date (mm/dd/yyyy)</label>
+            <input id="focusable_example_2" size="25" type="text" data-tooltip="The date in which the tenant will move out.">
+          </div>
+          <input value="Submit" type="submit">
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
+<?php includeShowcode("example2"); ?>
+
+<script type="application/json" id="example2-props">
 {
   "replaceHtmlRules": {},
   "steps": [{
