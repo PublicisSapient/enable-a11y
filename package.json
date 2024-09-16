@@ -49,13 +49,14 @@
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
     "eslint": "eslint .",
-    "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "server": "npm run validate:version && node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
     "stylelint": "npx stylelint \"**/*.less\"",
     "stylelint:fix": "npx stylelint \"**/*.less\" --fix",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh",
-    "prepare": "node .husky/install.mjs"
+    "prepare": "node .husky/install.mjs",
+    "validate:version": "node bin/validate-node-version.mjs"
   },
   "jest": {
     "verbose": true,
@@ -94,7 +95,8 @@
     "@prettier/plugin-php": "^0.22.2",
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
-    "chromedriver": "^126.0.4",
+    "chalk": "^5.3.0",
+    "chromedriver": "^128.0.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -149,14 +151,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,less}": [
-      "eslint --fix",
-      "npm run stylelint",
-      "git add"
+      "eslint",
+      "npm run stylelint"
     ],
     "*.{js,jsx,ts,tsx,json}": [
-        "prettier --write",
-        "npm test",
-        "git add"
+      "prettier"
     ]
   },
   "bin": {
@@ -164,5 +163,9 @@
   },
   "overrides": {
     "graceful-fs": "^4.2.11"
+  },
+  "engines": {
+    "npm": ">=10.2.3 <=10.8.1",
+    "node": ">=20.10.0 <=20.16.0"
   }
 }
