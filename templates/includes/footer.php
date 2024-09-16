@@ -1,4 +1,4 @@
-<footer aria-label="Copyright Information" class="footer">
+<footer aria-label="Additonal links and Copyright Information" class="footer">
     <ul class="footer__links">
         <li>
             <a href="faq.php">FAQ</a>
