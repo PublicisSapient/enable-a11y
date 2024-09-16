@@ -70,7 +70,7 @@ const tooltip = new function () {
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
-        tooltipEl.setAttribute('aria-hidden', 'true');
+        // tooltipEl.setAttribute('aria-hidden', 'true');
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -105,7 +105,9 @@ const tooltip = new function () {
         if (tooltipTarget.tagName === buttonName && tabbedIn) {
             return;
         }
-        timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
+        console.log('hmmm');
+        this.showTimeout(e);
+        // timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
     }
 
     this.handleClick = (e) => {
@@ -113,12 +115,14 @@ const tooltip = new function () {
 
         if (tooltipTarget.tagName === buttonName && tabbedIn) {
             if (!isTooltipVisible) {
-                timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
+                //timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
+                this.showTimeout(e);
             } else {
                 this.hide(e);
             }
         } else {
             if (tooltipTarget !== tooltipEl){
+                console.log('showing');
                 this.show(e);
             }          
         }
@@ -130,13 +134,14 @@ const tooltip = new function () {
         const text = tooltipTarget.dataset.tooltip;
 
         // don't do this if the tooltip is visible for this element already
+        console.log('dump', tooltipTarget, text, isTooltipVisible, tooltipBelongsTo, tooltipTarget);
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
         }
 
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-        tooltipEl.innerHTML = `<div class="tooltip__content">${text}</div>`;
-        tooltipEl.setAttribute('aria-hidden', "false");
+        tooltipEl.innerHTML = text; // `<div class="tooltip__content">${text}</div>`;
+        //tooltipEl.setAttribute('aria-hidden', "false");
         tooltipEl.classList.remove('tooltip--hidden');
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
         tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;
@@ -180,9 +185,10 @@ const tooltip = new function () {
             tooltipTarget = null;
         }
 
-        clearTimeout(timeout);
+        //clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
-        tooltipEl.setAttribute('aria-hidden', 'true');
+        tooltipEl.innerHTML = '';
+        //tooltipEl.setAttribute('aria-hidden', 'true');
         isTooltipVisible = false;
         tooltipBelongsTo = null;
 
