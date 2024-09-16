@@ -12,11 +12,16 @@
   margin: 0 0 0 14px;
 }
 .play-pause-anim__background-pill {
-  font-size: 1.125rem;
+  font-size: 1rem;
   background-color: #2b2929;
   border-radius: 25px;
   display: inline-flex;
   align-items: center;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  .play-pause-anim__background-pill {
+    font-size: 1.125rem;
+  }
 }
 .play-pause-anim__checkbox-container {
   align-items: center;
@@ -27,7 +32,7 @@
   text-align: center;
   display: flex;
   flex-direction: row;
-  margin: 0 30px;
+  margin: 0 30px 0 20px;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
@@ -36,7 +41,12 @@
 }
 .play-pause-anim__checkbox-container label {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 12px;
+}
+@media only screen and (min-width: 960px) {
+  .play-pause-anim__checkbox-container label {
+    padding: 10px 20px;
+  }
 }
 .play-pause-anim__checkbox-container .pause-button {
   width: 25px;

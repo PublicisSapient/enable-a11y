@@ -10,8 +10,7 @@
         <!-- Enable Logo (link to homepage) -->
         <div class="enable-logo">
             <a href="/">
-                <img src="images/accessible-text-svg/logo-enable-white.svg" alt="" role="presentation" />
-                <span class="sr-only">Enable</span>
+                <img src="images/accessible-text-svg/logo-enable-white.svg" alt="Enable Logo" />
             </a>
         </div>
         <!-- Here is the main menu will be placed by our global.js Javascript -->

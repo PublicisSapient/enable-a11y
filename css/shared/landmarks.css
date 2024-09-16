@@ -617,7 +617,6 @@ main *:focus-visible {
 body {
   margin: 0;
   position: relative;
-  min-width: 460px;
 }
 header,
 [role="banner"] {
