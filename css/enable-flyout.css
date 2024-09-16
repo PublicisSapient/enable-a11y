@@ -1,13 +1,15 @@
 * {
   box-sizing: border-box;
 }
-#enable-flyout-menu {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  text-align: center;
-  justify-content: end;
-  padding-right: 10px;
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  #enable-flyout-menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: end;
+    padding-right: 10px;
+  }
 }
 @media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
   .enable-flyout__top-level {

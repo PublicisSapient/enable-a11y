@@ -24,18 +24,6 @@
 
         </aside> 
 
-        <div>
-            <div class="sub-component-navigation">
-                <nav >
-                    <h2><a href="/components.php">Components</a></h2>
-                    <ul>
-                        <li><a href="/button.php">Button</a></li>
-                        <li><a href="">Checkbox</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
         <p>
             <strong>A button is an interactive element that triggers an action on a webpage or submits a form.</strong>
             The <code>&lt;button&gt;</code> tag has been available for a long time and developers should utilize it for this specific purpose.

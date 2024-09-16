@@ -159,7 +159,7 @@ h4.showcode__heading {
 }
 .showcode__ui {
   position: sticky;
-  top: 2.5rem;
+  top: 5rem;
   z-index: 1;
   background-color: #f5deb3;
   padding: 0.01em;

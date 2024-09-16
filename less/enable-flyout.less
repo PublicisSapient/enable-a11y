@@ -27,13 +27,16 @@
 * {
     box-sizing: border-box;
 }
+
 #enable-flyout-menu {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    text-align: center;
-    justify-content: end;
-    padding-right: 10px;
+    @media @tablet, @desktop {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        text-align: center;
+        justify-content: end;
+        padding-right: 10px;
+    }
 }
 
 @media @mobile, @tablet {
