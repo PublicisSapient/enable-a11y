@@ -6,6 +6,9 @@
         <li>
             <a href="acknowledgements.php">Acknowledgements</a>
         </li>
+        <li>
+            <a href="https://github.com/PublicisSapient/enable-a11y" target="_blank">GitHub</a>
+        </li>
     </ul>
     <div class="footer__attribution">
         <p>The Enable project has been fondly created by <a href="https://useragentman.com">Zoltan Hawryluk</a>.</p>

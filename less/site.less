@@ -118,56 +118,52 @@ main {
             .links-wrapper {
                 width: 100%;
                 @media @tablet, @desktop {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                     width: 66.66%;
+                    padding-left: 3rem;
                 }
-                ul {
-                    text-decoration: none;
+
+                p {
+                    list-style-type: none;
+                    padding: 26px 0;
                     margin: 0;
-                    padding: 0;
-                    @media @tablet, @desktop {
-                        padding-left: 3rem;
-                    }
+                    border-bottom: 2px solid #000;
+                }
 
-                    li {
-                        list-style-type: none;
-                        padding: 26px 0;
-                        border-bottom: 2px solid #000;
+                code {
+                    font-size: (16 / @px);
+                    color: @grey;
+                }
 
-                        code {
-                            font-size: (16 / @px);
-                            color: @grey;
-                        }
+                a {
+                    font-size: 1.3rem;
+                    color: #000;
+                    font-family: helvetica;
+                    font-weight: bold;
+                    text-decoration: none;
+                    display: inline-block;
+                    margin: 16px 0;
+                    padding: 10px 0;
+                }
 
-                        a {
-                            font-size: 1.3rem;
-                            color: #000;
-                            font-family: helvetica;
-                            font-weight: bold;
-                            text-decoration: none;
-                        }
+                a:hover {
+                    color: @pink;
+                }
 
-                        a:hover {
-                            color: @pink;
-                        }
+                a.get-code {
+                    position: relative;
+                }
 
-                        a.get-code {
-                            position: relative;
-                        }
-
-                        .get-code:after {
-                            content: " ";
-                            width: 25px;
-                            height: 25px;
-                            background: url(/images/icons/components/link-to-external-site.svg);
-                            position: absolute;
-                            right: -34px;
-                            top: -2px;
-                        }
-                    }
-
-                    li:last-child {
-                        border-bottom: 0;
-                    }
+                .get-code:after {
+                    content: " ";
+                    width: 25px;
+                    height: 25px;
+                    background: url(/images/icons/components/link-to-external-site.svg);
+                    position: absolute;
+                    right: -34px;
+                    top: -2px;
                 }
             }
         }

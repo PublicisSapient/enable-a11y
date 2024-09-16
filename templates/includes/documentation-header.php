@@ -157,13 +157,6 @@
                             ]
                         },
                         {
-                            "id": "flyout__link--no-image",
-                            "props": {
-                                "label": "GitHub",
-                                "url": "https://github.com/PublicisSapient/enable-a11y"
-                            }
-                        },
-                        {
                             "id": "flyout__link-mobile-only",
                             "props": {
                                 "label": "FAQ",
