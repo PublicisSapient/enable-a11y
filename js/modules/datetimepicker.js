@@ -34,6 +34,7 @@ const datetimepicker = new function() {
     }
    });
    function handleKeyDown(event) {
+    console.log('keydown');
     const calendarContainer = fp.calendarContainer;
             if (['ArrowUp', 'ArrowDown'].includes(event.key)) {
                 // Prevent the default behavior
