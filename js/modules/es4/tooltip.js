@@ -18,12 +18,11 @@ const tooltip = new function () {
     const { body } = document;
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
-    const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
     const escapeKey = 'Escape';
     const tabKey = 'Tab';
     const buttonName = 'BUTTON';
     const inputName = 'INPUT';
-    let timeout = null;
+    const spanName = 'SPAN';
     let tooltipTarget = null;
     let isTooltipVisible = false;
     let tooltipBelongsTo = null;
@@ -53,7 +52,7 @@ const tooltip = new function () {
 
         // Hover events for inputs and other elements
         body.addEventListener('mouseover', this.handleHover);
-        body.addEventListener('focus', this.show, true);
+        body.addEventListener('focus', this.onFocus, true);
         body.addEventListener('blur', this.hide, true);
 
         // Check for tabbing
@@ -70,7 +69,7 @@ const tooltip = new function () {
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
-        // tooltipEl.setAttribute('aria-hidden', 'true');
+        tooltipEl.setAttribute('aria-hidden', 'true');
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -92,56 +91,40 @@ const tooltip = new function () {
             e.preventDefault();
         }
     }
+
+    this.onFocus = (e) => {
+        tooltipTarget = e.target;
+
+        //Hide tooltip on initial focus if tabbed in 
+        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+            if (tooltipBelongsTo !== tooltipTarget){
+                return;
+            }
+        }
+
+        this.show(e);
+    }
     
     this.show = (e) => {
         tooltipTarget = e.target;
+
+        if (tooltipTarget.tagName === spanName){
+            tooltipTarget = e.target.parentNode;
+        }
+
+        const text = tooltipTarget.dataset.tooltip;
+        if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
+            return;
+        }
 
         //Set aria attribute only for onFocus (input) elements
         if (tooltipTarget.tagName === inputName){
             tooltipEl.setAttribute('aria-describedby', 'tooltip');
         }
-
-        //Hide tooltip on initial focus
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
-            return;
-        }
-        console.log('hmmm');
-        this.showTimeout(e);
-        // timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
-    }
-
-    this.handleClick = (e) => {
-        tooltipTarget = e.target;
-
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
-            if (!isTooltipVisible) {
-                //timeout = setTimeout(() => this.showTimeout(e), tooltipDelay);
-                this.showTimeout(e);
-            } else {
-                this.hide(e);
-            }
-        } else {
-            if (tooltipTarget !== tooltipEl){
-                console.log('showing');
-                this.show(e);
-            }          
-        }
-        
-    }
-
-    this.showTimeout = (e) => {
-        tooltipTarget = e.target;
-        const text = tooltipTarget.dataset.tooltip;
-
-        // don't do this if the tooltip is visible for this element already
-        console.log('dump', tooltipTarget, text, isTooltipVisible, tooltipBelongsTo, tooltipTarget);
-        if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
-            return;
-        }
-
+    
+        tooltipEl.setAttribute('aria-hidden', 'false');
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-        tooltipEl.innerHTML = text; // `<div class="tooltip__content">${text}</div>`;
-        //tooltipEl.setAttribute('aria-hidden', "false");
+        tooltipEl.innerHTML = text;
         tooltipEl.classList.remove('tooltip--hidden');
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
         tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;
@@ -163,9 +146,27 @@ const tooltip = new function () {
         tooltipTarget.addEventListener('mouseleave', this.hide);
         tooltipEl.addEventListener('mouseleave', this.hide);
 
-        tooltipTarget.dispatchEvent(
+        tooltipEl.dispatchEvent(
             new CustomEvent('enable-show', { bubbles: true })
         );
+    }
+
+    this.handleClick = (e) => {
+        tooltipTarget = e.target;
+
+        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+            if (!isTooltipVisible) {
+                this.show(e);
+            } else {
+                this.hide(e);
+            }
+        } else {
+            if (!isTooltipVisible){
+                this.show(e);
+            }
+                
+        }
+        
     }
 
     this.hide = (e) => {
@@ -185,10 +186,8 @@ const tooltip = new function () {
             tooltipTarget = null;
         }
 
-        //clearTimeout(timeout);
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '';
-        //tooltipEl.setAttribute('aria-hidden', 'true');
         isTooltipVisible = false;
         tooltipBelongsTo = null;
 
