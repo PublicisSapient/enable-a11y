@@ -4,8 +4,9 @@ import config from './test-config.js';
 
 const maxWaitTime = 10000;
 const tooltipTextButtonId = '#tooltip_button_1';
-const tooltipIconButtonId = '#tooltip_button_3';
-const tooltipInputId = '#tooltip_example_2';
+const tooltipIconButtonId = '#tooltip_button_2';
+const tooltipInputId = '#focusable_example_2';
+const tooltipButtonInputId = '#clickable_example_1';
 const tooltipId = '#tooltip';
 
 describe('Tooltip tests', () => {
@@ -95,8 +96,8 @@ describe('Tooltip tests', () => {
     });
 
     it('When tabbing, tooltip does not initially show until enter is pressed', async () => {
-        await page.waitForSelector('#tooltip_example_3');
-        await page.focus('#tooltip_example_3');
+        await page.waitForSelector(tooltipButtonInputId);
+        await page.focus(tooltipButtonInputId);
         await page.keyboard.press('Tab');
 
         const isButtonFocused = await page.evaluate((tooltipIconButtonId) => {

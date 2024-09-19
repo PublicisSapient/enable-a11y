@@ -18,12 +18,10 @@ const tooltip = new function () {
     const { body } = document;
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
-    const tooltipDelay = parseInt(body.dataset.tooltipDelay || '0');
     const escapeKey = 'Escape';
     const tabKey = 'Tab';
     const buttonName = 'BUTTON';
     const inputName = 'INPUT';
-    let timeout = null;
     let tooltipTarget = null;
     let isTooltipVisible = false;
     let tooltipBelongsTo = null;
@@ -70,7 +68,6 @@ const tooltip = new function () {
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
-        tooltipEl.setAttribute('aria-hidden', 'true');
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -109,27 +106,22 @@ const tooltip = new function () {
     this.show = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === 'SPAN'){
-            tooltipTarget = e.target.parentNode;
-        }
-
         const text = tooltipTarget.dataset.tooltip;
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
+        }
+        
+        if (tooltipTarget.tagName === 'SPAN'){
+            tooltipTarget = e.target.parentNode;
         }
 
         //Set aria attribute only for onFocus (input) elements
         if (tooltipTarget.tagName === inputName){
             tooltipEl.setAttribute('aria-describedby', 'tooltip');
         }
-
-        // don't do this if the tooltip is visible for this element already
-        console.log('dump', tooltipTarget, text, isTooltipVisible, tooltipBelongsTo, tooltipTarget);
     
-        tooltipEl.setAttribute('aria-hidden', 'false');
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-        tooltipEl.innerHTML = text; // `<div class="tooltip__content">${text}</div>`;
-        //tooltipEl.setAttribute('aria-hidden', "false");
+        tooltipEl.innerHTML = text;
         tooltipEl.classList.remove('tooltip--hidden');
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
         tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;

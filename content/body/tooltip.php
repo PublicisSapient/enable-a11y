@@ -4,7 +4,7 @@
   information about an existing UI control. It is hidden by default and becomes available on hover or focus of the
   control it describes.</strong> <a href="https://sarahmhigley.com/">Sarah M. Higley</a> came up with this definition for what a
   tooltip is in her article <a href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG
-    2.1</a>, and it's better than anything I could write, so I hope she doesn't mind me stealing it.
+    2.1</a>, and it's better than anything we could write, so we hope she doesn't mind me stealing it.
 </p>
 
 
@@ -19,7 +19,7 @@
 ]); ?>
 
 <p>
-  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that we are still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
 
 <h2> Clickable tooltip </h2>
@@ -160,7 +160,7 @@
 <?php includeStats([
     "doNot" => true,
     "comment" =>
-        "Although this is a common method to make tooltips, I would advise using the JavaScript method instead.",
+        "Although this is a common method to make tooltips, we would advise using the JavaScript method instead.",
 ]); ?>
 
 

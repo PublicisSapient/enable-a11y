@@ -22,7 +22,6 @@ const tooltip = new function () {
     const tabKey = 'Tab';
     const buttonName = 'BUTTON';
     const inputName = 'INPUT';
-    const spanName = 'SPAN';
     let tooltipTarget = null;
     let isTooltipVisible = false;
     let tooltipBelongsTo = null;
@@ -69,7 +68,6 @@ const tooltip = new function () {
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
         tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
-        tooltipEl.setAttribute('aria-hidden', 'true');
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -108,13 +106,13 @@ const tooltip = new function () {
     this.show = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === spanName){
-            tooltipTarget = e.target.parentNode;
-        }
-
         const text = tooltipTarget.dataset.tooltip;
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
+        }
+        
+        if (tooltipTarget.tagName === 'SPAN'){
+            tooltipTarget = e.target.parentNode;
         }
 
         //Set aria attribute only for onFocus (input) elements
@@ -122,7 +120,6 @@ const tooltip = new function () {
             tooltipEl.setAttribute('aria-describedby', 'tooltip');
         }
     
-        tooltipEl.setAttribute('aria-hidden', 'false');
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
         tooltipEl.innerHTML = text;
         tooltipEl.classList.remove('tooltip--hidden');
