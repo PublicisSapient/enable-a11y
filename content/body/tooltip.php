@@ -19,10 +19,14 @@
 ]); ?>
 
 <p>
-  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that we are still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly as wanted and uses the maximum value of a z-index in the document.
+  We show different types of tooltips below, based on how they are triggered.
+  It will disappear when keyboard users press the Escape key.
+  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions,
+  is something that we are still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
 </p>
 
-<h2> Clickable tooltip </h2>
+<h3> Clickable tooltip </h3>
 <p> This type of tooltip can be triggered when the user clicks on the entry element directly.</p>
 
 <p>
@@ -37,7 +41,7 @@
           <div class="field-block">
             <label for="clickable_example_1" class="form-label">
               <span>VIN</span>
-            </label>  
+            </label>
             <input id="clickable_example_1" size="25" type="text">
             <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-label="Clickable tooltip information" 
                 data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
@@ -60,7 +64,7 @@
   </form>
 </div>
 
-<?php includeShowcode("example1"); ?>
+<?php includeShowcode("example1", "", "", "", true, 4); ?>
 
 <script type="application/json" id="example1-props">
 {
@@ -94,10 +98,10 @@
 }
 </script>
 
-<h2> Focusable tooltip </h2>
+<h3> Focusable tooltip </h3>
 <p> This type of tooltip can be triggered when the user either clicks on it or navigates to it by keyboard.</p>
 <p>
-  The form example below demonstrates a tooltip that can be triggered via input field hover.
+  The form example below demonstrates a tooltip that can be triggered via input field click.
 </p>
 <div id="example2" class="enable-example">
   <form class="enable-form-example">
@@ -119,7 +123,7 @@
 </div>
 
 
-<?php includeShowcode("example2"); ?>
+<?php includeShowcode("example2", "", "", "", true, 4); ?>
 
 <script type="application/json" id="example2-props">
 {
@@ -155,7 +159,7 @@
 
 
 
-<h2>Native HTML Tooltips</h2>
+<h3>Native HTML Tooltips</h3>
 
 <?php includeStats([
     "doNot" => true,

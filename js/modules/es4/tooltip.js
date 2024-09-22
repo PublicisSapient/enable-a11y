@@ -117,7 +117,7 @@ const tooltip = new function () {
 
         //Set aria attribute only for onFocus (input) elements
         if (tooltipTarget.tagName === inputName){
-            tooltipEl.setAttribute('aria-describedby', 'tooltip');
+            tooltipTarget.setAttribute('aria-describedby', 'tooltip');
         }
     
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
@@ -178,7 +178,7 @@ const tooltip = new function () {
             tooltipTarget.removeEventListener('mouseleave', this.hide);
             tooltipEl.removeEventListener('mouseleave', this.hide);
             if (tooltipTarget.tagName === inputName){
-                tooltipEl.removeAttribute('aria-describedby');
+                tooltipTarget.removeAttribute('aria-describedby');
             }
             tooltipTarget = null;
         }

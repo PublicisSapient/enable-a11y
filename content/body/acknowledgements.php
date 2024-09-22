@@ -138,6 +138,9 @@
   <li><a href="https://zellwk.com/">Zell Liew</a> for
     the routine for <a href="https://github.com/zellwk/javascript/blob/master/src/browser/accessibility/focusable/focusable.js">
       getting all the focusable elements inside a DOM element</a> that <code>accessibility.getAlTabbableEls()</code> is based on.</li>
+  <li><a href="https://github.com/lunarias">Jessie Cai</a> for
+      adding additional functionality and cleaning up <a href="https://github.com/PublicisSapient/enable-a11y/blob/main/js/modules/tooltip.js">tooltip control</a>
+  </li>
 </ul>
 
 <h2>Icons</h2>

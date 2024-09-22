@@ -2,25 +2,15 @@
 
 import config from './test-config.js';
 
-const maxWaitTime = 10000;
 const tooltipTextButtonId = '#tooltip_button_1';
 const tooltipIconButtonId = '#tooltip_button_2';
 const tooltipInputId = '#focusable_example_2';
-const tooltipButtonInputId = '#clickable_example_1';
+const tooltipButtonInputId = '#clickable_example_2';
 const tooltipId = '#tooltip';
 
 describe('Tooltip tests', () => {
-    /* Get attributes from tooltip target and tooltip after click/focus */
+    /* Get attributes from tooltip target and tooltip after click/focus/keyboard event */
     async function getTooltipAttributes(tooltipTargetId) {
-        /* Wait for tooltip timeout */
-        await page.waitForFunction(
-            (tooltipTargetId) => {
-                const tooltip = document.querySelector(tooltipTargetId);
-                return tooltip.hasAttribute('aria-describedby');
-            },
-            { timeout: maxWaitTime },
-            tooltipTargetId,
-        );
 
         const tooltipTarget = await page.evaluate((tooltipTargetId) => {
             const el = document.querySelector(tooltipTargetId);
@@ -34,8 +24,8 @@ describe('Tooltip tests', () => {
         const tooltipEle = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
             return {
+                ariaLive: el.getAttribute('aria-live'),
                 role: el.getAttribute('role'),
-                ariaHidden: el.getAttribute('aria-hidden'),
                 className: el.className,
                 innerHTML: el.innerHTML,
             };
@@ -57,13 +47,13 @@ describe('Tooltip tests', () => {
             const el = document.querySelector(tooltipId);
             return {
                 role: el.getAttribute('role'),
-                ariaHidden: el.getAttribute('aria-hidden'),
+                ariaLive: el.getAttribute('aria-live'),
                 className: el.className,
             };
         }, tooltipId);
 
         expect(tooltipEle.role).toBe('tooltip');
-        expect(tooltipEle.ariaHidden).toBe('true');
+        expect(tooltipEle.ariaLive).toBe('assertive');
         expect(tooltipEle.className).toBe('tooltip tooltip--hidden');
     });
 
@@ -73,10 +63,9 @@ describe('Tooltip tests', () => {
         const [tooltipTarget, tooltipEle] =
             await getTooltipAttributes(tooltipTextButtonId);
 
-        expect(tooltipTarget.ariaDescribedBy).toBe('tooltip');
         expect(tooltipTarget.type).toBe('button');
         expect(tooltipEle.role).toBe('tooltip');
-        expect(tooltipEle.ariaHidden).toBe('false');
+        expect(tooltipEle.ariaLive).toBe('assertive');
         expect(tooltipEle.className).toMatch(/tooltip tooltip--(?!hidden)/);
         expect(tooltipEle.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
@@ -90,7 +79,7 @@ describe('Tooltip tests', () => {
         expect(tooltipTarget.ariaDescribedBy).toBe('tooltip');
         expect(tooltipTarget.type).toBe('text');
         expect(tooltipEle.role).toBe('tooltip');
-        expect(tooltipEle.ariaHidden).toBe('false');
+        expect(tooltipEle.ariaLive).toBe('assertive');
         expect(tooltipEle.className).toMatch(/tooltip tooltip--(?!hidden)/);
         expect(tooltipEle.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
@@ -111,24 +100,58 @@ describe('Tooltip tests', () => {
             const el = document.querySelector(tooltipId);
             return {
                 role: el.getAttribute('role'),
-                ariaHidden: el.getAttribute('aria-hidden'),
+                ariaLive: el.getAttribute('aria-live'),
                 className: el.className,
             };
         }, tooltipId);
 
-        expect(tooltipEleHidden.ariaHidden).toBe('true');
+        expect(tooltipEleHidden.ariaLive).toBe('assertive');
         expect(tooltipEleHidden.className).toBe('tooltip tooltip--hidden');
 
         await page.keyboard.press('Enter');
         const [tooltipTarget, tooltipEleShown] =
             await getTooltipAttributes(tooltipIconButtonId);
 
-        expect(tooltipTarget.ariaDescribedBy).toBe('tooltip');
         expect(tooltipTarget.type).toBe('button');
-        expect(tooltipEleShown.ariaHidden).toBe('false');
+        expect(tooltipEleShown.ariaLive).toBe('assertive');
         expect(tooltipEleShown.className).toMatch(
             /tooltip tooltip--(?!hidden)/,
         );
         expect(tooltipEleShown.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
+
+    it('Tooltips will disappear when escape key is pressed', async () => {
+        /* Button */
+        await page.waitForSelector(tooltipIconButtonId);
+        await page.click(tooltipIconButtonId);
+        const [tooltipTargetBtn, tooltipEleBtn] =
+            await getTooltipAttributes(tooltipIconButtonId);
+            
+        expect(tooltipTargetBtn.type).toBe('button');
+        expect(tooltipEleBtn.className).toMatch(/tooltip tooltip--(?!hidden)/);
+
+        await page.keyboard.press('Escape');
+
+        const [tooltipTargetBtnHidden, tooltipEleBtnHidden] =
+            await getTooltipAttributes(tooltipIconButtonId);
+
+        expect(tooltipEleBtnHidden.className).toContain('tooltip--hidden');
+        expect(tooltipTargetBtnHidden.type).toBe('button');
+
+        /* Input */
+        await page.click(tooltipInputId);
+        const [tooltipTargetInput, tooltipEleInput] =
+            await getTooltipAttributes(tooltipInputId);
+            
+        expect(tooltipTargetInput.type).toBe('text');
+        expect(tooltipEleInput.className).toMatch(/tooltip tooltip--(?!hidden)/);
+
+        await page.keyboard.press('Escape');
+
+        const [tooltipTargetInputHidden, tooltipEleInputHidden] =
+            await getTooltipAttributes(tooltipInputId);
+
+        expect(tooltipEleInputHidden.className).toContain('tooltip--hidden');
+        expect(tooltipTargetInputHidden.type).toBe('text');
+    })
 });
