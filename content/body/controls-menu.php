@@ -1,20 +1,18 @@
 <div class="sidemenu">
     <div class="sidemenu__list">
-        <h2 class="sidemenu__title">Forms</h2>
-            <h3 class="sidemenu__title__sub">Form Elements</h3>
-                <p class="sidemenu__title__sub__item">Button</p>
-                <p class="sidemenu__title__sub__item">Checkboxes</p>
-                <p class="sidemenu__title__sub__item">Radio Button Group</p>
-                <p class="sidemenu__title__sub__item">Select Box/Listbox</p>
-                <p class="sidemenu__title__sub__item">Textbox</p>
-                <p class="sidemenu__title__sub__item">Autocomplete Combobox</p>
-                <p class="sidemenu__title__sub__item">Slider/Range</p>
-                <p class="sidemenu__title__sub__item">Accessible Numeric Fields</p>    
-            <h3 class="sidemenu__title__sub">Form UX Patterns</h3>
-                <p class="sidemenu__title__sub__item">Accessible Form Structure</p>
-                <p class="sidemenu__title__sub__item">Form Error Checking</p>
-                <p class="sidemenu__title__sub__item">Search Forms</p>
-                <p class="sidemenu__title__sub__item">Input Masking</p>
+        <h2 class="sidemenu__title">Controls</h2>
+            <h3 class="sidemenu__title__sub">Simple Controls</h3>
+                <p class="sidemenu__title__sub__item">Link</p>
+                <p class="sidemenu__title__sub__item">Dropdown/Drawer/Expando</p>
+                <p class="sidemenu__title__sub__item">Tooltip</p>
+                <p class="sidemenu__title__sub__item">Switch/Toggle</p>
+                <p class="sidemenu__title__sub__item">Skip Links</p>  
+            <h3 class="sidemenu__title__sub">Complex Controls</h3>
+                <p class="sidemenu__title__sub__item">Carousel</p>
+                <p class="sidemenu__title__sub__item">Flyout Hamburger Menu</p>
+                <p class="sidemenu__title__sub__item">Modal Dialog</p>
+                <p class="sidemenu__title__sub__item">Tablist</p>
+                <p class="sidemenu__title__sub__item">Video Player</p>
     </div>
 </div>
 
@@ -439,4 +437,3 @@
         </div>
     </div>
 </div>
-    

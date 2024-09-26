@@ -1,20 +1,25 @@
 <div class="sidemenu">
     <div class="sidemenu__list">
-        <h2 class="sidemenu__title">Forms</h2>
-            <h3 class="sidemenu__title__sub">Form Elements</h3>
-                <p class="sidemenu__title__sub__item">Button</p>
-                <p class="sidemenu__title__sub__item">Checkboxes</p>
-                <p class="sidemenu__title__sub__item">Radio Button Group</p>
-                <p class="sidemenu__title__sub__item">Select Box/Listbox</p>
-                <p class="sidemenu__title__sub__item">Textbox</p>
-                <p class="sidemenu__title__sub__item">Autocomplete Combobox</p>
-                <p class="sidemenu__title__sub__item">Slider/Range</p>
-                <p class="sidemenu__title__sub__item">Accessible Numeric Fields</p>    
-            <h3 class="sidemenu__title__sub">Form UX Patterns</h3>
-                <p class="sidemenu__title__sub__item">Accessible Form Structure</p>
-                <p class="sidemenu__title__sub__item">Form Error Checking</p>
-                <p class="sidemenu__title__sub__item">Search Forms</p>
-                <p class="sidemenu__title__sub__item">Input Masking</p>
+        <h2 class="sidemenu__title">Content</h2>
+            <h3 class="sidemenu__title__sub">Static Content</h3>
+                <p class="sidemenu__title__sub__item">Description List</p>
+                <p class="sidemenu__title__sub__item">Image</p>
+                <p class="sidemenu__title__sub__item">Infographic</p>
+                <p class="sidemenu__title__sub__item">Figure</p>
+                <p class="sidemenu__title__sub__item">Headings</p>
+                <p class="sidemenu__title__sub__item">Meter</p>
+                <p class="sidemenu__title__sub__item">Progress Bar</p>
+                <p class="sidemenu__title__sub__item">Screen Reader Only Text</p> 
+                <p class="sidemenu__title__sub__item">Reflow Content</p>
+            <h3 class="sidemenu__title__sub">Animated Content</h3>
+                <p class="sidemenu__title__sub__item">Animated GIF/WEBP</p>
+                <p class="sidemenu__title__sub__item">Pause All Animations Control</p>
+                <p class="sidemenu__title__sub__item">Multimedia Content</p>
+            <h3 class="sidemenu__title__sub">Tables</h3>
+                <p class="sidemenu__title__sub__item">Simple Table Examples</p>
+                <p class="sidemenu__title__sub__item">Sortable Table</p>
+                <p class="sidemenu__title__sub__item">Pagination Table</p>
+
     </div>
 </div>
 

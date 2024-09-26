@@ -1,49 +1,5 @@
 <div class="plp">
     <div class="plp-list">
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-form-stucture">
-            <div class="icon-wrapper">
-                <h2 id="accessible-form-stucture">Accessible Form Structure</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/accessible-form-structure.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Learn about proper HTML form structure.</p>
-                <div><a href="/form.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="form-error-checking">
-            <div class="icon-wrapper">
-                <h2 id="form-error-checking">Form Error Checking</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>It is not hard to ensure forms work correctly with screen readers and other technology.</p>
-                <div><a href="/form-error-checking.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="search-forms">
-            <div class="icon-wrapper">
-                <h2 id="search-forms">Search Forms</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/search-forms.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it.</p>
-                <div><a href="/search.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="input-masking">
-            <div class="icon-wrapper">
-                <h2 id="input-masking">Input Masking</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/input-masking.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to code masking of keyboard input in form fields so they are accessible.</p>
-                <div><a href="/input-mask.php">See Examples</a></div>
-            </div>
-        </div>
-
         <div class="item-wrapper" role="group" aria-labelledby="form-error-checking">
             <div class="icon-wrapper">
                 <h2 id="form-error-checking">Form Error Checking</h2>
@@ -156,7 +112,7 @@
 
         <div class="item-wrapper" role="group" aria-labelledby="accessible-marquee">
             <div class="icon-wrapper">
-                <h2 id="accessible-marquee">Marquee / Auto Scrolling Content</h2>
+                <h2 id="accessible-marquee">Marquee / Auto-Scrolling Content</h2>
                 <div class="icon"><img src="/images/icons/code-patterns/marquee.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">

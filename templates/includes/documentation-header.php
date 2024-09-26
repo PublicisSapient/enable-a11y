@@ -118,11 +118,36 @@
                             "id": "flyout__home-mobile-only"
                         },
                         {
-                            "id": "flyout__link--no-image",
+                            "id": "flyout__button",
                             "props": {
-                                "label": "Components",
-                                "url": "components.php"
-                            }
+                                "id": "tools",
+                                "sectionName": "Components"
+                            },
+                            "content": [{
+                                    "id": "flyout__link--no-image",
+                                    "props": {
+                                        "label": "Forms",
+                                        "url": "forms-menu.php",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link--no-image",
+                                    "props": {
+                                        "label": "Controls",
+                                        "url": "controls-menu.php",
+                                        "alt": ""
+                                    }
+                                },
+                                {
+                                    "id": "flyout__link--no-image",
+                                    "props": {
+                                        "label": "Content",
+                                        "url": "content-menu.php",
+                                        "alt": ""
+                                    }
+                                }
+                            ]
                         },
                         {
                             "id": "flyout__link--no-image",

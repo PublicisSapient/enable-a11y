@@ -56,8 +56,8 @@
 }
 .plp .plp-list .item-wrapper .icon-wrapper {
   width: 100%;
-  min-height: 288px;
-  border-radius: 10px;
+  min-height: 250px;
+  border-top: 5px solid #CF1744;
   text-align: center;
   padding: 10px 10px;
   background-color: #f5f7f5;
@@ -129,6 +129,30 @@
   right: -34px;
   top: -2px;
 }
+.sidemenu {
+  display: top;
+  float: right;
+  margin-left: 50px;
+  padding-left: 100px;
+}
+.sidemenu__title {
+  border-bottom: none;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.sidemenu__title__sub {
+  border-bottom: none;
+  font-weight: normal;
+  font-size: 16px;
+  text-decoration: underline;
+  color: blue;
+}
+.sidemenu__title__sub__item {
+  border-bottom: none;
+  font-size: 12px;
+  color: pink;
+}
 .enable-stats {
   list-style-type: none;
   margin: 14px 0;
@@ -198,20 +222,12 @@
 .screenshot-table td {
   border: solid 1px black;
 }
-.footer ul {
-  margin: 20px;
-  padding: 0;
+.footer__links {
+  font-size: 14px;
+  font-weight: bold;
 }
-.footer ul li {
-  list-style: none;
-  display: inline;
-  padding: 10px 0;
-}
-.footer ul li::after {
-  content: "|";
-}
-.footer ul li:last-child::after {
-  content: "";
+.footer__links a {
+  text-decoration: none;
 }
 .footer__attribution {
   font-size: small;

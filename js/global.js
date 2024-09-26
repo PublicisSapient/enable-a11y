@@ -67,9 +67,12 @@ function initEnable() {
 
     const indexPage = includesUrl('index.php')
     const componentsPage = includesUrl('components.php');
+    const formsMenuPage = includesUrl('forms-menu.php');
+    const contentMenuPage = includesUrl('content-menu.php');
+    const controlsMenuPage = includesUrl('controls-menu.php');
     const codePatternsPage = includesUrl('code-patterns.php');
 
-    if (!indexPage && !componentsPage && !codePatternsPage) {
+    if (!indexPage && !componentsPage && !codePatternsPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
@@ -101,6 +104,9 @@ function initEnable() {
             '/enable/index.php',
             '/enable/faq.php',
             '/components.php',
+            '/forms-menu.php',
+            '/content-menu.php',
+            '/controls-menu.php',
             '/code-patterns.php'
         ],
         showAsSidebarDefault: true,

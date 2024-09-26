@@ -199,6 +199,14 @@
     "title": "Components",
     "desc": "A list of all the accessible components which can be found in the Enable project."
   },
+  "content-menu.php": {
+    "title": "Content",
+    "desc": "Page that organizes the components that fall under Content."
+  },
+  "controls-menu.php": {
+    "title": "Controls",
+    "desc": "Page that organizes the components that fall under Controls."
+  },
   "date.php": {
     "title": "Accessible Date Widget",
     "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web developer to do?  ",
@@ -282,6 +290,10 @@
     "title": "Accessible Form Structure",
     "desc": "Learn about proper HTML form structure. You'd be surprised how often this is not done correctly.",
     "toRefactor": false
+  },
+  "forms-menu.php": {
+    "title": "Forms",
+    "desc": "Page that organizes the components that fall under Forms."
   },
   "heading.php": {
     "title": "Accessible Headings",
