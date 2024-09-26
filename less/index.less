@@ -19,11 +19,12 @@ a:-webkit-any-link {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
 
         &--heading {
             font-family: @font-default-brand;
-            margin: 30px auto;
+            font-size: 4rem;
+            margin: 30px auto 10px;
             font-weight: normal;
             color: @pink;
 
@@ -48,7 +49,8 @@ a:-webkit-any-link {
         }
 
         p {
-            max-width: 40rem;
+            max-width: 50rem;
+            margin-bottom: -30px;
         }
     }
 
@@ -102,16 +104,23 @@ a:-webkit-any-link {
         }
 
         &--section {
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 25px;
             // background-color: #fffffff2;
             background-color: #f4f7f5;
+            margin-bottom: 40px;
             padding: 20px;
             flex-grow: 1;
             width: 100%;
 
             p {
                 text-align: justify;
+                a {
+                    color: @orange;
+                }
+                // a:visited {
+                //     color: @dark-orange;
+                // }
             }
 
             @media @tablet-up {
@@ -146,8 +155,8 @@ a:-webkit-any-link {
             margin-top: 10px;
             margin-bottom: 20px;
             color: @dark-grey;
-            text-align: left;
-            display: flex;
+            text-align: center;
+            display: block;
             align-items: center;
 
             @media @desktop {
@@ -157,11 +166,13 @@ a:-webkit-any-link {
 
             &::before {
                 content: "";
-                display: inline-flex;
+                //display: inline-flex;
+                display: block;
                 width: 20px;
                 height: 20px;
                 border-radius: 50%;
-                margin-right: 20px;
+                margin: 0 auto 30px auto;
+                //margin-right: 20px;
                 padding: 20px;
                 background-size: 40px;
                 background-repeat: no-repeat;
@@ -231,6 +242,7 @@ a:-webkit-any-link {
         color: #fff;
         line-height: 1.5;
         padding: 20px;
+        //padding-bottom: -10px;
         text-align: center;
 
         @media @desktop {
@@ -243,6 +255,9 @@ a:-webkit-any-link {
             font-size: 1.8rem;
             color: #fff;
             display: inline-flex;
+            //DECIDING STILL IF IM KEEPING THIS ALIGN-ITEMS
+            align-items: stretch;
+            margin-bottom: 0px;
 
             @media @tablet-up {
                 font-size: 2.375rem;

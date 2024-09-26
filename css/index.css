@@ -14,11 +14,12 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 .homepage__hero--heading {
   font-family: "MoniceDemo", Arial, Helvetica, sans-serif;
-  margin: 30px auto;
+  font-size: 4rem;
+  margin: 30px auto 10px;
   font-weight: normal;
   color: #CF1744;
 }
@@ -42,7 +43,8 @@ a:-webkit-any-link {
   }
 }
 .homepage__hero p {
-  max-width: 40rem;
+  max-width: 50rem;
+  margin-bottom: -30px;
 }
 .homepage__hero-link {
   text-decoration: none;
@@ -98,15 +100,19 @@ a:-webkit-any-link {
   }
 }
 .homepage__intro--section {
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 25px;
   background-color: #f4f7f5;
+  margin-bottom: 40px;
   padding: 20px;
   flex-grow: 1;
   width: 100%;
 }
 .homepage__intro--section p {
   text-align: justify;
+}
+.homepage__intro--section p a {
+  color: #FF9F1C;
 }
 @media only screen and (min-width: 720px) {
   .homepage__intro--section {
@@ -137,8 +143,8 @@ a:-webkit-any-link {
   margin-top: 10px;
   margin-bottom: 20px;
   color: #2b2929;
-  text-align: left;
-  display: flex;
+  text-align: center;
+  display: block;
   align-items: center;
 }
 @media only screen and (min-width: 960px) {
@@ -149,11 +155,11 @@ a:-webkit-any-link {
 }
 .homepage__intro--header::before {
   content: "";
-  display: inline-flex;
+  display: block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin: 0 auto 30px auto;
   padding: 20px;
   background-size: 40px;
   background-repeat: no-repeat;
@@ -219,6 +225,8 @@ a:-webkit-any-link {
   font-size: 1.8rem;
   color: #fff;
   display: inline-flex;
+  align-items: stretch;
+  margin-bottom: 0px;
 }
 @media only screen and (min-width: 720px) {
   .homepage__bottom-copy--heading {

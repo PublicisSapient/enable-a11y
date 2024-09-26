@@ -2,7 +2,7 @@
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
       <!-- <h1 class="homepage__hero--heading"><?= $title ?></h1> -->
-       <h1 class="homepage__hero--heading"><img src="/images/accessible-text-svg/logo-enable-pink.svg" /> </h1>
+       <h1 class="homepage__hero--heading">Enable </h1>
       <p>A space for developers to learn and collaborate on making the web accessible.</p>
     </div>
 
@@ -72,7 +72,7 @@
     </li>
     <li>
       Not only do we want to help developers, but <strong>we want the help from developers to contribute their accessible code.</strong>
-      If you have a component that you'd like to submit - please put in a <!-- #TODO --> <a href="#">pr</a>
+      If you have a component that you'd like to submit - please put in a <!-- #TODO --> <a href="#">PR</a>.
     </li>
   </ul>
 </div>
