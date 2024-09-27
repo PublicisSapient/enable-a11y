@@ -1,156 +1,23 @@
 <div class="sidemenu">
     <div class="sidemenu__list">
-        <h2 class="sidemenu__title">Controls</h2>
-            <h3 class="sidemenu__title__sub">Simple Controls</h3>
-                <p class="sidemenu__title__sub__item">Link</p>
-                <p class="sidemenu__title__sub__item">Dropdown/Drawer/Expando</p>
-                <p class="sidemenu__title__sub__item">Tooltip</p>
-                <p class="sidemenu__title__sub__item">Switch/Toggle</p>
-                <p class="sidemenu__title__sub__item">Skip Links</p>  
-            <h3 class="sidemenu__title__sub">Complex Controls</h3>
-                <p class="sidemenu__title__sub__item">Carousel</p>
-                <p class="sidemenu__title__sub__item">Flyout Hamburger Menu</p>
-                <p class="sidemenu__title__sub__item">Modal Dialog</p>
-                <p class="sidemenu__title__sub__item">Tablist</p>
-                <p class="sidemenu__title__sub__item">Video Player</p>
+        <h2 class="sidemenu__title">Simple Controls</h2>
+            <p class="sidemenu__item"><a href="#accessible-link">Link</a></p>
+            <p class="sidemenu__item"><a href="#dropdown-drawer-expando">Dropdown/Drawer/Expando</a></p>
+            <p class="sidemenu__item"><a href="#accessible-tooltip">Tooltip</a></p>
+            <p class="sidemenu__item"><a href="#accessible-switch">Switch/Toggle</a></p>
+            <p class="sidemenu__item"><a href="#accessible-skip-links">Skip Links</a></p>  
+        <h2 class="sidemenu__title">Complex Controls</h2>
+            <p class="sidemenu__item"><a href="#accessible-carousel">Carousel</a></p>
+            <p class="sidemenu__item"><a href="#flyout-hamburger-menu">Flyout Hamburger Menu</a></p>
+            <p class="sidemenu__item"><a href="#accessible-modal-dialog">Modal Dialog</a></p>
+            <p class="sidemenu__item"><a href="#accessible-tablist">Tablist</a></p>
+            <p class="sidemenu__item"><a href="#accessible-video-player">Video Player</a></p>
     </div>
 </div>
 
 <div class="plp">
     <div class="plp-list">
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-button">
-            <div class="icon-wrapper">
-                <h2 id="accessible-button">Button</h2>
-                <div class="icon"><img src="/images/icons/components/button.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.</p>
-                <div><a href="/button.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-checkbox">
-            <div class="icon-wrapper">
-                <h2 id="accessible-checkbox">Checkboxes</h2>
-                <div class="icon"><img src="/images/icons/components/checkbox.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>This page will show you how to code HTML5 and custom checkboxes in an accessible way, including indeterminate checkboxes.</p>
-                <div><a href="/checkbox.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-radio-button-group">
-            <div class="icon-wrapper">
-                <h2 id="accessible-radio-button-group">Radio Button Group</h2>
-                <div class="icon"><img src="/images/icons/components/radio-button-group.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>The way radio buttons are made accessible is slightly different than other form controls.</p>
-                <div><a href="/radiogroup.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-select-box">
-            <div class="icon-wrapper">
-                <h2 id="accessible-select-box">Select Box / Listbox</h2>
-                <div class="icon"><img src="/images/icons/components/select-box.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Why it's preferable to use native HTML5 select controls vs custom controls, and what developers must do if they have to use a custom one.</p>
-                <div><a href="/listbox.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-text-box">
-            <div class="icon-wrapper">
-                <h2 id="accessible-text-box">Text Box</h2>
-                <div class="icon"><img src="/images/icons/components/text-box.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>If you are using custom (i.e. non-native HTML5) textboxes, it's simple to add a few ARIA attributes to make them accessible, if you absolutely have to.</p>
-                <div><a href="/textbox.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="autocomplete-combobox">
-            <div class="icon-wrapper">
-                <h2 id="autocomplete-combobox">Autocomplete Combobox</h2>
-                <div class="icon"><img src="/images/icons/components/auto-complete-combobox.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>One exception to the First Rule of ARIA is HTML5 autocomplete using the <code>&lt;datalist&gt;</code> tag, which is not as accessible as the ARIA datalist role</p>
-                <div><a href="/combobox.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="slider-range-input">
-            <div class="icon-wrapper">
-                <h2 id="slider-range-input">Slider / Range Input</h2>
-                <div class="icon"><img src="/images/icons/components/slider.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users.</p>
-                <div><a href="/slider.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-numeric-fields">
-            <div class="icon-wrapper">
-                <h2 id="accessible-numeric-fields">Accessible Numeric Fields</h2>
-                <div class="icon"><img src="/images/icons/components/number-input-spinner.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Many developers think form fields with numeric values must always be coded as <code>&lt;input type="number"&gt;</code>.  There are exceptions.</p>
-                <div><a href="/spinner.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-form-stucture">
-            <div class="icon-wrapper">
-                <h2 id="accessible-form-stucture">Accessible Form Structure</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/accessible-form-structure.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Learn about proper HTML form structure.</p>
-                <div><a href="/form.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="form-error-checking">
-            <div class="icon-wrapper">
-                <h2 id="form-error-checking">Form Error Checking</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/form-error-checking.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>It is not hard to ensure forms work correctly with screen readers and other technology.</p>
-                <div><a href="/form-error-checking.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="search-forms">
-            <div class="icon-wrapper">
-                <h2 id="search-forms">Search Forms</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/search-forms.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it.</p>
-                <div><a href="/search.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="input-masking">
-            <div class="icon-wrapper">
-                <h2 id="input-masking">Input Masking</h2>
-                <div class="icon"><img src="/images/icons/code-patterns/input-masking.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to code masking of keyboard input in form fields so they are accessible.</p>
-                <div><a href="/input-mask.php">See Examples</a></div>
-            </div>
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-link">
+    <div class="item-wrapper" role="group" aria-labelledby="accessible-link">
             <div class="icon-wrapper">
                 <h2 id="accessible-link">Link</h2>
                 <div class="icon"><img src="/images/icons/components/link.svg" alt="" role="presentation"></div>
@@ -183,9 +50,9 @@
             </div>    
         </div>
 
-        <div class="item-wrapper" role="group" aria-labelledby="accessile-switch">
+        <div class="item-wrapper" role="group" aria-labelledby="accessible-switch">
             <div class="icon-wrapper">
-                <h2 id="accessile-switch">Switch / Toggle</h2>
+                <h2 id="accessible-switch">Switch / Toggle</h2>
                 <div class="icon"><img src="/images/icons/components/switch.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
@@ -257,182 +124,6 @@
             <div class="links-wrapper">
                 <p>Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time and get a WCAG AAA transcript for free!</p>
                 <div><a href="/video-player.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-description-list">
-            <div class="icon-wrapper">
-                <h2 id="accessible-description-list">Description List</h2>
-                <div class="icon"><img src="/images/icons/components/description-list.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Lists of name/value pairs should be coded in a definition list. This page covers the HTML5 and ARIA variants.</p>
-                <div><a href="/description-list.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-progress-bar">
-            <div class="icon-wrapper">
-                <h2 id="accessible-progress-bar">Progress Bar</h2>
-                <div class="icon"><img src="/images/icons/components/progress-bar.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them.</p>
-                <div><a href="/progress.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-image">
-            <div class="icon-wrapper">
-                <h2 id="accessible-image">Image</h2>
-                <div class="icon"><img src="/images/icons/components/image.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to code both <code>&lt;img&gt;</code> tags and background images so they are understandable by screen reader users.</p>
-                <div><a href="/img.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-figure">
-            <div class="icon-wrapper">
-                <h2 id="accessible-figure">Figure</h2>
-                <div class="icon"><img src="/images/icons/components/figure.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context.</p>
-                <div><a href="/figure.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-headings">
-            <div class="icon-wrapper">
-                <h2 id="accessible-headings">Headings</h2>
-                <div class="icon"><img src="/images/icons/components/headings.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How headings are used by screen reader users, and how to code them in an existing document without a lot of rework.</p>
-                <div><a href="/heading.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="sr-only-text">
-            <div class="icon-wrapper">
-                <h2 id="sr-only-text">Screen Reader Only Text</h2>
-                <div class="icon"><img src="/images/icons/components/screen-reader-only-text.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>What is screen reader only text, when it should be used and how it differs from aria-labels.</p>
-                <div><a href="/screen-reader-only-text.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-reflow">
-            <div class="icon-wrapper">
-                <h2 id="accessible-reflow">Reflow Content</h2>
-                <div class="icon"><img src="/images/icons/components/reflow.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions). This page talks about common solutions you can use to fix these type of issues.</p>
-                <div><a href="/reflow.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="animated-gif-webp">
-            <div class="icon-wrapper">
-                <h2 id="animated-gif-webp">Animated GIF / Webp</h2>
-                <div class="icon"><img src="/images/icons/components/animated-gif-webp.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to code Animated GIFs can be paused using the HTML5 details tag.</p>
-                <div><a href="/animated-gif-with-pause-button.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="pause-all-animations">
-            <div class="icon-wrapper">
-                <h2 id="pause-all-animations">Pause All Animations Control</h2>
-                <div class="icon"><img src="/images/icons/components/pause-all-animations-control.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.</p>
-                <div><a href="/pause-anim-control.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-video-content">
-            <div class="icon-wrapper">
-                <h2 id="accessible-video-content">Multimedia Content</h2>
-                <div class="icon"><img src="/images/icons/components/video-content.png" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible.</p>
-                <div><a href="/multimedia-content.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="simple-table-examples">
-            <div class="icon-wrapper">
-                <h2 id="simple-table-examples">Simple Table Examples</h2>
-                <div class="icon"><img src="/images/icons/components/simple-table-examples.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone.</p>
-                <div><a href="/table.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="sortable-table">
-            <div class="icon-wrapper">
-                <h2 id="sortable-table">Sortable Table</h2>
-                <div class="icon"><img src="/images/icons/components/sortable-table.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.</p>
-                <div><a href="/sortable-table.php">See Examples</a></div>
-            </div>    
-        </div>
-        
-        <div class="item-wrapper" role="group" aria-labelledby="pagination-table">
-            <div class="icon-wrapper">
-                <h2 id="pagination-table">Pagination Table</h2>
-                <div class="icon"><img src="/images/icons/components/pagination-table.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.</p>
-                <div><a href="/pagination-table.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-infographic">
-            <div class="icon-wrapper">
-                <h2 id="accessible-infographic">Infographic</h2>
-                <div class="icon"><img src="/images/icons/components/infographic.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to code SVG and bitmap images so they are understandable by screen reader users.</p>
-                <div><a href="/infographic.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-meter">
-            <div class="icon-wrapper">
-                <h2 id="accessible-meter">Meter</h2>
-                <div class="icon"><img src="/images/icons/components/meter.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>Meter component which is supported by non HTML5 browsers.</p>
-                <div><a href="/meter.php">See Examples</a></div>
-            </div>    
-        </div>
-
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-load-more">
-            <div class="icon-wrapper">
-                <h2 id="accessible-load-more">Load More</h2>
-                <div class="icon"><img src="/images/icons/components/load-more.svg" alt="" role="presentation"></div>
-            </div>
-            <div class="links-wrapper">
-                <p>How to approach building pagination using a load more button in an accessible way.</p>
-                <div><a href="/load-more.php">See Examples</a></div>
             </div>    
         </div>
     </div>

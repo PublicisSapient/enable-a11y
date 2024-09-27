@@ -1,20 +1,19 @@
 <div class="sidemenu">
     <div class="sidemenu__list">
-        <h2 class="sidemenu__title">Forms</h2>
-            <h3 class="sidemenu__title__sub">Form Elements</h3>
-                <p class="sidemenu__title__sub__item">Button</p>
-                <p class="sidemenu__title__sub__item">Checkboxes</p>
-                <p class="sidemenu__title__sub__item">Radio Button Group</p>
-                <p class="sidemenu__title__sub__item">Select Box/Listbox</p>
-                <p class="sidemenu__title__sub__item">Textbox</p>
-                <p class="sidemenu__title__sub__item">Autocomplete Combobox</p>
-                <p class="sidemenu__title__sub__item">Slider/Range</p>
-                <p class="sidemenu__title__sub__item">Accessible Numeric Fields</p>    
-            <h3 class="sidemenu__title__sub">Form UX Patterns</h3>
-                <p class="sidemenu__title__sub__item">Accessible Form Structure</p>
-                <p class="sidemenu__title__sub__item">Form Error Checking</p>
-                <p class="sidemenu__title__sub__item">Search Forms</p>
-                <p class="sidemenu__title__sub__item">Input Masking</p>
+        <h2 class="sidemenu__title">Form Elements</h2>
+            <p class="sidemenu__item"><a href="#accessible-button">Button</a></p>
+            <p class="sidemenu__item"><a href="#accessible-checkbox">Checkboxes</a></p>
+            <p class="sidemenu__item"><a href="#accessible-radio-button-group">Radio Button Group</a></p>
+            <p class="sidemenu__item"><a href="#accessible-select-box">Select Box/Listbox</a></p>
+            <p class="sidemenu__item"><a href="#accessible-text-box">Textbox</a></p>
+            <p class="sidemenu__item"><a href="#autocomplete-combobox">Autocomplete Combobox</a></p>
+            <p class="sidemenu__item"><a href="#slider-range-input">Slider/Range</a></p>
+            <p class="sidemenu__item"><a href="#accessible-numeric-fields">Accessible Numeric Fields</a></p>    
+        <h2 class="sidemenu__title">Form UX Patterns</h2>
+            <p class="sidemenu__item"><a href="#accessible-form-structure">Accessible Form Structure</a></p>
+            <p class="sidemenu__item"><a href="#form-error-checking">Form Error Checking</a></p>
+            <p class="sidemenu__item"><a href="#search-forms">Search Forms</a></p>
+            <p class="sidemenu__item"><a href="#input-masking">Input Masking</a></p>
     </div>
 </div>
 
@@ -108,9 +107,9 @@
             </div>    
         </div>
 
-        <div class="item-wrapper" role="group" aria-labelledby="accessible-form-stucture">
+        <div class="item-wrapper" role="group" aria-labelledby="accessible-form-structure">
             <div class="icon-wrapper">
-                <h2 id="accessible-form-stucture">Accessible Form Structure</h2>
+                <h2 id="accessible-form-structure">Accessible Form Structure</h2>
                 <div class="icon"><img src="/images/icons/code-patterns/accessible-form-structure.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">

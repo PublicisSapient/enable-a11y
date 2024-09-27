@@ -120,7 +120,7 @@
                         {
                             "id": "flyout__button",
                             "props": {
-                                "id": "tools",
+                                "id": "components",
                                 "sectionName": "Components"
                             },
                             "content": [{
@@ -174,7 +174,7 @@
                                     "id": "flyout__link--no-image",
                                     "props": {
                                         "label": "Bookmarklets",
-                                        "url": "bookmarlets.php",
+                                        "url": "bookmarklets.php",
                                         "alt": ""
                                     }
                                 }

@@ -141,16 +141,13 @@
   font-size: 20px;
   font-weight: bold;
 }
-.sidemenu__title__sub {
-  border-bottom: none;
-  font-weight: normal;
-  font-size: 16px;
-  text-decoration: underline;
-  color: blue;
-}
-.sidemenu__title__sub__item {
+.sidemenu__item {
+  text-decoration: none;
   border-bottom: none;
   font-size: 12px;
+  color: pink;
+}
+.sidemenu__item a {
   color: pink;
 }
 .enable-stats {
