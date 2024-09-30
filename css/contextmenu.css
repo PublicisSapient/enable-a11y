@@ -1,0 +1,102 @@
+.link-context-menu {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.specific-area {
+  display: block;
+  width: 120px;
+  height: 80px;
+  background-color: #3b99fc;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.context-menu {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+}
+.context-menu__example {
+  display: none;
+}
+.context-menu .listItem {
+  padding: 4px 12px 4px 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6f42c1;
+}
+.context-menu .listItem:hover {
+  background: #6f42c1;
+  color: #fff;
+}
+.context-menu__item {
+  padding: 4px 12px 4px 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6f42c1;
+}
+.context-menu__item:hover {
+  background: #6f42c1;
+  color: #fff;
+}
+.context-menu__item__divider {
+  height: 1px;
+  background: #6f42c1;
+  margin: 4px 8px;
+}
+.context-menu__item__disabled {
+  padding: 4px 12px 4px 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6f42c1;
+  color: #ccc;
+  cursor: default;
+}
+.context-menu__item__disabled:hover {
+  background: #6f42c1;
+  color: #fff;
+}
+.context-menu__item__disabled:hover {
+  background: unset;
+  color: #ccc;
+}
+.context-menu__item__withIcon {
+  padding: 4px 12px 4px 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6f42c1;
+  padding-left: 4px;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.context-menu__item__withIcon:hover {
+  background: #6f42c1;
+  color: #fff;
+}
+.context-menu__item__withIcon__icon {
+  width: 16px;
+  height: 16px;
+}
