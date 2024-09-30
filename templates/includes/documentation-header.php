@@ -424,6 +424,14 @@
                                         }
                                     },
                                     {
+                                      "id": "flyout__link",
+                                      "props": {
+                                        "label": "Cookie Banner",
+                                        "url-slug": "cookiebanner",
+                                        "alt": ""
+                                      }
+                                    },
+                                    {
                                         "id": "flyout__link",
                                         "props": {
                                             "label": "Tablist",
