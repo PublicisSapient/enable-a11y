@@ -112,7 +112,7 @@
   position: relative;
   border-radius: 0.2rem;
   padding: 0.25rem;
-  vertical-align: text-bottom;
+  vertical-align: sub;
 }
 .tooltip__text-button:hover {
   /* Hover styling */
@@ -123,6 +123,6 @@
 }
 @media only screen and (min-width: 720px) {
   .tooltip__text-button {
-    vertical-align: bottom;
+    vertical-align: top;
   }
 }
