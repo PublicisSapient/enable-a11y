@@ -1,3 +1,23 @@
+<div class="sidemenu">
+    <div class="sidemenu__list">
+        <h2 class="sidemenu__title">Focus Management</h2>
+            <p class="sidemenu__item"><a href="#form-error-checking">Form Error Checking</a></p>
+            <p class="sidemenu__item"><a href="#focus-styling-tips">Focus Styling Tips</a></p>
+        <h2 class="sidemenu__title">Typography</h2>
+            <p class="sidemenu__item"><a href="#basic-resizable-text">Basic Resizable Text</a></p>
+            <p class="sidemenu__item"><a href="#accessible-text-spacing">Accessible Text Spacing</a></p>
+            <p class="sidemenu__item"><a href="#resizing-text-in-hero-images">Resizing Text in Hero Images</a></p>
+            <p class="sidemenu__item"><a href="#accessible-text-in-svgs">Accessible Text in SVGs</a></p>
+            <p class="sidemenu__item"><a href="#exposing-style-info">Exposing Style Information to Screen Readers</a></p>
+        <h2 class="sidemenu__title">ARIA Live Regions</h2>
+            <p class="sidemenu__item"><a href="#accessible-alert">Alert</a></p>
+            <p class="sidemenu__item"><a href="#accessible-log">Log</a></p>
+            <p class="sidemenu__item"><a href="#accessible-timer">Timer</a></p>
+            <p class="sidemenu__item"><a href="#accessible-marquee">Marquee/Auto-Scrolling Content</a></p>
+            <p class="sidemenu__item"><a href="#accessible-status">Status</a></p>
+    </div>
+</div>
+
 <div class="plp">
     <div class="plp-list">
         <div class="item-wrapper" role="group" aria-labelledby="form-error-checking">
@@ -44,7 +64,7 @@
             </div>
         </div>
 
-        <div class="item-wrapper" role="group" aria-labelledby="resizing-text-in-hero-images">
+        <div class="item-wrapper" role="group" aria-labelledby="text-in-hero-imagesresizing-">
             <div class="icon-wrapper">
                 <h2 id="resizing-text-in-hero-images">Resizing Text in Hero Images</h2>
                 <div class="icon"><img src="/images/icons/code-patterns/resizing-text-in-hero-images.svg" alt="" role="presentation"></div>
