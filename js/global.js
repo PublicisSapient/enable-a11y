@@ -66,13 +66,12 @@ function initEnable() {
     let headingIndex = 0;
 
     const indexPage = includesUrl('index.php')
-    const componentsPage = includesUrl('components.php');
     const formsMenuPage = includesUrl('forms-menu.php');
     const contentMenuPage = includesUrl('content-menu.php');
     const controlsMenuPage = includesUrl('controls-menu.php');
-    const codePatternsPage = includesUrl('code-patterns.php');
+    const codePatternsMenuPage = includesUrl('code-patterns-menu.php');
 
-    if (!indexPage && !componentsPage && !codePatternsPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
+    if (!indexPage && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
@@ -103,11 +102,10 @@ function initEnable() {
             '/faq.php',
             '/enable/index.php',
             '/enable/faq.php',
-            '/components.php',
             '/forms-menu.php',
             '/content-menu.php',
             '/controls-menu.php',
-            '/code-patterns.php'
+            '/code-patterns-menu.php'
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,

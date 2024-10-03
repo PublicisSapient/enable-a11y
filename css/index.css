@@ -2,8 +2,7 @@ main {
   color: #2b2929;
   width: 100%;
 }
-a,
-a:-webkit-any-link {
+a {
   color: #FF9F1C;
 }
 .homepage__hero {

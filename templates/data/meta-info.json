@@ -186,7 +186,7 @@
       }
   ]  
   },
-  "code-patterns.php": {
+  "code-patterns-menu.php": {
     "title": "Code Patterns",
     "desc": "A list of all the accessible code patterns which can be found in the Enable project."
   },
@@ -194,10 +194,6 @@
     "title": "Accessible Autocomplete (a.k.a Combobox)",
     "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role.",
     "isNPM": "true"
-  },
-  "components.php": {
-    "title": "Components",
-    "desc": "A list of all the accessible components which can be found in the Enable project."
   },
   "content-menu.php": {
     "title": "Content",

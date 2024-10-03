@@ -146,15 +146,16 @@
                                         "url": "content-menu.php",
                                         "alt": ""
                                     }
+                                },
+                                {
+                                    "id": "flyout__link--no-image",
+                                    "props": {
+                                        "label": "Code Patterns",
+                                        "url": "code-patterns-menu.php",
+                                        "alt": ""
+                                    }
                                 }
                             ]
-                        },
-                        {
-                            "id": "flyout__link--no-image",
-                            "props": {
-                                "label": "Code Patterns",
-                                "url": "code-patterns.php"
-                            }
                         },
                         {
                             "id": "flyout__button",

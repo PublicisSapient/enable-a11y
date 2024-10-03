@@ -142,13 +142,12 @@
   font-weight: bold;
 }
 .sidemenu__item {
-  text-decoration: none;
   border-bottom: none;
   font-size: 12px;
-  color: pink;
 }
 .sidemenu__item a {
-  color: pink;
+  text-decoration: none;
+  color: #2b2929;
 }
 .enable-stats {
   list-style-type: none;

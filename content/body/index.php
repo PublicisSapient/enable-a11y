@@ -45,7 +45,7 @@
       <h2 class="homepage__intro--header homepage__intro--header--npm">Use Pre-built Accessible Components</h2>
 
       <p>
-        Enable also includes <a href="/components.php">components</a> that can be included into your own projects via NPM, with instructions on how to
+        Enable also includes components that can be included into your own projects via NPM, with instructions on how to
         integrate them as Webpack modules, native ES6 Modules or as old school ES4 JavaScript libraries.
     </div>
   </div>

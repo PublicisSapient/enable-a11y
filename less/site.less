@@ -154,7 +154,6 @@
 
 .sidemenu {
     display: top;
-    //float: inline-end;
     float: right;
     margin-left: 50px;
     padding-left: 100px;
@@ -163,25 +162,16 @@
         margin-bottom: 15px;
         font-size: 20px;
         font-weight: bold;
-        // &__sub {
-        //     border-bottom: none;
-        //     //margin-bottom: 10px;
-        //     font-weight: normal;
-        //     font-size: 16px;
-        //     text-decoration: underline;
-        //     color: blue;
     }
-            &__item {
-                a {
-                    color: pink;
-                }
-                text-decoration: none;
-                border-bottom: none;
-                font-size: 12px;
-                color: pink
-            }
+    &__item {
+        border-bottom: none;
+        font-size: 12px;
         
-    
+        a {
+            text-decoration: none;
+            color: @dark-grey;
+        }
+    }
 }
 
 .enable-stats {
