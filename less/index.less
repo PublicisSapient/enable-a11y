@@ -18,11 +18,11 @@ a {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 1.2rem;
+        font-size: (19.2 / @px);
 
         &--heading {
             font-family: @font-default-brand;
-            font-size: 4rem;
+            font-size: (64 / @px);
             margin: 30px auto 10px;
             font-weight: normal;
             color: @pink;
@@ -103,9 +103,8 @@ a {
         }
 
         &--section {
-            font-size: 16px;
+            font-size: (16 / @px);
             border-radius: 25px;
-            // background-color: #fffffff2;
             background-color: #f4f7f5;
             margin-bottom: 40px;
             padding: 20px;
@@ -212,17 +211,14 @@ a {
 
             &--question::before {
                 background-image: data-uri("../images/icons/question.svg");
-                // background-color: @color-npm;
             }
 
             &--donate:before {
                 background-image: data-uri("../images/icons/donate.svg");
-                // background-color: @color-scratch;
             }
 
             &--bug:before {
                 background-image: data-uri("../images/icons/bug.svg");
-                // background-color: @color-integrate;
             }
         }
 
@@ -248,15 +244,13 @@ a {
 
         &--heading {
             font-weight: bold;
-            font-size: 1.8rem;
             color: #fff;
             display: inline-flex;
-            //DECIDING STILL IF IM KEEPING THIS ALIGN-ITEMS
             align-items: stretch;
             margin-bottom: 0px;
 
             @media @tablet-up {
-                font-size: 2.375rem;
+                font-size: (38 / @px);
             }
         }
 

@@ -1,21 +1,9 @@
 <div class="homepage__hero">
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
-      <!-- <h1 class="homepage__hero--heading"><?= $title ?></h1> -->
        <h1 class="homepage__hero--heading">Enable </h1>
       <p>A space for developers to learn and collaborate on making the web accessible.</p>
     </div>
-
-    <!--
-    <div class="homepage__hero--ctas">
-      <a href="#getting-started.php" class="homepage__hero-link homepage__hero-link--main">
-        Getting Started
-      </a>
-      <a href="#how-to-contribute.php" class="homepage__hero-link homepage__hero-link--secondary">
-        How to Contribute
-      </a>
-    </div>
--->
   </div>
 </div>
  
