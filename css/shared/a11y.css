@@ -113,7 +113,7 @@ body {
      * the size set in the iOS Accessibility settings.
      */
   font: -apple-system-body;
-  font-size: 16px;
+  font-size: 18px;
   /*
      * Put whatever font you want to use here or in the body
 	 * selector of another stylesheet.  The font
@@ -128,3 +128,4 @@ main *:focus,
 main *:focus-visible {
   scroll-margin-top: 15rem;
 }
+/*# sourceMappingURL=a11y.css.map */

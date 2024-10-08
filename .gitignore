@@ -6,5 +6,9 @@ tmp
 report/*
 .idea
 
+# generated css map files
+*.css.map
+
 # auto-gen PHP files/logs
 php_errors.log
+

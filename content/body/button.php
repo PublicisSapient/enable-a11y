@@ -1,5 +1,5 @@
 
-    <!-- <aside class="notes">
+    <aside class="notes">
             <h2>Notes:</h2>
 
             <ul>
@@ -22,7 +22,7 @@
 
             </ul>
 
-        </aside> -->
+        </aside> 
 
         <p>
             <strong>A button is an interactive element that triggers an action on a webpage or submits a form.</strong>

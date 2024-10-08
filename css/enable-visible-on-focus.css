@@ -53,7 +53,6 @@
 .enable-mobile-visible-on-focus__container {
   display: block;
   width: 100%;
-  margin: 3px 0 0 0;
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
@@ -75,13 +74,13 @@
 }
 .enable-skip-link {
   /* Here is the general styles of the link */
+  color: #2b2929 !important;
   width: 100%;
   box-sizing: border-box;
   position: relative;
   display: inline-block;
-  background: #225502;
-  color: #fff;
-  padding: 1px;
+  background: #F4F7F5;
+  padding: 10px;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
@@ -107,3 +106,4 @@
 .fake-component a {
   color: #330000;
 }
+/*# sourceMappingURL=enable-visible-on-focus.css.map */

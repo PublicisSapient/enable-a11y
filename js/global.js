@@ -36,8 +36,15 @@ function buildFlyoutMenuHTML() {
     EnableFlyout.init();
 }
 
+function includesUrl(string) {
+    if (location.href.includes(string)) {
+        return true;
+    }
+    return false;
+}
+
 function initEnable() {
-    offscreenObserver.init(document.querySelector('[role="banner"]'));
+    offscreenObserver.init(document.getElementById('header'));
 
     enableVisibleOnFocus.init();
     buildFlyoutMenuHTML();
@@ -58,7 +65,13 @@ function initEnable() {
     // Add permalinks on all pages except home, so screen reader users, like VoiceOver users, can navigate via heading and have focus applied to the heading.
     let headingIndex = 0;
 
-    if (location.href.indexOf('index.php') === -1) {
+    const indexPage = includesUrl('index.php')
+    const formsMenuPage = includesUrl('forms-menu.php');
+    const contentMenuPage = includesUrl('content-menu.php');
+    const controlsMenuPage = includesUrl('controls-menu.php');
+    const codePatternsMenuPage = includesUrl('code-patterns-menu.php');
+
+    if (!indexPage && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
@@ -89,6 +102,10 @@ function initEnable() {
             '/faq.php',
             '/enable/index.php',
             '/enable/faq.php',
+            '/forms-menu.php',
+            '/content-menu.php',
+            '/controls-menu.php',
+            '/code-patterns-menu.php'
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,

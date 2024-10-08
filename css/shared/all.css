@@ -154,7 +154,7 @@ body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
 body {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
   /* @media @tablet-up {
@@ -180,14 +180,11 @@ ol {
   list-style: decimal;
 }
 h1 {
-  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
-  font-size: 2rem;
   color: #222;
   font-size: 2.1875rem;
 }
 h2 {
-  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-size: 1.8125rem;
   border-bottom: solid 1px #999999;
   margin: 1.8125rem 0 0 0;
@@ -601,7 +598,7 @@ body {
      * the size set in the iOS Accessibility settings.
      */
   font: -apple-system-body;
-  font-size: 16px;
+  font-size: 18px;
   /*
      * Put whatever font you want to use here or in the body
 	 * selector of another stylesheet.  The font
@@ -622,10 +619,8 @@ body {
 }
 header,
 [role="banner"] {
-  background: #450a0a;
   margin: 0;
   border-bottom: solid 1px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
   /*
    * Used to work around a Safari OSX bug with sticky table content
    * stacking on top of the banner
@@ -656,19 +651,6 @@ header .search-form,
   position: absolute;
   top: 1em;
   right: 1em;
-}
-.site__nav {
-  position: static;
-  background: #000000;
-  line-height: 1.6;
-}
-.site__nav ul li {
-  display: inline-block;
-  margin-right: 1em;
-}
-.site__nav ul li a {
-  color: white;
-  text-decoration: none;
 }
 .logo {
   position: relative;
@@ -717,7 +699,7 @@ main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-  padding: 1rem;
+  padding: 1.875rem;
   margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;
@@ -799,3 +781,4 @@ footer a,
 [role="contentinfo"] a {
   color: #ccccff;
 }
+/*# sourceMappingURL=all.css.map */

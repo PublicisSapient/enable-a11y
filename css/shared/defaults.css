@@ -1,5 +1,5 @@
 body {
-  font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
   color: #444;
   /* @media @tablet-up {
@@ -25,14 +25,11 @@ ol {
   list-style: decimal;
 }
 h1 {
-  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-weight: bold;
-  font-size: 2rem;
   color: #222;
   font-size: 2.1875rem;
 }
 h2 {
-  font-family: "GraublauWeb", "Arial", "Helvetica", sans-serif;
   font-size: 1.8125rem;
   border-bottom: solid 1px #999999;
   margin: 1.8125rem 0 0 0;
@@ -331,3 +328,4 @@ iframe:focus-visible {
   }
 }
 */
+/*# sourceMappingURL=defaults.css.map */

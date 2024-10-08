@@ -1,9 +1,21 @@
+// New Design Colors
+@pink: #CF1744;
+@teal: #05A8AA;
+@blue: #17183B;
+@orange: #A76000;
+@light-orange: #FF9F1C;
+@light-grey: #F4F7F5;
+@grey: #5d5c5c;
+@dark-grey: #2b2929;
+
 @focus-color: #097efb;
 @focus-color-dark-bg: rgb(59, 153, 252);
 
 // From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
 // pixels to rems.
 @px: 16rem;
+
+@min-screen-width: 460px;
 
 @desktop-min: 960px;
 
@@ -45,7 +57,7 @@
 @color-term-code: #090;
 @color-background-term-code: #000;
 
-@page-padding: (16 / @px);
+@page-padding: (30 / @px);
 
 .font-copy() {
     font-family: @font-default-copy;
@@ -61,6 +73,14 @@
 .font-heading-2() {
     font-family: @font-default-heading;
     font-size: (20 / @px);
+}
+
+.font-heading-3() {
+    font-family: @font-default-copy;
+    font-weight: bold;
+    padding-top: 20px;
+    font-size: (20 / @px);
+    border-bottom: double 3px #000;
 }
 
 //
