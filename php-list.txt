@@ -5,6 +5,7 @@ button.php
 carousel.php
 checkbox.php
 combobox.php
+dark-mode.php
 description-list.php
 dialog.php
 dropdown.php

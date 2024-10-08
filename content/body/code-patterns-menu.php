@@ -3,6 +3,7 @@
         <h2 class="sidemenu__title">Focus Management</h2>
             <p class="sidemenu__item"><a href="#form-error-checking">Form Error Checking</a></p>
             <p class="sidemenu__item"><a href="#focus-styling-tips">Focus Styling Tips</a></p>
+            <p class="sidemenu__item"><a href="#accessible-dark-mode">Dark Mode</a></p>
         <h2 class="sidemenu__title">Typography</h2>
             <p class="sidemenu__item"><a href="#basic-resizable-text">Basic Resizable Text</a></p>
             <p class="sidemenu__item"><a href="#accessible-text-spacing">Accessible Text Spacing</a></p>
@@ -39,6 +40,17 @@
             <div class="links-wrapper">
                 <p>Many designers will turn off focus styles on web apps. There are better solutions that ensure they appear for only the users that need them.</p>
                 <div><a href="/focus-styling.php">See Examples</a></div>
+            </div>
+        </div>
+
+        <div class="item-wrapper" role="group" aria-labelledby="accessible-dark-mode">
+            <div class="icon-wrapper">
+                <h2 id="accessible-dark-mode">Dark Mode</h2>
+                <div class="icon"><img src="/images/icons/code-patterns/dark-mode.png" alt="" role="presentation"></div>
+            </div>
+            <div class="links-wrapper">
+                <p>A dark mode version of a website is necessary to develop to make it more accessible.</p>
+                <div><a href="/dark-mode.php">See Examples</a></div>
             </div>
         </div>
 

@@ -203,6 +203,10 @@
     "title": "Controls",
     "desc": "Page that organizes the components that fall under Controls."
   },
+  "dark-mode.php": {
+    "title": "Dark Mode",
+    "desc": "This page will show you how to ensure your website has proper contrast as well as the overall function for dark mode."
+  },
   "date.php": {
     "title": "Accessible Date Widget",
     "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web developer to do?  ",
