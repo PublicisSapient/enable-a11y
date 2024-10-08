@@ -3,7 +3,7 @@ main {
   width: 100%;
 }
 a {
-  color: #FF9F1C;
+  color: #A76000;
 }
 .homepage__hero {
   color: #301414;
@@ -111,7 +111,7 @@ a {
   text-align: justify;
 }
 .homepage__intro--section p a {
-  color: #FF9F1C;
+  color: #A76000;
 }
 @media only screen and (min-width: 720px) {
   .homepage__intro--section {
@@ -245,6 +245,9 @@ a {
 }
 .homepage__bottom-copy.background-tertiary {
   background: #17183B;
+}
+.homepage__bottom-copy.background-tertiary a {
+  color: #FF9F1C;
 }
 .background-secondary .homepage__bottom-copy--heading {
   color: #17183B;
