@@ -93,7 +93,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 1rem;
   font: inherit;
   vertical-align: baseline;
 }
@@ -462,7 +462,7 @@ code {
   width: fit-content;
 }
 .screen-reader-table tr td {
-  width: calc((100% -  125px) / 5);
+  width: calc((100% - 125px) / 5);
 }
 .screen-reader-table tr td:first-child {
   width: 125px;
@@ -601,7 +601,7 @@ body {
      * the size set in the iOS Accessibility settings.
      */
   font: -apple-system-body;
-  font-size: 16px;
+  font-size: 1rem;
   /*
      * Put whatever font you want to use here or in the body
 	 * selector of another stylesheet.  The font
@@ -687,11 +687,11 @@ header .search-form,
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
 }
 .logo .acme {
-  font-size: 70px;
+  font-size: 4.375rem;
   font-weight: 900;
 }
 .logo .zoltipedia {
-  font-size: 60px;
+  font-size: 3.75rem;
 }
 .logo .corp {
   position: absolute;
@@ -782,7 +782,7 @@ aside h3,
 [role="complementary"] h3 {
   color: #9999ff;
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 3px 3px #000;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 footer,
