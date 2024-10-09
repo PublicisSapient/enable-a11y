@@ -38,7 +38,7 @@ const toastModule = new function() {
     // Create the container for the toasts
     createContainer(position) {
       const container = document.createElement('div');
-      container.className = `enable-toast enable-toast--${position}`;
+      container.className = `enable-toast__container enable-toast__container--${position}`;
       return container;
     }
 
@@ -57,7 +57,7 @@ const toastModule = new function() {
       toastElement.offsetHeight; // Force reflow to ensure the element is rendered before adding the visible class
 
       setTimeout(() => {
-        toastElement.classList.add('enable-toast--visible');
+        toastElement.classList.add('enable-toast__item--visible');
       }, 100); // Slight delay to ensure screen readers catch the change
 
       // Update the toast rack with the new toast
@@ -66,7 +66,7 @@ const toastModule = new function() {
       this.updateToggleRackButton();
     }
 
-    // Create the individual toast element
+    // Create the individual toast element (Using enable-toast__item)
     createToastElement(toastData) {
       const { message, level, id } = toastData;
       const toast = document.createElement('div');
@@ -98,7 +98,7 @@ const toastModule = new function() {
     dismissToast(toastData) {
       const toastElement = this.container.querySelector(`[data-id="${toastData.id}"]`);
       if (toastElement) {
-        toastElement.classList.add('enable-toast--exit');
+        toastElement.classList.add('enable-toast__item--exit');
         setTimeout(() => {
           toastElement.remove();
           this.visibleQueue = this.visibleQueue.filter(t => t.id !== toastData.id);
@@ -123,9 +123,9 @@ const toastModule = new function() {
       this.visibleQueue.forEach((toast, index) => {
         const toastElement = this.container.querySelector(`[data-id="${toast.id}"]`);
         if (index < this.maxVisible) {
-          toastElement.classList.add('enable-toast--visible');
+          toastElement.classList.add('enable-toast__item--visible');
         } else {
-          toastElement.classList.remove('enable-toast--visible');
+          toastElement.classList.remove('enable-toast__item--visible');
         }
       });
 
@@ -146,7 +146,7 @@ const toastModule = new function() {
       this.toastQueue.forEach(toastData => {
         const { message, level, id } = toastData;
         const toastElement = document.createElement('div');
-        toastElement.className = 'enable-toast__item enable-toast--visible';
+        toastElement.className = 'enable-toast__item enable-toast__item--visible';
         toastElement.style.backgroundColor = this.levels[level]?.color || '#333';
         toastElement.setAttribute('data-id', id);
 

@@ -13,13 +13,22 @@
 @rack-width: 300px;
 @rack-max-height: 400px;
 
-// Toast container positions
+// Debugging colors for visibility
+@debug-border-color: yellow;
+@debug-background: rgba(255, 255, 0, 0.2);
+@debug-z-index: 9999;
+
+// Toast container positions with added debugging styles
 .enable-toast {
     &__container {
         position: fixed;
-        z-index: 9999;
+        z-index: @debug-z-index; // Increased z-index for debugging visibility
         display: flex;
         transition: @toast-transition;
+        border: 2px dashed @debug-border-color; // Debugging border to visualize container
+
+        // Debugging background to visualize container
+        background-color: @debug-background;
 
         &--bottom-right,
         &--bottom-left,
@@ -56,7 +65,8 @@
         }
     }
 
-    &__toast {
+    // Toast item styles with debugging styles for visibility
+    &__item {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -69,6 +79,10 @@
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
 
+        // Debugging border and background to visualize the toast
+        border: 2px solid red;
+        background-color: @debug-background;
+
         &--visible {
             opacity: 1;
         }
@@ -78,19 +92,21 @@
         }
     }
 
-    &__close-button {
+    &__close {
         background: none;
         border: none;
         color: @toast-close-color;
         font-size: 16px;
         cursor: pointer;
 
+        // Debugging hover color
         &:hover {
             color: @toast-close-hover-color;
+            border: 1px solid @debug-border-color; // Debugging border
         }
     }
 
-    // toast rack
+    // Toast rack with debugging styles
     &__rack {
         position: fixed;
         top: 20px;
@@ -103,5 +119,14 @@
         overflow-y: auto;
         display: none;
         z-index: 9998;
+
+        // Debugging styles
+        background-color: rgba(
+            0,
+            255,
+            0,
+            0.2
+        ); // Light green background for rack visibility
+        border: 2px dashed orange;
     }
 }
