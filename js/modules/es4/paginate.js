@@ -13,9 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import { interpolate, htmlToDomNode } from './interpolate.js'
-
-const paginationTables = new function() {
+const paginationTables = new (function() {
   let perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
@@ -241,7 +239,4 @@ const paginationTables = new function() {
 
   }
 
-};
-
-
-export default paginationTables;
+});

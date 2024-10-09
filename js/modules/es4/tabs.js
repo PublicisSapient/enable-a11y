@@ -12,9 +12,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
-
-const tabgroup = new function() {
+const tabgroup = new (function() {
 
   this.init = function() {
     this.tabgroupEls = document.querySelectorAll('.enable-tablist');
@@ -168,6 +166,4 @@ const tabgroup = new function() {
     }
 
   };
-};
-
-export default tabgroup;
+});

@@ -1,4 +1,4 @@
-const hierarchicalCheckboxes = new function () {
+const hierarchicalCheckboxes = new (function() {
     
     this.init = () => {
         document.addEventListener('change', checkboxClickEvent, true);
@@ -123,6 +123,4 @@ const hierarchicalCheckboxes = new function () {
             ownerEl.setAttribute('aria-checked', 'mixed');
         }
     }
-}
-
-export default hierarchicalCheckboxes;
+})

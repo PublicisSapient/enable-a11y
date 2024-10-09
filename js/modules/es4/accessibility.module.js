@@ -860,4 +860,3 @@ accessibility = {
     this.initGroup(el, options);
   }
 };
-export default accessibility;

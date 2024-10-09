@@ -1,6 +1,4 @@
-import { throttle } from './performance-utils.js';
-
-const horizontalScrollUI = new function () {
+const horizontalScrollUI = new (function() {
   const scrollEvent = (e) => {
     const { target } = e;
 
@@ -24,6 +22,4 @@ const horizontalScrollUI = new function () {
   }
 
   setEvents();
-}
-
-export default horizontalScrollUI;
+})

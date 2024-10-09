@@ -16,10 +16,6 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import accessibility from "../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js";
-import { interpolate } from "./interpolate.js";
-
-
 const EnableCombobox = function(componentRoot) {
   let root = null,
     form = null,
@@ -513,7 +509,7 @@ const EnableCombobox = function(componentRoot) {
   this.initCombo(componentRoot);
 };
 
-const enableComboboxes = new function() {
+const enableComboboxes = new (function() {
   this.isKeyboardUser = false;
 
   this.list = [];
@@ -540,7 +536,4 @@ const enableComboboxes = new function() {
 
     document.addEventListener('keyup', keyUpEvent);
   }
-}
-
-
-export default enableComboboxes;
+})
