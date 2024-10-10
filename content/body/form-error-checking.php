@@ -271,29 +271,6 @@
       }
       </script>
 
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Accessible Form Validation: HTML5 and Custom Approaches",
-        "description": "Learn how to make form validation and error checking accessible using HTML5 and custom validation methods. Includes code examples and best practices.",
-        "url": "https://www.useragentman.com/enable/form-error-checking.php",
-        "mainEntity": [
-          {
-            "@type": "HowTo",
-            "name": "Using HTML5 for Accessible Form Validation",
-            "text": "You can use just the required and pattern attributes on HTML forms to do client-side validation without JavaScript.",
-            "url": "https://www.useragentman.com/enable/form-error-checking.php#using-native-html5-validation--heading"
-          },
-          {
-            "@type": "HowTo",
-            "name": "Using Custom Validation for Accessible Form Validation",
-            "text": "You can use enable-a11y node package to handle client-side form validation and error messages.",
-            "url": "https://www.useragentman.com/enable/form-error-checking.php#using-custom-validation--heading"
-          }
-        ]
-      }
-    </script>
 
       
 <?= includeNPMInstructions("accessibility", [], null, false, [

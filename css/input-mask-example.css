@@ -1,9 +1,9 @@
 .example__field-seperator {
-  margin-bottom: 30 / 16rem;
+  margin-bottom: 1.875rem;
 }
 .example .label {
   font-weight: bold;
-  margin-top: 20 / 16rem;
+  margin-top: 1.25rem;
   display: inline-block;
 }
 .example input {

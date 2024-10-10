@@ -70,7 +70,7 @@ fieldset .legend,
 .enable-listbox__right-area {
   box-sizing: border-box;
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem;
   vertical-align: top;
   width: 50%;
 }
@@ -122,7 +122,7 @@ fieldset .legend,
 }
 .enable-listbox button {
   border-radius: 0;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: left;
   padding: 5px 10px;
   width: 9.375rem;

@@ -36,7 +36,7 @@
   ],
   "scripts": {
     "jest": "jest --runInBand",
-    "test": "bin/checkHTML.sh && jest  --runInBand",
+    "test": "bin/enforceRemFontSize.sh && bin/checkHTML.sh && jest  --runInBand",
     "jest-local": "jest --maxWorkers=75%",
     "test-local": "bin/checkHTML.sh && jest  --maxWorkers=75%",
     "jest-debug-memory-leak": "node --expose-gc ./node_modules/.bin/jest --runInBand --logHeapUsage",
@@ -45,17 +45,18 @@
     "test-pa11y": "bin/checkHTML.sh pa11y",
     "test-lighthouse": "bin/checkHTML.sh lighthouse",
     "test-lighthouse-url": "node bin/lighthouse-accessibility-scan",
-    "lint": "bin/checkHTML.sh",
+    "lint": "npm run eslint && bin/checkHTML.sh",
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
     "eslint": "eslint .",
-    "server": "node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
+    "server": "npm run validate:version && node bin/promote-node-modules-to-server.js  && concurrently --kill-others \"less-watch-compiler\" \"npm-watch\" \"node bin/server.js\" ",
     "start": "npm run server",
-    "stylelint": "npx stylelint \"**/*.less\"",
-    "stylelint:fix": "npx stylelint \"**/*.less\" --fix",
+    "stylelint": "npx stylelint \"**/*.{css,less}\"",
+    "stylelint:fix": "npx stylelint \"**/*.{css,less}\" --fix",
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh",
-    "prepare": "node .husky/install.mjs"
+    "prepare": "node .husky/install.mjs",
+    "validate:version": "node bin/validate-node-version.mjs"
   },
   "jest": {
     "verbose": true,
@@ -94,7 +95,8 @@
     "@prettier/plugin-php": "^0.22.2",
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
-    "chromedriver": "^126.0.4",
+    "chalk": "^5.3.0",
+    "chromedriver": "^128.0.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -104,12 +106,14 @@
     "eslint-plugin-promise": "^6.1.1",
     "git-format-staged": "^3.1.1",
     "got": "^14.2.0",
-    "husky": "^9.0.11",
+    "husky": "^9.1.4",
     "jest": "^29.7.0",
     "jest-puppeteer": "^10.0.1",
     "jscodeshift": "^0.15.2",
     "jsdoc": "^4.0.2",
+    "less": "^4.2.0",
     "lighthouse-batch": "^8.1.1",
+    "lint-staged": "^15.2.9",
     "pa11y-ci": "^3.1.0",
     "postcss-less": "^6.0.0",
     "prettier": "^3.2.5",
@@ -145,10 +149,25 @@
     "text-zoom-event": "^1.7.0",
     "wicg-inert": "^3.1.2"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run eslint"
+    ],
+    "*.{css,less}": [
+      "npm run stylelint"
+    ],
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier"
+    ]
+  },
   "bin": {
     "enable-a11y": "bin/server.js"
   },
   "overrides": {
     "graceful-fs": "^4.2.11"
+  },
+  "engines": {
+    "npm": ">=10.2.3 <=10.8.1",
+    "node": ">=20.10.0 <=20.16.0"
   }
 }
