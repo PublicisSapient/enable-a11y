@@ -1,6 +1,7 @@
 'use strict';
 
 import config from './test-config.js';
+import testHelpers from './test-helpers.js';
 
 const tooltipTextButtonId = '#tooltip_button_1';
 const tooltipIconButtonId = '#tooltip_button_2';
@@ -23,10 +24,11 @@ describe('Tooltip tests', () => {
 
         const tooltipEle = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
+            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
             return {
                 ariaLive: el.getAttribute('aria-live'),
                 role: el.getAttribute('role'),
-                className: el.className,
+                isVisible: isVisible,
                 innerHTML: el.innerHTML,
             };
         }, tooltipId);
@@ -42,19 +44,23 @@ describe('Tooltip tests', () => {
         await page.waitForSelector('#example1');
     });
 
-    it('Tooltip is initially created with correct attributes and hidden on page load', async () => {
+    it('Tooltip is initially created with correct attributes and hidden on page load. There is only one tooltip', async () => {
         const tooltipEle = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
+            const tooltipCount = document.querySelectorAll('[role="tooltip"]').length;
+            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
             return {
                 role: el.getAttribute('role'),
                 ariaLive: el.getAttribute('aria-live'),
-                className: el.className,
+                isVisible: isVisible,
+                tooltipCount: tooltipCount
             };
         }, tooltipId);
 
         expect(tooltipEle.role).toBe('tooltip');
         expect(tooltipEle.ariaLive).toBe('assertive');
-        expect(tooltipEle.className).toBe('tooltip tooltip--hidden');
+        expect(tooltipEle.isVisible).toBe(false);
+        expect(tooltipEle.tooltipCount).toBe(1);
     });
 
     it('Tooltip is displayed and show correct ARIA when button is clicked', async () => {
@@ -66,7 +72,7 @@ describe('Tooltip tests', () => {
         expect(tooltipTarget.type).toBe('button');
         expect(tooltipEle.role).toBe('tooltip');
         expect(tooltipEle.ariaLive).toBe('assertive');
-        expect(tooltipEle.className).toMatch(/tooltip tooltip--(?!hidden)/);
+        expect(tooltipEle.isVisible).toBe(true);
         expect(tooltipEle.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
 
@@ -80,7 +86,7 @@ describe('Tooltip tests', () => {
         expect(tooltipTarget.type).toBe('text');
         expect(tooltipEle.role).toBe('tooltip');
         expect(tooltipEle.ariaLive).toBe('assertive');
-        expect(tooltipEle.className).toMatch(/tooltip tooltip--(?!hidden)/);
+        expect(tooltipEle.isVisible).toBe(true);
         expect(tooltipEle.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
 
@@ -88,25 +94,22 @@ describe('Tooltip tests', () => {
         await page.waitForSelector(tooltipButtonInputId);
         await page.focus(tooltipButtonInputId);
         await page.keyboard.press('Tab');
-
-        const isButtonFocused = await page.evaluate((tooltipIconButtonId) => {
-            const button = document.querySelector(tooltipIconButtonId);
-            return button === document.activeElement;
-        }, tooltipIconButtonId);
-
+        
+        const isButtonFocused = await testHelpers.isElementFocused(tooltipIconButtonId);
         expect(isButtonFocused).toBe(true);
 
         const tooltipEleHidden = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
+            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
             return {
                 role: el.getAttribute('role'),
                 ariaLive: el.getAttribute('aria-live'),
-                className: el.className,
+                isVisible: isVisible,
             };
         }, tooltipId);
 
         expect(tooltipEleHidden.ariaLive).toBe('assertive');
-        expect(tooltipEleHidden.className).toBe('tooltip tooltip--hidden');
+        expect(tooltipEleHidden.isVisible).toBe(false);
 
         await page.keyboard.press('Enter');
         const [tooltipTarget, tooltipEleShown] =
@@ -114,9 +117,7 @@ describe('Tooltip tests', () => {
 
         expect(tooltipTarget.type).toBe('button');
         expect(tooltipEleShown.ariaLive).toBe('assertive');
-        expect(tooltipEleShown.className).toMatch(
-            /tooltip tooltip--(?!hidden)/,
-        );
+        expect(tooltipEleShown.isVisible).toBe(true);
         expect(tooltipEleShown.innerHTML).toBe(tooltipTarget.dataTooltip);
     });
 
@@ -128,14 +129,14 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipIconButtonId);
             
         expect(tooltipTargetBtn.type).toBe('button');
-        expect(tooltipEleBtn.className).toMatch(/tooltip tooltip--(?!hidden)/);
+        expect(tooltipEleBtn.isVisible).toBe(true);
 
         await page.keyboard.press('Escape');
 
         const [tooltipTargetBtnHidden, tooltipEleBtnHidden] =
             await getTooltipAttributes(tooltipIconButtonId);
 
-        expect(tooltipEleBtnHidden.className).toContain('tooltip--hidden');
+        expect(tooltipEleBtnHidden.isVisible).toBe(false);
         expect(tooltipTargetBtnHidden.type).toBe('button');
 
         /* Input */
@@ -144,14 +145,14 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipInputId);
             
         expect(tooltipTargetInput.type).toBe('text');
-        expect(tooltipEleInput.className).toMatch(/tooltip tooltip--(?!hidden)/);
+        expect(tooltipEleInput.isVisible).toBe(true);
 
         await page.keyboard.press('Escape');
 
         const [tooltipTargetInputHidden, tooltipEleInputHidden] =
             await getTooltipAttributes(tooltipInputId);
 
-        expect(tooltipEleInputHidden.className).toContain('tooltip--hidden');
+        expect(tooltipEleInputHidden.isVisible).toBe(false);
         expect(tooltipTargetInputHidden.type).toBe('text');
     })
 });

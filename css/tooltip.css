@@ -62,6 +62,7 @@
   white-space: nowrap;
   width: 1px;
   margin: -1px;
+  display: none;
 }
 .tooltip--top:before {
   top: -0.5rem;

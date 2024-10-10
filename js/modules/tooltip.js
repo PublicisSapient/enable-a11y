@@ -106,15 +106,15 @@ const tooltip = new function () {
     this.show = (e) => {
         tooltipTarget = e.target;
 
+        if (tooltipTarget.tagName === 'SPAN'){
+            tooltipTarget = e.target.parentNode;
+        }
+
         const text = tooltipTarget.dataset.tooltip;
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
         }
         
-        if (tooltipTarget.tagName === 'SPAN'){
-            tooltipTarget = e.target.parentNode;
-        }
-
         //Set aria attribute only for onFocus (input) elements
         if (tooltipTarget.tagName === inputName){
             tooltipTarget.setAttribute('aria-describedby', 'tooltip');

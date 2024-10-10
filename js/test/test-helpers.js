@@ -9,6 +9,16 @@ const testHelpers = new (function () {
         return el.offsetParent === null;
     };
 
+    this.isElementFocused = async function (tooltipButtonInputId) {
+
+        const isButtonFocused = await page.evaluate((tooltipIconButtonId) => {
+            const button = document.querySelector(tooltipIconButtonId);
+            return button === document.activeElement;
+        }, tooltipButtonInputId);
+
+        return isButtonFocused;
+    }
+
     this.getDesktopBrowser = async function (isBrowserVisible) {
         try {
             const browser = await puppeteer.launch({
