@@ -9,14 +9,13 @@ const testHelpers = new (function () {
         return el.offsetParent === null;
     };
 
-    this.isElementFocused = async function (tooltipButtonInputId) {
+    this.isElementFocused = async function (elId) {
+        const isElFocused = await page.evaluate((elId) => {
+            const el = document.querySelector(elId);
+            return el === document.activeElement;
+        }, elId);
 
-        const isButtonFocused = await page.evaluate((tooltipIconButtonId) => {
-            const button = document.querySelector(tooltipIconButtonId);
-            return button === document.activeElement;
-        }, tooltipButtonInputId);
-
-        return isButtonFocused;
+        return isElFocused;
     }
 
     this.getDesktopBrowser = async function (isBrowserVisible) {
