@@ -49,7 +49,7 @@
                 <div class="icon"><img src="/images/icons/code-patterns/dark-mode.png" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">
-                <p>A dark mode version of a website is necessary to develop to make it more accessible.</p>
+                <p>A dark mode version of a website is necessary to develop in order to make your website more accessible.</p>
                 <div><a href="/dark-mode.php">See Examples</a></div>
             </div>
         </div>
