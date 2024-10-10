@@ -29,6 +29,13 @@ figure,
         caption-side: bottom;
         margin-bottom: 2rem;
         margin-top: 1rem;
+        a {
+            color: @orange;
+
+            @media (prefers-color-scheme: dark) {
+                color: @light-orange;
+            }
+        }
     }
 
     code {
@@ -102,5 +109,12 @@ a.tile-cta {
     }
     .able-status {
         text-align: right;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    figure,
+    [role="figure"] {
+        background: #555;
     }
 }

@@ -228,4 +228,24 @@
 .footer__attribution {
   font-size: small;
 }
+@media (prefers-color-scheme: dark) {
+  .plp .plp-list .item-wrapper .links-wrapper a {
+    color: white;
+  }
+  .plp .plp-list .item-wrapper .links-wrapper p {
+    border-bottom: 2px solid white;
+  }
+  .plp .plp-list .item-wrapper .icon-wrapper {
+    background-color: #444;
+  }
+  .plp .plp-list .item-wrapper .icon-wrapper h2 {
+    color: white;
+  }
+  .plp .plp-list .item-wrapper .links-wrapper code {
+    color: #ddd;
+  }
+  .sidemenu__item a {
+    color: white;
+  }
+}
 /*# sourceMappingURL=site.css.map */

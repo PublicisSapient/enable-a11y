@@ -46,6 +46,9 @@ h4 {
   padding: 20px 0;
   font-size: 1.25rem;
 }
+a {
+  color: #A76000;
+}
 h1,
 h2,
 h3,
@@ -320,12 +323,35 @@ iframe:focus-visible {
   outline: solid 2px #097efb !important;
   outline-offset: -2px;
 }
-/*
 @media (prefers-color-scheme: dark) {
+  main {
+    color: white;
+  }
   body {
-    background: #000;
-    color: rgb(201, 209, 217);
+    background: #333;
+    color: white;
+  }
+  strong {
+    color: white;
+  }
+  h1 {
+    color: white;
+  }
+  h2 {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+  a {
+    color: #FF9F1C;
+  }
+  code {
+    background-color: #555;
+  }
+  .enable-quote {
+    background: #222;
+    border-left: 10px solid #555;
   }
 }
-*/
 /*# sourceMappingURL=defaults.css.map */

@@ -30,6 +30,20 @@ figure span,
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
+figure figcaption a,
+[role="figure"] figcaption a,
+figure span a,
+[role="figure"] span a {
+  color: #A76000;
+}
+@media (prefers-color-scheme: dark) {
+  figure figcaption a,
+  [role="figure"] figcaption a,
+  figure span a,
+  [role="figure"] span a {
+    color: #FF9F1C;
+  }
+}
 figure code,
 [role="figure"] code {
   display: block;
@@ -93,5 +107,11 @@ a.tile-cta::after {
 }
 .video-figure .able-status {
   text-align: right;
+}
+@media (prefers-color-scheme: dark) {
+  figure,
+  [role="figure"] {
+    background: #555;
+  }
 }
 /*# sourceMappingURL=figure.css.map */

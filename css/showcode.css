@@ -247,4 +247,9 @@ h4.showcode__heading {
 figure.wide .showcode__example {
   margin-bottom: -2.5rem;
 }
+@media (prefers-color-scheme: dark) {
+  .showcode__steps {
+    background-color: #705029;
+  }
+}
 /*# sourceMappingURL=showcode.css.map */

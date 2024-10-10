@@ -298,3 +298,68 @@ a {
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    main {
+        color: white;
+    }
+    
+    .homepage {
+        &__hero {
+            color: @pink-darkmode;
+
+            &--heading {
+                color: @pink-darkmode;
+            }
+        }
+
+        &__intro {
+            &--section {
+                background-color: #222;
+                color: white;
+                
+                p {
+                    a {
+                        color: @light-orange;
+                    }
+                }
+            }
+
+            &--section + &--section {
+                background-color: #222;
+            }
+
+            &--header {
+                color: white;
+            }
+        }
+
+        &__bottom-copy {
+            ul {
+                li {
+                    background-color: #222;
+                    color: white;
+                }
+            }
+
+            &--heading {
+                color: white;
+            }
+
+            &.background-secondary {
+                background-color: #111;
+                p {
+                    color: white;
+                }
+
+                .homepage__bottom-copy--heading {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    a {
+        color: @light-orange;
+    }
+}

@@ -37,11 +37,11 @@
     }
 
     &__link {
-        color: @color-link;
+        color: @orange;
         text-decoration: none;
 
         &:visited {
-            color: @color-link;
+            color: @orange;
         }
 
         &:hover {
@@ -161,6 +161,45 @@
 
         &:hover img {
             background: #ddd;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .enable-toc {
+        background-color: #333;
+    
+        &__link {
+            color: @light-orange;
+
+            &:visited {
+                color: @light-orange;
+            }
+        }
+
+        &__toggle-button {
+            img {
+                content: data-uri("../images/icons/toc-dark.svg");
+            }
+        }
+
+        .enable-drawer__button {
+            background: #333;
+            color: white;
+
+            img {
+                content: data-uri("../images/plus-dark.svg");
+            }
+
+            &:hover img {
+                background: #444;
+            }
+        }
+
+        .enable-drawer__button[aria-expanded="true"] {
+            img {
+                content: data-uri("../images/minus-dark.svg");
+            }
         }
     }
 }
