@@ -10,7 +10,7 @@
 }
 .enable-flyout__level .enable-flyout__menu-item {
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-right: 0;
 }
 .enable-flyout__link {
@@ -187,7 +187,7 @@
 }
 .enable-logo__sub-text {
   display: block;
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-style: italic;
   padding: 0 10px;
   margin-top: -8px;
