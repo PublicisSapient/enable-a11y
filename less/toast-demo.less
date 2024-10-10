@@ -1,0 +1,27 @@
+// Variables
+@margin: 1.25rem; // 20px converted to rem (assuming base font-size is 16px)
+@gap: 0.625rem; // 10px converted to rem
+@font-size: 1rem; // 16px converted to rem
+
+// Controls styles
+.enable-toast__controls {
+    margin-bottom: @margin;
+    display: flex;
+    flex-direction: column;
+    gap: @gap;
+
+    &__control-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: @gap;
+    }
+
+    &__label {
+        font-weight: normal;
+    }
+
+    &__button-group {
+        display: flex;
+        gap: @gap;
+    }
+}
