@@ -24,7 +24,7 @@ describe('Tooltip tests', () => {
 
         const tooltipEle = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
-            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
+            const isVisible = document.defaultView.getComputedStyle(el, null).clip !== 'rect(1px, 1px, 1px, 1px)';
             return {
                 ariaLive: el.getAttribute('aria-live'),
                 role: el.getAttribute('role'),
@@ -48,7 +48,7 @@ describe('Tooltip tests', () => {
         const tooltipEle = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
             const tooltipCount = document.querySelectorAll('[role="tooltip"]').length;
-            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
+            const isVisible = document.defaultView.getComputedStyle(el, null).clip !== 'rect(1px, 1px, 1px, 1px)';
             return {
                 role: el.getAttribute('role'),
                 ariaLive: el.getAttribute('aria-live'),
@@ -100,7 +100,7 @@ describe('Tooltip tests', () => {
 
         const tooltipEleHidden = await page.evaluate((tooltipId) => {
             const el = document.querySelector(tooltipId);
-            const isVisible = document.defaultView.getComputedStyle(el, null).display !== 'none';
+            const isVisible = document.defaultView.getComputedStyle(el, null).clip !== 'rect(1px, 1px, 1px, 1px)';
             return {
                 role: el.getAttribute('role'),
                 ariaLive: el.getAttribute('aria-live'),
@@ -108,6 +108,7 @@ describe('Tooltip tests', () => {
             };
         }, tooltipId);
 
+        expect(tooltipEleHidden.role).toBe('tooltip');
         expect(tooltipEleHidden.ariaLive).toBe('assertive');
         expect(tooltipEleHidden.isVisible).toBe(false);
 
@@ -116,6 +117,7 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipIconButtonId);
 
         expect(tooltipTarget.type).toBe('button');
+        expect(tooltipEleShown.role).toBe('tooltip');
         expect(tooltipEleShown.ariaLive).toBe('assertive');
         expect(tooltipEleShown.isVisible).toBe(true);
         expect(tooltipEleShown.innerHTML).toBe(tooltipTarget.dataTooltip);
@@ -129,6 +131,7 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipIconButtonId);
             
         expect(tooltipTargetBtn.type).toBe('button');
+        expect(tooltipEleBtn.role).toBe('tooltip');
         expect(tooltipEleBtn.isVisible).toBe(true);
 
         await page.keyboard.press('Escape');
@@ -136,6 +139,7 @@ describe('Tooltip tests', () => {
         const [tooltipTargetBtnHidden, tooltipEleBtnHidden] =
             await getTooltipAttributes(tooltipIconButtonId);
 
+        expect(tooltipEleBtnHidden.role).toBe('tooltip');
         expect(tooltipEleBtnHidden.isVisible).toBe(false);
         expect(tooltipTargetBtnHidden.type).toBe('button');
 
@@ -145,6 +149,7 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipInputId);
             
         expect(tooltipTargetInput.type).toBe('text');
+        expect(tooltipEleInput.role).toBe('tooltip');
         expect(tooltipEleInput.isVisible).toBe(true);
 
         await page.keyboard.press('Escape');
@@ -153,6 +158,7 @@ describe('Tooltip tests', () => {
             await getTooltipAttributes(tooltipInputId);
 
         expect(tooltipEleInputHidden.isVisible).toBe(false);
+        expect(tooltipEleInputHidden.role).toBe('tooltip');
         expect(tooltipTargetInputHidden.type).toBe('text');
     })
 });
