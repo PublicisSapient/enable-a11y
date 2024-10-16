@@ -304,9 +304,42 @@
         }
     }
 
-    .enable-stats__desc--integrate {
-        a {
-            color: @orange;
+    .enable-stats {
+        &__desc {
+            color: white;
+        
+        
+            &--scratch {
+                background-color: #3c4c3d;
+            }
+
+            &--integrate {
+                background-color: #7d5d12;
+
+                a {
+                    color: #FFD8A2;
+                }
+            }
+
+            &--npm {
+                background-color: #516664;
+            }
+        
+            &--do-not {
+                background-color: #763f56;
+            }
+        
+            &--style {
+                background-color: #432155;
+            }
+        }
+
+        &__icon {
+            filter: invert();
+        }
+
+        &__heading-icon {
+            filter: invert();
         }
     }
 }

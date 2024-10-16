@@ -247,8 +247,32 @@
   .sidemenu__item a {
     color: white;
   }
+  .enable-stats__desc {
+    color: white;
+  }
+  .enable-stats__desc--scratch {
+    background-color: #3c4c3d;
+  }
+  .enable-stats__desc--integrate {
+    background-color: #7d5d12;
+  }
   .enable-stats__desc--integrate a {
-    color: #A76000;
+    color: #FFD8A2;
+  }
+  .enable-stats__desc--npm {
+    background-color: #516664;
+  }
+  .enable-stats__desc--do-not {
+    background-color: #763f56;
+  }
+  .enable-stats__desc--style {
+    background-color: #432155;
+  }
+  .enable-stats__icon {
+    filter: invert();
+  }
+  .enable-stats__heading-icon {
+    filter: invert();
   }
 }
 /*# sourceMappingURL=site.css.map */
