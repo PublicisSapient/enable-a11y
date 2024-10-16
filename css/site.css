@@ -247,5 +247,8 @@
   .sidemenu__item a {
     color: white;
   }
+  .enable-stats__desc--integrate a {
+    color: #A76000;
+  }
 }
 /*# sourceMappingURL=site.css.map */
