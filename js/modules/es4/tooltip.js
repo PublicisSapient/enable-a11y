@@ -13,15 +13,13 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const tooltip = new function () {
+const tooltip = new (function() {
     // global constants
     const { body } = document;
     const tooltipEl = document.createElement('div');
     const tooltipStyle = tooltipEl.style;
     const escapeKey = 'Escape';
     const tabKey = 'Tab';
-    const buttonName = 'BUTTON';
-    const inputName = 'INPUT';
     let tooltipTarget = null;
     let isTooltipVisible = false;
     let tooltipBelongsTo = null;
@@ -67,7 +65,7 @@ const tooltip = new function () {
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
-        tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
+        tooltipEl.innerHTML = '<div class="tooltip__content">Loading…</div>';
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -94,7 +92,7 @@ const tooltip = new function () {
         tooltipTarget = e.target;
 
         //Hide tooltip on initial focus if tabbed in 
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+        if (tooltipTarget.tagName === 'BUTTON' && tabbedIn) {
             if (tooltipBelongsTo !== tooltipTarget){
                 return;
             }
@@ -106,25 +104,22 @@ const tooltip = new function () {
     this.show = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === 'SPAN'){
-            tooltipTarget = e.target.parentNode;
-        }
-
         const text = tooltipTarget.dataset.tooltip;
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
         }
-
+        
         //Set aria attribute only for onFocus (input) elements
-        if (tooltipTarget.tagName === inputName){
+        if (tooltipTarget.tagName === 'INPUT'){
             tooltipTarget.setAttribute('aria-describedby', 'tooltip');
         }
     
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-        tooltipEl.innerHTML = text;
         tooltipEl.classList.remove('tooltip--hidden');
+        
+        tooltipEl.innerHTML = text;
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
-        tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;
+        tooltipStyle.left = `${tooltipTargetRect.left + window.scrollX}px`;
         tooltipEl.classList.remove('tooltip--bottom');
         tooltipEl.classList.add('tooltip--top');
 
@@ -151,7 +146,7 @@ const tooltip = new function () {
     this.handleClick = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+        if (tooltipTarget.tagName === 'BUTTON' && tabbedIn) {
             if (!isTooltipVisible) {
                 this.show(e);
             } else {
@@ -177,7 +172,7 @@ const tooltip = new function () {
         if (tooltipTarget) {
             tooltipTarget.removeEventListener('mouseleave', this.hide);
             tooltipEl.removeEventListener('mouseleave', this.hide);
-            if (tooltipTarget.tagName === inputName){
+            if (tooltipTarget.tagName === 'INPUT'){
                 tooltipTarget.removeAttribute('aria-describedby');
             }
             tooltipTarget = null;
@@ -192,6 +187,4 @@ const tooltip = new function () {
             new CustomEvent('enable-hide', { bubbles: true })
         );
     }
-}
-
-export default tooltip;
+})
