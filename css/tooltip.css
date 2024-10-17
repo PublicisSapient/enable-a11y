@@ -126,3 +126,7 @@
     vertical-align: top;
   }
 }
+.tooltip__text-button,
+.tooltip__icon-button {
+  outline-offset: 2px;
+}
