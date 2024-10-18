@@ -98,3 +98,6 @@ const htmlToDomNode = function(html) {
   const doc = interpolateDomParser.parseFromString(html, "text/html");
   return doc.body.firstChild;
 };
+
+
+export { interpolate, htmlToDomNode };

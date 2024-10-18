@@ -171,3 +171,5 @@ const enableVisibleOnFocus = new (function () {
     }
   };
 })();
+
+export default enableVisibleOnFocus;

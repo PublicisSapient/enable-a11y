@@ -13,6 +13,8 @@
  * Released under the MIT License.
  ******************************************************************************/
 
+import '../../enable-node-libs/glider-js/glider.js';
+
 let counter = 0;
 
 const EnableCarousel = function (container, options, gliderOptions) {
@@ -312,3 +314,5 @@ const EnableCarousel = function (container, options, gliderOptions) {
     }
   };
 }
+
+export default EnableCarousel;

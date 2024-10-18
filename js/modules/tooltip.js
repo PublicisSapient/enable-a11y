@@ -3,7 +3,7 @@
 /*******************************************************************************
 * tooltip.js - Accessible Tooltip Module
 * 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com> and Jessie Cai.
 * Part of the Enable accessible component library.
 * Version 1.0 released Dec. 27, 2021
 *

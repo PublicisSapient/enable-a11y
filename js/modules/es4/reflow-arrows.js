@@ -1,6 +1,6 @@
 'use strict'
 
-const reflowArrows = new (function() {
+const reflowArrows = new function() {
   
   this.init = () => {
     document.body.addEventListener('click', onArrowClick, true);
@@ -24,6 +24,6 @@ const reflowArrows = new (function() {
     console.log(offsetWidth);
     el.scrollLeft += (multiplier * (offsetWidth - 100));
   }
-})
+}
 
 reflowArrows.init();

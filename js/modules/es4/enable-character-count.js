@@ -1,4 +1,6 @@
-const enableCharacterCount = new (function() {
+import { interpolate } from "./interpolate.js";
+
+const enableCharacterCount = new function() {
   'use strict';
 
   const defaultReadCharacterCountKey = 'Escape';
@@ -202,4 +204,6 @@ const enableCharacterCount = new (function() {
     const characterCountText = target.dataset.characterCountText ?? 'Character Count: ${numChars} out of ${maxLength}. ${charsRemaining} characters remaining.'
     return interpolate(characterCountText, { numChars, maxLength, charsRemaining });
   }
-})
+}
+
+export default enableCharacterCount;

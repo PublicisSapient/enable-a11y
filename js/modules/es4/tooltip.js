@@ -3,7 +3,7 @@
 /*******************************************************************************
 * tooltip.js - Accessible Tooltip Module
 * 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com> and Jessie Cai.
 * Part of the Enable accessible component library.
 * Version 1.0 released Dec. 27, 2021
 *
@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const tooltip = new (function() {
+const tooltip = new function () {
     // global constants
     const { body } = document;
     const tooltipEl = document.createElement('div');
@@ -188,4 +188,6 @@ const tooltip = new (function() {
             new CustomEvent('enable-hide', { bubbles: true })
         );
     }
-})
+}
+
+export default tooltip;
