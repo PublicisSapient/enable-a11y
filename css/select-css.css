@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* class applies to select element itself, not a wrapper element */
 .select-css {
   display: block;
@@ -87,4 +97,3 @@
   margin: 20px 0 4px 4px;
   font-weight: bold;
 }
-/*# sourceMappingURL=select-css.css.map */

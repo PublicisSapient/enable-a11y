@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .enable-form-example__fieldset-inner-container {
   width: min-content;
   margin: 0 auto;
@@ -194,4 +204,3 @@
 .enable-form-example .required-symbol {
   color: #e60000;
 }
-/*# sourceMappingURL=form-error.css.map */

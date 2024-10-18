@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   --text-zoom-factor: 1;
 }
@@ -60,4 +70,3 @@ body {
 #accessible-text-svg-demo__svg-text-path {
   offset-distance: 50%;
 }
-/*# sourceMappingURL=accessible-text-svg.css.map */

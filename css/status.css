@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .wiktionary-lookup__content {
   height: 200px;
   overflow: auto;
@@ -14,4 +24,3 @@
 .mw-editsection {
   display: none;
 }
-/*# sourceMappingURL=status.css.map */

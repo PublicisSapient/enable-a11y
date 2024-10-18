@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .sprite {
   display: block;
   overflow: hidden;
@@ -133,4 +143,3 @@
   text-align: center;
   margin-top: 120px;
 }
-/*# sourceMappingURL=img.css.map */

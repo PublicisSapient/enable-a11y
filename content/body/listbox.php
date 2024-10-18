@@ -1,61 +1,3 @@
-<!-- <aside class="notes">
-            <h2>Notes</h2>
-            <ul>
-                <li>tl;dr: Both versions are accessible, with slight differences in how they are reported to users.</li>
-
-                <li>Screen reader interactions are as follows:
-
-                    <ol>
-                        <li>Tabbing into the widget:
-                            <ul>
-                                <li>
-                                    <strong>Voiceover:</strong> The ARIA and native HTML versions state that they are
-                                    "popup buttons"
-                                    as well as the selected value.
-                                </li>
-                                <li>
-                                    <strong>NVDA:</strong> The ARIA version is a "button" with "submenu", while the HTML
-                                    version
-                                    is a "combo box, collapsed"
-                                </li>
-                            </ul>
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    Opening the widget:
-                    <ul>
-                        <li>
-                            <strong>Voiceover:</strong> Reads out the selected value. The HTML version also reads how
-                            many
-                            other
-                            options there are (e.g. menu 26 items)
-                        </li>
-                        <li>
-                            <strong>NVDA:</strong> Both versions reads out the amount in the list as well as the
-                            selected
-                            value.
-                            The ARIA version is described as a list and the HTML version is a "combo box, expanded".
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    Selecting a value:
-                </li><li>
-                    <strong>Voiceover:</strong> ARIA version read out value as well as its place in the order in the
-                    list
-                    (e.g.
-                    Californium, text, 2 of 26). Native version just reads the just the value
-                    <strong>NVDA: ARIA and HTML versions read of the value and its place in the order in the
-                        list.</strong>
-
-                </li>
-            </ul>
-        </aside> -->
-
-
-
-
 
 <p>
   Like radio buttons, a select box (known in ARIA as a listbox) is a great way to choose one from a list. While radio
@@ -279,7 +221,7 @@
   and the installation instructions after the demo.
 </p>
 
-<div id="aria-example">
+<div id="aria-example" class="enable-example">
   <div class="enable-listbox listbox-area">
     <div class="left-area">
       <span id="exp_elem" class="enable-listbox__exp_elem">

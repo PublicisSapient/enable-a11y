@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .enable-custom-meter {
   background: #EFEFEF;
   border: 1px solid #E4E4E4;
@@ -43,4 +53,3 @@
 .enable-custom-meter[meter-state="negative"]::-moz-meter-bar {
   background: #c74821;
 }
-/*# sourceMappingURL=meter.css.map */

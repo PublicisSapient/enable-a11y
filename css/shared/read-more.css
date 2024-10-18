@@ -1,7 +1,16 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .read-more {
   display: block;
   overflow: hidden;
   max-height: 6em;
   text-overflow: ellipsis;
 }
-/*# sourceMappingURL=read-more.css.map */

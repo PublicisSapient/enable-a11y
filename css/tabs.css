@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 #tabs h2 {
   margin: 0.5em 0;
 }
@@ -146,4 +156,3 @@
 [role="tab"] {
   appearance: none;
 }
-/*# sourceMappingURL=tabs.css.map */

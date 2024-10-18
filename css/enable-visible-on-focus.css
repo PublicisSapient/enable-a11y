@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* Traditional skip links */
 .enable-visible-on-focus {
   clip: rect(1px, 1px, 1px, 1px);
@@ -60,7 +70,7 @@
   position: absolute;
 }
 .enable-mobile-visible-on-focus__container:focus-within {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 2px;
   z-index: 2;
 }
@@ -106,4 +116,3 @@
 .fake-component a {
   color: #330000;
 }
-/*# sourceMappingURL=enable-visible-on-focus.css.map */

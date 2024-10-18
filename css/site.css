@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 #header {
   position: sticky;
   top: 0;
@@ -228,51 +238,48 @@
 .footer__attribution {
   font-size: small;
 }
-@media (prefers-color-scheme: dark) {
-  .plp .plp-list .item-wrapper .links-wrapper a {
-    color: white;
-  }
-  .plp .plp-list .item-wrapper .links-wrapper p {
-    border-bottom: 2px solid white;
-  }
-  .plp .plp-list .item-wrapper .icon-wrapper {
-    background-color: #444;
-  }
-  .plp .plp-list .item-wrapper .icon-wrapper h2 {
-    color: white;
-  }
-  .plp .plp-list .item-wrapper .links-wrapper code {
-    color: #ddd;
-  }
-  .sidemenu__item a {
-    color: white;
-  }
-  .enable-stats__desc {
-    color: white;
-  }
-  .enable-stats__desc--scratch {
-    background-color: #3c4c3d;
-  }
-  .enable-stats__desc--integrate {
-    background-color: #7d5d12;
-  }
-  .enable-stats__desc--integrate a {
-    color: #FFD8A2;
-  }
-  .enable-stats__desc--npm {
-    background-color: #516664;
-  }
-  .enable-stats__desc--do-not {
-    background-color: #763f56;
-  }
-  .enable-stats__desc--style {
-    background-color: #432155;
-  }
-  .enable-stats__icon {
-    filter: invert();
-  }
-  .enable-stats__heading-icon {
-    filter: invert();
-  }
+enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper a {
+  color: white;
 }
-/*# sourceMappingURL=site.css.map */
+enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper p {
+  border-bottom: 2px solid white;
+}
+enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper {
+  background-color: #444;
+}
+enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper h2 {
+  color: white;
+}
+enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper code {
+  color: #ddd;
+}
+enable__is-dark-mode .sidemenu__item a {
+  color: white;
+}
+enable__is-dark-mode .enable-stats__desc {
+  color: white;
+}
+enable__is-dark-mode .enable-stats__desc--scratch {
+  background-color: #3c4c3d;
+}
+enable__is-dark-mode .enable-stats__desc--integrate {
+  background-color: #7d5d12;
+}
+enable__is-dark-mode .enable-stats__desc--integrate a {
+  color: #FFD8A2;
+}
+enable__is-dark-mode .enable-stats__desc--npm {
+  background-color: #516664;
+}
+enable__is-dark-mode .enable-stats__desc--do-not {
+  background-color: #763f56;
+}
+enable__is-dark-mode .enable-stats__desc--style {
+  background-color: #432155;
+}
+enable__is-dark-mode .enable-stats__icon {
+  filter: invert();
+}
+enable__is-dark-mode .enable-stats__heading-icon {
+  filter: invert();
+}

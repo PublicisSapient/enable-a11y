@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .bottom-fixed-nav {
   position: fixed;
   width: 100%;
@@ -28,4 +38,3 @@
 .bottom-fixed-nav__body footer {
   margin-bottom: 3.75rem;
 }
-/*# sourceMappingURL=bottom-fixed-nav.css.map */

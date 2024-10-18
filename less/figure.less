@@ -32,7 +32,7 @@ figure,
         a {
             color: @orange;
 
-            @media (prefers-color-scheme: dark) {
+            .enable__is-dark-mode & {
                 color: @light-orange;
             }
         }
@@ -112,7 +112,7 @@ a.tile-cta {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+enable__is-dark-mode {
     figure,
     [role="figure"] {
         background: #555;

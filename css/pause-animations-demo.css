@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This file contains CSS code specific to the demo.
  * For general code that pertains to the component 
@@ -112,4 +122,3 @@ main {
     background-position: -1920px 0;
   }
 }
-/*# sourceMappingURL=pause-animations-demo.css.map */

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* This is the CSS to style the custom HTML5 checkbox */
 .enable-checkbox {
   width: fit-content;
@@ -40,7 +50,7 @@
   place-content: center;
 }
 .enable-checkbox input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid #097efb;
+  outline: max(2px, 0.15em) solid var(--focus-color);
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]:focus:not(:focus-visible) {
@@ -48,7 +58,7 @@
   outline-offset: 0;
 }
 .enable-checkbox input[type="checkbox"]:focus-visible {
-  outline: max(2px, 0.15em) solid #097efb;
+  outline: max(2px, 0.15em) solid var(--focus-color);
   outline-offset: max(2px, 0.15em);
 }
 .enable-checkbox input[type="checkbox"]::before {
@@ -62,6 +72,9 @@
   box-shadow: inset 1em 1em var(--form-control-color);
   /* Windows High Contrast Mode */
   background-color: CanvasText;
+}
+.enable__is-dark-mode .enable-checkbox input[type="checkbox"]::before {
+  filter: invert(100%);
 }
 .enable-checkbox input[type="checkbox"]:indeterminate::before {
   clip-path: polygon(0% 40%, 100% 40%, 100% 60%, 0% 60%);
@@ -130,4 +143,3 @@
   min-width: 190px;
   list-style-type: none;
 }
-/*# sourceMappingURL=checkbox.css.map */

@@ -11,10 +11,7 @@
 }
 
 .enable-listbox {
-    padding: 20px;
-    background: #eee;
-    border: 1px solid #aaa;
-
+    
     &__left-area,
     &__right-area {
         box-sizing: border-box;
@@ -44,6 +41,10 @@
         margin: 0;
         min-width: (148 / @px);
         z-index: 2;
+
+        .enable__is-dark-mode & {
+            background-color: black;
+        }
     }
 
     [role="option"] {
@@ -55,6 +56,10 @@
 
     [role="option"]:focus {
         background: #bde4ff;
+
+        .enable__is-dark-mode & {
+            color: #366ed4;
+        }
     }
 
     [role="option"][aria-selected] {
@@ -67,6 +72,13 @@
         left: 0.5em;
     }
 
+
+    [role="option"][aria-selected="true"]:focus::before {
+        .enable__is-dark-mode & {
+            color: #000;
+        }
+    }
+
     button {
         font-size: 16px;
         border-radius: 0;
@@ -75,6 +87,11 @@
         padding: 5px 10px;
         width: (150 / @px);
         position: relative;
+
+        .enable__is-dark-mode & {
+            background: #000;
+            color: #fff;
+        }
 
         &[aria-disabled="true"] {
             opacity: 0.5;
@@ -88,6 +105,10 @@
             top: (3 / @px);
             font-size: (16 / @px);
             transform: scale(0.7);
+
+            .enable__is-dark-mode & {
+                filter: invert(100%);
+            }
         }
 
         &[aria-expanded="true"]::after {

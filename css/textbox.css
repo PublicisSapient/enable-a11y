@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 textarea,
 [role="textbox"] {
   display: inline-block;
@@ -39,4 +49,3 @@ fieldset div {
     width: 20rem;
   }
 }
-/*# sourceMappingURL=textbox.css.map */

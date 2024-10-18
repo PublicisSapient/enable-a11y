@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 @media only screen and (min-width: 720px) {
   .enable-toc-as-sidebar main#main {
     margin-left: 25%;
@@ -137,34 +147,31 @@
 .enable-toc .enable-drawer__button:hover img {
   background: #ddd;
 }
-@media (prefers-color-scheme: dark) {
-  .enable-toc {
-    background-color: #333;
-  }
-  .enable-toc__link {
-    color: #FF9F1C;
-  }
-  .enable-toc__link:visited {
-    color: #FF9F1C;
-  }
-  .enable-toc__toggle-button img {
-    content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Ctitle%3E%0A%09%09bullet%20list%0A%09%3C%2Ftitle%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M7%2015h12v2H7zm0-6h12v2H7zm0-6h12v2H7z%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%224%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2210%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2216%22%20r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
-  }
-  .enable-toc__image {
-    filter: invert();
-  }
-  .enable-toc .enable-drawer__button {
-    background: #333;
-    color: white;
-  }
-  .enable-toc .enable-drawer__button img {
-    content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2292px%22%20height%3D%2292px%22%20viewBox%3D%220%200%2092%2092%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20id%3D%22XMLID_933_%22%20d%3D%22M72.5%2046.5c0%202.5-2%204.5-4.5%204.5H50v17c0%202.5-2%204.5-4.5%204.5S41%2070.5%2041%2068V51H24c-2.5%200-4.5-2-4.5-4.5s2-4.5%204.5-4.5h17V24c0-2.5%202-4.5%204.5-4.5s4.5%202%204.5%204.5v18h18c2.5%200%204.5%202%204.5%204.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cmetadata%3E%3Crdf%3ARDF%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Ardfs%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%3E%3Crdf%3ADescription%20about%3D%22https%3A%2F%2Ficonscout.com%2Flegal%23licenses%22%20dc%3Atitle%3D%22plus%22%20dc%3Adescription%3D%22plus%22%20dc%3Apublisher%3D%22Iconscout%22%20dc%3Adate%3D%222017-09-24%22%20dc%3Aformat%3D%22image%2Fsvg%2Bxml%22%20dc%3Alanguage%3D%22en%22%3E%3Cdc%3Acreator%3E%3Crdf%3ABag%3E%3Crdf%3Ali%3EBasia%20Baldwin%3C%2Frdf%3Ali%3E%3C%2Frdf%3ABag%3E%3C%2Fdc%3Acreator%3E%3C%2Frdf%3ADescription%3E%3C%2Frdf%3ARDF%3E%3C%2Fmetadata%3E%3C%2Fsvg%3E");
-  }
-  .enable-toc .enable-drawer__button:hover img {
-    background: #444;
-  }
-  .enable-toc .enable-drawer__button[aria-expanded="true"] img {
-    content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2292px%22%20height%3D%2292px%22%20viewBox%3D%220%200%2092%2092%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20id%3D%22XMLID_38_%22%20d%3D%22M68%2050.5H24c-2.5%200-4.5-2-4.5-4.5s2-4.5%204.5-4.5h44c2.5%200%204.5%202%204.5%204.5s-2%204.5-4.5%204.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cmetadata%3E%3Crdf%3ARDF%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Ardfs%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%3E%3Crdf%3ADescription%20about%3D%22https%3A%2F%2Ficonscout.com%2Flegal%23licenses%22%20dc%3Atitle%3D%22minus%22%20dc%3Adescription%3D%22minus%22%20dc%3Apublisher%3D%22Iconscout%22%20dc%3Adate%3D%222017-09-24%22%20dc%3Aformat%3D%22image%2Fsvg%2Bxml%22%20dc%3Alanguage%3D%22en%22%3E%3Cdc%3Acreator%3E%3Crdf%3ABag%3E%3Crdf%3Ali%3EBasia%20Baldwin%3C%2Frdf%3Ali%3E%3C%2Frdf%3ABag%3E%3C%2Fdc%3Acreator%3E%3C%2Frdf%3ADescription%3E%3C%2Frdf%3ARDF%3E%3C%2Fmetadata%3E%3C%2Fsvg%3E");
-  }
+enable__is-dark-mode .enable-toc {
+  background-color: #333;
 }
-/*# sourceMappingURL=enable-toc.css.map */
+enable__is-dark-mode .enable-toc__link {
+  color: #FF9F1C;
+}
+enable__is-dark-mode .enable-toc__link:visited {
+  color: #FF9F1C;
+}
+enable__is-dark-mode .enable-toc__toggle-button img {
+  content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Ctitle%3E%0A%09%09bullet%20list%0A%09%3C%2Ftitle%3E%3Cg%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M7%2015h12v2H7zm0-6h12v2H7zm0-6h12v2H7z%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%224%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2210%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%223%22%20cy%3D%2216%22%20r%3D%222%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A");
+}
+enable__is-dark-mode .enable-toc__image {
+  filter: invert();
+}
+enable__is-dark-mode .enable-toc .enable-drawer__button {
+  background: #333;
+  color: white;
+}
+enable__is-dark-mode .enable-toc .enable-drawer__button img {
+  content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2292px%22%20height%3D%2292px%22%20viewBox%3D%220%200%2092%2092%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20id%3D%22XMLID_933_%22%20d%3D%22M72.5%2046.5c0%202.5-2%204.5-4.5%204.5H50v17c0%202.5-2%204.5-4.5%204.5S41%2070.5%2041%2068V51H24c-2.5%200-4.5-2-4.5-4.5s2-4.5%204.5-4.5h17V24c0-2.5%202-4.5%204.5-4.5s4.5%202%204.5%204.5v18h18c2.5%200%204.5%202%204.5%204.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cmetadata%3E%3Crdf%3ARDF%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Ardfs%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%3E%3Crdf%3ADescription%20about%3D%22https%3A%2F%2Ficonscout.com%2Flegal%23licenses%22%20dc%3Atitle%3D%22plus%22%20dc%3Adescription%3D%22plus%22%20dc%3Apublisher%3D%22Iconscout%22%20dc%3Adate%3D%222017-09-24%22%20dc%3Aformat%3D%22image%2Fsvg%2Bxml%22%20dc%3Alanguage%3D%22en%22%3E%3Cdc%3Acreator%3E%3Crdf%3ABag%3E%3Crdf%3Ali%3EBasia%20Baldwin%3C%2Frdf%3Ali%3E%3C%2Frdf%3ABag%3E%3C%2Fdc%3Acreator%3E%3C%2Frdf%3ADescription%3E%3C%2Frdf%3ARDF%3E%3C%2Fmetadata%3E%3C%2Fsvg%3E");
+}
+enable__is-dark-mode .enable-toc .enable-drawer__button:hover img {
+  background: #444;
+}
+enable__is-dark-mode .enable-toc .enable-drawer__button[aria-expanded="true"] img {
+  content: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2292px%22%20height%3D%2292px%22%20viewBox%3D%220%200%2092%2092%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20id%3D%22XMLID_38_%22%20d%3D%22M68%2050.5H24c-2.5%200-4.5-2-4.5-4.5s2-4.5%204.5-4.5h44c2.5%200%204.5%202%204.5%204.5s-2%204.5-4.5%204.5z%22%20fill%3D%22%23fff%22%2F%3E%3Cmetadata%3E%3Crdf%3ARDF%20xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%20xmlns%3Ardfs%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%22%20xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22%3E%3Crdf%3ADescription%20about%3D%22https%3A%2F%2Ficonscout.com%2Flegal%23licenses%22%20dc%3Atitle%3D%22minus%22%20dc%3Adescription%3D%22minus%22%20dc%3Apublisher%3D%22Iconscout%22%20dc%3Adate%3D%222017-09-24%22%20dc%3Aformat%3D%22image%2Fsvg%2Bxml%22%20dc%3Alanguage%3D%22en%22%3E%3Cdc%3Acreator%3E%3Crdf%3ABag%3E%3Crdf%3Ali%3EBasia%20Baldwin%3C%2Frdf%3Ali%3E%3C%2Frdf%3ABag%3E%3C%2Fdc%3Acreator%3E%3C%2Frdf%3ADescription%3E%3C%2Frdf%3ARDF%3E%3C%2Fmetadata%3E%3C%2Fsvg%3E");
+}

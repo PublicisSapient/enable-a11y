@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This CSS from http://gdkraus.github.io/accessible-modal-dialog/
  */
@@ -64,4 +74,3 @@ dialog {
   top: 22vmin;
   font-size: 2.5vmin;
 }
-/*# sourceMappingURL=dialog-html5.css.map */

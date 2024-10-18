@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This file contains generic CSS that pertains to the 
  * component, including general CSS code to pause CSS
@@ -107,4 +117,3 @@ body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--animat
 body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--still {
   display: initial;
 }
-/*# sourceMappingURL=pause-anim-control.css.map */

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .search {
   width: 100%;
   position: relative;
@@ -26,4 +36,3 @@
 .search__icon {
   width: 1.25rem;
 }
-/*# sourceMappingURL=search.css.map */

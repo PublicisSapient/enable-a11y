@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 [role="switch"],
 [role="switch"][aria-checked] {
   margin: 0;
@@ -68,4 +78,3 @@ label.switch--label {
   -moz-user-select: none;
   user-select: none;
 }
-/*# sourceMappingURL=switch.css.map */

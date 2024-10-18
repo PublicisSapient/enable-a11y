@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -313,45 +323,74 @@ code {
   width: 125px;
 }
 iframe:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
 iframe:focus:not(:focus-visible) {
   outline: none !important;
 }
 iframe:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
-@media (prefers-color-scheme: dark) {
-  main {
-    color: white;
-  }
-  body {
-    background: #333;
-    color: white;
-  }
-  strong {
-    color: white;
-  }
-  h1 {
-    color: white;
-  }
-  h2 {
-    color: white;
-  }
-  p {
-    color: white;
-  }
-  a {
-    color: #FF9F1C;
-  }
-  code {
-    background-color: #555;
-  }
-  .enable-quote {
-    background: #222;
-    border-left: 10px solid #555;
-  }
+enable__is-dark-mode {
+  /* overrides of the above */
 }
-/*# sourceMappingURL=defaults.css.map */
+enable__is-dark-mode main {
+  color: white;
+}
+enable__is-dark-mode body {
+  background: #333;
+  color: white;
+}
+enable__is-dark-mode strong {
+  color: white;
+}
+enable__is-dark-mode h1 {
+  color: white;
+}
+enable__is-dark-mode h2 {
+  color: white;
+}
+enable__is-dark-mode p {
+  color: white;
+}
+enable__is-dark-mode a {
+  color: #FF9F1C;
+}
+enable__is-dark-mode code {
+  background-color: #555;
+}
+enable__is-dark-mode .enable-quote {
+  background: #222;
+  border-left: 10px solid #555;
+}
+enable__is-dark-mode .showcode__notes-container strong,
+enable__is-dark-mode .showcode__example-code strong {
+  color: #000;
+}
+enable__is-dark-mode .showcode__notes-container h1,
+enable__is-dark-mode .showcode__example-code h1 {
+  color: #222;
+}
+enable__is-dark-mode .showcode__notes-container h2,
+enable__is-dark-mode .showcode__example-code h2 {
+  color: #222;
+}
+enable__is-dark-mode .showcode__notes-container p,
+enable__is-dark-mode .showcode__example-code p {
+  color: #000;
+}
+enable__is-dark-mode .showcode__notes-container a,
+enable__is-dark-mode .showcode__example-code a {
+  color: #A76000;
+}
+enable__is-dark-mode .showcode__notes-container code,
+enable__is-dark-mode .showcode__example-code code {
+  background-color: #eee;
+}
+enable__is-dark-mode .showcode__notes-container .enable-quote,
+enable__is-dark-mode .showcode__example-code .enable-quote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+}

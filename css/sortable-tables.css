@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .deque-table-sortable__group caption {
   margin-bottom: 15px;
 }
@@ -90,4 +100,3 @@
 .deque-table-sortable__group table tbody th:last-child {
   border-right: none;
 }
-/*# sourceMappingURL=sortable-tables.css.map */

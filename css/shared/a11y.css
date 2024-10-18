@@ -7,6 +7,16 @@
  * 
  * https://opensource.org/licenses/MIT
  ********************************************************/
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .sr-only {
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
@@ -62,16 +72,16 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 *:focus {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 *:focus:not(:focus-visible) {
   outline: none;
 }
 *:focus-visible {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
@@ -128,4 +138,3 @@ main *:focus,
 main *:focus-visible {
   scroll-margin-top: 15rem;
 }
-/*# sourceMappingURL=a11y.css.map */

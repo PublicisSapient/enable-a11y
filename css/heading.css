@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   background: #f0f0f0 url(../images/cream_dust.jpg);
 }
@@ -105,4 +115,3 @@ div.heading-example [role="heading"][aria-level="7"] {
   font-size: 18px;
   line-height: 20px;
 }
-/*# sourceMappingURL=heading.css.map */

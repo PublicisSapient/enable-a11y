@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -596,4 +606,3 @@
     left: calc(-1 * min(75vw, 350px));
   }
 }
-/*# sourceMappingURL=enable-flyout.css.map */

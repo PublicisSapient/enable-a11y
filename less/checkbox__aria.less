@@ -18,6 +18,11 @@
     .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
     vertical-align: bottom;
 
+    .enable__is-dark-mode & {
+        background: #000;
+        border-color: white;
+    }
+
     &:after {
         content: "";
     }
@@ -38,6 +43,10 @@
             text-shadow: 0 0 0.0714em rgb(115, 153, 77);
             font-weight: bold;
             transform: scale(2.5) translateY((-1 / @px)) translateX((-2 / @px));
+
+            .enable__is-dark-mode & {
+                color: #ddd;
+            }
         }
     }
 

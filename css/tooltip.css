@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .tooltip {
   display: block;
   background: black;
@@ -45,4 +55,3 @@
   width: 1px;
   margin: -1px;
 }
-/*# sourceMappingURL=tooltip.css.map */

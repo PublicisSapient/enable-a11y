@@ -1,3 +1,18 @@
+:root {
+    --focus-color: #097efb;
+    --focus-color-dark-bg: rgb(59, 153, 252);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --focus-color: rgb(59, 153, 252);
+        --focus-color-dark-bg: #097efb;
+    }
+}
+
+
+
+
 // New Design Colors
 @pink: #CF1744;
 @teal: #05A8AA;
@@ -12,8 +27,8 @@
 @pink-darkmode: #EF7290;
 @color0-darkmode: #CE8989;
 
-@focus-color: #097efb;
-@focus-color-dark-bg: rgb(59, 153, 252);
+@focus-color: var(--focus-color);
+@focus-color-dark-bg: var(--focus-color-dark);
 
 // From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
 // pixels to rems.

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .glider {
   border: solid 1px black;
   /* IE and edge */
@@ -10,14 +20,14 @@
   display: none;
 }
 .glider:focus {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px var(--focus-color-dark);
   outline-offset: -5px;
 }
 .glider:focus:not(:focus-visible) {
   outline: none;
 }
 .glider:focus-visible {
-  outline: solid 2px #3b99fc;
+  outline: solid 2px var(--focus-color-dark);
   outline-offset: -5px;
 }
 .glider-dot {
@@ -28,14 +38,14 @@
   background: none;
 }
 .glider-dot:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: 2px;
 }
 .glider-dot:focus:not(:focus-visible) {
   outline: none !important;
 }
 .glider-dot:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: 2px;
 }
 .glider-dot:only-child {
@@ -67,14 +77,14 @@
   color: white;
 }
 .glider-slide:focus {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: -5px;
 }
 .glider-slide:focus:not(:focus-visible) {
   outline: none;
 }
 .glider-slide:focus-visible {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: -5px;
 }
 @media only screen and (min-width: 720px) and (max-width: 959px) {
@@ -112,7 +122,7 @@
 }
 .glider-prev:focus,
 .glider-next:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -5px;
 }
 .glider-prev:focus:not(:focus-visible),
@@ -121,7 +131,7 @@
 }
 .glider-prev:focus-visible,
 .glider-next:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -5px;
 }
 .glider-prev {
@@ -211,4 +221,3 @@
   position: relative;
   padding: 0 !important;
 }
-/*# sourceMappingURL=enable-carousel.css.map */

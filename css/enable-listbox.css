@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 input[type="submit"],
 button[type="submit"] {
   display: block;
@@ -18,6 +28,11 @@ fieldset,
   margin-top: 1em;
   padding-top: 2em;
   background-color: #eeeeee;
+}
+.enable__is-dark-mode fieldset,
+.enable__is-dark-mode .fieldset,
+.enable__is-dark-mode [role="radiogroup"] {
+  background-color: #111111;
 }
 fieldset legend,
 .fieldset legend,
@@ -61,11 +76,6 @@ fieldset .legend,
 .enable-example fieldset {
   margin-top: -0.5em;
 }
-.enable-listbox {
-  padding: 20px;
-  background: #eee;
-  border: 1px solid #aaa;
-}
 .enable-listbox__left-area,
 .enable-listbox__right-area {
   box-sizing: border-box;
@@ -93,6 +103,9 @@ fieldset .legend,
   min-width: 9.25rem;
   z-index: 2;
 }
+.enable__is-dark-mode .enable-listbox [role="listbox"] {
+  background-color: black;
+}
 .enable-listbox [role="option"] {
   display: block;
   padding: 0 1em;
@@ -101,6 +114,9 @@ fieldset .legend,
 }
 .enable-listbox [role="option"]:focus {
   background: #bde4ff;
+}
+.enable__is-dark-mode .enable-listbox [role="option"]:focus {
+  color: #366ed4;
 }
 .enable-listbox [role="option"][aria-selected] {
   padding-left: 1.5em;
@@ -120,6 +136,9 @@ fieldset .legend,
     alt: "";
   }
 }
+.enable__is-dark-mode .enable-listbox [role="option"][aria-selected="true"]:focus::before {
+  color: #000;
+}
 .enable-listbox button {
   border-radius: 0;
   font-size: 16px;
@@ -127,6 +146,10 @@ fieldset .legend,
   padding: 5px 10px;
   width: 9.375rem;
   position: relative;
+}
+.enable__is-dark-mode .enable-listbox button {
+  background: #000;
+  color: #fff;
 }
 .enable-listbox button[aria-disabled="true"] {
   opacity: 0.5;
@@ -140,6 +163,9 @@ fieldset .legend,
   font-size: 1rem;
   transform: scale(0.7);
 }
+.enable__is-dark-mode .enable-listbox button::after {
+  filter: invert(100%);
+}
 .enable-listbox button[aria-expanded="true"]::after {
   transform: scaleX(0.7) scaleY(-0.7);
   top: 0.3125rem;
@@ -147,4 +173,3 @@ fieldset .legend,
 .enable-listbox .hidden {
   display: none;
 }
-/*# sourceMappingURL=enable-listbox.css.map */

@@ -153,6 +153,16 @@ fieldset {
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.1;
@@ -468,14 +478,14 @@ code {
   width: 125px;
 }
 iframe:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
 iframe:focus:not(:focus-visible) {
   outline: none !important;
 }
 iframe:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
 @media (prefers-color-scheme: dark) {
@@ -507,6 +517,36 @@ iframe:focus-visible {
   .enable-quote {
     background: #222;
     border-left: 10px solid #555;
+  }
+  /* overrides of the above */
+  .showcode__notes-container strong,
+  .showcode__example-code strong {
+    color: #000;
+  }
+  .showcode__notes-container h1,
+  .showcode__example-code h1 {
+    color: #222;
+  }
+  .showcode__notes-container h2,
+  .showcode__example-code h2 {
+    color: #222;
+  }
+  .showcode__notes-container p,
+  .showcode__example-code p {
+    color: #000;
+  }
+  .showcode__notes-container a,
+  .showcode__example-code a {
+    color: #A76000;
+  }
+  .showcode__notes-container code,
+  .showcode__example-code code {
+    background-color: #eee;
+  }
+  .showcode__notes-container .enable-quote,
+  .showcode__example-code .enable-quote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
   }
 }
 /*********************************************************
@@ -573,16 +613,16 @@ iframe:focus-visible {
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 *:focus {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 *:focus:not(:focus-visible) {
   outline: none;
 }
 *:focus-visible {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
@@ -821,4 +861,3 @@ footer a,
     color: #FF9F1C;
   }
 }
-/*# sourceMappingURL=all.css.map */

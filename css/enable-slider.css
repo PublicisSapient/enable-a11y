@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This is the CSS needed to style the <input type="range" />.  Note how complex it is due
  * to cross-browser issues.
@@ -83,11 +93,11 @@ input[type="range"]:focus::-moz-range-track {
   background: #352976;
 }
 input[type="range"]:focus::-webkit-slider-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus::-moz-range-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus:not(:focus-visible)::-webkit-slider-thumb {
@@ -97,11 +107,11 @@ input[type="range"]:focus:not(:focus-visible)::-moz-range-thumb {
   outline: none;
 }
 input[type="range"]:focus-visible::-webkit-slider-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus-visible::-moz-range-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 .html-slider__container {
@@ -414,4 +424,3 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .enable-slider output {
   padding-left: 1em;
 }
-/*# sourceMappingURL=enable-slider.css.map */

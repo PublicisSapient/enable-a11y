@@ -402,7 +402,7 @@ iframe {
 }
 
 
-@media (prefers-color-scheme: dark) {
+enable__is-dark-mode {
     main {
         color: white;
     }
@@ -412,6 +412,7 @@ iframe {
         //color: rgb(201, 209, 217);
         color: white;
     }
+    
 
     strong {
         color: white;
@@ -440,5 +441,38 @@ iframe {
     .enable-quote {
         background: #222;
         border-left: 10px solid #555;
+    }
+
+    /* overrides of the above */
+    .showcode__notes-container,
+    .showcode__example-code {
+        strong {
+            color: #000;
+        }
+    
+        h1 {
+            color: #222;
+        }
+    
+        h2 {
+            color: #222;
+        }
+    
+        p {
+            color: #000;
+        }
+    
+        a {
+            color: @orange;
+        }
+    
+        code {
+            background-color: #eee;
+        }
+    
+        .enable-quote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+        }
     }
 }
