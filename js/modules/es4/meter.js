@@ -6,7 +6,7 @@
  * applied to the element.
  ******************************************************************************/
 
-const meter = new function() {
+const meter = new (function() {
   this.init = function() {
     this.meterEls = document.querySelectorAll('.enable-custom-meter');
 
@@ -57,6 +57,4 @@ const meter = new function() {
 
     return state;
   }
-}
-
-export default meter;
+})

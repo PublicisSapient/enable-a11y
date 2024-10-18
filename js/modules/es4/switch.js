@@ -15,7 +15,7 @@
 
 
 
-const Switch = new function () {
+const Switch = new (function() {
 
     this.init = () => {
         document.body.addEventListener('click', this.onClick);
@@ -59,7 +59,4 @@ const Switch = new function () {
             );
         }    
     }
-}
-
-
-export default Switch;
+})

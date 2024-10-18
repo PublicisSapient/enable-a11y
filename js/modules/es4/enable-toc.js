@@ -14,12 +14,7 @@
  ******************************************************************************/
 
 // import tooltip from './tooltip.js'; // Temp: disable init of tooltip since it causes unexpected behavior
-import { addMissingIDToHeading, getCookie, setCookie } from "./helpers.js";
-
-/**
- * Represents the table of contents.
- */
-const tableOfContents = new function() {
+const tableOfContents = new (function() {
     this.toc;
 
     /**
@@ -409,6 +404,4 @@ const tableOfContents = new function() {
         // Add the tooltip component
         // tooltip.init(); // Temp: disable init of tooltip since it causes unexpected behavior
     }
-}
-
-export default tableOfContents;
+});

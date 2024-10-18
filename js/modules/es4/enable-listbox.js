@@ -13,9 +13,7 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
-
-const enableListbox = new function() {
+const enableListbox = new (function() {
 
   const showEvent = new CustomEvent('enable-listbox-show', {
     bubbles: true
@@ -249,7 +247,4 @@ const enableListbox = new function() {
       this.collapse(buttonEl, listboxEl, true);
     });
   }
-}
-
-
-export default enableListbox;
+});

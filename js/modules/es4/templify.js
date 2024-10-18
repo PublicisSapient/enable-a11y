@@ -1,7 +1,4 @@
 /* eslint-disable no-console */
-import { interpolate } from './interpolate.js';
-
-
 class Templify {
     constructor(element, props) {
         this.props = props;
@@ -49,6 +46,3 @@ class Templify {
         return html;
     }
 }
-
-
-export default Templify;
