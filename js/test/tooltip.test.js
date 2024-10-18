@@ -6,7 +6,7 @@ import testHelpers from './test-helpers.js';
 const tooltipTextButtonId = '#tooltip_button_1';
 const tooltipIconButtonId = '#tooltip_button_2';
 const tooltipInputId = '#focusable_example_2';
-const tooltipButtonInputId = '#clickable_example_2';
+const tooltipButtonInputId = '#body-style';
 const tooltipId = '#tooltip';
 
 describe('Tooltip tests', () => {
