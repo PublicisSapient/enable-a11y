@@ -104,6 +104,12 @@ const tooltip = new function () {
     this.show = (e) => {
         tooltipTarget = e.target;
 
+        const closestTooltipEl = tooltipTarget.closest('[data-tooltip]');
+
+        if (closestTooltipEl !== null) {
+            tooltipTarget = closestTooltipEl;
+        }
+
         const text = tooltipTarget.dataset.tooltip;
         if (!text || (isTooltipVisible && tooltipBelongsTo === tooltipTarget)) {
             return;
@@ -134,9 +140,6 @@ const tooltip = new function () {
 
             tooltipStyle.top = `calc(${tooltipTargetRect.top + window.scrollY - tooltipHeight}px - 1em)`
         }
-
-        tooltipTarget.addEventListener('mouseleave', this.hide);
-        tooltipEl.addEventListener('mouseleave', this.hide);
 
         tooltipEl.dispatchEvent(
             new CustomEvent('enable-show', { bubbles: true })
@@ -170,8 +173,6 @@ const tooltip = new function () {
         }
 
         if (tooltipTarget) {
-            tooltipTarget.removeEventListener('mouseleave', this.hide);
-            tooltipEl.removeEventListener('mouseleave', this.hide);
             if (tooltipTarget.tagName === 'INPUT'){
                 tooltipTarget.removeAttribute('aria-describedby');
             }
