@@ -104,7 +104,7 @@ fieldset .legend,
   z-index: 2;
 }
 .enable__is-dark-mode .enable-listbox [role="listbox"] {
-  background-color: black;
+  background-color: #121212;
 }
 .enable-listbox [role="option"] {
   display: block;
@@ -137,7 +137,7 @@ fieldset .legend,
   }
 }
 .enable__is-dark-mode .enable-listbox [role="option"][aria-selected="true"]:focus::before {
-  color: #000;
+  color: #121212;
 }
 .enable-listbox button {
   border-radius: 0;
@@ -148,8 +148,8 @@ fieldset .legend,
   position: relative;
 }
 .enable__is-dark-mode .enable-listbox button {
-  background: #000;
-  color: #fff;
+  background: #121212;
+  color: #ededed;
 }
 .enable-listbox button[aria-disabled="true"] {
   opacity: 0.5;
@@ -173,3 +173,4 @@ fieldset .legend,
 .enable-listbox .hidden {
   display: none;
 }
+/*# sourceMappingURL=enable-listbox.css.map */

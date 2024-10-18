@@ -279,44 +279,45 @@ a {
   list-style-type: none;
   color: #2b2929;
 }
-enable__is-dark-mode main {
-  color: white;
+.enable__is-dark-mode main {
+  color: #ededed;
 }
-enable__is-dark-mode .homepage__hero {
+.enable__is-dark-mode .homepage__hero {
   color: #EF7290;
 }
-enable__is-dark-mode .homepage__hero--heading {
+.enable__is-dark-mode .homepage__hero--heading {
   color: #EF7290;
 }
-enable__is-dark-mode .homepage__intro--section {
+.enable__is-dark-mode .homepage__intro--section {
   background-color: #222;
   color: white;
 }
-enable__is-dark-mode .homepage__intro--section p a {
+.enable__is-dark-mode .homepage__intro--section p a {
   color: #FF9F1C;
 }
-enable__is-dark-mode .homepage__intro--section + enable__is-dark-mode .homepage__intro--section {
+.enable__is-dark-mode .homepage__intro--section + .enable__is-dark-mode .homepage__intro--section {
   background-color: #222;
 }
-enable__is-dark-mode .homepage__intro--header {
+.enable__is-dark-mode .homepage__intro--header {
   color: white;
 }
-enable__is-dark-mode .homepage__bottom-copy ul li {
+.enable__is-dark-mode .homepage__bottom-copy ul li {
   background-color: #222;
   color: white;
 }
-enable__is-dark-mode .homepage__bottom-copy--heading {
+.enable__is-dark-mode .homepage__bottom-copy--heading {
   color: white;
 }
-enable__is-dark-mode .homepage__bottom-copy.background-secondary {
+.enable__is-dark-mode .homepage__bottom-copy.background-secondary {
   background-color: #111;
 }
-enable__is-dark-mode .homepage__bottom-copy.background-secondary p {
+.enable__is-dark-mode .homepage__bottom-copy.background-secondary p {
   color: white;
 }
-enable__is-dark-mode .homepage__bottom-copy.background-secondary .homepage__bottom-copy--heading {
+.enable__is-dark-mode .homepage__bottom-copy.background-secondary .homepage__bottom-copy--heading {
   color: white;
 }
-enable__is-dark-mode a {
+.enable__is-dark-mode a {
   color: #FF9F1C;
 }
+/*# sourceMappingURL=index.css.map */

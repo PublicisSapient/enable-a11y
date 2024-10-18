@@ -22,8 +22,8 @@
   vertical-align: bottom;
 }
 .enable__is-dark-mode [role="checkbox"] {
-  background: #000;
-  border-color: white;
+  background: #121212;
+  border-color: #ededed;
 }
 [role="checkbox"]:after {
   content: "";
@@ -51,3 +51,4 @@
 [role="checkbox"][aria-checked="mixed"]:after {
   content: "-";
 }
+/*# sourceMappingURL=checkbox__aria.css.map */

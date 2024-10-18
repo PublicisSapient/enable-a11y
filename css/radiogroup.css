@@ -84,6 +84,9 @@
   font-size: 18px;
   line-height: 1.44444444;
 }
+.enable__is-dark-mode .enable-radio [type="radio"] + label {
+  color: #ccc;
+}
 .enable-radio [type="radio"] + label:before {
   border: 0.125rem solid #ddd;
 }
@@ -124,3 +127,4 @@ fieldset .legend,
   border-bottom: none;
   text-align: left;
 }
+/*# sourceMappingURL=radiogroup.css.map */

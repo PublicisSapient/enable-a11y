@@ -22,7 +22,8 @@ import {
 } from './modules/helpers.js';
 
 const colorSchemeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-
+const htmlEl = document.querySelector('html');
+    
 function buildFlyoutMenuHTML() {
     // This is the DOM element where the hamburger menu will be inserted into.
     const hamburgerMenuEl = document.getElementById('enable-flyout-menu');
@@ -48,9 +49,9 @@ function includesUrl(string) {
 function setColorScheme() {
     if (window.matchMedia) {
         if (colorSchemeMql.matches) {
-            document.body.classList.add('enable__is-dark-mode');
+            htmlEl.classList.add('enable__is-dark-mode');
         } else {
-            document.body.classList.remove('enable__is-dark-mode');
+            htmlEl.classList.remove('enable__is-dark-mode');
         }
     }
 }

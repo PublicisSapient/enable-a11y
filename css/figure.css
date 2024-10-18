@@ -116,7 +116,8 @@ a.tile-cta::after {
 .video-figure .able-status {
   text-align: right;
 }
-enable__is-dark-mode figure,
-enable__is-dark-mode [role="figure"] {
+.enable__is-dark-mode figure,
+.enable__is-dark-mode [role="figure"] {
   background: #555;
 }
+/*# sourceMappingURL=figure.css.map */

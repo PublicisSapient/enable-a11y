@@ -169,6 +169,9 @@
   color: #000;
   text-align: center;
 }
+.enable__is-dark-mode .enable-stats {
+  border-color: #aaa;
+}
 .enable-stats__desc {
   min-height: 2.5rem;
   padding: 5px 20px;
@@ -238,48 +241,49 @@
 .footer__attribution {
   font-size: small;
 }
-enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper a {
-  color: white;
+.enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper a {
+  color: #ededed;
 }
-enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper p {
-  border-bottom: 2px solid white;
+.enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper p {
+  border-bottom: 2px solid #ededed;
 }
-enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper {
+.enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper {
   background-color: #444;
 }
-enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper h2 {
-  color: white;
+.enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper h2 {
+  color: #ededed;
 }
-enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper code {
+.enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper code {
   color: #ddd;
 }
-enable__is-dark-mode .sidemenu__item a {
-  color: white;
+.enable__is-dark-mode .sidemenu__item a {
+  color: #ededed;
 }
-enable__is-dark-mode .enable-stats__desc {
-  color: white;
+.enable__is-dark-mode .enable-stats__desc {
+  color: #ededed;
 }
-enable__is-dark-mode .enable-stats__desc--scratch {
+.enable__is-dark-mode .enable-stats__desc--scratch {
   background-color: #3c4c3d;
 }
-enable__is-dark-mode .enable-stats__desc--integrate {
+.enable__is-dark-mode .enable-stats__desc--integrate {
   background-color: #7d5d12;
 }
-enable__is-dark-mode .enable-stats__desc--integrate a {
+.enable__is-dark-mode .enable-stats__desc--integrate a {
   color: #FFD8A2;
 }
-enable__is-dark-mode .enable-stats__desc--npm {
+.enable__is-dark-mode .enable-stats__desc--npm {
   background-color: #516664;
 }
-enable__is-dark-mode .enable-stats__desc--do-not {
+.enable__is-dark-mode .enable-stats__desc--do-not {
   background-color: #763f56;
 }
-enable__is-dark-mode .enable-stats__desc--style {
+.enable__is-dark-mode .enable-stats__desc--style {
   background-color: #432155;
 }
-enable__is-dark-mode .enable-stats__icon {
+.enable__is-dark-mode .enable-stats__icon {
   filter: invert();
 }
-enable__is-dark-mode .enable-stats__heading-icon {
+.enable__is-dark-mode .enable-stats__heading-icon {
   filter: invert();
 }
+/*# sourceMappingURL=site.css.map */

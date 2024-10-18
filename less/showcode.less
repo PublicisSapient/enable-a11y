@@ -128,6 +128,10 @@ code {
             max-width: calc(100vw - 20px);
             overflow-x: auto;
             background: #000;
+
+            .enable__is-dark-mode & {
+                background: @dark-mode-black;
+            }
         }
 
         &--desc {
@@ -257,6 +261,10 @@ code {
         position: relative;
         color: #000;
 
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+        }
+
     }
 
     &__notes {
@@ -287,6 +295,11 @@ code {
             padding: 1em 1em 1em 1em;
             margin: 0 10px @notes-bottom-margin 10px;
             background-color: #ffffee;
+
+            .enable__is-dark-mode & {
+                border-color: #a3917b;
+                background-color: #000011;
+            }
 
             > div {
                 overflow: hidden;
@@ -362,8 +375,8 @@ code {
     }
 }
 
-enable__is-dark-mode {
-    .showcode__steps {
+.enable__is-dark-mode {
+    .showcode__steps, .showcode__ui {
         background-color: #705029;
     }
 }
