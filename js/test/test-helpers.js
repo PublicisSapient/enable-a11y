@@ -9,6 +9,15 @@ const testHelpers = new (function () {
         return el.offsetParent === null;
     };
 
+    this.isElementFocused = async function (elId) {
+        const isElFocused = await page.evaluate((elId) => {
+            const el = document.querySelector(elId);
+            return el === document.activeElement;
+        }, elId);
+
+        return isElFocused;
+    }
+
     this.getDesktopBrowser = async function (isBrowserVisible) {
         try {
             const browser = await puppeteer.launch({
