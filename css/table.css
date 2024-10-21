@@ -8,6 +8,9 @@
     --focus-color-dark-bg: #097efb;
   }
 }
+.sticky-table {
+  /* Is this still needed? */
+}
 .sticky-table__keyboard-instructions {
   display: none;
   background: black;
@@ -37,9 +40,16 @@
   position: relative;
   border: solid 1px black;
 }
+.enable__is-dark-mode .sticky-table__container table,
+.enable__is-dark-mode .sticky-table__container [role="table"] {
+  border-color: #ededed;
+}
 .sticky-table__container thead {
   background: white;
   transform: translateZ(1px);
+}
+.enable__is-dark-mode .sticky-table__container thead {
+  background: #121212;
 }
 .sticky-table__container th[scope="col"],
 .sticky-table__container [role="columnheader"] {
@@ -144,12 +154,27 @@ table [role="rowheader"],
   color: white;
   background-color: black;
 }
+.enable__is-dark-mode table th,
+.enable__is-dark-mode [role="table"] th,
+.enable__is-dark-mode table [role="columnheader"],
+.enable__is-dark-mode [role="table"] [role="columnheader"],
+.enable__is-dark-mode table [role="rowheader"],
+.enable__is-dark-mode [role="table"] [role="rowheader"] {
+  background-color: #ededed;
+  color: #121212;
+}
 table tr,
 [role="table"] tr,
 table [role="row"],
 [role="table"] [role="row"] {
   display: table-row;
-  background-color: #fff;
+  background-color: white;
+}
+.enable__is-dark-mode table tr,
+.enable__is-dark-mode [role="table"] tr,
+.enable__is-dark-mode table [role="row"],
+.enable__is-dark-mode [role="table"] [role="row"] {
+  background-color: #121212;
 }
 table tr:nth-child(2n),
 [role="table"] tr:nth-child(2n),
@@ -157,9 +182,23 @@ table [role="row"]:nth-child(2n),
 [role="table"] [role="row"]:nth-child(2n) {
   background-color: #cccccc;
 }
+.enable__is-dark-mode table tr:nth-child(2n),
+.enable__is-dark-mode [role="table"] tr:nth-child(2n),
+.enable__is-dark-mode table [role="row"]:nth-child(2n),
+.enable__is-dark-mode [role="table"] [role="row"]:nth-child(2n) {
+  background-color: #343434;
+}
 table [role="rowgroup"],
 [role="table"] [role="rowgroup"] {
   display: table-row-group;
+}
+table .thead [role="row"],
+[role="table"] .thead [role="row"] {
+  background-color: black;
+}
+.enable__is-dark-mode table .thead [role="row"],
+.enable__is-dark-mode [role="table"] .thead [role="row"] {
+  background-color: #ededed;
 }
 table.fixed-headers,
 [role="table"].fixed-headers {
@@ -198,15 +237,31 @@ table.fixed-headers [role="columnheader"],
 [role="table"].fixed-headers [role="columnheader"],
 table.fixed-headers [role="rowheader"],
 [role="table"].fixed-headers [role="rowheader"] {
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+}
+.enable__is-dark-mode table.fixed-headers th,
+.enable__is-dark-mode [role="table"].fixed-headers th,
+.enable__is-dark-mode table.fixed-headers [role="columnheader"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="columnheader"],
+.enable__is-dark-mode table.fixed-headers [role="rowheader"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="rowheader"] {
+  border-left: solid 1px #ededed;
+  border-right: solid 1px #ededed;
 }
 table.fixed-headers td,
 [role="table"].fixed-headers td,
 table.fixed-headers [role="cell"],
 [role="table"].fixed-headers [role="cell"] {
-  border-left: solid 1px #cccccc;
-  border-right: solid 1px #cccccc;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+.enable__is-dark-mode table.fixed-headers td,
+.enable__is-dark-mode [role="table"].fixed-headers td,
+.enable__is-dark-mode table.fixed-headers [role="cell"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="cell"] {
+  border-left: solid 1px #ededed;
+  border-right: solid 1px #ededed;
 }
 table.fixed-headers thead tr,
 [role="table"].fixed-headers thead tr,
@@ -246,14 +301,27 @@ table .rowspan2__bottom,
   border-left: solid 1px white;
   border-right: solid 1px white;
 }
+.enable__is-dark-mode .enable-table--with-borders th {
+  border-left: solid 1px #121212;
+  border-right: solid 1px #121212;
+}
 .enable-table--with-borders th:first-child {
   border-left: solid 1px black;
+}
+.enable__is-dark-mode .enable-table--with-borders th:first-child {
+  border-left: solid 1px #ededed;
 }
 .enable-table--with-borders th:last-child {
   border-right: solid 1px black;
 }
+.enable__is-dark-mode .enable-table--with-borders th:last-child {
+  border-right: solid 1px #ededed;
+}
 .enable-table--with-borders td {
   border: solid 1px black;
+}
+.enable__is-dark-mode .enable-table--with-borders td {
+  border-color: #ededed;
 }
 .enable-tabl .screenshot-table {
   margin: 0 auto;

@@ -129,7 +129,6 @@
   padding: 0.5em;
   margin-top: -1em;
   padding-top: 2em;
-  background-color: #fefefe;
 }
 .enable-form-example fieldset legend,
 .enable-form-example .aria-form-group legend,
@@ -198,10 +197,16 @@
 }
 .enable-form-example label.required::after {
   color: #e60000;
-  content: "*";
+  content: " *";
   font-weight: normal;
+}
+.enable__is-dark-mode .enable-form-example label.required::after {
+  color: #ff8888;
 }
 .enable-form-example .required-symbol {
   color: #e60000;
+}
+.enable__is-dark-mode .enable-form-example .required-symbol {
+  color: #ff8888;
 }
 /*# sourceMappingURL=form-error.css.map */

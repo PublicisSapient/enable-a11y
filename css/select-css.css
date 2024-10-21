@@ -46,6 +46,10 @@
   /* Support for rtl text, explicit support for Arabic and Hebrew */
   /* Disabled styles */
 }
+.enable__is-dark-mode .select-css {
+  background-color: #121212;
+  color: #ededed;
+}
 .select-css::-ms-expand {
   display: none;
 }

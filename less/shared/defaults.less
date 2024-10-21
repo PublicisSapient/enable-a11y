@@ -346,7 +346,11 @@ code {
 
     th {
         a {
-            color: #ccccff;
+            color: @table-header-link-color;
+
+            .enable__is-dark-mode & {
+                color: @table-header-link-color--dark-mode;
+            }
         }
     }
 
@@ -355,7 +359,11 @@ code {
     }
 
     td {
-        border: solid 1px black;
+        border: solid 1px @table-cell-border-color;
+
+        .enable__is-dark-mode & {
+            border: solid 1px @table-cell-border-color--dark-mode
+        }
     }
 
     &__icon {
@@ -447,4 +455,19 @@ iframe {
         border-left: 10px solid #555;
     }
 
+}
+
+.enable__is-dark-mode {
+    input,
+    textarea,
+    select {
+        background: @dark-mode-black;
+        color: @dark-mode-white;
+        border-color: @dark-mode-white;
+    }
+
+    input[type="submit"] {
+        background: @dark-mode-darkgrey;
+        color: @dark-mode-white;
+    }
 }

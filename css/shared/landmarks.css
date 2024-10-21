@@ -445,6 +445,10 @@ code {
 .comparison-table th a {
   color: #ccccff;
 }
+.enable__is-dark-mode .compliance-table th a,
+.enable__is-dark-mode .comparison-table th a {
+  color: #000088;
+}
 .compliance-table tr,
 .comparison-table tr {
   background: none !important;
@@ -452,6 +456,10 @@ code {
 .compliance-table td,
 .comparison-table td {
   border: solid 1px black;
+}
+.enable__is-dark-mode .compliance-table td,
+.enable__is-dark-mode .comparison-table td {
+  border: solid 1px #ededed;
 }
 .compliance-table__icon,
 .comparison-table__icon {
@@ -519,6 +527,17 @@ iframe:focus-visible {
 .enable__is-dark-mode .enable-quote {
   background: #222;
   border-left: 10px solid #555;
+}
+.enable__is-dark-mode input,
+.enable__is-dark-mode textarea,
+.enable__is-dark-mode select {
+  background: #121212;
+  color: #ededed;
+  border-color: #ededed;
+}
+.enable__is-dark-mode input[type="submit"] {
+  background: #343434;
+  color: #ededed;
 }
 /*********************************************************
  * a11y.css - a stylesheet to help create 

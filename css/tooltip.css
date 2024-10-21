@@ -23,6 +23,9 @@
      */
   border: 1px solid transparent;
 }
+.enable__is-dark-mode .tooltip {
+  border-color: #ededed;
+}
 .tooltip:before {
   content: "";
   width: 1rem;
@@ -35,6 +38,10 @@
   /* Again, we put a transparent border here for Windows High Contrast Mode */
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
+}
+.enable__is-dark-mode .tooltip:before {
+  border-top: 1px solid #ededed;
+  border-left: 1px solid #ededed;
 }
 .tooltip:after {
   content: "";

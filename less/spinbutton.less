@@ -16,6 +16,16 @@ input[type="number"] {
 input[type="number"] {
     font-size: @fontSize;
     text-align: right;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        &:not(:focus) {
+            opacity: 1;
+            margin-left: 5px;
+        }
+    }
+
+
 }
 
 .enable-spinner {

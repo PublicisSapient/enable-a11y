@@ -1,8 +1,12 @@
 @import "shared/mixins-and-vars";
 
-@table-header-height: 2em;
+//
+// Note: The LESS table color variables are in the mixins-and-vars.less file.
+//
 
 .sticky-table {
+
+    /* Is this still needed? */
     &__keyboard-instructions {
         display: none;
         background: black;
@@ -34,12 +38,20 @@
         [role="table"] {
             margin-bottom: 0;
             position: relative;
-            border: solid 1px black;
+            border: solid 1px @table-cell-border-color;
+
+            .enable__is-dark-mode & {
+                border-color: @table-cell-border-color--dark-mode;
+            }
         }
 
         thead {
-            background: white;
+            background: @table-header-border-color;
             transform: translateZ(1px);
+
+            .enable__is-dark-mode & {
+                background: @table-header-border-color--dark-mode;
+            }
         }
 
         th[scope="col"],
@@ -132,22 +144,47 @@ table,
     [role="columnheader"],
     [role="rowheader"] {
         font-weight: bold;
-        color: white;
-        background-color: black;
+        color: @table-header-text-color;
+        background-color: @table-header-background;
+
+        .enable__is-dark-mode & {
+            background-color: @table-header-background--dark-mode;
+            color: @table-header-text-color--dark-mode;
+        }
     }
 
     tr,
     [role="row"] {
         display: table-row;
-        background-color: #fff;
+        background-color: @table-cell-background;
+
+        .enable__is-dark-mode & {
+            background-color: @table-cell-background--dark-mode;
+        }
 
         &:nth-child(2n) {
-            background-color: #cccccc;
+            background-color: @table-cell-background2;
+
+            .enable__is-dark-mode & {
+                background-color: @table-cell-background2-dark-mode;
+            }
         }
     }
 
+
     [role="rowgroup"] {
         display: table-row-group;
+
+    }
+
+    .thead {
+        [role="row"] {
+            background-color: @table-header-background;
+
+            .enable__is-dark-mode & {
+                background-color: @table-header-background--dark-mode;
+            }
+        }
     }
 
     @table-width: 100%;
@@ -181,14 +218,24 @@ table,
         th,
         [role="columnheader"],
         [role="rowheader"] {
-            border-left: solid 1px #fff;
-            border-right: solid 1px #fff;
+            border-left: solid 1px @table-header-border-color;
+            border-right: solid 1px @table-header-border-color;
+
+            .enable__is-dark-mode & {
+                border-left: solid 1px @table-cell-border-color--dark-mode;
+                border-right: solid 1px @table-cell-border-color--dark-mode;
+            }
         }
 
         td,
         [role="cell"] {
-            border-left: solid 1px #cccccc;
-            border-right: solid 1px #cccccc;
+            border-left: solid 1px @table-cell-border-color;
+            border-right: solid 1px @table-cell-border-color;
+
+            .enable__is-dark-mode & {
+                border-left: solid 1px @table-cell-border-color--dark-mode;
+                border-right: solid 1px @table-cell-border-color--dark-mode;
+            }
         }
         thead,
         .thead {
@@ -233,20 +280,37 @@ table,
 
     &--with-borders {
         th {
-            border-left: solid 1px white;
-            border-right: solid 1px white;
+            border-left: solid 1px @table-header-border-color;
+            border-right: solid 1px @table-header-border-color;
+
+            .enable__is-dark-mode & {
+                border-left: solid 1px @table-header-border-color--dark-mode;
+                border-right: solid 1px @table-header-border-color--dark-mode;
+            }
 
             &:first-child {
-                border-left: solid 1px black;
+                border-left: solid 1px @table-header-background;
+
+                .enable__is-dark-mode & {
+                    border-left: solid 1px @table-header-background--dark-mode;
+                }
             }
 
             &:last-child {
-                border-right: solid 1px black;
+                border-right: solid 1px @table-header-background;
+
+                .enable__is-dark-mode & {
+                    border-right: solid 1px @table-header-background--dark-mode;
+                }
             }
         }
 
         td {
-            border: solid 1px black;
+            border: solid 1px @table-cell-border-color;
+
+            .enable__is-dark-mode & {
+                border-color: @table-cell-border-color--dark-mode;
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
   <form role="search" tabindex="-1">
     <div class="search">
       <label for="search-input" class="sr-only">Search:</label>
-      <input id="search-input" type="text" class="search__term" placeholder="What are you looking for?">
+      <input id="search-input" type="text" class="search__term" >
       <button type="submit" class="search__button">
         <img class="search__icon" src="images/search.svg" alt="Search">
       </button>

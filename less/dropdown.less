@@ -7,20 +7,35 @@
         margin: 0;
         padding: 0;
         color: #000;
-        background: white;
+        background: transparent;
         font-size: 1rem;
         font-weight: bold;
         list-style: none;
         cursor: default;
         width: 100%;
         text-align: left;
-        background-image: data-uri("../images/plus.svg");
+        background-image: url("../images/plus.svg");
         background-size: (20 / @px) (20 / @px);
         background-repeat: no-repeat;
         padding-left: (25 / @px);
         background-repeat: no-repeat;
 
+        &.enable-multiselect__button {
+            background: transparent;
+            background-image: url("../images/plus.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
         .remove-default-details-styles();
+
+        .enable__is-dark-mode & {
+            filter: invert(100%);
+
+            code {
+                background: @dark-mode-lightgrey;
+            }
+        }
 
         &:hover {
             text-decoration: underline;
@@ -76,6 +91,11 @@
         background-size: 14px 20px;
         background-position: 10px 5px;
         background-color: #ccffcc;
+        color: #000;
+
+        .enable__is-dark-mode & {
+            filter: invert(100%);
+        }
     }
 
     // We don't use the `enable
@@ -97,6 +117,12 @@
         background-color: white;
 
         .remove-default-details-styles();
+
+        .enable__is-dark-mode & {
+            filter: invert(100%);
+            background-color: @dark-mode-lightgrey;
+            color: @dark-mode-black;
+        }
     }
 
     &__contents {
