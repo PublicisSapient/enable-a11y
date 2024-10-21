@@ -120,4 +120,8 @@ a.tile-cta::after {
 .enable__is-dark-mode [role="figure"] {
   background: #555;
 }
+.enable__is-dark-mode figure code,
+.enable__is-dark-mode [role="figure"] code {
+  background: #121212;
+}
 /*# sourceMappingURL=figure.css.map */

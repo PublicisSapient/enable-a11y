@@ -61,4 +61,22 @@
       outline-offset: -2px;
     });
     }
+
+    .enable__is-dark-mode & {
+        .able-transcript {
+            background: @dark-mode-black;
+
+            div.able-transcript-desc {
+                background: #5E5151;
+            }
+
+             span {
+                &:hover,
+                &:active,
+                &:focus {
+                    background: #4C5E28;
+                }
+            }
+        }
+    }
 }

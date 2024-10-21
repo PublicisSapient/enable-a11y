@@ -20,6 +20,10 @@
   color: white;
   padding: 0.5em;
 }
+.enable__is-dark-mode .tabs--has-js .tabs__instructions {
+  background: #333366;
+  color: #ffffcc;
+}
 [role="tablist"] {
   float: left;
   list-style: none;
@@ -70,19 +74,26 @@
   border-top-right-radius: 0.5em;
   cursor: pointer;
 }
+.enable__is-dark-mode [role="tablist"] li [role="tab"] {
+  background: #343434;
+  color: #bbbbbb;
+  border-color: #ccc;
+}
 @media only screen and (min-width: 1px) and (max-width: 719px) {
   [role="tablist"] li [role="tab"] {
     font-size: 0.8em;
   }
-}
-[role="tablist"] li [role="tab"]:link {
-  border-color: #ccc;
 }
 [role="tablist"] li [role="tab"]:hover,
 [role="tablist"] li [role="tab"]:focus,
 [role="tablist"] li [role="tab"]:active {
   border-color: #999;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.enable__is-dark-mode [role="tablist"] li [role="tab"]:hover,
+.enable__is-dark-mode [role="tablist"] li [role="tab"]:focus,
+.enable__is-dark-mode [role="tablist"] li [role="tab"]:active {
+  border-color: #999;
 }
 [role="tablist"] li [role="tab"]:focus {
   outline-offset: 5px;
@@ -102,26 +113,10 @@
   border-bottom: #c0dcee 4px solid;
   font-weight: bold;
 }
-[role="tablist"][aria-selected="true"] a {
-  top: 2px;
-  font-weight: bold;
-  color: #333;
-  background: #fafafa;
-  border-color: #999;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-[role="tablist"][aria-selected="true"] a:hover,
-[role="tablist"][aria-selected="true"] a:focus {
-  color: #333;
-  background-color: #fafafa;
-}
-[role="tablist"][aria-selected="true"] a span {
-  position: absolute;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0;
+.enable__is-dark-mode [role="tablist"] li [role="tab"][aria-selected="true"] {
+  background: #526068;
+  border-color: #ccc;
+  border-bottom: 4px solid #526068;
 }
 [role="tabpanel"] {
   position: relative;
@@ -130,11 +125,24 @@
   clear: left;
   overflow: auto;
   padding: 0.5em 3em 2em;
-  border: 2px solid #999;
   border-radius: 1em;
   z-index: 1;
-  color: #333;
+  border: 2px solid #999;
+  color: #444;
   background-color: #c0dcee;
+}
+.enable__is-dark-mode [role="tabpanel"] {
+  border: 2px solid #ccc;
+  color: #bbbbbb;
+  background-color: #526068;
+}
+[role="tabpanel"] p,
+[role="tabpanel"] li {
+  color: #444;
+}
+.enable__is-dark-mode [role="tabpanel"] p,
+.enable__is-dark-mode [role="tabpanel"] li {
+  color: #ededed;
 }
 .tabs--has-js [role="tabpanel"] {
   display: none;

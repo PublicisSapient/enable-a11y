@@ -284,6 +284,10 @@ table .rowspan2__top,
   border-bottom: none;
   vertical-align: bottom;
 }
+.enable__is-dark-mode table .rowspan2__top,
+.enable__is-dark-mode [role="table"] .rowspan2__top {
+  border-bottom: none;
+}
 table .rowspan2__top span,
 [role="table"] .rowspan2__top span {
   display: inline-block;
@@ -291,6 +295,10 @@ table .rowspan2__top span,
 }
 table .rowspan2__bottom,
 [role="table"] .rowspan2__bottom {
+  border-top: none;
+}
+.enable__is-dark-mode table .rowspan2__bottom,
+.enable__is-dark-mode [role="table"] .rowspan2__bottom {
   border-top: none;
 }
 .enable-table--centered-data th,
