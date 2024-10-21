@@ -25,6 +25,9 @@
   left: 25%;
   display: none;
 }
+.enable__is-dark-mode .a11y-modal {
+  background-color: #121212;
+}
 .a11y-modal.visible {
   display: block;
 }
@@ -62,6 +65,9 @@
   display: none;
   margin: 0;
   padding: 0;
+}
+.enable__is-dark-mode #a11y-modal__overlay {
+  background-color: #ededed;
 }
 #a11y-modal__overlay.visible {
   display: block;
