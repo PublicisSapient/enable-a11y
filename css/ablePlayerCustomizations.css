@@ -15,6 +15,9 @@
 .enable-media-player .able-clipped {
   color: #ededed;
 }
+.enable-media-player .able-offscreen {
+  color: white;
+}
 .enable-media-player .able-wrapper {
   max-width: initial !important;
 }

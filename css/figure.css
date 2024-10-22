@@ -14,7 +14,6 @@ figure,
   margin: 40px auto 0 auto;
   padding: 1em;
   border: solid 1px #ccc;
-  background: #ffffcc;
 }
 figure:has(.showcode),
 [role="figure"]:has(.showcode) {
@@ -120,10 +119,6 @@ a.tile-cta::after {
 }
 .video-figure .able-status {
   text-align: right;
-}
-.enable__is-dark-mode figure,
-.enable__is-dark-mode [role="figure"] {
-  background: #555;
 }
 .enable__is-dark-mode figure code,
 .enable__is-dark-mode [role="figure"] code {

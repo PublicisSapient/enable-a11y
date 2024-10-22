@@ -129,6 +129,7 @@
                 background: @active-tab-color;
                 border-color: @active-tab-border-color;
                 border-bottom: @active-tab-color 4px solid;
+                color: @active-tab-text-color;
                 font-weight: bold;
 
                 .enable__is-dark-mode & {
@@ -154,10 +155,18 @@
     color: @active-tab-text-color;
     background-color: @active-tab-color;
 
+    a {
+        color: #8c5000;
+    }
+
     .enable__is-dark-mode & {
         border: 2px solid @active-tab-border-color--dark-mode;
         color: @unactive-tab-text-color--dark-mode;
         background-color: @active-tab-color--dark-mode;
+
+        a {
+            color: #FFD397;
+        }
     }
 
 

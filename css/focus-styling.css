@@ -16,6 +16,7 @@
   padding: 10px;
   background: #ffffcc;
   display: inline-block;
+  color: #A76000;
 }
 #double-focus-ring-example *:focus {
   outline: solid 2px var(--focus-color);

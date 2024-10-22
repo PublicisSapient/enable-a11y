@@ -111,6 +111,7 @@
   background: #c0dcee;
   border-color: #999;
   border-bottom: #c0dcee 4px solid;
+  color: #444;
   font-weight: bold;
 }
 .enable__is-dark-mode [role="tablist"] li [role="tab"][aria-selected="true"] {
@@ -131,10 +132,16 @@
   color: #444;
   background-color: #c0dcee;
 }
+[role="tabpanel"] a {
+  color: #8c5000;
+}
 .enable__is-dark-mode [role="tabpanel"] {
   border: 2px solid #ccc;
   color: #bbbbbb;
   background-color: #526068;
+}
+.enable__is-dark-mode [role="tabpanel"] a {
+  color: #FFD397;
 }
 [role="tabpanel"] p,
 [role="tabpanel"] li {

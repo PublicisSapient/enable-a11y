@@ -254,6 +254,9 @@ code {
   padding: 3px;
   word-wrap: break-word;
 }
+a code {
+  background-color: #f6f6f6;
+}
 .enable__is-dark-mode code {
   color: #0a0;
   background-color: #000;

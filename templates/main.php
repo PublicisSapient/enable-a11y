@@ -46,8 +46,6 @@ give404IfNotValid();
         ?>
 
         </<?= $mainContentTag ?>>
-    </div>
-
     <?php getPreBottomBodyTags(); ?>
 
     <?php include "includes/footer.php"; ?>

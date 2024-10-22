@@ -48,6 +48,7 @@
 }
 .enable__is-dark-mode .enable-drawer > .enable-drawer__button code {
   background: #9a9a9a;
+  color: black;
 }
 .enable-drawer > .enable-drawer__button:hover {
   text-decoration: underline;

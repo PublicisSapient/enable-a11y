@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="item-wrapper" role="group" aria-labelledby="text-in-hero-imagesresizing-">
+        <div class="item-wrapper" role="group" aria-labelledby="resizing-text-in-hero-images">
             <div class="icon-wrapper">
                 <h2 id="resizing-text-in-hero-images">Resizing Text in Hero Images</h2>
                 <div class="icon"><img src="/images/icons/code-patterns/resizing-text-in-hero-images.svg" alt="" role="presentation"></div>

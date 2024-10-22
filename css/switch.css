@@ -72,7 +72,7 @@
 .enable__is-dark-mode [role="switch"][aria-pressed="true"] :last-child,
 .enable__is-dark-mode [role="switch"][aria-checked][aria-pressed="true"] :last-child {
   background: #292;
-  color: #ededed;
+  color: #121212;
 }
 [role="switch"][aria-checked="false"] :last-child,
 [role="switch"][aria-checked][aria-checked="false"] :last-child,

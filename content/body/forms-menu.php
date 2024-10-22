@@ -208,7 +208,7 @@
 
         <div class="item-wrapper" role="group" aria-labelledby="accessible-carousel">
             <div class="icon-wrapper">
-                <h2 id="accessible-skip-links">Carousel</h2>
+                <h2 id="accessible-carousel">Carousel</h2>
                 <div class="icon"><img src="/images/icons/components/carousel.svg" alt="" role="presentation"></div>
             </div>
             <div class="links-wrapper">

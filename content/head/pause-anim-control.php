@@ -1,5 +1,5 @@
 <link id="able-player-css" href="js/enable-libs/ableplayer/styles/ableplayer.css" rel="stylesheet" >
-<link id="enable-media-player-css" href="css/ablePlayerCustomizations.css" rel="stylesheet" >
+<link href="css/ablePlayerCustomizations.css" rel="stylesheet" >
 <link id="enable-media-player-css" href="css/enable-media-player.css" rel="stylesheet" >
 <style>
     #elastic-collision-demo__canvas {

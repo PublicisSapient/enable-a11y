@@ -9,9 +9,11 @@
   }
 }
 .iframed-example [role="banner"],
+.iframed-example header,
 .iframed-example [role="navigation"],
 .iframed-example nav,
-.iframed-example footer {
+.iframed-example footer,
+.iframed-example .enable-toc__toggle-button {
   display: none;
 }
 :root {
@@ -36,6 +38,7 @@ body ::-webkit-scrollbar-track {
 }
 #main {
   max-width: 100% !important;
+  padding: 10px !important;
 }
 .reflow-examples__index {
   text-align: center;
@@ -115,9 +118,11 @@ body ::-webkit-scrollbar-track {
   margin: 0 -1rem;
   padding: 0 1rem;
 }
+.enable__is-dark-mode .reflow-examples__dropdown {
+  background: #343434;
+}
 .reflow-examples__dropdown--content {
   padding: 0;
-  margin: 0 -0.75rem;
 }
 .reflow-examples__dropdown .reflow-examples__list {
   background: black;

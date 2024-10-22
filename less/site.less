@@ -208,6 +208,17 @@
 
         &--scratch {
             background-color: @color-scratch;
+
+            .enable__is-dark-mode & {
+                background-color: #313e32;
+            }
+
+            a {
+                color: #7A4703;
+                .enable__is-dark-mode & {
+                    color: @light-orange;
+                }
+            }
         }
 
         &--integrate {
@@ -314,7 +325,7 @@
         
         
             &--scratch {
-                background-color: #3c4c3d;
+                background-color: #313e32;
             }
 
             &--integrate {

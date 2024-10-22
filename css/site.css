@@ -190,6 +190,15 @@
 .enable-stats__desc--scratch {
   background-color: #ccffcc;
 }
+.enable__is-dark-mode .enable-stats__desc--scratch {
+  background-color: #313e32;
+}
+.enable-stats__desc--scratch a {
+  color: #7A4703;
+}
+.enable__is-dark-mode .enable-stats__desc--scratch a {
+  color: #FF9F1C;
+}
 .enable-stats__desc--integrate {
   background-color: #ffffcc;
 }
@@ -200,7 +209,7 @@
   background-color: #ccccff;
 }
 .enable-stats__desc--npm {
-  background-color: #ccfffc;
+  background-color: #d2fffc;
 }
 .enable-stats__center {
   display: flex;
@@ -263,7 +272,7 @@
   color: #ededed;
 }
 .enable__is-dark-mode .enable-stats__desc--scratch {
-  background-color: #3c4c3d;
+  background-color: #313e32;
 }
 .enable__is-dark-mode .enable-stats__desc--integrate {
   background-color: #7d5d12;
