@@ -5,7 +5,7 @@
 @fade-color: #000;
 @border: solid 1px #999;
 @select-width: (160 / @px);
-@clip-bottom: 45px;
+@clip-bottom: 41px;
 @code-focus-outline-width: 4px;
 @code-focus-outline-gap: 4px;
 @notes-bottom-margin: 20px;
@@ -148,6 +148,11 @@ code {
                 display: block;
                 text-align: center;
                 display: block;
+
+                .enable__is-dark-mode & {
+                    background: @dark-mode-midgrey;
+                    color: @dark-mode-white;
+                }
             }
 
             &::after {
@@ -298,7 +303,7 @@ code {
 
             .enable__is-dark-mode & {
                 border-color: #a3917b;
-                background-color: #000011;
+                background-color: #454532;
             }
 
             > div {

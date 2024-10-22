@@ -100,6 +100,10 @@ table + figcaption {
             position: absolute;
             margin: 0 1em;
             top: 3px;
+
+            .enable__is-dark-mode & {
+                filter: invert(100%);
+            }
         }
 
         &:before {

@@ -101,6 +101,14 @@ table + figcaption {
     margin: 0 1em;
     top: 3px;
   }
+  .enable__is-dark-mode caption:before,
+  .enable__is-dark-mode .caption:before,
+  .enable__is-dark-mode table + figcaption:before,
+  .enable__is-dark-mode caption:after,
+  .enable__is-dark-mode .caption:after,
+  .enable__is-dark-mode table + figcaption:after {
+    filter: invert(100%);
+  }
   caption:before,
   .caption:before,
   table + figcaption:before {
@@ -160,7 +168,7 @@ table [role="rowheader"],
 .enable__is-dark-mode [role="table"] [role="columnheader"],
 .enable__is-dark-mode table [role="rowheader"],
 .enable__is-dark-mode [role="table"] [role="rowheader"] {
-  background-color: #ededed;
+  background-color: #9a9a9a;
   color: #121212;
 }
 table tr,
@@ -198,7 +206,7 @@ table .thead [role="row"],
 }
 .enable__is-dark-mode table .thead [role="row"],
 .enable__is-dark-mode [role="table"] .thead [role="row"] {
-  background-color: #ededed;
+  background-color: #9a9a9a;
 }
 table.fixed-headers,
 [role="table"].fixed-headers {
@@ -317,13 +325,13 @@ table .rowspan2__bottom,
   border-left: solid 1px black;
 }
 .enable__is-dark-mode .enable-table--with-borders th:first-child {
-  border-left: solid 1px #ededed;
+  border-left: solid 1px #9a9a9a;
 }
 .enable-table--with-borders th:last-child {
   border-right: solid 1px black;
 }
 .enable__is-dark-mode .enable-table--with-borders th:last-child {
-  border-right: solid 1px #ededed;
+  border-right: solid 1px #9a9a9a;
 }
 .enable-table--with-borders td {
   border: solid 1px black;

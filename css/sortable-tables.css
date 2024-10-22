@@ -45,6 +45,9 @@
   font-size: inherit;
   font-weight: inherit;
 }
+.enable__is-dark-mode .deque-table-sortable__group table thead th button {
+  color: #121212;
+}
 .deque-table-sortable__group table thead th button {
   margin: -25px 0;
   padding: 25px 0;
@@ -72,6 +75,7 @@
   position: absolute;
   left: 6px;
   top: calc(50% - 1.0625rem / 2);
+  filter: invert(90%);
 }
 .deque-table-sortable__group table thead th[aria-sort] .sortableColumnLabel:after {
   /* This is the down arrow SVG. */

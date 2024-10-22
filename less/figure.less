@@ -34,6 +34,10 @@ figure,
 
             .enable__is-dark-mode & {
                 color: @light-orange;
+
+                .enable__is-dark-mode & {
+                    color: @orange;
+                }
             }
         }
     }
@@ -44,7 +48,6 @@ figure,
         background: @color-background-term-code;
         color: @color-term-code;
         width: 100%;
-        border: solid 1px #ccc;
     }
 
     &.wide {

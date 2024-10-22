@@ -409,6 +409,10 @@ code {
   padding: 3px;
   word-wrap: break-word;
 }
+.enable__is-dark-mode code {
+  color: #0a0;
+  background-color: #000;
+}
 .center {
   text-align: center;
 }
@@ -520,9 +524,6 @@ iframe:focus-visible {
 }
 .enable__is-dark-mode a {
   color: #FF9F1C;
-}
-.enable__is-dark-mode code {
-  background-color: #555;
 }
 .enable__is-dark-mode .enable-quote {
   background: #222;

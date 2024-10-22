@@ -52,6 +52,12 @@ figure span a,
 .enable__is-dark-mode [role="figure"] span a {
   color: #FF9F1C;
 }
+.enable__is-dark-mode .enable__is-dark-mode figure figcaption a,
+.enable__is-dark-mode .enable__is-dark-mode [role="figure"] figcaption a,
+.enable__is-dark-mode .enable__is-dark-mode figure span a,
+.enable__is-dark-mode .enable__is-dark-mode [role="figure"] span a {
+  color: #A76000;
+}
 figure code,
 [role="figure"] code {
   display: block;
@@ -59,7 +65,6 @@ figure code,
   background: #000;
   color: #090;
   width: 100%;
-  border: solid 1px #ccc;
 }
 figure.wide,
 [role="figure"].wide {

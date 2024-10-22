@@ -308,6 +308,11 @@ code {
     border-radius: 3px;
     padding: 3px;
     word-wrap: break-word;
+
+    .enable__is-dark-mode & {
+        color: #0a0;
+        background-color: #000;
+    }
 }
 
 .center {
@@ -446,18 +451,11 @@ iframe {
         color: @light-orange;
     }
 
-    code {
-        background-color: #555;
-    }
-
     .enable-quote {
         background: #222;
         border-left: 10px solid #555;
     }
 
-}
-
-.enable__is-dark-mode {
     input,
     textarea,
     select {
