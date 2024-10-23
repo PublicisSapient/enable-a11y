@@ -111,13 +111,14 @@
   background: #c0dcee;
   border-color: #999;
   border-bottom: #c0dcee 4px solid;
-  color: #444;
+  color: #333;
   font-weight: bold;
 }
 .enable__is-dark-mode [role="tablist"] li [role="tab"][aria-selected="true"] {
   background: #526068;
   border-color: #ccc;
   border-bottom: 4px solid #526068;
+  color: #ededed;
 }
 [role="tabpanel"] {
   position: relative;
@@ -129,7 +130,7 @@
   border-radius: 1em;
   z-index: 1;
   border: 2px solid #999;
-  color: #444;
+  color: #333;
   background-color: #c0dcee;
 }
 [role="tabpanel"] a {

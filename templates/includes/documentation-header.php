@@ -127,7 +127,7 @@
                                     "id": "flyout__link--no-image",
                                     "props": {
                                         "label": "Forms",
-                                        "url": "forms-menu.php",
+                                        "url": "forms-section.php",
                                         "alt": ""
                                     }
                                 },
@@ -135,7 +135,7 @@
                                     "id": "flyout__link--no-image",
                                     "props": {
                                         "label": "Controls",
-                                        "url": "controls-menu.php",
+                                        "url": "controls-section.php",
                                         "alt": ""
                                     }
                                 },
@@ -143,7 +143,7 @@
                                     "id": "flyout__link--no-image",
                                     "props": {
                                         "label": "Content",
-                                        "url": "content-menu.php",
+                                        "url": "content-section.php",
                                         "alt": ""
                                     }
                                 },
@@ -151,7 +151,7 @@
                                     "id": "flyout__link--no-image",
                                     "props": {
                                         "label": "Code Patterns",
-                                        "url": "code-patterns-menu.php",
+                                        "url": "code-patterns-section.php",
                                         "alt": ""
                                     }
                                 }

@@ -227,7 +227,7 @@ function getURIFilename()
     $endSlug = $uriFile[$lastIndex];
     $fileSlug = explode("?", $endSlug)[0];
 
-    if ($dirSlug === "info") {
+    if ($dirSlug === "info" || $dirSlug === "sections") {
         return $dirSlug . "/" . $fileSlug;
     } else {
         return $fileSlug;

@@ -83,10 +83,10 @@ function initEnable() {
     let headingIndex = 0;
 
     const indexPage = includesUrl('index.php')
-    const formsMenuPage = includesUrl('forms-menu.php');
-    const contentMenuPage = includesUrl('content-menu.php');
-    const controlsMenuPage = includesUrl('controls-menu.php');
-    const codePatternsMenuPage = includesUrl('code-patterns-menu.php');
+    const formsMenuPage = includesUrl('forms-section.php');
+    const contentMenuPage = includesUrl('content-section.php');
+    const controlsMenuPage = includesUrl('controls-section.php');
+    const codePatternsMenuPage = includesUrl('code-patterns-section.php');
 
     if (!indexPage && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
         document
@@ -119,10 +119,10 @@ function initEnable() {
             '/faq.php',
             '/enable/index.php',
             '/enable/faq.php',
-            '/forms-menu.php',
-            '/content-menu.php',
-            '/controls-menu.php',
-            '/code-patterns-menu.php'
+            '/forms-section.php',
+            '/content-section.php',
+            '/controls-section.php',
+            '/code-patterns-section.php'
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,
