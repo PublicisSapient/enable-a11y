@@ -6,6 +6,7 @@
 
 .tabs__instructions {
     display: none;
+    margin: 0 0 0.5em;
 
     .tabs--has-js & {
         display: inherit;
@@ -16,111 +17,34 @@
 }
 
 [role="tablist"] {
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding-left: 2.35em;
-    position: relative;
-    z-index: 2;
-
-    @media @mobile {
-        padding-left: 0;
-    }
+    display: flex;
+    justify-content: space-between;
+    background-color: #73b6fc;
+    padding: 0.25em;
+    margin: 0 0 0.5em;
+    border-radius: 0.75em;
 
     li {
-        position: relative; /*for z-index*/
-        float: left;
-        margin: 0 0.1em 0 0;
-        z-index: 1;
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-        @media @desktop {
-            margin: 0 0.5em 0 0;
-        }
-
-        [role="tab"] {
-            appearance: none;
-            position: relative;
+        a {
+            display: block;
+            padding: 0.55em 0.75em;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: center;
             font-size: 1em;
-            top: 3px;
-            float: left;
-            overflow: hidden;
-            font-weight: normal;
-            text-shadow: none;
-            background: #fff;
-            color: #444;
             text-decoration: none;
-            margin: 0.5em 0 0;
-            padding: 0.5em 0.5em 0.35em;
-            border-style: solid;
-            border-color: #ccc;
-            border-width: 2px 2px 0;
-            -moz-border-radius-topleft: 0.5em;
-            -moz-border-radius-topright: 0.5em;
-            -webkit-border-top-left-radius: 0.5em;
-            -webkit-border-top-right-radius: 0.5em;
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
             cursor: pointer;
-
-            @media @mobile {
-                font-size: 0.8em;
-            }
-
-            &:link {
-                border-color: #ccc;
-            }
-
-            &:hover,
-            &:focus,
-            &:active {
-                border-color: #999;
-                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            }
-
-            .enable-focus(
-                {
-                    outline-offset: 5px;
-                },
-                {
-                    outline: none;
-                }
-            );
-
-            &:active {
-                top: 2px;
-            }
+            border: 2px solid transparent;
+            border-radius: 0.75em;
 
             &[aria-selected="true"] {
-                background: #c0dcee;
-                border-color: #999;
-                border-bottom: #c0dcee 4px solid;
-                font-weight: bold;
-            }
-        }
-    }
-
-    &[aria-selected="true"] {
-        a {
-            top: 2px;
-            font-weight: bold;
-            color: #333;
-            background: #fafafa;
-            border-color: #999;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
-            &:hover,
-            &:focus {
-                color: #333;
-                background-color: #fafafa;
-            }
-
-            span {
-                position: absolute;
-                top: auto;
-                width: 1px;
-                height: 1px;
-                overflow: hidden;
-                opacity: 0;
+                background-color: #ffffff;
+                color: #2e7de7;
+                border-color: #61a7f5;
             }
         }
     }
@@ -132,11 +56,10 @@
     clear: left;
     overflow: auto;
     padding: 0.5em 3em 2em;
-    border: 2px solid #999;
+    border: 2px solid #73b6fc;
     border-radius: 1em;
     z-index: 1;
     color: #333;
-    background-color: #c0dcee;
 
     .tabs--has-js & {
         display: none;
@@ -152,6 +75,8 @@
 
     h2 {
         display: inline-block;
+        border: none;
+        color: #2e7de7;
     }
 
     ol {
