@@ -1,9 +1,10 @@
 #!/bin/bash
 
-i=`find css -name '*.css' -print`
+i=`find less -name '*.less' -print`
 
 # echo $i
-OUTPUT=`grep -n 'font-size:[^\s\S]*[^@]px;' $i`
+OUTPUT=`grep -v "PX OK"  $i | grep -n 'font-size:[^\s\S]*[^@]px;'`
+# OUTPUT=`grep -n 'font-size:[^\s\S]*[^@]px;' $i`
 # grep -b 'line-height:[^\s\S]*[^0-9];' $i
 RET="$?"
 

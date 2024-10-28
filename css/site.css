@@ -55,7 +55,7 @@
 }
 .nav-container__level .nav-container__menu-item {
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-right: 0;
 }
 .nav-container--desktop {
@@ -200,12 +200,12 @@ body:has(.plp) h2 {
 .sidemenu__title {
   border-bottom: none;
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 .sidemenu__item {
   border-bottom: none;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .sidemenu__item a {
   text-decoration: none;
@@ -329,7 +329,7 @@ body:has(.plp) h2 {
   border: solid 1px black;
 }
 .footer__links {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
 }
 .footer__links a {
