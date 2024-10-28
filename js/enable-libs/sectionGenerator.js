@@ -55,7 +55,6 @@ const sectionGenerator = new function () {
                     item.url = url;
                     item.slug = url.replace('.php', '');
                     item.visibleTitle = item.shortTitle || item.title;
-                    console.log('title', item.title, item.shortTitle, item.visibleTitle);
 
                     if (isOnPage(item)) {
                         itemsOnPage.push(item);
@@ -78,8 +77,6 @@ const sectionGenerator = new function () {
                 }
 
                 /* For each section, write the pages on screen */
-                console.log(sectionPages);
-
                 for (let i in sectionPages) {
 
                     for (let j=0; j<sectionPages[i].length; j++) {

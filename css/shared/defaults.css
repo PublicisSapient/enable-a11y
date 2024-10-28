@@ -51,6 +51,9 @@ h3 {
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
+.enable__is-dark-mode h3 {
+  border-color: #ededed;
+}
 h4 {
   font-weight: 500;
   padding: 20px 0;

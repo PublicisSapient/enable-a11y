@@ -24,16 +24,15 @@
 </template>
 
 <template id="page-list-item">
-    <div class="item-wrapper" role="group" aria-labelledby="${slug}">
+    <a href="/${slug}.php" class="item-wrapper">
         <div class="icon-wrapper">
-            <h2 id="${slug}__page" tabindex="-1">${visibleTitle}</h2>
+            <div class="page-list__title id="${slug}__page" tabindex="-1">${visibleTitle}</div>
             <div class="icon">
                 <img src="/images/icons/${page}/${slug}.${thumbFileType}" alt="" role="presentation">
             </div>
         </div>
         <div class="links-wrapper">
             <p>${desc}</p>
-            <div><a href="/${slug}.php">Read More</a></div>
         </div>    
-    </div>
+    </a>
 </template>

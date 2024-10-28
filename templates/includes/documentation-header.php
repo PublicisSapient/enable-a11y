@@ -10,7 +10,8 @@
         <!-- Enable Logo (link to homepage) -->
         <div class="enable-logo">
             <a href="/">
-                <img src="images/accessible-text-svg/logo-enable-white.svg" alt="Enable Logo" />
+                <img src="images/ENABLE.svg" alt="Enable Home Page" class="enable-logo--mobile">
+                <img src="images/accessible-text-svg/logo-enable-white.svg" alt="Enable Home Page" class="enable-logo--desktop" />
             </a>
         </div>
         <!-- Here is the main menu will be placed by our global.js Javascript -->
@@ -182,16 +183,16 @@
                             ]
                         },
                         {
-                            "id": "flyout__link-mobile-only",
+                            "id": "flyout__link--no-image",
                             "props": {
                                 "label": "FAQ",
                                 "url": "faq.php"
                             }
                         },
                         {
-                            "id": "flyout__link-mobile-only",
+                            "id": "flyout__link--no-image",
                             "props": {
-                                "label": "Acknowledgements",
+                                "label": "Shout Outs",
                                 "url": "acknowledgements.php"
                             }
                         }

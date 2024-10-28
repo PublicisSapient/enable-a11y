@@ -15,7 +15,11 @@
     display: flex;
     justify-content: space-between;
     background: @grey;
-    padding: 0 30px;
+    padding: 0 10px;
+
+    @media @desktop {
+        padding: 0 30px;
+    }
 }
 
 // Logo in the header
@@ -30,8 +34,27 @@
         display: flex;
         vertical-align: middle;
     }
-    img {
+    
+    &--desktop {
         max-width: 100%;
+        display: none;
+    }
+
+    &--mobile {
+        height: 53px;
+        margin-top: 15px;
+    }
+
+    
+
+    @media @desktop {
+        &--desktop {
+            display: block; 
+        }
+
+        &--mobile {
+            display: none;
+        }
     }
 }
 
@@ -40,7 +63,7 @@
         margin: 0 0 80px 0;
     }
 
-    h2 {
+    .page-list__title, h2 {
         font-size: (26 / @px);
         font-weight: bold;
         color: #222;
@@ -61,6 +84,7 @@
             display: flex;
             margin-bottom: 25px;
             flex-direction: column;
+            text-decoration: none;
 
             @media @tablet, @desktop {
                 flex-direction: row;
@@ -78,7 +102,7 @@
                     width: 33.33%;
                 }
 
-                h2 {
+                .page-list__title, h2 {
                     display: block;
                     color: #000;
                     font-weight: bold;
@@ -111,7 +135,6 @@
                     list-style-type: none;
                     padding: 26px 0;
                     margin: 0;
-                    border-bottom: 2px solid #000;
                 }
 
                 code {
@@ -299,14 +322,11 @@
         color: @dark-mode-white;
     }
 
-    .plp .plp-list .item-wrapper .links-wrapper p {
-        border-bottom: 2px solid @dark-mode-white;
-    }
 
     .plp .plp-list .item-wrapper .icon-wrapper {
         background-color: #444;
 
-        h2 {
+        .page-list__title, h2 {
             color: @dark-mode-white;
         }
     }
