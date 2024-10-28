@@ -31,7 +31,7 @@
 <template id="page-list-item">
     <a href="/${slug}.php" class="item-wrapper">
         <div class="icon-wrapper">
-            <h3 class="page-list__title id="${slug}__page" >${visibleTitle}</h3>
+            <h3 class="page-list__title" id="${slug}__page" >${visibleTitle}</h3>
             <div class="icon">
                 <img src="/images/icons/${page}/${slug}.${thumbFileType}" alt="" role="presentation">
             </div>

@@ -1,4 +1,5 @@
 https://www.useragentman.com/enable/index.php
+https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/accessible-text-svg.php
 https://www.useragentman.com/enable/alert.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
@@ -24,7 +25,6 @@ https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/img.php
 https://www.useragentman.com/enable/infographic.php
 https://www.useragentman.com/enable/input-mask.php
-https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/listbox.php
 https://www.useragentman.com/enable/log.php
 https://www.useragentman.com/enable/marquee.php
