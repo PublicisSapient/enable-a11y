@@ -5,6 +5,11 @@
     "mainClass": "with-full-bleed-hero",
     "bodyClass": "index"
   },
+  "link.php": {
+    "sectionPages": [ {"controls": "Simple Controls"}],
+    "title": "Links",
+    "desc": "Links are easy to code accessibly, but it's nice to give more context."
+  },
   "accessible-text-svg.php": {
     "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Accessible Text in SVG",
@@ -214,7 +219,7 @@
     "desc": "Page that organizes the components that fall under Controls."
   },
   "dark-mode.php": {
-    "sectionPages": [ { "code-patterns": "Focus Management" }],
+    "sectionPages": [ { "code-patterns": "Visual Design" }],
     "title": "Dark Mode",
     "desc": "This page will show you how to ensure your website has proper contrast as well as the overall function for dark mode.",
     "thumbFileType": "png"
@@ -342,11 +347,7 @@
     "title": "Input Masking",
     "desc": "How to code masking of keyboard input in form fields so they are accessible."
   },
-  "link.php": {
-    "sectionPages": [ {"controls": "Simple Controls"}],
-    "title": "Links",
-    "desc": "Links are easy to code accessibly, but it's nice to give more context."
-  },
+  
   "listbox.php": {
     "sectionPages": [ {"forms": "Form Elements"}],
     "title": "Select Boxes (a.k.a. Listboxes)",

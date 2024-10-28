@@ -40,7 +40,7 @@ const sectionGenerator = new function () {
 
         result
             .then((response) => response.json())
-            .then(function (response) {
+            .then((response) => {
                 const itemsOnPage = [];
                 const sectionPages = {};
                 
@@ -48,6 +48,7 @@ const sectionGenerator = new function () {
                 let sectionTOCHTML = '';
                 let pageListHTML = '';
                 let pageListItemsHTML = [];
+                let pageListItemsContentHTML = [];
                 let sectionLinksHTML = [];
 
                 for (let url in response) {
@@ -86,7 +87,7 @@ const sectionGenerator = new function () {
                         sectionPages[i][j].visibleTitle = shortTitle || title;
                         sectionPages[i][j].thumbFileType = thumbFileType || 'svg';
                         
-                        pageListItemsHTML.push(interpolate(
+                        pageListItemsContentHTML.push(interpolate(
                             templates['page-list-item'],
                             sectionPages[i][j],
                             {
@@ -95,16 +96,16 @@ const sectionGenerator = new function () {
                         ));
 
 
-                        sectionLinksHTML.push(interpolate(
+                        /* sectionLinksHTML.push(interpolate(
                             templates['section-link'], 
                             sectionPages[i][j], 
                             {
                                 entifyParams: false
                             }
-                        ));
+                        )); */
                     }
 
-                    subsectionsHTML.push(interpolate(
+                    /* subsectionsHTML.push(interpolate(
                         templates['section-subsection'],
                         {  
                             subsectionTitle: i,
@@ -112,17 +113,29 @@ const sectionGenerator = new function () {
                         }, {
                             entifyParams: false
                         }
-                    ))
+                    )) */
+
+
+                    pageListItemsHTML.push(interpolate(
+                        templates['page-list__heading'],
+                        {  
+                            headingText: i,
+                            content: pageListItemsContentHTML.join('')
+                        }, {
+                            entifyParams: false,
+                        }
+                    ));
                     sectionLinksHTML = [];
+                    pageListItemsContentHTML = [];
                 }
-                sectionTOCHTML = interpolate(
+                /* sectionTOCHTML = interpolate(
                     templates['section-table-of-contents'],
                     {
                         subsections: subsectionsHTML.join('')
                     }, {
                         entifyParams: false
                     }
-                );
+                ); */
                 pageListHTML = interpolate(
                     templates['page-list'],
                     {
@@ -134,17 +147,26 @@ const sectionGenerator = new function () {
                 );
 
                 $sectionContent.innerHTML = sectionTOCHTML + pageListHTML;
+
+
+                // If callback exists, call it
+                if (this.callback) {
+                    this.callback();
+                }
             })
             .catch(function (ex) {
                 $sectionContent.innerHTML += `<span>Failed to get NPM module information.</span>.<pre>${ex}</pre></span>`;
                 console.error(ex);
             });
+
         }
 
 
-    this.init = () => {
+    this.init = (callback) => {
+        this.callback = callback;
         this.writeHTML();
     }
 }
 
-sectionGenerator.init();
+
+export default sectionGenerator;

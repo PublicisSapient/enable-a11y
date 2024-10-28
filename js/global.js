@@ -10,6 +10,7 @@
  ******************************************************************************/
 
 import showcode from './enable-libs/showcode.js';
+import sectionGenerator from './enable-libs/sectionGenerator.js';
 import pauseAnimControl from './modules/pause-anim-control.js';
 import Templify from './modules/templify.js';
 import EnableFlyout from './modules/enable-flyout.js';
@@ -88,7 +89,7 @@ function initEnable() {
     const controlsMenuPage = includesUrl('controls-section.php');
     const codePatternsMenuPage = includesUrl('code-patterns-section.php');
 
-    if (!indexPage && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage) {
+    if (!indexPage /* && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage */) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
@@ -113,16 +114,26 @@ function initEnable() {
 
     focusDeepLink();
 
+    // if this is a "-section" menu page, then generate the content using sectionGenerator
+    if (codePatternsMenuPage || formsMenuPage || contentMenuPage || controlsMenuPage ) {
+        sectionGenerator.init(generateTOC);
+    } else {
+        generateTOC();
+    }
+
+}
+
+function generateTOC() { 
     tableOfContents.init({
         skipPages: [
             '/index.php',
             '/faq.php',
             '/enable/index.php',
-            '/enable/faq.php',
+            '/enable/faq.php' /*,
             '/forms-section.php',
             '/content-section.php',
             '/controls-section.php',
-            '/code-patterns-section.php'
+            '/code-patterns-section.php' */
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,

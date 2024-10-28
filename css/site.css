@@ -53,6 +53,9 @@
     display: none;
   }
 }
+body:has(.plp) h2 {
+  margin-bottom: 10px;
+}
 .plp h1 {
   margin: 0 0 80px 0;
 }
@@ -67,6 +70,12 @@
 .plp .page-list__title a,
 .plp h2 a {
   color: #000;
+}
+.enable__is-dark-mode .plp .page-list__title,
+.enable__is-dark-mode .plp h2,
+.enable__is-dark-mode .plp .page-list__title a,
+.enable__is-dark-mode .plp h2 a {
+  color: #ededed;
 }
 .plp .plp-list {
   margin: 20px 0;

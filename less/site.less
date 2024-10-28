@@ -59,6 +59,12 @@
 }
 
 .plp {
+    body:has(&) {
+        h2 {
+            margin-bottom: 10px;
+        }
+    }
+
     h1 {
         margin: 0 0 80px 0;
     }
@@ -71,6 +77,12 @@
         margin: 40px 0 79px;
         a {
             color: #000;
+        }
+
+        .enable__is-dark-mode & {
+            &, & a {
+                color: @dark-mode-white;
+            }
         }
     }
 
