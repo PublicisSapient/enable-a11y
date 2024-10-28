@@ -10,19 +10,6 @@
     z-index: 10001; // 10001 to be above able player
 }
 
-.nav-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    background: @grey;
-    padding: 0 10px;
-
-    @media @desktop {
-        padding: 0 30px;
-    }
-}
-
-// Logo in the header
 .enable-logo {
     text-decoration: none;
     text-align: center;
@@ -33,6 +20,45 @@
     a {
         display: flex;
         vertical-align: middle;
+    }
+    
+    &--desktop {
+        max-width: 100%;
+        display: none;
+    }
+
+    &--mobile {
+        height: 53px;
+        margin-top: 15px;
+    }
+
+    
+
+    @media @desktop {
+        &--desktop {
+            display: block; 
+        }
+
+        &--mobile {
+            display: none;
+        }
+    }
+}
+.nav-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: @grey;
+    padding: 0 10px;
+
+    @media @desktop {
+        padding: 0 30px;
+    }
+
+    &__level &__menu-item {
+        display: inline-block;
+        font-size: (14/px);
+        margin-right: 0;
     }
     
     &--desktop {
@@ -197,17 +223,54 @@
     &__title {
         border-bottom: none;
         margin-bottom: 15px;
-        font-size: 20px;
+        font-size: (20/px);
         font-weight: bold;
     }
     &__item {
         border-bottom: none;
-        font-size: 12px;
+        font-size: (12/px);
         
         a {
             text-decoration: none;
             color: @dark-grey;
         }
+
+        @media @tablet-up {
+            padding: 0 30px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        margin: 10px 0;
+    }
+
+    &__text {
+        display: block;
+        position: absolute;
+        display: inline-block;
+        color: #fff;
+        font-size: (59 / @px);
+        padding-left: (20 / @px);
+        top: (8 / @px);
+
+        @media @tablet-up {
+            font-size: (30 / @px);
+            top: (15 / @px);
+        }
+    }
+
+    &__sub-text {
+        display: block;
+        font-size: (17/@px);
+        font-style: italic;
+        padding: 0 10px;
+        margin-top: -8px;
+        font-style: normal;
     }
 }
 
@@ -316,7 +379,7 @@
 .footer {
 
     &__links {
-        font-size: 14px;
+        font-size: (14/px);
         font-weight: bold;
         
         a {

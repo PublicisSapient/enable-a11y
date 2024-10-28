@@ -338,7 +338,7 @@ a code {
   width: fit-content;
 }
 .screen-reader-table tr td {
-  width: calc((100% -  125px) / 5);
+  width: calc((100% - 125px) / 5);
 }
 .screen-reader-table tr td:first-child {
   width: 125px;

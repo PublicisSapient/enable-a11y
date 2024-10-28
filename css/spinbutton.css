@@ -15,7 +15,7 @@ input[type="number"] {
   border: 1px solid black;
 }
 input[type="number"] {
-  font-size: 16px;
+  font-size: 1rem;
   text-align: right;
 }
 input[type="number"]::-webkit-inner-spin-button:not(:focus),
@@ -31,7 +31,7 @@ input[type="number"]::-webkit-outer-spin-button:not(:focus) {
 .enable-spinner__button {
   display: block;
   text-align: right;
-  font-size: 16px;
+  font-size: 1rem;
   position: absolute;
   right: 0;
   height: 0.625rem;
