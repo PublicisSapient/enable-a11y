@@ -96,25 +96,7 @@ const sectionGenerator = new function () {
                         ));
 
 
-                        /* sectionLinksHTML.push(interpolate(
-                            templates['section-link'], 
-                            sectionPages[i][j], 
-                            {
-                                entifyParams: false
-                            }
-                        )); */
                     }
-
-                    /* subsectionsHTML.push(interpolate(
-                        templates['section-subsection'],
-                        {  
-                            subsectionTitle: i,
-                            subsectionLinks: sectionLinksHTML.join('')
-                        }, {
-                            entifyParams: false
-                        }
-                    )) */
-
 
                     pageListItemsHTML.push(interpolate(
                         templates['page-list__heading'],
@@ -128,14 +110,7 @@ const sectionGenerator = new function () {
                     sectionLinksHTML = [];
                     pageListItemsContentHTML = [];
                 }
-                /* sectionTOCHTML = interpolate(
-                    templates['section-table-of-contents'],
-                    {
-                        subsections: subsectionsHTML.join('')
-                    }, {
-                        entifyParams: false
-                    }
-                ); */
+                
                 pageListHTML = interpolate(
                     templates['page-list'],
                     {

@@ -1,20 +1,3 @@
-<template id="section-table-of-contents">
-    <div class="sidemenu">
-        <div class="sidemenu__list">
-            ${subsections}
-        </div>
-    </div>
-</template>
-
-<template id="section-subsection">
-    <h3 class="sidemenu__title">${subsectionTitle}</h3>
-    ${subsectionLinks}
-</template>
-
-<template id="section-link">
-    <p class="sidemenu__item"><a href="#${slug}__page">${visibleTitle}</a></p>
-</template>
-
 <template id="page-list">
     <div class="plp">
         <div class="plp-list">
