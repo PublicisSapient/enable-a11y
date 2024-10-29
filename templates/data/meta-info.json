@@ -219,7 +219,7 @@
     "desc": "Page that organizes the components that fall under Controls."
   },
   "dark-mode.php": {
-    "sectionPages": [ { "code-patterns": "Visual Design" }],
+    "sectionPages": [ { "code-patterns-removed": "Visual Design" }],
     "title": "Dark Mode",
     "desc": "This page will show you how to ensure your website has proper contrast as well as the overall function for dark mode.",
     "thumbFileType": "png"
