@@ -4,12 +4,15 @@
         <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">
             Skip to Main Content
         </a>
+
+
+
     </div>
 
     <div class="nav-container">
         <!-- Enable Logo (link to homepage) -->
         <div class="enable-logo">
-            <a href="/">
+            <a href="index.php">
                 <img src="images/ENABLE.svg" alt="Enable Home Page" class="enable-logo--mobile">
                 <img src="images/accessible-text-svg/logo-enable-white.svg" alt="Enable Home Page" class="enable-logo--desktop" />
             </a>
