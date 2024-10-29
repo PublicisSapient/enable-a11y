@@ -127,7 +127,6 @@
         padding: 0.5em;
         margin-top: -1em;
         padding-top: 2em;
-        background-color: #fefefe;
 
         legend,
         .legend {
@@ -209,11 +208,19 @@
 
     label.required::after {
         color: #e60000;
-        content: "*";
+        content: " *";
         font-weight: normal;
+
+        .enable__is-dark-mode & {
+            color: #ff8888;
+        }
     }
 
     .required-symbol {
         color: #e60000;
+
+        .enable__is-dark-mode & {
+            color: #ff8888;
+        }
     }
 }

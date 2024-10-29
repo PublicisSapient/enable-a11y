@@ -473,6 +473,7 @@
       <div role="row">
         <span role="rowheader">Total Savings in one day</span>
         <span role="cell" aria-colspan="2">$45600</span>
+        <span role="cell" aria-colspan="2"></span>
       </div>
     </div>
   </div>

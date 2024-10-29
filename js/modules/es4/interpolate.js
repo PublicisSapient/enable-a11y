@@ -61,8 +61,11 @@ const entify = function(s) {
  * @returns {string} - The constructed string that results putting `string` and `params` together
  * @example interpolate("Showing ${searchNum} results for '${searchTerm}'", { searchNum: 10, searchTerm: "zoltan" }) = 'Showing 10 results for 'zoltan'
  */
-const interpolate = function(template, params) {
+const interpolate = function(template, params, options) {
   let r = template;
+  options = options || {
+    entifyParams: true
+  };
 
   for (let i = 0; i < disallowedInHTMLTemplate.length; i++) {
     const disallowed = disallowedInHTMLTemplate[i];
@@ -74,7 +77,7 @@ const interpolate = function(template, params) {
 
   try {
     for (const key in params) {
-      const value = entify(params[key] + '');
+      const value = options.entifyParams ? entify(params[key] + '') : params[key] + '';
 
       if ({}.hasOwnProperty.call(params, key)) {
         r = r.replace(new RegExp("\\$\\{" + key + "\\}", "g"), value);

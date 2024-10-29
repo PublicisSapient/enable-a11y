@@ -10,6 +10,7 @@
  ******************************************************************************/
 
 import showcode from './enable-libs/showcode.js';
+import sectionGenerator from './enable-libs/sectionGenerator.js';
 import pauseAnimControl from './modules/pause-anim-control.js';
 import Templify from './modules/templify.js';
 import EnableFlyout from './modules/enable-flyout.js';
@@ -21,6 +22,9 @@ import {
     createPermalinksForHeading,
 } from './modules/helpers.js';
 
+const colorSchemeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+const htmlEl = document.querySelector('html');
+    
 function buildFlyoutMenuHTML() {
     // This is the DOM element where the hamburger menu will be inserted into.
     const hamburgerMenuEl = document.getElementById('enable-flyout-menu');
@@ -36,8 +40,29 @@ function buildFlyoutMenuHTML() {
     EnableFlyout.init();
 }
 
+function includesUrl(string) {
+    if (location.href.includes(string)) {
+        return true;
+    }
+    return false;
+}
+
+function setColorScheme() {
+    if (window.matchMedia) {
+        if (colorSchemeMql.matches) {
+            htmlEl.classList.add('enable__is-dark-mode');
+        } else {
+            htmlEl.classList.remove('enable__is-dark-mode');
+        }
+    }
+}
+
 function initEnable() {
-    offscreenObserver.init(document.querySelector('[role="banner"]'));
+    // turn on dark mode on the site
+    setColorScheme();
+    colorSchemeMql.addEventListener('change', setColorScheme);
+
+    offscreenObserver.init(document.getElementById('header'));
 
     enableVisibleOnFocus.init();
     buildFlyoutMenuHTML();
@@ -58,7 +83,13 @@ function initEnable() {
     // Add permalinks on all pages except home, so screen reader users, like VoiceOver users, can navigate via heading and have focus applied to the heading.
     let headingIndex = 0;
 
-    if (location.href.indexOf('index.php') === -1) {
+    const indexPage = includesUrl('index.php')
+    const formsMenuPage = includesUrl('forms-section.php');
+    const contentMenuPage = includesUrl('content-section.php');
+    const controlsMenuPage = includesUrl('controls-section.php');
+    const codePatternsMenuPage = includesUrl('code-patterns-section.php');
+
+    if (!indexPage /* && !codePatternsMenuPage && !formsMenuPage && !contentMenuPage && !controlsMenuPage */) {
         document
             .querySelectorAll('h1, h2, h3, h4, h5, h6, [role="heading"]')
             .forEach((el) => {
@@ -83,12 +114,26 @@ function initEnable() {
 
     focusDeepLink();
 
+    // if this is a "-section" menu page, then generate the content using sectionGenerator
+    if (codePatternsMenuPage || formsMenuPage || contentMenuPage || controlsMenuPage ) {
+        sectionGenerator.init(generateTOC);
+    } else {
+        generateTOC();
+    }
+
+}
+
+function generateTOC() { 
     tableOfContents.init({
         skipPages: [
             '/index.php',
             '/faq.php',
             '/enable/index.php',
-            '/enable/faq.php',
+            '/enable/faq.php' /*,
+            '/forms-section.php',
+            '/content-section.php',
+            '/controls-section.php',
+            '/code-patterns-section.php' */
         ],
         showAsSidebarDefault: true,
         numberFirstLevelHeadings: true,

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   background: #f0f0f0 url(../images/cream_dust.jpg);
 }
@@ -40,7 +50,6 @@ div.heading-example p:nth-of-type(4) {
 div.heading-example h1,
 div.heading-example [role="heading"][aria-level="1"] {
   margin: 1em 0 0.5em 0;
-  color: #343434;
   font-weight: normal;
   font-family: "Ultra", sans-serif;
   font-size: 2.25rem;
@@ -52,7 +61,6 @@ div.heading-example h2,
 div.heading-example h5 [role="heading"][aria-level="2"],
 div.heading-example [role="heading"][aria-level="5"] {
   margin: 1em 0 0.5em 0;
-  color: #343434;
   font-weight: normal;
   font-family: "Orienta", sans-serif;
   border: none;
@@ -72,7 +80,6 @@ div.heading-example h6,
 div.heading-example [role="heading"][aria-level="3"],
 div.heading-example [role="heading"][aria-level="6"] {
   margin: 1em 0 0.5em 0;
-  color: #343434;
   font-weight: normal;
   text-transform: uppercase;
   font-family: "Orienta", sans-serif;
@@ -92,7 +99,6 @@ div.heading-example [role="heading"][aria-level="6"] {
 div.heading-example h4,
 div.heading-example [role="heading"][aria-level="7"] {
   margin: 1em 0 0.5em 0;
-  color: #343434;
   font-weight: normal;
   font-family: "Orienta", sans-serif;
 }
@@ -105,3 +111,24 @@ div.heading-example [role="heading"][aria-level="7"] {
   font-size: 1.125rem;
   line-height: 320rem;
 }
+div.heading-example h1,
+div.heading-example h2,
+div.heading-example h3,
+div.heading-example h4,
+div.heading-example h5,
+div.heading-example h6,
+div.heading-example [role="heading"] {
+  color: #6292f9;
+  border: none;
+}
+.enable__is-dark-mode div.heading-example h1,
+.enable__is-dark-mode div.heading-example h2,
+.enable__is-dark-mode div.heading-example h3,
+.enable__is-dark-mode div.heading-example h4,
+.enable__is-dark-mode div.heading-example h5,
+.enable__is-dark-mode div.heading-example h6,
+.enable__is-dark-mode div.heading-example [role="heading"] {
+  color: #ededed;
+  text-shadow: none;
+}
+/*# sourceMappingURL=heading.css.map */

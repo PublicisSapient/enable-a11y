@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This file contains CSS code specific to the demo.
  * For general code that pertains to the component 
@@ -13,17 +23,7 @@
     top: 0;
   }
 }
-#enable-pause-control {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
 @media only screen and (min-width: 960px) {
-  #enable-pause-control {
-    position: static;
-    top: auto;
-    z-index: inherit;
-  }
   .offscreen-observer__is-header-offscreen #enable-pause-control .play-pause-anim__checkbox-container {
     top: 0;
     left: 0;
@@ -122,3 +122,4 @@ main {
     background-position: -1920px 0;
   }
 }
+/*# sourceMappingURL=pause-animations-demo.css.map */

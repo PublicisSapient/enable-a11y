@@ -4,6 +4,18 @@
     position: relative;
     z-index: 0;
 
+    .able-duration {
+        background: #000;
+    }
+    
+    .able-clipped {
+        color: @dark-mode-white;
+    }
+
+    .able-offscreen {
+        color: white;
+    }
+
     .able-wrapper {
         max-width: initial !important;
     }
@@ -60,5 +72,23 @@
       outline: solid 2px @focus-color !important;
       outline-offset: -2px;
     });
+    }
+
+    .enable__is-dark-mode & {
+        .able-transcript {
+            background: @dark-mode-black;
+
+            div.able-transcript-desc {
+                background: #5E5151;
+            }
+
+             span {
+                &:hover,
+                &:active,
+                &:focus {
+                    background: #4C5E28;
+                }
+            }
+        }
     }
 }

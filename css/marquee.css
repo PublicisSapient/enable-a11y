@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 [role="marquee"] {
   background: black;
   color: white;
@@ -7,3 +17,4 @@
 [role="marquee"] a {
   color: white;
 }
+/*# sourceMappingURL=marquee.css.map */

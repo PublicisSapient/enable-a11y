@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 input[type="submit"],
 button[type="submit"] {
   display: block;
@@ -18,6 +28,11 @@ fieldset,
   margin-top: 1em;
   padding-top: 2em;
   background-color: #eeeeee;
+}
+.enable__is-dark-mode fieldset,
+.enable__is-dark-mode .fieldset,
+.enable__is-dark-mode [role="radiogroup"] {
+  background-color: #111111;
 }
 fieldset legend,
 .fieldset legend,
@@ -45,6 +60,9 @@ fieldset .legend,
   text-align: left;
   color: #db0000;
 }
+.enable__is-dark-mode .error {
+  color: #e17a7a;
+}
 .error::before {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' overflow='visible' xml:space='preserve'%3E%3Cpath opacity='.2' d='M4 64c0 33.636 27.364 61 61 61s61-27.364 61-61S98.636 3 65 3 4 30.364 4 64z'/%3E%3Cpath opacity='.2' d='M3 64c0 34.188 27.813 62 62 62 34.188 0 62-27.813 62-62S99.187 2 65 2 3 29.813 3 64z'/%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='60.49' y1='1.742' x2='69.656' y2='126.241'%3E%3Cstop offset='0' style='stop-color:%23a70000'/%3E%3Cstop offset='1' style='stop-color:%23a70000'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23a)' d='M4 63c0 33.636 27.364 61 61 61s61-27.364 61-61S98.636 2 65 2 4 29.364 4 63z'/%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='57.765' y1='1.689' x2='72.515' y2='126.69'%3E%3Cstop offset='0' style='stop-color:%23bd0000'/%3E%3Cstop offset='.352' style='stop-color:%23c40000'/%3E%3Cstop offset='.869' style='stop-color:%23d80000'/%3E%3Cstop offset='1' style='stop-color:%23de0000'/%3E%3C/linearGradient%3E%3Ccircle fill='url(%23b)' cx='65' cy='63' r='60'/%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='23.375' y1='14.566' x2='71.625' y2='67.816'%3E%3Cstop offset='0' style='stop-color:%23e05e5e'/%3E%3Cstop offset='1' style='stop-color:%23d81818'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23c)' d='M57.75 56.5c24.934-8.476 65.898-6.226 65.898-6.226C117.811 23.25 93.771 3 65 3 31.863 3 5 29.863 5 63a59.81 59.81 0 0 0 4.715 23.354S32.817 64.976 57.75 56.5z'/%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='63.818' y1='54.581' x2='72.118' y2='124.92'%3E%3Cstop offset='0' style='stop-color:%23bd0000'/%3E%3Cstop offset='.043' style='stop-color:%23c10606'/%3E%3Cstop offset='.294' style='stop-color:%23d62424'/%3E%3Cstop offset='.541' style='stop-color:%23e63a3a'/%3E%3Cstop offset='.78' style='stop-color:%23ef4747'/%3E%3Cstop offset='1' style='stop-color:%23f24b4b'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23d)' d='M65 122C32.03 122 5.283 95.406 5.013 62.5c-.002.167-.013.333-.013.5 0 33.137 26.863 60 60 60s60-26.863 60-60c0-.167-.012-.333-.013-.5C124.717 95.406 97.97 122 65 122z'/%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='-68.751' y1='-319.85' x2='-194.001' y2='-319.85' gradientTransform='rotate(180 -33 -143.25)'%3E%3Cstop offset='0' style='stop-color:%23e57373'/%3E%3Cstop offset='.118' style='stop-color:%23ec9393'/%3E%3Cstop offset='.266' style='stop-color:%23f4b4b4'/%3E%3Cstop offset='.39' style='stop-color:%23f9c9c9'/%3E%3Cstop offset='.472' style='stop-color:%23fbd0d0'/%3E%3Cstop offset='.548' style='stop-color:%23f9c8c8'/%3E%3Cstop offset='.67' style='stop-color:%23f5b1b1'/%3E%3Cstop offset='.821' style='stop-color:%23ed8b8b'/%3E%3Cstop offset='.994' style='stop-color:%23e35858'/%3E%3Cstop offset='1' style='stop-color:%23e35656'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23e)' d='M65 4.101c32.97 0 59.717 26.594 59.987 59.5.001-.167.013-.333.013-.5 0-33.137-26.863-60-60-60s-60 26.863-60 60c0 .167.011.333.013.5.27-32.906 27.017-59.5 59.987-59.5z'/%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='61.692' y1='46.315' x2='69.442' y2='83.065'%3E%3Cstop offset='0' style='stop-color:%23bd0000'/%3E%3Cstop offset='.167' style='stop-color:%23c10907'/%3E%3Cstop offset='.445' style='stop-color:%23cd2319'/%3E%3Cstop offset='.796' style='stop-color:%23e04c36'/%3E%3Cstop offset='1' style='stop-color:%23ed6749'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23f)' d='M26 49a1 1 0 0 0-1 1v24a1 1 0 0 0 1 1h78a1 1 0 0 0 1-1V50a1 1 0 0 0-1-1H26z'/%3E%3Cpath fill='%23FFF' d='M26 50h78v24H26z'/%3E%3Cpath fill='%23CCC' d='M27 51h77v-1H26v24h1z'/%3E%3C/svg%3E");
@@ -54,3 +72,4 @@ fieldset .legend,
   height: 0.7rem;
   margin-right: 0.5em;
 }
+/*# sourceMappingURL=form.css.map */

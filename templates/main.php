@@ -22,35 +22,36 @@ give404IfNotValid();
 </head>
 
 <body class="<?= isset($fileProps->bodyClass) ? $fileProps->bodyClass : "" ?>">
-  
+
   <?php include "includes/documentation-header.php"; ?>
-  <?php include "includes/pause-anim-control.php"; ?>
+
   <?php getAsideContent(); ?>
-  <<?= $mainContentTag ?> id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
+        <<?= $mainContentTag ?> id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
-    <?php
-    if (
-        property_exists($fileProps, "mainClass") &&
-        $fileProps->mainClass != "with-full-bleed-hero" &&
-        isset($fileProps->title) &&
-        !isset($fileProps->hideTitle)
-    ) {
-        print "<h1>" . $fileProps->title . "</h1>";
-    }
+        <?php
+        if (
+            property_exists($fileProps, "mainClass") &&
+            $fileProps->mainClass != "with-full-bleed-hero" &&
+            isset($fileProps->title) &&
+            !isset($fileProps->hideTitle)
+        ) {
+            print "<h1>" . $fileProps->title . "</h1>";
+        }
 
-    if (isset($fileProps->title)) {
-        getContent($fileProps->title);
-    } else {
-        getContent("");
-    }
-    ?>
-  </<?= $mainContentTag ?>>
+        if (isset($fileProps->title)) {
+            getContent($fileProps->title);
+        } else {
+            getContent("");
+        }
+        ?>
 
+        </<?= $mainContentTag ?>>
     <?php getPreBottomBodyTags(); ?>
 
-    <?php include "includes/example-footer.php"; ?>
+    <?php include "includes/footer.php"; ?>
 
     <?php getBottomBodyTags(); ?>
+<!-- </div> -->
 </body>
 
 </html>

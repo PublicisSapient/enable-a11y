@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 dialog {
   position: absolute;
   left: 0;
@@ -15,6 +25,10 @@ dialog {
   color: black;
   display: block;
   overflow: visible;
+}
+.enable__is-dark-mode dialog {
+  background: #121212;
+  color: #ededed;
 }
 dialog:not([open]) {
   display: none;
@@ -39,3 +53,4 @@ dialog dialog.fixed {
   bottom: 0;
   left: 0;
 }
+/*# sourceMappingURL=dialog-polyfill.css.map */

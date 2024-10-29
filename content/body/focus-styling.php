@@ -136,6 +136,7 @@
   and compensating visually with an equivalent negative margin, so why just conform to 
   <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.5.8: Target Size (Minimum).</a> (which only asks 24 pixels x 24 pixels)?</p>
 
+  <figure class="wide centered-image">
 <?php includeShowcode("css-focus-hitarea", "", "", "", false); ?>
 <script type="application/json" id="css-focus-hitarea-props">
 {
@@ -147,11 +148,15 @@
   }]
 }
 </script>
+<figcaption>Figure 3a. Code pattern that increases the hit area around navigation buttons.</figcaption>
+
+</figure>
 
 <template id="css-focus-hitarea" data-type="css">
   .enable-flyout__open-level-button { padding: 27px 0; margin: -27px 0; }
 
 </template>
+
 
 <p>I encourage everyone reading this to implement this on all the websites they code. From a UX perspective, it just
   makes it easier for everyone to use the websites you code.</p>

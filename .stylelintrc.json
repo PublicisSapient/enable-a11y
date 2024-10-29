@@ -22,9 +22,6 @@
         "declaration-block-no-redundant-longhand-properties": null,
         "declaration-block-no-shorthand-property-overrides": null,
         "declaration-block-single-line-max-declarations": null,
-        "declaration-property-unit-allowed-list": {
-            "font-size": ["em", "rem", "vmin", "vmax", "vw", "vh"]
-        },
         "font-family-name-quotes": null,
         "font-family-no-missing-generic-family-keyword": null,
         "function-calc-no-unspaced-operator": null,
