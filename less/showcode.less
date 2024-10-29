@@ -5,7 +5,7 @@
 @fade-color: #000;
 @border: solid 1px #999;
 @select-width: (160 / @px);
-@clip-bottom: 45px;
+@clip-bottom: 41px;
 @code-focus-outline-width: 4px;
 @code-focus-outline-gap: 4px;
 @notes-bottom-margin: 20px;
@@ -81,7 +81,7 @@ code {
     &__heading {
         font-weight: bold;
         padding-top: 20px;
-        font-size: 1.25rem;
+        font-size: (20 / @px);
         border-bottom: double 3px #000;
     }
 
@@ -128,6 +128,10 @@ code {
             max-width: calc(100vw - 20px);
             overflow-x: auto;
             background: #000;
+
+            .enable__is-dark-mode & {
+                background: @dark-mode-black;
+            }
         }
 
         &--desc {
@@ -144,6 +148,11 @@ code {
                 display: block;
                 text-align: center;
                 display: block;
+
+                .enable__is-dark-mode & {
+                    background: @dark-mode-midgrey;
+                    color: @dark-mode-white;
+                }
             }
 
             &::after {
@@ -242,7 +251,7 @@ code {
 
     &__ui {
         position: sticky;
-        top: (40 / @px);
+        top: (80 / @px);
         z-index: 1;
         background-color: rgb(245, 222, 179);
         padding: 0.01em;
@@ -255,6 +264,12 @@ code {
 
     &__notes-container {
         position: relative;
+        color: #000;
+
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+        }
+
     }
 
     &__notes {
@@ -285,6 +300,11 @@ code {
             padding: 1em 1em 1em 1em;
             margin: 0 10px @notes-bottom-margin 10px;
             background-color: #ffffee;
+
+            .enable__is-dark-mode & {
+                border-color: #a3917b;
+                background-color: #454532;
+            }
 
             > div {
                 overflow: hidden;
@@ -357,5 +377,11 @@ code {
 
     figure.wide &__example {
         margin-bottom: -2.5rem;
+    }
+}
+
+.enable__is-dark-mode {
+    .showcode__steps, .showcode__ui {
+        background-color: #705029;
     }
 }

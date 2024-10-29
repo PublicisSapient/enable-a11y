@@ -1,4 +1,13 @@
-/* Main tooltip */
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .tooltip {
   display: block;
   background: black;
@@ -8,41 +17,37 @@
   position: absolute;
   border-radius: 0.5rem;
   z-index: 2147483647;
-  /* Common styling for button entrypoints */
   /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
-    */
+     */
   border: 1px solid transparent;
-  /* Additional tooltip styles */
-  /* Button entrypoints */
 }
-.tooltip .button-common {
-  color: white;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-.tooltip .button-hover {
-  /* Hover styling */
-  transition: background-color 0.3s ease;
-  /* smooth transition */
-  background-color: darkblue;
-  /* Example darker background on hover */
+.enable__is-dark-mode .tooltip {
+  border-color: #ededed;
 }
 .tooltip:before {
   content: "";
-  width: 0.01rem;
-  height: 0.01rem;
+  width: 1rem;
+  height: 1rem;
+  background: black;
   position: absolute;
-  left: 0.1rem;
+  top: -0.5rem;
+  left: 0.5rem;
+  transform: rotate(45deg);
+  z-index: -1;
   /* Again, we put a transparent border here for Windows High Contrast Mode */
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid black;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+.enable__is-dark-mode .tooltip:before {
+  border-top: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+}
+.tooltip--bottom:before {
+  top: initial;
+  bottom: -0.5rem;
+  transform: rotate(-135deg);
 }
 .tooltip:after {
   content: "";
@@ -63,66 +68,4 @@
   width: 1px;
   margin: -1px;
 }
-.tooltip--top:before {
-  top: -0.5rem;
-}
-.tooltip--bottom:before {
-  bottom: -0.5rem;
-  transform: rotate(180deg);
-}
-.tooltip__icon-button {
-  color: white;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  /* to make it circular */
-  font-weight: bold;
-  font-size: 0.75rem;
-  /* adjust font size as needed */
-  /* Ensure the button content is centered */
-}
-.tooltip__icon-button:hover {
-  /* Hover styling */
-  transition: background-color 0.3s ease;
-  /* smooth transition */
-  background-color: darkblue;
-  /* Example darker background on hover */
-}
-.tooltip__icon-button .icon {
-  display: block;
-  /* Ensure block display for icon */
-  text-align: center;
-  /* Center text horizontally */
-  line-height: 1;
-  /* Adjust line height as needed */
-}
-.tooltip__text-button {
-  color: white;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  border-radius: 0.2rem;
-  padding: 0.25rem;
-  vertical-align: sub;
-}
-.tooltip__text-button:hover {
-  /* Hover styling */
-  transition: background-color 0.3s ease;
-  /* smooth transition */
-  background-color: darkblue;
-  /* Example darker background on hover */
-}
-@media only screen and (min-width: 720px) {
-  .tooltip__text-button {
-    vertical-align: top;
-  }
-}
+/*# sourceMappingURL=tooltip.css.map */

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .product-tile {
   display: block;
   width: 12.5rem;
@@ -11,10 +21,18 @@
   overflow: hidden;
   text-align: center;
 }
+.enable__is-dark-mode .product-tile {
+  color: #ededed;
+}
 .product-tile del,
 .product-tile ins,
 .product-tile mark {
   background-color: transparent;
+}
+.enable__is-dark-mode .product-tile del,
+.enable__is-dark-mode .product-tile ins,
+.enable__is-dark-mode .product-tile mark {
+  color: #ededed;
 }
 .product-tile del,
 .product-tile mark.del {
@@ -26,6 +44,9 @@
   left: 0;
   background: #aaa;
   padding: 5px;
+}
+.enable__is-dark-mode .product-tile__badge {
+  background: #550000;
 }
 .product-tile__name {
   font-weight: bold;
@@ -56,3 +77,4 @@
 .product-tile--not-as-good-example mark.ins::before {
   content: "Current price: ";
 }
+/*# sourceMappingURL=product-tile.css.map */

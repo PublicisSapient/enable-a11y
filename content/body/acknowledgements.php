@@ -19,6 +19,7 @@
 <ul>
   <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
   <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
+  <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for working on redesigning the Enable project and developing the site in dark mode.</li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
   </li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>

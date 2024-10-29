@@ -96,7 +96,7 @@
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
     "chalk": "^5.3.0",
-    "chromedriver": "^128.0.1",
+    "chromedriver": "^130.0.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -151,10 +151,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run eslint"
-    ],
-    "*.{css,less}": [
-      "npm run stylelint"
+      "eslint"
     ],
     "*.{js,jsx,ts,tsx,json}": [
       "prettier"

@@ -64,9 +64,10 @@
           
         </div>
       </div>
-    </fieldset>
+   
 
     <button type="submit">Submit</button>
+    </fieldset>
   </form>
 
 </div>
@@ -140,6 +141,8 @@
           </div>
         </div>
       </div>
+      <button type="submit">Submit</button>
+      
     </div>
   </div>
 </div>
@@ -189,9 +192,9 @@
 <p>A character counter is something that shows users how many characters they can type into a textbox.  It is visible at all times.  Our implementation has the character count information announced to screen reader users in the following scenarios:</p>
 
 <ol>
-  <li>A user uses the keyboard to access the textbox (e.g. using the TAB key) or swipes into the textbox on a mobile device</li>
-  <li>When there are <code>n</code> characters left before the textbox is filled, where <code>n</code> is either 20 (the default value) or the value used in the textbox's <code>data-warning-threshold</code> attribute.</li>
-  <li>When they use the keyboard to press the key set by the <code>data-read-count-key</code> attribute—the default is the Escape key.</li>
+  <li><strong>When the screen reader user uses the keyboard to access the textbox</strong> (e.g. by using the TAB key or swiping into the textbox on a mobile device)</li>
+  <li><strong>When there are 20 characters left before the textbox is filled.</strong>  This value can be changed by the developer by setting the <code>data-warning-threshold</code> attribute.</li>
+  <li><strong>When they use the keyboard to press the Escape key.</strong> This key can be changed by the developer by setting the <code>data-read-count-key</code> attribute</li>
 </ol>
 
 <p>Note that the code walkthrough below is specific to our implemtation.</p> 
@@ -210,8 +213,9 @@
           ></textarea>
         </div>
       </div>
-    </fieldset>
+
     <button type="submit">Submit</button>
+    </fieldset>
   </form>
 </div>
 
@@ -235,11 +239,11 @@
   }
 </script>
 
-<p>With the above two attributes set, the character counter will be created for the textbox and ARIA regions will be appended below the textbox. These ARIA regions will not be visible to sighted users but will provide the information needed for screen readers to announce the character count.</p>
+<p>When <code>data-has-character-count</code> is set, the character counter will be created for the textbox and ARIA regions will be appended below the textbox. These ARIA regions will not be visible to sighted users but will provide the information needed for screen readers to announce the character count:</p>
 
 <ol>
-  <li>ARIA-describedby Region: this area will be populated when the textbox comes into focus so that screen readers can read the description and instructions.</li>
-  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the key to announce the character count.
+  <li>ARIA-describedby Region: this area will be populated when the textbox comes into focus so that screen readers can read the description (i.e. that this is a textbox with a character limit) and instructions on how to use it (i.e. use the Escape key to report how many characters have been used up).</li> 
+  <li>ARIA-live Region: this area will be updated when the textbox comes into focus as well as whenever the user presses the Escape key (i.e. the instructions outlined in point #1)
     <ul>
       <li>Note: Chrome only announces the character count when there's a change to the text. In order to have Chrome announce on each key press—to align with other browsers—the JavaScript toggles between appending and removing an exclamation mark to the end of the announcement text.</li>
     </ul>
@@ -274,12 +278,13 @@
       </div>
     </fieldset>
 
+    <button type="submit">Submit</button>
+
     <!--
       Help:
          VO/OSX: CAPSLOCK+SHIFT+H
     -->
 
-    <button type="submit">Submit</button>
   </form>
 
 </div>

@@ -17,6 +17,11 @@
     left: 25%;
     display: none;
 
+    .enable__is-dark-mode & {
+        background-color: @dark-mode-black;
+        
+    }
+
     &.visible {
         display: block;
     }
@@ -57,6 +62,10 @@
         display: none;
         margin: 0;
         padding: 0;
+
+        .enable__is-dark-mode & {
+            background-color: @dark-mode-white;
+        }
 
         &.visible {
             display: block;

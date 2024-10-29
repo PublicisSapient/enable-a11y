@@ -1,9 +1,65 @@
-@focus-color: #097efb;
-@focus-color-dark-bg: rgb(59, 153, 252);
+:root {
+    --focus-color: #097efb;
+    --focus-color-dark-bg: rgb(59, 153, 252);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --focus-color: rgb(59, 153, 252);
+        --focus-color-dark-bg: #097efb;
+    }
+}
+
+
+
+
+// New Design Colors
+@pink: #CF1744;
+@teal: #05A8AA;
+@blue: #17183B;
+@orange: #A76000;
+@light-orange: #FF9F1C;
+@light-grey: #F4F7F5;
+@grey: #5d5c5c;
+@dark-grey: #2b2929;
+
+// Dark Mode Colors
+@pink-darkmode: #EF7290;
+@color0-darkmode: #CE8989;
+@dark-mode-black: #121212;
+@dark-mode-lightgrey: #9a9a9a;
+@dark-mode-darkgrey: #343434;
+@dark-mode-midgrey: #444444;
+@dark-mode-white: #ededed;
+
+// Table colors used in table.less and defaults.less (for comparison and compliance tables)
+@table-header-height: 2em;
+@table-header-background: black;
+@table-header-text-color: white;
+@table-header-border-color: white;
+@table-header-background--dark-mode: @dark-mode-lightgrey;
+@table-header-text-color--dark-mode: @dark-mode-black;
+@table-header-border-color--dark-mode: @dark-mode-black;
+@table-header-link-color: #ccccff;
+
+@table-cell-background: white;
+@table-cell-background2: #cccccc;   // for zebra striping
+@table-cell-text-color: black;
+@table-cell-border-color: black;
+@table-cell-background--dark-mode: @dark-mode-black;
+@table-cell-background2-dark-mode: @dark-mode-darkgrey; // for zebra striping
+@table-cell-text-color--dark-mode: @dark-mode-white;
+@table-cell-border-color--dark-mode: @dark-mode-white;
+@table-header-link-color--dark-mode: #000088;
+
+@focus-color: var(--focus-color);
+@focus-color-dark-bg: var(--focus-color-dark);
 
 // From https://codepen.io/janogarcia/pen/bNrKEP .  Used so we can convert
 // pixels to rems.
 @px: 16rem;
+
+@min-screen-width: 460px;
 
 @desktop-min: 960px;
 
@@ -39,13 +95,13 @@
 @color-integrate: #ffffcc;
 @color-do-not: #ffcccc;
 @color-style: #ccccff;
-@color-npm: #ccfffc;
+@color-npm: #d2fffc;
 @color-link: #00567c;
 
 @color-term-code: #090;
 @color-background-term-code: #000;
 
-@page-padding: (16 / @px);
+@page-padding: (30 / @px);
 
 .font-copy() {
     font-family: @font-default-copy;
@@ -61,6 +117,14 @@
 .font-heading-2() {
     font-family: @font-default-heading;
     font-size: (20 / @px);
+}
+
+.font-heading-3() {
+    font-family: @font-default-copy;
+    font-weight: bold;
+    padding-top: 20px;
+    font-size: (20 / @px);
+    border-bottom: double 3px #000;
 }
 
 //

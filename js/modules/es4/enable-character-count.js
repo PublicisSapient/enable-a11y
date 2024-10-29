@@ -64,9 +64,8 @@ const enableCharacterCount = new (function() {
     const liveRegionId = `${target.id}-live-region`;
     liveRegion.id = liveRegionId;
     liveRegion.className="sr-only";
-    liveRegion.role = 'region';
+    liveRegion.role = 'alert';
     liveRegion.ariaLive = 'polite';
-    liveRegion.ariaLabel = `ARIA live region for ${target.id}`
     target.insertAdjacentElement('afterend', liveRegion);
   }
 
