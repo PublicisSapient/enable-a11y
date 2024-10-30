@@ -12,8 +12,14 @@
   position: relative;
   z-index: 0;
 }
+.enable-media-player .able-transcript-container span {
+  display: inline;
+}
 .enable-media-player .able-duration {
   background: #000;
+}
+.enable__is-dark-mode .enable-media-player .able-highlight {
+  background: #880000;
 }
 .enable-media-player .able-clipped {
   color: #ededed;
