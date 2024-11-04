@@ -140,6 +140,7 @@
 }
 .enable-toc .enable-drawer__button img {
   height: 1.2rem;
+  max-height: 1.2rem;
   border-radius: 50%;
   transition: background 0.2s ease;
   will-change: background;
@@ -152,6 +153,7 @@
 }
 .enable__is-dark-mode .enable-toc__link {
   color: #FF9F1C;
+  line-height: 1.2;
 }
 .enable__is-dark-mode .enable-toc__link:visited {
   color: #FF9F1C;

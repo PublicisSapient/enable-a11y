@@ -30,7 +30,7 @@ function includeShowcode(
     $isInteractive = true,
     $headingLevel = 3,
     $prologue = "",
-    $displayOuterHTML = false,
+    $displayOuterHTML = false
 ) {
     includeFileWithVariables("includes/showcode-template.php", [
         "id" => $id,
@@ -40,7 +40,7 @@ function includeShowcode(
         "isInteractive" => $isInteractive,
         "headingLevel" => $headingLevel,
         "prologue" => $prologue,
-        "displayOuterHTML" => $displayOuterHTML,
+        "displayOuterHTML" => $displayOuterHTML
     ]);
 }
 
@@ -49,14 +49,14 @@ function includeMobileIframe(
     $queryString = "",
     $copy = "",
     $title = "Reflow Example",
-    $heading = "",
+    $heading = ""
 ) {
     includeFileWithVariables("includes/mobile-iframe.php", [
         "url" => $url,
         "queryString" => $queryString,
         "copy" => $copy,
         "title" => $title,
-        "heading" => $heading,
+        "heading" => $heading
     ]);
 }
 
@@ -65,7 +65,7 @@ function pictureWebpPng($src, $alt = "", $otherAttrs = "")
     includeFileWithVariables("includes/picture-webp-png.php", [
         "src" => $src,
         "alt" => $alt,
-        "otherAttrs" => $otherAttrs,
+        "otherAttrs" => $otherAttrs
     ]);
 }
 
@@ -73,7 +73,7 @@ function includeSvgSprite($id, $alt)
 {
     includeFileWithVariables("includes/svg-sprite.php", [
         "id" => $id,
-        "alt" => $alt,
+        "alt" => $alt
     ]);
 }
 
@@ -81,13 +81,13 @@ function includeMetaInfo(
     $title = "ERROR",
     $desc = "ERROR",
     $posterImg = "ERROR",
-    $mainClass = "",
+    $mainClass = ""
 ) {
     includeFileWithVariables("includes/meta-info.php", [
         "title" => $title,
         "desc" => $desc,
         "posterImg" => $posterImg,
-        "mainClass" => $mainClass,
+        "mainClass" => $mainClass
     ]);
 }
 
@@ -139,7 +139,7 @@ function includeNPMInstructions(
     $other = [],
     $doesHaveAddMethod = null,
     $willWorkAfterPageLoad = false,
-    $noInit = false,
+    $noInit = false
 ) {
     includeFileWithVariables("includes/npm.php", [
         "moduleName" => $moduleName,
@@ -150,7 +150,7 @@ function includeNPMInstructions(
         "doesHaveAddMethod" => $doesHaveAddMethod,
         "willWorkAfterPageLoad" => $willWorkAfterPageLoad,
         "noInit" => $noInit,
-        "bemPrefix" => $bemPrefix,
+        "bemPrefix" => $bemPrefix
     ]);
 }
 
@@ -196,7 +196,7 @@ function includeStats($props)
         "doNot" => isset($doNot),
         "isNPM" => isset($isNPM),
         "isStyle" => isset($isStyle),
-        "comment" => $comment,
+        "comment" => $comment
     ]);
 }
 

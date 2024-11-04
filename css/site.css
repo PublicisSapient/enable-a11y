@@ -333,10 +333,26 @@ body:has(.plp) h2 {
   font-weight: bold;
 }
 .footer__links a {
-  text-decoration: none;
+  display: block;
+}
+@media only screen and (min-width: 720px) {
+  .footer__links a {
+    display: inline-block;
+    margin-right: 1.875rem;
+  }
+  .footer__links a:last-child {
+    margin-right: 0;
+  }
 }
 .footer__attribution {
   font-size: small;
+  max-width: 1024px;
+  margin: 40px auto 0 auto;
+}
+@media only screen and (min-width: 720px) {
+  .footer__attribution a {
+    display: inline-block;
+  }
 }
 .enable__is-dark-mode .plp .plp-list .item-wrapper .links-wrapper a {
   color: #ededed;
