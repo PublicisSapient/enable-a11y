@@ -335,8 +335,9 @@ body:has(.plp) h2 {
 .footer__links a {
   display: block;
 }
-@media only screen and (min-width: 720px) and (max-width: 959px) {
+@media only screen and (min-width: 720px) {
   .footer__links a {
+    display: inline-block;
     margin-right: 1.875rem;
   }
   .footer__links a:last-child {

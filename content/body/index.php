@@ -63,7 +63,7 @@
     </li>
     <li>
       Not only do we want to help developers, but <strong>we want the help from developers to contribute their accessible code.</strong>
-      If you have a component that you'd like to submit - please put in a <!-- #TODO --> <a href="#">PR</a>.
+      If you have a component that you'd like to submit - please put in a <!-- #TODO --> <a href="https://github.com/PublicisSapient/enable-a11y?tab=readme-ov-file#contributing-code">PR</a>.
     </li>
   </ul>
 </div>
