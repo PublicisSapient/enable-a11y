@@ -383,12 +383,28 @@
         font-weight: bold;
         
         a {
-            text-decoration: none;
+            display: block;
+
+            @media @tablet {
+                margin-right: (30/@px);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
         }
     }
 
     &__attribution {
         font-size: small;
+        max-width: 1024px;
+        margin: 40px auto 0 auto;
+
+        a {
+            @media @tablet-up {
+                display: inline-block;
+            }
+        }
     }
 }
 

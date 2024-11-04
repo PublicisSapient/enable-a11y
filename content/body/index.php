@@ -2,7 +2,10 @@
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
        <h1 class="homepage__hero--heading">Enable </h1>
-      <p>A space for developers to learn and collaborate on making the web accessible.</p>
+      <p>A space for developers to learn and collaborate on making the web accessible.
+        <br/><br />
+        Proudly sponsored by The Publicis Sapient  Accessibility Centre of Excellence.
+      </p>
     </div>
   </div>
 </div>
