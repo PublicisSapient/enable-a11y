@@ -2,7 +2,7 @@
   Originally, Enable started out as a small personal website made by <a href="https://www.useragentman.com/">Zoltan Hawryluk</a> to show other developers how to make web-related code accessible to people with disabalities.  Some of the solutions were his own, and some he have borrowed, with citations, from others.  Zoltan is still the lead developer of this project and often contributes his own code to it, as well as reviewing all contributions from the community.
 </p>
 
-<p>Today, Enable is now sponsored by The Publicis Sapient Center of Excellence, to help not only its developers make accessible things, but also to give back to the accessibility and front-end web development communities.  It contains contributions from developers within Publicis Sapient as well as others, and we hope to continue to grow this ongoing collaboration.</p>
+<p>Today, Enable is now sponsored by The Publicis Sapient Accessibility Center of Excellence, to help not only its developers make accessible things, but also to give back to the accessibility and front-end web development communities.  It contains contributions from developers within Publicis Sapient as well as others, and we hope to continue to grow this ongoing collaboration.</p>
 
 <p>
   What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code we have
@@ -25,7 +25,7 @@
   <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
   <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
   <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for working on redesigning the Enable project and developing the site in dark mode.</li>
-  <li>Matthew Slavin for his redesign of the Enable Project's website in 2024, and to <a href="https://github.com/basiabaldwin">Basia Baldwin</a> and Travis Doughty for  </li>
+  <li>Matthew Slavin for his redesign of the Enable Project's website in 2024, and to <a href="https://github.com/basiabaldwin">Basia Baldwin</a> and Travis Doughty for for implementing the redesign on the site. </li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).  She also added the Table of Contents component that appears on the top of almost every Enable page.</li>
   <li>Oluwaseun Longe for adding stylelint to Enable.</li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>

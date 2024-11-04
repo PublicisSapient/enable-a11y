@@ -153,6 +153,7 @@
 }
 .enable__is-dark-mode .enable-toc__link {
   color: #FF9F1C;
+  line-height: 1.2;
 }
 .enable__is-dark-mode .enable-toc__link:visited {
   color: #FF9F1C;
