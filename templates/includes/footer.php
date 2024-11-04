@@ -6,9 +6,8 @@
         <p><a href="bookmarklets.php">Bookmarklets</a></p>
     </div>
     <div class="footer__attribution">
-        <p>The Enable project has been fondly created by <a href="https://useragentman.com">Zoltan Hawryluk</a>.</p>
-        <p>It has been released as open source so hopefully others can learn from it and this content is covered by the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.</p>
-        <p>Sponsored by PublicisSapient accessibility centre of excellence. MIT license.</p>
+        <p>The Enable Project has been fondly created by <a href="https://useragentman.com">Zoltan Hawryluk</a>. It has been released as open source so hopefully others can learn from it. Enable's source code is released under the MIT license, and the website's content is covered by the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>.</p>
+        <p>Enable is proudly sponsored by Publicis Sapient Accessibility Centre of Excellence.</p>
     </div>
 </footer>
 
