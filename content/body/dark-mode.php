@@ -22,7 +22,7 @@
 
 <ol>
   <li>Contrast is key!! Pay attention to the ratio (see below).</li>
-  <li>Don't forget the little details — take the time to <em>make sure</em> each component of the page (even ones not visible) is dark mode accessible. 
+  <li>Don't forget the little details — take the time to <em>make sure</em> each component of the page (even ones not visible) is dark mode accessible.
   </li>
   <li>Many users with photosensitivity use dark mode, so try to avoid using very bright colors, even if the contrast ratio appears correct.</li>
   <li>Make sure assistive technologies (such as screen readers) still work with dark mode.</li> 
