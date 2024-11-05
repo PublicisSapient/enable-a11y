@@ -241,6 +241,11 @@ a {
     padding-bottom: 60px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .homepage__bottom-copy {
+    background: #5f031a;
+  }
+}
 .homepage__bottom-copy--heading {
   font-weight: bold;
   color: #fff;
