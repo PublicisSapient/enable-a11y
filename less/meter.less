@@ -59,7 +59,7 @@
 .enable-custom-meter {
     .meter(#EFEFEF;#E4E4E4;120px);
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         .meter(@dark-mode-lightgrey; @dark-mode-white; 120px);
     }
 }

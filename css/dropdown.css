@@ -43,12 +43,14 @@
   content: "";
   display: none;
 }
-.enable__is-dark-mode .enable-drawer > .enable-drawer__button {
-  filter: invert(100%);
-}
-.enable__is-dark-mode .enable-drawer > .enable-drawer__button code {
-  background: #9a9a9a;
-  color: black;
+@media (prefers-color-scheme: dark) {
+  .enable-drawer > .enable-drawer__button {
+    filter: invert(100%);
+  }
+  .enable-drawer > .enable-drawer__button code {
+    background: #9a9a9a;
+    color: black;
+  }
 }
 .enable-drawer > .enable-drawer__button:hover {
   text-decoration: underline;
@@ -96,8 +98,10 @@
   background-color: #ccffcc;
   color: #000;
 }
-.enable__is-dark-mode .enable-multiselect__checkbox:checked + .enable-multiselect__label {
-  filter: invert(100%);
+@media (prefers-color-scheme: dark) {
+  .enable-multiselect__checkbox:checked + .enable-multiselect__label {
+    filter: invert(100%);
+  }
 }
 .enable-multiselect__checkbox:focus + .enable-multiselect__label {
   outline: solid 2px var(--focus-color);
@@ -125,10 +129,12 @@
   content: "";
   display: none;
 }
-.enable__is-dark-mode .enable-multiselect__button {
-  filter: invert(100%);
-  background-color: #9a9a9a;
-  color: #121212;
+@media (prefers-color-scheme: dark) {
+  .enable-multiselect__button {
+    filter: invert(100%);
+    background-color: #9a9a9a;
+    color: #121212;
+  }
 }
 .enable-multiselect__contents {
   display: inline-block;

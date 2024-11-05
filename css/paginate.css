@@ -36,9 +36,11 @@
   width: 3em;
   font-size: 0.875rem;
 }
-.enable__is-dark-mode .pagination__pager-item {
-  color: #ededed;
-  background-color: transparent;
+@media (prefers-color-scheme: dark) {
+  .pagination__pager-item {
+    color: #ededed;
+    background-color: transparent;
+  }
 }
 .pagination__pager-item:hover {
   background-color: #0e384c;
@@ -52,9 +54,11 @@
   color: #00f;
   font-weight: bold;
 }
-.enable__is-dark-mode .pagination__pager-item--selected {
-  border-bottom: solid #7e7ef8 3px;
-  color: #7e7ef8;
+@media (prefers-color-scheme: dark) {
+  .pagination__pager-item--selected {
+    border-bottom: solid #7e7ef8 3px;
+    color: #7e7ef8;
+  }
 }
 .pagination__table {
   margin-bottom: 0;

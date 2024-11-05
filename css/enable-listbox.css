@@ -29,11 +29,6 @@ fieldset,
   padding-top: 2em;
   background-color: #eeeeee;
 }
-.enable__is-dark-mode fieldset,
-.enable__is-dark-mode .fieldset,
-.enable__is-dark-mode [role="radiogroup"] {
-  background-color: #111111;
-}
 fieldset legend,
 .fieldset legend,
 [role="radiogroup"] legend,
@@ -60,8 +55,10 @@ fieldset .legend,
   text-align: left;
   color: #db0000;
 }
-.enable__is-dark-mode .error {
-  color: #e17a7a;
+@media (prefers-color-scheme: dark) {
+  .error {
+    color: #e17a7a;
+  }
 }
 .error::before {
   content: "";
@@ -71,6 +68,13 @@ fieldset .legend,
   width: 0.7rem;
   height: 0.7rem;
   margin-right: 0.5em;
+}
+@media (prefers-color-scheme: dark) {
+  fieldset,
+  .fieldset,
+  [role="radiogroup"] {
+    background-color: #111111;
+  }
 }
 .annotate {
   font-style: italic;
@@ -106,8 +110,10 @@ fieldset .legend,
   min-width: 9.25rem;
   z-index: 2;
 }
-.enable__is-dark-mode .enable-listbox [role="listbox"] {
-  background-color: #121212;
+@media (prefers-color-scheme: dark) {
+  .enable-listbox [role="listbox"] {
+    background-color: #121212;
+  }
 }
 .enable-listbox [role="option"] {
   display: block;
@@ -118,8 +124,10 @@ fieldset .legend,
 .enable-listbox [role="option"]:focus {
   background: #bde4ff;
 }
-.enable__is-dark-mode .enable-listbox [role="option"]:focus {
-  color: #366ed4;
+@media (prefers-color-scheme: dark) {
+  .enable-listbox [role="option"]:focus {
+    color: #366ed4;
+  }
 }
 .enable-listbox [role="option"][aria-selected] {
   padding-left: 1.5em;
@@ -139,8 +147,10 @@ fieldset .legend,
     alt: "";
   }
 }
-.enable__is-dark-mode .enable-listbox [role="option"][aria-selected="true"]:focus::before {
-  color: #121212;
+@media (prefers-color-scheme: dark) {
+  .enable-listbox [role="option"][aria-selected="true"]:focus::before {
+    color: #121212;
+  }
 }
 .enable-listbox button {
   border-radius: 0;
@@ -150,9 +160,11 @@ fieldset .legend,
   width: 9.375rem;
   position: relative;
 }
-.enable__is-dark-mode .enable-listbox button {
-  background: #121212;
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .enable-listbox button {
+    background: #121212;
+    color: #ededed;
+  }
 }
 .enable-listbox button[aria-disabled="true"] {
   opacity: 0.5;
@@ -166,8 +178,10 @@ fieldset .legend,
   font-size: 1rem;
   transform: scale(0.7);
 }
-.enable__is-dark-mode .enable-listbox button::after {
-  filter: invert(100%);
+@media (prefers-color-scheme: dark) {
+  .enable-listbox button::after {
+    filter: invert(100%);
+  }
 }
 .enable-listbox button[aria-expanded="true"]::after {
   transform: scaleX(0.7) scaleY(-0.7);

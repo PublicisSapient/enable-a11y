@@ -192,7 +192,7 @@
             font-weight: bold;
             text-align: center;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 color: #fff; // need to override default dark mode link color.
             }
         }

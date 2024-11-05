@@ -113,14 +113,16 @@ div.heading-example [role="heading"] {
   color: #6292f9;
   border: none;
 }
-.enable__is-dark-mode div.heading-example h1,
-.enable__is-dark-mode div.heading-example h2,
-.enable__is-dark-mode div.heading-example h3,
-.enable__is-dark-mode div.heading-example h4,
-.enable__is-dark-mode div.heading-example h5,
-.enable__is-dark-mode div.heading-example h6,
-.enable__is-dark-mode div.heading-example [role="heading"] {
-  color: #ededed;
-  text-shadow: none;
+@media (prefers-color-scheme: dark) {
+  div.heading-example h1,
+  div.heading-example h2,
+  div.heading-example h3,
+  div.heading-example h4,
+  div.heading-example h5,
+  div.heading-example h6,
+  div.heading-example [role="heading"] {
+    color: #ededed;
+    text-shadow: none;
+  }
 }
 /*# sourceMappingURL=heading.css.map */

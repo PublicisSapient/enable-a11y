@@ -23,9 +23,6 @@ fieldset,
     padding-top: 2em;
     background-color: #eeeeee;
 
-    .enable__is-dark-mode & {
-        background-color: #111111;
-    }
 
     legend,
     .legend {
@@ -50,7 +47,7 @@ fieldset,
     text-align: left;
     color: #db0000;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         color: #e17a7a;
     }
 
@@ -62,5 +59,14 @@ fieldset,
         width: 0.7rem;
         height: 0.7rem;
         margin-right: 0.5em;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    fieldset,
+    .fieldset,
+    [role="radiogroup"] {
+        background-color: #111111;
     }
 }

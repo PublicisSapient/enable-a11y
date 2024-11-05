@@ -136,7 +136,7 @@ body {
         margin: 0 -1rem;
         padding: 0 1rem;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: @dark-mode-darkgrey;
         }
 

@@ -44,8 +44,10 @@
   border: none;
   display: inline;
 }
-.enable__is-dark-mode .a11y-modal__button--close {
-  filter: invert(100%) brightness(140%);
+@media (prefers-color-scheme: dark) {
+  .a11y-modal__button--close {
+    filter: invert(100%) brightness(140%);
+  }
 }
 .a11y-modal__button--close img {
   border: 0;
@@ -66,8 +68,10 @@ dialog {
   width: 100vmin;
   margin: 0 auto;
 }
-.enable__is-dark-mode .image {
-  filter: invert(50%);
+@media (prefers-color-scheme: dark) {
+  .image {
+    filter: invert(50%);
+  }
 }
 .image__container {
   position: relative;
@@ -82,9 +86,11 @@ dialog {
   top: 22vmin;
   font-size: 2.5vmin;
 }
-.enable__is-dark-mode .modal__opener {
-  background: #121212;
-  color: #ededed;
-  border: solid 1px #ededed;
+@media (prefers-color-scheme: dark) {
+  .modal__opener {
+    background: #121212;
+    color: #ededed;
+    border: solid 1px #ededed;
+  }
 }
 /*# sourceMappingURL=dialog-html5.css.map */

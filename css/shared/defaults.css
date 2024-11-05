@@ -51,8 +51,10 @@ h3 {
   font-size: 1.25rem;
   border-bottom: double 3px #000;
 }
-.enable__is-dark-mode h3 {
-  border-color: #ededed;
+@media (prefers-color-scheme: dark) {
+  h3 {
+    border-color: #ededed;
+  }
 }
 h4 {
   font-weight: 500;
@@ -152,8 +154,10 @@ select {
   border-left: solid 5px black;
   font-family: "Helvetica", "Arial", sans-serif;
 }
-.enable__is-dark-mode .enable-example {
-  border-color: #aaa;
+@media (prefers-color-scheme: dark) {
+  .enable-example {
+    border-color: #aaa;
+  }
 }
 .enable-example--no-border {
   border: none;
@@ -260,9 +264,11 @@ code {
 a code {
   background-color: #f6f6f6;
 }
-.enable__is-dark-mode code {
-  color: #0a0;
-  background-color: #000;
+@media (prefers-color-scheme: dark) {
+  code {
+    color: #0a0;
+    background-color: #000;
+  }
 }
 .center {
   text-align: center;
@@ -300,9 +306,11 @@ a code {
 .comparison-table th a {
   color: #ccccff;
 }
-.enable__is-dark-mode .compliance-table th a,
-.enable__is-dark-mode .comparison-table th a {
-  color: #000088;
+@media (prefers-color-scheme: dark) {
+  .compliance-table th a,
+  .comparison-table th a {
+    color: #000088;
+  }
 }
 .compliance-table tr,
 .comparison-table tr {
@@ -312,9 +320,11 @@ a code {
 .comparison-table td {
   border: solid 1px black;
 }
-.enable__is-dark-mode .compliance-table td,
-.enable__is-dark-mode .comparison-table td {
-  border: solid 1px #ededed;
+@media (prefers-color-scheme: dark) {
+  .compliance-table td,
+  .comparison-table td {
+    border: solid 1px #ededed;
+  }
 }
 .compliance-table__icon,
 .comparison-table__icon {
@@ -354,41 +364,43 @@ iframe:focus-visible {
   outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
-.enable__is-dark-mode main {
-  color: #ededed;
-}
-.enable__is-dark-mode body {
-  background: #333;
-  color: #ededed;
-}
-.enable__is-dark-mode strong {
-  color: #ededed;
-}
-.enable__is-dark-mode h1 {
-  color: #ededed;
-}
-.enable__is-dark-mode h2 {
-  color: #ededed;
-}
-.enable__is-dark-mode p {
-  color: #ededed;
-}
-.enable__is-dark-mode a {
-  color: #FF9F1C;
-}
-.enable__is-dark-mode .enable-quote {
-  background: #222;
-  border-left: 10px solid #555;
-}
-.enable__is-dark-mode input,
-.enable__is-dark-mode textarea,
-.enable__is-dark-mode select {
-  background: #121212;
-  color: #ededed;
-  border-color: #ededed;
-}
-.enable__is-dark-mode input[type="submit"] {
-  background: #343434;
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  main {
+    color: #ededed;
+  }
+  body {
+    background: #333;
+    color: #ededed;
+  }
+  strong {
+    color: #ededed;
+  }
+  h1 {
+    color: #ededed;
+  }
+  h2 {
+    color: #ededed;
+  }
+  p {
+    color: #ededed;
+  }
+  a {
+    color: #FF9F1C;
+  }
+  .enable-quote {
+    background: #222;
+    border-left: 10px solid #555;
+  }
+  input,
+  textarea,
+  select {
+    background: #121212;
+    color: #ededed;
+    border-color: #ededed;
+  }
+  input[type="submit"] {
+    background: #343434;
+    color: #ededed;
+  }
 }
 /*# sourceMappingURL=defaults.css.map */

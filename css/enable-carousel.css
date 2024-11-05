@@ -198,8 +198,10 @@
   font-weight: bold;
   text-align: center;
 }
-.enable__is-dark-mode .enable-carousel__slide-cta {
-  color: #fff;
+@media (prefers-color-scheme: dark) {
+  .enable-carousel__slide-cta {
+    color: #fff;
+  }
 }
 .product-tile-carousel__example {
   margin: 0 -12px;

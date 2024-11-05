@@ -105,7 +105,7 @@
             color: #000;
         }
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             &, & a {
                 color: @dark-mode-white;
             }
@@ -287,7 +287,7 @@
     color: #000;
     text-align: center;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border-color: #aaa;
     }
 
@@ -309,13 +309,13 @@
         &--scratch {
             background-color: @color-scratch;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 background-color: #313e32;
             }
 
             a {
                 color: #7A4703;
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     color: @light-orange;
                 }
             }
@@ -409,7 +409,7 @@
     }
 }
 
-.enable__is-dark-mode {
+@media (prefers-color-scheme: dark) {
     .plp .plp-list .item-wrapper .links-wrapper a {
         color: @dark-mode-white;
     }

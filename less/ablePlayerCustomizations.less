@@ -13,7 +13,7 @@
     }
 
     .able-highlight {
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: #880000;
         }
     }
@@ -84,7 +84,7 @@
     });
     }
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         .able-transcript {
             background: @dark-mode-black;
 

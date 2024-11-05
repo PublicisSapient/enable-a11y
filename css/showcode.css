@@ -86,8 +86,10 @@ h4.showcode__heading {
   overflow-x: auto;
   background: #000;
 }
-.enable__is-dark-mode .showcode__example code {
-  background: #121212;
+@media (prefers-color-scheme: dark) {
+  .showcode__example code {
+    background: #121212;
+  }
 }
 .showcode__example--desc {
   display: none;
@@ -103,10 +105,6 @@ h4.showcode__heading {
     font-size: 1em;
     text-align: center;
     display: block;
-  }
-  .enable__is-dark-mode .showcode__example--desc {
-    background: #444444;
-    color: #ededed;
   }
   .showcode__example::after {
     content: "";
@@ -131,6 +129,12 @@ h4.showcode__heading {
   }
   .showcode__example.fade-left::after {
     background-image: linear-gradient(-270deg, #000, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0));
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 719px) and (prefers-color-scheme: dark) {
+  .showcode__example--desc {
+    background: #444444;
+    color: #ededed;
   }
 }
 .showcode--no-js {
@@ -189,8 +193,10 @@ h4.showcode__heading {
   position: relative;
   color: #000;
 }
-.enable__is-dark-mode .showcode__notes-container {
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .showcode__notes-container {
+    color: #ededed;
+  }
 }
 .showcode__notes + .showcode__notes-view-toggle {
   display: none;
@@ -216,9 +222,11 @@ h4.showcode__heading {
   margin: 0 10px 20px 10px;
   background-color: #ffffee;
 }
-.enable__is-dark-mode .showcode__notes:not(:empty) {
-  border-color: #a3917b;
-  background-color: #454532;
+@media (prefers-color-scheme: dark) {
+  .showcode__notes:not(:empty) {
+    border-color: #a3917b;
+    background-color: #454532;
+  }
 }
 .showcode__notes:not(:empty) > div {
   overflow: hidden;
@@ -272,8 +280,10 @@ h4.showcode__heading {
 figure.wide .showcode__example {
   margin-bottom: -2.5rem;
 }
-.enable__is-dark-mode .showcode__steps,
-.enable__is-dark-mode .showcode__ui {
-  background-color: #705029;
+@media (prefers-color-scheme: dark) {
+  .showcode__steps,
+  .showcode__ui {
+    background-color: #705029;
+  }
 }
 /*# sourceMappingURL=showcode.css.map */

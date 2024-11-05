@@ -5,7 +5,7 @@
     text-decoration: underline;
     cursor: pointer;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         color: #9999ff; 
     }
 }
@@ -13,7 +13,7 @@
 a[target="_blank"] {
     color: #00f;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         color: #92f1ff
     }
     &:visited {
@@ -23,7 +23,7 @@ a[target="_blank"] {
     .new-window-icon {
         height: (12 / @px);
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             filter: invert(100%) hue-rotate(162deg);
         }
     }
@@ -35,7 +35,7 @@ nav.breadcrumb {
     border-radius: 4px;
     background: hsl(300deg 14% 97%);
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background: hsl(300deg 14% 19%);
     }
 
@@ -63,7 +63,7 @@ nav.breadcrumb {
         font-weight: 700;
         text-decoration: none;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
         }
     }

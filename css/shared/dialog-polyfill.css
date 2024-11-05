@@ -26,9 +26,11 @@ dialog {
   display: block;
   overflow: visible;
 }
-.enable__is-dark-mode dialog {
-  background: #121212;
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  dialog {
+    background: #121212;
+    color: #ededed;
+  }
 }
 dialog:not([open]) {
   display: none;

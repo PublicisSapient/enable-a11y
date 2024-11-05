@@ -194,8 +194,10 @@ a {
     filter: invert() brightness(61%) contrast(434%);
   }
 }
-.enable__is-dark-mode .homepage__intro--header::before {
-  background-color: #999;
+@media (prefers-color-scheme: dark) {
+  .homepage__intro--header::before {
+    background-color: #999;
+  }
 }
 .homepage__intro--header--code::before {
   background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M5.719%2014.75a.997.997%200%200%201-.664-.252L-.005%2010l5.341-4.748a1%201%200%200%201%201.328%201.495L3.005%2010l3.378%203.002a1%201%200%200%201-.664%201.748zm8.945-.002L20.005%2010l-5.06-4.498a.999.999%200%201%200-1.328%201.495L16.995%2010l-3.659%203.252a1%201%200%200%200%201.328%201.496zm-4.678%201.417l2-12a1%201%200%201%200-1.972-.329l-2%2012a1%201%200%201%200%201.972.329z%22%20fill%3D%22%23444%22%20style%3D%22border%3A%20solid%201px%20transparent%22%2F%3E%3C%2Fsvg%3E");
@@ -289,45 +291,47 @@ a {
   list-style-type: none;
   color: #2b2929;
 }
-.enable__is-dark-mode main {
-  color: #ededed;
-}
-.enable__is-dark-mode .homepage__hero {
-  color: #EF7290;
-}
-.enable__is-dark-mode .homepage__hero--heading {
-  color: #EF7290;
-}
-.enable__is-dark-mode .homepage__intro--section {
-  background-color: #222;
-  color: white;
-}
-.enable__is-dark-mode .homepage__intro--section p a {
-  color: #FF9F1C;
-}
-.enable__is-dark-mode .homepage__intro--section + .enable__is-dark-mode .homepage__intro--section {
-  background-color: #222;
-}
-.enable__is-dark-mode .homepage__intro--header {
-  color: white;
-}
-.enable__is-dark-mode .homepage__bottom-copy ul li {
-  background-color: #222;
-  color: white;
-}
-.enable__is-dark-mode .homepage__bottom-copy--heading {
-  color: white;
-}
-.enable__is-dark-mode .homepage__bottom-copy.background-secondary {
-  background-color: #111;
-}
-.enable__is-dark-mode .homepage__bottom-copy.background-secondary p {
-  color: white;
-}
-.enable__is-dark-mode .homepage__bottom-copy.background-secondary .homepage__bottom-copy--heading {
-  color: white;
-}
-.enable__is-dark-mode a {
-  color: #FF9F1C;
+@media (prefers-color-scheme: dark) {
+  main {
+    color: #ededed;
+  }
+  .homepage__hero {
+    color: #EF7290;
+  }
+  .homepage__hero--heading {
+    color: #EF7290;
+  }
+  .homepage__intro--section {
+    background-color: #222;
+    color: white;
+  }
+  .homepage__intro--section p a {
+    color: #FF9F1C;
+  }
+  .homepage__intro--section + .homepage__intro--section {
+    background-color: #222;
+  }
+  .homepage__intro--header {
+    color: white;
+  }
+  .homepage__bottom-copy ul li {
+    background-color: #222;
+    color: white;
+  }
+  .homepage__bottom-copy--heading {
+    color: white;
+  }
+  .homepage__bottom-copy.background-secondary {
+    background-color: #111;
+  }
+  .homepage__bottom-copy.background-secondary p {
+    color: white;
+  }
+  .homepage__bottom-copy.background-secondary .homepage__bottom-copy--heading {
+    color: white;
+  }
+  a {
+    color: #FF9F1C;
+  }
 }
 /*# sourceMappingURL=index.css.map */

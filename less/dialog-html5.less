@@ -34,7 +34,7 @@
         border: none;
         display: inline;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             filter: invert(100%) brightness(140%);
         }
 
@@ -63,7 +63,7 @@ dialog {
     width: 100vmin;
     margin: 0 auto;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         filter: invert(50%);
     }
 
@@ -81,7 +81,7 @@ dialog {
     top: 22vmin;
     font-size: 2.5vmin;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background: @dark-mode-black;
         color: @dark-mode-white;
         border: solid 1px @dark-mode-white;

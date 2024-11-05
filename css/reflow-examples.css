@@ -118,8 +118,10 @@ body ::-webkit-scrollbar-track {
   margin: 0 -1rem;
   padding: 0 1rem;
 }
-.enable__is-dark-mode .reflow-examples__dropdown {
-  background: #343434;
+@media (prefers-color-scheme: dark) {
+  .reflow-examples__dropdown {
+    background: #343434;
+  }
 }
 .reflow-examples__dropdown--content {
   padding: 0;

@@ -200,13 +200,17 @@
   content: " *";
   font-weight: normal;
 }
-.enable__is-dark-mode .enable-form-example label.required::after {
-  color: #ff8888;
+@media (prefers-color-scheme: dark) {
+  .enable-form-example label.required::after {
+    color: #ff8888;
+  }
 }
 .enable-form-example .required-symbol {
   color: #e60000;
 }
-.enable__is-dark-mode .enable-form-example .required-symbol {
-  color: #ff8888;
+@media (prefers-color-scheme: dark) {
+  .enable-form-example .required-symbol {
+    color: #ff8888;
+  }
 }
 /*# sourceMappingURL=form-error.css.map */

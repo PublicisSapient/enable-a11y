@@ -35,7 +35,7 @@
         color: white;
         padding: 0.5em;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: #333366;
             color: #ffffcc;
         }
@@ -89,7 +89,7 @@
             border-top-right-radius: 0.5em;
             cursor: pointer;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 background: @unactive-tab-color--dark-mode;
                 color: @unactive-tab-text-color--dark-mode;
                 border-color: @unactive-tab-border-color--dark-mode;
@@ -107,7 +107,7 @@
                 border-color: @unactive-tab-border-color--highlight;
                 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     border-color: @unactive-tab-border-color--highlight--dark-mode;
                 }
             }
@@ -132,7 +132,7 @@
                 color: @active-tab-text-color;
                 font-weight: bold;
 
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     background: @active-tab-color--dark-mode;
                     border-color: @active-tab-border-color--dark-mode;
                     border-bottom: 4px solid @active-tab-color--dark-mode;
@@ -160,7 +160,7 @@
         color: #8c5000;
     }
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border: 2px solid @active-tab-border-color--dark-mode;
         color: @unactive-tab-text-color--dark-mode;
         background-color: @active-tab-color--dark-mode;
@@ -174,7 +174,7 @@
     p, li {
         color: @active-tabpanel-text-color;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @active-tabpanel-text-color--dark-mode;
         }
     }

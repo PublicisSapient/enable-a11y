@@ -14,7 +14,7 @@ textarea,
     background: #fff;
     vertical-align: bottom;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background-color: @dark-mode-black;
         border-color: @dark-mode-white;
         color: @dark-mode-white;

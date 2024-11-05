@@ -29,11 +29,6 @@ fieldset,
   padding-top: 2em;
   background-color: #eeeeee;
 }
-.enable__is-dark-mode fieldset,
-.enable__is-dark-mode .fieldset,
-.enable__is-dark-mode [role="radiogroup"] {
-  background-color: #111111;
-}
 fieldset legend,
 .fieldset legend,
 [role="radiogroup"] legend,
@@ -60,8 +55,10 @@ fieldset .legend,
   text-align: left;
   color: #db0000;
 }
-.enable__is-dark-mode .error {
-  color: #e17a7a;
+@media (prefers-color-scheme: dark) {
+  .error {
+    color: #e17a7a;
+  }
 }
 .error::before {
   content: "";
@@ -71,5 +68,12 @@ fieldset .legend,
   width: 0.7rem;
   height: 0.7rem;
   margin-right: 0.5em;
+}
+@media (prefers-color-scheme: dark) {
+  fieldset,
+  .fieldset,
+  [role="radiogroup"] {
+    background-color: #111111;
+  }
 }
 /*# sourceMappingURL=group.css.map */

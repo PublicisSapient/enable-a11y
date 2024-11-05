@@ -50,8 +50,10 @@
   float: left;
   margin-right: 20px;
 }
-.enable__is-dark-mode .decorative-example__icon {
-  filter: drop-shadow(0px 0px 14px #fff);
+@media (prefers-color-scheme: dark) {
+  .decorative-example__icon {
+    filter: drop-shadow(0px 0px 14px #fff);
+  }
 }
 #svg-sprite-example p {
   text-align: center;
@@ -65,8 +67,10 @@
   padding-top: 10px;
   padding-bottom: 7px;
 }
-.enable__is-dark-mode #svg-sprite-example ul {
-  background: #ededed;
+@media (prefers-color-scheme: dark) {
+  #svg-sprite-example ul {
+    background: #ededed;
+  }
 }
 #svg-sprite-example li {
   margin-right: 10px;
@@ -125,8 +129,10 @@
   padding: 7px;
   color: black;
 }
-.enable__is-dark-mode #icon-font-example section a {
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  #icon-font-example section a {
+    color: #ededed;
+  }
 }
 #icon-font-example section a:not(:first-child) {
   margin-left: 20px;
@@ -138,8 +144,10 @@
 #icon-font-example section a:nth-child(1):hover i {
   color: #3b5998;
 }
-.enable__is-dark-mode #icon-font-example section a:nth-child(1):hover i {
-  color: #6292f9;
+@media (prefers-color-scheme: dark) {
+  #icon-font-example section a:nth-child(1):hover i {
+    color: #6292f9;
+  }
 }
 #icon-font-example section a:nth-child(2):hover i {
   color: #4099ff;

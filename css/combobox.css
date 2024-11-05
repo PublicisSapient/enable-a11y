@@ -62,8 +62,10 @@
   box-sizing: border-box;
   z-index: 1;
 }
-.enable__is-dark-mode .enable-combobox input[role="combobox"] {
-  border-color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .enable-combobox input[role="combobox"] {
+    border-color: #ededed;
+  }
 }
 .enable-combobox [role="alert"] {
   position: absolute;
@@ -88,8 +90,10 @@
   max-height: 200px;
   overflow: auto;
 }
-.enable__is-dark-mode .enable-combobox [role="listbox"] {
-  background: #121212;
+@media (prefers-color-scheme: dark) {
+  .enable-combobox [role="listbox"] {
+    background: #121212;
+  }
 }
 .enable-combobox [role="option"] {
   display: block;

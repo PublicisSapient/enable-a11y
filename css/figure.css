@@ -45,17 +45,21 @@ figure span a,
 [role="figure"] span a {
   color: #A76000;
 }
-.enable__is-dark-mode figure figcaption a,
-.enable__is-dark-mode [role="figure"] figcaption a,
-.enable__is-dark-mode figure span a,
-.enable__is-dark-mode [role="figure"] span a {
-  color: #FF9F1C;
+@media (prefers-color-scheme: dark) {
+  figure figcaption a,
+  [role="figure"] figcaption a,
+  figure span a,
+  [role="figure"] span a {
+    color: #FF9F1C;
+  }
 }
-.enable__is-dark-mode .enable__is-dark-mode figure figcaption a,
-.enable__is-dark-mode .enable__is-dark-mode [role="figure"] figcaption a,
-.enable__is-dark-mode .enable__is-dark-mode figure span a,
-.enable__is-dark-mode .enable__is-dark-mode [role="figure"] span a {
-  color: #A76000;
+@media (prefers-color-scheme: dark) and (prefers-color-scheme: dark) {
+  figure figcaption a,
+  [role="figure"] figcaption a,
+  figure span a,
+  [role="figure"] span a {
+    color: #A76000;
+  }
 }
 figure code,
 [role="figure"] code {
@@ -120,8 +124,10 @@ a.tile-cta::after {
 .video-figure .able-status {
   text-align: right;
 }
-.enable__is-dark-mode figure code,
-.enable__is-dark-mode [role="figure"] code {
-  background: #121212;
+@media (prefers-color-scheme: dark) {
+  figure code,
+  [role="figure"] code {
+    background: #121212;
+  }
 }
 /*# sourceMappingURL=figure.css.map */

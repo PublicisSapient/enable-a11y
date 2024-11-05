@@ -21,9 +21,11 @@
   background-image: linear-gradient(0deg, #ffffff, #e0e0e0);
   vertical-align: bottom;
 }
-.enable__is-dark-mode [role="checkbox"] {
-  background: #121212;
-  border-color: #ededed;
+@media (prefers-color-scheme: dark) {
+  [role="checkbox"] {
+    background: #121212;
+    border-color: #ededed;
+  }
 }
 [role="checkbox"]:after {
   content: "";
@@ -44,9 +46,11 @@
   font-weight: bold;
   transform: scale(2.5) translateY(-0.0625rem) translateX(-0.125rem);
 }
-.enable__is-dark-mode [role="checkbox"][aria-checked="true"]:after,
-.enable__is-dark-mode [role="checkbox"][aria-checked="mixed"]:after {
-  color: #ddd;
+@media (prefers-color-scheme: dark) {
+  [role="checkbox"][aria-checked="true"]:after,
+  [role="checkbox"][aria-checked="mixed"]:after {
+    color: #ddd;
+  }
 }
 [role="checkbox"][aria-checked="mixed"]:after {
   content: "-";

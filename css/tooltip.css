@@ -23,8 +23,10 @@
      */
   border: 1px solid transparent;
 }
-.enable__is-dark-mode .tooltip {
-  border-color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    border-color: #ededed;
+  }
 }
 .tooltip:before {
   content: "";
@@ -40,9 +42,11 @@
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
 }
-.enable__is-dark-mode .tooltip:before {
-  border-top: 1px solid #ededed;
-  border-left: 1px solid #ededed;
+@media (prefers-color-scheme: dark) {
+  .tooltip:before {
+    border-top: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+  }
 }
 .tooltip--bottom:before {
   top: initial;

@@ -13,7 +13,7 @@
     overflow: hidden;
     text-align: center;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         color: @dark-mode-white;
     }
 
@@ -22,7 +22,7 @@
     mark {
         background-color: transparent;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
         }
     }
@@ -39,7 +39,7 @@
         background: #aaa;
         padding: 5px;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: #550000;
         }
     }

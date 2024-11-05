@@ -16,7 +16,7 @@
      */
     border: 1px solid transparent;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border-color: @dark-mode-white;
     }
 
@@ -37,7 +37,7 @@
 
 
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             border-top: 1px solid @dark-mode-white;
             border-left: 1px solid @dark-mode-white;
         }
