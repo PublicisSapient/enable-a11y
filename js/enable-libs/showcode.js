@@ -666,7 +666,7 @@ const showcode = new function () {
   }
 
   this.getStickyContainersOffset = (el) => {
-    const stickyEls = document.querySelectorAll('[data-is-sticky="top"] div');
+    const stickyEls = document.querySelectorAll('[data-is-sticky="top"]');
     let offset = 0;
     
     stickyEls.forEach((stickyEl) => {
@@ -675,6 +675,7 @@ const showcode = new function () {
       //}
     });
 
+    console.log('offset', offset);
     return offset
   }
 
@@ -689,7 +690,7 @@ const showcode = new function () {
     if (uiEl === null) {
       return;
     }
-
+ 
     const stickyContainersOffset = uiEl.offsetHeight + this.getStickyContainersOffset(codeEl) + 10;
     const { body } = document;
    

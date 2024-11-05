@@ -128,6 +128,7 @@
     "wget-improved": "^3.4.0"
   },
   "dependencies": {
+    "@double-great/stylelint-a11y": "^3.0.2",
     "bin-build": "^2.1.1",
     "d3": "^7.8.5",
     "dialog-polyfill": "^0.5.6",
