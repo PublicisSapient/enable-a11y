@@ -14,7 +14,6 @@ div.heading-example {
 div.heading-example p {
     font-size: (16/@px);
     line-height: 1.4;
-    text-align: justify;
 }
 
 div.heading-example p:nth-of-type(2) {
@@ -52,13 +51,6 @@ div.heading-example p:nth-of-type(4) {
 @h6-size: (18/@px);
 @h7-size: (18/@px);
 
-@line-height1: 36px;
-@line-height2: 33px;
-@line-height3: 30px;
-@line-height4: 25px;
-@line-height5: 22px;
-@line-height6: 18px;
-@line-height7: 18px;
 
 div.heading-example {
     h1,
@@ -67,7 +59,6 @@ div.heading-example {
         font-weight: normal;
         font-family: "Ultra", sans-serif;
         font-size: @h1-size;
-        line-height: 42 * (36 / @line-height1);
         text-transform: uppercase;
         text-shadow:
             0 2px white,
@@ -86,13 +77,11 @@ div.heading-example {
     h2,
     [role="heading"][aria-level="2"] {
         font-size: @h2-size;
-        line-height: 40 * (30 / @line-height2);
     }
 
     h5,
     [role="heading"][aria-level="5"] {
         font-size: @h5-size;
-        line-height: 40 * (30 / @h5-size);
     }
 
     h3,
@@ -110,13 +99,11 @@ div.heading-example {
     h3,
     [role="heading"][aria-level="3"] {
         font-size: @h3-size;
-        line-height: 40 * (22 / @h3-size);
     }
 
     h6,
     [role="heading"][aria-level="6"] {
         font-size: @h6-size;
-        line-height: 40 * (22 / @h6-size);
     }
 
     h4,
@@ -129,12 +116,10 @@ div.heading-example {
     h4,
     [role="heading"][aria-level="4"] {
         font-size: @h4-size;
-        line-height: 20 * (18 / @h4-size);
     }
 
     [role="heading"][aria-level="7"] {
         font-size: @h7-size;
-        line-height: 20 * (18 / @h7-size);
     }
 
     h1, h2, h3, h4, h5, h6, [role="heading"] {

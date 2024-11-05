@@ -1,6 +1,6 @@
-{
+module.exports = {
     "customSyntax": "postcss-less",
-    "extends": "stylelint-config-standard",
+    "extends": [ "stylelint-config-standard"],
     "ignoreFiles": [
         "**/*.js",
         "enable-node-libs/**/*.css",
