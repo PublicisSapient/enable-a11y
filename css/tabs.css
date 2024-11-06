@@ -19,6 +19,7 @@
   background: black;
   color: white;
   padding: 0.5em;
+  margin-bottom: 0.7em;
 }
 .enable__is-dark-mode .tabs--has-js .tabs__instructions {
   background: #333366;
@@ -93,7 +94,7 @@
   font-weight: bold;
 }
 .enable__is-dark-mode [role="tablist"] li [role="tab"][aria-selected="true"] {
-  background: #ffffff;
+  background: #ededed;
 }
 [role="tabpanel"] {
   position: relative;
@@ -105,13 +106,13 @@
   border-radius: 1em;
   z-index: 1;
   border: 2px solid #7da8d9;
-  color: #7da8d9;
+  color: #1457a3;
 }
 [role="tabpanel"] a {
   color: #1457a3;
 }
 .enable__is-dark-mode [role="tabpanel"] {
-  border: 2px solid #ccc;
+  border: 2px solid #9a9a9a;
   color: #fff;
 }
 .enable__is-dark-mode [role="tabpanel"] a {

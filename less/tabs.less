@@ -1,20 +1,20 @@
 @import "shared/mixins-and-vars";
 
 @active-tab-color: #ffffff;
-@active-tab-text-color: #7da8d9;
+@active-tab-text-color: #1457a3;
 @active-tabpanel-text-color: #151515;
 @active-tab-border-color: #7da8d9;
 @active-tab-border-color--highlight: #999;
 
 @unactive-tab-color: #fff;
 @unactive-tab-text-color: #444;
-@unactive-tab-border-color: #ccc;
+@unactive-tab-border-color: @dark-mode-lightgrey;
 @unactive-tab-border-color--highlight: #999;
 
-@active-tab-color--dark-mode: #526068;
+@active-tab-color--dark-mode: @dark-mode-white;
 @active-tab-text-color--dark-mode: @dark-mode-white;
 @active-tabpanel-text-color--dark-mode: @dark-mode-white;
-@active-tab-border-color--dark-mode: #ccc;
+@active-tab-border-color--dark-mode: @dark-mode-lightgrey;
 @active-tab-border-color--highlight--dark-mode: #999;
 
 @unactive-tab-color--dark-mode: @dark-mode-darkgrey;
@@ -34,6 +34,7 @@
         background: black;
         color: white;
         padding: 0.5em;
+        margin-bottom: 0.7em;
 
         .enable__is-dark-mode & {
             background: #333366;
@@ -115,11 +116,11 @@
 
             &[aria-selected="true"] {
                 background: @active-tab-color;
-                color: #1457a3;
+                color: @active-tab-text-color;
                 font-weight: bold;
 
                 .enable__is-dark-mode & {
-                    background: @active-tab-color;
+                    background: @active-tab-color--dark-mode;
                 }
             }
         }
