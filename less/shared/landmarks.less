@@ -54,7 +54,7 @@ header,
     position: relative;
     display: inline-block;
     padding: 20px;
-    background: @color2;
+    background-color: @color2;
     border-radius: 50%;
     transform: rotate(-10deg);
 
@@ -109,11 +109,15 @@ main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-    padding: @page-padding;
+    padding: @page-padding-mobile; 
     margin: 0 auto;
     max-width: 1024px;
     line-height: 1.4;
     position: relative;
+
+    @media @tablet-up {
+        padding: @page-padding;
+    }
 }
 
 .inline-left {
@@ -142,14 +146,15 @@ article {
 aside,
 [role="complementary"] {
     display: block;
-    background: #ddd data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+    background-repeat: no-repeat;
+    background-position: 1em 1em;
+    background-color: #ddd;
     margin: 1em auto;
     padding: 1em 1em 1em calc(100px + 2em);
     min-height: (139 / @px);
     border: solid 1px black;
     box-shadow: 4px 4px 0 black;
     line-height: 1.4;
-
     max-width: 1024px;
 
     h2 {
@@ -161,12 +166,12 @@ aside,
     @media @mobile {
         background-size: 3rem;
         padding-left: 1rem;
-        background: #ddd;
+        background-color: #ddd;
 
         h2 {
             &::before {
                 content: "";
-                background: data-uri("../../images/notepad-icon.svg");
+                background-image: data-uri("../../images/notepad-icon.svg");
                 width: 2rem;
                 height: 2rem;
                 display: inline-block;
@@ -176,6 +181,10 @@ aside,
                 top: 0.4rem;
             }
         }
+    }
+
+    @media @tablet-up {
+        background-image: data-uri("../../images/notepad-icon.svg");
     }
 
     h3 {
@@ -200,7 +209,7 @@ footer,
 [role="contentinfo"] {
     bottom: 0;
     width: 100%;
-    background: black;
+    background-color: black;
     color: white;
     padding: 1em;
     text-align: center;
@@ -213,10 +222,12 @@ footer,
 
 @media (prefers-color-scheme: dark) {
     aside, [role="complementary"] {
-        background: #444 data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+        background-color: #444;
         border-color: #aaa;
+
         a {
             color: @light-orange;
+            
         }
     }
 }
