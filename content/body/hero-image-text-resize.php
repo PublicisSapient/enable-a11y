@@ -1,3 +1,9 @@
+<aside class="notes">
+  <h2>Note:</h2>
+
+  <p>For basic information about resizable/zoomed text, please read <a href="text-resize.php">The Enable Resizable Typography</a> page.</p>
+</aside>
+
 <p>
   For text inside hero images to be considered accessible, they must conform to the following guidelines:
 </p>

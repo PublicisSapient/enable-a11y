@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  This page will discuss how users can configure their computers tp light or dark mode on different operating systems and devices.  We will also discuss how developers can style their pages for dark mode using very simple CSS.
+  This page will discuss how users can configure their computers tp light or dark mode on different operating systems and devices.  We will also discuss how developers can style their pages for dark mode using very simple CSS, and tips for designers on how to design for dark mode in mind.
 </p>
 
 <figure>
@@ -40,6 +40,16 @@
     </div>
   </div>
 </figure>
+
+<h2>How Can Developers Check If Dark Mode Is Activated And Apply Styles Accordingly?</h2>
+
+<?php includeCodeSnippet('dark-mode-code', "Dark Mode Code", <<<CODE
+@media (prefers-color-scheme: dark) {
+
+}
+</template>
+CODE); ?>
+
 
 <h2>The "Rules" for Developing</h2>
 
