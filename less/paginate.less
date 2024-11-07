@@ -29,7 +29,7 @@
         width: 3em;
         font-size: (14 / @px);
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
             background-color: transparent;
         }
@@ -48,7 +48,7 @@
             color: #00f;
             font-weight: bold;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 border-bottom: solid rgb(126, 126, 248) 3px;
                 color: rgb(126, 126, 248);
             }

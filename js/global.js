@@ -22,8 +22,6 @@ import {
     createPermalinksForHeading,
 } from './modules/helpers.js';
 
-const colorSchemeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
-const htmlEl = document.querySelector('html');
     
 function buildFlyoutMenuHTML() {
     // This is the DOM element where the hamburger menu will be inserted into.
@@ -47,21 +45,8 @@ function includesUrl(string) {
     return false;
 }
 
-function setColorScheme() {
-    if (window.matchMedia) {
-        if (colorSchemeMql.matches) {
-            htmlEl.classList.add('enable__is-dark-mode');
-        } else {
-            htmlEl.classList.remove('enable__is-dark-mode');
-        }
-    }
-}
 
 function initEnable() {
-    // turn on dark mode on the site
-    setColorScheme();
-    colorSchemeMql.addEventListener('change', setColorScheme);
-
     offscreenObserver.init(document.getElementById('header'));
 
     enableVisibleOnFocus.init();

@@ -45,8 +45,10 @@
   font-size: inherit;
   font-weight: inherit;
 }
-.enable__is-dark-mode .deque-table-sortable__group table thead th button {
-  color: #121212;
+@media (prefers-color-scheme: dark) {
+  .deque-table-sortable__group table thead th button {
+    color: #121212;
+  }
 }
 .deque-table-sortable__group table thead th button {
   margin: -25px 0;

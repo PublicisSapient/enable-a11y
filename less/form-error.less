@@ -211,7 +211,7 @@
         content: " *";
         font-weight: normal;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: #ff8888;
         }
     }
@@ -219,7 +219,7 @@
     .required-symbol {
         color: #e60000;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: #ff8888;
         }
     }

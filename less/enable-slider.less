@@ -55,7 +55,7 @@
     position: relative;
     top: 2px;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background: @track-color--dark-mode;
         border-color: @dark-mode-lightgrey;
     }
@@ -270,7 +270,7 @@ input[type="range"] {
                 outline: 2px solid transparent;
                 outline-offset: -4px;
 
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     background: @track-diff-color--dark-mode;
                 }
             }

@@ -48,7 +48,7 @@
         float: left;
         margin-right: 20px;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             filter: drop-shadow(0px 0px 14px #fff);
         }
     }
@@ -69,7 +69,7 @@
         padding-top: 10px;
         padding-bottom: 7px;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: @dark-mode-white;
         }
     }
@@ -140,7 +140,7 @@
         padding: 7px;
         color: black;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
         }
     }
@@ -157,7 +157,7 @@
     section a:nth-child(1):hover i {
         color: #3b5998;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: #6292f9;
         }
     }

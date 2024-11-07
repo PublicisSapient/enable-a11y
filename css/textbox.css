@@ -18,11 +18,13 @@ textarea,
   background: #fff;
   vertical-align: bottom;
 }
-.enable__is-dark-mode textarea,
-.enable__is-dark-mode [role="textbox"] {
-  background-color: #121212;
-  border-color: #ededed;
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  textarea,
+  [role="textbox"] {
+    background-color: #121212;
+    border-color: #ededed;
+    color: #ededed;
+  }
 }
 textarea,
 [aria-multiline="true"] {

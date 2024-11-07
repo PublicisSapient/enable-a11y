@@ -44,6 +44,18 @@ function includeShowcode(
     ]);
 }
 
+function includeCodeSnippet(
+    $id,
+    $label,
+    $code
+) {
+    includeFileWithVariables("includes/code-snippet-template.php", [
+        "id" => $id,
+        "label" => $label,
+        "code" => $code
+    ]);
+}
+
 function includeMobileIframe(
     $url,
     $queryString = "",

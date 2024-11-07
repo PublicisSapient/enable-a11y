@@ -26,10 +26,12 @@
   border-radius: 2.125rem;
   /* Checked */
 }
-.enable__is-dark-mode [role="switch"],
-.enable__is-dark-mode [role="switch"][aria-checked] {
-  border-color: #ededed;
-  background-color: #343434;
+@media (prefers-color-scheme: dark) {
+  [role="switch"],
+  [role="switch"][aria-checked] {
+    border-color: #ededed;
+    background-color: #343434;
+  }
 }
 [role="switch"] span,
 [role="switch"][aria-checked] span {
@@ -63,16 +65,18 @@
   padding: 0;
   line-height: 1.7rem;
 }
-.enable__is-dark-mode [role="switch"][aria-checked="false"] :first-child,
-.enable__is-dark-mode [role="switch"][aria-checked][aria-checked="false"] :first-child,
-.enable__is-dark-mode [role="switch"][aria-checked="true"] :last-child,
-.enable__is-dark-mode [role="switch"][aria-checked][aria-checked="true"] :last-child,
-.enable__is-dark-mode [role="switch"][aria-pressed="false"] :first-child,
-.enable__is-dark-mode [role="switch"][aria-checked][aria-pressed="false"] :first-child,
-.enable__is-dark-mode [role="switch"][aria-pressed="true"] :last-child,
-.enable__is-dark-mode [role="switch"][aria-checked][aria-pressed="true"] :last-child {
-  background: #292;
-  color: #121212;
+@media (prefers-color-scheme: dark) {
+  [role="switch"][aria-checked="false"] :first-child,
+  [role="switch"][aria-checked][aria-checked="false"] :first-child,
+  [role="switch"][aria-checked="true"] :last-child,
+  [role="switch"][aria-checked][aria-checked="true"] :last-child,
+  [role="switch"][aria-pressed="false"] :first-child,
+  [role="switch"][aria-checked][aria-pressed="false"] :first-child,
+  [role="switch"][aria-pressed="true"] :last-child,
+  [role="switch"][aria-checked][aria-pressed="true"] :last-child {
+    background: #292;
+    color: #121212;
+  }
 }
 [role="switch"][aria-checked="false"] :last-child,
 [role="switch"][aria-checked][aria-checked="false"] :last-child,

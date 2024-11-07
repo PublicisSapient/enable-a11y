@@ -18,7 +18,7 @@ dialog {
     display: block;
     overflow: visible;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background: @dark-mode-black;
         color: @dark-mode-white;
     }

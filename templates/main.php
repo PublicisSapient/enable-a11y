@@ -25,7 +25,6 @@ give404IfNotValid();
 
   <?php include "includes/documentation-header.php"; ?>
 
-  <?php getAsideContent(); ?>
         <<?= $mainContentTag ?> id="main" class="<?= $fileProps->mainClass ?>" tabindex="-1">
 
         <?php

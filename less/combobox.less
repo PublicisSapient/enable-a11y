@@ -55,7 +55,7 @@
         box-sizing: border-box;
         z-index: 1;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             border-color: @dark-mode-white;
         }
     }
@@ -83,7 +83,7 @@
         max-height: 200px;
         overflow: auto;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: @dark-mode-black;
         }
     }

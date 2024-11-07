@@ -18,7 +18,7 @@
     .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
     vertical-align: bottom;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background: @dark-mode-black;
         border-color: @dark-mode-white;
     }
@@ -44,7 +44,7 @@
             font-weight: bold;
             transform: scale(2.5) translateY((-1 / @px)) translateX((-2 / @px));
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 color: #ddd;
             }
         }

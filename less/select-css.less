@@ -21,7 +21,7 @@
     appearance: none;
     background-color: #fff;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         background-color: @dark-mode-black;
         color: @dark-mode-white;
     }

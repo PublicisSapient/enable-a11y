@@ -126,7 +126,7 @@ div.heading-example {
         color: #6292f9;
         border: none;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
             text-shadow: none;
         }

@@ -1,5 +1,13 @@
 
 
+<aside class="notes">
+    <h2>Notes:</h2>
+    <ul>
+        <li>Even if you have decades of experience and you think you know how to code tables, read this page.  You may be surprised.</li>
+        <li>This page only discusses non-interactive tables.  We have other pages dedicated to 
+    <a href="pagination-table.php">paginated tables</a> and <a href="sortable-table">sortable tables</a>.</li>
+    </ul>
+</aside>
 <p>
     <strong>When coding tabular data on a webpage, you should use the <code>&lt;table&gt;</code> tag.</strong>  Some developers, surprisingly don't do this.  Some also don't realize <a href="https://adrianroselli.com/2017/11/a-responsive-accessible-table.html#Update01">it's a bad idea to use flexbox to style tabular data</a>.  I think the aversion to using <code>&lt;table&gt;</code> markup comes from <a href="https://codepen.io/johneemac/pen/dyMwNoO">the bad old-school way developers, who couldn't use CSS back in the 90s, used to use table for layout</a> (which you should never do now with <a href="https://blog.hubspot.com/website/html-email-table">a small exception for those who have to code HTML emails</a>).
 </p>

@@ -1,4 +1,10 @@
-
+<aside class="notes">
+  <h2>Note:</h2>
+  <p>
+    <strong>This page discusses resizing text with either a web browser's or operating system's "text resize" or "zoom text" feature</strong> (<a href="text-resize.php#text-resize-instructions">instructions for how to resize text are available for a variety of browsers and operating systems</a>). However, in order for a web page to pass <a
+      href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">WCAG 1.4.4 - Text Resize</a>, alternatives can be used when testing, such as zooming the whole page, changing the viewport by changing display resolution or providing an on-page text size picker.  For more information about these techniques, please read <a href="https://yatil.net/blog/resize-text-reflow">WCAG SC 1.4.4 Resize Text & 1.4.10 Reflow</a> by <a href="https://yatil.net/blog/resize-text-reflow">Eric Eggert</a>. 
+  </p>
+</aside>
 <p>
   Many users, myself included, use the text-resizing functionality offered by their browser and/or operating system. 
   This functionality is not only used by people who are partially sighted but also by those who wear glasses and those who want to see text on their mobile devices in the sunlight.
@@ -45,23 +51,8 @@
   All the pages on the Enable project are designed to resize by using rems, but we use a dead-simple LESS mixin to convert pixels to rems.
 </p>
 
-<div id="less-px-to-rem">
 
-</div>
-
-<?php includeShowcode("less-px-to-rem", "", "", "", false); ?>
-<script type="application/json" id="less-px-to-rem-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [{
-    "label": "LESS markup",
-    "highlight": "%INLINE%px-to-rem__less",
-    "notes": ""
-  }]
-}
-</script>
-
-<template id="px-to-rem__less" data-type="text">
+<?php includeCodeSnippet('less-px-to-rem', "LESS markup", <<<CODE
 // 1. Define a base font size. For example,
 // 16px for the html root would translate to @px: 16rem;
 
@@ -91,8 +82,10 @@ body {
 // }
 
 // http://lesscss.org/features/#features-overview-feature-operations
-
 </template>
+CODE); ?>
+
+
 
 
 <p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programmatically).</p>
@@ -113,21 +106,7 @@ body {
     For example, let's take the following LESS:
 </p>
 
-<div id="unitless-line-height"></div>
-
-<?php includeShowcode("unitless-line-height", "", "", "", false); ?>
-<script type="application/json" id="unitless-line-height-props">
-{
-  "replaceHtmlRules": {},
-  "steps": [{
-    "label": "LESS markup",
-    "highlight": "%INLINE%unitless-line-height__less",
-    "notes": ""
-  }]
-}
-</script>
-
-<template id="unitless-line-height__less" data-type="text">
+<?php includeCodeSnippet('unitless-line-height', "Unitless line-height markup", <<<CODE
   ul {
     font-size: (15/@px);
 
@@ -146,8 +125,7 @@ body {
      * line-height is 1, and 1 * 20px = 20px.
      */
   }
-
-</template>
+CODE); ?> 
 
 <p>
   These two articles are really good at explaining this in detail:
@@ -180,22 +158,7 @@ body {
     system
     settings:<br>
 
-    <div id="apple-css">
-    </div>
-
-    <?php includeShowcode("apple-css", "", "", "", false); ?>
-    <script type="application/json" id="apple-css-props">
-    {
-      "replaceHtmlRules": {},
-      "steps": [{
-        "label": "CSS markup",
-        "highlight": "%INLINE%apple-css__code",
-        "notes": ""
-      }]
-    }
-    </script>
-
-    <template id="apple-css__code" data-type="text">
+    <?php includeCodeSnippet('apple-css', "IOS CSS for resizable text", <<<CODE
 body {
   /*
    * This tells Safari to use the OS's base font and
@@ -210,8 +173,8 @@ body {
    */
   font-family: "Times New Roman", serif;
 }
+CODE); ?>
 
-    </template>
     <p> I encourage everyone to put these styles in their base styles. It will make visually impaired
       iOS
       users happy. The only caveat here is that the font resize will not happen until after the user

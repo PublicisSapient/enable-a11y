@@ -20,7 +20,7 @@
     position: relative;
     border-radius: (34 / @px);
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border-color: @dark-mode-white;
         background-color: @dark-mode-darkgrey;
     }
@@ -54,7 +54,7 @@
         padding: 0;
         line-height: 1.7rem;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             background: #292;
             color: @dark-mode-black;
         }

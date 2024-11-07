@@ -73,7 +73,7 @@
             /* Windows High Contrast Mode */
             background-color: CanvasText;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 filter: invert(100%);
             }
         }

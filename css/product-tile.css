@@ -21,18 +21,22 @@
   overflow: hidden;
   text-align: center;
 }
-.enable__is-dark-mode .product-tile {
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .product-tile {
+    color: #ededed;
+  }
 }
 .product-tile del,
 .product-tile ins,
 .product-tile mark {
   background-color: transparent;
 }
-.enable__is-dark-mode .product-tile del,
-.enable__is-dark-mode .product-tile ins,
-.enable__is-dark-mode .product-tile mark {
-  color: #ededed;
+@media (prefers-color-scheme: dark) {
+  .product-tile del,
+  .product-tile ins,
+  .product-tile mark {
+    color: #ededed;
+  }
 }
 .product-tile del,
 .product-tile mark.del {
@@ -45,8 +49,10 @@
   background: #aaa;
   padding: 5px;
 }
-.enable__is-dark-mode .product-tile__badge {
-  background: #550000;
+@media (prefers-color-scheme: dark) {
+  .product-tile__badge {
+    background: #550000;
+  }
 }
 .product-tile__name {
   font-weight: bold;

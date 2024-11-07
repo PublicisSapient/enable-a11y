@@ -18,8 +18,10 @@
 .enable-media-player .able-duration {
   background: #000;
 }
-.enable__is-dark-mode .enable-media-player .able-highlight {
-  background: #880000;
+@media (prefers-color-scheme: dark) {
+  .enable-media-player .able-highlight {
+    background: #880000;
+  }
 }
 .enable-media-player .able-clipped {
   color: #ededed;
@@ -80,15 +82,17 @@
   outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
-.enable__is-dark-mode .enable-media-player .able-transcript {
-  background: #121212;
-}
-.enable__is-dark-mode .enable-media-player .able-transcript div.able-transcript-desc {
-  background: #5E5151;
-}
-.enable__is-dark-mode .enable-media-player .able-transcript span:hover,
-.enable__is-dark-mode .enable-media-player .able-transcript span:active,
-.enable__is-dark-mode .enable-media-player .able-transcript span:focus {
-  background: #4C5E28;
+@media (prefers-color-scheme: dark) {
+  .enable-media-player .able-transcript {
+    background: #121212;
+  }
+  .enable-media-player .able-transcript div.able-transcript-desc {
+    background: #5E5151;
+  }
+  .enable-media-player .able-transcript span:hover,
+  .enable-media-player .able-transcript span:active,
+  .enable-media-player .able-transcript span:focus {
+    background: #4C5E28;
+  }
 }
 /*# sourceMappingURL=ablePlayerCustomizations.css.map */

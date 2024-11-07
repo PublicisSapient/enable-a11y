@@ -195,7 +195,7 @@ a {
                     }
                 }
 
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     background-color: #999;
                 }
             }
@@ -255,6 +255,10 @@ a {
             padding-bottom: 60px;
         }
 
+        @media (prefers-color-scheme: dark) {
+            background: @red-darkmode;
+        }
+
         &--heading {
             font-weight: bold;
             color: #fff;
@@ -312,7 +316,7 @@ a {
     }
 }
 
-.enable__is-dark-mode {
+@media (prefers-color-scheme: dark) {
     main {
         color: @dark-mode-white;
     }

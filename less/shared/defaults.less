@@ -58,7 +58,7 @@ h3 {
     font-size: (20 / @px);
     border-bottom: double 3px #000;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border-color: @dark-mode-white;
     }
 }
@@ -187,7 +187,7 @@ select {
     border-left: solid 5px black;
     font-family: "Helvetica", "Arial", sans-serif;
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         border-color: #aaa;
     }
 
@@ -317,7 +317,7 @@ code {
         background-color: #f6f6f6;
     }
 
-    .enable__is-dark-mode & {
+    @media (prefers-color-scheme: dark) {
         color: #0a0;
         background-color: #000;
     }
@@ -361,7 +361,7 @@ code {
         a {
             color: @table-header-link-color;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 color: @table-header-link-color--dark-mode;
             }
         }
@@ -374,7 +374,7 @@ code {
     td {
         border: solid 1px @table-cell-border-color;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             border: solid 1px @table-cell-border-color--dark-mode
         }
     }
@@ -427,7 +427,7 @@ iframe {
 }
 
 
-.enable__is-dark-mode {
+@media (prefers-color-scheme: dark) {
     main {
         color: @dark-mode-white;
     }

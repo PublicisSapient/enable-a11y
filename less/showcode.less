@@ -129,7 +129,7 @@ code {
             overflow-x: auto;
             background: #000;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 background: @dark-mode-black;
             }
         }
@@ -149,7 +149,7 @@ code {
                 text-align: center;
                 display: block;
 
-                .enable__is-dark-mode & {
+                @media (prefers-color-scheme: dark) {
                     background: @dark-mode-midgrey;
                     color: @dark-mode-white;
                 }
@@ -266,7 +266,7 @@ code {
         position: relative;
         color: #000;
 
-        .enable__is-dark-mode & {
+        @media (prefers-color-scheme: dark) {
             color: @dark-mode-white;
         }
 
@@ -301,7 +301,7 @@ code {
             margin: 0 10px @notes-bottom-margin 10px;
             background-color: #ffffee;
 
-            .enable__is-dark-mode & {
+            @media (prefers-color-scheme: dark) {
                 border-color: #a3917b;
                 background-color: #454532;
             }
@@ -380,7 +380,7 @@ code {
     }
 }
 
-.enable__is-dark-mode {
+@media (prefers-color-scheme: dark) {
     .showcode__steps, .showcode__ui {
         background-color: #705029;
     }
