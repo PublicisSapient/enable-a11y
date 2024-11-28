@@ -1,3 +1,4 @@
+accessible-pdf-generation.php
 accessible-text-svg.php
 alert.php
 animated-gif-with-pause-button.php

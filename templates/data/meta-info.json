@@ -702,5 +702,9 @@
   "bookmarklets.php": {
     "title": "Bookmarklets to Test Accessibility Features On A Page",
     "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage."
+  },
+  "accessible-pdf-generation.php": {
+    "title": "Generating Accessible PDFs",
+    "desc": "Step-by-step guide to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   }
 }
