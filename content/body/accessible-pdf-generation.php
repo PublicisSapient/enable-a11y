@@ -39,39 +39,39 @@ After adding the necessary dependencies and properties for our project, the prop
 <?php includeShowcode("step-2-sample-pom", "", "", "", false, 4); ?>
 <template id="step-2-sample-pom" data-showcode-is-java="true">
 ...
-<properties>
-    <java.version>17</java.version>
-    <openhtml.version>1.0.10</openhtml.version>
-</properties>
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-    </dependency>
+&lt;properties&gt;
+    &lt;java.version&gt;17&lt;/java.version&gt;
+    &lt;openhtml.version&gt;1.0.10&lt;/openhtml.version&gt;
+&lt;/properties&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+    &lt;/dependency&gt;
 
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <!-- ALWAYS required, usually included transitively. -->
-        <groupId>com.openhtmltopdf</groupId>
-        <artifactId>openhtmltopdf-core</artifactId>
-        <version>${openhtml.version}</version>
-    </dependency>
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;!-- ALWAYS required, usually included transitively. --&gt;
+        &lt;groupId&gt;com.openhtmltopdf&lt;/groupId&gt;
+        &lt;artifactId&gt;openhtmltopdf-core&lt;/artifactId&gt;
+        &lt;version&gt;${openhtml.version}&lt;/version&gt;
+    &lt;/dependency&gt;
 
-    <dependency>
-        <!-- Required for PDF output. -->
-        <groupId>com.openhtmltopdf</groupId>
-        <artifactId>openhtmltopdf-pdfbox</artifactId>
-        <version>${openhtml.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-</dependencies>
+    &lt;dependency&gt;
+        &lt;!-- Required for PDF output. --&gt;
+        &lt;groupId&gt;com.openhtmltopdf&lt;/groupId&gt;
+        &lt;artifactId&gt;openhtmltopdf-pdfbox&lt;/artifactId&gt;
+        &lt;version&gt;${openhtml.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
 ...
 </template>
 
@@ -137,19 +137,19 @@ Be sure that the fonts that you select are free for commercial use.  We download
 <?php includeShowcode("step-8-sample-code", "", "", "", false, 4); ?>
 <template id="step-8-sample-code" data-showcode-is-java="true">
 ...
-    <build>
+    &lt;build&gt;
         ...
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                    <includes>
-                        <include>Your-Font.ttf</include>
-                        <include>Your-Other-Font.ttf</include>
-                    </includes>
-            </resource>
-        </resources>
+        &lt;resources&gt;
+            &lt;resource&gt;
+                &lt;directory&gt;src/main/resources&lt;/directory&gt;
+                    &lt;includes&gt;
+                        &lt;include&gt;Your-Font.ttf&lt;/include&gt;
+                        &lt;include&gt;Your-Other-Font.ttf&lt;/include&gt;
+                    &lt;/includes&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
         ...
-    </build>
+    &lt;/build&gt;
 ...
 </template>
 
