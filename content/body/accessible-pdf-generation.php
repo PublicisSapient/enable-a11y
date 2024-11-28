@@ -309,7 +309,7 @@ let html = `&lt;html lang="en"&gt;
 
 
 <h2>Feedback from a Screen Reader User</h2>
-<p>We had the help of Vishnu Ramchandani, a screen reader user, to test our implementation for accessible PDFs.  He had the feedback below.  We have also shared with these points how we were able to remedy the issues or if it is a limitation of the technology.
+<p>We had the help of Vishnu Ramchandani, a screen reader user, to test our implementation for accessible PDFs.  He had the feedback below.  We have also shared with these points how we were able to remedy the issues or if it is a limitation of the technology.</p>
 <ol>
     <li>Page title:  To ensure consistency and clarity, the document title and the filename should both be same and should be meaningful. 
     <ul><li>We remedied this issue by changing the title to be the same as the filename, but this is a point to remember while you are implementing your solution.</li></ul></li>
@@ -318,7 +318,6 @@ let html = `&lt;html lang="en"&gt;
     <li>Issue with Splitting URLs/Links: A single URL or link splits into multiple lines, making screen reader users think there are multiple links instead of a single one.  To prevent links from splitting across multiple lines, consider the following approaches: Use non-breaking spaces (&nbsp;) between words in the link text to prevent line breaks. Apply CSS to ensure the link text does not break into multiple lines. For example, using white-space: nowrap; can help keep the link text on a single line.
     <ul><li>Like in point 2, this is unfortunately a limitation in PDFs.  Again, we recommend keeping links shorter (while still having appropriate and descriptive link text). </li></ul></li>
 </ol>
-</p>
 
 
 <h2>Thanks and Contact Us</h2>
