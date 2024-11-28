@@ -17,7 +17,7 @@ We will be using SpringBoot, a Java Framework, to develop this app.  If you are 
 <a href="https://www.ibm.com/topics/java-spring-boot">please see here for more information about SpringBoot.</a>
 We will be using the Open HTML to PDF library to create an accessible PDF.  
 <a href="https://github.com/danfickle/openhtmltopdf">The repository for Open HTML to PDF for can be found here.</a>  
-We will provide references to specific pages that are of interest in the tutorial as applicable.
+We will provide references to specific pages that are of interest in the tutorial as applicable.</p>
 
 
 <h2>Step 1</h2>
@@ -34,7 +34,7 @@ Once you have selected your desired configuration, click on generate, and uncomp
 <p>Navigate to the pom.xml file.  This file controls the dependencies in the code.  This is where we will be adding in the dependency for the Open HTML to PDF.  Following the 
 <a>implementation guide in the Open HTML to PDF repository,</a> 
 we will add the necessary dependencies to the pom.xml file.  If your PDF does not contain images, right to left test, SVGs, or MathML, you will only need to add the first 2 dependencies found under the “MAVEN ARTIFACTS” section of the article.  We will also need to add the Open HTML to PDF version under the properties section.  
-After adding the necessary dependencies and properties for our project, the properties and dependencies tags will similar to below.
+After adding the necessary dependencies and properties for our project, the properties and dependencies tags will similar to below.</p>
 
 <?php includeShowcode("step-2-sample-pom", "", "", "", false, 4); ?>
 <template id="step-2-sample-pom" data-showcode-is-java="true">
@@ -188,7 +188,7 @@ private static void copyInputStreamToFile(InputStream inputStream, File file) th
 <h2>Step 10</h2>
 <p>We will now implement the Open HTML to PDF library in our controller file to convert the HTML we have sent as a string in the request body to PDF format.  We will be following the article in the repository called 
 <a href="https://github.com/danfickle/openhtmltopdf/wiki/PDF-Accessibility-(PDF-UA,-WCAG,-Section-508)-Support">“PDF Accessibility (PDF UA, WCAG, Section 508 Support’.</a>  
-In the section “Builder Example”, you will see the code that we will need to add to our project.  Adapting this to the steps before, we will add the following to our code:
+In the section “Builder Example”, you will see the code that we will need to add to our project.  Adapting this to the steps before, we will add the following to our code:</p>
 <?php includeShowcode("step-10-sample-code", "", "", "", false, 4); ?>
 <template id="step-10-sample-code" data-showcode-is-java="true">
 try (FileOutputStream os = new FileOutputStream("./" + html.filename + ".pdf")) {
