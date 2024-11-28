@@ -8,12 +8,12 @@ However, it is a Java library and we did not previously have anything that could
 
 
 <h2>Pre-Requisites</h2>
-<p>You will need the following installed on your machine:
+<p>You will need the following installed on your machine:</p>
 <ul>
     <li>Java 17</li>
     <li>Maven</li>
 </ul>
-We will be using SpringBoot, a Java Framework, to develop this app.  If you are unfamiliar with this technology, 
+<p>We will be using SpringBoot, a Java Framework, to develop this app.  If you are unfamiliar with this technology, 
 <a href="https://www.ibm.com/topics/java-spring-boot">please see here for more information about SpringBoot.</a>
 We will be using the Open HTML to PDF library to create an accessible PDF.  
 <a href="https://github.com/danfickle/openhtmltopdf">The repository for Open HTML to PDF for can be found here.</a>  
