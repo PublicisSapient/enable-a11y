@@ -295,15 +295,15 @@ There may be other tags that are not recognized that we have not yet come across
 <p>Most errors from the library are unfortunately extremely vague.  We have found that all the ones that we have found are fixed by following the advice above, as well as double checking the work that you did in Step 10 in adding the fonts.  To troubleshoot further, we have found that, though slow, the best method to find what HTML is causing the error is to start with small amounts of HTML and then slowly add more in until you see where the problem is.  For example, we would start with the following HTML string:</p>
 <?php includeShowcode("troubleshooting-sample-code", "", "", "", false); ?>
 <template id="troubleshooting-sample-code" data-showcode-is-java="true">
-let html = `<html lang="en">
-    <head>
-    <title>${title}</title>
-    <meta name="subject" content="Subject"></meta>
-    <meta name="description" content="Description"></meta>
-    <meta name="author" content="Author"></meta>
-    <style>${yourCSS}</style>
-    </head>
-    <body></body></html>`;
+let html = `&lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;title&gt;${title}&lt;/title&gt;
+    &lt;meta name="subject" content="Subject"&gt;&lt;/meta&gt;
+    &lt;meta name="description" content="Description"&gt;&lt;/meta&gt;
+    &lt;meta name="author" content="Author"&gt;&lt;/meta&gt;
+    &lt;style&gt;${yourCSS}&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;&lt;/html&gt;`;
 </template>
 <p>And then slowly add body elements until we found one that caused the bug.  So, for the next test we would add in the header to our report, then the table, then the column headers, then a single row, etc., until we isolated where the error was coming from.  For us, this was usually a tag that was not able to be parsed by the library, so we would either remove this tag if it was not necessary or find a way to express the information using other tags if it needed to be included.</p>
 
