@@ -125,6 +125,11 @@
     "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
     "isNPM": "true"
   },
+  "chat.php": {
+    "title": "Accessible Chat Demo",
+    "desc": "Chat applications can be very useful for users with disabilities, but only if they work correctly.  Luckily, it shouldn't be hard to do.",
+    "isNPM": "false"
+  },
   "checkbox.php": {
     "sectionPages": [ {"forms": "Form Elements"}],
     "title": "How to Create Accessible Checkboxes",
