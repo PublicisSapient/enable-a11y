@@ -35,7 +35,7 @@ We will be using the Open HTML to PDF library to create an accessible PDF.
 We will provide references to specific pages that are of interest in the tutorial as applicable.</p>
 
 
-<h2>Step 1</h2>
+<h2>Step 1: Initialize Spring Project</h2>
 <p>We will use the Spring initializer to create a new SpringBoot project. 
 <a href="https://start.spring.io/">The Spring initializer tool can be found here.</a>  
 This will generate a new SpringBoot project that we will use as the basis for our accessible PDF app.  Open HTML to PDF is injected as a maven dependency, so select “Maven” under project.  
@@ -45,7 +45,7 @@ Once you have selected your desired configuration, click on generate, and uncomp
 <img src="images/accessible-pdf-generation/step-1.png" alt="A screenshot of the Spring Initializer tool.  The settings are set to those described in the paragraph about Step 1." />
 
 
-<h2>Step 2</h2>
+<h2>Step 2: Add Dependencies to pom.xml</h2>
 <p>Navigate to the pom.xml file.  This file controls the dependencies in the code.  This is where we will be adding in the dependency for the Open HTML to PDF.  Following the 
 <a>implementation guide in the Open HTML to PDF repository,</a> 
 we will add the necessary dependencies to the pom.xml file.  If your PDF does not contain images, right to left test, SVGs, or MathML, you will only need to add the first 2 dependencies found under the “MAVEN ARTIFACTS” section of the article.  We will also need to add the Open HTML to PDF version under the properties section.  
@@ -91,13 +91,13 @@ After adding the necessary dependencies and properties for our project, the prop
 </template>
 
 
-<h2>Step 3</h2>
+<h2>Step 3: Create Controller File</h2>
 <p>We are going to begin to build out a Java file to act as our endpoint to generate a PDF.  To do this, first create a new file at the same level as the automatically generated java file under src/main/java/[your package name].   In our case, it is at the same level as “AccessiblePDFSpringApplication.java”.  
 We will call our new file AccessiblePDFController.java.  We will be creating a Controller file, would marks a class as a web request handler.</p>
 <img src="images/accessible-pdf-generation/step-3.png" alt="A screenshot of the file structure of the project, showing a new file created in the java/com/publicissapient/aid/accessiblepdfspring called AccessiblePDFController.java." />
 
 
-<h2>Step 4</h2>
+<h2>Step 4: Create Controller Class</h2>
 <p>Then, we will start to add to this file to build out our endpoint.  First, we will mark the class as a REST controller by adding @RestController above the class declaration.</p>
 <?php includeShowcode("step-4-sample-code", "", "", "", false, 4); ?>
 <template id="step-4-sample-code" data-showcode-is-java="true">
@@ -108,7 +108,7 @@ public class AccessiblePDFController {
 </template>
 
 
-<h2>Step 5</h2>
+<h2>Step 5: Add Method to Controller</h2>
 <p>Then, we will add a method and have it return a ResponseEntity&lt;byte[]&gt;, since we will be sending the response body as byte array.  This method will need to throw an exception.  You will see an error as we do not have a ResponseEntity as a return value yet, but we will add this in a later step.</p>
 <?php includeShowcode("step-5-sample-code", "", "", "", false, 4); ?>
 <template id="step-5-sample-code" data-showcode-is-java="true">
@@ -118,7 +118,7 @@ public ResponseEntity&lt;byte[]&gt; genratePDF() throws Exception {
 </template>
 
 
-<h2>Step 6</h2>
+<h2>Step 6: Create New File for Request Body</h2>
 <p>We will now create a new file so that we can properly parse the body that is sent to the endpoint in the request.  This will also be at the same level as the Controller file.  We have named ours “HTMLBody.java”. See below for the structure.</p>
 <img src="images/accessible-pdf-generation/step-6.png" alt="A screenshot of the file structure of the project, showing a new file created in the java/com/publicissapient/aid/accessiblepdfspring called HTMLBody.java."/>
 <p>For our purposes, we will send the HTML to the SpringBoot app as a string, and we will also send the filename, which will be the name of the file that we want to generate.  To consume this information properly, we will create a class that has 2 properties, a String html and a String filename.  The code will look like this:</p>
@@ -131,7 +131,7 @@ public class HTMLBody {
 </template>
 
 
-<h2>Step 7</h2>
+<h2>Step 7: Create Request Body</h2>
 <p>We will now add the request body as an argument to our method.  This will use the class that we created in the previous step.  In addition to this, we will add the @CrossOrigin annotation, which enables cross-origin resource sharing only for this specific method.  We will also be adding the @PostMapping annotation, which binds the method to an endpoint.  
 In the @PostMapping annotation, we will be adding the destination that we want the endpoint at, as well as the format of the body of the request, which in our case is JSON.</p>
 <?php includeShowcode("step-7-sample-code", "", "", "", false, 4); ?>
@@ -143,7 +143,7 @@ public ResponseEntity&lt;byte[]&gt; genratePDF(@RequestBody HTMLBody html) throw
 </template>
 
 
-<h2>Step 8</h2>
+<h2>Step 8: Add Fonts</h2>
 <p>Now, we will add fonts to our project.  Note that this is an extremely important step as the PDF will not generate if you do not provide fonts.  First, download the fonts that you would like.  We found ours on 
 <a href="https://fonts.google.com/">Google Fonts.</a>  
 Be sure that the fonts that you select are free for commercial use.  We downloaded 2 fonts, one for normal text and another for code snippets.  These files should be in .ttf format.  After downloading these fonts, we will add them to the resources folder.</p> 
@@ -169,7 +169,7 @@ Be sure that the fonts that you select are free for commercial use.  We download
 </template>
 
 
-<h2>Step 9</h2>
+<h2>Step 9: Handle Font Files in Code</h2>
 <p>We will now add code to deal with the font files.  The Open HTML to PDF library needs the files to be in Java File format, so we will add code to do this.  Since the files are under the resource folder, they will be loaded as resources rather than files.  We will convert the resource into a steam and then write that to a file that is accessible from our controller class.  
 We will delete the temporary font files that we’ve generated from the resource stream after we’re done converting the PDF, so we will add code to handle this as well.  The code below is added to our controller file to handle the fonts.</p>
 <?php includeShowcode("step-9-sample-code-1", "", "", "", false, 4); ?>
@@ -200,7 +200,7 @@ private static void copyInputStreamToFile(InputStream inputStream, File file) th
 </template>
 
 
-<h2>Step 10</h2>
+<h2>Step 10: Implement Open HTML to PDF Library</h2>
 <p>We will now implement the Open HTML to PDF library in our controller file to convert the HTML we have sent as a string in the request body to PDF format.  We will be following the article in the repository called 
 <a href="https://github.com/danfickle/openhtmltopdf/wiki/PDF-Accessibility-(PDF-UA,-WCAG,-Section-508)-Support">PDF Accessibility (PDF UA, WCAG, Section 508 Support</a>.  
 In the section “Builder Example”, you will see the code that we will need to add to our project.  Adapting this to the steps before, we will add the following to our code:</p>
@@ -229,7 +229,7 @@ try (FileOutputStream os = new FileOutputStream("./" + html.filename + ".pdf")) 
 If this font convention is not followed, your PDF will not generate properly, and you will likely get an extremely vague error message, usually from the Open HTML to PDF library saying that you did not provide fonts.  If you get that error message, come back to this step and ensure that you have added the fonts properly and that the font families specified in your CSS match those that you have specified in your Java code.</p>
 
 
-<h2>Step 11</h2>
+<h2>Step 11: Convert PDF to Byte Array</h2>
 <p>We will now add the code to convert the PDF to a byte array, as this is the format that we will be sending back in the response.</p>
 <?php includeShowcode("step-11-sample-code", "", "", "", false); ?>
 <template id="step-11-sample-code" data-showcode-is-java="true">
@@ -238,7 +238,7 @@ byte[] contents = java.util.Base64.getEncoder().encode(inFileBytes);
 </template>
 
 
-<h2>Step 12</h2>
+<h2>Step 12: Create Response</h2>
 <p>We will now add the code needed to send a response.  This will involve creating the headers needed and then setting the ResponseEntity.  We will add this for both the case where we are successful in generating a PDF, sending an OK status, and in the catch block that we will be in if we are not successful in generating a PDF, in which case we will send a 400 error.  We will also send that the content form of the response is a PDF.  See how we implemented this in the code below.</p>
 <?php includeShowcode("step-12-sample-code", "", "", "", false); ?>
 <template id="step-12-sample-code" data-showcode-is-java="true">
@@ -268,11 +268,11 @@ return response;
 </template>
 
 
-<h2>Step 13</h2>
+<h2>Step 13: Run App Locally</h2>
 <p>We are now able to run this app locally.  Use the command mvn spring-boot:run to run the program.  The endpoint will usually be at http://localhost/yourEndpointName.</p>
 
 
-<h2>Step 14</h2>
+<h2>Step 14: Integrate Endpoint</h2>
 <p>Integrate the endpoint into your existing code.  We have included a JavaScript example to convert a byte array into a PDF and to automatically save the resulting PDF.</p>
 <?php includeShowcode("step-14-sample-code", "", "", "", false); ?>
 <template id="step-14-sample-code" data-showcode-is-java="true">
