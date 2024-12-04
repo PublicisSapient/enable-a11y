@@ -1,10 +1,25 @@
-<p>This guide will demonstrate creating a SpringBoot app that implements the Open HTML to PDF library to generate an accessible PDF. </p>
+<p>
+    There are many times where a website may want to generate on-the-fly PDF documents.  A few examples are:
+</p>    
+    <ul>
+        <li>E-commerce sites may want to generate invoices.</li>
+        <li>Web based tools may need to generate reports.</li>
+        <li>Content management systems may want to generate an offline version of their content.</li>
+    </ul>
+
+
+<p>
+    Unfortunately, the average person tasked to generate these reports may not realize that screen readers have problems parsing the vast majority of PDFs, due to them not being <a href="https://allyant.com/what-is-a-tagged-pdf-definition-meaning-explanation/">tagged</a>. Tagging a PDF is similar to marking up an HTML document with semantic HTML tags &mdash; it allows screen readers to travese the document landmarks, navigate through interactive elements with a keyboard, and so forth.  In order to be considered accessible, Tagged PDFs must conform to <a href="https://en.wikipedia.org/wiki/PDF/UA">the PDF/UA standard</a>.
+</p>
+
+<p>
+    We have been searching a long time for a solution for creating PDF/UA compliant PDFs that was both inexpensive and open source.  In 2023, we stumbled upon <a href="https://github.com/danfickle/openhtmltopdf">Open HTML to PDF</a>, which claimed it could create PDF/UA compliant accessible PDFs.  After testing it out ourselves and confirming it can work, we wanted to share how we implemented this ourselves for those of you who want to as well. This guide will demonstrate creating a SpringBoot app with Open HTML to PDF, and will also cover how an HTML author can troubleshoot common problems using the tool.
+</p>
 
 
 <h2>Background</h2>
-<p>As developers on the AID tool, we want to create a program that takes HMTL and automatically convert it to an accessible PDF.  However, most libraries that convert HTML to a PDF do not have the ability to create an accessible PDF.  Zoltan found a library called Open HTML to PDF that will generate accessible PDFs.
-<a href="https://github.com/danfickle/openhtmltopdf">The repopository for Open HTML to PDF can be found here.</a> 
-However, it is a Java library and we did not previously have anything that could directly integrate with this.  Therefore, we decided to build a SpringBoot app that allows us to interact with this library and create these accessible PDFs.  This article will walk you through creating a Java SpringBoot app that integrates the OpenHTMLToPDF library.</p>
+<p>
+    The application that we wanted to integrate the PDF generator into was written in node.  Since Open HTML to PDF is a Java library, we decided to build a separate SpringBoot app that our node application could connect to via HTTP to create these accessible PDFs.  This article will walk you through how you too can create a Java SpringBoot app that integrates the OpenHTMLToPDF library.</p>
 
 
 <h2>Pre-Requisites</h2>
@@ -187,7 +202,7 @@ private static void copyInputStreamToFile(InputStream inputStream, File file) th
 
 <h2>Step 10</h2>
 <p>We will now implement the Open HTML to PDF library in our controller file to convert the HTML we have sent as a string in the request body to PDF format.  We will be following the article in the repository called 
-<a href="https://github.com/danfickle/openhtmltopdf/wiki/PDF-Accessibility-(PDF-UA,-WCAG,-Section-508)-Support">“PDF Accessibility (PDF UA, WCAG, Section 508 Support’.</a>  
+<a href="https://github.com/danfickle/openhtmltopdf/wiki/PDF-Accessibility-(PDF-UA,-WCAG,-Section-508)-Support">PDF Accessibility (PDF UA, WCAG, Section 508 Support</a>.  
 In the section “Builder Example”, you will see the code that we will need to add to our project.  Adapting this to the steps before, we will add the following to our code:</p>
 <?php includeShowcode("step-10-sample-code", "", "", "", false, 4); ?>
 <template id="step-10-sample-code" data-showcode-is-java="true">
@@ -309,17 +324,13 @@ let html = `&lt;html lang="en"&gt;
 
 
 <h2>Feedback from a Screen Reader User</h2>
-<p>We had the help of Vishnu Ramchandani, a screen reader user, to test our implementation for accessible PDFs.  He had the feedback below.  We have also shared with these points how we were able to remedy the issues or if it is a limitation of the technology.</p>
+<p>Vishnu Ramchandani, an experienced screen reader user, was kind enough to help us test the PDFs that we generated with Open HTML to PDF.  He confirmed that he was able to read the information in the generated PDFs, but added some UX feedback to see if we can incorporate them in our PDF reports.  Here is his feedback, along with what actions we took.</p>
 <ol>
     <li>Page title:  To ensure consistency and clarity, the document title and the filename should both be same and should be meaningful. 
-    <ul><li>We remedied this issue by changing the title to be the same as the filename, but this is a point to remember while you are implementing your solution.</li></ul></li>
-    <li>Reading behavior of lengthy paragraphs in tables: Screen reader users experience line breaks when reading lengthy paragraphs in table columns using arrow keys. A paragraph is read in a broken manner, making it hard to follow. Ensure that lengthy paragraphs are presented in a linear, single-column format when possible. This helps screen readers read the content in a logical order without breaking lines.
-    <ul><li>Unfortunately, this is a limitation of PDF technology.  We recommend keeping lines short in table rows to remedy this situation, but sometimes this was not possible for us.</li></ul></li>
-    <li>Issue with Splitting URLs/Links: A single URL or link splits into multiple lines, making screen reader users think there are multiple links instead of a single one.  To prevent links from splitting across multiple lines, consider the following approaches: Use non-breaking spaces (&nbsp;) between words in the link text to prevent line breaks. Apply CSS to ensure the link text does not break into multiple lines. For example, using white-space: nowrap; can help keep the link text on a single line.
-    <ul><li>Like in point 2, this is unfortunately a limitation in PDFs.  Again, we recommend keeping links shorter (while still having appropriate and descriptive link text). </li></ul></li>
+    <ul><li>We remedied this issue by changing the title to be the same as the filename.  This is definitely something you should think about when implenting your own solution, since it is not default behavior for the library.</li></ul></li>
+    <li>Reading behavior of lengthy paragraphs in tables: Screen reader users experience line breaks when reading lengthy paragraphs in table columns using arrow keys. A paragraph is read in a broken manner, making it hard to follow.  It is best to ensure that lengthy paragraphs are presented in a linear, single-column format when possible. This helps screen readers read the content in a logical order without breaking lines.
+    <ul><li>Unfortunately, this seems to be a limitation of PDF technology.  We recommend keeping lines short in table rows to remedy this situation.  If you know of any other work arounds for this, <a href="mailto:zoltan.dulac@gmail.com">please contact us</a> with the details and we'll update our recommendations here.</li></ul></li>
+    <li>Issue with Splitting URLs/Links: A single URL or link splits into multiple lines, making screen reader users think there are multiple links instead of a single one.  To prevent links from splitting across multiple lines, consider the following approaches: Use non-breaking spaces (&amp;nbsp;) between words in the link text to prevent line breaks. Apply CSS to ensure the link text does not break into multiple lines. For example, using white-space: nowrap; can help keep the link text on a single line.
+    <ul><li>This also seems like a limitation in PDFs, as many PDF authoring tools like <a href="https://acrobat.uservoice.com/forums/590923-acrobat-for-windows-and-mac/suggestions/40781203-hyperlinks-spanning-multiple-lines">InDesign seem to have this multiline link issue as well</a>.  We recommend keeping link labels short (while still having appropriate and descriptive link text).  Again, if you know of any other workarounds for this, <a href="mailto:zoltan.dulac@gmail.com">email us</a>.  We'd love to hear from you.</li></ul></li>
 </ol>
-
-
-<h2>Thanks and Contact Us</h2>
-<p>Thank you so much for following this guide to create an app to generate accessible PDFs!  If you have any questions or feedback, please reach out to the AID team.  We look forward to hearing from you.</p>
 
