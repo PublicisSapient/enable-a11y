@@ -4,15 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accessible Map with List View</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <style>
-    #map {
-      width: 100%;
-      height: 400px;
-    }
-    .locations {
-      margin-top: 20px;
-    }
+      #map {
+            height: 400px;
+            width: 100%;
+        }
+        #location-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #location-list li {
+            margin: 5px 0;
+        }
+        #location-list button {
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+        }
+        *:focus {
+            outline: solid 2px #3b99fc;
+        }
+        *:focus:not(:focus-visible) {
+             outline: none;
+        }
+        *:focus-visible {
+           outline: solid 2px #3b99fc;
+        }
   </style>
 </head>
 <body>
@@ -44,12 +61,8 @@
       <div aria-label="Interactive map showing various locations"></div>
     </section>
 
-    <!-- Accessible List View -->
-    <div class="enable-example">
-     <p>The following is the map container</p>
-   
-    </div>
-    <div id="map">
+    <div id="map" class="enable-example">
+    <p>The following is the map container</p>
         <section  role="region" aria-labelledby="map" tabindex="0"></section>
     </div>
     <section class="locations" role="region" aria-labelledby="location-list-title" >
@@ -61,43 +74,63 @@
     
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
   <script>
-    // Initialize map
-    
-    const map = L.map('map').setView([25.7617, -80.1918], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap contributors',
-      
-    }).addTo(map);
+        let map;
+        let currentFocusIndex = 0;
+        const locations = [
+            { id: 1, name: 'North office', coords: { lat: 25.7617, lng: -80.1918 }, description: 'First location description' },
+            { id: 2, name: 'East office', coords: { lat: 25.7637, lng: -80.1910 }, description: 'Second location description' },
+            { id: 3, name: 'West office', coords: { lat: 25.7657, lng: -80.1920 }, description: 'Third location description' }
+        ];
 
-    // Sample location data
-    const locations = [
-      { id: 1, name: 'North office', coords: [25.7617, -80.1918], description: 'First location description' },
-      { id: 2, name: 'East office', coords: [25.7637, -80.1910], description: 'Second location description' },
-      { id: 3, name: 'West office', coords: [25.7657, -80.1920], description: 'Third location description' }
-    ];
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 25.7617, lng: -80.1918 },
+                zoom: 13
+            });
 
-    // Add markers and list items for each location
+            locations.forEach((location, index) => {
+                const marker = new google.maps.Marker({
+                    position: location.coords,
+                    map: map,
+                    title: location.name
+                });
 
-    locations.forEach(location => {
-      const marker = L.marker(location.coords).addTo(map)
-        .bindPopup(`<strong>${location.name}</strong><br>${location.description}`);
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<strong>${location.name}</strong><br>${location.description}`
+                });
 
-      // Add each location to the list as a button
-      const listItem = document.createElement('li');
-      const button = document.createElement('button');
-      button.innerText = location.name;
-      button.setAttribute('aria-label', `${location.name}: ${location.description}`);
-      button.onclick = () => {
-        map.setView(location.coords, 15); // Center map on marker
-        marker.openPopup(); // Open info window
-      };
-      listItem.appendChild(button);
-      document.getElementById('location-list').appendChild(listItem);
-    });
-  </script>
+                marker.addListener('click', () => {
+                  infoWindow.open(map, marker);
+                });
+
+
+
+                
+
+                const listItem = document.createElement('li');
+                const button = document.createElement('button');
+                button.innerText = location.name;
+                
+                button.setAttribute('aria-label', `${location.name}`);
+                button.setAttribute('aria-describedby', `${location.description}`);
+                button.onclick = () => {
+                    map.setCenter(location.coords);
+                    map.setZoom(15);
+                    infoWindow.open(map, marker);
+                };
+                listItem.appendChild(button);
+                document.getElementById('location-list').appendChild(listItem);
+        
+            });
+
+           
+
+        }
+
+   
+    </script>
 
 <?php includeShowcode("map", "", "", "", true, 2); ?>
 <script type="application/json" id="map-props">
