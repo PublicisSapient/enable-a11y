@@ -842,7 +842,8 @@ const showcode = new function () {
 
     if (block) {
       const isJS = (block.dataset.showcodeIsJs === 'true')
-      
+      const isJava = (block.dataset.showcodeIsJava === 'true')
+    
       formatHTMLInBlock(block, replaceRulesJson)
 
       // let's do search and replace here
@@ -851,6 +852,8 @@ const showcode = new function () {
       
       if (isJS) {
         formattedHTML = unformattedHTML.replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
+      } else if (isJava) {
+        formattedHTML = this.unentify(unformattedHTML).replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
       } else {
         formattedHTML = formatHTML(unformattedHTML);
       }
@@ -864,7 +867,6 @@ const showcode = new function () {
 
   function formatHTMLInBlock(block, replaceRulesJson) {
     try {
-
       for (let i in replaceRulesJson) {
         const nodesToReplace = block.querySelectorAll(i);
 
