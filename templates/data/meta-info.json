@@ -514,7 +514,7 @@
   "spinner.php": {
     "sectionPages": [ {"forms": "Form Elements"}],
     "title": "Numeric Fields",
-    "desc": "Many developers think form fields with numeric values must always be coded as &gt;input type=\"number\"&lt;.  There are exceptions."
+    "desc": "Many developers think form fields with numeric values must always be coded as &lt;input type=\"number\"&gt;.  There are exceptions."
   },
   "status.php": {
     "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],

@@ -112,16 +112,18 @@ const tableOfContents = new function() {
 
                 // Add the heading content to the TOC item
                 el.childNodes && el.childNodes.forEach((child) => {
+                    console.log('child: ', child);
                     if (child.nodeName === 'IMG') {
                         // Clone an image within a heading and add it to the TOC
                         const clonedImage = child.cloneNode(true);
                         clonedImage.classList.add('enable-toc__image');
                         tocItem.appendChild(clonedImage);
-                    } else if (el.textContent) {
+                    } else if (child.nodeType === Node.TEXT_NODE) {
                         // Add the heading text content to the TOC
+                        console.log('xxxx', child);
                         const tocLink = document.createElement('a');
                         tocLink.setAttribute('href', `#${el.id}`);
-                        tocLink.textContent = el.textContent;
+                        tocLink.textContent = child.textContent;
                         tocLink.classList.add('enable-toc__link');
                         tocItem.appendChild(tocLink);
                     }
