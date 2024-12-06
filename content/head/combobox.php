@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/combobox.css" >
 <link rel="stylesheet" type="text/css" href="css/form.css" >
+<link rel="stylesheet" type="text/css" href="css/site-search.css" >
 
 <style>
   .combobox-example {

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="css/form.css" >
+<link rel="stylesheet" type="text/css" href="css/site-search.css" >
 <header id="header" data-is-sticky="top">
     <!-- Skip Link -->
     <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
@@ -22,6 +24,48 @@
         </div>
         <?php include "includes/pause-anim-control.php"; ?>
     </div>
+
+    <!-- Main search bar -->
+    <form role="search" aria-label="site wide search" tabindex="-1" class="combobox-example">
+        <div class="enable-combobox site-search">
+            <div class="site-search__inner-container">
+                <div id="home-search__close-desc" class="sr-only">
+                Please choose a value using the arrow keys or clear the combobox by either pressing the escape key or activating the
+                clear button.  Pressing enter will search for the item on Google.
+                </div>
+
+                <div class="enable-combobox__controls-container site-search__controls-container">
+                    <div class="sr-only" id="home-search__desc">
+                        As you type, use the up and down arrow keys or press ENTER and swipe to choose the autocomplete
+                        search terms.
+                    </div>
+
+                    <div role="alert" aria-atomic="true" aria-live="polite">
+                    </div>
+
+                    <button type="submit" class="combobox-example__button site-search__button">
+                    <img
+                        class="site-search__icon"
+                        src="images/search-dark.svg"
+                        alt="Search"
+                    >
+                    </button>
+                    <input class="site-search__term" type="text" tabindex="0" id="home-search" role="combobox" aria-autocomplete="list"
+                        aria-owns="home-search__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off"
+                        aria-describedby="home-search__desc" placeholder="Search for specific knowledge articles...">
+
+                    <button class="enable-combobox__reset-button site-search__reset-button" aria-controls="home-search__list" type="reset"
+                        aria-describedby="home-search__label">
+                        <img class="enable-combobox__reset-button-image" src="images/close-window.svg" alt="Clear"
+                        aria-describedby="home-search__label">
+                    </button>
+                    <ul role="listbox" id="home-search__list" tabindex="-1" hidden></ul>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+  </div>
 
     <!--  HTML Templates that the Flyout menu uses  -->
     <template id="flyout__root">
@@ -110,6 +154,12 @@
         <span class="enable-flyout__overlay-screen">
         </span>
     </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.0/dist/umd/index.min.js"></script>
+    <script type="module">
+        import search from '../../js/modules/site-search.js';
+        search.init();
+    </script>
 
     <!-- id, props, content -->
     <script id="flyout-props" type="application/json">

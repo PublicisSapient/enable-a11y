@@ -16,7 +16,7 @@
 .enable-logo {
   text-decoration: none;
   text-align: center;
-  width: 150px;
+  width: 120px;
   min-height: 85px;
   display: flex;
   vertical-align: middle;
@@ -46,11 +46,11 @@
   display: flex;
   justify-content: space-between;
   background: #5d5c5c;
-  padding: 0 10px;
+  padding: 0px 10px;
 }
 @media only screen and (min-width: 960px) {
   .nav-container {
-    padding: 0 30px;
+    padding: -20px 30px;
   }
 }
 .nav-container__level .nav-container__menu-item {
