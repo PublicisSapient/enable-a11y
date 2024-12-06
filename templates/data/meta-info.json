@@ -414,6 +414,12 @@
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
   },
+  "maps.php": {
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Maps",
+    "desc": "A map which is accessible"
+    
+  },
   "meter.php": {
     "sectionPages": [ { "content": "Static Content" }],
     "title": "Meter",
