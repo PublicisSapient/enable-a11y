@@ -1,44 +1,332 @@
 [
-    {
-        "id": 1,
-        "title": "Tooltip",
-        "content": "This article includes best practices on accessible tooltips",
-        "keywords": "controls, tooltip",
-        "link": "/tooltip.php"
-    },
-    {
-        "id": 2,
-        "title": "Accessible Form Structure",
-        "content": "Best practices for accessible form structure",
-        "keywords": "form",
-        "link": "/form.php"
-    },
-    {
-        "id": 3,
-        "title": "Accessible Form Validation",
-        "content": "Best practices for form validation",
-        "keywords": "form",
-        "link": "/form-error-checking.php"
-    },
-    {
-        "id": 4,
-        "title": "Search Forms",
-        "content": "Best practices for search forms",
-        "keywords": "form",
-        "link": "/search.php"
-    },
-    {
-        "id": 5,
-        "title": "Accessible Buttons",
-        "content": "Best practices for buttons",
-        "keywords": "form",
-        "link": "/button.php"
-    },
-    {
-        "id": 6,
-        "title": "Accessible Checkboxes",
-        "content": "Best practices for form checkboxes",
-        "keywords": "form",
-        "link": "/checkbox.php"
-    }
+  {
+    "id": 1,
+    "title": "Links",
+    "desc": "Links are easy to code accessibly, but it's nice to give more context.",
+    "link": "/link.php"
+  },
+  {
+    "id": 2,
+    "title": "Accessible Text in SVG",
+    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing).",
+    "link": "/accessible-text-svg.php"
+  },
+  {
+    "id": 4,
+    "title": "ARIA Alert",
+    "desc": "Learn about the ARIA alert property, how it enhances web accessibility, and explore practical examples with code samples. Master ARIA alerts for better UX.",
+    "link": "/alert.php"
+  },
+  {
+    "id": 5,
+    "title": "Animated GIFs with Pause Buttons",
+    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag.",
+    "link": "/animated-gif-with-pause-button.php"
+  },
+  {
+    "id": 9,
+    "title": "Accessible Buttons",
+    "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.",
+    "link": "/button.php"
+  },
+  {
+    "id": 10,
+    "title": "Carousels",
+    "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
+    "link": "/carousel.php"
+  },
+  {
+    "id": 11,
+    "title": "Checkboxes",
+    "desc": "Here is a step-by-step guide to creating accessible checkboxes",
+    "link": "/checkbox.php"
+  },
+  {
+    "id": 12,
+    "title": "Code Patterns",
+    "desc": "A list of all the accessible code patterns which can be found in the Enable project.",
+    "link": "/code-patterns-section.php"
+  },
+  {
+    "id": 13,
+    "title": "Accessible Autocomplete (a.k.a Combobox)",
+    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role.",
+    "link": "/combobox.php"
+  },
+  {
+    "id": 14,
+    "title": "Content",
+    "desc": "Page that organizes the components that fall under Content.",
+    "link": "/content-section.php"
+  },
+  {
+    "id": 15,
+    "title": "Controls",
+    "desc": "Page that organizes the components that fall under Controls.",
+    "link": "/controls-section.php"
+  },
+  {
+    "id": 16,
+    "title": "Dark Mode",
+    "desc": "This page will show you how to ensure your website has proper contrast as well as the overall function for dark mode.",
+    "link": "/dark-mode.php"
+  },
+  {
+    "id": 18,
+    "title": "Description List (neé Definition List)",
+    "desc": "Lists of name/value pairs should be coded in a definition list.  This page covers the HTML5 and ARIA variants.",
+    "link": "/description-list.php"
+  },
+  {
+    "id": 19,
+    "title": "Modal Dialog",
+    "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are.",
+    "link": "/dialog.php"
+  },
+  {
+    "id": 20,
+    "title": "Dropdowns/Drawers/Expandos",
+    "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accessible with just a little bit of markup.",
+    "link": "/dropdown.php"
+  },
+  {
+    "id": 21,
+    "title": "Figures",
+    "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context.",
+    "link": "/figure.php"
+  },
+  {
+    "id": 22,
+    "title": "Focus Styling Tips",
+    "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
+    "link": "/focus-styling.php"
+  },
+  {
+    "id": 23,
+    "title": "Form Validation and Errors",
+    "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone.",
+    "link": "/form-error-checking.php"
+  },
+  {
+    "id": 24,
+    "title": "Form Structure",
+    "desc": "Learn about proper HTML form structure. You'd be surprised how often this is not done correctly.",
+    "link": "/form.php"
+  },
+  {
+    "id": 25,
+    "title": "Forms",
+    "desc": "Page that organizes the components that fall under Forms.",
+    "link": "/forms-section.php"
+  },
+  {
+    "id": 26,
+    "title": "Headings",
+    "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework.",
+    "link": "/heading.php"
+  },
+  {
+    "id": 27,
+    "title": "Advanced Text Resizing",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).",
+    "link": "/hero-image-text-resize.php"
+  },
+  {
+    "id": 28,
+    "title": "Images",
+    "desc": "How to code both &gt;img&lt; tags and background images so they are understandable by screen reader users.",
+    "link": "/img.php"
+  },
+  {
+    "id": 29,
+    "title": "Infographics",
+    "desc": "How to code SVG and bitmap images so they are understandable by screen reader users.",
+    "link": "/infographic.php"
+  },
+  {
+    "id": 30,
+    "title": "Input Masking",
+    "desc": "How to code masking of keyboard input in form fields so they are accessible.",
+    "link": "/input-mask.php"
+  },
+  {
+    "id": 31,
+    "title": "Select Boxes (a.k.a. Listboxes)",
+    "desc": "Why it's preferable to use native HTML5 select controls vs custom controls, and what developers must do if they have to use a custom one.",
+    "link": "/listbox.php"
+  },
+  {
+    "id": 32,
+    "title": "ARIA Log",
+    "desc": "Discover how to implement an Accessible Log Display with a live example and detailed code walkthrough. Enhance web accessibility with best practices.",
+    "link": "/log.php"
+  },
+  {
+    "id": 33,
+    "title": "ARIA Marquee",
+    "desc": "Learn how to create an auto-scrolling Marquee for your web pages. Explore a live example and get detailed code samples to implement it effortlessly.",
+    "link": "/marquee.php"
+  },
+  {
+    "id": 35,
+    "title": "Meter",
+    "desc": "Meter component which is supported by non html5 browsers.",
+    "link": "/meter.php"
+  },
+  {
+    "id": 36,
+    "title": "Multimedia Content",
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible.",
+    "link": "/multimedia-content.php"
+  },
+  {
+    "id": 37,
+    "title": "Flyout/Hamburger Hybrid Menus",
+    "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
+    "link": "/multi-level-hamburger-menu.php"
+  },
+  {
+    "id": 38,
+    "title": "Pause Animation Controls",
+    "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
+    "link": "/pause-anim-control.php"
+  },
+  {
+    "id": 39,
+    "title": "Accessible Progress Bars",
+    "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them.",
+    "link": "/progress.php"
+  },
+  {
+    "id": 40,
+    "title": "Radio Groups",
+    "desc": "Here is a step-by-step guide to creating accessible radio groups",
+    "link": "/radiogroup.php"
+  },
+  {
+    "id": 41,
+    "title": "Skip Links (That Work In Mobile Too!)",
+    "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
+    "link": "/skip-link.php"
+  },
+  {
+    "id": 42,
+    "title": "Sliders (a.k.a Range Input)",
+    "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users.",
+    "link": "/slider.php"
+  },
+  {
+    "id": 43,
+    "title": "Numeric Fields",
+    "desc": "Many developers think form fields with numeric values must always be coded as &gt;input type=\"number\"&lt;.  There are exceptions.",
+    "link": "/spinner.php"
+  },
+  {
+    "id": 44,
+    "title": "ARIA Status",
+    "desc": "Learn about the ARIA status role, its importance in accessibility, and see a live example with supporting code samples to improve user experience.",
+    "link": "/status.php"
+  },
+  {
+    "id": 45,
+    "title": "ARIA Switch (a.k.a. Toggle)",
+    "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly.",
+    "link": "/switch.php"
+  },
+  {
+    "id": 46,
+    "title": "Simple Accessible Tables",
+    "desc": "Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone.",
+    "link": "/table.php"
+  },
+  {
+    "id": 47,
+    "title": "Accessible Sortable Tables",
+    "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.",
+    "link": "/sortable-table.php"
+  },
+  {
+    "id": 48,
+    "title": "Accessible Pagination Table",
+    "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
+    "link": "/pagination-table.php"
+  },
+  {
+    "id": 49,
+    "title": "Content That Scrolls In Two Dimensions (a WCAG Reflow Violation)",
+    "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
+    "link": "/reflow.php"
+  },
+  {
+    "id": 52,
+    "title": "Search Form",
+    "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it.",
+    "link": "/search.php"
+  },
+  {
+    "id": 54,
+    "title": "Tabs",
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible. We've got your back.",
+    "link": "/tabs.php"
+  },
+  {
+    "id": 55,
+    "title": "Textboxes",
+    "desc": "If you are using custom (i.e. non-native HTML5) textboxes, it's simple to add a few ARIA attributes to make them accessible, if you absolutely have to.",
+    "link": "/textbox.php"
+  },
+  {
+    "id": 57,
+    "title": "Resizable Typography",
+    "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature.",
+    "link": "/text-resize.php"
+  },
+  {
+    "id": 58,
+    "title": "Space-Adjusting Typography",
+    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities.",
+    "link": "/text-spacing.php"
+  },
+  {
+    "id": 59,
+    "title": "ARIA Timer",
+    "desc": "Discover what ARIA Timer is, see a live example, and explore the supporting code. Learn how to implement an accessible countdown timer with ARIA roles and attributes.",
+    "link": "/timer.php"
+  },
+  {
+    "id": 60,
+    "title": "Tooltip",
+    "desc": "If you have a tooltip, ensure it follows accessibility best practices.",
+    "link": "/tooltip.php"
+  },
+  {
+    "id": 61,
+    "title": "Video Player",
+    "desc": "Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time and get a WCAG AAA transcript for free!",
+    "link": "/video-player.php"
+  },
+  {
+    "id": 68,
+    "title": "Accessible Code Quality",
+    "desc": "What are the automated tools we use in Enable to ensure code quality.",
+    "link": "/code-quality.php"
+  },
+  {
+    "id": 69,
+    "title": "Exposing Style Information To Screen Readers",
+    "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?",
+    "link": "/exposing-style-info-to-screen-readers.php"
+  },
+  {
+    "id": 70,
+    "title": "Screen Reader Only Text",
+    "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels.",
+    "link": "/screen-reader-only-text.php"
+  },
+  {
+    "id": 71,
+    "title": "Bookmarklets to Test Accessibility Features On A Page",
+    "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage.",
+    "link": "/bookmarklets.php"
+  }
 ]

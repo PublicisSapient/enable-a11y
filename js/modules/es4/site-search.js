@@ -1,7 +1,6 @@
 const search = new (function() {
     // global constants
     const { body } = document;
-    let curSearch = null;
     let inputTarget = null;
 
     function removeListItems(listId) {
