@@ -26,6 +26,7 @@ https://www.useragentman.com/enable/img.php
 https://www.useragentman.com/enable/infographic.php
 https://www.useragentman.com/enable/input-mask.php
 https://www.useragentman.com/enable/listbox.php
+https://www.useragentman.com/enable/load-more.php
 https://www.useragentman.com/enable/log.php
 https://www.useragentman.com/enable/marquee.php
 https://www.useragentman.com/enable/meter.php
