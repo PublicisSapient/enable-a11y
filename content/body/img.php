@@ -365,3 +365,34 @@
   ]
 }
 </script>
+
+<h2>Use Embed to update a SVG</h2>
+
+<?php includeStats(["isForNewBuilds" => false]); ?>
+
+<p>
+  Use embed html tag instead image tag to import SVGs. By using embed we can update the color of svg based on color theme. 
+</p>
+
+<div id="svg-embed-example" class="enable-example">
+  <embed type="image/svg+xml" src="images/icons/controls/link.svg" role="presentation" title="Link SVG Image">
+</div>
+
+<?php includeShowcode("svg-embed-example"); ?>
+<script type="application/json" id="svg-embed-example-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [
+    {
+      "label": "Add readable title",
+      "highlight": "title",
+      "notes": "Add title for accessibility"
+    },
+    {
+      "label": "Add role to embed",
+      "highlight": "role",
+      "notes": ""
+    }
+  ]
+}
+</script>
