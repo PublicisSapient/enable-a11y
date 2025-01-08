@@ -19,7 +19,7 @@
   justify-content: center;
 }
 .gallery .slides .slide {
-  max-height: 30em;
+  max-height: 40em;
   max-width: 40em;
   display: none;
   transition: opacity 0.5s ease;
