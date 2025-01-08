@@ -13,9 +13,14 @@
   max-width: 600px;
   margin: auto;
 }
+.gallery .slides {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
 .gallery .slides .slide {
-  height: 30em;
-  width: 40em;
+  max-height: 30em;
+  max-width: 40em;
   display: none;
   transition: opacity 0.5s ease;
   border-radius: 0.6em;
@@ -25,6 +30,10 @@
     height: 16em;
     width: 100%;
   }
+}
+.gallery .slides .fig-slide {
+  justify-content: center;
+  flex-direction: column;
 }
 .gallery button {
   border: none;
