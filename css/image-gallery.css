@@ -25,10 +25,10 @@
   transition: opacity 0.5s ease;
   border-radius: 0.6em;
 }
-@media only screen and (min-width: 1px) and (max-width: 719px) {
+@media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
   .gallery .slides .slide {
-    height: 16em;
-    width: 100%;
+    max-height: 30em;
+    max-width: 100%;
   }
 }
 .gallery .slides .fig-slide {
