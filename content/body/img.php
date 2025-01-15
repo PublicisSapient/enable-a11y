@@ -150,8 +150,8 @@
     <title id="circle-alt">A dark blue circle with text inside</title>
 
     <rect x="0" y="0" width="200" height="163" fill="none" fill-opacity="1"></rect>
-    <circle cx="81" cy="85" r="75" fill="#00a" stroke="#000" stroke-width="1"></circle>
-    <text id="svg-text" x="81" y="85" font-size="14px" text-anchor="middle" fill="#fff">
+    <circle cx="81" cy="85" r="75" class="circle" stroke="#000" stroke-width="1"></circle>
+    <text id="svg-text" x="81" y="85" font-size="14px" text-anchor="middle" class="text">
       I am text in a circle
     </text>
   </svg>
@@ -371,11 +371,11 @@
 <?php includeStats(["isForNewBuilds" => false]); ?>
 
 <p>
-  Use embed html tag instead image tag to import SVGs. By using embed we can update the color of svg based on color theme. 
+  To ensure compatibility with Safari and allow dynamic color updates based on the color theme, use the <code>embed</code> HTML tag instead of the <code>img</code> tag to import SVGs. This approach facilitates greater flexibility in styling SVGs directly through CSS or JavaScript
 </p>
 
 <div id="svg-embed-example" class="enable-example">
-  <embed type="image/svg+xml" src="images/icons/controls/link.svg" role="presentation" title="Link SVG Image">
+  <embed type="image/svg+xml" src="images/icons/add-embed.svg" role="presentation" title="Link SVG Image">
 </div>
 
 <?php includeShowcode("svg-embed-example"); ?>

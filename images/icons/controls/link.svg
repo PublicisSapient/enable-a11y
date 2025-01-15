@@ -1,21 +1,4 @@
 <svg width="248" height="45" viewBox="0 0 248 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<style>
-path:first-of-type{
-    stroke: #5B68AD
-}
-path:not(:first-of-type) {
-    stroke: #05A8AB;
-}
-
-@media (prefers-color-scheme: dark) {
-    path:first-of-type{
-        stroke: #88888b
-    }
-    path:not(:first-of-type) {
-        stroke: #fff;
-    }
-}
-</style>
 <path d="M73 22H160" stroke="#5B68AD" stroke-width="3" stroke-linecap="round"/>
 <path d="M179 22H246" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
 <path d="M2 43H36" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
