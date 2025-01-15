@@ -18,22 +18,30 @@ function imageGallery() {
             const thumbnails = gallery.querySelectorAll('.thumbnail-button');
             const slideAlert = gallery.querySelector('.gallery-alert');
             const figSlide = gallery.querySelectorAll('.fig-slide')
-
+            let caption = ''
             figSlide.length > 0 && figSlide.forEach((slide, i) => {
                 slide.style.display = i === index ? 'flex' : 'none';
                 slide.setAttribute('aria-hidden', i !== index);
+                if(i === index){
+                    const figCaption = slide.querySelector('figcaption');
+                    caption = figCaption.textContent;
+                }
             });
 
             slides.forEach((slide, i) => {
                 slide.style.display = i === index ? 'flex' : 'none';
                 slide.setAttribute('aria-hidden', i !== index);
                 if (i === index) {
-                    const msg = slide.getAttribute('alt');
-                    slideAlert.innerHTML = `Now showing image with ${msg}`;
+                    let msg = `Now showing image with ${slide.getAttribute('alt')} `;
+                    if(caption) msg += `Caption underneath reads: ${caption}`
+                    slideAlert.innerHTML = msg;
                 }
             });
             thumbnails.forEach((thumbnail, i) => {
                 thumbnail.classList.toggle('active', i === index);
+                if (i===index){
+                    thumbnail.setAttribute('aria-pressed', true);
+                }
             });
         },
 

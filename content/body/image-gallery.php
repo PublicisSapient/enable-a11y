@@ -1,6 +1,6 @@
 <h2>ARIA Image Gallery Example</h2>
 
-<p>This component is an image carousel designed to showcase images with a smooth scrolling feature. Users can navigate through the images using the next and previous buttons. The active image is highlighted, providing a clear visual focus. Ideal for displaying product galleries, it enhances user interaction with dynamic image transitions.</p>
+<p>Image galleries are used in a lot of e-commerce sites to show off the products the site is selling. Images are a great way for sighted users to know what the product looks like and if it is the one that they want. But how about blind and partially-sighted users? They want to know what kind of pictures are in the image gallery as well so they can understand if the product is right for them as well. The following example is accessible and will announce to screen reader users when a new image is displayed and describe the image via the image's alt text set in the code</p>
 
 <?php includeStats(["isForNewBuilds" => true]); ?>
 <?php includeStats([
@@ -12,7 +12,7 @@
 <div id="gallery1" class="gallery" role="group" aria-label="Product Gallery">
         <div class="slides">
             <img src="images/image-gallery/001-product.jpg" alt="Miniature Space Invaders arcade game machine with a red joystick, yellow buttons, and retro branding. There are four switches on the panel, labelled: On/Off, Mute, Pause and Start/Fire." class="slide">
-            <img src="images/image-gallery/002-product.jpg" alt="Right side view of a miniature Space Invaders arcade machine showing colorful alien graphics and logo on a blue casing. There is a logo on the bottom that reads 'Excalibur Electronics Inc." class="slide">
+            <img src="images/image-gallery/002-product.jpg" alt="Right side view of a miniature Space Invaders arcade machine showing colorful alien graphics and logo on a blue casing. There is a logo on the bottom that reads 'Excalibur Electronics Inc.'" class="slide">
             <img src="images/image-gallery/003-product.jpg" alt="Close-up of a white sticker on the back of a blue Space Invaders arcade machine. The sticker reads: 'Excalibur Electronics, Inc. Miami, FL (305) 477-8080. WWW.ExcaliburElectronics.com. Battery: Size C x4 (not included). Model: 402-A. Space Invaders Arcade, copyright Taito corporation, 1978. Space Invader is the trademark of Taito. Made in China." class="slide">
             <img src="images/image-gallery/004-product.jpg" alt="Left side of a miniature Space Invaders arcade machine featuring alien-themed artwork and logo on a blue plastic body." class="slide">
         </div>
@@ -61,7 +61,12 @@
     {
       "label": "Use an ARIA live status to give update information to screen reader users",
       "highlight": "aria-live ||| role=\"status\"",
-      "notes": "This aria-live status will be updated with information for screen reader users on what has changed in the gallery"
+      "notes": "This aria-live status will be updated when new image is displayed in the gallery that describe what is being shown display (e.g Now displaying an image of)"
+    },  
+    {
+        "label": "Updated a aria-live using javascript",
+        "highlight": "%FILE% ./js/modules/image-gallery.js ~ slideAlert",
+        "notes": "When the image gallery displays a new image, this is the code that announces the change to screen reader users."
     },
     {
       "label": "Hide the gallery alert with sr-only CSS class",
@@ -69,42 +74,27 @@
       "notes": "This is <a href=\"screen-reader-only-text.php\">a standard class that hides items visually but allows screen readers to access them</a>."
     },
     {
-      "label": "CSS for sr-only",
-      "highlight": "%CSS%all-css ~ .sr-only",
-      "notes": "This is the  <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>   we use in the Enable project. There are several variations of this available on the web."
-    },
-    {
         "label": "Add aria-hidden to slide image",
         "highlight": "%FILE% ./js/modules/image-gallery.js ~ aria-hidden",
         "notes": "Ensure only one active thumbnail display on slide other gets hide and add aria-hidden"
     },
     {
-        "label": "Create JavaScript that ensure active image get update when any changes occurs",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ this.showSlide",
-        "notes": "This function add shows active image in gallery and updates gallery alert message."
-    },
-    {
         "label": "Create JavaScript that should be triggered when pressed",
         "highlight": "%FILE% ./js/modules/image-gallery.js ~ this.changeSlide",
         "notes": ""
-    },
-    {
-        "label": "Updated a aria-live using javascript",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ slideAlert",
-        "notes": "This will announce what is the image, which is active in the slides using aria-live"
     }
   ]
 }
 </script>
 
 <h2>Solution 2: Image Gallery with Caption</h2>
-<p>This example is an image gallery with caption that is designed to showcase images with a smooth scrolling feature.</p>
+<p>This is an example of a image gallery where there are captions underneath the image. Note that in some image galleries on the web, captions don't always describe what is inside the image completely and may just have some additional information (a great example of this is Instagram). For this reason, it is usually a great idea for screen readers to announce both the image alt text and the caption together when the user elects to display a new image in the gallery.</p>
 <?php includeStats(["isForNewBuilds" => true]); ?>
 <?php includeStats(["isForNewBuilds" => false]); ?>
 <?php includeStats(["isNPM" => true]); ?>
 
 <div id="example2" class="enable-example">
-<div id="gallery2" class="gallery" role="group" aria-label="Image Gallery with Caption">
+<div id="gallery2" class="gallery" role="group" aria-label="Gallery with Calligraphy Photos">
         <div class="slides">
           <figure class="fig-slide">
             <img class="slide" src="images/image-gallery/01-calligraphy.jpg" alt="My heart belongs to you written in an Italic script to the outline of a heart">
@@ -126,7 +116,7 @@
             </figcaption>
           </figure>
           <figure class="fig-slide">
-            <img class="slide" src="images/image-gallery/04-calligraphy.jpg" alt="The image shows a blackboard with white Italic and foundational calligraphy on it.  The text reads 'Things I Hate' followed by a numbered list: ‘1. Blackboard Calligraphy, 2. Lists, 3. Irony, and IV. Inconsistencies’.">
+            <img class="slide" src="images/image-gallery/04-calligraphy.jpg" alt="A blackboard with white Italic and foundational calligraphy on it.  The text reads 'Things I Hate' followed by a numbered list: ‘1. Blackboard Calligraphy, 2. Lists, 3. Irony, and IV. Inconsistencies’.">
             <figcaption>
             I saw this quote on what used to be Twitter in 2014.  I thought it was hilarious, so I posted my take on it on Instagram.
             </figcaption>
@@ -196,36 +186,11 @@
       "label": "Use an ARIA live status to give update information to screen reader users",
       "highlight": "aria-live ||| role=\"status\"",
       "notes": "This aria-live status will be updated with information for screen reader users on what has changed in the gallery"
-    },
-    {
-      "label": "Hide the gallery alert with sr-only CSS class",
-      "highlight": "sr-only",
-      "notes": "This is <a href=\"screen-reader-only-text.php\">a standard class that hides items visually but allows screen readers to access them</a>."
-    },
-    {
-      "label": "CSS for sr-only",
-      "highlight": "%CSS%all-css ~ .sr-only",
-      "notes": "This is the  <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a>   we use in the Enable project. There are several variations of this available on the web."
-    },
-    {
-        "label": "Add aria-hidden to slide image",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ aria-hidden",
-        "notes": "Ensure only one active thumbnail display on slide other gets hide and add aria-hidden"
-    },
-    {
-        "label": "Create JavaScript that ensure active image get update when any changes occurs",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ this.showSlide",
-        "notes": "This function add shows active image in gallery and updates gallery alert message."
-    },
-    {
-        "label": "Create JavaScript that should be triggered when pressed",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ this.changeSlide",
-        "notes": ""
-    },
+    },  
     {
         "label": "Updated a aria-live using javascript",
         "highlight": "%FILE% ./js/modules/image-gallery.js ~ slideAlert",
-        "notes": "This will announce what is the image, which is active in the slides using aria-live"
+        "notes": "When the image gallery displays a new image, this is the code that announces the change to screen reader users."
     }
   ]
 }
