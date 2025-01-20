@@ -39,6 +39,7 @@ function imageGallery() {
             });
             thumbnails.forEach((thumbnail, i) => {
                 thumbnail.classList.toggle('active', i === index);
+                thumbnail.setAttribute('aria-pressed', false);
                 if (i===index){
                     thumbnail.setAttribute('aria-pressed', true);
                 }
