@@ -27,7 +27,7 @@ A place to learn and share with developers what makes web work accessible. This 
     - [Install from browser](https://www.php.net/downloads.php)
     - Install using homebrew: `brew install php`
     - Install using MacPorts: `sudo port install php`
-    - Install on Ubuntu: `sudo apt install php8.4`
+    - Install on Ubuntu: `sudo apt install php8.1`
   - You can find the path to the installed PHP using `which php`. Add that path to your terminal profile's PATH environment value and/or VS Code settings.
 - Java: required in order to use the v.Nu checker during automation and unit testing
 
