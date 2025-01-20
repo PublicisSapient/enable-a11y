@@ -79,8 +79,13 @@
         "notes": "Ensure only one active thumbnail display on slide other gets hide and add aria-hidden"
     },
     {
+        "label": "Allow screen readers to know which element is active",
+        "highlight": "%FILE% ./js/modules/image-gallery.js ~ aria-pressed",
+        "notes": ""
+    },
+    {
         "label": "Create JavaScript that should be triggered when pressed",
-        "highlight": "%FILE% ./js/modules/image-gallery.js ~ this.changeSlide",
+        "highlight": "%FILE% ./js/modules/image-gallery.js ~ changeSlide",
         "notes": ""
     }
   ]
