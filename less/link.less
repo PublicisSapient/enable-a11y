@@ -1,20 +1,31 @@
 @import "shared/mixins-and-vars";
 
 [role="link"] {
-    color: blue;
+    color: #00f;
     text-decoration: underline;
     cursor: pointer;
+
+    .enable__is-dark-mode & {
+        color: #9999ff; 
+    }
 }
 
 a[target="_blank"] {
     color: #00f;
 
+    .enable__is-dark-mode & {
+        color: #92f1ff
+    }
     &:visited {
-        color: #009;
+        color: #99ff99;
     }
 
     .new-window-icon {
         height: (12 / @px);
+
+        .enable__is-dark-mode & {
+            filter: invert(100%) hue-rotate(162deg);
+        }
     }
 }
 
@@ -23,6 +34,10 @@ nav.breadcrumb {
     border: 1px solid hsl(0deg 0% 90%);
     border-radius: 4px;
     background: hsl(300deg 14% 97%);
+
+    .enable__is-dark-mode & {
+        background: hsl(300deg 14% 19%);
+    }
 
     & ol {
         margin: 0;
@@ -47,5 +62,9 @@ nav.breadcrumb {
         color: #000;
         font-weight: 700;
         text-decoration: none;
+
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+        }
     }
 }

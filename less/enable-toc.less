@@ -37,11 +37,11 @@
     }
 
     &__link {
-        color: @color-link;
+        color: @orange;
         text-decoration: none;
 
         &:visited {
-            color: @color-link;
+            color: @orange;
         }
 
         &:hover {
@@ -106,7 +106,7 @@
         display: none;
         position: sticky;
         float: left;
-        top: 2.5rem;
+        top: 5rem;
         right: 0;
         width: 25%;
         max-width: 18.75rem;
@@ -154,6 +154,7 @@
 
         img {
             height: 1.2rem;
+            max-height: 1.2rem;
             border-radius: 50%;
             transition: background 0.2s ease;
             will-change: background;
@@ -161,6 +162,50 @@
 
         &:hover img {
             background: #ddd;
+        }
+    }
+}
+
+.enable__is-dark-mode {
+    .enable-toc {
+        background-color: #333;
+    
+        &__link {
+            color: @light-orange;
+            line-height: 1.2;
+
+            &:visited {
+                color: @light-orange;
+            }
+        }
+
+        &__toggle-button {
+            img {
+                content: data-uri("../images/icons/toc-dark.svg");
+            }
+        }
+
+        &__image {
+            filter: invert();
+        }
+
+        .enable-drawer__button {
+            background: #333;
+            color: @dark-mode-white;
+
+            img {
+                content: data-uri("../images/plus-dark.svg");
+            }
+
+            &:hover img {
+                background: #444;
+            }
+        }
+
+        .enable-drawer__button[aria-expanded="true"] {
+            img {
+                content: data-uri("../images/minus-dark.svg");
+            }
         }
     }
 }

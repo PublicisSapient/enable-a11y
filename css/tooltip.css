@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .tooltip {
   display: block;
   background: black;
@@ -13,6 +23,9 @@
      */
   border: 1px solid transparent;
 }
+.enable__is-dark-mode .tooltip {
+  border-color: #ededed;
+}
 .tooltip:before {
   content: "";
   width: 1rem;
@@ -20,11 +33,21 @@
   background: black;
   position: absolute;
   top: -0.5rem;
-  left: 2rem;
+  left: 0.5rem;
   transform: rotate(45deg);
+  z-index: -1;
   /* Again, we put a transparent border here for Windows High Contrast Mode */
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
+}
+.enable__is-dark-mode .tooltip:before {
+  border-top: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+}
+.tooltip--bottom:before {
+  top: initial;
+  bottom: -0.5rem;
+  transform: rotate(-135deg);
 }
 .tooltip:after {
   content: "";
@@ -45,3 +68,4 @@
   width: 1px;
   margin: -1px;
 }
+/*# sourceMappingURL=tooltip.css.map */

@@ -5,9 +5,15 @@
     "mainClass": "with-full-bleed-hero",
     "bodyClass": "index"
   },
+  "link.php": {
+    "sectionPages": [ {"controls": "Simple Controls"}],
+    "title": "Links",
+    "desc": "Links are easy to code accessibly, but it's nice to give more context."
+  },
   "accessible-text-svg.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Accessible Text in SVG",
-    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing)",
+    "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing).",
     "mainClass": "with-full-bleed-hero"
   },
   "alert-dialog.php": {
@@ -16,6 +22,8 @@
     "wip": true
   },
   "alert.php": {
+    "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
+    "shortTitle": "ARIA Alert",
     "title": "ARIA Alert: Understanding, Live Example and Code Walkthrough",
     "desc": "Learn about the ARIA alert property, how it enhances web accessibility, and explore practical examples with code samples. Master ARIA alerts for better UX.",
     "url": "https://www.useragentman.com/enable/alert.php",
@@ -41,8 +49,9 @@
   ]
   },
   "animated-gif-with-pause-button.php": {
+    "sectionPages": [ { "content": "Animated Content" }],
     "title": "Animated GIFs with Pause Buttons",
-    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag",
+    "desc": "How to code Animated GIFs can be paused using the HTML5 details tag.",
     "isNPM": "true"
   },
   "animated-hide-show.php": {
@@ -51,7 +60,7 @@
     "wip": true
   },
   "audio-player.php": {
-    "title": "Accessible Audio Player",
+    "title": "Audio Player",
     "desc": "Audio on the web needs to include features such as transcripts, slowdown, and background noise reduction."
   },
   "bottom-fixed-navigation.php": {
@@ -60,13 +69,15 @@
     "wip": true
   },
   "button.php": {
+    "sectionPages": [ {"forms": "Form Elements"}],
     "title": "How to Create Accessible Buttons",
+    "shortTitle": "Accessible Buttons",
     "desc": "Native HTML5 buttons are the best when you have existing inaccessible code, using roles can help.",
     "url": "https://www.useragentman.com/enable/button.php",
     "mainEntity":[
       {
       "type": "Article",
-      "title": "Accessible Button ?",
+      "title": "Accessible Button",
       "desc": "An accessible HTML button is one that can be easily used by all individuals, including those with disabilities. Accessibility ensures that everyone, regardless of their abilities, can interact with web content.",
       "url": "https://www.useragentman.com/enable/button.php#an-html-button---heading"
       },
@@ -109,12 +120,15 @@
   ]
   },
   "carousel.php": {
-    "title": "Accessible Carousels",
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Carousels",
     "desc": "If you absolutely need carousels, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
     "isNPM": "true"
   },
   "checkbox.php": {
+    "sectionPages": [ {"forms": "Form Elements"}],
     "title": "How to Create Accessible Checkboxes",
+    "shortTitle": "Checkboxes",
     "desc": "Here is a step-by-step guide to creating accessible checkboxes",
     "url": "https://www.useragentman.com/enable/checkbox.php",
     "mainEntity":[
@@ -133,19 +147,19 @@
       {
       "type": "Article",
       "title": "A DIV with a role of checkbox",
-      "desc": "If you come across a <div> in that is marked up like a checkbox, that is not accessible",
+      "desc": "If you come across a &gt;div&lt; in that is marked up like a checkbox, that is not accessible",
       "url": "https://www.useragentman.com/enable/checkbox.php#a-div-with-a-role-of-checkbox--heading"
       },
       {
       "type": "HowTo",
       "title": "Step-by-Step to make the styled checkboxe accessible",
-      "desc": "See the dropdown to highlight each of the individual steps that make a <div> that is marked up like a checkbox accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make a &gt;div&lt; that is marked up like a checkbox accessible",
       "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-2"
       },
       {
       "type": "Article",
       "title": "HTML checkbox group",
-      "desc": "If you have a group of checkboxes, you could use <role='group'> instead of fieldsets",
+      "desc": "If you have a group of checkboxes, you could use &gt;role='group'&lt; instead of fieldsets",
       "url": "https://www.useragentman.com/enable/checkbox.php#html-checkbox-group--heading"
       },
       {
@@ -186,36 +200,61 @@
       }
   ]  
   },
+  "code-patterns-section.php": {
+    "title": "Code Patterns",
+    "desc": "A list of all the accessible code patterns which can be found in the Enable project."
+  },
   "combobox.php": {
+    "sectionPages": [ {"forms": "Form Elements"}],
     "title": "Accessible Autocomplete (a.k.a Combobox)",
-    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role",
+    "desc": "One exception to the First Rule of ARIA is HTML5 autocomplete using the datalist tag, which is not as accessible as the ARIA datalist role.",
     "isNPM": "true"
   },
+  "content-section.php": {
+    "title": "Content",
+    "desc": "Page that organizes the components that fall under Content."
+  },
+  "controls-section.php": {
+    "title": "Controls",
+    "desc": "Page that organizes the components that fall under Controls."
+  },
+  "dark-mode.php": {
+    "sectionPages": [ { "code-patterns-removed": "Visual Design" }],
+    "title": "Dark Mode",
+    "desc": "This page will show you how to ensure your website has proper contrast as well as the overall function for dark mode.",
+    "thumbFileType": "png"
+  },
   "date.php": {
-    "title": "Accessible Date Widget",
-    "desc": "Depending on the browser, the HTML5 <input type=\"date\"> is not keyboard/screen reader friendly. What is a web developer to do?  ",
+    "title": "Date Widget",
+    "desc": "Depending on the browser, the HTML5 &gt;input type=\"date\"&lt; is not keyboard/screen reader friendly. What is a web developer to do?  ",
     "wip": true
   },
   "description-list.php": {
+    "sectionPages": [ { "content": "Static Content" }],
     "title": "Description List (neé Definition List)",
     "desc": "Lists of name/value pairs should be coded in a definition list.  This page covers the HTML5 and ARIA variants."
   },
   "dialog.php": {
-    "title": "Accessible Modal Dialog",
+    "title": "Modal Dialog",
+    "sectionPages": [ {"controls": "Complex Controls"}],
     "desc": "Modal dialogs are often not made accessible.  This page covers, step by step, how to ensure your are.",
     "isNPM": "true"
   },
   "dropdown.php": {
-    "title": "Accessible Dropdowns/Drawers/Expando",
+    "sectionPages": [ {"controls": "Simple Controls"}],
+    "title": "Dropdowns/Drawers/Expandos",
     "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accessible with just a little bit of markup.",
     "isNPM": "true"
   },
   "figure.php": {
-    "title": "Accessible Figures",
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Figures",
     "desc": "Often overlooked, self-contained content that is references in a document, like a photo, chart, diagram or code, should be marked up as a figure to help screen reader users understand context."
   },
   "focus-styling.php": {
+    "sectionPages": [ { "code-patterns": "Focus Management" }],
     "title": "How to Create Accessible Focus Outlines in CSS",
+    "shortTitle": "Focus Styling Tips",
     "desc": "Explore best practices for focus outlines in web design. Improve accessibility and keyboard navigation with our comprehensive guide.",
     "url": "https://www.useragentman.com/enable/focus-styling.php",
     "mainEntity": [
@@ -252,7 +291,9 @@
     ]
   },
   "form-error-checking.php": {
+    "sectionPages": [ {"forms": "Form UX Patterns"}, {"code-patterns": "Focus Management"}],
     "title": "How to Ensure Accessible Form Validation and Error Checking",
+    "shortTitle": "Form Validation and Errors",
     "desc": "Learn how to make your form validation and error checking accessible. Follow best practices to ensure your web forms are compliant with WCAG guidelines and user-friendly for everyone.",
     "url": "https://www.useragentman.com/enable/form-error-checking.php",
     "mainEntity": [
@@ -271,38 +312,52 @@
     ]
   },
   "form.php": {
-    "title": "Accessible Form Structure",
-    "desc": "Learn about proper HTML form structure.  You'd be surprised how often this is not done correctly.",
+    "sectionPages": [ {"forms": "Form UX Patterns"}],
+    "title": "Form Structure",
+    "desc": "Learn about proper HTML form structure. You'd be surprised how often this is not done correctly.",
     "toRefactor": false
   },
+  "forms-section.php": {
+    "title": "Forms",
+    "desc": "Page that organizes the components that fall under Forms."
+  },
   "heading.php": {
-    "title": "Accessible Headings",
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Headings",
     "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework."
   },
   "hero-image-text-resize.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Advanced Text Resizing",
-    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4)",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).",
     "isNPM": "true"
   },
   "img.php": {
-    "title": "Accessible Images",
-    "desc": "How to code both <img> tags and background images so they are understandable by screen reader users."
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Images",
+    "desc": "How to code both &gt;img&lt; tags and background images so they are understandable by screen reader users."
+  },
+  "image-gallery.php":{
+    "sectionPages": [{"controls": "Complex Controls"}],
+    "title": "Image Gallery",
+    "desc": "If you absolutely need image gallery, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
+    "isNPM": "true"
   },
   "infographic.php": {
-    "title": "Accessible Infographics",
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Infographics",
     "desc": "How to code SVG and bitmap images so they are understandable by screen reader users."
   },
   "input-mask.php": {
-    "title": "Accessible Input Masking",
+    "sectionPages": [ {"forms": "Form UX Patterns"}],
+    "title": "Input Masking",
     "desc": "How to code masking of keyboard input in form fields so they are accessible."
   },
-  "link.php": {
-    "title": "Accessible Links",
-    "desc": "Links are easy to code accessibly, but it's nice to give more context"
-  },
+  
   "listbox.php": {
-    "title": "Accessible Select Boxes (a.k.a. Listboxes)",
-    "desc": "Why it's preferable to use native HTML5 <select> controls vs custom controls, and what developers must do if they have to use a custom one.",
+    "sectionPages": [ {"forms": "Form Elements"}],
+    "title": "Select Boxes (a.k.a. Listboxes)",
+    "desc": "Why it's preferable to use native HTML5 select controls vs custom controls, and what developers must do if they have to use a custom one.",
     "isNPM": "true"
   },
   "load-more.php": {
@@ -310,9 +365,12 @@
     "desc": "How to approach pagination using load more buttons."
   },
   "log.php": {
+    "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
     "title": "Accessible Log Display: Understanding, Live Example, and Code Walkthrough",
+    "shortTitle": "ARIA Log",
     "desc": "Discover how to implement an Accessible Log Display with a live example and detailed code walkthrough. Enhance web accessibility with best practices.",
     "url": "https://www.useragentman.com/enable/log.php",
+    "thumbFileType": "png",
     "mainEntity":[
       {
       "type": "Article",
@@ -335,7 +393,9 @@
   ]
   },
   "marquee.php": {
+    "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
     "title": "Mastering Marquee: Auto Scrolling Text with Live Example and Code Samples",
+    "shortTitle": "ARIA Marquee",
     "desc": "Learn how to create an auto-scrolling Marquee for your web pages. Explore a live example and get detailed code samples to implement it effortlessly.",
     "url": "https://www.useragentman.com/enable/marquee.php",
     "mainEntity":[
@@ -360,35 +420,43 @@
   ]
   },
   "math.php": {
-    "title": "Accessible Math Equations",
+    "title": "Math Equations",
     "desc": "Math equations can be made accessible to math students and scholars with MathML.",
     "wip": true
   },
   "meter.php": {
+    "sectionPages": [ { "content": "Static Content" }],
     "title": "Meter",
     "desc": "Meter component which is supported by non html5 browsers."
   },
   "multimedia-content.php": {
-    "title": "Accessible Multimedia Content",
-    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
+    "sectionPages": [ { "content": "Animated Content" }],
+    "title": "Multimedia Content",
+    "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible.",
+    "thumbFileType": "png"
   },
   "multi-level-hamburger-menu.php": {
-    "title": "Accessible Flyout/Hamburger Hybrid Menus",
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Flyout/Hamburger Hybrid Menus",
     "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
     "isNPM": "true"
   },
   "pause-anim-control.php": {
+    "sectionPages": [ { "content": "Animated Content" }],
     "title": "Pause Animation Controls",
     "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
     "mainClass": "with-full-bleed-hero",
     "isNPM": "true"
   },
   "progress.php": {
+    "sectionPages": [ { "content": "Static Content" }],
     "title": "Accessible Progress Bars",
     "desc": "HTML5 Progress Bars should be coded so users who use screen readers and assistive technology know they are there what they are trying to tell them."
   },
   "radiogroup.php": {
+    "sectionPages": [ {"forms": "Form Elements"}],
     "title": "How to Create Accessible Radio Groups",
+    "shortTitle": "Radio Groups",
     "desc": "Here is a step-by-step guide to creating accessible radio groups",
     "url": "https://www.useragentman.com/enable/radiogroup.php",
     "mainEntity": [
@@ -419,7 +487,7 @@
       {
       "type": "Article",
       "title": "Custom radio buttons",
-      "desc": "making <div> and/or <span> tags look like radio buttons?",
+      "desc": "making &gt;div&lt; and/or &gt;span&lt; tags look like radio buttons?",
       "url": "https://www.useragentman.com/enable/radiogroup.php#custom-radio-buttons-using-aria--heading"
       },
       {
@@ -443,20 +511,25 @@
   ]
   },
   "skip-link.php": {
+    "sectionPages": [ {"controls": "Simple Controls"}],
     "title": "Skip Links (That Work In Mobile Too!)",
     "desc": "Traditional skip links (e.g. Skip Navigation Links) that are visible only on focus don't work on mobile. This page presents an example of one that does.",
     "isNPM": "true"
   },
   "slider.php": {
-    "title": "Accessible Sliders",
+    "sectionPages": [ {"forms": "Form Elements"}],
+    "title": "Sliders (a.k.a Range Input)",
     "desc": "This page is a perfect example of why the First Rule of ARIA (i.e. don't use ARIA) is so relevant, especially for mobile screen reader users."
   },
   "spinner.php": {
-    "title": "Accessible Numeric Fields",
-    "desc": "Many developers think form fields with numeric values must always be coded as <input type=\"number\">.  There are exceptions."
+    "sectionPages": [ {"forms": "Form Elements"}],
+    "title": "Numeric Fields",
+    "desc": "Many developers think form fields with numeric values must always be coded as &gt;input type=\"number\"&lt;.  There are exceptions."
   },
   "status.php": {
+    "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
     "title": "ARIA Status: Understanding, Live Example, and Code Walkthrough",
+    "shortTitle": "ARIA Status",
     "desc": "Learn about the ARIA status role, its importance in accessibility, and see a live example with supporting code samples to improve user experience.",
     "url": "https://www.useragentman.com/enable/status.php",
     "mainEntity":[
@@ -481,24 +554,29 @@
   ]
   },
   "switch.php": {
-    "title": "The ARIA Switch Role  (a.k.a. Toggle)",
+    "sectionPages": [ {"controls": "Simple Controls"}],
+    "title": "ARIA Switch (a.k.a. Toggle)",
     "desc": "A control with no native HTML5 equivalent, switches have become popular recently in web and mobile applications, but many are inaccessible to screen reader and keyboard-only users.  Here's how to code them correctly."
   },
   "table.php": {
-    "title": "Accessible Tables",
+    "sectionPages": [ { "content": "Tables" }],
+    "title": "Simple Accessible Tables",
     "desc": "Learn the small things you didn't know were needed for HTML5 tables. Also learn how to make sortable and paginated tables accessible to everyone."
   },
   "sortable-table.php": {
+    "sectionPages": [ { "content": "Tables" }],
     "title": "Accessible Sortable Tables",
     "desc": "With a little bit of JavaScript, you can make your tables sortable, but you should make sure you mark them up correctly.",
     "isNPM": "true"
   },
   "pagination-table.php": {
+    "sectionPages": [ { "content": "Tables" }],
     "title": "Accessible Pagination Table",
     "desc": "If you have a large amount of data, many developers will code pagination widgets to show small portions of data in the table at a time.  Learn how to make that UI accessible, or just use our NPM module to do this.",
     "isNPM": "true"
   },
   "reflow.php": {
+    "sectionPages": [ { "content": "Static Content" }],
     "title": "Content That Scrolls In Two Dimensions (a WCAG Reflow Violation)",
     "desc": "In all breakpoints, you should ensure users don't have to scroll horizontally and vertically to understand the content (with some exceptions).  This page talks about common solutions you can use to fix these type of issues.",
     "hasIframes": true
@@ -516,21 +594,24 @@
     "hideTitle": true
   },
   "search.php": {
+    "sectionPages": [ {"forms": "Form UX Patterns"}],
     "title": "Search Form",
     "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it."
   },
   "sortable-pagination-table.php": {
-    "title": "Accessible Sortable Paginated Tables",
+    "title": "Sortable Paginated Tables",
     "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
     "wip": true
   },
   "tabs.php": {
-    "title": "Accessible Tabs",
-    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible.  We've got your back.",
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Tabs",
+    "desc": "Another control with no native HTML5 tag, many developers don't realize their tab components aren't accessible. We've got your back.",
     "isNPM": "true"
   },
   "textbox.php": {
-    "title": "Accessible Textboxes",
+    "sectionPages": [ {"forms": "Form Elements"}],
+    "title": "Textboxes",
     "desc": "If you are using custom (i.e. non-native HTML5) textboxes, it's simple to add a few ARIA attributes to make them accessible, if you absolutely have to."
   },
   "text-contrast.php": {
@@ -539,15 +620,19 @@
     "wip": true
   },
   "text-resize.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Resizable Typography",
     "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature."
   },
   "text-spacing.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Space-Adjusting Typography",
-    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities ."
+    "desc": "How you can ensure that your website's typography is legible for users that adjust text-spacing because of dyslexia or due to visual or cognitive disabilities."
   },
   "timer.php": {
+    "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
     "title": "ARIA Timer: Understanding, Live Example and Code Walkthrough",
+    "shortTitle": "ARIA Timer",
     "desc": "Discover what ARIA Timer is, see a live example, and explore the supporting code. Learn how to implement an accessible countdown timer with ARIA roles and attributes.",
     "url": "https://www.useragentman.com/enable/timer.php",
     "mainEntity":[
@@ -572,17 +657,19 @@
   ]
   },
   "tooltip.php": {
+    "sectionPages": [ {"controls": "Simple Controls"}],
     "title": "Tooltip",
     "desc": "If you have a tooltip, ensure it follows accessibility best practices.",
     "isNPM": "true"
   },
   "video-player.php": {
-    "title": "Accessible Video Player",
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Video Player",
     "desc": "Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time and get a WCAG AAA transcript for free!",
     "isNPM": "true"
   },
   "video-content.php": {
-    "title": "Accessible Video Content",
+    "title": "Video Content",
     "desc": "Is AI auto-captioning from services like Google, Facebook and Microsoft sufficient? Do you know what a transcript really is (hint: YouTube doesn't)? How can we make sure our videos don't cause seizures?  Learn how to make video content accessible."
   },
   "zoomable-viewport-units.php": {
@@ -596,7 +683,7 @@
     "wip": true
   },
   "acknowledgements.php": {
-    "title": "Credits",
+    "title": "Credits and Shout Outs",
     "desc": "These are the people who have directly, or indirectly, contributed to the Enable Project."
   },
   "faq.php": {
@@ -613,15 +700,22 @@
     "desc": "What are the automated tools we use in Enable to ensure code quality."
   },
   "exposing-style-info-to-screen-readers.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Exposing Style Information To Screen Readers",
     "desc": "If you think the style of text on the page is important to screen reader users, how do you code it?"
   },
   "screen-reader-only-text.php": {
+    "sectionPages": [ { "content": "Static Content" }],
     "title": "Screen Reader Only Text",
     "desc": "What is screen reader only text, when it should be used and how it differs from aria-labels."
   },
   "bookmarklets.php": {
     "title": "Bookmarklets to Test Accessibility Features On A Page",
     "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage."
+  },
+  "accessible-pdf-generation.php": {
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Generating Accessible PDFs",
+    "desc": "Step-by-step guide to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   }
 }

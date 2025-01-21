@@ -47,6 +47,10 @@
     &__icon {
         float: left;
         margin-right: 20px;
+
+        .enable__is-dark-mode & {
+            filter: drop-shadow(0px 0px 14px #fff);
+        }
     }
 }
 
@@ -62,6 +66,12 @@
     ul {
         display: table;
         margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 7px;
+
+        .enable__is-dark-mode & {
+            background: @dark-mode-white;
+        }
     }
 
     li {
@@ -90,6 +100,7 @@
             }
         }
     }
+
 }
 
 #icon-font-example {
@@ -128,6 +139,10 @@
     section a {
         padding: 7px;
         color: black;
+
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+        }
     }
 
     section a:not(:first-child) {
@@ -141,6 +156,10 @@
 
     section a:nth-child(1):hover i {
         color: #3b5998;
+
+        .enable__is-dark-mode & {
+            color: #6292f9;
+        }
     }
 
     section a:nth-child(2):hover i {

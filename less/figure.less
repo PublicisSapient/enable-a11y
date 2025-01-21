@@ -6,7 +6,7 @@ figure,
     margin: 40px auto 0 auto;
     padding: 1em;
     border: solid 1px #ccc;
-    background: #ffffcc;
+    // background: #ffffcc;
 
     &:has(.showcode) {
         padding: 0;
@@ -29,6 +29,17 @@ figure,
         caption-side: bottom;
         margin-bottom: 2rem;
         margin-top: 1rem;
+        a {
+            color: @orange;
+
+            .enable__is-dark-mode & {
+                color: @light-orange;
+
+                .enable__is-dark-mode & {
+                    color: @orange;
+                }
+            }
+        }
     }
 
     code {
@@ -37,7 +48,6 @@ figure,
         background: @color-background-term-code;
         color: @color-term-code;
         width: 100%;
-        border: solid 1px #ccc;
     }
 
     &.wide {
@@ -102,5 +112,16 @@ a.tile-cta {
     }
     .able-status {
         text-align: right;
+    }
+}
+
+.enable__is-dark-mode {
+    figure,
+    [role="figure"] {
+        // background: #555;
+
+        code {
+            background: @dark-mode-black;
+        }
     }
 }

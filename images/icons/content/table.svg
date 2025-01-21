@@ -1,0 +1,25 @@
+<svg width="218" height="83" viewBox="0 0 218 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="218" height="82" rx="5" fill="white"/>
+<mask id="mask0_104_1450" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="218" height="82">
+<rect y="1" width="218" height="82" rx="5" fill="white"/>
+</mask>
+<g mask="url(#mask0_104_1450)">
+<line x1="4.37114e-08" y1="26.5" x2="218" y2="26.5" stroke="#05A8AB"/>
+<line x1="4.37114e-08" y1="51.5" x2="218" y2="51.5" stroke="#05A8AB"/>
+<line x1="82.5" y1="1.0061" x2="81.5" y2="83.0061" stroke="#05A8AB"/>
+<line x1="0.997685" y1="1.50001" x2="216.998" y2="0.500005" stroke="#05A8AB"/>
+<path d="M102 15L150 15" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M17 15L65 15" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M102 39L150 39" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M102 64L150 64" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M181 39L217 39" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M182 64H217" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M181 15L217 15" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<line x1="166.5" y1="1" x2="166.5" y2="82" stroke="#05A8AB"/>
+<path d="M0.5 1L0.5 82" stroke="#05A8AB"/>
+<path d="M0.5 1L0.5 82" stroke="#05A8AB"/>
+<line x1="1" y1="75.5" x2="218" y2="75.5" stroke="#05A8AB"/>
+<path d="M17 39L65 39" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M17 64L65 64" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* Traditional skip links */
 .enable-visible-on-focus {
   clip: rect(1px, 1px, 1px, 1px);
@@ -53,7 +63,6 @@
 .enable-mobile-visible-on-focus__container {
   display: block;
   width: 100%;
-  margin: 3px 0 0 0;
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
@@ -61,7 +70,7 @@
   position: absolute;
 }
 .enable-mobile-visible-on-focus__container:focus-within {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 2px;
   z-index: 2;
 }
@@ -75,13 +84,13 @@
 }
 .enable-skip-link {
   /* Here is the general styles of the link */
+  color: #2b2929 !important;
   width: 100%;
   box-sizing: border-box;
   position: relative;
   display: inline-block;
-  background: #225502;
-  color: #fff;
-  padding: 1px;
+  background: #F4F7F5;
+  padding: 10px;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
@@ -95,7 +104,6 @@
 /* This is just a mock of the component */
 .fake-component {
   display: block;
-  background: white;
   height: 200px;
   width: 100%;
   position: relative;
@@ -104,6 +112,4 @@
   overflow-y: scroll;
   border: solid 1px #ccc;
 }
-.fake-component a {
-  color: #330000;
-}
+/*# sourceMappingURL=enable-visible-on-focus.css.map */

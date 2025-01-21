@@ -1,3 +1,16 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.sticky-table {
+  /* Is this still needed? */
+}
 .sticky-table__keyboard-instructions {
   display: none;
   background: black;
@@ -16,7 +29,7 @@
   overflow: auto;
 }
 .sticky-table__container:focus-within {
-  outline: #097efb 2px solid;
+  outline: var(--focus-color) 2px solid;
 }
 .sticky-table__container:focus-within .sticky-table__keyboard-instructions {
   display: block;
@@ -25,11 +38,17 @@
 .sticky-table__container [role="table"] {
   margin-bottom: 0;
   position: relative;
-  border: solid 1px black;
+}
+.enable__is-dark-mode .sticky-table__container table,
+.enable__is-dark-mode .sticky-table__container [role="table"] {
+  border-color: #ededed;
 }
 .sticky-table__container thead {
   background: white;
   transform: translateZ(1px);
+}
+.enable__is-dark-mode .sticky-table__container thead {
+  background: #121212;
 }
 .sticky-table__container th[scope="col"],
 .sticky-table__container [role="columnheader"] {
@@ -80,6 +99,14 @@ table + figcaption {
     position: absolute;
     margin: 0 1em;
     top: 3px;
+  }
+  .enable__is-dark-mode caption:before,
+  .enable__is-dark-mode .caption:before,
+  .enable__is-dark-mode table + figcaption:before,
+  .enable__is-dark-mode caption:after,
+  .enable__is-dark-mode .caption:after,
+  .enable__is-dark-mode table + figcaption:after {
+    filter: invert(100%);
   }
   caption:before,
   .caption:before,
@@ -134,12 +161,27 @@ table [role="rowheader"],
   color: white;
   background-color: black;
 }
+.enable__is-dark-mode table th,
+.enable__is-dark-mode [role="table"] th,
+.enable__is-dark-mode table [role="columnheader"],
+.enable__is-dark-mode [role="table"] [role="columnheader"],
+.enable__is-dark-mode table [role="rowheader"],
+.enable__is-dark-mode [role="table"] [role="rowheader"] {
+  background-color: #9a9a9a;
+  color: #121212;
+}
 table tr,
 [role="table"] tr,
 table [role="row"],
 [role="table"] [role="row"] {
   display: table-row;
-  background-color: #fff;
+  background-color: white;
+}
+.enable__is-dark-mode table tr,
+.enable__is-dark-mode [role="table"] tr,
+.enable__is-dark-mode table [role="row"],
+.enable__is-dark-mode [role="table"] [role="row"] {
+  background-color: #121212;
 }
 table tr:nth-child(2n),
 [role="table"] tr:nth-child(2n),
@@ -147,9 +189,23 @@ table [role="row"]:nth-child(2n),
 [role="table"] [role="row"]:nth-child(2n) {
   background-color: #cccccc;
 }
+.enable__is-dark-mode table tr:nth-child(2n),
+.enable__is-dark-mode [role="table"] tr:nth-child(2n),
+.enable__is-dark-mode table [role="row"]:nth-child(2n),
+.enable__is-dark-mode [role="table"] [role="row"]:nth-child(2n) {
+  background-color: #343434;
+}
 table [role="rowgroup"],
 [role="table"] [role="rowgroup"] {
   display: table-row-group;
+}
+table .thead [role="row"],
+[role="table"] .thead [role="row"] {
+  background-color: black;
+}
+.enable__is-dark-mode table .thead [role="row"],
+.enable__is-dark-mode [role="table"] .thead [role="row"] {
+  background-color: #9a9a9a;
 }
 table.fixed-headers,
 [role="table"].fixed-headers {
@@ -188,15 +244,31 @@ table.fixed-headers [role="columnheader"],
 [role="table"].fixed-headers [role="columnheader"],
 table.fixed-headers [role="rowheader"],
 [role="table"].fixed-headers [role="rowheader"] {
-  border-left: solid 1px #fff;
-  border-right: solid 1px #fff;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+}
+.enable__is-dark-mode table.fixed-headers th,
+.enable__is-dark-mode [role="table"].fixed-headers th,
+.enable__is-dark-mode table.fixed-headers [role="columnheader"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="columnheader"],
+.enable__is-dark-mode table.fixed-headers [role="rowheader"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="rowheader"] {
+  border-left: solid 1px #ededed;
+  border-right: solid 1px #ededed;
 }
 table.fixed-headers td,
 [role="table"].fixed-headers td,
 table.fixed-headers [role="cell"],
 [role="table"].fixed-headers [role="cell"] {
-  border-left: solid 1px #cccccc;
-  border-right: solid 1px #cccccc;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+}
+.enable__is-dark-mode table.fixed-headers td,
+.enable__is-dark-mode [role="table"].fixed-headers td,
+.enable__is-dark-mode table.fixed-headers [role="cell"],
+.enable__is-dark-mode [role="table"].fixed-headers [role="cell"] {
+  border-left: solid 1px #ededed;
+  border-right: solid 1px #ededed;
 }
 table.fixed-headers thead tr,
 [role="table"].fixed-headers thead tr,
@@ -219,6 +291,10 @@ table .rowspan2__top,
   border-bottom: none;
   vertical-align: bottom;
 }
+.enable__is-dark-mode table .rowspan2__top,
+.enable__is-dark-mode [role="table"] .rowspan2__top {
+  border-bottom: none;
+}
 table .rowspan2__top span,
 [role="table"] .rowspan2__top span {
   display: inline-block;
@@ -226,6 +302,10 @@ table .rowspan2__top span,
 }
 table .rowspan2__bottom,
 [role="table"] .rowspan2__bottom {
+  border-top: none;
+}
+.enable__is-dark-mode table .rowspan2__bottom,
+.enable__is-dark-mode [role="table"] .rowspan2__bottom {
   border-top: none;
 }
 .enable-table--centered-data th,
@@ -236,14 +316,27 @@ table .rowspan2__bottom,
   border-left: solid 1px white;
   border-right: solid 1px white;
 }
+.enable__is-dark-mode .enable-table--with-borders th {
+  border-left: solid 1px #121212;
+  border-right: solid 1px #121212;
+}
 .enable-table--with-borders th:first-child {
   border-left: solid 1px black;
+}
+.enable__is-dark-mode .enable-table--with-borders th:first-child {
+  border-left: solid 1px #9a9a9a;
 }
 .enable-table--with-borders th:last-child {
   border-right: solid 1px black;
 }
+.enable__is-dark-mode .enable-table--with-borders th:last-child {
+  border-right: solid 1px #9a9a9a;
+}
 .enable-table--with-borders td {
   border: solid 1px black;
+}
+.enable__is-dark-mode .enable-table--with-borders td {
+  border-color: #ededed;
 }
 .enable-tabl .screenshot-table {
   margin: 0 auto;
@@ -256,3 +349,4 @@ table .rowspan2__bottom,
 .enable-tabl .screenshot-table td {
   padding: 0;
 }
+/*# sourceMappingURL=table.css.map */
