@@ -62,3 +62,4 @@ https://www.useragentman.com/enable/code-quality.php
 https://www.useragentman.com/enable/exposing-style-info-to-screen-readers.php
 https://www.useragentman.com/enable/screen-reader-only-text.php
 https://www.useragentman.com/enable/bookmarklets.php
+https://www.useragentman.com/enable/accessible-pdf-generation.php
