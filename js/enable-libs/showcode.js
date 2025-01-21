@@ -669,7 +669,7 @@ const showcode = new function () {
   }
 
   this.getStickyContainersOffset = (el) => {
-    const stickyEls = document.querySelectorAll('[data-is-sticky="top"] div');
+    const stickyEls = document.querySelectorAll('[data-is-sticky="top"]');
     let offset = 0;
     
     stickyEls.forEach((stickyEl) => {
@@ -678,6 +678,7 @@ const showcode = new function () {
       //}
     });
 
+    console.log('offset', offset);
     return offset
   }
 
@@ -692,7 +693,7 @@ const showcode = new function () {
     if (uiEl === null) {
       return;
     }
-
+ 
     const stickyContainersOffset = uiEl.offsetHeight + this.getStickyContainersOffset(codeEl) + 10;
     const { body } = document;
    
@@ -844,7 +845,8 @@ const showcode = new function () {
 
     if (block) {
       const isJS = (block.dataset.showcodeIsJs === 'true')
-      
+      const isJava = (block.dataset.showcodeIsJava === 'true')
+    
       formatHTMLInBlock(block, replaceRulesJson)
 
       // let's do search and replace here
@@ -853,6 +855,8 @@ const showcode = new function () {
       
       if (isJS) {
         formattedHTML = unformattedHTML.replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
+      } else if (isJava) {
+        formattedHTML = this.unentify(unformattedHTML).replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
       } else {
         formattedHTML = formatHTML(unformattedHTML);
       }
@@ -866,7 +870,6 @@ const showcode = new function () {
 
   function formatHTMLInBlock(block, replaceRulesJson) {
     try {
-
       for (let i in replaceRulesJson) {
         const nodesToReplace = block.querySelectorAll(i);
 

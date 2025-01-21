@@ -471,22 +471,7 @@
 <script type="application/json" id="submit-on-select-example-props">
 {
   "replaceHtmlRules": {
-    "[role=\"listbox\"]": [
-      "<div class=\"enable-combobox__group\" role=\"presentation\">",
-      "<h2 class=\"enable-combobox__group-header\">Communist States</h2>",
-      "",
-      "<div role=\"option\" >People's Republic of China</div>",
-      "",
-      "...",
-      "",
-      "</div>",
-      "<div class=\"enable-combobox__group\" role=\"presentation\">",
-      "<h2 class=\"enable-combobox__group-header\">Other States</h2>",
-      "<div role=\"option\" >Afghanistan</div>",
-      "",
-      "...",
-      "</div>"
-    ]
+    "[role=\"listbox\"]": "<li role=\"option\" value=\"1942\">1942</li><li role=\"option\" value=\"Asteroids\">Asteroids</li> ..."
   },
   "steps": [{
     "label": "Create JavaScript code to submit query when clicking the option elements.",

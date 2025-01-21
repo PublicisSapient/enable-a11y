@@ -1,4 +1,5 @@
 https://www.useragentman.com/enable/index.php
+https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/accessible-text-svg.php
 https://www.useragentman.com/enable/alert.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
@@ -6,7 +7,11 @@ https://www.useragentman.com/enable/audio-player.php
 https://www.useragentman.com/enable/button.php
 https://www.useragentman.com/enable/carousel.php
 https://www.useragentman.com/enable/checkbox.php
+https://www.useragentman.com/enable/code-patterns-section.php
 https://www.useragentman.com/enable/combobox.php
+https://www.useragentman.com/enable/content-section.php
+https://www.useragentman.com/enable/controls-section.php
+https://www.useragentman.com/enable/dark-mode.php
 https://www.useragentman.com/enable/description-list.php
 https://www.useragentman.com/enable/dialog.php
 https://www.useragentman.com/enable/dropdown.php
@@ -14,12 +19,13 @@ https://www.useragentman.com/enable/figure.php
 https://www.useragentman.com/enable/focus-styling.php
 https://www.useragentman.com/enable/form-error-checking.php
 https://www.useragentman.com/enable/form.php
+https://www.useragentman.com/enable/forms-section.php
 https://www.useragentman.com/enable/heading.php
 https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/img.php
+https://www.useragentman.com/enable/image-gallery.php
 https://www.useragentman.com/enable/infographic.php
 https://www.useragentman.com/enable/input-mask.php
-https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/listbox.php
 https://www.useragentman.com/enable/load-more.php
 https://www.useragentman.com/enable/log.php
@@ -57,3 +63,4 @@ https://www.useragentman.com/enable/code-quality.php
 https://www.useragentman.com/enable/exposing-style-info-to-screen-readers.php
 https://www.useragentman.com/enable/screen-reader-only-text.php
 https://www.useragentman.com/enable/bookmarklets.php
+https://www.useragentman.com/enable/accessible-pdf-generation.php

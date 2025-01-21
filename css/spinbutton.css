@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .enable-spinner,
 input[type="number"] {
   width: 4.375rem;
@@ -7,6 +17,11 @@ input[type="number"] {
 input[type="number"] {
   font-size: 1rem;
   text-align: right;
+}
+input[type="number"]::-webkit-inner-spin-button:not(:focus),
+input[type="number"]::-webkit-outer-spin-button:not(:focus) {
+  opacity: 1;
+  margin-left: 5px;
 }
 .enable-spinner {
   position: relative;
@@ -44,3 +59,4 @@ label.sbLabel {
   font-weight: bold;
   font-size: 1.2em;
 }
+/*# sourceMappingURL=spinbutton.css.map */

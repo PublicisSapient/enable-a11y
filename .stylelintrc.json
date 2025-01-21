@@ -7,7 +7,9 @@
         "js/out/**/*.css",
         "js/enable-libs/**/*.css"
     ],
+    "plugins": ["@double-great/stylelint-a11y"],
     "rules": {
+        "a11y/no-text-align-justify": true,
         "alpha-value-notation": null,
         "at-rule-empty-line-before": null,
         "at-rule-no-unknown": null,
@@ -22,9 +24,6 @@
         "declaration-block-no-redundant-longhand-properties": null,
         "declaration-block-no-shorthand-property-overrides": null,
         "declaration-block-single-line-max-declarations": null,
-        "declaration-property-unit-allowed-list": {
-            "font-size": ["em", "rem", "vmin", "vmax", "vw", "vh"]
-        },
         "font-family-name-quotes": null,
         "font-family-no-missing-generic-family-keyword": null,
         "function-calc-no-unspaced-operator": null,

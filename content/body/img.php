@@ -149,7 +149,7 @@
   <svg width="200" height="163" role="img" aria-labelledby="circle-alt svg-text" focusable="false">
     <title id="circle-alt">A dark blue circle with text inside</title>
 
-    <rect x="0" y="0" width="200" height="163" fill="#ffffff" fill-opacity="1"></rect>
+    <rect x="0" y="0" width="200" height="163" fill="none" fill-opacity="1"></rect>
     <circle cx="81" cy="85" r="75" fill="#00a" stroke="#000" stroke-width="1"></circle>
     <text id="svg-text" x="81" y="85" font-size="14px" text-anchor="middle" fill="#fff">
       I am text in a circle

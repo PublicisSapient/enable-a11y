@@ -47,7 +47,6 @@
     &__container {
         display: block;
         width: @skip-link-width;
-        margin: 3px 0 0 0;
         overflow: hidden;
         pointer-events: none;
         z-index: 2;
@@ -76,14 +75,13 @@
 
 .enable-skip-link {
     /* Here is the general styles of the link */
-
+    color: @dark-grey !important;
     width: @skip-link-width;
     box-sizing: border-box;
     position: relative;
     display: inline-block;
-    background: #225502;
-    color: #fff;
-    padding: 1px;
+    background: @light-grey;
+    padding: 10px;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
@@ -100,7 +98,6 @@
 /* This is just a mock of the component */
 .fake-component {
     display: block;
-    background: white;
     height: 200px;
     width: 100%;
     position: relative;
@@ -108,8 +105,4 @@
     padding: 10px;
     overflow-y: scroll;
     border: solid 1px #ccc;
-
-    a {
-        color: #330000;
-    }
 }

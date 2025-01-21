@@ -23,6 +23,10 @@ fieldset,
     padding-top: 2em;
     background-color: #eeeeee;
 
+    .enable__is-dark-mode & {
+        background-color: #111111;
+    }
+
     legend,
     .legend {
         position: relative;
@@ -45,6 +49,10 @@ fieldset,
 .error {
     text-align: left;
     color: #db0000;
+
+    .enable__is-dark-mode & {
+        color: #e17a7a;
+    }
 
     &::before {
         content: "";

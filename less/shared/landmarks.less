@@ -9,16 +9,13 @@
 body {
     margin: 0;
     position: relative;
-    // padding-bottom: 5rem;
 }
 
 header,
 [role="banner"] {
-    background: @color1;
     margin: 0;
     position: relative;
     border-bottom: solid 1px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
 
     /*
    * Used to work around a Safari OSX bug with sticky table content
@@ -50,22 +47,6 @@ header,
         position: absolute;
         top: 1em;
         right: 1em;
-    }
-}
-
-.site__nav {
-    position: static;
-    background: #000000;
-    line-height: 1.6;
-
-    ul li {
-        display: inline-block;
-        margin-right: 1em;
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
     }
 }
 
@@ -133,7 +114,6 @@ main:not(.with-full-bleed-hero),
     max-width: 1024px;
     line-height: 1.4;
     position: relative;
-    // z-index: 2;  /* Don't know why this was put in here */
 }
 
 .inline-left {
@@ -210,11 +190,14 @@ aside,
         font-size: (40/@px);
         font-weight: bold;
     }
+
+    a {
+        color: #905300;
+    }
 }
 
 footer,
 [role="contentinfo"] {
-    // position: absolute;
     bottom: 0;
     width: 100%;
     background: black;
@@ -225,5 +208,15 @@ footer,
 
     a {
         color: #ccccff;
+    }
+}
+
+.enable__is-dark-mode {
+    aside, [role="complementary"] {
+        background: #444 data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+        border-color: #aaa;
+        a {
+            color: @light-orange;
+        }
     }
 }

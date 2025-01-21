@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .details-accordion {
   border: solid 1px #41a6df;
   border-radius: 10px;
@@ -44,3 +54,4 @@
 .details-accordion__button[aria-expanded="true"] + .details-accordion__content {
   display: block;
 }
+/*# sourceMappingURL=details-accordion.css.map */

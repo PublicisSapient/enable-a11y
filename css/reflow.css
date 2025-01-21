@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .reflow-example__frame {
   display: block;
   margin: 20px auto 0;
@@ -22,13 +32,14 @@
   }
 }
 .reflow-example__frame:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
 .reflow-example__frame:focus:not(:focus-visible) {
   outline: none !important;
 }
 .reflow-example__frame:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -2px;
 }
+/*# sourceMappingURL=reflow.css.map */
