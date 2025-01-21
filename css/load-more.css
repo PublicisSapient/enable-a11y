@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 #product-grid,
 #view-grid {
   width: 100%;
@@ -69,7 +79,7 @@
   text-align: center;
 }
 #load-more-btn,
-#view-more-btn {
+#display-more-btn {
   font-size: 0.9375rem;
   font-weight: bold;
   min-width: 200px;
@@ -83,7 +93,7 @@
   outline-offset: 4px;
 }
 #product-reset-btn,
-#view-reset-btn {
+#display-reset-btn {
   font-size: 0.9375rem;
   font-weight: bold;
   min-width: 200px;
@@ -94,6 +104,11 @@
   border: none;
   margin: 10px auto;
   outline-offset: 4px;
+  text-decoration: underline;
+}
+.enable__is-dark-mode #product-reset-btn,
+.enable__is-dark-mode #display-reset-btn {
+  color: #ededed;
 }
 .add-to-cart-btn {
   font-size: 0.9375rem;
@@ -111,3 +126,4 @@
 .tile-relative {
   position: relative;
 }
+/*# sourceMappingURL=load-more.css.map */

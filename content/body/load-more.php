@@ -8,9 +8,9 @@
 
 <p>In the following demos, we will focus on an alternative to infinite scroll: the "load more" button. This method prevents users from becoming trapped in an endless loop of content, allowing them to easily navigate the rest of the site. It's worth noting that other alternatives, such as traditional pagination, also exist, but for the purposes of these demos, our emphasis will be on the load more button.</p>
 
-<p>For a deeper understanding of the drawbacks of infinite scrolling on user experience, consider reading this insightful article by the Nielsen Norman Group: <a href="https://www.nngroup.com/articles/infinite-scrolling/">https://www.nngroup.com/articles/infinite-scrolling/</a></p>
+<p>For a deeper understanding of the drawbacks of infinite scrolling on user experience, consider reading this insightful article by the Nielsen Norman Group: <a href="https://www.nngroup.com/articles/infinite-scrolling/">Infinite Scrolling Is Not for Every Website</a></p>
 
-<p>The following demonstrations use placeholder assets sourced from <a href="https://dev.me/products/image-placeholder">https://dev.me/products/image-placeholder</a>.</p>
+<p>The following demonstrations use placeholder assets sourced from <a href="https://dev.me/products/image-placeholder">The Dev.me Image Placeholder API</a>.</p>
 
 <h2>Category Grid Load More Example</h2>
 
@@ -48,8 +48,8 @@
     </div>
   </section>
 
-  <button id="view-more-btn" type="button">View More Categories</button>
-  <button id="view-reset-btn" class="hide-btn" type="button">Reset Category Grid Demo</button>
+  <button id="display-more-btn" type="button">Display More Categories</button>
+  <button id="display-reset-btn" class="hide-btn" type="button">Reset Category Grid Demo</button>
 </div>
 
 <?php includeShowcode("example1"); ?>
@@ -74,11 +74,11 @@
     },
     {
       "label": "Ensure buttons contain the action and the descriptor",
-      "highlight": "%OPENCLOSECONTENTTAG%button id=\"view-more-btn\"",
+      "highlight": "%OPENCLOSECONTENTTAG%button id=\"display-more-btn\"",
       "notes": "Make sure that you're including both the action and a descriptor for buttons. This tells the user what they can expect by clicking the button."
     },
     {
-      "label": "Ensure the focus goes to the proper tile after clicking View More Categories button.",
+      "label": "Ensure the focus goes to the proper tile after clicking Display More Categories button.",
       "highlight": "%FILE% ./js/demos/load-more/load-more.js ~ \\s*const productTiles[\\s\\S]*?\\}\\)\\;",
       "notes": "It's important to move the users focus state to the first item in the newly loaded products. For demo purposes we're including a reset button. In the real world this data would likely come from an API request. By setting the users focus to the first item in the new batch of products a user can keep browsing through the tiles where they left off."
     },
