@@ -25,6 +25,8 @@ const testHelpers = new (function () {
                 ignoreHTTPSErrors: true,
                 args: [
                     `--window-size=${config.DESKTOP_WIDTH},${config.DESKTOP_HEIGHT}`,
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox'
                 ],
                 defaultViewport: {
                     width: config.DESKTOP_WIDTH,
@@ -46,6 +48,8 @@ const testHelpers = new (function () {
                 ignoreHTTPSErrors: true,
                 args: [
                     `--window-size=${config.MOBILE_WIDTH},${config.MOBILE_HEIGHT}`,
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox'
                 ],
                 defaultViewport: {
                     width: config.MOBILE_WIDTH,
