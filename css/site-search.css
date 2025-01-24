@@ -148,6 +148,29 @@
   display: flex;
   flex-direction: row;
 }
+.enable__is-dark-mode .enable-combobox [role="listbox"] {
+  background: #121212;
+}
+.enable__is-dark-mode .enable-combobox .site-search__button {
+  background: #121212;
+}
+.enable__is-dark-mode .enable-combobox .site-search__icon {
+  background: #121212;
+  content: url('../images/search.svg');
+}
+.site-search [role="option"]:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.site-search [role="option"]:hover p,
+.site-search [role="option"]:hover strong {
+  color: #000;
+}
+.highlight {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
 .site-search input[role="combobox"] {
   font-size: inherit !important;
   height: inherit !important;

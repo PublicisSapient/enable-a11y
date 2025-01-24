@@ -51,7 +51,7 @@
                     >
                     </button>
                     <input class="site-search__term" type="text" tabindex="0" id="home-search" role="combobox" aria-autocomplete="list"
-                        aria-owns="home-search__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off"
+                    aria-label="Search" aria-owns="home-search__list" aria-expanded="false" autocomplete="off" autocorrect="off" autocapitalize="off"
                         aria-describedby="home-search__desc" placeholder="Search for specific knowledge articles...">
 
                     <button class="enable-combobox__reset-button site-search__reset-button" aria-controls="home-search__list" type="reset"
