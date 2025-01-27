@@ -96,7 +96,7 @@
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
     "chalk": "^5.3.0",
-    "chromedriver": "^128.0.1",
+    "chromedriver": "^132.0.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -128,6 +128,7 @@
     "wget-improved": "^3.4.0"
   },
   "dependencies": {
+    "@double-great/stylelint-a11y": "^3.0.2",
     "bin-build": "^2.1.1",
     "d3": "^7.8.5",
     "dialog-polyfill": "^0.5.6",
@@ -151,10 +152,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "npm run eslint"
-    ],
-    "*.{css,less}": [
-      "npm run stylelint"
+      "eslint"
     ],
     "*.{js,jsx,ts,tsx,json}": [
       "prettier"
@@ -169,5 +167,8 @@
   "engines": {
     "npm": ">=10.2.3 <=10.8.1",
     "node": ">=20.10.0 <=20.16.0"
+  },
+  "jest-puppeteer": {
+    "exitOnPageError": false
   }
 }

@@ -1,4 +1,13 @@
-/* Main tooltip */
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .tooltip {
   display: block;
   background: black;
@@ -8,41 +17,37 @@
   position: absolute;
   border-radius: 0.5rem;
   z-index: 2147483647;
-  /* Common styling for button entrypoints */
   /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
-    */
+     */
   border: 1px solid transparent;
-  /* Additional tooltip styles */
-  /* Button entrypoints */
 }
-.tooltip .button-common {
-  color: white;
-  background-color: blue;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  position: relative;
-}
-.tooltip .button-hover {
-  /* Hover styling */
-  transition: background-color 0.3s ease;
-  /* smooth transition */
-  background-color: darkblue;
-  /* Example darker background on hover */
+.enable__is-dark-mode .tooltip {
+  border-color: #ededed;
 }
 .tooltip:before {
   content: "";
-  width: 0.01rem;
-  height: 0.01rem;
+  width: 1rem;
+  height: 1rem;
+  background: black;
   position: absolute;
-  left: 0.1rem;
+  top: -0.5rem;
+  left: 0.5rem;
+  transform: rotate(45deg);
+  z-index: -1;
   /* Again, we put a transparent border here for Windows High Contrast Mode */
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid black;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+.enable__is-dark-mode .tooltip:before {
+  border-top: 1px solid #ededed;
+  border-left: 1px solid #ededed;
+}
+.tooltip--bottom:before {
+  top: initial;
+  bottom: -0.5rem;
+  transform: rotate(-135deg);
 }
 .tooltip:after {
   content: "";
@@ -125,8 +130,4 @@
   .tooltip__text-button {
     vertical-align: top;
   }
-}
-.tooltip__text-button,
-.tooltip__icon-button {
-  outline-offset: 2px;
 }

@@ -14,7 +14,7 @@
 @thumb-shadow-blur: 10px;
 @thumb-shadow-color: rgba(20, 20, 20, 1);
 @thumb-border-width: 1px;
-@thumb-border-color: black;
+@thumb-border-color: transparent;
 @thumb-color: #555bc8;
 
 @output-color: #fff;
@@ -28,8 +28,11 @@
 @track-shadow-color: #222;
 @track-border-width: 1px;
 @track-border-color: black;
+@track-border-color--dark-mode: @dark-mode-white;
 @track-color: #afafaf;
+@track-color--dark-mode: #666;
 @track-diff-color: #333;
+@track-diff-color--dark-mode: #afafaf;
 @track-focus-color: #352976;
 @track-radius: 9px;
 @track-useful-width: (@track-width - @thumb-width);
@@ -51,6 +54,11 @@
     border: @track-border-width solid @track-border-color;
     position: relative;
     top: 2px;
+
+    .enable__is-dark-mode & {
+        background: @track-color--dark-mode;
+        border-color: @dark-mode-lightgrey;
+    }
 }
 
 /*
@@ -129,6 +137,7 @@ input[type="range"] {
     width: @track-width;
     border: none;
     box-sizing: @slider-box-sizing;
+    background: transparent;
 
     &:focus {
         outline: solid 2px transparent;
@@ -260,6 +269,10 @@ input[type="range"] {
                 // For Windows High Contrast Mode
                 outline: 2px solid transparent;
                 outline-offset: -4px;
+
+                .enable__is-dark-mode & {
+                    background: @track-diff-color--dark-mode;
+                }
             }
 
             input[type="range"] {

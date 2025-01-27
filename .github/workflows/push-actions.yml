@@ -45,12 +45,14 @@ jobs:
                   architecture: x64
             - name: Install Lynx dependency
               run: sudo apt install lynx
-            - name: Install PHP8.1
-              run: sudo apt install php8.1
-            - name: Install latest Chrome er.124 to match chromedriver package version
+            - name: Install PHP
+              run: sudo apt install php
+            - name: Install latest Chrome to match chromedriver package version
+              # Note: you should see if the version of Chrome matches the latest listed on
+              # https://mirror.cs.uchicago.edu/google-chrome/pool/main/g/google-chrome-stable/
               run: |
                   apt search '^google-chrome.*' \
-                      && wget -q -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_128.0.6613.119-1_amd64.deb \
+                      && wget -q -O /tmp/chrome.deb http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_130.0.6723.58-1_amd64.deb \
                   && sudo apt install -y /tmp/chrome.deb --allow-downgrades \
                   && rm /tmp/chrome.deb
             - name: Log system details

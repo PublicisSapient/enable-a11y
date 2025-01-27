@@ -9,9 +9,11 @@
 
 .iframed-example {
     [role="banner"],
+    header,
     [role="navigation"],
     nav,
-    footer {
+    footer,
+    .enable-toc__toggle-button {
         display: none;
     }
 }
@@ -26,6 +28,7 @@ body {
 
 #main {
     max-width: 100% !important;
+    padding: 10px !important;
 }
 
 .reflow-examples {
@@ -133,9 +136,12 @@ body {
         margin: 0 -1rem;
         padding: 0 1rem;
 
+        .enable__is-dark-mode & {
+            background: @dark-mode-darkgrey;
+        }
+
         &--content {
             padding: 0;
-            margin: 0 -(12 / @px);
         }
     }
 

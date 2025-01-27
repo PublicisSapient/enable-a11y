@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This is the CSS needed to style the <input type="range" />.  Note how complex it is due
  * to cross-browser issues.
@@ -26,6 +36,7 @@ input[type="range"] {
   width: 100%;
   border: none;
   box-sizing: content-box;
+  background: transparent;
 }
 input[type="range"]:focus {
   outline: solid 2px transparent;
@@ -41,6 +52,10 @@ input[type="range"]::-webkit-slider-runnable-track {
   position: relative;
   top: 2px;
 }
+.enable__is-dark-mode input[type="range"]::-webkit-slider-runnable-track {
+  background: #666;
+  border-color: #9a9a9a;
+}
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: 5px;
@@ -52,11 +67,15 @@ input[type="range"]::-moz-range-track {
   position: relative;
   top: 2px;
 }
+.enable__is-dark-mode input[type="range"]::-moz-range-track {
+  background: #666;
+  border-color: #9a9a9a;
+}
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   box-sizing: content-box;
-  border: 1px solid black;
+  border: 1px solid transparent;
   height: 30px;
   width: 30px;
   border-radius: 15px;
@@ -68,7 +87,7 @@ input[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   box-sizing: content-box;
-  border: 1px solid black;
+  border: 1px solid transparent;
   height: 30px;
   width: 30px;
   border-radius: 15px;
@@ -83,11 +102,11 @@ input[type="range"]:focus::-moz-range-track {
   background: #352976;
 }
 input[type="range"]:focus::-webkit-slider-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus::-moz-range-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus:not(:focus-visible)::-webkit-slider-thumb {
@@ -97,11 +116,11 @@ input[type="range"]:focus:not(:focus-visible)::-moz-range-thumb {
   outline: none;
 }
 input[type="range"]:focus-visible::-webkit-slider-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 input[type="range"]:focus-visible::-moz-range-thumb {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: 4px;
 }
 .html-slider__container {
@@ -168,6 +187,10 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   z-index: -2;
   width: calc(100% - 1px);
 }
+.enable__is-dark-mode .html-slider__multi--container::before {
+  background: #666;
+  border-color: #9a9a9a;
+}
 .html-slider__multi--container::after {
   width: 100%;
   height: 5px;
@@ -188,6 +211,13 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   background: #333;
   outline: 2px solid transparent;
   outline-offset: -4px;
+}
+.enable__is-dark-mode .html-slider__multi--container::after {
+  background: #666;
+  border-color: #9a9a9a;
+}
+.enable__is-dark-mode .html-slider__multi--container::after {
+  background: #afafaf;
 }
 .html-slider__multi--container input[type="range"] {
   position: absolute;
@@ -414,3 +444,4 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .enable-slider output {
   padding-left: 1em;
 }
+/*# sourceMappingURL=enable-slider.css.map */

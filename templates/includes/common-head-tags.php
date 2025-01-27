@@ -16,9 +16,7 @@
 <link id="all-css"
   rel="stylesheet"
   href="css/shared/all.css" />
-<link id="read-all-css"
-  rel="stylesheet"
-  href="css/shared/read-more.css" />
+
 
 <!-- hamburger menu -->
 <link id="hamburger-style"

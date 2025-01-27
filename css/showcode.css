@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 html {
   width: calc(100vw - (100vw - 100%));
   overflow-x: hidden;
@@ -12,11 +22,11 @@ code {
   font-family: "ModeSeven", "Consolas", monospace;
   background: #000;
   color: #090;
-  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -53px 0 black inset;
+  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -49px 0 black inset;
 }
 .showcode {
   background-color: #f5deb3;
-  clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 45px), 0 calc(100% - 45px));
+  clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 41px), 0 calc(100% - 41px));
 }
 h4.showcode__heading {
   border-bottom: none;
@@ -25,7 +35,7 @@ h4.showcode__heading {
   margin-bottom: -5px;
 }
 .showcode__example--code:focus {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -4px;
 }
 .showcode__example--code:focus:not(:focus-visible) {
@@ -33,7 +43,7 @@ h4.showcode__heading {
   outline-offset: 0;
 }
 .showcode__example--code:focus-visible {
-  outline: solid 2px #097efb !important;
+  outline: solid 2px var(--focus-color) !important;
   outline-offset: -4px;
 }
 .showcode--no-js-container {
@@ -55,7 +65,7 @@ h4.showcode__heading {
   font-family: "ModeSeven", "Consolas", monospace;
   background: #000;
   color: #090;
-  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -53px 0 black inset;
+  box-shadow: 8px 0 0 black inset, -8px 0 0 black inset, 0 8px 0 black inset, 0 -49px 0 black inset;
   /* @media @mobile {
             margin: 0 -2em -25px -1em;
         } */
@@ -64,7 +74,7 @@ h4.showcode__heading {
   color: #8f8fff;
 }
 .showcode__example:focus-within {
-  box-shadow: 4px 0 0 #097efb inset, -4px 0 0 #097efb inset, 0 4px 0 #097efb inset, 0 -49px 0 #097efb inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -53px 0 white inset;
+  box-shadow: 4px 0 0 var(--focus-color) inset, -4px 0 0 var(--focus-color) inset, 0 4px 0 var(--focus-color) inset, 0 -45px 0 var(--focus-color) inset, 8px 0 0 white inset, -8px 0 0 white inset, 0 8px 0 white inset, 0 -49px 0 white inset;
 }
 .showcode__example:focus-within code {
   outline: transparent 2px solid;
@@ -75,6 +85,9 @@ h4.showcode__heading {
   max-width: calc(100vw - 20px);
   overflow-x: auto;
   background: #000;
+}
+.enable__is-dark-mode .showcode__example code {
+  background: #121212;
 }
 .showcode__example--desc {
   display: none;
@@ -90,6 +103,10 @@ h4.showcode__heading {
     font-size: 1em;
     text-align: center;
     display: block;
+  }
+  .enable__is-dark-mode .showcode__example--desc {
+    background: #444444;
+    color: #ededed;
   }
   .showcode__example::after {
     content: "";
@@ -159,7 +176,7 @@ h4.showcode__heading {
 }
 .showcode__ui {
   position: sticky;
-  top: 2.5rem;
+  top: 5rem;
   z-index: 1;
   background-color: #f5deb3;
   padding: 0.01em;
@@ -170,6 +187,10 @@ h4.showcode__heading {
 }
 .showcode__notes-container {
   position: relative;
+  color: #000;
+}
+.enable__is-dark-mode .showcode__notes-container {
+  color: #ededed;
 }
 .showcode__notes + .showcode__notes-view-toggle {
   display: none;
@@ -194,6 +215,10 @@ h4.showcode__heading {
   padding: 1em 1em 1em 1em;
   margin: 0 10px 20px 10px;
   background-color: #ffffee;
+}
+.enable__is-dark-mode .showcode__notes:not(:empty) {
+  border-color: #a3917b;
+  background-color: #454532;
 }
 .showcode__notes:not(:empty) > div {
   overflow: hidden;
@@ -247,3 +272,8 @@ h4.showcode__heading {
 figure.wide .showcode__example {
   margin-bottom: -2.5rem;
 }
+.enable__is-dark-mode .showcode__steps,
+.enable__is-dark-mode .showcode__ui {
+  background-color: #705029;
+}
+/*# sourceMappingURL=showcode.css.map */

@@ -1,38 +1,64 @@
 @import "shared/mixins-and-vars";
 
 main {
-    background-color: #444;
-    color: white;
+    color: @dark-grey;
     width: 100%;
 }
 
-strong {
-    color: #fff !important;
+a {
+    color: @orange;
 }
 
 .homepage {
+    &__sponsor-logo {
+        display: block;
+        margin: 20px auto;
+        width: 200px;
+    }
+
+    &__slogan {
+        margin-bottom: 40px;
+    }
+
     &__hero {
         color: @color0;
-        background: #ccc;
         min-height: 30vh;
-        padding: 40px;
+        padding: 20px;
         text-align: center;
-
-        // center text vertically
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-size: (19.2 / @px);
 
         &--heading {
             font-family: @font-default-brand;
-            font-size: (80 / @px);
-            margin: 0 auto;
+            font-size: (64 / @px);
+            margin: 30px auto 10px;
             font-weight: normal;
-            color: darken(@color1, 5%);
+            color: @pink;
+
+            img {
+                width: 12rem;
+
+                @media @tablet-up {
+                    width: 18rem;
+                }
+            }
         }
 
         &--copy {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @media @tablet-up {
+                margin-bottom: 40px;
+            }
+        }
+
+        p {
+            max-width: 50rem;
         }
     }
 
@@ -86,16 +112,39 @@ strong {
         }
 
         &--section {
+            font-size: (16 / @px);
+            border-radius: 25px;
+            background-color: #f4f7f5;
+            margin-bottom: 40px;
+            padding: 20px;
             flex-grow: 1;
             width: 100%;
 
+            p {
+                text-align: center;
+                a {
+                    color: @orange;
+                }
+            }
+
             @media @tablet-up {
                 width: 33%;
+                p {
+                    text-align: center;
+                }
             }
         }
 
         &--section + &--section {
-            margin-left: 2%;
+            // margin-left: 2%;
+            // background-color: #b8d5b8;
+            background-color: #f4f7f5;
+            margin-top: 20px;
+
+            @media @tablet-up {
+                margin-left: 2%;
+                margin-top: 0;
+            }
         }
 
         &--section-icon {
@@ -104,47 +153,66 @@ strong {
         }
 
         &--header {
-            font-family: "OpenSans", "Helvetica", "Arial", sans-serif;
             font-weight: bold;
             font-size: (20 / @px);
             border: none;
+            margin-top: 10px;
             margin-bottom: 20px;
-            color: #ccc;
+            color: @dark-grey;
             text-align: center;
+            display: block;
+            align-items: center;
+
+            @media @desktop {
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
 
             &::before {
                 content: "";
+                //display: inline-flex;
                 display: block;
-                width: 100px;
-                height: 100px;
+                width: 20px;
+                height: 20px;
                 border-radius: 50%;
                 margin: 0 auto 30px auto;
+                //margin-right: 20px;
                 padding: 20px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                background-size: 80px 80px;
+                background-size: 40px;
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
+                background-color: #fff;
+                flex-shrink: 0;
+
+                @media @desktop {
+                    width: 50px;
+                    height: 50px;
+                }
 
                 @media (forced-colors: active) {
                     & {
                         filter: invert() brightness(61%) contrast(434%);
                     }
                 }
+
+                .enable__is-dark-mode & {
+                    background-color: #999;
+                }
             }
 
             &--code::before {
                 background-image: data-uri("../images/icons/code.svg");
-                background-color: @color-scratch;
+                // background-color: @color-scratch;
             }
 
             &--existing::before {
                 background-image: data-uri("../images/icons/integrate.svg");
-                background-color: @color-integrate;
+                // background-color: @color-integrate;
             }
 
             &--npm::before {
                 background-image: data-uri("../images/icons/npm.svg");
-                background-color: @color-npm;
+                // background-color: @color-npm;
 
                 @media (forced-colors: active) {
                     & {
@@ -156,60 +224,155 @@ strong {
 
             &--question::before {
                 background-image: data-uri("../images/icons/question.svg");
-                background-color: @color-npm;
             }
 
             &--donate:before {
                 background-image: data-uri("../images/icons/donate.svg");
-                background-color: @color-scratch;
             }
 
             &--bug:before {
                 background-image: data-uri("../images/icons/bug.svg");
-                background-color: @color-integrate;
             }
         }
 
         a {
-            color: @color-style;
+            color: @pink;
+            border-bottom: 3px solid;
+            text-decoration: none;
         }
     }
 
     &__bottom-copy {
-        background: #ccc;
-        color: #222;
+        background: @pink;
+        color: #fff;
         line-height: 1.5;
         padding: 20px;
-
-        &:nth-child(2n) {
-            background: #eee;
-        }
+        //padding-bottom: -10px;
+        text-align: center;
 
         @media @desktop {
             padding: 20px calc(~"(100% - 1024px) / 2 + 20px");
+            padding-bottom: 60px;
         }
-
-        strong {
-            color: #000 !important;
-        }
-
-        /* I have no idea why this was put here -- commenting out for now */
-        /* &::after {
-      content: "";
-      position: absolute; 
-      display: block;
-      left: 0;
-      width: 100vw;
-      top: 0;
-      right: 0;
-      bottom: 0;
-    } */
 
         &--heading {
-            font-family: @font-default-copy;
             font-weight: bold;
-            font-size: (22 / @px);
-            color: #444;
+            color: #fff;
+            display: inline-flex;
+            align-items: stretch;
+            margin-bottom: 0px;
+
+            @media @tablet-up {
+                font-size: (38 / @px);
+            }
         }
+
+        &--heading::before {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        &.background-secondary {
+            background: #f4f7f5;
+            p {
+                color: @blue;
+            }
+        }
+
+        &.background-tertiary {
+            background: @blue;
+            a {
+                color: @light-orange;
+            }
+        }
+
+        .background-secondary &--heading {
+            color: @blue;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            @media @tablet-up {
+                column-count: 2;
+                column-gap: 13px;
+            }
+
+            li {
+                margin-bottom: 20px;
+                background-color: #fff;
+                border-radius: 25px;
+                padding: 20px;
+                list-style-type: none;
+                color: @dark-grey;
+            }
+        }
+    }
+}
+
+.enable__is-dark-mode {
+    main {
+        color: @dark-mode-white;
+    }
+    
+    .homepage {
+        &__hero {
+            color: @pink-darkmode;
+
+            &--heading {
+                color: @pink-darkmode;
+            }
+        }
+
+        &__intro {
+            &--section {
+                background-color: #222;
+                color: white;
+                
+                p {
+                    a {
+                        color: @light-orange;
+                    }
+                }
+            }
+
+            &--section + &--section {
+                background-color: #222;
+            }
+
+            &--header {
+                color: white;
+            }
+        }
+
+        &__bottom-copy {
+            ul {
+                li {
+                    background-color: #222;
+                    color: white;
+                }
+            }
+
+            &--heading {
+                color: white;
+            }
+
+            &.background-secondary {
+                background-color: #111;
+                p {
+                    color: white;
+                }
+
+                .homepage__bottom-copy--heading {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    a {
+        color: @light-orange;
     }
 }

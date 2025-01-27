@@ -1,3 +1,5 @@
+@import "./mixins-and-vars";
+
 dialog {
     position: absolute;
     left: 0;
@@ -15,6 +17,11 @@ dialog {
     color: black;
     display: block;
     overflow: visible;
+
+    .enable__is-dark-mode & {
+        background: @dark-mode-black;
+        color: @dark-mode-white;
+    }
 
     &:not([open]) {
         display: none;

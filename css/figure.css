@@ -1,10 +1,19 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 figure,
 [role="figure"] {
   display: table;
   margin: 40px auto 0 auto;
   padding: 1em;
   border: solid 1px #ccc;
-  background: #ffffcc;
 }
 figure:has(.showcode),
 [role="figure"]:has(.showcode) {
@@ -30,6 +39,24 @@ figure span,
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
+figure figcaption a,
+[role="figure"] figcaption a,
+figure span a,
+[role="figure"] span a {
+  color: #A76000;
+}
+.enable__is-dark-mode figure figcaption a,
+.enable__is-dark-mode [role="figure"] figcaption a,
+.enable__is-dark-mode figure span a,
+.enable__is-dark-mode [role="figure"] span a {
+  color: #FF9F1C;
+}
+.enable__is-dark-mode .enable__is-dark-mode figure figcaption a,
+.enable__is-dark-mode .enable__is-dark-mode [role="figure"] figcaption a,
+.enable__is-dark-mode .enable__is-dark-mode figure span a,
+.enable__is-dark-mode .enable__is-dark-mode [role="figure"] span a {
+  color: #A76000;
+}
 figure code,
 [role="figure"] code {
   display: block;
@@ -37,7 +64,6 @@ figure code,
   background: #000;
   color: #090;
   width: 100%;
-  border: solid 1px #ccc;
 }
 figure.wide,
 [role="figure"].wide {
@@ -94,3 +120,8 @@ a.tile-cta::after {
 .video-figure .able-status {
   text-align: right;
 }
+.enable__is-dark-mode figure code,
+.enable__is-dark-mode [role="figure"] code {
+  background: #121212;
+}
+/*# sourceMappingURL=figure.css.map */

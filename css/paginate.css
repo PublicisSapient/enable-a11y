@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .pagination__inactive {
   display: none !important;
 }
@@ -26,6 +36,10 @@
   width: 3em;
   font-size: 0.875rem;
 }
+.enable__is-dark-mode .pagination__pager-item {
+  color: #ededed;
+  background-color: transparent;
+}
 .pagination__pager-item:hover {
   background-color: #0e384c;
   color: white;
@@ -36,7 +50,13 @@
 .pagination__pager-item--selected {
   border-bottom: solid #00f 3px;
   color: #00f;
+  font-weight: bold;
+}
+.enable__is-dark-mode .pagination__pager-item--selected {
+  border-bottom: solid #7e7ef8 3px;
+  color: #7e7ef8;
 }
 .pagination__table {
   margin-bottom: 0;
 }
+/*# sourceMappingURL=paginate.css.map */

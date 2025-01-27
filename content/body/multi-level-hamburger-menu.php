@@ -162,8 +162,8 @@
   <li>Use the following code walkthrough below to create your menu navigation.</li>
 </ol>
 
-<?php includeShowcode("website-banner", "", "", "", true, 0, "", true); ?>
-<script type="application/json" id="website-banner-props">
+<?php includeShowcode("header", "", "", "", true, 0, "", true); ?>
+<script type="application/json" id="header-props">
 {
     "replaceHtmlRules": {
       "#non-hamburger-ctas": "<!-- HTML for skip link and logo link -->"
