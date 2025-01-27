@@ -10,6 +10,23 @@
     border-radius: 0.5rem;
     z-index: 2147483647;
 
+    /* Common styling for button entrypoints */
+    .button-common {
+        color: white;
+        background-color: blue;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .button-hover {
+        /* Hover styling */
+        transition: background-color 0.3s ease; /* smooth transition */
+        background-color: darkblue; /* Example darker background on hover */
+    }
+    
     /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.

@@ -17,11 +17,30 @@
   position: absolute;
   border-radius: 0.5rem;
   z-index: 2147483647;
+  /* Common styling for button entrypoints */
   /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
      */
   border: 1px solid transparent;
+  /* Additional tooltip styles */
+  /* Button entrypoints */
+}
+.tooltip .button-common {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.tooltip .button-hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
 }
 .enable__is-dark-mode .tooltip {
   border-color: #ededed;
@@ -131,3 +150,8 @@
     vertical-align: top;
   }
 }
+.tooltip__text-button,
+.tooltip__icon-button {
+  outline-offset: 2px;
+}
+/*# sourceMappingURL=tooltip.css.map */
