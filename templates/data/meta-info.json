@@ -711,7 +711,7 @@
   },
   "accessible-pdf-generation.php": {
     "sectionPages": [ { "content": "Static Content" }],
-    "title": "Generating Accessible PDFs",
-    "desc": "Step-by-step guide to generate accessible PDFs with Open HTML to PDF and SpringBoot."
+    "title": "Converting Accessible PDFs from HTML",
+    "desc": "Many websites generate PDFs dynamically, like invoices, that look nice but are not accessible. This page is a step-by-step guide on how to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   }
 }

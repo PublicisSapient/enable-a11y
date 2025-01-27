@@ -324,13 +324,38 @@ let html = `&lt;html lang="en"&gt;
 
 
 <h2>Feedback from a Screen Reader User</h2>
-<p>Vishnu Ramchandani, an experienced screen reader user, was kind enough to help us test the PDFs that we generated with Open HTML to PDF.  He confirmed that he was able to read the information in the generated PDFs, but added some UX feedback to see if we can incorporate them in our PDF reports.  Here is his feedback, along with what actions we took.</p>
-<ol>
-    <li>Page title:  To ensure consistency and clarity, the document title and the filename should both be same and should be meaningful. 
-    <ul><li>We remedied this issue by changing the title to be the same as the filename.  This is definitely something you should think about when implenting your own solution, since it is not default behavior for the library.</li></ul></li>
-    <li>Reading behavior of lengthy paragraphs in tables: Screen reader users experience line breaks when reading lengthy paragraphs in table columns using arrow keys. A paragraph is read in a broken manner, making it hard to follow.  It is best to ensure that lengthy paragraphs are presented in a linear, single-column format when possible. This helps screen readers read the content in a logical order without breaking lines.
-    <ul><li>Unfortunately, this seems to be a limitation of PDF technology.  We recommend keeping lines short in table rows to remedy this situation.  If you know of any other work arounds for this, <a href="mailto:zoltan.dulac@gmail.com">please contact us</a> with the details and we'll update our recommendations here.</li></ul></li>
-    <li>Issue with Splitting URLs/Links: A single URL or link splits into multiple lines, making screen reader users think there are multiple links instead of a single one.  To prevent links from splitting across multiple lines, consider the following approaches: Use non-breaking spaces (&amp;nbsp;) between words in the link text to prevent line breaks. Apply CSS to ensure the link text does not break into multiple lines. For example, using white-space: nowrap; can help keep the link text on a single line.
-    <ul><li>This also seems like a limitation in PDFs, as many PDF authoring tools like <a href="https://acrobat.uservoice.com/forums/590923-acrobat-for-windows-and-mac/suggestions/40781203-hyperlinks-spanning-multiple-lines">InDesign seem to have this multiline link issue as well</a>.  We recommend keeping link labels short (while still having appropriate and descriptive link text).  Again, if you know of any other workarounds for this, <a href="mailto:zoltan.dulac@gmail.com">email us</a>.  We'd love to hear from you.</li></ul></li>
-</ol>
+<p>Vishnu Ramchandani, an experienced screen reader user, was kind enough to help us test the PDFs that we generated with Open HTML to PDF.  Vishnu confirmed that the generated PDFs were accessible for screen reader users but provided valuable UX feedback to improve the user experience. Below is his feedback and the actions we took to address the issues:</p>
 
+<ol>
+    <li>Page Title Consistency
+        <dl>
+            <dt>Feedback:</dt>
+            <dd>The document title and filename should be consistent and meaningful to ensure clarity for users.</dd>
+            <dt>Action Taken:</dt>
+            <dd>We updated the title of the PDF to match the filename. This adjustment improves consistency and makes the document more user-friendly. When implementing your own solution, remember that this is not a default behavior in the Open HTML to PDF library and should be explicitly configured.</dd>
+        </dl>
+    </li>
+    <li>Reading Behavior of Lengthy Paragraphs in Tables
+
+        <dl>
+            <dt>Feedback:</dt>
+            <dd>Screen readers encounter issues when lengthy paragraphs within table columns are broken into lines. This disrupts the reading flow, making it difficult for users to follow the content. To address this, lengthy paragraphs should ideally be displayed in a linear, single-column format.</dd>
+            <dt>Action Taken:</dt>
+            <dd>Unfortunately, this behavior seems to be a limitation of PDF technology. While we cannot fully resolve this issue, we recommend keeping table row text concise and avoiding lengthy paragraphs. If you are aware of any workaround to mitigate this issue, <a href="mailto:zoltan.dulac@gmail.com">please share your insights with us</a>, and we will update our recommendations accordingly.</dd>
+        </dl>
+    </li>
+    <li>Issues with Splitting URLs and Links
+
+        <dl>
+            <dt>Feedback:</dt>
+            <dd>When URLs or links break across multiple lines in the PDF, screen readers interpret them as multiple links, leading to confusion. To prevent this:
+                <ol>
+                    <li>Use non-breaking spaces (&nbsp;) in link text to avoid line breaks.</li>
+                    <li>Apply CSS styles such as white-space: nowrap; to keep links on a single line.</li>
+                </ol>
+            </dd>
+            <dt>Action Taken:</dt>
+            <dd>This issue also appears to be a limitation inherent to PDF technology, as <a href="https://acrobat.uservoice.com/forums/590923-acrobat-for-windows-and-mac/suggestions/40781203-hyperlinks-spanning-multiple-lines">even advanced tools like Adobe InDesign exhibit this behavior</a>. As a best practice, we recommend keeping link labels concise but descriptive to minimize splitting. If you have additional solutions or tools to address this, <a href="mailto:zoltan.dulac@gmail.com">please reach out to us</a> &mdash; we are eager to incorporate any new strategies.</dd>
+        </dl>
+    </li>
+</ol>
