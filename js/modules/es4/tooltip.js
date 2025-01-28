@@ -3,7 +3,7 @@
 /*******************************************************************************
 * tooltip.js - Accessible Tooltip Module
 * 
-* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com>
+* Written by Zoltan Hawryluk <zoltan.dulac@gmail.com> and Jessie Cai.
 * Part of the Enable accessible component library.
 * Version 1.0 released Dec. 27, 2021
 *
@@ -20,8 +20,6 @@ const tooltip = new (function() {
     const tooltipStyle = tooltipEl.style;
     const escapeKey = 'Escape';
     const tabKey = 'Tab';
-    const buttonName = 'BUTTON';
-    const inputName = 'INPUT';
     let tooltipTarget = null;
     let isTooltipVisible = false;
     let tooltipBelongsTo = null;
@@ -67,7 +65,7 @@ const tooltip = new (function() {
         tooltipEl.id = 'tooltip';
         tooltipEl.setAttribute('role', 'tooltip');
         tooltipEl.classList.add('tooltip--hidden');
-        tooltipEl.innerHTML = '<div class="tooltip__content">Loading ...</div>';
+        tooltipEl.innerHTML = '<div class="tooltip__content">Loading…</div>';
         tooltipEl.setAttribute('aria-live', 'assertive');
         body.appendChild(tooltipEl);
     }
@@ -94,7 +92,7 @@ const tooltip = new (function() {
         tooltipTarget = e.target;
 
         //Hide tooltip on initial focus if tabbed in 
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+        if (tooltipTarget.tagName === 'BUTTON' && tabbedIn) {
             if (tooltipBelongsTo !== tooltipTarget){
                 return;
             }
@@ -106,8 +104,10 @@ const tooltip = new (function() {
     this.show = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === 'SPAN'){
-            tooltipTarget = e.target.parentNode;
+        const closestTooltipEl = tooltipTarget.closest('[data-tooltip]');
+
+        if (closestTooltipEl !== null) {
+            tooltipTarget = closestTooltipEl;
         }
 
         const text = tooltipTarget.dataset.tooltip;
@@ -116,15 +116,16 @@ const tooltip = new (function() {
         }
         
         //Set aria attribute only for onFocus (input) elements
-        if (tooltipTarget.tagName === inputName){
+        if (tooltipTarget.tagName === 'INPUT'){
             tooltipTarget.setAttribute('aria-describedby', 'tooltip');
         }
     
         const tooltipTargetRect = tooltipTarget.getBoundingClientRect();
-        tooltipEl.innerHTML = text;
         tooltipEl.classList.remove('tooltip--hidden');
+        
+        tooltipEl.innerHTML = text;
         tooltipStyle.top = `calc(${tooltipTargetRect.bottom + window.scrollY}px + 1em)`
-        tooltipStyle.left = `${tooltipTargetRect.left + window.pageXOffset}px`;
+        tooltipStyle.left = `${tooltipTargetRect.left + window.scrollX}px`;
         tooltipEl.classList.remove('tooltip--bottom');
         tooltipEl.classList.add('tooltip--top');
 
@@ -140,9 +141,6 @@ const tooltip = new (function() {
             tooltipStyle.top = `calc(${tooltipTargetRect.top + window.scrollY - tooltipHeight}px - 1em)`
         }
 
-        tooltipTarget.addEventListener('mouseleave', this.hide);
-        tooltipEl.addEventListener('mouseleave', this.hide);
-
         tooltipEl.dispatchEvent(
             new CustomEvent('enable-show', { bubbles: true })
         );
@@ -151,7 +149,7 @@ const tooltip = new (function() {
     this.handleClick = (e) => {
         tooltipTarget = e.target;
 
-        if (tooltipTarget.tagName === buttonName && tabbedIn) {
+        if (tooltipTarget.tagName === 'BUTTON' && tabbedIn) {
             if (!isTooltipVisible) {
                 this.show(e);
             } else {
@@ -175,9 +173,7 @@ const tooltip = new (function() {
         }
 
         if (tooltipTarget) {
-            tooltipTarget.removeEventListener('mouseleave', this.hide);
-            tooltipEl.removeEventListener('mouseleave', this.hide);
-            if (tooltipTarget.tagName === inputName){
+            if (tooltipTarget.tagName === 'INPUT'){
                 tooltipTarget.removeAttribute('aria-describedby');
             }
             tooltipTarget = null;
