@@ -92,6 +92,7 @@
   background: #ffffff;
   color: #1457a3;
   font-weight: bold;
+  border: solid 1px transparent;
 }
 .enable__is-dark-mode [role="tablist"] li [role="tab"][aria-selected="true"] {
   background: #ededed;
