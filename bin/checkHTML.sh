@@ -86,6 +86,12 @@ If that does not work, you may need to do a global update of @axe-core/cli:
 
 sudo npm update -g @axe-core/cli
 
+********************************************************************************
+* NOTE: If you are seeing this message in GitHub Automated Tests, you need to 
+* update push-actions.yml to ensure the version of Chrome being downloaded there
+* matches the one in your package.json
+******************************************************************************** 
+
 
 ' 1>&2
 	exit 1;

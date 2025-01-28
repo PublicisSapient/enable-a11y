@@ -7,7 +7,9 @@
         "js/out/**/*.css",
         "js/enable-libs/**/*.css"
     ],
+    "plugins": ["@double-great/stylelint-a11y"],
     "rules": {
+        "a11y/no-text-align-justify": true,
         "alpha-value-notation": null,
         "at-rule-empty-line-before": null,
         "at-rule-no-unknown": null,

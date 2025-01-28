@@ -2,7 +2,17 @@
   <div class="homepage__hero--text">
     <div class="homepage__hero--copy">
        <h1 class="homepage__hero--heading">Enable </h1>
-      <p>A space for developers to learn and collaborate on making the web accessible.</p>
+      <p class="homepage__slogan">A space for developers to learn and collaborate on making the web accessible.</p>
+      
+      <p>
+        Proudly sponsored by The
+      <br />
+      <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="images/sponsor/ps-logo__white.svg">
+          <img src="images/sponsor/ps-logo__color.svg" alt="Publicis Sapient" class="homepage__sponsor-logo" />
+      </picture>
+
+      Accessibility Centre of Excellence.</p>
     </div>
   </div>
 </div>
@@ -60,7 +70,7 @@
     </li>
     <li>
       Not only do we want to help developers, but <strong>we want the help from developers to contribute their accessible code.</strong>
-      If you have a component that you'd like to submit - please put in a <!-- #TODO --> <a href="#">PR</a>.
+      If you have a component that you'd like to submit, <a href="https://github.com/PublicisSapient/enable-a11y?tab=readme-ov-file#contributing-code">please feel free to create a PR</a>.
     </li>
   </ul>
 </div>

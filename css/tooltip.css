@@ -17,11 +17,30 @@
   position: absolute;
   border-radius: 0.5rem;
   z-index: 2147483647;
+  /* Common styling for button entrypoints */
   /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
      */
   border: 1px solid transparent;
+  /* Additional tooltip styles */
+  /* Button entrypoints */
+}
+.tooltip .button-common {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.tooltip .button-hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
 }
 .enable__is-dark-mode .tooltip {
   border-color: #ededed;
@@ -67,5 +86,72 @@
   white-space: nowrap;
   width: 1px;
   margin: -1px;
+}
+.tooltip--top:before {
+  top: -0.5rem;
+}
+.tooltip--bottom:before {
+  bottom: -0.5rem;
+  transform: rotate(180deg);
+}
+.tooltip__icon-button {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* to make it circular */
+  font-weight: bold;
+  font-size: 0.75rem;
+  /* adjust font size as needed */
+  /* Ensure the button content is centered */
+}
+.tooltip__icon-button:hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
+}
+.tooltip__icon-button .icon {
+  display: block;
+  /* Ensure block display for icon */
+  text-align: center;
+  /* Center text horizontally */
+  line-height: 1;
+  /* Adjust line height as needed */
+}
+.tooltip__text-button {
+  color: white;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  vertical-align: sub;
+}
+.tooltip__text-button:hover {
+  /* Hover styling */
+  transition: background-color 0.3s ease;
+  /* smooth transition */
+  background-color: darkblue;
+  /* Example darker background on hover */
+}
+@media only screen and (min-width: 720px) {
+  .tooltip__text-button {
+    vertical-align: top;
+  }
+}
+.tooltip__text-button,
+.tooltip__icon-button {
+  outline-offset: 2px;
 }
 /*# sourceMappingURL=tooltip.css.map */
