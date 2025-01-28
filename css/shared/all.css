@@ -223,7 +223,7 @@ h3,
 h4,
 h5,
 h6 {
-  scroll-margin-top: 60px;
+  scroll-margin-top: 100px;
 }
 .heading__deeplink {
   color: inherit;

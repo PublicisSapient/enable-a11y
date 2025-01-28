@@ -15,6 +15,14 @@ main {
 a {
   color: #A76000;
 }
+.homepage__sponsor-logo {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+}
+.homepage__slogan {
+  margin-bottom: 40px;
+}
 .homepage__hero {
   color: #301414;
   min-height: 30vh;
@@ -53,7 +61,6 @@ a {
 }
 .homepage__hero p {
   max-width: 50rem;
-  margin-bottom: -30px;
 }
 .homepage__hero-link {
   text-decoration: none;
@@ -118,7 +125,7 @@ a {
   width: 100%;
 }
 .homepage__intro--section p {
-  text-align: justify;
+  text-align: center;
 }
 .homepage__intro--section p a {
   color: #A76000;

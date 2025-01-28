@@ -337,6 +337,12 @@
     "title": "Images",
     "desc": "How to code both &gt;img&lt; tags and background images so they are understandable by screen reader users."
   },
+  "image-gallery.php":{
+    "sectionPages": [{"controls": "Complex Controls"}],
+    "title": "Image Gallery",
+    "desc": "If you absolutely need image gallery, you should really make them accessible and easily bypassed for keyboard and screen reader users.",
+    "isNPM": "true"
+  },
   "infographic.php": {
     "sectionPages": [ { "content": "Static Content" }],
     "title": "Infographics",
@@ -702,5 +708,10 @@
   "bookmarklets.php": {
     "title": "Bookmarklets to Test Accessibility Features On A Page",
     "desc": "The bookmarklets on this page are designed to help developers check if certain features are coded correctly on a webpage."
+  },
+  "accessible-pdf-generation.php": {
+    "sectionPages": [ { "content": "Static Content" }],
+    "title": "Converting Accessible PDFs from HTML",
+    "desc": "Many websites generate PDFs dynamically, like invoices, that look nice but are not accessible. This page is a step-by-step guide on how to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   }
 }
