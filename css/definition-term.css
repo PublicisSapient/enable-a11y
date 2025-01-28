@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 dl dd,
 .dl dd,
 dl dt,
@@ -29,3 +39,7 @@ dl [role="definition"]::after,
   display: block;
   height: 1rem;
 }
+ol dl {
+  margin-top: 20px;
+}
+/*# sourceMappingURL=definition-term.css.map */

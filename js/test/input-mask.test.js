@@ -136,7 +136,7 @@ describe('Input mask test suite', () => {
         await page.mouse.move(inputBoundingBox.x, inputBoundingBox.y);
         // Select using
         await page.mouse.down();
-        await page.mouse.move(inputBoundingBox.x + 50, inputBoundingBox.y);
+        await page.mouse.move(inputBoundingBox.x + 55, inputBoundingBox.y);
         await page.mouse.up();
         //get the selection
         const selectedText = await page.$eval(

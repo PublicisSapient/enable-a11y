@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .enable-media-player .able-wrapper {
   max-width: initial !important;
 }
@@ -40,14 +50,14 @@
   width: 100%;
 }
 .enable-media-player .able-media-container iframe:focus {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: -2px;
 }
 .enable-media-player .able-media-container iframe:focus:not(:focus-visible) {
   outline: none;
 }
 .enable-media-player .able-media-container iframe:focus-visible {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   outline-offset: -2px;
 }
 .enable-media-player .able-media-container iframe *:focus-visible {
@@ -72,3 +82,4 @@
 .compliance-table__icon {
   width: 20px;
 }
+/*# sourceMappingURL=enable-media-player.css.map */

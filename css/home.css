@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 html,
 body {
   min-height: 100vh;
@@ -35,3 +45,4 @@ body.with-open-dyslexia * {
 #dyslexia-switch__label {
   font-family: "OpenDyslexic", sans-serif;
 }
+/*# sourceMappingURL=home.css.map */

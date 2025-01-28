@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* ARIA radio buttons */
 /* This is the radio button's outer circle */
 [role="radio"] {
@@ -40,7 +50,7 @@
   border-radius: 50%;
 }
 .aria-radio-label {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.38888889;
 }
 .enable-radio [type="radio"] {
@@ -71,8 +81,11 @@
   cursor: pointer;
   display: inline-block;
   color: #666;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.44444444;
+}
+.enable__is-dark-mode .enable-radio [type="radio"] + label {
+  color: #ccc;
 }
 .enable-radio [type="radio"] + label:before {
   border: 0.125rem solid #ddd;
@@ -94,7 +107,7 @@
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 .enable-radio [type="radio"]:focus + label:before {
-  outline: 2px #097efb solid;
+  outline: 2px var(--focus-color) solid;
 }
 .enable-radio [type="radio"]:not(:checked) + label:after {
   opacity: 0;
@@ -114,3 +127,4 @@ fieldset .legend,
   border-bottom: none;
   text-align: left;
 }
+/*# sourceMappingURL=radiogroup.css.map */

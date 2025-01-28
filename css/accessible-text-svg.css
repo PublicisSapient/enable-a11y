@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 body {
   --text-zoom-factor: 1;
 }
@@ -7,7 +17,7 @@ body {
 #accessible-text-svg-demo__text {
   fill: black;
   stroke-width: 2px;
-  font-size: calc(54px * var(--text-zoom-factor));
+  font-size: calc(3.375rem * var(--text-zoom-factor));
   font-family: "Georgia", "Times New Roman", serif;
   panose-1: 0 0 0 0 0 0 0 0 0 0;
   font-style: italic;
@@ -23,7 +33,7 @@ body {
   transform: translateY(-4px);
 }
 #accessible-text-svg-demo__intro-text {
-  font-size: calc(54px * var(--text-zoom-factor));
+  font-size: calc(3.375rem * var(--text-zoom-factor));
   z-index: 2;
   color: black;
   font-family: "Georgia", "Times New Roman", serif;
@@ -41,7 +51,7 @@ body {
   width: 100%;
 }
 #accessible-text-svg-demo__roller-coaster-image {
-  left: 0px;
+  left: 0;
   position: absolute;
   top: 0;
   z-index: 1;
@@ -60,3 +70,4 @@ body {
 #accessible-text-svg-demo__svg-text-path {
   offset-distance: 50%;
 }
+/*# sourceMappingURL=accessible-text-svg.css.map */

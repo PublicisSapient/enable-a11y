@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .datetimepicker__input-label {
   padding-right: 0.625rem;
 }
@@ -24,3 +34,4 @@
     flex-direction: column;
   }
 }
+/*# sourceMappingURL=datetimepicker.css.map */

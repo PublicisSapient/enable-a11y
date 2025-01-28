@@ -1,0 +1,21 @@
+<svg width="110" height="128" viewBox="0 0 110 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="109.609" height="128" rx="5" fill="#C4D2D2"/>
+<path d="M47.9766 22.3369H84.9351" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M47.9766 29.1211H96.1086" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M47.9766 36.2275H79.7781" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M47.9766 93.1729H84.9351" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M47.9766 99.957H96.1086" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M47.9766 107.063H79.7781" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M61.8682 56.9932H24.9096" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M61.8682 63.7773H13.7361" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M61.8682 70.8838H30.0666" stroke="#05A8AB" stroke-width="3" stroke-linecap="round"/>
+<path d="M12.7764 32.4863C12.7764 28.6203 15.9104 25.4863 19.7764 25.4863H32.2652C36.1311 25.4863 39.2652 28.6203 39.2652 32.4863V37.4848C39.2652 41.3508 36.1312 44.4848 32.2652 44.4848H19.7764C15.9104 44.4848 12.7764 41.3508 12.7764 37.4848V32.4863Z" fill="#05A8AB"/>
+<circle cx="25.9505" cy="20.7825" r="8.78249" fill="#C4D2D2"/>
+<circle cx="25.9498" cy="20.7828" r="7.02599" fill="#05A8AB"/>
+<path d="M71.9844 67.6162C71.9844 63.7502 75.1184 60.6162 78.9844 60.6162H91.4732C95.3392 60.6162 98.4732 63.7502 98.4732 67.6162V72.6146C98.4732 76.4806 95.3392 79.6147 91.4732 79.6147H78.9844C75.1184 79.6147 71.9844 76.4806 71.9844 72.6147V67.6162Z" fill="#05A8AB"/>
+<circle cx="85.1585" cy="55.9124" r="8.78249" fill="#C4D2D2"/>
+<circle cx="85.1578" cy="55.9127" r="7.02599" fill="#05A8AB"/>
+<path d="M12.7764 100.989C12.7764 97.1233 15.9104 93.9893 19.7764 93.9893H32.2652C36.1311 93.9893 39.2652 97.1233 39.2652 100.989V105.988C39.2652 109.854 36.1312 112.988 32.2652 112.988H19.7764C15.9104 112.988 12.7764 109.854 12.7764 105.988V100.989Z" fill="#05A8AB"/>
+<circle cx="25.9505" cy="89.2854" r="8.78249" fill="#C4D2D2"/>
+<circle cx="25.9498" cy="89.2858" r="7.02599" fill="#05A8AB"/>
+</svg>

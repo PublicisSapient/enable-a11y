@@ -20,6 +20,11 @@
     position: relative;
     border-radius: (34 / @px);
 
+    .enable__is-dark-mode & {
+        border-color: @dark-mode-white;
+        background-color: @dark-mode-darkgrey;
+    }
+
     span {
         padding: 0 (4 / @px);
     }
@@ -48,6 +53,11 @@
         border-radius: (22 / @px);
         padding: 0;
         line-height: 1.7rem;
+
+        .enable__is-dark-mode & {
+            background: #292;
+            color: @dark-mode-black;
+        }
     }
 
     &[aria-checked="false"] :last-child,

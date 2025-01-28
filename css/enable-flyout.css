@@ -1,5 +1,30 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 * {
   box-sizing: border-box;
+}
+@media only screen and (min-width: 720px) and (max-width: 959px), only screen and (min-width: 960px) {
+  #enable-flyout-menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    justify-content: end;
+    padding-right: 10px;
+  }
+}
+@media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  .enable-flyout__top-level {
+    background-color: #2b2929;
+  }
 }
 .enable-flyout {
   --enable-flyout__desktop-media-query: only screen and (min-width: 960px);
@@ -7,16 +32,15 @@
   --enable-flyout__desktop-min: 960px;
   width: calc(min(75vw, 350px));
   right: calc(-1 * min(75vw, 350px));
-  background: #2e2f35;
   color: #fff;
   font-size: 0.875rem;
   font-weight: 100;
+  height: 100vh;
   position: absolute;
   text-decoration: none;
   top: 0;
   z-index: 1;
   display: none;
-  height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
@@ -36,12 +60,10 @@
   will-change: right;
 }
 .enable-flyout__container {
+  display: inline-block;
   padding: 0;
   margin-bottom: 0;
   color: #fff;
-}
-.enable-flyout > .enable-flyout__list .enable-flyout__link {
-  top: -1px;
 }
 .enable-flyout__secondary-navigation--desktop {
   display: none;
@@ -59,9 +81,6 @@
   width: calc(100% - 40px);
   height: 1px;
   background: #fff;
-}
-.enable-flyout__last-top-level-link {
-  margin-right: 40px !important;
 }
 .enable-flyout__last-top-level-link::after {
   content: "";
@@ -93,7 +112,7 @@
   height: 46px;
   position: absolute;
   right: 2px;
-  top: 12px;
+  top: 20px;
   background: none;
   border: none;
 }
@@ -106,7 +125,7 @@
   position: absolute;
   height: 6px;
   width: 100%;
-  background: currentColor;
+  background: #FFF;
   border: 1px solid transparent;
   border-radius: 3px;
   opacity: 1;
@@ -147,7 +166,9 @@
 .enable-flyout__list {
   list-style-type: none;
   margin: 0;
-  padding: 50px 0 0 0;
+  padding: 70px 0 0 0;
+  height: 100vh;
+  background: #2b2929;
 }
 .enable-flyout__separator {
   border: 1px solid #555555;
@@ -155,18 +176,19 @@
 .enable-flyout__open-level-button,
 .enable-flyout__close-level-button,
 .enable-flyout__link {
-  color: #fff;
+  color: #fff !important;
   display: block;
   font-family: "Helvetica", "Arial", "sans-serif";
-  font-size: 0.875rem;
-  padding: 0.875rem 0.875rem 0.875rem 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  padding: 0.625rem 0.75rem;
   text-decoration: none;
-  text-indent: 20px;
   transition: background 0.2s ease-in-out;
   width: 100%;
   background: transparent;
   border: none;
   text-align: left;
+  font-weight: bold;
   -webkit-appearance: none;
   -khtml-appearance: none;
   -ms-appearance: none;
@@ -218,7 +240,6 @@
   width: 100%;
 }
 .enable-flyout__open-level-button {
-  padding: 25px;
   position: relative;
 }
 .enable-flyout__open-level-button::after {
@@ -283,14 +304,11 @@
   display: none;
 }
 .enable-flyout__close-level-button {
+  background: #5d5c5c;
   cursor: pointer;
   display: block;
-  font-size: 0.875rem;
-  padding: 0.875rem 0;
-  text-indent: 20px;
   transition: background 0.2s ease-in-out;
   position: relative;
-  padding-left: 26px;
 }
 .enable-flyout__close-level-button::before {
   content: "";
@@ -303,7 +321,6 @@
   background-size: 1.25rem 1.25rem;
   filter: invert();
   position: relative;
-  margin-left: -33px;
   top: 0.25rem;
 }
 @media only screen and (min-width: 960px) {
@@ -317,28 +334,15 @@
 .enable-flyout__open-level-button {
   cursor: pointer;
   display: block;
-  padding: 0.875rem 0;
-  text-indent: 20px;
   transition: background 0.2s ease-in-out;
 }
 .enable-flyout__open-level-button:hover {
   background: #494a50;
 }
-@media only screen and (min-width: 960px) {
-  .enable-flyout__open-level-button,
-  .enable-flyout__link {
-    /* This is how you increase the hit area of a CTA */
-    padding: 15px 0;
-    margin: -15px 0;
-  }
-}
-.enable-flyout__close-level-button {
-  background-color: #1e1e24;
-}
 .enable-flyout__open-menu-button {
   position: absolute;
   right: 2px;
-  top: 12px;
+  top: 20px;
   z-index: 2;
 }
 .enable-flyout-container--positioned-left .enable-flyout__open-menu-button {
@@ -440,12 +444,14 @@
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out reverse;
   }
   .enable-flyout__level.enable-flyout--is-open {
+    width: 18rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: none;
     animation: enable-flyout__anim--desktop-open 0.2s ease-in-out forwards;
     visibility: visible;
-    padding-bottom: 3em;
-    padding-left: calc(50vw - (960px / 2));
-    padding-right: calc(50vw - (960px / 2));
-    margin-top: 3px;
+    padding: 15px;
+    top: 66px;
+    left: -14px;
   }
   .enable-flyout__open-level-button,
   .enable-flyout__close-level-button,
@@ -468,11 +474,11 @@
   .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__link:hover:before {
     content: "";
     position: absolute;
-    width: calc(100% - 20px);
+    width: calc(100% - 24px);
     height: 2px;
     background-color: #fff;
     bottom: 12px;
-    left: 14px;
+    left: 12px;
   }
   .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__open-level-button:hover:before,
   .enable-flyout__secondary-navigation--desktop .enable-flyout__top-level > .enable-flyout__list > .enable-flyout__menu-item > .enable-flyout__close-level-button:hover:before,
@@ -492,12 +498,9 @@
     text-align: left;
   }
   .enable-flyout__top-level {
-    display: block;
+    display: inline-block;
     height: auto;
     overflow: visible;
-  }
-  .enable-flyout--is-open .enable-flyout__open-level-button {
-    display: none;
   }
   .enable-flyout--is-open .enable-flyout__level {
     display: block;
@@ -507,10 +510,12 @@
     width: 100%;
   }
   .enable-flyout__menu-item {
+    display: inline-block;
     width: auto;
+    position: relative;
   }
   .enable-flyout--is-open .enable-flyout__menu-item {
-    width: 100%;
+    display: block;
   }
   .enable-flyout__list--photo-layout .enable-flyout__menu-item {
     width: 20%;
@@ -527,11 +532,9 @@
     background: white;
   }
   .enable-flyout__list {
-    display: flow-root;
+    display: inline;
     text-align: center;
-  }
-  .enable-flyout__open-level-button {
-    padding-right: 5px;
+    background: none;
   }
   .enable-flyout__open-level-button::after {
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%0A%3Cscript%20xmlns%3D%22%22%2F%3E%3C%2Fsvg%3E");
@@ -541,9 +544,6 @@
   }
   .enable-flyout__close-level-button {
     display: none;
-  }
-  .enable-flyout__menu-item {
-    display: inline-block;
   }
   .enable-flyout__menu-item--close {
     display: none;
@@ -560,14 +560,13 @@
   }
   .enable-flyout--is-open {
     display: block;
-    background: #fff;
-    color: black;
-    text-align: center;
+    background: #2b2929;
   }
   .enable-flyout--is-open .enable-flyout__open-level-button,
   .enable-flyout--is-open .enable-flyout__close-level-button,
   .enable-flyout--is-open .enable-flyout__link {
-    color: black;
+    color: #FFF;
+    text-align: left;
   }
   .enable-flyout--is-open .enable-flyout__open-level-button::after,
   .enable-flyout--is-open .enable-flyout__close-level-button::after,
@@ -607,3 +606,4 @@
     left: calc(-1 * min(75vw, 350px));
   }
 }
+/*# sourceMappingURL=enable-flyout.css.map */

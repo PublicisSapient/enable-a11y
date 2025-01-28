@@ -4,7 +4,7 @@
 @inputHeight: (@inputHeightPx / @px);
 @inputWidth: (70 / @px);
 @spinButtonHeight: (@inputHeight / 2);
-@fontSize: (@inputHeightPx - 4) * 1px;
+@fontSize: (@inputHeightPx - 4) * (1/@px);
 
 .enable-spinner,
 input[type="number"] {
@@ -16,6 +16,16 @@ input[type="number"] {
 input[type="number"] {
     font-size: @fontSize;
     text-align: right;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        &:not(:focus) {
+            opacity: 1;
+            margin-left: 5px;
+        }
+    }
+
+
 }
 
 .enable-spinner {

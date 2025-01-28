@@ -4,7 +4,7 @@
   information about an existing UI control. It is hidden by default and becomes available on hover or focus of the
   control it describes.</strong> <a href="https://sarahmhigley.com/">Sarah M. Higley</a> came up with this definition for what a
   tooltip is in her article <a href="https://sarahmhigley.com/writing/tooltips-in-wcag-21/">Tooltips in the time of WCAG
-    2.1</a>, and it's better than anything I could write, so I hope she doesn't mind me stealing it.
+    2.1</a>, and it's better than anything we could write, so we hope she doesn't mind me stealing it.
 </p>
 
 
@@ -19,37 +19,138 @@
 ]); ?>
 
 <p>
-  This solution can be styled exactly as wanted, appears on focus, and uses the maximum value of a z-index in the document.  It will disappear when keyboard users press the Escape key.  <strong>It doesn't work in mobile,</strong> which while consistent with other tooltip solutions, is something that I am still looking to fix.  If anyone has any ideas, please feel free to <a href="https://twitter.com/zoltandulac">reach out to me on Twitter</a>.
+  This solution can be styled exactly as wanted and uses the maximum value of a z-index in the document.
+  We show different types of tooltips below, based on how they are triggered.
+  It will disappear when keyboard users press the Escape key.
+</p>
+
+<h3> Clickable tooltip </h3>
+<p> This type of tooltip can be triggered when the user clicks on the entry element directly.</p>
+
+<p>
+  The form example below demonstrates tooltips that can be triggered via text button and icon button click.
 </p>
 
 <div id="example1" class="enable-example">
-  <p>
-    <a href="/" data-tooltip="This tooltip is accessible!">This link has a tooltip</a>
-    <label for="input-tooltip-example2">and so does this input field:</label>
-    <input id="input-tooltip-example2" type="text" data-tooltip="You can put tooltips on any focusable item.">
-  </p>
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Vehicle Inspection Form</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+          <div class="field-block">
+            <label id="vin-label" for="vin" class="form-label">
+              <span>VIN</span>
+            </label>
+            <input id="vin" size="25" type="text">
+            <button id="tooltip_button_1" type="button" class="tooltip__text-button" aria-describedby="vin-label"
+                data-tooltip="VIN (Vehicle Identification Number) is a 17 character (digits/capital letters) unique identifier for a vehicle.">
+                <span>More info</span>
+              </button>
+          </div>
+          <div class="field-block">
+            <label id="body-style-label" for="body-style" class="form-label">
+              <span>Body style</span>
+            </label>
+            <input id="body-style" size="25" type="text">
+            <button id="tooltip_button_2" type="button" class="tooltip__icon-button" aria-label="More Information" aria-describedby="body-style-label" 
+                data-tooltip="Categorization of a car based on its shape, style, and space. Examples include sedan, SUV, convertible, etc.">
+                <span class="icon" aria-hidden="true">i</span>
+              </button>
+          </div>
+          <input value="Submit" type="submit">
+      </div>
+    </fieldset>
+  </form>
 </div>
 
-
-<?php includeShowcode("example1"); ?>
+<?php includeShowcode("example1", "", "", "", true, 4); ?>
 
 <script type="application/json" id="example1-props">
 {
   "replaceHtmlRules": {},
+  "steps": [
+    {
+      "label": "Create markup for the button that opens the tooltip",
+      "highlight": "[\\s]*data-tooltip",
+      "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
+    },
+    {
+      "label": "Give button context on what it is giving information on",
+      "highlight": "aria-describedby",
+      "notes": "When screen reader users tab into this control, they will not just hear the label of the button that opens the tooptip (e.g. \"More Info\"), but also the context of what the context of the what information will be given when clicking the button via the <code>aria-describedby</code> (e.g. \"VIN\")"
+    },
+    {
+      "label": "Create HTML for the tooltip",
+      "highlight": "%OUTERHTML%tooltip ||| role=\"tooltip ||| aria-live=\"assertive\"",
+      "notes": "Note the role of tooltip.  It is an aria-live region so that the content is announced by screen readers.  The content is dynamically changed in JS when any of the buttons that open up the tooltip are pressed."
+    },
+    {
+      "label": "Create JavaScript events for tooltip script",
+      "highlight": "%JS% tooltip.create; tooltip.init ||| (this.create|this.init)[^=]*=",
+      "notes": "When the page is loaded, create the tooltip DOM object and initialize the mouse and keyboard events that will display the tooltips. <strong>Note the role of tooltip being added to the tooltip DOM object</strong>."
+    },
+    {
+      "label": "Create the show and hide methods for the tooltip",
+      "highlight": "%JS% tooltip.show; tooltip.hide ||| (this.hide|this.show)\\s=\\s",
+      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with the aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
+    },
+    {
+      "label": "Ensure tooltip disappears when Escape key is pressed",
+      "highlight": "%JS% tooltip.onKeyup ||| (this.onKeyup)\\s=\\s",
+      "notes": "This is to ensure keyboard users can make the tooltip disappear without tabbing out of the component."
+    },
+    {
+      "label": "Set up the CSS",
+      "highlight": "%CSS%tooltip-css~ .tooltip; .tooltip::before; .tooltip--hidden ||| border[^:]*: 1px solid transparent; ",
+      "notes": "The arrow that points to this tooltip is CSS generated content. We hide the content ensuring it is still read by screen readers. <strong>Note the highlighted properties</strong>.  <a href=\"https://piccalil.li/quick-tip/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode\">These ensure the tooltips appear in Windows High Contrast Mode</a>."
+    }
+  ]
+}
+</script>
+
+<h3> Focusable tooltip </h3>
+<p> This type of tooltip can be triggered when the user either clicks on it or navigates to it by keyboard.</p>
+<p>
+  The form example below demonstrates a tooltip that can be triggered via input field click. 
+</p>
+<div id="example2" class="enable-example">
+  <form class="enable-form-example">
+    <fieldset>
+      <legend>Lease termination form</legend>
+      <div class="enable-form-example__fieldset-inner-container">
+          <div class="field-block">
+            <label for="focusable_example_1" class="form-label">Tenant name</label>
+            <input id="focusable_example_1" size="25" type="text" data-tooltip="The full name of the tenant residing in the residential unit.">
+          </div>
+          <div class="field-block">
+            <label for="focusable_example_2" class="form-label">Termination date (mm/dd/yyyy)</label>
+            <input id="focusable_example_2" size="25" type="text" data-tooltip="The date in which the tenant will move out.">
+          </div>
+          <input value="Submit" type="submit">
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+
+<?php includeShowcode("example2", "", "", "", true, 4); ?>
+
+<script type="application/json" id="example2-props">
+{
+  "replaceHtmlRules": {},
   "steps": [{
       "label": "Create markup",
-      "highlight": "data-tooltip",
+      "highlight": "[\\s]*data-tooltip",
       "notes": "Our script uses the <code>data-tooltip</code> attribute instead of the <code>title</code> attribute, since <strong>title</strong> is rendered by user agents by default and cannot be styled."
     },
     {
       "label": "Create JavaScript events for tooltip script",
-      "highlight": "%JS% tooltip.create; tooltip.init",
+      "highlight": "%JS% tooltip.create; tooltip.init ||| (this.create|this.init)[^=]*=",
       "notes": "When the page is loaded, create the tooltip DOM object and initialize the mouse and keyboard events that will display the tooltips. <strong>Note the role of tooltip being added to the tooltip DOM object</strong>."
     },
     {
       "label": "Create the show and hide methods for the tooltip",
       "highlight": "%JS% tooltip.show; tooltip.hide",
-      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with he aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
+      "notes": "We make sure the element that triggered the tooltip's <code>show</code> method will be connected to it with the aria-describedby attribute, which points to the tooltip.  This ensures screen readers announce the tooltip on focus."
     },
     {
       "label": "Ensure tooltip disappears when Escape key is pressed",
@@ -67,12 +168,12 @@
 
 
 
-<h2>Native HTML Tooltips</h2>
+<h3>Native HTML Tooltips</h3>
 
 <?php includeStats([
     "doNot" => true,
     "comment" =>
-        "Although this is a common method to make tooltips, I would advise using the JavaScript method instead.",
+        "Although this is a common method to make tooltips, we would advise using the JavaScript method instead.",
 ]); ?>
 
 
