@@ -27,7 +27,6 @@
   border: none;
   text-align: center;
   cursor: pointer;
-  padding: 0;
   padding: 0 0 10px 10px;
   margin: 0 !important;
 }
@@ -36,7 +35,6 @@
 }
 .site-search__inner-container {
   text-align: left;
-  /* pc is positioning context */
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -123,30 +121,29 @@
 }
 .site-search [aria-selected="true"] {
   color: #fff;
-  background-color: #666;
+  background-color: #ccc;
 }
-.site-search__reset-button {
-  position: absolute;
-  z-index: 1;
-  right: 5px;
-  top: 0;
-  bottom: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  -webkit-appearance: none;
-  -khtml-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.enable-combobox input[role="combobox"]:not(:valid) ~ .site-search__reset-button {
-  display: none;
-  border: solid 30px red;
+.site-search [aria-selected="true"] p,
+.site-search [aria-selected="true"] strong {
+  color: #000;
 }
 .site-search__controls-container {
   display: flex;
   flex-direction: row;
+}
+.site-search input[role="combobox"] {
+  font-size: inherit !important;
+  height: inherit !important;
+  padding: inherit !important;
+  border: none !important;
+}
+.site-search [role="option"]:hover {
+  color: #000;
+  background-color: #ccc;
+}
+.site-search [role="option"]:hover p,
+.site-search [role="option"]:hover strong {
+  color: #000;
 }
 .enable__is-dark-mode .enable-combobox [role="listbox"] {
   background: #121212;
@@ -158,23 +155,9 @@
   background: #121212;
   content: url('../images/search.svg');
 }
-.site-search [role="option"]:hover {
-  color: #000;
-  background-color: #ccc;
-}
-.site-search [role="option"]:hover p,
-.site-search [role="option"]:hover strong {
-  color: #000;
-}
 .highlight {
   background-color: yellow;
   color: black;
   font-weight: bold;
-}
-.site-search input[role="combobox"] {
-  font-size: inherit !important;
-  height: inherit !important;
-  padding: inherit !important;
-  border: none !important;
 }
 /*# sourceMappingURL=site-search.css.map */

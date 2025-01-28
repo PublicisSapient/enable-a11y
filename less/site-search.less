@@ -17,23 +17,20 @@
     &__button {
         width: (40 / @px);
         height: (36 / @px);
-        //border: 1px solid @dark-grey;
         background: white;
         border: none;
         text-align: center;
         cursor: pointer;
-        padding: 0;
-        padding:0 0 10px 10px;
+        padding: 0 0 10px 10px;
         margin: 0 !important;
     }
 
     &__icon {
         width: (20 / @px);
     }
-    
+
     &__inner-container {
         text-align: left;
-        /* pc is positioning context */
         position: relative;
         width: 100%;
         max-width: 100%;
@@ -45,7 +42,6 @@
     &__group {
         padding: 10px;
     }
-
 
     &__reset-button {
         position: absolute;
@@ -110,17 +106,19 @@
 
         li {
             padding: 0;
-        } 
+        }
     }
+
     [role="option"] {
         display: block;
         margin: 0;
         padding: 0.3em 0.5em;
         list-style: none;
-        font-size: (16/@px);
+        font-size: (16 / @px);
         cursor: pointer;
         border-bottom: 1px solid #ccc;
     }
+
     [role="option"]:hover {
         color: #000;
         background-color: #ccc;
@@ -128,25 +126,12 @@
 
     [aria-selected="true"] {
         color: #fff;
-        background-color: #666;
-    }
+        background-color: #ccc;
 
-    &__reset-button {
-        position: absolute;
-        z-index: 1;
-        right: 5px;
-        top: 0;
-        bottom: 0;
-        padding: 0;
-        border: none;
-        background: transparent;
-        .vendor(appearance, none);
-
-        .enable-combobox input[role="combobox"]:not(:valid) ~ & {
-            display: none;
-            border: solid 30px red;
+        p,
+        strong {
+            color: #000;
         }
-
     }
 
     &__controls-container {
@@ -154,11 +139,43 @@
         flex-direction: row;
     }
 
-
-    input[role="combobox"]{
+    input[role="combobox"] {
         font-size: inherit !important;
         height: inherit !important;
         padding: inherit !important;
         border: none !important;
     }
+
+        [role="option"]:hover {
+          color: #000;
+          background-color: #ccc;
+    
+          p,
+          strong {
+            color: #000;
+          }
+        }
+    
 }
+
+.enable__is-dark-mode {
+    .enable-combobox {
+      [role="listbox"] {
+        background: #121212;
+      }
+      .site-search__button {
+        background: #121212;
+      }
+      .site-search__icon {
+        background: #121212;
+        content: url('../images/search.svg');
+      }
+    }
+  }
+
+  .highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+  }
+

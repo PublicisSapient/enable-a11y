@@ -54,7 +54,6 @@ const search = new function () {
                             link.style.display = 'block';
                             link.style.textDecoration = 'none';
     
-                            // Highlight title and description
                             const title = document.createElement('strong');
                             title.innerHTML = highlightText(item.title, searchTerm);
     
@@ -68,7 +67,13 @@ const search = new function () {
     
                             listItem.appendChild(link);
                             list.appendChild(listItem);
-                        });
+
+                            listItem.addEventListener('keydown', (event) => {
+                                    if (event.key === 'Enter') {
+                                     link.click();
+                                 }
+                                });
+                            });
                     };
     
                     populateList(titleMatches);
