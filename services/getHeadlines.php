@@ -2,8 +2,9 @@
 
 header("Content-Type: application/json; charset=utf-8");
 
-$response = json_cached_api_results(); //file_get_contents("https://newsapi.org/v2/top-headlines?country=ca&apiKey=d25934a07be84a96a22d882d5d91075b");
+$response = json_cached_api_results(); //file_get_contents("http://newsapi.org/v2/top-headlines?country=us&apiKey=d25934a07be84a96a22d882d5d91075b");
 echo $response;
+
 
 /**
  * API Request Caching
@@ -33,7 +34,7 @@ function json_cached_api_results($cache_file = null, $expires = null)
     ) {
         // File is too old, refresh cache
         $api_results = file_get_contents(
-            "https://newsapi.org/v2/top-headlines?country=ca&apiKey=d25934a07be84a96a22d882d5d91075b",
+            "http://newsapi.org/v2/top-headlines?country=us&apiKey=d25934a07be84a96a22d882d5d91075b",
         );
         $json_results = json_encode($api_results);
 
