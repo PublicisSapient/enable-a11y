@@ -50,8 +50,11 @@
 
 <div id="example1" class="enable-example">
   <form class="enable-form-example">
-    <fieldset>
+    <fieldset aria-describedby="example1__instructions">
       <legend id="contact_html5">Contact Information</legend>
+
+      <p id="example1__instructions" class="enable-form-example__instructions">Please fill out all available information below.</p>
+
       <div class="enable-form-example__fieldset-inner-container">
         <div class="field-block">
           <label for="name_html5">Name: </label>
@@ -116,8 +119,11 @@
 
 <div id="example2" class="enable-example">
   <div role="form" class="enable-form-example">
-    <div role="group" aria-labelledby="contact-aria" class="fieldset aria-form-group">
+    <div role="group" aria-labelledby="contact-aria" aria-describedby="example2__instructions" class="fieldset aria-form-group">
       <div id="contact-aria" class="legend">Contact Information</div>
+
+      <p id="example2__instructions" class="enable-form-example__instructions">Please fill out all available information below.</p>
+
       <div class="enable-form-example__fieldset-inner-container">
 
         <div class="field-block">
