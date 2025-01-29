@@ -89,6 +89,11 @@
       "label": "Insert fieldset and legend",
       "highlight": "\\s*&lt;[\/]?fieldset&gt; ||| \\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
       "notes": "The <strong>legend</strong> tag must be a direct child of the <strong>fieldset</strong> tag in order for it to work across screen readers."
+    },
+    {
+      "label": "Connect instructions to fieldset with aria-describedby",
+      "highlight": "aria-describedby",
+      "notes": "Most screen readers will read the instructions when the user first accesses any of the form elements via keyboard."
     }
   ]
 }
@@ -170,6 +175,11 @@
         "This ensures that what the aria-labelledby attribute points to acts as a legend for the fieldset.",
         "Unlike a HTML example, the label does not have to be a direct child to the group element (which acts as a fieldset)."
       ]
+    },
+    {
+      "label": "Connect instructions to the group with aria-describedby",
+      "highlight": "aria-describedby",
+      "notes": "Most screen readers will read the instructions when the user first accesses any of the form elements via keyboard."
     }
   ]
 }
