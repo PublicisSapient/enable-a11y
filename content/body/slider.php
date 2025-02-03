@@ -49,7 +49,7 @@
     <div>
       <div class="html-slider__container">
         <input type="range" id="horizontal-slider" name="donationAmount" value="500" min="0" max="1000" step="50"
-        onchange="this.form.elements.myOutput.innerHTML = parseFloat(this.value);"       
+        oninput="this.form.elements.myOutput.innerHTML = parseFloat(this.value);"       
         >
       </div>
       <output class="html-slider__output" name="myOutput" role="presentation">500</output>
@@ -109,8 +109,8 @@
       "notes": "Just like any interactive component, it needs a label"
     },
     {
-      "label": "Set an onchange event to display current value.",
-      "highlight": "onchange=\"[^\"]*\" ||| id=\"myOutput\"",
+      "label": "Set an oninput event to display current value.",
+      "highlight": "oninput=\"[^\"]*\" ||| id=\"myOutput\"",
       "notes": [
         "<p>This is so sighted users can see the value of the slider.  Although I implemented this inline, you should use <code>.addEventListener</code> instead.</p>",
         "<p><strong>Note:</strong> Originally, I used an <code>oninput</code> event on the form element to do this, but this wasn't being captured by iOS with VoiceOver on, so I changed it to this.  Keep that in mind when you implement this yourself.</p>"
