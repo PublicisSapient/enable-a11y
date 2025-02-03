@@ -80,9 +80,9 @@ A switch (also known as a toggle) is like a checkbox, in that is designed to be 
       "notes": "Just like any other interactive element, a switch needs a label."
     },
     {
-      "label": "Denote state without using color",
-      "highlight": "on|off",
-      "notes": "In this example, we put the words \'on\' and \'off\' inside the control to show the state, thus avoiding using color alone.  This may not be possible in other languages (where the words will not fit), but can be put ourside the control for a similar effect."
+      "label": "Display change of state without using color",
+      "highlight": "[\\s]+(off|on)",
+      "notes": "In this example, we put the words 'on' and 'off' visually inside the control to show the state, thus avoiding using color alone.  This may not be possible in other languages (where the words will not fit), but you could change the design to put those words next to or underneath the control for a similar effect."
     }
   ]
 }
