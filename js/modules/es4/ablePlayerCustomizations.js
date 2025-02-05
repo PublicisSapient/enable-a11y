@@ -110,5 +110,3 @@ function ablePlayerCustomizations($, extraCustomizations) {
   }
 
 }
-
-ablePlayerCustomizations(jQuery);

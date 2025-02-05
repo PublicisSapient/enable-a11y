@@ -15,7 +15,7 @@
 
 /* global AblePlayer, jQuery */
 import '../../enable-node-libs/jquery/dist/jquery.min.js';
-import '../enable-libs/ableplayer/thirdparty/js.cookie.js';
+import '../../enable-node-libs/js-cookie/dist/js.cookie.js';
 import { AblePlayerInstances } from '../enable-libs/ableplayer/build/ableplayer.js';
 
 let hasClicked = false;
@@ -115,6 +115,6 @@ function ablePlayerCustomizations($, extraCustomizations) {
 
 }
 
-ablePlayerCustomizations(jQuery);
+//ablePlayerCustomizations(jQuery);
 
 export { ablePlayerCustomizations, AblePlayerInstances };
