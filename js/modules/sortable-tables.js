@@ -195,40 +195,16 @@ const sortableTables = new(function() {
 
     const sortByIndex = (rows, index) => {
       const tableHeadings = tableGroup.querySelectorAll('thead th');
-      const sortByFuncName = tableHeadings[index].dataset.sortableTablesCompareFunc;
-      const customCompareFunc = this.functions[sortByFuncName];
-      const compareFunc = customCompareFunc ? createCompareFunc(customCompareFunc, index) : (function(a, b) {
-        a = Array.prototype.slice.call(a.children);
-        b = Array.prototype.slice.call(b.children);
-        var aVal = null;
-        var bVal = null;
-
-        if (a[index]) {
-          aVal = a[index].innerText;
-        }
-
-        if (b[index]) {
-          bVal = b[index].innerText;
-        }
-
-        if (!isNaN(parseInt(aVal)) && !isNaN(parseInt(bVal))) {
-          if (parseInt(aVal) < parseInt(bVal)) {
-            return -1;
-          }
-          if (parseInt(aVal) > parseInt(bVal)) {
-            return 1;
-          }
-          return 0;
-        } else {
-          if (aVal < bVal) {
-            return -1;
-          }
-          if (aVal > bVal) {
-            return 1;
-          }
-          return 0;
-        }
-      });
+      const headerCell = tableHeadings[index];
+      const sortType = headerCell.dataset.sortType;
+      
+      let compareFunc;
+      
+      if (sortType === "number") {
+        compareFunc = createCompareFunc(this.functions['exampleCustomCompare'], index);
+      } else {
+        compareFunc = createCompareFunc((a, b) => a.localeCompare(b), index);
+      }
 
       rows = tableGroup.querySelectorAll("tbody tr");
       rows = [].slice.call(rows);
@@ -246,7 +222,7 @@ const sortableTables = new(function() {
     var firstOne = table.querySelector(".sortableColumnLabel");
     if (firstOne) {
       firstOne.click();
-    } // give the table a default sort...
+    }
   }
 
   function createHeaderCell(header, handler) {

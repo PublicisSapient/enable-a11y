@@ -600,6 +600,7 @@
     "desc": "If you have a search form on your page, make sure it is coded correctly so it can not only be read by screen reader users, but also have the right landmark applied to it."
   },
   "sortable-pagination-table.php": {
+    "sectionPages": [ { "content": "Tables" }],
     "title": "Sortable Paginated Tables",
     "desc": "Combine two accessible table scripts to make sortable and paginated tables.",
     "wip": true

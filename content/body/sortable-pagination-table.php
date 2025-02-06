@@ -1,59 +1,59 @@
-<!-- File WIP -->
-
+<?php includeStats([
+    "isForNewBuilds" => true,
+    "comment" =>
+        'If you are going to use this in a new webpage, please review our <a href="table.php#sticky-header-example">Sticky Table Header Example</a> and decide which solution is better for your use-case.',
+]); ?>
 <?php includeStats([
     "isForNewBuilds" => false,
-    "comment" => "You may want to read inform",
 ]); ?>
-<?php includeStats([
-    "isNPM" => true,
-    "comment" =>
-        'There are NPM modules for both the <a href="sortable-table.php#npm-instructions">Sortable Table</a> and the <a href="pagination-table.php#npm-instructions">Pagination Table</a> Enable Scripts used in this demo.',
-]); ?>
+<?php includeStats(["isNPM" => true]); ?>
 
+<p>
+  If you have a lot of data in a table that you want to present to the user in small, bite-sized chunks, you may want to
+  use a pagination UI element to do this. The solution presented below is accessible and works for keyboard and screen
+  reader users.
+</p>
 
+<p>
+  <strong>That said, it is a bit of work for a keyboard and screen reader use to any pagination UI, even if it is
+    accessible.</strong> It may be easier for users to navigate <a href="table.php#sticky-header-example">a table with a
+    sticky header
+    instead</a>. Before you implement this solution (or if you are trying to make an existing pagination component
+  accessible), weigh the pros and cons between this and the Sticky Header solution.
+</p>
 
-<h2 tabindex="-1">Sortable Paginated Table</h2>
+<h2 tabindex="-1">Sortable Paginated Table Example</h2>
 
-<div class="enable-example" id="sortable-paginated-table-example">
-  <div class="pagination deque-table-sortable-group">
-    <div id="sortable-paginated-table-example__desc--top" class="sr-only">
+<div class="enable-example" id="paginated-table-example">
+  <div class="pagination deque-table-sortable__group">
+    <div id="pagination-table-example__desc--top" class="sr-only">
       <p>
         The buttons inside this control allow you to paginate through
         the data in the table below, 10 columns at a time.
       </p>
     </div>
-    <div id="sortable-paginated-table-example__sort-instructions">
-      Click the table heading buttons to sort the table by the data in its column.
-    </div>
-    <div class="pagination__pager" role="group" aria-labelledby="sortable-paginated-table-example__desc--top"></div>
+    <div class="pagination__pager" role="group" aria-labelledby="pagination-table-example__desc--top"></div>
     <figure>
-      <figcaption id="sortable-paginated-table-example__caption" class="caption">
+      <figcaption id="pagination-table-example__caption" class="caption">
         Pagination Table Example: GDP of the World Nations
       </figcaption>
       <div class="sticky-table__container" tabindex="0">
-        <table role="grid" aria-readonly="true" class="pagination__table deque-table-sortable" data-pagecount="7"
+        <table class="pagination__table" data-pagecount="7"
           data-pagination-alert-template="Now displaying rows ${n} through ${m}" data-pagination-button-spread="5"
-          data-pagination-mobile-button-spread="4" aria-labelledby="sortable-paginated-table-example__caption"
-          data-aria-live-update="The table ${caption} is now ${sortedBy}"
-          data-ascending-label="Sorted in ascending order" data-descending-label="Sorted in descending order">
+          data-pagination-mobile-button-spread="4" 
+             data-aria-live-update="The table ${caption} is now ${sortedBy}"
+                    data-ascending-label="Sorted in ascending order"
+                    data-descending-label="Sorted in descending order"aria-labelledby="pagination-table-example__caption">
           <thead>
             <tr>
-              <th scope="col"><button class="sortableColumnLabel"
-                  aria-describedby="sortable-paginated-table-example__sort-instructions">Rank</button></th>
-              <th scope="col"><button class="sortableColumnLabel"
-                  aria-describedby="sortable-paginated-table-example__sort-instructions">Name</button></th>
-              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
-                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
-                  (IMF '19)</button></th>
-              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
-                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
-                  (UN '16)</button></th>
-              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
-                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions">GDP
-                  Per Capita</button></th>
-              <th data-sortable-tables-compare-func="exampleCustomCompare" scope="col"><button
-                  class="sortableColumnLabel" aria-describedby="sortable-paginated-table-example__sort-instructions"
-                  data-sortable-tables-compare-func="exampleCustomCompare">Population</button></th>
+              <th scope="col"
+              data-sort-type="number">
+                 <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">Rank</button></th>
+              <th scope="col" data-sort-type="default"> <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">Name</button></th>
+              <th scope="col" data-sort-type="number">  <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">GDP (IMF '19)</button></th>
+              <th scope="col" data-sort-type="number"> <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">GDP (UN '16)</button></th>
+              <th scope="col" data-sort-type="default"> <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">GDP Per Capita</button></th>
+              <th scope="col" data-sort-type="number"> <button class="sortableColumnLabel" aria-describedby="user-info-table__sort-instructions">Population</button></th>
             </tr>
           </thead>
           <tbody>
@@ -1413,7 +1413,7 @@
               <td>170</td>
               <td>Gambia</td>
               <td>1.87 billion</td>
-              <td>985.83 Mn</td>
+              <td>985.83 million</td>
               <td>$752</td>
               <td>2,486,945</td>
             </tr>
@@ -1469,38 +1469,38 @@
               <td>177</td>
               <td>Saint Kitts And Nevis</td>
               <td>1.12 billion</td>
-              <td>909.85 Mn</td>
+              <td>909.85 million</td>
               <td>$20,880</td>
               <td>53,544</td>
             </tr>
             <tr>
               <td>178</td>
               <td>Vanuatu</td>
-              <td>994.00 Mn</td>
-              <td>837.52 Mn</td>
+              <td>994.00 million</td>
+              <td>837.52 million</td>
               <td>$3,161</td>
               <td>314,464</td>
             </tr>
             <tr>
               <td>179</td>
               <td>Samoa</td>
-              <td>960.00 Mn</td>
-              <td>822.23 Mn</td>
+              <td>960.00 million</td>
+              <td>822.23 million</td>
               <td>$4,796</td>
               <td>200,149</td>
             </tr>
             <tr>
               <td>180</td>
               <td>Saint Vincent And The Grenadines</td>
-              <td>903.00 Mn</td>
-              <td>765.32 Mn</td>
+              <td>903.00 million</td>
+              <td>765.32 million</td>
               <td>$8,116</td>
               <td>111,263</td>
             </tr>
             <tr>
               <td>181</td>
               <td>Comoros</td>
-              <td>773.00 Mn</td>
+              <td>773.00 million</td>
               <td>1.15 billion</td>
               <td>$870</td>
               <td>888,451</td>
@@ -1508,72 +1508,72 @@
             <tr>
               <td>182</td>
               <td>Dominica</td>
-              <td>590.00 Mn</td>
-              <td>581.48 Mn</td>
+              <td>590.00 million</td>
+              <td>581.48 million</td>
               <td>$8,175</td>
               <td>72,167</td>
             </tr>
             <tr>
               <td>183</td>
               <td>Sao Tome And Principe</td>
-              <td>527.00 Mn</td>
-              <td>342.78 Mn</td>
+              <td>527.00 million</td>
+              <td>342.78 million</td>
               <td>$2,359</td>
               <td>223,368</td>
             </tr>
             <tr>
               <td>184</td>
               <td>Tonga</td>
-              <td>512.00 Mn</td>
-              <td>401.46 Mn</td>
+              <td>512.00 million</td>
+              <td>401.46 million</td>
               <td>$4,796</td>
               <td>106,760</td>
             </tr>
             <tr>
               <td>185</td>
               <td>Micronesia</td>
-              <td>389.00 Mn</td>
-              <td>329.90 Mn</td>
+              <td>389.00 million</td>
+              <td>329.90 million</td>
               <td>$3,346</td>
               <td>116,254</td>
             </tr>
             <tr>
               <td>186</td>
               <td>Palau</td>
-              <td>324.00 Mn</td>
-              <td>310.25 Mn</td>
+              <td>324.00 million</td>
+              <td>310.25 million</td>
               <td>$17,833</td>
               <td>18,169</td>
             </tr>
             <tr>
               <td>187</td>
               <td>Marshall Islands</td>
-              <td>228.00 Mn</td>
-              <td>183.00 Mn</td>
+              <td>228.00 million</td>
+              <td>183.00 million</td>
               <td>$3,825</td>
               <td>59,610</td>
             </tr>
             <tr>
               <td>188</td>
               <td>Kiribati</td>
-              <td>196.00 Mn</td>
-              <td>173.66 Mn</td>
+              <td>196.00 million</td>
+              <td>173.66 million</td>
               <td>$1,615</td>
               <td>121,392</td>
             </tr>
             <tr>
               <td>189</td>
               <td>Nauru</td>
-              <td>117.00 Mn</td>
-              <td>103.47 Mn</td>
+              <td>117.00 million</td>
+              <td>103.47 million</td>
               <td>$10,758</td>
               <td>10,876</td>
             </tr>
             <tr>
               <td>190</td>
               <td>Tuvalu</td>
-              <td>53.00 Mn</td>
-              <td>36.70 Mn</td>
+              <td>53.00 million</td>
+              <td>36.70 million</td>
               <td>$4,442</td>
               <td>11,931</td>
             </tr>
@@ -1597,7 +1597,7 @@
               <td>193</td>
               <td>British Virgin Islands</td>
               <td></td>
-              <td>971.24 Mn</td>
+              <td>971.24 million</td>
               <td>$31,927</td>
               <td>30,421</td>
             </tr>
@@ -1613,7 +1613,7 @@
               <td>195</td>
               <td>Cook Islands</td>
               <td></td>
-              <td>290.19 Mn</td>
+              <td>290.19 million</td>
               <td>$16,521</td>
               <td>17,565</td>
             </tr>
@@ -1677,7 +1677,7 @@
               <td>203</td>
               <td>Montserrat</td>
               <td></td>
-              <td>62.05 Mn</td>
+              <td>62.05 million</td>
               <td>$12,468</td>
               <td>4,977</td>
             </tr>
@@ -1717,7 +1717,7 @@
               <td>208</td>
               <td>Anguilla</td>
               <td></td>
-              <td>337.52 Mn</td>
+              <td>337.52 million</td>
               <td>$22,327</td>
               <td>15,117</td>
             </tr>
@@ -1741,17 +1741,97 @@
               <td>211</td>
               <td>Turks And Caicos Islands</td>
               <td></td>
-              <td>917.55 Mn</td>
+              <td>917.55 million</td>
               <td>$23,388</td>
               <td>39,231</td>
             </tr>
           </tbody>
         </table>
+         <span class="deque-table-sortable__live-region sr-only" aria-live="assertive" data-read-captions="false"></span>
       </div>
     </figure>
 
     <div class="pagination__alert sr-only" role="alert" aria-live="polite"></div>
-    <span class="deque-table-sortable__live-region sr-only" aria-live="polite" data-read-captions="false">
-    </span>
 
+    <div id="pagination-table-example__desc--bottom" class="sr-only">
+      <p>
+        The buttons inside this control allow you to paginate through
+        the data in the table above, 10 columns at a time.
+      </p>
+    </div>
+    <div class="pagination__pager" role="group" aria-labelledby="pagination-table-example__desc--bottom"></div>
+
+    <template id="pagination__template--button">
+      <button class="pagination__pager-item ${isSelectedClass}" data-index="${index}"
+        aria-label="Display page ${label} of ${totalPages}" aria-current="${ariaCurrent}">
+        ${label}
+      </button>
+    </template>
+
+    <template id="pagination__template--previous-button">
+      <button class="pagination__pager-item pagination__pager-item--previous" ${disabledattr}
+        aria-label="Display previous page" data-index=${index}>
+        &lt;
+      </button>
+    </template>
+
+    <template id="pagination__template--next-button">
+      <button class="pagination__pager-item pagination__pager-item--next" ${disabledattr} aria-label="Display next page"
+        data-index=${index}>
+        &gt;
+      </button>
+    </template>
   </div>
+</div>
+
+<?php includeShowcode("paginated-table-example"); ?>
+
+<script type="application/json" id="paginated-table-example-props">
+{
+  "replaceHtmlRules": {
+    "table": "<!-- Insert table data here -->"
+  },
+  "steps": [{
+      "label": "Use the template HTML instead of hardcoding HTML inside your script",
+      "highlight": "%OPENCLOSECONTENTTAG%template",
+      "notes": "Hardcoding HTML in scripts is bad for two reasons: It prevents a developer for customizing the controls, and it can also hardcode the human language to a specific language.  In this example, we use the <code>template</code> HTML tag to create the HTML fragments for the script.  The dynamic content is added using template string style variable syntax(e.g. ${x}).  See the next step to see how this is replaced"
+    },
+    {
+      "label": "Use <code>interpolate()</code> to place dynamic content inside the templates.",
+      "highlight": "%JS%paginationTables.renderTable ||| interpolate",
+      "notes": "The <a href=\"js/shared/interpolate.js\">interpolate function</a> is one that I created.  It is based on code from a Stack Overflow page, <a href=\"https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string\">Convert a string to a template string</a>, with a few <a href=\"https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/\">XSS sanitizing logic included</a>"
+    },
+    {
+      "label": "Mark up the pagination widget correctly",
+      "highlight": "role=\"group\" ||| aria-labelledby=\"pagination-table-example__desc--top\" ||| id=\"pagination-table-example__desc--top\" ||| aria-labelledby=\"pagination-table-example__desc--bottom\" ||| id=\"pagination-table-example__desc--bottom\"",
+      "notes": "This widget is marked up as a group so screen readers will announce instructions on how it works when they navigate inside of it.  Note the instructions are screen reader only using the <a href=\"screen-reader-only-text.php\"><code>sr-only</code></a> class."
+    },
+    {
+      "label": "Ensure all pagination buttons have an aria-label",
+      "highlight": "aria-label=\"[^\"]*\"",
+      "notes": "This is to ensure the purpose of every button is reported to screen readers, since words like  \"Greater than\", \"one\", \"two\", etc., would be confusing"
+    },
+    {
+      "label": "Disable buttons that are not useful to screen reader users",
+      "highlight": "\\$\\{disabledattr\\}",
+      "notes": "This variable will be set to <code>\"disabled\"</code> if the arrow is supposed to be disabled, and to a blank string if not.  This element will be skipped in the tabbing order."
+    },
+    {
+      "label": "Use an ARIA live region to give update information to screen reader users",
+      "highlight": "aria-live ||| role=\"alert\"",
+      "notes": "This aria-live region will be updated with information for screen reader users on what has changed in the table when the pagination buttons are pressed."
+    }
+
+  ]
+}
+</script>
+
+<?= includeNPMInstructions(
+    "sortable-tables paginate",
+    [],
+    "deque-table-sortable pagination",
+    false,
+    [],
+    ".pagination__table",
+) ?>
+
