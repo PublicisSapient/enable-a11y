@@ -16,11 +16,19 @@
 .search__term {
   width: 100%;
   border: 3px solid #4e7963;
-  border-right: none;
+  border-right-width: 0px;
   padding: 5px;
   height: 2.25rem;
   border-radius: 5px 0 0 5px;
   color: #000;
+  position: relative;
+}
+.enable__is-dark-mode .search__term {
+  border-right-width: 3px;
+}
+.search__term:focus {
+  z-index: 2;
+  outline-offset: 2px;
 }
 .search__button {
   width: 2.5rem;
@@ -32,6 +40,9 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   margin: 0 !important;
+}
+.search__button:focus {
+  outline-offset: 2px;
 }
 .search__icon {
   width: 1.25rem;

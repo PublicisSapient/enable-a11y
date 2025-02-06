@@ -10,11 +10,21 @@
     &__term {
         width: 100%;
         border: 3px solid @search-color;
-        border-right: none;
+        border-right-width: 0px;
         padding: 5px;
         height: (36 / @px);
         border-radius: 5px 0 0 5px;
         color: #000;
+        position: relative;
+
+        .enable__is-dark-mode & {
+            border-right-width: 3px;
+        }
+
+        &:focus {
+            z-index: 2;
+            outline-offset: 2px;
+        }
     }
 
     &__button {
@@ -27,6 +37,10 @@
         border-radius: 0 5px 5px 0;
         cursor: pointer;
         margin: 0 !important;
+
+        &:focus {
+            outline-offset: 2px;
+        }
     }
 
     &__icon {

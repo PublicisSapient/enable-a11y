@@ -18,6 +18,9 @@
     margin: 0;
   }
 }
+.enable-form-example__instructions {
+  text-align: center;
+}
 .enable-form-example label {
   font-weight: bold;
   display: block;

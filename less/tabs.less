@@ -1,29 +1,29 @@
 @import "shared/mixins-and-vars";
 
-@active-tab-color: #c0dcee;
-@active-tab-text-color: #333;
-@active-tabpanel-text-color: #444;
-@active-tab-border-color: #999;
+@active-tab-color: #ffffff;
+@active-tab-text-color: #1457a3;
+@active-tabpanel-text-color: #151515;
+@active-tab-border-color: #7da8d9;
 @active-tab-border-color--highlight: #999;
 
 @unactive-tab-color: #fff;
 @unactive-tab-text-color: #444;
-@unactive-tab-border-color: #ccc;
+@unactive-tab-border-color: @dark-mode-lightgrey;
 @unactive-tab-border-color--highlight: #999;
 
-@active-tab-color--dark-mode: #526068;
+@active-tab-color--dark-mode: @dark-mode-white;
 @active-tab-text-color--dark-mode: @dark-mode-white;
 @active-tabpanel-text-color--dark-mode: @dark-mode-white;
-@active-tab-border-color--dark-mode: #ccc;
+@active-tab-border-color--dark-mode: @dark-mode-lightgrey;
 @active-tab-border-color--highlight--dark-mode: #999;
 
 @unactive-tab-color--dark-mode: @dark-mode-darkgrey;
-@unactive-tab-text-color--dark-mode: #bbbbbb;
+@unactive-tab-text-color--dark-mode: #fff;
 @unactive-tab-border-color--dark-mode: #ccc;
 @unactive-tab-border-color--highlight--dark-mode: #999;
 
 #tabs h2 {
-    margin: 0.5em 0;
+    margin: 0.3em 0;
 }
 
 .tabs__instructions {
@@ -34,6 +34,7 @@
         background: black;
         color: white;
         padding: 0.5em;
+        margin-bottom: 0.7em;
 
         .enable__is-dark-mode & {
             background: #333366;
@@ -43,57 +44,43 @@
 }
 
 [role="tablist"] {
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding-left: 2.35em;
-    position: relative;
-    z-index: 2;
-
-    @media @mobile {
-        padding-left: 0;
-    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7da8d9;
+    padding: 0.25em;
+    margin: 0.3em 0 0.5em;
+    border-radius: 0.75em;
 
     li {
-        position: relative; /*for z-index*/
-        float: left;
-        margin: 0 0.1em 0 0;
+        display: flex;
+        flex: 1;
+        list-style: none;
+        position: relative;
+        /* float: left; */
         z-index: 1;
-
-        @media @desktop {
-            margin: 0 0.5em 0 0;
-        }
+        align-items: center;
+        background-color: transparent;
 
         [role="tab"] {
-            appearance: none;
-            position: relative;
+            flex: 1;
             font-size: 1em;
-            top: 3px;
-            float: left;
-            overflow: hidden;
-            font-weight: normal;
+            font-weight: 700;
+            text-align: center;
             text-shadow: none;
-            background: @unactive-tab-color;
-            color: @unactive-tab-text-color;
+            color: #333;
             text-decoration: none;
-            margin: 0.5em 0 0;
             padding: 0.5em 0.5em 0.35em;
-            border-style: solid;
-            border-color: @unactive-tab-border-color;
-            border-width: 2px 2px 0;
-            -moz-border-radius-topleft: 0.5em;
-            -moz-border-radius-topright: 0.5em;
-            -webkit-border-top-left-radius: 0.5em;
-            -webkit-border-top-right-radius: 0.5em;
-            border-top-left-radius: 0.5em;
-            border-top-right-radius: 0.5em;
+            -moz-border-radius: 0.5em;
+            -moz-border-radius: 0.5em;
+            -webkit-border-radius: 0.5em;
+            -webkit-border-radius: 0.5em;
+            border-radius: 0.5em;
             cursor: pointer;
 
-            .enable__is-dark-mode & {
-                background: @unactive-tab-color--dark-mode;
-                color: @unactive-tab-text-color--dark-mode;
-                border-color: @unactive-tab-border-color--dark-mode;
-            }
+            // .enable__is-dark-mode & {
+            //     color: @unactive-tab-text-color--dark-mode;
+            // }
 
 
             @media @mobile {
@@ -105,16 +92,18 @@
             &:focus,
             &:active {
                 border-color: @unactive-tab-border-color--highlight;
-                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                outline-color: #1C1C1C;
+                outline-width: 0.27em;
 
                 .enable__is-dark-mode & {
                     border-color: @unactive-tab-border-color--highlight--dark-mode;
+                    outline-color: #ebebeb;
                 }
             }
 
             .enable-focus(
                 {
-                    outline-offset: 5px;
+                    outline-offset: 4px;
                 },
                 {
                     outline: none;
@@ -127,16 +116,12 @@
 
             &[aria-selected="true"] {
                 background: @active-tab-color;
-                border-color: @active-tab-border-color;
-                border-bottom: @active-tab-color 4px solid;
                 color: @active-tab-text-color;
                 font-weight: bold;
+                border: solid 1px transparent;
 
                 .enable__is-dark-mode & {
                     background: @active-tab-color--dark-mode;
-                    border-color: @active-tab-border-color--dark-mode;
-                    border-bottom: 4px solid @active-tab-color--dark-mode;
-                    color: @active-tab-text-color--dark-mode;
                 }
             }
         }
@@ -154,19 +139,17 @@
     z-index: 1;
     border: 2px solid @active-tab-border-color;
     color: @active-tab-text-color;
-    background-color: @active-tab-color;
 
     a {
-        color: #8c5000;
+        color: #1457a3;
     }
 
     .enable__is-dark-mode & {
         border: 2px solid @active-tab-border-color--dark-mode;
         color: @unactive-tab-text-color--dark-mode;
-        background-color: @active-tab-color--dark-mode;
 
         a {
-            color: #FFD397;
+            color: #adcaf0;
         }
     }
 
@@ -194,6 +177,12 @@
 
     h2 {
         display: inline-block;
+        font-weight: 600;
+        color: #1457a3;
+        border-bottom: none;
+        .enable__is-dark-mode & {
+            color: #adcaf0;
+        }
     }
 
     ol {

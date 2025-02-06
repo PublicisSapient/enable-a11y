@@ -218,9 +218,14 @@ code {
         font-style: normal;
         background: black;
 
+        .sr-only {
+            .vendor(user-select, none);
+        }
+
         & & {
             border: none;
         }
+        
     }
 
     &__select-label {

@@ -5,16 +5,27 @@
     "mainClass": "with-full-bleed-hero",
     "bodyClass": "index"
   },
-  "link.php": {
-    "sectionPages": [ {"controls": "Simple Controls"}],
-    "title": "Links",
-    "desc": "Links are easy to code accessibly, but it's nice to give more context."
+  "text-resize.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
+    "title": "Resizable Typography",
+    "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature."
+  },
+  "hero-image-text-resize.php": {
+    "sectionPages": [ { "code-patterns": "Typography" }],
+    "title": "Advanced Text Resizing",
+    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).",
+    "isNPM": "true"
   },
   "accessible-text-svg.php": {
     "sectionPages": [ { "code-patterns": "Typography" }],
-    "title": "Accessible Text in SVG",
+    "title": "Resizable Text in SVG",
     "desc": "How to ensure text in SVG respects WCAG 1.4.4 (Resize text) and WCAG 1.4.12 (Text Spacing).",
     "mainClass": "with-full-bleed-hero"
+  },
+  "link.php": {
+    "sectionPages": [ {"controls": "Simple Controls"}],
+    "title": "Links (Including Those in Breadcrumbs and Ones That Open a New Window)",
+    "desc": "Links are easy to code accessibly, but it's nice to give more context."
   },
   "alert-dialog.php": {
     "title": "Alert Dialog",
@@ -47,6 +58,13 @@
       "url": "https://www.useragentman.com/enable/alert.php#developer-walkthrough-1"
       }
   ]
+  },
+  "pause-anim-control.php": {
+    "sectionPages": [ { "content": "Animated Content" }],
+    "title": "Global Pause Animation Control Button",
+    "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
+    "mainClass": "with-full-bleed-hero",
+    "isNPM": "true"
   },
   "animated-gif-with-pause-button.php": {
     "sectionPages": [ { "content": "Animated Content" }],
@@ -326,12 +344,6 @@
     "title": "Headings",
     "desc": "How headings are used by screen reader users, and how to code them in an existing document without a lot of rework."
   },
-  "hero-image-text-resize.php": {
-    "sectionPages": [ { "code-patterns": "Typography" }],
-    "title": "Advanced Text Resizing",
-    "desc": "How to make text in things like hero images be coded via HTML (WCAG 1.4.5) while still allowing text resizing (WCAG 1.4.4).",
-    "isNPM": "true"
-  },
   "img.php": {
     "sectionPages": [ { "content": "Static Content" }],
     "title": "Images",
@@ -435,13 +447,6 @@
     "sectionPages": [ {"controls": "Complex Controls"}],
     "title": "Flyout/Hamburger Hybrid Menus",
     "desc": "A hard thing to code from scratch, many developers will use an existing library to create hybrid flyout/hamburger menus.  Most of them aren't accessible. Let's show you how they can be.",
-    "isNPM": "true"
-  },
-  "pause-anim-control.php": {
-    "sectionPages": [ { "content": "Animated Content" }],
-    "title": "Pause Animation Controls",
-    "desc": "Instructions on how you can create a global control on you site that pauses animations while respecting your operating animation system settings.",
-    "mainClass": "with-full-bleed-hero",
     "isNPM": "true"
   },
   "progress.php": {
@@ -615,11 +620,6 @@
     "desc": "How can you check your design for text contrast issues? How about for text on top of photographic or gradient backgrounds? Read on.",
     "wip": true
   },
-  "text-resize.php": {
-    "sectionPages": [ { "code-patterns": "Typography" }],
-    "title": "Resizable Typography",
-    "desc": "How you can ensure that your website's typography resizes/zooms for people that use their browser's text zooming feature."
-  },
   "text-spacing.php": {
     "sectionPages": [ { "code-patterns": "Typography" }],
     "title": "Space-Adjusting Typography",
@@ -711,7 +711,7 @@
   },
   "accessible-pdf-generation.php": {
     "sectionPages": [ { "content": "Static Content" }],
-    "title": "Generating Accessible PDFs",
-    "desc": "Step-by-step guide to generate accessible PDFs with Open HTML to PDF and SpringBoot."
+    "title": "Converting Accessible PDFs from HTML",
+    "desc": "Many websites generate PDFs dynamically, like invoices, that look nice but are not accessible. This page is a step-by-step guide on how to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   }
 }
