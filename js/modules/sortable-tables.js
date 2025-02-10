@@ -193,6 +193,10 @@ const sortableTables = new(function() {
       )
     }
 
+    const localeCompareFunction = (a, b) => {
+      return a.localeCompare(b);
+    }
+
     const sortByIndex = (rows, index) => {
       const tableHeadings = tableGroup.querySelectorAll('thead th');
       const headerCell = tableHeadings[index];
@@ -203,7 +207,7 @@ const sortableTables = new(function() {
       if (sortType === "number") {
         compareFunc = createCompareFunc(this.functions['exampleCustomCompare'], index);
       } else {
-        compareFunc = createCompareFunc((a, b) => a.localeCompare(b), index);
+        compareFunc = createCompareFunc(localeCompareFunction, index);
       }
 
       rows = tableGroup.querySelectorAll("tbody tr");

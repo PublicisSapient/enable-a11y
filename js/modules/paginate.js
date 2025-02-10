@@ -75,6 +75,7 @@ const paginationTables = new function() {
 
     for (let i=0; i<rows.length; i++) {
       rows[i].classList.remove(inactiveClass);
+      rows[i].ariaHidden = false;
     }
 
     table.dataset.currentpage = 0;
@@ -106,8 +107,10 @@ const paginationTables = new function() {
     for (let x = startIndex; x < rows.length; x++) {
       if (x < start || x >= end) {
         rows[x].classList.add(inactiveClass);
+        rows[x].ariaHidden = true;
       } else {
         rows[x].classList.remove(inactiveClass);
+        rows[x].ariaHidden = false;
       }
     }
 
