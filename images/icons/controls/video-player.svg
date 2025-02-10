@@ -1,4 +1,12 @@
 <svg width="193" height="40" viewBox="0 0 193 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+    
+    @media (prefers-color-scheme: dark) {
+        path, rect, circle{
+            filter: invert(100%);
+        }
+    }
+</style>
 <rect x="0.5" y="0.5" width="192" height="39" rx="4.5" stroke="black"/>
 <circle cx="96.1761" cy="19.7532" r="12.6292" fill="black"/>
 <path d="M104.271 20.077L92.6138 26.8076L92.6138 13.3464L104.271 20.077Z" fill="white"/>

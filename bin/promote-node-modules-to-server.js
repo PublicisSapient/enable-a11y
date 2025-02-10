@@ -16,6 +16,7 @@ const nodeFiles = [
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/accessibility-js-routines/dist/accessibility.module.js',
     'node_modules/wicg-inert/dist/inert.min.js',
+    'node_modules/js-cookie/dist/js.cookie.js'
 ];
 
 nodeFiles.forEach((fullPath) => {
