@@ -78,6 +78,7 @@
     "wip": true
   },
   "audio-player.php": {
+    "sectionPages": [ {"controls": "Complex Controls"}],
     "title": "Audio Player",
     "desc": "Audio on the web needs to include features such as transcripts, slowdown, and background noise reduction."
   },
