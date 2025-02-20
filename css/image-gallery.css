@@ -39,6 +39,12 @@
   border: none;
   background: transparent;
 }
+.enable__is-dark-mode .gallery .thumb-nav-button {
+  filter: invert(100%);
+}
+.enable__is-dark-mode .gallery .thumbnail-button {
+  border: solid 1px #ededed;
+}
 .gallery .thumbnail-slider {
   display: flex;
   align-items: center;
@@ -54,8 +60,11 @@
   width: 60px;
   height: 40px;
   cursor: pointer;
-  opacity: 0.6;
   border-radius: 5px;
+  margin-right: 5px;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button:last-child {
+  margin-right: 0;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button img {
   width: 100%;
@@ -65,13 +74,23 @@
 .gallery .thumbnail-slider .thumbnails .thumbnail-button img:focus-visible {
   outline: none;
 }
+.gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  border: 0.1px solid #292929;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  border: 0.38px solid #9a6c6c;
+}
 .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
   opacity: 1;
   border: 0.38px solid #2b2b2b;
+  border-bottom-width: 3px;
 }
-.gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
-  opacity: 0.4;
-  border: 0.1px solid #2b2b2b;
+.gallery .thumbnail-slider .thumbnails .thumbnail-button.active img {
+  height: calc(100% + 3px);
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border: 0.38px solid #9a6c6c;
+  border-bottom-width: 3px;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
   margin: 3px;

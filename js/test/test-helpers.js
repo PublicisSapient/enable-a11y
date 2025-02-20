@@ -155,6 +155,12 @@ const testHelpers = new (function () {
       console.log(request.failure().errorText, request.url());
     }); */
     };
+
+    this.keyPressHelper = (page, key, numTimes) => {
+        for (let i = 0; i < numTimes; i++) {
+            page.keyboard.press(key);
+        }
+    };
 })();
 
 export default testHelpers;
