@@ -277,3 +277,5 @@ const sortableTables = new(function() {
     this.activateAllSortableTables(document, options);
   }
 })();
+
+export default sortableTables;

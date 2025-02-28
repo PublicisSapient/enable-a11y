@@ -13,7 +13,7 @@
 * Released under the MIT License.
 ******************************************************************************/
 
-const tooltip = new (function() {
+const tooltip = new function () {
     // global constants
     const { body } = document;
     const tooltipEl = document.createElement('div');
@@ -188,4 +188,6 @@ const tooltip = new (function() {
             new CustomEvent('enable-hide', { bubbles: true })
         );
     }
-})
+}
+
+export default tooltip;
