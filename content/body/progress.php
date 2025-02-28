@@ -83,7 +83,7 @@
         </p>
 
         <div id="html5-example" class="enable-example">
-            <progress aria-label="Loading progress" id="html1" class="uam" max="100" value="0" data-timeout="1000" data-alert="html1-alert">
+            <progress aria-label="Loading progress" id="html1" class="simplebar" max="100" value="0" data-timeout="1000" data-alert="html1-alert">
             </progress>
             <strong class="sr-only" id="html1-alert" aria-live="assertive" aria-atomic="true" role="alert">0%</strong>
         </div>
@@ -113,7 +113,7 @@
         </p>
 
         <div id="html5-focus-example" class="enable-example">
-            <progress id="html2" class="uam" max="100" value="0" data-timeout="1000" tabindex="-1"
+            <progress id="html2" class="gradientbar" max="100" value="0" data-timeout="1000" tabindex="-1"
                 aria-label="Loading Data">
             </progress>
         </div>
