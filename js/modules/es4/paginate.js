@@ -13,7 +13,9 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const paginationTables = new (function() {
+import { interpolate, htmlToDomNode } from './interpolate.js'
+
+const paginationTables = new function() {
   let perPage = 20;
   const baseClass = "pagination";
   const baseSelector = `.${baseClass}`;
@@ -73,6 +75,7 @@ const paginationTables = new (function() {
 
     for (let i=0; i<rows.length; i++) {
       rows[i].classList.remove(inactiveClass);
+      rows[i].ariaHidden = false;
     }
 
     table.dataset.currentpage = 0;
@@ -104,8 +107,10 @@ const paginationTables = new (function() {
     for (let x = startIndex; x < rows.length; x++) {
       if (x < start || x >= end) {
         rows[x].classList.add(inactiveClass);
+        rows[x].ariaHidden = true;
       } else {
         rows[x].classList.remove(inactiveClass);
+        rows[x].ariaHidden = false;
       }
     }
 
@@ -239,4 +244,7 @@ const paginationTables = new (function() {
 
   }
 
-});
+};
+
+
+export default paginationTables;

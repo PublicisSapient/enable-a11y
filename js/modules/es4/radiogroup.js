@@ -13,7 +13,9 @@
  * Released under the MIT License.
  ******************************************************************************/
 
-const radiogroups = new (function() {
+import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
+
+const radiogroups = new function() {
 
   this.init = function() {
     this.radioGroupEls = document.querySelectorAll('.enable-custom-radiogroup');
@@ -33,4 +35,6 @@ const radiogroups = new (function() {
       }
     );
   }
-});
+}
+
+export default radiogroups;

@@ -1,6 +1,6 @@
 <script type="module">
-    import sortableTables from './js/modules/sortable-tables.js';
     import paginationTables from "./js/modules/paginate.js";
+    import sortableTables from './js/modules/sortable-tables.js';
     import showcode from "./js/enable-libs/showcode.js";
 
     function normalizeNumber(numString) {
@@ -9,14 +9,13 @@
         const rSplit = r.split(/ /);
         if (rSplit.length === 2) {
             const suffix = rSplit[1].trim();
-            switch(suffix) {
-                case "billion":
+            switch (suffix) {
+                case 'billion':
                     multiplier = 1000000000;
                     break;
-                case "trillion":
+                case 'trillion':
                     multiplier = 1000000000000;
                     break;
-                case 'Mn':
                 case 'million':
                     multiplier = 1000000;
                     break;
@@ -31,22 +30,20 @@
         return r;
     }
 
-
     function exampleCustomCompare(a, b) {
         const normalA = normalizeNumber(a + '');
         const normalB = normalizeNumber(b + '');
 
-
-        return (normalA - normalB);
+        return normalA - normalB;
     }
 
     sortableTables.addSortFunction('exampleCustomCompare', exampleCustomCompare);
 
     sortableTables.init({
-        onBeforeSort: paginationTables.showAll,
-        onAfterSort: paginationTables.renderTable
+    onBeforeSort: paginationTables.showAll,
+    onAfterSort: paginationTables.renderTable,
     });
-    
+
     paginationTables.init();
 
     showcode.addJsObj('paginationTables', paginationTables);
