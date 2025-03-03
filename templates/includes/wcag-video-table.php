@@ -69,7 +69,7 @@
             <th scope="row">Sign Language</th>
             <td>not required</td>
             <td>not required</td>
-            <td>not required</td>
+            <td>required for prerecorded video</td>
         </tr>
 
 
