@@ -16,9 +16,6 @@
   display: block;
   /* Turns off styling - not usually needed, but good to know. */
   -webkit-appearance: none;
-  -khtml-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   /* Apply border. */
   border: inset 3px;
