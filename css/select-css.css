@@ -64,6 +64,9 @@
   color: #222;
   outline: transparent 1px solid;
 }
+.enable__is-dark-mode .select-css:focus {
+  color: white;
+}
 .select-css:focus:not(:focus-visible) {
   border-color: inherit;
   box-shadow: none;
@@ -77,6 +80,9 @@
   box-shadow: 0 0 0 3px -moz-mac-focusring;
   color: #222;
   outline: transparent 1px solid;
+}
+.enable__is-dark-mode .select-css:focus-visible {
+  color: white;
 }
 .select-css option {
   font-weight: normal;
