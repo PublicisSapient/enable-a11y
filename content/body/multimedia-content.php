@@ -95,7 +95,7 @@
 
 
 <h2>Audio Descriptions:</h2>
-<p>An extra audio track with spoken commentary what help users with visual disabilities perceive content that is
+<p>An extra audio track with spoken commentary will help users with visual disabilities perceive content that is
     presented only visually. A narrator usually describes the visual-only content in the video. Audio descriptions can
     be implemented in several ways:
 
