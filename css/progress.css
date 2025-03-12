@@ -131,4 +131,225 @@ progress.uam::-webkit-progress-value {
 progress.verbose {
   appearance: none;
 }
+.simplebar {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 242px;
+  height: 30px;
+  margin-left: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+progress.simplebar {
+  /* Firefox and Polyfill */
+  background-color: #cccccc;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+  /* Chrome */
+}
+progress.simplebar::-webkit-progress-bar {
+  background-color: #cccccc;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+}
+progress.simplebar::-moz-progress-bar {
+  background-color: #2bc253;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+}
+progress.simplebar::-webkit-progress-value {
+  background-color: #2bc253;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+}
+.simplebar[role="progressbar"] {
+  background-color: #2bc253;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+  /* Polyfill */
+}
+.simplebar[role="progressbar"]:after {
+  background-image: none;
+  /* removes default background from polyfill */
+}
+.simplebar[role="progressbar"] strong {
+  display: none;
+}
+.simplebar[role="progressbar"][aria-valuenow]:before {
+  content: "";
+  display: block;
+  height: 100%;
+  background-color: #2bc253;
+  background-image: linear-gradient(center bottom, #2bc253 37%, #54f054 69%);
+  box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3), inset 0 -2px 6px rgba(0, 0, 0, 0.4), 0 0 5px 0 lightgray;
+  position: relative;
+  background-repeat: repeat;
+  animation: shine 4s ease-in infinite, end 1s ease-out 1;
+  transition: width 3s;
+}
+.simplebar[role="progressbar"][aria-valuenow="0"]:before {
+  width: 0%;
+}
+.simplebar[role="progressbar"][aria-valuenow="10"]:before {
+  width: 10%;
+}
+.simplebar[role="progressbar"][aria-valuenow="20"]:before {
+  width: 20%;
+}
+.simplebar[role="progressbar"][aria-valuenow="30"]:before {
+  width: 30%;
+}
+.simplebar[role="progressbar"][aria-valuenow="40"]:before {
+  width: 40%;
+}
+.simplebar[role="progressbar"][aria-valuenow="50"]:before {
+  width: 50%;
+}
+.simplebar[role="progressbar"][aria-valuenow="60"]:before {
+  width: 60%;
+}
+.simplebar[role="progressbar"][aria-valuenow="70"]:before {
+  width: 70%;
+}
+.simplebar[role="progressbar"][aria-valuenow="80"]:before {
+  width: 80%;
+}
+.simplebar[role="progressbar"][aria-valuenow="90"]:before {
+  width: 90%;
+}
+.simplebar[role="progressbar"][aria-valuenow="100"]:before {
+  width: 100%;
+}
+.simplebar > div {
+  background: #cccccc;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+}
+@keyframes shine {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+.gradientbar {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 242px;
+  height: 30px;
+  margin-left: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+}
+progress.gradientbar {
+  background-color: #cccccc;
+}
+progress.gradientbar::-webkit-progress-bar {
+  background-color: #cccccc;
+}
+progress.gradientbar::-moz-progress-bar {
+  background-color: #2bc253;
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+}
+progress.gradientbar::-webkit-progress-value {
+  background-color: #2bc253;
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+}
+.gradientbar[role="progressbar"] {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+  /* Polyfill */
+}
+.gradientbar[role="progressbar"]:after {
+  background-image: none;
+  /* removes default background from polyfill */
+}
+.gradientbar[role="progressbar"] strong {
+  display: none;
+}
+.gradientbar[role="progressbar"][aria-valuenow]:before {
+  content: "";
+  display: block;
+  height: 100%;
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  overflow: hidden;
+}
+.gradientbar[role="progressbar"][aria-valuenow="0"]:before {
+  width: 0%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="10"]:before {
+  width: 10%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="20"]:before {
+  width: 20%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="30"]:before {
+  width: 30%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="40"]:before {
+  width: 40%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="50"]:before {
+  width: 50%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="60"]:before {
+  width: 60%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="70"]:before {
+  width: 70%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="80"]:before {
+  width: 80%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="90"]:before {
+  width: 90%;
+}
+.gradientbar[role="progressbar"][aria-valuenow="100"]:before {
+  width: 100%;
+}
+progress.gradientbar > div {
+  background: #cccccc;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+}
 /*# sourceMappingURL=progress.css.map */
