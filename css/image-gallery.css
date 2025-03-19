@@ -39,6 +39,9 @@
   border: none;
   background: transparent;
 }
+.enable__is-dark-mode .gallery .thumb-nav-button img {
+  filter: invert();
+}
 .gallery .thumbnail-slider {
   display: flex;
   align-items: center;
@@ -47,7 +50,6 @@
 }
 .gallery .thumbnail-slider .thumbnails {
   display: flex;
-  overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button {
@@ -56,6 +58,7 @@
   cursor: pointer;
   opacity: 0.6;
   border-radius: 5px;
+  margin: 0 5px;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button img {
   width: 100%;
@@ -67,14 +70,23 @@
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
   opacity: 1;
-  border: 0.38px solid #2b2b2b;
+  border: 1px solid #2b2b2b;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border-color: #fff;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
-  opacity: 0.4;
-  border: 0.1px solid #2b2b2b;
+  opacity: 1;
+  border: none;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  border-color: #fff;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
-  margin: 3px;
-  border: 0.1px solid #2b2b2b;
+  opacity: 1;
+  outline-offset: 2px;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
+  border-color: #fff;
 }
 /*# sourceMappingURL=image-gallery.css.map */
