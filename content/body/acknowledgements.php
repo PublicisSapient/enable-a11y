@@ -38,6 +38,9 @@
   <li><a href="https://github.com/lunarias">Jessie Cai</a> for our <a href="tooltip.php">Tooltips page</a> and adding fixes for running Enable locally on a Windows machine.</li>
   <li>Mahesh Ambig for the unit tests for the Tab Component.</li>
   <li>Neha Singla for the unit tests for the Combobox Component.</li>
+  <li><a href="https://github.com/shiprarawal">Shipra Rawal</a> for the <a href="./infographic.php">accessible infographics</a> and <a href="./datetimepicker.php">accessible datetime picker</a> component.</li>
+  <li><a href="https://www.useragentman.com/">Zoltan Hawryluk</a> for starting the Enable project to begin with.</li>
+  
 </ul>
 
 <h2>Code Used By Enable</h2>
