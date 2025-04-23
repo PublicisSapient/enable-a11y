@@ -180,7 +180,7 @@
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  font-size: 16px;
+  font-size: 16 / 16rem;
 }
 .custom-select > div option:is(:checked) {
   background: #0078d4;
@@ -208,7 +208,7 @@
 .custom-option:has(.description) .description {
   color: #666;
   font-family: "ModeSeven";
-  font-size: 11px;
+  font-size: 11 / 16rem;
 }
 option:is(:checked) .custom-option .description {
   font-weight: normal;
@@ -216,7 +216,7 @@ option:is(:checked) .custom-option .description {
 }
 .custom-option .title {
   font-family: monospace;
-  font-size: 13px;
+  font-size: 13 / 16rem;
 }
 .selected-option .custom-selected-option {
   display: flex;
