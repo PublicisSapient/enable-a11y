@@ -290,7 +290,7 @@
   </label>
   
   <select id="lipstick-shade" class="custom-select" aria-label="Select lipstick shade">
-    <button aria-label="Open lipstick shade dropdown">
+    <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="lipstick-shade">
      <div class="selected-option">
       <selectedcontent class="custom-selected-option"></selectedcontent>
        <svg width="24" height="24" viewBox="0 0 24 24">
@@ -303,7 +303,7 @@
         <span class="avatar">
           <svg width="30" height="30">
           <title></title>
-            <circle cx="50%" cy="50%" r="10" fill="#A1224E" />
+            <circle cx="50%" cy="50%" r="10" fill="#A1224E"></circle>
            </svg>
         </span>
       <div class="custom-option">
@@ -316,7 +316,7 @@
         <span class="avatar">
           <svg width="30" height="30">
           <title></title>
-            <circle cx="50%" cy="50%" r="10" fill="#833177" />
+            <circle cx="50%" cy="50%" r="10" fill="#833177"></circle>
            </svg>
         </span>
       <div class="custom-option">
@@ -328,7 +328,7 @@
        <span class="avatar">
           <svg width="30" height="30">
             <title></title>
-            <circle cx="50%" cy="50%" r="10" fill="#732E4A" />
+            <circle cx="50%" cy="50%" r="10" fill="#732E4A"></circle>
            </svg>
         </span>
       <div class="custom-option">
@@ -340,7 +340,7 @@
        <span class="avatar">
           <svg width="30" height="30">
           <title></title>
-            <circle cx="50%" cy="50%" r="10" fill="#FF585D" />
+            <circle cx="50%" cy="50%" r="10" fill="#FF585D" ></circle>
            </svg>
         </span>
       <div class="custom-option">
@@ -352,7 +352,7 @@
        <span class="avatar">
           <svg width="30" height="30">
           <title></title>
-            <circle cx="50%" cy="50%" r="10" fill="#CF4520" />
+            <circle cx="50%" cy="50%" r="10" fill="#CF4520"></circle>
            </svg>
         </span>
       <div class="custom-option">
@@ -363,11 +363,10 @@
     </div>
    </select>  
   </div>
- 
 
 <?php includeShowcode("custom-select-example"); ?>
 
-<script type="application/json" id="html5-custom-select-example-props">
+<script type="application/json" id="html5-custom-select-example-props-1">
 {
   "replaceHtmlRules": {
     "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
