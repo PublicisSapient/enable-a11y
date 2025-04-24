@@ -213,7 +213,7 @@
   </figcaption>
   <p>Please click the link below for the latest information on the custom select box availability by browser.</p> 
     <a href="https://caniuse.com/mdn-css_properties_appearance_base-select">Click here to check</a>
-</p>
+
 
   <div class="can-horizontally-scroll__parent">
     <div class="sticky-table__container sticky-table__container--horizontal-scroll can-horizontally-scroll">
@@ -255,11 +255,13 @@
             <td><img class="screenshot-image" src="images/pages/listbox/custom-select/desktop-chrome-custom-select.png"
                 alt="Custom select box in Chrome for desktop. It is supported in Firefox and Safari but they do not look the same in those browsers.">
             </td>
-            <td><img src=""
-                alt="">
+            <td>
+              <!-- <img src=""
+                alt=""> -->
             </td>
-            <td><img src=""
-                alt="">
+            <td>
+              <!-- <img src=""
+                alt=""> -->
             </td>
 
           </tr>
@@ -288,16 +290,16 @@
   </label>
   
   <select id="lipstick-shade" class="custom-select" aria-label="Select lipstick shade">
-  <button aria-label="Open lipstick shade dropdown">
-    <div class="selected-option">
+    <button aria-label="Open lipstick shade dropdown">
+     <div class="selected-option">
       <selectedcontent class="custom-selected-option"></selectedcontent>
-      <svg width="24" height="24" viewBox="0 0 24 24">
-      <path fill="currentColor" d="m7 10l5 5l5-5z"/>
+       <svg width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="m7 10l5 5l5-5z"/>
       </svg>
-    </div>
-  </button>
+     </div>
+    </button>
   <div>
-  <option value="214">
+    <option value="214">
         <span class="avatar">
           <svg width="30" height="30">
           <title></title>
@@ -309,8 +311,9 @@
         <div class="description">Deep Fushia</div>
       </div>
     </option>
+
     <option value="215">
-    <span class="avatar">
+        <span class="avatar">
           <svg width="30" height="30">
           <title></title>
             <circle cx="50%" cy="50%" r="10" fill="#833177" />
@@ -322,7 +325,7 @@
       </div>
     </option>
     <option value="216">
-    <span class="avatar">
+       <span class="avatar">
           <svg width="30" height="30">
             <title></title>
             <circle cx="50%" cy="50%" r="10" fill="#732E4A" />
@@ -334,7 +337,7 @@
       </div>
     </option>
     <option value="217">
-    <span class="avatar">
+       <span class="avatar">
           <svg width="30" height="30">
           <title></title>
             <circle cx="50%" cy="50%" r="10" fill="#FF585D" />
@@ -346,7 +349,7 @@
       </div>
     </option>
     <option value="218">
-    <span class="avatar">
+       <span class="avatar">
           <svg width="30" height="30">
           <title></title>
             <circle cx="50%" cy="50%" r="10" fill="#CF4520" />
@@ -358,14 +361,13 @@
       </div>
     </option>
     </div>
-    </select>
-    
+   </select>  
   </div>
  
 
 <?php includeShowcode("custom-select-example"); ?>
 
-<script type="application/json" id="html5-example-props">
+<script type="application/json" id="html5-custom-select-example-props">
 {
   "replaceHtmlRules": {
     "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
