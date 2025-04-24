@@ -172,7 +172,7 @@
 
 <?php includeShowcode("html5-example"); ?>
 
-<script type="application/json" id="html5-example-props">
+<script type="application/json" id="html5-custom-select-example-props">
 {
   "replaceHtmlRules": {
     "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
@@ -208,7 +208,7 @@
 </p>
 
 <figure>
-  <figcaption id="screenshot-table__caption" class="caption">
+  <figcaption id="screenshot-table__custom-select-box" class="caption">
     Custom select box availability by browser
   </figcaption>
   <p>Please click the link below for the latest information on the custom select box availability by browser.</p> 
@@ -236,7 +236,7 @@
 </figure>
 
 <figure>
-  <figcaption id="screenshot-table__caption" class="caption">
+  <figcaption id="screenshot-table__heading" class="caption">
     Screenshots of the custom select box by platform
   </figcaption>
 
@@ -287,8 +287,8 @@
    Select lipstick shade:
   </label>
   
-  <select id="lipstick-shade" class="custom-select">
-  <button>
+  <select id="lipstick-shade" class="custom-select" aria-label="Select lipstick shade">
+  <button aria-label="Open lipstick shade dropdown">
     <div class="selected-option">
       <selectedcontent class="custom-selected-option"></selectedcontent>
       <svg width="24" height="24" viewBox="0 0 24 24">
