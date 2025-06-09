@@ -505,6 +505,8 @@ fi
 if [ "$1" = "vnu" ]
 then
 	runVNUTests
+	#.. Remove temporary files on success
+	rm -rf tmp/* 2> /dev/null
 elif [ "$1" = "axe" ]
 then
 	runAXETests
@@ -526,5 +528,5 @@ else
 	runLighthouseTests
 
 	#.. Remove temporary files on success
-	rm tmp/* 2> /dev/null
+	rm -rf tmp/* 2> /dev/null
 fi
