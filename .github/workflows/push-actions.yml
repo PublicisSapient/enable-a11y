@@ -15,7 +15,7 @@ jobs:
             - name: Use Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "20.15.0"
+                  node-version: "22.14.0"
                   cache: "npm"
             - name: Install X11 dependencies for robotjs (needed for unit testing on input-mask tests)
               run: sudo apt-get install libxtst-dev libpng++-dev xvfb
@@ -35,7 +35,7 @@ jobs:
             - name: Use Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "20.15.0"
+                  node-version: "22.14.0"
                   cache: "npm"
             - name: Set up JDK 11 for x64
               uses: actions/setup-java@v4
