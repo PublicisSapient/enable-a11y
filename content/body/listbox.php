@@ -283,12 +283,18 @@
 </p>
 
 
-<div id="custom-select-example">
+<!-- 
+   * v.Nu throws up on the <selectedcontent> tag, so we have it ignore it for now.
+-->
 
+<!-- vnu:ignore-start -->
+<div id="custom-select-example">
+  
   <label class="select-css__label" for="custom-select">
    Select lipstick shade:
   </label>
   
+
   <select id="lipstick-shade" class="custom-select" aria-label="Select lipstick shade">
     <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="lipstick-shade">
      <div class="selected-option">
@@ -363,6 +369,7 @@
     </div>
    </select>  
   </div>
+<!-- vnu:ignore-end -->
 
 <?php includeShowcode("custom-select-example"); ?>
 

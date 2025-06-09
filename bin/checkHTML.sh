@@ -251,39 +251,53 @@ downloadHTML() {
 		mkdir tmp
 	fi
 
+
+		
+	if [ ! -d tmp/vnu ]
+	then
+		mkdir tmp/vnu
+	fi
+
 	for i in $URLS
 	do
 		FILE_SLUG=`echo $i| awk -F'/' '{print $NF}'`
 		TEMP_FILE="tmp/$FILE_SLUG"
+		VNU_TEMP_FILE="tmp/vnu/$FILE_SLUG"
 
-		
 		printf "."
 		
 		wget $i -O $TEMP_FILE 2> /dev/null
 		DOWNLOADED_URLS=`echo -e "$DOWNLOADED_URLS\n$i"`
+
+		# strip out HTML you don't want to be verified by v.Nu.
+		sed '/<!-- vnu:ignore-start -->/,/<!-- vnu:ignore-end -->/d' $TEMP_FILE > $VNU_TEMP_FILE
+
 		TEMP_FILES="$TEMP_FILES $TEMP_FILE"
+		VNU_TEMP_FILES="$VNU_TEMP_FILES $VNU_TEMP_FILE"
 	done
 	echo
 
 	printf "%s\n" $DOWNLOADED_URLS > tmp/downloaded-urls.txt
 	echo -n $TEMP_FILES > tmp/temp-files.txt
 	echo -n $AXE_DELAYED_FILES > tmp/axe-delayed-files.txt
+
+	echo -n $VNU_TEMP_FILES > tmp/vnu/temp-files.txt
 }
 
 
 runVNUTests() {
 	#. Download the HTML files if they have not already been downloaded
-	if ! [ -f tmp/temp-files.txt ]
+	if ! [ -f tmp/vnu/temp-files.txt ]
 	then
 		bin/generateSiteMap.sh
 		downloadHTML
 	else
-		: "${TEMP_FILES:=`cat tmp/temp-files.txt`}"
+		: "${VNU_TEMP_FILES:=`cat tmp/vnu/temp-files.txt`}"
 	fi
 	numTempFiles=$(echo "${TEMP_FILES}" | awk -F" " '{print NF}')
 
 	echo "Checking HTML..."
-	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $TEMP_FILES 2>&1 `
+	OUTPUT=`$VNU_CMD --filterfile $SCRIPT_DIR/../data/vnu-filters --errors-only $VNU_TEMP_FILES 2>&1 `
 	VNU_ERR_CODE="$?"
 
 	if [ $VNU_ERR_CODE != "0" ]
