@@ -1,7 +1,10 @@
 https://www.useragentman.com/enable/index.php
-https://www.useragentman.com/enable/link.php
+https://www.useragentman.com/enable/text-resize.php
+https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/accessible-text-svg.php
+https://www.useragentman.com/enable/link.php
 https://www.useragentman.com/enable/alert.php
+https://www.useragentman.com/enable/pause-anim-control.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
 https://www.useragentman.com/enable/audio-player.php
 https://www.useragentman.com/enable/button.php
@@ -21,7 +24,6 @@ https://www.useragentman.com/enable/form-error-checking.php
 https://www.useragentman.com/enable/form.php
 https://www.useragentman.com/enable/forms-section.php
 https://www.useragentman.com/enable/heading.php
-https://www.useragentman.com/enable/hero-image-text-resize.php
 https://www.useragentman.com/enable/img.php
 https://www.useragentman.com/enable/image-gallery.php
 https://www.useragentman.com/enable/infographic.php
@@ -32,7 +34,6 @@ https://www.useragentman.com/enable/marquee.php
 https://www.useragentman.com/enable/meter.php
 https://www.useragentman.com/enable/multimedia-content.php
 https://www.useragentman.com/enable/multi-level-hamburger-menu.php
-https://www.useragentman.com/enable/pause-anim-control.php
 https://www.useragentman.com/enable/progress.php
 https://www.useragentman.com/enable/radiogroup.php
 https://www.useragentman.com/enable/skip-link.php
@@ -49,7 +50,6 @@ https://www.useragentman.com/enable/reflow__example-of-product-tile-carousel.php
 https://www.useragentman.com/enable/search.php
 https://www.useragentman.com/enable/tabs.php
 https://www.useragentman.com/enable/textbox.php
-https://www.useragentman.com/enable/text-resize.php
 https://www.useragentman.com/enable/text-spacing.php
 https://www.useragentman.com/enable/timer.php
 https://www.useragentman.com/enable/tooltip.php
