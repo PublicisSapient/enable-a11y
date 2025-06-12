@@ -26,7 +26,8 @@
     Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> to style our demo below.</p>
 
 <p>
-  <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
+  <strong>The fact that we still can't style the options within a select box in all browsers is not necessarily a bad thing</strong>
+  (Chrome is, however, trying to change this, as seen in <a href="#custom-option-styles">the next section of this page regarding custom option styling</a>).
   The gut reaction from a lot of designers is to change their appearance since they understandably want to control
   every aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
   manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.
@@ -195,9 +196,9 @@
 }
 </script>
 
-<h2>Custom select box example</h2>
+<h2 id="custom-option-styles">How to Style <code>option</code> Tags in CSS Using <code>appearance: base-select</code></h2>
 
-<?php includeStats(["isForNewBuilds" => true]); ?>
+<?php includeStats(["isForNewBuilds" => false, "isStyle" => true, "comment" => 'This only works in Chrome. Use this only if it is okay to fallback to default styles for other browsers']); ?>
 
 <p>
   Although native HTML5 select boxes provide a functional and accessible solution, they are limited in terms of styling, especially for the open state and the options within the dropdown. To address this, we have implemented a custom select box. This custom implementation allows full control over the design and behavior of both the closed and open states, as well as the options within the dropdown. It uses a combination of ARIA roles, JavaScript, and CSS to ensure accessibility and functionality across devices. You can explore the implementation in our demo below.
