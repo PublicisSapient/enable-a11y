@@ -40,7 +40,7 @@ const showcode = new function () {
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate|open|disabled|\$\{[^}]*\})=""/g;
+  const blankAttrValueRe = /(required|novalidate|open|disabled|autofocus|\$\{[^}]*\})=""/g;
   const commandsRe = /^%[A-Z]*?%/;
   const HTMLCommentBegin = /^\s*<!--/;
   const HTMLCommentEnd = /-->\s*$/;
