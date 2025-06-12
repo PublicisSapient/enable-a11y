@@ -176,4 +176,9 @@ fieldset .legend,
 .enable-listbox .hidden {
   display: none;
 }
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 /*# sourceMappingURL=enable-listbox.css.map */

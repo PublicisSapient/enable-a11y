@@ -26,7 +26,8 @@
     Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> to style our demo below.</p>
 
 <p>
-  <strong>The fact that we still can't style the options within a select box is a feature, not a bug.</strong>
+  <strong>The fact that we still can't style the options within a select box in all browsers is not necessarily a bad thing</strong>
+  (Chrome is, however, trying to change this, as seen in <a href="#custom-option-styles">the next section of this page regarding custom option styling</a>).
   The gut reaction from a lot of designers is to change their appearance since they understandably want to control
   every aspect of the design of the user interface consistently across browsers and devices. However, mobile browser
   manufacturers have optimized the HTML5 select box UI to use the strengths of the platform they run on.
@@ -172,7 +173,208 @@
 
 <?php includeShowcode("html5-example"); ?>
 
-<script type="application/json" id="html5-example-props">
+<script type="application/json" id="html5-custom-select-example-props">
+{
+  "replaceHtmlRules": {
+    "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
+  },
+  "steps": [{
+      "label": "Mark up the component with a select tag",
+      "highlight": "%OPENCLOSETAG%select",
+      "notes": ""
+    }, {
+      "label": "Mark up all the options with the option tag",
+      "highlight": "%OPENCLOSECONTENTTAG%option",
+      "notes": ""
+    },
+    {
+      "label": "Ensure the label is associated with the select tag",
+      "highlight": "for",
+      "notes": ""
+    }
+  ]
+}
+</script>
+
+<h2 id="custom-option-styles">How to Style <code>option</code> Tags in CSS Using <code>appearance: base-select</code></h2>
+
+<?php includeStats(["isForNewBuilds" => false, "isStyle" => true, "comment" => 'This only works in Chrome. Use this only if it is okay to fallback to default styles for other browsers']); ?>
+
+<p>
+  Although native HTML5 select boxes provide a functional and accessible solution, they are limited in terms of styling, especially for the open state and the options within the dropdown. To address this, we have implemented a custom select box. This custom implementation allows full control over the design and behavior of both the closed and open states, as well as the options within the dropdown. It uses a combination of ARIA roles, JavaScript, and CSS to ensure accessibility and functionality across devices. You can explore the implementation in our demo below.
+</p>
+
+<p>
+  <strong>Why use a custom select box?</strong> While native select boxes are optimized for platform-specific behavior, custom select boxes allow designers and developers to create a consistent user interface across all browsers and devices. This approach is particularly useful when you need to match the select box's design with the rest of your application's UI.
+</p>
+
+<figure>
+  <figcaption id="screenshot-table__custom-select-box" class="caption">
+    Custom select box availability by browser
+  </figcaption>
+  <p>Please click the link below for the latest information on the custom select box availability by browser.</p> 
+    <a href="https://caniuse.com/mdn-css_properties_appearance_base-select">Click here to check</a>
+
+
+  <div class="can-horizontally-scroll__parent">
+    <div class="sticky-table__container sticky-table__container--horizontal-scroll can-horizontally-scroll">
+      <table class="screenshot-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">See which browsers support custom select box</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="responsive-image" src="images/pages/listbox/custom-select/supported-browsers.png"
+                alt="See which broswers support custom-select box.">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</figure>
+
+<figure>
+  <figcaption id="screenshot-table__heading" class="caption">
+    Screenshots of the custom select box by platform
+  </figcaption>
+
+  <div class="can-horizontally-scroll__parent">
+    <div class="sticky-table__container sticky-table__container--horizontal-scroll can-horizontally-scroll">
+      <table class="screenshot-table" tabindex="0">
+        <thead>
+          <tr>
+            <th scope="col">Chrome Desktop</th>
+            <th scope="col">Chrome Android</th>
+            <th scope="col">Safari iOS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img class="screenshot-image" src="images/pages/listbox/custom-select/desktop-chrome-custom-select.png"
+                alt="Custom select box in Chrome for desktop. It is supported in Firefox and Safari but they do not look the same in those browsers.">
+            </td>
+            <td>
+              <!-- <img src=""
+                alt=""> -->
+            </td>
+            <td>
+              <!-- <img src=""
+                alt=""> -->
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</figure>
+
+<p>
+  Designers can style the closed version of HTML5 select boxes, but not that of the optimized UI. I urge designers to
+  embrace this <strong>feature, not a bug</strong> mantra for select boxes. You will make your users happier.
+</p>
+
+
+
+<p>What follows is an excellent custom-styled native HTML5 select box. It uses code from <a
+    href="https://twitter.com/scottjehl">Scott Jehl</a>'s <a href="https://github.com/filamentgroup/select-css">cross-browser CSS demo</a> that you can download via NPM.
+</p>
+
+
+<!-- 
+   * v.Nu throws up on the <selectedcontent> tag, so we have it ignore it for now.
+-->
+
+<!-- vnu:ignore-start -->
+<div id="custom-select-example">
+  
+  <label class="select-css__label" for="custom-select">
+   Select lipstick shade:
+  </label>
+  
+
+  <select id="lipstick-shade" class="custom-select" aria-label="Select lipstick shade">
+    <button aria-haspopup="listbox" aria-expanded="false" aria-labelledby="lipstick-shade">
+     <div class="selected-option">
+      <selectedcontent class="custom-selected-option"></selectedcontent>
+       <svg width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="m7 10l5 5l5-5z"/>
+      </svg>
+     </div>
+    </button>
+  <div>
+    <option value="214">
+        <span class="avatar">
+          <svg width="30" height="30">
+          <title></title>
+            <circle cx="50%" cy="50%" r="10" fill="#A1224E"></circle>
+           </svg>
+        </span>
+      <div class="custom-option">
+        <div class="title">214/Pink Flash</div>
+        <div class="description">Deep Fushia</div>
+      </div>
+    </option>
+
+    <option value="215">
+        <span class="avatar">
+          <svg width="30" height="30">
+          <title></title>
+            <circle cx="50%" cy="50%" r="10" fill="#833177"></circle>
+           </svg>
+        </span>
+      <div class="custom-option">
+        <div class="title">215/Future Shock</div>
+        <div class="description">Vivid purple</div>
+      </div>
+    </option>
+    <option value="216">
+       <span class="avatar">
+          <svg width="30" height="30">
+            <title></title>
+            <circle cx="50%" cy="50%" r="10" fill="#732E4A"></circle>
+           </svg>
+        </span>
+      <div class="custom-option">
+        <div class="title">216/Vortex</div>
+        <div class="description">Grape</div>
+      </div>
+    </option>
+    <option value="217">
+       <span class="avatar">
+          <svg width="30" height="30">
+          <title></title>
+            <circle cx="50%" cy="50%" r="10" fill="#FF585D" ></circle>
+           </svg>
+        </span>
+      <div class="custom-option">
+        <div class="title">217/Coral Pop</div>
+        <div class="description">Cantaloupe</div>
+      </div>
+    </option>
+    <option value="218">
+       <span class="avatar">
+          <svg width="30" height="30">
+          <title></title>
+            <circle cx="50%" cy="50%" r="10" fill="#CF4520"></circle>
+           </svg>
+        </span>
+      <div class="custom-option">
+        <div class="title">218/Volanic</div>
+        <div class="description">Vivid orange</div>
+      </div>
+    </option>
+    </div>
+   </select>  
+  </div>
+<!-- vnu:ignore-end -->
+
+<?php includeShowcode("custom-select-example"); ?>
+
+<script type="application/json" id="html5-custom-select-example-props-1">
 {
   "replaceHtmlRules": {
     "select": "<option value=\"\">Choose an element ...</option><option value=\"Np\">  Neptunium</option> ..."
