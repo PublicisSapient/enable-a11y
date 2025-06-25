@@ -209,6 +209,9 @@ select {
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
+  /* .enable__is-dark-mode & {
+        background-color: #141b1e;
+    } */
 }
 .list--no-decoration,
 .list--inline {

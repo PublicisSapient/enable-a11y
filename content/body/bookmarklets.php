@@ -109,6 +109,7 @@
 <p>There are, of course, many other places to get a11y related bookmarklets. Here are a few we know about.</p>
 
 <ul>
+  <li><a href="https://www.accessibility-developer-guide.com/setup/helper-tools/bookmarklets/h123/">h123</a>, an excellent bookmarklet that displays all the headings on a page in an easy to read tree structure.</li>
   <li><a href="https://pauljadam.com/bookmarklets/">Paul J. Adams' JavaScript Bookmarklets for Accessibility Testing</a>
   </li>
   <li><a href="https://whatsock.github.io/visual-aria/github-bookmarklet/visual-aria.htm">The Visual ARIA

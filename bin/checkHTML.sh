@@ -382,6 +382,13 @@ runAXETests() {
 	AXE_DELAY_RETURN="$?"
 	echo "Result: $AXE_DELAY_RETURN errors"
 
+	echo "Running delayed tests (dark mode)"
+	$AXE --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS --puppeteer-options='{
+		"args": ["--force-prefers-color-scheme=dark"]
+	}'
+	AXE_DELAY_DARKMODE_RETURN="$?"
+	echo "Result: $AXE_DELAY_DARKMODE_RETURN errors"
+
 	# Note that the exception here is for the second carousel variation.  We don't care about the
 	# scrollabe area being focusable, because the scrollable UI is missing for all users.
 	echo "Running immediate tests"
@@ -389,7 +396,14 @@ runAXETests() {
 	AXE_UNDELAY_RETURN="$?"
 	echo "Result: $AXE_UNDELAY_RETURN errors"
 
-	if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
+	echo "Running immediate tests (dark mode)"
+	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS --puppeteer-options='{
+		"args": ["--force-prefers-color-scheme=dark"]
+	}'
+	AXE_UNDELAY_DARKMODE_RETURN="$?"
+	echo "Result: $AXE_UNDELAY_DARKMODE_RETURN errors"
+
+	if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" -o "$AXE_DELAY_DARKMODE_RETURN" != "0" -o "$AXE_UNDELAY_DARKMODE_RETURN" != "0" ]
 	then
 		echo "aXe failed. See information above."
 		exit 101
