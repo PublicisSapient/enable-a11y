@@ -15,7 +15,7 @@
 
 /* global AblePlayer, jQuery */
 import '../../enable-node-libs/jquery/dist/jquery.min.js';
-import '../enable-libs/ableplayer/thirdparty/js.cookie.js';
+import '../../enable-node-libs/js-cookie/dist/js.cookie.js';
 import { AblePlayerInstances } from '../enable-libs/ableplayer/build/ableplayer.js';
 
 let hasClicked = false;
@@ -42,19 +42,26 @@ function ablePlayerCustomizations($, extraCustomizations) {
   // set before audio description functionality is initialized.  After
   // initialization, adjust layout of page if transcript is visible.
   AblePlayer.prototype.initDescription = function() {
+    let deferred = new $.Deferred();
+		let promise = deferred.promise();
+
     setDescriptionCookies();
     this.oldInitDescription();
     adjustTranscriptVisibility(this);
 
 
-  // Ensure all media players have a unique aria-label
-  const ariaLabels = [ 'video player', 'audio player'];
-  for (let i=0; i<ariaLabels.length; i++) {
-    const query = `[aria-label="${ariaLabels[i]}"]`;
-    document.querySelectorAll(query).forEach((el, j) => {
-      el.setAttribute('aria-label', `${ariaLabels[i]} ${j}`);
-    });
-  }
+    // Ensure all media players have a unique aria-label
+    const ariaLabels = [ 'video player', 'audio player'];
+    for (let i=0; i<ariaLabels.length; i++) {
+      const query = `[aria-label="${ariaLabels[i]}"]`;
+      document.querySelectorAll(query).forEach((el, j) => {
+        el.setAttribute('aria-label', `${ariaLabels[i]} ${j}`);
+      });
+    }
+
+
+		deferred.resolve();
+		return promise; 
   }
 
   // Resolves issue where transcript visibility is not set properly when only captions are present.

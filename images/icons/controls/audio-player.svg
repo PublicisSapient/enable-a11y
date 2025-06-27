@@ -1,0 +1,32 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 100 60"
+    x="0px" y="0px">
+    <style>
+     @media (prefers-color-scheme: dark) {
+        g{
+            filter: invert(100%);
+        }
+    }
+    </style>
+    <g transform="translate(0,-538.36214) scale(0.55 0.55)" transform-origin="50% 50%">
+        <path d="m 7.166914,982.59906 0,39.52634 19.76315,0 0,-39.52634 z" style="" fill="none" stroke="#000000"
+            stroke-width="7.90526009" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"
+            stroke-dasharray="none" stroke-opacity="1" />
+        <path d="m 26.930064,982.59906 27.66841,-23.71578 0,86.95782 -27.66841,-23.7157 z" style="" fill="none"
+            stroke="#000000" stroke-width="7.90526009" stroke-linecap="round" stroke-linejoin="round"
+            stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1" />
+        <path id="b" d="m 70.451342,1002.3622 22.09238,0" style="" fill="none" stroke="#000000"
+            stroke-width="7.90526009" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"
+            stroke-dasharray="none" stroke-opacity="1" />
+        <use style="" height="100%" width="100%" id="a" xlink:href="#b" y="0" x="0" stroke="#000000" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dasharray="none"
+            stroke-opacity="1" />
+        <use style="" height="100%" width="100%" transform="matrix(0.8660254,0.5,-0.5,0.8660254,506.15782,115.71772)"
+            xlink:href="#a" y="0" x="0" stroke="#000000" stroke-width="20" stroke-linecap="round"
+            stroke-linejoin="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1" />
+        <use style="" height="100%" width="100%" transform="matrix(0.8660254,-0.5,0.5,0.8660254,-496.20438,152.86443)"
+            xlink:href="#a" y="0" x="0" stroke="#000000" stroke-width="20" stroke-linecap="round"
+            stroke-linejoin="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-opacity="1" />
+    </g>
+</svg>
