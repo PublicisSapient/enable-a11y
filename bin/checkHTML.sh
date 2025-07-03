@@ -382,12 +382,7 @@ runAXETests() {
 	AXE_DELAY_RETURN="$?"
 	echo "Result: $AXE_DELAY_RETURN errors"
 
-	echo "Running delayed tests (dark mode)"
-	$AXE --exit --load-delay=2000 --exclude "iframe" $AXE_DELAYED_URLS --puppeteer-options='{
-		"args": ["--force-prefers-color-scheme=dark"]
-	}'
-	AXE_DELAY_DARKMODE_RETURN="$?"
-	echo "Result: $AXE_DELAY_DARKMODE_RETURN errors"
+	
 
 	# Note that the exception here is for the second carousel variation.  We don't care about the
 	# scrollabe area being focusable, because the scrollable UI is missing for all users.
@@ -396,14 +391,8 @@ runAXETests() {
 	AXE_UNDELAY_RETURN="$?"
 	echo "Result: $AXE_UNDELAY_RETURN errors"
 
-	echo "Running immediate tests (dark mode)"
-	$AXE --exit --verbose --exclude ".enable-logo__text" --exclude "#announcements-carousel" $AXE_UNDELAYED_URLS --puppeteer-options='{
-		"args": ["--force-prefers-color-scheme=dark"]
-	}'
-	AXE_UNDELAY_DARKMODE_RETURN="$?"
-	echo "Result: $AXE_UNDELAY_DARKMODE_RETURN errors"
 
-	if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" -o "$AXE_DELAY_DARKMODE_RETURN" != "0" -o "$AXE_UNDELAY_DARKMODE_RETURN" != "0" ]
+	if [ "$AXE_DELAY_RETURN" != "0" -o "$AXE_UNDELAY_RETURN" != "0" ]
 	then
 		echo "aXe failed. See information above."
 		exit 101
@@ -469,12 +458,55 @@ function runPa11yTests() {
 
 	# comment
 
+	# <<comment
+	( 
+		echo '{
+		"urls": [ '
+
+		echo $DOWNLOADED_URLS | awk '
+			{ 
+				for (i=1; i<=NF; i++) {
+					if (i == NF) {
+						comma = "";
+					} else {
+						comma = ",";
+					}
+					printf("\"%s\"%s\n", $i, comma);
+				} 
+			}
+		'
+		
+		echo "],
+            \"defaults\": {
+                \"chromeLaunchConfig\": {
+                    $CHROME_PATH
+                    \"args\": [
+                        \"--no-sandbox\",
+                        \"--disable-setuid-sandbox\",
+                        \"--disable-dev-shm-usage\",
+						\"--force-prefers-color-scheme=dark\"
+                    ]
+                }
+            }
+        }"
+	) > tmp/pa11y-darkmode-config.txt 
+	# comment
+
 	pa11y-ci --config tmp/pa11y-config.txt 
 	DID_PALLY_SUCCEED="$?"
 
 	if [ $DID_PALLY_SUCCEED != "0" ]
 	then
 		echo "Pa11y failed.  See information above."
+		exit 102;
+	fi
+
+	pa11y-ci --config tmp/pa11y-darkmode-config.txt 
+	DID_PALLY_DARKMODE_SUCCEED="$?"
+
+	if [ $DID_PALLY_DARKMODE_SUCCEED != "0" ]
+	then
+		echo "Pa11y (dark mode) failed.  See information above."
 		exit 102;
 	fi
 }
