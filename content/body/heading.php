@@ -16,12 +16,17 @@
 
 
 <p>
-  Screen reader users also use headings to skim through a web page quickly and are used by screen reader users as a table of contents. For example, using NVDA, this is done via the Elements List, and for Voiceover, this is done via The Rotor.  The following video shows how screen reader users use these tools.
-</p>
+  Screen reader users also use headings to skim through a web page quickly and are used by screen reader users as a table of contents.  To illustrate how screen reader users do this, please watch the following videos:</p>
 
-<div class="enable-example">
-  Insert video here
-</div>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=DapB390LQaBM">The NVDA Heading Elements List</a>, which shows how to do this with NVDA's Element List</li>
+    <li><a href="https://www.youtube.com/watch?v=DGf2uDgRKT4">Navigating a page with headings using Mac's VoiceOver screen reader</a>, which demonstrates how to navigate headings use VoiceOver's Rotor.</li>
+  </ul>
+
+<p>
+  To help developers ensure headings are marked up correctly, we suggest using <a href="https://www.accessibility-developer-guide.com/setup/helper-tools/bookmarklets/h123/">h123</a>, an excellent bookmarklet that displays all the headings on a page in an easy to read tree structure.</p>
+ 
+
 
 <h2>HTML5 Headings</h2>
 
