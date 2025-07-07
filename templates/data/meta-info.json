@@ -372,6 +372,10 @@
     "desc": "Why it's preferable to use native HTML5 select controls vs custom controls, and what developers must do if they have to use a custom one.",
     "isNPM": "true"
   },
+  "load-more.php": {
+    "title": "Accessilble Load More Buttons",
+    "desc": "How to approach pagination using load more buttons."
+  },
   "log.php": {
     "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
     "title": "Accessible Log Display: Understanding, Live Example, and Code Walkthrough",
