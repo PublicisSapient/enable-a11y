@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 textarea,
 [role="textbox"] {
   display: inline-block;
@@ -7,6 +17,13 @@ textarea,
   border: solid 1px black;
   background: #fff;
   vertical-align: bottom;
+  padding: 10px;
+}
+.enable__is-dark-mode textarea,
+.enable__is-dark-mode [role="textbox"] {
+  background-color: #121212;
+  border-color: #ededed;
+  color: #ededed;
 }
 textarea,
 [aria-multiline="true"] {
@@ -39,3 +56,4 @@ fieldset div {
     width: 20rem;
   }
 }
+/*# sourceMappingURL=textbox.css.map */

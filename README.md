@@ -10,7 +10,7 @@ A place to learn and share with developers what makes web work accessible. This 
 
 - nvm: A Node version manager. It allows you to install several versions of node on the same machine and change versions easily.
   - [Here are instructions in how to install nvm](https://github.com/nvm-sh/nvm#usage)
-  - After installing nvm, install a Node version >= 18 using nvm, ideally `nvm install 20.11.0`
+  - After installing nvm, install a Node version >= 20.15.0 using nvm, ideally `nvm install 20.15.0`
 - npm: a Node Package Manager, usually installed alongside Node
   - More info: [Downloading and installing Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - Lynx: A text-only browser used for testing for how a website will work without graphics turned on.
@@ -74,6 +74,17 @@ A place to learn and share with developers what makes web work accessible. This 
    ```sh
    git clone git@github.com:PublicisSapient/enable-a11y.git
    cd enable-a11y
+   ```
+
+   ```sh
+   nvm use
+   ```
+
+   This instructs nvm to use the Node version specified in the `.nvmrc` file located in the project root directory.
+
+   > Note: If the specified version has not been installed yet, nvm will advise to install it after running the command above.
+
+   ```sh
    npm clean-install
    ```
 
@@ -126,7 +137,7 @@ Your version of Chrome needs to match the `chromedriver` package version. You ca
 
 If there is a problem with running Chromedriver, because you have an error like "SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version XXX", then you should ensure your chromedriver is installed with the right version.
 
-You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (ie. `npm install -D chromedriver@121`).
+You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (e.g., `npm install -D chromedriver@121`).
 
 Links at the [Chrome for Testing availability webpage](https://googlechromelabs.github.io/chrome-for-testing/) allow you to download a separate "Chrome for Testing" application, and/or the associated chromedriver files.
 
@@ -145,6 +156,14 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 ### Contributing code
 
 If you would like to contribute to this project, please feel free to raise a Pull Request! See the documentation at [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for instructions.
+
+### I want to update npm and node to later versions supported by Enable.
+
+We encourage doing this, but please test the application to make sure it works with them before merging this into main. Here are the placed to update:
+
+- package.json (search for the `engine` section).
+- .nvmrc (update with the latest node version)
+- push-actions.yml (there are two `node-version` values you will need to update)
 
 ### Style Notes
 
@@ -199,6 +218,44 @@ If you are trying to contribute to the Enable site from a forked version of this
 ### I Made a New Component! How do I make sure it is available on NPM
 
 You will need to update the version number that NPM broadcasts as the latest version number. Please use [np](https://github.com/sindresorhus/np) to do this (it is what we have used in the past). This should be done by development lead of the Enable project (as of this writing, this is [Zoltan Hawryluk](https://www.npmjs.com/~zoltandulac)).
+
+### Strcutured Data Markup
+
+Structured Data Markup is a way to label or tag the content on your website so that search engines and other platforms can better understand it.
+
+The Article and HowTo tags are two types of structured data markup that help search engines understand specific kinds of content.
+
+#### Article Tag:
+
+This is used to mark up articles, blog posts, or other written content. By using the Article tag, we help search engines identify the main parts of your article, like the headline. This can make your article show up better in search results, sometimes with extra features like the headline or image preview.
+
+#### HowTo Tag:
+
+This is used for content that gives step-by-step instructions on how to do something. When you use the HowTo tag, search engines can display your instructions in a more detailed way, often showing each step directly in the search results.
+
+Example of checkbox in the meta-info.json, where the mainEntity can be an array of 'Article' and 'HowTo' objects extracted from page:
+
+```json
+"checkbox.php": {
+    "title": "How to Create Accessible Checkboxes",
+    "desc": "Here is a step-by-step guide to creating accessible checkboxes",
+    "url": "https://www.useragentman.com/enable/checkbox.php",
+    "mainEntity":[
+      {
+      "type": "Article",
+      "title": "A real styled HTML5 checkbox",
+      "desc": "You can style an HTML5 checkbox using CSS easily.",
+      "url": "https://www.useragentman.com/enable/checkbox.php#a-real-styled-html5-checkbox--heading"
+      },
+      {
+      "type": "HowTo",
+      "title": "Step-by-Step to make the styled checkboxe accessible",
+      "desc": "See the dropdown to highlight each of the individual steps that make the styled checkboxe accessible",
+      "url": "https://www.useragentman.com/enable/checkbox.php#developer-walkthrough-1"
+      },
+  ]
+}
+```
 
 ## References
 

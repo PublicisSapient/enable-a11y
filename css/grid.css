@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /* General table styles */
 /******************************************************************************/
 /*                                    Tables                                  */
@@ -183,7 +193,7 @@ table.data img {
 [role="gridcell"]:focus,
 [role="gridcell"] *:focus,
 [role="grid"] [tabindex="0"]:focus {
-  outline: #097efb;
+  outline: var(--focus-color);
   outline-style: dotted;
   outline-width: 3px;
 }
@@ -204,7 +214,7 @@ table.data img {
 /* Menu button */
 button {
   cursor: pointer;
-  font-size: 110%;
+  font-size: 1.1rem;
 }
 .menu-wrapper {
   position: relative;
@@ -232,3 +242,4 @@ ul[role="menu"] li {
 [role="menuitem"]:hover {
   background-color: #ffffff;
 }
+/*# sourceMappingURL=grid.css.map */

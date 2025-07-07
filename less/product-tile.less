@@ -13,10 +13,18 @@
     overflow: hidden;
     text-align: center;
 
+    .enable__is-dark-mode & {
+        color: @dark-mode-white;
+    }
+
     del,
     ins,
     mark {
         background-color: transparent;
+
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+        }
     }
 
     del,
@@ -30,6 +38,10 @@
         left: 0;
         background: #aaa;
         padding: 5px;
+
+        .enable__is-dark-mode & {
+            background: #550000;
+        }
     }
 
     &__name {

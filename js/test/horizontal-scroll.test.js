@@ -35,12 +35,6 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
             };
         });
 
-        if (!domInfo.doesPageHorizontallyScroll) {
-            console.log(
-                `isWrapChecked: (${domInfo.isWrapChecked}), scrollWidth: ${domInfo.scrollWidth}, clientWidth: ${domInfo.clientWidth}.`,
-            );
-        }
-
         expect(domInfo.doesPageHorizontallyScroll).toBe(false);
     }
 
@@ -71,10 +65,6 @@ describe('Test Horizontal Scrolling on all pages on Enable', () => {
                 return false;
             }
         });
-
-        console.log(
-            `has checkbox: ${hasCheckbox}, filename: ${filename}, isDesktop: ${isDesktop}`,
-        );
 
         if (hasCheckbox) {
             // press space and check if it's unchecked.

@@ -9,6 +9,15 @@ const testHelpers = new (function () {
         return el.offsetParent === null;
     };
 
+    this.isElementFocused = async function (elId) {
+        const isElFocused = await page.evaluate((elId) => {
+            const el = document.querySelector(elId);
+            return el === document.activeElement;
+        }, elId);
+
+        return isElFocused;
+    }
+
     this.getDesktopBrowser = async function (isBrowserVisible) {
         try {
             const browser = await puppeteer.launch({
@@ -16,6 +25,8 @@ const testHelpers = new (function () {
                 ignoreHTTPSErrors: true,
                 args: [
                     `--window-size=${config.DESKTOP_WIDTH},${config.DESKTOP_HEIGHT}`,
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox'
                 ],
                 defaultViewport: {
                     width: config.DESKTOP_WIDTH,
@@ -37,6 +48,8 @@ const testHelpers = new (function () {
                 ignoreHTTPSErrors: true,
                 args: [
                     `--window-size=${config.MOBILE_WIDTH},${config.MOBILE_HEIGHT}`,
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox'
                 ],
                 defaultViewport: {
                     width: config.MOBILE_WIDTH,
@@ -141,6 +154,12 @@ const testHelpers = new (function () {
     page.on('requestfailed', request => {
       console.log(request.failure().errorText, request.url());
     }); */
+    };
+
+    this.keyPressHelper = (page, key, numTimes) => {
+        for (let i = 0; i < numTimes; i++) {
+            page.keyboard.press(key);
+        }
     };
 })();
 

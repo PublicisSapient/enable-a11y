@@ -29,6 +29,11 @@
         width: 3em;
         font-size: (14 / @px);
 
+        .enable__is-dark-mode & {
+            color: @dark-mode-white;
+            background-color: transparent;
+        }
+
         &:hover {
             background-color: #0e384c;
             color: white;
@@ -41,6 +46,12 @@
         &--selected {
             border-bottom: solid #00f 3px;
             color: #00f;
+            font-weight: bold;
+
+            .enable__is-dark-mode & {
+                border-bottom: solid rgb(126, 126, 248) 3px;
+                color: rgb(126, 126, 248);
+            }
         }
     }
 

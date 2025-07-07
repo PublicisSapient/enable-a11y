@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 #double-focus-ring-example {
   background-image: linear-gradient(to right, #fffbd5, #b20a2c);
 }
@@ -6,9 +16,10 @@
   padding: 10px;
   background: #ffffcc;
   display: inline-block;
+  color: #A76000;
 }
 #double-focus-ring-example *:focus {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
 #double-focus-ring-example *:focus:not(:focus-visible) {
@@ -16,6 +27,7 @@
   box-shadow: none;
 }
 #double-focus-ring-example *:focus-visible {
-  outline: solid 2px #097efb;
+  outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
+/*# sourceMappingURL=focus-styling.css.map */

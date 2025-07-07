@@ -55,7 +55,7 @@
 }
 
 .aria-radio-label {
-    font-size: (@radio-label-font-size * 1px);
+    font-size: (@radio-label-font-size * (1/@px));
     line-height: ((@radio-size + @radio-border) / @radio-label-font-size);
 }
 
@@ -94,11 +94,15 @@
             cursor: pointer;
             display: inline-block;
             color: #666;
-            font-size: (@enable-radio-label-font-size * 1px);
+            font-size: (@enable-radio-label-font-size * (1/@px));
             line-height: (
                 (@enable-radio-size + 2 * @enable-radio-border) /
                     @enable-radio-label-font-size
             );
+
+            .enable__is-dark-mode & {
+                color: #ccc;
+            }
         }
 
         + label:before {

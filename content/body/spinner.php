@@ -59,6 +59,10 @@
         "This is the best solution to use <strong>when developers want to code a quantity in a form field</strong>, especially when building from scratch.",
 ]); ?>
 
+<p>
+  While this is the best solution from an accessibility perspective, the only drawback is that it is impossible to style the colors of the incremental arrow buttons (both foreground and background).  Note as well that the incremental arrow buttons only are visible on focus in Chrome, Edge and other Blink-based web browsers.  While <a href="https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp">it is possible to hide the incremental arrow buttons using CSS</a>, I don't usually do this since it's appearance is good UX to distinguish it from non-incremental input.
+</p>
+
 <div id="html-example" class="enable-example">
   <form>
     <label id="html_number" class="sbLabel" for="type-number">Quantity between 500 and 1000</label>

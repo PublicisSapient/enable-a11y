@@ -1,0 +1,92 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.gallery {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+.gallery .slides {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.gallery .slides .slide {
+  max-height: 40em;
+  max-width: 40em;
+  display: none;
+  transition: opacity 0.5s ease;
+  border-radius: 0.6em;
+}
+@media only screen and (min-width: 1px) and (max-width: 719px), only screen and (min-width: 720px) and (max-width: 959px) {
+  .gallery .slides .slide {
+    max-height: 30em;
+    max-width: 100%;
+  }
+}
+.gallery .slides .fig-slide {
+  justify-content: center;
+  flex-direction: column;
+}
+.gallery button {
+  border: none;
+  background: transparent;
+}
+.enable__is-dark-mode .gallery .thumb-nav-button img {
+  filter: invert();
+}
+.gallery .thumbnail-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.gallery .thumbnail-slider .thumbnails {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button {
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0.6;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button img:focus-visible {
+  outline: none;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  opacity: 1;
+  border: 1px solid #2b2b2b;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border-color: #fff;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  opacity: 1;
+  border: none;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  border-color: #fff;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
+  opacity: 1;
+  outline-offset: 2px;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
+  border-color: #fff;
+}
+/*# sourceMappingURL=image-gallery.css.map */

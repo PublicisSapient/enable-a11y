@@ -10,11 +10,32 @@
     border-radius: 0.5rem;
     z-index: 2147483647;
 
+    /* Common styling for button entrypoints */
+    .button-common {
+        color: white;
+        background-color: blue;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .button-hover {
+        /* Hover styling */
+        transition: background-color 0.3s ease; /* smooth transition */
+        background-color: darkblue; /* Example darker background on hover */
+    }
+    
     /* 
      * We put a transparent border here for Windows High Contrast Mode. 
      * Otherwise, the background will blend into the content underneath.
      */
     border: 1px solid transparent;
+
+    .enable__is-dark-mode & {
+        border-color: @dark-mode-white;
+    }
 
     &:before {
         content: "";
@@ -23,12 +44,27 @@
         background: black;
         position: absolute;
         top: -0.5rem;
-        left: 2rem;
+        left: 0.5rem;
         transform: rotate(45deg);
+        z-index: -1;
 
         /* Again, we put a transparent border here for Windows High Contrast Mode */
         border-top: 1px solid transparent;
         border-left: 1px solid transparent;
+
+
+
+        .enable__is-dark-mode & {
+            border-top: 1px solid @dark-mode-white;
+            border-left: 1px solid @dark-mode-white;
+        }
+    }
+
+    &--bottom:before {
+        top: initial;
+        bottom: -0.5rem;
+        transform: rotate(-135deg);
+
     }
 
     &:after {
@@ -42,5 +78,56 @@
 
     &--hidden {
         .enable__visually-hidden();
+    }
+
+    /* Additional tooltip styles */
+    &--top:before {
+        top: -0.5rem;
+    }
+
+    &--bottom:before {
+        bottom: -0.5rem;
+        transform: rotate(180deg);
+    }
+
+    /* Button entrypoints */
+    &__icon-button {
+        .button-common();
+        width: 20px;
+        height: 20px;
+        border-radius: 50%; /* to make it circular */
+        font-weight: bold;
+        font-size: (12 / @px); /* adjust font size as needed */
+
+        &:hover {
+            .button-hover();
+        }
+
+        /* Ensure the button content is centered */
+        .icon {
+            display: block; /* Ensure block display for icon */
+            text-align: center; /* Center text horizontally */
+            line-height: 1; /* Adjust line height as needed */
+        }
+    }
+
+    &__text-button {
+        .button-common();
+        border-radius: 0.2rem;
+        padding: 0.25rem;
+        vertical-align: sub;
+
+        &:hover {
+            .button-hover();
+        }
+
+        @media only screen and (min-width: 720px) {
+            vertical-align: top;
+        }
+    }
+
+    &__text-button,
+    &__icon-button {
+        outline-offset: 2px;
     }
 }

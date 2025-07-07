@@ -1,4 +1,18 @@
 <p>
+  Before we dive into making focus outlines accessible, let's first understand what a focus outline is and why it’s important for web accessibility, particularly for screen readers. 
+  If you're already familiar with focus outlines, feel free to skip to the next section. For those who aren’t, here's a brief definition.
+</p>
+
+<h2>What is a Focus Outline?</h2>
+
+<p>
+  Simply put, when a specific HTML element is ready to accept keyboard input, it is considered to be "in focus." 
+  As users navigate a webpage using the keyboard (typically via the Tab key), different elements receive focus, allowing screen readers to read their content. 
+  According to accessibility standards, any element in focus should have a visible border around it, known as the focus outline. This helps users, especially those relying on screen readers or keyboard navigation, to know which element is currently active.
+</p>
+
+
+<p>
   Focus states are used by keyboard users to know what interactive element they can currently manipulate. They are easily
   styled with the <code>outline</code> CSS property and the <code>:focus</code> and <code>:focus-visible</code> pseudo-classes.
   Unfortunately, many designers hate them and try to get focus-styles removed from a website.  This page discussed 
@@ -122,6 +136,7 @@
   and compensating visually with an equivalent negative margin, so why just conform to 
   <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">WCAG 2.5.8: Target Size (Minimum).</a> (which only asks 24 pixels x 24 pixels)?</p>
 
+  <figure class="wide centered-image">
 <?php includeShowcode("css-focus-hitarea", "", "", "", false); ?>
 <script type="application/json" id="css-focus-hitarea-props">
 {
@@ -133,11 +148,15 @@
   }]
 }
 </script>
+<figcaption>Figure 3a. Code pattern that increases the hit area around navigation buttons.</figcaption>
+
+</figure>
 
 <template id="css-focus-hitarea" data-type="css">
   .enable-flyout__open-level-button { padding: 27px 0; margin: -27px 0; }
 
 </template>
+
 
 <p>I encourage everyone reading this to implement this on all the websites they code. From a UX perspective, it just
   makes it easier for everyone to use the websites you code.</p>

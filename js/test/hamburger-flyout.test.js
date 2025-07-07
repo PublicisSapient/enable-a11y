@@ -108,12 +108,12 @@ describe('Hamburger Menu Tests', () => {
                 }, ariaControls);
             } while (domInfo.isFocusedInsideMenu);
 
-            // We are now focused outside of the Controls flyout menu.  The menu
+            // We are now focused outside of the last flyout menu.  The menu
             // should be closed now, so let's check.
             expect(domInfo.isMenuExpanded).toBe(false);
         }
 
-        await page.focus('[aria-controls="controls-section"]');
+        await page.focus('[aria-controls="tools-section"]');
     });
 
     async function loadPage(isDesktop) {

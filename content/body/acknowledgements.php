@@ -1,26 +1,43 @@
 <p>
-  Originally, Enable started out as a small personal website to help me show other developers how accessible code is
-  structured.
-  Some of the solutions are my own, and some I have borrowed from others (because why reinvent the wheel, especially when
-  you have already learned from the best?)
+  Originally, Enable started out as a small personal website made by <a href="https://www.useragentman.com/">Zoltan Hawryluk</a> to show other developers how to make web-related code accessible to people with disabalities.  Some of the solutions were his own, and some he have borrowed, with citations, from others.  Zoltan is still the lead developer of this project and often contributes his own code to it, as well as reviewing all contributions from the community.
 </p>
 
+<p>Today, Enable is now sponsored by The Publicis Sapient Accessibility Center of Excellence, to help not only its developers make accessible things, but also to give back to the accessibility and front-end web development communities.  It contains contributions from developers within Publicis Sapient as well as others, and we hope to continue to grow this ongoing collaboration.</p>
+
 <p>
-  What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code I have
+  What follows are not just acknowledgements to existing accessible code examples used in Enable, but also to other code we have
   built on that I have accessibility features to.
 </p>
 
 <h2>Direct Contributers</h2>
 
+  
 <p>
-  The following people have contributed directly to the Enable project by adding code/content via pull requests.
+  The following people have contributed directly to the Enable project by adding code/content via pull requests or by direct collaboration.
 </p>
 
 <ul>
-  <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
+<li>
+  <a href="https://twitter.com/lsnrae">Alison Walden</a> for her UX guidelines for both <a
+      href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
+      carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>.
   </li>
+  <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
+  <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
+  <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for working on redesigning the Enable project and developing the site in dark mode.</li>
+  <li>Matthew Slavin for his redesign of the Enable Project's website in 2024, and to <a href="https://github.com/basiabaldwin">Basia Baldwin</a> and Travis Doughty for for implementing the redesign on the site. </li>
+  <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).  She also added the Table of Contents component that appears on the top of almost every Enable page.</li>
+  <li>Oluwaseun Longe for adding stylelint to Enable.</li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
-  <li><a href="https://www.useragentman.com/">Zoltan Hawryluk</a> for starting the Enable project to begin with.</li>
+  <li>Noel Tibbles and Yash Narang for contributing to <a href="https://github.com/PublicisSapient/enable-a11y-react">the React version of Enable</a> (still in beta).  Noel has also created the <a href="https://github.com/PublicisSapient/enable-a11y-web-components">Enable's HTML5 Web Components</a>, also in beta.</li>
+  <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing deployment procedures in <a href="https://enable-a11y-react-iqpmwl8kb-publicis-sapient-sandbox.vercel.app/">Vercel</a> for <a href="https://github.com/PublicisSapient/enable-a11y-react">the React version of Enable</a> and create npm package for external use of the accessible components.</li>
+  
+  <li><a href="https://github.com/akr3081">Adam Rock</a> for the accessible <a href="/meter.php">meter</a> and <a href="/audio-player.php">audio player</a> components
+  </li>
+  <li><a href="https://github.com/shiprarawal/shiprarawal">Shipra Rawal</a> for our <a href="infographics.php">Infographics page</a>.</li>
+  <li><a href="https://github.com/lunarias">Jessie Cai</a> for our <a href="tooltip.php">Tooltips page</a> and adding fixes for running Enable locally on a Windows machine.</li>
+  <li>Mahesh Ambig for the unit tests for the Tab Component.</li>
+  <li>Neha Singla for the unit tests for the Combobox Component.</li>
 </ul>
 
 <h2>Code Used By Enable</h2>
@@ -30,14 +47,7 @@
 </p> 
 
 <ul>
-  <li><a href="https://twitter.com/lsnrae">Alison Walden</a> for her UX guidelines for both <a
-      href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
-      carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>
-  </li>
-  <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).
-  </li>
-  <li><a href="https://github.com/akr3081">Adam Rock</a> for the accessible <a href="/meter.php">meter</a> and <a href="/audio-player.php">audio player</a> components
-  </li>
+  
 
   <li><a href="https://code.iamkate.com">Kate Morley</a> for her <a
       href="https://code.iamkate.com/html-and-css/styling-checkboxes-and-radio-buttons/">ARIA radio buttons</a>

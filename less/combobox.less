@@ -7,7 +7,7 @@
         position: relative;
         width: 30em;
         max-width: 100%;
-        font-size: 100%;
+        font-size: (16/@px);
         font-family: sans-serif;
 
         @media @desktop {
@@ -46,7 +46,7 @@
 
     input[role="combobox"] {
         position: relative;
-        font-size: 12px;
+        font-size: (12/@px);
         height: 1.5em;
         width: 100%; /* of pc */
         border: solid 1px #000;
@@ -54,6 +54,10 @@
         padding: 0.9em 0.5em;
         box-sizing: border-box;
         z-index: 1;
+
+        .enable__is-dark-mode & {
+            border-color: @dark-mode-white;
+        }
     }
 
     [role="alert"] {
@@ -78,13 +82,17 @@
         z-index: 2;
         max-height: 200px;
         overflow: auto;
+
+        .enable__is-dark-mode & {
+            background: @dark-mode-black;
+        }
     }
     [role="option"] {
         display: block;
         margin: 0;
         padding: 0.3em 0.5em;
         list-style: none;
-        font-size: 12px;
+        font-size: (12/@px);
         cursor: pointer;
     }
     [role="option"]:hover {

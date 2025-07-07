@@ -42,16 +42,16 @@
       </p>
       <form method="dialog">
         <div>
-          <div>
-            <label for="username">Username:</label>
+          <div class="a11y-modal__form-input-container">
+            <label class="a11y-modal__label" for="username">Username:</label>
             <input id="username" type="text" name="u">
           </div>
-          <div>
-            <label for="password">Password:</label>
+          <div class="a11y-modal__form-input-container">
+            <label class="a11y-modal__label" for="password">Password:</label>
             <input id="password" type="password" name="p">
           </div>
         </div>
-        <div>
+        <div class="a11y-modal__button-group-container">
           <button type="reset" id="cancel_bottom" onClick="onModalButtonClick();">
             Cancel
           </button>

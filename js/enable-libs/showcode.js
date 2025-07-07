@@ -40,7 +40,7 @@ const showcode = new function () {
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(required|novalidate|open|disabled|\$\{[^}]*\})=""/g;
+  const blankAttrValueRe = /(allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|formnovalidate|hidden|inert|ismap|itemscope|loop|multiple|muted|nomodule|novalidate|open|readonly|required|reversed|selected|truespeed|typemustmatch|\$\{[^}]*\})=""/g;
   const commandsRe = /^%[A-Z]*?%/;
   const HTMLCommentBegin = /^\s*<!--/;
   const HTMLCommentEnd = /-->\s*$/;
@@ -347,6 +347,9 @@ const showcode = new function () {
         //    Will show HTML encased in tag with given id
         // "%OUTERHTML% id"
         //    Will show HTML encased in tag with given id (including the tag)
+        // "%FILE% filePath"
+        //    Will allow you to change the code block to a file of your choosing by passing the URL path to the file
+        //    this is useful when you want to show a part of another file e.g. a JavaScript file
 
         command = highlightString.match(commandsRe);
 
@@ -666,7 +669,7 @@ const showcode = new function () {
   }
 
   this.getStickyContainersOffset = (el) => {
-    const stickyEls = document.querySelectorAll('[data-is-sticky="top"] div');
+    const stickyEls = document.querySelectorAll('[data-is-sticky="top"]');
     let offset = 0;
     
     stickyEls.forEach((stickyEl) => {
@@ -675,6 +678,7 @@ const showcode = new function () {
       //}
     });
 
+    console.log('offset', offset);
     return offset
   }
 
@@ -689,7 +693,7 @@ const showcode = new function () {
     if (uiEl === null) {
       return;
     }
-
+ 
     const stickyContainersOffset = uiEl.offsetHeight + this.getStickyContainersOffset(codeEl) + 10;
     const { body } = document;
    
@@ -841,7 +845,8 @@ const showcode = new function () {
 
     if (block) {
       const isJS = (block.dataset.showcodeIsJs === 'true')
-      
+      const isJava = (block.dataset.showcodeIsJava === 'true')
+    
       formatHTMLInBlock(block, replaceRulesJson)
 
       // let's do search and replace here
@@ -850,6 +855,8 @@ const showcode = new function () {
       
       if (isJS) {
         formattedHTML = unformattedHTML.replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
+      } else if (isJava) {
+        formattedHTML = this.unentify(unformattedHTML).replace(HTMLCommentBegin, '').replace(HTMLCommentEnd, '');
       } else {
         formattedHTML = formatHTML(unformattedHTML);
       }
@@ -863,7 +870,6 @@ const showcode = new function () {
 
   function formatHTMLInBlock(block, replaceRulesJson) {
     try {
-
       for (let i in replaceRulesJson) {
         const nodesToReplace = block.querySelectorAll(i);
 

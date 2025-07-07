@@ -1,12 +1,21 @@
 @import "shared/mixins-and-vars";
 
 .enable-input-mask {
+
+    @cursor-color: #000;
+    @cursor-color--dark-mode: @dark-mode-white;
+    @select-color: #b4d5fe;
+
     position: relative;
     display: inline-flex;
     white-space: break-spaces;
 
     &__input {
         color: transparent;
+
+        .enable__is-dark-mode & {
+            color: transparent;
+        }
 
         &::selection {
             color: transparent;
@@ -42,9 +51,14 @@
             width: 1px;
             overflow: hidden;
             margin: 2px 0;
-            background-color: #000;
+            background-color: @cursor-color;
             animation: blink 1.1s infinite steps(1, start);
             position: absolute;
+
+            .enable__is-dark-mode & {
+                background-color: @cursor-color--dark-mode;
+                animation: blink-dark-mode 1.1s infinite steps(1, start);
+            }
         }
 
         &:empty::after {
@@ -61,7 +75,11 @@
     }
 
     &__input:focus + &__mask &__mask-mid-val:not(:empty) {
-        background: #b4d5fe;
+        background: @select-color;
+
+        .enable__is-dark-mode & {
+            color: @dark-mode-black;
+        }
     }
 }
 
@@ -76,3 +94,17 @@
         background-color: transparent;
     }
 }
+
+
+@keyframes blink-dark-mode {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: @dark-mode-white;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+

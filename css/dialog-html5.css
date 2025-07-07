@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 /*
  * This CSS from http://gdkraus.github.io/accessible-modal-dialog/
  */
@@ -14,6 +24,18 @@
   top: 25%;
   left: 25%;
   display: none;
+}
+.a11y-modal__form-input-container {
+  margin-bottom: 10px;
+}
+.a11y-modal__label {
+  display: inline-block;
+  min-width: 7.875rem;
+  text-align: right;
+}
+.a11y-modal__button-group-container {
+  margin-top: 20px;
+  text-align: right;
 }
 .a11y-modal.visible {
   display: block;
@@ -34,6 +56,9 @@
   border: none;
   display: inline;
 }
+.enable__is-dark-mode .a11y-modal__button--close {
+  filter: invert(100%) brightness(140%);
+}
 .a11y-modal__button--close img {
   border: 0;
   width: 38px;
@@ -53,14 +78,25 @@ dialog {
   width: 100vmin;
   margin: 0 auto;
 }
+.enable__is-dark-mode .image {
+  filter: invert(50%);
+}
 .image__container {
   position: relative;
   height: 92vmin;
 }
 .modal__opener {
+  -webkit-appearance: none;
+  appearance: none;
   z-index: 2;
   position: absolute;
   left: calc(50% - 27vmin);
   top: 22vmin;
   font-size: 2.5vmin;
 }
+.enable__is-dark-mode .modal__opener {
+  background: #121212;
+  color: #ededed;
+  border: solid 1px #ededed;
+}
+/*# sourceMappingURL=dialog-html5.css.map */

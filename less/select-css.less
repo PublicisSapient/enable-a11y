@@ -3,7 +3,7 @@
 /* class applies to select element itself, not a wrapper element */
 .select-css {
     display: block;
-    font-size: 16px;
+    font-size: (16/@px);
     font-family: sans-serif;
     font-weight: 700;
     color: #444;
@@ -20,6 +20,12 @@
     -webkit-appearance: none;
     appearance: none;
     background-color: #fff;
+
+    .enable__is-dark-mode & {
+        background-color: @dark-mode-black;
+        color: @dark-mode-white;
+    }
+
     /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
 		for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
 		
@@ -52,6 +58,10 @@
         box-shadow: 0 0 0 3px -moz-mac-focusring;
         color: #222; 
         outline: transparent 1px solid;
+
+        .enable__is-dark-mode & {
+            color: white;
+        }
     }, {
         border-color: inherit;
         box-shadow: none;

@@ -1,10 +1,20 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .enable-combobox__inner-container {
   text-align: left;
   /* pc is positioning context */
   position: relative;
   width: 30em;
   max-width: 100%;
-  font-size: 100%;
+  font-size: 1rem;
   font-family: sans-serif;
 }
 @media only screen and (min-width: 960px) {
@@ -42,7 +52,7 @@
 }
 .enable-combobox input[role="combobox"] {
   position: relative;
-  font-size: 12px;
+  font-size: 0.75rem;
   height: 1.5em;
   width: 100%;
   /* of pc */
@@ -51,6 +61,9 @@
   padding: 0.9em 0.5em;
   box-sizing: border-box;
   z-index: 1;
+}
+.enable__is-dark-mode .enable-combobox input[role="combobox"] {
+  border-color: #ededed;
 }
 .enable-combobox [role="alert"] {
   position: absolute;
@@ -75,12 +88,15 @@
   max-height: 200px;
   overflow: auto;
 }
+.enable__is-dark-mode .enable-combobox [role="listbox"] {
+  background: #121212;
+}
 .enable-combobox [role="option"] {
   display: block;
   margin: 0;
   padding: 0.3em 0.5em;
   list-style: none;
-  font-size: 12px;
+  font-size: 0.75rem;
   cursor: pointer;
 }
 .enable-combobox [role="option"]:hover {
@@ -91,3 +107,4 @@
   color: #fff;
   background-color: #666;
 }
+/*# sourceMappingURL=combobox.css.map */
