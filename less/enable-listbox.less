@@ -11,12 +11,11 @@
 }
 
 .enable-listbox {
-    
     &__left-area,
     &__right-area {
         box-sizing: border-box;
         display: inline-block;
-        font-size: (14/@px);
+        font-size: (14 / @px);
         vertical-align: top;
         width: 50%;
     }
@@ -72,7 +71,6 @@
         left: 0.5em;
     }
 
-
     [role="option"][aria-selected="true"]:focus::before {
         .enable__is-dark-mode & {
             color: @dark-mode-black;
@@ -81,7 +79,7 @@
 
     button {
         border-radius: 0;
-        font-size: (16/@px);
+        font-size: (16 / @px);
         text-align: left;
         padding: 5px 10px;
         width: (150 / @px);
@@ -119,4 +117,10 @@
     .hidden {
         display: none;
     }
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
