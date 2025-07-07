@@ -1,9 +1,20 @@
-<svg width="128" height="192" viewBox="0 0 128 192" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="128" height="192" rx="16" fill="#00B3BD"/>
-  <!-- Plus symbol -->
-  <line x1="64" y1="40" x2="64" y2="72" stroke="white" stroke-width="8" stroke-linecap="round"/>
-  <line x1="48" y1="56" x2="80" y2="56" stroke="white" stroke-width="8" stroke-linecap="round"/>
-  <!-- Down arrow -->
-  <line x1="64" y1="88" x2="64" y2="136" stroke="white" stroke-width="8" stroke-linecap="round"/>
-  <polyline points="48,120 64,136 80,120" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="192" height="96" viewBox="0 0 192 96" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="192" height="96" rx="16" fill="#00B3BD"/>
+
+  <!-- Plus symbol block (centered at x ≈ 48) -->
+  <line x1="38" y1="36" x2="38" y2="60" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <line x1="26" y1="48" x2="50" y2="48" stroke="white" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Three down arrows block (evenly spaced, starting at x ≈ 112) -->
+  <!-- Arrow 1 -->
+  <line x1="112" y1="36" x2="112" y2="60" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <polyline points="104,52 112,60 120,52" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Arrow 2 -->
+  <line x1="136" y1="36" x2="136" y2="60" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <polyline points="128,52 136,60 144,52" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Arrow 3 -->
+  <line x1="160" y1="36" x2="160" y2="60" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <polyline points="152,52 160,60 168,52" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
