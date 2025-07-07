@@ -24,7 +24,7 @@
   </ul>
 
 <p>
-  To help developers ensure headings are marked up correctly, we suggest using <a href="https://www.accessibility-developer-guide.com/setup/helper-tools/bookmarklets/h123/">h123</a>, an excellent bookmarklet that displays all the headings on a page in an easy to read tree structure.</p>
+  To help developers ensure headings are marked up correctly, we suggest <a href="https://www.accessibility-developer-guide.com/setup/helper-tools/bookmarklets/h123/">h123</a>, an excellent bookmarklet that displays all the headings on a page in an easy to read tree structure.</p>
  
 
 
