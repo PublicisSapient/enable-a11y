@@ -147,6 +147,13 @@ h4.showcode__heading {
   font-style: normal;
   background: black;
 }
+.showcode__highlight .sr-only {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 .showcode__highlight .showcode__highlight {
   border: none;
 }

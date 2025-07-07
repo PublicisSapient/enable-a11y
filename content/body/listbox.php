@@ -83,7 +83,7 @@
 
 <div id="html5-example" class="enable-example">
   <label class="select-css__label" for="fave-fruit">
-    Favourite fruit:
+    Favourite element:
   </label>
   <select id="fave-fruit" class="select-css">
     <option value="">Choose one…</option>

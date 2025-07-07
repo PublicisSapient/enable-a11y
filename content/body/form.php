@@ -50,8 +50,11 @@
 
 <div id="example1" class="enable-example">
   <form class="enable-form-example">
-    <fieldset>
+    <fieldset aria-describedby="example1__instructions">
       <legend id="contact_html5">Contact Information</legend>
+
+      <p id="example1__instructions" class="enable-form-example__instructions">Please fill out all available information below.</p>
+
       <div class="enable-form-example__fieldset-inner-container">
         <div class="field-block">
           <label for="name_html5">Name: </label>
@@ -86,6 +89,11 @@
       "label": "Insert fieldset and legend",
       "highlight": "\\s*&lt;[\/]?fieldset&gt; ||| \\s*&lt;legend[\\s\\S]*&gt;[\\s\\S]*&lt;/legend&gt;",
       "notes": "The <strong>legend</strong> tag must be a direct child of the <strong>fieldset</strong> tag in order for it to work across screen readers."
+    },
+    {
+      "label": "Connect instructions to fieldset with aria-describedby",
+      "highlight": "aria-describedby",
+      "notes": "Most screen readers will read the instructions when the user first accesses any of the form elements via keyboard."
     }
   ]
 }
@@ -116,8 +124,11 @@
 
 <div id="example2" class="enable-example">
   <div role="form" class="enable-form-example">
-    <div role="group" aria-labelledby="contact-aria" class="fieldset aria-form-group">
+    <div role="group" aria-labelledby="contact-aria" aria-describedby="example2__instructions" class="fieldset aria-form-group">
       <div id="contact-aria" class="legend">Contact Information</div>
+
+      <p id="example2__instructions" class="enable-form-example__instructions">Please fill out all available information below.</p>
+
       <div class="enable-form-example__fieldset-inner-container">
 
         <div class="field-block">
@@ -164,6 +175,11 @@
         "This ensures that what the aria-labelledby attribute points to acts as a legend for the fieldset.",
         "Unlike a HTML example, the label does not have to be a direct child to the group element (which acts as a fieldset)."
       ]
+    },
+    {
+      "label": "Connect instructions to the group with aria-describedby",
+      "highlight": "aria-describedby",
+      "notes": "Most screen readers will read the instructions when the user first accesses any of the form elements via keyboard."
     }
   ]
 }

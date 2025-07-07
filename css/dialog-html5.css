@@ -25,6 +25,18 @@
   left: 25%;
   display: none;
 }
+.a11y-modal__form-input-container {
+  margin-bottom: 10px;
+}
+.a11y-modal__label {
+  display: inline-block;
+  min-width: 7.875rem;
+  text-align: right;
+}
+.a11y-modal__button-group-container {
+  margin-top: 20px;
+  text-align: right;
+}
 .a11y-modal.visible {
   display: block;
 }

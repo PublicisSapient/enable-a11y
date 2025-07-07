@@ -137,7 +137,7 @@ Your version of Chrome needs to match the `chromedriver` package version. You ca
 
 If there is a problem with running Chromedriver, because you have an error like "SessionNotCreatedError: session not created: This version of ChromeDriver only supports Chrome version XXX", then you should ensure your chromedriver is installed with the right version.
 
-You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (ie. `npm install -D chromedriver@121`).
+You can change the version of chromedriver installed with this project by using `npm install -D chromedriver@XXX`, and replacing XXX with the same version of Chrome you already have installed (e.g., `npm install -D chromedriver@121`).
 
 Links at the [Chrome for Testing availability webpage](https://googlechromelabs.github.io/chrome-for-testing/) allow you to download a separate "Chrome for Testing" application, and/or the associated chromedriver files.
 
@@ -156,6 +156,14 @@ If you still have problems with Chromedriver, you may want to read the Stack Ove
 ### Contributing code
 
 If you would like to contribute to this project, please feel free to raise a Pull Request! See the documentation at [Creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) for instructions.
+
+### I want to update npm and node to later versions supported by Enable.
+
+We encourage doing this, but please test the application to make sure it works with them before merging this into main. Here are the placed to update:
+
+- package.json (search for the `engine` section).
+- .nvmrc (update with the latest node version)
+- push-actions.yml (there are two `node-version` values you will need to update)
 
 ### Style Notes
 

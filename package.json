@@ -1,6 +1,6 @@
 {
   "name": "enable-a11y",
-  "version": "1.3.1",
+  "version": "1.5.0",
   "description": " Demonstration code of aria roles so developers can study the examples and implement aria roles in their own projects.",
   "main": "js/modules/index.js",
   "exports": {
@@ -96,7 +96,7 @@
     "accessibility-js-routines": "^3.4.1",
     "babel-preset-env": "^1.7.0",
     "chalk": "^5.3.0",
-    "chromedriver": "^132.0.1",
+    "chromedriver": "^137.0.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -165,8 +165,8 @@
     "graceful-fs": "^4.2.11"
   },
   "engines": {
-    "npm": ">=10.2.3 <=10.8.1",
-    "node": ">=20.10.0 <=20.16.0"
+    "npm": ">=10.2.3 <=10.9.2",
+    "node": ">=20.10.0 <=22.14.0"
   },
   "jest-puppeteer": {
     "exitOnPageError": false

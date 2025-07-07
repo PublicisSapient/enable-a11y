@@ -39,7 +39,7 @@
   border: none;
   background: transparent;
 }
-.enable__is-dark-mode .gallery .thumb-nav-button img {
+.enable__is-dark-mode .gallery .thumb-nav-button {
   filter: invert(100%);
 }
 .enable__is-dark-mode .gallery .thumbnail-button {
@@ -53,6 +53,7 @@
 }
 .gallery .thumbnail-slider .thumbnails {
   display: flex;
+  overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button {
@@ -82,16 +83,17 @@
 .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
   opacity: 1;
   border: 0.38px solid #2b2b2b;
+  border-bottom-width: 3px;
 }
-.gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
-  opacity: 0.4;
-  border: 0.1px solid #2b2b2b;
+.gallery .thumbnail-slider .thumbnails .thumbnail-button.active img {
+  height: calc(100% + 3px);
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border: 0.38px solid #9a6c6c;
+  border-bottom-width: 3px;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
-  opacity: 1;
-  outline-offset: 2px;
+  margin: 3px;
+  border: 0.1px solid #2b2b2b;
 }
-.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
-  border-color: #fff;
-}
-/*# sourceMappingURL=image-gallery.css.map */
+/*# sourceMappingURL=image-gallery_LOCAL_40253.css.map */

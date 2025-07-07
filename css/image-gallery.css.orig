@@ -39,11 +39,16 @@
   border: none;
   background: transparent;
 }
-.enable__is-dark-mode .gallery .thumb-nav-button img {
+<<<<<<< HEAD
+.enable__is-dark-mode .gallery .thumb-nav-button {
   filter: invert(100%);
 }
 .enable__is-dark-mode .gallery .thumbnail-button {
   border: solid 1px #ededed;
+=======
+.enable__is-dark-mode .gallery .thumb-nav-button img {
+  filter: invert();
+>>>>>>> 4b4cad3a3b90977a36078d2e3c537921790f0794
 }
 .gallery .thumbnail-slider {
   display: flex;
@@ -60,10 +65,14 @@
   height: 40px;
   cursor: pointer;
   border-radius: 5px;
+<<<<<<< HEAD
   margin-right: 5px;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:last-child {
   margin-right: 0;
+=======
+  margin: 0 5px;
+>>>>>>> 4b4cad3a3b90977a36078d2e3c537921790f0794
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button img {
   width: 100%;
@@ -81,11 +90,29 @@
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
   opacity: 1;
+<<<<<<< HEAD
   border: 0.38px solid #2b2b2b;
+  border-bottom-width: 3px;
+}
+.gallery .thumbnail-slider .thumbnails .thumbnail-button.active img {
+  height: calc(100% + 3px);
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border: 0.38px solid #9a6c6c;
+  border-bottom-width: 3px;
+=======
+  border: 1px solid #2b2b2b;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button.active {
+  border-color: #fff;
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
-  opacity: 0.4;
-  border: 0.1px solid #2b2b2b;
+  opacity: 1;
+  border: none;
+}
+.enable__is-dark-mode .gallery .thumbnail-slider .thumbnails .thumbnail-button:hover {
+  border-color: #fff;
+>>>>>>> 4b4cad3a3b90977a36078d2e3c537921790f0794
 }
 .gallery .thumbnail-slider .thumbnails .thumbnail-button:focus-visible {
   opacity: 1;
