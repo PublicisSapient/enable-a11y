@@ -1,15 +1,15 @@
 <svg width="193" height="40" viewBox="0 0 193 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="0.5" width="192" height="39" rx="4.5" stroke="black"/>
-<circle cx="96.1761" cy="19.7532" r="12.6292" fill="black"/>
+<rect x="0.5" y="0.5" width="192" height="39" rx="4.5" stroke="#00B3BD"/>
+<circle cx="96.1761" cy="19.7532" r="12.6292" fill="#00B3BD"/>
 <path d="M104.271 20.077L92.6138 26.8076L92.6138 13.3464L104.271 20.077Z" fill="white"/>
-<path d="M139.893 20.401L121.92 30.7773L121.92 10.0247L139.893 20.401Z" fill="black" fill-opacity="0.63"/>
-<path d="M147.017 20.401L129.044 30.7773L129.044 10.0247L147.017 20.401Z" fill="black" fill-opacity="0.63"/>
-<path d="M52.46 20.4008L70.4323 10.0245L70.4323 30.7771L52.46 20.4008Z" fill="black" fill-opacity="0.63"/>
-<path d="M45.3359 20.4008L63.3083 10.0245L63.3083 30.7771L45.3359 20.4008Z" fill="black" fill-opacity="0.63"/>
-<path d="M22.0205 20.4008L39.9928 10.0245L39.9928 30.7771L22.0205 20.4008Z" fill="black" fill-opacity="0.63"/>
-<path d="M14.8965 20.4008L32.8688 10.0245L32.8688 30.7771L14.8965 20.4008Z" fill="black" fill-opacity="0.63"/>
-<rect x="12.3057" y="9.06689" width="2.5906" height="21.3725" fill="black" fill-opacity="0.63"/>
-<path d="M170.332 20.401L152.36 30.7773L152.36 10.0247L170.332 20.401Z" fill="black" fill-opacity="0.63"/>
-<path d="M177.456 20.401L159.484 30.7773L159.484 10.0247L177.456 20.401Z" fill="black" fill-opacity="0.63"/>
-<rect x="177.456" y="9.06689" width="2.5906" height="21.3725" fill="black" fill-opacity="0.63"/>
+<path d="M139.893 20.401L121.92 30.7773L121.92 10.0247L139.893 20.401Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M147.017 20.401L129.044 30.7773L129.044 10.0247L147.017 20.401Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M52.46 20.4008L70.4323 10.0245L70.4323 30.7771L52.46 20.4008Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M45.3359 20.4008L63.3083 10.0245L63.3083 30.7771L45.3359 20.4008Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M22.0205 20.4008L39.9928 10.0245L39.9928 30.7771L22.0205 20.4008Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M14.8965 20.4008L32.8688 10.0245L32.8688 30.7771L14.8965 20.4008Z" fill="#00B3BD" fill-opacity="0.63"/>
+<rect x="12.3057" y="9.06689" width="2.5906" height="21.3725" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M170.332 20.401L152.36 30.7773L152.36 10.0247L170.332 20.401Z" fill="#00B3BD" fill-opacity="0.63"/>
+<path d="M177.456 20.401L159.484 30.7773L159.484 10.0247L177.456 20.401Z" fill="#00B3BD" fill-opacity="0.63"/>
+<rect x="177.456" y="9.06689" width="2.5906" height="21.3725" fill="#00B3BD" fill-opacity="0.63"/>
 </svg>

@@ -1,0 +1,9 @@
+<svg width="128" height="192" viewBox="0 0 128 192" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="128" height="192" rx="16" fill="#00B3BD"/>
+  <!-- Plus symbol -->
+  <line x1="64" y1="40" x2="64" y2="72" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <line x1="48" y1="56" x2="80" y2="56" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <!-- Down arrow -->
+  <line x1="64" y1="88" x2="64" y2="136" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <polyline points="48,120 64,136 80,120" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

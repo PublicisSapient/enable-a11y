@@ -373,8 +373,10 @@
     "isNPM": "true"
   },
   "load-more.php": {
-    "title": "Accessilble Load More Buttons",
-    "desc": "How to approach pagination using load more buttons."
+    "sectionPages": [{"controls": "Complex Controls"}],
+    "title": "Load More Buttons",
+    "desc": "How to approach pagination using load more buttons.",
+    "isNPM": "false"
   },
   "log.php": {
     "sectionPages": [ { "code-patterns": "ARIA Live Regions" }],
