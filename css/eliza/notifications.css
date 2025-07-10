@@ -1,0 +1,47 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.eliza #notification-area {
+  position: fixed;
+  left: 15px;
+  top: 10px;
+  width: 200px;
+  z-index: 100;
+}
+.eliza .notification-wrapper {
+  width: 100%;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+.eliza .positive-notification {
+  background-color: #D8F6CE;
+}
+.eliza .info-notification {
+  background-color: #F5D0A9;
+}
+.eliza .negative-notification {
+  background-color: #8A0808;
+}
+.eliza .notification-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+}
+.eliza .notification-hiding-text {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.625rem;
+}
+.eliza .dark-text {
+  color: #2e2e2e;
+}
+.eliza .light-text {
+  color: white;
+}
+/*# sourceMappingURL=notifications.css.map */
