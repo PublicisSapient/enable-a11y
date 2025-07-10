@@ -47,6 +47,7 @@
         slidesToShow: 1,
         resizeLock: true,
         duration: 0.5,
+        passiveListeners: false,
         // easeInQuad
         easing: function (x, t, b, c, d) {
           return c * (t /= d) * t + b
@@ -82,9 +83,14 @@
 
     // set events
     _.resize = _.init.bind(_, true)
-    _.event(_.ele, 'add', {
-      scroll: _.updateControls.bind(_)
-    })
+    _.event(
+      _.ele,
+      'add',
+      {
+        scroll: _.updateControls.bind(_)
+      },
+      { passive: _.opt.passiveListeners }
+    )
     _.event(_window, 'add', {
       resize: _.resize
     })
@@ -201,7 +207,11 @@
 
     _.ele.classList.toggle('draggable', _.opt.draggable === true)
     _.event(_.ele, 'remove', events)
-    if (_.opt.draggable) _.event(_.ele, 'add', events)
+    if (_.opt.draggable) {
+      _.event(_.ele, 'add', events, {
+        passive: _.opt.passiveListeners
+      })
+    }
   }
 
   gliderPrototype.buildDots = function () {

@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .eliza .chat-message-outter-wrapper {
   width: 100%;
   padding-top: 5px;
@@ -54,6 +64,34 @@
   right: 40px;
   width: 350px;
   z-index: 1000;
+}
+.chatbot-container {
+  position: relative;
+}
+.chatbot-close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  -webkit-appearance: none;
+  -khtml-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  display: inline;
+}
+.chatbot-close img {
+  border: 0;
+  width: 38px;
+  height: 38px;
+}
+.chatbot label {
+  color: black;
+}
+.chatbot-desc {
+  margin: 0 10px;
+  color: black;
 }
 .show-chatbot .chatbot {
   display: block;
@@ -115,8 +153,7 @@
   border: none;
   font-size: 0.95rem;
   height: 55px;
-  padding: 16px 15px 16px 0;
-  resize: none;
+  padding: 16px 15px;
   width: 100%;
 }
 .chatbot-input button {
@@ -162,3 +199,4 @@
 .show-chatbot .chatbot-btn span:last-child {
   opacity: 1;
 }
+/*# sourceMappingURL=chat.css.map */

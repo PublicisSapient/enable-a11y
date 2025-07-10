@@ -1,3 +1,13 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
 .eliza .send-wrapper {
   padding: 10px;
 }
@@ -30,3 +40,4 @@
   font-size: 0.75rem;
   font-family: 'Source Sans Pro', sans-serif;
 }
+/*# sourceMappingURL=send.css.map */

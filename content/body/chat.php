@@ -3,13 +3,20 @@
 </p>
 
 <div class="chatbot-container">
-  <div aria-labelledby="chatbot-heading" class="chatbot" role="region">
+  <div aria-labelledby="chatbot-heading" class="chatbot" role="dialog">
+    
+    <button id="cancel" class="chatbot-close" autofocus>
+        <img class="a11y-modal__button--close-image" src="images/close-window.svg" alt="close this dialog">
+      </button>
     <div class="chatbot-heading" id="chatbot-heading">
-      <h2>Chatbot Heading</h2>
+      <h2>Chat with us</h2>
+      
     </div>
-    <ul aria-live="polite" class="chatbot-dialogue" tabindex="0"></ul>
+    <div class="chatbot-desc">Let us know what you want to talk about in the form below</div>
+    <ul class="chatbot-dialogue" tabindex="0"></ul>
+    <div class="chatbot-sr-dialog sr-only" aria-live="polite" ></div>
     <form class="chatbot-input">
-      <label class="sr-only" for="chat-textarea">Chat dialogue:</label>
+      <label for="chat-textarea">Message:</label>
       <textarea id="chat-textarea"></textarea>
       <button type="submit">
         <span class="sr-only">Submit your chat dialogue.</span>
