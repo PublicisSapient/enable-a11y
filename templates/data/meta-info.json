@@ -352,7 +352,7 @@
   "img.php": {
     "sectionPages": [ { "content": "Static Content" }],
     "title": "Images",
-    "desc": "How to code both &gt;img&lt; tags and background images so they are understandable by screen reader users."
+    "desc": "How to code both &lt;img&gt; tags and background images so they are understandable by screen reader users."
   },
   "image-gallery.php":{
     "sectionPages": [{"controls": "Complex Controls"}],
