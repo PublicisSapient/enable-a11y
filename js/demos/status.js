@@ -14,13 +14,13 @@ const dictLookup = new (function () {
     );
     const $lookupForm = document.querySelector('.wiktionary-lookup__form');
     const $word = document.querySelector('.wiktionary-lookup__word');
-    const $pageAlert = document.querySelector('.wiktionary-lookup__page-alert');
+    const $pageStatus = document.querySelector('.wiktionary-lookup__page-status');
 
     function showPage(page, text) {
         $pageTitle.innerHTML = page;
         $wikiInfo.innerHTML = text;
         $licenceInfo.style.display = 'block';
-        $pageAlert.innerHTML = `Now displaying information about the word "${page}".`;
+        $pageStatus.innerHTML = `Now displaying information about the word "${page}".`;
 
         // now you can modify content of #wikiInfo as you like
 
@@ -42,7 +42,7 @@ const dictLookup = new (function () {
             const $msg = `<p>Please wait .. looking up "${word}".</p>`;
             e.preventDefault();
             $wikiInfo.innerHTML = $msg;
-            $pageAlert.innerHTML = $msg;
+            $pageStatus.innerHTML = $msg;
             fetch(baseURL + word).then((response) => {
                 if (response.status === 200) {
                     $wikiInfoContainer.classList.add(
@@ -54,7 +54,7 @@ const dictLookup = new (function () {
                         } else {
                             const msg = `<p>Unable to find any information about "${word}".</p>`;
                             $wikiInfo.innerHTML = msg;
-                            $pageAlert.innerHTML = msg;
+                            $pageStatus.innerHTML = msg;
                             $licenceInfo.style.display = 'block';
                             $pageTitle.innerHTML = 'Not Found';
                         }

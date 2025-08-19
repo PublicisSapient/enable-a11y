@@ -23,7 +23,7 @@
   </form>
   <div class="wiktionary-lookup__content-container">
     <h3 class="wiktionary-lookup__page-title">Not found.</h3>
-    <div class="wiktionary-lookup__page-alert sr-only" role="status" aria-live="polite">
+    <div class="wiktionary-lookup__page-status sr-only" role="status" aria-live="polite">
 
     </div>
     <div class="wiktionary-lookup__content"></div>
@@ -46,7 +46,7 @@
     "this": "that"
   },
   "steps": [{
-      "label": "Add role of alert",
+      "label": "Add role of status",
       "highlight": "role",
       "notes": ""
     },
@@ -56,7 +56,7 @@
       "notes": "This should be set to <strong>polite</strong> if you want it to be announced after the screen reader is finished announcing other things, or <strong>assertive</strong> if you want the screen reader to interrupt what it is currently saying to state the message inside.  The latter should only be used sparingly."
     },
     {
-      "label": "Hide the alert with sr-only CSS class",
+      "label": "Hide the status message with sr-only CSS class",
       "highlight": "sr-only",
       "notes": "This is <a href=\"screen-reader-only-text.php\">a standard class that hides items visually but allows screen readers to access them</a>."
     },
