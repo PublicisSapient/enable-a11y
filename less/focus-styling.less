@@ -27,3 +27,72 @@
     );
     }
 }
+
+.kb-instructions {
+
+  &__container &__text {
+    .enable__visually-hidden();
+  }
+
+
+
+
+  &__container:has(:focus-visible):focus-within &__text {
+    .enable__visually-hidden--reverse();
+    background: black;
+    color: white;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    padding: 4px;
+
+    .enable__is-dark-mode & {
+      background: #999;
+      color: black;
+    }
+  }
+}
+
+.circleless-radio-buttons {
+  display: inline-block;
+
+
+  label {
+    min-width: 100px;
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 5px;
+    float: left;
+
+    .enable__is-dark-mode & {
+      border: solid 1px white;
+    }
+
+    &::last-child {
+      margin-right: none;
+    }
+  }
+
+  input {
+    .enable__visually-hidden();
+
+    + label {
+      text-align: center;
+    }
+
+    &:focus + label {
+      outline: solid 2px @focus-color;
+      outline-offset: 2px;
+    }
+
+    &:checked + label {
+      background-color: #333;
+      color: #fff;
+
+      .enable__is-dark-mode & {
+        background-color: #ccc;
+        color: #000;
+      }
+    }
+  }
+}

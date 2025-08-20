@@ -30,4 +30,78 @@
   outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
+.kb-instructions__container .kb-instructions__text {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+.kb-instructions__container:has(:focus-visible):focus-within .kb-instructions__text {
+  clip: auto;
+  -webkit-clip-path: none;
+  clip-path: none;
+  height: auto;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+  width: auto;
+  margin: auto;
+  background: black;
+  color: white;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  padding: 4px;
+}
+.enable__is-dark-mode .kb-instructions__container:has(:focus-visible):focus-within .kb-instructions__text {
+  background: #999;
+  color: black;
+}
+.circleless-radio-buttons {
+  display: inline-block;
+}
+.circleless-radio-buttons label {
+  min-width: 100px;
+  border-radius: 5px;
+  padding: 3px;
+  margin-right: 5px;
+  float: left;
+}
+.enable__is-dark-mode .circleless-radio-buttons label {
+  border: solid 1px white;
+}
+.circleless-radio-buttons label::last-child {
+  margin-right: none;
+}
+.circleless-radio-buttons input {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  margin: -1px;
+}
+.circleless-radio-buttons input + label {
+  text-align: center;
+}
+.circleless-radio-buttons input:focus + label {
+  outline: solid 2px var(--focus-color);
+  outline-offset: 2px;
+}
+.circleless-radio-buttons input:checked + label {
+  background-color: #333;
+  color: #fff;
+}
+.enable__is-dark-mode .circleless-radio-buttons input:checked + label {
+  background-color: #ccc;
+  color: #000;
+}
 /*# sourceMappingURL=focus-styling.css.map */

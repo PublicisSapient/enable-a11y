@@ -385,3 +385,24 @@ instead of using <code>outline: none</code> to remove the default focus ring, de
   }
 ]}
 </script>
+
+<h2 id="kb-only-focus-within">Showing Instructions for Keyboard Users Only</h2>
+
+<div id="kb-only-focus-within__example" class="enable-example">
+
+  <form>
+    <fieldset class="kb-instructions__container">
+      <legend>Product Size</legend>
+
+
+      <p>How much Zoltania Olive Oil would you like to buy?</p>
+
+      <div class="kb-instructions__text">Use arrow keys to choose one of the following</div>
+      <div class="circleless-radio-buttons"><input name="radio-group-01" type="radio" id="radio-a1"><label for="radio-a1">100 mL</label></div>
+      <div class="circleless-radio-buttons"><input name="radio-group-01" type="radio" id="radio-a2"><label for="radio-a2">500 mL</label></div>
+      <div class="circleless-radio-buttons"><input name="radio-group-01" type="radio" id="radio-a3"><label for="radio-a3">1 L</label></div>
+      <div class="circleless-radio-buttons"><input name="radio-group-01" type="radio" id="radio-a4"><label for="radio-a4">10 L</label></div>
+      <div class="circleless-radio-buttons"><input name="radio-group-01" type="radio" id="radio-a5"><label for="radio-a5">More than I'm ever going to use</label></div>
+    </fieldset>
+  </form>
+</div>
