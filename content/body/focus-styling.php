@@ -1,3 +1,26 @@
+<!--
+
+We need to handle this:
+
+.container-with-visible-on-focus-instructions:has(:focus-visible):focus-within::before {
+        content: "Use arrow keys to select";
+        background: black;
+        color: white;
+        padding: 3px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        transform: translateY(-3rem);
+}
+
+.container-with-visible-on-focus-instructions.variation-tabs:has(:focus-visible):focus-within {
+        margin-top: -3rem;
+}
+
+-->
+
+
+
 <p>
   Before we dive into making focus outlines accessible, let's first understand what a focus outline is and why it’s important for web accessibility, particularly for screen readers. 
   If you're already familiar with focus outlines, feel free to skip to the next section. For those who aren’t, here's a brief definition.
