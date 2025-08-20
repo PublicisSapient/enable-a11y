@@ -35,6 +35,13 @@ const dictLookup = new (function () {
         // ...
     }
 
+    function showMessage(msg) {
+        $wikiInfo.innerHTML = msg;
+        $pageStatus.innerHTML = msg;
+        $licenceInfo.style.display = 'block';
+        $pageTitle.innerHTML = 'Not Found';
+    }
+
     this.init = () => {
         $pageTitle.style.display = 'none';
         $lookupForm.addEventListener('submit', function (e) {
@@ -49,14 +56,21 @@ const dictLookup = new (function () {
                         'wiktionary-lookup__content-container--is-loaded',
                     );
                     response.json().then((json) => {
-                        if (json && json.parse && json.parse.revid > 0) {
-                            showPage(word, json.parse.text['*']);
+                        console.log(json)
+                        if (json ) {
+                            if (json.error) {
+                                showMessage(`<p>Unable to lookup word.  An error has occured.</p>
+                                    <!--
+                                        ${json.error.trim()}
+                                    -->
+                                `);
+                            } else if (json.parse && json.parse.revid > 0) {
+                                showPage(word, json.parse.text['*']);
+                            }
                         } else {
-                            const msg = `<p>Unable to find any information about "${word}".</p>`;
-                            $wikiInfo.innerHTML = msg;
-                            $pageStatus.innerHTML = msg;
-                            $licenceInfo.style.display = 'block';
-                            $pageTitle.innerHTML = 'Not Found';
+                            showMessage(`<p>Unable to find any information about "${word}".</p>`);
+                            
+                            
                         }
                     });
                 }
