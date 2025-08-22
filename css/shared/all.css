@@ -578,7 +578,7 @@ iframe:focus-visible {
   position: static;
   white-space: normal;
   width: auto;
-  margin: auto;
+  margin: initial;
 }
 /*
  * Style for "Skip Navigation" type links.  Should have an href linked to 

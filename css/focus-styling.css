@@ -30,18 +30,19 @@
   outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 white, -3px -3px 0 white, -3px 3px 0 white, 3px -3px 0 white;
 }
-.kb-instructions__container .kb-instructions__text {
-  clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  margin: -1px;
+.has-kb-instructions__text {
+  background-color: black;
+  color: white;
+  width: 100%;
+  display: block;
+  margin: 10px 0 15px 0 !important;
+  padding: 4px;
 }
-.kb-instructions__container:has(:focus-visible):focus-within .kb-instructions__text {
+.enable__is-dark-mode .has-kb-instructions__text {
+  background: #999;
+  color: black;
+}
+.has-kb-instructions__container:has(:focus-visible):focus-within .has-kb-instructions__text {
   clip: auto;
   -webkit-clip-path: none;
   clip-path: none;
@@ -50,23 +51,32 @@
   position: static;
   white-space: normal;
   width: auto;
-  margin: auto;
-  background: black;
-  color: white;
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  padding: 4px;
+  margin: initial;
 }
-.enable__is-dark-mode .kb-instructions__container:has(:focus-visible):focus-within .kb-instructions__text {
-  background: #999;
-  color: black;
+#kb-only-focus-within__example {
+  text-align: center;
+}
+#kb-only-focus-within__example legend {
+  font-size: 20/16rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+#kb-only-focus-within__example p {
+  margin-bottom: 20px;
+}
+#kb-only-focus-within__example button[type="submit"] {
+  margin: 20px auto;
+  display: block;
+  font-size: 16/16rem;
+  border-radius: 30px;
+  padding: 5px 10px;
 }
 .circleless-radio-buttons {
   display: inline-block;
 }
 .circleless-radio-buttons label {
   min-width: 100px;
+  border: solid 1px #333;
   border-radius: 5px;
   padding: 3px;
   margin-right: 5px;
