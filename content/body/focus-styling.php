@@ -1,23 +1,4 @@
-<!--
 
-We need to handle this:
-
-.container-with-visible-on-focus-instructions:has(:focus-visible):focus-within::before {
-        content: "Use arrow keys to select";
-        background: black;
-        color: white;
-        padding: 3px;
-        width: 100%;
-        display: block;
-        position: absolute;
-        transform: translateY(-3rem);
-}
-
-.container-with-visible-on-focus-instructions.variation-tabs:has(:focus-visible):focus-within {
-        margin-top: -3rem;
-}
-
--->
 
 
 
