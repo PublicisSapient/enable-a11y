@@ -1,0 +1,29 @@
+@import "shared/mixins-and-vars";
+
+.datetimepicker {
+    &__input-label {
+        padding-right: (10 / @px);
+    }
+    &__input-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    &__table {
+        border-collapse: collapse;
+        width: 100%;
+        & th {
+            background-color: #d0e1f1;
+            width: 50%;
+        }
+        & td,th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: (10 / @px);
+        }
+    }
+}
+@media @mobile {
+    .datetimepicker__input-wrapper {
+        flex-direction: column;
+    }
+}

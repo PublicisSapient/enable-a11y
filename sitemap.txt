@@ -40,6 +40,7 @@ https://www.useragentman.com/enable/radiogroup.php
 https://www.useragentman.com/enable/skip-link.php
 https://www.useragentman.com/enable/slider.php
 https://www.useragentman.com/enable/spinner.php
+https://www.useragentman.com/enable/datetimepicker.php
 https://www.useragentman.com/enable/status.php
 https://www.useragentman.com/enable/switch.php
 https://www.useragentman.com/enable/table.php

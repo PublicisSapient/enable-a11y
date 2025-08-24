@@ -16,9 +16,17 @@ const nodeFiles = [
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/accessibility-js-routines/dist/accessibility.module.js',
     'node_modules/wicg-inert/dist/inert.min.js',
+    'node_modules/flatpickr/dist/flatpickr.min.js',
+    'node_modules/flatpickr/dist/flatpickr.min.css',
+    'node_modules/flatpickr/dist/esm/l10n/'
 ];
 
+const isFileRe = /\.(js|css)$/;
+
 nodeFiles.forEach((fullPath) => {
+    
+    const isDir = !(isFileRe.test(fullPath));
+
     const explodedPath = fullPath.split('/');
     let fileName = explodedPath.pop();
     let dir = explodedPath
@@ -33,13 +41,17 @@ nodeFiles.forEach((fullPath) => {
     }
 
     const newPath = `${dir}/${fileName}`;
-    console.log(`Copying node module ${fullPath} to ${newPath}.`);
+    console.log(`Copying ${isDir?"directory":"file"} ${fullPath} to ${newPath}.`);
 
-    fs.copyFile(fullPath, newPath, (err) => {
+    fs.cp(fullPath, newPath, {recursive: isDir}, (err) => {
         if (err) {
             throw err;
         } else {
-            console.log(`${fullPath} was copied to ${newPath}`);
+            if (isDir) {
+                console.log(`Directory ${fullPath} was copied to ${newPath}`);
+            } else {
+                console.log(`File ${fullPath} was copied to ${newPath}`);
+            }
         }
     });
 });
