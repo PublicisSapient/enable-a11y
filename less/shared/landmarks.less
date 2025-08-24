@@ -73,12 +73,12 @@ header,
     }
 
     .acme {
-        font-size: (70/@px);
+        font-size: (70 / @px);
         font-weight: 900;
     }
 
     .zoltipedia {
-        font-size: (60/@px);
+        font-size: (60 / @px);
     }
 
     .corp {
@@ -187,7 +187,7 @@ aside,
             0 -1px 0 #000,
             3px 3px #000;
 
-        font-size: (40/@px);
+        font-size: (40 / @px);
         font-weight: bold;
     }
 
@@ -212,11 +212,16 @@ footer,
 }
 
 .enable__is-dark-mode {
-    aside, [role="complementary"] {
-        background: #444 data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+    aside,
+    [role="complementary"] {
+        background: #444 no-repeat 1em 1em;
         border-color: #aaa;
         a {
             color: @light-orange;
+        }
+        @media @tablet-up {
+            background: #444 data-uri("../../images/notepad-icon.svg") no-repeat
+                1em 1em;
         }
     }
 }
