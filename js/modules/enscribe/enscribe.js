@@ -4,7 +4,11 @@ const en = {
     players: new Map(),
     mods: new Map(),     // type -> module (html5|vimeo|youtube|…)
     urls: new Map(),     // type -> absolute URL to plugin file
-    ready: false
+    ready: false,
+    l10n: {
+      adOn:  'Turn on audio descriptions',
+      adOff: 'Turn off audio descriptions'
+    }
   };
   
   // Base-path from this file
@@ -110,6 +114,18 @@ const en = {
     // plugin can either default-export the module object or export {plugin}
     register(type, mod.default || mod.plugin || mod);
   }
+
+  export function setupL10n () {
+    console.log('!');
+    const dataEl = document.getElementById('enscribe-data');
+
+    if (dataEl) {
+      const { dataset } = dataEl;
+      for (let i in dataEl.dataset) {
+        en.l10n[i] = dataset[i];
+      }
+    }
+  }
   
   // Map DOM -> players
   export function createPlayerMappings() {
@@ -147,6 +163,7 @@ const en = {
         const el = e.currentTarget;
         const {enscribeButtonFor} = el.dataset;
         const p = en.players.get(enscribeButtonFor);
+        let buttonAriaLabel;
 
         if (!p) {
           console.error(`No enscribe video with id ${enscribeButtonFor}.`);
@@ -154,7 +171,14 @@ const en = {
         }
         p.enabled = !p.enabled;
         el.classList.toggle('active');
-        el.setAttribute('aria-label', `Turn ${p.enabled ? 'off' : 'on'} audio descriptions`);
+        if (p.enabled) {
+
+        }
+        
+        buttonAriaLabel = (p.enabled ? en.l10n.adOff : en.l10n.adOn);
+        
+        el.setAttribute('aria-label', buttonAriaLabel);
+
         const mod = en.mods.get(p.type);
         if (p.ADSource && mod?.updateSource) {
           await mod.updateSource(p, p.enabled ? 'AD' : 'standard');
@@ -163,13 +187,14 @@ const en = {
         }
       });
     });
+
   }
   
   // Public: initialize everything (dynamic plugin loading by type)
   export async function init() {
     if (en.ready) return;
     en.ready = true;
-  
+    setupL10n();
     createPlayerMappings();
   
     // Load & setup each player’s plugin
