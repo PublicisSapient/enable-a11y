@@ -1,0 +1,27 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+button.icon-audio-descriptions {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: solid 1px transparent;
+  caret-color: rgba(0, 0, 0, 0);
+  background-image: url('../images/enscribe/icon-audio-description--off.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: block;
+}
+/* Active State of AD Button */
+button.icon-audio-descriptions.active {
+  background-image: url('../images/enscribe/icon-audio-description.svg');
+}
+/*# sourceMappingURL=enscribe-basic-ui.css.map */

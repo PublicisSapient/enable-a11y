@@ -1,0 +1,24 @@
+
+@import "shared/mixins-and-vars";
+
+  button.icon-audio-descriptions {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: solid 1px transparent;
+    caret-color: rgba(0,0,0,0);
+    background-image: url('../images/enscribe/icon-audio-description--off.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display:block;
+  } 
+  
+  
+  /* Active State of AD Button */
+  
+  button.icon-audio-descriptions.active  {
+    background-image: url('../images/enscribe/icon-audio-description.svg');
+  }
+  
+  

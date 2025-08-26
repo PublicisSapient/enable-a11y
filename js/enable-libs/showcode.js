@@ -40,7 +40,7 @@ const showcode = new function () {
   const tagLine = /^\s*</;
   const blankString = /^\s*$/;
   const ellipsesRe = /(\s*\.\.\.)/g;
-  const blankAttrValueRe = /(allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|formnovalidate|hidden|inert|ismap|itemscope|loop|multiple|muted|nomodule|novalidate|open|readonly|required|reversed|selected|truespeed|typemustmatch|\$\{[^}]*\})=""/g;
+  const blankAttrValueRe = /(allowfullscreen|async|autofocus|autoplay|checked|controls|default|defer|disabled|formnovalidate|hidden|inert|ismap|itemscope|loop|multiple|muted|nomodule|novalidate|open|readonly|required|reversed|selected|truespeed|typemustmatch|data-ad-player|\$\{[^}]*\})=""/g;
   const commandsRe = /^%[A-Z]*?%/;
   const HTMLCommentBegin = /^\s*<!--/;
   const HTMLCommentEnd = /-->\s*$/;
@@ -320,6 +320,10 @@ const showcode = new function () {
 
       if (highlightString !== "") {
 
+        // If you want to highlight an HTML attribute, it's just as simple as writing the name/value pair as:
+        //  "highlight": "name=\\\"value\\\""
+        // If you want something more fancy, you must highlight using a command.
+        
         // If this is a command, extract it and set highlightString to the remainder.
         // Commands are in the form of:
         // 
@@ -412,8 +416,11 @@ const showcode = new function () {
                     highlightCode(command, highlightString, showcodeFor, notesEl, showcodeNotes, code, codeEl, doScroll, isFinalStep);
                   });
                 })();
+                const string = splitHighlightString[1];
 
-                highlightString = splitHighlightString[1].trim();
+                if (string) {
+                  highlightString = string.trim();
+                }
 
                 break;
               }
@@ -546,6 +553,7 @@ const showcode = new function () {
                 const htmlAttr = (command === '%OUTERHTML%' ? 'outerHTML' : 'innerHTML');
                 if (HTMLTemplateEl) {
                   let html = HTMLTemplateEl[htmlAttr];
+                  html = html.replace(`id="enscribe-js"`, "");
                   html = html.replace(`id="${id}"`, `id='${id}'`);
                   html = html.replace(/\s{2,}/g, " ");
                   code = this.entify(formatHTML(html));
@@ -712,6 +720,8 @@ const showcode = new function () {
       }
 
       
+    } else {
+      containerEl.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
     }
 
     this.scrollIntoViewIfOffscreen(containerEl, stepsEl, firstHighlightedElement, behavior);
@@ -869,17 +879,27 @@ const showcode = new function () {
   }
 
   function formatHTMLInBlock(block, replaceRulesJson) {
+    const stringRegex = /^string:/
     try {
       for (let i in replaceRulesJson) {
-        const nodesToReplace = block.querySelectorAll(i);
+        if (stringRegex.test(i)) {
+          const replaceRegex = new RegExp(i.replace(/^string:/, ''));
+          const replaceString = replaceRulesJson[i];
+          const blockContent = block.innerHTML;
+          blockContent.replace(replaceRegex, replaceString);
+          block.innerHTML = blockContent;
+        } else {
 
-        for (let j = 0; j < nodesToReplace.length; j++) {
-          const node = nodesToReplace[j];
-          const content = replaceRulesJson[i];
-          if (Array.isArray(content)) {
-            node.innerHTML = content.join('');
-          } else {
-            node.innerHTML = content;
+          const nodesToReplace = block.querySelectorAll(i);
+
+          for (let j = 0; j < nodesToReplace.length; j++) {
+            const node = nodesToReplace[j];
+            const content = replaceRulesJson[i];
+            if (Array.isArray(content)) {
+              node.innerHTML = content.join('');
+            } else {
+              node.innerHTML = content;
+            }
           }
         }
       }
