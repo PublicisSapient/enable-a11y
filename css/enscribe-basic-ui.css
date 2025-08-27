@@ -1,0 +1,34 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.enscribe-video-container {
+  position: relative;
+}
+.enscribe-video-container button.icon-audio-descriptions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+button.icon-audio-descriptions {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  border: solid 1px transparent;
+  caret-color: rgba(0, 0, 0, 0);
+  background-image: url('../images/enscribe/icon-audio-description--off.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: block;
+}
+button.icon-audio-descriptions[aria-checked="true"] {
+  background-image: url('../images/enscribe/icon-audio-description.svg');
+}
+/*# sourceMappingURL=enscribe-basic-ui.css.map */
