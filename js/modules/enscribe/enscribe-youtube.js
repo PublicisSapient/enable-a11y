@@ -34,7 +34,9 @@ const mod = {
   async setup(p) {
     // If not using an alternate AD video, build a proxy descriptions track
     if (!p.element.dataset.adVideoSource) {
-      const v = document.createElement('video');
+      const v = Object.assign(document.createElement('video'), {
+				ariaHidden: 'true'
+			});
       const t = Object.assign(document.createElement('track'), {
         kind: 'descriptions', label: 'Audio Descriptions', srclang: 'en'
       });

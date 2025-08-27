@@ -23,14 +23,14 @@ function includeFileWithVariables($fileName, $variables = [])
 }
 
 function includeShowcode(
-    string $id,
-    string $cssId = "",
-    string $jsId = "",
-    string $extra = "",
-    bool $isInteractive = true,
-    int $headingLevel = 3,
-    string $prologue = "",
-    bool $displayOuterHTML = false
+    $id,
+    $cssId = "",
+    $jsId = "",
+    $extra = "",
+    $isInteractive = true,
+    $headingLevel = 3,
+    $prologue = "",
+    $displayOuterHTML = false
 ) {
     includeFileWithVariables("includes/showcode-template.php", [
         "id" => $id,

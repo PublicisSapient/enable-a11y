@@ -16,7 +16,7 @@
 
 <div id="enscribe-html5-example" class="enable-example">
     <div class="enscribe-video-container">
-        <button data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
+        <button type="button" data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
         </button>
     
         <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls>
@@ -71,13 +71,13 @@
 <h3>Vimeo</h3>
 
 <div id="vimeo-example" class="enable-example">
-    <iframe id="vimeo-example-video" class="enable-video" data-enscribe="vimeo" data-enscribe-global-pause="true"
-        width="100%" height="auto" data-enscribe-vtt-path="../vtt/vimeo-audio-descriptions.vtt"
-        src="https://player.vimeo.com/video/76979871?h=8272103f6e" width="640" height="360" frameborder="0"
+    <iframe title="Vimeo Video Example" id="vimeo-example-video" class="enable-video" data-enscribe="vimeo" data-enscribe-global-pause="true"
+        data-enscribe-vtt-path="../vtt/vimeo-audio-descriptions.vtt"
+        src="https://player.vimeo.com/video/76979871?h=8272103f6e" 
         allowfullscreen allow="autoplay; encrypted-media"></iframe>
     
     <label>
-        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
+        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" checked aria-label="Audio descriptions">
         Turn on audio descriptions
     </label>
 </div>
@@ -126,11 +126,10 @@
 <h3>YouTube</h3>
 
 <div id="youtube-example" class="enable-example">
-    <iframe id="youtube-example-video" autoplay width="100%" height="auto" class="enable-video" data-enscribe="youtube"
+    <iframe title="Youtube Video Example" id="youtube-example-video" class="enable-video" data-enscribe="youtube"
         data-enscribe-VTT-path="../vtt/youtube-audio-descriptions.vtt" data-enscrine-ducking="20%"
-        src="https://www.youtube.com/embed/MfLXHHeUS2s?enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
-    <button data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Audio descriptions" aria-checked="false"></button>
-    </button>
+        src="https://www.youtube.com/embed/MfLXHHeUS2s?enablejsapi=1&rel=0"  allowfullscreen></iframe>
+    <button type="button" data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Audio descriptions" aria-checked="false"></button>
 </div>
 
 <?php includeShowcode("youtube-example", headingLevel: 4) ?>
@@ -183,7 +182,7 @@
     <thead>
         <tr>
             <th scope="col">Attribute name</th>
-            <th scole="col">Purpose</th>
+            <th scope="col">Purpose</th>
         </tr>
     </thead>
     <tbody>
@@ -227,7 +226,7 @@
     <thead>
         <tr>
             <th scope="col">Class Name</th>
-            <th scole="col">Purpose</th>
+            <th scope="col">Purpose</th>
             <th scope="col">Example</th>
         </tr>
     </thead>
