@@ -31,39 +31,31 @@
     video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
     download that at that point. </p>
 
-<h2>How It's Put Together</h2>
-<p>The package has a small core (<code>enscribe.js</code>) plus add-on modules for different video types:</p>
-<ul>
-    <li>
-        <p><code>enscribe-html5.js</code>, for HTML5 videos loaded with the <code>&lt;video&gt;</code> tag.
-        </p>
-    </li>
-    <li>
-        <p><code>enscribe-youtube.js</code>, for YouTube videos.</p>
-    </li>
-    <li>
-        <p><code>enscribe-vimeo.js</code> for Vimeo videos.</p>
-    </li>
-</ul>
 
-<h1>A Simple HTML5 Video example</h1>
+<h2>Examples</h2>
+
+<h3>HTML5 Video</h3>
 
 <p>Use the code walkthrough component below this simple HTML5 video example. It's just five easy steps to add audio
     descriptions to any video using Enscribe.</p>
 
 <div id="enscribe-html5-example" class="enable-example">
-    <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls>
-        <source src="https://www.gileadhiv.com/static/blind-angels_trailer-b882aa5b7d039e16b48c024e23764bc0.mp4"
-            type="video/mp4">
-        <track src="vtt/blind-angels-captions.vtt" kind="captions" srclang="en" label="English">
-        <track src="vtt/blind-angels-descriptions.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
-    </video>
-    <button data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions"
-        aria-label="Turn on audio descriptions">
-    </button>
+    <div class="enscribe-video-container">
+        <button data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
+        </button>
+    
+        <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls>
+            <source src="https://www.gileadhiv.com/static/blind-angels_trailer-b882aa5b7d039e16b48c024e23764bc0.mp4"
+                type="video/mp4">
+            <track src="vtt/blind-angels-captions.vtt" kind="captions" srclang="en" label="English">
+            <track src="vtt/blind-angels-descriptions.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
+        </video>
+    </div>
+    
+
 </div>
 
-<?php includeShowcode("enscribe-html5-example") ?>
+<?php includeShowcode("enscribe-html5-example", headingLevel: 4) ?>
 <script type="application/json" id="enscribe-html5-example-props">
 {
     "replaceHtmlRules": {
@@ -88,7 +80,7 @@
     {
         "label": "Create the UI for an audio description button",
         "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
-        "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
+        "notes": "There are many types of controls you can use to turn on and off audio descriptions.  For the HTML5 version, I decided to use a <code>button</code> with <code>role=\"switch\"</code>, but you can use <a href=\"#controls\">any of the controls to turn Enscribe audio descriptions on and off</a> listed below."
     },
     {
         "label": "Create the audio description file.",
@@ -101,20 +93,21 @@
 
 
 
-<h2>Vimeo Example</h2>
+<h3>Vimeo</h3>
 
 <div id="vimeo-example" class="enable-example">
-    <iframe id="vimeo-example-video" class="enable-video" data-enscribe="vimeo"
-        data-enscribe-global-pause="true" width="100%" height="auto"
-        data-enscribe-vtt-path="../vtt/vimeo-audio-descriptions.vtt"    
+    <iframe id="vimeo-example-video" class="enable-video" data-enscribe="vimeo" data-enscribe-global-pause="true"
+        width="100%" height="auto" data-enscribe-vtt-path="../vtt/vimeo-audio-descriptions.vtt"
         src="https://player.vimeo.com/video/76979871?h=8272103f6e" width="640" height="360" frameborder="0"
         allowfullscreen allow="autoplay; encrypted-media"></iframe>
-    <button data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions"
-        aria-label="Turn on audio descriptions">
-    </button>
+    
+    <label>
+        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
+        Turn on audio descriptions
+    </label>
 </div>
 
-<?php includeShowcode("vimeo-example") ?>
+<?php includeShowcode("vimeo-example", headingLevel: 4) ?>
 <script type="application/json" id="vimeo-example-props">
 {
     "replaceHtmlRules": {
@@ -143,8 +136,8 @@
     },
     {
         "label": "Create the UI for an audio description button",
-        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
-        "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
+        "highlight": "%OPENTAG%input data-enscribe-button-for",
+        "notes": "There are many types of controls you can use to turn on and off audio descriptions.  For this Vimeo example, I decided to use an <code>input</code> with <code>type=\"radio\"</code> below the video, since Vimeo video players have default controls in all corners of the compoent. You can use <a href=\"#controls\">any of the controls to turn Enscribe audio descriptions on and off</a> listed below."
     },
     {
         "label": "Create the audio description file.",
@@ -158,23 +151,14 @@
 <h3>YouTube</h3>
 
 <div id="youtube-example" class="enable-example">
- <iframe 
-      id="youtube-example-video" 
-      autoplay 
-      width="100%" height="auto"
-      class="enable-video"
-      data-enscribe="youtube" 
-      data-enscribe-VTT-path="../vtt/youtube-audio-descriptions.vtt"
-      data-enscrine-ducking="20%"
-      src="https://www.youtube.com/embed/MfLXHHeUS2s?enablejsapi=1&rel=0" 
-      frameborder="0"
-      allowfullscreen></iframe>
-      <button data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions"
-        aria-label="Turn on audio descriptions">
+    <iframe id="youtube-example-video" autoplay width="100%" height="auto" class="enable-video" data-enscribe="youtube"
+        data-enscribe-VTT-path="../vtt/youtube-audio-descriptions.vtt" data-enscrine-ducking="20%"
+        src="https://www.youtube.com/embed/MfLXHHeUS2s?enablejsapi=1&rel=0" frameborder="0" allowfullscreen></iframe>
+    <button data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Audio descriptions" aria-checked="false"></button>
     </button>
 </div>
 
-<?php includeShowcode("youtube-example") ?>
+<?php includeShowcode("youtube-example", headingLevel: 4) ?>
 <script type="application/json" id="youtube-example-props">
 {
     "replaceHtmlRules": {
@@ -212,33 +196,86 @@
 
 
 
-<h3>Useful Attributes</h3>
-<ul>
-    <li>
-        <p><code>data-enscribe</code> → path to VTT file
-        </p>
-    </li>
-    <li>
-        <p><code>data-enscribe-duck="true"</code> → lower
-            video volume during narration</p>
-    </li>
-    <li>
-        <p><code>data-enscribe-pause="true"</code> → pause
-            video until narration finishes</p>
-    </li>
-    <li>
-        <p><code>data-enscribe-use-readium="true"</code> →
-            (optional) use <a class="decorated-link" rel="noopener" target="_new"
-                href="https://github.com/readium/speech">Readium Speech<span aria-hidden="true"
-                    class="ms-0.5 inline-block align-middle leading-none"><svg width="20" height="20"
-                        viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-rtl-flip=""
-                        class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]">
-                        <path
-                            d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z">
-                        </path>
-                    </svg></span></a> to pick better voices</p>
-    </li>
-</ul>
+<h2>Useful Attributes</h2>
+
+<p>As we alluded to in the YouTube example above, there are a few <code>data-</code> attributes you can add to your
+    <code>video</code> or <code>iframe</code> tag to
+    configure Enscribe.
+</p>
+
+
+<table class="enable-table enable-table--with-borders">
+    <thead>
+        <tr>
+            <th scope="col">Attribute name</th>
+            <th scole="col">Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row" class="nowrap"><code>data-enscribe-global-pause</code></th>
+            <td>Tells Enscribe if the video should pause when it is announcing an audio description. If set to
+                <code>"true"</code>, then the video, by default, pauses when reading an audio description. If set to
+                <code>"false"</code>, then the video will not pause when reading audio descriptions.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="nowrap"><code>data-enscribe-ducking</code></th>
+            <td>Tells Enscribe what to set the video volume to when reading audio descriptions. This is useful when
+                <code>data-enscribe-global-pause</code> is set to <code>"false"</code> and you want to ensure the audio
+                descriptions can be heard above the video's audio stream.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="nowrap"><code>data-enscribe-use-readium</code></th>
+            <td>Uses the <a href="https://readium.org/speech/">Readium Speech</a> library to pick the best voice
+                available in the web browser. Good if you find the default voice used in a some browsers not optimal.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="nowrap"><code>data-enscribe-video-source</code></th>
+            <td>If you want to use an alternative cut of the video with audio descriptions already populated into the
+                video's audio stream, set this attribute to be the path or the ID of this alternative cut.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Useful VTT Classes to Use</h2>
+
+<p>
+    You can have more granular control over what happens when certain audio descriptions are read using the <code>c</code> tag inside the WebVTT file.  You can find
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format#cue_payload_text_tags">more information about the tags WebVTT supports on MDN</a>.
+</p>
+
+
+<table class="enable-table enable-table--with-borders">
+    <thead>
+        <tr>
+            <th scope="col">Class Name</th>
+            <th scole="col">Purpose</th>
+            <th scope="col">Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"><code>pause</code></th>
+            <td>Will pause the video when this audio description is read out, no matter what
+                <code>data-enscribe-global-pause</code> is set to.
+            </td>
+            <td><code>&lt;c.pause&gt;Scene is of a bridge over a river.&lt;/c&gt;</code>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row"><code>play</code></th>
+            <td>Will play the video when this audio description is read out, no matter what
+                <code>data-enscribe-global-pause</code> is set to.
+            </td>
+            <td><code>&lt;c.play&gt;Scene is of a bridge over a river.&lt;/c&gt;</code>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
 
 
 <h2>Extensible</h2>

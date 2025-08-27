@@ -4,11 +4,7 @@ const en = {
     players: new Map(),
     mods: new Map(),     // type -> module (html5|vimeo|youtube|…)
     urls: new Map(),     // type -> absolute URL to plugin file
-    ready: false,
-    l10n: {
-      adOn:  'Turn on audio descriptions',
-      adOff: 'Turn off audio descriptions'
-    }
+    ready: false
   };
   
   // Base-path from this file
@@ -115,45 +111,63 @@ const en = {
     register(type, mod.default || mod.plugin || mod);
   }
 
-  export function setupL10n () {
-    console.log('!');
-    const dataEl = document.getElementById('enscribe-data');
-
-    if (dataEl) {
-      const { dataset } = dataEl;
-      for (let i in dataEl.dataset) {
-        en.l10n[i] = dataset[i];
-      }
-    }
-  }
   
   // Map DOM -> players
   export function createPlayerMappings() {
     document.querySelectorAll('[data-enscribe]').forEach((el) => {
       const type = el.dataset.enscribe;
       let standardSource = el.querySelector('source')?.src || el.src;
+      let enabled = false;
       if (type === 'youtube') {
         const m = /embed\/([^?]+)/.exec(el.src);
         standardSource = m ? m[1] : '';
       }
+
+      const controlButton = document.querySelector(`[data-enscribe-button-for="${el.id}"]`);
+
+      if (controlButton.checked !== undefined) {
+        enabled = controlButton.checked;
+      } else if (controlButton.hasAttribute('aria-checked')) {
+        enabled = (controlButton.getAttribute('aria-checked') === 'true')
+      }
+      console.log('el.id:', el.id)
+
       en.players.set(el.id, {
         element: el,
         type,
         standardSource,
         ADSource: el.dataset.enscribeVideoSource,
-        enabled: false,
+        enabled,
         ADPlaying: false,
       });
     });
   }
   
-  // Public: let apps manually toggle a player by id
+  // Public: let apps manually s a player by id
   export function setEnabled(playerId, enabled) {
     const p = en.players.get(playerId);
     if (!p) return;
     p.enabled = enabled;
     const mod = en.mods.get(p.type);
     if (p.type === 'html5' && mod?.setHTML5TrackMode) mod.setHTML5TrackMode(p);
+  }
+
+  async function updateADState(p, adControl) {
+    
+    if (adControl.checked !== undefined) {
+      console.log('checked', p.enabled)
+      adControl.checked = p.enabled;
+    } else if (adControl.hasAttribute('aria-checked')) {
+      console.log('aria-checked');
+      adControl.setAttribute('aria-checked', p.enabled ? 'true' : 'false');
+    }
+
+    const mod = en.mods.get(p.type);
+    if (p.ADSource && mod?.updateSource) {
+      await mod.updateSource(p, p.enabled ? 'AD' : 'standard');
+    } else if (p.type === 'html5' && mod?.setHTML5TrackMode) {
+      mod.setHTML5TrackMode(p);
+    }
   }
   
   // Hook up UI buttons
@@ -163,28 +177,16 @@ const en = {
         const el = e.currentTarget;
         const {enscribeButtonFor} = el.dataset;
         const p = en.players.get(enscribeButtonFor);
-        let buttonAriaLabel;
-
         if (!p) {
           console.error(`No enscribe video with id ${enscribeButtonFor}.`);
           return;
         }
+        
+
         p.enabled = !p.enabled;
-        el.classList.toggle('active');
-        if (p.enabled) {
-
-        }
+        updateADState(p, el)
         
-        buttonAriaLabel = (p.enabled ? en.l10n.adOff : en.l10n.adOn);
         
-        el.setAttribute('aria-label', buttonAriaLabel);
-
-        const mod = en.mods.get(p.type);
-        if (p.ADSource && mod?.updateSource) {
-          await mod.updateSource(p, p.enabled ? 'AD' : 'standard');
-        } else if (p.type === 'html5' && mod?.setHTML5TrackMode) {
-          mod.setHTML5TrackMode(p);
-        }
       });
     });
 
@@ -194,7 +196,6 @@ const en = {
   export async function init() {
     if (en.ready) return;
     en.ready = true;
-    setupL10n();
     createPlayerMappings();
   
     // Load & setup each player’s plugin
@@ -202,6 +203,11 @@ const en = {
       await ensure(p.type);
       const mod = en.mods.get(p.type);
       if (mod?.setup) await mod.setup(p, { speak, getCueData });
+      const adControl = document.querySelector(`[data-enscribe-button-for=${p.element.id}]`);
+      if (!adControl) {
+        console.error(`Video with ID ${p.element.id} does not have an AD control.`);
+      }
+      updateADState(p, adControl);
     }
   
     setupToggleButtons();

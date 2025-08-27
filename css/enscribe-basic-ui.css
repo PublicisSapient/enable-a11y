@@ -8,9 +8,17 @@
     --focus-color-dark-bg: #097efb;
   }
 }
+.enscribe-video-container {
+  position: relative;
+}
+.enscribe-video-container button.icon-audio-descriptions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 button.icon-audio-descriptions {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   cursor: pointer;
   border: solid 1px transparent;
   caret-color: rgba(0, 0, 0, 0);
@@ -20,8 +28,7 @@ button.icon-audio-descriptions {
   background-color: transparent;
   display: block;
 }
-/* Active State of AD Button */
-button.icon-audio-descriptions.active {
+button.icon-audio-descriptions[aria-checked="true"] {
   background-image: url('../images/enscribe/icon-audio-description.svg');
 }
 /*# sourceMappingURL=enscribe-basic-ui.css.map */
