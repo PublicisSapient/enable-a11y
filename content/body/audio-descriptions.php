@@ -1,35 +1,10 @@
-<p>Audio descriptions (AD) are short bits of narration that describe what's happening on
-    screen: actions, scene changes, text that appears visually. They're critical for blind and low-vision users. The
-    problem is that producing them the "traditional" way is expensive. You need a
-    scriptwriter, a voice actor, an editor, and time to re-render the video. Once it's baked in, updating it means
-    re-doing all that work. For some projects, the expense for all of them can be too high a barrier, so the videos just
-    go out without AD.</p>
+<p>Audio descriptions (AD) make on-screen visuals accessible to blind and low-vision viewers.  The traditional workflow of scripting, voice talent, re-editing, and re-rendering makes creation and updates slow and costly, so audio-descriptions are often not implemented on websites. Enscribe removes that barrier: if you write time-coded descriptions in a simple WebVTT file, Enscribe will use the browser’s SpeechSynthesis API to say them at the right moments in the video. </p>
 
-
-<h2>A Cheaper, Faster Way</h2>
-<p>Enscribe makes this easier. Instead of recutting the video, all you need is someone (e.g. a writer) to create a
-    <strong>WebVTT
-        file</strong> with descriptions tied to timecodes. A developer can then use Enscribe, which uses the browser's
-    <strong>SpeechSynthesis
-        API</strong> to read those descriptions out loud at the right times. No re-editing video. A bonus to this is
-    that if the audio descriptions need to be changed at a later date, it's as simple as changing the WebVTT file to do
-    so.
-</p>
 
 <p>If you are unfamilar with how to create a WebVTT file, please read <a
         href="/multimedia-content.php#how-to-edit-and-create-caption-files--heading">the "How to Edit and Create Caption
         Files" section of the Enable multimedia page</a>.</p>
 
-<h2>Why Not Just Use AblePlayer?</h2>
-<p>AblePlayer does have support for browser generated audio descriptions using WebVTT as well. However, it's a whole
-    video player in
-    itself. It ships with custom controls, styles, and it requires jQuery, an older JavaScript framework. All this adds
-    to the amount of bandwidth needed to load your webpage. If you just want to layer AD on top of the players you
-    already use, that's overkill.</p>
-
-<p>Enscribe is quite small (under 15K) and is modular: it will only load the parts that you need. If you just need HTML5
-    video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
-    download that at that point. </p>
 
 
 <h2>Examples</h2>
@@ -277,15 +252,13 @@
     </tbody>
 </table>
 
+<h2>Why Not Just Use AblePlayer?</h2>
+<p>AblePlayer does have support for browser generated audio descriptions using WebVTT as well. However, it's a whole
+    video player in
+    itself. It ships with custom controls, styles, and it requires jQuery, an older JavaScript framework. All this adds
+    to the amount of bandwidth needed to load your webpage. If you just want to layer AD on top of the players you
+    already use, that's overkill.</p>
 
-<h2>Extensible</h2>
-<p>Nothing in the design locks you to these three players. The core just expects a
-    module that can: play, pause, and set volume. If you're using Brightcove, Kaltura, or another API-driven player, you
-    could write a new module and plug it in.</p>
-
-
-<h2>Why This Matters</h2>
-<p>This isn't about "bells and whistles." It's about making video accessible without
-    breaking budgets.</p>
-<p>Enscribe lowers the cost so more creators can actually ship AD with their videos.
-    For people with disabilities, that can be the difference between "unusable" and "inclusive."</p>
+<p>Enscribe is quite small (under 15K) and is modular: it will only load the parts that you need. If you just need HTML5
+    video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
+    download that at that point. </p>
