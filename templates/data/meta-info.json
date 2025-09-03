@@ -81,6 +81,10 @@
     "title": "Audio Player",
     "desc": "Audio on the web needs to include features such as transcripts, slowdown, and background noise reduction."
   },
+  "audio-descriptions.php": {
+    "title": "Adding Audio Descriptions to Video with Enscribe",
+    "desc": "Audio Descriptions can be implemented inexpensively with Enscribe."
+  },
   "bottom-fixed-navigation.php": {
     "title": "Accessible Bottom Fixed Navigation",
     "desc": "Making fixed navigation on the bottom (like Instagram's) accessible is possible using skip links.",

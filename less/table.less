@@ -128,6 +128,10 @@ table,
     border-collapse: collapse;
     display: table;
 
+    .nowrap {
+        white-space: nowrap;
+    }
+
     figure & {
         margin-bottom: 0;
     }
@@ -150,6 +154,12 @@ table,
         font-weight: bold;
         color: @table-header-text-color;
         background-color: @table-header-background;
+
+        code {
+            display: inline-block;
+            background-color: transparent;
+            color: #0a0;
+        }
 
         .enable__is-dark-mode & {
             background-color: @table-header-background--dark-mode;
@@ -327,7 +337,7 @@ table,
     }
 }
 
-&.enable-tabl .screenshot-table {
+&.enable-table .screenshot-table {
     margin: 0 auto;
     width: initial;
     max-width: initial;

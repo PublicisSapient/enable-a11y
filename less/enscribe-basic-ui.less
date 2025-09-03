@@ -1,0 +1,39 @@
+
+@import "shared/mixins-and-vars";
+
+
+.enscribe-video-container {
+
+  position: relative;
+
+  button.icon-audio-descriptions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+
+}
+
+
+button.icon-audio-descriptions {
+  width: (20/@px);
+  height: (20/@px);
+  cursor: pointer;
+  border: solid 1px transparent;
+  caret-color: rgba(0,0,0,0);
+  background-image: url('../images/enscribe/icon-audio-description--off.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display:block;
+
+  &[aria-checked="true"]  {
+    background-image: url('../images/enscribe/icon-audio-description.svg');
+  }
+
+  
+}
+  
+  
+  
