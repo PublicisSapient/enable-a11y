@@ -60,7 +60,7 @@ const mod = {
     p.youtube = new YT.Player(p.element.id, {
       events: {
         onStateChange: (e) => {
-          if (e.data !== YT.PlayerState.UNSTARTED && !p._pollStarted && !p.element.dataset.enscribeVideoSource) {
+          if (e.data !== YT.PlayerState.UNSTARTED && !p._pollStarted && !p.element.dataset.enscribeAdVideoSource) {
             p._pollStarted = true;
             const tick = () => {
               if (!p.enabled || p.ADPlaying || !p.youtube?.getCurrentTime) return;

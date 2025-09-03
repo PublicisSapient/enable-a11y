@@ -1,4 +1,6 @@
-<p>Audio descriptions (AD) make on-screen visuals accessible to blind and low-vision viewers.  The traditional workflow of scripting, voice talent, re-editing, and re-rendering makes creation and updates slow and costly, so audio-descriptions are often not implemented on websites. Enscribe removes that barrier: if you write time-coded descriptions in a simple WebVTT file, Enscribe will use the browser’s SpeechSynthesis API to say them at the right moments in the video. </p>
+<p>Audio descriptions (AD) make on-screen visuals accessible to blind and low-vision viewers.  The traditional workflow of scripting, voice talent, re-editing, and re-rendering makes creation and updates slow and costly, so audio-descriptions are often not implemented on websites.  Enscribe removes that barrier: if you write time-coded descriptions in a simple WebVTT file, Enscribe will use the browser’s SpeechSynthesis API to say them at the right moments in the video. </p>
+
+<p>We would like to thank Jeremy Burr, who kindly donated the original code that Enscribe is based on. </p>
 
 
 <p>If you are unfamilar with how to create a WebVTT file, please read <a
@@ -16,14 +18,16 @@
 
 <div id="enscribe-html5-example" class="enable-example">
     <div class="enscribe-video-container">
-        <button type="button" data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Audio descriptions">
+        <button type="button" data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Activate audio descriptions">
         </button>
     
-        <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls>
-            <source src="https://www.gileadhiv.com/static/blind-angels_trailer-b882aa5b7d039e16b48c024e23764bc0.mp4"
+        <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls data-enscribe-global-pause="true">
+            <source src="videos/plan-9-trailer-enscribe--av1.mp4" type='video/mp4; codecs="av01.0.05M.08, mp4a.40.2"'
                 type="video/mp4">
-            <track src="vtt/blind-angels-captions.vtt" kind="captions" srclang="en" label="English">
-            <track src="vtt/blind-angels-descriptions.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
+            <source src="videos/plan-9-trailer-enscribe.mp4" 
+                type="video/mp4">
+            <track src="vtt/plan-9-trailer.en.vtt" kind="captions" srclang="en" label="English">
+            <track src="vtt/plan-9-trailer--ad.en.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
         </video>
     </div>
     
@@ -71,13 +75,15 @@
 <h3>Vimeo</h3>
 
 <div id="vimeo-example" class="enable-example">
+
+
     <iframe title="Vimeo Video Example" id="vimeo-example-video" class="enable-video" data-enscribe="vimeo" data-enscribe-global-pause="true"
-        data-enscribe-vtt-path="../vtt/vimeo-audio-descriptions.vtt"
-        src="https://player.vimeo.com/video/76979871?h=8272103f6e" 
+        data-enscribe-vtt-path="../vtt/bela-ad.en.vtt"
+        src="https://player.vimeo.com/video/1115565292?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
         allowfullscreen allow="autoplay; encrypted-media"></iframe>
     
     <label>
-        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" checked aria-label="Audio descriptions">
+        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" checked>
         Turn on audio descriptions
     </label>
 </div>
@@ -127,9 +133,9 @@
 
 <div id="youtube-example" class="enable-example">
     <iframe title="Youtube Video Example" id="youtube-example-video" class="enable-video" data-enscribe="youtube"
-        data-enscribe-VTT-path="../vtt/youtube-audio-descriptions.vtt" data-enscrine-ducking="20%"
-        src="https://www.youtube.com/embed/MfLXHHeUS2s?enablejsapi=1&rel=0"  allowfullscreen></iframe>
-    <button type="button" data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Audio descriptions" aria-checked="false"></button>
+        data-enscribe-VTT-path="../vtt/the-light-that-burned--ad.en.vtt" data-enscribe-global-pause="true"
+        src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0"  allowfullscreen></iframe>
+    <button type="button" data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
 </div>
 
 <?php includeShowcode("youtube-example", headingLevel: 4) ?>
@@ -168,6 +174,48 @@
 </script>
 
 
+<h2>Support For Traditional Audio Descriptions with Human Voice Actors</h2>
+<div id="youtube-human-ad-example" class="enable-example">
+    <iframe title="Youtube Video Example" id="youtube-human-ad-example-video" class="enable-video" data-enscribe="youtube"
+        data-enscribe-ad-video-source="eGwCYWSCnyY"
+        src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0"  allowfullscreen></iframe>
+    <button type="button" data-enscribe-button-for="youtube-human-ad-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
+</div>
+
+<?php includeShowcode("youtube-human-ad-example", headingLevel: 3) ?>
+<script type="application/json" id="youtube-human-ad-example-props">
+{
+    "replaceHtmlRules": {
+        "string:id=": ""
+    },
+    "steps": [
+    {
+        "label": "Include Enscribe into you project",
+        "highlight": "%OUTERHTML%enscribe-js ||| type=\\\"module\\\"",
+        "notes": "While this just file just contains the base code without YouTube support, it will dynamically load the <code>enscribe-youtube.js</code> when it detects a YouTube video that is set up for Enscribe on the page. Enscribe will also load the YouTube API itself, so developers don't need to do this."
+    },
+    {
+        "label": "Ensure data-enscribe is set to the right video type",
+        "highlight": "data-enscribe=\\\"youtube\\\"",
+        "notes": "This is how we tell Enscribe this <code>iframe</code> is a YouTube video player. Other than the <code>data-enscribe-</code> elements, the <code>iframe</code> is set up just like any other YouTube video."
+    },
+    {
+        "label": "Give Enscribe information about the audio described version of the video",
+        "highlight": "data-enscribe-ad-video-source",
+        "notes": "This tells enscribe the YouTube Video ID of the video source with the audio description. (<a href=\"https://gist.github.com/jakebellacera/d81bbf12b99448188f183141e6696817\">Lean more about YouTube Video IDs</a>).  If you were using any other video platform (e.g. HTML5 or Vimeo), then this would have the full URL of the audio described version of the video."
+    },
+    {
+        "label": "Create the UI for an audio description button",
+        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
+        "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
+    },
+    {
+        "label": "Create the audio description file.",
+        "highlight": "%FILE% vtt/youtube-audio-descriptions.vtt",
+        "notes": ""
+    }
+]}
+</script>
 
 
 <h2>Useful Attributes</h2>
@@ -207,12 +255,14 @@
             </td>
         </tr>
         <tr>
-            <th scope="row" class="nowrap"><code>data-enscribe-video-source</code></th>
+            <th scope="row" class="nowrap"><code>data-enscribe-ad-video-source</code></th>
             <td>If you want to use an alternative cut of the video with audio descriptions already populated into the
                 video's audio stream, set this attribute to be the path or the ID of this alternative cut.</td>
         </tr>
     </tbody>
 </table>
+
+
 
 <h2>Useful VTT Classes to Use</h2>
 
@@ -250,6 +300,8 @@
 
     </tbody>
 </table>
+
+
 
 <h2>Why Not Just Use AblePlayer?</h2>
 <p>AblePlayer does have support for browser generated audio descriptions using WebVTT as well. However, it's a whole

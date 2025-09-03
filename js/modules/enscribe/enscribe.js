@@ -136,7 +136,7 @@ const en = {
         element: el,
         type,
         standardSource,
-        ADSource: el.dataset.enscribeVideoSource,
+        ADSource: el.dataset.enscribeAdVideoSource,
         enabled,
         ADPlaying: false,
       });
