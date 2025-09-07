@@ -24,7 +24,7 @@ const en = {
   }
   
   // Helpers used by plugins
-    function htmlToText(html) {
+  function htmlToText(html) {
     const d = document.createElement('div');
     d.appendChild(html.cloneNode(true));
     return d.textContent || '';
