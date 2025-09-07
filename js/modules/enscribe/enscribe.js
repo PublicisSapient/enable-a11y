@@ -57,7 +57,6 @@ const en = {
   
   // Speak + (optional) pause/duck
   export async function speak(content, pause, play, player) {
-    console.log('speak', content, pause, play, player)
     const mod = en.mods.get(player.type);
     if (!mod) return;
   
@@ -168,15 +167,10 @@ const en = {
   // Safari will not work correctly if the time allocated for the audio
   // description is not larger than 300 ms, so we ensure the AD is that length.
   export function sanatizeTrack(ADTrack) {
-    console.log('sanatizeTrack', ADTrack.cues);
     const {cues} = ADTrack;
-    console.log('cues', ADTrack.cues, ADTrack);
     for (let i=0; i<cues.length; i++) {
-      console.log(cues[i]);
       const {startTime, endTime} = cues[i];
-      console.log('time', startTime, endTime, endTime-startTime);
       if (endTime - startTime < 0.3) {
-        console.log('!')
         cues[i].endTime = startTime + 0.3;
       }
     }
@@ -192,11 +186,7 @@ const en = {
     for (const p of en.players.values()) {
       await ensure(p.type);
       const mod = en.mods.get(p.type);
-      if (mod?.setup) {
-        await mod.setup(p, { speak, getCueData })
-        console.log('p',p);
-        //sanatizeTrack(p.ADTrack);
-      };
+      if (mod?.setup) await mod.setup(p, { speak, getCueData });
       
       const adControl = document.querySelector(`[data-enscribe-button-for=${p.element.id}]`);
       if (!adControl) {

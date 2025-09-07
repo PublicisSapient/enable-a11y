@@ -22,8 +22,7 @@
         </button>
     
         <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls data-enscribe-global-pause="true">
-            <source src="videos/plan-9-trailer-enscribe--av1.mp4" type='video/mp4; codecs="av01.0.05M.08, mp4a.40.2"'
-                type="video/mp4">
+            <source src="videos/plan-9-trailer-enscribe--av1.mp4" type='video/mp4; codecs="av01.0.05M.08, mp4a.40.2"'>
             <source src="videos/plan-9-trailer-enscribe.mp4" 
                 type="video/mp4">
             <track src="vtt/plan-9-trailer.en.vtt" kind="captions" srclang="en" label="English">

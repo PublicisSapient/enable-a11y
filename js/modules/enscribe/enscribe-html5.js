@@ -29,7 +29,6 @@ const mod = {
 
       p.trackEl.addEventListener('load', () => { 
         sanatizeTrack(p.ADTrack);
-        console.log('xx');
       });
     }
     // Keep captions state consistent

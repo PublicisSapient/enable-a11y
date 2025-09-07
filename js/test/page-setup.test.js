@@ -42,6 +42,19 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
     async function testPage(filename, page) {
         let domInfo;
+        const messages = [];
+        const url = `${config.BASE_URL}/${filename}`;
+
+        // Make sure we don't have any stale listeners from prior tests
+        page.removeAllListeners('console');
+
+        // Capture ONLY console.log for this test run
+        const onConsole = (msg) => {
+            if (msg.type() === 'log') {
+                messages.push(msg.text());
+            }
+        };
+        page.on('console', onConsole);
 
         // testHelpers.redirectPuppeteerConsole(page);
         await page.goto(`${config.BASE_URL}/${filename}`);
@@ -49,7 +62,7 @@ describe('Test all pages on Enable to Ensure the information is written correctl
 
         // Step 1: Wait for whole page to load (this is so scripts
         // like `enable-visible-on-focus` can initialize)
-        await page.waitForSelector('footer');
+        await page.goto(url, { waitUntil: 'networkidle2' });
 
         //await testHelpers.fastPause();
         domInfo = await page.evaluate(() => {
@@ -93,6 +106,17 @@ describe('Test all pages on Enable to Ensure the information is written correctl
         expect(openGraphPosterURL).toBe(twitterGraphPosterURL);
         expect(doesFileExist).toBe(true);
         expect(areTherePHPJestErrors).toBe(false);
+        expect(messages.length).toBe(0);
+        if (messages.length > 0) {
+          // surface details for debugging while still failing the test above
+          // (this console.error is for the Jest process, not the page)
+          // It won't mask the failure because the expect above already fails.
+          // If you prefer *only* the thrown error, you can remove this.
+          // eslint-disable-next-line no-console
+          console.error(`console.log found on ${url}:\n${messages.join('\n')}`);
+        }
+        // Always clean up the console listener for the next iteration
+        page.off('console', onConsole);
     }
 
     for (let i = 0; i < fileList.length; i++) {

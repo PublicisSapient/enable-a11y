@@ -34,6 +34,7 @@ const mod = {
     }, 100);
   },
 
+
   async setup(p) {
     // If not using an alternate AD video, build a proxy descriptions track
     if (!p.element.dataset.adVideoSource) {
@@ -80,6 +81,7 @@ const mod = {
         }
       }
     });
+
   }
 };
 
