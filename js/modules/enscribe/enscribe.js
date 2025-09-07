@@ -24,7 +24,7 @@ const en = {
   }
   
   // Helpers used by plugins
-  export function htmlToText(html) {
+    function htmlToText(html) {
     const d = document.createElement('div');
     d.appendChild(html.cloneNode(true));
     return d.textContent || '';
@@ -47,7 +47,7 @@ const en = {
     return u;
   }
 
-  export async function speakDescription(text, player, opts = {}) {
+  async function speakDescription(text, player, opts = {}) {
     const u = await getUtterance(text, player, preferred);
     if (opts.rate != null)  u.rate = opts.rate;
     if (opts.pitch != null) u.pitch = opts.pitch;
@@ -92,16 +92,6 @@ const en = {
     };
   }
   
-  // Utility: script loader (rarely needed now that we use import(); still here if you want it)
-  export function loadScript(src) {
-    return new Promise((r) => {
-      const s = document.createElement('script');
-      s.onload = r;
-      s.src = src;
-      document.head.appendChild(s);
-    });
-  }
-  
   // Dynamic import for a given type
   async function ensure(type) {
     if (en.mods.has(type)) return;
@@ -113,7 +103,7 @@ const en = {
 
   
   // Map DOM -> players
-  export function createPlayerMappings() {
+  function createPlayerMappings() {
     document.querySelectorAll('[data-enscribe]').forEach((el) => {
       const type = el.dataset.enscribe;
       let standardSource = el.querySelector('source')?.src || el.src;
@@ -130,7 +120,6 @@ const en = {
       } else if (controlButton.hasAttribute('aria-checked')) {
         enabled = (controlButton.getAttribute('aria-checked') === 'true')
       }
-      console.log('el.id:', el.id)
 
       en.players.set(el.id, {
         element: el,
@@ -142,23 +131,12 @@ const en = {
       });
     });
   }
-  
-  // Public: let apps manually s a player by id
-  export function setEnabled(playerId, enabled) {
-    const p = en.players.get(playerId);
-    if (!p) return;
-    p.enabled = enabled;
-    const mod = en.mods.get(p.type);
-    if (p.type === 'html5' && mod?.setHTML5TrackMode) mod.setHTML5TrackMode(p);
-  }
 
   async function updateADState(p, adControl) {
     
     if (adControl.checked !== undefined) {
-      console.log('checked', p.enabled)
       adControl.checked = p.enabled;
     } else if (adControl.hasAttribute('aria-checked')) {
-      console.log('aria-checked');
       adControl.setAttribute('aria-checked', p.enabled ? 'true' : 'false');
     }
 
@@ -171,7 +149,7 @@ const en = {
   }
   
   // Hook up UI buttons
-  export function setupToggleButtons() {
+ function setupToggleButtons() {
     document.querySelectorAll('[data-enscribe-button-for]').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const el = e.currentTarget;
@@ -181,15 +159,27 @@ const en = {
           console.error(`No enscribe video with id ${enscribeButtonFor}.`);
           return;
         }
-        
-
         p.enabled = !p.enabled;
-        updateADState(p, el)
-        
-        
+        updateADState(p, el) 
       });
     });
+  }
 
+  // Safari will not work correctly if the time allocated for the audio
+  // description is not larger than 300 ms, so we ensure the AD is that length.
+  export function sanatizeTrack(ADTrack) {
+    console.log('sanatizeTrack', ADTrack.cues);
+    const {cues} = ADTrack;
+    console.log('cues', ADTrack.cues, ADTrack);
+    for (let i=0; i<cues.length; i++) {
+      console.log(cues[i]);
+      const {startTime, endTime} = cues[i];
+      console.log('time', startTime, endTime, endTime-startTime);
+      if (endTime - startTime < 0.3) {
+        console.log('!')
+        cues[i].endTime = startTime + 0.3;
+      }
+    }
   }
   
   // Public: initialize everything (dynamic plugin loading by type)
@@ -202,7 +192,12 @@ const en = {
     for (const p of en.players.values()) {
       await ensure(p.type);
       const mod = en.mods.get(p.type);
-      if (mod?.setup) await mod.setup(p, { speak, getCueData });
+      if (mod?.setup) {
+        await mod.setup(p, { speak, getCueData })
+        console.log('p',p);
+        //sanatizeTrack(p.ADTrack);
+      };
+      
       const adControl = document.querySelector(`[data-enscribe-button-for=${p.element.id}]`);
       if (!adControl) {
         console.error(`Video with ID ${p.element.id} does not have an AD control.`);

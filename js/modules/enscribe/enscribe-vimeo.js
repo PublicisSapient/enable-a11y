@@ -49,7 +49,6 @@ const mod = {
 			const tt = v.textTracks[0];
 			tt.mode = 'hidden';
 			t.addEventListener('load', () => {
-				console.log('loaded');
 				p.ADTrack = tt;
 
 

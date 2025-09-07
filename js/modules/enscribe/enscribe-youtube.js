@@ -20,6 +20,9 @@ const mod = {
 
   async updateSource(p, which) {
     const id = which === 'AD' ? p.ADSource : p.standardSource;
+
+    if (!p.youtube.getCurrentTime) return;
+
     const cur = p.youtube.getCurrentTime();
     const paused = p.youtube.getPlayerState() === 2;
     p.youtube.loadVideoById(id, cur);
@@ -42,15 +45,12 @@ const mod = {
       });
       v.appendChild(t);
       t.addEventListener('load', () => { 
-        console.log('youtube loaded');
         p.ADTrack = tt; 
-        console.log('p', p.ADTrack)
       }, { once: true });
       
       t.src =  p.element.dataset.enscribeVttPath;
 
       const tt = v.textTracks[0];
-      console.log('tt', tt, v.outerHTML);
       tt.mode = 'hidden';
       
       document.body.appendChild(v);

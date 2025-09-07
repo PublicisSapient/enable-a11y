@@ -27,7 +27,7 @@
             <source src="videos/plan-9-trailer-enscribe.mp4" 
                 type="video/mp4">
             <track src="vtt/plan-9-trailer.en.vtt" kind="captions" srclang="en" label="English">
-            <track src="vtt/plan-9-trailer--ad.en.vtt" kind="descriptions" srclang="en" label="Audio Descriptions">
+            <track src="vtt/plan-9-trailer--ad.en.vtt" kind="descriptions" srclang="en" label="Audio Descriptions" >
         </video>
     </div>
     

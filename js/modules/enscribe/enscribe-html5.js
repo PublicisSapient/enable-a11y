@@ -1,11 +1,11 @@
 // enscribe-html5.js
-import { register, getCueData, speak } from './enscribe.js';
+import { register, getCueData, speak, sanatizeTrack } from './enscribe.js';
 
 const mod = {
   getVolume: (p) => Promise.resolve(p.element.volume),
   setVolume: (p, v) => { p.element.volume = v; },
   control: (p, action) => p.element[action](),
-  setHTML5TrackMode: (p) => { if (p.ADTrack) p.ADTrack.mode = p.enabled ? 'showing' : 'disabled'; },
+  setHTML5TrackMode: (p) => { if (p.ADTrack) p.ADTrack.mode = p.enabled ? 'showing' : 'disabled'; console.log('change', p.ADTrack.mode) },
 
   async updateSource(p, which) {
     const src = which === 'AD' ? p.ADSource : p.standardSource;
@@ -19,15 +19,27 @@ const mod = {
     for (const t of p.element.textTracks) {
       if (t.kind === 'descriptions') { p.ADTrack = t; break; }
     }
+    p.trackEl = p.element.querySelector('track[kind="descriptions"]');
+    console.log('ADTrack', p.ADTrack, p.trackEl);
     if (!p.element.dataset.adVideoSource && p.ADTrack) {
       p.ADTrack.addEventListener('cuechange', (e) => {
+        console.log('cuechange');
         if (p.ADPlaying) return;
         const cue = e.currentTarget.activeCues[0];
+        console.log('cue', e.currentTarget.activeCues)
         if (cue) speak(...Object.values(getCueData(cue)), p);
       });
+
+      p.trackEl.addEventListener('load', () => { 
+          sanatizeTrack(p.ADTrack);
+        console.log('xx');
+      });
     }
+
+    
     // Keep captions state consistent
-    p.element.textTracks?.addEventListener?.('change', () => mod.setHTML5TrackMode(p));
+    p.element.textTracks?.addEventListener?.('change', () => { mod.setHTML5TrackMode(p); });
+    console.log('done');
   }
 };
 

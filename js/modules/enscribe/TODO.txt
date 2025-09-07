@@ -1,0 +1,2 @@
+- Ensure set up of players can happen not only onload, but at any time.
+- Add multi-language support
