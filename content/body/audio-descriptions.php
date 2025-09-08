@@ -21,7 +21,7 @@
         <button type="button" data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Activate audio descriptions">
         </button>
     
-        <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls data-enscribe-global-pause="true">
+        <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls data-enscribe-global-pause="true" playsinline>
             <source src="videos/plan-9-trailer-enscribe--av1.mp4" type='video/mp4; codecs="av01.0.05M.08, mp4a.40.2"'>
             <source src="videos/plan-9-trailer-enscribe.mp4" 
                 type="video/mp4">
