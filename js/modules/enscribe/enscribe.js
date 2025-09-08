@@ -114,7 +114,7 @@ function createPlayerMappings() {
       standardSource = m ? m[1] : '';
     }
 
-    const controlButton = document.querySelector(`[data-enscribe-ad-control="${el.id}"]`);
+    const controlButton = document.querySelector(`[data-enscribe-ad-control-for="${el.id}"]`);
 
     if (controlButton.checked !== undefined) {
       enabled = controlButton.checked;
@@ -151,13 +151,13 @@ async function updateADState(p, adControl) {
 
 // Hook up UI buttons
 function setupToggleButtons() {
-  document.querySelectorAll('[data-enscribe-ad-control]').forEach((btn) => {
+  document.querySelectorAll('[data-enscribe-ad-control-for]').forEach((btn) => {
     btn.addEventListener('click', async (e) => {
       const el = e.currentTarget;
-      const { enscribeAdControl } = el.dataset;
-      const p = en.players.get(enscribeAdControl);
+      const { enscribeAdControlFor } = el.dataset;
+      const p = en.players.get(enscribeAdControlFor);
       if (!p) {
-        console.error(`No enscribe video with id ${enscribeAdControl}.`);
+        console.error(`No enscribe video with id ${enscribeAdControlFor}.`);
         return;
       }
       p.enabled = !p.enabled;
@@ -211,7 +211,7 @@ export async function init() {
     const mod = en.mods.get(p.type);
     if (mod?.setup) await mod.setup(p, { speak, getCueData });
 
-    const adControl = document.querySelector(`[data-enscribe-ad-control=${p.element.id}]`);
+    const adControl = document.querySelector(`[data-enscribe-ad-control-for=${p.element.id}]`);
     if (!adControl) {
       console.error(`Video with ID ${p.element.id} does not have an AD control.`);
     }
