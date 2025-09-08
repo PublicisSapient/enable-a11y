@@ -18,7 +18,7 @@
 
 <div id="enscribe-html5-example" class="enable-example">
     <div class="enscribe-video-container">
-        <button type="button" data-enscribe-button-for="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Activate audio descriptions">
+        <button type="button" data-enscribe-ad-control="html5-example-video" class="icon-audio-descriptions" role="switch" aria-checked="true" aria-label="Activate audio descriptions">
         </button>
     
         <video id="html5-example-video" class="enable-video" data-enscribe="html5" controls data-enscribe-global-pause="true" playsinline>
@@ -57,7 +57,7 @@
     },
     {
         "label": "Create the UI for an audio description button",
-        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
+        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-ad-control",
         "notes": "There are many types of controls you can use to turn on and off audio descriptions.  For the HTML5 version, I decided to use a <code>button</code> with <code>role=\"switch\"</code>, but you can use <a href=\"#controls\">any of the controls to turn Enscribe audio descriptions on and off</a> listed below."
     },
     {
@@ -82,7 +82,7 @@
         allowfullscreen allow="autoplay; encrypted-media"></iframe>
     
     <label>
-        <input type="checkbox" data-enscribe-button-for="vimeo-example-video" class="icon-audio-descriptions" checked>
+        <input type="checkbox" data-enscribe-ad-control="vimeo-example-video" class="icon-audio-descriptions" checked>
         Turn on audio descriptions
     </label>
 </div>
@@ -116,7 +116,7 @@
     },
     {
         "label": "Create the UI for an audio description button",
-        "highlight": "%OPENTAG%input data-enscribe-button-for",
+        "highlight": "%OPENTAG%input data-enscribe-ad-control",
         "notes": "There are many types of controls you can use to turn on and off audio descriptions.  For this Vimeo example, I decided to use an <code>input</code> with <code>type=\"radio\"</code> below the video, since Vimeo video players have default controls in all corners of the compoent. You can use <a href=\"#controls\">any of the controls to turn Enscribe audio descriptions on and off</a> listed below."
     },
     {
@@ -134,7 +134,7 @@
     <iframe title="Youtube Video Example" id="youtube-example-video" class="enable-video" data-enscribe="youtube"
         data-enscribe-VTT-path="../vtt/the-light-that-burned--ad.en.vtt" data-enscribe-global-pause="true"
         src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0"  allowfullscreen></iframe>
-    <button type="button" data-enscribe-button-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
+    <button type="button" data-enscribe-ad-control="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
 </div>
 
 <?php includeShowcode("youtube-example", headingLevel: 4) ?>
@@ -161,7 +161,7 @@
     },
     {
         "label": "Create the UI for an audio description button",
-        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
+        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-ad-control",
         "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
     },
     {
@@ -178,7 +178,7 @@
     <iframe title="Youtube Video Example" id="youtube-human-ad-example-video" class="enable-video" data-enscribe="youtube"
         data-enscribe-ad-video-source="eGwCYWSCnyY"
         src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0"  allowfullscreen></iframe>
-    <button type="button" data-enscribe-button-for="youtube-human-ad-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
+    <button type="button" data-enscribe-ad-control="youtube-human-ad-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
 </div>
 
 <?php includeShowcode("youtube-human-ad-example", headingLevel: 3) ?>
@@ -205,7 +205,7 @@
     },
     {
         "label": "Create the UI for an audio description button",
-        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-button-for",
+        "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-ad-control",
         "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
     },
     {
