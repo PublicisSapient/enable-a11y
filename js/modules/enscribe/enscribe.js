@@ -37,7 +37,7 @@ export function getCueData(cue) {
   return { content: htmlToText(h), pause: !!h.querySelector('span.pause'), play: !!h.querySelector('span.play') };
 }
 
-async function getUtterance(text, player, preferredLocales) {
+async function getUtterance(text, player, preferredLangs) {
   if (player?.element?.getAttribute("data-enscribe-use-readium") === "true") {
     // Lazy-load Readium integration only when needed
     const { makeUtterance } = await import("./enscribe-voice.js");
@@ -51,6 +51,7 @@ async function getUtterance(text, player, preferredLocales) {
     for (const pref of preferredLangs) {
       const lc = pref.toLowerCase();
       chosen = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(lc));
+      console.log('chosen', chosen, preferredLangs);
       if (chosen) { chosenLang = chosen.lang; break; }
     }
   
@@ -110,7 +111,7 @@ export async function speak(content, pause, play, player) {
   if (!mod) return;
 
   const preferredLangs = buildLangPrefs(player.adLang);
-  const u = await getUtterance(content, player, preferred);
+  const u = await getUtterance(content, player, preferredLangs);
   if (mod.getVolume) u.volume = await mod.getVolume(player);
 
   const el = player.element;

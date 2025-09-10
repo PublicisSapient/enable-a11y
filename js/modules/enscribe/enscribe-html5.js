@@ -25,7 +25,7 @@ const mod = {
       // remember the language from markup (srclang) or track.language
       // TODO: Do we need such a long clause?
       p.adLang = normalizeLang(
-        trackEl.getAttribute('srclang') ||
+        p.trackEl.getAttribute('srclang') ||
         (p.ADTrack && p.ADTrack.language) ||
         ''
       );
