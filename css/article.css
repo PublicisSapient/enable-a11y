@@ -131,6 +131,10 @@ table,
   border-collapse: collapse;
   display: table;
 }
+table .nowrap,
+[role="table"] .nowrap {
+  white-space: nowrap;
+}
 figure table,
 figure [role="table"] {
   margin-bottom: 0;
@@ -160,6 +164,16 @@ table [role="rowheader"],
   font-weight: bold;
   color: white;
   background-color: black;
+}
+table th code,
+[role="table"] th code,
+table [role="columnheader"] code,
+[role="table"] [role="columnheader"] code,
+table [role="rowheader"] code,
+[role="table"] [role="rowheader"] code {
+  display: inline-block;
+  background-color: transparent;
+  color: #0a0;
 }
 .enable__is-dark-mode table th,
 .enable__is-dark-mode [role="table"] th,
@@ -338,15 +352,15 @@ table .rowspan2__bottom,
 .enable__is-dark-mode .enable-table--with-borders td {
   border-color: #ededed;
 }
-.enable-tabl .screenshot-table {
+.enable-table .screenshot-table {
   margin: 0 auto;
   width: initial;
   max-width: initial;
 }
-.enable-tabl .screenshot-table th[scope="row"] {
+.enable-table .screenshot-table th[scope="row"] {
   vertical-align: middle;
 }
-.enable-tabl .screenshot-table td {
+.enable-table .screenshot-table td {
   padding: 0;
 }
 table td:first-child,

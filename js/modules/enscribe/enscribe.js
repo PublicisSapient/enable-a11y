@@ -42,11 +42,58 @@ async function getUtterance(text, player, preferredLocales) {
     // Lazy-load Readium integration only when needed
     const { makeUtterance } = await import("./enscribe-voice.js");
     return await makeUtterance(text, preferredLocales);
-  }
+  } else {
+    // Fallback: plain SpeechSynthesisUtterance without Readium
+    const u = new SpeechSynthesisUtterance(text);const voices = speechSynthesis.getVoices() || [];
 
-  // Fallback: plain SpeechSynthesisUtterance without Readium
-  const u = new SpeechSynthesisUtterance(text);
-  return u;
+    // Try to find a matching voice by preferred langs (prefix match on BCP-47)
+    let chosen = null, chosenLang = null;
+    for (const pref of preferredLangs) {
+      const lc = pref.toLowerCase();
+      chosen = voices.find(v => v.lang && v.lang.toLowerCase().startsWith(lc));
+      if (chosen) { chosenLang = chosen.lang; break; }
+    }
+  
+    if (chosen) {
+      u.voice = chosen;
+      u.lang  = chosenLang;       // make sure the engine knows the intended lang
+    } else if (preferredLangs[0]) {
+      u.lang = preferredLangs[0]; // even without a voice object, hint the language
+    }
+  
+    return u;
+  }
+}
+
+
+// language preference list
+function buildLangPrefs(primary) {
+  const prefs = [];
+  if (primary) {
+    prefs.push(primary);
+    const base = primary.split('-')[0];
+    if (base && base !== primary) prefs.push(base);
+  }
+  // fallbacks to user/browser
+  if (navigator.language) {
+    prefs.push(navigator.language);
+    const base = navigator.language.split('-')[0];
+    if (base) prefs.push(base);
+  }
+  // final hard fallback
+  prefs.push('en-US', 'en');
+  // dedupe while preserving order
+  return [...new Set(prefs.map(p => p && p.trim()).filter(Boolean))];
+}
+
+// TODO: Do we really need this?
+export function normalizeLang(tag) {
+  if (!tag) return null;
+  // normalize case and map bare "fr" -> "fr-FR" style region
+  let t = tag.trim().replace('_', '-');
+  const lower = t.toLowerCase();
+  if (!lower.includes('-')) t = `${lower}-${lower.toUpperCase()}`;
+  return t;
 }
 
 async function speakDescription(text, player, opts = {}) {
@@ -62,12 +109,7 @@ export async function speak(content, pause, play, player) {
   const mod = en.mods.get(player.type);
   if (!mod) return;
 
-  //const u = new SpeechSynthesisUtterance(content);
-  const preferred = [
-    navigator.language,
-    navigator.language?.split("-")[0],
-    "en-US"
-  ];
+  const preferredLangs = buildLangPrefs(player.adLang);
   const u = await getUtterance(content, player, preferred);
   if (mod.getVolume) u.volume = await mod.getVolume(player);
 

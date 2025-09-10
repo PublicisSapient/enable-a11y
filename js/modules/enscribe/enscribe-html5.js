@@ -1,5 +1,5 @@
 // enscribe-html5.js
-import { register, getCueData, speak, sanatizeTrack } from './enscribe.js';
+import { register, getCueData, speak, sanatizeTrack, normalizeLang } from './enscribe.js';
 
 const mod = {
   getVolume: (p) => Promise.resolve(p.element.volume),
@@ -20,6 +20,17 @@ const mod = {
       if (t.kind === 'descriptions') { p.ADTrack = t; break; }
     }
     p.trackEl = p.element.querySelector('track[kind="descriptions"]');
+
+    if (p.trackEl) {
+      // remember the language from markup (srclang) or track.language
+      // TODO: Do we need such a long clause?
+      p.adLang = normalizeLang(
+        trackEl.getAttribute('srclang') ||
+        (p.ADTrack && p.ADTrack.language) ||
+        ''
+      );
+    }
+
     if (!p.element.dataset.adVideoSource && p.ADTrack) {
       p.ADTrack.addEventListener('cuechange', (e) => {
         if (p.ADPlaying) return;
