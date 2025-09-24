@@ -158,6 +158,16 @@ select {
 .enable-example--no-border {
   border: none;
 }
+.enable-example:has(video),
+.enable-example:has(iframe) {
+  padding: 0;
+  border: none;
+  /* margin: 0 -@mobile-page-padding;
+
+        @media @desktop {
+            margin: 0 -@page-padding;
+        } */
+}
 .clearfix:after {
   content: "";
   display: table;
@@ -390,5 +400,9 @@ iframe:focus-visible {
 .enable__is-dark-mode input[type="submit"] {
   background: #343434;
   color: #ededed;
+}
+img,
+svg {
+  max-width: 100%;
 }
 /*# sourceMappingURL=defaults.css.map */

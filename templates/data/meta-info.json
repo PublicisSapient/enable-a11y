@@ -264,7 +264,7 @@
   },
   "dropdown.php": {
     "sectionPages": [ {"controls": "Simple Controls"}],
-    "title": "Dropdowns/Drawers/Expandos",
+    "title": "Dropdowns / Drawers / Expandos",
     "desc": "No matter what you can them, dropdowns, drawers and expandos can be easily made accessible with just a little bit of markup.",
     "isNPM": "true"
   },

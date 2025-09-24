@@ -322,6 +322,9 @@ table .rowspan2__bottom,
 .enable__is-dark-mode [role="table"] .rowspan2__bottom {
   border-top: none;
 }
+.enable-table--horizontally-scrollable {
+  overflow-y: scroll;
+}
 .enable-table--centered-data th,
 .enable-table--centered-data td {
   text-align: center;

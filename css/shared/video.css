@@ -11,8 +11,9 @@
 .enable-video {
   width: 100%;
   background: black;
-  /* We subtract the padding and border of the example container, plus 2 * the page padding. */
-  height: calc(61vw - 38px - 30px * 2);
+  /* We subtract the padding and border of the example container, plus 2 * the page padding. 
+	height: ~"calc(61vw - 38px - @{page-padding} * 2)";
+     */
 }
 @media only screen and (min-width: 960px) {
   .enable-video {

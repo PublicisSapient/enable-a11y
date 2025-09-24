@@ -133,7 +133,7 @@
 <div id="youtube-example" class="enable-example">
     <iframe title="Youtube Video Example" id="youtube-example-video" class="enable-video" data-enscribe="youtube"
         data-enscribe-VTT-path="../vtt/the-light-that-burned--ad.en.vtt" data-enscribe-global-pause="true"
-        src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0"  allowfullscreen></iframe>
+        src="https://www.youtube.com/embed/Rju8qyPwngM?enablejsapi=1&rel=0&app=desktop"  allowfullscreen></iframe>
     <button type="button" data-enscribe-ad-control-for="youtube-example-video" class="icon-audio-descriptions" role="switch" aria-label="Activate audio descriptions" aria-checked="false"></button>
 </div>
 
@@ -224,7 +224,7 @@
     configure Enscribe.
 </p>
 
-
+<div class="enable-table--horizontally-scrollable" tabindex="0">
 <table class="enable-table enable-table--with-borders">
     <thead>
         <tr>
@@ -260,6 +260,7 @@
         </tr>
     </tbody>
 </table>
+</div>
 
 
 
