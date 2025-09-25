@@ -3,11 +3,12 @@
 .enable-video {
 	width: 100%;
 	background: black;
+	height: calc(78vw - 20px);
 
 	/* We subtract the padding and border of the example container, plus 2 * the page padding. 
 	height: ~"calc(61vw - 38px - @{page-padding} * 2)";
      */
-	@media @desktop {
+	@media @desktop-up {
 		height: 522px;
 	}
 }
