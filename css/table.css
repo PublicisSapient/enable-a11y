@@ -171,7 +171,7 @@ table [role="columnheader"] code,
 [role="table"] [role="columnheader"] code,
 table [role="rowheader"] code,
 [role="table"] [role="rowheader"] code {
-  display: inline-block;
+  display: inline;
   background-color: transparent;
   color: #0a0;
 }

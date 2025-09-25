@@ -61,9 +61,14 @@
         "notes": "There are many types of controls you can use to turn on and off audio descriptions.  For the HTML5 version, I decided to use a <code>button</code> with <code>role=\"switch\"</code>, but you can use <a href=\"#controls\">any of the controls to turn Enscribe audio descriptions on and off</a> listed below."
     },
     {
+        "label": "Configure the audio descriptions to pause the video when reading the descriptions by default.",
+        "highlight": "data-enscribe-global-pause=\\\"true\\\"",
+        "notes": "If you don't set this, the audio descriptions will be read out while the video is being played.  This is not ideal if there is a lot of existing dialog when the audio description is supposed to be announced"
+    },
+    {
         "label": "Create the audio description file.",
-        "highlight": "%FILE% vtt/blind-angels-descriptions.vtt",
-        "notes": "This is in the standard WebVTT format. The <code>&lt;c.pause&gt; ... &lt;/c&gt</code> markup ensures the player pauses for the particular audio-description.  This is a useful feature when the description is long and you don't want it to overlap with the existing audio.  If you want Enscribe to pause the video on every description, you can just set <code>data-enscribe-global-pause=\"true\"</code> to the <code>video</code> tag instead."
+        "highlight": "%FILE% vtt/plan-9-trailer--ad.en.vtt",
+        "notes": "This is in the standard WebVTT format.  You will note there are some tags inside the descriptions &mdash; they are used by Enscribe to control how the description is being spoken.  A full list of these tags are given in the <a href=\"#vtt-classes\">Useful VTT Classes to Use section of this page</a>."
     }
 ]}
 </script>
@@ -121,7 +126,7 @@
     },
     {
         "label": "Create the audio description file.",
-        "highlight": "%FILE% vtt/vimeo-audio-descriptions.vtt",
+        "highlight": "%FILE% vtt/bela-ad.en.vtt",
         "notes": ""
     }
 ]}
@@ -166,7 +171,7 @@
     },
     {
         "label": "Create the audio description file.",
-        "highlight": "%FILE% vtt/youtube-audio-descriptions.vtt",
+        "highlight": "%FILE% vtt/the-light-that-burned--ad.en.vtt",
         "notes": ""
     }
 ]}
@@ -207,11 +212,6 @@
         "label": "Create the UI for an audio description button",
         "highlight": "%OPENCLOSECONTENTTAG%button data-enscribe-ad-control-for",
         "notes": "Note that the aria-label must be set to screen reader label for the control if the content is an icon."
-    },
-    {
-        "label": "Create the audio description file.",
-        "highlight": "%FILE% vtt/youtube-audio-descriptions.vtt",
-        "notes": ""
     }
 ]}
 </script>
@@ -264,7 +264,7 @@
 
 
 
-<h2>Useful VTT Classes to Use</h2>
+<h2 id="vtt-classes" tabindex="0">Useful VTT Classes to Use</h2>
 
 <p>
     You can have more granular control over what happens when certain audio descriptions are read using the <code>c</code> tag inside the WebVTT file.  You can find
