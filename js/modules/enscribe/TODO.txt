@@ -1,0 +1,6 @@
+- Ensure set up of players can happen not only onload, but at any time.
+- Add multi-language support
+    - First, able to change a single track
+    - Support for multiple tracks.
+- For non-pausing the video during the AD: can we support having ADs being read within the start and end times?  If it is 
+- Transcript generation?

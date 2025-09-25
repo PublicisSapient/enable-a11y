@@ -194,6 +194,17 @@ select {
     &--no-border {
         border: none;
     }
+
+    &:has(video),
+    &:has(iframe) {
+        padding: 0;
+        border: none;
+        /* margin: 0 -@mobile-page-padding;
+
+        @media @desktop {
+            margin: 0 -@page-padding;
+        } */
+    }
 }
 
 .clearfix:after {
@@ -476,4 +487,8 @@ iframe {
         background: @dark-mode-darkgrey;
         color: @dark-mode-white;
     }
+}
+
+img, svg {
+    max-width: 100%;
 }

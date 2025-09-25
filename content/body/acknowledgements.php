@@ -22,6 +22,7 @@
       href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
       carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>.
   </li>
+  <li>Jeremy Burr, who kindly donated the original code that Enscribe, <a href="audio-descriptions.php">our speech synthesis audio descriptions library</a> is based on. </li>
   <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
   <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
   <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for working on redesigning the Enable project and developing the site in dark mode.</li>

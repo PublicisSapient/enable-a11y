@@ -109,11 +109,15 @@ main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
-    padding: @page-padding;
+    padding: @mobile-page-padding;
     margin: 0 auto;
     max-width: 1024px;
     line-height: 1.4;
     position: relative;
+
+    @media @tablet {
+        padding: @page-padding;
+    }
 }
 
 .inline-left {
@@ -213,8 +217,13 @@ footer,
 
 .enable__is-dark-mode {
     aside, [role="complementary"] {
-        background: #444 data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+        background: #444;        
         border-color: #aaa;
+
+        @media @tablet {
+            background: data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+        }
+        
         a {
             color: @light-orange;
         }

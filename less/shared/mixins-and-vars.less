@@ -66,6 +66,8 @@
 @tablet-min: 720px;
 @tablet-max: (@desktop-min - 1);
 
+@phablet-min: 400px;
+
 @mobile-min: 1px;
 @mobile-max: (@tablet-min - 1);
 
@@ -73,6 +75,7 @@
 @tablet: ~"only screen and (min-width: @{tablet-min}) and (max-width: @{tablet-max})";
 @mobile: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{mobile-max})";
 
+@phablet-up:  ~"only screen and (min-width: @{phablet-min})";
 @tablet-up: ~"only screen and (min-width: @{tablet-min})";
 @mobile-up: ~"only screen and (min-width: @{mobile-min})";
 @mobile-and-tablet: ~"only screen and (min-width: @{mobile-min}) and (max-width: @{tablet-max})";
@@ -101,7 +104,8 @@
 @color-term-code: #090;
 @color-background-term-code: #000;
 
-@page-padding: (30 / @px);
+@mobile-page-padding: 10px;
+@page-padding: 30px;
 
 .font-copy() {
     font-family: @font-default-copy;

@@ -1,0 +1,24 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.enable-video {
+  width: 100%;
+  background: black;
+  height: calc(78vw - 20px);
+  /* We subtract the padding and border of the example container, plus 2 * the page padding. 
+	height: ~"calc(61vw - 38px - @{page-padding} * 2)";
+     */
+}
+@media only screen and (min-width: 720px) {
+  .enable-video {
+    height: 522px;
+  }
+}
+/*# sourceMappingURL=video.css.map */

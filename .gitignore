@@ -12,3 +12,6 @@ report/*
 # auto-gen PHP files/logs
 php_errors.log
 
+# any file that begins with an underscore
+_*
+
