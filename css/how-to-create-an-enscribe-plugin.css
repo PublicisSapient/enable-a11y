@@ -1,0 +1,18 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+table {
+  max-width: 750px;
+  margin-bottom: 40px;
+}
+table.api-table tbody td {
+  text-align: left;
+}
+/*# sourceMappingURL=how-to-create-an-enscribe-plugin.css.map */
