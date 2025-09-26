@@ -13,14 +13,25 @@ table {
   margin-bottom: 40px;
 }
 table.api-table tbody th {
+  min-width: 150px;
+}
+table.api-table tbody td {
+  text-align: left;
+}
+table.api-table tbody th,
+table.api-table tbody td {
   word-break: break-word;
   /* allow breaking words */
   overflow-wrap: anywhere;
   /* break at allowed points */
   line-break: hyphens;
-  min-width: 200px;
 }
-table.api-table tbody td {
-  text-align: left;
+@media only screen and (min-width: 720px) {
+  table.api-table tbody th {
+    word-break: inital;
+    /* allow breaking words */
+    line-break: initial;
+    white-space: nowrap;
+  }
 }
 /*# sourceMappingURL=how-to-create-an-enscribe-plugin.css.map */

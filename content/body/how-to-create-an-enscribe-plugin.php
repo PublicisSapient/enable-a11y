@@ -90,16 +90,16 @@
         utterance.</td>
 
     <tr>
-      <th scope="row">getVolume(player) → Promise&lt;number&gt;</th>
+      <th scope="row">getVolume(player)</th>
       <td>Return the current volume in the provider’s 0–1 range. Used for ducking.</td>
 
     <tr>
       <th scope="row">setVolume(player, value)</th>
-      <td>Set provider volume (0–1). Core restores the original value when AD finishes.</td>
+      <td>Set provider volume (0–1). Core restores the original value when AD finishes. Used for ducking.</td>
 
     <tr>
       <th scope="row">async updateSource(player, which)</th>
-      <td>When <code>player.ADSource</code> is present, core calls this with <code>"AD"</code> or
+      <td>When <code>player.ADSource</code> is present (i.e. when we use video switching to alternate between videos with and without audio descriptions), core calls this with <code>"AD"</code> or
         <code>"standard"</code>
         whenever AD is toggled. Implement seamless source swapping that preserves current time and play/pause state.
         (See
@@ -108,6 +108,7 @@
     </tr>
   </tbody>
 </table>
+
 
 <p>To see how these functions are implemented in our existing plugins, it would be useful to look at the source of
   <code>enscribe-html.js</code>, <code>enscribe-vimeo.js</code> and <code>enscribe-youtube.js</code> in <a
