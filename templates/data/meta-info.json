@@ -671,8 +671,19 @@
   "video-player.php": {
     "sectionPages": [ {"controls": "Complex Controls"}],
     "title": "Video Player",
-    "desc": "Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost and time and get a WCAG AAA transcript for free!",
+    "desc": "AblePlayer is a video player that supports captions and audio descriptions -- and can offer transcripts for free if you support the first two!",
     "isNPM": "true"
+  },
+  "enscribe-audio-descriptions.php": {
+    "sectionPages": [ {"controls": "Complex Controls"}],
+    "title": "Using Enscribe to Create Inexpensive Audio Descriptions for Videos",
+    "desc": "Videos on the web must have audio descriptions as well as captions to be WCAG AA compliant. Learn how to do so without a lot of cost using Enscribe",
+    "isNPM": "true"
+  },
+  "how-to-create-an-enscribe-plugin.php": {
+    "sectionPages": [ {"code": "For Developers"}],
+    "title": "How to Write an Enscribe Plugin",
+    "desc": "Do you want to have WebVTT generated audio descriptions for your videos but your video provider doesn't support your video platform? Developers can read this to build a plugin so Enscribe can do that. "
   },
   "video-content.php": {
     "title": "Video Content",
