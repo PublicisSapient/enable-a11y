@@ -7,36 +7,62 @@
 
 <h2>What properties and methods does enscribe.js provide</h2>
 
-<ol>
-  <li>The enscribe.js script exposes these helpers to plugins:
-    <ul>
-      <li><code>register(type, mod)</code> — register your plugin object under a <code>type</code>.</li>
-      <li><code>speak(content, pause, play, player)</code> — speaks text; optionally pauses/ducks the underlying player
-        during the AD, then resumes.</li>
-      <li><code>getCueData(cue)</code> — returns <code>{ content, pause, play }</code> derived from the cue’s HTML
-        (<code>&lt;span class="pause"&gt;</code> or <code>play</code> toggles).</li>
-      <li><code>sanatizeTrack(track)</code> — ensures each cue is at least ~300 ms long (Safari quirk fix).</li>
-    </ul>
-  </li>
-  <li>Core also builds a <strong>player object</strong> for each media element marked with <code>data-enscribe</code>:
-    <dl class="dl">
-      <dt><code>player.element</code></dt>
-      <dd>The DOM element for your provider (e.g., &lt;video&gt;, &lt;iframe&gt;, or container).</dd>
-      <dt><code>player.type</code></dt>
-      <dd>The string used in <code>data-enscribe</code> and in <code>register()</code> (e.g., <code>"html5"</code>,
-        <code>"youtube"</code>, or your custom type).</dd>
-      <dt><code>player.standardSource</code></dt>
-      <dd>Main video identifier/URL inferred from the element.</dd>
-      <dt><code>player.ADSource</code></dt>
-      <dd>Optional alternate source from <code>data-enscribe-ad-video-source</code> used when AD is enabled.</dd>
-      <dt><code>player.enabled</code></dt>
-      <dd>Whether AD is currently on. Toggled by a control with
-        <code>data-enscribe-ad-control-for="{element.id}"</code>.</dd>
-      <dt><code>player.ADPlaying</code></dt>
-      <dd>Internal flag set while an AD utterance is in progress.</dd>
-    </dl>
-  </li>
-</ol>
+
+    <table>
+      <caption>Enscribe.js exposes these helpers to plugins:</caption>
+      <thead>
+        <tr>
+          <th scope="col">Function</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">register(type, mod)</th><td>register your plugin object under a <code>type</code>.</td></tr>
+        <tr>
+          <th scope="row">speak(content, pause, play, player)</th><td>speaks text; optionally pauses/ducks the underlying player
+        during the AD, then resumes.</td></tr>
+        <tr>
+          <th scope="row">getCueData(cue)</th><td>returns <code>{ content, pause, play }</code> derived from the cue’s HTML
+        (<code>&lt;span class="pause"&gt;</code> or <code>play</code> toggles).</td></tr>
+        <tr>
+          <th scope="row">sanatizeTrack(track)</th><td>ensures each cue is at least ~300 ms long (Safari quirk fix).</td></tr>
+      </tbody>
+    </table>
+    
+    <table>
+      <caption><strong>player object</strong> for each media element marked with <code>data-enscribe</code></caption>
+      <thead>
+        <tr>
+          <th scope="col">property</th>
+          <th scope="col">value description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr>
+          <th scope="row">player.element</th>
+          <td>The DOM element for your provider (e.g., &lt;video&gt;, &lt;iframe&gt;, or container).</td>
+        <tr>
+          <th scope="row">player.type</th>
+          <td>The string used in <code>data-enscribe</code> and in <code>register()</code> (e.g., <code>"html5"</code>,
+          <code>"youtube"</code>, or your custom type).</td>
+        <tr>
+          <th scope="row">player.standardSource</th>
+          <td>Main video identifier/URL inferred from the element.</td>
+        <tr>
+          <th scope="row">player.ADSource</th>
+          <td>Optional alternate source from <code>data-enscribe-ad-video-source</code> used when AD is enabled.</td>
+        <tr>
+          <th scope="row">player.enabled</th>
+          <td>Whether AD is currently on. Toggled by a control with
+          <code>data-enscribe-ad-control-for="{element.id}"</code>.</td>
+        <tr>
+          <th scope="row">player.ADPlaying</th>
+          <td>Internal flag set while an AD utterance is in progress.</td>
+</tbody>
+</table>
 
 <div class="tip"><strong>UI wiring:</strong> Core finds buttons or checkboxes with
   <code>data-enscribe-ad-control-for</code> and keeps their state in sync with <code>player.enabled</code>. Your plugin

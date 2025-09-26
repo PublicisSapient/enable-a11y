@@ -682,7 +682,7 @@
   },
   "how-to-create-an-enscribe-plugin.php": {
     "sectionPages": [ {"code": "For Developers"}],
-    "title": "How to Write an Enscribe Plugin",
+    "title": "How to Create an Enscribe Plugin",
     "desc": "Do you want to have WebVTT generated audio descriptions for your videos but your video provider doesn't support your video platform? Developers can read this to build a plugin so Enscribe can do that. "
   },
   "video-content.php": {
