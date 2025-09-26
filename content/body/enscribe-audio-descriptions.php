@@ -225,7 +225,7 @@
 </p>
 
 <div class="enable-table--horizontally-scrollable" tabindex="0">
-<table class="enable-table enable-table--with-borders" class="api-table">
+<table class="enable-table enable-table--with-borders api-table">
     <thead>
         <tr>
             <th scope="col">Attribute name</th>
@@ -317,3 +317,16 @@
 <p>Enscribe is quite small (under 15K) and is modular: it will only load the parts that you need. If you just need HTML5
     video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
     download that at that point. </p>
+
+    <?= includeNPMInstructions(
+    "enscribe",
+    [],
+    "",
+    false,
+    [
+        
+    ],
+    null,
+    false,
+    true,
+) ?>
