@@ -6,6 +6,12 @@ table {
 
     &.api-table {
         tbody {
+            th {
+                word-break: break-word;   /* allow breaking words */
+                overflow-wrap: anywhere;  /* break at allowed points */
+                line-break: hyphens;   
+                min-width: 200px;
+            }
             td {
                 text-align: left;
             }

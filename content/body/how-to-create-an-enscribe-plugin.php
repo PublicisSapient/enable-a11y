@@ -131,7 +131,7 @@
 <ul>
   <li>Reads the current playback time with p.youtube.getCurrentTime().</li>
   <li>Skips if AD is disabled or an AD utterance is already playing.</li>
-  <li>Detects quick backwards seeks (if now < lastTime - 0.2) and clears the “recent cue” guard.</li>
+  <li>Detects quick backwards seeks (if now &lt; lastTime - 0.2) and clears the “recent cue” guard.</li>
   <li>Scans the
       p.ADTrack.cues list and fires exactly when |now - cue.startTime| ≤ 0.1s.</li>
   <li>Dedupes by remembering the last fired startTime so the same cue won’t trigger twice.</li>
@@ -163,7 +163,7 @@
 <h2>What properties and methods does enscribe.js provide</h2>
 
 
-<table>
+<table class="api-table">
   <caption>Enscribe.js exposes these helpers to plugins:</caption>
   <thead>
     <tr>
@@ -193,7 +193,7 @@
   </tbody>
 </table>
 
-<table>
+<table class="api-table">
   <caption><strong>player object</strong> for each media element marked with <code>data-enscribe</code></caption>
   <thead>
     <tr>
@@ -239,12 +239,12 @@
 
 
 <h2>Where do the cues come from?</h2>
-<p>Enscribe expects cues to be real <a href="https://developer.mozilla.org/en-US/docs/Web/API/VTTCue">HTML5  VTTCues</a>a> so <code>getCueData(cue)</code> can call
+<p>Enscribe expects cues to be real <a href="https://developer.mozilla.org/en-US/docs/Web/API/VTTCue">HTML5  VTTCues</a> so <code>getCueData(cue)</code> can call
   <code>cue.getCueAsHTML()</code>, so you will need to do the same for your plugin.  This is how we handled it in the existing plugins' <code>setup()</code> code:
 </p>
 
 <ol>
-  <li>For <code>enscribe-html5.js</code>, we have access to the player's native VTTCue.  <strong>If the provider you are writing a plugin for exposes a <code>TextTrackList</code>,</stong> pick the right track (e.g., type="descriptions") and assign it to <code>player.ADTrack</code>.</li>
+  <li>For <code>enscribe-html5.js</code>, we have access to the player's native VTTCue.  <strong>If the provider you are writing a plugin for exposes a <code>TextTrackList</code>,</strong> pick the right track (e.g., type="descriptions") and assign it to <code>player.ADTrack</code>.</li>
   <li><strong>When a video provider lacks tracks:</strong> Create a hidden HTML5 <code>&lt;video muted&gt;</code> element with a
     child <code>&lt;track src="/path/to/descriptions.vtt" kind="descriptions" default&gt;</code>. Read
     <code>video.textTracks[0]</code> once the track <code>load</code> event fires; store it as

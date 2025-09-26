@@ -7,7 +7,6 @@ https://www.useragentman.com/enable/alert.php
 https://www.useragentman.com/enable/pause-anim-control.php
 https://www.useragentman.com/enable/animated-gif-with-pause-button.php
 https://www.useragentman.com/enable/audio-player.php
-https://www.useragentman.com/enable/audio-descriptions.php
 https://www.useragentman.com/enable/button.php
 https://www.useragentman.com/enable/carousel.php
 https://www.useragentman.com/enable/checkbox.php
@@ -56,6 +55,8 @@ https://www.useragentman.com/enable/text-spacing.php
 https://www.useragentman.com/enable/timer.php
 https://www.useragentman.com/enable/tooltip.php
 https://www.useragentman.com/enable/video-player.php
+https://www.useragentman.com/enable/enscribe-audio-descriptions.php
+https://www.useragentman.com/enable/how-to-create-an-enscribe-plugin.php
 https://www.useragentman.com/enable/video-content.php
 https://www.useragentman.com/enable/acknowledgements.php
 https://www.useragentman.com/enable/faq.php
