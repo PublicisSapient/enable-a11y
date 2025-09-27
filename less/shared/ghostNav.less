@@ -7,12 +7,21 @@
     &--is-hidden {
         transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
     }
+
+    @media @tablet-up {
+        will-change: none;
+        &--is-hidden {
+            transform: none;
+        }
+    }
 }
 .pause-anim-control__prefers-reduced-motion {
 	.ghost-nav {
 		transition: none;
+        will-change: none;
 	    &--is-hidden {
             transform: none;
         }
     }
 }
+

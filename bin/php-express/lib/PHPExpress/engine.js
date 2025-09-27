@@ -9,6 +9,7 @@ var engine = function (filePath, opts, callback) {
         displayErrors = this.displayErrors,
 
         method = opts.method || 'GET',
+        url = opts.url || '',
         get = opts.get || {},
         post = opts.post || {},
 
@@ -22,13 +23,11 @@ var engine = function (filePath, opts, callback) {
             QUERY_STRING: query,
             SERVER_NAME: 'localhost',
         };
-        
 
-        Object.keys(server).forEach(key => {
-            env[key] = server[key]
-        });
-    console.error('help ', binPath)
 
+    Object.keys(server).forEach(key => {
+        env[key] = server[key]
+    });
     var command = util.format(
         '%s %s %s %s',
         (body ? util.format('echo "%s" | ', body) : '') + binPath,
@@ -37,9 +36,13 @@ var engine = function (filePath, opts, callback) {
         filePath
     );
 
-    child_process.exec(command,{
-		env: env
-	}, function (error, stdout, stderr) {
+
+    console.info(`${method} from ${binPath}: ${url}`);
+
+
+    child_process.exec(command, {
+        env: env
+    }, function (error, stdout, stderr) {
         if (error) {
 
             // can leak server configuration

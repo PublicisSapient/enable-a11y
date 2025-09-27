@@ -271,6 +271,15 @@ code {
         body:not(.pause-anim-control__prefers-reduced-motion):has(.ghost-nav--is-hidden) & {
             top: 0;
         }
+
+        @media @tablet-up {
+            transition: none;
+            will-change: none;
+
+            body:not(.pause-anim-control__prefers-reduced-motion):has(.ghost-nav--is-hidden) & {
+                top: (80 / @px);
+            }
+        }
     }
 
     &__notes-container {
