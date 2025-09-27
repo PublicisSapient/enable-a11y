@@ -691,6 +691,22 @@ main *:focus,
 main *:focus-visible {
   scroll-margin-top: 15rem;
 }
+/* Keep header in flow; slide it up when hidden */
+.ghost-nav {
+  transition: transform 200ms ease;
+  will-change: transform;
+}
+.ghost-nav--is-hidden {
+  transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
+}
+@media (prefers-reduced-motion: reduce) {
+  .ghost-nav {
+    transition: none;
+  }
+  .ghost-nav--is-hidden {
+    transform: none;
+  }
+}
 body {
   margin: 0;
   position: relative;

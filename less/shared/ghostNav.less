@@ -1,0 +1,18 @@
+@import "mixins-and-vars";
+
+/* Keep header in flow; slide it up when hidden */
+.ghost-nav {
+	transition: transform @ghost-nav-speed @ghost-nav-ease;
+	will-change: transform;
+    &--is-hidden {
+        transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
+    }
+}
+.pause-anim-control__prefers-reduced-motion {
+	.ghost-nav {
+		transition: none;
+	    &--is-hidden {
+            transform: none;
+        }
+    }
+}

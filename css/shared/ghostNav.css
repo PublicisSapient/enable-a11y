@@ -1,0 +1,25 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+/* Keep header in flow; slide it up when hidden */
+.ghost-nav {
+  transition: transform 200ms ease-in-out;
+  will-change: transform;
+}
+.ghost-nav--is-hidden {
+  transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
+}
+.pause-anim-control__prefers-reduced-motion .ghost-nav {
+  transition: none;
+}
+.pause-anim-control__prefers-reduced-motion .ghost-nav--is-hidden {
+  transform: none;
+}
+/*# sourceMappingURL=ghostNav.css.map */

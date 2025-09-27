@@ -886,4 +886,20 @@ footer a,
 .enable__is-dark-mode [role="complementary"] a {
   color: #FF9F1C;
 }
+/* Keep header in flow; slide it up when hidden */
+.ghost-nav {
+  transition: transform 200ms ease;
+  will-change: transform;
+}
+.ghost-nav--is-hidden {
+  transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
+}
+@media (prefers-reduced-motion: reduce) {
+  .ghost-nav {
+    transition: none;
+  }
+  .ghost-nav--is-hidden {
+    transform: none;
+  }
+}
 /*# sourceMappingURL=all.css.map */
