@@ -123,10 +123,12 @@ figure figcaption.caption {
 
 table,
 [role="table"] {
-    width: 100%;
+    width: initial;
+    min-width: 50%;
     max-width: 1024px;
     border-collapse: collapse;
     display: table;
+    margin: 0 auto;
 
     .nowrap {
         white-space: nowrap;
@@ -142,10 +144,24 @@ table,
     [role="rowheader"],
     [role="cell"] {
         line-height: 1.2;
-        text-align: left;
         padding: 10px;
         display: table-cell;
         font-size: (14 / @px);
+    }
+
+    td,
+    [role="cell"] {
+        text-align: center;
+    }
+
+    tfoot td {
+        text-align: left;
+    }
+
+    tbody th,
+    tfoot th,
+    [role="rowheader"] {
+        text-align: right;
     }
 
     th,

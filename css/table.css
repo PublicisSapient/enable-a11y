@@ -126,10 +126,12 @@ figure figcaption.caption {
 }
 table,
 [role="table"] {
-  width: 100%;
+  width: initial;
+  min-width: 50%;
   max-width: 1024px;
   border-collapse: collapse;
   display: table;
+  margin: 0 auto;
 }
 table .nowrap,
 [role="table"] .nowrap {
@@ -150,10 +152,27 @@ table [role="rowheader"],
 table [role="cell"],
 [role="table"] [role="cell"] {
   line-height: 1.2;
-  text-align: left;
   padding: 10px;
   display: table-cell;
   font-size: 0.875rem;
+}
+table td,
+[role="table"] td,
+table [role="cell"],
+[role="table"] [role="cell"] {
+  text-align: center;
+}
+table tfoot td,
+[role="table"] tfoot td {
+  text-align: left;
+}
+table tbody th,
+[role="table"] tbody th,
+table tfoot th,
+[role="table"] tfoot th,
+table [role="rowheader"],
+[role="table"] [role="rowheader"] {
+  text-align: right;
 }
 table th,
 [role="table"] th,

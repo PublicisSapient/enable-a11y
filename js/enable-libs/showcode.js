@@ -60,7 +60,8 @@ const showcode = new function () {
     'for',
     'href',
     'xlink:href',
-    'data-select-all-for'
+    'data-select-all-for',
+    'data-enscribe-ad-control-for'
   ]
 
 

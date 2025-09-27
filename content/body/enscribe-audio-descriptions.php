@@ -225,7 +225,7 @@
 </p>
 
 <div class="enable-table--horizontally-scrollable" tabindex="0">
-<table class="enable-table enable-table--with-borders">
+<table class="enable-table enable-table--with-borders api-table">
     <thead>
         <tr>
             <th scope="col">Attribute name</th>
@@ -234,33 +234,37 @@
     </thead>
     <tbody>
         <tr>
-            <th scope="row" class="nowrap"><code>data-enscribe-global-pause</code></th>
+            <th scope="row" ><code>data-enscribe-global-pause</code></th>
             <td>Tells Enscribe if the video should pause when it is announcing an audio description. If set to
                 <code>"true"</code>, then the video, by default, pauses when reading an audio description. If set to
                 <code>"false"</code>, then the video will not pause when reading audio descriptions.
             </td>
         </tr>
         <tr>
-            <th scope="row" class="nowrap"><code>data-enscribe-ducking</code></th>
+            <th scope="row" ><code>data-enscribe-ducking</code></th>
             <td>Tells Enscribe what to set the video volume to when reading audio descriptions. This is useful when
                 <code>data-enscribe-global-pause</code> is set to <code>"false"</code> and you want to ensure the audio
                 descriptions can be heard above the video's audio stream.
             </td>
         </tr>
         <tr>
-            <th scope="row" class="nowrap"><code>data-enscribe-use-readium</code></th>
+            <th scope="row" ><code>data-enscribe-use-readium</code></th>
             <td>Uses the <a href="https://readium.org/speech/">Readium Speech</a> library to pick the best voice
                 available in the web browser. Good if you find the default voice used in a some browsers not optimal.
             </td>
         </tr>
         <tr>
-            <th scope="row" class="nowrap"><code>data-enscribe-ad-video-source</code></th>
+            <th scope="row" ><code>data-enscribe-ad-video-source</code></th>
             <td>If you want to use an alternative cut of the video with audio descriptions already populated into the
                 video's audio stream, set this attribute to be the path or the ID of this alternative cut.</td>
         </tr>
     </tbody>
 </table>
 </div>
+
+<h2>But I Want Enscribe To Work With A Video Platform It Doesn't Support</h2>
+
+<p>Good news!  If you are a developer, you can create a plugin that will support any video platform that it doesn't currently work with. Full documentation on how to do this is on our <a href="how-to-create-an-enscribe-plugin.php">How to Create an Enscribe Plugin</a> page.</p>
 
 
 
@@ -313,3 +317,16 @@
 <p>Enscribe is quite small (under 15K) and is modular: it will only load the parts that you need. If you just need HTML5
     video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
     download that at that point. </p>
+
+    <?= includeNPMInstructions(
+    "enscribe",
+    [],
+    "",
+    false,
+    [
+        
+    ],
+    null,
+    false,
+    true,
+) ?>

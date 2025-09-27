@@ -77,10 +77,10 @@ describe('Test all pages on Enable to Ensure the information is written correctl
             );
 
             const openGraphPosterContent =
-                openGraphPoster.getAttribute('content');
+                openGraphPoster?.getAttribute('content');
             const twitterGraphPosterContent =
-                twitterGraphPoster.getAttribute('content');
-            const openGraphPosterURL = openGraphPosterContent.split('?')[0];
+                twitterGraphPoster?.getAttribute('content');
+            const openGraphPosterURL = openGraphPosterContent?.split('?')[0];
             const twitterGraphPosterURL = twitterGraphPosterContent;
             const areTherePHPJestErrors =
                 document.querySelector('.jest-error') !== null;
