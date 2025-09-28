@@ -1,0 +1,3 @@
+{
+	"testScript": "npm run jest"
+}
