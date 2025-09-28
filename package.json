@@ -36,6 +36,7 @@
   ],
   "scripts": {
     "jest": "jest --runInBand",
+    "jest-optimal": "jest --runInBand --onlyChanged",
     "test": "bin/enforceRemFontSize.sh && bin/checkHTML.sh && jest  --runInBand",
     "jest-local": "jest --maxWorkers=75%",
     "test-local": "bin/checkHTML.sh && jest  --maxWorkers=75%",
