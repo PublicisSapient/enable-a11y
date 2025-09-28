@@ -43,7 +43,7 @@
     {
         "label": "Include Enscribe into you project",
         "highlight": "%OUTERHTML%enscribe-js ||| type=\\\"module\\\"",
-        "notes": "Note that it must be of type module"
+        "notes": "Note that it must be of type module.  The module runs init() on it's own on page load. You can call <code>init()</code> again manually if you add other video players into the page after the page is loaded.  If you don't need this functionality, you could just load this script using <code>&lt;script type=\"module\" src=\"path/to/enscribe.js\"&gt;&lt;/script&gt;"
     },
     {
         "label": "Ensure data-enscribe is set to the right video type",
@@ -318,6 +318,10 @@
     video support, it only loads the HTML5 module. If it comes across a YouTube video you want to use it with, it will
     download that at that point. </p>
 
+<h2>Installing Enscribe</h2>
+
+<p>Enscribe is available a number of ways for developers to use.  Here's how you can use it in your own projects.</p>
+
     <?= includeNPMInstructions(
     "enscribe",
     [],
@@ -328,5 +332,5 @@
     ],
     null,
     false,
-    true,
+    false
 ) ?>
