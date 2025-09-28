@@ -1,7 +1,10 @@
 
 @import "shared/mixins-and-vars";
 
-
+/*
+ * This is the basic UI needed for Enscribe as implented on the Enable website.
+ * Feel free to adjust this stylesheet for your own needs.
+ */
 .enscribe-video-container {
 
   position: relative;
@@ -22,14 +25,14 @@ button.icon-audio-descriptions {
   cursor: pointer;
   border: solid 1px transparent;
   caret-color: rgba(0,0,0,0);
-  background-image: url('../images/enscribe/icon-audio-description--off.svg');
+  background-image: data-uri('../images/enscribe/icon-audio-description--off.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   display:block;
 
   &[aria-checked="true"]  {
-    background-image: url('../images/enscribe/icon-audio-description.svg');
+    background-image: data-uri('../images/enscribe/icon-audio-description.svg');
   }
 
   

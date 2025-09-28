@@ -886,4 +886,27 @@ footer a,
 .enable__is-dark-mode [role="complementary"] a {
   color: #FF9F1C;
 }
+/* Keep header in flow; slide it up when hidden */
+.ghost-nav {
+  transition: transform 200ms ease-in-out;
+  will-change: transform;
+}
+.ghost-nav--is-hidden {
+  transform: translateY(calc(-100% - env(safe-area-inset-top, 0px)));
+}
+@media only screen and (min-width: 720px) {
+  .ghost-nav {
+    will-change: none;
+  }
+  .ghost-nav--is-hidden {
+    transform: none;
+  }
+}
+.pause-anim-control__prefers-reduced-motion .ghost-nav {
+  transition: none;
+  will-change: none;
+}
+.pause-anim-control__prefers-reduced-motion .ghost-nav--is-hidden {
+  transform: none;
+}
 /*# sourceMappingURL=all.css.map */

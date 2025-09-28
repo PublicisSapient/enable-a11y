@@ -15,7 +15,14 @@
         &--is-loaded {
             display: block;
         }
+
+
+        /* Ensure all elements with inline background styles are turned off */
+        .enable__is-dark-mode  & * {
+            background: none !important;
+        }
     }
+
 }
 
 .mw-editsection {

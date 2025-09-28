@@ -35,7 +35,7 @@
   
   <li><a href="https://github.com/akr3081">Adam Rock</a> for the accessible <a href="/meter.php">meter</a> and <a href="/audio-player.php">audio player</a> components
   </li>
-  <li><a href="https://github.com/shiprarawal/shiprarawal">Shipra Rawal</a> for our <a href="infographics.php">Infographics page</a>.</li>
+  <li><a href="https://github.com/shiprarawal/shiprarawal">Shipra Rawal</a> for our <a href="infographic.php">Infographics page</a>.</li>
   <li><a href="https://github.com/lunarias">Jessie Cai</a> for our <a href="tooltip.php">Tooltips page</a> and adding fixes for running Enable locally on a Windows machine.</li>
   <li>Mahesh Ambig for the unit tests for the Tab Component.</li>
   <li>Neha Singla for the unit tests for the Combobox Component.</li>

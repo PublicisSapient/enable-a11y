@@ -1,6 +1,6 @@
 {
   "index.php": {
-    "title": "Enable",
+    "title": "Enable Home Page",
     "desc": "A website that shows web developers how to make their work accessible.",
     "mainClass": "with-full-bleed-hero",
     "bodyClass": "index"
@@ -24,11 +24,11 @@
   },
   "link.php": {
     "sectionPages": [ {"controls": "Simple Controls"}],
-    "title": "Links (Including Those in Breadcrumbs and Ones That Open a New Window)",
+    "title": "Accessible Links (Including Those in Breadcrumbs and Ones That Open a New Window)",
     "desc": "Links are easy to code accessibly, but it's nice to give more context."
   },
   "alert-dialog.php": {
-    "title": "Alert Dialog",
+    "title": "Accessible Alert Dialog",
     "desc": "Do we need this?",
     "wip": true
   },
