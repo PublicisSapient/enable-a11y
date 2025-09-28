@@ -56,7 +56,8 @@
     "watch": "npm-watch",
     "convert-modules-to-libs": "bash bin/convert-modules-to-libs.sh",
     "prepare": "node .husky/install.mjs",
-    "validate:version": "node bin/validate-node-version.mjs"
+    "validate:version": "node bin/validate-node-version.mjs",
+    "publish": "np --test-script jest --branch main"
   },
   "jest": {
     "verbose": true,
