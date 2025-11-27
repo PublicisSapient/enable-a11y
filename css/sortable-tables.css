@@ -24,16 +24,22 @@
 .deque-table-sortable__group table thead th {
   position: relative;
   text-align: center;
+  padding: 0;
+}
+.deque-table-sortable__group table thead th:focus-within {
+  z-index: 1;
 }
 .deque-table-sortable__group table thead th:last-child {
   border-right: none;
 }
 .deque-table-sortable__group table thead th .sortableColumnLabel {
   display: inline-block;
-  height: 100%;
   cursor: pointer;
-  padding: 0 0 0 1.5625rem;
   text-align: left;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 .deque-table-sortable__group table thead th .sortableColumnLabel:hover {
   outline: 1px dashed #767676;
@@ -49,15 +55,7 @@
 .enable__is-dark-mode .deque-table-sortable__group table thead th button {
   color: #121212;
 }
-.deque-table-sortable__group table thead th button {
-  margin: -25px 0;
-  padding: 25px 0;
-}
-.deque-table-sortable__group table thead th button:hover {
-  margin: 0;
-}
 .deque-table-sortable__group table thead th button:focus {
-  margin: 0;
   z-index: 1;
 }
 .deque-table-sortable__group table thead th button:active {
@@ -93,7 +91,6 @@
 }
 .deque-table-sortable__group table thead td,
 .deque-table-sortable__group table thead th {
-  padding: 12px 11px 12px 0;
   text-align: center;
   vertical-align: middle;
 }

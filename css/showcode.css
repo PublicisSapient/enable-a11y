@@ -173,12 +173,13 @@ h4.showcode__heading {
   display: block;
   width: calc(100% - 20px);
   margin: 0 auto;
+  min-height: 30px;
 }
 @media only screen and (min-width: 720px) {
   .showcode__steps select {
     width: calc(100% - 10rem - 10px);
     float: right;
-    margin: 3px 10px 0 0;
+    margin: 0px 10px 0 0;
   }
 }
 .showcode__ui {
