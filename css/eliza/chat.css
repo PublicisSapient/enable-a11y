@@ -199,4 +199,20 @@
 .show-chatbot .chatbot-btn span:last-child {
   opacity: 1;
 }
+.chatbot-quick-options {
+  margin-top: 0.5rem;
+}
+.chatbot .chatbot-option-link {
+  display: block;
+  width: 75%;
+  border: solid 1px #22f;
+  border-radius: 10px;
+  padding: 10px;
+  background: #ccf;
+  color: #22f;
+  margin: 10px auto;
+}
+.chatbot-options-list {
+  list-style-type: none;
+}
 /*# sourceMappingURL=chat.css.map */
