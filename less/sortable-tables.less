@@ -9,13 +9,14 @@
         border-spacing: 0;
         overflow: visible;
         margin-top: 8px;
-        width: 100%;
+        width: initial%;
 
         thead {
             border-bottom: 1px solid #e3e3e3;
 
             th {
                 position: relative;
+                text-align: center;
             }
 
             th:last-child {
@@ -76,9 +77,10 @@
                 height: @height;
                 width: @width;
 
-                position: absolute;
+                position: relative;
+                display: inline-block;
                 left: 6px;
-                top: calc(50% - @height / 2);
+                top: (4/@px);
 
                 filter: invert(90%);
             }
@@ -99,12 +101,15 @@
             td,
             th {
                 padding: 12px 11px 12px 0;
-                text-align: left;
+                text-align: center;
                 vertical-align: middle;
             }
         }
 
         tbody {
+            th {
+                text-align: center;
+            }
             td th {
                 text-align: left;
                 padding: 7px;

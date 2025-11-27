@@ -29,7 +29,7 @@
   position: static;
   white-space: normal;
   width: auto;
-  margin: auto;
+  margin: initial;
   width: 100%;
   /*
     * We use a negative outline-offset here. If we didn't,

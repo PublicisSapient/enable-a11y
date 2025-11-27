@@ -28,8 +28,10 @@ textarea,
     overflow: auto;
     .vendor(appearance, textarea);
     resize: both;
-    min-width: 20rem;
-    max-width: none !important;
+
+    @media @desktop {
+        min-width: 20rem;
+    }
 }
 
 .textarea-label {

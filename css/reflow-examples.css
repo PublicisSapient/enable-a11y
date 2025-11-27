@@ -137,4 +137,20 @@ a[tabindex="-1"] {
   cursor: not-allowed;
   opacity: 0.5;
 }
+.product-tile-carousel__example .glider-prev,
+.product-tile-carousel__example .glider-next {
+  top: 140px;
+}
+@media only screen and (min-width: 960px) {
+  .product-tile-carousel__example .glider-prev,
+  .product-tile-carousel__example .glider-next {
+    display: none;
+  }
+}
+.product-tile-carousel__example .glider-prev {
+  margin-left: 10px;
+}
+.product-tile-carousel__example .glider-next {
+  margin-right: 10px;
+}
 /*# sourceMappingURL=reflow-examples.css.map */

@@ -72,7 +72,8 @@ if ($heading == "") {
 
       </div>
     </div>
-
+    <button class="glider-prev" tabindex="-1" aria-label="Display Previous Slide" aria-hidden="true">«</button>
+    <button class="glider-next" tabindex="-1" aria-label="Display Next Slide" aria-hidden="true">»</button>
     <div id="product-tile-carousel__indicators" class="dots">
     </div>
   </div>
@@ -86,5 +87,5 @@ if ($heading == "") {
 </div>
 
 <p class="center">
-  Resize the browser window to see how we ensure the carousel only appears on smaller width breakpoints.
+  Resize the browser window to see how we ensure the carousel only appears on smaller width breakpoints.  To ensure no reflow violations, we put the arrow buttons (i.e. "Display Previous Slide" and "Display Next Slide" controls) on this component when it is a carousel.
 </p>

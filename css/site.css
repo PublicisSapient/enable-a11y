@@ -141,6 +141,12 @@ body:has(.plp) h2 {
 .plp .plp-list .item-wrapper .icon-wrapper .icon {
   min-height: 100px;
 }
+.plp .plp-list .item-wrapper .icon-wrapper .icon img[src="images/icons/controls/enscribe-audio-descriptions.svg"] {
+  height: 150px;
+}
+.enable__is-dark-mode .plp .plp-list .item-wrapper .icon-wrapper .icon img[src="images/icons/controls/enscribe-audio-descriptions.svg"] {
+  filter: invert();
+}
 .plp .plp-list .item-wrapper .icon-wrapper img {
   max-width: 100%;
 }

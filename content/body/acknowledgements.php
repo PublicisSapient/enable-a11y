@@ -22,19 +22,21 @@
       href="https://lsnrae.medium.com/if-you-must-use-a-carousel-make-it-accessible-977afd0173f4">accessible
       carousels</a> and <a href="https://lsnrae.medium.com/accessible-form-validation-9fa637ddb0fc">form validation</a>.
   </li>
+  <li>Jeremy Burr, who kindly donated the original code that Enscribe, <a href="audio-descriptions.php">our speech synthesis audio descriptions library</a> is based on. </li>
   <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing husky pre-commit hooks to run lint-staged before pushing code to the repository</li>
   <li><a href="https://github.com/majid-paktinat">Majid Paktinat</a> and <a href="https://github.com/akshaypanchal">Akshaykumar Panchal</a> for implementing dynamic Structured Data Markup for improving the SEO of the Enable Project.</li>
   <li><a href="https://github.com/basiabaldwin">Basia Baldwin</a> for working on redesigning the Enable project and developing the site in dark mode.</li>
   <li>Matthew Slavin for his redesign of the Enable Project's website in 2024, and to <a href="https://github.com/basiabaldwin">Basia Baldwin</a> and Travis Doughty for for implementing the redesign on the site. </li>
   <li><a href="https://github.com/alisonhall">Alison Hall</a> for cleaning up and streamlining the unit testing and automated testing NPM tasks (and also doing the difficult task of updating the NPM packages within the project in 2024).  She also added the Table of Contents component that appears on the top of almost every Enable page.</li>
   <li>Oluwaseun Longe for adding stylelint to Enable.</li>
+  <li>Sachin Manchanda for bug fixes to the  <a href="input-mask.php">input mask component</a>.</li>
   <li>Sahil Singh for unit tests for the <a href="input-mask.php">input mask component</a>.</li>
   <li>Noel Tibbles and Yash Narang for contributing to <a href="https://github.com/PublicisSapient/enable-a11y-react">the React version of Enable</a> (still in beta).  Noel has also created the <a href="https://github.com/PublicisSapient/enable-a11y-web-components">Enable's HTML5 Web Components</a>, also in beta.</li>
   <li><a href="https://github.com/saumyajitc">Saumyajit Chowdhury</a> for implementing deployment procedures in <a href="https://enable-a11y-react-iqpmwl8kb-publicis-sapient-sandbox.vercel.app/">Vercel</a> for <a href="https://github.com/PublicisSapient/enable-a11y-react">the React version of Enable</a> and create npm package for external use of the accessible components.</li>
   
   <li><a href="https://github.com/akr3081">Adam Rock</a> for the accessible <a href="/meter.php">meter</a> and <a href="/audio-player.php">audio player</a> components
   </li>
-  <li><a href="https://github.com/shiprarawal/shiprarawal">Shipra Rawal</a> for our <a href="infographics.php">Infographics page</a>.</li>
+  <li><a href="https://github.com/shiprarawal/shiprarawal">Shipra Rawal</a> for our <a href="infographic.php">Infographics page</a>.</li>
   <li><a href="https://github.com/lunarias">Jessie Cai</a> for our <a href="tooltip.php">Tooltips page</a> and adding fixes for running Enable locally on a Windows machine.</li>
   <li>Mahesh Ambig for the unit tests for the Tab Component.</li>
   <li>Neha Singla for the unit tests for the Combobox Component.</li>

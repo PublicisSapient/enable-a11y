@@ -35,8 +35,12 @@ textarea,
   -moz-appearance: textarea;
   appearance: textarea;
   resize: both;
-  min-width: 20rem;
-  max-width: none !important;
+}
+@media only screen and (min-width: 960px) {
+  textarea,
+  [aria-multiline="true"] {
+    min-width: 20rem;
+  }
 }
 .textarea-label {
   vertical-align: top;

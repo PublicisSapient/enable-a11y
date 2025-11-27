@@ -14,13 +14,13 @@ const dictLookup = new (function () {
     );
     const $lookupForm = document.querySelector('.wiktionary-lookup__form');
     const $word = document.querySelector('.wiktionary-lookup__word');
-    const $pageAlert = document.querySelector('.wiktionary-lookup__page-alert');
+    const $pageStatus = document.querySelector('.wiktionary-lookup__page-status');
 
     function showPage(page, text) {
         $pageTitle.innerHTML = page;
         $wikiInfo.innerHTML = text;
         $licenceInfo.style.display = 'block';
-        $pageAlert.innerHTML = `Now displaying information about the word "${page}".`;
+        $pageStatus.innerHTML = `Now displaying information about the word "${page}".`;
 
         // now you can modify content of #wikiInfo as you like
 
@@ -35,6 +35,13 @@ const dictLookup = new (function () {
         // ...
     }
 
+    function showMessage(msg) {
+        $wikiInfo.innerHTML = msg;
+        $pageStatus.innerHTML = msg;
+        $licenceInfo.style.display = 'block';
+        $pageTitle.innerHTML = 'Not Found';
+    }
+
     this.init = () => {
         $pageTitle.style.display = 'none';
         $lookupForm.addEventListener('submit', function (e) {
@@ -42,21 +49,28 @@ const dictLookup = new (function () {
             const $msg = `<p>Please wait .. looking up "${word}".</p>`;
             e.preventDefault();
             $wikiInfo.innerHTML = $msg;
-            $pageAlert.innerHTML = $msg;
+            $pageStatus.innerHTML = $msg;
             fetch(baseURL + word).then((response) => {
                 if (response.status === 200) {
                     $wikiInfoContainer.classList.add(
                         'wiktionary-lookup__content-container--is-loaded',
                     );
                     response.json().then((json) => {
-                        if (json && json.parse && json.parse.revid > 0) {
-                            showPage(word, json.parse.text['*']);
+                        console.log(json)
+                        if (json ) {
+                            if (json.error) {
+                                showMessage(`<p>Unable to lookup word.  An error has occured.</p>
+                                    <!--
+                                        ${json.error.trim()}
+                                    -->
+                                `);
+                            } else if (json.parse && json.parse.revid > 0) {
+                                showPage(word, json.parse.text['*']);
+                            }
                         } else {
-                            const msg = `<p>Unable to find any information about "${word}".</p>`;
-                            $wikiInfo.innerHTML = msg;
-                            $pageAlert.innerHTML = msg;
-                            $licenceInfo.style.display = 'block';
-                            $pageTitle.innerHTML = 'Not Found';
+                            showMessage(`<p>Unable to find any information about "${word}".</p>`);
+                            
+                            
                         }
                     });
                 }

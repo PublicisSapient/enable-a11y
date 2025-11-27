@@ -21,6 +21,7 @@ import {
     focusDeepLink,
     createPermalinksForHeading,
 } from './modules/helpers.js';
+import ghostNav from './modules/ghostNav.js';
 
 const colorSchemeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 const htmlEl = document.querySelector('html');
@@ -120,6 +121,11 @@ function initEnable() {
     } else {
         generateTOC();
     }
+
+    ghostNav.init({
+        revealOnStop: null,
+        usePauseAnimControl: true
+    });
 
 }
 

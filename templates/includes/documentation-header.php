@@ -1,4 +1,4 @@
-<header id="header" data-is-sticky="top">
+<header id="header" class="ghost-nav" data-is-sticky="top">
     <!-- Skip Link -->
     <div class="enable-mobile-visible-on-focus__container enable-skip-link--begin">
         <a href="#main" id="beginning-of-nav" class="enable-mobile-visible-on-focus enable-skip-link">

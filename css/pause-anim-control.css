@@ -42,7 +42,7 @@
   text-align: center;
   display: flex;
   flex-direction: row;
-  margin: 0 55px 0 20px;
+  margin: 0 64px 0 20px;
 }
 @media only screen and (min-width: 960px) {
   .play-pause-anim__checkbox-container {
@@ -59,10 +59,15 @@
   }
 }
 .play-pause-anim__checkbox-container .pause-button {
-  width: 25px;
+  width: 0px;
   height: 25px;
   display: inline-block;
   margin: 0px 10px 0 0;
+}
+@media only screen and (min-width: 720px) {
+  .play-pause-anim__checkbox-container .pause-button {
+    width: 25px;
+  }
 }
 .play-pause-anim__checkbox-container a {
   color: #ccccff;

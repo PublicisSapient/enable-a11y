@@ -6,6 +6,15 @@
     border: solid 1px black;
     .no-scrollbars();
 
+    &-contain {
+        width: 100vw !important;
+
+        @media @tablet-up {
+            width: 100% !important;
+        }
+        overflow: none;
+    }
+
     .enable-focus(
     {
       outline: solid 2px @focus-color-dark-bg;

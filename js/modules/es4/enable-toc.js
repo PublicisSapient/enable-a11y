@@ -177,7 +177,7 @@ const tableOfContents = new (function() {
         if (toggleTOCSelector) {
             toggleTOCSelector.style.display = 'none';
         }
-        toggleButtonSelector?.focus();
+        //toggleButtonSelector?.focus();
         window.removeEventListener('click', this.closeToggleTOCOnEvent);
         window.removeEventListener('keyup', this.closeToggleTOCOnEvent);
     }
@@ -190,12 +190,16 @@ const tableOfContents = new (function() {
      * @param {Event} event - The event object that triggered this function, which could be a click or keyup event.
      */
     this.closeToggleTOCOnEvent = (event) => {
+        
         const { toggleButtonSelector, toggleTOCSelector } = commonSelectors();
-        if (
-            (event.type === 'keyup' && event.key === 'Escape') ||
-            (event.target.parentNode && !toggleButtonSelector?.contains(event.target) && !toggleTOCSelector?.contains(event.target))
-        ) {
-            event.preventDefault();
+        const wasEscapePressed =  (event.type === 'keyup' && event.key === 'Escape');
+        const wasTOCItemPressed = (event.type === 'click' && event.target.classList.contains('enable-toc__link'));
+        const wasClickedOutsideTOCDropdown = (event.target.parentNode && !toggleButtonSelector?.contains(event.target) && !toggleTOCSelector?.contains(event.target))
+        console.log('event', event, wasEscapePressed, wasClickedOutsideTOCDropdown, wasTOCItemPressed);
+        if (wasEscapePressed || wasClickedOutsideTOCDropdown || wasTOCItemPressed) {
+            if (wasEscapePressed) {
+                event.preventDefault();
+            }
             this.closeToggleTOC();
         }
     }
@@ -205,7 +209,8 @@ const tableOfContents = new (function() {
      * This function is triggered when the toggle TOC button is clicked. It removes any tooltip attributes, checks the
      * current expanded state of the TOC, and calls the appropriate function to either open or close the TOC.
      */
-    this.toggleTOC = () => {
+    this.toggleTOC = (e) => {
+        console.log('TOC', e.currentTarget)
         const { toggleButtonSelector } = commonSelectors();
         toggleButtonSelector?.removeAttribute('data-tooltip'); // Remove any tooltip attributes that might be set on the toggle button.
         const isExpanded = toggleButtonSelector?.getAttribute('aria-expanded') === 'true';

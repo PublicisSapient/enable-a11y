@@ -123,10 +123,16 @@ figure figcaption.caption {
 
 table,
 [role="table"] {
-    width: 100%;
+    width: initial;
+    min-width: 50%;
     max-width: 1024px;
     border-collapse: collapse;
     display: table;
+    margin: 0 auto;
+
+    .nowrap {
+        white-space: nowrap;
+    }
 
     figure & {
         margin-bottom: 0;
@@ -138,10 +144,24 @@ table,
     [role="rowheader"],
     [role="cell"] {
         line-height: 1.2;
-        text-align: left;
         padding: 10px;
         display: table-cell;
         font-size: (14 / @px);
+    }
+
+    td,
+    [role="cell"] {
+        text-align: center;
+    }
+
+    tfoot td {
+        text-align: left;
+    }
+
+    tbody th,
+    tfoot th,
+    [role="rowheader"] {
+        text-align: right;
     }
 
     th,
@@ -150,6 +170,12 @@ table,
         font-weight: bold;
         color: @table-header-text-color;
         background-color: @table-header-background;
+
+        code {
+            display: inline;
+            background-color: transparent;
+            color: #0a0;
+        }
 
         .enable__is-dark-mode & {
             background-color: @table-header-background--dark-mode;
@@ -283,6 +309,12 @@ table,
 }
 
 .enable-table {
+
+
+    &--horizontally-scrollable {
+        overflow-y: scroll;
+    }
+    
     &--centered-data {
         th,
         td {
@@ -327,7 +359,7 @@ table,
     }
 }
 
-&.enable-tabl .screenshot-table {
+&.enable-table .screenshot-table {
     margin: 0 auto;
     width: initial;
     max-width: initial;

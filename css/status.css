@@ -17,9 +17,13 @@
 }
 .wiktionary-lookup__content-container {
   display: none;
+  /* Ensure all elements with inline background styles are turned off */
 }
 .wiktionary-lookup__content-container--is-loaded {
   display: block;
+}
+.enable__is-dark-mode .wiktionary-lookup__content-container * {
+  background: none !important;
 }
 .mw-editsection {
   display: none;

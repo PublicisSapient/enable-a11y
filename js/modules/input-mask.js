@@ -162,30 +162,29 @@ const inputMask = new function () {
 
     const pasteEvent = (e) => {
         const { target } = e;
+        setTimeout(() => {
+            if (isMaskedInput(target)) {
+                e.preventDefault();
+                const { selectionStart, selectionEnd, value, maxLength } = target;
+                let pastedText = (e.clipboardData || window.clipboardData).getData("text");
+                pastedText = pastedText.replace(formatCharacterRe, '');
 
-        if (isMaskedInput(target)) {
-            e.preventDefault();
-            const { selectionStart, selectionEnd, value, maxLength } = target;
-            let pastedText = (e.clipboardData || window.clipboardData).getData("text");
-            pastedText = pastedText.replace(formatCharacterRe, '');
+                const pre = value.substring(0, selectionStart);
+                const post = value.substring(selectionEnd);
+                const newValue = `${pre}${pastedText}${post}`;
 
-            const pre = value.substring(0, selectionStart);
-            const post = value.substring(selectionEnd);
-            const newValue = `${pre}${pastedText}${post}`;
-
-            if (maxLength === -1) {
-                target.value = newValue;
-                target.selectionStart = selectionStart + newValue.length;
-                target.selectionEnd = selectionStart + newValue.length;
-            } else {
-                target.value = newValue.substring(0, maxLength);
-                target.selectionStart = Math.min(selectionStart + pastedText.length, maxLength);
-                target.selectionEnd = Math.min(selectionStart + pastedText.length, maxLength);
+                if (maxLength === -1) {
+                    target.value = newValue;
+                    target.selectionStart = selectionStart + newValue.length;
+                    target.selectionEnd = selectionStart + newValue.length;
+                } else {
+                    target.value = newValue.substring(0, maxLength);
+                    target.selectionStart = Math.min(selectionStart + pastedText.length, maxLength);
+                    target.selectionEnd = Math.min(selectionStart + pastedText.length, maxLength);
+                }
+                setMaskValue(target);
             }
-            setMaskValue(target);
-        }
-        
-        
+        },10);
     }
 
     const keydownEvent = (e) => {
@@ -246,14 +245,11 @@ const inputMask = new function () {
     }
 
     const isMaskedInput = (target) => {
-        return target.nodeType === Node.ELEMENT_NODE && target.classList.contains(inputClass)
+        return target.classList.contains(inputClass)
     }
 
     const isInMask = (target) => {
-        return target.nodeType === Node.ELEMENT_NODE && (
-            target.classList.contains(maskClass) || 
-            (target?.parentNode?.classList && target.parentNode.classList.contains(maskClass)
-        ));
+        return target.classList.contains(maskClass) || (target?.parentNode?.classList && target.parentNode.classList.contains(maskClass));
     }
 
     const getMaskedSelectionStartEnd = (inputEl) => {
@@ -302,7 +298,7 @@ const inputMask = new function () {
     }
 
     const getMaskedValue = (inputEl) => {
-        const { dataset, value = '' } = inputEl;
+        const { dataset, value } = inputEl;
         const { mask } = dataset;
         const valueArr = value.split('');
         const maskArr = mask.split('');
@@ -466,7 +462,7 @@ const inputMask = new function () {
     }
 
     const getPreviousValue = (el) => {
-        return el.dataset[getDatasetAttr('PreVal')] || '';
+        return el.dataset[getDatasetAttr('PreVal')];
     }
 
     const populateMasks = () => {

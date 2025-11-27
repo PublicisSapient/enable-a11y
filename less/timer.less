@@ -6,6 +6,7 @@
     height: 300px;
     text-align: center;
     margin: 0 auto;
+    max-width: 100%;
 
     &__svg {
         transform: scaleX(-1);
@@ -46,7 +47,9 @@
     &__label {
         position: absolute;
         width: 300px;
-        height: 300px;
+        max-width: 100%;
+        height: calc(88vw - 20px);
+        max-height: 300px;
         top: 0;
         display: flex;
         align-items: center;

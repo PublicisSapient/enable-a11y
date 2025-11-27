@@ -56,7 +56,7 @@
   <h2>Quick Start guide</h2>
 
   <p>
-    Just <a href="js/pause-anim-control.js">download the script</a> and include it at the end of the
+    Just <a href="js/modules/pause-anim-control.js">download the script</a> and include it at the end of the
     <code>body</code>:
   </p>
 

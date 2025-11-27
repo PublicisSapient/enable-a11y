@@ -55,6 +55,8 @@ https://www.useragentman.com/enable/text-spacing.php
 https://www.useragentman.com/enable/timer.php
 https://www.useragentman.com/enable/tooltip.php
 https://www.useragentman.com/enable/video-player.php
+https://www.useragentman.com/enable/enscribe-audio-descriptions.php
+https://www.useragentman.com/enable/how-to-create-an-enscribe-plugin.php
 https://www.useragentman.com/enable/video-content.php
 https://www.useragentman.com/enable/acknowledgements.php
 https://www.useragentman.com/enable/faq.php
@@ -64,3 +66,4 @@ https://www.useragentman.com/enable/exposing-style-info-to-screen-readers.php
 https://www.useragentman.com/enable/screen-reader-only-text.php
 https://www.useragentman.com/enable/bookmarklets.php
 https://www.useragentman.com/enable/accessible-pdf-generation.php
+https://www.useragentman.com/enable/m-enabling-2025.php

@@ -91,7 +91,7 @@ function PauseAnimControlDef() {
      // for vanilla HTML5 Videos
      document.querySelectorAll('video').forEach((el) => {
        const { dataset } = el;
-       if (!dataset.ablePlayer && !dataset.notPausableByEnable) {
+       if (!dataset.ablePlayer && !dataset.notPausableByEnable && !el.paused) {
          dataset.pausedWithEnableControl = true;
          el.pause();
        }

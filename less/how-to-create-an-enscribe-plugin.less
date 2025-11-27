@@ -1,0 +1,33 @@
+@import "shared/mixins-and-vars";
+
+table {
+    max-width: 750px;
+    margin-bottom: 40px;
+
+    &.api-table {
+        tbody {
+            th {
+                min-width: 150px;
+            }
+            td {
+                text-align: left;
+            }
+
+            th,
+            td {
+                word-break: break-word;   /* allow breaking words */
+                overflow-wrap: anywhere;  /* break at allowed points */
+                line-break: hyphens; 
+            }
+
+            th {
+                
+                @media @tablet-up {
+                    word-break: inital;   /* allow breaking words */
+                    line-break: initial;
+                    white-space: nowrap;
+                } 
+            }
+        }
+    }
+}

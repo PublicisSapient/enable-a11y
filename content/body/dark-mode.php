@@ -39,9 +39,9 @@
 </p>
 
 <div class="enable-example">
-    <img src="images/dark-mode-example/goodContrast_credits.png" width=800 height=155
+    <img src="images/dark-mode-example/goodContrast_credits.png"
     alt="Good Contrast Example">
-    <img src="images/dark-mode-example/badContrast_credits.png" width=800 height=155
+    <img src="images/dark-mode-example/badContrast_credits.png"
     alt="Bad Contrast Example">
 </div>
 
