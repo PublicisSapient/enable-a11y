@@ -15,7 +15,7 @@
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
-  margin: 0.25rem 0.5rem 0.25rem 0.25rem;
+  margin: 0.25rem;
   border: 0.0625rem solid #444;
   background: #e0e0e0;
   background-image: linear-gradient(0deg, #ffffff, #e0e0e0);
@@ -106,8 +106,8 @@
   border: 0.125rem solid transparent;
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
-.enable-radio [type="radio"]:focus + label:before {
-  outline: 2px var(--focus-color) solid;
+.enable-radio [type="radio"]:focus + label {
+  outline: 2px solid var(--focus-color);
 }
 .enable-radio [type="radio"]:not(:checked) + label:after {
   opacity: 0;
@@ -126,5 +126,45 @@ fieldset .legend,
 [role="radiogroup"] .legend {
   border-bottom: none;
   text-align: left;
+}
+.circleless-radio-buttons {
+  /* The following two selectors are the keyboard only instructions CSS. */
+  /* This ensures the instructions only appear if a keyboard user applies focus to one of the radio buttons */
+}
+.circleless-radio-buttons fieldset {
+  margin: 10px 0;
+}
+.circleless-radio-buttons label {
+  padding: 5px;
+  border-radius: 4px;
+  margin: 0 10px 10px 0;
+  border: solid 1px #333;
+}
+.enable__is-dark-mode .circleless-radio-buttons label {
+  border: solid 1px #ccc;
+}
+.circleless-radio-buttons label:focus-within {
+  /* This insures a focus ring appears around the label when focus is applied to the input inside it. */
+  outline: 2px solid var(--focus-color);
+}
+.circleless-radio-buttons label:has(input[type="radio"]:checked) {
+  background: #ccc;
+}
+.enable__is-dark-mode .circleless-radio-buttons label:has(input[type="radio"]:checked) {
+  background: #555;
+}
+.circleless-radio-buttons .keyboard-instructions {
+  display: none;
+  padding: 5px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: black;
+}
+.enable__is-dark-mode .circleless-radio-buttons .keyboard-instructions {
+  color: black;
+  background-color: white;
+}
+.circleless-radio-buttons fieldset:focus-within:has(:focus-visible) .keyboard-instructions {
+  display: block;
 }
 /*# sourceMappingURL=radiogroup.css.map */

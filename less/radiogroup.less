@@ -9,150 +9,194 @@
 
 /* This is the radio button's outer circle */
 [role="radio"] {
-    display: inline-block;
-    position: relative;
-    width: (@radio-size / @px);
-    height: (@radio-size / @px);
-    margin: (4 / @px) (8 / @px) (4 / @px) (4 / @px);
-    border: (@radio-border / @px) solid #444;
+	display: inline-block;
+	position: relative;
+	width: (@radio-size / @px);
+	height: (@radio-size / @px);
+	margin: (4 / @px);
+	border: (@radio-border / @px) solid #444;
 
-    background: rgb(224, 224, 224);
-    .gradient(linear; rgb(255, 255, 255),rgb(224,224,224));
-    vertical-align: bottom;
+	background: rgb(224, 224, 224);
+	.gradient(linear; rgb(255, 255, 255), rgb(224, 224, 224));
+	vertical-align: bottom;
 
-    &[aria-checked="true"] {
-        &::after {
-            /*
+	&[aria-checked="true"] {
+		&::after {
+			/*
        * These styles ensure the checkbox appears 
        * as an 'X' in Windows High Contrast Mode
        */
-            content: "x";
-            text-align: center;
-            font-size: (25 / @px);
-            line-height: (@radio-size-without-border / @px);
+			content: "x";
+			text-align: center;
+			font-size: (25 / @px);
+			line-height: (@radio-size-without-border / @px);
 
-            /*
+			/*
        * These styles are for sighted users who
        * don't use assistive technology.
        */
-            color: #900;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: (@radio-size-without-border / @px);
-            height: (@radio-size-without-border / @px);
-            transform: scale(0.65);
-            background: #900;
-        }
-    }
+			color: #900;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: (@radio-size-without-border / @px);
+			height: (@radio-size-without-border / @px);
+			transform: scale(0.65);
+			background: #900;
+		}
+	}
 
-    /* Ensures both the inner and outer circles are circles, not squares. */
-    &,
-    &::after {
-        border-radius: 50%;
-    }
+	/* Ensures both the inner and outer circles are circles, not squares. */
+	&,
+	&::after {
+		border-radius: 50%;
+	}
 }
 
 .aria-radio-label {
-    font-size: (@radio-label-font-size * (1/@px));
-    line-height: ((@radio-size + @radio-border) / @radio-label-font-size);
+	font-size: (@radio-label-font-size *(1/@px));
+	line-height: ((@radio-size + @radio-border) / @radio-label-font-size);
 }
 
 .enable-radio {
-    @enable-radio-size: 22;
-    @enable-radio-border: 2;
-    @enable-radio-size-without-border: (
-        @enable-radio-size - 2 * @enable-radio-border
-    );
-    @enable-radio-padding: 13;
-    @enable-radio-label-font-size: 18;
+	@enable-radio-size: 22;
+	@enable-radio-border: 2;
+	@enable-radio-size-without-border: (@enable-radio-size - 2 * @enable-radio-border );
+	@enable-radio-padding: 13;
+	@enable-radio-label-font-size: 18;
 
-    [type="radio"] {
-        .vendor(appearance, none);
-        position: absolute;
-        z-index: 1;
-        width: (@enable-radio-size / @px);
-        height: (@enable-radio-size / @px);
-        margin: 0;
-        opacity: 0;
+	[type="radio"] {
+		.vendor(appearance, none);
+		position: absolute;
+		z-index: 1;
+		width: (@enable-radio-size / @px);
+		height: (@enable-radio-size / @px);
+		margin: 0;
+		opacity: 0;
 
-        &,
-        &::before,
-        &::after {
-            box-sizing: border-box;
-        }
+		&,
+		&::before,
+		&::after {
+			box-sizing: border-box;
+		}
 
-        &,
-        & + label {
-            margin-bottom: (8 / @px);
-        }
+		&,
+		& + label {
+			margin-bottom: (8 / @px);
+		}
 
-        + label {
-            position: relative;
-            padding-left: ((@enable-radio-size + @enable-radio-padding) / @px);
-            cursor: pointer;
-            display: inline-block;
-            color: #666;
-            font-size: (@enable-radio-label-font-size * (1/@px));
-            line-height: (
-                (@enable-radio-size + 2 * @enable-radio-border) /
-                    @enable-radio-label-font-size
-            );
+		+ label {
+			position: relative;
+			padding-left: ((@enable-radio-size + @enable-radio-padding) / @px);
+			cursor: pointer;
+			display: inline-block;
+			color: #666;
+			font-size: (@enable-radio-label-font-size *(1/@px));
+			line-height: ((@enable-radio-size + 2 * @enable-radio-border) / @enable-radio-label-font-size);
 
-            .enable__is-dark-mode & {
-                color: #ccc;
-            }
-        }
+			.enable__is-dark-mode & {
+				color: #ccc;
+			}
+		}
 
-        + label:before {
-            border: (@enable-radio-border / @px) solid #ddd;
-        }
+		+ label:before {
+			border: (@enable-radio-border / @px) solid #ddd;
+		}
 
-        + label:before,
-        + label:after {
-            content: "";
-            display: block;
-            position: absolute;
-            left: ((-1 * @enable-radio-border) / @px);
-            top: ((-1 * @enable-radio-border) / @px);
-            width: (@enable-radio-size / @px);
-            height: (@enable-radio-size / @px);
+		+ label:before,
+		+ label:after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: ((-1 * @enable-radio-border) / @px);
+			top: ((-1 * @enable-radio-border) / @px);
+			width: (@enable-radio-size / @px);
+			height: (@enable-radio-size / @px);
 
-            border-radius: 100%;
-            background: #fff;
-        }
+			border-radius: 100%;
+			background: #fff;
+		}
 
-        + label:after {
-            border: (@enable-radio-border / @px) solid transparent;
-            transition:
-                opacity 0.25s ease-in-out,
-                transform 0.25s ease-in-out;
-        }
+		+ label:after {
+			border: (@enable-radio-border / @px) solid transparent;
+			transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+		}
 
-        &:focus + label:before {
-            outline: 2px @focus-color solid;
-        }
+		&:focus + label {
+			outline: 2px  solid @focus-color;
+		}
 
-        &:not(:checked) + label:after {
-            opacity: 0;
-            transform: scale(0);
-        }
+		&:not(:checked) + label:after {
+			opacity: 0;
+			transform: scale(0);
+		}
 
-        &:checked + label:after {
-            opacity: 1;
-            background: #060;
-            transform: scale(0.6);
-        }
-    }
+		&:checked + label:after {
+			opacity: 1;
+			background: #060;
+			transform: scale(0.6);
+		}
+	}
 }
 
 fieldset,
 .fieldset,
 [role="radiogroup"] {
-    legend,
-    .legend {
-        border-bottom: none;
-        text-align: left;
-    }
+	legend,
+	.legend {
+		border-bottom: none;
+		text-align: left;
+	}
+}
+
+.circleless-radio-buttons {
+
+	fieldset {
+		margin: 10px 0;
+	}
+
+	label {
+		padding: 5px;
+		border-radius: 4px;
+		margin: 0 10px 10px 0;
+
+		border: solid 1px #333;
+
+        .enable__is-dark-mode & {
+		    border: solid 1px #ccc;
+        }
+	}
+
+	label:focus-within {
+        /* This insures a focus ring appears around the label when focus is applied to the input inside it. */
+		outline: 2px solid @focus-color ;
+	}
+
+	label:has(input[type="radio"]:checked) {
+		background: #ccc;
+
+        .enable__is-dark-mode & {
+            background: #555;
+        }
+	}
+
+	/* The following two selectors are the keyboard only instructions CSS. */
+	.keyboard-instructions {
+		display: none;
+		padding: 5px;
+		margin-bottom: 20px;
+		color: white;
+		background-color: black;
+
+        .enable__is-dark-mode & {
+            color: black;
+            background-color: white;
+        }
+	}
+
+	/* This ensures the instructions only appear if a keyboard user applies focus to one of the radio buttons */
+	fieldset:focus-within:has(:focus-visible) .keyboard-instructions {
+		display: block;
+	}
 }
