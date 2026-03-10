@@ -140,7 +140,6 @@
     }
 </script>
 <h2>Custom radio buttons using ARIA</h2>
-<?php includeStats(["isForNewBuilds" => false]); ?>
 <p> Use when some developer before you decided that making <code>&lt;div&gt;</code> tags look like radio buttons was a good use of time. Even though it wasn't. Bad, developer! Bad! </p>
 <div id="example2" class="enable-example">
     <h3 class="form-heading">Set Alerts for your Account</h3>
@@ -273,14 +272,11 @@
     }
 </script>
 <h2>Radio Buttons That Look Like Buttons</h2>
+<?php includeStats(["doNot" => false, "comment" => "<p><strong>It is better to have radio buttons look like the other examples on this page because it's what users are used to.</strong>  We only would use the code below if you had to fix code already implemented.</p><p>For net new work, do your users a favour and make radio buttons look like traditional radio buttons.</p>"]); ?>
 <p>On web pages, radio buttons have traditionally looked like the ones demonstrated earlier on this page: <strong>unfilled circles when unselected and filled circles when selected</strong>. However, some designers style radio buttons to look like regular buttons instead.</p>
-<p>While this may seem unusual at first, the term radio button actually comes from the physical buttons once used on radios to select preset stations. When one of these buttons was pressed, the others would pop out while the selected one remained pushed in. (source: <a href="https://www.jitbit.com/alexblog/242-the-history-of-a-radio-button/">The history of a radio-button by Alex Yumashev</a>) Many radios (particularly car radios built before the 1980s) used this type of control:</p>
-<figure class="wide">
-    <img src="images/radiogroup/retro-car-radio.jpg" alt="Vintage car radio with tuning dial knobs and push buttons attached to metal mounting bracket with exposed wiring."/>
-    <figcaption>Autovox Bermuda RA 163 B. - Solid State Car Radio Receiver</figcaption>
-</figure>
 <p>The challenge with styling radio button groups to look like regular buttons is that keyboard users may assume each button can be reached individually using the Tab key. In reality, radio buttons behave differently. Only one radio button in the group—typically the first one or the currently selected one—is included in the tab order. The remaining options are accessed using the arrow keys, which may not be obvious to all users.</p>
-<p>To accommodate keyboard users, <strong>it is advisable to provide instructions above the radio button group</strong> explaining how to navigate the options. If desired, these instructions can be hidden visually and revealed only when a keyboard user focuses on one of the radio buttons.</p>
+<p>To accommodate keyboard users, <strong>you could provide instructions above the radio button group</strong> explaining how to navigate the options. If desired, these instructions can be hidden visually and revealed only when a keyboard user focuses on one of the radio buttons.</p>
+<p> An example of this solution is below. <strong>Please keep in mind that we do not suggest this solution for a new website. Designers should just make radio buttons look like radio buttons.</strong> </p>
 <div id="circleless-radio-buttons" class="enable-example circleless-radio-buttons">
     <p>Use your keyboard to apply focus to one of the radio buttons below.</p>
     <fieldset >
