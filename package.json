@@ -132,6 +132,12 @@
   },
   "dependencies": {
     "@double-great/stylelint-a11y": "^3.0.2",
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/core-mt": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/types": "^0.12.4",
+    "@ffmpeg/util": "^0.12.2",
+    "@timur00kh/whisper.wasm": "^0.1.0-canary.52de4c5",
     "bin-build": "^2.1.1",
     "d3": "^7.8.5",
     "dialog-polyfill": "^0.5.6",

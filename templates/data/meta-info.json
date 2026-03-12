@@ -957,5 +957,14 @@
     ],
     "title": "Accessible Multimedia on a Budget (M-Enabling 2025 Talk)",
     "desc": "Creating accessibility multimedia doesn't have to break the bank.  This presentation shows you how you do it effectively at little cost."
+  },
+  "captions.php": {
+    "sectionPages": [
+      {
+        "content": "Static Content"
+      }
+    ],
+    "title": "Generating Captions Using Whisper.cpp",
+    "desc": "Creating captions for a video can be difficult for someone if they don't have experience. Fortunately, modern AI captioning solutions like Whisper.cpp can help with that.  Even though a human still needs to review the work, the initial results are really impressive."
   }
 }
