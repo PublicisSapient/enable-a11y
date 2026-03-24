@@ -6,6 +6,14 @@ const port = 8888;
 
 let phpCmd = 'php';
 
+
+function setIsolationHeaders(res) {
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+    // Often helpful for same-origin resources used under COEP
+    res.setHeader('Cross-Origin-Resource-Policy', 'same-origin');
+  }
+
 // must specify options hash even if no options provided!
 var phpExpress = require('./php-express/index.js')({
     // assumes php is in your PATH
@@ -29,6 +37,7 @@ app.get('/', function (req, res) {
 });
 
 function render(req, res) {
+    setIsolationHeaders(res);
     phpExpress.engine(
         path.join(__dirname, '..', 'templates/main.php'),
         {
@@ -54,6 +63,12 @@ app.use(rewrite('/~*', '/enable-node-libs/$1'));
 
 // serve static files.
 app.use(express.static('.'));
+
+app.use((/* req, res, next */) => {
+    setIsolationHeaders();
+});
+
+console.log('hhahaha');
 
 const server = app.listen(port, function () {
     const port = server.address().port;

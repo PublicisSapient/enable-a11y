@@ -1,6 +1,6 @@
 import {FFmpeg} from '/node_modules/@ffmpeg/ffmpeg/dist/esm/index.js';
 import {fetchFile, toBlobURL} from '/node_modules/@ffmpeg/util/dist/esm/index.js';
-import { WhisperWasmService, ModelManager, convertFromFile, convertFromArrayBuffer } from '/node_modules/@timur00kh/whisper.wasm/dist/index.es.js ';
+import { WhisperWasmService, ModelManager, convertFromArrayBuffer, convertFromFile } from '/node_modules/@timur00kh/whisper.wasm/dist/index.es.js';
 
 const status = document.getElementById('status');
 const input = document.getElementById('videoInput');
@@ -41,10 +41,12 @@ async function loadFFmpeg() {
 		status.textContent = message;
 	});
 
+	console.log('crossOriginIsolated:', window.crossOriginIsolated);
+	console.log('SharedArrayBuffer exists:', typeof SharedArrayBuffer !== 'undefined');
+
 	await ffmpeg.load({
 		coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
-		wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-		workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript')
+		wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm')
 	});
 
 	status.textContent = 'FFmpeg loaded.';
@@ -72,55 +74,71 @@ const prepareAudioForWhisper = async (file, output, events = {}) => {
 		'1',
 		'-c:a',
 		'pcm_s16le',
-		'output.wav'
+		output
 	]);
 
 	if (events.readOutput) {
 		events.readOutput();
 	}
 
-	const data = await ffmpeg.readFile('output.wav');
+	const wavBytes = await ffmpeg.readFile(output);
 
-	
-	return data;
+	const wavBuffer = wavBytes.buffer.slice(
+		wavBytes.byteOffset,
+		wavBytes.byteOffset + wavBytes.byteLength
+	);
+
+	const { audioData } = await convertFromArrayBuffer(wavBuffer, { normalize: true });
+
+	return audioData;
 }
 
-const caption = async (wavData) => {
-    // Load a model
-    const modelData = await modelManager.loadModel('base'); // e.g. 'tiny', 'small', 'medium-q5_0', 'large-q5_0'
-    await whisper.initModel(modelData);
-    console.log('init');
+let modelLoaded = false;
 
-    // Create a transcription session for streaming
-    const session = whisper.createSession();
-    console.log('session created');
+const caption = async (audioData) => {
+  if (!modelLoaded) {
+    let modelData;
 
-    const arrayBuffer =
-        wavData.buffer.slice(
-            wavData.byteOffset,
-            wavData.byteOffset + wavData.byteLength
-        );
-    console.log('created array buffer');
+    try {
+      status.textContent = 'Downloading model...';
+      modelData = await modelManager.loadModel('tiny', true, (progress) => {
+        status.textContent = `Loading model: ${progress}%`;
+      });
+      console.log('model bytes:', modelData.length);
 
-    const { audioData } = await convertFromArrayBuffer(arrayBuffer, {
-        normalize: true
-    });
-
-    console.log('converted audio');
-
-    // Process audio in chunks
-    const stream = session.streaming(audioData, {
-        language: 'en',
-        threads: 4,
-        translate: false,
-        sleepMsBetweenChunks: 100,
-    });
-    console.log('streaming');
-
-    for await (const segment of stream) {
-        status.textContent = `[${segment.timeStart}ms - ${segment.timeEnd}ms]: ${segment.text}`;
+      status.textContent = 'Initializing Whisper model...';
+      await whisper.initModel(modelData);
+      modelLoaded = true;
+      console.log('initModel ok');
+    } catch (err) {
+      console.error('model setup failed', err);
+      throw err;
     }
-}
+  }
+
+  try {
+    console.log('Transcribing...');
+    status.textContent = 'Transcribing...';
+	console.log('audioData constructor:', audioData.constructor.name);
+	console.log('audioData length:', audioData.length);
+	console.log('first 10 samples:', Array.from(audioData.slice(0, 10)));
+	console.log('threads requested:', 1);
+	console.log('SharedArrayBuffer exists:', typeof SharedArrayBuffer !== 'undefined');
+    const result = await whisper.transcribe(audioData, undefined, {
+      language: 'en',
+      threads: 1,
+      translate: false,
+      restartModelOnError: true
+    });
+
+    console.log(result);
+    return result;
+  } catch (err) {
+    console.error('transcribe failed', err);
+    throw err;
+  }
+};
+
 
 const submitVideoEvent = async (e) => {
 	const file = input.files ?. [0];
@@ -133,9 +151,12 @@ const submitVideoEvent = async (e) => {
 		button.disabled = true;
 		downloadLink.style.display = 'none';
 
+		const { audioData } = await convertFromFile(file, { normalize: true });
+		await caption(audioData);
+		/*
 		await loadFFmpeg();
 
-		const wavData = await prepareAudioForWhisper(file, 'output.wav', {
+		const audioData = await prepareAudioForWhisper(file, 'output.wav', {
 			writeInput: () => {
 				status.textContent = 'Writing input file...';
 			},
@@ -149,11 +170,23 @@ const submitVideoEvent = async (e) => {
 		});
 
 		status.textContent = 'Done. WAV created locally in your browser.';
-        await caption(wavData);
+
+
+		const maxSeconds = 30;
+		const maxSamples = 16000 * maxSeconds;
+		const shortAudioData = audioData.length > maxSamples
+		? audioData.slice(0, maxSamples)
+		: audioData;
+
+		console.log('full duration seconds:', audioData.length / 16000);
+		console.log('test duration seconds:', shortAudioData.length / 16000);
+
+		await caption(shortAudioData); */
+        //await caption(audioData);
 	} catch (err) {
 		console.error(err);
 		//status.textContent = 'Conversion failed: ' + err.message;
-        throw "Conversion Error. " + err.message;
+        throw new Error("Conversion Error: " + err.message);
 	} finally {
 		button.disabled = false;
 	}
