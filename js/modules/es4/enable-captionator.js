@@ -48,46 +48,33 @@ async function loadFFmpeg() {
 	status.textContent = 'FFmpeg loaded.';
 }
 
-const prepareAudioForWhisper = async (file, output, events = {}) => {
-
+const convertVideoToWav = async (file, output = 'output.wav', events = {}) => {
 	if (events.writeInput) {
-		events.writeInput();
+	  events.writeInput();
 	}
-
+  
 	await ffmpeg.writeFile('input', await fetchFile(file));
-
+  
 	if (events.extractAudio) {
-		events.extractAudio();
+	  events.extractAudio();
 	}
-
+  
 	await ffmpeg.exec([
-		'-i',
-		'input',
-		'-vn',
-		'-ar',
-		'16000',
-		'-ac',
-		'1',
-		'-c:a',
-		'pcm_s16le',
-		output
+	  '-i', 'input',
+	  '-vn',
+	  '-ar', '16000',
+	  '-ac', '1',
+	  '-c:a', 'pcm_s16le',
+	  output
 	]);
-
+  
 	if (events.readOutput) {
-		events.readOutput();
+	  events.readOutput();
 	}
-
+  
 	const wavBytes = await ffmpeg.readFile(output);
-
-	const wavBuffer = wavBytes.buffer.slice(
-		wavBytes.byteOffset,
-		wavBytes.byteOffset + wavBytes.byteLength
-	);
-
-	const { audioData } = await convertFromArrayBuffer(wavBuffer, { normalize: true });
-
-	return audioData;
-}
+	return wavBytes;
+};
 
 let modelLoaded = false;
 
