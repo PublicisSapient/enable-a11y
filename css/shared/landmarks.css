@@ -686,11 +686,12 @@ body {
 	 font-family: "Helvetica", "Arial", sans-serif;
      */
 }
-/* Prevents sticky header to obscure focused elements */
+/* Prevents sticky header to obscure focused elements 
 main *:focus,
 main *:focus-visible {
-  scroll-margin-top: 15rem;
+    scroll-margin-top: 15rem;
 }
+*/
 /* Keep header in flow; slide it up when hidden */
 .ghost-nav {
   transition: transform 200ms ease-in-out;

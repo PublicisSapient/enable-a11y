@@ -96,6 +96,9 @@
   color: #e60000;
   padding-left: 18px;
 }
+.enable__is-dark-mode .enable-form-example label.error {
+  color: #f2baba;
+}
 @media only screen and (min-width: 720px) {
   .enable-form-example label.error {
     margin-left: calc(45% + 10px);
