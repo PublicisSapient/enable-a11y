@@ -171,13 +171,17 @@ fieldset,
 	label:focus-within {
         /* This insures a focus ring appears around the label when focus is applied to the input inside it. */
 		outline: 2px solid @focus-color ;
+        outline-offset: 2px;
 	}
 
 	label:has(input[type="radio"]:checked) {
-		background: #ccc;
+		background: #000;
+        color: #fff;
+        font-weight: bold;
 
         .enable__is-dark-mode & {
-            background: #555;
+            background: #fff;
+            color: #000;    
         }
 	}
 

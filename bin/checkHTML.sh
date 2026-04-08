@@ -530,4 +530,4 @@ then
 	#.. Remove temporary files on success
 	rm tmp/* 2> /dev/null
 fi
-
+exit 0

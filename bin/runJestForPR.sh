@@ -21,6 +21,8 @@ PHP_FILES_AFFECTED=`node bin/find-affected-pages.js \
   --files "$(git diff --name-only origin/main...HEAD | paste -sd, -)"
   `
 
+echo "Jest testing: $PHP_FILES_AFFECTED"
+
 POSSIBLE_TEST_FILES=`echo "$PHP_FILES_AFFECTED" | sed "s/.php/.test.js/"`
 TEST_FILES=""
 
