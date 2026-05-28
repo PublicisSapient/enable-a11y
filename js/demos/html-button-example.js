@@ -2,12 +2,12 @@ new (function () {
     const activate = (e) => {
         const { target } = e;
         if (
-            target.tagName === 'BUTTON' &&
-            target.closest('main') &&
-            target.closest('.enable-example') &&
-            target.id !== 'aria-js-disabled-button'
+            (target.tagName === 'BUTTON' || target.tagName === 'A') &&
+            target.closest('.click-example') 
         ) {
-            alert('this HTML button has been triggered');
+            e.preventDefault();
+            e.stopPropagation();
+            alert('A button has been triggered');
         }
     };
 

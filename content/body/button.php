@@ -12,7 +12,7 @@
 <?php includeStats(["isForNewBuilds" => true]); ?>
 <p>The most bulletproof way to make a button. It "just works" for everyone.</p>
 <div class="enable-example">
-    <div id="example1" class="button-container">
+    <div id="example1" class="button-container click-example">
         <p>If you want to give Zoltan your data, push this:</p>
         <button> Surrender my data to Zoltan </button>
     </div>
@@ -25,6 +25,11 @@
                 "label": "Create markup",
                 "highlight": "%OPENCLOSECONTENTTAG%button",
                 "notes": "So straightforward.  Why would you want to use an ARIA button?"
+            },
+            {
+                "label": "Create JavaScript that should be triggered when pressed",
+                "highlight": "%FILE% js/demos/html-button-example.js ~  ([\\s]*const activate = [\\s\\S]*};|\\s*document.addEventListener\\('click[^;]*;)",
+                "notes": "When you change an <code>a</code> tag to a <code>button</code>, you don't need the <code>keyup</code> event.  This is because the <code>click</code> event will fire when the Enter key is pressed.  You only need to use the <code>keyup</code> event in the scenario given in the next example on this page."
             }
         ]
     }
@@ -34,9 +39,9 @@
             "isForNewBuilds" => false,
         ]); ?>
 <p> I can't tell you how many times I have seen buttons incorrectly marked up as links on a project. When dealing with older projects where it would be time-consuming to refactor the existing functionality and convert these "pseudo-buttons" into proper <code>&lt;button&gt;</code> tags, it might be more practical to add the ARIA <code>role="button"</code> to the existing <code>&lt;a&gt;</code> tags. If you decide to do this, you should first review all the steps below and see what would entail more work: refactoring the code to use actual HTML buttons or adding the extra JavaScript to the codebase to ensure the "imitation buttons" are accessible. </p>
-<div id="example3" class="button-container enable-example">
+<div id="example3" class="button-container enable-example click-example">
     <p> If you want to give Zoltan your data, push this: </p>
-    <a class="aria-button" aria-describedby="link-button-label" href="#" role="button">Surrender my data to Zoltan</a>
+    <a class="aria-button" href="#" role="button">Surrender my data to Zoltan</a>
 </div>
 <?php includeShowcode("example3"); ?>
 <script type="application/json" id="example3-props">
@@ -54,7 +59,7 @@
             },
             {
                 "label": "Create JavaScript that should be triggered when pressed",
-                "highlight": "%FILE% js/demos/aria-button-example.js ~  (ariaButtonExample|document.addEventListener\\('click[^;]*;)",
+                "highlight": "%FILE% js/demos/html-button-example.js ~  ([\\s]*const activate = [\\s\\S]*};|\\s*document.addEventListener\\('click[^;]*;)",
                 "notes": "When you change an <code>a</code> tag to a <code>button</code>, you don't need the <code>keyup</code> event.  This is because the <code>click</code> event will fire when the Enter key is pressed.  You only need to use the <code>keyup</code> event in the scenario given in the next example on this page."
             },
             {
@@ -72,7 +77,7 @@
 <p> There have been a few projects, particularly ones developed using React and Angular for some reason, where I have observed developers creating buttons using <code>&lt;div&gt;</code> tags. </p>
 <p> This hurts my brain. It goes against the ideas of semantic HTML and it makes Tim Berners-Lee cry. Do you want to make the Father of the Web cry? What kind of monster are you? </p>
 <p> If you have an existing project that has code built this way, read the steps below and determine if it would be less work to do the following instead of using real HTML <code>&lt;button&gt;</code> tags. </p>
-<div id="example2" class="button-container enable-example">
+<div id="example2" class="button-container enable-example aria-example">
     <p> If you want to give Zoltan your data, push this: </p>
     <div class="aria-button" role="button" tabindex="0">Surrender my data to Zoltan</div>
 </div>
@@ -92,7 +97,7 @@
             },
             {
                 "label": "Create JavaScript that should be triggered when pressed",
-                "highlight": "%FILE% js/demos/aria-button-example.js ~ document.addEventListener[^;]*;",
+                "highlight": "%FILE% js/demos/aria-button-example.js ~ ([\\s]*const activate = [\\s\\S]*};|\\s*document.addEventListener[^;]*;)",
                 "notes": "You must ensure that you include the 'keyup' event as well as the 'click' event. This is due to the fact that the 'click' event isn't triggered by keyboard actions for those DOM elements that aren't inherently accessible via keyboard as a standard feature."
             },
             {
@@ -110,7 +115,7 @@
     <li> Use the <code>aria-disabled="true"</code> attribute. This doesn't remove the button from the keyboard tabbing order. It also doesn't prevent click events from being fired <em>except for Chrome on Google Android with Talkback on</em>. (Thanks to Noel Tibbles for pointing this out). </li>
 </ol>
 <p>The ideal solution would be to use the <code>aria-disabled="true"</code> attribute while using JavaScript to prevent the click event from performing an action. This allows the button to be accessible by screen reader users, while still notifying them that it is disabled.</p>
-<div class="enable-example">
+<div class="enable-example click-example">
     <p>The following button is disabled with the <code>disabled</code> attribute </p>
     <div id="html-disabled" class="button-container">
         <p>If you want to give Zoltan your data, push this:</p>

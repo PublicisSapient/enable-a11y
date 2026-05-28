@@ -63,7 +63,8 @@ const formValidator = new (function () {
                         !isValid
                     ) {
                         const ariaDesc =
-                            formField.getAttribute('aria-describedby');
+                            formField.getAttribute('aria-describedby') || '';
+                        console.log('ariaDesc', ariaDesc, typeof(ariaDesc));
                         const newAriaDesc = formField.id + '-error';
                         formField.setAttribute('aria-invalid', 'true');
                         if (
@@ -73,14 +74,17 @@ const formValidator = new (function () {
                             //formField.setAttribute('aria-describedby', newAriaDesc);
                         } else {
                             formField.dataset.origAriaDesc = ariaDesc;
+                            let newAriaDesc = ariaDesc + ' ' + formField.id + '-error';
+                            newAriaDesc = newAriaDesc.trim();
                             formField.setAttribute(
                                 'aria-describedby',
-                                ariaDesc + ' ' + formField.id + '-error',
+                                newAriaDesc,
                             );
+                            console.log('yyy');
                         }
                     } else {
                         const ariaDesc = formField.dataset.origAriaDesc;
-                        if (ariaDesc) {
+                        if (ariaDesc === '') {
                             formField.setAttribute(
                                 'aria-describedby',
                                 ariaDesc,

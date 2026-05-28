@@ -21,6 +21,9 @@
   overflow: hidden;
   text-align: center;
 }
+.product-tile--link {
+  display: block;
+}
 .enable__is-dark-mode .product-tile {
   color: #ededed;
 }
@@ -53,6 +56,15 @@
 }
 .product-tile__image {
   width: 100%;
+}
+.product-tile__button {
+  border: solid 1px #aaa;
+  color: white;
+  background: black;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 20px auto 0 auto;
+  font-weight: bold;
 }
 .product-tile--not-as-good-example del::before,
 .product-tile--not-as-good-example ins::before {

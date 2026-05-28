@@ -52,6 +52,11 @@
         }
     }
 
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: initial;
+    }
+
     .enable-input-mask input {
         width: 100%;
     }
@@ -120,7 +125,8 @@
         }
     }
 
-    input[type="submit"] {
+    input[type="submit"],
+    button[type="submit"] {
         display: block;
         margin: 2rem auto 0 auto;
         padding-bottom: 0;
@@ -215,7 +221,7 @@
     }
 
     label.required::after {
-        color: #e60000;
+        color: #860000;
         content: " *";
         font-weight: normal;
 
@@ -225,7 +231,7 @@
     }
 
     .required-symbol {
-        color: #e60000;
+        color: #860000;
 
         .enable__is-dark-mode & {
             color: #ff8888;

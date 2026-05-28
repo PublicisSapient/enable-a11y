@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-var ariaButtonExample = new (function () {
+const ariaButtonExample = new (function () {
     const activate = (e) => {
         const { target } = e;
+
         if (
-            target.classList.contains('aria-button') &&
-            (e.type == 'click' || e.key === ' ' || e.key === 'Enter')
+            (target.role === 'button' && target.nodeName === 'DIV') &&
+            (e.type === 'click' || e.key === ' ' || e.key === 'Enter')
         ) {
             e.preventDefault();
             e.stopPropagation();
-            alert('this ARIA button has been triggered');
+            alert('An ARIA Button has been triggered');
         }
     };
 

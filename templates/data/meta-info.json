@@ -949,6 +949,15 @@
     "title": "Converting Accessible PDFs from HTML",
     "desc": "Many websites generate PDFs dynamically, like invoices, that look nice but are not accessible. This page is a step-by-step guide on how to generate accessible PDFs with Open HTML to PDF and SpringBoot."
   },
+  "adding-context-to-redundant-labels.php": {
+    "sectionPages": [
+      {
+        "content": "Static Content"
+      }
+    ],
+    "title": "Adding Context To Redundant Labels",
+    "desc": "There are several ways to make add context to visual labels for screen reader users.  This page describes the pros and cons of each."
+  },
   "m-enabling-2025.php": {
     "sectionPages": [
       {

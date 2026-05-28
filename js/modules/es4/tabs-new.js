@@ -12,10 +12,7 @@
  * 
  * Released under the MIT License.
  ******************************************************************************/
-import accessibility from '../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js';
-
-
-const tabgroup = new function() {
+const tabgroup = new (function() {
 
   this.init = function() {
     this.tabgroupEls = document.querySelectorAll('.enable-tablist');
@@ -45,6 +42,35 @@ const tabgroup = new function() {
 
     // When keyboard users click on tab button, focus goes to heading.
     tabgroupEl.addEventListener("keyup", this.keyUpEvent);
+
+    // CHANGE: Add keydown event to handle SHIFT+Tab on first tab
+    tabgroupEl.addEventListener("keydown", (e) => {
+      // Only handle SHIFT+Tab
+      if (e.key === "Tab" && e.shiftKey) {
+        const tabEls = tabgroupEl.querySelectorAll('[role="tab"]');
+        if (tabEls.length > 0 && document.activeElement === tabEls[0]) {
+          // Find previous focusable element outside the tablist
+          const focusableSelectors = [
+            'a[href]:not([tabindex="-1"])',
+            'button:not([disabled]):not([tabindex="-1"])',
+            'input:not([disabled]):not([tabindex="-1"])',
+            'select:not([disabled]):not([tabindex="-1"])',
+            'textarea:not([disabled]):not([tabindex="-1"])',
+            '[tabindex]:not([tabindex="-1"])',
+            '[contenteditable="true"]'
+          ];
+          // Get all focusable elements in document
+          const focusable = Array.from(document.querySelectorAll(focusableSelectors.join(',')))
+            .filter(el => el.offsetParent !== null || el === document.activeElement);
+          const firstTab = tabEls[0];
+          const idx = focusable.indexOf(firstTab);
+          if (idx > 0) {
+            e.preventDefault();
+            focusable[idx - 1].focus();
+          }
+        }
+      }
+    });
 
     // ... use accessibility.initGroup() to allow the use of arrow keys
     // to choose each tab one at a time.
@@ -169,6 +195,4 @@ const tabgroup = new function() {
     }
 
   };
-};
-
-export default tabgroup;
+});

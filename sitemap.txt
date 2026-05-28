@@ -66,4 +66,5 @@ https://www.useragentman.com/enable/exposing-style-info-to-screen-readers.php
 https://www.useragentman.com/enable/screen-reader-only-text.php
 https://www.useragentman.com/enable/bookmarklets.php
 https://www.useragentman.com/enable/accessible-pdf-generation.php
+https://www.useragentman.com/enable/adding-context-to-redundant-labels.php
 https://www.useragentman.com/enable/m-enabling-2025.php

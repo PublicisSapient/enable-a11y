@@ -5,7 +5,7 @@
   \___//_//_/ \_,_/ \__//_/  (_)__/ //___/
                               |___/
 
-  Version: 1.7.4
+  Version: 1.7.10
   Author: Nick Piscitelli (pickykneee)
   Website: https://nickpiscitelli.com
   Documentation: http://nickpiscitelli.github.io/Glider.js
@@ -217,7 +217,7 @@
   gliderPrototype.buildDots = function () {
     var _ = this
 
-    if (!_.opt.dots) {
+    if (!_.opt.dots || !_.opt.slidesToShow) {
       if (_.dots) _.dots.innerHTML = ''
       return
     }
@@ -548,10 +548,10 @@
     _.init(true, paging)
   }
 
-  gliderPrototype.setOption = function (opt, global) {
+  gliderPrototype.setOption = function (opt, isGlobal) {
     var _ = this
 
-    if (_.breakpoint && !global) {
+    if (_.breakpoint && !isGlobal) {
       _._opt.responsive.forEach(function (v) {
         if (v.breakpoint === _.breakpoint) {
           v.settings = Object.assign({}, v.settings, opt)
