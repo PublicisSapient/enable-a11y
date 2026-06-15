@@ -39,7 +39,14 @@ dl [role="definition"]::after,
   display: block;
   height: 1rem;
 }
+dl .for-article,
+.dl .for-article {
+  margin: 10px 0;
+}
+dl .for-article dd,
+.dl .for-article dd {
+  list-style-type: circle;
+}
 ol dl {
   margin-top: 20px;
 }
-/*# sourceMappingURL=definition-term.css.map */

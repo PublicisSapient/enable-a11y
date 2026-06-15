@@ -21,6 +21,20 @@
   outline-offset: 3px;
   margin: 0 0 0 14px;
 }
+.pause-anim-control__button {
+  width: 25px;
+  height: 25px;
+  background: #000 url('../images/icons/pause.svg');
+  border-radius: 50%;
+  border: solid 1px white;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.pause-anim-control__button[data-pause-anim-control-checked="true"] {
+  background: url('../images/icons/play-button.svg') no-repeat 4px;
+  background-size: 17px 17px;
+}
 .play-pause-anim__background-pill {
   font-size: 0.875rem;
   background-color: #2b2929;
@@ -122,4 +136,3 @@ body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--animat
 body.pause-anim-control__prefers-reduced-motion .pause-anim-control__gif--still {
   display: initial;
 }
-/*# sourceMappingURL=pause-anim-control.css.map */

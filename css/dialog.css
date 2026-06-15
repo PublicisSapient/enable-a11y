@@ -35,6 +35,7 @@
   text-align: center;
 }
 .a11y-modal__button--close {
+  this: that;
   position: absolute;
   top: -20px;
   right: -20px;
@@ -72,4 +73,3 @@
 #a11y-modal__overlay.visible {
   display: block;
 }
-/*# sourceMappingURL=dialog.css.map */

@@ -284,7 +284,7 @@ describe('ARIA Listbox', () => {
             expect(domInfo.ariaSelected).toBe('false');
 
         // Press Enter to see if the new value gets populated in the button.
-        page.keyboard.press('Tab');
+        page.keyboard.press('Enter');
         // await 100ms before continuing further
         await testHelpers.fastPause();
 
@@ -302,9 +302,6 @@ describe('ARIA Listbox', () => {
                 ariaExpanded,
             };
         });
-
-        // console.log('html', el.html);
-
         expect(domInfo.ariaHaspopup).toBe('listbox');
         expect(domInfo.ariaExpanded).toBe('false');
         expect(domInfo.value).toBe('Plutonium');

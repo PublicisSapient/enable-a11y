@@ -13,6 +13,17 @@
     overflow: hidden;
     text-align: center;
 
+
+    &--link {
+        display: block;
+        text-decoration: none;
+    }
+
+
+    &--link &__price {
+        text-decoration: none;
+    }
+
     .enable__is-dark-mode & {
         color: @dark-mode-white;
     }
@@ -38,18 +49,31 @@
         left: 0;
         background: #aaa;
         padding: 5px;
+        color: black;
 
         .enable__is-dark-mode & {
             background: #550000;
+            color: white;
         }
     }
 
     &__name {
         font-weight: bold;
+        text-decoration: underline;
     }
 
     &__image {
         width: 100%;
+    }
+
+    &__button {
+        border: solid 1px #aaa;
+        color: white;
+        background: black;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 20px auto 0 auto;
+        font-weight: bold;
     }
 
     &--not-as-good-example {

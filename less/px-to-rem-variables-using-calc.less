@@ -1,0 +1,21 @@
+@px: 16;
+
+body {
+    font-size: unit(@px, px);
+}
+
+.generate-px-vars(@i) when (@i <= 10) {
+  --px@{i}: calc(unit(@i, rem) / @px);
+  .generate-px-vars(@i + 1);
+}
+
+:root {
+  .generate-px-vars(1);
+
+  /* 
+   * ... and so on ...
+   *
+   * Note that --pxN: (N/16)rem,
+   * where N is a positive integer.
+   */
+}

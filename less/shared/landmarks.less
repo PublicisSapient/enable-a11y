@@ -118,6 +118,19 @@ main:not(.with-full-bleed-hero),
     @media @tablet {
         padding: @page-padding;
     }
+
+}
+
+main:not(.with-full-bleed-hero),
+[role="main"]:not(.with-full-bleed-hero),
+#main:not(.with-full-bleed-hero) {
+    #enable-toc--sidebar + & {
+        margin: 0 auto;
+    }
+}
+
+.enable-toc-as-sidebar main.with-full-bleed-hero .with-full-bleed-hero__content {
+    margin: initial;
 }
 
 .inline-left {

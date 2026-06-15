@@ -56,7 +56,7 @@
   border: none;
   display: inline;
 }
-.enable__is-dark-mode .a11y-modal__button--close {
+.enable__is-dark-mode .a11y-modal__button--close img {
   filter: invert(100%) brightness(140%);
 }
 .a11y-modal__button--close img {
@@ -99,4 +99,3 @@ dialog {
   color: #ededed;
   border: solid 1px #ededed;
 }
-/*# sourceMappingURL=dialog-html5.css.map */

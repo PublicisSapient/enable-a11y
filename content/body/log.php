@@ -25,20 +25,17 @@ The <code>log</code> role is an ARIA-live region where new information is added 
         </aside> -->
         <h2>Example 1: </h2>
 
-        <?php includeStats([
-            "doNot" => true,
-            "comment" =>
-                'This doesn\'t seem to work as intended in many browser/screen reader combinations, so I advise not using it.',
-        ]); ?>
-
+       
         <p>
             The following example is a log that will announce the CPU usage of the web server every five seconds.
 
-        </p><div id="log-example" class="enable-example">
-        <pre id="syslog" role="log" aria-atomic="true">
-<span>Initializing.  Please wait …</span>
-        </pre>
-</div>
+        </p>
+        <div id="log-example" class="enable-example">
+            <pre id="syslog" role="log" aria-relevant="additions" aria-live="polite">
+            </pre>
+
+            <button class="log-example__button">Start logging</button>
+        </div>
 
         <?php includeShowcode("log-example"); ?>
         <script type="application/json" id="log-example-props">
@@ -58,9 +55,9 @@ The <code>log</code> role is an ARIA-live region where new information is added 
                 "notes": ""
             },
             {
-                "label": "Add aria-atomic=\"false\"",
-                "highlight": "aria-atomic",
-                "notes": "Doing this will ensure that only the updates are read out by screen readers."
+                "label": "Add aria-relevant=\"additions\"",
+                "highlight": "aria-relevant",
+                "notes": "Doing this will ensure that only the updates are read out by screen readers.  "
             },
             {
                 "label": "Ensure new information are encapsulated in separate DOM nodes.",

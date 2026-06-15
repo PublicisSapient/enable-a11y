@@ -1,1 +1,1 @@
-<script src="js/demos/log.js"></script>
+<script src="js/demos/log.js" type="module"></script>

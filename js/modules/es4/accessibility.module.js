@@ -311,6 +311,7 @@ const a11yGroup = function(el, options) {
         }
 
         if (elToFocus) {
+          console.log('ha');
           e.preventDefault();
           requestAnimationFrame(() => {
             elToFocus.focus();

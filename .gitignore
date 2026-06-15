@@ -2,9 +2,10 @@ node_modules
 .DS_Store
 api-cache
 tmp
-.vscode
+.vscode/settings.json
 report/*
 .idea
+.slingshot
 
 # generated css map files
 *.css.map

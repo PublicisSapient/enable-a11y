@@ -58,7 +58,7 @@
       "replaceHtmlRules": {},
       "steps": [{
           "label": "Insert form tag",
-          "highlight": "\\s*&lt;[\/]?form&gt;",
+          "highlight": "%OPENCLOSETAG%form",
           "notes": "Whenever you have form elements, include this tag.  It does a lot of things for you that you may not even be aware of."
         },
         {

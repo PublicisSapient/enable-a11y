@@ -90,7 +90,7 @@ $cpuLoad = getServerLoad();
 if (is_null($cpuLoad)) {
     echo "CPU load unknown -" . PHP_OS . "-";
 } else {
-    echo "CPU load at " . date("g:i:s a") . ": " . $cpuLoad . "%";
+    echo "CPU load at " . date("g:i.s A") . ": " . round($cpuLoad) . "%";
 }
 
 

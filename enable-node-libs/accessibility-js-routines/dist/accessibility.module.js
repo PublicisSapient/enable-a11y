@@ -111,6 +111,11 @@ const a11yGroup = function (el, options) {
 
     if (doSelectFirstOnInit) {
       this.select(null, el.querySelector(`[role="${this.groupType}"]`));
+    } else {
+      // Look in the group to see if one of the elements in selected.
+      // If so, you must ensure it is the only one in the group that 
+      // can initially get keyboard focus if it is tabbed into.
+      this.select(null, el.querySelector(`[role="${this.groupType}"][${this.checkedAttribute}="true"]`));
     }
 
     if (keyboardOnlyInstructionsEl) {
@@ -121,10 +126,16 @@ const a11yGroup = function (el, options) {
     document.addEventListener('keydown', this.keydownEvent);
     el.addEventListener('focusin', this.focusinEvent);
 
+    
+
     /* if (focusCallback) {
       el.addEventListener('focus', this.onFocus.bind(this), true);
     } */
   };
+
+  this.setInitialFocusStates = () => {
+
+  }
 
   /**
    * Fired when mousedown event happens. Used internally only.
@@ -245,7 +256,7 @@ const a11yGroup = function (el, options) {
   this.onClick = (e) => {
     const { target } = e;
 
-    if (this.preventClickDefault) {
+    if (this.preventClickDefault && e) {
       e.preventDefault();
     }
 
@@ -991,6 +1002,10 @@ accessibility = {
     });
   },
 
+  showStackTrace() {
+    const stack = new Error("Current stack trace").stack;
+    console.log(stack);
+  },
 
   /**
    * Calling this method will give accessibility debugging information
@@ -1001,6 +1016,7 @@ accessibility = {
     HTMLElement.prototype.oldFocus = HTMLElement.prototype.focus;
 
     HTMLElement.prototype.focus = function () {
+      accessibility.showStackTrace();
       this.oldFocus();
     };
   },

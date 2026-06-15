@@ -626,12 +626,14 @@ const showcode = new function () {
               ids = ids.substring(1);
             }
 
-            ids = ids.split(/\s+/);
+            if (ids) {
+              ids = ids.split(/\s+/);
 
-            for (let k = 0; k < ids.length; k++) {
-              const id = ids[k];
-              const idReplaceRegex = new RegExp(`id="${id}"`);
-              code = code.replace(idReplaceRegex, highlightFunc);
+              for (let k = 0; k < ids.length; k++) {
+                const id = ids[k];
+                const idReplaceRegex = new RegExp(`id="${id}"`);
+                code = code.replace(idReplaceRegex, highlightFunc);
+              }
             }
           }
         }
