@@ -783,6 +783,7 @@ main:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
   padding: 10px;
+  margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;
   position: relative;
@@ -794,6 +795,14 @@ main:not(.with-full-bleed-hero),
   .with-full-bleed-hero__content {
     padding: 30px;
   }
+}
+#enable-toc--sidebar + main:not(.with-full-bleed-hero),
+#enable-toc--sidebar + [role="main"]:not(.with-full-bleed-hero),
+#enable-toc--sidebar + #main:not(.with-full-bleed-hero) {
+  margin: 0 auto;
+}
+.enable-toc-as-sidebar main.with-full-bleed-hero .with-full-bleed-hero__content {
+  margin: initial;
 }
 .inline-left {
   float: left;

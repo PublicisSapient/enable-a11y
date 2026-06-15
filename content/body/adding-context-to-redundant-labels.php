@@ -22,17 +22,17 @@
 <p> A developer can add the product name and the pricing information to the "Add to Cart" button using the existing DOM with <code>aria-labelledby</code>:</p>
 <div id="aria-labelledby-label" class="enable-example">
     <div class="product-tile ">
-        <a href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/" class="product-tile--link" id="aria-labelledby-link" >
+        <a href="https://en.wikipedia.org/wiki/Netscape_Navigator" class="product-tile--link" id="aria-labelledby-link" >
             <div  class="product-tile__badge">
                 <div class="badge-product"> Clearance Sale </div>
             </div>
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netscape.jpg" alt="" role="presentation">
             </div>
-            <div class="product-tile__name"> Internet Explorer<br>T-Shirt </div>
+            <div class="product-tile__name"> Netscape Navigator Compass </div>
             <div class="product-tile__price">
-                <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark>
-                <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
+                <mark class="del"><span class="sr-only">Old Price: </span>$500.00</mark>
+                <mark class="ins"><span class="sr-only">New Price: </span>$0.50</mark>
             </div>
         </a>
         <button id="aria-labelledby-button" class="product-tile__button" aria-labelledby="aria-labelledby-button aria-labelledby-link">Add to cart</button>
@@ -84,17 +84,17 @@
         <div class="product-tile__badge">
             <div class="badge-product"> Clearance Sale </div>
         </div>
-        <a href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/" class="product-tile--link">
+        <a href="https://en.wikipedia.org/wiki/Netcom_(United_States)" class="product-tile--link">
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netcruiser.jpg" alt="" role="presentation">
             </div>
-            <div class="product-tile__name"> Internet Explorer<br>T-Shirt </div>
+            <div class="product-tile__name"> Netcruiser Install Disk </div>
             <div class="product-tile__price">
-                <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark>
-                <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
+                <mark class="del"><span class="sr-only">Old Price: </span>$35.99</mark>
+                <mark class="ins"><span class="sr-only">New Price: </span>$4.00</mark>
             </div>
         </a>
-        <button class="product-tile__button" aria-label="Add to cart - Internet Explorer T-Shirt, Old price $30.00, now $10.00">Add to cart</button>
+        <button class="product-tile__button" aria-label="Add to cart - Netcruiser Install Disk, Old Price: $35.99, New Price: $4.00">Add to cart</button>
     </div>
 </div>
 <?php includeShowcode("aria-label-label")?>
@@ -141,19 +141,19 @@
 <div id="sr-only-label" class="enable-example">
     <div class="product-tile ">
         <div class="product-tile__badge">
-            <div class="badge-product"> Clearance Sale </div>
+            <div class="badge-product">A Real Steal!</div>
         </div>
-        <a href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/" class="product-tile--link">
+        <a href="https://en.wikipedia.org/wiki/Napster" class="product-tile--link">
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/napster.jpg" alt="" role="presentation">
             </div>
-            <div class="product-tile__name"> Internet Explorer<br>T-Shirt </div>
+            <div class="product-tile__name"> Napster Headphones </div>
             <div class="product-tile__price">
-                <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark>
-                <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
+                <mark class="del"><span class="sr-only">Old Price: </span>$55.00</mark>
+                <mark class="ins"><span class="sr-only">New Price: </span>Free</mark>
             </div>
         </a>
-        <button class="product-tile__button">Add to cart <span class="sr-only"> - Internet Explorer T-Shirt, Old price $30.00, now $10.00</span></button>
+        <button class="product-tile__button">Add to cart <span class="sr-only"> - Napster Headphones, Old price $55.00, now Free</span></button>
     </div>
 </div>
 <?php includeShowcode("sr-only-label")?>
@@ -188,16 +188,16 @@
 <div id="group-aria-label-label" class="enable-example" >
     <div class="product-tile " role="group" aria-labelledby="group-arial-label__product-name" >
         <div class="product-tile__badge">
-            <div class="badge-product"> Clearance Sale </div>
+            <div class="badge-product">It Can Belong To You!</div>
         </div>
-        <a href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/" class="product-tile--link" id="group-arial-label__product-name">
+        <a href="https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us" class="product-tile--link" id="group-arial-label__product-name">
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/all-your-base.jpg" alt="" role="presentation">
             </div>
-            <div class="product-tile__name"> Internet Explorer<br>T-Shirt </div>
+            <div class="product-tile__name"> All Your Bass Base Guitar </div>
             <div class="product-tile__price">
-                <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark>
-                <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
+                <mark class="del"><span class="sr-only">Old Price: </span>$55.00</mark>
+                <mark class="ins"><span class="sr-only">New Price: </span>$12.00</mark>
             </div>
         </a>
         <button class="product-tile__button">Add to cart </button>

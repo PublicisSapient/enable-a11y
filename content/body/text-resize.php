@@ -107,7 +107,7 @@ body {
 
 <h3>LESS</h3>
 <p>
-  This is the pre-processor that Enable uses.  Because of the way LESS's syntax is, we decided to use a simple formula that developers can easily understand and code.</p>
+  This is the pre-processor that Enable uses.  Because of the way LESS's syntax is, we decided to use a simple formula that developers can easily understand and code.
 </p>
 
 <div id="less-px-to-rem">

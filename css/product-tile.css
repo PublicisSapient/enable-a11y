@@ -23,6 +23,10 @@
 }
 .product-tile--link {
   display: block;
+  text-decoration: none;
+}
+.product-tile--link .product-tile__price {
+  text-decoration: none;
 }
 .enable__is-dark-mode .product-tile {
   color: #ededed;
