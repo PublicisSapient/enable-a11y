@@ -66,8 +66,8 @@
         },
         {
           "label": "CSS for the required field labels",
-          "highlight": "%CSS% form-error-css~ form label.required::after",
-          "notes": "Note that the star is put into the labels via CSS"
+          "highlight": "%CSS% form-error-css~ .enable-form-example label.required::after",
+          "notes": "Note that the star is put into the labels via CSS.  CSS content is not guaranteed to be read by screen readers, but this is fine, since the required state is being read out because of the required attribute"
         },
         {
           "label": "Use regular expression patterns to ensure the data being submitted is in the right format",
@@ -176,7 +176,7 @@
         },
         {
           "label": "CSS for the required field labels",
-          "highlight": "%CSS% form-error-css~ form label.required::after",
+          "highlight": "%CSS% form-error-css~ .enable-form-example label.required::after",
           "notes": "Note that the star is put into the labels via CSS"
         },
         {
@@ -199,13 +199,13 @@
         },
         {
           "label": "Ensure the invalidHandler sets all the invalid fields with aria-invalid attributes",
-          "highlight": "%JS% formValidator.init ||| formField.setAttribute\\(\"aria-invalid\"[^)]*\\)\\;",
+          "highlight": "%JS% formValidator.init ||| (formField.setAttribute\\('aria-invalid'[^)]*\\)\\;|\\s*// When[^.]*\\.)",
           "notes": ""
         },
         {
           "label": "Use JavaScript to ensure the, when a form with an error is submitted, focus is applied to the first form element with an error",
           "highlight": "%JS% formValidator.init ||| accessibility[^)]*\\)\\;",
-          "notes": "In order to do this easily, we use <code>accessibility.applyFormFocus(), which is part of my <a href=\"https://github.com/zoltan-dulac/accessibility.js\">accessibility.js</a> library.  As long as the invalid elements are marked up with <code>aria-invalid</code> after the form is submitted, focus will go to the first invalid element."
+          "notes": "In order to do this easily, we use <code>accessibility.applyFormFocus()</code>, which is part of my <a href=\"https://github.com/zoltan-dulac/accessibility.js\">accessibility.js</a> library.  As long as the invalid elements are marked up with <code>aria-invalid</code> after the form is submitted, focus will go to the first invalid element."
         }
       ]
     }

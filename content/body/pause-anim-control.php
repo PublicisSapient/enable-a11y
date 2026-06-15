@@ -184,7 +184,26 @@
 
   <div id="elastic-collision-demo" class="enable-example">
     <canvas id="elastic-collision-demo__canvas"></canvas>
+    <button class="pause-anim-control__button" 
+        data-pause-anim-control-pause-label="Pause Animations" 
+        data-pause-anim-control-play-label="Play Animations"
+    ></button>
   </div>
+
+  
+
+
+<!-- 
+  Note: You can override the default path to accessibility.module.js by adding the 
+  data-pause-anim-control-accessibility-path attribute to any pause control element 
+  (checkbox or button). The script will use the first custom path it finds.
+  
+  Example with custom path:
+  <button class="pause-anim-control__button" 
+          data-pause-anim-control-pause-label="Pause Animations" 
+          data-pause-anim-control-play-label="Play Animations"
+          data-pause-anim-control-accessibility-path="/custom/path/to/accessibility.module.js">Pause</button>
+-->
 
   <?php includeShowcode("elastic-collision-demo", "", "", "", true, 4); ?>
   <script type="application/json" id="elastic-collision-demo-props">
@@ -312,6 +331,10 @@
       </svg>
 
     </svg>
+    <button class="pause-anim-control__button" 
+        data-pause-anim-control-pause-label="Pause Animations" 
+        data-pause-anim-control-play-label="Play Animations"
+    ></button>
   </div>
 
   <?php includeShowcode("svg-smil-demo", "", "", "", true, 4); ?>
@@ -352,6 +375,10 @@
       <img class="pause-anim-control__gif--still" src="images/running-man-anim__still.jpg"
         alt="A drawing of a man running">
     </div>
+    <button class="pause-anim-control__button" 
+        data-pause-anim-control-pause-label="Pause Animations" 
+        data-pause-anim-control-play-label="Play Animations"
+    ></button>
   </div>
 
   <?php includeShowcode("anim-gif-demo", "", "", "", true, 4); ?>
@@ -386,7 +413,7 @@
     originally checked.
   </p>
 
-  <div id="html5-video-example">
+  <div id="html5-video-example" class="enable-example">
     <div role="region">
       <video controls="" preload="metadata"  autoplay muted loop playsinline>
         <source src="videos/test-pattern.mp4" type="video/mp4">
@@ -395,7 +422,7 @@
     </div>
   </div>
 
-  <?php includeShowcode("html5-video-example"); ?>
+  <?php includeShowcode("html5-video-example", "", "", "", true, 4); ?>
   <script type="application/json" id="html5-video-example-props">
   {
     "replaceHtmlRules": {},
@@ -429,7 +456,7 @@
   </p>
 
 
-  <div id="ableplayer-example">
+  <div id="ableplayer-example" class="enable-example">
     <div class="enable-media-player">
       <video playsinline data-able-player id="video1" data-youtube-id="NINogq4BS68" preload="auto" data-skin="2020"
         data-root-path="./js/enable-libs/ableplayer/" data-heading-level="4">
@@ -440,7 +467,7 @@
     </div>
   </div>
 
-  <?php includeShowcode("ableplayer-example"); ?>
+  <?php includeShowcode("ableplayer-example", "", "", "", true, 4); ?>
   <script type="application/json" id="ableplayer-example-props">
   {
     "replaceHtmlRules": {},
@@ -463,7 +490,7 @@
   }
   </script>
 
-  <h3>Making scrollIntoView() Respect the Pause Control</h3>
+  <h2>Making scrollIntoView() Respect the Pause Control</h2>
 
   <p>
     It is possible to make a DOM element's <code>scrollIntoView()</code> method respect the setting of the pause

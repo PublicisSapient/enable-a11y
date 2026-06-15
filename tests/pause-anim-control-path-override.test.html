@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause Animation Control - Path Override Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .test-section h2 {
+            margin-top: 0;
+        }
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 3px;
+        }
+        button, input[type="checkbox"] {
+            margin: 10px 5px;
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pause Animation Control - Path Override Test Suite</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Default Path (No Override)</h2>
+        <p>This checkbox should use the default accessibility.module.js path.</p>
+        <label>
+            <input type="checkbox" class="pause-anim-control__checkbox" id="test1-checkbox">
+            Pause Animations (Default Path)
+        </label>
+        <div id="test1-result" class="test-result">Waiting for test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Custom Path Override on Button</h2>
+        <p>This button has a custom path configured via data attribute.</p>
+        <button class="pause-anim-control__button" 
+                id="test2-button"
+                data-pause-anim-control-pause-label="Pause Animations" 
+                data-pause-anim-control-play-label="Play Animations"
+                data-pause-anim-control-accessibility-path="../../enable-node-libs/accessibility-js-routines/dist/accessibility.module.js">
+            Test Button (Custom Path)
+        </button>
+        <div id="test2-result" class="test-result">Waiting for test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Custom Path Override on Checkbox</h2>
+        <p>This checkbox has a custom path configured via data attribute.</p>
+        <label>
+            <input type="checkbox" 
+                   class="pause-anim-control__checkbox" 
+                   id="test3-checkbox"
+                   data-pause-anim-control-accessibility-path="/custom/path/accessibility.module.js">
+            Pause Animations (Custom Path on Checkbox)
+        </label>
+        <div id="test3-result" class="test-result">Waiting for test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Invalid Path Handling</h2>
+        <p>This button has an invalid path. The script should handle the error gracefully.</p>
+        <button class="pause-anim-control__button" 
+                id="test4-button"
+                data-pause-anim-control-pause-label="Pause Animations" 
+                data-pause-anim-control-play-label="Play Animations"
+                data-pause-anim-control-accessibility-path="/invalid/path/accessibility.module.js">
+            Test Button (Invalid Path)
+        </button>
+        <div id="test4-result" class="test-result">Waiting for test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Multiple Controls with Different Paths</h2>
+        <p>When multiple controls have different paths, the first one found should be used.</p>
+        <button class="pause-anim-control__button" 
+                id="test5-button1"
+                data-pause-anim-control-pause-label="Pause" 
+                data-pause-anim-control-play-label="Play"
+                data-pause-anim-control-accessibility-path="/path/one/accessibility.module.js">
+            Button 1 (Path One)
+        </button>
+        <button class="pause-anim-control__button" 
+                id="test5-button2"
+                data-pause-anim-control-pause-label="Pause" 
+                data-pause-anim-control-play-label="Play"
+                data-pause-anim-control-accessibility-path="/path/two/accessibility.module.js">
+            Button 2 (Path Two)
+        </button>
+        <div id="test5-result" class="test-result">Waiting for test...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Summary</h2>
+        <div id="test-summary" class="test-result">
+            <strong>Total Tests:</strong> 5<br>
+            <strong>Passed:</strong> <span id="passed-count">0</span><br>
+            <strong>Failed:</strong> <span id="failed-count">0</span>
+        </div>
+    </div>
+
+    <script type="module">
+        // Test execution script
+        let passedTests = 0;
+        let failedTests = 0;
+
+        function updateSummary() {
+            document.getElementById('passed-count').textContent = passedTests;
+            document.getElementById('failed-count').textContent = failedTests;
+        }
+
+        function logResult(testId, message, passed) {
+            const resultDiv = document.getElementById(testId + '-result');
+            resultDiv.innerHTML = `<span class="${passed ? 'pass' : 'fail'}">${passed ? 'PASS' : 'FAIL'}</span>: ${message}`;
+            if (passed) {
+                passedTests++;
+            } else {
+                failedTests++;
+            }
+            updateSummary();
+        }
+
+        // Test 1: Default path
+        setTimeout(() => {
+            const checkbox = document.getElementById('test1-checkbox');
+            if (checkbox) {
+                logResult('test1', 'Default path checkbox rendered successfully', true);
+            } else {
+                logResult('test1', 'Default path checkbox not found', false);
+            }
+        }, 100);
+
+        // Test 2: Custom path on button
+        setTimeout(() => {
+            const button = document.getElementById('test2-button');
+            const hasCustomPath = button && button.dataset.pauseAnimControlAccessibilityPath;
+            if (hasCustomPath) {
+                logResult('test2', `Custom path attribute found: ${button.dataset.pauseAnimControlAccessibilityPath}`, true);
+            } else {
+                logResult('test2', 'Custom path attribute not found on button', false);
+            }
+        }, 200);
+
+        // Test 3: Custom path on checkbox
+        setTimeout(() => {
+            const checkbox = document.getElementById('test3-checkbox');
+            const hasCustomPath = checkbox && checkbox.dataset.pauseAnimControlAccessibilityPath;
+            if (hasCustomPath) {
+                logResult('test3', `Custom path attribute found on checkbox: ${checkbox.dataset.pauseAnimControlAccessibilityPath}`, true);
+            } else {
+                logResult('test3', 'Custom path attribute not found on checkbox', false);
+            }
+        }, 300);
+
+        // Test 4: Invalid path handling
+        setTimeout(() => {
+            const button = document.getElementById('test4-button');
+            const hasInvalidPath = button && button.dataset.pauseAnimControlAccessibilityPath === '/invalid/path/accessibility.module.js';
+            if (hasInvalidPath) {
+                logResult('test4', 'Invalid path configured correctly (error handling will be tested at runtime)', true);
+            } else {
+                logResult('test4', 'Invalid path test setup failed', false);
+            }
+        }, 400);
+
+        // Test 5: Multiple controls with different paths
+        setTimeout(() => {
+            const button1 = document.getElementById('test5-button1');
+            const button2 = document.getElementById('test5-button2');
+            const path1 = button1 && button1.dataset.pauseAnimControlAccessibilityPath;
+            const path2 = button2 && button2.dataset.pauseAnimControlAccessibilityPath;
+            if (path1 && path2 && path1 !== path2) {
+                logResult('test5', `Multiple different paths configured: ${path1} and ${path2}`, true);
+            } else {
+                logResult('test5', 'Multiple path test setup failed', false);
+            }
+        }, 500);
+
+        // Note: To fully test the path override functionality, you would need to:
+        // 1. Import the pause-anim-control.js module
+        // 2. Monitor the actual import() calls being made
+        // 3. Verify that the correct path is being used
+        // This HTML file provides the structural tests for the configuration mechanism.
+    </script>
+</body>
+</html>

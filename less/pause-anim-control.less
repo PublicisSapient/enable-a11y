@@ -15,6 +15,22 @@
         outline-offset: 3px;
         margin: 0 0 0 14px;
     }
+
+    &__button {
+        width: 25px;
+        height: 25px;
+        background: #000 url('../images/icons/pause.svg');
+        border-radius: 50%;
+        border: solid 1px white;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+
+        &[data-pause-anim-control-checked="true"] {
+            background: url('../images/icons/play-button.svg') no-repeat 4px;
+            background-size: 17px 17px;
+        }
+    }
 }
 
 .play-pause-anim {

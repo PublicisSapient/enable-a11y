@@ -47,6 +47,8 @@ const formValidator = new (function () {
                 form.clear();
                 //form.submit();
             },
+            // When the form has errors, ensure all invalid fields
+            // are marked up with aria-invalid="true".
             invalidHandler: function (form) {
                 // make required fields that are not filled out have their aria-invalid="true"
                 const formFields = form.target.elements;
@@ -95,7 +97,6 @@ const formValidator = new (function () {
                         formField.removeAttribute('aria-invalid');
                     }
                 }
-                console.log('foo');
                 accessibility.applyFormFocus(form);
             },
         });

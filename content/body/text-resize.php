@@ -41,8 +41,73 @@
   <strong>should</strong> change the base font of the document (please see the note on Chrome for Android below).
 </p>
 
+
+<h2>Converting Pixels to Rems Using a Pre-processor</h2> 
+
+<p>With a CSS pre-processor like SASS or LESS, you can create a function or a simple formula to do this without worrying about the math.  The general idea is to:</p>
+
+<ol>
+  <li>Set the base font (I like to use 16px, since this is usually the browser's default.</li>
+  <li>Create a function or formula to convert pixels to rems, using the formula <code>rems = (pixels / baseFontSize) </code></li>
+  <li>Use that function throughout our pre-processed files.  The pixel sizes will be put in the converted to CSS at build time.</li>
+</ol>
+
+<p>Below we how we can do so with SASS and LESS.  It should be trivial to do the same using a different pre-processor using these as a model.</p>
+
+<h3>SASS</h3>
+
+<p>For our SASS example, we use a <code>@@function</code> to do the conversion</p>
+
+<div id="sass-px-to-rem">
+</div>
+
+<?php includeShowcode("sass-px-to-rem", "", "", "", false); ?>
+<script type="application/json" id="sass-px-to-rem-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "SASS markup",
+    "highlight": "%INLINE%px-to-rem__sass",
+    "notes": ""
+  }]
+}
+</script>
+<template id="px-to-rem__sass" data-type="text">
+// 1. Define a base font size. For example,
+// 16px for the html root would translate to @px: 16rem;
+$base-font-size: 16px;
+
+// 2. set the base font-size of the body tag to the same
+// amount in pixels.
+body {
+  font-size: $base-font-size;
+}
+
+@function pxToRem($px-value) { 
+  @return ($px-value / $base-font-size) * 1rem;
+}
+
+// 3. Set your pixel values as fractions. For example,
+// 16px would be 16/@px, 200px would be 200/@px, and so on.
+
+.example {
+  font-size: pxToRem(16px);
+  margin: pxToRem(20px) 0;
+  padding: pxToRem(20px) pxToRem(10px);
+}
+
+// Compiled output
+
+// .example {
+//   font-size: 1rem;
+//   margin: 1.25rem 0;
+//   padding: 1.25rem 0.625rem;
+// }
+</template>
+
+<h3>LESS</h3>
 <p>
-  All the pages on the Enable project are designed to resize by using rems, but we use a dead-simple LESS mixin to convert pixels to rems.
+  This is the pre-processor that Enable uses.  Because of the way LESS's syntax is, we decided to use a simple formula that developers can easily understand and code.</p>
 </p>
 
 <div id="less-px-to-rem">
@@ -93,10 +158,64 @@ body {
 // http://lesscss.org/features/#features-overview-feature-operations
 
 </template>
+ 
+<h2>Converting Pixels to Rems In Vanilla CSS</h2>
 
+<p>The best way to do this using vanilla JavaScript is by converting the pixel values that you will need in CSS variables.</p>
 
-<p>(<a href="https://blog.logrocket.com/using-em-vs-rem-css/">You could also use ems</a> as well to ensure font-resizing/text-zoom happens, but they are harder to convert to pixels programmatically).</p>
+<div id="css-px-to-rem">
+</div>
 
+<?php includeShowcode("css-px-to-rem", "", "", "", false); ?>
+<script type="application/json" id="css-px-to-rem-props">
+{
+  "replaceHtmlRules": {},
+  "steps": [{
+    "label": "SASS markup",
+    "highlight": "%INLINE%px-to-rem__css",
+    "notes": ""
+  }]
+}
+</script>
+<template id="px-to-rem__css" data-type="text">
+body {
+  font-size: 16px;
+}
+:root {
+  --px1: calc(1rem / 16);
+  --px2: calc(2rem / 16);
+  --px3: calc(3rem / 16);
+  --px4: calc(4rem / 16);
+  --px5: calc(5rem / 16);
+  --px6: calc(6rem / 16);
+  --px7: calc(7rem / 16);
+  --px8: calc(8rem / 16);
+  --px9: calc(9rem / 16);
+  --px10: calc(10rem / 16);
+  /* 
+   * ... and so on ...
+   *
+   * Note that --pxN: (N/16)rem,
+   * where N is a positive integer.
+   */
+}
+
+.example {
+  font-size: var(--px16);
+  margin: var(--px20) 0;
+  padding: var(--px20) --pxToRem(10);
+}
+
+/*
+ * Browser will convert to these values internally in memory when loaded.
+ *
+ * .example {
+ *   font-size: 1rem;
+ *   margin: 1.25rem 0;
+ *   padding: 1.25rem 0.625rem;
+ * }
+ */
+</template>
 
 <h2>Use Unitless Line Heights</h2>
 

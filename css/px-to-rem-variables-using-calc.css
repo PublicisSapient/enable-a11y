@@ -1,0 +1,21 @@
+body {
+  font-size: 16px;
+}
+:root {
+  --px1: calc(1rem / 16);
+  --px2: calc(2rem / 16);
+  --px3: calc(3rem / 16);
+  --px4: calc(4rem / 16);
+  --px5: calc(5rem / 16);
+  --px6: calc(6rem / 16);
+  --px7: calc(7rem / 16);
+  --px8: calc(8rem / 16);
+  --px9: calc(9rem / 16);
+  --px10: calc(10rem / 16);
+  /* 
+   * ... and so on ...
+   *
+   * Note that --pxN: (N/16)rem,
+   * where N is a positive integer.
+   */
+}

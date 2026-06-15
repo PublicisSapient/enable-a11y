@@ -306,6 +306,7 @@ select {
   margin: 1em 0;
   border-left: solid 5px black;
   font-family: "Helvetica", "Arial", sans-serif;
+  position: relative;
 }
 .enable-example h2 + .enable-example {
   margin-top: 1em;
@@ -782,7 +783,6 @@ main:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero),
 .with-full-bleed-hero__content {
   padding: 10px;
-  margin: 0 auto;
   max-width: 1024px;
   line-height: 1.4;
   position: relative;
@@ -913,4 +913,3 @@ footer a,
 .pause-anim-control__prefers-reduced-motion .ghost-nav--is-hidden {
   transform: none;
 }
-/*# sourceMappingURL=all.css.map */

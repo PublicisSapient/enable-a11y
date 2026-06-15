@@ -151,6 +151,7 @@ select {
   margin: 1em 0;
   border-left: solid 5px black;
   font-family: "Helvetica", "Arial", sans-serif;
+  position: relative;
 }
 .enable-example h2 + .enable-example {
   margin-top: 1em;
@@ -408,4 +409,3 @@ img,
 svg {
   max-width: 100%;
 }
-/*# sourceMappingURL=defaults.css.map */
