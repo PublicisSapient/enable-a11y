@@ -51,12 +51,15 @@
   left: 0;
   background: #aaa;
   padding: 5px;
+  color: black;
 }
 .enable__is-dark-mode .product-tile__badge {
   background: #550000;
+  color: white;
 }
 .product-tile__name {
   font-weight: bold;
+  text-decoration: underline;
 }
 .product-tile__image {
   width: 100%;

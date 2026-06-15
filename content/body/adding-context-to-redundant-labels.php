@@ -3,7 +3,7 @@
     <div class="product-tile ">
         <a href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/" class="product-tile--link">
             <div class="product-tile__badge">
-                <div class="badge-product"> Clearance Sale </div>
+                Clearance Sale 
             </div>
             <div class="product-tile__image-container">
                 <img class="product-tile__image" src="https://www.useragentman.com/blog/wp-content/uploads/2022/06/good-bad-thumb.jpg" alt="" role="presentation">
@@ -24,7 +24,7 @@
     <div class="product-tile ">
         <a href="https://en.wikipedia.org/wiki/Netscape_Navigator" class="product-tile--link" id="aria-labelledby-link" >
             <div  class="product-tile__badge">
-                <div class="badge-product"> Clearance Sale </div>
+                Clearance Sale 
             </div>
             <div class="product-tile__image-container">
                 <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netscape.jpg" alt="" role="presentation">
@@ -81,10 +81,11 @@
 <p>A developer can override the visual label with a label only assistive technology will announce using <code>aria-label</code>.</p>
 <div id="aria-label-label" class="enable-example">
     <div class="product-tile ">
+    <a href="https://en.wikipedia.org/wiki/Netcom_(United_States)" class="product-tile--link">
         <div class="product-tile__badge">
-            <div class="badge-product"> Clearance Sale </div>
+            Clearance Sale 
         </div>
-        <a href="https://en.wikipedia.org/wiki/Netcom_(United_States)" class="product-tile--link">
+        
             <div class="product-tile__image-container">
                 <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netcruiser.jpg" alt="" role="presentation">
             </div>
@@ -140,10 +141,11 @@
 <p>A developer can augment the existing visual label with visually hidden text using <a href="screen-reader-only-text.php">screen reader only text</a>.</p>
 <div id="sr-only-label" class="enable-example">
     <div class="product-tile ">
+    <a href="https://en.wikipedia.org/wiki/Napster" class="product-tile--link">
         <div class="product-tile__badge">
             <div class="badge-product">A Real Steal!</div>
         </div>
-        <a href="https://en.wikipedia.org/wiki/Napster" class="product-tile--link">
+        
             <div class="product-tile__image-container">
                 <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/napster.jpg" alt="" role="presentation">
             </div>
@@ -187,10 +189,11 @@
 <p>A developer can use ARIA to label the group element of many CTAs at once.</p>
 <div id="group-aria-label-label" class="enable-example" >
     <div class="product-tile " role="group" aria-labelledby="group-arial-label__product-name" >
+    <a href="https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us" class="product-tile--link" id="group-arial-label__product-name">
         <div class="product-tile__badge">
             <div class="badge-product">It Can Belong To You!</div>
         </div>
-        <a href="https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us" class="product-tile--link" id="group-arial-label__product-name">
+        
             <div class="product-tile__image-container">
                 <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/all-your-base.jpg" alt="" role="presentation">
             </div>

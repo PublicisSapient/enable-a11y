@@ -6,9 +6,9 @@
   <a class="product-tile product-tile__bad-example"
     href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/">
     <div class="product-tile__badge">
-      <div class="badge-product">
+      
         Clearance Sale
-</div>
+
     </div>
 
     <div class="product-tile__image-container">
@@ -57,9 +57,9 @@
   <a class="product-tile product-tile--good-example"
     href="https://www.useragentman.com/blog/2022/06/16/r-i-p-internet-explorer-a-hate-filled-love-letter/">
     <div class="product-tile__badge">
-      <div class="badge-product">
+      
         Clearance Sale
-</div>
+
     </div>
 
     <div class="product-tile__image-container">
