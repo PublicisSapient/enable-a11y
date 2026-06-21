@@ -422,14 +422,19 @@ const enableSlider = function (
             );
         });
 
-        $handle.addEventListener('touchstart', (e) => {
-            return this.handlePointerDown(
-                $handle,
-                $incrementor,
-                $decrementor,
-                e,
-            );
-        });
+        // Use passive: true for touchstart event listeners
+        $handle.addEventListener(
+            'touchstart',
+            (e) => {
+                return this.handlePointerDown(
+                    $handle,
+                    $incrementor,
+                    $decrementor,
+                    e,
+                );
+            },
+            { passive: true },
+        );
 
         window.addEventListener('resize', this.handleResize);
 
@@ -866,6 +871,10 @@ const enableSlider = function (
             );
         }
 
+        // Snap the value to the nearest increment
+        newVal = Math.round(newVal / this.inc) * this.inc;
+
+        // Clamp the value within the allowed range
         newVal = Math.max(startVal, Math.min(newVal, stopVal));
 
         this.positionHandle($handle, $handleButton, newVal);
