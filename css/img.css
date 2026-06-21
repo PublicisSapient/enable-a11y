@@ -53,6 +53,18 @@
 .enable__is-dark-mode .decorative-example__icon {
   filter: drop-shadow(0px 0px 14px #fff);
 }
+#inline-svg-example .circle {
+  fill: #00a;
+}
+.enable__is-dark-mode #inline-svg-example .circle {
+  fill: #fff;
+}
+#inline-svg-example .text {
+  fill: #fff;
+}
+.enable__is-dark-mode #inline-svg-example .text {
+  fill: #00a;
+}
 #svg-sprite-example p {
   text-align: center;
 }
