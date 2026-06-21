@@ -1,0 +1,21 @@
+:root {
+  --focus-color: #097efb;
+  --focus-color-dark-bg: #3b99fc;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #3b99fc;
+    --focus-color-dark-bg: #097efb;
+  }
+}
+.eliza .chat-row {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.eliza h1,
+.eliza h2,
+.eliza p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=main.css.map */
