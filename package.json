@@ -168,8 +168,8 @@
     "graceful-fs": "^4.2.11"
   },
   "engines": {
-    "npm": ">=10.2.3 <=10.9.2",
-    "node": ">=20.10.0 <=22.14.0"
+    "npm": ">=11.4.0 <= 11.4.2",
+    "node": ">=24.0.0 <=24.4.0"
   },
   "jest-puppeteer": {
     "exitOnPageError": false
