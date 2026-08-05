@@ -633,6 +633,7 @@ svg {
 }
 *:focus {
   transform: translateZ(0);
+  z-index: 1;
   outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
 }
@@ -642,6 +643,7 @@ svg {
 }
 *:focus-visible {
   transform: translateZ(0);
+  z-index: 1;
   outline: solid 2px var(--focus-color);
   box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
 }

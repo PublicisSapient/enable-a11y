@@ -27,6 +27,9 @@
     "./tabs": "./js/modules/tabs.js",
     "./tooltip": "./js/modules/tooltip.js"
   },
+  "config": {
+    "chromedriver_force_download": "true"
+  },
   "files": [
     "css",
     "less",
