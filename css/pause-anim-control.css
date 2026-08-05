@@ -4,7 +4,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-color: #3b99fc;
+    --focus-color: #034A96;
     --focus-color-dark-bg: #097efb;
   }
 }
@@ -21,6 +21,18 @@
   outline-offset: 3px;
   margin: 0 0 0 14px;
 }
+.pause-anim-control__checkbox:focus {
+  outline: solid 2px white;
+  box-shadow: none;
+}
+.pause-anim-control__checkbox:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: initial;
+}
+.pause-anim-control__checkbox:focus-visible {
+  outline: solid 2px white;
+  box-shadow: none;
+}
 .pause-anim-control__button {
   width: 25px;
   height: 25px;
@@ -34,6 +46,18 @@
 .pause-anim-control__button[data-pause-anim-control-checked="true"] {
   background: url('../images/icons/play-button.svg') no-repeat 4px;
   background-size: 17px 17px;
+}
+.pause-anim-control__button:focus {
+  outline: solid 2px #0359B5;
+  box-shadow: none;
+}
+.pause-anim-control__button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: initial;
+}
+.pause-anim-control__button:focus-visible {
+  outline: solid 2px #0359B5;
+  box-shadow: none;
 }
 .play-pause-anim__background-pill {
   font-size: 0.875rem;

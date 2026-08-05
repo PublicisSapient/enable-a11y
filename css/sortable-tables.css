@@ -4,7 +4,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-color: #3b99fc;
+    --focus-color: #034A96;
     --focus-color-dark-bg: #097efb;
   }
 }
@@ -16,7 +16,7 @@
   border-spacing: 0;
   overflow: visible;
   margin-top: 8px;
-  width: initial%;
+  width: initial;
 }
 .deque-table-sortable__group table thead {
   border-bottom: 1px solid #e3e3e3;
@@ -32,7 +32,7 @@
   display: inline-block;
   height: 100%;
   cursor: pointer;
-  padding: 0 0 0 1.5625rem;
+  padding: 0 1.5625rem 0 1.5625rem;
   text-align: left;
 }
 .deque-table-sortable__group table thead th .sortableColumnLabel:hover {

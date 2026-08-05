@@ -14,6 +14,17 @@
     &__checkbox {
         outline-offset: 3px;
         margin: 0 0 0 14px;
+
+        .enable-focus(
+		{
+			outline: solid 2px white;
+            box-shadow: none;
+		},
+		{
+			outline: none;
+            box-shadow: initial;
+		}
+	);
     }
 
     &__button {
@@ -30,6 +41,17 @@
             background: url('../images/icons/play-button.svg') no-repeat 4px;
             background-size: 17px 17px;
         }
+
+        .enable-focus(
+            {
+                outline: solid 2px #0359B5;
+                box-shadow: none;
+            },
+            {
+                outline: none;
+                box-shadow: initial;
+            }
+        )
     }
 }
 

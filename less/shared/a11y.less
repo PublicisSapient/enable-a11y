@@ -59,13 +59,17 @@
 * {
     .enable-focus(
 		{
+            transform: translateZ(0);
 			outline: solid 2px @focus-color;
+            box-shadow: 3px 3px 0 @box-shadow-focus-color, -3px -3px 0 @box-shadow-focus-color, -3px 3px 0 @box-shadow-focus-color, 3px -3px 0 @box-shadow-focus-color;
 		},
 		{
 			outline: none;
+            box-shadow: initial;
 		}
 	);
 }
+
 
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
