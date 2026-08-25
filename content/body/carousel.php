@@ -62,7 +62,7 @@
     </a>
   </div>
 
-  <div class="glider-contain">
+  <div data-ignore-reflow="true" class="glider-contain">
 
     <!-- 
       The ID of the carousel is used as a prefix
@@ -219,7 +219,7 @@
 
   <p id="carousel-instructions" class="sr-only">Tab into the previous and next buttons below to cycle the slides in the carousel.</p>
 
-  <div class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
+  <div data-ignore-reflow="true" class="glider-contain" role="region" aria-label="Store Announcements Carousel" id="announcements-carousel__container">
 
     <button class="glider-prev" aria-describedby="carousel-instructions" aria-label="Display Previous Slide" data-contrast-false-positive="true">«</button>
     <div id="announcements-carousel" tabindex="-1" class="glider enable-carousel enable-carousel--has-focusable-arrow-buttons" aria-labelledby="announcements-carousel__container" aria-describedby="carousel-instructions">

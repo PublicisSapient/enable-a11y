@@ -152,9 +152,23 @@ table [role="rowheader"],
 table [role="cell"],
 [role="table"] [role="cell"] {
   line-height: 1.2;
-  padding: 10px;
+  padding: 10px 2px 10px 0;
   display: table-cell;
   font-size: 0.875rem;
+}
+@media only screen and (min-width: 400px) {
+  table th,
+  [role="table"] th,
+  table td,
+  [role="table"] td,
+  table [role="columnheader"],
+  [role="table"] [role="columnheader"],
+  table [role="rowheader"],
+  [role="table"] [role="rowheader"],
+  table [role="cell"],
+  [role="table"] [role="cell"] {
+    padding: 10px;
+  }
 }
 table td,
 [role="table"] td,

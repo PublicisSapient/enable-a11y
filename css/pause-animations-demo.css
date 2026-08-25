@@ -90,8 +90,14 @@ main:not(.with-full-bleed-hero) .play-pause-anim {
   border-bottom: none;
   font-size: 3.75rem;
 }
+.enable-toc-as-sidebar .play-pause-anim__full-bleed-image-demo--copy h2 {
+  font-size: 2.5rem;
+}
 .play-pause-anim__full-bleed-image-demo--copy p {
   font-size: 1.875rem;
+}
+.enable-toc-as-sidebar .play-pause-anim__full-bleed-image-demo--copy p {
+  font-size: 1.25rem;
 }
 .play-pause-anim__full-bleed-image-demo--copy strong {
   color: white;

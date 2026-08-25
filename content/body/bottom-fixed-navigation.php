@@ -1,7 +1,7 @@
 <!-- File WIP -->
 
 <div id="example1">
-    <div class="enable-visible-on-focus__container enable-skip-link--begin">
+    <div data-ignore-reflow="true" class="enable-visible-on-focus__container enable-skip-link--begin">
         <a href="#main-nav-link" id="top-of-page" class="enable-visible-on-focus enable-skip-link">
             Skip to main navigation at the bottom of page
         </a>

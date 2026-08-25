@@ -20,6 +20,10 @@
 }
 .deque-table-sortable__group table thead {
   border-bottom: 1px solid #e3e3e3;
+  /* th button {
+                margin: -25px 0;
+                padding: 25px 0;
+            } */
 }
 .deque-table-sortable__group table thead th {
   position: relative;
@@ -48,10 +52,6 @@
 }
 .enable__is-dark-mode .deque-table-sortable__group table thead th button {
   color: #121212;
-}
-.deque-table-sortable__group table thead th button {
-  margin: -25px 0;
-  padding: 25px 0;
 }
 .deque-table-sortable__group table thead th button:hover {
   margin: 0;
@@ -93,7 +93,7 @@
 }
 .deque-table-sortable__group table thead td,
 .deque-table-sortable__group table thead th {
-  padding: 12px 11px 12px 0;
+  padding: 12px 0;
   text-align: center;
   vertical-align: middle;
 }
