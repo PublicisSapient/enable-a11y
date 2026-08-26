@@ -72,7 +72,7 @@
     </div>
 
     <div class="product-tile__price">
-      <mark class="del"><span class="sr-only">Old Price: </span>$30.00</mark> <mark class="ins"><span class="sr-only">New Price: </span>$10.00</mark>
+      <del><span class="sr-only">Old Price: </span>$30.00</del> <ins><span class="sr-only">New Price: </span>$10.00</ins>
     </div>
   </a>
 </div>
@@ -85,9 +85,9 @@
 {
   "replaceHtmlRules": {},
   "steps": [{
-      "label": "Use the mark tags to markup the old and new prices.",
-      "highlight": "%OPENCLOSECONTENTTAG%mark",
-      "notes": "Note that we use <code>.del</code> and <code>.ins</code> classes to denote deleted and inserted content respectively. We also don't use <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code>.  This is because <code>&lt;mark&gt;</code> is a semantic tag, and <code>&lt;s&gt;</code> or <code>&lt;strike&gt;</code> are not, in the same way <a href=\"https://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em\">developers should use strong tags instead of the b tag in HTML</a>"
+      "label": "Use the del and ins tags to markup the old and new prices. respectively.",
+      "highlight": "%OPENCLOSECONTENTTAG%del ||| %OPENCLOSECONTENTTAG%ins ",
+      "notes": ""
     },
     {
       "label": "Use the sr-only class to generate screen reader only text",

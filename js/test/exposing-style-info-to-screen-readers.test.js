@@ -3,7 +3,7 @@
 import config from './test-config.js';
 
 describe('Styled Elements Tests', () => {
-    it('Detect if there is sr-only content in the mark tags in the visually hidden text example', async () => {
+    it('Detect if there is sr-only content in the del or ins tags in the visually hidden text example', async () => {
         let domInfo;
 
         await page.goto(
@@ -16,7 +16,7 @@ describe('Styled Elements Tests', () => {
         // check the DOM to see if the visually hidden CSS generated content is there.
         domInfo = await page.evaluate(() => {
             const markEls = document.querySelectorAll(
-                '#sr-only-text-example mark',
+                '#sr-only-text-example del, #sr-only-text-example ins',
             );
             let hasMissingMarkContent = false;
 
