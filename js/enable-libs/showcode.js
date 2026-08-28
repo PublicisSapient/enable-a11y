@@ -648,7 +648,6 @@ const showcode = new function () {
 
     codeEl.innerHTML = code;
 
-    this.scrollToHighlightedText(doScroll, codeEl);
 
     // Set up the ARIA alert to announce changes to screen readers.
     if (isFinalStep) {
@@ -671,6 +670,8 @@ const showcode = new function () {
 
       notesEl.innerHTML = showcodeNotes || '';
       changesAlertEl.innerHTML = showcodeNotes ? `${showcodeNotes} ${screenReaderAlert}` : ''; 
+    
+      this.scrollToHighlightedText(doScroll, codeEl);
     }
 
 
@@ -720,6 +721,8 @@ const showcode = new function () {
       firstHighlightedElement.style.scrollMarginTop = stickyContainersOffset + 'px';
       if (doScroll) {
         firstHighlightedElement.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
+
+        
       }
 
       
@@ -727,7 +730,24 @@ const showcode = new function () {
       containerEl.scrollIntoView({ behavior: behavior, block: 'start', left: 0 });
     }
 
+
+    containerEl.addEventListener("scrollend", () => {
+      // If the highlighted element is still covered by the UI bar stacked on top,
+      // nudge the page down by the UI's height so it becomes visible.
+      const hlRect = firstHighlightedElement.getBoundingClientRect();
+      const uiRect = uiEl.getBoundingClientRect();
+      if (hlRect.top < uiRect.bottom) {
+        const delta = (uiRect.bottom - hlRect.top) + 4; // small margin
+        window.scrollBy({ top: delta, left: 0, behavior });
+      } 
+    }, { once: true });
+
     this.scrollIntoViewIfOffscreen(containerEl, stepsEl, firstHighlightedElement, behavior);
+    
+      
+   
+    
+    
   }
 
   this.scrollIntoViewIfOffscreen = (containerEl, stepsEl, firstHighlightedElement, behavior) => {

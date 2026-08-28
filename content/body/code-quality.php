@@ -195,8 +195,8 @@ and <a href="https://github.com/noetibbl/lighthouse-batch">lighthouse-batch</a> 
         "notes": ""
       },
       {
-        "label": "Create a test for each tag to be tested (ins, del and mark)",
-        "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s\\}\\);",
+        "label": "Create a test for each tag to be tested (ins and del)",
+        "highlight": "\\s+it\\([\\s\\S]*?>\\s\\s*\\}\\);[^\\}]*}\\);",
         "notes": "Note the second parameter of the <code>it()</code> function is an <strong>asynchronous</code> function"
       },
       {
@@ -269,8 +269,13 @@ and <a href="https://github.com/noetibbl/lighthouse-batch">lighthouse-batch</a> 
       },
       {
         "label": "Use jest's expect method to find if the code is doing things right.",
-        "highlight": "expect\\([^;]*;",
+        "highlight": "expect\\(domInfo[^;]*;",
         "notes": "We take the information given to <code>domInfo</code> in the previous step and run tests on it using jest's <code>expect()</code> method."
+      },
+      {
+        "label": "Use page.keyboard.press() to keyboard accessibility",
+        "highlight": "\\s*await\\spage.keyboard.press\\('Space'\\)[\\s\\S]*riaChecked\\);",
+        "notes": "We use <code>page.keyboard.press()</code> to similate a user hitting the space bar and then check the value of aria-checked has changed. "
       },
       {
         "label": "Note the helper function to get the checked value of a switch",
