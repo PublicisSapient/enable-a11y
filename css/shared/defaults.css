@@ -4,7 +4,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-color: #3b99fc;
+    --focus-color: #034A96;
     --focus-color-dark-bg: #097efb;
   }
 }
@@ -223,6 +223,7 @@ select {
   text-align: center;
   text-decoration: none;
   text-shadow: 2px 2px 2px black;
+  outline-offset: 2px;
 }
 .list--no-decoration,
 .list--inline {

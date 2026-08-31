@@ -10,7 +10,7 @@
 # 2 - axe not installed
 # 3 - pa11y not installed
 # 4 - PHP not installed
-# 5 - OS based tool not installed (e.g. java or lynx)
+# 5 - OS based tool not installed (e.g. java)
 # 6 - Java not installed
 # 7 - VNU not installed
 # 8 - need to run `npm run server` before running this script
@@ -208,7 +208,8 @@ checkDependencies() {
 	fi
 
 
-	A=`lynx -dump $PROJECT_URL`
+	# Check if server is up using wget 
+	wget --spider -q "$PROJECT_URL"
 	if [ "$?" != "0" ]
 	then
 		echo "You need to do a `npm run server` in another shell before you run this target."

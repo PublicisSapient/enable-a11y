@@ -27,7 +27,7 @@
                 Clearance Sale 
             </div>
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netscape.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="images/adding-context-to-redundant-labels/netscape.jpg" alt="" role="presentation">
             </div>
             <div class="product-tile__name"> Netscape Navigator Compass </div>
             <div class="product-tile__price">
@@ -87,7 +87,7 @@
         </div>
         
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/netcruiser.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="images/adding-context-to-redundant-labels/netcruiser.jpg" alt="" role="presentation">
             </div>
             <div class="product-tile__name"> Netcruiser Install Disk </div>
             <div class="product-tile__price">
@@ -147,7 +147,7 @@
         </div>
         
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/napster.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="images/adding-context-to-redundant-labels/napster.jpg" alt="" role="presentation">
             </div>
             <div class="product-tile__name"> Napster Headphones </div>
             <div class="product-tile__price">
@@ -195,7 +195,7 @@
         </div>
         
             <div class="product-tile__image-container">
-                <img class="product-tile__image" src="/images/adding-context-to-redundant-labels/all-your-base.jpg" alt="" role="presentation">
+                <img class="product-tile__image" src="images/adding-context-to-redundant-labels/all-your-base.jpg" alt="" role="presentation">
             </div>
             <div class="product-tile__name"> All Your Bass Base Guitar </div>
             <div class="product-tile__price">

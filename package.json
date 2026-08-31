@@ -27,6 +27,9 @@
     "./tabs": "./js/modules/tabs.js",
     "./tooltip": "./js/modules/tooltip.js"
   },
+  "config": {
+    "chromedriver_force_download": "true"
+  },
   "files": [
     "css",
     "less",
@@ -46,6 +49,7 @@
     "test-pa11y": "bin/checkHTML.sh pa11y",
     "test-lighthouse": "bin/checkHTML.sh lighthouse",
     "test-lighthouse-url": "node bin/lighthouse-accessibility-scan",
+    "test-links": "TEST_LINKS=1 jest --runInBand js/test/linkHealth.test.js",
     "lint": "npm run eslint && bin/checkHTML.sh",
     "format": "npx prettier . --write",
     "format-check": "npx prettier . --check",
@@ -101,7 +105,7 @@
     "babel-preset-env": "^1.7.0",
     "chalk": "^5.3.0",
     "chokidar-cli": "^3.0.0",
-    "chromedriver": "^148.0.1",
+    "chromedriver": "^151.0.3",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -168,8 +172,8 @@
     "graceful-fs": "^4.2.11"
   },
   "engines": {
-    "npm": ">=10.2.3 <=10.9.2",
-    "node": ">=20.10.0 <=22.14.0"
+    "npm": ">=11.4.0 <= 11.4.2",
+    "node": ">=24.0.0 <=24.4.0"
   },
   "jest-puppeteer": {
     "exitOnPageError": false
