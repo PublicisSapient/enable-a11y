@@ -47,6 +47,7 @@
   justify-content: space-between;
   background: #5d5c5c;
   padding: 0 10px;
+  height: 5.3125rem;
 }
 @media only screen and (min-width: 960px) {
   .nav-container {

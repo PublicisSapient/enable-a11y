@@ -72,7 +72,7 @@
     </div>
 
     <div class="product-tile__price">
-      <del><span class="sr-only">Old Price: </span>$30.00</del> <ins><span class="sr-only">New Price: </span>$10.00</ins>
+      <del><span class="sr-only">Old Price: </span>$30.00 </del> <ins><span class="sr-only">New Price: </span>$10.00 </ins>
     </div>
   </a>
 </div>

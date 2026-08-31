@@ -211,7 +211,7 @@ and <a href="https://github.com/noetibbl/lighthouse-batch">lighthouse-batch</a> 
       },
       {
         "label": "Query the DOM using puppeteer's page.evaluate method.",
-        "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s\\s\\s\\s\\}\\);",
+        "highlight": "\\s*domInfo\\s=[\\s\\S]*?>\\s*?\\}\\);",
         "notes": "<div>Although <a href=\"https://jestjs.io/docs/tutorial-jquery\">Jest can do basic DOM manipulation and testing</a>, it doesn't have good enough support for ARIA, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle\">window.getCurrentStyle()</a> and other web technologies that will allow us to find out if a web component is exposing the right information to browsers and screen readers to ensure our work is accessible.  Using <a href=\"https://pptr.dev/api/puppeteer.page.evaluate/\">Puppeteer's <code>page.evaluate()</code> method</a> ensures that we are using these APIs and more to fully test our work in a real (headless) web browser. The information we need to test on is returned as an object, which is passed to the variable <code>domInfo</code>.</div>"
       },
       {
@@ -377,14 +377,60 @@ Note that we ignore <code>iframe</code>, <code>video</code>, and <code>body</cod
   <!--<?php include "../.github/workflows/push-actions.yml"; ?>-->
   </template>
 
-  <?php includeShowcode("github-actions-walkthrough", "", "", "", false); ?>
+  <?php includeShowcode("github-actions-walkthrough", "", "", ""); ?>
   <script type="application/json" id="github-actions-walkthrough-props">
   {
     "replaceHtmlRules": {},
-    "steps": [{
-        "label": "Unit Testing configuration",
-        "highlight": "#\\sAn\\sautomated\\scheck\\sthat\\sruns\\sall\\sof\\sthe\\saccessibility\\sand\\sunit\\stests[\\s\\S]*npm\\srun\\stest",
+    "steps": [
+      {
+        "label": "Set up automated test when pushing to Git",
+        "highlight": "on:\\spush",
         "notes": ""
+      },
+      {
+        "label": "First job: eslint",
+        "highlight": "\\s\\s\\s\\seslint:[\\s\\S]*npm\\srun\\seslint",
+        "notes": "Ensures all code conforms to the Javascript conventions established for the project."
+      },
+      {
+        "label": "Unit Testing configuration",
+        "highlight": "\\s\\s\\s\\s#\\sAn\\sautomated\\scheck\\sthat\\sruns\\sall\\sof\\sthe\\saccessibility\\sand\\sunit\\stests[\\s\\S]*npm\\srun\\stest",
+        "notes": ""
+      },
+      {
+        "label": "Install Ubuntu for each target",
+        "highlight": "runs-on:\\subuntu-latest",
+        "notes": ""
+      },
+      {
+        "label": "Install Java",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sSet\\sup\\sJDK\\s11\\sfor\\sx64[\\s\\S]*x64",
+        "notes": ""
+      },
+      {
+        "label": "Install PHP",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sInstall\\sPHP[\\s\\S]*php",
+        "notes": ""
+      },
+      {
+        "label": "Install Chrome and Chromedriver",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sInstall\\slatest\\sChrome\\sto\\smatch\\schromedriver\\spackage\\sversion[\\s\\S]*google-chrome-stable",
+        "notes": ""
+      },
+      {
+        "label": "Install project dependencies",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sInstall\\sX11[\\s\\S]*npm\\sci",
+        "notes": ""
+      },
+      {
+        "label": "Start Server",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sStart\\sserver[\\s\\S]*8888",
+        "notes": ""
+      },
+      {
+        "label": "Run Automation Tests",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sRun\\sautomation[\\s\\S]*npm\\srun\\stest",
+        "notes": "Note the <code>export DISPLAY</code> and <code>sudo</code> lines are there only because of the unit tests we created to test clicking inside the unit masking component.  You normally wouldn't need this for accessibility unit testing."
       }
     ]
   }
