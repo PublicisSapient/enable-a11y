@@ -41,8 +41,6 @@ jobs:
                   java-version: "11"
                   distribution: "temurin"
                   architecture: x64
-            - name: Install Lynx dependency
-              run: sudo apt install lynx
             - name: Install PHP
               run: sudo apt install php
             - name: Install latest Chrome to match chromedriver package version

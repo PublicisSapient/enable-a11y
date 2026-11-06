@@ -403,6 +403,16 @@ Note that we ignore <code>iframe</code>, <code>video</code>, and <code>body</cod
         "notes": ""
       },
       {
+        "label": "Check out the Enable code",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sCheckout\\scode[\\s\\S]*?@v4?",
+        "notes": ""
+      },
+      {
+        "label": "Install node/npm",
+        "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sUse\\sNode.js[\\s\\S]*?\"npm\"",
+        "notes": ""
+      },
+      {
         "label": "Install Java",
         "highlight": "\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s\\s-\\sname:\\sSet\\sup\\sJDK\\s11\\sfor\\sx64[\\s\\S]*x64",
         "notes": ""

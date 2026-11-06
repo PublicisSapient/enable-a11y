@@ -97,7 +97,7 @@ checkDependencies() {
 
 	echo "Checking if dependencies are installed ..."
 
-	for i in lynx java $PHP axe pa11y-ci
+	for i in java $PHP axe pa11y-ci
 	do
 		which $i > /dev/null 2> /dev/null
 		if [ "$?" != "0" ]
