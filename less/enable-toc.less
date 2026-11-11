@@ -54,10 +54,24 @@
         padding: 0.3125rem 0.625rem;
         border: none;
         margin-bottom: 0.125rem;
+        outline-offset: 5px;
+        border: black 1px solid ;
 
         &:hover {
             background-color: #ccc;
         }
+
+        .enable-focus(
+            {
+                transform: translateZ(0);
+                outline: solid 2px @focus-color;
+                box-shadow: 3px 3px 0 @box-shadow-focus-color, -3px -3px 0 @box-shadow-focus-color, -3px 3px 0 @box-shadow-focus-color, 3px -3px 0 @box-shadow-focus-color;
+            },
+            {
+                outline: none;
+                box-shadow: initial;
+            }
+        );
     }
 
     &__move-to-sidebar-button {

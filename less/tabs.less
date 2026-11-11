@@ -88,18 +88,6 @@
             }
 
 
-            &:hover,
-            &:focus,
-            &:active {
-                border-color: @unactive-tab-border-color--highlight;
-                outline-color: #1C1C1C;
-                outline-width: 0.27em;
-
-                .enable__is-dark-mode & {
-                    border-color: @unactive-tab-border-color--highlight--dark-mode;
-                    outline-color: #ebebeb;
-                }
-            }
 
             .enable-focus(
                 {
@@ -118,7 +106,7 @@
                 background: @active-tab-color;
                 color: @active-tab-text-color;
                 font-weight: bold;
-                border: solid 1px transparent;
+                border: solid 1px black;
 
                 .enable__is-dark-mode & {
                     background: @active-tab-color--dark-mode;

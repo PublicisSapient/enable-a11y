@@ -13,7 +13,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-color: #3b99fc;
+    --focus-color: #034A96;
     --focus-color-dark-bg: #097efb;
   }
 }
@@ -75,13 +75,20 @@
   outline: solid 2px var(--focus-color);
 }
 *:focus {
+  transform: translateZ(0);
+  z-index: 1;
   outline: solid 2px var(--focus-color);
+  box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
 }
 *:focus:not(:focus-visible) {
   outline: none;
+  box-shadow: initial;
 }
 *:focus-visible {
+  transform: translateZ(0);
+  z-index: 1;
   outline: solid 2px var(--focus-color);
+  box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
 }
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 

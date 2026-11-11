@@ -246,6 +246,7 @@ const tableOfContents = new function() {
         hideSidebarButton.textContent = 'Hide';
         hideSidebarButton.classList.add('enable-toc__hide-sidebar-button');
         hideSidebarButton.setAttribute('aria-label', 'Hide Table of Contents sidebar');
+        hideSidebarButton.dataset.contrastFalsePositive = 'true';
         hideSidebarButton.addEventListener('click', this.moveToToggleButton);
 
         // Append the elements to the nav
@@ -307,6 +308,7 @@ const tableOfContents = new function() {
         toggleButton.setAttribute('aria-controls', 'enable-toc--toggle');
         toggleButton.setAttribute('aria-expanded', 'false');
         toggleButton.setAttribute('title', 'Open or close the Table of Contents');
+        toggleButton.dataset.contrastFalsePositive = 'true';
         toggleButton.innerHTML = '<img src="images/icons/toc.svg" alt="" />';
         toggleButton.addEventListener('click', this.toggleTOC);
 

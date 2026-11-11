@@ -4,7 +4,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --focus-color: #3b99fc;
+    --focus-color: #034A96;
     --focus-color-dark-bg: #097efb;
   }
 }
@@ -52,10 +52,29 @@
   padding: 0.3125rem 0.625rem;
   border: none;
   margin-bottom: 0.125rem;
+  outline-offset: 5px;
+  border: black 1px solid ;
 }
 .enable-toc__move-to-sidebar-button:hover,
 .enable-toc__hide-sidebar-button:hover {
   background-color: #ccc;
+}
+.enable-toc__move-to-sidebar-button:focus,
+.enable-toc__hide-sidebar-button:focus {
+  transform: translateZ(0);
+  outline: solid 2px var(--focus-color);
+  box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
+}
+.enable-toc__move-to-sidebar-button:focus:not(:focus-visible),
+.enable-toc__hide-sidebar-button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: initial;
+}
+.enable-toc__move-to-sidebar-button:focus-visible,
+.enable-toc__hide-sidebar-button:focus-visible {
+  transform: translateZ(0);
+  outline: solid 2px var(--focus-color);
+  box-shadow: 3px 3px 0 #D3E9FD, -3px -3px 0 #D3E9FD, -3px 3px 0 #D3E9FD, 3px -3px 0 #D3E9FD;
 }
 .enable-toc__move-to-sidebar-button {
   display: none;

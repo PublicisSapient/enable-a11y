@@ -1,0 +1,201 @@
+'use strict';
+
+import config from './test-config.js';
+import testHelpers from './test-helpers.js';
+
+// NOTE: This test uses the global `page` provided by jest-puppeteer (same style as linkTarget.test.js)
+
+const fileList = testHelpers.getPageList();
+
+// Gate the suite behind an env var so it doesn't run with default test scripts
+const SHOULD_RUN_LINK_HEALTH = process.env.TEST_LINKS === '1';
+const suite = SHOULD_RUN_LINK_HEALTH ? describe : describe.skip;
+
+// Simple HTTP(S) request helper without extra deps. Follows redirects up to maxRedirects.
+function requestUrlStatus(urlStr, { method = 'HEAD', timeoutMs = 10000, maxRedirects = 5 } = {}) {
+  return new Promise((resolve) => {
+    try {
+      const urlObj = new URL(urlStr);
+      const protocol = urlObj.protocol === 'https:' ? 'https' : urlObj.protocol === 'http:' ? 'http' : null;
+      if (!protocol) {
+        return resolve({ ok: true, status: 0, url: urlStr, note: 'non-http(s) skipped' });
+      }
+      const mod = require(protocol);
+
+      const makeReq = (currentUrl, redirectsLeft, useMethod) => {
+        const u = new URL(currentUrl);
+        const options = {
+          method: useMethod,
+          hostname: u.hostname,
+          port: u.port || (u.protocol === 'https:' ? 443 : 80),
+          path: u.pathname + (u.search || ''),
+          headers: {
+            'User-Agent': 'EnableA11yLinkHealth/1.0 (+tests)',
+            'Accept': '*/*',
+            'Connection': 'close',
+          },
+        };
+
+        const req = mod.request(options, (res) => {
+          // Follow redirects (3xx with Location)
+          if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location && redirectsLeft > 0) {
+            const nextUrl = new URL(res.headers.location, u).toString();
+            req.destroy();
+            return makeReq(nextUrl, redirectsLeft - 1, useMethod);
+          }
+
+          // If HEAD not allowed, retry once with GET
+          if (useMethod === 'HEAD' && (res.statusCode === 405 || res.statusCode === 501)) {
+            req.destroy();
+            return makeReq(currentUrl, redirectsLeft, 'GET');
+          }
+
+          const status = res.statusCode || 0;
+          // consider 2xx and 3xx as ok
+          const ok = status >= 200 && status < 400;
+          res.resume(); // drain
+          return resolve({ ok, status, url: currentUrl });
+        });
+
+        req.setTimeout(timeoutMs, () => {
+          req.destroy(new Error('timeout'));
+        });
+
+        req.on('error', (err) => {
+          // Retry with GET if method was HEAD and network error occurred
+          if (useMethod === 'HEAD') {
+            return makeReq(currentUrl, redirectsLeft, 'GET');
+          }
+          return resolve({ ok: false, status: 0, url: currentUrl, error: err && err.message });
+        });
+
+        req.end();
+      };
+
+      makeReq(urlStr, maxRedirects, method);
+    } catch (e) {
+      return resolve({ ok: false, status: 0, url: urlStr, error: e && e.message });
+    }
+  });
+}
+
+// Limit concurrency to avoid hammering hosts
+async function mapWithConcurrency(items, limit, worker) {
+  const results = new Array(items.length);
+  let idx = 0;
+  const workers = new Array(Math.min(limit, items.length)).fill(0).map(async () => {
+    while (true) {
+      const i = idx++;
+      if (i >= items.length) break;
+      try {
+        results[i] = await worker(items[i], i);
+      } catch (e) {
+        results[i] = e;
+      }
+    }
+  });
+  await Promise.all(workers);
+  return results;
+}
+
+// Helpers to filter links we want to check
+function isRelativeRawHref(rawHref) {
+  if (!rawHref) return false;
+  const s = rawHref.trim();
+  if (!s) return true;
+  if (s === '#' || s.startsWith('#')) return true; // in-page anchors treated as relative/skipped
+  // Absolute if scheme present (e.g., http:, https:, mailto:, etc.) or protocol-relative //
+  if (/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(s)) return false;
+  if (s.startsWith('//')) return false;
+  return true; // likely relative like "/path" or "page.html"
+}
+
+function isExcludedHost(urlStr) {
+  try {
+    const h = new URL(urlStr).hostname.toLowerCase();
+    if (h === 'localhost' || h === '127.0.0.1' || h === '::1') return true;
+    if (h === 'useragentman.com' || h.endsWith('.useragentman.com')) return true;
+    return false;
+  } catch {
+    return false;
+  }
+}
+
+function isSkippableHref(href, rawHref) {
+  if (!href) return true;
+  const s = href.trim();
+  if (!s) return true;
+  const lower = s.toLowerCase();
+  // Skip non-http(s) schemes and blobs, javascript, mailto, tel, data
+  if (
+    lower.startsWith('javascript:') ||
+    lower.startsWith('mailto:') ||
+    lower.startsWith('tel:') ||
+    lower.startsWith('data:') ||
+    lower.startsWith('blob:')
+  ) return true;
+  // Skip relative URLs based on the raw attribute value
+  if (isRelativeRawHref(rawHref)) return true;
+  // Skip localhost or useragentman.com hosts
+  if (isExcludedHost(href)) return true;
+  return false;
+}
+
+suite('Link health check on all pages (HTTP errors)', () => {
+  beforeAll(async () => {});
+  afterAll(async () => {});
+
+  async function testPage(filename) {
+    await page.goto(`${config.BASE_URL}/${filename}`, { waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('footer');
+
+    const links = await page.evaluate(() => {
+      const anchors = Array.from(document.querySelectorAll('a'));
+      // Use element.href to get fully-resolved absolute URLs, and keep raw href to detect relative links
+      return anchors.map(a => ({
+        text: (a.innerText || '').trim(),
+        href: a.href || a.getAttribute('href') || '',
+        rawHref: a.getAttribute('href') || ''
+      }));
+    });
+
+    // Filter and de-duplicate
+    const urlSet = new Set();
+    const urls = [];
+    for (const { href, rawHref } of links) {
+      if (isSkippableHref(href, rawHref)) continue;
+      if (!urlSet.has(href)) {
+        urlSet.add(href);
+        urls.push(href);
+      }
+    }
+
+    // Check each URL status with limited concurrency
+    const results = await mapWithConcurrency(urls, 6, async (u) => requestUrlStatus(u));
+
+    const failures = [];
+    for (let i = 0; i < urls.length; i++) {
+      const u = urls[i];
+      const r = results[i];
+      if (!r || !r.ok) {
+        failures.push({ url: u, status: r && r.status, error: r && r.error });
+      }
+    }
+
+    if (failures.length > 0) {
+      console.log(
+        `Bad links on ${filename}:\n` +
+        failures.slice(0, 50).map((f, i) => `#${i + 1} ${f.url} -> status=${f.status || 'n/a'} error=${f.error || ''}`).join('\n')
+      );
+    }
+
+    expect(failures.length).toBe(0);
+  }
+
+  for (let i = 0; i < fileList.length; i++) {
+    const file = fileList[i];
+    it(`HTTP link health on ${file}`, async () => {
+      await testPage(file);
+    });
+  }
+});

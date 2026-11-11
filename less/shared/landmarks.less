@@ -121,13 +121,15 @@ main:not(.with-full-bleed-hero),
 
 }
 
-main:not(.with-full-bleed-hero),
+// The following was removed -- just want
+// to make sure it is not breaking anything.
+/* main:not(.with-full-bleed-hero),
 [role="main"]:not(.with-full-bleed-hero),
 #main:not(.with-full-bleed-hero) {
     #enable-toc--sidebar + & {
         margin: 0 auto;
     }
-}
+} */ 
 
 .enable-toc-as-sidebar main.with-full-bleed-hero .with-full-bleed-hero__content {
     margin: initial;
@@ -159,7 +161,7 @@ article {
 aside,
 [role="complementary"] {
     display: block;
-    background: #ddd data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
+    background: #eee data-uri("../../images/notepad-icon.svg") no-repeat 1em 1em;
     margin: 1em auto;
     padding: 1em 1em 1em calc(100px + 2em);
     min-height: (139 / @px);

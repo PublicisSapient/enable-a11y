@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This script ensures that we do not use pixel sized fonts in Enable.
+# We should always use:
+#   font-size: 20 / @px;
+# instead of:
+#   font-size: 20px;
+
 i=`find less -name '*.less' -print`
 
 # echo $i
