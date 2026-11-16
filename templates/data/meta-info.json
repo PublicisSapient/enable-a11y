@@ -5,6 +5,16 @@
     "mainClass": "with-full-bleed-hero",
     "bodyClass": "index"
   },
+  "avoiding-nested-interactive-elements.php": {
+    "sectionPages": [
+      {
+        "code-patterns": "Accessible Styling"
+      }
+      ],
+      "title": "Accessible Netsted Interactive Elements",
+      "desc": "Sometimes you want an entire component, like a product tile, to be clickable with other interactive elements inside. How can you do this without violating HTML?"
+    
+  },
   "text-resize.php": {
     "sectionPages": [
       {

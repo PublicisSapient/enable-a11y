@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 665 591" width="665" height="591"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Product tile wireframe</title>
+  <desc id="desc">A rounded turquoise product card containing an image placeholder, linked product name, two lines of text above and below three radio buttons, and a button at the bottom.</desc>
+
+  <!-- This is genuine editable vector artwork: no raster images or filters. -->
+  <g fill="none" stroke="#01938f" stroke-width="4.5"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer card -->
+    <rect x="73" y="43" width="505" height="488" rx="28" fill="#ffffff"/>
+
+    <!-- Product image placeholder -->
+    <rect x="96" y="69" width="459" height="167" rx="21"/>
+    <path d="M218 207 L286 130 Q289 127 293 131 L341 183 L369 154 Q372 151 376 154 L431 207 Z"/>
+    <circle cx="380" cy="115" r="23"/>
+
+    <!-- Product link underline -->
+    <line x1="98" y1="283" x2="294" y2="283" stroke-width="3.5"/>
+
+    <!-- Text placeholders above radio buttons -->
+    <line x1="98" y1="305" x2="384" y2="305" stroke-width="7"/>
+    <line x1="98" y1="324" x2="311" y2="324" stroke-width="7"/>
+
+    <!-- Three radio buttons -->
+    <circle cx="117" cy="363" r="19"/>
+    <circle cx="187" cy="363" r="19"/>
+    <circle cx="257" cy="363" r="19"/>
+
+    <!-- Text placeholders below radio buttons -->
+    <line x1="98" y1="404" x2="384" y2="404" stroke-width="7"/>
+    <line x1="98" y1="424" x2="311" y2="424" stroke-width="7"/>
+  </g>
+
+  <!-- Product link as editable SVG text -->
+  <text x="98" y="273" fill="#01938f"
+        font-family="Arial, Helvetica, sans-serif"
+        font-weight="700" font-size="29">Product name</text>
+
+  <!-- Bottom action button -->
+  <rect x="96" y="450" width="183" height="57" rx="28.5" fill="#01938f"/>
+  <line x1="136" y1="479" x2="239" y2="479"
+        stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+</svg>

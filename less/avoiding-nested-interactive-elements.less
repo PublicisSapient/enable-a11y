@@ -1,80 +1,262 @@
 :root {
-      --tile-bg: #fff;
-      --tile-border: #e7e2dc;
-      --text: #2b2b2b;
-      --muted: #6c625a;
-      --price-accent: #e05900;
-      --badge-bg: #0A6CFF;
-      --badge-text: #fff;
-      --rating-bg: #ffd45a;
-      --btn-bg: #6b3f1d;
-      --btn-text: #fff;
-      --focus: #0a84ff;
-      --radius-lg: 18px;
-      --shadow: 0 2px 10px rgba(0,0,0,.08);
-    }
+  --tile-bg: #fff;
+  --tile-bg--dark: #333;
+  --tile-border: #e7e2dc;
+  --text: #2b2b2b;
+  --text--dark: #e4e4e4;
+  --muted: #6c625a;
+  --muted--dark: #a3aeb4;
+  --price-accent: #e05900;
+  --badge-bg: #0A6CFF;
+  --badge-text: #fff;
+  --rating-bg: #ffd45a;
+  --btn-bg: #6b3f1d;
+  --btn-text: #fff;
+  --focus: #0a84ff;
+  --radius-lg: 18px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, .08);
+  
+}
 
-    .sr-only {
-      clip: rect(1px, 1px, 1px, 1px);
-      -webkit-clip-path: inset(50%);
-      clip-path: inset(50%);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-      margin: -1px;
-    }
 
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 24px; font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: #f7f4f1; }
+/* Step 1: Product card is the root node.  The position relative is crucial.*/
+.large-target-product-tile {
+  width: 320px;
+  background: var(--tile-bg);
+  border: 1px solid var(--tile-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: clip;
+  position: relative;
 
-    /* Step 1: Product card is the root node.  The position relative is crucial.*/
-    .product-card {
-      width: 320px; background: var(--tile-bg); border: 1px solid var(--tile-border);
-      border-radius: var(--radius-lg); box-shadow: var(--shadow); overflow: clip; position: relative;
-    }
+  .enable__is-dark-mode & {
+    background: var(--tile-bg--dark);
+  }
 
-    /* Step 2: The invisible link is here that makes the whole card clickable.
+  /* Step 2: The invisible link is here that makes the whole card clickable.
        The position absolute is critical here.  The inset: 0 makes top, left,
        right and bottom properties all 0. which stretches the link to be the full 
        size of the parent. */
-    .card-link { position: absolute; inset: 0; z-index: 1; border-radius: var(--radius-lg); text-decoration: none; }
-    .card-link:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+  &__overlay-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+  }
 
-    /* Step 3: All the rest of this is for styling of the rest of the card. */
-    .media { position: relative; }
-    .media img { display: block; width: 100%; height: auto; }
+  &__overlay-link:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: -3px;
+  }
 
-    .badges { position: absolute; inset: 10px 10px auto 10px; display: flex; gap: 8px; align-items: center; pointer-events: none; }
-    .badge-rating { background: var(--rating-bg); color: #2b2b2b; font-weight: 700; font-size: 13px; padding: 4px 8px; border-radius: 999px; box-shadow: var(--shadow); display: inline-flex; align-items: center; gap: 6px; }
-    .badge-rating .star { color: #444; }
-    .badge-pill { background: var(--badge-bg); color: var(--badge-text); font-weight: 700; font-size: 12px; padding: 5px 10px; border-radius: 8px; box-shadow: var(--shadow); }
+  /* Step 3: All the rest of this is for styling of the rest of the card. */
+  &__media {
+    position: relative;
+  }
 
-    .content { padding: 12px 14px 14px 14px; display: grid; gap: 8px; }
-    .brand { color: var(--muted); font-size: 12px; }
-    .name { font-size: 16px; font-weight: 800; margin: 0; }
+  &__media-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-    /* Swatches visually sit under the name but remain outside the link.
+  &__badges {
+    position: absolute;
+    inset: 10px 10px auto 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  &__badge-rating {
+    background: var(--rating-bg);
+    color: #2b2b2b;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__badge-star {
+    color: #444;
+  }
+
+  &__badge-pill {
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }
+
+  &__content {
+    padding: 12px 14px 14px 14px;
+    display: grid;
+    gap: 8px;
+  }
+
+  &__brand {
+    color: var(--muted);
+    font-size: 12px;
+
+    .enable__is-dark-mode & {
+      color: var(--muted--dark);
+    }
+  }
+
+  &__name {
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0;
+    padding-top: 0;
+    border: none;
+  }
+
+  /* Swatches visually sit under the name but remain outside the link.
        Elevate above the overlay link so they stay interactive. */
-    fieldset.swatches { margin: 2px 0 6px 0; padding: 0; border: 0; position: relative; z-index: 3; }
-    fieldset.swatches legend { font-size: 12px; padding-bottom: 5px}
-    .swatch-list { display: flex; gap: 10px; align-items: center; }
-    .swatch { --size: 22px; position: relative; display: inline-grid; place-items: center; }
-    .swatch input { position: absolute; opacity: 0; inset: 0; margin: 0; }
-    .swatch .dot { width: var(--size); height: var(--size); border-radius: 999px; border: 2px solid #c9c3bc; box-shadow: inset 0 0 0 2px rgba(0,0,0,.05); }
-    .swatch input:focus-visible + .dot { outline: 3px solid var(--focus); outline-offset: 3px; }
-    .swatch input:checked + .dot { border-color: #6b6b6b; box-shadow: 0 0 0 2px #6b6b6b inset; }
+  &__swatches {
+    margin: 2px 0 6px 0;
+    padding: 0;
+    border: 0;
+    position: relative;
+    z-index: 3;
+  }
 
-    .pricing { display: grid; gap: 4px; }
-    .price-primary { color: var(--price-accent); font-size: 22px; font-weight: 900; }
-    .price-row { display: flex; align-items: baseline; gap: 6px; }
-    .small { color: var(--muted); font-size: 12px; }
+  &__swatches legend {
+    font-size: 12px;
+    padding-bottom: 5px
+  }
 
-    .actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; position: relative; z-index: 3; }
-    .btn-buy { appearance: none; border: 0; background: var(--btn-bg); color: var(--btn-text); font-weight: 800; padding: 10px 16px; border-radius: 999px; cursor: pointer; }
-    .btn-buy:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-    .compare { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
-    .compare input { width: 18px; height: 18px; }
+  &__swatch-list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 
-      .helper { color: #c6422d; font-weight: 700; font-size: 13px; }
+  &__swatch {
+    --size: 22px;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+  }
+
+  &__swatch input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    margin: 0;
+  }
+
+  &__swatch-dot {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 999px;
+    border: 2px solid #c9c3bc;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .05);
+  }
+
+  &__swatch input:focus-visible+&__swatch-dot {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  &__swatch input:checked+&__swatch-dot {
+    border-color: #6b6b6b;
+    box-shadow: 0 0 0 2px #6b6b6b inset;
+  }
+
+  &__pricing {
+    display: grid;
+    gap: 4px;
+  }
+
+  &__price-primary {
+    color: var(--price-accent);
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  &__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  &__small {
+    color: var(--muted);
+    font-size: 12px;
+
+
+    .enable__is-dark-mode & {
+      color: var(--muted--dark);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__btn-buy {
+    appearance: none;
+    border: 0;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: 800;
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  &__btn-buy:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  &__compare {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 14px;
+
+    .enable__is-dark-mode & {
+      color: var(--muted--dark);
+    }
+  }
+
+  &__compare input {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__helper {
+    color: #c6422d;
+    font-weight: 700;
+    font-size: 13px;
+
+    .enable__is-dark-mode & {
+      color: #e8a69c;
+    }
+  }
+
+}
+
+.helper {
+  color: #c6422d;
+  font-weight: 700;
+  font-size: 13px;
+}
